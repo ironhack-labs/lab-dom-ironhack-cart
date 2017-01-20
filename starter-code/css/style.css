@@ -3,15 +3,24 @@ input {
 }
 
 h1 {
-  margin-bottom: 1em;
+  margin: 1em auto 2em;
 }
 
 #prices {
   margin-top: 3em;
 }
 
+#calc-prices-button {
+  margin-top: 2.5em !important;
+}
+
 .container {
-  margin: auto 2.5%;
+  margin: 1em 2.5% 2em;
+  overflow: hidden;
+}
+
+.min-height {
+  min-height: 1px;
 }
 
 .info-container {
@@ -36,12 +45,23 @@ h1 {
   transform: translateX(-50%);
 }
 
+.left {
+  float: left;
+}
+
+.clear {
+  clear: both;
+}
+
+.block {
+  display: block !important;
+}
+
 .inline-block {
   display: inline-block;
 }
 
 .col-xs-2 {
-  float: left;
   width: 20%;
 }
 
@@ -93,6 +113,12 @@ h1 {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+}
+
+.btn-create {
+    color: black;
+    background-color: lightgrey;
+    border-color: black;
 }
 
 .quantity {

@@ -14,6 +14,8 @@ function getTotalPrice() {
   var unitPrice = Number(document.getElementById("unit-price").textContent.slice(1));
   var quantity = document.getElementById("qty").value;
   document.getElementById("item-total").innerHTML = "$" + (unitPrice * quantity).toString();
+  console.log(document.getElementsByClassName("item-totals"));
+
 }
 
 function createQuantityInput(){
