@@ -2,8 +2,16 @@ input {
   border: solid 1px black;
 }
 
-.container {
+h1 {
+  margin-bottom: 1em;
+}
 
+#prices {
+  margin-top: 3em;
+}
+
+.container {
+  margin: auto 2.5%;
 }
 
 .info-container {
@@ -18,8 +26,23 @@ input {
 
 }
 
-.col-xs-2 {
+.center-text {
+  text-align: center;
+}
 
+.center {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.col-xs-2 {
+  float: left;
+  width: 20%;
 }
 
 .col-xs-3 {

@@ -6,9 +6,33 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
+  <script type="text/javascript" src="./js/index.js" async></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+  <h1 class="center-text">Ironhack<br>Merchandising Shop</h1>
+  <section class="container">
+    <div class="inline-block col-xs-2">
+      <span>Cool T-shirt</span>
+    </div>
+    <div class="inline-block col-xs-2">
+      <span id="unit-price">$24.99</span>
+    </div>
+    <div class="inline-block col-xs-2">
+      <label for="qty">QTY</label>
+      <input type="text" id="qty" value="0">
+    </div>
+    <div class="inline-block col-xs-2">
+      <span id="item-total">$0.00</span>
+    </div>
+    <div class="inline-block col-xs-2">
+      <button label="Delete" class="btn btn-delete">
+        Delete
+      </button>
+    </div>
+  </section>
+  <button label="Calculate Prices" class="btn btn-success center" id="calc-prices-button">
+    Calculate Prices
+  </button>
 </body>
 </html>
