@@ -2,11 +2,23 @@ input {
   border: solid 1px black;
 }
 
-.container {
+header{
+  width: 100%;
+  background-color: #666464;
+  color: #FFF;
+  text-align: center;
+  font-size: 1rem;
+  padding: 1rem;
+}
 
+.container {
+  width: 80%;
+  margin: 0 auto;
+  background-color: #000;
 }
 
 .info-container {
+
 
 }
 
