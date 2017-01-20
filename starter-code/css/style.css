@@ -2,6 +2,11 @@ input {
   border: solid 1px black;
 }
 
+header{
+text-align: left;
+margin-left: 400px;
+
+}
 .container {
 
 }
@@ -15,11 +20,14 @@ input {
 }
 
 .row {
-
+float: left;
+margin-top: 20px;
+margin-right: 110px;
+margin-bottom: 20px;
 }
 
 .col-xs-2 {
-
+margin-left: 80px;
 }
 
 .col-xs-3 {
@@ -37,7 +45,14 @@ input {
 .col-xs-7 {
 
 }
-
+#delete{
+  color:white;
+  background-color: red;
+}
+#calculate{
+  color:white;
+  background-color: green;
+}
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -74,4 +89,11 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+.reset-float{
+  clear:both;
+}
+.calculate-price{
+  text-align: left;
+  margin-left: 400px;
 }
