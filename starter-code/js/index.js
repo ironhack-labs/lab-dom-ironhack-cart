@@ -11,10 +11,20 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-  var unitPrice = Number(document.getElementById("unit-price").textContent.slice(1));
-  var quantity = document.getElementById("qty").value;
-  document.getElementById("item-total").innerHTML = "$" + (unitPrice * quantity).toString();
-  console.log(document.getElementsByClassName("item-totals"));
+  // var unitPrice = Number(document.getElementById("unit-price").textContent.slice(1));
+  // var quantity = document.getElementById("qty").value;
+  // document.getElementById("item-total").innerHTML = "$" + (unitPrice * quantity).toString();
+
+  // console.log(document.getElementsByClassName("item-totals"));
+
+  var items = document.getElementsByClassName("item-totals");
+  var numberOfItems = items.length;
+  for (var i=0; i < numberOfItems; i++) {
+    console.log("unit-price" + i);
+    var unitPrice = Number(document.getElementById("unit-price" + i).textContent.slice(1));
+    var quantity = document.getElementById("qty" + i).value;
+    document.getElementById(items[i]["id"]).innerHTML = "$" + (unitPrice * quantity).toFixed(2).toString();
+  }
 
 }
 
