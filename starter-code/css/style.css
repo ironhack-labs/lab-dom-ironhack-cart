@@ -6,6 +6,10 @@ h1 {
   margin: 1em auto 2em;
 }
 
+h2 {
+  margin-top: 2em;
+}
+
 #prices {
   margin-top: 3em;
 }

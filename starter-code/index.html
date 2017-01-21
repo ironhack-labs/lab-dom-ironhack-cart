@@ -71,11 +71,12 @@
       </button>
     </div>
   </section>
-  <section class="container">
+  <section class="container" id='create-item-row'>
     <div class="inline-block col-xs-2 left">
       <input id="product-name" type="text" placeholder="Product Name">
     </div>
     <div class="col-xs-2 left">
+      <label for="product-price">$</label>
       <input id="product-price" type="text" placeholder="Product Price">
     </div>
     <div class="col-xs-2 left min-height">
@@ -83,7 +84,7 @@
     <div class="col-xs-2 left min-height">
     </div>
     <div class="inline-block col-xs-2 left">
-      <button label="Create" class="btn btn-create" id="create-button">
+      <button label="Create" class="btn btn-create" id="new-item-create">
         Create
       </button>
     </div>
@@ -91,6 +92,6 @@
   <button label="Calculate Prices" class="btn btn-success clear block center" id="calc-prices-button">
     Calculate Prices
   </button>
-  <h1 class="center-text">Total Price: $0.00</h1>
+  <h2 class="center-text">Total Price: <span id='finalTotal'>$0.00</span></h2>
 </body>
 </html>
