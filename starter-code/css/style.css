@@ -27,18 +27,6 @@ h2 {
   min-height: 1px;
 }
 
-.info-container {
-
-}
-
-.item {
-
-}
-
-.row {
-
-}
-
 .center-text {
   text-align: center;
 }
@@ -65,24 +53,8 @@ h2 {
   display: inline-block;
 }
 
-.col-xs-2 {
-  width: 20%;
-}
-
-.col-xs-3 {
-
-}
-
 .col-xs-5 {
-
-}
-
-.col-xs-4 {
-
-}
-
-.col-xs-7 {
-
+  width: 20%;
 }
 
 .btn {
