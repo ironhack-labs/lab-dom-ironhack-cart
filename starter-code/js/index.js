@@ -11,21 +11,21 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-  var rows = document.getElementsByClassName('row');
+  var items = document.getElementsByClassName('item');
 
-  for(var i = 0; i < rows.length; ++i){
-    var pricePerUnitElem = rows[i].querySelector('.price-per-unit');
-    var qtyOfUnit = rows[i].querySelector('.unit-qty').value;
-    var rowTotalElem = rows[i].querySelector('.row-total');
+  for(var i = 0; i < items.length; ++i){
+    var pricePerUnitElem = items[i].querySelector('.price-per-unit');
+    var qtyOfUnit = items[i].querySelector('.unit-qty').value;
+    var itemTotalElem = items[i].querySelector('.item-total');
 
-    console.log(rows[i].id + ", ppe: " + rows[i].querySelectorAll('.container')[1].textContent +
+    console.log(items[i].id + ", ppe: " + items[i].querySelectorAll('.container')[1].textContent +
        ", qty: " +
-      qtyOfUnit + ", total: $" + rowTotalElem.innerHTML);
+      qtyOfUnit + ", total: $" + itemTotalElem.innerHTML);
 
     console.log("ppe to int: " + parseInt(pricePerUnitElem.innerHTML));
     console.log("qty to int: " + parseInt(qtyOfUnit));
 
-    rowTotalElem.innerHTML = String(parseInt(pricePerUnitElem.innerHTML) *
+    itemTotalElem.innerHTML = String(parseInt(pricePerUnitElem.innerHTML) *
       parseInt(qtyOfUnit));
   }
 
@@ -49,14 +49,14 @@ function createItemNode(dataType, itemData){
 
 function createNewItemRow(itemName, itemUnitPrice){
   var row = document.createElement('div');
-  row.setAttribute('class', 'row');
+  row.setAttribute('class', 'row item');
   row.setAttribute('id', "item-" + (++numOfItems));
   var productNameNode = createNewItem();
   var pricePerUnitNode = createNewItemPrice();
   row.appendChild(productNameNode);
   row.appendChild(pricePerUnitNode);
   var bodyElem = document.getElementsByTagName('body')[0];
-  bodyElem.insertBefore(row, bodyElem.getElementsByClassName('bottom')[0]);
+  bodyElem.insertBefore(row, document.getElementById('new-item-row'));
 }
 
 function createNewItem (){
@@ -87,8 +87,8 @@ function createNewItemPrice(){
 var numOfItems = 1;
 
 window.onload = function(){
-  var calculatePriceButton = document.getElementById('calc-prices-button');
-  var createItemButton = document.getElementById('new-item-create');
+  var calculatePriceButton = document.getElementById('calc-prices-btn');
+  var createItemButton = document.getElementById('new-item-create-btn');
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
   calculatePriceButton.onclick = getTotalPrice;

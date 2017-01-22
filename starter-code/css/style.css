@@ -24,41 +24,30 @@ body > h1 {
   text-align: center;
 }
 
-.info-container {
-
+.row {
+  clear: both;
+  width: 100%;
+  height: auto;
+  margin: 30px auto;
 }
 
 .item {
 
 }
 
-.row {
+#new-item-row {
+  clear: both;
   width: 100%;
-}
-
-.col-xs-2 {
-
-}
-
-.col-xs-3 {
-
-}
-
-.col-xs-5 {
-
-}
-
-.col-xs-4 {
-
-}
-
-.col-xs-7 {
-
+  height: auto;
+  margin: 30px auto;
+  padding-top: 60px;
 }
 
 .bottom {
+  clear: both;
   width: 100%;
   height: auto;
+  margin: 30px auto;
   padding-top: 60px;
 }
 
@@ -89,8 +78,6 @@ body > h1 {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
-    display: block;
-    margin: 0 auto;
 }
 
 .btn-delete {
@@ -99,11 +86,16 @@ body > h1 {
     border-color: #CF000F;
 }
 
-#new-item-create {
+#new-item-create-btn {
     color: #fff;
     background-color: blue;
     float: right;
-    margin-right: 80px;
+    margin-right: 150px;
+}
+
+#calc-prices-btn {
+  display: block;
+    margin: 0 auto;
 }
 
 .quantity {
