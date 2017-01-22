@@ -14,7 +14,7 @@
     Ironhack <br> Merchandising Shop
   </h1>
 </header>
-<body>
+<body id="shop">
   <section class="container">
     <article class="item">
       <div class="row">
@@ -28,7 +28,7 @@
       <div class="row">
         <div class="col-xs-3">
           <span>
-            $25.00
+            $<p class="Unit-price" >50</p>
           </span>
         </div>
       </div>
@@ -37,15 +37,15 @@
         <div class="col-xs-4">
           <span>
             QTY
-            <input type="text" name="" value="0">
+            <input class="Input-value" type="text" name="" value="0">
           </span>
         </div>
       </div>
 
       <div class="row">
         <div class="col-xs-5">
-          <span>
-            $0.00
+          $<span class="Total-Price">
+            0.00
           </span>
         </div>
       </div>
@@ -53,17 +53,27 @@
       <div class="row">
         <div class="col-xs-7">
           <span>
-            <button class="btn" id="delete"> DELETE</button>
+            <button class="btn btn-delete" > DELETE</button>
           </span>
         </div>
       </div>
     </article>
   </section>
+
+  <div class="reset-float"></div>
+
   <section>
     <div class="reset-float"></div>
     <div class="calculate-price">
       <button class="btn" id="calculate">CALCULATE PRICE</button>
+    </div class="cart">
+    <div>
+      <input class="Text-Content" id="Product-Name" type="text" name="" value="Product Name">
+      <input class="Unit-Price" id="Product-Price" type="text" name="" value="Product price">
+      <button class="new" id="new-item-create">New Product</button>
     </div>
+    <h2>TOTAL PRICE: $</h2><span class="Cart-price">0</span>
+
   </section>
 </body>
 </html>

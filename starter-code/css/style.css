@@ -22,7 +22,7 @@ margin-left: 400px;
 .row {
 float: left;
 margin-top: 20px;
-margin-right: 110px;
+margin-right: 120px;
 margin-bottom: 20px;
 }
 
@@ -96,4 +96,8 @@ margin-left: 80px;
 .calculate-price{
   text-align: left;
   margin-left: 400px;
+}
+.new{
+  float:right;
+  margin-right:2%;
 }
