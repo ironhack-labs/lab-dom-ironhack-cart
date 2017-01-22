@@ -16,25 +16,18 @@ function getTotalPrice() {
   var items = document.getElementsByClassName('item');
   var cartTotal = 0;
   for(var i = 0; i < items.length; ++i){
+    var lineTotalElem = items[i].querySelector('.item-total');
     var lineTotal = 0;
-    var pricePerUnitElem = items[i].querySelector('.price-per-unit');
-    var qtyOfUnit = items[i].querySelector('.unit-qty').value;
-    var itemTotalElem = items[i].querySelector('.item-total');
+    var pricePerUnit = parseFloat(items[i].querySelector('.price-per-unit').textContent);
+    var qtyOfUnit = parseInt(items[i].querySelector('.unit-qty').value);
 
-    console.log(items[i].id + ", ppe: " + items[i].querySelectorAll('.container')[1].textContent +
-       ", qty: " +
-      qtyOfUnit + ", total: $" + itemTotalElem.innerHTML);
+    //PROBLEM WAS HERE!!! I called toFixed() on lineTotal which turned it into string.
+    lineTotal = (pricePerUnit * qtyOfUnit);
 
-    console.log("ppe to int: " + parseInt(pricePerUnitElem.innerHTML));
-    console.log("qty to int: " + parseInt(qtyOfUnit));
-
-    lineTotal = parseInt(pricePerUnitElem.innerHTML *
-      parseInt(qtyOfUnit));
-    itemTotalElem.innerHTML = String(lineTotal);
+    lineTotalElem.innerHTML = lineTotal.toFixed(2);
     cartTotal += lineTotal;
   }
-
-  document.getElementById('total-price-value').innerHTML = cartTotal;
+  document.getElementById('total-price-value').innerHTML = cartTotal.toFixed(2);
 }
 
 function createNewItemRow(itemName, itemUnitPrice){
