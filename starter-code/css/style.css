@@ -14,7 +14,7 @@ body > h1 {
 
 }
 
-.row-total {
+.item-total {
 
 }
 
@@ -31,23 +31,7 @@ body > h1 {
   margin: 5px auto;
 }
 
-.item {
-
-}
-
 #new-item-row {
-  clear: both;
-  width: 100%;
-  height: auto;
-  margin: 30px auto;
-  padding-top: 60px;
-}
-
-.bottom {
-  clear: both;
-  width: 100%;
-  height: auto;
-  margin: 30px auto;
   padding-top: 60px;
 }
 
@@ -94,10 +78,11 @@ body > h1 {
 }
 
 #calc-prices-btn {
-  display: block;
+    display: block;
     margin: 0 auto;
 }
 
-.quantity {
-  margin: 0 5px;
+#total-price-heading {
+  margin: 20px auto;
+  text-align: center;
 }
