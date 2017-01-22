@@ -67,7 +67,7 @@ function createNewItem (){
   item.setAttribute('class', 'product-name');
   //itemNode.appendChild(dollarTxtNode);
   itemNode.appendChild(item);
-  item.innerHTML = "Baseball bat";
+  item.innerHTML = document.getElementById('new-product-name').value;
   return itemNode;
 }
 
@@ -79,7 +79,7 @@ function createNewItemPrice(){
   item.setAttribute('class', 'price-per-unit');
   itemNode.appendChild(dollarTxtNode);
   itemNode.appendChild(item);
-  item.innerHTML = "30.00";
+  item.innerHTML = document.getElementById('new-price-per-unit').value;
   return itemNode;
 
 }
