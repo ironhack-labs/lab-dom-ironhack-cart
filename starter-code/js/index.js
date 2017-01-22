@@ -56,7 +56,6 @@ console.log(element);
 
 function delete_element(event)
 {
-  //  e.currentTarget.parentElement.parentNode.removeChild(parentElement);
   event.currentTarget.parentElement.parentNode.remove();
 }
 
