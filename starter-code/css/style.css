@@ -2,8 +2,26 @@ input {
   border: solid 1px black;
 }
 
-.container {
+body > h1 {
+  text-align: center;
+}
 
+.product-name {
+
+}
+
+.price-per-unit {
+
+}
+
+.row-total {
+
+}
+
+.container {
+  width: 20%;
+  float:left;
+  text-align: center;
 }
 
 .info-container {
@@ -15,7 +33,7 @@ input {
 }
 
 .row {
-
+  width: 100%;
 }
 
 .col-xs-2 {
@@ -38,10 +56,17 @@ input {
 
 }
 
+.bottom {
+  width: 100%;
+  height: auto;
+  padding-top: 60px;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
-  margin-bottom: 0;
+  margin-bottom: 0px;
+  margin-top: -8px;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.42857143;
@@ -64,12 +89,21 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    display: block;
+    margin: 0 auto;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+}
+
+#new-item-create {
+    color: #fff;
+    background-color: blue;
+    float: right;
+    margin-right: 80px;
 }
 
 .quantity {
