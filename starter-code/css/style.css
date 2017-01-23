@@ -1,14 +1,51 @@
 input {
   border: solid 1px black;
+  width: 150px;
+  height: 20px;
 }
 
 .container {
+  position: relative;
+  width: auto;
+  height: 600px;
+  margin: 0;
+  border: 1px solid blue;
+}
+
+h1 {
+  width: 300px;
+  position: relative;
+  text-align: left;
+  margin: 0;
+  left: 390px;
+}
+
+h2 {
+  width: 300px;
+  position: relative;
+  text-align: left;
+  margin-top: 40px;
+  left: 390px;
 
 }
 
 .info-container {
-
+  width: 100%;
+  display: flex;
+  float: left;
+  padding-top: 50px;
+  padding-left: 30px;
+  padding-bottom: 20px;
+  text-align: left;
+  border: 1px solid green;
 }
+
+.info-container span {
+  display: table-cell;
+  padding-right: 70px;
+  text-align: left;
+}
+
 
 .item {
 
@@ -61,17 +98,26 @@ input {
 }
 
 .btn-success {
+    position: relative;
+    border-radius: 4px;
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin-top: 20px;
+    left: 400px;
 }
 
 .btn-delete {
+    position: relative;
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    border-radius: 4px;
+    right: 0;
 }
 
 .quantity {
+  position: relative;
   margin: 0 5px;
+  padding-right: 230px;
 }
