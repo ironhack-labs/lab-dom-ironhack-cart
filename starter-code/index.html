@@ -10,5 +10,117 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <section class="info-container">
+    <h1>Ironhack Merchandising Shop</h1>
+  </section>
+  <section id="items-list" class="container">
+    <div class="item row">
+      <div class="item-name col-xs-2">
+        <span>IronBubble-head</span>
+      </div>
+      <div class="item-price col-xs-2">
+        <span>$25.00</span>
+      </div>
+      <div class="item-qty col-xs-3">
+        <label>QTY</label>
+        <input class="quantity" value="0">
+      </div>
+      <div class="item-subtotal col-xs-2">
+        <span>$0.00</span>
+      </div>
+      <div class="item-delete col-xs-3">
+        <button class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+    <div class="item row">
+      <div class="item-name col-xs-2">
+        <span>IronShirt</span>
+      </div>
+      <div class="item-price col-xs-2"><span>$15.00</span></div>
+      <div class="item-qty col-xs-3">
+        <label>QTY</label>
+        <input class="quantity" value="0">
+      </div>
+      <div class="item-subtotal col-xs-2">
+        <span>$0.00</span>
+      </div>
+      <div class="item-delete col-xs-3">
+        <button class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+    <div class="item row">
+      <div class="item-name col-xs-2">
+        <span>IronCup</span>
+      </div>
+      <div class="item-price col-xs-2"><span>$10.00</span></div>
+      <div class="item-qty col-xs-3">
+        <label>QTY</label>
+        <input class="quantity" value="0">
+      </div>
+      <div class="item-subtotal col-xs-2">
+        <span>$0.00</span>
+      </div>
+      <div class="item-delete col-xs-3">
+        <button class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+    <div class="item row">
+      <div class="item-name col-xs-2">
+        <span>IronSticker</span>
+      </div>
+        <div class="item-price col-xs-2"><span>$1.00</span></div>
+      <div class="item-qty col-xs-3">
+        <label>QTY</label>
+        <input class="quantity" value="0">
+      </div>
+      <div class="item-subtotal col-xs-2">
+        <span>$0.00</span>
+      </div>
+      <div class="item-delete col-xs-3">
+        <button class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+    <div class="item row">
+      <div class="item-name col-xs-2">
+        <span>IronAxe</span>
+      </div>
+        <div class="item-price col-xs-2"><span>$100.00</span></div>
+      <div class="item-qty col-xs-3">
+        <label>QTY</label>
+        <input class="quantity" value="0">
+      </div>
+      <div class="item-subtotal col-xs-2">
+        <span>$0.00</span>
+      </div>
+      <div class="item-delete col-xs-3">
+        <button class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+    <div class="item row">
+      <div class="col-xs-2">
+        <input id="new-item-name">
+      </div>
+      <div class="col-xs-7">
+        <input id="new-item-unit-price">
+      </div>
+      <div class="col-xs-2">
+        <button id="new-item-create">Create</button>
+      </div>
+    </div>
+    <div class="info-container">
+      <div class="col-xs-3">
+        <button id="calc-prices-button" type="button" class="btn btn-success">
+          Calculate Prices
+        </button>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="info-container">
+      <h1 class="total-price-label">
+        Total Price: <span id="total-price">$0.00</span>
+      </h1>
+    </div>
+  </section>
 </body>
 </html>
