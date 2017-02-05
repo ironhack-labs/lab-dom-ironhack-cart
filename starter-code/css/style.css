@@ -1,45 +1,61 @@
+body{
+  background-color: #f7f7f7;
+}
+h1,.total-price{
+  text-align: center;
+  padding: 10px;
+}
+.total-price{
+  font-size: 1.5em;
+}
 input {
-  border: solid 1px black;
+  border: solid 1px #eee;
+  width: 50px;
 }
-
-.container {
-
+.container{
+  text-align: center;
+  float:left;
+  padding:6px 0 ;
 }
-
-.info-container {
-
+.price:after,.total-price-product:after,.total-price:after{
+  content: '$';
 }
-
-.item {
-
+.product,#create-element{
+  overflow: auto;
+  clear: both;
+  padding: 5px;
 }
-
-.row {
-
+#content{
+  padding: 15px 0 ;
+  overflow: auto;
+  border-radius: 10px;
+  background-color: #fff;
+  margin: auto;
+  width: 60%;
 }
-
-.col-xs-2 {
-
+.name{
+  width: 20%;
 }
-
-.col-xs-3 {
-
+.price{
+  width: 20%;
 }
-
-.col-xs-5 {
-
+.qty{
+  width: 25%;
 }
-
-.col-xs-4 {
-
+.total-price-product{
+  width: 10%;
 }
-
-.col-xs-7 {
-
+#create-element{
+  padding: 15px 5px;
+  background-color: #f3fff3;
+}
+#create-button{
+  width: 22%;
+  float:left;
+  margin-left: 35%;
 }
 
 .btn {
-  display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
   font-size: 14px;
@@ -58,6 +74,7 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+  transition: 0.5s;
 }
 
 .btn-success {
@@ -65,11 +82,24 @@ input {
     background-color: #5cb85c;
     border-color: #4cae4c;
 }
+.btn-success:hover{
+  background-color: #fff;
+  color: #5cb85c;
+}
 
 .btn-delete {
+    width: 20%;
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+}
+.btn-delete:hover{
+    color: #CF000F;
+    background-color: #fff;;
+}
+
+#calc-prices-button{
+  margin: 0 43%;
 }
 
 .quantity {
