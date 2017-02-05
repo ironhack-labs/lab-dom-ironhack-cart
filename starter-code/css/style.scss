@@ -1,8 +1,16 @@
+@import 'normalize';
+
+h1 {
+  text-align: center;
+}
+
 input {
   border: solid 1px black;
 }
 
 .container {
+  display: inline-block;
+  margin: 2% 6% 0% 6%;
 
 }
 
@@ -18,24 +26,38 @@ input {
 
 }
 
+.col-xs-1 {
+
+}
+
 .col-xs-2 {
 
 }
 
 .col-xs-3 {
-
-}
-
-.col-xs-5 {
-
+  button {
+    background-color: #10b910;
+    border-radius: 3px;
+    border-style: none;
+    color: white;
+    margin: 2vh 56vw 0 44vw;
+    padding: 0.5%;
+    white-space: nowrap;
+  }
 }
 
 .col-xs-4 {
 
 }
 
-.col-xs-7 {
-
+.col-xs-5 {
+  button {
+    background-color: red;
+    border-radius: 3px;
+    border-style: none;
+    color: white;
+    padding: 10%;
+  }
 }
 
 .btn {
@@ -73,5 +95,5 @@ input {
 }
 
 .quantity {
-  margin: 0 5px;
+
 }

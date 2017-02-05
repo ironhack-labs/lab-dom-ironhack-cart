@@ -9,9 +9,20 @@ function getPriceByProduct(itemNode){
 function updatePriceByProduct(productPrice, index){
 
 }
-
+//get array of elements by tag name and iterate through it
 function getTotalPrice() {
+  var prices = document.querySelectorAll('.col-xs-2');
+  console.log(prices[0]);
+  var quantities = document.querySelectorAll('.quantity');
+  console.log(quantities[0]);
+  var total = document.querySelectorAll('.col-xs-4');
+  console.log(total[0]);
 
+  prices.forEach(function (price, i) {
+    if (quantities[i].value > 0) {
+      total[i].innerHTML = "$" + (quantities[i].value * prices[i].innerHTML).toFixed(2);
+    }
+  });
 }
 
 function createQuantityInput(){
