@@ -35,13 +35,11 @@ input {
   border: 0px;
 }
 .buttonDelete {
-  /*border-radius: 5px;
-  padding: 7px;
+  border-radius: 5px;
+  /*padding: 7px;*/
   background-color: #cf201b;
-  color: white;*/
-  color: red;
-  background-color: white;
   border: 0px;
+  color: white;
 }
 .createTable {
   position: relative;
@@ -71,17 +69,6 @@ input {
   text-align: right;
   padding-right: 5%;
   /*float: right;*/
-}
-.numItems {
-  text-align: right;
-  padding-right: 18%;
-  margin-top: -25px;
-
-}
-.table {
-  width: 80%;
-  margin-left: 50px;
-}
 }
 .theAnswer {
   position: realative;
