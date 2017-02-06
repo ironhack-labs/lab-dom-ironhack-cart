@@ -3,39 +3,29 @@ input {
 }
 
 .container {
+  margin: 0 auto;
+  width: 90%;
+  min-width: 800px;
 
 }
 
 .info-container {
-
+ width: 25%;
+ margin: 50px auto 0;
 }
 
 .item {
-
+    margin: 30px 0;
 }
 
 .row {
-
+    width: 100%;
 }
 
-.col-xs-2 {
-
-}
-
-.col-xs-3 {
-
-}
-
-.col-xs-5 {
-
-}
-
-.col-xs-4 {
-
-}
-
-.col-xs-7 {
-
+.col {
+  font-size: 14px;
+  display: inline-block;
+  width: 15%;
 }
 
 .btn {
