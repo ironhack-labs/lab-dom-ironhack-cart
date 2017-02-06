@@ -66,30 +66,3 @@ function remove_2() {
   var total = document.querySelector('.sumTotal');
   total.innerHTML = window.greatTotal -= checkPrice(price2, qty_2,total2);
 }
-
-
-// =============
-// CREATING NEW ITEM =======================================
-// =============
-//
-// var price = document.querySelector('.price').innerHTML;
-// price = parseInt(price);
-// var qty = document.querySelector('.quantity').value;
-// qty = parseInt(qty);
-//
-//
-//
-// function SumAll(price, qtyBought) {
-//   this.price = price;
-//   this.qtyBought = qtyBought;
-//   this.totalSum = function () {
-//     return this.price * this.qtyBought;
-//   }
-// }
-//
-// var item_1 = new SumAll(price, qty);
-// var total = item_1.totalSum();
-//
-// function totalPrice() {
-//     alert(total);
-// }
