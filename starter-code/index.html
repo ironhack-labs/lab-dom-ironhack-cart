@@ -6,9 +6,90 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
+  <script type="text/javascript" src="index.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+
+  <h1>Ironhack Merchandising Shop</h1>
+
+  <table style="width:100%;" id="myTable">
+      <tr>
+        <th>Item</th>
+        <th>Price</th>
+        <th>Quanity</th>
+        <th class="space">Total</th>
+        <th></th>
+      </tr>
+  <!-- FIRST ITEM -->
+      <tr>
+          <td>IronBubble-head</td>
+          <td>
+          $<span class="price">25.00</span>
+          </td>
+          <td class="qty">
+            <input class="quantity" type="text" placeholder="0"></input>
+          </td>
+          <td class="total space">$0.00</td>
+          <td>
+            <button  class="btn btn-delete" type="button" onclick="remove_1()">DELETE</button>
+          </td>
+      </tr>
+  <!-- SECOND ITEM -->
+      <tr>
+          <td>IronShirt</td>
+          <td>
+          $<span class="price-2">15.00</span>
+          </td>
+          <td class="qty">
+            <input class="quantity-2" type="text" placeholder="0"></input>
+          </td>
+          <td class="total-2 space">$0.00</td>
+          <td>
+            <button  class="btn btn-delete" type="button" onclick="remove_2()">DELETE</button>
+          </td>
+      </tr>
+  <!-- THIRD ITEM -->
+  <tr class="newItem-1">
+      <td class="newName"></td>
+      <td>
+      $<span class="newPrice"></span>
+      </td>
+      <td class="qty">
+        <input class="quantity" type="text" placeholder="0"></input>
+      </td>
+      <td class="total space">$0.00</td>
+      <td>
+        <button  class="btn btn-delete" type="button" onclick="remove_2()">DELETE</button>
+      </td>
+  </tr>
+  <!-- CREATE NEW -->
+      <tr>
+          <td>
+          <input class="itemName" type="text" placeholder="New Item"></input>
+          </td>
+
+          <td>
+          $<span class="price-3">
+          <input class="quantity-3" type="text" placeholder="0"></input>
+          </span>
+          </td>
+          <td>
+            <button class="btn btn-create" onclick="">Create</button>
+          </td>
+      </tr>
+
+
+
+
+  </table>
+      <div>
+        <button class="btn btn-success" onclick="totalPrice()">Calculate</button>
+        <h1>Total Price:$<span class="sumTotal">0.00</span></h1>
+      <div>
+
+
+
+
 </body>
 </html>
