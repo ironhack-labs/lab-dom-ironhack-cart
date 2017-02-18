@@ -3,7 +3,7 @@ input {
 }
 
 .container {
-
+  padding: 1em;
 }
 
 .info-container {
@@ -15,7 +15,7 @@ input {
 }
 
 .row {
-
+  width: 100%;
 }
 
 .col-xs-2 {
@@ -27,7 +27,8 @@ input {
 }
 
 .col-xs-5 {
-
+  width: calc(100% / 5);
+  float: left;
 }
 
 .col-xs-4 {
@@ -74,4 +75,13 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+#qty {
+  width: 60%;
+}
+
+.calculate {
+  text-align: center;
+  margin-top: 100px;
 }
