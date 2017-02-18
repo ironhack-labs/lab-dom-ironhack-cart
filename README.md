@@ -21,7 +21,7 @@ We will create a the Ironhack Cart, where the users will be able to add and remo
 ## Requirements
 
 - Use a normalizer to avoid differences between browsers styles. Here you have one CDN:
-	https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.cs
+	https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css
 - Use at least 3 `onclick` events
 - Use at least once `getElementById`
 - Use at least once `getElementsByTagName`
