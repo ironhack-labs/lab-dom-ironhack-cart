@@ -19,6 +19,7 @@ We will create a the Ironhack Cart, where the users will be able to add and remo
 ## Exercise
 
 ## Requirements
+- fork this repo
 
 - Use a normalizer to avoid differences between browsers styles. Here you have one CDN:
 	https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css
