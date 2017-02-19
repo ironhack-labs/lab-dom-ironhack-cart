@@ -1,3 +1,9 @@
+// Use at least 3 onclick events
+// Use at least once getElementById
+// Use at least once getElementsByTagName
+// Use at least once getElementsByClassName
+
+
 function deleteItem(e){
 
 }

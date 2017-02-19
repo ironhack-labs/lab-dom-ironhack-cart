@@ -1,3 +1,7 @@
+.mb {
+  margin-bottom: 30px;
+}
+
 input {
   border: solid 1px black;
 }
