@@ -38,8 +38,12 @@ function createNewItem(){
 }
 
 function calculatePrices() {
-  var getUnitPrice = document.getElementById('productCost').innerHTML;
-  var getUnitQty = document.getElementById('qty').value;
-  var totalPrice = Number(getUnitPrice.replace(/[^0-9\.]+/g,"")) * getUnitQty;
-  document.getElementById('totalProductPrice').innerHTML = totalPrice;
+  var getProduct = document.getElementsByClassName('productName');
+  var getUnitPrice = document.getElementsByClassName('productCost');
+  var getUnitQty = document.getElementsByClassName('qty');
+  console.log(getUnitQty);
+  for(i = 0; i < getProduct.length; i ++) {
+    var totalPrice = Number(getUnitPrice[i].innerHTML.replace(/[^0-9\.]+/g,"")) * getUnitQty[i].value;
+    document.getElementsByClassName('totalProductPrice')[i].innerHTML = totalPrice;
+  }
 }

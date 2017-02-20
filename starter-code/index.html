@@ -13,24 +13,49 @@
 <body>
   <div class="container">
     <h1>Ironhack Merchandising Shop</h1>
+
     <div class="row">
       <div class="col-xs-5">
-        <span id="productName">IronBubble-head</span>
+        <span class="productName">IronBubble-head</span>
       </div>
       <div class="col-xs-5">
-        <span id="productCost">$25.00</span>
+        <span class="productCost">$25.00</span>
       </div>
       <div class="col-xs-5">
         <label for="qty">QTY</label>
-        <input type="text" value="0" id="qty">
+        <input type="text" value="0" class="qty">
       </div>
       <div class="col-xs-5">
-        <span id="totalProductPrice">$0.00</span>
+        <span class="totalProductPrice">$0.00</span>
       </div>
       <div class="col-xs-5">
         <button class="btn btn-delete">DELETE</button>
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-xs-5">
+        <span class="productName">Ironshirt</span>
+      </div>
+      <div class="col-xs-5">
+        <span class="productCost">$15.00</span>
+      </div>
+      <div class="col-xs-5">
+        <label for="qty">QTY</label>
+        <input type="text" value="0" class="qty">
+      </div>
+      <div class="col-xs-5">
+        <span class="totalProductPrice">$0.00</span>
+      </div>
+      <div class="col-xs-5">
+        <button class="btn btn-delete">DELETE</button>
+      </div>
+    </div>
+
+
+
+
+
     <div class="row calculate">
       <div>
         <button id="calc-prices-button" class="btn btn-success" onclick="calculatePrices()">CALCULATE PRICES</button>

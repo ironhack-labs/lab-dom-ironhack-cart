@@ -4,6 +4,7 @@ input {
 
 .container {
   padding: 1em;
+  margin: auto;
 }
 
 .info-container {
@@ -16,6 +17,8 @@ input {
 
 .row {
   width: 100%;
+  clear: both;
+  padding: 2em;
 }
 
 .col-xs-2 {
