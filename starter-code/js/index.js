@@ -47,16 +47,57 @@ getPrice2();
 
 // total Price
 
-
-function totalPrice() {
-  var total = parseInt(document.querySelector("#total2").innerHTML);
-  document.querySelector("#totalPrice").innerHTML = getPrice() + getPrice2();
-  return total;
+function totalPrice2() {
+  var total = parseInt(document.querySelector("#total").innerHTML);
+  var total2 = parseInt(document.querySelector("#total2").innerHTML);
+  document.querySelector("#totalPrice").innerHTML = total + total2;
 }
 
-totalPrice();
+totalPrice2();
 
-//Romve Item
+
+
+// function totalPrice2() {
+//   var totality = getPrice() +  getPrice2();
+//   document.querySelector("#totalPrice").innerHTML += totality;
+// }
+//
+// totalPrice2();
+
+
+
+
+// function totalPrice() {
+//   var total = parseInt(document.querySelector("#total").innerHTML);
+//   document.querySelector("#totalPrice").innerHTML = total;
+// }
+//
+// totalPrice();
+//
+// function totalPrice2() {
+//   var total2 = parseInt(document.querySelector("#total2").innerHTML);
+//   document.querySelector("#totalPrice").innerHTML = (total2 += dimo);
+// }
+//
+// totalPrice2();
+
+
+
+// function totalPrice() {
+//   var total = parseInt(document.querySelector("#total2").innerHTML);
+//   document.querySelector("#totalPrice").innerHTML = total ;
+// }
+//
+// totalPrice();
+
+
+
+
+
+
+
+
+//Romove Item
 
 function removeItem() {
     var remove = document.querySelector("#itemSubject").remove("itemSubject");
