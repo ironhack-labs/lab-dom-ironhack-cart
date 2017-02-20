@@ -6,10 +6,14 @@ input {
   border: solid 1px black;
 }
 
-.calculator {
+.calculator, .calculator:hover {
     border: none;
     background: transparent;
     font-weight: bold;
+}
+.delateItem, .delateItem:hover {
+    background: transparent;
+    border: none;
 }
 
 .container {

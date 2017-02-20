@@ -3,24 +3,68 @@
 // Use at least once getElementsByTagName
 // Use at least once getElementsByClassName
 
-// ------------------- PING --------------------
 
 
+// qty
 
 function getQty() {
-    var qty = document.getElementById("qty1").value;
-    document.getElementById("total-1").innerHTML = qty;
+    var qty = document.querySelector("#qty").value;
+    document.querySelector("#total").innerHTML = qty;
     return qty;
 }
 
 getQty();
 
+
+// qty2
+
+function getQty2() {
+    var qty2 = document.querySelector("#qty2").value;
+    document.querySelector("#total2").innerHTML = qty2;
+    return qty2;
+}
+
+getQty();
+
+
+// Price
+
 function getPrice() {
-    var price = parseInt(document.getElementById("priceTshirt").innerHTML);
-    document.getElementById("total-1").innerHTML = price * getQty();
+    var price = parseInt(document.querySelector("#product").innerHTML);
+    document.querySelector("#total").innerHTML = price * getQty();
 }
 
 getPrice();
+
+// Price 2
+
+function getPrice2() {
+    var price2 = parseInt(document.querySelector("#product2").innerHTML);
+    document.querySelector("#total2").innerHTML = price2 * getQty2();
+}
+
+getPrice2();
+
+
+
+
+//Romve Item
+
+function removeItem() {
+    var remove = document.querySelector("#itemSubject").remove("itemSubject");
+    setTimeout(function() { alert("Your shopping cart is empty"); }, 1000);
+}
+removeItem();
+
+
+
+
+// itemSubject
+
+
+// if (getPrice() >= 100) {
+//   alert("that is a lot");
+// }
 
 // function getPrice(price, qty) {
 //   getPrice.call(this, price);

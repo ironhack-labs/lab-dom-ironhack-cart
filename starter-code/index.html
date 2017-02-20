@@ -5,7 +5,7 @@
 	<title>Ironhack Store</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="css/style.css">
-  <script href="js/index.js"></script>
+  <script src="js/index.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
  </head>
@@ -26,22 +26,40 @@
       </th>
     </tr>
    </thead>
-   <tbody>
-    <tr>
-      <th scope="row">T-Shirts</th>
-      <td class="price1"> <span class="dolar">$</span><span id="priceTshirt">15</span></td>
+   <tbody id="soyTBody">
+    <tr id="itemSubject">
+      <th scope="row"><span id="productName">T-Shirts</span></th>
+      <td class="price1"> <span class="dolar">$</span><span id="product">15</span></td>
       <td class="qty1">
         <form class="form-inline">
           <div class="form-group">
            <label for="inputQty">QTY</label>
-           <input type="text" id="qty1" class="form-control mx-sm-3" aria-describedby="qtyItem1">
+           <input type="text" id="qty" class="form-control mx-sm-3" maxlength="3" aria-describedby="qtyItem1">
           </div>
         </form>
       </td>
-      <td <span class="dolar">$</span><span id="total-1">0.00</span></td>
+      <td <span class="dolar">$</span><span id="total">0.00</span></td>
      <td class="text-right">
           <button class="delate btn btn-danger" type="button" value="delate">
-          <span class="delateButton"><strong>Delate</strong></span>
+          <input id ="delateButton" class="delateItem" type="button" onclick="removeItem()" value="Delate">
+        </button>
+      </td>
+    </tr>
+    <tr id="itemSubject">
+      <th scope="row"><span id="productName">Stickers</span></th>
+      <td class="price1"> <span class="dolar">$</span><span id="product2">2</span></td>
+      <td class="qty2">
+        <form class="form-inline">
+          <div class="form-group">
+           <label for="inputQty">QTY</label>
+           <input type="text" id="qty2" class="form-control mx-sm-3" maxlength="3" aria-describedby="qtyItem1">
+          </div>
+        </form>
+      </td>
+      <td <span class="dolar">$</span><span id="total2">0.00</span></td>
+     <td class="text-right">
+          <button class="delate btn btn-danger" type="button" value="delate">
+          <input id ="delateButton" class="delateItem" type="button" onclick="removeItem()" value="Delate">
         </button>
       </td>
     </tr>
@@ -85,7 +103,7 @@
   <div class="row text-right">
 
   <button class="delate btn btn-success" type="submit" value="calculatePriceButton" >
-    <input id ="calc-prices-button" class="calculator" type="button" onclick="alert('Hello World!')" value="Calculate Prices">
+    <input id ="calc-prices-button" class="calculator" type="button" onclick="getPrice();getPrice2();" value="Calculate Prices">
     <!-- <span class="delateButton"><strong>Calculate Prices</strong></span> -->
     </button>
  </div>
