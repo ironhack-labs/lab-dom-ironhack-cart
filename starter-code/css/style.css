@@ -6,6 +6,12 @@ input {
   border: solid 1px black;
 }
 
+.calculator {
+    border: none;
+    background: transparent;
+    font-weight: bold;
+}
+
 .container {
 
 }
