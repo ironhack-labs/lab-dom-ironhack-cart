@@ -45,8 +45,16 @@ function getPrice2() {
 
 getPrice2();
 
+// total Price
 
 
+function totalPrice() {
+  var total = parseInt(document.querySelector("#total2").innerHTML);
+  document.querySelector("#totalPrice").innerHTML = getPrice() + getPrice2();
+  return total;
+}
+
+totalPrice();
 
 //Romve Item
 
