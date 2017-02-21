@@ -47,13 +47,24 @@ function createItemNode(dataType, itemData){
 
 }
 
-function createNewItemRow(itemName, itemUnitPrice){
+var getValueofProductName = document.getElementById('productNameValue').value;
+var getValueofProductCost = document.getElementById('productCostValue').value;
+
+var getCreateBtn = document.getElementById('createBtn');
+var getCreateDiv = document.getElementById('create');
+
+function createNewItemRow(itemName, itemUnitPrice) {
 
 }
 
-function createNewItem(){
 
-}
+getCreateBtn.addEventListener('click', function (e) {
+  var newProductRow = document.createElement('div');
+  newProductRow.setAttribute('class','row');
+  var text = document.createTextNode('hi');
+  newProductRow.appendChild(text);
+  document.getElementsByClassName('container')[0].insertBefore(newProductRow, getCreateDiv.parentNode);
+});
 
 function calculatePrices() {
   for( i = 0; i < getProduct.length; i++ ) {

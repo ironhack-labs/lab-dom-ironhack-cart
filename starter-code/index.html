@@ -52,10 +52,22 @@
       </div>
     </div>
 
-    <div class="row calculate">
-      <div>
-        <button id="calc-prices-button" class="btn btn-success" onclick="calculatePrices()">CALCULATE PRICES</button>
+    <div class="row" >
+      <div class="col-xs-5">
+        <input id="productNameValue" type="text" placeholder="Product Name">
       </div>
+
+      <div class="col-xs-5">
+        <input id="productCostValue" type="text" placeholder="Product Cost">
+      </div>
+
+      <div id="create">
+        <button class="btn" id="createBtn" type="button">CREATE</button>
+      </div>
+    </div>
+
+    <div class="row calculate">
+        <button id="calc-prices-button" class="btn btn-success" onclick="calculatePrices()">CALCULATE PRICES</button>
     </div>
 
     <div class="row totalPrice">
