@@ -40,12 +40,12 @@
       </td>
       <td <span class="dolar">$</span><span id="total">0.00</span></td>
      <td class="text-right">
-          <button class="delate btn btn-danger" type="button" value="delate">
-          <input id ="delateButton" class="delateItem" type="button" onclick="removeItem()" value="Delate">
+          <button class="delate btn btn-danger" type="button" onclick="removeItem()" value="delate">
+          <input id ="delateButton" class="delateItem" type="button"  value="Delate">
         </button>
       </td>
     </tr>
-    <tr id="itemSubject">
+    <tr id="itemSubject2">
       <th scope="row"><span id="productName">Stickers</span></th>
       <td class="price2"> <span class="dolar">$</span><span id="product2">2</span></td>
       <td class="qty2">
@@ -58,8 +58,8 @@
       </td>
       <td <span class="dolar">$</span><span id="total2">0.00</span></td>
      <td class="text-right">
-          <button class="delate btn btn-danger" type="button" value="delate">
-          <input id ="delateButton" class="delateItem" type="button" onclick="removeItem()" value="Delate">
+          <button class="delate btn btn-danger" type="button" onclick="removeItem2()" value="delate">
+          <input id ="delateButton" class="delateItem" type="button"  value="Delate">
         </button>
       </td>
     </tr>
@@ -102,8 +102,8 @@
   </table>
   <div class="row text-right">
 
-  <button class="delate btn btn-success" type="submit" value="calculatePriceButton" >
-    <input id ="calc-prices-button" class="calculator" type="button" onclick="getPrice();getPrice2();totalPrice2()" value="Calculate Prices">
+  <button class="delate btn btn-success" onclick="getPrice();getPrice2();totalPrice2()" type="submit" value="calculatePriceButton" >
+    <input id ="calc-prices-button" class="calculator" type="button"  value="Calculate Prices">
     <!-- <span class="delateButton"><strong>Calculate Prices</strong></span> -->
     </button>
  </div>

@@ -56,6 +56,21 @@ function totalPrice2() {
 totalPrice2();
 
 
+//Romove Item
+
+function removeItem() {
+    var remove = document.querySelector("#itemSubject").remove("itemSubject");
+    // setTimeout(function() { alert("Your shopping cart is empty"); }, 1000);
+}
+removeItem();
+
+function removeItem2() {
+    var remove = document.querySelector("#itemSubject2").remove("itemSubject2");
+    // setTimeout(function() { alert("Your shopping cart is empty"); }, 1000);
+}
+removeItem2();
+
+
 
 // function totalPrice2() {
 //   var totality = getPrice() +  getPrice2();
@@ -97,13 +112,7 @@ totalPrice2();
 
 
 
-//Romove Item
 
-function removeItem() {
-    var remove = document.querySelector("#itemSubject").remove("itemSubject");
-    setTimeout(function() { alert("Your shopping cart is empty"); }, 1000);
-}
-removeItem();
 
 
 
