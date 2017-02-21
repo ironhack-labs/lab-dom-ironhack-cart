@@ -1,3 +1,9 @@
+h1{
+  text-align: center;
+  font-size: 40px;
+  padding-bottom: 20px;
+}
+
 input {
   border: solid 1px black;
 }
@@ -6,42 +12,47 @@ input {
 
 }
 
-.info-container {
-
+.product{
+  margin: 0 auto;
+  width: 70%;
+  height: 80px;
 }
+
+/*.info-container {
+
+}*/
 
 .item {
+  float:left;
 
+  width: 20%;
 }
 
-.row {
+.price {
+  float:left;
 
+  width: 20%;
 }
 
-.col-xs-2 {
+.qty {
+  float:left;
 
+  width: 20%;
 }
 
-.col-xs-3 {
-
+.total-price {
+  float:left;
+  text-align: center;
+  width: 20%;
 }
-
-.col-xs-5 {
-
-}
-
-.col-xs-4 {
-
-}
-
-.col-xs-7 {
-
+.delete{
+  width: 20%;
+  float:left;
 }
 
 .btn {
   display: inline-block;
   padding: 6px 12px;
-  margin-bottom: 0;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.42857143;
@@ -58,6 +69,7 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+
 }
 
 .btn-success {
@@ -72,6 +84,49 @@ input {
     border-color: #CF000F;
 }
 
+.calculate-prices{
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.overall-price{
+  text-align: center;
+}
+
 .quantity {
   margin: 0 5px;
+}
+
+.item-input{
+  float:left;
+  width: 20%;
+}
+
+.price-input{
+  float:left;
+  width: 20%;
+}
+
+.empty-space{
+  float:left;
+  width: 40%;
+}
+
+.create{
+  width: 20%;
+  float:right;
+}
+
+.btn-create{
+  background-color: white;
+  color: black;
+  border-color: gray;
+}
+
+
+.add-product{
+  margin: 0 auto;
+  width: 70%;
+  height: 80px;
 }
