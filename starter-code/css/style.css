@@ -2,40 +2,59 @@ input {
   border: solid 1px black;
 }
 
+h1 {
+  margin: 1em auto 2em;
+}
+
+h2 {
+  margin-top: 2em;
+}
+
+#prices {
+  margin-top: 3em;
+}
+
+#calc-prices-button {
+  margin-top: 2.5em !important;
+}
+
 .container {
-
+  margin: 1em 2.5% 2em;
+  overflow: hidden;
 }
 
-.info-container {
-
+.min-height {
+  min-height: 1px;
 }
 
-.item {
-
+.center-text {
+  text-align: center;
 }
 
-.row {
-
+.center {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.col-xs-2 {
-
+.left {
+  float: left;
 }
 
-.col-xs-3 {
+.clear {
+  clear: both;
+}
 
+.block {
+  display: block !important;
+}
+
+.inline-block {
+  display: inline-block;
 }
 
 .col-xs-5 {
-
-}
-
-.col-xs-4 {
-
-}
-
-.col-xs-7 {
-
+  width: 20%;
 }
 
 .btn {
@@ -70,6 +89,12 @@ input {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+}
+
+.btn-create {
+    color: black;
+    background-color: lightgrey;
+    border-color: black;
 }
 
 .quantity {
