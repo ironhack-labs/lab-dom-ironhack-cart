@@ -26,7 +26,7 @@
         <input type="text" value="0" class="qty">
       </div>
       <div class="col-xs-5">
-        <span class="totalProductPrice">$0.00</span>
+        $<span class="totalProductPrice">0.00</span>
       </div>
       <div class="col-xs-5">
         <button class="btn btn-delete">DELETE</button>
@@ -45,22 +45,23 @@
         <input type="text" value="0" class="qty">
       </div>
       <div class="col-xs-5">
-        <span class="totalProductPrice">$0.00</span>
+        $<span class="totalProductPrice">0.00</span>
       </div>
       <div class="col-xs-5">
         <button class="btn btn-delete">DELETE</button>
       </div>
     </div>
 
-
-
-
-
     <div class="row calculate">
       <div>
         <button id="calc-prices-button" class="btn btn-success" onclick="calculatePrices()">CALCULATE PRICES</button>
       </div>
     </div>
+
+    <div class="row totalPrice">
+      <h2>Total Price: $<span id="spanTotal">0</span></h2>
+    </div>
+
   </div>
   <script type="text/javascript" src="js/index.js"></script>
 </body>
