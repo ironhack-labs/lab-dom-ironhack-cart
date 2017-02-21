@@ -4,18 +4,13 @@ var getUnitQty = document.getElementsByClassName('qty');
 var getTotalProductPrice = document.getElementsByClassName('totalProductPrice');
 var deleteButtons = document.getElementsByClassName('btn-delete');
 
-function deleteItem(e){
-  for(i = 0; i < deleteButtons.length; i++) {
-    deleteButtons[i].onclick = parentNode();
+for(i = 0; i < deleteButtons.length; i++) {
+    deleteButtons[i].addEventListener('click', function (e) {
+      e.currentTarget.parentNode.parentNode.style.display= "none";
+    });
 
   }
-}
 
-function parentNode() {
-  var x = deleteButtons[i].parentNode.parentNode;
-  console.log(x);
-  x.style.display = "none";
-}
 
 function getPriceByProduct(itemNode){
 }
