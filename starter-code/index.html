@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
@@ -10,5 +11,64 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+
+  <div class="header">
+    <img src="images/ironhacklogo.png"/ class="logo">
+    <h1>Merchandising Shop</h1>
+    <h2 id="total-price">Total Price: $0,00</h2>
+    <img src="images/shopping-cart.png" class="cart"/>
+    <h4 id="productsInTheCart">4</h4>
+  </div>
+  <div class="container">
+    <div class="spacer">
+
+    </div>
+    <div class="products">
+      <div class="row product-row">
+        <span id="product-name" class="col-xs-3">IronBubble Head</span>
+        <span class="price col-xs-5">$25</span>
+        <label>QTY</label><input type="text" value="0" class="quantity col-xs-7"/>
+        <span class="sub-total col-xs-2">0$</span>
+        <button class="btn-delete col-xs-7"><img src=images/garbage.png class="bin-img"/></button>
+      </div>
+      <div class="row product-row">
+        <span id="product-name" class="col-xs-3">IronBubble Tshirt</span>
+        <span class="price col-xs-5">$25</span>
+        <label>QTY</label><input type="text" value="0" class="quantity col-xs-7"/>
+        <span class="sub-total col-xs-2">0$</span>
+        <button class="btn-delete col-xs-7"><img src=images/garbage.png class="bin-img"/></button>
+      </div>
+      <div class="row product-row">
+        <span id="product-name" class="col-xs-3">IronBubble Cup</span>
+        <span class="price col-xs-5">$25</span>
+        <label>QTY</label><input type="text" value="0" class="quantity col-xs-7"/>
+        <span class="sub-total col-xs-2">0$</span>
+        <button class="btn-delete col-xs-7"><img src=images/garbage.png class="bin-img"/></button>
+      </div>
+      <div class="row product-row">
+        <span id="product-name" class="col-xs-3">IronBubble Sticker</span>
+        <span class="price col-xs-5">$25</span>
+        <label>QTY</label><input type="text" value="0" class="quantity col-xs-7"/>
+        <span class="sub-total col-xs-2">0$</span>
+        <button class="btn-delete col-xs-7"><img src=images/garbage.png class="bin-img"/></button>
+      </div>
+      <div class="row product-row">
+        <span id="product-name" class="col-xs-3">IronBubble Axe</span>
+        <span class="price col-xs-5">$25</span>
+        <label>QTY</label><input type="text" value="0" class="quantity col-xs-7"/>
+        <span class="sub-total col-xs-2">0$</span>
+        <button class="btn-delete col-xs-7"><img src=images/garbage.png class="bin-img"/></button>
+      </div>
+    </div>
+    <div class="add-new">
+      <input type="text" value="Product name..." id="newName"/>
+      <input type="text" value="0" id="newPrice"/>
+      <img src="images/plus.png" class="btn" id="new-item-create"/>
+    </div>
+
+    <button class="btn-success" id="calc-prices-button">Calculate Price</button>
+
+    <h2 id="total-price2">Total Price: $0,00</h2>
+  </div>
 </body>
 </html>
