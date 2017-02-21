@@ -2,9 +2,19 @@ var getProduct = document.getElementsByClassName('productName');
 var getUnitPrice = document.getElementsByClassName('productCost');
 var getUnitQty = document.getElementsByClassName('qty');
 var getTotalProductPrice = document.getElementsByClassName('totalProductPrice');
+var deleteButtons = document.getElementsByClassName('btn-delete');
 
 function deleteItem(e){
+  for(i = 0; i < deleteButtons.length; i++) {
+    deleteButtons[i].onclick = parentNode();
 
+  }
+}
+
+function parentNode() {
+  var x = deleteButtons[i].parentNode.parentNode;
+  console.log(x);
+  x.style.display = "none";
 }
 
 function getPriceByProduct(itemNode){
@@ -23,7 +33,6 @@ function getTotalPrice() {
     var productPriceValue = parseInt(getTotalProductPrice[i].innerHTML);
     priceArray.push(productPriceValue);
   }
-  console.log(priceArray);
   document.getElementById('spanTotal').innerHTML = priceArray.reduce(addTotalProductPrice, 0);
 }
 

@@ -15,22 +15,22 @@
     <h1>Ironhack Merchandising Shop</h1>
 
     <div class="row">
-      <div class="col-xs-5">
-        <span class="productName">IronBubble-head</span>
-      </div>
-      <div class="col-xs-5">
-        <span class="productCost">$25.00</span>
-      </div>
-      <div class="col-xs-5">
-        <label for="qty">QTY</label>
-        <input type="text" value="0" class="qty">
-      </div>
-      <div class="col-xs-5">
-        $<span class="totalProductPrice">0.00</span>
-      </div>
-      <div class="col-xs-5">
-        <button class="btn btn-delete">DELETE</button>
-      </div>
+        <div class="col-xs-5">
+          <span class="productName">IronBubble-head</span>
+        </div>
+        <div class="col-xs-5">
+          <span class="productCost">$25.00</span>
+        </div>
+        <div class="col-xs-5">
+          <label for="qty">QTY</label>
+          <input type="text" value="0" class="qty">
+        </div>
+        <div class="col-xs-5">
+          $<span class="totalProductPrice">0.00</span>
+        </div>
+        <div class="col-xs-5 delete">
+          <button onclick="deleteItem()" class="btn btn-delete">DELETE</button>
+        </div>
     </div>
 
     <div class="row">
@@ -47,8 +47,8 @@
       <div class="col-xs-5">
         $<span class="totalProductPrice">0.00</span>
       </div>
-      <div class="col-xs-5">
-        <button class="btn btn-delete">DELETE</button>
+      <div class="col-xs-5 delete">
+        <button onclick="deleteItem()" class="btn btn-delete">DELETE</button>
       </div>
     </div>
 
