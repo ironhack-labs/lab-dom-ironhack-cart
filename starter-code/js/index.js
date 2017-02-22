@@ -75,21 +75,3 @@ createRow();
 deleteRow();
 
 //done
-
-getCreateBtn.addEventListener('click', function (e) {
-  var newProductRow = document.createElement('div');
-  newProductRow.setAttribute('class','row');
-  var text = document.createTextNode('hi');
-  newProductRow.appendChild(text);
-  document.getElementsByClassName('container')[0].insertBefore(newProductRow, getCreateDiv.parentNode);
-});
-
-function calculatePrices() {
-  for( i = 0; i < getProduct.length; i++ ) {
-    var totalPrice = Number(getUnitPrice[i].innerHTML.replace(/[^0-9\.]+/g,"")) * getUnitQty[i].value;
-    document.getElementsByClassName('totalProductPrice')[i].innerHTML = totalPrice;
-  }
-  getTotalPrice();
-}
-createRow();
-deleteRow();
