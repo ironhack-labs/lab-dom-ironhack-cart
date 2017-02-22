@@ -36,6 +36,8 @@ function getTotalPrice() {
   document.getElementById('spanTotal').innerHTML = priceArray.reduce(addTotalProductPrice, 0);
 }
 
+var getValueofProductName = document.getElementById('productNameValue').value;
+var getValueofProductCost = document.getElementById('productCostValue').value;
 
 // Create a new row of product
 
@@ -68,7 +70,26 @@ function createRow() {
   });
 }
 
+
 createRow();
 deleteRow();
 
 //done
+
+getCreateBtn.addEventListener('click', function (e) {
+  var newProductRow = document.createElement('div');
+  newProductRow.setAttribute('class','row');
+  var text = document.createTextNode('hi');
+  newProductRow.appendChild(text);
+  document.getElementsByClassName('container')[0].insertBefore(newProductRow, getCreateDiv.parentNode);
+});
+
+function calculatePrices() {
+  for( i = 0; i < getProduct.length; i++ ) {
+    var totalPrice = Number(getUnitPrice[i].innerHTML.replace(/[^0-9\.]+/g,"")) * getUnitQty[i].value;
+    document.getElementsByClassName('totalProductPrice')[i].innerHTML = totalPrice;
+  }
+  getTotalPrice();
+}
+createRow();
+deleteRow();
