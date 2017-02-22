@@ -8,7 +8,7 @@ var deleteButtons = document.getElementsByClassName('btn-delete');
 function deleteRow(){
   for(i = 0; i < getProduct.length; i++) {
     deleteButtons[i].addEventListener('click', function (e) {
-      e.currentTarget.parentNode.parentNode.style.display= "none";
+      e.currentTarget.parentNode.parentNode.remove();
     });
   }
 }
