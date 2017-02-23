@@ -1,4 +1,4 @@
-
+var x = 3;
 
 // Deletes the whole row when 'Delete' is clicked
 function deleteItem(e){
@@ -117,9 +117,8 @@ var buttonType = "button",
 
  // end button attributes
 
-function createDeleteButton(){
-  var prices = document.getElementsByClassName('item-total');
-  var x = prices.length + 1;
+function createDeleteButton(x){
+
   var itemX = "deleteItem('item-" + x + "')";
 
   var deleteDiv = document.createElement('div');
@@ -136,9 +135,8 @@ function createDeleteButton(){
   return deleteDiv;
 }
 
-function createQuantityNode(){
-  var prices = document.getElementsByClassName('item-total');
-  var x = prices.length + 1;
+function createQuantityNode(x){
+
   var quantityX = "quantity-" + x;
   var priceX = "price-" + x;
   var totalX = "total-" + x;
@@ -187,9 +185,8 @@ function createItemName(itemName) {
   return nameDiv;
 }
 
-function createItemPrice(itemPrice) {
-  var prices = document.getElementsByClassName('item-total');
-  var x = prices.length + 1;
+function createItemPrice(itemPrice, x) {
+
   var priceX = "price-" + x;
 
   var newPrice = document.getElementById(itemPrice).value;
@@ -207,9 +204,8 @@ function createItemPrice(itemPrice) {
   return priceDiv;
 }
 
-function createItemTotal() {
-  var prices = document.getElementsByClassName('item-total');
-  var x = prices.length + 1;
+function createItemTotal(x) {
+
   var totalX = "total-" + x;
 
   var totalDiv = document.createElement('div');
@@ -226,16 +222,15 @@ function createItemTotal() {
 }
 
 function createItemRow(itemName, itemPrice){
-  var prices = document.getElementsByClassName('item-total');
-  var x = prices.length + 1;
+  x ++;
   var itemX = "item-" + x;
 
 
   var newItemName = createItemName(itemName);
-  var newItemPrice = createItemPrice(itemPrice);
-  var newQuantityNode = createQuantityNode();
-  var newItemTotal = createItemTotal();
-  var newDeleteButton = createDeleteButton();
+  var newItemPrice = createItemPrice(itemPrice, x);
+  var newQuantityNode = createQuantityNode(x);
+  var newItemTotal = createItemTotal(x);
+  var newDeleteButton = createDeleteButton(x);
 
   var itemRowDiv = document.createElement('div');
   itemRowDiv.setAttribute('class', rowTopMargin);
