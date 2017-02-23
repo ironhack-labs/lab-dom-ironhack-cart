@@ -6,12 +6,25 @@ var inputprice = "";
 var inputqty = 0;
 var itemDiv = "";
 var itemSpan = "";
+var producto = 0;
+var sumArray = [];
+var priceArray = [25];
+var formatPrice = 0;
+var formatProducto = 0;
+
+function numberformatter (n, currency) {
+  n = parseFloat(n);
+  return currency + "" + n.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, "$1,");
+}
 
 function getinputThenCreate() {
   inputprod = document.querySelector('input[name="createme"]').value;
   inputprice = document.querySelector('input[name="createprice"]').value;
-  createNewItemRow(inputprod, inputprice);
-  console.log(`Stored - ${inputprod} - $${inputprice}`);
+  priceArray.push(inputprice);
+  formatPrice = numberformatter(inputprice, "$");
+
+  createNewItemRow(inputprod, formatPrice);
+  console.log(`Stored - ${inputprod} - ${formatPrice}`);
 }
 
 
@@ -35,72 +48,73 @@ function createNewItemRow(itemName, itemUnitPrice){
 }
 
 function createQuantityInput(currentE){
-  //there is always one less pricecol than the amount of products cause...another hack
+
+  //there is always one less pricecol than the amount of products...another hack
   var elementTarget = document.getElementsByClassName('pricecol')[count-1];
 
   console.log(elementTarget);
-  elementTarget.insertAdjacentHTML('afterend', `<div class = "col-xs-4 inputcol"><span class ="item">QTY<input type ="text" name="calculateme-${count}"></span></div>`);
+  elementTarget.insertAdjacentHTML('afterend', `<div class = "col-xs-4 inputcol"><span class ="item">QTY<input type ="text" value="1" name="calculateme-${count}"></span></div>`);
   console.log(`Created: Input-${count}`);
+  // and then create the product columns
+  var afterInput = document.getElementsByClassName('inputcol')[count-1];
+  afterInput.insertAdjacentHTML('afterend', `<div class = "col-xs-2 prod"><span class = "item prodcol">$0.00</span></div>`);
+  createDeleteButton();
 }
-
-function getPriceByProduct(itemNode){
-var inputClass = document.getElementsByClassName('inputcol')[count-1];  // :) I know... I know I need to seriously re-factor this
-}
-
-
-
-function deleteItem(e){
-
-  console.log(e);
-}
-
-
-function updatePriceByProduct(productPrice, index){
-
-
-}
-
-function getTotalPrice() {
-  var product1Price = 25;
-  var inputqty = document.querySelector('input[name="calculateme"]').value;
-  inputqty = parseInt(inputqty);
-  var total = product1Price * inputqty;
-  console.log(total);
-}
-
 
 
 function createDeleteButton(){
-
+  var afterProd = document.getElementsByClassName('prod')[count-1];
+  afterProd.insertAdjacentHTML('afterend', '<div class = "col-xs-2"><span class ="item"><button class = "btn btn-danger btn-delete" type="button">Delete</button></span></div>')
+ updateDeletelist();
 }
 
-function createQuantityNode(){
+function getPriceByProduct(itemNode){
+  sumArray = [];
+  for (var calcLoop = 0; calcLoop <= count; calcLoop++) {
 
+    var inputedQty = document.querySelector(`input[name="calculateme-${calcLoop}"]`).value; //when created it doesn't have a value.
+    var prodColclass = document.getElementsByClassName('prodcol')[calcLoop];
+    var producto = parseInt(inputedQty) * parseInt(priceArray[calcLoop]);
+    formatProducto = numberformatter(producto, "$");
+    console.log(count);
+    console.log(calcLoop);
+    console.log(inputedQty);
+    console.log("This is the input price: " + inputprice);
+    console.log("This is the price we have selected in array: " + priceArray[calcLoop]);
+    console.log(producto);
+    prodColclass.innerHTML = formatProducto;
+    sumArray.push(producto);
+    getTotalPrice();
+  } //close for loop
+} //close function
+
+
+function deleteItem(e){
+  // deleteElement = document.getElementsByClassName('product');
+  var parent = this.parentNode.parentNode.parentNode;
+  parent = parent.childNodes;
+  console.log(e);
+  console.log(parent);
+  // parent.innerHTML = "";
+  // count -= 1;
 }
 
-function createItemNode(dataType, itemData){
-var initial = document.getElementById('product-1');
 
-
-itemDiv.dataType
-// var divContent = document.createTextNode()
-console.log(initial.childNodes);
-console.log(dataType);
-console.log(itemData);
+function getTotalPrice() {
+ var sumAll = sumArray.reduce((a, b) => a + b);
+ console.log(sumAll);
+ var sumclass = document.getElementsByClassName('sumsum');
+ var sumAll = numberformatter(sumAll, "$");
+ sumclass.innerHTML = sumAll;
 }
 
 
+function updateDeletelist (){
+   var deleteButtons = document.getElementsByClassName('btn-delete');
 
+   for(var i = 0; i<deleteButtons.length ; i++){
+     deleteButtons[i].onclick = deleteItem;
+   }
+}
 
-window.onload = function(){
-  var calculatePriceButton = document.getElementById('calc-prices-button');
-  var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');
-
-  calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
-
-  for(var i = 0; i<deleteButtons.length ; i++){
-    deleteButtons[i].onclick = deleteItem;
-  }
-};
+window.onload = updateDeletelist ();

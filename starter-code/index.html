@@ -21,11 +21,11 @@
     <div class = "row product" id= "product-1">
 
       <div class = "col-xs-2"><span class ="item" id ="itemName">IronBubble-head</span></div>
-      <div class = "col-xs-2"><span class ="item" id ="itemUnitPrice">$25.00</span></div>
+      <div class = "col-xs-2"><span class ="item initial">$25.00</span></div>
       <div class = "col-xs-4">
-        <span class ="item" id ="quantity">QTY<input type="text" name="calculateme"></span>
+        <span class ="item" id ="quantity">QTY<input type="text" value="1" name="calculateme-0"></span>
       </div>
-      <div class = "col-xs-2"><span class ="item" id ="productTotal">$50</span></div>
+      <div class = "col-xs-2"><span class ="item prodcol">$0.00</span></div>
       <div class = "col-xs-2">
         <span class ="item" id ="deleteItem">
           <button class = "btn btn-danger btn-delete" type="button" >Delete</button>
@@ -53,17 +53,20 @@
 
   <div class = "calcRow">
       <span class>
-            <button class = "btn btn-success" id="calc-prices-button" type="button" onclick="getTotalPrice()">Calculate Price</button>
+            <button class = "btn btn-success" id="calc-prices-button" type="button" onclick="getPriceByProduct()">Calculate Price</button>
       </span>
   </div><!--closing button row calc-->
 
 
 </div><!--closing container elCarto-->
 
-
-
-var createItemButton = document.getElementById('new-item-create');
-var deleteButtons = document.getElementsByClassName('btn-delete');
+<div class = "row" id= "totally">
+  <div class = "col-xs-2"></div>
+  <div class = "col-xs-2"></div>
+  <div class = "col-xs-4"></div>
+  <div class = "col-xs-2 sumsum">$0.00</div>
+  <div class = "col-xs-2"></div> <!--delete button-->
+</div><!--newProd Row-->
 
 
 

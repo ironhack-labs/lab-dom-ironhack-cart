@@ -21,6 +21,22 @@ function createNewItemRow(itemName, itemUnitPrice){
   // itemDiv.appendChild(nameNode)
 }
 
+var currentElement = getElementsByClassName('product')[count];
+itemRow = document.createElement('div')
+itemDiv = document.createElement('div');
+itemSpan = document.createElement('span');
+//lets add the span before we add it to the dom
+itemDiv.appendChild(itemSpan);
+//lets add the class to the div before we add to document
+itemDiv.setAttribute('class', 'col-xs-2');
+itemDiv.setAttribute('id', count);
+
+
+
+createNewItemRow(name, price);
+
+return `Sucessfully created: "${name}"`;
+
 function Product (name, price) {
   count += 1;
   this.currentProd = 'product ${count}';
