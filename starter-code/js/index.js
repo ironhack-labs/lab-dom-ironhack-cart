@@ -1,10 +1,3 @@
-// Use at least 3 onclick events
-// Use at least once getElementById
-// Use at least once getElementsByTagName
-// Use at least once getElementsByClassName
-
-
-
 // qty
 
 function getQty() {
@@ -45,18 +38,22 @@ function getPrice2() {
 
 getPrice2();
 
-// total Price
+// get elements by class name then do a loop
 
-function totalPrice2() {
-  var total = parseInt(document.querySelector("#total").innerHTML);
-  var total2 = parseInt(document.querySelector("#total2").innerHTML);
-  document.querySelector("#totalPrice").innerHTML = total + total2;
+
+function totalPrice() {
+  var sum = 0;
+var collection = document.getElementsByClassName("money");
+for (var i = 0; i < collection.length; i++) {
+  console.log(parseInt(collection[i].innerHTML));
+  sum = sum + parseInt(collection[i].innerHTML);
 }
+ console.log('SUM: ',sum);
+ document.querySelector("#totalPrice").innerHTML = sum;
+}
+totalPrice();
 
-totalPrice2();
 
-
-//Romove Item
 
 function removeItem() {
     var remove = document.querySelector("#itemSubject").remove("itemSubject");
@@ -66,9 +63,44 @@ removeItem();
 
 function removeItem2() {
     var remove = document.querySelector("#itemSubject2").remove("itemSubject2");
-    // setTimeout(function() { alert("Your shopping cart is empty"); }, 1000);
 }
 removeItem2();
+
+
+
+// function removeItem() {
+//     for (var i = 0; i < remove.length; i++) {
+//       remove[i].addEventListener('click', function (e) {
+//         e.currentTarget.parentNode.parentNode.remove();
+//       });
+//   }
+// console.log(removeItem());
+// }
+//
+
+
+
+
+// var create = document.createElement("tr");
+// create.innerHTML = '<tr class="nextArea" id="itemSubject2"> <th scope="row"><span id="productName">Stickers</span></th> <td class="price2"> <span class="dolar">$</span><span id="product2">2</span></td> <td class="qty2"> <form class="form-inline"><div class="form-group"><label for="inputQty">QTY</label><input type="text" id="qty2" class="form-control mx-sm-3" maxlength="3" aria-describedby="qtyItem2">  </div>  </form></td><td <span class="dolar">$</span><span class="money" id="total2">0.00</span></td><td class="text-right"><button class="delate btn btn-danger" type="button" onclick="removeItem2();totalPrice()" value="delate"><input id ="delateButton" class="delateItem" type="button"  value="Delate">  </button> </td></tr>';
+//
+// var include = document.querySelector(".nextArea");
+//    include.appendChild( document.createTextNode(create));
+//
+//
+// var button = document.querySelector(".nextArea");
+//
+//    button.onclick = function(){
+//   include.appendChild( document.createElement(create));
+// };
+
+
+  //  var including =  create.appendChild( document.createTextNode(' <tr class="nextArea" id="itemSubject2"> <th scope="row"><span id="productName">Stickers</span></th> <td class="price2"> <span class="dolar">$</span><span id="product2">2</span></td> <td class="qty2"> <form class="form-inline"><div class="form-group"><label for="inputQty">QTY</label><input type="text" id="qty2" class="form-control mx-sm-3" maxlength="3" aria-describedby="qtyItem2">  </div>  </form></td><td <span class="dolar">$</span><span class="money" id="total2">0.00</span></td><td class="text-right"><button class="delate btn btn-danger" type="button" onclick="removeItem2();totalPrice()" value="delate"><input id ="delateButton" class="delateItem" type="button"  value="Delate">  </button> </td></tr>'));
+
+
+
+
+
 
 
 
@@ -108,34 +140,6 @@ removeItem2();
 
 
 
-
-
-
-
-
-
-
-
-
-// itemSubject
-
-
-// if (getPrice() >= 100) {
-//   alert("that is a lot");
-// }
-
-// function getPrice(price, qty) {
-//   getPrice.call(this, price);
-//   getQty.call(this, qty);
-//     return this.price * this.qty ;
-//   }
-//
-// getPrice();
-
-
-
-
-
 // function getQty() {
 //     var x = document.getElementById("qty1").innerHTML;
 // }
@@ -156,13 +160,6 @@ removeItem2();
 //  };
 //  }
 
-  //   if (this.health > 0 ){
-  //     return (this.name + ' has received ' + damage + ' points of damage');
-  //   } else {
-  //     return (this.name + ' has died in act of combat');
-  //   };
-  // }
-
 
 //
 // var totalToPay = document.getElementById('total-1');
@@ -171,52 +168,3 @@ removeItem2();
 // function deleteItem(e){
 //
 // }
-//
-// function getPriceByProduct(itemNode){
-//
-// }
-//
-// function updatePriceByProduct(productPrice, index){
-//
-// }
-//
-// // function getTotalPrice() {
-// //
-// // }
-//
-// function createQuantityInput(){
-//
-// }
-//
-// function createDeleteButton(){
-//
-// }
-//
-// function createQuantityNode(){
-//
-// }
-//
-// function createItemNode(dataType, itemData){
-//
-// }
-//
-// function createNewItemRow(itemName, itemUnitPrice){
-//
-// }
-//
-// function createNewItem(){
-//
-// }
-//
-// window.onload = function(){
-//   var calculatePriceButton = document.getElementById('calc-prices-button');
-//   var createItemButton = document.getElementById('new-item-create');
-//   var deleteButtons = document.getElementsByClassName('btn-delete');
-//
-//   calculatePriceButton.onclick = getTotalPrice;
-//   createItemButton.onclick = createNewItem;
-//
-//   for(var i = 0; i<deleteButtons.length ; i++){
-//     deleteButtons[i].onclick = deleteItem;
-//   }
-// };

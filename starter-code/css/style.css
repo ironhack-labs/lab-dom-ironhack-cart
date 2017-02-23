@@ -1,57 +1,3 @@
-.mb {
-  margin-bottom: 30px;
-}
-
-input {
-  border: solid 1px black;
-}
-
-.calculator, .calculator:hover {
-    border: none;
-    background: transparent;
-    font-weight: bold;
-}
-.delateItem, .delateItem:hover {
-    background: transparent;
-    border: none;
-}
-
-.container {
-
-}
-
-.info-container {
-
-}
-
-.item {
-
-}
-
-.row {
-
-}
-
-.col-xs-2 {
-
-}
-
-.col-xs-3 {
-
-}
-
-.col-xs-5 {
-
-}
-
-.col-xs-4 {
-
-}
-
-.col-xs-7 {
-
-}
-
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -88,4 +34,60 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+.mb {
+  margin-bottom: 30px;
+}
+
+input {
+  border: solid 1px black;
+}
+
+.calculator, .calculator:hover {
+    border: none;
+    background: transparent;
+    font-weight: bold;
+}
+.delateItem, .delateItem:hover {
+    background: transparent;
+    border: none;
+}
+.addMore {
+  border: 1px solid black;
+}
+
+.container {
+
+}
+
+.info-container {
+
+}
+
+.item {
+
+}
+
+.row {
+
+}
+
+.col-xs-2 {
+
+}
+
+.col-xs-3 {
+
+}
+
+.col-xs-5 {
+
+}
+
+.col-xs-4 {
+
+}
+
+.col-xs-7 {
+
 }

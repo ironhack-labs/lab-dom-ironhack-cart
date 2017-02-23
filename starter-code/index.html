@@ -27,7 +27,7 @@
     </tr>
    </thead>
    <tbody id="soyTBody">
-    <tr id="itemSubject">
+    <tr class="itemSubjectClass" id="itemSubject">
       <th scope="row"><span id="productName">T-Shirts</span></th>
       <td class="price1"> <span class="dolar">$</span><span id="product">15</span></td>
       <td class="qty1">
@@ -38,14 +38,14 @@
           </div>
         </form>
       </td>
-      <td <span class="dolar">$</span><span id="total">0.00</span></td>
+      <td <span class="dolar">$</span><span class="money" id="total">0.00</span></td>
      <td class="text-right">
-          <button class="delate btn btn-danger" type="button" onclick="removeItem()" value="delate">
+          <button class="delate btn btn-danger" type="button" onclick="removeItem();totalPrice()" value="delate">
           <input id ="delateButton" class="delateItem" type="button"  value="Delate">
         </button>
       </td>
     </tr>
-    <tr id="itemSubject2">
+    <tr class="nextArea" id="itemSubject2">
       <th scope="row"><span id="productName">Stickers</span></th>
       <td class="price2"> <span class="dolar">$</span><span id="product2">2</span></td>
       <td class="qty2">
@@ -56,53 +56,21 @@
           </div>
         </form>
       </td>
-      <td <span class="dolar">$</span><span id="total2">0.00</span></td>
+      <td <span class="dolar">$</span><span class="money" id="total2">0.00</span></td>
      <td class="text-right">
-          <button class="delate btn btn-danger" type="button" onclick="removeItem2()" value="delate">
+          <button class="delate btn btn-danger" type="button" onclick="removeItem2();totalPrice()" value="delate">
           <input id ="delateButton" class="delateItem" type="button"  value="Delate">
         </button>
       </td>
     </tr>
-    <!-- <tr>
-      <th scope="row">Stickers</th>
-      <td class="price2">$1</td>
-      <td class="qty2">
-        <form class="form-inline">
-          <div class="form-group">
-           <label for="inputPassword4">QTY</label>
-           <input type="text" id="qty2text" class="form-control mx-sm-3" aria-describedby="passwordHelpInline">
-          </div>
-        </form>
-      </td>
-      <td class="total-2">$0.00</td>
-      <td class="text-right">
-          <button class="delate btn btn-danger" type="button" value="delate">
-          <span class="delateButton"><strong>Delate</strong></span>
-        </button>
-      </td>
-    </tr> -->
-    <!-- <tr>
-      <th scope="row">Flags</th>
-      <td class="price3">$2</td>
-      <td class="qty3"><form class="form-inline">
-        <div class="form-group">
-         <label for="inputPassword4">QTY</label>
-         <input type="text" id="qty3text" class="form-control mx-sm-3" aria-describedby="passwordHelpInline">
-        </div>
-      </form>
-    </td>
-      <td class="total3">$0.00</td>
-      <td class="text-right">
-        <button class="delate btn btn-danger" type="button" value="delate">
-          <span class="delateButton"><strong>Delate</strong></span>
-        </button>
-      </td>
-    </tr> -->
-  </tbody>
+   </tbody>
   </table>
   <div class="row text-right">
-
-  <button class="delate btn btn-success" onclick="getPrice();getPrice2();totalPrice2()" type="submit" value="calculatePriceButton" >
+    <button class="delate btn btn-default addMore" onclick="" type="submit" value="calculatePriceButton" >
+      <input id ="calc-prices-button" class="calculator" type="button"  value="Add More">
+      <!-- <span class="delateButton"><strong>Calculate Prices</strong></span> -->
+      </button>
+  <button class="delate btn btn-success" onclick="getPrice();getPrice2();totalPrice()" type="submit" value="calculatePriceButton" >
     <input id ="calc-prices-button" class="calculator" type="button"  value="Calculate Prices">
     <!-- <span class="delateButton"><strong>Calculate Prices</strong></span> -->
     </button>
