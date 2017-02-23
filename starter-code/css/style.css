@@ -1,4 +1,4 @@
-input {
+/*input {
   border: solid 1px black;
 }
 
@@ -74,4 +74,15 @@ input {
 
 .quantity {
   margin: 0 5px;
+}*/
+
+
+.top-margin {
+  margin-top: 50px;
+}
+
+
+.text-small {
+  font-size: 12px;
+  font-weight: normal;
 }
