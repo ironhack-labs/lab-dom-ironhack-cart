@@ -26,7 +26,7 @@
       <input type = "number" name="" value="" placeHolder = 0 id="amountFirst">
     </div>
     <div class="totalpricediv col-xs-2">
-      <span id="totalpriceFirst">$0.00</span>
+      <span id="totalpriceFirst"class="totalpriceclass">$0.00</span>
     </div>
     <div class="deletebuttondiv col-xs-2">
       <button class="deletebutton btn btn-delete" id="deleteButtonFirst">Delete</button>
@@ -46,7 +46,7 @@
       <input type = "number" name="" value="" placeHolder = 0 id="amountSecond">
     </div>
     <div class="totalpricediv col-xs-2">
-      <span id="totalpriceSecond">$0.00</span>
+      <span id="totalpriceSecond" class="totalpriceclass">$0.00</span>
     </div>
     <div class="deletebuttondiv col-xs-2">
       <button class="deletebutton btn btn-delete" id = "deleteButtonSecond">Delete</button>
@@ -54,15 +54,16 @@
   </div>
   <!-- ==========Rest-PRODUCT=================== -->
   <div class="restDiv row" id="creatediv">
-    <div class="col-xs-3 " id="namedivrest">
-      <input type="text" name="" value="" placeholder= 0 id="nameinput">
+    <div class="row" id="before">
+      <div class="col-xs-3 " id="namedivrest">
+        <input type="text" name="" value="" placeholder= 0 id="nameinput">
+      </div>
+      <div class="costdiv col-xs-2" id="pricedivrest">
+        <input type="number" name="" value="" placeholder = 0 id="priceinput">
+      </div>
+      <button type="button" name="button" class="btn btn-default"id="buttonrest">Create</button>
     </div>
-    <div class="costdiv col-xs-2" id="pricedivrest">
-      <input type="number" name="" value="" placeholder = 0 id="priceinput">
-    </div>
-    <button type="button" name="button" class="btn btn-default"id="buttonrest">Create</button>
   </div>
-
 
 
   <button type="button" name="button" class="btn btn-success row" id= "btncalculate" >Calculate Price</button>

@@ -68,6 +68,9 @@ input {
 .remove{
   display: none;
 }
+.ivan{
+background-color:red;
+}
 
 .btn-success {
     color: #fff;

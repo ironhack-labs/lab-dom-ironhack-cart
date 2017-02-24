@@ -5,7 +5,7 @@ var totalsum = [];
 var total;
 var totaleverything = 0 ;
 var count = 0;
-    var quantity;
+var quantity;
 
 // =======================================================
 function Products(productname, price, input, total1){
@@ -13,8 +13,8 @@ function Products(productname, price, input, total1){
   this.price = price;
   this.inputForQuantity = input;
   this.quantityTimesPrice = total1;
-  this.inputIdforObjects=function(){
-quantity = document.querySelector(input).value;
+  this.inputIdforObjects = function(){
+    quantity = document.getElementById(input).value;
   return quantity;
 };
   this.calculateEverything = function(){
@@ -23,6 +23,10 @@ quantity = document.querySelector(input).value;
   };
 }
 // =======================================================
+// function listen() {
+//   var values = document.getElementsByClassName('totalpriceclass').value;
+// console.log(values);
+// }
 
 var calculatebutton = document.getElementById('btncalculate');
 calculatebutton.onclick = function(){
@@ -34,6 +38,15 @@ console.log(typeof listOfProduct);
       console.log( "the id of the object"+product.inputIdforObjects());
 
       product.calculateEverything();
+
+      var testNumba = 0;
+      [].forEach.call(document.getElementsByClassName('totalpriceclass'), function(num){
+        testNumba += parseInt(num.innerHTML);
+      });
+
+    console.log(testNumba);
+
+
       });
   };
   // =======================================================
@@ -45,7 +58,7 @@ console.log(typeof listOfProduct);
 function getTotalPrice(variableprice, total1){
   var totalPriceForProduct = document.getElementById(total1);
   total = quantity * variableprice;
-  totalPriceForProduct.innerHTML=('$'+total+'.00');
+  totalPriceForProduct.innerHTML=total;
   totalsum.push(total);
   totalsum.forEach(function(prod){
       totaleverything += prod;
@@ -79,6 +92,13 @@ deleteBut1.onclick= function(e) {
       firstdiv.removeChild(firstdiv.firstChild);
       // totaleverything = 0;
   }
+  var testNumba = 0;
+  [].forEach.call(document.getElementsByClassName('totalpriceclass'), function(num){
+    testNumba += parseInt(num.innerHTML);
+  });
+  console.log(testNumba, + "1111");
+  totaleverything = testNumba;
+  document.getElementById('totalprice').innerHTML = totaleverything;
 };
 // ============================================================
 var secondDiv = document.getElementById('secondProduct');
@@ -88,7 +108,17 @@ deleteBut2.onclick = function(e) {
   while (secondDiv.firstChild) {
       secondDiv.removeChild(secondDiv.firstChild);
   }
+  var testNumba = 0;
+  [].forEach.call(document.getElementsByClassName('totalpriceclass'), function(num){
+    testNumba += parseInt(num.innerHTML);
+  });
+  console.log(testNumba, + "22222");
+  totaleverything = testNumba;
+  document.getElementById('totalprice').innerHTML = totaleverything;
+
 };
+
+
 // ============================================================
 function deleteItem(){
 }
@@ -117,8 +147,8 @@ function createNewItem(){}
 //
 // };
 //
-
 var  createdivrest = document.querySelector('#creatediv');
+
       // createdivrest.setAttribute('class', 'row');
 var  namedivrest = document.querySelector('#namedivrest');
 var  pricedivrest = document.querySelector('#pricedivrest');
@@ -126,20 +156,25 @@ var  pricedivrest = document.querySelector('#pricedivrest');
 var buttonrest = document.getElementById("buttonrest");
 
 var count3= 0;
+
 function creatediv(){
-  var creatediv = document.createElement('div');
+  var createdivforrow = document.createElement('div');
   count3 ++;
-  creatediv.setAttribute('class', 'row');
-  creatediv.setAttribute('Id', 'divrest'+count3);
-  createdivrest.appendChild(creatediv);
-  creatediv.style.backgroundColor = "red";
+  createdivforrow.setAttribute('class', 'row');
+  createdivforrow.setAttribute('Id', 'divrest'+count3);
+  createdivrest.insertBefore(createdivrest, before);
+
+  createdivforrow.appendChild(document.createTextNode("ivnnnnn"));
+  createdivrest.appendChild(createdivforrow);
+
+  createdivforrow.style.backgroundColor = "red";
 
 }
 function createnamespan(){
   var inputprodutname= document.querySelector('#nameinput').value;
   var createname = document.createElement('span');
   createname.appendChild(document.createTextNode(inputprodutname));
-  namedivrest.appendChild(createname);
+  createdivrest.appendChild(createname);
 
 }
 
@@ -147,7 +182,7 @@ function createpricespan(){
   var inputprice = document.querySelector('#input').value;
   var createprice = document.createElement('span');
   createprice.appendChild(document.createTextNode(inputprice));
-  pricedivrest.appendChild(createprice);
+  createdivrest.appendChild(createprice);
 }
 
 buttonrest.onclick = function(e){
@@ -157,7 +192,8 @@ createnamespan();
 };
 
 
-var IronBubblehead = new Products ("IronBubblehead", 25, '#amountFirst', "totalpriceFirst" );
-var IronShirthead = new Products ("IronShirthead", 15, '#amountSecond', "totalpriceSecond" );
+
+var IronBubblehead = new Products ("IronBubblehead", 25, 'amountFirst', "totalpriceFirst" );
+var IronShirthead = new Products ("IronShirthead", 15, 'amountSecond', "totalpriceSecond" );
 listOfProduct.push(IronShirthead);
 listOfProduct.push(IronBubblehead);
