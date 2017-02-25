@@ -11,6 +11,7 @@ var sumArray = [];
 var priceArray = [25];
 var formatPrice = 0;
 var formatProducto = 0;
+var deleteButtons = "";
 
 function numberformatter (n, currency) {
   n = parseFloat(n);
@@ -64,7 +65,7 @@ function createQuantityInput(currentE){
 
 function createDeleteButton(){
   var afterProd = document.getElementsByClassName('prod')[count-1];
-  afterProd.insertAdjacentHTML('afterend', '<div class = "col-xs-2"><span class ="item"><button class = "btn btn-danger btn-delete" type="button">Delete</button></span></div>')
+  afterProd.insertAdjacentHTML('afterend', `<div class = "col-xs-2"><span class ="item"><button class = "btn-${count} btn btn-danger btn-delete" type="button">Delete</button></span></div>`)
  updateDeletelist();
 }
 
@@ -90,31 +91,39 @@ function getPriceByProduct(itemNode){
 
 
 function deleteItem(e){
-  // deleteElement = document.getElementsByClassName('product');
-  var parent = this.parentNode.parentNode.parentNode;
-  parent = parent.childNodes;
-  console.log(e);
-  console.log(parent);
+  var x = e.currentTarget.parentNode.parentNode.parentNode;
+  console.log(x);
+
+  // var selectbuttonclass = event.target.className.split(" ")[0];
+  // console.log(selectbuttonclass + "  This is selectbuttonclass");
+  // var theButton = document.getElementsByClassName(selectbuttonclass);
+  // console.log(theButton + "  This is theButton");
+  // var parent = selectbuttonclass.parentNode.parentNode;
+  // // parent = parent[6];
+  // console.log(e);
+  // console.log(parent);
   // parent.innerHTML = "";
   // count -= 1;
 }
-
 
 function getTotalPrice() {
  var sumAll = sumArray.reduce((a, b) => a + b);
  console.log(sumAll);
  var sumclass = document.getElementsByClassName('sumsum');
+ console.log(sumclass);
  var sumAll = numberformatter(sumAll, "$");
- sumclass.innerHTML = sumAll;
+ sumclass = sumclass.innerHTML = sumAll ;
 }
-
 
 function updateDeletelist (){
    var deleteButtons = document.getElementsByClassName('btn-delete');
+   var prodRow = document.getElementsByClassName('product');
+
 
    for(var i = 0; i<deleteButtons.length ; i++){
      deleteButtons[i].onclick = deleteItem;
+     console.log(prodRow);
    }
 }
 
-window.onload = updateDeletelist ();
+window.onload = updateDeletelist();
