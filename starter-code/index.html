@@ -4,11 +4,126 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+  <div class="body-wrapper">
+    <div class="container-fluid">
+      <div class="row">
+      <div class="full-banner">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-6">
+          <h1>Ironhack Merchandising <br>Shop</h1>
+
+        <div class="col-sm-5"></div>
+      </div>
+      </div>
+    </div>
+    &nbsp;
+    &nbsp;
+    &nbsp;
+      <div id="product">
+      <div class="row">
+          <div class="col-sm-2">
+            <center>
+            IronBubble-head
+            </center>
+          </div>
+          <div class="col-sm-2">
+            <center>
+            $25.00
+          </center>
+          </div>
+          <div class="col-sm-3">
+            <form class="form-inline">
+              <div class="form-group">
+                <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+                <div class="input-group">
+                <div class="input-group-addon">Qty</div>
+                <input type="text" class="form-control" id="exampleInputAmount" placeholder="quantity">
+              </div>
+            </div>
+            </form>
+          </div>
+          <div class="col-sm-2">
+            <center>
+            <span id="total-price"></span>
+          </center>
+          </div>
+          <div class="col-sm-2">
+            <center>
+            <button class="btn-danger bubble">
+              Delete
+            </button>
+          </center>
+          </div>
+        </div>
+      </div>
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      <div id="shirt-product">
+      <div class="row">
+          <div class="col-sm-2">
+            <center>
+            Iron Shirt
+            </center>
+          </div>
+          <div class="col-sm-2">
+            <center>
+            $15.00
+          </center>
+          </div>
+          <div class="col-sm-3">
+            <form class="form-inline">
+              <div class="form-group">
+                <label class="sr-only" for="InputAmount">Amount (in dollars)</label>
+                <div class="input-group">
+                <div class="input-group-addon">Qty</div>
+                <input type="text" class="form-control" id="InputAmount" placeholder="quantity">
+              </div>
+            </div>
+            </form>
+          </div>
+          <div class="col-sm-2">
+            <center>
+            <span id="total-shirt"></span>
+          </center>
+          </div>
+          <div class="col-sm-2">
+            <center>
+            <button class="btn-danger shirt">
+              Delete
+            </button>
+          </center>
+          </div>
+        </div>
+      </div>
+      &nbsp;
+      &nbsp;
+      &nbsp;
+      &nbsp;
+        <div class="row">
+
+          <div class="col-sm-2">
+            <center>
+              <button class="btn-success btn-lg calc">Calculate Total</button>
+            </center>
+          </div>
+          <div class="col-sm-2">
+            <center>
+              <h3><span id="grand-total">Your Total is: </span></h3>
+            </center>
+          </div>
+          <div class="col-sm-8"></div>
+        </div>
 </body>
 </html>

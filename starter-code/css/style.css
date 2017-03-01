@@ -1,5 +1,26 @@
+body {
+  font-family: 'Rajdhani';
+  font-size: 22px;
+}
+
+h1 {
+  margin: 3.67em 0 !important;
+}
+
 input {
   border: solid 1px black;
+}
+
+.full-banner {
+  background-image: url("../images/back.jpg");
+  background-size: cover;
+  color: #fff;
+  margin-bottom: 20px;
+  height: 400px;
+};
+
+.body-wrapper {
+  padding: 5% 5% 5% 5%
 }
 
 .container {
