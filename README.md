@@ -103,9 +103,7 @@ We will create a click event binded to the Delete buttons to delete a product fr
 	- Select the div that contains the product list
 	- Use the function `removeChild` we saw in [DOM Manipulators](https://hackmd.io/MwBgRgHAjATArMAtANjsgxogLAU3QQ0QmQHZlEdgox8BOE9EsAMzCA==)
 
-:::success
 :bulb: Remember it is possible to track which button was clicked by the `e.currentTarget` function, and select the parent node of an HTML element with `parentNode`.
-:::
 
 ### Iteration 5: Creating new products
 
@@ -120,11 +118,7 @@ We have two inputs that represent the name and the unit price of the new product
 	- Get the data from the inputs.
 	- Create a new product row with the data we stored.
 
-:::warning
-
-:warning: Be sure the new product you added has the same behavior than the previous products.
+**Warning** Be sure the new product you added has the same behavior than the previous products.
 - You should be able to calculate the product total price
 - You should be able to sum the product total price to the Shopping Cart total price
 - You should be able to delete the product
-
-:::
