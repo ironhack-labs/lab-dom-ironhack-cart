@@ -1,3 +1,7 @@
+function createQuantityInput() {
+    var x = document.getElementById("myNumber").value;
+    document.getElementById("quant").innerHTML = x;
+}
 function deleteItem(e){
 
 }
@@ -14,9 +18,9 @@ function getTotalPrice() {
 
 }
 
-function createQuantityInput(){
+//function createQuantityInput(){
 
-}
+//}
 
 function createDeleteButton(){
 

@@ -2,28 +2,69 @@ input {
   border: solid 1px black;
 }
 
-.container {
-width: 980px;
-height: auto;
-padding: 50px;
-border-style: dotted;
+header {
+text-align: center;
+font-size: 48px;
+}
 
+.container {
+width: 100%;
+height: auto;
+padding: 00px;
+//border-style: dotted;
+margin: 10%
 }
 
 .info-container {
-  width: 888px;
+  width: 100%;
   height: auto;
-  padding: 50px;
-  border-style: dotted;
-
-}
-.p {
+  padding-top: 50px;
+  padding-bottom: 10px;
   text-align: center;
+//  border-style: dotted;
 
+#item {
+        //border-style: dotted;
+        float: left;
+        margin-left: 50px;
+}
+#prec{
+        //border-style: dotted;
+        float: left;
+        margin-left: 50px;
 }
 
-.item {
+#quant{
+        //border-style: dotted;
+        float: left;
+        margin-left: 50px;
+}
 
+#amtot{
+        //border-style: dotted;
+        float: left;
+        margin-left: 50px;
+}
+
+#delbut{
+        //border-style: dotted;
+        float: left;
+        margin-left: 50px;
+}
+
+
+price {
+ margin-left: 50px;
+}
+Q {
+ margin-left: 50px;
+}
+tot {
+ margin-left: 50px;
+}
+tdel {
+ margin-left: 10px;
+}
 }
 
 .row {
