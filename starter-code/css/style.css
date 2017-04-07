@@ -72,6 +72,12 @@ input {
     border-color: #CF000F;
 }
 
-.quantity {
-  margin: 0 5px;
+
+.ironHackCart{
+  /*background-color: red;*/
+  text-align: center;
 }
+.sep{
+  padding-top: 20px
+}
+/*.color{background-color: blue;}*/
