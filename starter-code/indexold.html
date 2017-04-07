@@ -10,69 +10,38 @@
   <title>Ironhack cart</title>
 </head>
 <body>
-  <div id="container">
+  <div class="container">
   <header>
   <h1>IronHack<br> Merchandising Shop</h1>
   </header>
-  <div id="products">
-  <div class="product1">
-    <div class="productname">
-     <span>IronBuble-head</span>
-    </div>
-    <div class="costunit">
-     <span class="cost">25</span>
-    </div>
-    <div class="quantity">
-    <label>QTY</label>
-    <input class="input"/>
-    </div>
-    <div class="totalprice2">
-      <span class="totalprice">0.00</span>
-    </div>
-    <div class="buttond">
-      <button onclick="deleteItems(event)" class= "btnDelete">Delete</button>
-    </div>
-  </div>
-  <div class="product2">
   <div class="productname">
+   <span>IronBuble-head</span><br><br><br>
    <span>IronShirt</span>
   </div>
   <div class="costunit">
-   <span class="cost">15</span>
+   $<span class="cost">25</span><br><br><br>
+   $<span class="cost">15</span>
   </div>
   <div class="quantity">
+  <label>QTY</label>
+  <input class="input"/><br><br><br>
   <label>QTY</label>
   <input class="input"/>
   </div>
   <div class="totalprice2">
-    <span class="totalprice">0.00</span>
+    $<span id="Childid1" class="totalprice">0.00</span><br><br><br>
+    $<span class="totalprice">0.00</span>
   </div>
   <div class="buttond">
+    <button onclick="deleteItems(event)" class= "btnDelete">Delete</button><br><br><br>
     <button onclick="deleteItems(event)" class= "btnDelete">Delete</button>
   </div>
-  </div>
-</div>
-<div class="createNewProducts">
-  <div class="newLabels">
-    <div class="newName2">
-  <input class="newName"/>
-</div>
-<div class="newPrice2">
-  <input class="newPrice"/>
-</div>
-  <div class="create">
-    <button onclick="creates()" class= "btn">Create</button>
-  </div>
-</div>
-  <div class="calculateItems">
   <div class="calcula">
     <button onclick="totalPriceProducts()" class= "btn">Calculate Prices</button>
   </div>
-  <div class="resultTotal">
+  <div>
   <h2 id="result">Total price: <span id="sum"></span></h2>
   </div>
-</div>
-</div>
-</div>
+  </div>
 </body>
 </html>

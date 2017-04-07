@@ -2,43 +2,62 @@ input {
   border: solid 1px black;
 }
 
-.container {
+header {
+  font-size: 15px;
+  position: relative;
+  padding-left: 35%;
 
 }
 
-.info-container {
-
+.product1 {
+  display: flex;
+  flex-direction: row wrap;
+  justify-content: space-around;
+  align-content: center;
 }
 
-.item {
-
+.product2 {
+  display: flex;
+  flex-direction: row wrap;
+  justify-content: space-around;
+  align-content: center;
 }
 
-.row {
-
+.newProduct {
+  display: flex;
+  flex-direction: row wrap;
+  justify-content: space-around;
+  align-content: center;
 }
 
-.col-xs-2 {
-
+.newLabels {
+  display: flex;
+  flex-direction: row wrap;
+  align-items: baseline;
+  padding-top: 2%;
 }
 
-.col-xs-3 {
-
+.newName2 {
+  padding-left: 90px;
 }
 
-.col-xs-5 {
-
+.newPrice2 {
+  padding-left: 150px;
 }
 
-.col-xs-4 {
-
+.productname, .costunit, .quantity, .input, .totalprice2, .buttond {
+  margin: auto;
+  padding-top: 2%;
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 0;
 }
 
-.col-xs-7 {
-
+.productname {
+  width: 200px;
 }
 
-.btn {
+.btnDelete {
   display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
@@ -60,18 +79,25 @@ input {
   border-radius: 4px;
 }
 
-.btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
-}
-
-.btn-delete {
+.btnDelete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
 }
 
-.quantity {
-  margin: 0 5px;
+.btn {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+.create {
+padding-left: 54%;
+}
+
+
+.calculateItems {
+  flex-direction: row;
+  padding-left: 40%;
+  padding-top: 5%;
 }

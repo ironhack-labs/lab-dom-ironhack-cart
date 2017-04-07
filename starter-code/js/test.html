@@ -1,0 +1,61 @@
+<title>Ironhack cart</title>
+
+<body>
+  <div id="container">
+    <header>
+      <h1>IronHack<br> Merchandising Shop</h1>
+    </header>
+    <div class="product1">
+      <div class="productname">
+        <span>IronBuble-head</span>
+      </div>
+      <div class="costunit">
+        $<span class="cost">25</span>
+      </div>
+      <div class="quantity">
+        <label>QTY</label>
+        <input class="input" />
+      </div>
+      <div class="totalprice2">
+        $<span class="totalprice">0.00</span>
+      </div>
+      <div class="buttond">
+        <button onclick="deleteItems(event)" class="btnDelete">Delete</button>
+      </div>
+    </div>
+    <div class="product2">
+      <div class="productname">
+        <span>IronShirt</span>
+      </div>
+      <div class="costunit">
+        $<span class="cost">15</span>
+      </div>
+      <div class="quantity">
+        <label>QTY</label>
+        <input class="input" />
+      </div>
+      <div class="totalprice2">
+        $<span class="totalprice">0.00</span>
+      </div>
+      <div class="buttond">
+        <button onclick="deleteItems(event)" class="btnDelete">Delete</button>
+      </div>
+    </div>
+    <div class="calcula">
+      <button onclick="totalPriceProducts()" class="btn">Calculate Prices</button>
+    </div>
+    <div class="resultTotal">
+      <h2 id="result">Total price: <span id="sum"></span></h2>
+    </div>
+  <div class="create">
+    <div class="name">
+      <label>Name</label>
+      <input class="newName" />
+      <div class="price">
+        <label>Price</label>
+        <input class="newPrice" />
+        <div class="create">
+          <button onclick="create()" class="btn">Create</button>
+        </div>
+      </div>
+   </div>
