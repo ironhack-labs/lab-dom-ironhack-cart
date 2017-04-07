@@ -1,0 +1,112 @@
+@import 'normalize';
+
+h1, h2 {
+  text-align: center;
+}
+
+input {
+  border: solid 1px black;
+}
+
+.container {
+  display: inline-block;
+  #new-item-create {
+    background-color: blue;
+    border-radius: 3px;
+    border-style: none;
+    color: white;
+    display: inline-block;
+    margin: 2vh 10vw 0vh 25vw;
+    padding: 0.7%;
+    white-space: nowrap;
+  }
+}
+
+.info-container {
+
+}
+
+.item {
+
+}
+
+.row {
+
+}
+
+.col-xs-1 {
+  margin: 3vh 4vw 3vh 7vw;
+  width: 13vw;
+}
+
+.col-xs-2 {
+  margin: 3vh 12vw 0vh 0vw;
+
+}
+
+.col-xs-3 {
+  margin: 3vh 12vw 0vh 0vw;
+  button {
+    background-color: #10b910;
+    border-radius: 3px;
+    border-style: none;
+    color: white;
+    display: inline-block;
+    margin: 2vh 0vw 0vh 20vw;
+    padding: 0.7%;
+    white-space: nowrap;
+  }
+}
+
+.col-xs-4 {
+  margin: 3vh 12vw 0vh 0vw;
+}
+
+.col-xs-5 {
+  margin: 3vh 12vw 0vh 0vw;
+  button {
+    background-color: red;
+    border-radius: 3px;
+    border-style: none;
+    color: white;
+    padding: 10%;
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+.btn-delete {
+    color: #fff;
+    background-color: #CF000F;
+    border-color: #CF000F;
+}
+
+.quantity {
+
+}
