@@ -2,9 +2,63 @@ input {
   border: solid 1px black;
 }
 
-.container {
-
+h1{
+  text-align: center;
+  padding: 10px;
 }
+
+#total-price-button{
+  margin-left: 400px;
+  padding: 10px;
+}
+
+
+.container {
+  text-align: center;
+  float:left;
+  padding:6px 0 ;
+  margin-left: 20px;
+  margin-bottom: 30px;
+}
+
+.price:before,.total-price-product:before{
+  content: '$';
+}
+#content{
+  padding: 15px 0 ;
+  overflow: auto;
+  border-radius: 10px;
+  background-color: #fff;
+  margin: auto;
+  width: 60%;
+}
+#product-list{
+  padding: 15px 0 ;
+  overflow: auto;
+  border-radius: 10px;
+  background-color: #fff;
+  margin: auto;
+  width: 60%;
+}
+#qty-input{
+  max-width: 100px;
+}
+
+#calc-prices-button{
+  margin-left: 350px;
+}
+
+.product{
+  clear: both;
+  overflow: auto;
+  margin-left: 40px;
+}
+#create-element{
+  clear: both;
+  overflow: auto;
+  margin-left: 300px;
+}
+
 
 .info-container {
 
