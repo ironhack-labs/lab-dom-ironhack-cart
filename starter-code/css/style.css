@@ -1,5 +1,15 @@
+div {
+  box-sizing: border-box;
+}
+
 input {
-  border: solid 1px black;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding-left: 5px;
+  border: none;
+  height: 35px;
+  margin-right: 5px;
 }
 
 .container {
@@ -14,8 +24,35 @@ input {
 
 }
 
-.row {
+.container--flex {
+  width: 90%;
+  margin: 0 auto;
+}
 
+.row {
+  display: flex;
+}
+
+.row--products {
+  background: WhiteSmoke;
+}
+
+.row--calculate {
+  align-items: center;
+  justify-content: center;
+}
+
+textarea, input, button { outline: none; }
+
+.col {
+  width: 20%;
+  margin: 5px;
+  flex-grow: 1;
+  height: 50px;
+  display: flex;
+  -ms-align-items: center;
+  align-items: center;
+  width: 20%;
 }
 
 .col-xs-2 {
@@ -35,16 +72,15 @@ input {
 }
 
 .col-xs-7 {
-
+  justify-content: center;
+  display: flex;
 }
 
 .btn {
-  display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
   font-size: 14px;
   font-weight: 400;
-  line-height: 1.42857143;
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
@@ -57,13 +93,14 @@ input {
   user-select: none;
   background-image: none;
   border: 1px solid transparent;
-  border-radius: 4px;
 }
 
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    display: flex;
+    justify-content: center;
 }
 
 .btn-delete {
@@ -74,4 +111,31 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.row--create {
+  border-top: 3px solid grey;
+  background-color: WhiteSmoke;
+}
+
+.input--create {
+  background-color: white;
+  border: none;
+  padding: 5px;
+}
+
+.btn--create {
+  background-color: grey;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.input--quantity {
+  margin-left: 10px;
+}
+
+.container--total {
+  display: flex;
+  justify-content: flex-end;
 }

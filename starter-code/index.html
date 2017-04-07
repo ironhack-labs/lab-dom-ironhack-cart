@@ -6,9 +6,86 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
+  <script type="text/javascript" src="./js/index.js" async></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+<div class="container--flex" id="container--flex">
+  <div class="header"><h1>Ironhack Merchandising Shop</h1></div>
+
+  <div class="row row--products" id="row--1">
+    <div class="col col-xs-2">
+      <p class="product__name">Product Name</p>
+    </div>
+    <div class="col col-xs-3">
+      $<span class="product__price" id="product__price-1">10</span>
+    </div>
+    <div class="col col-xs-4">
+      <input class="input--quantity" type="text">
+    </div>
+    <div class="col col-xs-5">
+      <p class="product__line-total" id="product__line-total-1">$0</p></div>
+    <div class="col col-xs-7">
+      <button class="btn btn-delete">
+        Delete
+      </button>
+    </div>
+  </div>
+
+  <div class="row row--products" id="row--2">
+    <div class="col col-xs-2">
+      <p class="product__name">Product Name</p>
+    </div>
+    <div class="col col-xs-3">
+      $<span class="product__price" id="product__price-2">15</span>
+    </div>
+    <div class="col col-xs-4">
+      <input class="input--quantity" type="text">
+    </div>
+    <div class="col col-xs-5">
+      <p class="product__line-total">$0</p>
+    </div>
+    <div class="col col-xs-7">
+      <button class="btn btn-delete">
+        Delete
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="container--flex">
+  <div class="row row--create">
+    <div class="col">
+      <input class="input--create" id="input--new-produdct" type="text" placeholder="New Product Name">
+    </div>
+    <div class="col">
+      <input class="input--create" id="input--new-price" type="text" placeholder="New Product Price">
+    </div>
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col col-xs-7">
+      <div class="btn btn--create" id="new-item-create">Create</div>
+    </div>
+  </div>
+</div>
+
+<div class="container--flex">
+  <div class="row row--calculate">
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col">
+      <button class="col btn btn-success" id="btn-calculate">
+        Calculate Prices
+      </button>
+    </div>
+  </div>
+</div>
+<div class="container--flex container--total">
+  <h1>Total: $<span id="total--overall">0</span></h1>
+</div>
 </body>
+
+
 </html>
