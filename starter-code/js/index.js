@@ -50,3 +50,16 @@ window.onload = function(){
     deleteButtons[i].onclick = deleteItem;
   }
 };
+
+
+var products = [
+  {descripcion: "Camiseta", precio: 10},
+  {descripcion: "Pantalon", precio: 22},
+  {descripcion: "Zapatos", precio: 31},
+];
+
+function addItem() {
+  var list = document.getElementById("list");
+  
+
+}
