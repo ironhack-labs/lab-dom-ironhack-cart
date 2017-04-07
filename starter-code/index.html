@@ -4,11 +4,79 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+  <div class="firs-product container-fluid" >
+    <h1 class="header row">Ironhack Merchandisng Shop</h1>
+  </div>
+<!-- ==========FIRST-PRODUCT=================== -->
+  <div class="firs-product container-fluid row" id="firstproduct">
+    <div class="col-xs-3" id="namedivFirst">
+      <span class="ironbubble-head">IronBubble-head</span>
+    </div>
+    <div class="costdiv col-xs-2">
+      <span id="costFirst">25.00</span>
+    </div>
+    <div class="col-xs-3">
+      <label for="">QTY</label>
+      <input type = "number" name="" value="" placeHolder = 0 id="amountFirst">
+    </div>
+    <div class="totalpricediv col-xs-2">
+      <span id="totalpriceFirst"class="totalpriceclass">$0.00</span>
+    </div>
+    <div class="deletebuttondiv col-xs-2">
+      <button class="deletebutton btn btn-delete" id="deleteButtonFirst">Delete</button>
+    </div>
+  </div>
+  <!-- ==========SECOND-PRODUCT=================== -->
+
+  <div class="firs-product container-fluid row" id="secondProduct">
+    <div class="col-xs-3" id="namedivSecond">
+      <span class="ironbubble-head">IronShirt</span>
+    </div>
+    <div class="costdiv col-xs-2">
+      <span id="costSecond">15.00</span>
+    </div>
+    <div class="col-xs-3">
+      <label for="">QTY</label>
+      <input type = "number" name="" value="" placeHolder = 0 id="amountSecond">
+    </div>
+    <div class="totalpricediv col-xs-2">
+      <span id="totalpriceSecond" class="totalpriceclass">$0.00</span>
+    </div>
+    <div class="deletebuttondiv col-xs-2">
+      <button class="deletebutton btn btn-delete" id = "deleteButtonSecond">Delete</button>
+    </div>
+  </div>
+  <!-- ==========Rest-PRODUCT=================== -->
+  <div class="restDiv row" id="creatediv">
+    <div class="row" id="before">
+      <div class="col-xs-3 " id="namedivrest">
+        <input type="text" name="" value="" placeholder= 0 id="nameinput">
+      </div>
+      <div class="costdiv col-xs-2" id="pricedivrest">
+        <input type="number" name="" value="" placeholder = 0 id="priceinput">
+      </div>
+      <button type="button" name="button" class="btn btn-default"id="buttonrest">Create</button>
+    </div>
+  </div>
+
+
+  <button type="button" name="button" class="btn btn-success row" id= "btncalculate" >Calculate Price</button>
+<div class="">
+  <h2>Total Price: <span id="totalprice">$0</span></h2>
+</div>
+  <!-- <form name="userInput" method="post">
+      <input type="text" name="calculateme">
+      <div class = "row">
+      <button class = "btn" type="reset">Reset</button>
+      <button class = "btn" type="button" onclick="getTotalPrice()">Calculate Price</button>
+      </div>
+      </form> -->
+      <script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>
