@@ -1,46 +1,21 @@
 input {
-  border: solid 1px black;
+  border: solid 1px #ccc;
+  text-align: center;
 }
 
-.container {
-
+body {
+  width: 75%;
+  margin: 80px auto;
+  background-color: #eee;
+  color: #7f8c8d;
 }
-
-.info-container {
-
+h1 {
+  text-align: center;
+  margin-bottom: 50px;
 }
-
-.item {
-
-}
-
-.row {
-
-}
-
-.col-xs-2 {
-
-}
-
-.col-xs-3 {
-
-}
-
-.col-xs-5 {
-
-}
-
-.col-xs-4 {
-
-}
-
-.col-xs-7 {
-
-}
-
 .btn {
   display: inline-block;
-  padding: 6px 12px;
+  padding: 5px 12px;
   margin-bottom: 0;
   font-size: 14px;
   font-weight: 400;
@@ -58,12 +33,16 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+  margin-top: -6px;
 }
 
 .btn-success {
+    display: inline-block;
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin-top: 50px;
+    width: 113px;
 }
 
 .btn-delete {
@@ -72,6 +51,51 @@ input {
     border-color: #CF000F;
 }
 
-.quantity {
-  margin: 0 5px;
+.price,
+.qty,
+.total {
+  text-align: center;
+}
+div {
+  text-align: center;
+}
+.quantity,
+.quantity-2 {
+  width: 25px;
+  text-align: center;
+}
+
+th {
+  margin: 0;
+  padding: 10px;
+  background: #3498db;
+  color: white;
+}
+td {
+  padding: 10px;
+  border-bottom: 1px solid #bdc3c7;
+  border-left: 1px solid #bdc3c7;
+  border-right: 1px solid #bdc3c7;
+  text-align: center;
+  background-color: #ecf0f1;
+}
+
+.space {
+  width: 150px;
+}
+.quantity-3 {
+  width: 50px;
+}
+.itemNama,
+.quantity-3 {
+  text-align: center;
+}
+
+.btn-create {
+  background: #1abc9c;
+  border: 1px solid #1abc9c;
+  color: white;
+}
+.newItem-1 {
+  display: none;
 }
