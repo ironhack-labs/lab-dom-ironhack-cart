@@ -1,14 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+ <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
-</head>
-<body>
+	<title>Ironhack Store</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="js/index.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+ </head>
+ <body>
+  <div class="container">
+ <header>
+  <h1 class="h1 text-center mb">Ironhack Merchandising Shop<span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></h1>
+ </header>
+ <table class="table mb">
+  <thead>
+    <tr>
+      <th>Products:</th>
+      <th>Price:</th>
+      <th>Quantity:</th>
+      <th>Total:</th>
+      <th>
+
+      </th>
+    </tr>
+   </thead>
+   <tbody id="soyTBody">
+    <tr class="itemSubjectClass" id="itemSubject">
+      <th scope="row"><span id="productName">T-Shirts</span></th>
+      <td class="price1"> <span class="dolar">$</span><span id="product">15</span></td>
+      <td class="qty1">
+        <form class="form-inline">
+          <div class="form-group">
+           <label for="inputQty">QTY</label>
+           <input type="text" id="qty" class="form-control mx-sm-3" maxlength="3" aria-describedby="qtyItem1">
+          </div>
+        </form>
+      </td>
+      <td <span class="dolar">$</span><span class="money" id="total">0.00</span></td>
+     <td class="text-right">
+          <button class="delate btn btn-danger" type="button" onclick="removeItem();totalPrice()" value="delate">
+          <input id ="delateButton" class="delateItem" type="button"  value="Delate">
+        </button>
+      </td>
+    </tr>
+    <tr class="nextArea" id="itemSubject2">
+      <th scope="row"><span id="productName">Stickers</span></th>
+      <td class="price2"> <span class="dolar">$</span><span id="product2">2</span></td>
+      <td class="qty2">
+        <form class="form-inline">
+          <div class="form-group">
+           <label for="inputQty">QTY</label>
+           <input type="text" id="qty2" class="form-control mx-sm-3" maxlength="3" aria-describedby="qtyItem2">
+          </div>
+        </form>
+      </td>
+      <td <span class="dolar">$</span><span class="money" id="total2">0.00</span></td>
+     <td class="text-right">
+          <button class="delate btn btn-danger" type="button" onclick="removeItem2();totalPrice()" value="delate">
+          <input id ="delateButton" class="delateItem" type="button"  value="Delate">
+        </button>
+      </td>
+    </tr>
+   </tbody>
+  </table>
+  <div class="row text-right">
+    <button class="delate btn btn-default addMore" onclick="" type="submit" value="calculatePriceButton" >
+      <input id ="calc-prices-button" class="calculator" type="button"  value="Add More">
+      <!-- <span class="delateButton"><strong>Calculate Prices</strong></span> -->
+      </button>
+  <button class="delate btn btn-success" onclick="getPrice();getPrice2();totalPrice()" type="submit" value="calculatePriceButton" >
+    <input id ="calc-prices-button" class="calculator" type="button"  value="Calculate Prices">
+    <!-- <span class="delateButton"><strong>Calculate Prices</strong></span> -->
+    </button>
+ </div>
+ <h2 class="text-center">Total Price: $<span id="totalPrice"></span></h2>
+ </div>
+
+
 </body>
 </html>
