@@ -3,40 +3,94 @@ input {
 }
 
 .container {
+  background-color: white;
+  margin: 0 auto;
+  width: 1000px
 
 }
 
 .info-container {
+  position: static;
+  width: 400px;
+  left: 100px;
+  padding-top: 50px;
+  margin: 0 auto;
+  text-align: left;
+  font-size: 26px;
+  font-style: italic;
+  font-weight: bold;
 
 }
 
 .item {
+  margin-top: 50px;
+  position: relative;
+  width: 1000px;
+  background-color: white;
 
 }
 
-.row {
+.product {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.col1 {
+  width: 100px;
+  margin-left: 20px;
+  margin-right: 50px;
 
 }
 
-.col-xs-2 {
+.col2 {
+
+margin-left: 50px;
+margin-right: 50px;
+}
+
+.col3 {
+
+margin-left: 50px;
+margin-right: 50px;
+}
+
+.col4 {
+
+margin-left: 50px;
+margin-right: 50px;
+}
+
+.col5 {
+
+margin-left: 50px;
+margin-right: 10px;
+background-color: red;
+}
+
+
+button{
+  background-color: red;
+}
+
+.calculatePrices{
+  position: relative;
+  width: 1000px;
+  height: 50px;
+  background-color: #f6f6f6;
+}
+
+.calculatePrices button{
+  position: absolute;
+  left: 600px;
+  top:10px;
+  width: 150px;
+  color: black;
+  background-color: green;
+
 
 }
 
-.col-xs-3 {
-
-}
-
-.col-xs-5 {
-
-}
-
-.col-xs-4 {
-
-}
-
-.col-xs-7 {
-
-}
 
 .btn {
   display: inline-block;
