@@ -2,7 +2,13 @@ input {
   border: solid 1px black;
 }
 
+h1 {
+  margin: 5% 35%;
+}
+
 .container {
+  margin: 0 auto;
+  width: 100%
 
 }
 
@@ -11,7 +17,13 @@ input {
 }
 
 .item {
+ float: left;
+ margin-left: 10%;
+}
 
+#calc-prices-button {
+position: relative;
+margin: auto 25%;
 }
 
 .row {
@@ -37,6 +49,7 @@ input {
 .col-xs-7 {
 
 }
+
 
 .btn {
   display: inline-block;
