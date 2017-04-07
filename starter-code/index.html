@@ -10,5 +10,34 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <h1>Ironhack<br>Merchandising Shop</h1>
+  <div id="item-1" class="row item">
+    <div class="container">
+      <span class="product-name">IronBubble-head</span>
+    </div>
+    <div class="container">
+      $<span class="price-per-unit">25.00</span>
+    </div>
+    <div class="container">
+      <label>QTY: <input class="unit-qty" type="text" value="0"></label>
+    </div>
+    <div class="container">
+      $<span class="item-total">0</span>
+    </div>
+    <input class="btn btn-delete" type="button" value="Delete">
+  </div>
+  <div id="new-item-row" class="row">
+    <div class="container">
+      <label>Product Name<input id="new-product-name" type="text" value=""></label>
+    </div>
+    <div class="container">
+      <label>Price per unit ($) <input id="new-price-per-unit" type="text" value="0"></label>
+    </div>
+    <input id="new-item-create-btn" class="btn" type="button" value="Create Item">
+  </div>
+  <div class="row">
+    <input id="calc-prices-btn" class="btn btn-success" type="button" value="Calculate Prices">
+    <h2 id="total-price-heading">Total Price: $<span id="total-price-value">0</span></h2>
+  </div>
 </body>
 </html>

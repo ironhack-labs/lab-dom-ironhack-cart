@@ -2,46 +2,44 @@ input {
   border: solid 1px black;
 }
 
+body > h1 {
+  text-align: center;
+}
+
+.product-name {
+
+}
+
+.price-per-unit {
+
+}
+
+.item-total {
+
+}
+
 .container {
-
-}
-
-.info-container {
-
-}
-
-.item {
-
+  width: 20%;
+  float:left;
+  text-align: center;
 }
 
 .row {
-
+  clear: both;
+  width: 100%;
+  height: 40px;
+  margin: 5px auto;
 }
 
-.col-xs-2 {
-
-}
-
-.col-xs-3 {
-
-}
-
-.col-xs-5 {
-
-}
-
-.col-xs-4 {
-
-}
-
-.col-xs-7 {
-
+#new-item-row {
+  padding-top: 60px;
 }
 
 .btn {
   display: inline-block;
   padding: 6px 12px;
-  margin-bottom: 0;
+  margin-bottom: 0px;
+  margin-top: -8px;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.42857143;
@@ -72,6 +70,19 @@ input {
     border-color: #CF000F;
 }
 
-.quantity {
-  margin: 0 5px;
+#new-item-create-btn {
+    color: #fff;
+    background-color: blue;
+    float: right;
+    margin-right: 150px;
+}
+
+#calc-prices-btn {
+    display: block;
+    margin: 0 auto;
+}
+
+#total-price-heading {
+  margin: 20px auto;
+  text-align: center;
 }
