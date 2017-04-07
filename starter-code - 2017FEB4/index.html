@@ -6,8 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <!-- <script src="http://www.google.com/jsapi" type="text/javascript"></script>
-  <script type="text/javascript">google.load("jquery", "1.3.2");</script> -->
   <title>Ironhack cart</title>
 </head>
 <body>
@@ -36,7 +34,7 @@
         <li>....</li>
       </form>
       <li class="createTotal" id="createTotal">...</li>
-      <li><button class="buttonCreate" id="buttonCreate" >Create</button></li>
+      <li><button class="buttonCreate" id="buttonCreate" type="submit">Create</button></li>
     </ul>
   </div>
   <div>
@@ -46,41 +44,31 @@
       <br>
       <div id="totalPrice">
         <h1 class="tprice" id="tprice"></h1>
-        <h4 class="numItems" id="numItems"></h4>
       </div>
-
       <hr>
     </p>
   </div>
-
   <div class="item" id="item">
-    <form>
-      <table id="table" class="table">
-        <tr id="column">
-          <td>Item</td>
-          <td>Price</td>
-          <td>Quantity</td>
-          <td><button class="buttonDelete" id="buttonDelete">Delete</button></td>
-        </tr>
-        <tr>
-          <td id="itemName"></td>
-          <td id="price"></td>
-          <td id="quantity"></td>
-          <td></td>
-        </tr>
-      </table>
-    </form>
-
-        <!-- <ul class="tableItems" id="tableItems">
-          <li class="itemName" id="itemName"></li>
-          <li class="price" id="price"></li>
-          <li class="quantity" id="quantity"></li>
-          <li class="total" id="total"></li>
-          <li class="buttonDelete" id="buttonDelete" onclick="buttonDelete()"></li>
-        </ul> -->
+    <ul class="tableItems" id="tableItems">
+      <li class="itemName" id="itemName">Item</li>
+      <form onsubmit="">
+        <li class="price" id="price">$2.00</li>
+        <li class="quantity" id="quantity">
+          QTY
+          <input type="text" class="qty" value="0" size="8">
+          <!-- <br>
+          <button type="submit" class="buttonCalculate" id="buttonCalculate" onsubmit="calculateButton()">Calculate Prices</button> -->
+        </li>
+      </form>
+      <li class="total" id="total">Total</li>
+      <li id="buttonDelete"><button class="buttonDelete" type="submit">Delete</button></li>
+    </ul>
   </div>
 
 
+  <div class="theAnswer">
+    <img src="https://camo.githubusercontent.com/d90f802a741cafd091c950cf09f687e2e9b280b5/68747470733a2f2f692e696d6775722e636f6d2f464756557548742e706e67" alt="the answer key" />
+  </div>
   <script type="text/javascript" src="./js/index.js"></script>
 
 </body>

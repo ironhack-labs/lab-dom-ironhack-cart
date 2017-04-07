@@ -38,10 +38,9 @@ input {
   /*border-radius: 5px;
   padding: 7px;
   background-color: #cf201b;
+  border: 0px;
   color: white;*/
   color: red;
-  background-color: white;
-  border: 0px;
 }
 .createTable {
   position: relative;
@@ -77,11 +76,6 @@ input {
   padding-right: 18%;
   margin-top: -25px;
 
-}
-.table {
-  width: 80%;
-  margin-left: 50px;
-}
 }
 .theAnswer {
   position: realative;
