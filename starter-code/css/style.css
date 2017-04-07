@@ -1,3 +1,41 @@
+h1{
+
+  text-align: left;
+  margin-left: 50%;
+}
+
+.content{
+  font-size: 13px;
+  margin-left: 140px;
+
+}
+.iron{
+  float: left;
+  padding: 20px;
+}
+.precio{
+  float: left;
+  padding: 20px;
+}
+.cantidad{
+  float: left;
+  padding: 20px;
+}
+
+.calculate{
+    float: left;
+padding: 20px;
+
+}
+
+.botn{
+  float: left;
+  padding: 20px;
+
+}
+
+
+
 input {
   border: solid 1px black;
 }
