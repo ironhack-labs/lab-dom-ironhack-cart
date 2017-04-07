@@ -2,6 +2,27 @@ input {
   border: solid 1px black;
 }
 
+.header{
+  text-align: center;
+}
+
+.row{
+  clear: both;
+  width: 100%;
+}
+
+.button-success{
+  clear: both;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.grand-total{
+  clear: both;
+  text-align: center;
+  padding-top: 50px;
+}
+
 .container {
 
 }
@@ -23,11 +44,15 @@ input {
 }
 
 .col-xs-3 {
-
+  padding-top: 50px;
+  width: calc(100%/3);
+  float: right;
 }
 
 .col-xs-5 {
-
+  padding-top: 50px;
+  width: calc(100%/5);
+  float: left;
 }
 
 .col-xs-4 {
