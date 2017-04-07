@@ -6,9 +6,42 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
+
   <title>Ironhack cart</title>
 </head>
 <body>
+  <h1>IronHack merchandise shop</h1>
+  <div id="content">
+    <div id="product-list">
+      <div class = "product">
+        <div class="name container"><span>Coffee mug</span></div>
+        <div class="price container"><span>5</span></div>
+        <div class="qty container">
+            <label>QTY</label>
+            <input class="qty-input" value="1" min="0" type="number"></input>
+        </div>
+        <div class="total-price-product container"><span>0</span></div>
+        <div class="delete btn btn-delete container">DELETE</div>
+      </div>
+      <div class = "product">
+        <div class="name container"><span>Shirt</span></div>
+        <div class="price container"><span>14</span></div>
+        <div class="qty container">
+            <label>QTY</label>
+            <input class="qty-input" value="1" min="0" type="number"></input>
+        </div>
+        <div class="total-price-product container"><span>0</span></div>
+        <div class="delete btn btn-delete container">DELETE</div>
+      </div>
+    </div>
+    <div id="create-element">
+      <input id="create-name" class="name container" placeholder="Product Name"></input>
+      <input id="create-price" class="price container" placeholder="Product Price"></input>
+      <button class="btn btn-success container" id="create-button">CREATE</button>
+    </div>
+    <div class="total-price">TOTAL PRICE: <span>0</span></div>
+    <button class="btn btn-success" id="calc-prices-button">Calculate Prices</button>
+  </div>
+  <script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>
