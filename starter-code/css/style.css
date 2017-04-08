@@ -2,40 +2,39 @@ input {
   border: solid 1px black;
 }
 
-.container {
-
+header {
+  margin: 5% 0 2% 40%;
+  font-size: 30px; 
+  font-weight: bold; 
 }
 
-.info-container {
+footer {
+  margin: 2% 0 0 40%;
+  font-size: 30px; 
+  font-weight: bold; 
+}
 
+.calculate-container {
+  display:flex;
+  justify-content: center;
+  margin: 3% 0 0 0;
 }
 
 .item {
+  display:flex;
+  align-items: center;
+  width: 80%;
+}
 
+.item-field {
+  width:25%
 }
 
 .row {
-
-}
-
-.col-xs-2 {
-
-}
-
-.col-xs-3 {
-
-}
-
-.col-xs-5 {
-
-}
-
-.col-xs-4 {
-
-}
-
-.col-xs-7 {
-
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  margin:1% 0;
 }
 
 .btn {
@@ -72,6 +71,14 @@ input {
     border-color: #CF000F;
 }
 
+.btn-create {
+    color: #000;
+    background-color: #FFF;
+    border-color: #000;
+}
 .quantity {
   margin: 0 5px;
+}
+.error {
+  color: red;
 }
