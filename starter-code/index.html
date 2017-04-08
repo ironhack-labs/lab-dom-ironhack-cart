@@ -10,5 +10,38 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <header>
+    Ironhack Merchandising <br>Shop
+  </header> 
+
+  <div id="container"></div>
+
+  <div class="row">
+    <div class="item">
+      
+      <div class="item-field">
+        <input type="input" id="new-item-name"><br>
+        <span class="error" id="error-name">&nbsp<span>
+      </div>
+      <div class="item-field">
+        <input type="input" id="new-item-price"><br>
+        <span class="error" id="error-price">&nbsp<span>
+      </div>
+      <div class="item-field" id="new-item-error"></div>
+      <div class="item-field"></div>
+      
+    </div>  
+    <div id="new-item-create" class="btn btn-create">Create</div>
+  </div>
+
+  <div class="calculate-container">
+    <div class="btn btn-success" id="calc-prices-button">
+      Calculate Prices
+    </div>
+  </div>
+
+  <footer>
+    Total price: $<span id="total-price">0.00</span>
+  </footer>
 </body>
 </html>
