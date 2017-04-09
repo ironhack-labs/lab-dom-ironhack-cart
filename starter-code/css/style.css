@@ -1,22 +1,30 @@
 input {
   border: solid 1px black;
 }
-
+select {
+  border: solid 1px black;
+  width: 20%;
+}
 .container {
-
+  text-align: center;
+  width: 90%;
 }
 
 .info-container {
 
 }
 
-.item {
 
+.list{
+  width: 100%;
+  padding-bottom: 20px;
 }
 
 .row {
-
+  width: 100%;
+  padding-bottom: 20px;
 }
+
 
 .col-xs-2 {
 
@@ -37,7 +45,7 @@ input {
 .col-xs-7 {
 
 }
-
+/*
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -58,20 +66,63 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
-}
+}*/
 
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
-    border-color: #4cae4c;
+    border: 2px solid #4cae4c;
+    border-radius: 5px;
+
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
-    border-color: #CF000F;
+    border: 2px solid #CF000F;
+    border-radius: 5px;
+}
+
+/*COLUMNS*/
+
+.item {
+  width: 30%;
+  float: left;
 }
 
 .quantity {
   margin: 0 5px;
+  width: 20%;
+}
+
+.price {
+  width: 10%;
+  float: left;
+}
+
+.quantity {
+  display: inline-block;
+  width: 30%;
+  float: left;
+}
+
+.total_item {
+  width: 20%;
+  float: left;
+}
+
+/*FOOTER*/
+.footer {
+  width: 100%;
+  clear: both;
+  padding: 20px;
+  text-align: center;
+}
+
+
+
+
+
+.addControls {
+  margin: 20px;
 }

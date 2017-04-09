@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
+
   <title>Ironhack cart</title>
 </head>
 <body>
@@ -14,17 +14,23 @@
     <div class="header">
       <h1>Ironhack Merchandising Shop</h1>
     </div>
-    <div id="list">
-      <div class="row">
-        <span id="item">nombre</span>
-        <span id="price">precio</span>
-        <span class="quantity">Q:<input type="text"></input> </span>
-        <span class="total_item">total</span>
-        <span class=".btn"><button type="button">Delete</button></span>
-      </div>
+
+    <div id="list"></div>
+
+    <div class="addControls">
+      <span class="btn">
+        <button id="new-item-create" type="button">Añadir nuevo</button>
+      </span>
+      <select id="description" type="text"></select>
+      <input id="price"type="text"></input>
     </div>
-    <div = "footer"></div>
+
+    <div class="footer">
+    <span class="btn"><button id="calc-prices-button" class="btn-success" type="button">Calculate Prices</button></span>
+    <h2>Total Price: <span id="mainTotal">$0</span></h2>
+    </div>
   </div>
 
 </body>
+<script type="text/javascript" src="./js/index.js"></script>
 </html>
