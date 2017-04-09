@@ -1,9 +1,17 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
 input {
   border: solid 1px black;
 }
 
 .container {
-
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .info-container {
@@ -15,15 +23,24 @@ input {
 }
 
 .row {
-
+  margin-right: -15px;
+  margin-left: -15px;
 }
 
+.col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+  position: relative;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  text-align: center;
+  float: left;
+}
 .col-xs-2 {
-
+  width: 16.66666667%;
 }
 
 .col-xs-3 {
-
+  width: 25%;
 }
 
 .col-xs-5 {
@@ -31,12 +48,20 @@ input {
 }
 
 .col-xs-4 {
+  width: 33.33333333%;
+}
+
+.col-xs-6 {
 
 }
 
 .col-xs-7 {
 
 }
+.col-xs-12 {
+  width: 100%;
+}
+
 
 .btn {
   display: inline-block;

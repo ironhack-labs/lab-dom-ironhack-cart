@@ -6,9 +6,68 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
+
   <title>Ironhack cart</title>
 </head>
 <body>
+  <div class="container">
+
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>Ironhack Merchandising Shop</h1>
+      </div>
+    </div>
+
+    <div id="new-item-create">
+      <div class="row">
+        <div class="col-xs-2">
+          <span>IronBubble-head</span>
+        </div>
+        <div class="col-xs-2">
+          <span id="js-price">$25.00</span>
+        </div>
+        <div class="col-xs-4">
+          <label for="qty1">QTY</label>
+          <input id="js-qty" type="text" name="qty1" value="">
+        </div>
+        <div class="col-xs-2">
+          <span id="js-priceTotal">$0.00</span>
+        </div>
+        <div class="col-xs-2">
+          <button id="js-delete" class="btn-delete" type="button" name="button">Delete</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="new-item-create">
+      <div class="row">
+        <div class="col-xs-2">
+          <span>IronBubble-head</span>
+        </div>
+        <div class="col-xs-2">
+          <span id="js-price">$25.00</span>
+        </div>
+        <div class="col-xs-4">
+          <label for="qty2">QTY</label>
+          <input id="js-qty" type="text" name="qty2" value="">
+        </div>
+        <div class="col-xs-2">
+          <span id="js-priceTotal">$0.00</span>
+        </div>
+        <div class="col-xs-2">
+          <button id="js-delete" class="btn-delete" type="button" name="button">Delete</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12">
+        <button id="calc-prices-button" class="btn-success" type="button" name="button">Calculate Prices</button>
+        <div id="alert"></div>
+      </div>
+    </div>
+
+  </div>
+  <script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>
