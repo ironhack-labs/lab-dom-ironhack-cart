@@ -29,6 +29,10 @@ function getQuantity(){
   var howMany = [];
   var i = 0;
   while(i<quantity.length){
+    //porque no funciona?
+    // if(isNan(quantity[i].value ===true)){
+    //   howMany.push(0);
+    // }else{
     howMany.push(parseInt(quantity[i].value));
     i++;
   }
@@ -37,9 +41,12 @@ function getQuantity(){
 }
 //calculate total price
 var getTotalPrice = function (){
+    var sumTotal = document.getElementById("sum-prices");
     var pricesArray = document.getElementsByClassName('total-price');
     var totalPrices = [];
     var i = 0;
+
+
     //for every product
     while(i<pricesArray.length){
       //we call both functions and insert values into array
@@ -47,7 +54,12 @@ var getTotalPrice = function (){
       var Quantities = getQuantity();
       totalPrices.push(parseInt(Prices[i] * Quantities[i]));
       pricesArray[i].innerHTML = totalPrices[i] + "€";
+      sumTotal.innerHTML = totalPrices.reduce(sumTotalPrice) + "€";
       i++;
     }
     console.log(totalPrices);
 };
+//sum the total prices
+function sumTotalPrice(total,num){
+  return total + num;
+}
