@@ -3,11 +3,13 @@ input {
 }
 
 .container {
-
+width: 100%;
+height: 100%;
 }
 
 .info-container {
-
+width: 100%;
+height: 100px;
 }
 
 .item {
@@ -19,22 +21,29 @@ input {
 }
 
 .col-xs-2 {
+width: 16.66666667%;
+float: left;
+text-align: center;
 
 }
 
 .col-xs-3 {
-
+width: 25%;
+float: left;
 }
 
 .col-xs-5 {
+float: left;
 
 }
 
 .col-xs-4 {
-
+width: 33.33333333%;
+float: left;
 }
 
 .col-xs-7 {
+float: left;
 
 }
 
@@ -64,12 +73,14 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    position: absolute;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+
 }
 
 .quantity {
