@@ -1,6 +1,64 @@
+body {
+  width: 100%;
+}
+
+main  {
+  width: 90%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+#total {
+  margin: 0 auto;
+  width: 18%;
+}
+
+
+#create {
+  width: 80%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+  margin: auto;
+}
+
+
+#shop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.product {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: auto;
+}
+
+.product div {
+  flex: 1;
+
+  margin: 0 5px;
+
+}
+
+header {
+    margin: 0 auto;
+    width: 18%;
+
+
+}
+
 input {
   border: solid 1px black;
+  width: 80%;
 }
+
+
 
 .container {
 
@@ -62,16 +120,14 @@ input {
 
 .btn-success {
     color: #fff;
+    margin: 0 45%;
     background-color: #5cb85c;
     border-color: #4cae4c;
 }
 
 .btn-delete {
+
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
-}
-
-.quantity {
-  margin: 0 5px;
 }
