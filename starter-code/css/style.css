@@ -2,40 +2,50 @@ input {
   border: solid 1px black;
 }
 
-.container {
-
+.cabecera{
+  width: 100%;
+  height: 100px;
+  padding-top: 1%;
+  padding-left: 40%;
 }
-
-.info-container {
-
+.final-price{
+  width: 100%;
+  height: 100px;
+}
+.container{
+  width: 100%;
+}
+.row{
+  width: inherit;
+  height: 40px;
+  padding-top: 20px;
+}
+.calculate{
+  width: inherit;
+  height: 60px;
+  padding-top: 2%;
+  padding-left: 40%;
 }
 
 .item {
-
+  display: inline-block;
+  width: 20%;
 }
 
-.row {
-
+.unit-price{
+  display: inline-block;
+  width: 20%;
 }
 
-.col-xs-2 {
-
+.quantity {
+    margin: 0 5px;
+    display: inline-block;
+    width: 20%;
 }
 
-.col-xs-3 {
-
-}
-
-.col-xs-5 {
-
-}
-
-.col-xs-4 {
-
-}
-
-.col-xs-7 {
-
+.total-price{
+  display: inline-block;
+  width: 20%;
 }
 
 .btn {
@@ -60,7 +70,7 @@ input {
   border-radius: 4px;
 }
 
-.btn-success {
+#calc-prices-button {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
@@ -70,8 +80,4 @@ input {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
-}
-
-.quantity {
-  margin: 0 5px;
 }

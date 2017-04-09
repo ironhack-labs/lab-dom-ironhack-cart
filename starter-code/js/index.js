@@ -11,7 +11,17 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-
+  var unitPrice = document.getElementsByClassName("price");
+  var input = document.getElementsByTagName("input");
+  var toPay = document.getElementsByClassName("total-amount");
+  var finalPrice = document.getElementById("money");
+  var sum = 0;
+  for(var i=0; i<unitPrice.length; i++){
+    var totalPrice = unitPrice[i].innerHTML * input[i].value;
+    toPay[i].innerHTML = totalPrice;
+    sum += totalPrice;
+  }
+  finalPrice.innerHTML = sum;
 }
 
 function createQuantityInput(){
@@ -46,7 +56,7 @@ window.onload = function(){
   calculatePriceButton.onclick = getTotalPrice;
   createItemButton.onclick = createNewItem;
 
-  for(var i = 0; i<deleteButtons.length ; i++){
+  for(var i = 0; i<deleteButtons.length ; i++)  {
     deleteButtons[i].onclick = deleteItem;
   }
 };
