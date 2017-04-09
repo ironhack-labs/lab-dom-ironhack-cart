@@ -7,8 +7,54 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
   <script type="text/javascript" src="./js/index.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+  <header>
+    <h1>Ironhack Merchandising Shop</h1>
+  </header>
+  <section class="item-container">
+  <div class="item">
+    <span>Product name</span>
+  </div>
+  <div class="item">
+    <span class="price">25€</span>
+  </div>
+  <div class = "quantity">
+    <label for="QTY">QTY</label>
+    <input type="type" class="QTY" name="QTY"/>
+  </div>
+  <div class="total-prices">
+    <span class="total-price">0€</span>
+  </div>
+  <div class = "btn ">
+    <button class="btn btn-delete">DELETE</button>
+  </div>
+</section>
+<section class="item-container">
+<div class="item">
+  <span>Product name</span>
+</div>
+<div class="item">
+  <span class="price">30€</span>
+</div>
+<div class = "quantity">
+  <label for="QTY">QTY</label>
+  <input type="type" class="QTY" name="QTY"/>
+</div>
+<div class="total-prices">
+  <span class="total-price">0€</span>
+</div>
+<div class = "btn ">
+  <button class="btn btn-delete">DELETE</button>
+</div>
+</section>
+<div>
+<div class="calculate">
+    <button class = "btn btn-success" id="calc-prices-button">Calculate Total Price</button>
+</div>
+</div>
+<h2>Total Price: <span id = "sum-prices">$0</span></h2>
 </body>
 </html>

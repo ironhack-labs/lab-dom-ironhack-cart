@@ -1,17 +1,24 @@
+body{
+}
 input {
   border: solid 1px black;
 }
-
-.container {
+header{
+  margin: 50px 0px 0px 200px;
+}
+.item-container div {
+  margin: 50px;
 
 }
-
+.total-prices{
+  display: inline-block;
+}
 .info-container {
 
 }
 
 .item {
-
+display: inline-block;
 }
 
 .row {
@@ -61,6 +68,7 @@ input {
 }
 
 .btn-success {
+    margin: 0 auto;
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
@@ -70,8 +78,15 @@ input {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+
 }
 
 .quantity {
   margin: 0 5px;
+  display: inline-block;
+}
+.calculate{
+  text-align: : center;
+  float: right;
+  margin: 50px;
 }
