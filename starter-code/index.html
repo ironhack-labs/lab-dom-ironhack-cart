@@ -7,8 +7,75 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
   <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
+  <title>Ironhack Cart</title>
 </head>
 <body>
+
+  <h3> Ironhack Merchandising Shop </h3>
+
+  <div class="container" id="main_container">
+<div class="item">
+  <div class="row">
+      <div class="col-xs-2">
+IronBubble-Head
+      </div>
+      <div class="col-xs-3">
+$25.00
+      </div>
+      <div class="col-xs-4">
+        <form action="" method="post">
+          <label class="qty-label" for="qty">QTY:</label>
+          <input class="qty" type="number" value="0">
+        </form>
+      </div>
+      <div class="col-xs-5">
+$0.00
+      </div>
+      <div class="col-xs-7">
+<button class="btn-delete btn"> Delete </button>
+</div>
+      </div>
+    </div>
+<div class="item">
+      <div class="row">
+          <div class="col-xs-2">
+    IronShirt
+          </div>
+          <div class="col-xs-3">
+    $15.00
+          </div>
+          <div class="col-xs-4">
+            <form action="" method="post">
+              <label class="qty-label" for="qty">QTY:</label>
+              <input class="qty" type="number" value="0">
+            </form>
+          </div>
+          <div class="col-xs-5">
+    $0.00
+          </div>
+          <div class="col-xs-7">
+    <button class="btn-delete btn"> Delete </button>
+    </div>
+          </div>
+        </div>
+
+</div>
+<div class="row-add">
+  <div class='inputContainer'>
+  <div class="name-input">
+    <input class="add-name" id="add-name" type="text" value="">
+  </div>
+  <div class="price-input">
+    <input class="add-price" id="add-price" type="number" value="">
+  </div>
+</div>
+  <div class="createButtonContainer">
+    <button class="btn-create btn" id="new-item-create"> Create </button>
+  </div>
+</div>
+
+    <div class="calculate-row"><button class="btn" id="calc-prices-button">Calculate Prices</button></div>
+<h2>Total Price: <span id="grandTotalPrice">$0.00</span></h2>
+
 </body>
 </html>
