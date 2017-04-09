@@ -11,31 +11,54 @@ window.onload = function(){
 //      deleteButtons[i].onclick = deleteItem;
 //  }
 };
-//retrieve price
+//retrieve prices
 function getPrice(){
-  var productPrice = document.getElementById('price');
-  var price = 0;
-  if (productPrice.innerHTML !== "") {
-    price = parseInt(productPrice.innerHTML);
+  var productPrice = document.getElementsByClassName('price');
+  var priceList = [];
+  var i =0 ;
+  while ( i<productPrice.length){
+    priceList.push(parseInt(productPrice[i].innerHTML));
+    i++;
   }
-  console.log(price);
-  return price;
+  //console.log(priceList);
+  return priceList;
 }
-//retrieve quantity
+//retrieve quantities
 function getQuantity(){
-  var quantity = document.getElementById('QTY');
-  var howMany = 0;
-    if (quantity.value !== ""){
-      howMany = parseInt(quantity.value);
-    }
+  var quantity = document.getElementsByClassName('QTY');
+  var howMany = [];
+  var i = 0;
+  while(i<quantity.length){
+    howMany.push(parseInt(quantity[i].value));
+    i++;
+  }
   //console.log(howMany);
   return howMany;
 }
-//retrieve every items prices
-function getAllPrices(){}
 //calculate total price
 var getTotalPrice = function (){
-  var totalPrice = document.getElementById('total-price');
-  var total = getQuantity() * getPrice();
-  totalPrice.innerHTML = total + "€";
+
+  //pricesArray.forEach(function(){
+    var pricesArray = document.getElementsByClassName('total-price');
+    var totalPrices = [];
+    var i = 0;
+    while(i<pricesArray.length){
+      //totalPrices.push();
+      var Prices = getPrice();
+      var Quantities = getQuantity();
+      //var doneOperation = ();
+      totalPrices.push(parseInt(Prices[i] * Quantities[i]));
+
+      pricesArray[i].innerHTML = totalPrices[i] + "€";
+      //totalPrices[i].innerHTML = priceList[i] * howMany[i];
+      i++;
+    }
+    console.log(totalPrices);
+
+    // var total = getQuantity() * getPrice();
+    // totalPrice.innerHTML = total + "€";
+    //console.log(totalPrice);
+    //console.log(total);
+//});
+  //console.log(pricesArray);
 };
