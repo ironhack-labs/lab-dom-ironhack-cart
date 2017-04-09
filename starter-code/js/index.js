@@ -29,14 +29,15 @@ function getQuantity(){
   var howMany = [];
   var i = 0;
   while(i<quantity.length){
-    //porque no funciona?
-    // if(isNan(quantity[i].value ===true)){
-    //   howMany.push(0);
-    // }else{
-    howMany.push(parseInt(quantity[i].value));
+    var number = quantity[i].value;
+    //convert uncorrect inputs (NaN) to 0
+    if(number === "" ||isNaN(number)){
+      number = 0;
+    }
+    howMany.push(parseInt(number));
     i++;
   }
-  //console.log(howMany);
+//  console.log(number);
   return howMany;
 }
 //calculate total price
