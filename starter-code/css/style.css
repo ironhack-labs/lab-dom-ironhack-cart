@@ -1,8 +1,19 @@
 input {
   border: solid 1px black;
+  height: 22px;
+}
+
+.logo {
+  margin-top: 50px;
+  padding-left: 500px;
+  font-size: 36px;
+  width: auto;
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0px;
 
 }
 
@@ -11,35 +22,42 @@ input {
 }
 
 .item {
-
+  display: flex;
+  flex-direction: row;
 }
 
 .row {
-
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding: 10px;
+  width: 100%;
 }
 
 .col-xs-2 {
-
+  width: 125px;
 }
 
 .col-xs-3 {
-
-}
-
-.col-xs-5 {
-
+  width: 40px;
 }
 
 .col-xs-4 {
+  width: 225px;
+}
 
+.col-xs-5 {
+  width: 30px;
 }
 
 .col-xs-7 {
-
+  width: 50px;
 }
 
 .btn {
-  display: inline-block;
+  display: flex;
   padding: 6px 12px;
   margin-bottom: 0;
   font-size: 14px;
@@ -60,11 +78,13 @@ input {
   border-radius: 4px;
 }
 
-.btn-success {
+.btn-create:active {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
 }
+
+
 
 .btn-delete {
     color: #fff;
@@ -72,6 +92,64 @@ input {
     border-color: #CF000F;
 }
 
+.calculate-row {
+  display: flex;
+  flex-direction: row;
+  padding-top: 50px;
+  justify-content: center;
+}
+
+.row-add {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: space-between;
+  width: auto;
+  padding: 10px;
+  margin-left: 50px;
+  margin-right: 35px;
+
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 480px;
+}
+
+.createButtonContainer {
+  width: auto;
+  float: right;
+}
+
+.name-input {
+  width: auto;
+}
+
+.price-input {
+  width: auto;
+}
+
+#add-price {
+  width: 120px;
+}
+
+.btn-create {
+  color: black;
+  background-color: white;
+  border-color: gray;
+}
+
 .quantity {
   margin: 0 5px;
+}
+
+h2 {
+  text-align: center;
+}
+
+h3 {
+  text-align: center;
+  font-size: 40px;
 }
