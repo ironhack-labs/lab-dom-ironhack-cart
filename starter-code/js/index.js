@@ -37,28 +37,17 @@ function getQuantity(){
 }
 //calculate total price
 var getTotalPrice = function (){
-
-  //pricesArray.forEach(function(){
     var pricesArray = document.getElementsByClassName('total-price');
     var totalPrices = [];
     var i = 0;
+    //for every product
     while(i<pricesArray.length){
-      //totalPrices.push();
+      //we call both functions and insert values into array
       var Prices = getPrice();
       var Quantities = getQuantity();
-      //var doneOperation = ();
       totalPrices.push(parseInt(Prices[i] * Quantities[i]));
-
       pricesArray[i].innerHTML = totalPrices[i] + "€";
-      //totalPrices[i].innerHTML = priceList[i] * howMany[i];
       i++;
     }
     console.log(totalPrices);
-
-    // var total = getQuantity() * getPrice();
-    // totalPrice.innerHTML = total + "€";
-    //console.log(totalPrice);
-    //console.log(total);
-//});
-  //console.log(pricesArray);
 };
