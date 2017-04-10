@@ -1,41 +1,89 @@
-input {
-  border: solid 1px black;
+/*input {
+
+}*/
+
+header{
+  width: 100%;
+  height: 200px;
 }
 
 .container {
-
+  width: 100%;
+  height: 800px;
+  margin: 0 auto;
 }
 
 .info-container {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding-left: 30%;
 
 }
 
 .item {
+  width: 100%;
+  height: auto;
 
 }
 
 .row {
-
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: auto;
+  //background-color: yellow;
 }
 
 .col-xs-2 {
-
+  float:left;
+  margin-right: 20px;
 }
 
 .col-xs-3 {
-
-}
-
-.col-xs-5 {
-
+  float:left;
+  margin-right: 20px;
 }
 
 .col-xs-4 {
+  float:left;
+  margin-right: 20px;
+}
 
+.col-xs-5 {
+  float:left;
+  margin-right: 20px;
 }
 
 .col-xs-7 {
+  float:left;
+  margin-right: 20px;
+  overflow: auto;
+}
 
+.label-quantity{
+  float:left;
+}
+
+.quantity {
+  float:left;
+  border: solid 1px black;
+  margin: 0 5px;
+  margin-top: 15px;
+}
+
+#calc-prices-button{
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 0 50% 0 50%;
+}
+
+.total-price{
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 0 50% 0 50%;
 }
 
 .btn {
@@ -70,8 +118,4 @@ input {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
-}
-
-.quantity {
-  margin: 0 5px;
 }
