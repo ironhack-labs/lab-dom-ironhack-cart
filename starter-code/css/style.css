@@ -1,21 +1,29 @@
 input {
   border: solid 1px black;
+  width: 50%;
 }
 
 .container {
-
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .info-container {
-
+    text-align: center;
 }
 
 .item {
-
+    height: 50px;
 }
 
-.row {
-
+.col {
+    line-height: 50px;
+    vertical-align: middle;
+    width: 20%;
+    float: left;
+    margin: auto 0;
+    box-sizing: border-box;
 }
 
 .col-xs-2 {
@@ -49,7 +57,7 @@ input {
   white-space: nowrap;
   vertical-align: middle;
   -ms-touch-action: manipulation;
-  touch-action: manipulation;
+  /*touch-action: manipulation;*/
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
