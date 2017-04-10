@@ -86,6 +86,29 @@ header{
   padding: 0 50% 0 50%;
 }
 
+#create-new-item{
+  display: block;
+  width: 100%;
+  height: auto;
+  padding-left: 30%;
+  overflow: auto;
+}
+
+#create-new-item .item-name{
+  float:left;
+  margin-right: 20px;
+}
+
+#create-new-item .item-price{
+  float:left;
+  margin-right: 20px;
+}
+
+#create-new-item #new-item-create{
+  float:left;
+  margin-right: 20px;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
