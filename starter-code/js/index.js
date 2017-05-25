@@ -1,52 +1,22 @@
-function deleteItem(e){
+$(document).ready(function() {
 
-}
+$(".btn-success").click(function(event) {
+  var priceString = $(".productPrice").text();
+  var price = parseInt(priceString.replace("$",""));
+  var quantity = $("#inputQTY").val();
 
-function getPriceByProduct(itemNode){
+  $(".totalPrice").text("$" + (price * quantity));
+  console.log("hola");
+});
 
-}
+var x = $(".row");
 
-function updatePriceByProduct(productPrice, index){
+// agrega otro producto
 
-}
+$(".row").clone().prepend(".container");
 
-function getTotalPrice() {
 
-}
 
-function createQuantityInput(){
 
-}
 
-function createDeleteButton(){
-
-}
-
-function createQuantityNode(){
-
-}
-
-function createItemNode(dataType, itemData){
-
-}
-
-function createNewItemRow(itemName, itemUnitPrice){
-
-}
-
-function createNewItem(){
-
-}
-
-window.onload = function(){
-  var calculatePriceButton = document.getElementById('calc-prices-button');
-  var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');
-
-  calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
-
-  for(var i = 0; i<deleteButtons.length ; i++){
-    deleteButtons[i].onclick = deleteItem;
-  }
-};
+});
