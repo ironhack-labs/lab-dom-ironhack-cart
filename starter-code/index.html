@@ -5,10 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="./css/style.css">
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+  <div class="container">
+    <div class="elem" id="elem1">
+      <div class="col-xs-5 ">
+        <span class="productName">IronBubble-head</span>
+      </div>
+      <div class="col-xs-5 ">
+        <span class="costeUnitario">$25.00</span>
+      </div>
+      <div class="col-xs-5 ">
+        <label for="units">QTY</label>
+        <input type="number" name="units" value="0">
+      </div>
+      <div class="col-xs-5 ">
+        <span class="totalPrice">$0.00</span>
+      </div>
+      <div class="col-xs-5">
+        <button type="button" name="button" class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+    <div class="elem" id="elem2">
+      <div class="col-xs-5 ">
+        <span class="productName">IronBubble-head</span>
+      </div>
+      <div class="col-xs-5 ">
+        <span class="costeUnitario">$5.00</span>
+      </div>
+      <div class="col-xs-5 ">
+        <label for="units">QTY</label>
+        <input type="number" name="units" value="0">
+      </div>
+      <div class="col-xs-5 ">
+        <span class="totalPrice">$0.00</span>
+      </div>
+      <div class="col-xs-5">
+        <button type="button" name="button" class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="create">
+    <input type="text" name="" id="nameProduct" value="">
+    <input type="text" name="" id="priceProduct" value="">
+    <button type="button" id="new-item-create" name="button" class="btn">create</button>
+  </div>
+
+  <button type="button" id="calc-prices-button" name="button" class="btn btn-success">Calculate Prices</button>
+
+  <h2>Total Price: <span id="totalAmount">$0</span></h2>
+
 </body>
 </html>

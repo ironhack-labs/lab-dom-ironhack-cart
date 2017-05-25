@@ -27,11 +27,11 @@ input {
 }
 
 .col-xs-5 {
-
+  width: 19%;
+  display: inline-block;
 }
 
 .col-xs-4 {
-
 }
 
 .col-xs-7 {
