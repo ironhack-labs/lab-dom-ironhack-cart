@@ -4,11 +4,110 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+
+<div class="container-fluid">
+
+  <div class="row">
+
+    <div class="col-md-6">
+      <div class="col-md-6">
+        <span>IronShirt</span>
+      </div>
+
+      <div class="col-md-6 price1">
+        <span>26€</span>
+      </div>
+    </div>
+
+
+<!-- **************** --->
+
+    <div class="col-md-6">
+      <div class="col-md-4">
+        <label for="usr">QTY</label>
+        <input type="text" class="units-1">
+      </div>
+
+      <div class="col-md-4">
+        <span class="total-item1"> </span>
+      </div>
+
+      <div class="col-md-4">
+        <button class="btn-delete" type="button" name="button">Delete</button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="row">
+
+    <div class="col-md-6">
+      <div class="col-md-6">
+        <span>IronPuppet</span>
+      </div>
+
+      <div class="col-md-6 price1">
+        <span>41€</span>
+      </div>
+    </div>
+
+
+<!-- **************** --->
+
+    <div class="col-md-6">
+      <div class="col-md-4">
+        <label for="usr">QTY</label>
+        <input type="text" class="units-2">
+      </div>
+
+      <div class="col-md-4">
+        <span class="total-item2"> </span>
+      </div>
+
+      <div class="col-md-4">
+        <button class="btn-delete" type="button" name="button">Delete</button>
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <div class="btn-result">
+    <button class="btn-success" id="calc-prices-button" type="button" name="button">Calculate price</button>
+  </div>
+
+
+  <div class="cent">
+
+  <div class="center">
+
+    <span class="total">Total price: </span>
+    <span id="totalprice"></span>
+
+    </div>
+  </div>
+</div>
+
 </body>
 </html>

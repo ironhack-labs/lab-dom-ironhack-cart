@@ -15,7 +15,7 @@ input {
 }
 
 .row {
-
+margin-top: 1em;
 }
 
 .col-xs-2 {
@@ -64,14 +64,37 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    font-size: 2em;
+}
+
+.btn-result{
+  text-align: center;
+  padding-top:2em;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    font-size: 2em;
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+span {
+    float: left;
+    font-size: 2em;
+}
+
+.cent{
+  margin: auto;
+  text-align: center;
+}
+
+.center{
+  text-align: center;
+
+  width: 300px;
 }

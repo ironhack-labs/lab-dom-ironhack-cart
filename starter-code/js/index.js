@@ -1,9 +1,10 @@
+
 function deleteItem(e){
 
 }
 
 function getPriceByProduct(itemNode){
-
+  
 }
 
 function updatePriceByProduct(productPrice, index){
@@ -11,6 +12,21 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
+
+  var price = $(".price1 span" ).text();
+  priceOne = parseInt(priceOne.substring(0,priceOne.indexOf("€")));
+
+  var howManyUnits = $(".units" ).val();
+  if (howManyUnits === "") {
+    howManyUnits = 1;
+  }
+  var fact = (priceOne * howManyUnits) + "€";
+
+  $(".total-item1").text(fact);
+
+
+  //$("#totalprice").text(fact);
+
 
 }
 
@@ -44,9 +60,12 @@ window.onload = function(){
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
   calculatePriceButton.onclick = getTotalPrice;
+  /*
   createItemButton.onclick = createNewItem;
 
   for(var i = 0; i<deleteButtons.length ; i++){
-    deleteButtons[i].onclick = deleteItem;
-  }
+    deleteButtons[i].onclick = deleteItem;  */
+
+
+  //}
 };
