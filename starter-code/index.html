@@ -20,32 +20,55 @@
     <span> <h1>Ironhack Merchandising Shop </h1></span>
   </div>
 
-<div class="itemList">
+  <div class="itemList">
 
-<div class="row">
+    <div class="row mainRow">
 
-  <div class="col-xs-2">
-    <span class="productName">product1</span>
-  </div>
+      <div class="col-xs-2">
+        <span class="productName">product1</span>
+      </div>
 
-  <div class="col-xs-1">
-    <span class="productPrice">$10.00</span>
-  </div>
+      <div class="col-xs-1">
+        <span class="productPrice">$10.00</span>
+      </div>
 
-  <div class="col-xs-4">
-    <label class="quantity">QTY</label>
-    <input type="text" name="" id="inputQTY">
-  </div>
+      <div class="col-xs-4">
+        <label class="quantity">QTY</label>
+        <input type="text" name="" id="inputQTY" class="mainInput">
+      </div>
 
-  <div class="col-xs-2">
-    <span class="totalPrice">$0.00</span>
-  </div>
+      <div class="col-xs-2">
+        <span class="totalPrice">$0.00</span>
+      </div>
 
-  <div class="col-xs-3">
-    <button class="btn-delete">Delete</button>
+      <div class="col-xs-3 delete" >
+        <button class="btn-delete">Delete</button>
+      </div>
+
+    </div>
+
   </div>
 
 </div>
+<div class="row" "blankRow">
+
+  <div class="col-xs-2">
+    <input type="text" name="" id="inputProduct">
+  </div>
+
+  <div class="col-xs-1">
+    <input type="text" name="" id="inputPrice">
+  </div>
+
+  <div class="col-xs-4">
+  </div>
+
+  <div class="col-xs-2">
+  </div>
+
+  <div class="col-xs-3">
+    <button class="btn-create"> Create </button>
+  </div>
 
 </div>
 
@@ -53,6 +76,12 @@
   <button class="btn-success"> Calculate Prices </button>
 </div>
 
+<div class="finalPrice">
+  <h2> Total Price: <span class="finalNumber"></span></h2>
+</div>
+
+<div class="image">
+  <img src="http://img1.meristation.com/files/imagenes/general/111_30.jpg">
 </div>
 
 </body>
