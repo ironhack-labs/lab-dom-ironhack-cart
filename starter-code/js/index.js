@@ -47,11 +47,15 @@ function Cart(){
 
 
       $('input[name="quantity"]').on("focusout", function(){
-        var i = $(this).attr("data-input");
+        var idx = $(this).attr("data-input");
         var qty = $(this).val();
-        cart.items[i].changeQuantity(qty);
-        cart.printItems();
-        cart.getTotalPrice();
+        if(qty > 0){
+          cart.items[idx].changeQuantity(qty);
+          cart.printItems();
+          cart.getTotalPrice();
+        }else{
+          cart.deleteItem(idx);
+        }
       })
 
 
