@@ -1,14 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+ <link rel="stylesheet" href="  https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+ <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+ <link rel="stylesheet" href="./css/style.css">
+ <script type="text/javascript" src="./js/index.js"></script>
+ <title>Ironhack cart</title>
 </head>
+
 <body>
+ <main>
+   <div class="container-fluid">
+
+     <div class="row">
+       <div class="col-xs-12"><h1>Ironhack Merchandising Shop</h1></div>
+     </div>
+     <!-- div.container-fluid>div.row>div.col-xs-3+div.col-xs-3+div.col-xs-3+div.col-xs-2+div.col-xs-1 -->
+     <div class="items-table">
+
+     </div>
+
+     <div class="row">
+       <div class="col-xs-3">
+         <input type="text" name="nameItem" value="">
+       </div>
+       <div class="col-xs-3">
+         <input type="text" name="priceItem" value="">
+       </div>
+       <div class="col-xs-5"></div>
+       <div class="col-xs-1">
+         <button class='create  btn btn-large'>Create</button>
+       </div>
+     </div>
+     <div class="row">
+       <div class="col-xs-12"><button class="btn btn-success">Calculate Prices</button></div>
+     </div>
+
+
+   <div class="row">
+     <div class="col-xs-12"><strong>Total Price: $ <span class="total-price"></span></strong></div>
+   </div>
+
+ </div>
+
+
+ </main>
 </body>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </html>
