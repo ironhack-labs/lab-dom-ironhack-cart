@@ -55,6 +55,7 @@ function Cart(){
           cart.getTotalPrice();
         }else{
           cart.deleteItem(idx);
+
         }
       })
 
@@ -71,6 +72,7 @@ function Cart(){
   this.deleteItem = function(idx){
     this.items.splice(idx, 1);
     this.printItems();
+    this.getTotalPrice();
   };
 
   this.getTotalPrice = function(){
