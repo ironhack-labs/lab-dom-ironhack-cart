@@ -23,7 +23,7 @@ $(document).ready(function() {
     var inputPr = $("#inputPrice").val();
     console.log(inputPdt);
     var newRow = ('<div class=\"row mainRow\"><div class=\"col-xs-2\"><span class=\"productName\">' + inputPdt + '</span></div><div class=\"col-xs-1\"><span class=\"productPrice\">' + '$' + inputPr + '</span></div><div class=\"col-xs-4\"><label class=\"quantity\">QTY</label><input type=\"text\" name=\"\" class="mainInput"></div><div class=\"col-xs-2\"><span class=\"totalPrice\">$0.00</span></div><div class="col-xs-3 delete"><button class="btn-delete">Delete</button></div></div>');
-    $(".container").append(newRow);
+    $(".mainContainer").append(newRow);
     $(".btn-delete").click(function(event) {
       $(this).parent().parent().remove();
       console.log("delete");

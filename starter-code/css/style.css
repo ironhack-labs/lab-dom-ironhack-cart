@@ -1,5 +1,4 @@
 body {
-  margin-left: 2%;
   background-color: #EAEBEC;
 }
 
@@ -9,10 +8,19 @@ input {
 
 .info-container {
   text-align: center;
+  font-family: Helvetica;
 }
 
-.blankRow {
-  padding-top: 10px;
+.productName, .productPrice, .quantity, .totalPrice {
+  font-size: 18px;
+}
+
+.quantity {
+  margin: 0 5px;
+}
+
+.row {
+  padding-top: 15px;
 }
 
 .btn-success, .btn-create, .btn-delete {
@@ -38,10 +46,6 @@ input {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
-}
-
-.quantity {
-  margin: 0 5px;
 }
 
 .image {
