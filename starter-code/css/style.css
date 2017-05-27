@@ -2,6 +2,10 @@ input {
   border: solid 1px black;
 }
 
+main{
+  margin: 0 auto;
+}
+
 .container {
 
 }
