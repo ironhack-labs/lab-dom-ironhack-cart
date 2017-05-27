@@ -11,8 +11,12 @@ input {
   text-align: center;
 }
 
-.row {
+.blankRow {
   padding-top: 10px;
+}
+
+.btn-success, .btn-create, .btn-delete {
+  font-size: 20px;
 }
 
 .calculatePrice {
