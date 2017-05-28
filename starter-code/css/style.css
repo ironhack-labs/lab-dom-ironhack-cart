@@ -1,100 +1,58 @@
+
+
+.col-xs-4 input {
+  margin-left: 20px;
+  border: solid 1px black;
+}
+
 input {
   border: solid 1px black;
 }
 
-.container {
-
-}
-
 .info-container {
-
-}
-
-.item {
-
-}
-
-.row {
-margin-top: 1em;
-}
-
-.col-xs-2 {
-
-}
-
-.col-xs-3 {
-
-}
-
-.col-xs-5 {
-
-}
-
-.col-xs-4 {
-
-}
-
-.col-xs-7 {
-
-}
-
-.btn {
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.42857143;
   text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
+  font-weight: bold;
+  padding: 2em;
 }
 
-.btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
-    font-size: 2em;
-}
-
-.btn-result{
-  text-align: center;
-  padding-top:2em;
-}
-
-.btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
-    font-size: 2em;
+.productName, .productPrice, .quantity, .totalPrice {
+  font-size: 18px;
 }
 
 .quantity {
   margin: 0 5px;
 }
 
-span {
-    float: left;
-    font-size: 2em;
+.row {
+  margin-top: 30px;
 }
 
-.cent{
-  margin: auto;
-  text-align: center;
+ .btn {
+  font-size: 20px;
 }
 
-.center{
+.calculatePrice {
+  margin-top: 20px;
   text-align: center;
+  padding-top: 20px;
+}
 
-  width: 300px;
+.finalPrice p {
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  margin-top: 15px;
+
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+.btn-delete {
+    color: #fff;
+    background-color: #CF000F;
+    border-color: #CF000F;
 }

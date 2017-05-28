@@ -1,71 +1,38 @@
 
-function deleteItem(e){
 
-}
+$(document).ready(function() {
 
-function getPriceByProduct(itemNode){
-  
-}
+  // --[!!DISPLAY] -- Deletes the row
 
-function updatePriceByProduct(productPrice, index){
+  $(".btn-delete").on("click", function(event) {
+    $(this).parent().parent().remove();
+  });
 
-}
+  // --[DISPLAY] --  Shows the total price and multiplies each product price for every unit.
 
-function getTotalPrice() {
+  $(".btn-success").on("click", function(event) {
 
-  var price = $(".price1 span" ).text();
-  priceOne = parseInt(priceOne.substring(0,priceOne.indexOf("€")));
+    var endPrice = 0;
 
-  var howManyUnits = $(".units" ).val();
-  if (howManyUnits === "") {
-    howManyUnits = 1;
-  }
-  var fact = (priceOne * howManyUnits) + "€";
+    for (var i = 0; i <= $(".product").length-1; i++) {
+      var getThePrice = $(".product .product-price").eq(i).text();
+      var parsedPrice = parseInt(getThePrice.replace("$", ""));
+      var units = $(".product .col-xs-4 input").eq(i).val();
+      $(".product .totalPrice").eq(i).text("$" + (parsedPrice * units));
+      endPrice += (parsedPrice * units);
+    }
+    $(".end-price").text("$" + endPrice);
+  });
 
-  $(".total-item1").text(fact);
+  // --[DISPLAY] --  Creates a new row with the specified values.
 
-
-  //$("#totalprice").text(fact);
-
-
-}
-
-function createQuantityInput(){
-
-}
-
-function createDeleteButton(){
-
-}
-
-function createQuantityNode(){
-
-}
-
-function createItemNode(dataType, itemData){
-
-}
-
-function createNewItemRow(itemName, itemUnitPrice){
-
-}
-
-function createNewItem(){
-
-}
-
-window.onload = function(){
-  var calculatePriceButton = document.getElementById('calc-prices-button');
-  var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');
-
-  calculatePriceButton.onclick = getTotalPrice;
-  /*
-  createItemButton.onclick = createNewItem;
-
-  for(var i = 0; i<deleteButtons.length ; i++){
-    deleteButtons[i].onclick = deleteItem;  */
+  $(".btn-primary").click(function(event) {
+    var newProduct = ('<div class=\"row product\"><div class=\"col-xs-2\"><span class=\"productName\">' + $("#product-name").val() + '</span></div><div class=\"col-xs-2\"><span class=\"product-price\">' + '$' + $("#product-price").val() + '</span></div><div class=\"col-xs-4\"><label class=\"quantity\">QTY</label><input type=\"text\" name=\"\" class="mainInput"></div><div class=\"col-xs-2\"><span class=\"totalPrice\">$0.00</span></div><div class="col-xs-2 "><button class="btn btn-delete">Delete</button></div></div>');
+    $(".all-products").append(newProduct);
+    $(".btn-delete").on("click", function(event) {
+      $(this).parent().parent().remove();
+    });
+  });
 
 
-  //}
-};
+});
