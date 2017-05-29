@@ -4,11 +4,91 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript" src="./js/js-ironhack-cart.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+
+<div class="container-fluid">
+
+  <div class="item-row item row" id="item1">
+
+    <div class="col-md-6">
+      <div class="col-md-6">
+        <span class="productname">IronShirt</span>
+      </div>
+
+      <div class="col-md-6">
+        <span class="productprice">26€</span>
+      </div>
+    </div>
+
+
+<!-- **************** --->
+    <div class="col-md-6">
+      <div class="col-md-4">
+        <label for="usr">QTY</label>
+        <input type="text" data-productnr="1" id="input-item1" value="1" class="units">
+      </div>
+      <div class="col-md-4">
+        <span id="totalProduct1"> </span>
+      </div>
+      <div class="col-md-4">
+        <button class="btn-delete" type="button" data-button="1" name="button">Delete</button>
+      </div>
+    </div>
+  </div>
+  <div class="row item-row item" id="item2">
+    <div class="col-md-6">
+      <div class="col-md-6">
+        <span class="productname">IronPuppet</span>
+      </div>
+      <div class="col-md-6">
+        <span class="productprice">41€</span>
+      </div>
+    </div>
+<!-- **************** --->
+    <div class="col-md-6">
+      <div class="col-md-4">
+        <label for="usr">QTY</label>
+        <input type="text" data-productnr="2" id="input-item2" value="1" class="units">
+      </div>
+      <div class="col-md-4">
+        <span id="totalProduct2"> </span>
+      </div>
+      <div class="col-md-4">
+        <button class="btn-delete" type="button" data-button="2" name="button">Delete</button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="btn-result">
+    <button class="btn-success" id="calc-prices-button" type="button" name="button">Calculate price</button>
+  </div>
+
+  <div class="totalpriceall">
+    <span class="total">Total price: </span>
+    <span id="totalprice"></span>
+    </div>
+
+
+</div>
+<div class="row"><input type="text" id="input-productname" value="productName" class="units2"><input type="text" id="input-price" value="0">
+
+  <button class="btn" id="btn-createitem">CREATE</button>
+  <div id="error-message"><p>PLEASE CHECK THAT ALL INPUTS ARE SET</p></div>
+  <div id="error-message-NAN"><p>PLEASE CHECK THAT YOUR PRODUCT PRICE CONTAINS ONLY NUMBERES</p></div>
+</div>
+
 </body>
 </html>

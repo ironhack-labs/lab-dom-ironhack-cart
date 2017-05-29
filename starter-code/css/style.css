@@ -1,5 +1,17 @@
 input {
-  border: solid 1px black;
+
+  box-shadow: 1px 1px 2px grey;
+  position: relative;
+  top: 5px;
+  font-size: 14px;
+  color: grey;
+
+}
+label{
+  position: relative;
+  left: -35px;
+  top: 5px;
+  font-size: 12px;
 }
 
 .container {
@@ -10,12 +22,15 @@ input {
 
 }
 
-.item {
+.item{
+  box-shadow: 1px 1px 1px grey;
+  padding: 32px 20px 30px 20px;
 
 }
 
 .row {
 
+font-size: 16px;
 }
 
 .col-xs-2 {
@@ -36,6 +51,12 @@ input {
 
 .col-xs-7 {
 
+}
+#error-message, #error-message-NAN{
+  display:none;
+  margin-left: 60px;
+  margin-top: 20px;
+  padding-bottom: 40px;
 }
 
 .btn {
@@ -58,20 +79,76 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+  border: none;
+  font-size: 16px;
+  border-radius: 3px;
 }
 
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    border-radius: 3px;
+    padding: 10px 20px 10px 20px;
+    border: none;
+
+
+}
+
+.btn-result{
+  text-align: right;
+  margin-right: 120px;
+  margin-top: 40px;
+
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
-    border-color: #CF000F;
+
+    border: none;
+    font-size: 16px;
+    border-radius: 3px;
+    padding: 10px 15px 10px 15px;
 }
 
-.quantity {
-  margin: 0 5px;
+.create-new-items{
+  width: 100%;
+  display: block;
+  height: 100px;
+}
+.totalpriceall{
+    text-align:right;
+    font-weight: bold;
+    font-size: 18px;
+    margin-right: 130px;
+    margin-top: 20px;
+}
+
+#btn-createitem{
+  padding: 10px 15px 10px 15px;
+  color: #ffffff;
+  display: inline-block;
+  margin-left: 50px;
+
+}
+
+#input-productname{
+  margin-left: 60px;
+}
+
+#input-price{
+  margin-left: 20px;
+}
+
+span {
+    font-size: 16px;
+    display: inline-block;
+    line-height: 32px;
+  }
+
+
+.center{
+  text-align: center;
+  width: 300px;
 }
