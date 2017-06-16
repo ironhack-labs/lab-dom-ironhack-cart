@@ -17,7 +17,7 @@ function getTotalPrice() {
 
   for(var i = 0; i < unitPriceSpans.length ; i++){
     var units = parseInt( unitPriceSpans[0].innerHTML.replace(/[^0-9\.]+/g,"") );
-    var qtyText = quantitySpans[0].value.replace(/[^0-9\.]+/g,"");
+    var qtyText = quantitySpans[i].value.replace(/[^0-9\.]+/g,"");
     var qty = (qtyText === "") ? 0 : parseInt(qtyText);
 
     if(qty === 0){
