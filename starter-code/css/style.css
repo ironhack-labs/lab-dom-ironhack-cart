@@ -1,7 +1,12 @@
 input {
   border: solid 1px black;
 }
-
+.wrapper{
+  text-align: center;
+}
+.product {
+  margin-top: 25px;
+}
 .container {
 
 }
