@@ -4,6 +4,7 @@ function deleteItem(e){
 
 function getPriceByProduct(itemNode){
 
+
 }
 
 function updatePriceByProduct(productPrice, index){
@@ -11,6 +12,16 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
+  var unitPrice = document.getElementsByClassName("unitPrice");
+  var qty = document.getElementsByClassName("qty");
+  var totalPrice = document.getElementsByClassName("totalPrice");
+  var totalPriceItems = 0;
+  for(var i=0; i < 2; i++) {
+    var total = Number(unitPrice[i].innerHTML) * qty[i].value;
+    totalPrice[i].innerHTML = total;
+    totalPriceItems += total;
+  }
+  document.getElementById("totalPriceItems").innerHTML = totalPriceItems;
 
 }
 

@@ -10,5 +10,51 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <header>
+    <h1>Ironhack</h1>
+    <h1>Merchandising Shop</h1>
+  </header>
+  <div class="container" id="">
+    <div class="item">
+      <span id="itemName">IronBubble-head</span>
+    </div>
+    <div>
+      <h4>$<span class="unitPrice">25</span></h4>
+    </div>
+    <div class="">
+      <label for="qty">QTY</label>
+      <input type="number" class="qty" value="0">
+    </div>
+    <div>
+      <h4>$<span class="totalPrice">0</span></h4>
+    </div>
+    <div class="deleteItem">
+      <button onclick="deleteItem(e)" type="button" class="btn btn-delete">delete</button>
+    </div>
+  </div>
+  <div class="container" id="">
+    <div class="item">
+      <span id="itemName2">IronShirt</span>
+    </div>
+    <div>
+      <h4>$<span class="unitPrice">15</span></h4>
+    </div>
+    <div class="">
+      <label for="qty">QTY</label>
+      <input type="number" class="qty" value="0">
+    </div>
+    <div>
+      <h4>$<span class="totalPrice">0</span></h4>
+    </div>
+    <div class="">
+      <button onclick="deleteItem(e)" type="button" class="btn btn-delete">delete</button>
+    </div>
+  </div>
+  <div class="">
+    <button onclick="getTotalPrice()" type="button" name="totalPrice" class="btn btn-success">calculate prices</button>
+  </div>
+  <div class="totalPriceProducts">
+    <h2>Total Price: $<span id="totalPriceItems">0</span></h2>
+  </div>
 </body>
 </html>

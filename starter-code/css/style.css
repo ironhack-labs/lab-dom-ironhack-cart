@@ -1,17 +1,26 @@
 input {
   border: solid 1px black;
 }
-
-.container {
-
+header {
+  margin-left: 43%;
 }
-
+.container {
+  padding-left: 10%;
+}
+.container > div {
+  display: inline-block;
+  margin-right: 10%;
+  margin-bottom: 2%;
+}
 .info-container {
 
 }
+.totalPriceProducts {
+  margin-left: 42%;
+}
 
 .item {
-
+  width: 10%;
 }
 
 .row {
@@ -64,12 +73,16 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    text-transform: capitalize;
+    margin-left: 44%;
+    margin-top: 2%;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    text-transform: capitalize;
 }
 
 .quantity {
