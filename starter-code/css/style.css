@@ -49,6 +49,11 @@ footer{
   width: 5%;
 }
 
+.create-item{
+  display: flex;
+  justify-content: space-between;
+}
+
 .row {
 }
 
