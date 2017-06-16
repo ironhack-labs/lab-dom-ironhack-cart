@@ -1,5 +1,8 @@
 function deleteItem(e){
-
+  // var deleteButons = document.getElementsByClassName("btn-delete");
+  // console.log(deleteButons.indexOf(e.target));
+  var items = e.target.parentElement.parentElement;
+  items.parentElement.removeChild(items);
 }
 
 function getPriceByProduct(itemNode){
@@ -36,7 +39,7 @@ function getTotalPrice() {
     }
   }
 
-  totalPriceSpan.innerHTML = toFixedPrice(totalPrice)
+  totalPriceSpan.innerHTML = toFixedPrice(totalPrice);
 }
 
 function createQuantityInput(){
@@ -71,7 +74,7 @@ window.onload = function(){
   calculatePriceButton.onclick = getTotalPrice;
   // createItemButton.onclick = createNewItem;
   //
-  // for(var i = 0; i<deleteButtons.length ; i++){
-  //   deleteButtons[i].onclick = deleteItem;
-  // }
+  for(var i = 0; i<deleteButtons.length ; i++){
+    deleteButtons[i].onclick = deleteItem;
+  }
 };
