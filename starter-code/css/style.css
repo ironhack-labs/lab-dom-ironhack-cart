@@ -15,15 +15,20 @@ input {
 }
 
 .row {
-
+  padding: 0 5%;
+  display: block;
 }
 
 .col-xs-2 {
-
+  padding: 0 5%;
+  float: left;
+  width; 20%;
 }
 
 .col-xs-3 {
-
+  padding: 0 5%;
+  float: left;
+  width; 33%;
 }
 
 .col-xs-5 {
@@ -58,6 +63,8 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+  margin: auto;
+  display: block;
 }
 
 .btn-success {
@@ -74,4 +81,8 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+header {
+  text-align: center;
 }
