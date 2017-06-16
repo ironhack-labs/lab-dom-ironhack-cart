@@ -3,39 +3,47 @@ input {
 }
 
 .container {
-
+  margin: 18%;
+  font-family: Helvetica;
+  font-size: 16px;
 }
 
-.info-container {
-
+h1 {
+  padding-left: 49%;
+  margin-bottom: 50px;
 }
 
 .item {
-
+  height: 50px;
+  margin: auto;
+  margin-top: 25px;
 }
 
-.row {
-
+.product-name {
+  display: inline-block;
+  white-space: nowrap;
+  padding: 10px 20px;
+  width: 220px;
 }
 
-.col-xs-2 {
-
+.product-cost {
+  display: inline-block;
+  padding: 10px 20px;
+  width: 220px;
 }
 
-.col-xs-3 {
-
+.quantity {
+  display: inline-block;
+  padding: 10px 20px;
+  width: 220px;
+  text-align: center;
 }
 
-.col-xs-5 {
-
-}
-
-.col-xs-4 {
-
-}
-
-.col-xs-7 {
-
+.price {
+  display: inline-block;
+  padding: 10px 20px;
+  width: 220px;
+  text-align: center;
 }
 
 .btn {
@@ -64,14 +72,20 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin: 70px 44% 0 44%;
+    padding: 8px 25px;
+    text-align: center;
+    border-radius: 5px;
+    width: 12%;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
-}
-
-.quantity {
-  margin: 0 5px;
+    display: inline-block;
+    padding: 8px 25px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0px 20px;
 }

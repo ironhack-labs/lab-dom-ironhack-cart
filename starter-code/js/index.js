@@ -39,7 +39,7 @@ function createNewItem(){
 }
 
 window.onload = function(){
-  var calculatePriceButton = document.getElementById('calc-prices-button');
+  var calculatePriceButton = document.getElementById('btn-sucess');
   var createItemButton = document.getElementById('new-item-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
