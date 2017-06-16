@@ -1,42 +1,69 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 input {
   border: solid 1px black;
+  padding-left: 5px;
+}
+
+.general {
+  margin: 40px 0;
+}
+
+.title-container {
+  height: 110px;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  width: 50%;
+  height: 100%;
+  float: right;
 }
 
 .container {
-
+  width: 20%;
+  float: left;
+  vertical-align: middle;
+  padding-top: 8px;
 }
 
-.info-container {
-
+.button-container {
+  width: 15%;
+  float: left;
 }
 
-.item {
+.info-container {}
 
-}
+.item {}
 
 .row {
-
+  width: 100%;
+  height: 34px;
+  margin-top: 20px;
+  padding: 0 10px;
 }
 
-.col-xs-2 {
+.col-xs-2 {}
 
-}
+.col-xs-3 {}
 
-.col-xs-3 {
+.col-xs-5 {}
 
-}
+.col-xs-4 {}
 
-.col-xs-5 {
-
-}
-
-.col-xs-4 {
-
-}
-
-.col-xs-7 {
-
-}
+.col-xs-7 {}
 
 .btn {
   display: inline-block;
@@ -61,17 +88,23 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #CF000F;
+  border-color: #CF000F;
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+.calculator {
+  margin-top: 40px;
+  width: 50%;
+  float: right;
 }
