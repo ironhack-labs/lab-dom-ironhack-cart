@@ -1,8 +1,7 @@
 function deleteItem(e){
-
-console.log(e.target.parentNode.parentNode.parentNode)
-e.target.parentNode.parentNode.parentNode.remove()
-
+  console.log(e.target.parentNode.parentNode.parentNode)
+  e.target.parentNode.parentNode.parentNode.remove()
+  getTotalPrice()
 }
 
 function getPriceByProduct(itemNode){
