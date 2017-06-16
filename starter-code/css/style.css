@@ -1,5 +1,27 @@
+body{
+  width: 1200px;
+  max-width: 90%;
+  margin: auto;
+}
+
+header > h1{
+  width: 350px;
+  margin: 40px auto;
+  padding-left: 200px;
+}
+
 input {
   border: solid 1px black;
+  padding-left: 15px;
+}
+
+input.quantity{
+  width: 100px;
+}
+
+footer{
+  margin: 40px auto;
+  text-align: center;
 }
 
 .container {
@@ -11,11 +33,28 @@ input {
 }
 
 .item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
 
+.item > div{
+  margin: 0px;
+  width: calc(95%/4);
+}
+
+.item > div:nth-child(5){
+  text-align: right;
+  width: 5%;
+}
+
+.create-item{
+  display: flex;
+  justify-content: space-between;
 }
 
 .row {
-
 }
 
 .col-xs-2 {
