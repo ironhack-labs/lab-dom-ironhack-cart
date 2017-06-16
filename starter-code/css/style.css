@@ -63,8 +63,7 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
-  margin: auto;
-  display: block;
+
 }
 
 .btn-success {
@@ -83,6 +82,6 @@ input {
   margin: 0 5px;
 }
 
-header {
+.text-align {
   text-align: center;
 }
