@@ -15,6 +15,10 @@ input {
   padding-left: 15px;
 }
 
+input.quantity{
+  width: 100px;
+}
+
 footer{
   margin: 40px auto;
   text-align: center;
@@ -29,9 +33,20 @@ footer{
 }
 
 .item {
+  width: 100%;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 15px;
+}
 
+.item > div{
+  margin: 0px;
+  width: calc(95%/4);
+}
+
+.item > div:nth-child(5){
+  text-align: right;
+  width: 5%;
 }
 
 .row {
