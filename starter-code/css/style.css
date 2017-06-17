@@ -1,43 +1,29 @@
 input {
   border: solid 1px black;
 }
-
-.container {
-
-}
-
-.info-container {
+.wrapper{
+  text-align: center;
 
 }
-
-.item {
-
+.product {
+  margin-top: 25px;
 }
-
-.row {
-
+.left {
+  margin-left: 35px;
+  width: 18%;
 }
-
-.col-xs-2 {
-
+span{
+  line-height:50px;
 }
-
-.col-xs-3 {
-
+.width{
+  width: 50px !important;
 }
-
-.col-xs-5 {
-
+.product-name{
+  width: 70px;
 }
-
-.col-xs-4 {
-
+.btn-prices{
+  text-align: center;
 }
-
-.col-xs-7 {
-
-}
-
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -65,13 +51,20 @@ input {
     background-color: #5cb85c;
     border-color: #4cae4c;
 }
+.createProduct{
+  text-align: center;
+}
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
 }
-
+.btn-create {
+  color: #fff;
+  background-color: #0099ff;
+  border-color: #007acc;
+}
 .quantity {
   margin: 0 5px;
 }

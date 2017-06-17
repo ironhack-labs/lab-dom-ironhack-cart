@@ -10,5 +10,43 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+
+    <div class="wrapper" id="wrapper">
+        <h1>Ironhack Merchandising Shop</h1>
+        <div class="product" id="product1">
+            <span class="left product-name">Ironbubble</span>
+            <span class="uPrice left">25$</span>
+            <label class="left">QTY</label>
+            <input  class="units left"type="text" name="units">
+            <span class="total-price left">0.00 $</span>
+            <button type="button" class="btn btn-delete left" onClick="">Delete</button>
+        </div>
+        <div class="product" id="product2">
+          
+            <span class="left product-name">IronShirt</span>
+            <span class="uPrice left">15$</span>
+            <label class="left">QTY</label>
+            <input  class="units left"type="text" name="units">
+            <span class="total-price left">0.00 $</span>
+            <button type="button"class="btn btn-delete left">Delete</button>
+        </div>
+
+      </div>
+      <div class="btn-prices">
+      <button type="button" name="button" class="btn btn-success" onClick="getTotalPrice();">Calcular precios</button>
+      <h2 id="totalCarrito">
+
+      </h2>
+    </div>
+      <div class="createProduct">
+          <h3>Create a product</h3>
+          Name: <input type="text" id="item-name"name="" value="">
+          Price : <input type="number" min="0"name="item-price" id="item-price"value="">
+          <button type="button" class="btn btn-create" name="button" onClick="createNewItem()">Create</button>
+      </div>
+
+
+
+
 </body>
 </html>
