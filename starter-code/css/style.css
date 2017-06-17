@@ -80,29 +80,64 @@ input {
   margin: 0 auto;
 }
 
-.container > h1 {
+header > h1 {
   text-align: center;
   margin-bottom: 50px;
 }
 
-.product1, .product2 {
+/* Productos */
+.product1, .product2, .product3, .product4, .product5 {
   width: 100%;
   display: inline-block;
   margin-bottom: 20px;
 }
 
 .product1 > span {
-  margin-right: 8.7%;
+  margin-right: 8%;
 }
 
 .product2 > span {
-  margin-right: 8.7%;
+  margin-right: 8%;
+}
+
+.product3 > span {
+  margin-right: 8%;
+}
+
+.product4 > span {
+  margin-right: 8%;
+}
+
+.product5 > span {
+  margin-right: 8%;
 }
 
 .product2 > span:first-child {
-  margin-right: 16%;
+  margin-right: 15%;
 }
 
-.precio-Total-mostrar {
+.product3 > span:first-child {
+  margin-right: 16.3%;
+}
+
+.product4 > span:first-child {
+  margin-right: 13%;
+}
+
+.product5 > span:first-child {
+  margin-right: 15%;
+}
+
+.precio-total-mostrar {
   text-align: center;
+}
+
+/* Crear */
+.btn-create{
+  border: 1px solid #000;
+  float: right;
+}
+
+body > span:nth-child(3) {
+  margin-right: 20%;
 }
