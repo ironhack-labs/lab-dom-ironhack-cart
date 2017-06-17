@@ -1,15 +1,11 @@
-input {
-  border: solid 1px black;
-}
-
 .container {
-  margin: 18%;
+  margin: 15% 18%;
   font-family: Helvetica;
   font-size: 16px;
 }
 
 h1 {
-  padding-left: 49%;
+  padding-left: 45%;
   margin-bottom: 50px;
 }
 
@@ -19,31 +15,18 @@ h1 {
   margin-top: 25px;
 }
 
-.product-name {
+.product-name, .product-cost, .quantity, .price {
   display: inline-block;
-  white-space: nowrap;
   padding: 10px 20px;
-  width: 220px;
+  width: 18%;
 }
 
-.product-cost {
+.costs {
   display: inline-block;
-  padding: 10px 20px;
-  width: 220px;
 }
 
-.quantity {
-  display: inline-block;
-  padding: 10px 20px;
-  width: 220px;
-  text-align: center;
-}
-
-.price {
-  display: inline-block;
-  padding: 10px 20px;
-  width: 220px;
-  text-align: center;
+input {
+  border: solid 1px black;
 }
 
 .btn {
@@ -68,7 +51,7 @@ h1 {
   border-radius: 4px;
 }
 
-.btn-success {
+#btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
@@ -76,7 +59,7 @@ h1 {
     padding: 8px 25px;
     text-align: center;
     border-radius: 5px;
-    width: 12%;
+    width: 200px;
 }
 
 .btn-delete {
@@ -88,4 +71,12 @@ h1 {
     text-align: center;
     border-radius: 5px;
     margin: 0px 20px;
+}
+
+#total {
+  margin-top: 50px;
+}
+
+#showTotal {
+  display: inline-block;
 }

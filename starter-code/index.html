@@ -13,28 +13,31 @@
   <div class="container">
     <h1> Ironhack <br> Merchandising Shop </h1>
     <div class="item">
-      <div class="product-name"> <span> IronBubble-head </span></div>
-      <div class="product-cost"> <span> $25.00 </span> </div>
+      <div class="product-name"> IronBubble-head </div>
+      <div class="product-cost"> $ <div class="costs">25.00 </div> </div>
       <div class="quantity">
         <label> QTY </label>
-        <input type="number" placeholder="0"></input>
+        <input class="quantities" type="number" placeholder="0"></input>
       </div>
       <div class="price"> 0 </div>
       <div class="btn-delete"> Delete </div>
     </div>
     <div class="item">
-      <div class="product-name"> <span> IronShirt </span></div>
-      <div class="product-cost"> <span> $15.00 </span> </div>
+      <div class="product-name"> IronShirt </div>
+      <div class="product-cost"> $ <div class="costs"> 15.00 </div> </div>
       <div class="quantity">
         <label> QTY </label>
-        <input type="number" placeholder="0"></input>
+        <input class="quantities" type="number" placeholder="0"></input>
       </div>
       <div class="price"> 0 </div>
-      <div class="btn-delete"> Delete </div>
+      <button class="btn-delete"> Delete </button>
     </div>
-    <div class="btn-success">
+    <button id="btn-success">
       Calculate Prices
-    </div>
+    </button>
+    <div id="total"> </div>
+      <h1>Total Price: $<div id="showTotal">0</div></h1>
+
   </div>
 </body>
 </html>
