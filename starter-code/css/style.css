@@ -9,7 +9,7 @@ margin-right: 100px;
 margin: auto;
 padding-top: 200px;
 }
-#carro > div{
+.product > div{
   display: inline-block;
   margin-right: 60px;
   margin-left: 60px;
