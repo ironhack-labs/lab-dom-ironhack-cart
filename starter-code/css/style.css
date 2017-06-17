@@ -7,15 +7,21 @@ margin-right: 100px;
 }
 #carro{
 margin: auto;
-padding-top: 200px;
+padding-top: 300px;
 }
 .product > div{
-  display: inline-block;
+  display:inline-block;
   margin-right: 60px;
   margin-left: 60px;
+  padding: 5px;
 }
 .product-name2{
-  margin-right: 63px;
+  margin-right: 60px;
+}
+.newProduct{
+  display:inline-block;
+  margin-right: 10px;
+  margin-left: 60px;
 }
 .btn-delete{
   display: inline-block;
@@ -64,7 +70,6 @@ padding-top: 200px;
 h2{
   float: right;
   margin: 100px 600px 200px 230px;
-  bottom: 200px;
 }
 
 .quantity {

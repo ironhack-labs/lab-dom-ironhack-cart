@@ -46,20 +46,19 @@ document.getElementById("totalPriceGlobal").innerHTML= totalPrice;
 //function createNewItemRow(itemName, itemUnitPrice){
 
 //}
+function createNewItem(){
 
-//function createNewItem(){
+}
 
-//}
-
-//window.onload = function(){
-  //var calculatePriceButton = document.getElementById('calc-prices-button');
-  //var createItemButton = document.getElementById('new-item-create');
+window.onload = function(){
+  var calculatePriceButton = document.getElementById('calc-prices-button');
+  var createItemButton = document.getElementById('new-item-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
-//  calculatePriceButton.onclick = calculatePrice;
-  // createItemButton.onclick = createNewItem;
+  calculatePriceButton.onclick = calculatePrice;
+  createItemButton.onclick = createNewItem;
 
-//  for(var i = 0; i<deleteButtons.length ; i++){
-  //  deleteButtons[i].onclick = deleteItem;
-//  }
-//};
+  for(var i = 0; i<deleteButtons.length ; i++){
+    deleteButtons[i].onclick = deleteItem;
+  }
+};
