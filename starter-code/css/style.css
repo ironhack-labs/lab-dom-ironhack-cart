@@ -3,46 +3,27 @@ input {
 }
 .wrapper{
   text-align: center;
+
 }
 .product {
   margin-top: 25px;
 }
-.container {
-
+.left {
+  margin-left: 35px;
+  width: 18%;
 }
-
-.info-container {
-
+span{
+  line-height:50px;
 }
-
-.item {
-
+.width{
+  width: 50px !important;
 }
-
-.row {
-
+.product-name{
+  width: 70px;
 }
-
-.col-xs-2 {
-
+.btn-prices{
+  text-align: center;
 }
-
-.col-xs-3 {
-
-}
-
-.col-xs-5 {
-
-}
-
-.col-xs-4 {
-
-}
-
-.col-xs-7 {
-
-}
-
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -70,13 +51,20 @@ input {
     background-color: #5cb85c;
     border-color: #4cae4c;
 }
+.createProduct{
+  text-align: center;
+}
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
 }
-
+.btn-create {
+  color: #fff;
+  background-color: #0099ff;
+  border-color: #007acc;
+}
 .quantity {
   margin: 0 5px;
 }
