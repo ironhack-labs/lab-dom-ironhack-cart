@@ -2,8 +2,14 @@ input {
   border: solid 1px black;
 }
 
-.container {
+.head{
+  width: 100%;
+  text-align: center;
+}
 
+.container {
+  width: 100%;
+  height: 20px;
 }
 
 .info-container {
@@ -18,24 +24,29 @@ input {
 
 }
 
-.col-xs-2 {
+.col-xs-1 {
+  width: 24%;
+  display: inline-block;
+}
 
+.col-xs-2 {
+  width: 16%;
+  display: inline-block;
 }
 
 .col-xs-3 {
-
-}
-
-.col-xs-5 {
-
+  width: 24%;
+  display: inline-block;
 }
 
 .col-xs-4 {
-
+  width: 16%;
+  display: inline-block;
 }
 
-.col-xs-7 {
-
+.col-xs-5 {
+  width: 16%;
+  display: inline-block;
 }
 
 .btn {

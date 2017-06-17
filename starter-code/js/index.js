@@ -3,7 +3,8 @@ function deleteItem(e){
 }
 
 function getPriceByProduct(itemNode){
-
+  var unitPrices = document.getElementsByClassName("unit-price");
+  var quantity = documento.getElementsByClassName("quan");
 }
 
 function updatePriceByProduct(productPrice, index){
