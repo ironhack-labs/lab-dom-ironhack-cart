@@ -11,16 +11,24 @@ function calculatePrice() {
   document.getElementById('totalPriceGlobal').innerHTML = totalPrice;
 }
 
-function deleteItem() {
+function deleteItem(e){
   var parent = document.getElementById('container');
   var item = document.getElementsByClassName("item");
-  var deleteButtons = document.getElementsByClassName('btn-delete');
-  for (var i = 0; i < deleteButtons.length; i++) {
-    console.log(i);
-    deleteButtons[i].onclick = parent.removeChild(item[i]);
-    console.log(deleteButtons);
-  }
+  parent.removeChild(item[e]);
 }
+
+// Función DELETE! Funciona, pero elimina el primer ITEM y nunca sobre el que pulso
+
+// function deleteItem() {
+//   var parent = document.getElementById('container');
+//   var item = document.getElementsByClassName("item");
+//   var deleteButtons = document.getElementsByClassName('btn-delete');
+//   for (var i = 0; i < deleteButtons.length; i++) {
+//     console.log(i);
+//     deleteButtons[i].onclick = parent.removeChild(item[i]);
+//     console.log(deleteButtons);
+//   }
+// }
 window.onload = function() {
   // var calculatePriceButton = document.getElementById('calc-prices-button');
   // var createItemButton = document.getElementById('new-item-create');
