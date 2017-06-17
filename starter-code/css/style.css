@@ -2,10 +2,6 @@ input {
   border: solid 1px black;
 }
 
-.container {
-
-}
-
 .info-container {
 
 }
@@ -64,14 +60,49 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin: 5% 45%;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    margin-left: 20px;
+    float: right;
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+.container{
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.container > h1 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.product1, .product2 {
+  width: 100%;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.product1 > span {
+  margin-right: 8.7%;
+}
+
+.product2 > span {
+  margin-right: 8.7%;
+}
+
+.product2 > span:first-child {
+  margin-right: 16%;
+}
+
+.precio-Total-mostrar {
+  text-align: center;
 }
