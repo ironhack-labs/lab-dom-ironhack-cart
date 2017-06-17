@@ -2,40 +2,21 @@ input {
   border: solid 1px black;
 }
 
-.container {
-
+body{
+  color: black;
 }
 
-.info-container {
-
+h1{
+  text-align: center;
 }
 
-.item {
-
+.product-name, .cost, .quantity, .total-price, .btn{
+  display: inline-block;
+  padding: 0px 120px;
 }
 
-.row {
-
-}
-
-.col-xs-2 {
-
-}
-
-.col-xs-3 {
-
-}
-
-.col-xs-5 {
-
-}
-
-.col-xs-4 {
-
-}
-
-.col-xs-7 {
-
+.product-name{
+  padding-left: 80px;
 }
 
 .btn {
@@ -56,8 +37,12 @@ input {
   -ms-user-select: none;
   user-select: none;
   background-image: none;
-  border: 1px solid transparent;
+  border: 2px solid white;
   border-radius: 4px;
+  margin-left: 100px;
+  background-color: red;
+  color: white;
+  border-radius: 10px;
 }
 
 .btn-success {
@@ -72,6 +57,19 @@ input {
     border-color: #CF000F;
 }
 
-.quantity {
-  margin: 0 5px;
+.calculate-prices{
+  color: white;
+  border: 2px solid white;
+  border-radius: 10px;
+  background-color: lightgreen;
+  padding: 6px 12px;
+  text-align: center;
+  margin-top: 20px;
+  margin-left: 46%;
+  width: 120px;
+}
+
+.hola{
+  font-size: 50px;
+  color: black;
 }
