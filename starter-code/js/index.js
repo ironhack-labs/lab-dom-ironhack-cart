@@ -1,7 +1,7 @@
 function deleteItem(e){
 
   var child = e.target.parentElement.parentElement;
-  // var parent = document.getElementsByClassName("container");
+  // var parent = document.getElementsByClagssName("container");
   // var child = document.getElementsByClassName("row")[e];
   child.parentNode.removeChild(child);
 }
