@@ -10,34 +10,36 @@
   <title>Ironhack cart</title>
 </head>
 <body>
-  <div class="container">
+  <div id="container">
     <h1> Ironhack <br> Merchandising Shop </h1>
-    <div class="item">
-      <div class="product-name"> IronBubble-head </div>
-      <div class="product-cost"> $ <div class="costs">25.00 </div> </div>
-      <div class="quantity">
-        <label> QTY </label>
-        <input class="quantities" type="number" placeholder="0"></input>
+    <div id="all-items">
+      <div class="item">
+        <div class="product-name"> IronBubble-head </div>
+        <div class="product-cost"> $ <div class="costs">25.00 </div> </div>
+        <div class="quantity">
+          <label> QTY </label>
+          <input class="quantities" type="number" placeholder="0"></input>
+        </div>
+        <div class="price"> 0 </div>
+        <button class="btn-delete" onclick="deleteItem(0)"> Delete </button>
       </div>
-      <div class="price"> 0 </div>
-      <div class="btn-delete"> Delete </div>
-    </div>
-    <div class="item">
-      <div class="product-name"> IronShirt </div>
-      <div class="product-cost"> $ <div class="costs"> 15.00 </div> </div>
-      <div class="quantity">
-        <label> QTY </label>
-        <input class="quantities" type="number" placeholder="0"></input>
+      <div class="item">
+        <div class="product-name"> IronShirt </div>
+        <div class="product-cost"> $ <div class="costs"> 15.00 </div> </div>
+        <div class="quantity">
+          <label> QTY </label>
+          <input class="quantities" type="number" placeholder="0"></input>
+        </div>
+        <div class="price"> 0 </div>
+        <button class="btn-delete" onclick="deleteItem(1)"> Delete </button>
       </div>
-      <div class="price"> 0 </div>
-      <button class="btn-delete"> Delete </button>
+      <button id="btn-success">
+        Calculate Prices
+      </button>
+      <div id="total">
+        <h1>Total Price: $<div id="showTotal">0</div></h1>
+      </div>
     </div>
-    <button id="btn-success">
-      Calculate Prices
-    </button>
-    <div id="total"> </div>
-      <h1>Total Price: $<div id="showTotal">0</div></h1>
-
   </div>
 </body>
 </html>
