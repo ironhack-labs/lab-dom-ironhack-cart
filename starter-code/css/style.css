@@ -1,5 +1,43 @@
 input {
   border: solid 1px black;
+  margin-right: 100px;
+
+}
+
+.form-inline {
+  padding-bottom: 10px;
+}
+
+.label-productname {
+    width: 20%;
+    display: inline-block;
+}
+
+.label-price {
+    width: 16%;
+    display: inline-block;
+}
+
+.label-total-price {
+    width: 18%;
+    display: inline-block;
+}
+
+.title {
+  text-align: center;
+  font-size: 20px;
+  padding-bottom: 50px;
+}
+
+.calculate-prices {
+  text-align: center;
+  padding-top: 50px;
+}
+
+.grand-total {
+   text-align: center;
+   padding-top: 10px;
+   font-size: 28px;
 }
 
 .container {
@@ -38,6 +76,10 @@ input {
 
 }
 
+.input-price {
+  display: inline;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -70,6 +112,10 @@ input {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+}
+
+.btn-create {
+  margin-left: 426px;
 }
 
 .quantity {
