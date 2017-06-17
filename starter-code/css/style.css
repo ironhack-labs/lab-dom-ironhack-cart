@@ -1,42 +1,72 @@
+body {
+  width: 1200px;
+  max-width: 90%;
+  margin: auto;
+}
+
 input {
   border: solid 1px black;
 }
 
-.container {
-
+.info-container>h1 {
+  padding-left: 10px;
 }
 
-.info-container {
-
+.totalPrice-container>h1 {
+  margin-left: 545px;
 }
 
-.item {
-
+#calc-prices-button {
+  margin-left: 555px;
 }
+
+.container {}
+
+.info-container>img {
+  display: inline-block;
+  height: 80px;
+  margin-left: 420px;
+  margin-top: 10px;
+}
+
+.info-container>span {
+  display: inline-block;
+}
+
+.secondContainer {}
+
+.empty {}
+
+.item {}
 
 .row {
-
+  width: 100%;
+  padding-bottom: 15px;
 }
 
-.col-xs-2 {
+.row>div {
+  display: inline-block;
+}
 
+.productName {}
+
+.productPrice {}
+
+.col-xs-2 {
+  height: 10px;
+  width: 16.66%;
 }
 
 .col-xs-3 {
-
+  height: 10px;
+  width: 24.2%;
 }
 
-.col-xs-5 {
+.col-xs-5 {}
 
-}
+.col-xs-4 {}
 
-.col-xs-4 {
-
-}
-
-.col-xs-7 {
-
-}
+.col-xs-7 {}
 
 .btn {
   display: inline-block;
@@ -61,15 +91,15 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #CF000F;
+  border-color: #CF000F;
 }
 
 .quantity {
