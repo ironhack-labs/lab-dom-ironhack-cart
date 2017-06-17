@@ -1,7 +1,6 @@
-function deleteItem(parentDiv, childDiv){
-    var child = document.getElementById(childDiv);
-    var parent = document.getElementById(parentDiv);
-    parent.removeChild(child);
+function deleteItem(){
+    var child = event.currentTarget.parentNode.parentNode;
+    child.parentNode.removeChild(child);
 }
 
 function getPriceByProduct(itemNode){
@@ -44,7 +43,14 @@ function createItemNode(dataType, itemData){
 }
 
 function createNewItemRow(itemName, itemUnitPrice){
-
+  var newId = document.getElementsByClassName("container").length;
+  var div = document.createElement("div");
+  node.setAttribute("class", "container");
+  node.setAttribute("id", String(newId));
+  var span = document.createElement("div");
+  var content = document.createTextNode(itemName);
+  node.appendChild(content);
+  document.getElementById("parent").appendChild(node);
 }
 
 function createNewItem(){

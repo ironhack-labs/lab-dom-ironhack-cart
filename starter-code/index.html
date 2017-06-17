@@ -17,7 +17,7 @@
   <section id="parent">
     <div class="container" id="0">
       <div class="item">
-        <span id="itemName">IronBubble-head</span>
+        <span id="">IronBubble-head</span>
       </div>
       <div>
         <h4>$<span class="unitPrice">25</span></h4>
@@ -30,12 +30,12 @@
         <h4>$<span class="totalPrice">0</span></h4>
       </div>
       <div class="deleteItem">
-        <button onclick="deleteItem('parent', 0)" type="button" class="btn btn-delete">delete</button>
+        <button onclick="deleteItem()" type="button" class="btn btn-delete">delete</button>
       </div>
     </div>
     <div class="container" id="1">
       <div class="item">
-        <span id="itemName2">IronShirt</span>
+        <span id="">IronShirt</span>
       </div>
       <div>
         <h4>$<span class="unitPrice">15</span></h4>
@@ -48,15 +48,20 @@
         <h4>$<span class="totalPrice">0</span></h4>
       </div>
       <div class="">
-        <button onclick="deleteItem('parent', 1)" type="button" class="btn btn-delete" id="0">delete</button>
+        <button onclick="deleteItem()" type="button" class="btn btn-delete" id="0">delete</button>
       </div>
     </div>
-    <div class="">
-      <button onclick="getTotalPrice()" type="button" name="totalPrice" class="btn btn-success">calculate prices</button>
-    </div>
-    <div class="totalPriceProducts">
-      <h2>Total Price: $<span id="totalPriceItems">0</span></h2>
-    </div>
   </section>
+  <div class="">
+    <button onclick="getTotalPrice()" type="button" name="totalPrice" class="btn btn-success">calculate prices</button>
+  </div>
+  <div class="">
+    <input type="text" name="itemName" value="">
+    <input type="number" name="itemUnitPrice" value="">
+    <button type="button" name="newItem" onclick="createNewItemRow()">create</button>
+  </div>
+  <div class="totalPriceProducts">
+    <h2>Total Price: $<span id="totalPriceItems">0</span></h2>
+  </div>
 </body>
 </html>
