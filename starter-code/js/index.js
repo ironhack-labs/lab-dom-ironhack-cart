@@ -1,5 +1,7 @@
-function deleteItem(e){
-
+function deleteItem(parentDiv, childDiv){
+    var child = document.getElementById(childDiv);
+    var parent = document.getElementById(parentDiv);
+    parent.removeChild(child);
 }
 
 function getPriceByProduct(itemNode){
@@ -48,6 +50,7 @@ function createNewItemRow(itemName, itemUnitPrice){
 function createNewItem(){
 
 }
+
 
 window.onload = function(){
   var calculatePriceButton = document.getElementById('calc-prices-button');
