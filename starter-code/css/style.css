@@ -2,40 +2,26 @@ input {
   border: solid 1px black;
 }
 
-.container {
-
+body {
+  margin: 40px;
+  text-align: right;
 }
 
-.info-container {
-
+.container, .button-calculate {
+  text-align: center;
 }
 
-.item {
-
+h1 {
+  margin-right: 200px;
 }
 
-.row {
-
+.button-calculate {
+  padding: 40px;
 }
 
-.col-xs-2 {
-
-}
-
-.col-xs-3 {
-
-}
-
-.col-xs-5 {
-
-}
-
-.col-xs-4 {
-
-}
-
-.col-xs-7 {
-
+.total-text, .div-total-price{
+  text-align: center;
+  font-size: 2em
 }
 
 .btn {
@@ -60,16 +46,34 @@ input {
   border-radius: 4px;
 }
 
+.item {
+  margin-right: 150px;
+  margin-top: 50px;
+}
+
+span {
+  margin: 40px;
+}
+.dollar {
+  margin: -35px;
+}
+
+.productName {
+    margin: 90px;
+}
+
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    border-radius: 8px;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    border-radius: 8px;
 }
 
 .quantity {
