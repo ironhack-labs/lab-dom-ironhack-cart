@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,23 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
   <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
+  <title>Ironhack cart </title>
 </head>
+
 <body>
+  <div>
+    <div class="ironmerchandasing"><span>Ironhack Merchandising Shop</span></div>
+    <div class="row">
+      <div class="info-container">
+        <div class="col-xs-1"><span>IronBubble</span></div>
+        <div class="col-xs-3"><span>20$</span></div>
+        <div class="col-xs-4"><label>QTY</label><input class="price-product" type="number" name="gender" id="pr" value=""></div>
+        <div class="col-xs-5"><span></span></div>
+        <div class="col-xs-7"><button onclick="deleteItem()" class="btn-delete" type="reset" value="Delete">Delete</button></div>
+        <div ><button onclick="getTotalPrice()" class="btn-success" type="reset" value="calculate">Calculate Price</button></div>
+      </div>
+    </div>
+  </div>
 </body>
+
 </html>

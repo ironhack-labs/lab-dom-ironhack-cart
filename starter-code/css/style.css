@@ -1,77 +1,100 @@
-input {
-  border: solid 1px black;
+  input {
+    border: solid 1px black;
+  }
+
+  .ironmerchandasing {
+    font-size: 50px;
+    font-weight: bold;
+    width: 600px;
+    margin-left: 500px;
+    margin-top: 200px;
+  }
+
+  .container {}
+
+  .info-container {
+    margin-left: 300px;
+  }
+
+  .info-container>div {
+    display: flex;
+    margin-left: 80px;
+    margin_right: 80px;
+    margin-top: 70px;
+    float: left;
+    justify-content: center;
+  }
+
+  .item {}
+
+  .row {
+    width: 2000px;
+    height: 200px;
+    justify-content: center;
+    display: run-in;
+  }
+  /*
+.col-xs-1 {
+  margin-right: 20px;
+  float: left;
 }
-
-.container {
-
-}
-
-.info-container {
-
-}
-
-.item {
-
-}
-
-.row {
-
-}
-
 .col-xs-2 {
-
+  margin-right: 20px;
+  float: left;
 }
+.col-xs-3 {}
 
-.col-xs-3 {
+.col-xs-4 {}
 
-}
+.col-xs-5 {}
 
-.col-xs-5 {
+  .col-xs-7 {
+    position: relative;
+    float: inheritd;
+  }*/
 
-}
+  .btn-success {
+    float: none;
+    position: relative;
+    top: 200px;
+    right: 450px;
+    ;
+  }
 
-.col-xs-4 {
+  .btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+  }
 
-}
-
-.col-xs-7 {
-
-}
-
-.btn {
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
-}
-
-.btn-success {
+  .btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
-}
+  }
 
-.btn-delete {
+  .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
-}
+  }
 
-.quantity {
-  margin: 0 5px;
-}
+  .quantity {
+    margin: 0 5px;
+  }
