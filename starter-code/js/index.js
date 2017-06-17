@@ -11,22 +11,21 @@ function calculatePrice() {
   document.getElementById('totalPriceGlobal').innerHTML = totalPrice;
 }
 
-function deleteItem(e) {
-  parent.removeChild(e);
+function deleteItem() {
+  var parent = document.getElementById('container');
+  var item = document.getElementsByClassName("item");
+  var deleteButtons = document.getElementsByClassName('btn-delete');
+  for (var i = 0; i < deleteButtons.length; i++) {
+    console.log(i);
+    deleteButtons[i].onclick = parent.removeChild(item[i]);
+    console.log(deleteButtons);
+  }
 }
-
 window.onload = function() {
   // var calculatePriceButton = document.getElementById('calc-prices-button');
   // var createItemButton = document.getElementById('new-item-create');
   // calculatePriceButton.onclick = getTotalPrice;
   // createItemButton.onclick = createNewItem;
-
-  var deleteButtons = document.getElementsByClassName('btn-delete');
-  var parent = document.getElementsByClassName('container');
-  var child = document.getElementsByClassName("item");
-  for (var i = 0; i < deleteButtons.length; i++) {
-    deleteButtons[i].onclick = deleteItem(itemNumber[i]);
-  }
 };
 //
 // function getPriceByProduct(itemNode){
