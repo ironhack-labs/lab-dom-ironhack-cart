@@ -1,4 +1,7 @@
 function deleteItem(e){
+  var parent= document.getElementById("carro");
+  var child= document.getElementsByClassName("product");
+  parent.removeChild(child[e]);
 
 }
 
@@ -10,30 +13,39 @@ function updatePriceByProduct(productPrice, index){
 
 }
 
-function getTotalPrice() {
-
+function calculatePrice() {
+var costUnit = document.getElementsByClassName("cost-unit");
+var quantity = document.getElementsByClassName("qt");
+var totalPrice = 0;
+for (var i = 0; i < quantity.length; i++){
+  console.log(i);
+  var eachItem = costUnit[i].innerHTML * quantity[i].value;
+  totalPrice += eachItem;
+  var valorProductoIndividual = document.getElementsByClassName("total-price");
+  valorProductoIndividual[i].innerHTML= eachItem;
+}
+document.getElementById("totalPriceGlobal").innerHTML= totalPrice;
 }
 
-function createQuantityInput(){
+//function createQuantityInput(){
 
-}
+//}
 
-function createDeleteButton(){
+//function createDeleteButton(){
 
-}
+//}
 
-function createQuantityNode(){
+//function createQuantityNode(){
 
-}
+//}
 
-function createItemNode(dataType, itemData){
+//function createItemNode(dataType, itemData){
 
-}
+//}
 
-function createNewItemRow(itemName, itemUnitPrice){
+//function createNewItemRow(itemName, itemUnitPrice){
 
-}
-
+//}
 function createNewItem(){
 
 }
@@ -43,7 +55,7 @@ window.onload = function(){
   var createItemButton = document.getElementById('new-item-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
-  calculatePriceButton.onclick = getTotalPrice;
+  calculatePriceButton.onclick = calculatePrice;
   createItemButton.onclick = createNewItem;
 
   for(var i = 0; i<deleteButtons.length ; i++){

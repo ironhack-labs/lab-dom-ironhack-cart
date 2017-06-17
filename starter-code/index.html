@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,59 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+  <nav>
+    <h1> Ironhack<br> Merchadising Shop </h1>
+  </nav>
+  <div id="carro">
+    <div class="product">
+      <div><span class="product-name"> Iron Bubble-head </span></div>
+      <div>$<span class="cost-unit">25.00</span></div>
+      <div> <span class="qty"><label>QTY</label><input class="qt" type="number" value="0"></span></div>
+      <div>$<span class="total-price">0.00</span></div>
+      <div><button class="btn-delete" onclick="deleteItem(0)">Delete</button></div>
+    </div>
+    <div class="product">
+      <div><span class="product-name2"> IronShirt </span></div>
+      <div>$<span class="cost-unit">15.00</span></div>
+      <div> <span class="qty"><label>QTY</label><input class="qt" type="number" value="0"></span></div>
+      <div>$<span class="total-price">0.00</span></div>
+      <div><button class="btn-delete" onclick="deleteItem(1)">Delete</button></div>
+    </div>
+    <div class="product">
+      <div><span class="product-name2"> IronCup </span></div>
+      <div>$<span class="cost-unit">10.00</span></div>
+      <div> <span class="qty"><label>QTY</label><input class="qt" type="number" value="0"></span></div>
+      <div>$<span class="total-price">0.00</span></div>
+      <div><button class="btn-delete" onclick="deleteItem(1)">Delete</button></div>
+    </div>
+    <div class="product">
+      <div><span class="product-name2"> IronSticker </span></div>
+      <div>$<span class="cost-unit">1.00</span></div>
+      <div> <span class="qty"><label>QTY</label><input class="qt" type="number" value="0"></span></div>
+      <div>$<span class="total-price">0.00</span></div>
+      <div><button class="btn-delete" onclick="deleteItem(1)">Delete</button></div>
+    </div>
+    <div class="product">
+      <div><span class="product-name2"> IronAxe </span></div>
+      <div>$<span class="cost-unit">100.00</span></div>
+      <div> <span class="qty"><label>QTY</label><input class="qt" type="number" value="0"></span></div>
+      <div>$<span class="total-price">0.00</span></div>
+      <div><button class="btn-delete" onclick="deleteItem(1)">Delete</button></div>
+      <input class="newProduct" type="text" value="Product Name">
+      <input class="newProduct" type="number" value="0">
+      <div><button class="btn" onclick="createNewItem()">Create</button></div>
+    </div>
+
+  </div>
+  <div><button class="calc-prices-button" onclick="calculatePrice()">Calculate Price</button></div>
+  <div><h2>Total Price: $ <span id="totalPriceGlobal">0</span> </h2></div>
+
+
+  </div>
+  </div>
+
 </body>
+
 </html>
