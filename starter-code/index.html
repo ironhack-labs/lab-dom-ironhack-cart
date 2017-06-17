@@ -5,10 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/style.css">
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+  <div class="container">
+      <div class="row">
+        <div class="col-sm-12 title">
+         Ironhack Merchandising Shop
+        </div>
+      </div>
+      <div class="row">
+        <div id="form" class="col-sm-12">
+          <div class="form-inline">
+            <span class="label-productname">ironBubble-head</span> 
+            <span id="spanPrice" class="label-price">$25.00</span> 
+            <div class="input-price">
+                <label for="qty">QTY</label>
+                <input id="inputQty" class="input" />
+            </div>
+            <span id="spanSubTotal" class="label-total-price">$0.00</span>
+            <input type="submit" value="Delete" class="btn btn-delete" />
+          </div>
+          <div class="form-inline">
+            <span class="label-productname">ironShirt</span> 
+            <span id="spanPrice" class="label-price">$15.00</span> 
+            <div class="input-price">
+                <label for="qty">QTY</label>
+                <input id="inputQty" class="input" />
+            </div>
+            <span id="spanSubTotal" class="label-total-price">$0.00</span>
+            <input type="submit" value="Delete" class="btn btn-delete" />
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="newForm" class="col-sm-12">
+          <input id="productName" class="input" />
+          <input id="inputPrice" class="input" />
+          <input type="submit" class="btn-create" id="new-item-create" value="create" />
+        </div>
+      </div>
+       <div class="row">
+        <div class="col-sm-12 calculate-prices">
+          <input type="submit" value="Calculate Prices" id="calc-prices-button" class="btn btn-success" />
+        </div>
+      </div>
+      <div class="row grand-total">
+        <label>Total Price:</label>
+        <span id="totalPrice"></span>
+      </div>
+  </div>
 </body>
 </html>
