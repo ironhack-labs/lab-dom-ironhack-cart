@@ -11,10 +11,9 @@ function calculatePrice() {
   document.getElementById('totalPriceGlobal').innerHTML = totalPrice;
 }
 
-function deleteItem(e){
-  var parent = document.getElementById('container');
-  var item = document.getElementsByClassName("item");
-  parent.removeChild(item[e]);
+function deleteItem(){
+  var item = event.currentTarget.parentNode;
+  item.parentNode.removeChild(item);
 }
 
 // Función DELETE! Funciona, pero elimina el primer ITEM y nunca sobre el que pulso
