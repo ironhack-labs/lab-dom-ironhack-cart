@@ -3,7 +3,7 @@ function deleteItem(e){
 }
 
 function getPriceByProduct(itemNode){
-
+jciicfyuipyiftui
 }
 
 function updatePriceByProduct(productPrice, index){
