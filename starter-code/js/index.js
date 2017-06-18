@@ -1,4 +1,10 @@
-function deleteItem(e){
+function deleteItem(){
+//necesito saber el node del padre de la row que quiero borrar,
+// para ello primero tengo que saber el nodo del padre del evento que se crea al pulsar el boton,
+//  y a su vez el padre de éste
+var parentRow = event.currentTarget.parentNode.parentNode;
+//a continuación indico que se borre todos los elementos que están dentro de este padre
+ parentRow.parentNode.removeChild(parentRow);
 
 
 }
@@ -25,8 +31,6 @@ function getTotalPrice() {
     totalCart += totalPrice;
     productTotalPrices[i].innerHTML = "$"+totalPrice;
   }
-  // document.getElementById("product-total-cart").innerHTML = "Total Price: $"+ totalCart;
-// var cart = document.getElementById("product-total-cart");
 var h2 = document.createElement("h2");
 h2.innerHTML = "Total Price: $"+ totalCart;
 document.getElementById("product-total-cart").appendChild(h2);
