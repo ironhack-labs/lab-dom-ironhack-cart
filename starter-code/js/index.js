@@ -47,12 +47,6 @@ function createItemNode(dataType, itemData){
 }
 
 function createNewItemRow(itemName, itemUnitPrice){
-  //var nuevoProducto = document.getElementById('nuevo-producto').value;
-  //console.log(itemName);
-  //return itemName;
-
-  //var nuevoPrecio = document.getElementById('nuevo-precio').value;
-  //console.log(nuevoPrecio);
   nuevoProducto = document.getElementById('nuevo-producto').value;
   var elementoSpan = document.createElement('span');
   var textSpan = document.createTextNode(nuevoProducto);
