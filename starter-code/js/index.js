@@ -1,6 +1,9 @@
-function deleteItem(e){
-
+function deleteItem(){
+    var child = event.currentTarget.parentNode.parentNode;
+    child.parentNode.removeChild(child);
 }
+
+//Funciona pero no se como. Estoy un poco agunstiado.
 
 function getPriceByProduct(itemNode){
 
