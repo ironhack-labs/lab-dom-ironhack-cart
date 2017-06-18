@@ -6,7 +6,7 @@ function getPriceByProduct(item) {
     document.getElementsByClassName('units')[item].value = 0;
     qty = 0;
   } else {
-    parseInt(document.getElementsByClassName('units')[item].value);
+    qty = parseInt(document.getElementsByClassName('units')[item].value);
   }
 
   var price = document.getElementsByClassName('price')[item].innerHTML;
