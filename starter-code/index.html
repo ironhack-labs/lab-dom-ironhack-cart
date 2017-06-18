@@ -6,9 +6,63 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+
+
+
+
+<div class="thewhole">
+  <div class="title">
+    <h1>MERCH.INC</h1>
+  </div>
+
+  <div class="content">
+
+    <div class="line" id="line1">
+      <div class="twenty"><span>The thing</span></div>
+      <div class="twenty"><span id="price1">20</span></div>
+      <div class="twenty">
+        <span class="quantity">QTY</span>
+        <input type="number" id="input1">
+      </div>
+      <div class="twenty"><span>0.00€</span></div>
+      <div class="twenty">
+        <button class="btn btn-delete" onclick="deleteOtherItem(1)">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="line" id="line2">
+    <div class="twenty"><span>The other thing</span></div>
+    <div class="twenty"><span id="price2">24</span></div>
+    <div class="twenty">
+      <span class="quantity">QTY</span>
+      <input type="number" id="input2">
+    </div>
+    <div class="twenty"><span>0.00€</span></div>
+    <div class="twenty">
+      <button class="btn btn-delete" onclick="deleteOtherItem(2)"
+      >Delete</button>
+    </div>
+  </div>
+  <button class="btn btn-success" onclick="addLine()">Add Line</button>
+</div>
+
+  <div class="bottom">
+    <button class="btn btn-success" onclick="calcPrices()">Calculate</button>
+
+  </div>
+
+  <div class="bottom">
+    <h2>Total : <span id="total"></span>€</h2>
+  </div>
+
+</div>
+
+
 </body>
 </html>
