@@ -1,41 +1,37 @@
+#container {
+  font-family: Helvetica;
+  font-size: 16px;
+  width: 80%;
+  margin: auto;
+}
+
+h1 {
+  padding-left: 45%;
+  margin: 100px 0 50px 0;
+}
+
+.item, #create-item {
+  height: 50px;
+  margin: auto;
+  margin-top: 25px;
+}
+
+.product-name, .product-cost, .quantity, .price {
+  display: inline-block;
+  padding: 10px 10px;
+  width: 18%;
+}
+
+.price {
+  text-align: center;
+}
+
+.costs {
+  display: inline-block;
+}
+
 input {
   border: solid 1px black;
-}
-
-.container {
-
-}
-
-.info-container {
-
-}
-
-.item {
-
-}
-
-.row {
-
-}
-
-.col-xs-2 {
-
-}
-
-.col-xs-3 {
-
-}
-
-.col-xs-5 {
-
-}
-
-.col-xs-4 {
-
-}
-
-.col-xs-7 {
-
 }
 
 .btn {
@@ -60,18 +56,43 @@ input {
   border-radius: 4px;
 }
 
-.btn-success {
+#btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin: 70px 44% 0 44%;
+    padding: 8px 25px;
+    text-align: center;
+    border-radius: 5px;
+    width: 200px;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    display: inline-block;
+    padding: 8px 25px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0px 10px;
 }
 
-.quantity {
-  margin: 0 5px;
+#total {
+  margin-top: 50px;
+}
+
+#showTotal {
+  display: inline-block;
+}
+
+#btn-create {
+  display: inline-block;
+  margin-left: 40%;
+}
+
+#input-name, #input-price {
+  display: inline-block;
+  margin: 10px 10px;
+  width: 18%;
 }
