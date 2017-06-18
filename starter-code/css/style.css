@@ -1,3 +1,9 @@
+.title{
+  display: inline-block;
+  float: right;
+}
+
+
 input {
   border: solid 1px black;
 }
@@ -15,27 +21,19 @@ input {
 }
 
 .row {
-
+  margin: 20px 0px 20px 30px;
 }
 
 .col-xs-2 {
-
+width: 16.66%;
+display: inline-block;
+height: 10px;
 }
 
 .col-xs-3 {
-
-}
-
-.col-xs-5 {
-
-}
-
-.col-xs-4 {
-
-}
-
-.col-xs-7 {
-
+width: 24%;
+display: inline-block;
+height: 10px;
 }
 
 .btn {
