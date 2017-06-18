@@ -15,50 +15,50 @@
     <h1>Merchandising Shop</h1>
   </header>
   <section id="parent">
-    <div class="container" id="0">
+    <div class="container">
       <div class="item">
-        <span id="">IronBubble-head</span>
+        <span>IronBubble-head</span>
       </div>
-      <div>
+      <div class="price">
         <h4>$<span class="unitPrice">25</span></h4>
       </div>
-      <div class="">
+      <div class="qtyInput">
         <label for="qty">QTY</label>
         <input type="number" class="qty" value="0">
       </div>
-      <div>
+      <div class="total">
         <h4>$<span class="totalPrice">0</span></h4>
       </div>
-      <div class="deleteItem">
+      <div class="delete">
         <button onclick="deleteItem()" type="button" class="btn btn-delete">delete</button>
       </div>
     </div>
-    <div class="container" id="1">
+    <div class="container">
       <div class="item">
-        <span id="">IronShirt</span>
+        <span>IronShirt</span>
       </div>
-      <div>
+      <div class="price">
         <h4>$<span class="unitPrice">15</span></h4>
       </div>
-      <div class="">
+      <div class="qtyInput">
         <label for="qty">QTY</label>
         <input type="number" class="qty" value="0">
       </div>
-      <div>
+      <div class="total">
         <h4>$<span class="totalPrice">0</span></h4>
       </div>
-      <div class="">
+      <div class="delete">
         <button onclick="deleteItem()" type="button" class="btn btn-delete" id="0">delete</button>
       </div>
     </div>
   </section>
-  <div class="">
-    <button onclick="getTotalPrice()" type="button" name="totalPrice" class="btn btn-success">calculate prices</button>
+  <div class="newInput">
+    <input type="text" id="itemName" value="">
+    <input type="number" id="itemUnitPrice" value="">
+    <button class="btn" type="button" name="newItem" onclick="createNewItem()">create</button>
   </div>
-  <div class="">
-    <input type="text" name="itemName" value="">
-    <input type="number" name="itemUnitPrice" value="">
-    <button type="button" name="newItem" onclick="createNewItemRow()">create</button>
+  <div>
+    <button onclick="getTotalPrice()" type="button" name="totalPrice" class="btn btn-success">calculate prices</button>
   </div>
   <div class="totalPriceProducts">
     <h2>Total Price: $<span id="totalPriceItems">0</span></h2>

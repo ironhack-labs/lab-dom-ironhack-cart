@@ -17,7 +17,7 @@ function getTotalPrice() {
   var qty = document.getElementsByClassName("qty");
   var totalPrice = document.getElementsByClassName("totalPrice");
   var totalPriceItems = 0;
-  for(var i=0; i < 2; i++) {
+  for(var i=0; i < unitPrice.length; i++) {
     var total = Number(unitPrice[i].innerHTML) * qty[i].value;
     totalPrice[i].innerHTML = total;
     totalPriceItems += total;
@@ -27,34 +27,34 @@ function getTotalPrice() {
 }
 
 function createQuantityInput(){
-
+  return '<input type="number" class="qty" value="0">';
 }
 
 function createDeleteButton(){
-
+  return '<div class="delete"><button onclick="deleteItem()" type="button" class="btn btn-delete" id="0">delete</button></div>';
 }
 
 function createQuantityNode(){
-
+  return '<div class="qtyInput"><label for="qty">QTY</label>'+ createQuantityInput() +'</div>';
 }
 
 function createItemNode(dataType, itemData){
 
 }
+function createTotalPriceItem () {
+  return '<div class="total"><h4>$<span class="totalPrice">0</span></h4></div>';
+}
 
 function createNewItemRow(itemName, itemUnitPrice){
-  var newId = document.getElementsByClassName("container").length;
-  var div = document.createElement("div");
-  node.setAttribute("class", "container");
-  node.setAttribute("id", String(newId));
-  var span = document.createElement("div");
-  var content = document.createTextNode(itemName);
-  node.appendChild(content);
-  document.getElementById("parent").appendChild(node);
+  var newItemRow = '<div class="container"><div class="item"><span>'+itemName+'</span></div><div class="price"><h4>$<span class="unitPrice">'+itemUnitPrice+'</span></h4></div>'+createQuantityNode()+createTotalPriceItem()+createDeleteButton()+'</div>';
+  var section = document.getElementById('parent');
+  section.innerHTML += newItemRow;
 }
 
 function createNewItem(){
-
+  var itemName = document.getElementById('itemName').value;
+  var itemUnitPrice = document.getElementById('itemUnitPrice').value;
+  createNewItemRow(itemName, itemUnitPrice);
 }
 
 

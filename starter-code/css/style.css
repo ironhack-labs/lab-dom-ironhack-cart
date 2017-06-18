@@ -18,11 +18,33 @@ header {
 .totalPriceProducts {
   margin-left: 42%;
 }
+.price {
+  width: 5%
+}
+.qtyInput {
+  width: 18%;
+}
+.total {
+  width: 5%;
+}
+.delete {
+
+}
 
 .item {
   width: 10%;
 }
-
+.newInput {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 10%;
+}
+.newInput > input {
+  margin-right: 2%;
+}
+.newInput > button {
+  margin-left: 40%;
+}
 .row {
 
 }
