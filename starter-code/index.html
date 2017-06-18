@@ -13,21 +13,35 @@
 
 <body>
   <div class="chart-title">Ironhack Merchandaising Shop</div>
-  <div id="item1" class="product-section">
-    <div><span class="product-name">IronBubble-head</span></div>
-    <div><span class="cost-unit">25.00</span></div>
-    <div><form>QTY:<input class="input" type="text" name="QTY"></form></div>
-    <div><span class="total-price">0.00</span></div>
-    <div id="btn-delete1"><button class="button button-delete" type="button" onclick="deleteItem()">Delete</button></div>
+  <div class="items-container">
+    <div id="item1" class="product-section">
+      <div><span class="product-name">IronBubble-head</span></div>
+      <div><span class="cost-unit">25.00</span></div>
+      <div>
+        <form class="input-form">QTY:<input class="input" type="text" name="QTY" value=0></form>
+      </div>
+      <div><span class="total-price">0.00</span></div>
+      <div id="btn-delete1"><button class="button button-delete" type="button" onclick="deleteItem(item1)">Delete</button></div>
+    </div>
+    <!-- <div id="item2" class="product-section">
+      <div><span class="product-name">Iron Shirt</span></div>
+      <div><span class="cost-unit">15.00</span></div>
+      <div>
+        <form class="input-form">QTY:<input class="input" type="text" name="QTY" value=0></form>
+      </div>
+      <div><span class="total-price">0.00</span></div>
+      <div><button class="button button-delete" type="button" onclick="deleteItem(item2)">Delete</button></div>
+    </div> -->
   </div>
-  <div id="item2" class="product-section">
-    <div><span class="product-name">Iron Shirt</span></div>
-    <div><span class="cost-unit">15.00</span></div>
-    <div><form>QTY:<input class="input" type="text" name="QTY"></form></div>
-    <div><span class="total-price">0.00</span></div>
-    <div><button class="button button-delete" type="button" onclick="deleteItem()">Delete</button></div>
+  <div class="product-section">
+    <form>Item Name:<input class="input-new-itemName" type="text" name="item-name" value=""></form>
+    <form>Item Price:<input class="input-new-itemPrice" type="text" name="item-price" value=""></form>
+    <button id="create-items-button" class="button" type="button" onclick="insertNewItem()">Create</button>
   </div>
-  <div class="container-calculatePrices"><button id="calc-prices-button" class="button button-success" type="button" onclick="calculatePrice()">Calculate Prices</button></div>
+  <div class="container-calculatePrices"><button id="calc-prices-button" class="button button-success" type="button" onclick="calculateAllPrices()">Calculate Prices</button></div>
+  <div class="total-purchase-price">
+    <span class="final-price-text">Total Price:</span><span class="final-price-calculation">0.00</span>
+  </div>
 </body>
 
 </html>

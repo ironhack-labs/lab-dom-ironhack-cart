@@ -7,22 +7,24 @@ input {
   text-align: center;
   font-size: 40px;
   padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 .product-section {
-  width: 800px;
+  width: 1000px;
   height: 70px;
   margin: auto;
-  padding-top: 100px;
 
 }
 
 .product-name {
   float: left;
+  width: 200px;
 }
 
 .cost-unit {
   float: left;
+  width: 100px;
   padding-left: 100px;
 }
 
@@ -78,4 +80,14 @@ form {
 
 .quantity {
   margin: 0 5px;
+}
+.total-purchase-price {
+  width: auto;
+  text-align: center;
+  font-size: 40px;
+  padding-top: 100px;
+}
+
+#create-items-button {
+  margin-left: 200px;
 }
