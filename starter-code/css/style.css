@@ -9,7 +9,7 @@ header {
 }
 .container > div {
   display: inline-block;
-  margin-right: 10%;
+  width: 18%;
   margin-bottom: 2%;
 }
 .info-container {
@@ -18,22 +18,8 @@ header {
 .totalPriceProducts {
   margin-left: 42%;
 }
-.price {
-  width: 5%
-}
-.qtyInput {
-  width: 18%;
-}
-.total {
-  width: 5%;
-}
-.delete {
 
-}
 
-.item {
-  width: 10%;
-}
 .newInput {
   margin-top: 2%;
   margin-bottom: 2%;
@@ -43,7 +29,7 @@ header {
   margin-right: 2%;
 }
 .newInput > button {
-  margin-left: 40%;
+  margin-left: 42%;
 }
 .row {
 
