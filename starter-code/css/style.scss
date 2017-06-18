@@ -2,16 +2,17 @@ input {
   border: solid 1px black;
 }
 
-.container {}
-
-.info-container {}
-
 .item div {
   display: inline-block;
+  min-width: 115px;
 }
 
 .row {
   margin: 30px;
+}
+
+.inline {
+  display: inline-block;
 }
 
 .col-xs-2 {
@@ -27,7 +28,7 @@ input {
 }
 
 .col-xs-5 {
-  width: 25%;
+  width: 20%;
 }
 
 .col-xs-7 {
@@ -66,8 +67,20 @@ input {
   color: #fff;
   background-color: #CF000F;
   border-color: #CF000F;
+  float: right;
+}
+
+.delete {
+  vertical-align: middle;
 }
 
 .quantity {
   margin: 0 5px;
+  padding: 2px 5px;
+  width: 110px;
+}
+
+.center {
+  text-align: center;
+  margin: 20px 0;
 }
