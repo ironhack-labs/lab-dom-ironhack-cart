@@ -3,8 +3,7 @@ function deleteItem(e){
 }
 
 function getPriceByProduct(itemNode){
-  var unitPrices = document.getElementsByClassName("unit-price");
-  var quantity = documento.getElementsByClassName("quan");
+
 }
 
 function updatePriceByProduct(productPrice, index){
@@ -12,7 +11,20 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-
+  var unitPrices = document.getElementsByClassName("unit-price");
+  var quantities = document.getElementsByClassName("QTY");
+  var productTotalPrices = document.getElementsByClassName("product-total-price");
+  var totalCart = 0;
+  for(i=0;i<unitPrices.length;i++){
+    var totalPrice = 0;
+    unitPrice = unitPrices[i].innerHTML;
+    quantity= parseInt(quantities[i].value);
+    finalPrice = parseInt(unitPrice.substring(1,unitPrice.length));
+    totalPrice += quantity*finalPrice;
+    totalCart += totalPrice;
+    productTotalPrices[i].innerHTML = "$"+totalPrice;
+  }
+  document.getElementById("product-total-cart").innerHTML = totalCart;
 }
 
 function createQuantityInput(){
