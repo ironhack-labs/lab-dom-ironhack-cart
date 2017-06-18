@@ -16,13 +16,13 @@ function initializePage(){
   quantity.forEach(function(item){
     item.addEventListener('blur', getTotalPrice);
   });
-  
-};
 
+};
 
 function deleteItem(e){
   var item = e.currentTarget.parentNode.parentNode;
   e.currentTarget.parentNode.parentNode.parentNode.removeChild(item);
+  getTotalPrice();
 }
 
 function getTotalPrice() {
@@ -30,12 +30,17 @@ function getTotalPrice() {
   var unitPrices = document.getElementsByClassName('unit-price');
   var totalAll = 0;
 
+  if(unitPrices.length === 0) {
+    document.getElementById('total-all').innerHTML = 0;
+    return;
+  }
+
   for (i = 0; i <= unitPrices.length - 1; i += 1) {
     var unitprice = document.getElementById('unit-price' + i).innerHTML;
     var unitquantity = document.getElementById('unit-quantity' + i).value;
     var unitTotal = document.getElementById('total-price' + i).innerHTML;
 
-    if (unitprice === undefined || unitquantity === undefined || isNaN(unitprice) || isNaN(unitquantity)) {
+    if (isNaN(unitprice) || isNaN(unitquantity)) {
       continue;
     } else {
       unitTotal = (unitprice * unitquantity);
