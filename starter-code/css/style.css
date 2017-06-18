@@ -2,40 +2,35 @@ input {
   border: solid 1px black;
 }
 
-.container {
-
+h1 {
+  margin: 2% 0 5% 2%;
 }
 
-.info-container {
-
+.row-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 2% 2%;
 }
+
+.new-row-container {
+  display: flex;
+}
+
+.new-row-container > * {
+  margin: 1%;
+}
+
+.calculate-container,
+.total-all-container {
+  text-align: center;
+  margin-top: 5%;
+}
+
 
 .item {
-
-}
-
-.row {
-
-}
-
-.col-xs-2 {
-
-}
-
-.col-xs-3 {
-
-}
-
-.col-xs-5 {
-
-}
-
-.col-xs-4 {
-
-}
-
-.col-xs-7 {
-
+  display: inline-block;
+  width: 20%;
+  text-align: left;
 }
 
 .btn {
