@@ -1,15 +1,16 @@
 #container {
-  margin: 15% 18%;
   font-family: Helvetica;
   font-size: 16px;
+  width: 80%;
+  margin: auto;
 }
 
 h1 {
   padding-left: 45%;
-  margin-bottom: 50px;
+  margin: 100px 0 50px 0;
 }
 
-.item {
+.item, #create-item {
   height: 50px;
   margin: auto;
   margin-top: 25px;
@@ -17,8 +18,12 @@ h1 {
 
 .product-name, .product-cost, .quantity, .price {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 10px 10px;
   width: 18%;
+}
+
+.price {
+  text-align: center;
 }
 
 .costs {
@@ -70,7 +75,7 @@ input {
     padding: 8px 25px;
     text-align: center;
     border-radius: 5px;
-    margin: 0px 20px;
+    margin: 0px 10px;
 }
 
 #total {
@@ -79,4 +84,15 @@ input {
 
 #showTotal {
   display: inline-block;
+}
+
+#btn-create {
+  display: inline-block;
+  margin-left: 40%;
+}
+
+#input-name, #input-price {
+  display: inline-block;
+  margin: 10px 10px;
+  width: 18%;
 }

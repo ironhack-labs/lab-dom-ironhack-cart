@@ -21,7 +21,7 @@
           <input class="quantities" type="number" placeholder="0"></input>
         </div>
         <div class="price"> 0 </div>
-        <button class="btn-delete" onclick="deleteItem(0)"> Delete </button>
+        <button class="btn-delete"> Delete </button>
       </div>
       <div class="item">
         <div class="product-name"> IronShirt </div>
@@ -31,14 +31,19 @@
           <input class="quantities" type="number" placeholder="0"></input>
         </div>
         <div class="price"> 0 </div>
-        <button class="btn-delete" onclick="deleteItem(1)"> Delete </button>
+        <button class="btn-delete"> Delete </button>
       </div>
-      <button id="btn-success">
-        Calculate Prices
-      </button>
-      <div id="total">
-        <h1>Total Price: $<div id="showTotal">0</div></h1>
+      <div id ="create-item">
+        <input id="input-name" type="text" placeholder="Product Name"></input>
+        <input id="input-price" type="number" placeholder="Product Price"></input>
+        <button id="btn-create"> Create </button>
       </div>
+    </div>
+    <button id="btn-success">
+      Calculate Prices
+    </button>
+    <div id="total">
+      <h1>Total Price: $<div id="showTotal">0</div></h1>
     </div>
   </div>
 </body>
