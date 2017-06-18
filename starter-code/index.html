@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,52 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+  <img class="logo" src="./image/logo.png">
+  <h1>Ironhack Merchandising Shop</h1>
+<div id=parent class="border">
+  <div class="row">
+    <div class="product">Una cajita de Ibuprofeno
+    </div>
+    <div class="price">$<span class="unitPrice"> 8.00</span>
+    </div>
+    <div class="qtyInput">
+      <label for="qty">QTY</label>
+        <input type="number" class="qty" value="0">
+    </div>
+    <div class="total"> $<span class="priceTotal">0</span>
+    </div>
+    <div class="btn-delete"  onclick="deleteItem()">Borrar
+    </div>
+  </div>
+  <div class="row2">
+    <div class="product">24 latas de Coca-Cola
+    </div>
+    <div class="price">$<span class="unitPrice"> 20.00</span>
+    </div>
+    <div class="qtyInput">
+      <label for="qty">QTY</label>
+        <input type="number" class="qty" value="0">
+    </div>
+    <div class="total"> $<span class="priceTotal">0</span>
+    </div>
+    <div class="btn-delete"  onclick="deleteItem()">Borrar
+    </div>
+  </div>
+</div>
+<div class="newInput">
+ <input type="text" id="itemName" value="" placeholder="Escriba su producto">
+ <input type="number" id="itemUnitPrice" value="" placeholder="Añada un precio">
+ <span class="btn-success2" onclick="createNewItem()">Añadir
+ </span>
+</div>
+
+<footer class="totalPriceProducts">
+   <h3>Precio Total: $<span id="totalPriceItems">0</span></h3>
+   <div class="btn-success" onclick="getTotalPrice()" id="calc-prices-button">Calcular Precio
+   </div>
+</footer>
 </body>
+
 </html>
