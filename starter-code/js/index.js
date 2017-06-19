@@ -3,7 +3,7 @@ function deleteItem(){
     child.parentNode.removeChild(child);
 }
 
-//Funciona pero no se como. Estoy un poco agunstiado.
+//Funciona pero no se como. Estoy un poco angustiado.
 
 function getPriceByProduct(itemNode){
 
@@ -31,15 +31,15 @@ function getTotalPrice() {
 }
 
 function createQuantityInput(){
-
+   return '<input type="number" class="QTY" value="0">';
 }
 
 function createDeleteButton(){
-
+  return '<div class="col-xs-1"><button onclick="deleteItem()" type="button" class="btn btn-delete" id="0">delete</button></div>';
 }
 
 function createQuantityNode(){
-
+  return '<div class="qtyInput"><label for="qty">QTY</label>'+ createQuantityInput() +'</div>';
 }
 
 function createItemNode(dataType, itemData){
@@ -50,8 +50,20 @@ function createNewItemRow(itemName, itemUnitPrice){
 
 }
 
-function createNewItem(){
+function createTotalPriceItem () {
+  return '<div class="col-xs-1 product-total-price"</div>';
+}
 
+function createNewItemRow(itemName, itemUnitPrice){
+  var newItemRow = '<div class="Product"><div class="col-xs-2"><span>'+itemName+'</span></div> <div class="unitPrice"> <p>itemUnitPrice</p></div>'+createQuantityNode()+createTotalPriceItem()+createDeleteButton()+'</div>';
+  var section = document.getElementById('parent');
+  section.innerHTML += newItemRow;
+}
+
+function createNewItem(){
+  var itemName = document.getElementById('name').value;
+  var itemUnitPrice = document.getElementById('unitPrice').value;
+  createNewItemRow(itemName, itemUnitPrice);
 }
 
 window.onload = function(){
