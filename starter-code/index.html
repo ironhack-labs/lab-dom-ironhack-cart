@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,64 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+  <header>
+    <h1>Ironhack Mercandising Shop</h1>
+  </header>
+<section class="productos">
+<div class="container" id="container">
+<!--Primer Producto-->
+  <div class="product1">
+    <span>IronBubble-head</span>
+    <span>$<span type="number" class="precio" name="precio">25.00</span></span>
+    <span>QTY<input class="quantity" type="number"></span>
+    <span type="number"  class="precio-final">0.00</span>
+    <button class="btn btn-delete" onclick="deleteItem()">Delete</button>
+  </div>
+<!--Segundo Producto-->
+  <div class="product2">
+    <span>IronShirt</span>
+    <span>$<span type="number" class="precio" name="precio">15.00</span></span>
+    <span>QTY<input class="quantity" type="number"></span>
+    <span type="number"  class="precio-final">0.00</span>
+    <button class="btn btn-delete" onclick="deleteItem()">Delete</button>
+  </div>
+<!--Tercer Producto-->
+  <div class="product3">
+    <span>IronCup</span>
+    <span>$<span type="number" class="precio" name="precio">1.00</span></span>
+    <span>QTY<input class="quantity" type="number"></span>
+    <span type="number"  class="precio-final">0.00</span>
+    <button class="btn btn-delete" onclick="deleteItem()">Delete</button>
+  </div>
+<!--Cuarto Producto-->
+  <div class="product4">
+    <span>IronSticker</span>
+    <span>$<span type="number" class="precio" name="precio">10.00</span></span>
+    <span>QTY<input class="quantity" type="number"></span>
+    <span type="number"  class="precio-final">0.00</span>
+    <button class="btn btn-delete" onclick="deleteItem()">Delete</button>
+  </div>
+<!--Quinto Producto-->
+  <div class="product5" id="ultimo-producto">
+    <span>IronAxe</span>
+    <span>$<span type="number" class="precio" name="precio">100.00</span></span>
+    <span>QTY<input class="quantity" type="number"></span>
+    <span type="number"  class="precio-final">0.00</span>
+    <button class="btn btn-delete" onclick="deleteItem()">Delete</button>
+  </div>
+  <!--Crear producto-->
+  <div class="new-product">
+    <input id="nuevo-producto" type="text">
+    <input id="nuevo-precio" type="number">
+    <button class="btn btn-create" onclick="createNewItemRow()">Create</button>
+  </div>
+  <button class="btn btn-success" onclick="getTotalPrice()">Calculate prices</button>
+  <div class="precio-total-mostrar">
+    <h2>Total Price: <span id="precio-total">0</span></h2>
+  </div>
+</div>
+</section>
 </body>
 </html>
