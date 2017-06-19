@@ -16,8 +16,7 @@ function initializePage(){
   quantity.forEach(function(item){
     item.addEventListener('blur', getTotalPrice);
   });
-
-};
+}
 
 function deleteItem(e){
   var item = e.currentTarget.parentNode.parentNode;
@@ -55,6 +54,8 @@ function createNewItem(){
 
   var index = document.querySelectorAll('.row-container').length;
 
+  var row = document.getElementById('rows').lastChild;
+
   createNewRow();
   createNewProductName(index);
   createNewProductPrice(index);
@@ -67,6 +68,7 @@ function createNewItem(){
   initializePage();
 
 }
+
 
 function createNewRow() {
   var rows = document.getElementById('rows');
@@ -109,7 +111,7 @@ function createNewProductQuantity(index) {
 
   row.appendChild(rowDiv).setAttribute('id', 'productquantity' + index);
   document.getElementById('productquantity' + index).setAttribute('class', 'item product-quantity');
-  row.lastChild.appendChild(rowLabel).setAttribute('for', 'product-input');
+  row.lastChild.appendChild(rowLabel).setAttribute('for', 'unit-quantity' + index);
   row.lastChild.appendChild(rowLabel).innerHTML = 'QTY ';
   row.lastChild.appendChild(rowInput).setAttribute('id', 'unit-quantity' + index);
   document.getElementById('unit-quantity' + index).setAttribute('value', 0);
