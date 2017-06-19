@@ -1,42 +1,59 @@
 input {
   border: solid 1px black;
 }
+.position {
+  float:right;
+  padding-right: 9rem;
+}
+.title {
+  font-size:2rem;
+  font-weight: bold;
 
+}
 .container {
-
+  width:100%;
+}
+.container > div {
+  margin:2rem 2rem;
+  width:50%;
+  display: table;
 }
 
 .info-container {
 
 }
 
-.item {
+.span {
+  word-break: keep-all;
+
+}
+.row, .new-item {
+  display:table-row;
+}
+.row > div  {
+  display: table-cell;
+  padding-right: 8rem;
+
+
 
 }
 
-.row {
+.new-item > div  {
+  display: table-cell;
+  padding-right: 2rem;
+  width:10rem;
 
 }
 
-.col-xs-2 {
+.new {
+  float:left;
+}
+
+#new-item-create {
+  margin-left: 30.4rem;
 
 }
 
-.col-xs-3 {
-
-}
-
-.col-xs-5 {
-
-}
-
-.col-xs-4 {
-
-}
-
-.col-xs-7 {
-
-}
 
 .btn {
   display: inline-block;
@@ -66,12 +83,18 @@ input {
     border-color: #4cae4c;
 }
 
+.btn-new {
+    color: #fff;
+    background-color: #1E90FF;
+    border-color: #1E90FF;
+}
+
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
 }
 
-.quantity {
+.quantity, .new {
   margin: 0 5px;
 }
