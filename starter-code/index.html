@@ -10,5 +10,17 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <header>
+    <h3>Ironhack Merchandising Shop</h3>
+  </header>
+  <div class="info">
+    <span>IronBubblue-head</span>
+    <span id="productPrice">25</span>
+    <input id="quantity" type="number"  value="0"></label>
+    <span id="total"></span>
+    <button class="btn-delete" type="button" name="delete" onclick="deleteItem()">Delete</button>
+  </div>
+
+  <button class="btn-success" type="button" name="button" onclick="calculatePrice()">Calculate Prices</button>
 </body>
 </html>
