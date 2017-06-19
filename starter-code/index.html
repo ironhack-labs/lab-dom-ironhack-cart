@@ -1,14 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="text/javascript" src="./js/index.js"></script>
+    <title>Ironhack cart</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="checkout-table">
+        <div class="checkout-table-title">Ironhack Merchandising Shop</div>
+        <div class="checkout-table-content">
+          <div class="product-row">
+            <div class="product-name">Ironhack T-Shirt</div>
+            <div class="product-price">25</div>
+            <div class="product-qty">
+              <label for="qty">Qtty</label>
+              <input type="number" value="0" min="0">
+            </div>
+            <div class="product-newprice">$0</div>
+            <div class="product-delete">
+              <button class="btn btn-delete">Delete</button>
+            </div>
+          </div>
+          <div class="product-row">
+            <div class="product-name">Ironhack Backpack</div>
+            <div class="product-price">42.5</div>
+            <div class="product-qty">
+              <label for="qty">Qtty</label>
+              <input type="number" value="0" min="0">
+            </div>
+            <div class="product-newprice">$0</div>
+            <div class="product-delete">
+              <button class="btn btn-delete">Delete</button>
+            </div>
+          </div>
+          <div class="product-row">
+            <div class="product-name">Ironhack Water Bottle</div>
+            <div class="product-price">10.5</div>
+            <div class="product-qty">
+              <label for="qty">Qtty</label>
+              <input type="number" value="0" min="0">
+            </div>
+            <div class="product-newprice">$0</div>
+            <div class="product-delete">
+              <button class="btn btn-delete">Delete</button>
+            </div>
+          </div>
+        </div>
+        <div class="new-products-row">
+          <h4>Add new items here!</h4>
+          <input type="text" id="new-product-name">
+          <input type="number" id="new-product-price">
+          <button class="btn btn-success" id="new-item-create">Create item</button>
+        </div>
+        <div class="checkout-calculate">
+          <button class="btn btn-success" id="calc-prices-button">Calculate price</button>
+        </div>
+        <h2>Total Price: <span id="total-price">$0</span></h2>
+      </div>
+
+    </div>
+  </body>
 </html>
+
