@@ -1,9 +1,12 @@
-function deleteItem(e){
 
+
+function deleteItem(e){
+    
 }
 
 function getPriceByProduct(itemNode){
-
+    var unitPrice = querySelectorAll(".unit-price");
+    return(unitPrice);
 }
 
 function updatePriceByProduct(productPrice, index){

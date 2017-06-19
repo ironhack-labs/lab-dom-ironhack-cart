@@ -1,14 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
+    
+<!--METADATA-->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+<!--STYLESHEETS-->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
+
+<!--FONTS-->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    
+<!--PAGE TITLE-->
   <title>Ironhack cart</title>
+    
 </head>
+    
 <body>
+
+<!--PRODUCT ONE-->
+<div class="info-container">
+    
+    <div class="product-charact">
+        <span>"JS Fundamentals Book"</span>
+    </div>
+    
+    <div class="product-charact">
+        <span class="unit-price">$25.00</span>
+    </div>
+    
+    <div class="product-charact">
+        <label>Quantity: </label><input class="qty border-small" type="text" name="quantity" value="" placeholder="0">
+    </div>
+    
+    <div class="product-charact">
+        <label>Price: </label><span>$0.00</span>
+    </div>
+    
+    <div class="product-charact">
+        <button class="btn-delete border-small" type="button">delete</button>
+    </div>
+</div>
+    
+    <button class="btn-success border-small" type="button">Calculate Prices</button>
+
+    
+<!--BODY SCRIPTS-->
+    <script type="text/javascript" src="./js/index.js"></script>  
 </body>
+    
 </html>

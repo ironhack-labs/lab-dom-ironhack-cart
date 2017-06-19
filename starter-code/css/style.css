@@ -1,13 +1,26 @@
-input {
-  border: solid 1px black;
+body {
+ font-family: "Open Sans", sans-serif;
 }
 
-.container {
+input {
+  border: solid 1px #43A3E6;
+}
 
+.border-small{
+  border-radius: 3px;
 }
 
 .info-container {
-
+  width: 100%;
+  background-color: rgba(39,55,71,1);
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: white;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }
 
 .item {
@@ -56,20 +69,21 @@ input {
   -ms-user-select: none;
   user-select: none;
   background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
 }
 
 .btn-success {
+    display: block;
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin: 0 auto;
 }
 
 .btn-delete {
-    color: #fff;
+    color: rgba(255,80,80,1);
     background-color: #CF000F;
-    border-color: #CF000F;
+    border-color: rgba(255,80,80,0.7);
+    color: white;
 }
 
 .quantity {
