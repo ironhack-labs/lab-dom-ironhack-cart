@@ -3,8 +3,69 @@ input {
 }
 
 .container {
+ margin : 0px;
+ padding: 0px;
+ height: 100%;
+ width: 100%;
+}
+
+.header{
+ font-size: 2em;
+ font-weight: bold;
+ margin-left: 40%;
+ margin-top: 4%;
+ margin-bottom: 3%;
+}
+
+.divProduct{
+  height: 60px;
+  vertical-align: middle;
+}
+
+
+.divProductName, .divProductCost, .divProductQty, .divtotalPrice, .delButton{
+  width: 20%;
+  float: left;
+  text-align: center;
+  margin-top: 22px;
+}
+
+.delButton{
+  width: 8%;
+  float: right;
+  margin-right: 8%;
+  background-color: RGB(226,0,0);
+  color: white;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  height: 45px;
+  margin-top: 7px;
 
 }
+
+.calcPrices{
+  margin-left: 40%;
+  margin-top: 4%;
+}
+
+.calcButton{
+  width: 30%;
+  background-color: lightgreen;
+  color: white;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  height: 45px;
+  margin-top: 7px;
+}
+
+.totalPrice{
+  font-size: 2em;
+  font-weight: bold;
+  margin-left: 46%;
+  margin-top: 4%;
+  margin-bottom: 3%;
+}
+
 
 .info-container {
 
@@ -26,11 +87,11 @@ input {
 
 }
 
-.col-xs-5 {
+.col-xs-4 {
 
 }
 
-.col-xs-4 {
+.col-xs-5 {
 
 }
 
