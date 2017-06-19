@@ -1,4 +1,14 @@
-//var button = d
+
+  var calculatePriceButton = document.getElementById("calc-button");
+  //var createItemButton = document.getElementById('new-item-create');
+  //var deleteButtons = document.getElementsByClassName('btn-delete');
+
+  //calculatePriceButton.onclick = getTotalPrice;
+  //createItemButton.onclick = createNewItem;
+
+  //for(var i = 0; i<deleteButtons.length ; i++){
+    //deleteButtons[i].onclick = deleteItem;
+  //}
 
 function getUnitPrice(productPriceIndex){
     var unitPrice = document.querySelectorAll(".unit-price")[productPriceIndex].innerText;
@@ -17,14 +27,20 @@ function getUnitQuantity(productQuantityIndex){
 getUnitQuantity(0);
 
 
+var getTotalPrice = function getTotalPrice() {
+    var addToTotal = 0;
+        document.querySelectorAll(".total-unit-price").forEach(function(element){
+            addToTotal += parseInt(element.innerHTML);
+        })
+    document.getElementById("total-cart").innerHTML = addToTotal;
+};
 
-
-//NEED TO ACCOUNT FOR DECIMALS?
-document.getElementById("calc-button").onclick = function(){
+calculatePriceButton.onclick = function(){
         document.querySelectorAll(".total-unit-price").forEach(function(element, index){
             element.innerHTML = getUnitPrice(index) * getUnitQuantity(index);
         })
-}
+    getTotalPrice();
+};
 
 
 
@@ -41,9 +57,7 @@ function updatePriceByProduct(productPrice, index){
 
 }
 
-function getTotalPrice() {
 
-}
 
 function createQuantityInput(){
 
@@ -68,17 +82,5 @@ function createNewItemRow(itemName, itemUnitPrice){
 function createNewItem(){
 
 }
-
-window.onload = function(){
-  var calculatePriceButton = document.getElementById('calc-prices-button');
-  var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');
-
-  calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
-
-  for(var i = 0; i<deleteButtons.length ; i++){
-    deleteButtons[i].onclick = deleteItem;
-  }
-};
 */
+

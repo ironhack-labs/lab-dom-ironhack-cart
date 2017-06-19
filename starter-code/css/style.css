@@ -26,7 +26,23 @@ header{
     font-family: "Comfortaa", cursive;
     font-weight: 600;
     color: #2D4189;
+    font-size: 1.8rem;
+}
 
+.total-container{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-total{
+    font-family: "Comfortaa", cursive;
+    font-weight: 600;
+    color: #2D4189;
+    font-size: 1.7rem;
+    margin-top: 40px;
 }
 
 .logo{
@@ -53,62 +69,15 @@ header{
   padding-top: 20px;
   padding-bottom: 20px;
   color: white;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.item {
-
-}
-
-.row {
-
-}
-
-.col-xs-2 {
-
-}
-
-.col-xs-3 {
-
-}
-
-.col-xs-5 {
-
-}
-
-.col-xs-4 {
-
-}
-
-.col-xs-7 {
-
-}
-
-.btn {
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-image: none;
+  margin-top: 17px;
+  margin-bottom: 17px;
 }
 
 .btn-success {
     display: block;
-    color: #5a5a5a;
+    color: #4a4a4a;
     font-weight: bold;
+    font-family: "Comfortaa",cursive;
     padding: 9px;
     background-color: #39D36F;
     border-color: #39D36F;
@@ -121,6 +90,7 @@ header{
     color: #B8C5ED;
     background-color: #EA2362;
     border-color: #EA2362;
+    font-family: "Comfortaa",cursive;
     padding: 4px 6px;
     color: white;
     font-size: 0.9rem;
