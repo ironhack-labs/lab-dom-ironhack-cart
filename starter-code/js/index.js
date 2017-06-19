@@ -1,14 +1,36 @@
+function calculatePrice(){
+  var money = document.getElementById('productPrice').innerHTML;
+  var quantity = document.getElementById('quantity').value;
+  var resultado = money*quantity;
+  document.getElementById('total').innerHTML=resultado;
+}
+
+function deleteItem(){
+  var remove = document.getElementById('total');
+  total.removeAttribute('id')
+}
+
+/*
+function updatePriceByProduct(productPrice, index){
+  console.log(index * productPrice);
+  return  index * productPrice;
+}
+
+*/
+
+
+
+
+
+
+/*
 function deleteItem(e){
 
 }
-
 function getPriceByProduct(itemNode){
 
 }
 
-function updatePriceByProduct(productPrice, index){
-
-}
 
 function getTotalPrice() {
 
@@ -50,3 +72,4 @@ window.onload = function(){
     deleteButtons[i].onclick = deleteItem;
   }
 };
+*/

@@ -1,5 +1,23 @@
+body{
+  margin: 40px;
+  text-align: right;
+}
+h3{
+  margin-right: 200px;
+}
+
+.info{
+  margin-right: 150px;
+  margin-top: 50px;
+}
+
+span{
+  margin: 40px;
+}
+
 input {
   border: solid 1px black;
+  width: 150px;
 }
 
 .container {
@@ -64,12 +82,16 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    border-radius: 8px;
+    margin-right: 395px;
+    margin-top: 10px;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    border-radius: 8px;
 }
 
 .quantity {
