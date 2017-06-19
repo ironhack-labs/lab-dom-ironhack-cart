@@ -33,7 +33,21 @@ input {
   margin-top: 22px;
 }
 
+.new {
+  margin-top:3%;
+}
 
+.new input {
+  margin-right: 70px;
+}
+
+.new button {
+  margin-left: 50px;
+}
+
+.newitem {
+  text-align: right;
+}
 
 
 div {
@@ -79,7 +93,7 @@ div {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
-
+1
 }
 
 .quantity {
