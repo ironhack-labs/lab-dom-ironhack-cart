@@ -3,7 +3,7 @@ input {
 }
 
 .container {
-
+  box-sizing: border-box;
 }
 
 .info-container {
@@ -17,31 +17,27 @@ input {
 .row {
   padding: 0 5%;
   display: block;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.col-xs-2 {
-  padding: 0 5%;
+.col-xs-2,
+.col-xs-3,
+.col-xs-4,
+.col-xs-5,
+.col-xs-6 {
+  min-height: 1px;
+  box-sizing: border-box;
   float: left;
-  width; 20%;
-}
-
-.col-xs-3 {
   padding: 0 5%;
-  float: left;
-  width; 33%;
 }
 
-.col-xs-5 {
-
-}
-
-.col-xs-4 {
-
-}
-
-.col-xs-7 {
-
-}
+.col-xs-2 { width: 16.6%; }
+.col-xs-3 { width: 25%; }
+.col-xs-4 { width: 40%; }
+.col-xs-5 { }
+.col-xs-6 { width: 50%; }
+.col-xs-7 { }
 
 .btn {
   display: inline-block;
