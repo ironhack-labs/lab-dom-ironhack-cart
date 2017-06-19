@@ -1,41 +1,64 @@
+header {
+   width:50%;
+   margin: auto;
+   text-align: center;
+}
+
 input {
   border: solid 1px black;
 }
 
 .container {
-
+    margin-left:2%;
+    width:90%;
+    padding:0%;
 }
 
-.info-container {
-
-}
 
 .item {
+    width: 20%;
+}
 
+.totalprice {
+  width:2%;
 }
 
 .row {
-
+  width: 100%;
+  margin-top: 22px;
 }
 
-.col-xs-2 {
-
+.row2 {
+  width: 100%;
+  margin-top: 22px;
 }
 
-.col-xs-3 {
-
+.new {
+  margin-top:3%;
 }
 
-.col-xs-5 {
-
+.new input {
+  margin-right: 70px;
 }
 
-.col-xs-4 {
-
+.new button {
+  margin-left: 50px;
 }
 
-.col-xs-7 {
+.newitem {
+  text-align: right;
+}
 
+
+div {
+    display:inline-block;
+    text-align: center;
+    margin: 0% 3%;
+}
+
+.calcbutton {
+  text-align: center;
+  margin-top:20px;
 }
 
 .btn {
@@ -70,6 +93,7 @@ input {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+1
 }
 
 .quantity {
