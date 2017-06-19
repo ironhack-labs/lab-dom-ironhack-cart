@@ -1,13 +1,41 @@
+//var button = d
+
+function getUnitPrice(productPriceIndex){
+    var unitPrice = document.querySelectorAll(".unit-price")[productPriceIndex].innerText;
+      return parseInt(unitPrice)
+}
+
+getUnitPrice(0);
 
 
+function getUnitQuantity(productQuantityIndex){
+    var unitQuantity = document.querySelectorAll(".unit-quantity")[productQuantityIndex].value;
+        return parseInt(unitQuantity);      
+}
+
+
+getUnitQuantity(0);
+
+
+
+
+//NEED TO ACCOUNT FOR DECIMALS?
+document.getElementById("calc-button").onclick = function(){
+        document.querySelectorAll(".total-unit-price").forEach(function(element, index){
+            element.innerHTML = getUnitPrice(index) * getUnitQuantity(index);
+        })
+}
+
+
+
+
+
+    
+/*
 function deleteItem(e){
     
 }
 
-function getPriceByProduct(itemNode){
-    var unitPrice = querySelectorAll(".unit-price");
-    return(unitPrice);
-}
 
 function updatePriceByProduct(productPrice, index){
 
@@ -53,3 +81,4 @@ window.onload = function(){
     deleteButtons[i].onclick = deleteItem;
   }
 };
+*/

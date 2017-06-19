@@ -9,11 +9,12 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
 <!--STYLESHEETS-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">    
   <link rel="stylesheet" href="./css/style.css">
 
 <!--FONTS-->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
     
 <!--PAGE TITLE-->
   <title>Ironhack cart</title>
@@ -21,24 +22,59 @@
 </head>
     
 <body>
+    
+<!--HEADER-->
+<header>
+    <img src="assets/logo.png" class="logo" alt="ironhack logo">
+    <h1 class="title">bookshop</h1>
+</header>
 
-<!--PRODUCT ONE-->
-<div class="info-container">
     
-    <div class="product-charact">
-        <span>"JS Fundamentals Book"</span>
+<!--PRODUCT 1-->
+<div class="info-container border-small">
+    
+    <div class="unit-dot"> </div>
+    
+    <div>
+        <span class="unit-name">"Advanced Javascript v2"</span>
+    </div>
+    
+    <div>
+        <span>&#036</span><span class="unit-price">14.00</span>
+    </div>
+    
+    <div>
+        <label>Quantity: </label><input class="unit-quantity border-small" type="text" name="quantity" value="" placeholder="0">
+    </div>
+    
+    <div>
+        <label>Price: </label><span>&#036</span><span class="total-unit-price">0.00</span>
     </div>
     
     <div class="product-charact">
-        <span class="unit-price">$25.00</span>
+        <button class="btn-delete border-small" type="button">delete</button>
+    </div>
+</div>
+
+<!--PRODUCT 2-->
+<div class="info-container border-small">
+    
+    <div class="unit-dot"> </div>
+    
+    <div>
+        <span class="unit-name">"Advanced Javascript v3"</span>
     </div>
     
-    <div class="product-charact">
-        <label>Quantity: </label><input class="qty border-small" type="text" name="quantity" value="" placeholder="0">
+    <div>
+        <span>&#036</span><span class="unit-price">17.00</span>
     </div>
     
-    <div class="product-charact">
-        <label>Price: </label><span>$0.00</span>
+    <div>
+        <label>Quantity: </label><input class="unit-quantity border-small" type="text" name="quantity" value="" placeholder="0">
+    </div>
+    
+    <div>
+        <label>Price: </label><span>&#036</span><span class="total-unit-price">0.00</span>
     </div>
     
     <div class="product-charact">
@@ -46,7 +82,8 @@
     </div>
 </div>
     
-    <button class="btn-success border-small" type="button">Calculate Prices</button>
+<!--CALCULATE PRICES-->
+    <button class="btn-success border-small" type="button" id="calc-button">Calculate Prices</button>
 
     
 <!--BODY SCRIPTS-->

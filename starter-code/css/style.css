@@ -1,26 +1,60 @@
 body {
  font-family: "Open Sans", sans-serif;
+    margin-left: 2%;
+    margin-right: 2%;
 }
 
 input {
   border: solid 1px #43A3E6;
 }
 
-.border-small{
-  border-radius: 3px;
+#calc-button {
+    
 }
+
+header{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title{
+    margin-top: 0;
+    margin-bottom: 40px;
+    font-family: "Comfortaa", cursive;
+    font-weight: 600;
+    color: #2D4189;
+
+}
+
+.logo{
+    height: auto; 
+    width: auto; 
+    max-width: 200px; 
+    max-height: 200px;
+    padding-top: 40px;
+}
+    
+
+.border-small{
+  border-radius: 4px;
+}
+
 
 .info-container {
   width: 100%;
-  background-color: rgba(39,55,71,1);
+  background-color: #4666D7;
   display: inline-flex;
   flex-direction: row;
   justify-content: space-around;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
   color: white;
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .item {
@@ -73,19 +107,44 @@ input {
 
 .btn-success {
     display: block;
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
-    margin: 0 auto;
+    color: #5a5a5a;
+    font-weight: bold;
+    padding: 9px;
+    background-color: #39D36F;
+    border-color: #39D36F;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .btn-delete {
-    color: rgba(255,80,80,1);
-    background-color: #CF000F;
-    border-color: rgba(255,80,80,0.7);
+    color: #B8C5ED;
+    background-color: #EA2362;
+    border-color: #EA2362;
+    padding: 4px 6px;
     color: white;
+    font-size: 0.9rem;
 }
 
-.quantity {
-  margin: 0 5px;
+.unit-dot {
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    background-color: white;
+}
+
+.total-unit-price{
+    
+}
+
+.unit-price{
+    
+}
+
+.unit-name{
+    
+}
+
+.unit-quantity {
+    max-width: 40px;
 }
