@@ -3,7 +3,7 @@ input {
 }
 
 .container {
-
+  box-sizing: border-box;
 }
 
 .info-container {
@@ -11,32 +11,33 @@ input {
 }
 
 .item {
-
+  padding: 1%;
 }
 
 .row {
-
+  padding: 0 5%;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.col-xs-2 {
-
+.col-xs-2,
+.col-xs-3,
+.col-xs-4,
+.col-xs-5,
+.col-xs-6 {
+  min-height: 1px;
+  box-sizing: border-box;
+  float: left;
+  padding: 0 5%;
 }
 
-.col-xs-3 {
-
-}
-
-.col-xs-5 {
-
-}
-
-.col-xs-4 {
-
-}
-
-.col-xs-7 {
-
-}
+.col-xs-2 { width: 16.6%; }
+.col-xs-3 { width: 25%; }
+.col-xs-4 { width: 40%; }
+.col-xs-5 { }
+.col-xs-6 { width: 50%; }
+.col-xs-7 { }
 
 .btn {
   display: inline-block;
@@ -58,6 +59,7 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+
 }
 
 .btn-success {
@@ -74,4 +76,8 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.text-align {
+  text-align: center;
 }
