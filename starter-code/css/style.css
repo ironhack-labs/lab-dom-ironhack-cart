@@ -1,43 +1,42 @@
-input {
-  border: solid 1px black;
-}
+html { font-size: 16px; }
 
 .container {
-
+  margin: 0 auto;
+  text-align: center;
 }
 
-.info-container {
-
+/* PRODUCT LIST */
+.productList {
+  margin: 2rem 0; 
+  width: 100%;
 }
 
-.item {
 
+/* PRODUCT */
+.product { width: 100%; }
+.product__name,
+.product__unit-price,
+.product__qty,
+.product__price,
+.product__delete {
+  display: inline-block;
+  margin: 1rem 0;
+  text-align: left;
+  width: 12rem;
 }
 
-.row {
+/* Name */
+.product__name { width: 12rem; }
 
-}
+/* Unit price */
+.product__unit-price {}
 
-.col-xs-2 {
+/* Quantity */
+fieldset { border: none; }
+input { border: solid 1px black; }
+.product__qty { margin: 0 5px; }
 
-}
-
-.col-xs-3 {
-
-}
-
-.col-xs-5 {
-
-}
-
-.col-xs-4 {
-
-}
-
-.col-xs-7 {
-
-}
-
+/* BUTTONS */
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -72,6 +71,11 @@ input {
     border-color: #CF000F;
 }
 
-.quantity {
-  margin: 0 5px;
+/* PRODUCT CREATOR */
+.product-creator-countainer {
+  display: inline-block;
+  margin-bottom: 2rem;
 }
+
+/* TOTAL PRICE */
+h2 { margin: 2rem 0; }
