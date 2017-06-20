@@ -1,77 +1,120 @@
+body {
+ font-family: "Open Sans", sans-serif;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
 input {
-  border: solid 1px black;
+  border: solid 1px #43A3E6;
 }
 
-.container {
-
+#calc-button {
+    
 }
 
-.info-container {
-
+header{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.item {
-
+.title{
+    margin-top: 0;
+    margin-bottom: 40px;
+    font-family: "Comfortaa", cursive;
+    font-weight: 600;
+    color: #2D4189;
+    font-size: 1.8rem;
 }
 
-.row {
-
+.total-container{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
-.col-xs-2 {
-
+.cart-total{
+    font-family: "Comfortaa", cursive;
+    font-weight: 600;
+    color: #2D4189;
+    font-size: 1.7rem;
+    margin-top: 40px;
 }
 
-.col-xs-3 {
-
+.logo{
+    height: auto; 
+    width: auto; 
+    max-width: 200px; 
+    max-height: 200px;
+    padding-top: 40px;
 }
+    
 
-.col-xs-5 {
-
-}
-
-.col-xs-4 {
-
-}
-
-.col-xs-7 {
-
-}
-
-.btn {
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
+.border-small{
   border-radius: 4px;
 }
 
+
+.info-container {
+  width: 100%;
+  background-color: #4666D7;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: white;
+  margin-top: 17px;
+  margin-bottom: 17px;
+}
+
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+    display: block;
+    color: #4a4a4a;
+    font-weight: bold;
+    font-family: "Comfortaa",cursive;
+    padding: 9px;
+    background-color: #39D36F;
+    border-color: #39D36F;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+    color: #B8C5ED;
+    background-color: #EA2362;
+    border-color: #EA2362;
+    font-family: "Comfortaa",cursive;
+    padding: 4px 6px;
+    color: white;
+    font-size: 0.9rem;
 }
 
-.quantity {
-  margin: 0 5px;
+.unit-dot {
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    background-color: white;
+}
+
+.total-unit-price{
+    
+}
+
+.unit-price{
+    
+}
+
+.unit-name{
+    
+}
+
+.unit-quantity {
+    max-width: 40px;
 }

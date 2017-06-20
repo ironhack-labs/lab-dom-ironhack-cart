@@ -1,14 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
+    
+<!--METADATA-->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    
+<!--STYLESHEETS-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"> 
+  <link rel="stylesheet" href="css/">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
+
+<!--FONTS-->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    
+<!--PAGE TITLE-->
   <title>Ironhack cart</title>
+    
 </head>
+    
 <body>
+    
+<!--HEADER-->
+<header>
+    <img src="assets/logo.png" class="logo" alt="ironhack logo">
+    <h1 class="title">bookshop</h1>
+</header>
+
+<!--PRODUCT LIST-->    
+<section class="product-list" id="main-product-list">
+    
+<!--PRODUCT 1-->
+    <div class="info-container border-small">
+
+        <div class="unit-dot"> </div>
+
+        <div>
+            <span class="unit-name">"Advanced Javascript v2"</span>
+        </div>
+
+        <div>
+            <span>&#036</span><span class="unit-price">14.00</span>
+        </div>
+
+        <div>
+            <label>Quantity: </label><input class="unit-quantity border-small" type="text" name="quantity" value="" placeholder="0">
+        </div>
+
+        <div>
+            <label>Price: </label><span>&#036</span><span class="total-unit-price">0.00</span>
+        </div>
+
+        <div class="product-charact">
+            <button class="btn-delete border-small" type="button">delete</button>
+        </div>
+    </div>
+
+
+    <!--PRODUCT 2-->
+    <div class="info-container border-small">
+
+        <div class="unit-dot"> </div>
+
+        <div>
+            <span class="unit-name">"Advanced Javascript v3"</span>
+        </div>
+
+        <div>
+            <span>&#036</span><span class="unit-price">17.00</span>
+        </div>
+
+        <div>
+            <label>Quantity: </label><input class="unit-quantity border-small" type="text" name="quantity" value="" placeholder="0">
+        </div>
+
+        <div>
+            <label>Price: </label><span>&#036</span><span class="total-unit-price">0.00</span>
+        </div>
+
+        <div class="product-charact">
+            <button class="btn-delete border-small" type="button">delete</button>
+        </div>
+    </div>
+</section>
+    
+<!--CALCULATE PRICES-->
+    <button class="btn-success border-small" type="button" id="calc-button">Calculate Prices</button>
+    
+<!--TOTAL CART VALUE-->    
+    <div class="total-container">
+    <label class="cart-total">Cart Total:</label><span class="cart-total"> &#036 </span><span class="cart-total" id="total-cart">0.00</span>
+    </div>
+
+    
+<!--BODY SCRIPTS-->
+    <script type="text/javascript" src="./js/index.js"></script>  
 </body>
+    
 </html>
