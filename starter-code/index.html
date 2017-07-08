@@ -1,14 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
+
+
   <title>Ironhack cart</title>
 </head>
+
 <body>
+  <div class="container">
+    <h1>Ironhack Merchandising SHop</h1>
+    <div class="row product">
+      <div class="col-xs-2"><span class="product-name">IronBubble-head</span></div>
+      <div class="col-xs-2">$<span class="price">25.00</span></div>
+      <div class="col-xs-2"><label for="quantity">QTY</label><input value="5" class="quantity" type="text" placeholder="0"></div>
+      <div class="col-xs-2">$<span class="total-price"></span></div>
+      <div class="delete-button col-sm-2"><button class="btn btn-delete">Delete</button></div>
+    </div>
+    <div class="row product">
+      <div class="col-xs-2"><span class="product-name">IronUmbrella</span></div>
+      <div class="col-xs-2">$<span class="price">35.00</span></div>
+      <div class="col-xs-2"><label for="quantity">QTY</label><input value="3" class="quantity" type="text" placeholder="0"></div>
+      <div class="col-xs-2">$<span class="total-price"></span></div>
+      <div class="col-sm-2"><button class="btn btn-delete delete-button">Delete</button></div>
+    </div>
+
+    <div class="row">
+      <input type="text" id="qty-input">
+      <input type="text" id="px-input">
+      <button class="btn" id="new-item-create">Create</button>
+    </div>
+    <div class="row">
+      <div class="center-block"><button class="btn" id="calc-prices-button">Calculate Prices</button></div>
+      <h1>Total Price: <span id="total-price"></span></h1>
+    </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./js/index.js"></script>
+
 </body>
+
 </html>
