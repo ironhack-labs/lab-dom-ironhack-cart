@@ -15,30 +15,31 @@
 
 <body>
   <div class="container">
-    <h1>Ironhack Merchandising SHop</h1>
-    <div class="row product">
-      <div class="col-xs-2"><span class="product-name">IronBubble-head</span></div>
-      <div class="col-xs-2">$<span class="price">25.00</span></div>
-      <div class="col-xs-2"><label for="quantity">QTY</label><input value="5" class="quantity" type="text" placeholder="0"></div>
-      <div class="col-xs-2">$<span class="total-price"></span></div>
-      <div class="delete-button col-sm-2"><button class="btn btn-delete">Delete</button></div>
-    </div>
-    <div class="row product">
-      <div class="col-xs-2"><span class="product-name">IronUmbrella</span></div>
-      <div class="col-xs-2">$<span class="price">35.00</span></div>
-      <div class="col-xs-2"><label for="quantity">QTY</label><input value="3" class="quantity" type="text" placeholder="0"></div>
-      <div class="col-xs-2">$<span class="total-price"></span></div>
-      <div class="col-sm-2"><button class="btn btn-delete delete-button">Delete</button></div>
-    </div>
-
-    <div class="row">
-      <input type="text" id="qty-input">
-      <input type="text" id="px-input">
-      <button class="btn" id="new-item-create">Create</button>
+    <div id="products">
+      <h1 class="text-center">Ironhack Merchandising Shop</h1>
+      <div class="row product">
+        <div class="col-xs-2"><span class="product-name">IronBubble-head</span></div>
+        <div class="col-xs-2">$<span class="price">25.00</span></div>
+        <div class="col-xs-3"><label for="quantity">QTY</label><input class="quantity" type="text" placeholder="0"></div>
+        <div class="col-xs-2">$<span class="total-price"></span></div>
+        <div class="col-xs-2 pull-right"><button class="delete-button btn test btn-delete">Delete</button></div>
+      </div>
+      <div class="row product">
+        <div class="col-xs-2"><span class="product-name">IronUmbrella</span></div>
+        <div class="col-xs-2">$<span class="price">35.00</span></div>
+        <div class="col-xs-3"><label for="quantity">QTY</label><input value="3" class="quantity" type="text" placeholder="0"></div>
+        <div class="col-xs-2">$<span class="total-price"></span></div>
+        <div class="col-xs-2 pull-right"><button class="btn btn-delete delete-button">Delete</button></div>
+      </div>
     </div>
     <div class="row">
-      <div class="center-block"><button class="btn" id="calc-prices-button">Calculate Prices</button></div>
-      <h1>Total Price: <span id="total-price"></span></h1>
+      <input type="text" id="name-input" class="col-xs-2" placeholder="item name">
+      <input type="text" id="px-input" class="col-xs-2" placeholder="item price">
+      <button class="btn btn-secondary col-xs-2 pull-right" id="new-item-create">Create</button>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 text-center"><button class="btn btn-success center-block" id="calc-prices-button">Calculate Prices</button>
+        <h1>Total Price: $<span id="total-price"></span></h1></div>
     </div>
   </div>
 
