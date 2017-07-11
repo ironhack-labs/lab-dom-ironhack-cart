@@ -60,6 +60,7 @@ input {
   border-radius: 4px;
 }
 
+
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
@@ -70,8 +71,28 @@ input {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    margin-bottom:10%;
+
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+.inline {
+  display: inline;
+  padding-right: 10px;
+}
+
+.headerone  {
+  float: right;
+  padding-right: 38%;
+  margin-bottom: 3%;
+
+}
+
+#buttontwo {
+float:right;
+margin-top: 40px;
+padding-right: 50%;
 }
