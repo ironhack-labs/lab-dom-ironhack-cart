@@ -15,6 +15,10 @@ input {
 }
 
 .row {
+  height:50px;
+  width:100%;
+  padding-top: 5px;
+  /*border-bottom-style:solid;*/
 
 }
 
@@ -44,6 +48,7 @@ input {
   margin-bottom: 0;
   font-size: 14px;
   font-weight: 400;
+  color:white;
   line-height: 1.42857143;
   text-align: center;
   white-space: nowrap;
@@ -55,7 +60,7 @@ input {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-image: none;
+  background-color: red;
   border: 1px solid transparent;
   border-radius: 4px;
 }
@@ -74,4 +79,12 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.inline{
+  display:inline;
+}
+
+.qtyInput{
+  display:inline
 }
