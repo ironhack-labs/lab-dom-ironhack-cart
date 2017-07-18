@@ -75,3 +75,6 @@ input {
 .quantity {
   margin: 0 5px;
 }
+.inline {
+  display: inline;
+}
