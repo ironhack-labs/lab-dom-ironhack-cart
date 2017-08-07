@@ -16,7 +16,7 @@ One of the most common business in Internet nowadays are online shops. Websites 
 
 We will create a the Ironhack Cart, where the users will be able to add and remove products to a shopping cart. Besides, we will calculate the total price of items for each product and the total price of the whole Shopping Cart.
 
-We already create the class for the different types of buttons, so just add them to the one you create in the HTML and they will be perfectly style :wink
+We already create the class for the different types of buttons, so just add them to the one you create in the HTML and they will be perfectly style 😉
 
 ## Requirements
 - fork this repo
