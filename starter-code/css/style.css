@@ -1,6 +1,9 @@
 input {
   border: solid 1px black;
 }
+/*div{
+  display: inline-block;
+}*/
 
 .btn {
   display: inline-block;
@@ -38,4 +41,19 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+#name-input, #px-input{ margin: 0 15px;
+}
+.row{
+  padding-bottom: 15px;
+}
+
+#calc-prices-button{
+
+}
+
+h1{
+  margin-bottom: 60px;
+  margin-top: 30px;
 }
