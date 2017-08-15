@@ -1,7 +1,32 @@
-input {
-  border: solid 1px black;
+h1 {
+  text-align: center;
+}
+.itemline, #sum{
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+.newline {
+  display: flex;
+  justify-content: flex-start;
+  width: 60%;
+}
+.create {
+  float: center;
+}
+div {
+  width: 100%;
 }
 
+input {
+  border: solid 1px black;
+  margin-left: 5px;
+}
+#totalbtn{
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
 .btn {
   display: inline-block;
   padding: 6px 12px;
