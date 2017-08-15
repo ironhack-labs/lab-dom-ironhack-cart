@@ -1,5 +1,6 @@
 input {
   border: solid 1px black;
+  width: 50%;
 }
 
 .btn {
@@ -28,9 +29,13 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin: 20px auto;
+    display: block;
 }
 
 .btn-delete {
+    display:inline-block;
+    width: 10%;
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
@@ -38,4 +43,29 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+.product{
+  margin-bottom: 40px;
+}
+.product > div{
+  display: inline-block;
+  width: 20%;
+}
+
+#total-cost{
+  text-align: center;
+}
+.product,
+#user-input{
+ width:100%;
+ padding: 0 10px;
+}
+#user-input > input{
+  display: inline-block;
+  width: 15%;
+  margin: 10px;
+}
+
+#user-input > button{
+  display:inline;
 }

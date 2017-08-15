@@ -4,11 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="./css/reset.min.css">
   <link rel="stylesheet" href="./css/style.css">
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+ <h1> IronHack Merchandising Shop</h1>
+ <div id="library">
+ <div class="product">
+   <div>IronBuddle-head</div>
+   <div>$<span class="cost">25</span></div>
+   <div class="quantity">QTY <input placeholder="0" type="text" class="product-quanity"/></div>
+   <div class="total">$0</div>
+   <button class="btn btn-delete">Delete</button>
+ </div>
+ <div class="product">
+   <div>IronShirt</div>
+   <div>$<span class="cost">15</span></div>
+   <div class="quantity">QTY <input placeholder="0" type="text" class="product-quanity"/></div>
+   <div class="total">$0</div>
+   <button class="btn btn-delete">Delete</button>
+ </div>
+ </div>
+ <button class="btn btn-success" id="calc-prices-button">Calculate Prices</button>
+ <h1 id="total-cost"></h1>
+ <div id="user-input">
+   Product Title: <input id="user-productname" type="text" />
+   Price: <input type="text" id="user-productprice" />
+    <button class="btn btn-success" id="new-item-create">Add</button>
+ </div>
 </body>
 </html>
