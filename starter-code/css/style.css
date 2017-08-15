@@ -1,3 +1,22 @@
+body {
+  font-family: Helvetica;
+}
+
+main {
+  width: 100%;
+}
+
+.merchandise-container {
+  margin: 100px auto;
+  width: 800px;
+  border: 1px solid #d0c4c4;
+  border-radius: 3px;
+}
+
+.merchandise-sections {
+  margin: 25px 25px;
+}
+
 input {
   border: solid 1px black;
 }
@@ -25,17 +44,49 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #CF000F;
+  border-color: #CF000F;
 }
 
-.quantity {
+.item-quantity {
   margin: 0 5px;
+}
+
+.items-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: -40px;
+  font-size: 18px;
+}
+
+.categories {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  margin-bottom: 40px;
+}
+
+/* Add a $ before the item cost and item total cost elements */
+.categories li:nth-child(2)::before, li:nth-child(4)::before {
+  content: "$";
+}
+
+/* Add .00 after the item cost and item total cost elements */
+.categories li:nth-child(2)::after, li:nth-child(4)::after {
+  content: ".00";
+}
+
+.total-cost {
+  float: right;
+  margin-top: -25px;
+  margin-right: 105px;
 }
