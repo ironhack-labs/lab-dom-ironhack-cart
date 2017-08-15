@@ -1,19 +1,4 @@
-// function deleteItem(e){
-//
-// }
-//
-// function getPriceByProduct(itemNode){
-//
-// }
-//
-// function updatePriceByProduct(productPrice, index){
-//
-// }
-//
-// function getTotalPrice() {
-//
-// }
-//
+
 // function createQuantityInput(){
 //
 // }
@@ -38,13 +23,14 @@
 //
 // }
 
-
+// Revealing Module Pattern
 const Module = (() => {
   'use strict';
 
-  // A NodeList containing all UL elements with class 'categories'
+  // ulNodeList contains a NodeList with all UL elements with class 'categories'
   const ulNodeList = document.querySelectorAll('ul.categories');
   const calculatePricesButton = document.getElementById('calculate-prices-button');
+  let cartTotal = 0;
 
   /* Each individual item (a product) has the same HTML structure:
    * UL > LI where each LI contains item name, cost, quantity, total cost, delete */
@@ -84,31 +70,42 @@ const Module = (() => {
     return itemTotalPrice;
   }
 
+  //
+  function calculatePriceForAllItems() {
+    for (let itemNumber = 0; itemNumber < ulNodeList.length; itemNumber++) {
+      updateItemTotalPriceElement(itemNumber);
+    }
+  }
+
+  const updateCartTotal = (itemTotalPrice) => {
+    return cartTotal += parseInt(itemTotalPrice);
+  }
+
   // Update the HTML element for a single item's total cost.
-  function updateItemTotalPrice(itemNumber = 0) {
+  function updateItemTotalPriceElement(itemNumber = 0) {
     const itemCost = getItemCostFromUlList(itemNumber);
     const itemQuantity = getItemQuantityFromUlList(itemNumber);
     const itemTotalPrice = calculateItemPrice(itemCost, itemQuantity);
+    const updatedCartTotal = updateCartTotal(itemTotalPrice);
     const itemTotalPriceElement = document.getElementsByClassName('item-total-price')[itemNumber];
+    const cartTotalPriceElement = document.getElementsByClassName('cart-total')[0];
 
-    // Now update element in the DOM with new calculated total cost.
+    // Now update elements in the DOM with new calculated total costs.
     itemTotalPriceElement.innerHTML = itemTotalPrice;
+    cartTotalPriceElement.innerHTML = updatedCartTotal;
   }
 
-  // Public methods.
+  // Public variables and methods.
   return {
     calculatePricesButton,
-    updateItemTotalPrice
+    calculatePriceForAllItems
   }
 
 })(); // End Module
 
 Module.calculatePricesButton.onclick = () => {
-  Module.updateItemTotalPrice();
+  Module.calculatePriceForAllItems();
 };
-
-
-// Module.updateItemTotalPrice(0);
 
 
 

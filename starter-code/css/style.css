@@ -85,6 +85,16 @@ input {
   content: ".00";
 }
 
+.total-cost span::before {
+  content: "Total Cost: $";
+  font-weight: bold;
+}
+
+.total-cost span::after {
+  content: ".00";
+  font-weight: bold;
+}
+
 .total-cost {
   float: right;
   margin-top: -25px;
