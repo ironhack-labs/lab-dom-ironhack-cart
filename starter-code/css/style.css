@@ -92,7 +92,7 @@ input {
 
 .total-cost span::after {
   content: ".00";
-  font-weight: bold;
+  
 }
 
 .total-cost {
