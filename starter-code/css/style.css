@@ -66,7 +66,7 @@ input {
   font-size: 18px;
 }
 
-.categories {
+.item {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -76,12 +76,12 @@ input {
 }
 
 /* Add a $ before the item cost and item total cost elements */
-.categories li:nth-child(2)::before, li:nth-child(4)::before {
+.item li:nth-child(2)::before, li:nth-child(4)::before {
   content: "$";
 }
 
 /* Add .00 after the item cost and item total cost elements */
-.categories li:nth-child(2)::after, li:nth-child(4)::after {
+.item li:nth-child(2)::after, li:nth-child(4)::after {
   content: ".00";
 }
 
@@ -92,7 +92,7 @@ input {
 
 .total-cost span::after {
   content: ".00";
-  
+
 }
 
 .total-cost {

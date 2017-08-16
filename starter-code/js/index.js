@@ -1,72 +1,49 @@
+/* This Module follows the Revealing Module Pattern. It contains functions
+ * and variables available only within its scope and exposes some of them
+ * for outside use. */
 
-// function createQuantityInput(){
-//
-// }
-//
-// function createDeleteButton(){
-//
-// }
-//
-// function createQuantityNode(){
-//
-// }
-//
-// function createItemNode(dataType, itemData){
-//
-// }
-//
-// function createNewItemRow(itemName, itemUnitPrice){
-//
-// }
-//
-// function createNewItem(){
-//
-// }
-
-// Revealing Module Pattern
 const Module = (() => {
   'use strict';
 
   /* Each individual item (a product) has the same HTML structure:
    * UL > LI where each LI contains item name, cost, quantity, total cost, delete.
-   * ulNodeList contains a NodeList with all UL elements with class 'categories'. */
 
-  const ulNodeList = document.querySelectorAll('ul.categories');
+   * The variables below are available across the entire Module scope.
+   * They're all meant to be private, except calculatePricesButton which is exposed to the public.
+   * ulNodeList contains a NodeList with all UL elements with class 'item'. */
+
+  const ulNodeList = document.querySelectorAll('ul.item');
   const calculatePricesButton = document.getElementById('calculate-prices-button');
   const cartTotalPriceElement = document.getElementsByClassName('cart-total')[0];
   const deleteItemButtons = document.getElementsByClassName('btn-delete');
   let cartTotal = 0;
 
   const getItemNameFromUlList = (itemNumber = 0) => {
-    // Select innerHTML of first child with ul at itemNumber.
+    // From ul at itemNumber, select the first child's innerHTML.
     const itemName = ulNodeList[itemNumber].children[0].innerHTML;
 
     return itemName;
   };
 
-  // Get a single item's cost given an item number.
   const getItemCostFromUlList = (itemNumber = 0) => {
+    // From ul at itemNumber, select the second child's innerHTML.
     const itemCost = ulNodeList[itemNumber].children[1].innerHTML;
 
     return itemCost;
   };
 
-  // Get a single item's quantity given an item number.
   const getItemQuantityFromUlList = (itemNumber = 0) => {
+    // From ul at itemNumber, select the value of the input typed by the user.
     const itemQuantity = ulNodeList[itemNumber].children[2].children[1].value;
 
     return itemQuantity;
   };
 
-  // Get a single item's total cost given an item number.
   const getItemTotalFromUlList = (itemNumber = 0) => {
+    // From ul at itemNumber, select the fourth child's innerHTML (total cost for one item).
     const itemTotal = ulNodeList[itemNumber].children[3].innerHTML;
 
     return itemTotal;
-  };
-
-  const getItemDeleteButton = (itemNumber) => {
-    const deleteButton = ulNodeList[itemNumber].children[4];
   };
 
   // Calculate total price for a single item.
@@ -76,19 +53,15 @@ const Module = (() => {
     return itemTotalPrice;
   };
 
-  //
-  function calculatePriceForAllItems() {
+  const calculatePriceForAllItems = () => {
     for (let itemNumber = 0; itemNumber < ulNodeList.length; itemNumber++) {
       updateItemTotalPriceElement(itemNumber);
     }
-  }
-
-  const updateCartTotal = (itemTotalPrice) => {
-    return cartTotal += parseInt(itemTotalPrice);
   };
 
-  // Update the HTML element for a single item's total cost.
-  function updateItemTotalPriceElement(itemNumber = 0) {
+  const updateCartTotal = itemTotalPrice => cartTotal += parseInt(itemTotalPrice);
+
+  const updateItemTotalPriceElement = (itemNumber = 0) => {
     const itemCost = getItemCostFromUlList(itemNumber);
     const itemQuantity = getItemQuantityFromUlList(itemNumber);
     const itemTotalPrice = calculateItemPrice(itemCost, itemQuantity);
@@ -98,23 +71,28 @@ const Module = (() => {
     // Now update elements in the DOM with new calculated total costs.
     itemTotalPriceElement.innerHTML = itemTotalPrice;
     cartTotalPriceElement.innerHTML = updatedCartTotal;
-  }
+  };
 
+  // Attach an onclick event to every Delete button, and pass an anonymous
+  // function as a callback with the event (e) that calls deleteItem() with it.
   const handleOnClickDelete = () => {
     for (let i = 0; i < deleteItemButtons.length; i++) {
       deleteItemButtons[i].onclick = (e) => {
         deleteItem(e);
       };
     }
-  }
+  };
 
   const deleteItem = e => {
+    // Parent container.
     const ulParentContainer = e.currentTarget.parentNode.parentNode.parentNode;
+    // UL for item (an entire item row).
     const ulChild = e.currentTarget.parentNode.parentNode;
+
     ulParentContainer.removeChild(ulChild);
   };
 
-  // Public variables and methods.
+  // Exposed public variables and methods.
   return {
     calculatePricesButton,
     calculatePriceForAllItems,
@@ -128,24 +106,3 @@ Module.calculatePricesButton.onclick = () => {
 };
 
 Module.handleOnClickDelete();
-
-// Delete an item.
-// const buttonWithClassDelete = document.getElementsByClassName('btn-delete')[0];
-// buttonWithClassDelete.onclick = (e) => {
-//   Module.deleteItem(e);
-// };
-
-
-
-// window.onload = () => {
-//   const calculatePriceButton = document.getElementById('calculate-prices-button');
-//   // const createItemButton = document.getElementById('new-item-create');
-//   const deleteButtons = document.getElementsByClassName('btn-delete');
-//
-//   calculatePriceButton.onclick = getTotalPrice;
-//   createItemButton.onclick = createNewItem;
-//
-//   for(var i = 0; i<deleteButtons.length ; i++){
-//     deleteButtons[i].onclick = deleteItem;
-//   }
-// };
