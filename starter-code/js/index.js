@@ -16,6 +16,7 @@ const Module = (() => {
   const calculatePricesButton = document.getElementById('calculate-prices-button');
   const cartTotalPriceElement = document.getElementsByClassName('cart-total')[0];
   const deleteItemButtons = document.getElementsByClassName('btn-delete');
+  const addItemButton = document.getElementsByClassName('add-item-button')[0];
   let cartTotal = 0;
 
   const getItemNameFromUlList = (itemNumber = 0) => {
@@ -53,12 +54,15 @@ const Module = (() => {
     return itemTotalPrice;
   };
 
-  const calculatePriceForAllItems = () => {
+  const handleCalculatePrice = () => {
     for (let itemNumber = 0; itemNumber < ulNodeList.length; itemNumber++) {
       updateItemTotalPriceElement(itemNumber);
     }
   };
 
+  // Since cartTotal is a variable accessible across the entire Module,
+  // it should be mutated explicitly by calling the updateCartTotal function
+  // and not by doing cartTotal = someNewValue anywhere in the code.
   const updateCartTotal = itemTotalPrice => cartTotal += parseInt(itemTotalPrice);
 
   const updateItemTotalPriceElement = (itemNumber = 0) => {
@@ -75,15 +79,18 @@ const Module = (() => {
 
   // Attach an onclick event to every Delete button, and pass an anonymous
   // function as a callback with the event (e) that calls deleteItem() with it.
-  const handleOnClickDelete = () => {
+  const handleDelete = () => {
     for (let i = 0; i < deleteItemButtons.length; i++) {
-      deleteItemButtons[i].onclick = (e) => {
+      deleteItemButtons[i].onclick = e => {
         deleteItem(e);
       };
     }
   };
 
+  // Delete a single item.
   const deleteItem = e => {
+    e.preventDefault();
+
     // Parent container.
     const ulParentContainer = e.currentTarget.parentNode.parentNode.parentNode;
     // UL for item (an entire item row).
@@ -92,17 +99,53 @@ const Module = (() => {
     ulParentContainer.removeChild(ulChild);
   };
 
+  const handleAddItem = (e) => {
+    //const prevSibling = addItemButton.previousSibling;
+
+    createItem(e);
+  };
+
+  // Create a single item. This function gets called onclick.
+  function createItem(e) {
+    e.preventDefault();
+    const itemsContainer = e.currentTarget.previousSibling.previousSibling;
+    const newUL = `<ul class="item">
+                    <li class="item-name">
+                      <label for="item-name">Item Name </label>
+                      <input type="text" id="item-name" name="item-name" placeholder="IronShoes" value="">
+                    </li>
+                    <li class="item-price">30</li>
+                    <li class="item-quantity">
+                      <label for="quantity">QTY </label>
+                      <input type="text" id="quantity" name="quantity" placeholder="0" value="1">
+                    </li>
+                    <li class="item-total-price">0</li>
+                    <li class="item-delete">
+                      <button class="btn btn-delete" type="button" name="delete">Delete</button>
+                    </li>
+                  </ul>`;
+
+    $(itemsContainer).append(newUL);
+
+  };
+
   // Exposed public variables and methods.
   return {
     calculatePricesButton,
-    calculatePriceForAllItems,
-    handleOnClickDelete
+    addItemButton,
+    handleCalculatePrice,
+    handleDelete,
+    handleAddItem
   }
 
 })(); // End Module
 
 Module.calculatePricesButton.onclick = () => {
-  Module.calculatePriceForAllItems();
+  Module.handleCalculatePrice();
 };
 
-Module.handleOnClickDelete();
+Module.addItemButton.onclick = (e) => {
+  Module.handleAddItem(e);
+};
+
+Module.handleDelete();

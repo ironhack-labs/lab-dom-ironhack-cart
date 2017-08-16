@@ -21,6 +21,12 @@ input {
   border: solid 1px black;
 }
 
+input[type="text"] {
+  width: 50%;
+  margin-left: 10px;
+  padding: 2px 5px;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -47,6 +53,12 @@ input {
   color: #fff;
   background-color: #5cb85c;
   border-color: #4cae4c;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #5b90e9;
+  margin-bottom: 50px;
 }
 
 .btn-delete {
