@@ -17,10 +17,24 @@ body {
   width: 10%;
 }
 
+#creator {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#create-name {
+  width: 15%;
+}
+
+#empty-price-div {
+  width: 10%;
+}
+
 input {
   border: solid 1px black;
 }
-
 
 .btn {
   display: inline-block;
