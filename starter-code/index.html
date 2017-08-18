@@ -5,10 +5,105 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+
+  <h1>Ironhack <br /> Merchandising Shop</h1>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-3">
+        <div class="product">
+          <span>IronBubble-head</span>
+        </div>
+      </div>
+
+      <div class="col-xs-3">
+        <div class="">
+          $<span class="cost">25.00</span>
+        </div>
+      </div>
+
+      <div class="col-xs-3">
+        <div class="QTY">
+          <form>
+            QTY <input class="cantidad" type="text" name="" placeholder="0"/>
+          </form>
+
+        </div>
+      </div>
+
+      <div class="col-xs-3">
+        <div class="sum">
+          <span class="sumTotal">
+            $0.00
+          </span>
+        </div>
+
+        <button type="button" class="btn btn-danger">Delete</button>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-3">
+        <div class="product">
+          <span>Ironshirt</span>
+        </div>
+      </div>
+
+      <div class="col-xs-3">
+        <div class="">
+          $<span class="cost">15.00</span>
+        </div>
+      </div>
+
+      <div class="col-xs-3">
+        <div class="QTY">
+          <form>
+            QTY <input class="cantidad" type="text" name="" placeholder="0" />
+          </form>
+
+        </div>
+      </div>
+
+      <div class="col-xs-3">
+        <div class="sum">
+          <span class="sumTotal">
+            $0.00
+          </span>
+        </div>
+
+        <button type="button" class="btn btn-danger">Delete</button>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <button  class="btn-success" id="calc-prices-button" type="button" name="button"> Calculate Prices </button>
+    </div>
+  </div>
+
+
+    <div class="totalTwo">
+    <h1>Total Price: $<span class="totalSumado">0.00 </span> </h1>
+
+
+    </div>
+
+
+
+  <!-- jQuery's Javascript (put ir before bootstrap)-->
+  <script
+  src="http://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>
