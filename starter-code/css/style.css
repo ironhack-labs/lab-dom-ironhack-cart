@@ -1,3 +1,27 @@
+body {
+  font-family: sans-serif;
+}
+
+h1 {
+   margin-left: 48%;
+}
+
+.row {
+  margin: 25px 0;
+}
+
+
+
+.sum {
+    display: inline;
+    margin-right: 20px;
+}
+.QTY {
+  float: left;
+}
+
+
+
 input {
   border: solid 1px black;
 }
@@ -28,12 +52,18 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin-left: 44%;
+    margin-top: -4%;
+    border-radius: 5px;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    border-radius: 5px;
+    margin-left: 10%;
+    margin-bottom: -2%;
 }
 
 .quantity {
