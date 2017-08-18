@@ -1,6 +1,26 @@
+body {
+  text-align: center;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.product-name {
+  width: 15%;
+}
+
+.total-price {
+  width: 10%;
+}
+
 input {
   border: solid 1px black;
 }
+
 
 .btn {
   display: inline-block;
@@ -39,3 +59,4 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
