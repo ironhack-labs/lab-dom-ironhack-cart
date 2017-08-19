@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -10,5 +10,18 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <div class="container">
+    <h1>IronHack Merchandising Shop</h1>
+    <div class="product">
+      <div class="box"><span>IronBubble-head</span></div>
+      <div class="box"><span id="price" class="price">$25.00</span></div>
+      <div class="box box-quantity">
+        <label for="input-quantity" class="quantity">QTY</label>
+        <input id="input-quantity" type="number" class="input" min="0" placeholder="0"></div>
+      <div class="box"><span id="total-price" class="total-price">$0.00</span></div>
+      <div class="box"><button class="btn btn-delete">Delete</button></div>
+    </div>
+    <button id="calc-prices-button" class="btn btn-success">Calculate Prices</button>
+  </div>
 </body>
 </html>
