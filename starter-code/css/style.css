@@ -1,3 +1,31 @@
+body {
+  text-align: center;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+
+.total-price {
+  width: 10%;
+}
+
+#creator {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.col-1, .col-2, .col-3, .col-4, .col-5 {
+  width: 15%;
+}
+
+
 input {
   border: solid 1px black;
 }
@@ -39,3 +67,4 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
