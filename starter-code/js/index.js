@@ -1,6 +1,5 @@
 
-function deleteItem(e){
-}
+function deleteItem(e){}
 
 function getPriceByProduct(itemNode){
 //  var button = document.getElementById("calculate");
@@ -57,6 +56,8 @@ document.getElementById("calculate").onclick = function(){
   getPriceByProduct(1);
   getTotalPrice();
 };
+
+document.getElementsByClassName("delete").onclick = function(){}
 
 /*
 window.onload = function(){
