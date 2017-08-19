@@ -20,10 +20,17 @@ function updatePrice(item, price) {
 	total.innerHTML = "$" + price.toFixed(2);
 	return price;
 }
+
 window.onload = function() {
+
+	// buttons
 	var priceButton = document.getElementById('price-calculator')
 	var deleteButtons = document.getElementsByClassName('btn-delete');
 	var createButton = document.getElementById('create-button');
+
+	// cloned division so we can recreate even if everything is deleted
+	var productExample = document.getElementById('ironbubble-head');
+	newProduct = productExample.cloneNode(true);
 	
 	// calculate prices
 
@@ -31,8 +38,8 @@ window.onload = function() {
 		var shopItems = document.getElementsByClassName('product-name');
 		totalPrice = 0
 		for (i = 0; i < shopItems.length; i++) {
+			console.log(shopItems[i])
 			processItem = shopItems[i].querySelector("p").innerHTML.toLowerCase()
-			console.log(processItem)
 			var newPrice = updatePrice(processItem, getTotalPrice(processItem))
 			totalPrice += newPrice
 		} 
@@ -49,21 +56,41 @@ window.onload = function() {
 
 
 	createButton.onclick = function() {
+
+		// extract info necessary to build new item 
 		var productName = document.getElementById('create-name-text').value;
-		var productPrice = document.getElementById('create-name-price').value || 0;
-		var productExample = document.getElementById('ironbubble-head');
-		newProduct = productExample.cloneNode(true);
+		var productPrice = parseFloat(document.getElementById('create-name-price').value) || 0;
+		
+
+		// clone division and insert it 
+		
 		var productDiv = document.getElementById('products');
-		productDiv.appendChild(newProduct)
+		productDiv.appendChild(newProduct);
+
+		// insert new product name 
 		var shopItems = document.getElementsByClassName('product-name');
-		shopItems[shopItems.length - 1].innerHTML = productName;
+		var newItem = shopItems[shopItems.length - 1];
+		var pText = document.createElement('p');
+		pText.innerHTML = productName; 
+		newItem.removeChild(newItem.querySelector('p'))
+		newItem.appendChild(pText);
+
+		// insert product price 
 		var shopItemsPrices = document.getElementsByClassName('product-cost');
-		shopItemsPrices[shopItemsPrices.length - 1].innerHTML = "$" + productPrice;
+		var newPrice = shopItemsPrices[shopItemsPrices.length - 1];
+		var pText2 = document.createElement('p')
+		pText2.innerHTML = "$" + productPrice.toFixed(2);
+		newPrice.removeChild(newPrice.querySelector('p'))
+		newPrice.appendChild(pText2)
 		var productList = document.getElementsByClassName('wrapper');
 		(productList[productList.length - 1].removeAttribute('id'));
 		(productList[productList.length - 1].setAttribute('id', productName.toLowerCase()));
-		console.log(productList[productList.length - 1]);
-		dispatchEvent(new Event('load'));
 
+		for (i = 0; i < deleteButtons.length; i++) {
+			deleteButtons[i].onclick = function() {
+				var products = document.querySelector("#products")
+				products.removeChild(this.parentElement.parentElement)
+		}
+	}
 	}
 }

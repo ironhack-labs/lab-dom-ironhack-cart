@@ -9,9 +9,6 @@ body {
   margin-bottom: 20px;
 }
 
-.product-name {
-  width: 15%;
-}
 
 .total-price {
   width: 10%;
@@ -24,13 +21,10 @@ body {
   margin-top: 20px;
 }
 
-#create-name {
+.col-1, .col-2, .col-3, .col-4, .col-5 {
   width: 15%;
 }
 
-#empty-price-div {
-  width: 10%;
-}
 
 input {
   border: solid 1px black;
