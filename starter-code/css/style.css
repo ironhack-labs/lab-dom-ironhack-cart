@@ -34,8 +34,59 @@ input {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    margin: 0px 0px 40px 200px;
+    width: 20%;
+}
+
+.delete {
+  float: right;
+  width: 20rem;
+  margin-right: 35px;
+}
+
+.bubble-head {
+  width: 1335px;
+  margin: 20px auto 10px;
+}
+
+.iron-shirt {
+  width: 1335px;
+  margin: 10px auto 10px;
+}
+
+.qty {
+  padding: 10px 10px 40px 100px;
+  float: left;
 }
 
 .quantity {
-  margin: 0 5px;
+  margin: 10px 100px 0 0;
+  width: 170px;
+  float: left;
+}
+
+h1, h2 {
+  margin: 20px auto;
+	width: 10em;
+}
+
+.name {
+  width: 10rem;
+}
+
+.first-span {
+  padding: 10px 100px 40px 100px;
+  width: 100%;
+}
+
+span {
+  display: inline-block;
+  padding: 10px 0px 40px 0px;
+  float: left;
+}
+
+#calculate {
+  clear: both;
+  text-align: center;
+  width: 1335px;
 }
