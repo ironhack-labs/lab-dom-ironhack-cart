@@ -21,10 +21,11 @@ function updatePriceByProduct(productPrice, index){
 function getTotalPrice() {
   var a = document.getElementsByClassName("total-price");
   var final = document.getElementsByClassName("final-price");
-  var valora = Number(a[0].textContent.slice(1,a[0].length));
-  var valorb = Number(a[1].textContent.slice(1,a[1].length));
-  var total = valora + valorb;
-  final[0].textContent = "Total Price: $" + total.toFixed(2);
+  var acc = 0;
+  for (var i=0; i<a.length; i++){
+      acc += Number(a[i].textContent.slice(1,a[i].length));
+  }
+  final[0].textContent = "Total Price: $" + acc.toFixed(2);
 }
 
 function createQuantityInput(){

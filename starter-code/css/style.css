@@ -85,6 +85,11 @@ span {
   float: left;
 }
 
+.final{
+  float: none;
+  padding: 0px;
+}
+
 #calculate {
   clear: both;
   text-align: center;
