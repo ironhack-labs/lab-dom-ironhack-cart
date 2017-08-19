@@ -1,5 +1,7 @@
 function deleteItem(e){
-
+  var container = document.getElementById('container');
+  var divProduct = e.currentTarget.parentNode.parentNode
+  container.removeChild(divProduct);
 }
 
 function getPriceByProduct(product){
@@ -7,7 +9,6 @@ function getPriceByProduct(product){
   var quantity = Number(product.children[2].children[1].value)
   var totalPrice = product.children[3].children[0]
   updatePriceByProduct("$" + price*quantity, totalPrice)
-  totalPrice.innerHTML = "$" + price*quantity
 }
 
 function updatePriceByProduct(productPrice, totalPrice){
@@ -63,7 +64,9 @@ window.onload = function(){
   }
   // createItemButton.onclick = createNewItem();
   //
-  // for(var i = 0; i<deleteButtons.length ; i++){
-  //   deleteButtons[i].onclick = deleteItem;
-  // }
+  for(var i = 0; i<deleteButtons.length ; i++){
+    deleteButtons[i].onclick = function(e){
+      deleteItem(e);
+    }
+  }
 };
