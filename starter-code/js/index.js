@@ -127,7 +127,6 @@ function createNewItemRow(itemName, itemUnitPrice){
 }
 
 
-
 window.onload = function() {
 
   var calculatePriceButton = document.getElementById('calc-prices-button');
@@ -138,11 +137,6 @@ window.onload = function() {
   //Deleting products
   for (var i = 0, len = deleteButtons.length; i < len; i++) {
     deleteItem(deleteButtons[i]);
-
-    // deleteButtons[i].onclick=function(){
-    //   a = this.parentNode.parentNode;
-    //   a.parentNode.removeChild(a);
-    // };
   }
 
   //Calculating the total price of all products
