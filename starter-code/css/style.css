@@ -1,3 +1,32 @@
+
+.wrapper {
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+
+
+}
+
+h1 {
+  margin-right: 312px;
+  line-height: 60px;
+  text-align: right;
+}
+
+.wrapper > article{
+  width: 15%;
+  display: inline-block;
+
+}
+
+.calculate{
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  margin: 50px;
+}
+
+
 input {
   border: solid 1px black;
 }
