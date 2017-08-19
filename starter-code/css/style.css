@@ -39,3 +39,21 @@ input {
 .quantity {
   margin: 0 5px;
 }
+.container{
+  width: 70%;
+  margin: 0 auto;
+}
+.product{
+  background: #ccc;
+  padding: 40px;
+  font-size: 20px;
+
+}
+.inline{
+  display: inline-block;
+  margin: 0px 50px;
+}
+.button, .total{
+  margin-top: 40px;
+  text-align: center;
+}
