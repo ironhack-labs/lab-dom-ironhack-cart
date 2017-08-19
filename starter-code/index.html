@@ -11,6 +11,7 @@
 </head>
 <body>
   <div class="container">
+    <div id="product-container">
     <div class="product">
       <div class="inline"><span>IronBubble-head</span></div>
       <div class="inline"><span data-price ="25">$25.00</span></div>
@@ -25,10 +26,17 @@
       <div class="inline"><span>$0.00</span></div>
       <div class="inline"><button class="btn btn-delete">Delete</button></div>
     </div>
+    </div>
+    <div class="newItems">
+      <div class="inline"><input type="text" name="names"></div>
+      <div class="inline"><input type="text" name="price"></div>
+      <div class="inline"><button id="new-item-create" class="btn">Create New Item</button></div>
+    </div>
     <div class="button">
     <button class="btn btn-success" id="calculate">Calculate Prices</button>
     </div>
     <div class="total"><h2>Total price: <span id="total"></span></h2></div>
+
   </div>
 </body>
 </html>
