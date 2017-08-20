@@ -1,17 +1,28 @@
 function deleteItem(e){
-
+  return 
 }
 
 function getPriceByProduct(itemNode){
-
+  var price = itemNode.querySelector("span.price")
+  return parseInt(price.innerHTML)
 }
 
-function updatePriceByProduct(productPrice, index){
-
+function updatePriceByProduct(productPrice, qty, index){
+  var total = productPrice * qty
+  var product = document.getElementsByClassName("product")[index]
+  return product.querySelector("span.total").innerHTML = total 
 }
 
 function getTotalPrice() {
-
+  var product = document.getElementsByClassName("product")
+  var total = 0
+  for(var i=0; i<product.length; i++) {
+    var price = product[i].querySelector("span.price").innerHTML
+    var qty  = product[i].querySelector("#number-product").value
+    updatePriceByProduct(price, qty, i)
+    total += (price * qty)
+  }
+  return document.querySelector("span.total-price").innerHTML = total; 
 }
 
 function createQuantityInput(){
