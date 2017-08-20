@@ -16,9 +16,14 @@ $border-del-color: #CF000F;
   }
   .content-table{
     width: 100%;
-    div {
-      float: left;
-      width: 20%;
+    .product{
+      width: 100%;
+      margin: 0 auto;
+      padding: 20px;
+      div {
+        float: left;
+        width: 20%;
+      }
     }
   }
   .calculate{

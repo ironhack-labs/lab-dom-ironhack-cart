@@ -1,54 +1,44 @@
 function deleteItem(e) {
-
-}
-
-function updatePriceByProduct(productPrice, index) {
-  var a = document.getElementsByClassName('total-amount')
-  a[index].innerHTML = "$" + productPrice.toFixed(2)
-}
-
-function getPriceByProduct(itemNode) {
-  var total
-  var oneItem = parseFloat(document.getElementById('price-product').innerHTML)
-  var oneQuantity = parseFloat(document.getElementById('qProduct').value)
   
-  total = oneItem[itemNode] * oneQuantity[itemNode]
+}
+
+function updatePriceByProduct (productPrice, index) {
+  
+}
+
+function getPriceByProduct (itemNode) {
+  
+}
+
+function getTotalPrice () {
+  var prodPrice = document.getElementById('price-product').innerHTML
+  var quantPrice = document.getElementById('qProduct').value
+  var total = parseFloat(prodPrice) * parseFloat(quantPrice)
   console.log(total)
-  // Update price product one by one
-  updatePriceByProduct(total, itemNode)
-  return total
+  return document.querySelector("span.total-amount").innerHTML = "$" + total.toFixed(2);
 }
 
-function getTotalPrice() {
-  var price = document.getElementsByClassName('price')
-  var tPrice = 0
-  for(var i = 0; i < price.length; i++){
-    tPrice += getPriceByProduct(i)
-  } 
-  document.getElementsByClassName('total-price').innerHTML = "<h2>Total Price: $" + tPrice.toFixed(2)+ "</h2>"
-}
-
-function createQuantityInput() {
+function createQuantityInput () {
 
 }
 
-function createDeleteButton() {
+function createDeleteButton () {
 
 }
 
-function createQuantityNode() {
+function createQuantityNode () {
 
 }
 
-function createItemNode(dataType, itemData) {
+function createItemNode (dataType, itemData) {
 
 }
 
-function createNewItemRow(itemName, itemUnitPrice) {
+function createNewItemRow (itemName, itemUnitPrice) {
 
 }
 
-function createNewItem() {
+function createNewItem () {
 
 }
 
@@ -58,7 +48,6 @@ window.onload = function () {
   var deleteButtons = document.getElementsByClassName('btn-delete')
 
   calculatePriceButton.onclick = getTotalPrice
-  console.log(calculatePriceButton)
   //createItemButton.onclick = createNewItem
 
   for (var i = 0; i < deleteButtons.length; i++) {

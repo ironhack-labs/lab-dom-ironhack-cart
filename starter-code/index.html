@@ -1,43 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/style.min.css">
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
   <div class="container">
     <section class="header">
       <h1>Ironhack Merchandising Shop</h1>
     </section>
     <section class="content-table">
-      <div class="name-div">
-        <span id="name-product">IronBubble-head</span>
+      <div class="product">
+        <div class="name-div">
+          <span id="name-product">IronBubble-head</span>
+        </div>
+        <div class="price-div">
+          $<span class="price" id="price-product">25</span>
+        </div>
+        <div class="quantity-div">
+          <label for="quantity-product" class="quantity">QTY</label>
+          <input type="text" placeholder="0" class="input" id="qProduct">
+        </div>
+        <div class="total-div">
+          <span class="total-amount">$0.00</span>
+        </div>
+        <div class="delete-div">
+          <button id="delete" class="btn btn-delete">Delete</button>
+        </div>
       </div>
-      <div class="price-div">
-        $<span class="price" id="price-product">25</span>
-      </div>
-      <div class="quantity-div">
-        <label for="quantity-product" class="quantity">QTY</label>
-        <input type="text" placeholder="0" class="input" id="qProduct">
-      </div>
-      <div class="total-div">
-        <span class="total-amount">$0.00</span>
-      </div>
-      <div class="delete-div">
-        <button id="delete" class="btn btn-delete">Delete</button>
+      <div class="product">
+        <div class="name-div">
+          <span id="name-product">IronShirt</span>
+        </div>
+        <div class="price-div">
+          $<span class="price" id="price-product">15</span>
+        </div>
+        <div class="quantity-div">
+          <label for="quantity-product" class="quantity">QTY</label>
+          <input type="text" placeholder="0" class="input" id="qProduct">
+        </div>
+        <div class="total-div">
+          <span class="total-amount">$0.00</span>
+        </div>
+        <div class="delete-div">
+          <button id="delete" class="btn btn-delete">Delete</button>
+        </div>
       </div>
     </section>
     <section class="calculate">
       <button class="btn btn-success" id="calc-prices-button">
         Calculate Prices
       </button>
+      <button class="btn btn-success" id="new-product">
+        New Product
+      </button>
       <div class="total-price"></div>
     </section>
   </div>
 </body>
+
 </html>
