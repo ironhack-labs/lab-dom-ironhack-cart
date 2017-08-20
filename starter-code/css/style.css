@@ -44,7 +44,7 @@ input {
   margin-right: 35px;
 }
 
-.bubble-head {
+#bubble-head {
   width: 1335px;
   margin: 20px auto 10px;
 }
