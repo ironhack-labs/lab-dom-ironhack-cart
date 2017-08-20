@@ -1,6 +1,6 @@
 function deleteItem(e){
   var wrapper = e.currentTarget.parentNode
-  var container = document.getElementsByClassName("container")[0]
+  var container = document.getElementsByTagName("section")[0]
   return container.removeChild(wrapper)
 }
 
