@@ -74,7 +74,10 @@ function createQuantityNode() {
 }
 
 function createItemNode(dataType, itemData) {
+  var itemNode = document.createElement(dataType)
+  itemNode.innerHTML = itemData
 
+  return itemNode
 }
 
 function createNewItemRow(itemName, itemUnitPrice) {
@@ -82,33 +85,30 @@ function createNewItemRow(itemName, itemUnitPrice) {
 }
 
 function createNewItem() {
-  var divProductName = document.createElement('div')
+  var divProductName = createItemNode('div')
   divProductName.className = 'box'
 
-  var productName = document.createElement('span')
-  productName.innerHTML = document.getElementById('product-name-input').value
+  var productName =  createItemNode('span', document.getElementById('product-name-input').value)
 
   divProductName.appendChild(productName)
 
-  var divProductPrice = document.createElement('div')
+  var divProductPrice = createItemNode('div')
   divProductPrice.className = 'box'
 
-  var productPrice = document.createElement('span')
+  var productPrice = createItemNode('span', '$' + document.getElementById('product-price-input').value)
   productPrice.className = 'price'
-  productPrice.innerHTML = '$' + document.getElementById('product-price-input').value
 
   divProductPrice.appendChild(productPrice)
 
-  var divTotalProductPrice = document.createElement('div')
+  var divTotalProductPrice = createItemNode('div')
   divTotalProductPrice.className = 'box'
 
-  var totalProductPrice = document.createElement('span')
+  var totalProductPrice = createItemNode('span', '$0.00')
   totalProductPrice.className = 'total-price'
-  totalProductPrice.innerHTML = '$0.00'
 
   divTotalProductPrice.appendChild(totalProductPrice)
 
-  var divProduct = document.createElement('div')
+  var divProduct = createItemNode('div')
   divProduct.className = 'product'
 
   divProduct.appendChild(divProductName)
@@ -119,7 +119,7 @@ function createNewItem() {
 
   var divContainerProducts = document.getElementById('container')
   var productsList = document.getElementsByClassName('product')
-  divContainerProducts.insertBefore(divProduct, productsList[productsList.length -1].nextSibling)
+  divContainerProducts.insertBefore(divProduct, productsList[productsList.length - 1].nextSibling)
 }
 
 window.onload = function() {
