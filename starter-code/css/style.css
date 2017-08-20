@@ -46,26 +46,26 @@ section.container {
 }
 
 .product {
-  margin-top: 10px;
+  margin: 10px auto;
 }
 
-.product > div {
+.create {
+  margin-top: 50px;
+}
+
+.product > div, .create > div {
   display: inline-block;
   width: 12%;
   margin: 0 20px;
   text-align: left;
 }
 
-.product > div.num-product {
+.product > div.num-product, .create > div.num-product {
   width: 23%;
 }
 
-.quantity {
+div.num-product label {
   margin: 0 5px;
-}
-
-.product > div.delete-product {
-  width: 4%;
 }
 
 section.calculate {
