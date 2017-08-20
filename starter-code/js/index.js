@@ -50,9 +50,11 @@ window.onload = function(){
   calculatePriceButton.onclick = getTotalPrice;
   
 
-//   createItemButton.onclick = createNewItem;
-//
-//   for(var i = 0; i<deleteButtons.length ; i++){
-//     deleteButtons[i].onclick = deleteItem;
-//   }
-// };
+
+  createItemButton.onclick = createNewItem;
+
+  for(var i = 0; i<deleteButtons.length ; i++){
+     deleteButtons[i].onclick = deleteItem;
+
+  }
+ };

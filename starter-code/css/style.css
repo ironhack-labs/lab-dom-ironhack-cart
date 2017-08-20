@@ -3,14 +3,13 @@
   text-align: center;
   display: inline-block;
   width: 100%;
-
+  line-height: 70px;
 
 }
 
 h1 {
-  margin-right: 312px;
-  line-height: 60px;
-  text-align: right;
+  margin-left: 650px;
+
 }
 
 .wrapper > article{
