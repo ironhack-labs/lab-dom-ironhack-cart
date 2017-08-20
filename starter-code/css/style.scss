@@ -1,20 +1,34 @@
+// COLORS
+$black: #000;
+$white: #fff;
+$back-succ-color: #5cb85c;
+$border-succ-color: #4cae4c;
+$back-del-color: #CF000F;
+$border-del-color: #CF000F;
+
 .container {
   width: 100%;
   height: 800px;
-  margin: 10px 15px; }
-  .container .header {
+  margin: 10px 15px;
+  .header {
     width: 100%;
-    text-align: center; }
-  .container .content-table {
-    width: 100%; }
-    .container .content-table div {
+    text-align: center;
+  }
+  .content-table{
+    width: 100%;
+    div {
       float: left;
-      width: 20%; }
-  .container .calculate {
-    text-align: center; }
+      width: 20%;
+    }
+  }
+  .calculate{
+    text-align: center;
+  }
+}
 
 input {
-  border: solid 1px #000; }
+  border: solid 1px $black;
+}
 
 .btn {
   display: inline-block;
@@ -35,17 +49,20 @@ input {
   cursor: pointer;
   background-image: none;
   border: 1px solid transparent;
-  border-radius: 4px; }
+  border-radius: 4px;
+}
 
 .btn-success {
-  color: #fff;
-  background-color: #5cb85c;
-  border-color: #4cae4c; }
-
+  color: $white;
+  background-color: $back-succ-color;
+  border-color: $border-succ-color;
+}
 .btn-delete {
-  color: #fff;
-  background-color: #CF000F;
-  border-color: #CF000F; }
+  color: $white;
+  background-color: $back-del-color;
+  border-color: $border-del-color;
+}
 
 .quantity {
-  margin: 0 5px; }
+  margin: 0 5px;
+}
