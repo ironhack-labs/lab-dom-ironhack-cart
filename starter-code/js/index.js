@@ -75,7 +75,7 @@ function createQuantityNode() {
 
 function createItemNode(dataType, itemData) {
   var itemNode = document.createElement(dataType)
-  itemNode.innerHTML = itemData
+  if(itemData != undefined) itemNode.innerHTML = itemData
 
   return itemNode
 }
