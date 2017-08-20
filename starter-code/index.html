@@ -11,10 +11,10 @@
 </head>
 <body>
 
-  <div class="container" id="container">
+  <div class="container" id="containeres">
     <h1>Iron Hack Merchandising Shop</h1>
 
-    <div id="product">
+    <div class="product">
       <div class="name">
         <p>IronBubble-head</p>
       </div>
@@ -33,11 +33,11 @@
       </div>
 
       <div class="delete">
-        <button class="btn btn-delete" id="btn-delete" type="button" name="button">DELETE</button>
+        <button onclick="del()" class="btn btn-delete"  type="button" name="button">DELETE</button>
       </div>
     </div>
 
-    <div id="product">
+    <div class="product">
       <div class="name">
         <p>IronBubble-bike</p>
       </div>
@@ -56,9 +56,14 @@
       </div>
 
       <div class="delete">
-        <button class="btn btn-delete" id="btn-delete" type="button" name="button">DELETE</button>
+        <button onclick="del()" class="btn btn-delete" type="button" name="button">DELETE</button>
       </div>
     </div>
+
+    <input id="newName" type="text" name="" value="">
+    <input type="newPrice" name="" value="">
+
+    <button onclick="create()"  type="button" name="button">Create</button>
 
     <div class="calculate">
       <button onclick="calculatePrice()" class="btn btn-success" id="calc-prices-button" type="button" name="button">Calculate prices</button>

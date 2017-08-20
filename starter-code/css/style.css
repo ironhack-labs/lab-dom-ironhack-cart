@@ -52,14 +52,14 @@ html,body{
   /*background-color: green;*/
 }
 
-#product {
+.product {
   width: 90%;
   /*text-align: center;*/
   /*background-color: red;*/
   float: left;
 }
 
-.container #product div{
+.container .product div{
   width: 15%;
   height: 50px;
   float: left;

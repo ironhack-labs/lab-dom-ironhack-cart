@@ -17,6 +17,14 @@ function calculatePrice (){
   document.getElementById("sumT").innerHTML = sum;
 }
 
+function del(){
+  var btn = document.getElementsByClassName("product");
+  var div = document.getElementById("containeres");
+
+  div.removeChild(btn[0]);
+}
+
+
 
 
 
