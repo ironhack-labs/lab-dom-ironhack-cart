@@ -39,3 +39,24 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+
+.wrapper {
+    padding : 20px;
+}
+
+.wrapper .item {
+    padding : 10px 0;
+}
+.wrapper .col {
+    width : 19%;
+    display : inline-block;
+}
+
+.wrapper .update {
+    padding : 30px 0;
+    text-align : center;
+}
+
+
+
