@@ -65,7 +65,7 @@ function createQuantityNode(c){
 }
 //Function to create the delete button
 function createDeleteButton(a){
-  var contentButton = createItemNode(['div','button-delete btn'], '');
+  var contentButton = createItemNode(['div','button-delete btn pdd-left-btn'], '');
   appendChildItem(a, contentButton);
   var button = createItemNode(['button','btn-delete btn'], 'Delete');
   appendChildItem(contentButton, button);

@@ -55,18 +55,23 @@ input {
   width: calc(100%-2px);
   overflow: hidden;
   .title{
-    width: 50%;
+    width: 60%;
     float: right;
   }
   .product{
-    width: 100%;
-    background-color: #eee;
+    width: calc(100% - 60px);
     padding: 30px;
-    .name, .price, .input-quantity, .total-price, .button-delete{
+    .name, .price, .input-quantity, .total-price{
       width: calc(20% - 6px);
       display: inline-block;
       text-align: left;
     }
+    .button-delete{
+      width: calc(20% - 5px);
+      display: inline-block;
+      text-align: left;
+    }
+
   }
   .new-product{
     padding: 10px;
@@ -79,9 +84,9 @@ input {
       }
     }
     .button-new-prod{
-      width: calc(60% - 9px - 40% - 30px);
+      width: calc(60% - 9px - 40% - 28px);
       display: inline-block;
-      padding-left: calc(40% + 30px);
+      padding-left: calc(40% - 28px);
     }
   }
   .button-calculate{
@@ -95,6 +100,9 @@ input {
 
 .mg-left{
   margin-left: 10px;
+}
+.pdd-left-btn{
+  padding-left: 7px;
 }
 .clearfix{
   clear: both;
