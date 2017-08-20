@@ -52,8 +52,9 @@ input {
 }
 
 .content{
-  width: calc(100%-2px);
+  width: calc(100% - 5%);
   overflow: hidden;
+  padding-left: 5%;
   .title{
     width: 60%;
     float: right;
