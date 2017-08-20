@@ -1,5 +1,9 @@
 input {
-  border: solid 1px black;
+  border: solid 1px black ;
+}
+
+span {
+
 }
 
 .btn {
@@ -38,4 +42,46 @@ input {
 
 .quantity {
   margin: 0 5px;
+  width: 30%;
+}
+
+.header {
+  height: 100px;
+  background: #fff;
+  padding-left: 40%;
+}
+
+.complete {
+  height: 100px;
+  background: teal;
+}
+
+.calculate-price {
+  height: 100px;
+  background: #fff;
+  text-align: center;
+  line-height: 100px;
+}
+
+.product-name{
+  display: inline-block;
+  float: left;
+  background: rgb(117, 58, 32);
+  width:20%;
+  height:100px;
+}
+.border-box{
+  display: inline-block;
+  float: left;
+  background: #fff;
+  width:20%;
+  height:100px;
+  box-sizing: border-box;
+  display: inline-block;
+  text-align: center;
+  line-height: 100px;
+}
+
+.qty-box {
+
 }
