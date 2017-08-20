@@ -1,7 +1,25 @@
+
+header{
+  margin: auto;
+  text-align: center;
+  line-height: 100px;
+  width: 90%;
+  height: 100px;
+
+}
 input {
   border: solid 1px black;
 }
 
+section{
+  width:90%;
+  margin: auto;
+  text-align: center;
+}
+div{
+  height: 100px;
+  line-height: 100px;
+}
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -38,4 +56,24 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.middle{
+  width:100%;
+  text-align:center;
+  line-height:4;
+}
+.bot{
+  width:100%;
+  text-align:center;
+  line-height:4;
+}
+
+.middle0{
+  display: inline-block;
+  width:20%;
+  height:100%;
+  float:left;
+  text-align:center;
+  line-height:5;
 }
