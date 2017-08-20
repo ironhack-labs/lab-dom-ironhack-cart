@@ -54,3 +54,11 @@ input {
 .box-quantity{
   width: 20%;
 }
+
+#calc-prices-button{
+  margin-top: 60px
+}
+
+h1, h2{
+  text-align: center;
+}
