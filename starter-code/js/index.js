@@ -3,17 +3,21 @@ function deleteItem(e){
 }
 
 function getPriceByProduct(){
-var precio = Number(document.getElementById("price1").innerHTML);
-var cantidad = Number(document.getElementById("QTY").value);
+  var precio = document.getElementsByClassName("price1");
+  var cantidad = document.getElementsByClassName("QTY");
 
-var total = document.getElementById("firstTotal");
+  var total = document.getElementsByClassName("firstTotal");
 
-var multi= precio * cantidad;
-total.innerHTML = multi;
 
+  var todoslosprecios=[]
+  for (var i = 0; i < 2; i++) {
+    x = precio[i].innerHTML* cantidad[i].value;
+    todoslosprecios.push(x)
+       }
+
+  for (var i = 0; i < todoslosprecios.length; i++) {
+    total[i].innerHTML = todoslosprecios[i];}
 }
-
-
 
 
 
