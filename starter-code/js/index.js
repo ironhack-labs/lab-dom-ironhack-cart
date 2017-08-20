@@ -1,25 +1,34 @@
-function deleteItem(e){
+function deleteItem(e) {
 
 }
 
-function getPriceByProduct(){
+function getPriceByProduct() {
   var precio = document.getElementsByClassName("price1");
   var cantidad = document.getElementsByClassName("QTY");
 
   var total = document.getElementsByClassName("firstTotal");
 
 
-  var todoslosprecios=[]
+  var todoslosprecios = []
   for (var i = 0; i < 2; i++) {
-    x = precio[i].innerHTML* cantidad[i].value;
+    x = precio[i].innerHTML * cantidad[i].value;
     todoslosprecios.push(x)
-       }
+  }
 
   for (var i = 0; i < todoslosprecios.length; i++) {
-    total[i].innerHTML = todoslosprecios[i];}
+    total[i].innerHTML = todoslosprecios[i];
+  }
+
+
+  var cuantoEs = document.getElementById("precioFinal");
+
+  var superTotal = 0;
+
+  for (var i = 0; i < todoslosprecios.length; i++) {
+    superTotal += todoslosprecios[i];
+  };
+  cuantoEs.innerHTML = "$" + superTotal;
 }
-
-
 
 
 /*
