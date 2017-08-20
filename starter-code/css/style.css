@@ -39,3 +39,40 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+h1 {
+  margin-left: 48%;
+}
+
+.product-container {
+  height: 75px;
+  text-align: center;
+}
+
+.product-name {
+  display: inline-block;
+  width: 20%;
+}
+
+.product-cost-per-unit {
+  display: inline-block;
+  width: 20%;
+}
+
+.amount-of-units {
+  display: inline-block;
+  width: 20%;
+}
+
+.total-price {
+  display: inline-block;
+  width: 20%;
+}
+
+.delete-button {
+  display: inline-block;
+}
+
+.calculate-price {
+  margin-left: 50%;
+}

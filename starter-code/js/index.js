@@ -4,6 +4,17 @@ function deleteItem(e){
 
 function getPriceByProduct(itemNode){
 
+  var button = document.getElementsByClassName('btn-success')[0];
+
+  button.onclick = function(){
+    var unitPrice = document.getElementById("product-price-unit").innerHTML;
+    var qty = document.getElementById("qty").value;
+    var totalPrice = document.getElementById("total-price");
+    var total = unitPrice * qty;
+    totalPrice.innerHTML = total;
+
+  }
+
 }
 
 function updatePriceByProduct(productPrice, index){
