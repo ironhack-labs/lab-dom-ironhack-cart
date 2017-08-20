@@ -1,10 +1,14 @@
 function calculatePrice (){
-  var price = document.getElementById("price").innerHTML;
-  var unit = document.getElementById("qty").value;
-  console.log(price, unit);
-  var totalPrice = price * unit;
-  document.getElementById("priceTotal").innerHTML = totalPrice;
+  var price = document.getElementsByClassName("prices");
+  var unit = document.getElementsByTagName("input");
+  var priceTotales = document.getElementsByClassName("priceTotal");
+  //console.log(price, unit, priceTotales);
 
+  for (var i = 0; i < price.length; i++) {
+     var totalPrice = price[i].innerHTML * unit[i].value;
+     //console.log(totalPrice);
+     priceTotales[i].innerHTML = totalPrice;
+   }
 }
 
 
