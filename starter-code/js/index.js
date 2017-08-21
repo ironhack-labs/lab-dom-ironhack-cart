@@ -5,12 +5,11 @@ function deleteItem(e) {
 function getPriceByProduct() {
   var precio = document.getElementsByClassName("price1");
   var cantidad = document.getElementsByClassName("QTY");
-
   var total = document.getElementsByClassName("firstTotal");
 
 
   var todoslosprecios = []
-  for (var i = 0; i < 2; i++) {
+  for (var i = 0; i < precio.length; i++) {
     x = precio[i].innerHTML * cantidad[i].value;
     todoslosprecios.push(x)
   }
