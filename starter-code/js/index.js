@@ -95,11 +95,9 @@ return finalPrice;
     deleteButtons[i].onclick = deleteItem;
   }
 function deleteItem(e){
-  if(e.currentTarget==document.getElementById('section1')){
-  var child = document.getElementById('section1');
-  var parent = document.getElementById('container');
-  parent.removeChild(child)[0];
-}
+  var clear = e.currentTarget.parentNode.parentNode;
+  clear.innerHTML="";
+
 }
 
 };
