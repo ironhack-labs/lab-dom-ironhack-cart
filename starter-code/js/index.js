@@ -17,7 +17,7 @@ function getPriceByProduct(itemNode){
   var total;
   var unitPrice = document.getElementsByClassName('js-price');
   var unitQuantity = document.getElementsByClassName('js-quantity');
-  total = unitPrice[itemNode].innerHTML * unitQuantity[itemNode].value;
+  total = (unitPrice[itemNode].innerHTML).slice(0, -1) * unitQuantity[itemNode].value;
 
   //Updating the prices of each product
   updatePriceByProduct(total, itemNode);
@@ -32,8 +32,10 @@ function getTotalPrice() {
     //Calculating the price of each product
     totalPrice += getPriceByProduct(i);
   }
+
+
   //Updating the total price of the content js-final-price
-  document.getElementById('js-final-price').innerHTML = "<h2>Total price: $" + totalPrice.toFixed(2) + "</h2>";
+  document.getElementById('js-final-price').innerHTML = "<h2>Total price: " + totalPrice.toFixed(2) + "$ </h2>";
 }
 
 //Function to create a new node
@@ -48,7 +50,8 @@ function createItemNode(dataType, itemData){
 //Function to create a new product
 function createNewItem(){
   var a = document.getElementById("new-item-name").value;
-  var b = document.getElementById("new-unit-price").value;
+  var b = (document.getElementById("new-unit-price").value);
+  b+="$";
   //Creating a new product
   createNewItemRow(a, b);
 }
@@ -88,7 +91,6 @@ function deleteItem(e){
 function createQuantityInput(a){
   var b = createItemNode(['input', 'js-quantity'],'');
   b.setAttribute("placeholder", "0");
-  //console.log(a);
   appendItem(a, b);
 }
 
