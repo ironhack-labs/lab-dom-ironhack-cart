@@ -1,9 +1,8 @@
 
 
 function deleteItem(e){
-  var clear = document.getElementById("bubble-head");
-  var clear = document.getElementsByClassName("items");
-  clear[e].innerHTML = "";
+  var clear = e.currentTarget.parentNode.parentNode;
+  clear.innerHTML = "";
 }
 
 function getPriceByProduct(itemNode){
@@ -54,6 +53,7 @@ function createNewItemRow(itemName, itemUnitPrice){
 
 function createNewItem(){
 
+
 }
 /*
 document.getElementById("calc-prices-button").onclick = function(){
@@ -61,17 +61,8 @@ document.getElementById("calc-prices-button").onclick = function(){
   getPriceByProduct(1);
   getTotalPrice();
 };
-*/
-/*
-var delclick = document.getElementsByClassName("delete");
-for (var j = 0; j < delclick.length; j++){
-    delclick[j].onclick = function(e){
-      console.log(j + "length: " + delclick.length);
-      console.log("Current: " + e.currentTarget.innerHTML);
-    };
-}
-*/
 
+//DELETE A MANO
 document.getElementsByClassName("delete")[0].onclick = function(){
   deleteItem(0);
 };
@@ -79,7 +70,7 @@ document.getElementsByClassName("delete")[0].onclick = function(){
 document.getElementsByClassName("delete")[1].onclick = function(){
   deleteItem(1);
 };
-
+*/
 
 window.onload = function(){
   var calculatePriceButton = document.getElementById('calc-prices-button');
@@ -95,7 +86,7 @@ window.onload = function(){
   };
   //createItemButton.onclick = createNewItem();
 
-/*  for(var i = 0; i<deleteButtons.length ; i++){
+  for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
-  }*/
+}
 };
