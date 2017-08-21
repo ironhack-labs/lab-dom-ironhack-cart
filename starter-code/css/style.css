@@ -1,5 +1,30 @@
+* {
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
+
+h1 {
+  font-family: "Baloo Bhaijaan", sans-serif;
+  letter-spacing: 05px;
+  font-size: 3rem;
+  text-align: center;
+}
+
+p {
+  font-family: 'Questrial', sans-serif;
+}
+
+label {
+  display: inline-block;
+  margin-right: 10px;
+}
+
 input {
-  border: solid 1px black;
+  border: solid 1px grey;
+  border-radius: 2px;
+  padding: 3px;
+  width: 100px;
 }
 
 .btn {
@@ -22,6 +47,11 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+  transition: all 200ms ease;
+}
+
+.btn:hover {
+  opacity: 0.7;
 }
 
 .btn-success {
@@ -38,4 +68,48 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.product-wrapper {
+  width: 70%;
+  min-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.product-wrapper div {
+  display: inline-block;
+  width: 190px;
+  white-space: nowrap;
+  margin-bottom: 30px;
+}
+
+div .btn-success {
+  width: 150px;
+  margin: 0 auto;
+  display: block;
+  margin-top: 30px;
+}
+
+div h2 {
+  font-family: "Questrial", sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.total {
+  transition: all 200ms ease;
+}
+
+.new-product input {
+  width: 160px;
+}
+
+#hidden-product {
+  display:none;
+}
+
+#headings {
+  margin-bottom: 15px;
 }
