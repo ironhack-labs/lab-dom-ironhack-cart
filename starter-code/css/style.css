@@ -1,5 +1,6 @@
 input {
   border: solid 1px black;
+
 }
 
 .btn {
@@ -38,4 +39,41 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.everything{
+  width: 100%;
+  margin: auto;
+}
+.header1 {
+
+  width: 49%;
+  height: 100px;
+  float: left;
+  }
+
+.content {
+  clear: both;
+  margin-top: 30px;
+  margin-botton: 30px;
+}
+
+.box{
+  width: 19%;
+  display: inline-block;
+  height: 50px;
+  text-align: center;
+}
+
+
+.superBotton{
+  clear: both;
+  width: 100%;
+
+  text-align: center;
+}
+
+footer{
+  text-align: center;
+  
 }
