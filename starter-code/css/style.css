@@ -1,5 +1,6 @@
 input {
   border: solid 1px black;
+  margin-left: 8px;
 }
 
 .btn {
@@ -22,6 +23,7 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+  margin-top: 8px;
 }
 
 .btn-success {
@@ -37,5 +39,40 @@ input {
 }
 
 .quantity {
-  margin: 0 5px;
+  margin: 12px 5px;
+}
+
+html,body{
+  width: 100%;
+}
+
+.container{
+  width: 100%;
+  text-align: center;
+  /*background-color: green;*/
+}
+
+.product {
+  width: 90%;
+  /*text-align: center;*/
+  /*background-color: red;*/
+  float: left;
+}
+
+.container .product div{
+  width: 15%;
+  height: 50px;
+  float: left;
+  /*background-color: blue;*/
+  margin-left: 10px;
+}
+
+.pricet{
+  margin-top: 14px;
+}
+
+.calculate{
+  clear: both;
+  width: 100%;
+
 }

@@ -10,5 +10,78 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+
+  <div class="container" id="containeres">
+    <h1>Iron Hack Merchandising Shop</h1>
+
+    <div class="product">
+      <div class="name">
+        <p>IronBubble-head</p>
+      </div>
+
+      <div class="price">
+        <p class="prices">25.00</p>
+      </div>
+
+      <div class="quantity">
+        <label for="qty">QTY</label>
+        <input id="qty" type="number" name="" value="" size="2" min="0" max="99">
+      </div>
+
+      <div class="pricet">
+        <span class="priceTotal">$0.00</span>
+      </div>
+
+      <div class="delete">
+        <button onclick="del()" class="btn btn-delete"  type="button" name="button">DELETE</button>
+      </div>
+    </div>
+
+    <div class="product">
+      <div class="name">
+        <p>IronBubble-bike</p>
+      </div>
+
+      <div class="price">
+        <p class="prices">55.00</p>
+      </div>
+
+      <div class="quantity">
+        <label for="qty">QTY</label>
+        <input id="qty" type="number" name="" value="" size="2" min="0" max="99">
+      </div>
+
+      <div class="pricet">
+        <span class="priceTotal">$0.00</span>
+      </div>
+
+      <div class="delete">
+        <button onclick="del()" class="btn btn-delete" type="button" name="button">DELETE</button>
+      </div>
+    </div>
+
+
+
+    <input id="newName" type="text" name="" value="">
+    <input id="newPrice" type="text" name="" value="">
+
+    <button onclick="create()"  type="button" name="button">Create</button>
+
+    <div class="calculate">
+      <button onclick="calculatePrice()" class="btn btn-success" id="calc-prices-button" type="button" name="button">Calculate prices</button>
+    </div>
+
+    <div class="">
+      <h2>Total Price:
+      <spam id="sumT">0</spam> $</h2>
+
+    </div>
+  </div>
+
+
+
+
+
+
 </body>
 </html>
