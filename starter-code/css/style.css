@@ -39,3 +39,26 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+body {
+  margin: 50px 300px 0 300px;
+}
+
+h1 {
+  margin-left: 100px;
+}
+
+.calculate {
+  margin-left: 200px;
+  margin-top: 40px;
+}
+
+.allProduct {
+  margin-top: 50px;
+}
+
+.inline{
+  display: inline-block;
+  width: 18.5%;
+  padding-top: 40px;
+}
