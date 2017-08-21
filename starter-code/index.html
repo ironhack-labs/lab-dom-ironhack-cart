@@ -10,5 +10,54 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <h1>Ironhack<br>Merchandising Shop</h1>
+  <section class="productList wrapper">
+
+    <div class="productItem wrapper">
+      <div class="container">
+        <span>IronBubble-head</span>
+      </div>
+      <div class="data-container">
+        <span class="unitCost">5.5</span><span>$</span>
+      </div>
+      <div class="quant container">
+        <label for="quantity">QTY </label>
+        <input class="quantity" type="number" name="quantity" value="0" onchange="updatePrice()" min="0">
+      </div>
+      <div class="data-container">
+        <span class="currentPrice">0.00</span><span>$</span>
+      </div>
+      <div class="delete container">
+        <button class="btn" type="button" name="button">Delete</button>
+      </div>
+    </div>
+
+    <div class="productItem wrapper">
+      <div class="container">
+        <span>Ironshirt</span>
+      </div>
+      <div class="data-container">
+        <span class="unitCost">20.5</span><span>$</span>
+      </div>
+      <div class="quant container">
+        <label for="quantity">QTY </label>
+        <input class="quantity" type="number" name="quantity" value="0" onchange="updatePrice()" min="0">
+      </div>
+      <div class="data-container">
+        <span class="currentPrice" >0.00</span><span>$</span>
+      </div>
+      <div class="delete container">
+        <button class="btn" type="button" name="button">Delete</button>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="calculation wrapper">
+    <button id="calc-button" type="button" name="button" onclick="updateTotal()">Calculate Prices</button>
+  </div>
+  <div class="total-sum wrapper">
+    <span>Total: </span><span id="total">0.00</span><span>$</span>
+  </div>
 </body>
 </html>

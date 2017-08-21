@@ -2,6 +2,7 @@ input {
   border: solid 1px black;
 }
 
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -38,4 +39,53 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.wrapper{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+  min-width: 850px;
+}
+
+.container{
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  width: 200px;
+  flex-wrap: nowrap;
+}
+
+.data-container{
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  width: 100px;
+}
+
+h1{
+  width: 100%;
+  margin-bottom: 5%;
+  margin-left: 50%;
+}
+
+.quant{
+  justify-content: center;
+  align-items: center;
+}
+
+
+#calc-button{
+  background-color: green;
+  color: white;
+  padding: 6px 16px;
+  border: solid thick green;
+  border-radius: 3%;
+}
+
+.total-sum, .calculation{
+  justify-content: center;
+  font-weight: bold;
 }
