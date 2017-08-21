@@ -1,9 +1,12 @@
 input {
   border: solid 1px black;
+  width: 65%;
 }
 
 .container {
-
+  padding: 1em;
+  margin: auto;
+  width: 1024px;
 }
 
 .info-container {
@@ -15,7 +18,9 @@ input {
 }
 
 .row {
-
+  width: 90%;
+  clear: both;
+  padding: 2em;
 }
 
 .col-xs-2 {
@@ -27,7 +32,8 @@ input {
 }
 
 .col-xs-5 {
-
+  width: calc(100% / 5);
+  float: left;
 }
 
 .col-xs-4 {
@@ -75,6 +81,23 @@ input {
 .quantity {
   margin: 0 5px;
 }
-.inline {
-  display: inline;
+
+#qty {
+  width: 60%;
+}
+
+.calculate {
+  text-align: center;
+  margin-top: 100px;
+  clear: both;
+}
+
+#create input {
+  width: 75%;
+}
+
+#createBtn {
+  float: right;
+  text-align: center;
+  margin-right: 103px;
 }
