@@ -50,8 +50,7 @@ function createItemNode(dataType, itemData){
 //Function to create a new product
 function createNewItem(){
   var a = document.getElementById("new-item-name").value;
-  var b = (document.getElementById("new-unit-price").value);
-  b+="$";
+  var b = parseFloat(document.getElementById("new-unit-price").value).toFixed(2);
   //Creating a new product
   createNewItemRow(a, b);
 }
@@ -111,7 +110,7 @@ function createNewItemRow(itemName, itemUnitPrice){
   //Creating div class="price" and a span inside
   var contentPrice = createItemNode(['div','price'], '');
   appendChildItem(contentProduct, contentPrice);
-  var contentPriceSpan = createItemNode(['span','js-price'], itemUnitPrice);
+  var contentPriceSpan = createItemNode(['span','js-price'], itemUnitPrice + "$");
   appendChildItem(contentPrice, contentPriceSpan);
 
   //Creating the div class="js-quantity"
