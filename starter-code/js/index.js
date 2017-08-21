@@ -1,30 +1,40 @@
-function calculatePrice (){
-  var price = document.getElementsByClassName("prices");
-  var unit = document.getElementsByTagName("input");
-  var priceTotales = document.getElementsByClassName("priceTotal");
-  var sum = 0;
+function calculatePrice () {
+  var price = document.getElementsByClassName('prices')
+  var unit = document.getElementsByTagName('input')
+  var priceTotales = document.getElementsByClassName('priceTotal')
+  var sum = 0
+
   //console.log(price, unit, priceTotales);
 
   for (var i = 0; i < price.length; i++) {
-     var totalPrice = price[i].innerHTML * unit[i].value;
+     var totalPrice = price[i].innerHTML * unit[i].value
      //console.log(totalPrice);
-     priceTotales[i].innerHTML = totalPrice;
-     console.log(sum);
-     sum = sum + parseInt(priceTotales[i].innerHTML);
-     console.log(sum);
+     priceTotales[i].innerHTML = totalPrice
+     console.log(sum)
+     sum = sum + parseInt(priceTotales[i].innerHTML)
+     console.log(sum)
    }
 
-  document.getElementById("sumT").innerHTML = sum;
+  document.getElementById("sumT").innerHTML = sum
 }
 
 function del(){
   var btn = document.getElementsByClassName("product");
   var div = document.getElementById("containeres");
 
-  div.removeChild(btn[0]);
+  div.removeChild(this.btn);
 }
 
-
+// function create(){
+//   var newN = document.getElementById("newName")
+//   var newP = document.getElementById("newPrice")
+//
+//
+// }
+//
+// function createD(){
+//   document.createElement("div")
+// }
 
 
 
