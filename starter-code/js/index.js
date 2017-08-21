@@ -1,5 +1,6 @@
 function deleteItem(e){
 
+
 }
 
 function getPriceByProduct(itemNode){
@@ -11,8 +12,19 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-
-}
+  var product = document.getElementById("units")
+  console.log(product);
+  var cost = document.getElementsByClassName("costOfUnit")
+  console.log(cost);
+  var calculatePriceButton = document.getElementsByClassName("btn-success")
+  console.log(calculatePriceButton);
+  calculatePriceButton.onclick = function {
+  for (var i = 0; i<getTotalPrice; i++) {
+    var total = product*cost
+   }
+  }
+  return total
+};
 
 function createQuantityInput(){
 
