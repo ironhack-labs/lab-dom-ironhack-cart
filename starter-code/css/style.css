@@ -39,3 +39,23 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.left{
+  float: left;
+  width:18%;
+  padding-left: 2%;
+  margin-top:20px;
+}
+
+.left label{
+  margin-right: 5px;
+}
+
+#success{
+  text-align: center;
+  padding-top: 50px;
+}
+
+#showTotal{
+  text-align: center;
+}
