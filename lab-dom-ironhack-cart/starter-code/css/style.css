@@ -1,0 +1,80 @@
+body {
+  text-align: center;
+  margin: 50px;
+}
+
+h1 {
+  font-size: 30px;
+  text-align: left;
+  margin-left: 500px;
+}
+
+h2 {
+  font-size: 20px;
+  text-align: center;
+}
+
+article {
+  display: inline-block;
+  padding: 40px;
+}
+
+input {
+  border: solid 1px black;
+  margin: 0 5px;
+  content: "0";
+}
+
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    text-align: center;
+}
+
+.btn-delete {
+    color: #fff;
+    background-color: #CF000F;
+    border-color: #CF000E;
+}
+
+
+.quantity {
+  margin: 0 5px;
+}
+
+.box{
+  width: 10%;
+  display: inline-block;
+  margin: 2px
+}
+
+.box-quantity{
+  width: 17%;
+}
+
+#calc-prices-button{
+  margin-top: 60px
+}
