@@ -1,6 +1,63 @@
+h1{
+  width: 90%;
+  margin: 50px auto 0;
+  text-align: center;
+}
+
+
+ /*----------------------Each Product -----------------------------*/
+
+
+
+.product {
+
+  width: 90%;
+  margin: 50px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.in-row {
+  display: inline-block;
+  padding: 0 2%;
+  margin: 0 3%;
+  width: 10%;
+}
+
+
+
 input {
   border: solid 1px black;
 }
+
+.btn-delete {
+    display: inline-block;
+    color: #fff;
+    background-color: #CF000F;
+    border-color: #CF000F;
+}
+
+
+
+/*----------------------Calculate Price -----------------------------*/
+
+.total {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+#calc-prices-button {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+
+
+}
+
+
+/*----------------------Random -----------------------------*/
 
 .btn {
   display: inline-block;
@@ -22,20 +79,4 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
-}
-
-.btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
-}
-
-.btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
-}
-
-.quantity {
-  margin: 0 5px;
 }

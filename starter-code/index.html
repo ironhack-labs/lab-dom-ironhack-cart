@@ -6,9 +6,85 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+
+<!-- HEADER____________________ -->
+
+
+  <h1>Fruit Shop</h1>
+
+<div id="all-products">
+<!-- Product 1: Banana____________________ -->
+
+  <section class="product">
+        <div class="product-name in-row"> Banana </div>
+        <div class="in-row"> $<span class="item-price">1.00</span> </div>
+        <div class="quantity in-row">
+
+                QTY
+                <input type="number" name="quantity">
+
+        </div>
+        <div class="in-row"> $<span class="total-price">0.00</span> </div>
+        <button class="btn-delete in-row">Delete</button>
+  </section>
+
+
+  <!-- Product 3: Apple____________________ -->
+  <section class="product">
+        <div class="product-name in-row"> Apple </div>
+        <div class="in-row"> $<span class="item-price">2.75</span> </div>
+        <div class="quantity in-row">
+              <form>
+                QTY
+                <input type="number" name="quantity">
+              </form>
+        </div>
+        <div class="in-row"> $<span class="total-price">0.00</span> </div>
+        <button class="btn-delete in-row">Delete</button>
+  </section>
+
+</div>
+
+<!-- CREATE Product X: Add your own product!!!! -->
+
+  <section class="product">
+
+        <div id="in-row">
+          <input type="text" name="new-item" id="empty-product">
+        </div>
+
+        <div class="in-row">
+          <span >
+            <input id="empty-price" type="number" name="price">
+          </span>
+        </div>
+
+        <div class="quantity in-row">
+              <!-- <form>
+                QTY
+                <input type="number" name="quantity">
+              </form> -->
+        </div>
+        <div class="in-row"> <span class="total-price"></span> </div>
+        <button id="btn-create" class="in-row">Create</button>
+  </section>
+
+
+
+  <!-- Calculate Button _____________________________ -->
+
+  <section class="total">
+    <button id="calc-prices-button">Calculate Price</button>
+  </section>
+
+
+<!-- Total Price _____________________________ -->
+<h1>Total Price is $<span id="final-price">0.00</span></h1>
+
+
+  <script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>
