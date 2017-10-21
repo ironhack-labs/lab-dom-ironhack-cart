@@ -1,5 +1,7 @@
 function deleteItem(e){
-  var product = document.getElementById('')
+  let item = e.target.parentElement.parentElement;
+  let container = item.parentElement;
+  container.removeChild(item);
 }
 
 function getPriceByProduct(itemNode){
