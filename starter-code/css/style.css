@@ -1,33 +1,43 @@
+body {
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+}
+
 input {
-  border: solid 1px black;
+    border: solid 1px black;
+    margin: 0 auto;
 }
 
 .btn {
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
 }
 
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin: 20px auto;
 }
 
 .btn-delete {
@@ -37,5 +47,23 @@ input {
 }
 
 .quantity {
-  margin: 0 5px;
+    box-sizing: border-box;
+    margin: 0 5px;
+}
+
+.product {
+    padding: 5px 20px;
+}
+
+.product div {
+    text-align: center;
+    display: inline-block;
+    width: 19%;
+    border-width: 0;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.total-price {
+    text-align: center;
 }
