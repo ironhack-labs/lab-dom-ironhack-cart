@@ -17,13 +17,21 @@ function getPriceByProduct(itemNode){
 
 function updatePriceByProduct(productPrice, index){
   let updatePrice = document.getElementsByClassName('total')[index]
-      updatePrice.innerText = productPrice;
+  updatePrice.innerText = productPrice;
 }
 
 
 function getTotalPrice(){
-  var product = document.getElementsByClassName('item-nodo');
+  let product = document.getElementsByClassName('item-nodo');
   getPriceByProduct(product);
+  let totalsPrice = document.getElementsByClassName('total');
+  let sumTotal = 0;
+  for(var i = 0; i < totalsPrice.length; i++){
+    let price = totalsPrice[i].innerText.replace("$","");
+        price = parseFloat(price);
+     sumTotal +=  price;
+  }
+  document.getElementById('sum-total').innerText = "$" + sumTotal;
 }
 
 function createQuantityInput(){
