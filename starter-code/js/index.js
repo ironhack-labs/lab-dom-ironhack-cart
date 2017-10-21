@@ -1,14 +1,17 @@
 function deleteItem(e){
-
+  var buttonSelect = e.currentTarget;
+  var divABorrar = buttonSelect.parentNode.parentNode;
+  var padre = divABorrar.parentNode;
+  padre.removeChild(divABorrar);
 }
 
-function getPriceByProduct(itemNode){
+/*function getPriceByProduct(itemNode){
 
 }
 
 function updatePriceByProduct(productPrice, index){
 
-}
+}*/
 
 /* Function for calculating the total price of one product.
    Gets the number of items the user wants of this product,
@@ -57,7 +60,7 @@ window.onload = function(){
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
   calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
+  //createItemButton.onclick = createNewItem;
 
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
