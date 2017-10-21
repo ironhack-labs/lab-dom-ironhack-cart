@@ -1,3 +1,5 @@
+
+/* Styles given */
 input {
   border: solid 1px black;
 }
@@ -38,4 +40,21 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+/* Additional styles */
+.title{
+  width: 30%;
+  text-align: left;
+  margin-left: 45%;
+}
+
+.product {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.calculateButton {
+  text-align: center;
 }
