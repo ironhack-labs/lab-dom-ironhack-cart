@@ -37,7 +37,9 @@ function createQuantityInput() {
   };
 
   var element = document.createElement("div");
+  element.className="qty";
   var label = document.createElement("label");
+  label.innerHTML="QTY ";
   var input = document.createElement("input");
 
   element.className = "qty";
