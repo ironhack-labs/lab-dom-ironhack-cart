@@ -3,7 +3,8 @@ function deleteItem(e){
 }
 
 function getPriceByProduct(itemNode){
-
+  var price = document.getElementById("itemNode");
+  price = price.innerText;
 }
 
 function updatePriceByProduct(productPrice, index){

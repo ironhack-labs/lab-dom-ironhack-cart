@@ -1,5 +1,25 @@
-input {
-  border: solid 1px black;
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing:    border-box;
+  box-sizing:         border-box;
+}
+
+h1 {
+  position: relative;
+  left: 42vw;
+  display: inline-block;
+}
+
+.product-container {
+  text-align: center;
+  height: 110px;
+}
+
+.product-container div {
+  display: inline-block;
+  text-align: left;
+  margin: 5px 30px;
+  position: relative;
 }
 
 .btn {
@@ -28,6 +48,12 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+}
+
+#calc-prices-button {
+  position: absolute;
+  top: 65px;
+  left: 75px;
 }
 
 .btn-delete {
