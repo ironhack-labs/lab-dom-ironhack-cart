@@ -28,6 +28,8 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin: 50px auto;
+    display:block;
 }
 
 .btn-delete {
@@ -38,4 +40,24 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 70px 20px 70px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.product {
+  width: 150px;
+}
+
+.total-price {
+  display: none;
+  justify-content: center;
 }
