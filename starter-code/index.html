@@ -11,14 +11,28 @@
 </head>
 <body>
   <h1>Ironhack Merchandising Shop</h1>
-  <div class="item-container">
-    <span id="item-name">IronBubble-head</span>
-    <span>$</span><span id="item-price">$25.00</span>
-    <input type="number" pattern="[0-9]" name="" value="" placeholder="Introduce quantity">
-    <span>$</span><span id="total-amount">0.00</span>
-    <button class="btn btn-delete" type="button">Delete</button>
+  <div id="items-container">
+    <div class="item">
+      <span class="item-name">IronBubble-head</span>
+      <span class="item-price">$25.00</span>
+      <input class="quantity" type="number" pattern="[0-9]" name="" value="" placeholder="Quantity">
+      <span class="total-amount">$0.00</span>
+      <button class="btn btn-delete" type="button">Delete</button>
+    </div>
+    <div class="item">
+      <span class="item-name">IronShirt</span>
+      <span class="item-price">$15.00</span>
+      <input class="quantity" type="number" pattern="[0-9]" name="" value="" placeholder="Quantity">
+      <span class="total-amount">$0.00</span>
+      <button class="btn btn-delete" type="button">Delete</button>
+    </div>
   </div>
-  <button class="btn" id="new-item-create" type="button">Create</button>
-  <button class="btn btn-success" id="calc-prices-button" type="button">Calculate</button>
+  <div class="create">
+    <input id="create-name" type="text" placeholder="Product name">
+    <input  id="create-quantity" type="number" pattern="[0-9]" placeholder="Product price">
+    <button class="btn" id="new-item-create" type="button">Create</button>
+  </div>
+    <button class="btn btn-success" id="calc-prices-button" type="button">Calculate</button>
+  <h2 id="final-price">Total Price: $0</h2>
 </body>
 </html>

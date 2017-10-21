@@ -11,14 +11,22 @@ span {
 #new-item-create {
   display: block;
 }
-.item-container {
-  width: 640px;
-  margin: 1em 0 2.5em;
+.item, .create {
+  width: 550px;
+  margin-bottom: 1em;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
 }
+
+.create {
+  margin-bottom: 2em;
+}
+
+.item-name {
+  flex-basis: 120px;
+}
+
 input {
   border: solid 1px grey;
   padding: 4px;
@@ -49,6 +57,7 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin-bottom: 2em;
 }
 
 .btn-delete {
