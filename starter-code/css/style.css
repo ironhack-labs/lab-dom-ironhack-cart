@@ -45,7 +45,7 @@ input {
 .wrapper {
   display: flex;
   justify-content: space-between;
-  margin: 20px 70px 20px 70px;
+  margin: 20px 0 20px 0;
 }
 
 h1 {
@@ -54,10 +54,31 @@ h1 {
 }
 
 .product {
-  width: 150px;
+  width: 140px;
+}
+
+.price {
+  width: 60px;
+}
+
+.totalProduct {
+  width: 100px;
 }
 
 .total-price {
   display: none;
   justify-content: center;
+}
+
+.new-product {
+  display: flex;
+  justify-content:space-between;
+}
+
+.new-product-inputs > :first-child {
+  margin-right: 100px;
+}
+
+body {
+  padding: 0 90px 0 90px;
 }
