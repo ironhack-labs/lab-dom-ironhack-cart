@@ -53,6 +53,11 @@ input {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin-top: 1%;
+}
+
+.prodName {
+  width: 20%;
 }
 
 .calculateButton {

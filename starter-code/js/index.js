@@ -14,12 +14,16 @@ function updatePriceByProduct(productPrice, index){
    Gets the number of items the user wants of this product,
    the unit price*/
 function getTotalPrice() {
-  var price = document.getElementsByClassName("prodPrice");
-  var quantity = document.getElementsByClassName("prodQuantity");
-  var prodPrice = price[0].getElementsByTagName("span")[0].innerHTML.substr(1);
-  var prodQty = quantity[0].getElementsByTagName("input")[0].value;
-  var totalPrice = prodPrice*prodQty;
-  document.getElementsByClassName("prodTotalPrice")[0].innerHTML = "$"+totalPrice.toFixed(2);
+  var prices = document.getElementsByClassName("prodPrice");
+  var quantitys = document.getElementsByClassName("prodQuantity");
+  var price, quantity, totalPrice;
+  for (var i = 0; i < prices.length; i++){
+    price = prices[i].getElementsByTagName("span")[0].innerHTML.substr(1);
+    quantity = quantitys[i].getElementsByTagName("input")[0].value;
+    totalPrice = price * quantity;
+    console.log(totalPrice);
+    document.getElementsByClassName("prodTotalPrice")[i].innerHTML = "$"+totalPrice.toFixed(2);
+  }  
 }
 
 function createQuantityInput(){
