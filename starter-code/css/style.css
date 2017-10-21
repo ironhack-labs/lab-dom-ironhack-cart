@@ -2,6 +2,12 @@ input {
   border: solid 1px black;
 }
 
+h1 {
+  width: 350px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -38,4 +44,9 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+.cart {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px;
 }
