@@ -16,14 +16,15 @@ function updatePriceByProduct(productPrice, index){
 function getTotalPrice() {
   var prices = document.getElementsByClassName("prodPrice");
   var quantitys = document.getElementsByClassName("prodQuantity");
-  var price, quantity, totalPrice;
+  var price, quantity, totalProdPrice, totalPrice = 0;
   for (var i = 0; i < prices.length; i++){
     price = prices[i].getElementsByTagName("span")[0].innerHTML.substr(1);
     quantity = quantitys[i].getElementsByTagName("input")[0].value;
-    totalPrice = price * quantity;
-    console.log(totalPrice);
-    document.getElementsByClassName("prodTotalPrice")[i].innerHTML = "$"+totalPrice.toFixed(2);
-  }  
+    totalProdPrice = price * quantity;
+    totalPrice = totalPrice + totalProdPrice;
+    document.getElementsByClassName("prodTotalPrice")[i].innerHTML = "$"+totalProdPrice.toFixed(2);
+  }
+  document.getElementById("totalPrice").getElementsByTagName("span")[0].innerHTML = "$"+totalPrice.toFixed(2);
 }
 
 function createQuantityInput(){

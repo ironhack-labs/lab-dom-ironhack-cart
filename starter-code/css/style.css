@@ -43,7 +43,7 @@ input {
 }
 
 /* Additional styles */
-.title{
+.title {
   width: 30%;
   text-align: left;
   margin-left: 45%;
@@ -62,4 +62,10 @@ input {
 
 .calculateButton {
   text-align: center;
+}
+
+#totalPrice {
+  width: 30%;
+  text-align: left;
+  margin-left: 45%;
 }
