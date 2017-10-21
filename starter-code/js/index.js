@@ -118,8 +118,17 @@ window.onload = function(){
   }
 
   function createNewItem(){
-    var nombre = document.getElementById('new-prod-name').value;
-    var unitPrice = document.getElementById('new-prod-price').value;
-    createNewItemRow(nombre, unitPrice);
+    var nombre = document.getElementById('new-prod-name');
+    var unitPrice = document.getElementById('new-prod-price');
+
+    if(nombre.value == "" || unitPrice.value == ""){
+      document.getElementById('error').style.display = "inline-block";
+    } else {
+      createNewItemRow(nombre.value, unitPrice.value);
+      // Reset Inputs
+      nombre.value = "";
+      unitPrice.value = "";
+      document.getElementById('error').style.display = "none";
+    }
   }
 };

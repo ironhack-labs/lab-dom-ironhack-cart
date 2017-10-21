@@ -82,3 +82,9 @@ h1 {
 body {
   padding: 0 90px 0 90px;
 }
+
+#error {
+  display: none;
+  color: red;
+  margin-left: 30px;
+}
