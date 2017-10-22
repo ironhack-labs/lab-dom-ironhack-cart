@@ -1,5 +1,17 @@
+h1 {
+  text-align:center;
+      margin: 1.67em 0;
+}
+
 input {
   border: solid 1px black;
+}
+
+.product-line {
+  display:flex;
+      justify-content: space-around;
+          padding: 0 10%;
+              align-items: center;
 }
 
 .btn {
@@ -24,7 +36,7 @@ input {
   border-radius: 4px;
 }
 
-.btn-success {
+.success-button {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
@@ -38,4 +50,17 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.calc-section {
+  display:flex;
+  justify-content: space-around;
+align-items: center;
+margin: 6% 0;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+
 }
