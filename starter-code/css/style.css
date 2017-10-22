@@ -13,13 +13,19 @@ h1 {
 .product-container {
   text-align: center;
   height: 110px;
+  white-space: nowrap;
 }
 
 .product-container div {
   display: inline-block;
   text-align: left;
-  margin: 5px 30px;
+  margin: 10px 30px;
   position: relative;
+}
+
+.product-name, .product-cost, .total-cost {
+  width: 125px;
+  overflow: hidden;
 }
 
 .btn {
@@ -50,18 +56,17 @@ h1 {
     border-color: #4cae4c;
 }
 
-#calc-prices-button {
-  position: absolute;
-  top: 65px;
-  left: 75px;
+.calculate,.total-price{
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.total-price span{
+  display: inline-block;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
-}
-
-.quantity {
-  margin: 0 5px;
 }
