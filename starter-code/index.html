@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,48 +10,53 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
-  <div class = "header">
-  <h1>Ironhack Merchandising Shop</h1>
-</div>
-<div class="bloque">
-  <div>
-    <p>IronBubble-head</p>
+  <div class="header">
+    <h1>Ironhack Merchandising Shop</h1>
   </div>
-  <div>
-    <p>$<span id="product-price">25.00</span></p>
+  <div class="bloque">
+    <div>
+      <p>IronBubble-head</p>
+    </div>
+    <div>
+      <p>$<span class="product-price">25.00</span></p>
+    </div>
+    <div class="quantity">
+      <label for="numbers">QTY</label>
+      <input type="number" class="numbers">
+    </div>
+    <div>
+      <p>$</p>
+      <p class="final">0.00</p>
+    </div>
+    <div>
+      <button class="btn btn-delete" type="button">Delete</button>
+    </div>
   </div>
-  <div class="quantity">
-    <label for="numbers">QTY</label>
-    <input type="number" id="numbers">
+  <div class="bloque">
+    <div>
+      <p>IronBubble-head</p>
+    </div>
+    <div>
+      <p>$<span class="product-price">25.00</span></p>
+    </div>
+    <div class="quantity">
+      <label for="numbers">QTY</label>
+      <input type="number" class="numbers">
+    </div>
+    <div>
+      <p>$</p>
+      <p class="final">0.00</p>
+    </div>
+    <div>
+      <button class="btn btn-delete" type="button">Delete</button>
+    </div>
   </div>
-  <div>
-    <p>$</p>
-    <p id="final">0.00</p>
+  <button id="calc-prices-button" class="btn btn-success" type="button">Calculate Prices</button>
+  <div class="resultadoFinal">
+    <h2>Total Price: <span class = "totalPrice">$0</span></h2>
   </div>
-  <div>
-    <button class="btn btn-delete" type="button">Delete</button>
-  </div>
-</div>
-<div class="bloque">
-  <div>
-    <p>IronBubble-head</p>
-  </div>
-  <div>
-    <p>$<span id="product-price">25.00</span></p>
-  </div>
-  <div class="quantity">
-    <label for="numbers">QTY</label>
-    <input type="number" id="numbers">
-  </div>
-  <div>
-    <p>$</p>
-    <p id="final">0.00</p>
-  </div>
-  <div>
-    <button class="btn btn-delete" type="button">Delete</button>
-  </div>
-</div>
-<button id="calc-prices-button" class = "btn btn-success" type="button">Calculate Prices</button>
 </body>
+
 </html>
