@@ -10,5 +10,63 @@
   <title>Ironhack cart</title>
 </head>
 <body>
-</body>
-</html>
+  <body>
+
+    <h1> Ironhack Merchandising Cart </h1>
+
+  <div class = "container1">
+
+  <span class = "product-one"> IronBubble Head </span>
+  <span class = "product-one">$25.00</span>
+
+    <form class = "product-one">
+      QTY:
+  <input type="number" name="quantity">
+  </form>
+
+  <span class ="sum-all-products, product-one">
+      0.00$
+  </span>
+
+    <button class = "btn-delete" onclick= "delete-button"> Delete </button>
+
+    </div>
+
+
+    <div class = "container1">
+      <span class = "product-one"> IronShirt</span>
+      <span class = "product-one">$15.00</span>
+
+      <form class = "product-one">
+          QTY:
+      <input type="text" name="quantity">
+      </form>
+
+      <span class ="sum-all-products, product-one">0.00$</span>
+
+  <button class = "btn-delete" onclick= "delete-button"> Delete </button>
+   </div>
+
+  <div class = "container1">
+      <span class = "product-one"> IronBubble Head </span>
+      <span class = "product-one">$25.00</span>
+
+      <form class = "product-one">
+          QTY:
+      <input type="text" name="quantity">
+      </form>
+
+      <span class ="sum-all-products, product-one">0.00$</span>
+
+  <button class = "btn-delete" onclick= "delete-button"> Delete </button>
+   </div>
+
+    <button class = "create" type = "button" onclick = "newProduct()">Create</button>
+
+  <button class ="btn-success" type="button" onclick="sumProducts()">Calculate
+   Prices</button>
+
+    <h1>Total Price: </h1>
+
+  </body>
+  </html>
