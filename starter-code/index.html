@@ -5,10 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="index.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+  <div class="container">
+    <h1>Ironhack Merchandising Shop</h1>
+
+    <div class="product">
+      <span class="product-name">IronBubble-Head</span>
+      <span class="cost-of-unit">$25.00</span>
+      <div class="quantity">
+        <label for="qty">QTY</label>
+        <input id="qty-input" type="number" name="quantity" value="0" />
+      </div>
+      <div class="total-price-div">
+        <span class="total-price">$0.00</span>
+      </div>
+
+      <div  class"delete-btn-div">
+        <button  class="btn-delete" type="button">Delete</button>
+      </div>
+    </div>
+
+    <button  id="calculate-price"  type="button">Calculate Prices</button>
+  </div>
 </body>
 </html>
