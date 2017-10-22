@@ -1,7 +1,3 @@
-function deleteItem(e){
-
-}
-
 function getPriceByProduct(itemNode){
 
 }
@@ -56,13 +52,16 @@ function createNewItem(){
 
 window.onload = function(){
   var calculatePriceButton = document.getElementById('calc-prices-button');
-  var createItemButton = document.getElementById('new-item-create');
+  //var createItemButton = document.getElementById('new-item-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
   calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
+  //createItemButton.onclick = createNewItem;
 
-  for(var i = 0; i<deleteButtons.length ; i++){
-    deleteButtons[i].onclick = deleteItem;
+  for(var x = 0; x < deleteButtons.length; x++){
+    deleteButtons[x].onclick = function(){
+      this.parentNode.parentNode.remove();
+    };
   }
+
 };
