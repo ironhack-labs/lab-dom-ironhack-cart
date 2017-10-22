@@ -36,7 +36,7 @@ input {
   height: 20px;
 }
 
-button {
+.btn {
   display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
@@ -69,15 +69,11 @@ button {
     justify-content: center;
 }
 
-.btn-delete {
+#btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
     margin-right: 30px;
-}
-
-.quantity {
-  margin: 0 5px;
 }
 
 
