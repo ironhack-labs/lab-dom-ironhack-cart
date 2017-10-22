@@ -1,4 +1,4 @@
-h1 {
+h1, h2 {
   text-align:center;
       margin: 1.67em 0;
 }
@@ -62,5 +62,8 @@ margin: 6% 0;
 .price {
   display: flex;
   align-items: center;
+}
+
+.newProduct {
 
 }
