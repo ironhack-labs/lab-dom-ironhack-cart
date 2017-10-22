@@ -61,7 +61,26 @@ input {
 }
 
 .calculateButton {
+  margin-top: 5%;
   text-align: center;
+}
+
+.newProduct {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1%;
+}
+
+#newName {
+  width: 30%;
+  align-items: flex-start;
+  margin-left: 5%;
+}
+
+#newPrice {
+  width: 30%;
+  align-items: flex-start;
+  margin-right: 25%;
 }
 
 #totalPrice {
