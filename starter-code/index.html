@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,62 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+  <table class="table" id="table">
+    <thead>
+      <tr>
+        <th colspan="5" class="padded title">
+          <h2>Ironhack <br> Merchandising Shop</h2>
+        </th>
+      </tr>
+    </thead>
+    <tbody id="table-body">
+      <tr class="item-holder" id="item-holder">
+        <td>Iron Bubble-head</td>
+        <td>
+          <span>$</span>
+          <span class="price">25.00</span></td>
+        <td class="text-center">
+          <label class="uppercase">qty</label>
+          <input type="number" value="0" class="quantity">
+        </td>
+        <td class="text-center js-total-product">
+          <span>$</span>
+          <span class="total-price">0.00</span></td>
+        <td class="text-right">
+          <button class="btn btn-delete">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+    <tfooter>
+      <tr>
+        <td>
+          <input type="text" id="newproduct">
+        </td>
+        <td>
+          <input type="number" id="newprice">
+        </td>
+        <td colspan="3" class="text-right">
+          <button class="btn btn-create" id="new-item-create">Create</button>
+        </td>
+      </tr>
+      <tr rowspan="5">
+        <td colspan="5" class="text-center padded">
+          <button class="btn btn-success" id="calc-prices-button">Calculate Prices</button>
+        </td>
+      </tr>
+      <tr id="footer-table">
+        <td colspan="5" class="text-center title">
+          <h2>
+            <span><b>Total Prices :</b></span>
+            <span><b>$</b></span>
+            <span id="finalsum"><b>0.00</b></span>
+          </h2>
+        </td>
+      </tr>
+    </tfooter>
+  </table>
 </body>
+
 </html>

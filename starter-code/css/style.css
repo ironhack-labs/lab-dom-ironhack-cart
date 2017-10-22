@@ -2,6 +2,10 @@ input {
   border: solid 1px black;
 }
 
+td {
+  padding: 1rem 0;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -36,6 +40,39 @@ input {
     border-color: #CF000F;
 }
 
+.btn-create {
+  padding: 0 6px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
 .quantity {
   margin: 0 5px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.table {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  table-layout: fixed;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.padded {
+  padding: 3rem 0;
+}
+
+.title {
+  font-size:
 }
