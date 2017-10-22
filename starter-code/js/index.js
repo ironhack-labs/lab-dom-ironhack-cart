@@ -1,4 +1,4 @@
-window.onload = function(){
+window.onload = function() {
   var calculatePriceButton = document.getElementById('calc-prices-button');
   var createItemButton = document.getElementById('new-item-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
@@ -8,18 +8,20 @@ window.onload = function(){
   calculatePriceButton.onclick = getTotalPrice;
   createItemButton.onclick = createNewItem;
 
- for(var i = 0; i<deleteButtons.length ; i++){
+  for (var i = 0; i < deleteButtons.length; i++) {
     deleteButtons[i].onclick = function() {
       deleteItem(this);
+      // Reset the total price when deleting an element.
+      getTotalPrice();
     };
   }
 
   // Functions to modify the DOM.
-  function deleteItem(e){
+  function deleteItem(e) {
     e.parentNode.remove();
   }
 
-  function getPriceByProduct(itemNode , i){
+  function getPriceByProduct(itemNode, i) {
     var itemQty = document.getElementsByClassName("quantity");
     return Math.floor(itemQty[i].value) * itemNode;
   }
@@ -37,20 +39,22 @@ window.onload = function(){
     finalSum.innerHTML = sum;
   }
 
-  function createNewItem(){
+  function createNewItem() {
     var totalItemList = document.getElementById("totalitemlist");
     var newItem = document.getElementById("newitem").value;
     var newPrice = document.getElementById("newprice").value;
     // Check if the input fields are empty.
     if (newItem && newPrice) {
       var newItemDiv = initialItem.cloneNode(true);
-      // Change every childNodes from the cloned element.
-      newItemDiv.childNodes[1].innerHTML = newItem;
-      newItemDiv.childNodes[3].childNodes[3].innerHTML = newPrice;
+      // Used querySelector to choose the first element with that class in the div.
+      newItemDiv.querySelector(".name").innerHTML = newItem;
+      newItemDiv.querySelector(".price").innerHTML = newPrice;
+      // Used chilNodes here to try out another way to move inside the div.
       newItemDiv.childNodes[7].childNodes[3].innerHTML = 0.00;
       newItemDiv.childNodes[5].childNodes[3].value = "";
-      newItemDiv.childNodes[9].onclick = function() {
+      newItemDiv.querySelector("button").onclick = function() {
         deleteItem(this);
+        getTotalPrice();
       };
       // Append the child elements created.
       totalItemList.appendChild(newItemDiv);
@@ -60,6 +64,5 @@ window.onload = function(){
     } else {
       alert("Input fields are empty! Can't create a new item!");
     }
-
   }
 };
