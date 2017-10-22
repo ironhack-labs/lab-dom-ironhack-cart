@@ -18,72 +18,72 @@
     <h1> Ironhack Merchandising Shop </h1>
 
   </header>
+  <div id="content">
+    <article class="ironbubble">
 
-  <article class="ironbubble">
+      <div class="product1_name">
+        <span> IronBubble-Head </span>
+      </div>
 
-    <div class="product1_name">
-      <span> IronBubble-Head </span>
-    </div>
+      <div class="product1_cost">
+        <span class="cost"> 25.00 $ </span>
+      </div>
 
-    <div class="product1_cost">
-      <span class="cost"> 25.00 $ </span>
-    </div>
+      <div class="product1_qty">
+        <label>QTY <input type="number" min="1" class="QTY" value="0"></label>
+      </div>
 
-    <div class="product1_qty">
-      <label>QTY <input type="number" min="1" class="QTY" value="0"></label>
-    </div>
+      <div class="total_cost">
+        <span class="totalcost">0 $</span>
+      </div>
 
-    <div class="total_cost">
-      <span class="totalcost">0 $</span>
-    </div>
+      <div class="delete1">
+        <button class="btn btn-delete" > Delete </button>
+      </div>
 
-    <div class="delete1">
-      <button class="btn btn-delete" > Delete </button>
-    </div>
+    </article>
 
-  </article>
+    <article class="ironshirt">
 
-  <article class="ironshirt">
+      <div class="product1_name">
+        <span> IronShirt </span>
+      </div>
 
-    <div class="product1_name">
-      <span> IronShirt </span>
-    </div>
+      <div class="product1_cost">
+        <span class="cost"> 25.00 $ </span>
+      </div>
 
-    <div class="product1_cost">
-      <span class="cost"> 15.00 $ </span>
-    </div>
+      <div class="product1_qty">
+        <label>QTY <input type="number" min="1" class="QTY" value="0"></label>
+      </div>
 
-    <div class="product1_qty">
-      <label>QTY <input type="number" min="1" class="QTY" value="0"></label>
-    </div>
+      <div class="totalcost1">
+        <span class="totalcost">0 $</span>
+      </div>
 
-    <div class="totalcost1">
-      <span class="totalcost">0 $</span>
-    </div>
+      <div class="delete1">
+        <button class="btn btn-delete"> Delete </button>
+      </div>
 
-    <div class="delete1">
-      <button class="btn btn-delete"> Delete </button>
-    </div>
-
-  </article>
-
-
-  <button id="calc-prices-button" class="btn btn-success calculate"> Calculate price </button>
-
-  <div class="cart_total">
-
-    <h2> Total Price: <span id="final_price"> 0$ </span> </h2>
-
+    </article>
   </div>
 
+  <div class="totalPrice">
+
+    <button id="calc-prices-button" class="btn btn-success calculate"> Calculate price </button>
+
+    <div class="cart_total">
+
+      <h2> Total Price: <span id="final_price"> 0$ </span> </h2>
+
+    </div>
+  </div>
+  <div class="inputs">
+
+    <label> Name <input type="text" min="1" id="create-name"></label>
+    <label> Price <input type="number" min="1" id="create-price"></label>
+    <button class="btn btn-create" id="new-item-create"> Add new</button>
+  </div>
 </body>
 
 </html>
-
-<!--
-
-Now, as part of your "Calculate Prices" function:
-
-Select the elements that contain the each product's total price.
-Loop through the elements selected in the previous step, retrieve each of their total prices and add them together to get the total price of the entire shopping cart.
-Show the total price in the DOM. -->

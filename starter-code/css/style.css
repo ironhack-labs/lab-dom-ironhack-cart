@@ -28,8 +28,6 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
-    margin-top: 100px;
-    margin-left: 25%;
 }
 
 .delete1 button {
@@ -49,21 +47,23 @@ header {
   margin-bottom: 100px;
 }
 
-.ironbubble div {
+article {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+article div {
   display: inline-block;
-  margin-left: 40px;
-  margin-bottom: 20px;
+  flex: 1;
+}
+.totalPrice {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-.ironshirt div {
-  display: inline-block;
-  margin-left: 40px;
-}
-
-.product1_name {
-  width: 150px;
-}
-
-.cart_total {
-  text-align: center; 
+.inputs {
+  display: flex;
+  justify-content: center;
 }

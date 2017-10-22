@@ -24,29 +24,38 @@ function getTotalPrice() {
   }
 }
 
-
 function createQuantityInput(){
-
+  return '<input type="number" min="1" class="QTY" value="0">'
 }
 
+function createPriceNode(price){
+  return '<div class="product1_cost"><span class="cost"> ' + price + ' $ </span></div>';
+}
 function createDeleteButton(){
-
+  return '<div class="delete1"><button class="btn btn-delete"> Delete </button></div>';
 }
 
 function createQuantityNode(){
-
+  return '<div class="product1_qty"><label>QTY ' + createQuantityInput() + '</label></div>';
 }
 
-function createItemNode(dataType, itemData){
-
+function createItemNode(itemData){
+  return '<div class="product1_name"><span>' + itemData +'</span></div>';
 }
 
 function createNewItemRow(itemName, itemUnitPrice){
-
+  return '<article class="' + itemName + '">' + createItemNode(itemName) + createPriceNode(itemUnitPrice) + createQuantityNode() + '<div class="totalcost1"><span class="totalcost">0 $</span></div>' + createDeleteButton() +  '</article>'
 }
 
 function createNewItem(){
-
+  var name = document.getElementById('create-name').value;
+  var price = document.getElementById('create-price').value;
+  document.getElementById('content').innerHTML = document.getElementById('content').innerHTML + createNewItemRow(name, price);
+    
+  var deleteButtons = document.getElementsByClassName('btn-delete');
+  for(var i = 0; i<deleteButtons.length ; i++){
+    deleteButtons[i].onclick = deleteItem;
+  }
 }
 
 window.onload = function(){
@@ -56,7 +65,7 @@ window.onload = function(){
 
   calculatePriceButton.onclick = getTotalPrice;
 
-  //createItemButton.onclick = createNewItem;
+  createItemButton.onclick = createNewItem;
 
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
