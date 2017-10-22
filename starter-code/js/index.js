@@ -76,4 +76,14 @@ window.onload = function() {
         deleteItem(this);
       };
     }
+
+    //To update the totals when the input has an event
+
+    document.addEventListener('input', function (e) {
+      var target = e.target;
+      var isNumber = !isNaN(target.value);
+      if (target.classList.contains('quantity') && isNumber) {
+        getTotalPrice();
+      }
+    });
   };
