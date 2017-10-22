@@ -51,6 +51,11 @@ h1 {
   margin: 1.5em auto;
 }
 
+#total-price {
+  display: none;
+  text-align: center;
+}
+
 /* */
 
 .flex-shop {
@@ -74,7 +79,7 @@ h1 {
 }
 
 .item div:nth-child(2):before, .item div:nth-child(4):before {
-  content: "$";
+  content: "$ ";
 }
 
 button:hover {

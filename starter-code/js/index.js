@@ -1,73 +1,54 @@
-    function deleteItem(e){
 
-    }
+function calculatePrices(){
+  var amountOfPrices = document.getElementsByClassName("price").length;
+  var price = 0;
+  var quantity = 0;
+  var totalRow = 0.00;
+  var totalFinal = 0;
 
-    function getPriceByProduct(itemNode){
+  for(var i = 0; i < amountOfPrices; i++){
+    price = document.getElementsByClassName("price")[i].innerHTML;
+    quantity = document.getElementsByClassName("quantity")[i].valueAsNumber; //
+    rowPrice = price * quantity; // we get the price for each row
+    document.getElementsByClassName("total")[i].innerHTML = rowPrice; // updates row price
+    totalFinal += price * quantity; // total sum of every single row price
+  }
 
-    }
+  document.getElementById("total-price").style.display = "block";
+  document.getElementById("total-price").innerHTML = "<h1>Total Price: " + totalFinal + "$</h1>";
+}
 
-    function updatePriceByProduct(productPrice, index){
+// function createNewItem(){
+//   document.getElementsByTagName
+// }
 
-    }
+function createNewItem () {
 
-    function calculatePrices(){
-      var amountOfPrices = document.getElementsByClassName("price").length;
+  var item = document.createElement("div");
+  line.setAttribute('class', 'item');
+  line.innerHTML = "<strong>" + name + ": </strong>" + message.field_message_body.und[0].value;
 
-      var price = 0;
-      var quantity = 0;
-      var totalRow = 0;
-      var totalFinal = 0;
 
-      for(var i = 0; i < amountOfPrices; i++){
-        price = document.getElementsByClassName("price")[i].innerHTML;
-        quantity = document.getElementsByClassName("quantity")[i].valueAsNumber;
 
-        rowPrice = price * quantity;
-        document.getElementsByClassName("total")[i].innerHTML = rowPrice;
 
-        totalFinal += price * quantity;
-        console.log((i+1) + "st product's total is: " + rowPrice);
-      }
-      console.log("Total order is: " + totalFinal);
-    }
+  document.getElementById("").appendChild(item);
 
-    function getTotalPrice() {
-        var price = document.getElementsByClassName("price")[0].innerHTML;
-        var quantity = document.getElementById("number").value;
-        var total = price * quantity;
-    }
+  // add the newly created element and its content into the DOM
+  var root = document.getElementsByClassName("flex-shop");
+  document.body.insertBefore(parent, root);
+}
 
-    function createQuantityInput(){
+function deleteItem(e){
 
-    }
+}
 
-    function createDeleteButton(){
-
-    }
-
-    function createQuantityNode(){
-
-    }
-
-    function createItemNode(dataType, itemData){
-
-    }
-
-    function createNewItemRow(itemName, itemUnitPrice){
-
-    }
-
-    function createNewItem(){
-
-    }
 window.onload = function(){
     var calculatePriceButton = document.getElementById('calc-prices-button');
-
     var createItemButton = document.getElementById('new-item-create');
     var deleteButtons = document.getElementsByClassName('btn-delete');
 
-    //calculatePriceButton.onclick = getTotalPrice;
-    //createItemButton.onclick = createNewItem;
+    calculatePriceButton.onclick = calculatePrices;
+    createItemButton.onclick = createNewItem;
 
     for(var i = 0; i<deleteButtons.length ; i++){
       deleteButtons[i].onclick = deleteItem;
