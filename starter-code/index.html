@@ -10,5 +10,83 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+
+  <!--Header-->
+  <div class="align">
+    <h1>Ironhack Merchandising Shop</h1>
+  </div>
+
+  <div id="bigContainer" class="general">
+    <div class="subGeneral align flex">
+      <!--Product name-->
+      <div class="productName inline">
+        <span>IronBubble-head</span>
+      </div>
+      <!--Cost unit-->
+      <div class="inline">
+        <span class="costUnit">$25.00</span>
+      </div>
+      <!--Quantity-->
+      <div class="inline">
+        <label>QTY</label>
+        <input class="quantity" type="text">
+      </div>
+      <!--Total price-->
+      <div class="inline">
+        <span class="totalPrice">$0</span>
+      </div>
+      <!--Delete button-->
+      <div class="inline">
+        <button class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+
+    <div class="subGeneral align flex">
+      <!--Product name-->
+      <div class="productName inline">
+        <span>IronShirt</span>
+      </div>
+      <!--Cost unit-->
+      <div class="inline">
+        <span class="costUnit">$15.00</span>
+      </div>
+      <!--Quantity-->
+      <div class="inline">
+        <label>QTY</label>
+        <input class="quantity" type="text">
+      </div>
+      <!--Total price-->
+      <div class="inline">
+        <span class="totalPrice">$0</span>
+      </div>
+      <!--Delete button-->
+      <div class="inline">
+        <button class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!--Add new Items-->
+  <div class="newData">
+    <div class="inline">
+      <input id="t1" class="inline" type="text">
+      <input id="t2" class="inline" type="text">
+    </div>
+    <div class="inline create">
+      <button id="new-item-create" class"btn">Create</button>
+    </div>
+  </div>
+
+  <!--Calculate prices button-->
+  <div class="align">
+    <button id="calc-prices-button" class="btn btn-success">Calculate Prices</button>
+  </div>
+
+  <div class="align">
+    <h1 id="total">Total Price: $0</h1>
+  </div>
+
+
 </body>
 </html>

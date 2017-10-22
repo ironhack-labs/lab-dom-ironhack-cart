@@ -2,6 +2,27 @@ input {
   border: solid 1px black;
 }
 
+.inline{
+  display: inline-block;
+}
+
+.align{
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.flex{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.subGeneral div{
+  flex-basis: 20%;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -38,4 +59,19 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.general{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.create{
+  position: absolute;
+  right: 30px;
+}
+
+.newData{
+  margin: 30px;
 }
