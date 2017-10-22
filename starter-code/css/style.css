@@ -1,3 +1,18 @@
+
+body {
+  padding: 64px;
+}
+
+h1 {
+  margin-bottom: 32px;
+}
+
+.product {
+  display: flex;
+  justify-content: space-between;
+}
+
+
 input {
   border: solid 1px black;
 }
@@ -22,20 +37,32 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+  background-color: red;
+  color: white;
 }
 
-.btn-success {
+#btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin-left: 60%;
 }
+
+
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+.priceTitle {
+  width: 30%;
+  margin-left: 50%;
+  margin-top: 50px;
 }
