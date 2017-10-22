@@ -10,5 +10,38 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <div id="container">
+    <div id="header">
+      <h1>Ironhack</h1>
+      <h1>Merchandising Shop</h1>
+    </div>
+    <div id="first-product">
+      <div class="description, formatBoxes">
+        <span class="labels">IronBubble-head</span>
+      </div>
+      <div class="price, formatBoxes">
+        <span class="labels">$</span>
+        <span id="initialPrice" class="indivPrice labels">25</span>
+      </div>
+      <div class="labelInput formatBoxes">
+        <span class="labels">
+          <form action>
+            QTY: <input id="quantity" type="text" name="Quantity" value="0">
+          </form>
+        </span>
+      </div>
+      <div class="totalPrice formatBoxes">
+        <span class="labels">$</span>
+        <span id="subtotalPrice" class="indivPrice labels">0</span>
+      </div>
+      <div class="delete formatBoxes">
+        <button class="btn-delete btn" type="button" onclick="deleteQuantity()">Delete</button>
+      </div>
+    </div>
+
+      <div id="calcPriceButton">
+      <button id="buttonCalculatPrice" class="btn-success btn" type="button" onclick="totalPrice()">Calculate Price</button>
+    </div>
+  </div>
 </body>
 </html>
