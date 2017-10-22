@@ -1,3 +1,4 @@
+window.onload = function(){
 
 function calculatePrices(){
   var amountOfPrices = document.getElementsByClassName("price").length;
@@ -9,40 +10,38 @@ function calculatePrices(){
   for(var i = 0; i < amountOfPrices; i++){
     price = document.getElementsByClassName("price")[i].innerHTML;
     quantity = document.getElementsByClassName("quantity")[i].valueAsNumber; //
-    rowPrice = price * quantity; // we get the price for each row
-    document.getElementsByClassName("total")[i].innerHTML = rowPrice; // updates row price
-    totalFinal += price * quantity; // total sum of every single row price
+
+    if (!quantity || quantity < 0){
+      alert('please fill a correct quantity for product number [' + i + ']' );
+    }
+    else {
+      rowPrice = price * quantity; // we get the price for each row
+      document.getElementsByClassName("total")[i].innerHTML = rowPrice; // updates row price
+      totalFinal += price * quantity; // total sum of every single row price
+    }
   }
 
   document.getElementById("total-price").style.display = "block";
   document.getElementById("total-price").innerHTML = "<h1>Total Price: " + totalFinal + "$</h1>";
 }
 
-// function createNewItem(){
-//   document.getElementsByTagName
-// }
+function createNewItem(){
+  var item = document.getElementsByClassName("item")[0].cloneNode(true);
+  document.getElementsByClassName("flex-shop")[0].appendChild(item);
 
-function createNewItem () {
+  var product_name = document.getElementById("product-name").value;
+  var product_price = document.querySelector("#unit-price").value;
 
-  var item = document.createElement("div");
-  line.setAttribute('class', 'item');
-  line.innerHTML = "<strong>" + name + ": </strong>" + message.field_message_body.und[0].value;
+  item.querySelector(".name").innerHTML = product_name;
+  item.querySelector(".price").innerHTML = product_price;
 
-
-
-
-  document.getElementById("").appendChild(item);
-
-  // add the newly created element and its content into the DOM
-  var root = document.getElementsByClassName("flex-shop");
-  document.body.insertBefore(parent, root);
-}
-
-function deleteItem(e){
+  item.querySelector(".btn-delete").onclick = function(){
+    this.parentNode.parentNode.remove();
+  };
 
 }
 
-window.onload = function(){
+
     var calculatePriceButton = document.getElementById('calc-prices-button');
     var createItemButton = document.getElementById('new-item-create');
     var deleteButtons = document.getElementsByClassName('btn-delete');
@@ -50,7 +49,11 @@ window.onload = function(){
     calculatePriceButton.onclick = calculatePrices;
     createItemButton.onclick = createNewItem;
 
-    for(var i = 0; i<deleteButtons.length ; i++){
-      deleteButtons[i].onclick = deleteItem;
-    }
+    for(var i = 0; i < deleteButtons.length; i++){
+      deleteButtons[i].onclick = function(){
+      this.parentNode.parentNode.remove();
+    };
+  }
+
+
 };
