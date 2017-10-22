@@ -96,7 +96,7 @@ input {
 
 }
 
-.product-name, .quantity, .cost-per-unit, .total-price, .btn-delete {
+.product-name, .quantity, .cost-of-unit, .total-price, .btn-delete {
   margin-left: 130px;
   margin-right: 50px;
 }
