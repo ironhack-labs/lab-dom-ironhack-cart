@@ -32,25 +32,6 @@ function deleteItem(){
   this.parentNode.parentNode.parentNode.remove();
 }
 
-function createQuantityInput(){
-
-}
-
-function createDeleteButton(){
-
-}
-
-function createQuantityNode(){
-
-}
-
-function createItemNode(dataType, itemData){
-
-}
-
-function createNewItemRow(itemName, itemUnitPrice){
-
-}
 
 function createNewItem(newItem){
 newItem.querySelector('.article-name').innerHTML=document.querySelector(".newItem").value;
