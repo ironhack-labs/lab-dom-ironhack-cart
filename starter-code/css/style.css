@@ -14,6 +14,17 @@ input {
               align-items: center;
 }
 
+.products{
+  display: table;
+width: 100%;
+padding: 0 0%;
+text-align: center;
+}
+
+.product-name {
+    width: 20%;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -46,10 +57,12 @@ input {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    width:10%;
 }
 
 .quantity {
   margin: 0 5px;
+      width: 30%;
 }
 
 .calc-section {
@@ -62,8 +75,14 @@ margin: 6% 0;
 .price {
   display: flex;
   align-items: center;
+  justify-content: center;
+      width: 10%;
 }
 
 .newProduct {
+    padding: 0.5% 10%;
+}
 
+.new-item-info {
+      width: 85%;
 }
