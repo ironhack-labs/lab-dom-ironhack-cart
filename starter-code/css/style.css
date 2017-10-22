@@ -10,6 +10,7 @@ h1 {
 .product {
   display: flex;
   justify-content: space-between;
+  padding: 15px 0; 
 }
 
 

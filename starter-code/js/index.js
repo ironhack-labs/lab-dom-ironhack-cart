@@ -11,7 +11,6 @@ function updatePriceByProduct(productPrice, index) {
 
 }
 
-//button event
 
 var button = document.getElementById("btn-success");
 
@@ -25,9 +24,10 @@ function getTotalPrice () {
    totalPrice[i].innerHTML = parseFloat(finalPrice).toFixed(2);
    sum += Number(parseFloat(finalPrice).toFixed(2));
     }
-    var finalSum = document.getElementById("finalSum");
+    var finalSum = document.getElementById("finalsum");
     finalSum.innerHTML = sum;
 }
+
 
 
 
