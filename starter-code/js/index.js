@@ -2,10 +2,21 @@ window.onload = function(){
   var calculatePriceButton = document.getElementById('calc-prices-button');
   var createItemButton = document.getElementById('new-item-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
+  var inputUnitPrice = document.getElementById('new-prod-price');
+  var inputNewName = document.getElementById('new-prod-name');
 
   // For cloneNode in case we have deleted all products
-  var productStructure= document.getElementsByClassName('wrapper')[0];
+  var productStructure = document.querySelector('.wrapper');
 
+  // You can add new product pressing enter in the new prod price input
+  inputUnitPrice.addEventListener('keypress', function(e){
+    // Enter pressed
+    if (e.keyCode == 13) {
+      cloneCreate();
+      inputNewName.focus();
+    }
+
+});
 
   // Check why no need ()
   calculatePriceButton.onclick = getTotalPrice;
@@ -15,8 +26,8 @@ window.onload = function(){
   //createItemButton.onclick = createNewItem;
 
   for(var i = 0; i<deleteButtons.length ; i++){
-    deleteButtons[i].onclick = function(e){
-      deleteItem(this,e);
+    deleteButtons[i].onclick = function(){
+      deleteItem(this);
     };
   }
 
@@ -32,14 +43,14 @@ window.onload = function(){
   }
 
   function getPriceByProduct(itemNode){
-    var unitPrice = itemNode.getElementsByClassName('price')[0].getElementsByTagName('span')[0].innerHTML;
-    var quantity = itemNode.getElementsByClassName('qty')[0].getElementsByTagName('input')[0].value;
+    var unitPrice = itemNode.querySelector('.price').querySelector('span').innerHTML;
+    var quantity = itemNode.querySelector('.qty').querySelector('input').value;
 
     return unitPrice * quantity;
   }
 
   function updatePriceByProduct(productPrice, index){
-    var totalProduct = document.getElementsByClassName('totalProduct')[index].getElementsByTagName('span')[0];
+    var totalProduct = document.getElementsByClassName('totalProduct')[index].querySelector('span');
     totalProduct.innerHTML = productPrice;
   }
 
@@ -64,13 +75,13 @@ window.onload = function(){
       var clonated = productStructure.cloneNode(true);
 
       // Modify new wrapper div with the new product values
-      clonated.getElementsByClassName('product')[0].getElementsByTagName('span')[0].innerHTML = nombre.value;
-      clonated.getElementsByClassName('price')[0].getElementsByTagName('span')[0].innerHTML = unitPrice.value;
-      clonated.getElementsByClassName('qty')[0].getElementsByTagName('input')[0].value = 0;
-      clonated.getElementsByClassName('totalProduct')[0].getElementsByTagName('span')[0].innerHTML = 0;
+      clonated.querySelector('.product').querySelector('span').innerHTML = nombre.value;
+      clonated.querySelector('.price').querySelector('span').innerHTML = unitPrice.value;
+      clonated.querySelector('.qty').querySelector('input').value = 0;
+      clonated.querySelector('.totalProduct').querySelector('span').innerHTML = 0;
       console.log("TERMINADO");
       // Add delete event
-      clonated.getElementsByClassName('btn-delete')[0].onclick = function () {
+      clonated.querySelector('.btn-delete').onclick = function () {
         deleteItem(this);
       };
       // Add wrapper div to the end of the 'product-list' div
