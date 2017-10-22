@@ -40,7 +40,7 @@ input {
     width: 120px;
 }
 
-.quantity {
+.product1_qty {
   margin: 0 5px;
 }
 
@@ -61,5 +61,9 @@ header {
 }
 
 .product1_name {
-  width: 150px; 
+  width: 150px;
+}
+
+.cart_total {
+  text-align: center; 
 }
