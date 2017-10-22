@@ -1,5 +1,6 @@
 input {
   border: solid 1px black;
+  padding: 5px;
 }
 
 .btn {
@@ -38,4 +39,62 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+.full-container{
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 0 auto;
+
+}
+h1,h2{
+margin-bottom: 0px;
+}
+.parent{
+  padding: 40px 0px;
+
+}
+.header{
+  display: flex;
+  justify-content: flex-start;
+  align-items:flex-start;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.header h1,.header h2{
+text-align: left;
+}
+.calc-prices-button{
+  padding:20px;
+
+}
+.parent .item, .itemForm{
+  list-style: none;
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+.div-form ul div{
+}
+.div-create{
+  text-align: right;
+  align-items:flex-end;
+  flex-direction: column;
+  padding:20px;
+}
+.div-calculate{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding:20px;
+}
+.div-total{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
