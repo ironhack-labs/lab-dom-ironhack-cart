@@ -10,9 +10,12 @@ h1 {
 .product {
   display: flex;
   justify-content: space-between;
-  padding: 15px 0; 
+  padding: 15px 0;
 }
 
+.product-name {
+  width:15%;
+}
 
 input {
   border: solid 1px black;
@@ -42,11 +45,11 @@ input {
   color: white;
 }
 
-#btn-success {
+#calc-prices-button {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
-    margin-left: 60%;
+    margin-left: 51%;
 }
 
 
