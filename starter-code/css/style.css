@@ -16,6 +16,11 @@ input {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  width: 100%;
+}
+
+.subGeneral div{
+  flex-basis: 20%;
 }
 
 .btn {
@@ -54,4 +59,10 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.general{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }

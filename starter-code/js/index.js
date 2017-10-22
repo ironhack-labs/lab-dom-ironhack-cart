@@ -12,11 +12,22 @@ function updatePriceByProduct(productPrice, index){
 
 //Define the total price of the product
 function getTotalPrice() {
-  var qty = document.getElementById("qty");
-  var price = document.getElementById("price");
-  console.log(qty + ", " + price);
-  var result = qty * price;
-  total.innerHTML = "$" + result;
+  var qtys = document.getElementsByClassName("quantity");
+  var prices = document.getElementsByClassName("costUnit");
+  var totals = document.getElementsByClassName("totalPrice");
+  var totalPrice = document.getElementById("total").innerHTML;
+  var sum = 0;
+  for(var x = 0; x < prices.length; x++){
+    var fCost = prices[x].innerHTML.substring(1);
+    var result = qtys[x].value * fCost;
+    sum += result;
+    totals[x].innerHTML = "$" + result;
+  }
+  totalPrice = totalPrice.split(" ");
+  totalPrice.pop();
+  totalPrice.push("$" + sum);
+  totalPrice = totalPrice.join(" ");
+  total.innerHTML = totalPrice;
 }
 
 function createQuantityInput(){
