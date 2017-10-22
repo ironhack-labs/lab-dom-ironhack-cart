@@ -1,10 +1,3 @@
-function getPriceByProduct(itemNode){
-
-}
-
-function updatePriceByProduct(productPrice, index){
-
-}
 
 //Define the total price of the product
 function getTotalPrice() {
@@ -26,38 +19,32 @@ function getTotalPrice() {
   total.innerHTML = totalPrice;
 }
 
-function createQuantityInput(){
-
-}
-
-function createDeleteButton(){
-
-}
-
-function createQuantityNode(){
-
-}
-
-function createItemNode(dataType, itemData){
-
-}
-
-function createNewItemRow(itemName, itemUnitPrice){
-
-}
-
+//Create a new item
 function createNewItem(){
-
+  var t1 = document.getElementById("t1");
+  var t2 = document.getElementById("t2");
+  var sub = document.getElementsByClassName("subGeneral");
+  var clonedTree = sub[0].cloneNode(true);
+  clonedTree.querySelector(".productName").innerHTML = document.getElementById("t1").value;
+  clonedTree.querySelector(".costUnit").innerHTML = "$" + document.getElementById("t2").value;
+  clonedTree.querySelector(".quantity").value = "";
+  clonedTree.querySelector(".totalPrice").innerHTML = "$0";
+  clonedTree.querySelector(".btn-delete").onclick = function(){
+    this.parentNode.parentNode.remove();
+  }
+  bigContainer.appendChild(clonedTree);
 }
 
+//General function
 window.onload = function(){
   var calculatePriceButton = document.getElementById('calc-prices-button');
-  //var createItemButton = document.getElementById('new-item-create');
+  var createItemButton = document.getElementById('new-item-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
   calculatePriceButton.onclick = getTotalPrice;
-  //createItemButton.onclick = createNewItem;
+  createItemButton.onclick = createNewItem;
 
+  //Delete
   for(var x = 0; x < deleteButtons.length; x++){
     deleteButtons[x].onclick = function(){
       this.parentNode.parentNode.remove();

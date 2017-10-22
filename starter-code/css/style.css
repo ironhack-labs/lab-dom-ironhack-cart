@@ -66,3 +66,12 @@ input {
   flex-wrap: wrap;
   justify-content: space-between;
 }
+
+.create{
+  position: absolute;
+  right: 30px;
+}
+
+.newData{
+  margin: 30px;
+}
