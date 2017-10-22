@@ -1,6 +1,33 @@
 input {
   border: solid 1px black;
 }
+body {
+  font-family: "Helvetica Neue";
+  margin: 0px;
+  padding: 0px;
+}
+
+h1 {
+  margin-left: 500px;
+}
+
+.container1 {
+  width: 100%;
+  margin: 30px 10px 6px 0px;
+  padding-left: 100px;
+
+}
+
+.product-one {
+  display: inline-block;
+  width: 10%;
+  margin-right: 80px;
+}
+
+
+input {
+  border: solid 1px black;
+}
 
 .btn {
   display: inline-block;
@@ -24,18 +51,38 @@ input {
   border-radius: 4px;
 }
 
+
 .btn-success {
     color: #fff;
+    font-size: 1em;
+    color: white;
     background-color: #5cb85c;
+    border-radius: 5px;
     border-color: #4cae4c;
+    border-style: none;
+    padding:10px;
+    display: inline-block;
+    margin-left: 600px;
+  margin-top: 50px;
+
 }
 
 .btn-delete {
     color: #fff;
-    background-color: #CF000F;
+    font-size: 1em;
+    font-family: "Helvetica Neue";
+  background-color: #CF000F;
     border-color: #CF000F;
+    border-radious: 10px;
+    border-radius: 5px;
+    border-style: none;
+    padding: 10px;
+  margin-left:60px;
+    display: inline-block;
 }
 
-.quantity {
-  margin: 0 5px;
+.create {
+ width: 5%;
+  margin-left: 1070px;
+  margin-top: 25px;
 }

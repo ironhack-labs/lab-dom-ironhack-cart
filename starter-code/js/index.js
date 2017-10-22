@@ -1,42 +1,31 @@
-function deleteItem(e){
 
+//Function to multiply  price of one product and quantity, and upload to total price of that product
+
+var result = document.getElementById("sum-all-products").innerHTML;
+
+function sumProducts (price) {
+result = document.getElementById("new-quantity")*price;
+  return;
 }
 
-function getPriceByProduct(itemNode){
+var productPrice1= sumProducts(25);
+var productPrice2=sumProduct(15);
 
+function totalSum (){
+var totalPrice =
 }
 
-function updatePriceByProduct(productPrice, index){
+//Function to eliminate a whole product
+//But which product....?
+function deleteProduct (){
+  if(document.getElementsByClass("btn-delete").onclick){
+    document.getElementById("container1").innerHTML = "";
+     return;
+    }
+  deleteProduct();
 
-}
 
-function getTotalPrice() {
 
-}
-
-function createQuantityInput(){
-
-}
-
-function createDeleteButton(){
-
-}
-
-function createQuantityNode(){
-
-}
-
-function createItemNode(dataType, itemData){
-
-}
-
-function createNewItemRow(itemName, itemUnitPrice){
-
-}
-
-function createNewItem(){
-
-}
 
 window.onload = function(){
   var calculatePriceButton = document.getElementById('calc-prices-button');
