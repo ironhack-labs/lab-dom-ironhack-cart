@@ -1,6 +1,35 @@
+body{
+  margin:0;
+  padding:0;
+}
+
 input {
   border: solid 1px black;
 }
+
+.container{
+  margin:0 auto;
+  width:80%;
+}
+
+.tittle{
+  text-align:center;
+  padding-bottom: 60px;
+}
+
+.market{
+  margin: 40px 0px;
+}
+
+.name-product, .price-product{
+  width:40%;
+}
+
+.product{
+  margin-right:40px;
+}
+
+
 
 .btn {
   display: inline-block;
