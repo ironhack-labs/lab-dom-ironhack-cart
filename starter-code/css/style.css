@@ -9,6 +9,7 @@ h1 {
 input {
     border: solid 1px black;
     margin: 0 auto;
+    padding: 4px 4px;
 }
 
 .btn {
@@ -51,17 +52,17 @@ input {
     margin: 0 5px;
 }
 
-.product {
+.product, .new-product {
     padding: 5px 20px;
 }
 
-.product div {
+.col-5 {
     text-align: center;
     display: inline-block;
     width: 19%;
     border-width: 0;
     margin: 0 auto;
-    padding: 0;
+    padding: 0 auto;
 }
 
 .total-price {
