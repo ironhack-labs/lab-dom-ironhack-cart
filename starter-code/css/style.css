@@ -28,14 +28,38 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin-top: 100px;
+    margin-left: 25%;
 }
 
-.btn-delete {
+.delete1 button {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    height: 30px;
+    width: 120px;
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.ironbubble div {
+  display: inline-block;
+  margin-left: 40px;
+  margin-bottom: 20px;
+}
+
+.ironshirt div {
+  display: inline-block;
+  margin-left: 40px;
+}
+
+.product1_name {
+  width: 150px; 
 }

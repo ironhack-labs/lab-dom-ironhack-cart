@@ -11,7 +11,10 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-
+  var itemValue = document.getElementById('QTY1').value;
+  var itemCostString = document.getElementById('cost').innerHTML;
+  var itemCostNumber = parseFloat(itemCostString);
+  document.getElementById('totalcost').innerHTML = itemValue*itemCostNumber + " $";
 }
 
 function createQuantityInput(){
