@@ -1,3 +1,20 @@
+body {
+  background-color: #F6CECE;
+}
+
+header {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+h1{
+  width: 55%;
+  margin-top: 20px;
+  padding: 0px;
+}
+
+
 input {
   border: solid 1px black;
 }
@@ -24,18 +41,53 @@ input {
   border-radius: 4px;
 }
 
+.calculateDiv {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #CF000F;
+  border-color: #CF000F;
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+
+
+.wrapper {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-around;
+
+}
+.forWraps{
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+
+}
+
+.total{
+  display: flex;
+  justify-content: flex-end;
+}
+
+h2{
+  width: 55%;
+
 }
