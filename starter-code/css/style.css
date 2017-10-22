@@ -24,18 +24,64 @@ input {
   border-radius: 4px;
 }
 
-.btn-success {
+.btn-calc {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
 }
 
-.btn-delete {
+.btn-dlt {
+    color: #fff;
+    background-color: #CF000F;
+    border-color: #CF000F;
+}
+.btn-dlt-two {
+    color: #fff;
+    background-color: #CF000F;
+    border-color: #CF000F;
+}
+
+.btn-dlt-three {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
 }
 
 .quantity {
-  margin: 0 5px;
+  margin: 0 10px;
+}
+
+.calculate {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.down {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 2%;
+}
+#newitem {
+  margin-left: 10%;
+}
+#new-item {
+  margin-right: 10%;
+}
+
+.title {
+  margin-left: 45%;
+  display: inline-block;
+}
+
+.article {
+  margin-left: 10%;
+}
+
+.delete-but {
+  margin-right: 10%;
+}
+
+.last-down {
+  text-align: center;
 }
