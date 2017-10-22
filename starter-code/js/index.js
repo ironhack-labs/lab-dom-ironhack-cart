@@ -2,16 +2,19 @@ function deleteItem(e){
 
 }
 
-function getPriceByProduct(itemNode){
-
+function getPriceByProduct(itemNode,i){
+  var priceUnit = document.getElementById("price-unit");
+  updatePriceByProduct(priceUnit);
 }
 
 function updatePriceByProduct(productPrice, index){
-
+  var totalPrice = document.getElementById("total-price");
+  var quantity = document.getElementById("quantityy");
+  totalPrice.innerHTML = productPrice.innerHTML * quantity.value;
 }
 
 function getTotalPrice() {
-
+  getPriceByProduct();
 }
 
 function createQuantityInput(){

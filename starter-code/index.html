@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,117 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+  <div class="title">
+    <h2> Ironhack <br> Merchandising Shop </h2>
+  </div>
+  <div class="down">
+    <div class="article">
+      <span class="article-name">
+        IronBubble
+      </span>
+    </div>
+    <div class="price">
+      <span>$</span>
+      <span class="price-num" id="price-unit">
+      25.00
+    </span>
+    </div>
+    <div class="quantity-products">
+      <span class="quantity">
+      <label for = "quantity"> QTY </label>
+      <input class="qty" type="number" value="0" id="quantityy" min = "0">
+      </span>
+    </div>
+    <div class="total-price-gral">
+      <span>$</span>
+      <span class="total-price" id="total-price">
+        0.00
+      </span>
+    </div>
+    <div class="delete-but">
+      <button class="btn-dlt btn">Delete</button>
+    </div>
+  </div>
+
+
+  <div class="down">
+    <div class="article">
+      <span class="article-name-two">
+        IronShirt
+      </span>
+    </div>
+    <div class="price">
+      <span>$</span>
+      <span class="price-num-two" id="price-unit-two">
+      15.00
+    </span>
+    </div>
+    <div class="quantity-products">
+      <span class="quantity-two">
+      <label for = "quantity-two"> QTY </label>
+      <input class="qty-two" type="number" value="0" id="quantityy-two" min = "0">
+      </span>
+    </div>
+    <div class="total-price-gral">
+      <span>$</span>
+      <span class="total-price-two" id="total-price-two">
+        0.00
+      </span>
+    </div>
+    <div class="delete-but">
+      <button class="btn-dlt-two btn">Delete</button>
+    </div>
+  </div>
+
+  <div class="down">
+    <div class="article">
+      <span class="article-name-three">
+        IronCup
+      </span>
+    </div>
+    <div class="price">
+      <span>$</span>
+      <span class="price-num-three" id="price-unit-three">
+      10.00
+    </span>
+    </div>
+    <div class="quantity-products">
+      <span class="quantity-three">
+      <label for = "quantity-three"> QTY </label>
+      <input class="qty-three" type="number" value="0" id="quantityy-three" min = "0">
+      </span>
+    </div>
+    <div class="total-price-gral">
+      <span>$</span>
+      <span class="total-price-three" id="total-price-three">
+        0.00
+      </span>
+    </div>
+    <div class="delete-but">
+      <button class="btn-dlt-three btn">Delete</button>
+    </div>
+  </div>
+
+  <div class="down">
+      <input type="text" placeholder="New article" id="newitem">
+      <input type="number" placeholder="$" id="newprice" min="0">
+
+      <button class="btn-create btn" type="button" name="button" id="new-item">Create</button>
+  </div>
+
+
+  <div class="last-down">
+    <div class="calculate">
+      <button class="btn-calc btn">Calculate Price</button>
+    </div>
+    <div class="divTotal">
+      <h2><span class="Totall">Total Price: </span>
+        <span>$</span>
+        <span id="FinalPricee">0.00</span></h2>
+    </div>
+  </div>
 </body>
+
 </html>
