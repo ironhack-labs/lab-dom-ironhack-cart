@@ -2,12 +2,15 @@ input {
   border: solid 1px black;
 }
 
+
 .headline {
   text-align: center;
 }
 
 .product-line,
-.total-price {
+.total-price,
+.sub-total-price,
+.new-product {
   display: flex;
   justify-content: space-around;
   align-items: center;
