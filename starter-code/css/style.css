@@ -39,3 +39,22 @@ input {
 .quantity {
   margin: 0 5px;
 }
+.inline-block{
+  display: inline-block;
+}
+.title{
+  margin-left: 45%;
+  font-size: 25px;
+  font-weight: 600;
+}
+.container{
+  display: flex;
+  text-align: center;
+}
+.container>div{
+  flex-basis: 20%;
+}
+.myButton{
+  text-align: center;
+  margin-top: 40px;
+}

@@ -3,15 +3,22 @@ function deleteItem(e){
 }
 
 function getPriceByProduct(itemNode){
-
+  var priceUnit = document.getElementById('price-unit');
+  updatePriceByProduct(priceUnit);
 }
 
-function updatePriceByProduct(productPrice, index){
+// function updatePriceByProduct(productPrice, index){
+//
+// }
+function updatePriceByProduct(productPrice){
+  var totalPrice = document.getElementById ('total-price');
+  var quantity = document.getElementById('qty');
+  totalPrice.innerHTML = quantity.value * productPrice.innerHTML;
 
 }
 
 function getTotalPrice() {
-
+  getPriceByProduct();
 }
 
 function createQuantityInput(){
