@@ -30,25 +30,25 @@ function getTotalPrice() {
 }
 
 function createQuantityInput() {
-  var newInputDiv = document.createElement('div');
-  newInputDiv.setAttribute('class', 'qty');
-
-  var newQuantity = document.createElement('input');
-  newQuantity.type = "text";
-  newQuantity.setAttribute('class', 'input');
-
-  var parent = document.getElementById('products').lastChild;
-  parent.appendChild(newQuantity);
+  // var newInputDiv = document.createElement('div');
+  // newInputDiv.setAttribute('class', 'qty');
+  //
+  // var newQuantity = document.createElement('input');
+  // newQuantity.type = "text";
+  // newQuantity.setAttribute('class', 'input');
+  //
+  // var parent = document.getElementById('products').lastChild;
+  // parent.appendChild(newQuantity);
 }
 
 function createDeleteButton() {
-  var newDeleteButton = document.createElement('button');
-  newDeleteButton.innerHTML = 'Delete';
-  newDeleteButton.setAttribute('class', 'btn btn-delete');
-
-
-  var parent = document.getElementById('products').lastChild;
-  parent.appendChild(newDeleteButton);
+  // var newDeleteButton = document.createElement('button');
+  // newDeleteButton.innerHTML = 'Delete';
+  // newDeleteButton.setAttribute('class', 'btn btn-delete');
+  //
+  //
+  // var parent = document.getElementById('products').lastChild;
+  // parent.appendChild(newDeleteButton);
 }
 
 function createQuantityNode() {
@@ -56,29 +56,42 @@ function createQuantityNode() {
 }
 
 function createItemNode(dataType, itemData) {
-  var newProductPrice = document.createElement('div');
-  newProductPrice.setAttribute('class', 'product-cost');
-  newProductPrice.innerHTML = document.getElementsByClassName("new-product-price")[0].value + '$';
-  var newProductName = document.createElement('div');
-  newProductName.setAttribute('class', 'product-name');
-  newProductName.innerHTML = document.getElementsByClassName("new-product-name")[0].value;
-  var parent = document.getElementById('products').lastChild;
-  parent.appendChild(newProductName);
-  parent.appendChild(newProductPrice);
+  // var newProductPrice = document.createElement('div');
+  // newProductPrice.setAttribute('class', 'product-cost');
+  // newProductPrice.innerHTML = document.getElementsByClassName("new-product-price")[0].value + '$';
+  // var newProductName = document.createElement('div');
+  // newProductName.setAttribute('class', 'product-name');
+  // newProductName.innerHTML = document.getElementsByClassName("new-product-name")[0].value;
+  // var parent = document.getElementById('products').lastChild;
+  // parent.appendChild(newProductName);
+  // parent.appendChild(newProductPrice);
 }
 
 function createNewItemRow(itemName, itemUnitPrice) {
-  var newItemRow = document.createElement('div');
-  newItemRow.setAttribute('class', 'product-line');
+  var orgProduct = document.querySelector('.product-line');
+  var newProductLine = orgProduct.cloneNode(true);
+
+  var newProductName = newProductLine.children[0];
+  newProductName.innerHTML = document.getElementsByClassName('new-product-name')[0].value;
+
+  var newProductPrice = newProductLine.children[1].children[0];
+  newProductPrice.innerHTML = document.getElementsByClassName('new-product-price')[0].value;
+  console.log(newProductPrice);
+
   var parent = document.getElementById('products');
-  parent.appendChild(newItemRow).lastChild;
+  parent.appendChild(newProductLine);
+
+  // var newItemRow = document.createElement('div');
+  // newItemRow.setAttribute('class', 'product-line');
+  // var parent = document.getElementById('products');
+  // parent.appendChild(newItemRow).lastChild;
 }
 
 function createNewItem() {
   createNewItemRow();
-  createItemNode();
-  createQuantityNode()
-  createQuantityInput();
+  // createItemNode();
+  // createQuantityNode();
+  // createQuantityInput();
   createDeleteButton();
   window.onload();
 }
