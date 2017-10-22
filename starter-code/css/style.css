@@ -1,3 +1,30 @@
+body {
+  font-family: sans-serif;
+  font-size: 18px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.container{
+  width:1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2.5em;
+  text-align: center;
+}
+
+.quantity input {
+  width: 80px;
+  text-align: center;
+  margin-left: 10px;
+  border: solid 1px black;
+}
+
 input {
   border: solid 1px black;
 }
@@ -22,20 +49,43 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+  font-weight: bold;
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+  width: 200px;
+  margin: 20px 0 30px 0;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #CF000F;
+  border-color: #CF000F;
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+.itemNode {
+  width: 90%;
+  height: 100px;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+}
+
+.size20 {
+  width: 20%;
+  text-align: center;
+}
+
+#total{
+  width: 400px;
+  text-align: center;
 }
