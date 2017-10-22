@@ -28,6 +28,8 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin: 50px auto;
+    display:block;
 }
 
 .btn-delete {
@@ -38,4 +40,51 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0 20px 0;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.product {
+  width: 140px;
+}
+
+.price {
+  width: 60px;
+}
+
+.totalProduct {
+  width: 100px;
+}
+
+.total-price {
+  display: none;
+  justify-content: center;
+}
+
+.new-product {
+  display: flex;
+  justify-content:space-between;
+}
+
+.new-product-inputs > :first-child {
+  margin-right: 100px;
+}
+
+body {
+  padding: 0 90px 0 90px;
+}
+
+#error {
+  display: none;
+  color: red;
+  margin-left: 30px;
 }

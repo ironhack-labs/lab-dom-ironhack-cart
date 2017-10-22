@@ -10,5 +10,58 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <h1>Ironhack<br>Merchandising Shop</h1>
+  <div id="product-list">
+    <div class="wrapper">
+      <div class="product">
+        <span>IronBubble-Head</span>
+      </div>
+      <div class="price">
+        $<span>25</span>
+      </div>
+      <div class="qty">
+        <label class="quantity" for="qty">QTY</label>
+        <input type="number" name="cantidad" value=0>
+      </div>
+      <div class="totalProduct">
+        $<span>0</span>
+      </div>
+      <div class="delete">
+        <button class="btn btn-delete" type="button" name="button">Delete</button>
+      </div>
+    </div>
+    <div class="wrapper">
+      <div class="product">
+        <span>IronShirt</span>
+      </div>
+      <div class="price">
+        $<span>15</span>
+      </div>
+      <div class="qty">
+        <label class="quantity" for="qty">QTY</label>
+        <input type="number" name="cantidad" value=0 >
+      </div>
+      <div class="totalProduct">
+        $<span>0</span>
+      </div>
+      <div class="delete">
+        <button class="btn btn-delete" onclick="deleteItem(this)" type="button" name="button">Delete</button>
+      </div>
+    </div>
+  </div>
+  <button id="calc-prices-button" class="btn btn-success" type="button" name="button">Calculate Prices</button>
+  <div id="total-price" class="total-price">
+      <h2>Total Price: $<span id="total"></span></h2>
+  </div>
+  <div class="new-product">
+    <div class="new-product-inputs">
+      <input id="new-prod-name" type="text" name="" value="">
+      <input id="new-prod-price" type="number" name="" value="">
+      <div id="error">
+        You must enter both values
+      </div>
+    </div>
+    <button id="new-item-create" type="button" name="button">Create</button>
+  </div>
 </body>
 </html>
