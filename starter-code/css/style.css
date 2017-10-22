@@ -39,3 +39,50 @@ input {
 .quantity {
   margin: 0 5px;
 }
+/*Own Code*/
+.itemdiv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 50px;
+}
+
+
+.title {
+  width: 30%;
+  margin-left: 45%;
+  margin-bottom: 50px;
+}
+
+.pricebtndiv {
+  width: 30%;
+  margin-left: 50%;
+  margin-top: 50px;
+}
+
+.totalprice {
+  flex-basis: 10%;
+}
+
+.pricetitle {
+  width: 30%;
+  margin-left: 50%;
+  margin-top: 50px;
+}
+
+.creatediv {
+  display:flex;
+  justify-content: space-around;
+}
+
+.creatediv input {
+  margin-right: 30px;
+}
+
+.inputdiv {
+  flex-basis: 71.5%;
+}
+
+.name {
+  flex-basis: 10%; 
+}
