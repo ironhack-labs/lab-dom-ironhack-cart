@@ -4,6 +4,7 @@ var unitTotal = document.querySelectorAll(".js-total-product");
 
 function deleteItem(e){
   e.parentNode.parentNode.remove();
+  getTotalPrice();
 }
 
 function getPriceByProduct(itemNode, index){
@@ -15,51 +16,59 @@ function getTotalPrice() {
   var itemPrice = document.getElementsByClassName("price");
   var totalPrice = document.getElementsByClassName("total-price");
   var sum = 0;
+  var finalPrice;
 
+  //To iterate for every elements
   for(var i = 0; i < itemPrice.length; i++) {
-    var finalPrice = getPriceByProduct(itemPrice[i].innerHTML, i);
+    finalPrice = getPriceByProduct(itemPrice[i].innerHTML, i);
     totalPrice[i].innerHTML = parseFloat(finalPrice).toFixed(2);
     sum += Number(finalPrice);
   }
 
+  //To update the total
   var finalSum = document.getElementById("finalsum");
   finalSum.innerHTML = sum;
-
 }
 
 window.onload = function() {
+
   var calculatePriceButton = document.getElementById('calc-prices-button');
   var createItemButton = document.getElementById('new-item-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
-  var initialItem = document.getElementsByClassName("item-holder")[0];
+  var initialItem = document.querySelector(".item-holder");
 
   calculatePriceButton.onclick = getTotalPrice;
   createItemButton.onclick = createNewItem;
 
   function createNewItem(){
     var table = document.getElementById("table");
-    var tr = initialItem.cloneNode(true);
+    var tr = initialItem.cloneNode(true); //To clone the node and his childs.
     var tableBody = document.getElementById("table-body");
     var newProduct = document.getElementById("newproduct");
     var newPrice = document.getElementById("newprice");
+    var button;
+
+    //We check if the input has value and show a warning
+
     if(!newProduct.value || !newPrice.value) {
       alert("You need enter a value");
     } else {
       tr.childNodes[1].innerHTML = newProduct.value;
-      tr.getElementsByClassName('price')[0].innerHTML = newPrice.value;
-      var button = tr.getElementsByClassName('btn-delete')[0];
+      tr.querySelector('.price').innerHTML = newPrice.value;
+      button = tr.querySelector('.btn-delete');
       button.onclick = function() {
         deleteItem(this);
       };
 
-      tr.getElementsByClassName('quantity')[0].value = 0;
-      tr.getElementsByClassName('total-price')[0].innerHTML = 0;
+      //To reset the values
+      tr.querySelector('.quantity').value = 0;
+      tr.querySelector('.total-price').innerHTML = 0;
+      newPrice.value = 0;
+      newProduct.value = '';
 
+      //To append new element
       tableBody.appendChild(tr);
     }
-
-
-
   }
 
     for(var i = 0; i<deleteButtons.length ; i++){

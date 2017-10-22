@@ -28,7 +28,7 @@
           <span class="price">25.00</span></td>
         <td class="text-center">
           <label class="uppercase">qty</label>
-          <input type="text" pattern=[0,9] value="0" class="quantity">
+          <input type="number" value="0" class="quantity">
         </td>
         <td class="text-center js-total-product">
           <span>$</span>
@@ -37,22 +37,6 @@
           <button class="btn btn-delete">Delete</button>
         </td>
       </tr>
-      <!-- <tr>
-      <td>Iron Bubble-head</td>
-      <td>
-        <span>$</span>
-        <span class="price">25.00</span></td>
-      <td class="text-center">
-        <label class="uppercase">qty</label>
-        <input type="text" pattern="[0,9]" value="0" class="quantity">
-      </td>
-      <td class="text-center js-total-product">
-        <span>$</span>
-        <span class="total-price">0.00</span></td>
-      <td class="text-right">
-        <button class="btn btn-delete">Delete</button>
-      </td>
-    </tr> -->
     </tbody>
     <tfooter>
       <tr>
@@ -60,7 +44,7 @@
           <input type="text" id="newproduct">
         </td>
         <td>
-          <input type="text" id="newprice">
+          <input type="number" id="newprice">
         </td>
         <td colspan="3" class="text-right">
           <button class="btn btn-create" id="new-item-create">Create</button>
