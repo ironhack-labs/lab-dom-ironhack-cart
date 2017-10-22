@@ -1,5 +1,4 @@
 function deleteItem(e){
- console.log(e.target.parentNode);
  var elToRemove = e.target.parentNode;
  elToRemove.parentNode.removeChild(elToRemove);
 }
@@ -12,9 +11,6 @@ function getPriceByProduct(itemNode){
 function updatePriceByProduct(productPrice, index){
   var allProductsQuantity = document.querySelectorAll(".quantity");
   var allTotalAmounts = document.querySelectorAll(".total-amount");
-  // console.log(getPriceByProduct(productPrice));
-  // console.log(parseFloat(allProductsQuantity[index].value));
-  // console.log(allTotalAmounts[index].innerText);
   allTotalAmounts[index].innerText = "$" + getPriceByProduct(productPrice) * parseFloat(allProductsQuantity[index].value);
 }
 
@@ -25,10 +21,8 @@ function getTotalPrice() {
   allProductsPrices.forEach(function(product, index){
     updatePriceByProduct(product, index);
   });
-  // FINAL TOTAL
   var total = 0;
   document.querySelectorAll(".total-amount").forEach(function(subtotal) {
-    // console.log(subtotal.innerText);
     total += parseFloat(subtotal.innerText.substr(1));
   });
 
@@ -38,10 +32,16 @@ function getTotalPrice() {
 
 function createQuantityInput(){
   var quantityInput = document.createElement('input');
+
   return quantityInput;
 }
 
 function createDeleteButton(){
+  var deleteButtons = document.getElementsByClassName('btn-delete');
+
+  for(var i = 0; i<deleteButtons.length ; i++){
+    deleteButtons[i].onclick = deleteItem;
+  }
 }
 
 function createQuantityNode(){
@@ -59,41 +59,36 @@ function createItemNode(dataType, itemData){
 function createNewItemRow(itemName, itemUnitPrice){
   var myNewElement = document.createElement("div");
   myNewElement.classList.add('item');
-  console.log(myNewElement);
-  //select last div
-  var lastchild = document.getElementById("items-container");
-  console.log(lastchild);
-  myNewElement.innerHTML = `<span class="item-name">IronShirt</span>
-  <span class="item-price">$15.00</span>
-  <input class="quantity" type="number" pattern="[0-9]" name="" value="" placeholder="Quantity">
+  var itemsContainer = document.getElementById("items-container");
+  myNewElement.innerHTML = `<span class="item-name">${itemName}</span>
+  <span class="item-price">$${itemUnitPrice}</span>
+  <input class="quantity" type="number" pattern="[0-9]" name="" value="0">
   <span class="total-amount">$0.00</span>
   <button class="btn btn-delete" type="button">Delete</button>`;
-  console.log(myNewElement);
-  lastchild.appendChild(myNewElement);
+
+  itemsContainer.appendChild(myNewElement);
+  createDeleteButton();
 }
 
 function createNewItem(){
-  var newProductName = document.getElementById("create-name");
-  console.log(newProductName.value);
+  var newProductName = document.getElementById("create-name").value;
+  var newProductPrice = parseFloat(document.getElementById("create-price").value) + ".00";
+  var createBtn = document.getElementById("new-item-create");
 
-  var newProductQuantity = document.getElementById("create-quantity");
-  console.log(parseFloat(newProductQuantity.value));
-  createNewItemRow(newProductName, newProductQuantity);
+  if(newProductName && newProductPrice) {
+    createNewItemRow(newProductName, newProductPrice);
+  } else console.log("Please fill both fields");
+  document.getElementById("create-name").value = "";
+  document.getElementById("create-price").value = "";
 
 }
 
 window.onload = function(){
   var calculatePriceButton = document.getElementById('calc-prices-button');
   var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');
   var itemPrice = document.querySelector(".item-price");
 
   calculatePriceButton.onclick = getTotalPrice;
   createItemButton.onclick = createNewItem;
-
-  for(var i = 0; i<deleteButtons.length ; i++){
-    deleteButtons[i].onclick = deleteItem;
-  }
-
-
+  createDeleteButton();
 };

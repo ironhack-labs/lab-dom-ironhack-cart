@@ -24,7 +24,14 @@ span {
 }
 
 .item-name {
-  flex-basis: 120px;
+  flex-basis: 140px;
+}
+
+.item-price {
+  flex-basis: 60px;
+}
+.total-amount {
+  flex-basis: 60px;
 }
 
 input {
