@@ -2,6 +2,9 @@ input {
   border: solid 1px black;
   text-align: end;
 }
+section {
+  margin-top: 150px;
+}
 
 h1 {
   width: 350px;

@@ -1,6 +1,6 @@
 function deleteItem(e){
-  let item = e.target.parentElement.parentElement;
-  let container = item.parentElement;
+  let item = e.currentTarget.parentNode.parentNode;
+  let container = item.parentNode;
   container.removeChild(item);
 }
 
@@ -37,20 +37,56 @@ function getTotalPrice(){
 }
 
 function createQuantityInput(){
-
+  var imputNode = document.createElement('input');
+  return imputNode
 }
 
-function createDeleteButton(){
-
+function createQuantityLabel(){
+  var labelNode = document.createElement('label');
+  var dataNodeQuantity = document.createTextNode('QTY');
+  labelNode.appendChild(dataNodeQuantity);
+  return labelNode
 }
 
 function createQuantityNode(){
+  var itemLabelNode = createQuantityLabel();
+  var itemInputNode = createQuantityInput();
+  var itemNode = document.createElement('div');
 
+  itemNode.className += "product"
+  itemNode.appendChild(itemLabelNode);
+  itemNode.appendChild(itemInputNode);
+  return itemNode
+}
+
+
+
+function createTotalPriceNode(){
+  var itemNode = document.createElement('div');
+  var totalsPriceNode = document.createElement('span');
+  totalsPriceNode.className += "total"
+  var dataTotalNode = document.createTextNode('$0.00');
+
+  itemNode.appendChild(totalsPriceNode);
+  totalsPriceNode.appendChild(dataTotalNode);
+  return itemNode
+}
+
+function createDeleteButton(){
+  var itemNode = document.createElement('div');
+  var itemButton = document.createElement('button');
+  itemButton.onclick = deleteItem;
+  var dataButtonNode = document.createTextNode('delete');
+
+  itemButton.appendChild(dataButtonNode);
+  itemButton.className += "btn btn-delete";
+  itemNode.appendChild(itemButton);
+  return itemNode
 }
 
 function createItemNode(dataType, itemData){
   var itemNode = document.createElement('div');
-  itemNode.className += "product"
+  itemNode.className += "product";
   var spanTag = document.createElement('span');
   var dataNode = document.createTextNode(itemData);
   itemNode.appendChild(spanTag);
@@ -67,9 +103,15 @@ function createNewItemRow(itemName, itemUnitPrice){
 
   var itemNameNode = createItemNode("name", itemName);
   var itemPriceNode = createItemNode("price","$"+ itemUnitPrice);
+  var itemQuantityNode = createQuantityNode();
+  var itemTotalPriceNode = createTotalPriceNode();
+  var itemDeleteButton = createDeleteButton();
 
   itemRow.appendChild(itemNameNode);
   itemRow.appendChild(itemPriceNode);
+  itemRow.appendChild(itemQuantityNode);
+  itemRow.appendChild(itemTotalPriceNode);
+  itemRow.appendChild(itemDeleteButton);
 
   parent.insertBefore(itemRow, firstItemRow);
 }
