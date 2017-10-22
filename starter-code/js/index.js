@@ -42,14 +42,23 @@ window.onload = function() {
     var tableBody = document.getElementById("table-body");
     var newProduct = document.getElementById("newproduct");
     var newPrice = document.getElementById("newprice");
-    tr.childNodes[1].innerHTML = newProduct.value;
-    tr.getElementsByClassName('price')[0].innerHTML = newPrice.value;
-    var button = tr.getElementsByClassName('btn-delete')[0];
-    button.onclick = function() {
-      deleteItem(this);
-    };
+    if(!newProduct.value || !newPrice.value) {
+      alert("You need enter a value");
+    } else {
+      tr.childNodes[1].innerHTML = newProduct.value;
+      tr.getElementsByClassName('price')[0].innerHTML = newPrice.value;
+      var button = tr.getElementsByClassName('btn-delete')[0];
+      button.onclick = function() {
+        deleteItem(this);
+      };
 
-    tableBody.appendChild(tr);
+      tr.getElementsByClassName('quantity')[0].value = 0;
+      tr.getElementsByClassName('total-price')[0].innerHTML = 0;
+
+      tableBody.appendChild(tr);
+    }
+
+
 
   }
 
