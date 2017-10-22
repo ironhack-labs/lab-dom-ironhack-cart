@@ -9,9 +9,10 @@ window.onload = function(){
 
   // Check why no need ()
   calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
-  // Cloning method, just one function
-  //createItemButton.onclick = cloneCreate;
+  // Cloning function, just one function
+  createItemButton.onclick = cloneCreate;
+  // Old way, multple functions
+  //createItemButton.onclick = createNewItem;
 
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = function(e){
@@ -65,6 +66,9 @@ window.onload = function(){
       // Modify new wrapper div with the new product values
       clonated.getElementsByClassName('product')[0].getElementsByTagName('span')[0].innerHTML = nombre.value;
       clonated.getElementsByClassName('price')[0].getElementsByTagName('span')[0].innerHTML = unitPrice.value;
+      clonated.getElementsByClassName('qty')[0].getElementsByTagName('input')[0].value = 0;
+      clonated.getElementsByClassName('totalProduct')[0].getElementsByTagName('span')[0].innerHTML = 0;
+      console.log("TERMINADO");
       // Add delete event
       clonated.getElementsByClassName('btn-delete')[0].onclick = function () {
         deleteItem(this);
