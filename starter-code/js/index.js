@@ -10,8 +10,13 @@ function updatePriceByProduct(productPrice, index){
 
 }
 
+//Define the total price of the product
 function getTotalPrice() {
-
+  var qty = document.getElementById("qty");
+  var price = document.getElementById("price");
+  console.log(qty + ", " + price);
+  var result = qty * price;
+  total.innerHTML = "$" + result;
 }
 
 function createQuantityInput(){
