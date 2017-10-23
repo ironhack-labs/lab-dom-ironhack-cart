@@ -70,7 +70,7 @@ input {
   margin: 0 5px;
 }
 
-.itemNode {
+.item-node {
   width: 90%;
   height: 100px;
   display: flex;
@@ -88,4 +88,14 @@ input {
 #total{
   width: 400px;
   text-align: center;
+}
+
+.create-new-product{
+  width: 95%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+.btn-create{
+  align-self: flex-end;
 }
