@@ -39,3 +39,49 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+/*My html styles class*/
+
+.title {
+  margin-left: 55%;
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 30px 0;
+}
+
+.nameItem {
+  width: 25%;
+}
+
+.buttonCalculate {
+  margin-top: 55px;
+  text-align: center;
+}
+
+.newItem {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+/*New items id*/
+
+#newName {
+  width: 30%;
+  align-items: flex-start;
+  margin-left: 5.5%;
+}
+
+#newPrice {
+  width: 30%;
+  align-items: flex-start;
+  margin-right: 25%;
+}
+
+#totalPrice {
+  width: 30%;
+  margin-left: 45%;
+}
