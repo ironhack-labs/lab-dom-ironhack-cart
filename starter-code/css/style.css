@@ -39,3 +39,47 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+#title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  justify-content: space-around;
+}
+
+#delete-button {
+  background-color: red;
+  color: white;
+  border-radius: 4px;
+  padding: 8px;
+  margin-bottom: 40px;
+}
+
+
+.wrapper-2 {
+  display: flex;
+  justify-content: space-between;
+  justify-content: space-around;
+}
+
+#delete-button-2 {
+  background-color: red;
+  color: white;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+#calculate-prices {
+  background-color: green;
+  color: white;
+  border-radius: 5px;
+  padding: 13px;
+  width: 15%;
+  text-align: center;
+  margin-left: 47%;
+  margin-top: 20px;
+}
