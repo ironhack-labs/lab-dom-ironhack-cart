@@ -10,12 +10,16 @@ function updatePriceByProduct(productPrice, index){
 
 }
 
-function getTotalPrice() {
-  
-pricePerUnit * input.quantityInput = totalPrice;
 
-totalPrice.createTextNode(totalPrice)
-
+// Getting the final price x product but not x purchase
+function getTotalPrice(itemNode) {
+  var pricePerUnit = document.getElementsByClassName('price-per-unit');
+  var calculatePriceButton = document.getElementById('calculate-price');
+  var quantityInput = document.getElementById('quantity-input').value;
+  var deleteButton = document.getElementsByClassName('btn-delete');
+  var totalPrice = document.getElementsByClassName('total-price');
+  var total = pricePerUnit * quantityInput ;
+  return total.createTextNode(total)
 }
 
 function createQuantityInput(){
@@ -43,14 +47,11 @@ function createNewItem(){
 }
 
 window.onload = function(){
+  var calculatePriceButton = document.getElementById('calc-prices-button');
+  var createItemButton = document.getElementById('new-item-create');
+  var deleteButtons = document.getElementsByClassName('btn-delete');
 
-  var calculatePriceButton = document.getElementById('calculate-price');
-  var quantityInput = document.getElementsByClassName('quantity-input');
-  var deleteButton = document.getElementsByClassName('btn-delete');
-  var totalPrice = document.getElementsByClassName('total-price');
-  var pricePerUnit = document.getElementsByClassName('price-per-unit');
-
-  calculatePriceButton.onclick = getTotalPrice;
+  calculatePriceButton.onclick = getTotalPrice();
   quantityInput.onclick = createNewItem;
 
   for(var i = 0; i<deleteButton.length ; i++){
