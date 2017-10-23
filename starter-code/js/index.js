@@ -28,6 +28,7 @@ function getTotalPrice() {
 function createItemNode(dataType, itemData) {
   var product = document.querySelector('.product-line');
   var newProductLine = product.cloneNode(true);
+  newProductLine.removeAttribute('id');
   var newProductName = newProductLine.children[0];
   newProductName.innerHTML = document.getElementsByClassName("new-item-name")[0].value;
   var newProductPrice = newProductLine.children[1].children[1];

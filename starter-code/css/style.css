@@ -93,3 +93,7 @@ margin: 6% 0;
 .new-item-info {
       width: 85%;
 }
+
+#hidden {
+  display:none;
+}
