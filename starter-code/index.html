@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,76 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+
+<!-- ***************************** TITLE ***************************** -->
+  <h1 class = "title"> Ironhack Merchandising Shop <h1>
+
+<!-- ***************************** PRODUCTS ***************************** -->
+  <div class = "products-container">
+
+<!-- ***************************** PRODUCT ONE ***************************** -->
+
+    <div class = "product">
+  <!-- A div with a span, showing the product name. -->
+      <div class = "name">
+        <span> IronBubble-head </span>
+      </div>
+  <!-- A div with a span, showing the cost of one unit. -->
+      <div class = "cost">
+        <span> $25.00 </span>
+      </div>
+  <!-- A div with one label and one input, where the user will indicate how many units they will buy. -->
+      <div class = "qty-input">
+        <label class = "quantity"> QTY <input type="number"></label>
+      </div>
+  <!-- A div with a span, showing the total price for this product. This number should be the result of multiplying the amount of units multiplied by the price of one unit of that product. The default total price should be 0. -->
+      <div class = "item-total-price">
+        <span> $0.00 </span>
+      </div>
+  <!-- A div with a delete button, to remove the product from the list.  -->
+      <div class = "btn">
+        <input type="button" value="Delete" class = "btn-delete">
+      </div>
+    </div>
+
+<!-- ***************************** PRODUCT TWO ***************************** -->
+
+    <div class = "product">
+  <!-- A div with a span, showing the product name. -->
+      <div class = "name">
+        <span> IronShirt  &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp </span>
+      </div>
+  <!-- A div with a span, showing the cost of one unit. -->
+      <div class = "cost">
+        <span> $15.00 </span>
+      </div>
+  <!-- A div with one label and one input, where the user will indicate how many units they will buy. -->
+      <div class = "qty-input">
+        <label class = "quantity"> QTY <input type="number"></label>
+      </div>
+  <!-- A div with a span, showing the total price for this product. This number should be the result of multiplying the amount of units multiplied by the price of one unit of that product. The default total price should be 0. -->
+      <div class = "item-total-price">
+        <span> $0.00 </span>
+      </div>
+  <!-- A div with a delete button, to remove the product from the list.  -->
+      <div class = "btn">
+        <input type="button" value="Delete" class = "btn-delete">
+      </div>
+    </div>
+
+<!-- ***************************** END OF PRODUCTS ***************************** -->
+  </div>
+
+<!-- *********************** Calculate Prices Button *********************** -->
+
+  <div class = "btn">
+    <input type="button" value="Calculate Prices" class = "btn-success">
+  </div>
+
+<!-- *********************** ... *********************** -->
+
 </body>
+
 </html>

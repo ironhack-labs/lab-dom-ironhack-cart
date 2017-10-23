@@ -1,9 +1,16 @@
+/* BODY STYLING */
+
+body {
+  border: 1px solid black;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
 input {
-  border: solid 1px black;
+  border: solid 1px darkgrey;
 }
 
 .btn {
-  display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
   font-size: 14px;
@@ -22,20 +29,71 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+  order: 5;
 }
 
-.btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+/* HEADER STYLING */
+
+.title {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid black;
+  max-width: 860px;
+  border: 0 auto;
+}
+
+/* PRODUCT LINES STYLING*/
+
+.product {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.name {
+  display: inline-flex;
+  order: 1;
+  font-size: 14px;
+}
+
+.cost {
+  display: inline-flex;
+  order: 2;
+  font-size: 14px;
+}
+
+.qty-input {
+  display: inline-flex;
+  order: 3;
+  font-size: 14px;
+}
+
+.quantity {
+  margin: 0 5px;
+}
+
+.item-total-price {
+  display: inline-flex;
+  order: 4;
+  font-size: 14px;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    display: inline-flex;
+    /*order: 5; was placed in the .btn section above*/
 }
 
-.quantity {
-  margin: 0 5px;
+/* CALCULATE PRICE STYLING*/
+
+.btn-success {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
 }
