@@ -1,7 +1,6 @@
 input {
   border: solid 1px black;
 }
-
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -23,19 +22,68 @@ input {
   border: 1px solid transparent;
   border-radius: 4px;
 }
-
+.btn-default {
+  color: black;
+  background-color: #fff;
+  border-color: black;
+}
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
-
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #CF000F;
+  border-color: #CF000F;
 }
-
 .quantity {
   margin: 0 5px;
+  width: 50px;
+}
+.ironhack-cart {
+  margin: 30px auto;
+}
+.text-center, .block-center {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cart-product,
+.cart-new-item-controls {
+  display: table;
+  table-layout: fixed;
+}
+.cart-product,
+.cart-new-item-controls,
+.cart-actions {
+  width: 80%;
+  margin: 15px auto 5px;
+}
+.cart-product:not(:first-child) {
+  border-top: 1px solid #CCC;
+}
+[class*='cart-product--'],
+[class*='cart-new-item--'] {
+  display: table-cell;
+  padding: 15px;
+}
+[class*='cart-product--']:not(:first-child):not(:last-child) {
+  width: 20%;
+}
+[class*='--name'] {
+  width: 30%;
+}
+[class*='--actions'] {
+  width: 10%;
+  text-align: right;
+}
+.cart-new-item--price {
+  width: 60%;
+}
+abbr, abbr[title] {
+  text-decoration: none;
+}
+.dollars:before {
+  content: '$';
 }
