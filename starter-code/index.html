@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class=erythang lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,83 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
-<body>
+
+<body class=body>
+  <header class=header>
+    <div>
+      <div class=titlediv>
+        <h1 class=title>
+          Iron Hack
+        </h1>
+      </div>
+      <div class=titlediv>
+        <h1 class=title>
+          Shop
+        </h1>
+      </div>
+    </div>
+  </header>
+
+  <!--products-->
+
+  <div class=products>
+
+    <!--first product-->
+
+    <div class=product1>
+
+      <div class=productname1>
+
+        <span class=name1>
+          IronBobble-Head
+        </span>
+
+      </div>
+
+      <div class=productprice1>
+
+        <span class=price1>
+          $25.00
+        </span>
+
+      </div>
+
+      <div class=product1QTY>
+
+        <form action="/action_page.php">
+          QTY
+          <input type="number" name="QTY">
+        </form>
+
+      </div>
+
+      <div class=totalproductprice1>
+
+        <span class=totalprice1>
+          ??$
+        </span>
+
+      </div>
+
+      <div class=deleteButton>
+        <button class=btn-delete>
+          Delete Item
+        </button>
+      </div>
+
+
+
+    </div>
+
+  </div>
+
+  <div class=btncalculate>
+    <div class=btn-before>
+      <button class=btn-success>
+        Calculate Total
+      </button>
+    </div>
+  </div>
 </body>
+
 </html>
