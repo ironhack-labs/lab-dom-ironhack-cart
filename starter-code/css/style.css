@@ -1,9 +1,22 @@
+html {
+ box-sizing: border-box;
+}
+*, *:before, *:after {
+ box-sizing: inherit;
+}
+
+body {
+ margin: 0;
+ padding: 0;
+}
+/*previous specifications*/
+
 input {
   border: solid 1px black;
 }
 
 .btn {
-  display: inline-block;
+  display: center;
   padding: 6px 12px;
   margin-bottom: 0;
   font-size: 14px;
@@ -24,18 +37,48 @@ input {
   border-radius: 4px;
 }
 
-.btn-success {
+.success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
 }
 
-.btn-delete {
+.delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
 }
 
-.quantity {
+/*.quantity {
   margin: 0 5px;
+}*/
+
+/*work specifications*/
+
+header{
+  display: flex;
+  justify-content: center;
+}
+section{
+  justify-content: center;
+}
+
+.wrapper{
+  width: 400px;
+}
+
+.container{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+input{
+  width: 40px;
+}
+
+.success{
+  margin-top: 50px;
 }
