@@ -9,6 +9,81 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
+
+
+
 <body>
+  <header>
+    <div class="topic">
+      <h2 class="upper-topic"> Ironhack </h2>
+      <h2 class="lower-topic"> Merchandising Shop </h2>
+
+
+
+
+    </div>
+  </header>
+  <div class="container">
+
+    <div class="name">
+      <p><span>IronBubble-head</span></p>
+
+    </div>
+
+    <div class="price">
+      <p>$<span class="price-product">25.00</span></p>
+
+    </div>
+    <form method="post" >
+      <div class="quantity">
+        <label for="qnt">QTY</label>
+        <input type="text" class="qnt" name="0" value="0"> </input>
+      </div>
+
+    </form>
+
+    <div class="cost">
+      <p>$<span class="qnt-cost">0.00</span></p>
+
+    </div>
+
+    <div class="money">
+
+    </div>
+
+
+    <div class="btn">
+
+
+
+
+      <button type="submit" class="btn-delete">
+         Delete
+      </button>
+
+    </div>
+
+
+
+
+
+  </div>
+  <footer>
+    <div class="lower-btn">
+      <div class="btn">
+        <button type="submit" class="btn-success" onclick="multiplyQntAndPrice( input , productPrice  )">
+
+
+           Calculate Prices
+        </button>
+     </div>
+   </div>
+
+
+
+
+
+  </footer>
 </body>
 </html>
