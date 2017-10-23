@@ -1,4 +1,30 @@
+
+
+
+
+header{
+  display:flex;
+  flex-wrap: nowrap;
+  margin-top: 10%;
+  margin-bottom: 2%;
+}
+
+.topic{
+  margin-left: 60%;
+
+  text-align: left;
+  width: 30%;
+}
+
+
+
+
 input {
+
+
+  margin: 15px;
+
+
   border: solid 1px black;
 }
 
@@ -34,8 +60,44 @@ input {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    margin:20% 10%;
+    width:100%;
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+.container{
+  display:flex;
+  flex-direction:row;
+  justify-content: space-around;
+
+
+  width:100%;
+
+}
+div, header ,body, footer,form{
+  outline: solid black;
+}
+
+
+
+footer{
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 5%;
+}
+
+.btn-success{
+
+}
+
+
+.lower-btn{
+
+  margin-left: 60%;
+  margin-right: 30%;
+
 }

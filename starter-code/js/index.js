@@ -1,3 +1,42 @@
+
+
+//document.getElementsByClassName("qnt price").onclick=multiplyQntAndPrice();
+
+var input = document.getElementsByTagName('input').value;
+
+var price = document.getElementsByClassName("price")[0];
+
+var productPrice = document.getElementsByClassName("price-product")[0];
+
+var currentQntCost = document.getElementsByClassName("qnt-cost");
+
+var total;
+
+
+
+function inner(){
+  currentQntCost[0].innerHTML = String(total);
+}
+
+
+
+
+  function multiplyQntAndPrice(quantity, price){
+
+    total = quantity*price;
+
+
+
+
+   inner();
+}
+
+
+
+
+
+//document.getElementsByClassName("btn-success").onclick = multiplyQntAndPrice( input , productPrice  );
+
 function deleteItem(e){
 
 }
