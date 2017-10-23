@@ -1,5 +1,9 @@
+
+
 input {
   border: solid 1px black;
+  position: relative;
+  left: 5px;
 }
 
 .btn {
@@ -31,11 +35,25 @@ input {
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #CF000F;
+  border-color: #CF000F;
+  padding: 2px 10px;
+  border-radius: 2px;
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+.wrapper, .item-name, .item-price, .quantity, .total-price, .btn-delete {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.title {
+text-align: center;
+padding: 4% 0;
 }
