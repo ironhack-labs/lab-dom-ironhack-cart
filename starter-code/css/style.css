@@ -2,6 +2,9 @@ input {
   border: solid 1px black;
 }
 
+#hidden {
+  display: none;
+}
 
 .headline {
   text-align: center;
@@ -15,6 +18,14 @@ input {
   justify-content: space-around;
   align-items: center;
 }
+
+.products {
+  display: table;
+}
+
+
+
+
 
 .product-cost {
   display: flex;

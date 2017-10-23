@@ -15,6 +15,23 @@
   <div class="container">
     <h1 class='headline'>The Ironhack Cart</h1>
     <div id="products">
+      <div class="product-line" id='hidden'>
+        <div class="product-name">
+          <span>Ironhack Skateboard</span>
+        </div>
+        <div class="product-cost">
+          <span class='unit-price'>50</span>
+          <p>$</p>
+        </div>
+        <div class="qty">
+          <label for="qty">QTY</label>
+          <input class='input' type="number">
+        </div>
+        <div class="sub-total-price">
+          <span class='sub-total'></span>
+        </div>
+        <button class="btn-delete btn">Delete</button>
+      </div>
       <div class="product-line">
         <div class="product-name">
           <span>Ironhack Skateboard</span>
@@ -25,7 +42,7 @@
         </div>
         <div class="qty">
           <label for="qty">QTY</label>
-          <input class='input' type="text">
+          <input class='input' type="number">
         </div>
         <div class="sub-total-price">
           <span class='sub-total'></span>
@@ -42,7 +59,7 @@
         </div>
         <div class="qty">
           <label for="qty">QTY</label>
-          <input class='input' type="text">
+          <input class='input' type="number">
         </div>
         <div class="sub-total-price">
           <span class='sub-total'></span>
@@ -52,7 +69,7 @@
     </div>
     <div class="new-product">
       <input class='new-product-name' type="text" placeholder='Product Name'>
-      <input class='new-product-price' type="text" placeholder='Product Price'>
+      <input class='new-product-price' type="number" placeholder='Product Price'>
       <button class="btn" id='new-item-create'>Create New Product</button>
     </div>
 

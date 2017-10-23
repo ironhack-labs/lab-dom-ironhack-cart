@@ -1,7 +1,7 @@
 function deleteItem(e) {
-  var products = e.currentTarget.parentNode.parentNode;
-  var deleteLine = e.currentTarget.parentNode;
-  products.removeChild(deleteLine);
+  var products = e.currentTarget.parentNode;
+  // var deleteLine = e.currentTarget.parentNode;
+  products.remove();
   getTotalPrice();
 }
 
@@ -70,8 +70,10 @@ function createItemNode(dataType, itemData) {
 function createNewItemRow(itemName, itemUnitPrice) {
   var orgProduct = document.querySelector('.product-line');
   var newProductLine = orgProduct.cloneNode(true);
+  newProductLine.removeAttribute('id');
 
   var newProductName = newProductLine.children[0];
+
   newProductName.innerHTML = document.getElementsByClassName('new-product-name')[0].value;
 
   var newProductPrice = newProductLine.children[1].children[0];
