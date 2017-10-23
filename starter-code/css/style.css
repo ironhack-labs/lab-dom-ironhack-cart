@@ -1,3 +1,49 @@
+html {
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.products {
+  margin: 50px 0;
+}
+
+.product, #product-preview {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.product > div {
+  margin-right: 50px;
+}
+
+.product-name, .product-price {
+  width: 20%;
+}
+
+.create {
+  margin: 0 115px 0 auto;
+}
+
+h1 {
+  width: 30%;
+  margin: 30px auto;
+}
+
 input {
   border: solid 1px black;
 }
@@ -28,6 +74,9 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    display: block;
+    margin: 0 50% 0 auto;
+
 }
 
 .btn-delete {
