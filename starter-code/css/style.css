@@ -28,6 +28,7 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin: 40px 0 0 50.5%;
 }
 
 .btn-delete {
@@ -38,4 +39,38 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px;
+}
+
+.center-title {
+  width: 400px;
+  text-align: left;
+  display: block;
+  margin-left: 47%;
+}
+
+.price::before {
+  content: "$"
+}
+
+.totaldiv::before {
+  content: "$"
+}
+
+h2 {
+  width: 400px;
+  text-align: left;
+  display: block;
+  margin-left: 47%;
+}
+
+#finalsum::before {
+  content: "$"
 }
