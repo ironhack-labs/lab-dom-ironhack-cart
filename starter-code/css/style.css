@@ -2,6 +2,31 @@ input {
   border: solid 1px black;
 }
 
+
+.headline {
+  text-align: center;
+}
+
+.product-line,
+.total-price,
+.sub-total-price,
+.new-product {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.product-cost {
+  display: flex;
+  align-items: center;
+}
+
+.price-btn {
+  display: flex;
+  justify-content: center;
+  margin: 7% 0;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -39,3 +64,4 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
