@@ -1,14 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+  <div class="container">
+    <div class="title">
+      <h1>Ironhack Merchandising Shop</h1>
+    </div>
+    <div class="product">
+      <div class="name">
+        IronBubble-Head
+      </div>
+      <div class="unit-price">
+        $<span class="unit-price-number">25</span>.00
+      </div>
+      <div class="amount">
+        <span>QTY</span>
+        <input class="amount-value" type="number" value="0">
+      </div>
+      <div class="final-price">
+        $<span class="final-price-value">0</span>.00
+      </div>
+      <button class="delete-button">Delete</button>
+    </div>
+    <div class="product">
+      <div class="name">
+        Iron Shirt
+      </div>
+      <div class="unit-price">
+        $<span class="unit-price-number">15</span>.00
+      </div>
+      <div class="amount">
+        <span>QTY</span>
+        <input class="amount-value" type="number" value="0">
+      </div>
+      <div class="final-price">
+        $<span class="final-price-value">0.00</span>
+      </div>
+      <button class="delete-button">Delete</button>
+    </div>
+    <div class="calculate-container">
+      <button id="calculate-button">Calculate Prices</button>
+    </div>
+    <div class="total-price-container">
+      <h2>TOTAL PRICE: $</h2><h2 id="total-price">0</h2><h2>.00</h2>
+    </div>
+  </div>
+  <script src="./js/index.js"></script>
 </body>
 </html>
