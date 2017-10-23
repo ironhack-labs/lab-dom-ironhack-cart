@@ -1,5 +1,35 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+h1, h2 {
+  text-align:center;
+      margin: 1.67em 0;
+}
+
 input {
   border: solid 1px black;
+}
+
+.product-line {
+  display:flex;
+      justify-content: space-around;
+          padding: 0 10%;
+              align-items: center;
+}
+
+.products{
+  display: table;
+width: 100%;
+padding: 0 0%;
+text-align: center;
+}
+
+.product-name {
+    width: 20%;
 }
 
 .btn {
@@ -24,7 +54,7 @@ input {
   border-radius: 4px;
 }
 
-.btn-success {
+.success-button {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
@@ -34,8 +64,36 @@ input {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    width:10%;
 }
 
 .quantity {
   margin: 0 5px;
+      width: 30%;
+}
+
+.calc-section {
+  display:flex;
+  justify-content: space-around;
+align-items: center;
+margin: 6% 0;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+      width: 10%;
+}
+
+.newProduct {
+    padding: 0.5% 10%;
+}
+
+.new-item-info {
+      width: 85%;
+}
+
+#hidden {
+  display:none;
 }
