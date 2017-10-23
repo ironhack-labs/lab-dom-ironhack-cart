@@ -28,6 +28,7 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin: 100px 40%
 }
 
 .btn-delete {
@@ -36,6 +37,20 @@ input {
     border-color: #CF000F;
 }
 
+
 .quantity {
   margin: 0 5px;
+}
+
+
+/*-----  ADDED CSS ----- */
+
+.unitPrice, .amount, .btn-delete, .product, .total-cost-item {
+  margin: 0 5%;
+}
+
+
+.heading-text {
+  padding-left: 40%;
+  text-align: left;
 }
