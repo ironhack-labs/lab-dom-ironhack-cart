@@ -1,0 +1,107 @@
+
+/* ------DEFAULT------ */
+html{
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+/*
+div{
+  border: 1px solid black;
+}
+*/
+*:before, *, *:after {
+  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+}
+
+
+
+html {
+margin: 0;
+padding: 0;
+}
+
+/* ------START------ */
+
+body {
+display: flex;
+flex-direction: column;
+}
+
+
+input {
+  border: solid 1px black;
+  height: 20px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: red;
+}
+
+#calculate-price {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    width: 140px;
+    margin: 84px auto;
+    display: flex;
+    justify-content: center;
+}
+
+#btn-delete {
+    color: #fff;
+    background-color: #CF000F;
+    border-color: #CF000F;
+    margin-right: 30px;
+}
+
+
+.container >h1{
+  width: 34%;
+  margin: 123px auto 76px auto;
+}
+
+.product{
+  display: flex;
+  flex-direction: row;
+  height: 30px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: stretch;
+  align-items: center;
+
+
+}
+
+.product-name, .quantity, .cost-of-unit, .total-price, .btn-delete {
+  margin-left: 130px;
+  margin-right: 50px;
+}
+
+
+.product, #calculate-price {
+
+}
