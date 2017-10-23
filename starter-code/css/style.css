@@ -1,25 +1,44 @@
-input {
+
+body {
+  padding: 0px;
+  margin: 0px;
+}
+
+header {
+  height: 80px;
+  border-bottom: solid black 1px;
+  padding: 1%;
+}
+
+header h1 {
+  color: #00C1FF;
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  height: 80px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+
+.item-detail {
+  display: flex;
+  flex: 1;
+  padding: 1%;
+}
+
+.item-detail input {
   border: solid 1px black;
 }
 
 .btn {
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
   font-size: 14px;
-  font-weight: 400;
-  line-height: 1.42857143;
   text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
 }
