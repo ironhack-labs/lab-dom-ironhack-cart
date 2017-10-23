@@ -3,16 +3,17 @@ function deleteItem(e){
 }
 
 function getPriceByProduct(itemNode){
-
+  var  price = document.getElementsByClassName(itemNode);
 }
 
-function updatePriceByProduct(productPrice, index){
-
+function updatePriceByProduct(productPrice, index, node){
+  document.getElementsByClassName(node).[index]=productPrice;
 }
 
-function getTotalPrice() {
-
+function getTotalPrice(q) {
+  var quantity = document.getElementsByClassName('quantity');
 }
+
 
 function createQuantityInput(){
 
