@@ -2,9 +2,27 @@ function deleteItem(e){
 
 }
 
+//Just getting the item price
 function getPriceByProduct(itemNode){
-
+  var itemUnit = document.getElementsByClassName('item-price');
+  var itemUnitPrice = itemUnit[0].childNodes[itemNode].innerHTML;
+  return itemUnitPrice
 }
+
+
+document.addEventListener('keyup', getUnitsByProduct)
+
+function getUnitsByProduct() {
+  var qty = document.getElementById('qty');
+    return console.log(parseInt(qty.value));
+}
+
+totalPrice[0].innerHTML = '$<span>' + getPriceByProduct(1) * getUnitsByProduct(0) +'</span>'
+
+var totalPrice = document.getElementsByClassName('total-price');
+//var totalUnitPrice = totalPrice[0].childNodes[1].innerText;
+
+
 
 function updatePriceByProduct(productPrice, index){
 
