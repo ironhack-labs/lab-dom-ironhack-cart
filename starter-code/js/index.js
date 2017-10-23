@@ -13,6 +13,8 @@ function getPriceByProduct(itemNode) {
 
 function updatePriceByProduct(productPrice, node, index) {
     document.getElementsByClassName(node)[index].innerHTML = productPrice;
+    // Missing
+    // Remove the price of the deleted products
 }
 
 function substringPrice(price) {
@@ -75,7 +77,7 @@ function createNewItemRow(itemName, itemUnitPrice) {
       <div class="product-price"><span class="price">$` + itemUnitPrice + `</span></div>
       <div class="product-quantity">
           <label for="quantity">QTY</label>
-          <input class="quantity" type="number" name="quantity" value="0" />
+          <input class="quantity" type="number" name="quantity" value="" placeholder="0" />
       </div>
       <div><span class="total-product-price">$0.00</span></div>
       <div>

@@ -36,7 +36,7 @@ body {
 }
 
 .create {
-  margin-left: auto;
+  margin: 0 115px 0 auto;
 }
 
 h1 {
