@@ -1,3 +1,10 @@
+body{
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-content: center;
+}
 input {
   border: solid 1px black;
 }
@@ -38,4 +45,14 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+.row{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-content: center;
+}
+.row > *{
+  width: 15%;
+  padding: 1%;
 }
