@@ -3,7 +3,7 @@ function deleteItem(e){
   var totPrice = document.querySelector('.total-price');
   e = 0.00;
   deleteBtn.onclick = function () {
-  console.log(totPrice.innerHTML=e);
+  // console.log(totPrice.innerHTML=e);
   return totPrice.innerHTML = e;
  };
 }
