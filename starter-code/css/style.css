@@ -28,14 +28,51 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    border: none;
+    border-radius: 5%;
+    padding: 10px;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    border: none;
+    border-radius: 5%;
+    padding: 10px;
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+span {
+  display: inline-block;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+}
+
+input {
+  height: 20px;
+}
+
+h1 {
+  width: 300px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  margin-left: 340px;
+}
+
+.container-button {
+  margin-left: 600px;
+  margin-top: 40px;
 }
