@@ -1,6 +1,5 @@
 input {
   border: solid 1px black;
-  margin-left: 8px;
 }
 
 .btn {
@@ -23,7 +22,6 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
-  margin-top: 8px;
 }
 
 .btn-success {
@@ -39,36 +37,52 @@ input {
 }
 
 .quantity {
-  margin: 12px 5px;
+  margin: 0 5px;
+}
+/*Own Code*/
+.itemdiv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-bottom: 50px;
 }
 
-html,body{
-  width: 100%;
+
+.title {
+  width: 30%;
+  margin-left: 45%;
+  margin-bottom: 50px;
 }
 
-.container{
-  width: 100%;
-  text-align: center;
+.pricebtndiv {
+  width: 30%;
+  margin-left: 50%;
+  margin-top: 50px;
 }
 
-.product {
-  width: 90%;
-  float: left;
+.totalprice {
+  flex-basis: 10%;
 }
 
-.container .product div{
-  width: 15%;
-  height: 50px;
-  float: left;
-  margin-left: 10px;
+.pricetitle {
+  width: 30%;
+  margin-left: 50%;
+  margin-top: 50px;
 }
 
-.pricet{
-  margin-top: 14px;
+.creatediv {
+  display:flex;
+  justify-content: space-around;
 }
 
-.calculate{
-  clear: both;
-  width: 100%;
+.creatediv input {
+  margin-right: 30px;
+}
 
+.inputdiv {
+  flex-basis: 71.5%;
+}
+
+.name {
+  flex-basis: 10%; 
 }
