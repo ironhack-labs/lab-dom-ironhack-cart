@@ -1,4 +1,15 @@
-function deleteItem(e){
+$(document).ready(function(){
+	$(".btn-success").click(function() {
+		var price = parseInt($(".price").text().replace("$",""));
+		var quantity = parseInt($("input").val());
+		var totalAmount = parseInt(price * quantity);
+		$(".total").replaceWith(totalAmount)
+	});
+})
+
+
+
+/*function deleteItem(e){
 
 }
 
@@ -50,3 +61,4 @@ window.onload = function(){
     deleteButtons[i].onclick = deleteItem;
   }
 };
+*/
