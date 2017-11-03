@@ -6,9 +6,30 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+  <h1>Merchandising shop</h1>
+  <div class="wallet">
+    <!-- Premier produit -->
+    <div class="product">
+      <div><span class="product-name">IronBubble-head</span></div>
+      <div><span class="price">$25</span></div>
+      <div>QTY<input class="quantity" type="number"></input></div>
+      <div><span class="total">$0.00</span></div>
+      <div><button class="btn-delete">delete</button></div>
+    </div>
+
+    <div class="product">
+      <div><span class="product-name">IronShirt</span></div>
+      <div><span class="price">$15</span></div>
+      <div>QTY<input class="quantity" type="number"></input></div>
+      <div><span class="total">$0.00</span></div>
+      <div><button class="btn-delete">delete</button></div>
+    </div>
+  </div>
+  <button class="btn-success">Calculate prices</button>
 </body>
 </html>
