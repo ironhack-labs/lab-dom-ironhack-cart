@@ -39,3 +39,19 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.product , .product2 {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.calculate {
+  margin: auto
+}
+
+body {
+  margin: 50px;
+}
