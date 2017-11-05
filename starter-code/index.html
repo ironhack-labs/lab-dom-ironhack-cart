@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,76 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+  <section>
+    <h1>Ironhack Merchandising Shop</h1>
+    <div id="product" class="product">
+      <div id="product-name">
+        <span id="span-product-name">
+          IronBubble-head
+        </span>
+      </div>
+      <div id="cost-unit">
+        $
+        <span class="cost-unit-span">
+          25.00
+        </span>
+      </div>
+      <div id="quantity">
+        <label for="quantity-input">QTY</label>
+        <input type="text" name="quantity-input" placeholder="Insert the quantity" class="quantity quantity-input">
+      </div>
+      <div id="total">
+        $
+        <span class="span-total">
+          0.00
+        </span>
+      </div>
+      <div id="div-delete">
+        <button id="btn-delete" class="btn btn-delete">
+          Delete
+        </button>
+      </div>
+    </div>
+
+    <div id="product" class="product">
+      <div id="product-name">
+        <span id="span-product-name">
+          IronShirt
+        </span>
+      </div>
+      <div id="cost-unit">
+        $
+        <span class="cost-unit-span">
+          15.00
+        </span>
+      </div>
+      <div id="quantity">
+        <label for="quantity-input">QTY</label>
+        <input type="text" name="quantity-input" placeholder="Insert the quantity" class="quantity quantity-input">
+      </div>
+      <div id="total">
+        $
+        <span class="span-total">
+          0.00
+        </span>
+      </div>
+      <div id="div-delete">
+        <button id="btn-delete" class="btn btn-delete">
+          Delete
+        </button>
+      </div>
+    </div>
+    <div id="div-calculate">
+      <button id="calc-prices-button" class="btn-success btn">
+        Calculate Prices
+      </button>
+    </div>
+    <div class="">
+      <h2>Total Price: $<span id="total-price">0</span></h2>
+    </div>
+  </section>
 </body>
+
 </html>

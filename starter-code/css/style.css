@@ -39,3 +39,15 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.product{
+  margin-bottom: 20px;
+  text-align: center;
+}
+.product>div{
+  width: 19%;
+  display: inline-block;
+}
+#div-calculate{
+  text-align: center;
+}
