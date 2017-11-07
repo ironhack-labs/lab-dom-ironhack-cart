@@ -1,6 +1,10 @@
 input {
   border: solid 1px black;
 }
+h1{
+  text-align: center;
+  font-size: 60px;
+}
 
 .btn {
   display: inline-block;
@@ -49,5 +53,8 @@ input {
   display: inline-block;
 }
 #div-calculate{
+  text-align: center;
+}
+.div-total-price{
   text-align: center;
 }

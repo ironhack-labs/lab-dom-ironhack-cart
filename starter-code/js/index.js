@@ -1,4 +1,9 @@
 function deleteItem(e) {
+  alert("Hola");
+  el = e.parentNode;
+  // i = 2;
+  // while (i-- && (el = el.parentNode));
+  el.removeChild(e);
 
 }
 
@@ -14,12 +19,16 @@ function getTotalPrice() {
   unitCost = document.getElementsByClassName("cost-unit-span");
   units = document.getElementsByClassName("quantity-input");
   totalCost = document.getElementsByClassName('span-total');
+  // if(typeof(units.value) instanceof Number){
   totalPrice = 0;
   for (i = 0; i < unitCost.length; i++) {
     totalCost[i].innerHTML = unitCost[i].innerText * units[i].value;
     totalPrice += unitCost[i].innerText * units[i].value;
   }
   document.getElementById("total-price").innerHTML = totalPrice;
+  // }else{
+  // alert("The quantity has to be a number value");
+  // }
 }
 
 function createQuantityInput() {
