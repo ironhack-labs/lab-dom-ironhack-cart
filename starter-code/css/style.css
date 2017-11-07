@@ -52,9 +52,16 @@ h1{
   width: 19%;
   display: inline-block;
 }
-#div-calculate{
+.div-success{
   text-align: center;
 }
 .div-total-price{
   text-align: center;
+}
+.span-product-name{
+  text-align: left;
+}
+.div-create-new-item{
+  display: flex;
+  justify-content: space-around;
 }

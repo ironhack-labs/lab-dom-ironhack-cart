@@ -1,9 +1,9 @@
 function deleteItem(e) {
-  alert("Hola");
-  el = e.parentNode;
-  // i = 2;
-  // while (i-- && (el = el.parentNode));
-  el.removeChild(e);
+  el=e.currentTarget;
+  el2=el.parentNode;
+  el3=el2.parentNode;
+  el4=el3.parentNode;
+  el4.removeChild(el3);
 
 }
 
@@ -52,14 +52,14 @@ function createNewItemRow(itemName, itemUnitPrice) {
 }
 
 function createNewItem() {
-
+  container=document.getElementsByClassName("container");
+  container[0].children[1].innerHTML = "";
 }
 
 window.onload = function() {
   var calculatePriceButton = document.getElementById('calc-prices-button');
   var createItemButton = document.getElementById('new-item-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
-
   calculatePriceButton.onclick = getTotalPrice;
   createItemButton.onclick = createNewItem;
 

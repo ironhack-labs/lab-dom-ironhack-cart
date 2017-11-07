@@ -12,7 +12,7 @@
 </head>
 
 <body>
-  <section>
+  <section class="container">
     <h1>Ironhack Merchandising Shop</h1>
     <div class="product">
       <div>
@@ -71,10 +71,17 @@
         </button>
       </div>
     </div>
-    <div>
-      <button class="btn-success btn">
+    <div class="div-success">
+      <button class="btn-success btn" id="calc-prices-button">
         Calculate Prices
       </button>
+    </div>
+    <div class="div-create-new-item">
+      <div class="">
+        <input type="text" name="new-name-input" placeholder="New element name" class=" ">
+        <input type="text" name="new-quantity-input" placeholder="New element price" class=" ">
+      </div>
+      <button type="button" name="button" class="btn" id="new-item-create">Create</button>
     </div>
     <div class="div-total-price">
       <h2>Total Price: $<span id="total-price">0</span></h2>
