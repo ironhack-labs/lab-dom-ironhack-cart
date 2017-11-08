@@ -31,22 +31,72 @@ function getTotalPrice() {
   // }
 }
 
+function createSpanProductName() {
+  // <div>
+  //   <span class="span-product-name">
+  //     IronShirt
+  //   </span>
+  // </div>
+  divTag = document.createElement('div');
+  spanTag = document.createElement('span');
+  spanTag.setAttribute('class', 'span-product-name');
+  text = document.createTextNode(document.getElementById('new-element-name').value);
+  spanTag.appendChild(text);
+  divTag.appendChild(spanTag);
+  return divTag;
+}
+
+function createSpanProductPrice() {
+  // <div>
+  //   $
+  //   <span class="cost-unit-span">
+  //     15.00
+  //   </span>
+  // </div>
+  divTag = document.createElement('div');
+  text = document.createTextNode('$');
+  divTag.appendChild(text);
+  spanTag = document.createElement('span');
+  spanTag.setAttribute('class', 'cost-unit-span');
+  text = document.createTextNode(document.getElementById('new-element-price').value);
+  spanTag.appendChild(text);
+  divTag.appendChild(spanTag);
+  return divTag;
+}
+
+function createSpanTotal() {
+  // <div>
+  //   $
+  //   <span class="span-total">
+  //     0.00
+  //   </span>
+  // </div>
+  divTag = document.createElement('div');
+  text = document.createTextNode('$');
+  divTag.appendChild(text);
+  spanTag = document.createElement('span');
+  spanTag.setAttribute('class', 'span-total');
+  text = document.createTextNode('0.00');
+  spanTag.appendChild(text);
+  divTag.appendChild(spanTag);
+  return divTag;
+}
+
 function createQuantityInput() {
   // <div>
   //   <label for="quantity-input">QTY</label>
   //   <input type="text" name="quantity-input" placeholder="Insert the quantity" class="quantity quantity-input">
   // </div>
-  divTag= document.createElement('div');
-  labelTag= document.createElement('label');
+  divTag = document.createElement('div');
+  labelTag = document.createElement('label');
   labelTag.setAttribute('for', 'quantity-input');
   text = document.createTextNode('QTY');
   labelTag.appendChild(text);
   divTag.appendChild(labelTag);
-  // inputTag= document.createElement('input');
-  // inputTag.setAttribute('placeholder', 'Insert the quantity');
-  // inputTag.setAttribute('class', 'quantity quantity-input');
-  // buttonTag.appendChild(text);
-  // divTag.appendChild(buttonTag);
+  inputTag = document.createElement('input');
+  inputTag.setAttribute('placeholder', 'Insert the quantity');
+  inputTag.setAttribute('class', 'quantity quantity-input');
+  divTag.appendChild(inputTag);
   return divTag;
 }
 
@@ -56,8 +106,8 @@ function createDeleteButton() {
   //     Delete
   //   </button>
   // </div>
-  divTag= document.createElement('div');
-  buttonTag= document.createElement('button');
+  divTag = document.createElement('div');
+  buttonTag = document.createElement('button');
   buttonTag.setAttribute('class', 'btn-delete btn');
   text = document.createTextNode('Delete');
   buttonTag.appendChild(text);
@@ -80,11 +130,14 @@ function createNewItemRow(itemName, itemUnitPrice) {
 function createNewItem() {
   container = document.getElementById('container');
   lastChild = document.getElementById('div-calculate-prices');
-  divTag = document.createElement('div');
-  divTag.setAttribute('class', 'product');
-  divTag.appendChild(createQuantityInput());
-  divTag.appendChild(createDeleteButton());
-  container.insertBefore(divTag, lastChild);
+  divTag2 = document.createElement('div');
+  divTag2.setAttribute('class', 'product');
+  divTag2.appendChild(createSpanProductName());
+  divTag2.appendChild(createSpanProductPrice());
+  divTag2.appendChild(createQuantityInput());
+  divTag2.appendChild(createSpanTotal());
+  divTag2.appendChild(createDeleteButton());
+  container.insertBefore(divTag2, lastChild);
   // container[0].children[1].innerHTML = "";
 }
 
