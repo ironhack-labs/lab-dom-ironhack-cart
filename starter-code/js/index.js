@@ -1,5 +1,5 @@
 function deleteItem(e){
-
+  
 }
 
 function getPriceByProduct(itemNode){
