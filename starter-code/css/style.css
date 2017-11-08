@@ -1,3 +1,8 @@
+.title {
+  text-align: center;
+  margin-top: 10vh;
+}
+
 input {
   border: solid 1px black;
 }
@@ -22,6 +27,8 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+  background-color: #c00;
+  color: #fff;
 }
 
 .btn-success {
@@ -38,4 +45,29 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.cartDiv {
+  display: flex;
+  justify-content: space-around;
+  width: 70vw;
+  margin: 20vh auto;
+  align-items: center;
+}
+
+.calculatePrice {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+.calculatePriceButton {
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
 }
