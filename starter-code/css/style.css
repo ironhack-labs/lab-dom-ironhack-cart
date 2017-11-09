@@ -39,3 +39,41 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.header{
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.cart{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-evenly;
+}
+
+.calculate{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.new-prod{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.inputs{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cart-total{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
