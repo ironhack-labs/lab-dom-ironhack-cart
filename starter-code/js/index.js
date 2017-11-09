@@ -16,17 +16,21 @@ function getTotalPrice() {
     for( i=0; i<document.getElementsByClassName("cart").length; i++){
       price = parseFloat(document.getElementsByClassName("cost")[i].innerText);
       units = parseInt(document.getElementsByClassName("qty")[i].value);
-      total = price*units;
-      totalCart += total;
-      totalLabel = document.getElementsByClassName("tot-price")[i];
-      message=document.createTextNode(total);
-      totalLabel.innerHTML="";
-      totalLabel.appendChild(message);
+      if( !isNaN(units) ){
+        total = price*units;
+        totalCart += total;
+        totalLabel = document.getElementsByClassName("tot-price")[i];
+        message=document.createTextNode(total);
+        totalLabel.innerHTML="";
+        totalLabel.appendChild(message);
+      }
     }
+    if(totalCart>0){
     totalCartLabel = document.getElementById("cart-total-amount");
     messageTot=document.createTextNode(totalCart);
     totalCartLabel.innerHTML="";
     totalCartLabel.appendChild(messageTot);
+    }
 }
 
 function createQuantityInput(){
