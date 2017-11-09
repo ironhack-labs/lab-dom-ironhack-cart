@@ -5,6 +5,7 @@
 
 input {
   border: solid 1px black;
+  padding-left: 2px;
 }
 
 .btn {
@@ -70,4 +71,5 @@ input {
   cursor: pointer;
   border: 1px solid transparent;
   border-radius: 4px;
+  background-color: #0b0;
 }
