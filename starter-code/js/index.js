@@ -1,9 +1,15 @@
-function deleteItem(e){
-  
+function deleteItem(){
+  parent = document.getElementById('page-wrapper');
+
+  currentDeleteBtn = event.currentTarget;
+
+  deletedItem = currentDeleteBtn.parentNode.parentNode;
+
+  parent.removeChild(deletedItem);
 }
 
-function getPriceByProduct(itemNode){
-
+function getPriceByProduct(){
+  
 }
 
 function updatePriceByProduct(productPrice, index){
@@ -39,12 +45,12 @@ function createNewItem(){
 }
 
 window.onload = function(){
-  var calculatePriceButton = document.getElementById('calc-prices-button');
-  var createItemButton = document.getElementById('new-item-create');
+  //var calculatePriceButton = document.getElementById('calc-prices-button');
+  //var createItemButton = document.getElementById('new-item-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
-  calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
+  //calculatePriceButton.onclick = getTotalPrice;
+  //createItemButton.onclick = createNewItem;
 
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;

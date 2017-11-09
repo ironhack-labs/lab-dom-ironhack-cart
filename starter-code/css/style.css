@@ -44,10 +44,23 @@ h1 {
   margin-left: 20px;
 }
 
+.flexbox-container {
+  display: flex;
+}
+
+.page-wrapper {
+  flex-direction: column;
+}
+
 .product-wrapper {
   padding: 0 20px;
-  display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  flex-basis: 100%;
+  margin-bottom: 20px;
+}
+
+.calculate-prices-container {
+  justify-content: center;
 }

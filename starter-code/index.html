@@ -11,22 +11,27 @@
 </head>
 <body>
   <h1>Ironhack Merchandising Shop</h1>
-  <div class="product-wrapper">
-    <div class="product-name">
-      <span>IronBubble-head</span>
+  <div id="page-wrapper" class="flexbox-container page-wrapper">
+    <div class="product-wrapper flexbox-container">
+      <div class="product-name">
+        <span>IronBubble-head</span>
+      </div>
+      <div>
+        <span class="cost-unit">25</span>
+      </div>
+      <div class="quantity">
+        <label for="product-quantity">QTY</label>
+        <input class="product-quantity" type="number" name="product-quantity" value="0" min="0">
+      </div>
+      <div class="total-product-price">
+        <span>0</span>
+      </div>
+      <div class="btn-delete-container">
+        <button type="button" class="btn btn-delete">Delete</button>
+      </div>
     </div>
-    <div class="cost-unit">
-      <span>$25.00</span>
-    </div>
-    <div class="quantity">
-      <label for="product-quantity">QTY</label>
-      <input type="number" name="product-quantity">
-    </div>
-    <div class="total-product-price">
-      <span>$0.00</span>
-    </div>
-    <div class="btn-delete-container">
-      <button type="button" class="btn btn-delete">Delete</button>
+    <div class="calculate-prices-container flexbox-container">
+      <button id="calc-prices-button" type="button" class="btn btn-success">Calculate prices</button>
     </div>
   </div>
 </body>
