@@ -1,6 +1,8 @@
 function deleteItem(e){
   var node = e.currentTarget.parentNode.parentNode;
   node.parentNode.removeChild(node);
+  getTotalPrice();
+
 }
 
 function getPriceByProduct(itemNode){

@@ -46,7 +46,9 @@ input {
 
   align-items: center;
 }
-
+body{
+  flex-wrap: wrap;
+}
 .cart{
   display: flex;
   flex-direction: row;
