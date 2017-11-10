@@ -59,7 +59,7 @@ input {
   margin: 0 5px;
 }
 
-.itemRow {
+.item-row {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

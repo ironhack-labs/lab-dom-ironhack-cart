@@ -21,15 +21,29 @@ function getTotalPrice() {
 		totalMoney += updatePriceByProduct(getPriceByProduct(itemNode[i]), i);
 	}
 	totalMoneyNode = document.getElementById('total-price');
-	totalMoneyNode.innerHTML = totalMoney;
+	totalMoneyNode.innerHTML = totalMoney.toFixed(2);
 }
 
 function createQuantityInput(){
-
+  grandpaNode = document.getElementsById('items-div');
+  node = document.createElement('form');
+  node.className = "quantity-form";
+  label = document.createElement('label');
+  label.innerHTML = "QTY";
+  input = document.createElement('input');
+  input.type = "number";
+  input.value = 0;
+  input.className = "quantity";
+  grandpaNode.appenChild(node);
+  node.appenChild(label);
+  node.appenChild(input);
 }
 
 function createDeleteButton(){
-
+  parentNode = document.getElementById('items-div');
+  node = document.createElement('button');
+  node.className = "btn-delete";
+  parentNode.appenChild(node);
 }
 
 function createQuantityNode(){
@@ -37,18 +51,21 @@ function createQuantityNode(){
 }
 
 function createItemNode(dataType, itemData){
-  item = document.createElement(dataType);
-  item.innerHTML = itemData;
+
 }
 
 function createNewItemRow(itemName, itemUnitPrice){
-  itemName = document.createElement("span");
-  span.setAttribute("class", "productName");
-  span.innerHTML = itemName;
+  parentNode = document.getElementById('items-div');
+  node = document.createElement('div');
+  node.className = "item-row";
+  parentNode.appendChild(node);
 }
 
 function createNewItem(){
-
+  parentNode = document.getElementById('new-item');
+  parentNode.appendChild('button');
+  createQuantityInput();
+  createDeleteButton();
 }
 
 window.onload = function(){
