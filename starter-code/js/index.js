@@ -35,12 +35,31 @@ function getTotalPrice() {
     }
 }
 
-function createQuantityInput(){
-
+function createQuantityInput(cart){
+  qtyinputdiv = document.createElement('div');
+  cart.appendChild(qtyinputdiv);
+  qtyinputdiv.className = 'qty-input';
+  qtyinputlabel = document.createElement('label');
+  qtyinputdiv.appendChild(qtyinputlabel);
+  qtyinputlabel.innerHTML="QTY ";
+  qtyinput = document.createElement('input');
+  qtyinputdiv.appendChild(qtyinput);
+  qtyinput.className = 'qty';
+  qtyinput.type = 'number';
 }
 
-function createDeleteButton(){
-
+function createDeleteButton(cart){
+  deletebut = document.createElement('div');
+  cart.appendChild(deletebut);
+  deletebut.className = 'delete';
+  delbutton = document.createElement('button');
+  deletebut.appendChild(delbutton);
+  delbutton.className = 'btn-delete';
+  delbutton.innerHTML = "Delete";
+  deleteButtons = document.getElementsByClassName('btn-delete');
+  for(var i = 0; i<deleteButtons.length ; i++){
+    deleteButtons[i].onclick = deleteItem;
+  }
 }
 
 function createQuantityNode(){
@@ -78,16 +97,7 @@ function createNewItem(){
   prodpricediv.appendChild(span);
   span.className="cost";
   span.innerHTML = parseFloat(document.getElementById("new-prod-price").value);
-  var qtyinputdiv = document.createElement('div');
-  cartdiv.appendChild(qtyinputdiv);
-  qtyinputdiv.className = 'qty-input';
-  qtyinputlabel = document.createElement('label');
-  qtyinputdiv.appendChild(qtyinputlabel);
-  qtyinputlabel.innerHTML="QTY ";
-  qtyinput = document.createElement('input');
-  qtyinputdiv.appendChild(qtyinput);
-  qtyinput.className = 'qty';
-  qtyinput.type = 'number';
+  createQuantityInput(cartdiv);
   var prodtotaldiv = document.createElement('div');
   cartdiv.appendChild(prodtotaldiv);
   prodtotaldiv.className = 'total';
@@ -98,17 +108,7 @@ function createNewItem(){
   spantot = document.createElement('span');
   prodtotaldiv.appendChild(spantot);
   spantot.className="tot-price";
-  var deletebut = document.createElement('div');
-  cartdiv.appendChild(deletebut);
-  deletebut.className = 'delete';
-  var delbutton = document.createElement('button');
-  deletebut.appendChild(delbutton);
-  delbutton.className = 'btn-delete';
-  delbutton.innerHTML = "Delete";
-  deleteButtons = document.getElementsByClassName('btn-delete');
-  for(var i = 0; i<deleteButtons.length ; i++){
-    deleteButtons[i].onclick = deleteItem;
-  }
+  createDeleteButton(cartdiv);
 }
 
 window.onload = function(){
