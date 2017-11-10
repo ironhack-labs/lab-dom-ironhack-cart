@@ -15,7 +15,7 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-	itemNode = document.getElementsByClassName('unit-cost');
+	itemNode = document.getElementsByClassName('unit-price');
 	totalMoney = 0;
 	for(i = 0; i < itemNode.length; i++){
 		totalMoney += updatePriceByProduct(getPriceByProduct(itemNode[i]), i);
@@ -34,9 +34,9 @@ function createQuantityInput(){
   input.type = "number";
   input.value = 0;
   input.className = "quantity";
-  grandpaNode.appenChild(node);
   node.appenChild(label);
   node.appenChild(input);
+  grandpaNode.appenChild(node);
 }
 
 function createDeleteButton(){
@@ -55,17 +55,14 @@ function createItemNode(dataType, itemData){
 }
 
 function createNewItemRow(itemName, itemUnitPrice){
-  parentNode = document.getElementById('items-div');
   node = document.createElement('div');
   node.className = "item-row";
-  parentNode.appendChild(node);
+  return node;
 }
 
 function createNewItem(){
   parentNode = document.getElementById('new-item');
   parentNode.appendChild('button');
-  createQuantityInput();
-  createDeleteButton();
 }
 
 window.onload = function(){

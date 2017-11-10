@@ -5,13 +5,13 @@ body {
 #title {
   text-align: center;
   margin-top: 10vh;
-  color: rgb(69, 73, 88);
+  color: #454958;
   font-size: 2.5rem;
   font-weight: 900;
 }
 
 input {
-  border: solid 1px black;
+  border: solid 1px #000;
   padding-left: 2px;
 }
 
@@ -55,22 +55,34 @@ input {
     border-color: #CF000F;
 }
 
+.btn-delete:hover {
+  background-color: #7d3535;
+  border-color: #7d3535;
+}
+
 .quantity {
   margin: 0 5px;
 }
 
-.item-row {
+.item {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   width: 60vw;
   margin: 2vh auto;
   align-items: center;
+  box-shadow: 0 1px 0.3px #dbdbdb;
 }
 
 #items-div {
   display: flex;
   flex-direction: column;
+}
+
+.item-row {
+  display: flex;
+  justify-content: space-between;
+  width: 15vw;
 }
 
 .calculate-price {
@@ -91,6 +103,10 @@ input {
   background-color: #0b0;
   margin-top: 3vh;
   color: #fff;
+}
+
+#calc-prices-button:hover {
+  background-color: #049c04;
 }
 
 #total-price-div {
@@ -128,6 +144,10 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
-  background-color: #ab8c09;
+  background-color: #303481;
   color: #fff;
+}
+
+#new-item-create:hover {
+  background-color: #212459;
 }
