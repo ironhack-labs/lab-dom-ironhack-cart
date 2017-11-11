@@ -1,3 +1,11 @@
+* {
+  margin: 0;
+}
+
+h1 {
+  text-align: center;;
+}
+
 input {
   border: solid 1px black;
 }
@@ -38,4 +46,13 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.product_element {
+  float: left;
+  margin: 0 25px;
+}
+
+.clearfix {
+  clear: both;
 }
