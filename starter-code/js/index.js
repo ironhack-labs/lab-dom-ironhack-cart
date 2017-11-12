@@ -40,14 +40,46 @@ function createQuantityInput(){
 }
 
 function createDeleteButton(){
-  parentNode = document.getElementById('items-div');
-  node = document.createElement('button');
+  node = document.createElement("button");
   node.className = "btn-delete";
-  parentNode.appenChild(node);
+	return node;
+}
+
+function createNameNode(name) {
+	nameNode = document.createElement(span)
+	nameNode.className = "productName";
+	nameNode.innerHTML = name;
+	return nameNode;
+}
+
+function createPriceNode(price) {
+	priceNode = document.createElement(span);
+	priceNode.className = "unit-price";
+	priceNode.innerHTML = price;
+	return priceNode;
+}
+
+function createItemRow() {
+	var rowNode = document.createElement("div");
+	rowNode.className = "item-row";
+	var x = document.createElement(createDeleteButton());
+	rowNode.appendChild(document.createElement(createDeleteButton()));
+	return rowNode;
 }
 
 function createQuantityNode(){
-
+	qntNode = document.createElement(div);
+	qntNode.className = "quantity-form";
+	label = document.createElement(label);
+	label.for = "amount";
+	label.innerHTML = "QTY";
+	input = document.createElement(input);
+	input.className = "quantity";
+	input.type = "number";
+	input.name = "amount"
+	qntNode.appendChild(label);
+	qntNode.appenChild(input);
+	return qntNode;
 }
 
 function createItemNode(dataType, itemData){
@@ -61,8 +93,9 @@ function createNewItemRow(itemName, itemUnitPrice){
 }
 
 function createNewItem(){
-  parentNode = document.getElementById('new-item');
-  parentNode.appendChild('button');
+  parentNode = document.getElementById('items-div');
+	var node = createItemRow();
+	parentNode.appendChild(node);
 }
 
 window.onload = function(){
