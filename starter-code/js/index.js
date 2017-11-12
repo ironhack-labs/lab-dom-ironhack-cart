@@ -54,6 +54,7 @@ function createDeleteButton(){
   var deleteBtn = document.createElement('button');
   deleteBtn.className = "btn-delete";
 	deleteBtn.innerHTML = "Delete";
+	deleteBtn.onclick = deleteItem;
 	return deleteBtn;
 }
 
