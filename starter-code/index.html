@@ -7,7 +7,6 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 
@@ -21,16 +20,16 @@
       <span>Iron Tee</span>
     </div>
     <div class="price-container">
-      <span>€ 25.00</span>
+      <p>€ <span id="item-price">25.00</span></p>
     </div>
     <div class="quantity-input">
-      <form action="/action_page.php">
+      <form>
         <label class="quantity" for="quantity">QTY</label>
-        <input type="text" name="quantity">
+        <input type="number" name="quantity" min="0">
       </form>
     </div>
-    <div class="total-price">
-      <span>€ 0.00</span>
+    <div class="total-price-product">
+      <p>€ <span id="subtotal">0.00</span></p>
     </div>
     <div class="delete-button">
       <button class="btn btn-delete">Delete</button>
@@ -42,9 +41,10 @@
   </div>
 
   <div class="total-price">
-    <h2>Total Price: <span>$ 0.00</span></h2>
+    <h2>Total Price: € <span>0.00</span></h2>
   </div>
 
+<script type="text/javascript" src="./js/index.js"></script>
 </body>
 
 </html>

@@ -2,6 +2,11 @@ input {
   border: solid 1px black;
 }
 
+p {
+  margin: 0;
+  padding: 0;
+}
+
 .title-container {
   text-align: center;
   margin-bottom: 70px;
@@ -60,4 +65,5 @@ input {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
 }
