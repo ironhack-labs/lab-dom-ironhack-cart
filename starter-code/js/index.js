@@ -1,13 +1,18 @@
+productContainer = document.getElementsByClassName("product-wrapper");
+
 function deleteItem(e){
 
 }
 
 function getPriceByProduct(){
-itemPrice = document.getElementById("item-price").innerHTML;
-amount = document.getElementsByTagName("input")[0].value;
-subTotal = document.getElementById("subtotal");
-var sum = itemPrice * amount;
-subTotal.innerHTML = sum.toFixed(2);
+itemPrice = document.getElementsByClassName("item-price");
+amount = document.getElementsByTagName("input");
+subTotal = document.getElementsByClassName("subtotal");
+for (i = 0; i < productContainer.length; i++) {
+  var sum = itemPrice[i].innerHTML * amount[i].value;
+  subTotal[i].innerHTML = sum;
+}
+
 }
 
 function updatePriceByProduct(productPrice, index){
