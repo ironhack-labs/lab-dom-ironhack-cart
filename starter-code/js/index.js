@@ -11,7 +11,9 @@ function getPriceByProduct(itemNode){
 function updatePriceByProduct(productPrice, index){
 	var totalItems = document.getElementsByClassName('quantity');
 	var totalPrice = document.getElementsByClassName('price');
-	totalPrice[index].innerHTML = "$" + (totalItems[index].value * productPrice).toFixed(2);
+	if(totalItems[index].value >= 0){
+		totalPrice[index].innerHTML = "$" + (totalItems[index].value * productPrice).toFixed(2);
+	} else totalPrice[index].innerHTML = "$0.00";
 	return parseInt(totalPrice[index].innerHTML.replace("$",""));
 }
 
