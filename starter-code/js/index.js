@@ -92,6 +92,7 @@ function createQuantityNode(){
 	var input = document.createElement(input);
 	input.className = "quantity";
 	input.type = "number";
+	input.min = "0";
 	input.name = "amount"
 	qntNode.appendChild(label);
 	qntNode.appenChild(input);
