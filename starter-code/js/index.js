@@ -8,20 +8,27 @@ var divs = document.getElementsByTagName('div');
 */
 
 window.onload = function(){
+  console.log("evento onload window");
+
   var btnTotalPrice = document.getElementById("calculate-total-price");
-  var createItemButton = document.getElementById('new-item-create');
+  var createItemButton = document.getElementById("new-item-create");
   var deleteButtons = document.getElementsByClassName('btn-delete');
-
   btnTotalPrice.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
+  /* createItemButton.onclick = createNewItem; */
 
-  for(var i = 0; i<deleteButtons.length ; i++){
-    deleteButtons[i].onclick = deleteItem;
-  }
-};
+  for (var i = 0; i<deleteButtons.length; i++) {
+    console.log("asignado evento onclick al botón delete n: " + i);
+    deleteButtons[i].onclick = console.log(deleteButtons[i]);
+  };
 
 
+/*
+//
+//
+//
+*/
 function getTotalPrice() {
+  console.log("función getTotalPrice llamada con el evento onclick");
   unitPrices = document.getElementsByClassName("product-cost");
   units = document.getElementsByClassName("units");
   subtotals = document.getElementsByClassName("product-total");
@@ -35,44 +42,14 @@ function getTotalPrice() {
     console.log("subtotal artículo: " + subtotal);
     subtotals[i].innerHTML = subtotal;
     total += subtotal;
-  }
+  };
 
-document.getElementById("total-price").innerHTML = total;
-
-}
-
-
-function deleteItem(e){
-
-}
+  document.getElementById("total-price").innerHTML = total;
+};
 
 
-function updatePriceByProduct(productPrice, index){
+function deleteItem() {
+  console.log("FUNCTION deleteItem");
+};
 
-}
-
-
-function createQuantityInput(){
-
-}
-
-function createDeleteButton(){
-
-}
-
-function createQuantityNode(){
-
-}
-
-function createItemNode(dataType, itemData){
-
-}
-
-function createNewItemRow(itemName, itemUnitPrice){
-
-}
-
-function createNewItem(){
-
-}
 
