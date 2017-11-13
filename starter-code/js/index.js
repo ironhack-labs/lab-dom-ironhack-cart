@@ -17,7 +17,7 @@ function getTotalPrice() {
     var unitPrice = parseInt(products[i].childNodes[3].innerText);
     var qty = parseInt(products[i].childNodes[5].childNodes[1].childNodes[3].value);
     var totalItemPrice = unitPrice * qty;
-    document.getElementById("total-price").innerHTML = totalItemPrice;
+    products[i].childNodes[7].innerHTML = totalItemPrice;
   }
 }
 
