@@ -56,3 +56,7 @@ h1 {
   justify-content: center;
   margin: 30px;
 }
+
+#final-price {
+  text-align: center;
+}
