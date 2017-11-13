@@ -36,6 +36,12 @@ input {
     border-color: #CF000F;
 }
 
+.btn-create {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+
 .quantity {
   margin: 0 5px;
 }
