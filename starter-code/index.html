@@ -11,55 +11,72 @@
 </head>
 <body>
   <h1>Ironhack Merchandising Shop</h1>
+  <div id="products">
   <div class="product">
     <div class="product_element">
       <span class="prod-name"> IronBubble-head</span>
     </div>
     <div class="product_element">
-      $<span class="prod-cost"> 25.00</span>
+      $<span class="prod-cost">25.00</span>
+    </div>
+    <div class="product_element quantity">
+      <label>QTY</label>
+      <input type="number" class="number"/>
     </div>
     <div class="product_element">
-      <label class="code">QTY</label>
-      <input type="number" class="quantity" />
-    </div>
-    <div class="product_element">
-      $<span class="result">0</span>
+      <span class="result">0</span>
     </div>
     <div class="product_element">
       <button type="button" class=".btn btn-delete">Delete</button>
     </div>
-
+    <div class="clearfix"></div>
   </div>
 
-  <div class="clearfix"></div>
+
 
   <div class="product">
     <div class="product_element">
       <span class="prod-name"> IronShirt</span>
     </div>
     <div class="product_element">
-      $<span class="prod-cost"> 15.00</span>
+      $<span class="prod-cost">15.00</span>
+    </div>
+    <div class="product_element quantity">
+      <label>QTY</label>
+      <input type="number" class="number"/>
     </div>
     <div class="product_element">
-      <label class="code">QTY</label>
-      <input type="number" class="quantity" />
-    </div>
-    <div class="product_element">
-      $<span class="result">0</span>
+      <span class="result">0</span>
     </div>
     <div class="product_element">
       <button type="button" class=".btn btn-delete">Delete</button>
     </div>
-
+    <div class="clearfix"></div>
   </div>
+</div>
 
+  <div class="add-new-product">
+    <div class="product_element">
+      <input type="text" name="name" />
+    </div>
+    <div class="product_element">
+      <input type="number" name="price"  value="0" min="0" />
+    </div>
+    <div class="product_element"></div>
+    <div class="product_element"></div>
+    <div class="product_element">
+      <button class="btn" id="new-item-create" class=".btn">Create</button>
+    </div>
+  </div>
   <div class="clearfix"></div>
+
   <div>
-    <button class=".btn  btn-success" type="button" id="calc-prices-button"> Calculate Prices </button>
+    <button class="btn  btn-success" type="button" id="calc-prices-button"> Calculate Prices </button>
   </div>
   <div>
     <h2>Total Price: <span id="total-price">$0</span></h2>
   </div>
+
 
 </body>
 </html>

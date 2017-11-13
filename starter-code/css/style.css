@@ -1,5 +1,6 @@
 * {
   margin: 0;
+   text-align: center;
 }
 
 h1 {
@@ -44,14 +45,21 @@ input {
     border-color: #CF000F;
 }
 
-.quantity {
+/*.quantity {
   margin: 0 5px;
-}
+}*/
 
 .product_element {
   float: left;
-  margin: 0 25px;
+  padding: 10px 4%;
+  width: 150px;
 }
+
+
+.quantity{
+      display: inline-block;
+      width: 15%;
+      text-align: left;}
 
 .clearfix {
   clear: both;
