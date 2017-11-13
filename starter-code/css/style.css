@@ -2,8 +2,23 @@ input {
   border: solid 1px black;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+}
+
 .btn {
-  display: inline-block;
+  display: flex;
+  justify-content: space-between;
+  width: 800px;
   padding: 6px 12px;
   margin-bottom: 0;
   font-size: 14px;
@@ -22,6 +37,38 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+}
+
+.btn>div {
+  width: 20%;
+}
+
+.btn-create {
+  display: flex;
+  justify-content: space-between;
+  width: 800px;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.btn-create>div {
+  width: 20%;
 }
 
 .btn-success {
