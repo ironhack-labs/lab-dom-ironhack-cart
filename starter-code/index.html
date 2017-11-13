@@ -16,7 +16,7 @@
       <span>nombre del producto</span>
     </div>
     <div class="product-cost">
-      <span>precio del producto</span>
+      <span id="unit-price">30</span>
     </div>
     <div class="product-form">
       <form>
@@ -25,14 +25,14 @@
       </form>
     </div>
     <div class="product-total-price">
-      <span>precio total = precio * QTY</span>
+      <span id="total-price">precio total = precio * QTY</span>
     </div>
     <div>
       <button id="btn button-delete" class="btn-delete" onclick="deleteItem">Delete</button>
     </div>
   </div>
   <div class="calc-prices">
-    <button class="btn btn-success">Calculate Prices</button>
+    <button class="btn btn-success" onclick="getTotalPrice()">Calculate Prices</button>
   </div>
 </body>
 </html>
