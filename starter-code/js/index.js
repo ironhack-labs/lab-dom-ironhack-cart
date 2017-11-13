@@ -18,9 +18,9 @@ window.onload = function(){
 
   for (var i = 0; i<deleteButtons.length; i++) {
     console.log("asignado evento onclick al botón delete n: " + i);
-    deleteButtons[i].onclick = console.log(deleteButtons[i]);
-  };
-
+    deleteButtons[i].onclick = deleteItem;
+  }
+}
 
 /*
 //
@@ -42,14 +42,18 @@ function getTotalPrice() {
     console.log("subtotal artículo: " + subtotal);
     subtotals[i].innerHTML = subtotal;
     total += subtotal;
-  };
+  }
 
   document.getElementById("total-price").innerHTML = total;
-};
+}
 
 
 function deleteItem() {
   console.log("FUNCTION deleteItem");
-};
+  fatherProduct = this.parentElement.parentElement;
+  if (fatherProduct) {
+    fatherProduct.innerHTML="";
+  }
+}
 
 
