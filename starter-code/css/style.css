@@ -2,6 +2,27 @@ input {
   border: solid 1px black;
 }
 
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.title-container {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.calculate-price {
+  position: relative;
+  left: 45%;
+  margin: 40px 0;
+}
+
+.total-price {
+  position: relative;
+  left: 45%;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -24,6 +45,12 @@ input {
   border-radius: 4px;
 }
 
+#btn-add {
+  color: #fff;
+  background-color: orange;
+  border-color: orange;
+}
+
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
@@ -38,4 +65,35 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.product-wrapper {
+  margin: 30px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.add-product {
+  margin: 30px;
+}
+
+.product-name {
+  width: 300px;
+}
+
+.product-name-input,
+.price-container,
+#adding {
+  display: inline-block;
+}
+
+#adding {
+  float: right;
+}
+
+.product-name-input,
+.price-container {
+  margin-right: 50px;
 }

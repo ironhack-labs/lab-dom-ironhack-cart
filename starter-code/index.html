@@ -1,14 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+  <div class="title-container">
+    <h1>Ironhack Merchandising Shop</h1>
+  </div>
+<div id="products">
+  <div class="product-wrapper">
+    <div class="product-name">
+      <span class="prd-name">Iron Tee</span>
+    </div>
+    <div class="price-container">
+      <p>€ <span class="item-price">25.00</span></p>
+    </div>
+    <div class="quantity-input">
+      <form>
+        <label class="quantity" for="quantity">QTY</label>
+        <input class="get-quantity" type="number" name="quantity" min="0">
+      </form>
+    </div>
+    <div class="total-price-product">
+      <p>€ <span class="subtotal">0.00</span></p>
+    </div>
+    <div class="delete-button">
+      <button class="btn btn-delete">Delete</button>
+    </div>
+  </div>
+
+  <div class="product-wrapper">
+    <div class="product-name">
+      <span class="prd-name">Iron Coffee Mug</span>
+    </div>
+    <div class="price-container">
+      <p>€ <span class="item-price">12.00</span></p>
+    </div>
+    <div class="quantity-input">
+      <form>
+        <label class="quantity" for="quantity">QTY</label>
+        <input class="get-quantity" type="number" name="quantity" min="0">
+      </form>
+    </div>
+    <div class="total-price-product">
+      <p>€ <span class="subtotal">0.00</span></p>
+    </div>
+    <div class="delete-button">
+      <button class="btn btn-delete">Delete</button>
+    </div>
+  </div>
+</div>
+
+<div class="add-product">
+  <div class="product-name-input">
+    <form>
+      <label class="add-name" for="add-name"></label>
+      <input id="get-name" type="text" name="name" placeholder="Product name">
+    </form>
+  </div>
+  <div class="price-container">
+    <form>
+      <label class="add-price" for="add-price"></label>
+      <input id="get-price" type="number" name="quantity" min="0" placeholder="Price">
+    </form>
+  </div>
+  <div id="adding">
+    <button class="btn" id="btn-add">Add product</button>
+  </div>
+</div>
+
+  <div class="calculate-price">
+    <button class="btn btn-success">Calculate Prices</button>
+  </div>
+
+  <div class="total-price">
+    <h2>Total Price: € <span id="total-price">0.00</span></h2>
+  </div>
+
+<script type="text/javascript" src="./js/index.js"></script>
 </body>
+
 </html>
