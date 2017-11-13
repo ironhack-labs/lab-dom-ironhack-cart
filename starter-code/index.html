@@ -14,10 +14,10 @@
   <div class="title-container">
     <h1>Ironhack Merchandising Shop</h1>
   </div>
-
+<div id="products">
   <div class="product-wrapper">
     <div class="product-name">
-      <span>Iron Tee</span>
+      <span class="prd-name">Iron Tee</span>
     </div>
     <div class="price-container">
       <p>€ <span class="item-price">25.00</span></p>
@@ -25,7 +25,7 @@
     <div class="quantity-input">
       <form>
         <label class="quantity" for="quantity">QTY</label>
-        <input type="number" name="quantity" min="0">
+        <input class="get-quantity" type="number" name="quantity" min="0">
       </form>
     </div>
     <div class="total-price-product">
@@ -38,15 +38,15 @@
 
   <div class="product-wrapper">
     <div class="product-name">
-      <span>Iron Coffee Mug</span>
+      <span class="prd-name">Iron Coffee Mug</span>
     </div>
     <div class="price-container">
-      <p>€ <span class="item-price">12.50</span></p>
+      <p>€ <span class="item-price">12.00</span></p>
     </div>
     <div class="quantity-input">
       <form>
         <label class="quantity" for="quantity">QTY</label>
-        <input type="number" name="quantity" min="0">
+        <input class="get-quantity" type="number" name="quantity" min="0">
       </form>
     </div>
     <div class="total-price-product">
@@ -56,6 +56,25 @@
       <button class="btn btn-delete">Delete</button>
     </div>
   </div>
+</div>
+
+<div class="add-product">
+  <div class="product-name-input">
+    <form>
+      <label class="add-name" for="add-name"></label>
+      <input id="get-name" type="text" name="name" placeholder="Product name">
+    </form>
+  </div>
+  <div class="price-container">
+    <form>
+      <label class="add-price" for="add-price"></label>
+      <input id="get-price" type="number" name="quantity" min="0" placeholder="Price">
+    </form>
+  </div>
+  <div id="adding">
+    <button class="btn" id="btn-add">Add product</button>
+  </div>
+</div>
 
   <div class="calculate-price">
     <button class="btn btn-success">Calculate Prices</button>

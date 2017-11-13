@@ -1,13 +1,17 @@
 // DOM elements
 productContainer = document.getElementsByClassName("product-wrapper");
 itemPrice = document.getElementsByClassName("item-price");
-amount = document.getElementsByTagName("input");
+amount = document.getElementsByClassName("get-quantity");
 subTotal = document.getElementsByClassName("subtotal");
 totalPrice = document.getElementById("total-price");
+allProducts = document.getElementById("products");
 
-function deleteItem(e) {
 
-}
+
+
+//function deleteItem(e) {
+
+//}
 
 function getPriceByProduct() {
   for (i = 0; i < productContainer.length; i++) {
@@ -17,9 +21,9 @@ function getPriceByProduct() {
   getTotalPrice();
 }
 
-function updatePriceByProduct(productPrice, index) {
+//function updatePriceByProduct(productPrice, index) {
 
-}
+//}
 
 function getTotalPrice() {
   var subTotalPerProduct = 0;
@@ -29,33 +33,36 @@ function getTotalPrice() {
   totalPrice.innerHTML = subTotalPerProduct.toFixed(2);
 }
 
-function createQuantityInput() {
+//function createQuantityInput() {
 
-}
+//}
 
-function createDeleteButton() {
+//function createDeleteButton() {
 
-}
+//}
 
-function createQuantityNode() {
+//function createQuantityNode() {
 
-}
+//}
 
-function createItemNode(dataType, itemData) {
+//function createItemNode(dataType, itemData) {
 
-}
+//}
 
-function createNewItemRow(itemName, itemUnitPrice) {
+//function createNewItemRow() {
+//var element = document.getElementsByTagName("div")[2];
+//var cln = element.cloneNode(true);
+//allProducts.appendChild(cln);
+//}
 
-}
+//function createNewItem() {
+//createNewItemRow();
 
-function createNewItem() {
-
-}
+//}
 
 window.onload = function() {
   var calculatePriceButton = document.getElementsByClassName('btn-success')[0];
-  var createItemButton = document.getElementById('new-item-create');
+  var createItemButton = document.getElementById('btn-add');
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
   calculatePriceButton.onclick = getPriceByProduct;
