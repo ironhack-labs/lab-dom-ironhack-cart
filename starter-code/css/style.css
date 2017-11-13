@@ -2,6 +2,17 @@ input {
   border: solid 1px black;
 }
 
+body h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.product{
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 50px;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
