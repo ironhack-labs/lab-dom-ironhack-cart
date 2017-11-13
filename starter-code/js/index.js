@@ -13,10 +13,9 @@ function updatePriceByProduct(productPrice, index){
 function getTotalPrice() {
   products = document.getElementsByClassName("product");
   var finalPrice = 0;
-  for ( i = 0; i < products.length; i++ ) {
-    console.log(products[i].childNodes)
-    var unitPrice = parseInt(products[i].childNodes[3].innerText);
-    var qty = parseInt(products[i].childNodes[5].childNodes[1].childNodes[3].value);
+  for(i = 0; i < products.length; i++) {
+    var unitPrice = parseFloat(document.getElementsByClassName("product-unit-price")[i].innerText);
+    var qty = parseFloat(document.getElementsByClassName("product-qty")[i].value);
     var totalItemPrice = unitPrice * qty;
     finalPrice += totalItemPrice;
     products[i].childNodes[7].innerHTML = totalItemPrice;
