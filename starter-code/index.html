@@ -10,5 +10,34 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <div>
+    <h1>Ironhack Merchandising Shop<h1>
+  </div>
+  <div class="product-wrapper">
+      <div>
+        <span>Name product</span>
+      </div>
+
+      <div>
+        <span id="unit-price">100</span><span>$</span>
+      </div>
+
+      <div>
+        <label for="unidades">QTY</label><input name="unidades" id="quantity" type="text"/>
+      </div>
+
+      <div>
+        <span>0.00</span><span>$</span>
+      </div>
+
+      <div>
+        <button type="submit" name="button" class="btn-delete">Delete</button>
+      </div>
+
+  </div>
+
+  <div>
+    <button type="submit" name="button" id="calc-prices-button" class="" onclick="getTotalPrice()">Calculate Prices</button>
+  </div>
 </body>
 </html>
