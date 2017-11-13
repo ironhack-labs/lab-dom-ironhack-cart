@@ -1,6 +1,18 @@
 input {
   border: solid 1px black;
 }
+.full-container {
+  margin-top: 50px;
+  flex-direction: row;
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+  justify-content:space-around;
+}
 
 .btn {
   display: inline-block;
@@ -38,4 +50,10 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+.clear{
+  clear:both;
+}
+.btn-calculate{
+  margin-left: 45%;
 }
