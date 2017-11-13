@@ -1,53 +1,59 @@
+// DOM elements
 productContainer = document.getElementsByClassName("product-wrapper");
-
-function deleteItem(e){
-
-}
-
-function getPriceByProduct(){
 itemPrice = document.getElementsByClassName("item-price");
 amount = document.getElementsByTagName("input");
 subTotal = document.getElementsByClassName("subtotal");
-for (i = 0; i < productContainer.length; i++) {
-  var sum = itemPrice[i].innerHTML * amount[i].value;
-  subTotal[i].innerHTML = sum;
-}
+totalPrice = document.getElementById("total-price");
+
+function deleteItem(e) {
 
 }
 
-function updatePriceByProduct(productPrice, index){
+function getPriceByProduct() {
+  for (i = 0; i < productContainer.length; i++) {
+    var sum = itemPrice[i].innerHTML * amount[i].value;
+    subTotal[i].innerHTML = sum.toFixed(2);
+  }
+  getTotalPrice();
+}
+
+function updatePriceByProduct(productPrice, index) {
 
 }
 
 function getTotalPrice() {
+  var subTotalPerProduct = 0;
+  for (var i = 0; i < productContainer.length; i++) {
+    subTotalPerProduct += parseInt(subTotal[i].innerHTML);
+  }
+  totalPrice.innerHTML = subTotalPerProduct.toFixed(2);
+}
+
+function createQuantityInput() {
 
 }
 
-function createQuantityInput(){
+function createDeleteButton() {
 
 }
 
-function createDeleteButton(){
+function createQuantityNode() {
 
 }
 
-function createQuantityNode(){
+function createItemNode(dataType, itemData) {
 
 }
 
-function createItemNode(dataType, itemData){
+function createNewItemRow(itemName, itemUnitPrice) {
 
 }
 
-function createNewItemRow(itemName, itemUnitPrice){
+function createNewItem() {
 
 }
 
-function createNewItem(){
-
-}
-
-window.onload = function(){
+window.onload = function() {
   var calculatePriceButton = document.getElementsByClassName('btn-success')[0];
   var createItemButton = document.getElementById('new-item-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
@@ -55,7 +61,7 @@ window.onload = function(){
   calculatePriceButton.onclick = getPriceByProduct;
   createItemButton.onclick = createNewItem;
 
-  for(var i = 0; i<deleteButtons.length ; i++){
+  for (var i = 0; i < deleteButtons.length; i++) {
     deleteButtons[i].onclick = deleteItem;
   }
 };
