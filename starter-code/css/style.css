@@ -36,6 +36,37 @@ input {
     border-color: #CF000F;
 }
 
+.btn-create {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+
 .quantity {
   margin: 0 5px;
+}
+
+.product {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+}
+
+h1 {
+  margin: 30px;
+  text-align: center;
+}
+
+.calc-prices {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+
+.final-price {
+  text-align: center;
+}
+
+.template {
+  display: none;
 }

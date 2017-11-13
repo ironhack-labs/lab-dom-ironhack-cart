@@ -10,5 +10,65 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <h1>Ironhack Cart</h1>
+  <div id="cart">
+    <div class="product template">
+      <div class="product-name-container">
+        <span class="product-name">item</span>
+      </div>
+      <div class="product-cost">
+        <span class="product-unit-price">0</span>
+      </div>
+      <div class="product-form">
+        <form>
+          <label for="product-qty">QTY</label>
+          <input class="product-qty" type="text" name="qty">
+        </form>
+      </div>
+      <div class="product-total-price">
+        <span class="total-price">0</span>
+      </div>
+      <div>
+        <button class="btn btn-delete" class="btn-delete" onclick="deleteItem(this)">Delete</button>
+      </div>
+    </div>
+    <div class="product">
+      <div class="product-name-container">
+        <span class="product-name">item</span>
+      </div>
+      <div class="product-cost">
+        <span class="product-unit-price">18</span>
+      </div>
+      <div class="product-form">
+        <form>
+          <label for="product-qty">QTY</label>
+          <input class="product-qty" type="text" name="qty">
+        </form>
+      </div>
+      <div class="product-total-price">
+        <span class="total-price">0</span>
+      </div>
+      <div>
+        <button class="btn btn-delete" class="btn-delete" onclick="deleteItem(this)">Delete</button>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="add-items">
+      <form id="form-create">
+        <input id="p-name" class="form-product-name" type="text" name="p-name" placeholder="item name">
+        <input id="p-price" class="form-product-price" type="text" name="p-price" placeholder="item price">
+      </form>
+      <div>
+        <button id="create" class="btn btn-create" onclick="createNewItem()">Create</button>
+      </div>
+    </div>
+  </div>
+  <div class="calc-prices">
+    <button class="btn btn-success" onclick="getTotalPrice()">Calculate Prices</button>
+  </div>
+  <div class="final-price">
+    <h2>Total Price: $<span id="final-price">0</span></h2>
+  </div>
 </body>
 </html>
