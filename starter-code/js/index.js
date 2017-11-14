@@ -21,6 +21,10 @@ function getTotalPrice() {
   totalCost = document.getElementsByClassName('span-total');
   totalPrice = 0;
   for (i = 0; i < unitCost.length; i++) {
+    if(isNaN(units[i].value)){
+      alert("You have introduced an incorrect number");
+      break;
+    }
     totalCost[i].innerHTML = unitCost[i].innerText * units[i].value;
     totalPrice += unitCost[i].innerText * units[i].value;
   }
@@ -54,10 +58,14 @@ function createSpanProductPrice() {
   divTag.appendChild(text);
   spanTag = document.createElement('span');
   spanTag.setAttribute('class', 'cost-unit-span');
-  text = document.createTextNode(document.getElementById('new-element-price').value);
-  spanTag.appendChild(text);
-  divTag.appendChild(spanTag);
-  return divTag;
+  if(isNaN(document.getElementById('new-element-price').value)){
+    alert("You have introduced an incorrect number");
+  }else{
+    text = document.createTextNode(document.getElementById('new-element-price').value);
+    spanTag.appendChild(text);
+    divTag.appendChild(spanTag);
+    return divTag;
+  }
 }
 
 function createSpanTotal() {
