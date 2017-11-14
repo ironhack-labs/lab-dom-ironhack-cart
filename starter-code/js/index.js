@@ -1,12 +1,3 @@
-/*
-element.innerHTML = "I'm a cat";
-element.style.border = "2px green solid";
-otherElement.className = cName;
-HTMLCollection
-var mice = document.getElementsByClassName('mouse');
-var divs = document.getElementsByTagName('div');
-*/
-
 window.onload = function(){
   console.log("evento onload window");
 
@@ -109,7 +100,25 @@ function createNewItem() {
             inputQty.setAttribute('value', '0');
             divQty.appendChild(inputQty);
         newProduct.appendChild(divQty);
-
+        /*Creamos el div del producto-total y lo insertamos */
+        divSubTotal = document.createElement('div');
+        divSubTotal.classList.add("width-S");
+            dollar = document.createTextNode("$");
+            divSubTotal.appendChild(dollar);
+            spanTotal = document.createElement('span');
+            spanTotal.classList.add("product-total");
+            nodeTotal = document.createTextNode("0");
+            spanTotal.appendChild(nodeTotal);
+            divSubTotal.appendChild(spanTotal);
+        newProduct.appendChild(divSubTotal);
+        /*Creamos el div DEL BOTÓN y lo insertamos */
+        divBtn = document.createElement('div');
+            btnDelete = document.createElement('button');
+            btnDelete.appendChild(document.createTextNode('Delete'));
+            btnDelete.classList.add("btn", "btn-delete");
+            divBtn.appendChild(btnDelete);
+        newProduct.appendChild(divBtn);
+        btnDelete.onclick = deleteItem;
     
     document.getElementById("product-list").appendChild(newProduct);
   }
