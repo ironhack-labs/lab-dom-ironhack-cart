@@ -49,11 +49,20 @@
         <button type="button" class="btn btn-delete">Delete</button>
       </div>
     </div>
-
-    <div class="calculate-prices-container flexbox-container">
-      <button id="calc-prices-button" type="button" class="btn btn-success">Calculate prices</button>
-    </div>
   </div>
+
+  <div class="calculate-prices-container flexbox-container">
+    <button id="calc-prices-button" type="button" class="btn btn-success">Calculate prices</button>
+  </div>
+
   <h2>Total Price: <span id="total-price-span">0</span></h2>
+
+  <h3>Create a new item</h3>
+
+  <div class="create-product flexbox-container">
+    <input type="text" id="new-product-name" name="new-product-name" placeholder="Enter new product name">
+    <input type="number" id="new-product-price" name="new-product-price" min="0" placeholder="Enter new product price">
+    <button id="new-item-create" type="button" class="create-button">Create</button>
+  </div>
 </body>
 </html>

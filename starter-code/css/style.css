@@ -58,7 +58,7 @@ input:focus {
   background-color: #fff;
 }
 
-h1, h2 {
+h1, h2, h3 {
   text-align: center;
 }
 
@@ -68,6 +68,22 @@ h1, h2 {
 
 .page-wrapper {
   flex-direction: column;
+}
+
+.create-product {
+  width: 90%;
+  flex-direction: row;
+  flex-basis: 100%;
+  margin: 0 auto;
+}
+
+h3 {
+  margin-top: 40px;
+}
+
+.create-product input {
+  flex-basis: 40%;
+  margin-right: 5px;
 }
 
 .product-wrapper {
