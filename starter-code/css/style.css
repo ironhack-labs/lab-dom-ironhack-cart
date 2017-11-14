@@ -1,5 +1,18 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: linen; 
+}
+
+h1 {
+  text-align: center;
+  margin: 10vh auto;
+}
 input {
   border: solid 1px black;
+}
+
+.productName{
+  font-weight: bold;
 }
 
 .btn {
@@ -24,11 +37,30 @@ input {
   border-radius: 4px;
 }
 
+hr {
+  height: 12px;
+  border: 0;
+  box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+  width: 80%;
+}
+
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin-top: 5vh;
 }
+
+.calculate-total-price {
+  display: flex;
+  justify-content: center;
+
+}
+.total-price {
+  display: flex;
+  justify-content: center;
+}
+
 
 .btn-delete {
     color: #fff;
@@ -38,4 +70,36 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.product {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+.item {
+  display:flex;
+  justify-content: space-between;
+}
+
+.item > div {
+  width: 30%;
+}
+
+.product-name {
+  margin-left: 10vw;
+}
+
+.item-row {
+  display: flex;
+  justify-content: space-between;
+  width: 15vw;
+  margin-left: 3vw;
+  margin-right: 5vw;
+}
+
+#new-item-create{
+  margin-left: 78%;
 }
