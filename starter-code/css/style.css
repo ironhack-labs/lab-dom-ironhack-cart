@@ -1,5 +1,49 @@
+.tittle {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Ironhack {
+  padding-right: 20%;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 15px;
+  padding-left: 10px;
+}
+
+.productName {
+  width: 20%;
+}
+
+.productCost {
+  width: 20%;
+}
+
+.productUnits {
+  width: 20%;
+  display: inline-block;
+}
+
+.productTotal {
+  width: 20%;
+}
+
+.dltBtn {
+  width: 20%
+}
+
 input {
   border: solid 1px black;
+  width: 60%;
 }
 
 .btn {
@@ -25,15 +69,21 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+  margin-top: 30px;
+  margin-left: 60%;
+}
+
+.totalPriceCart {
+  margin-left: 60%;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #CF000F;
+  border-color: #CF000F;
 }
 
 .quantity {
