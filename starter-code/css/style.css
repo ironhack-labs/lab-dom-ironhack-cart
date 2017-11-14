@@ -1,6 +1,10 @@
 input {
   border: solid 1px black;
 }
+h1{
+  text-align: center;
+  font-size: 60px;
+}
 
 .btn {
   display: inline-block;
@@ -38,4 +42,33 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.product{
+  margin-bottom: 20px;
+  text-align: center;
+}
+.product>div{
+  width: 19%;
+  display: inline-block;
+}
+.div-success{
+  text-align: center;
+}
+.div-total-price{
+  text-align: center;
+}
+.span-product-name{
+  text-align: left;
+}
+.div-create-new-item{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 8%;
+}
+.new-items-inputs{
+}
+#new-element-price{
+}
+#new-item-create{
 }
