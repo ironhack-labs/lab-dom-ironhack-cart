@@ -1,4 +1,4 @@
-function deleteItem(e){
+function deleteItem(event){
   var product = event.currentTarget.parentNode;
   var allProducts = product.parentNode;
   allProducts.removeChild(product);
@@ -105,7 +105,10 @@ function createNewItem(){
 var itemUnitPrice = document.getElementById('create-product-cost').value;
 var itemName = document.getElementById('create-product-name').value;
 createNewItemRow(itemName, itemUnitPrice);
-
+var deleteButtons = document.getElementsByClassName('btn-delete');
+for(var i = 0; i<deleteButtons.length ; i++){
+  deleteButtons[i].onclick = deleteItem;
+}
 }
 
 window.onload = function(){
@@ -121,4 +124,4 @@ window.onload = function(){
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
   }
-}
+};
