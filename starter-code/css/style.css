@@ -7,6 +7,11 @@ body h1 {
   justify-content: center;
 }
 
+h2 {
+  display: flex;
+  justify-content: center;
+}
+
 .product{
   display: flex;
   justify-content: space-between;

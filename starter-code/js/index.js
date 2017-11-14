@@ -3,8 +3,11 @@
 //var udCost = document.getElementById ("ud-cost");
 //udCost.innerHTML = IronBubblePrice + " €";
 
+var totalPrice = 0;
+
 var productPrice = document.getElementById("calc-prices-button");
 productPrice.onclick = function (){
+
 for (var i=0; i< document.getElementsByClassName("ud-cost").length; i++){
     var udCost = document.getElementsByClassName("ud-cost")[i];
     var units = document.getElementsByClassName("quantity")[i];
@@ -16,7 +19,11 @@ for (var i=0; i< document.getElementsByClassName("ud-cost").length; i++){
 //        });
 //      });
 //    });
-  }
+    totalPrice += (units.value * udCost.innerHTML);
+    }
+    var showTotalPrice = document.getElementById ("precio-total");
+    showTotalPrice.innerHTML = "";
+    showTotalPrice.innerHTML = totalPrice + " €";
 };
 
 function deleteItem(e){
