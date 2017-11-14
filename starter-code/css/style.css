@@ -12,6 +12,9 @@ body {
 .marg-bot {
   margin-bottom: 20px;
 }
+.margin-right {
+  margin-right: 20px;
+}
 
 .flex {
   display: flex;
@@ -80,6 +83,13 @@ input {
     background-color: #CF000F;
     border-color: #CF000F;
 }
+
+.btn-new {
+  color: #fff;
+  background-color: #dadada;
+  border-color: #dadada;
+}
+
 
 .quantity {
   margin: 0 5px;

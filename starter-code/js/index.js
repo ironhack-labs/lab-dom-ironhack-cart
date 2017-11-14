@@ -11,10 +11,10 @@ window.onload = function(){
   console.log("evento onload window");
 
   var btnTotalPrice = document.getElementById("calculate-total-price");
-  var createItemButton = document.getElementById("new-item-create");
+  var createItemButton = document.getElementById("newProductBtn");
   var deleteButtons = document.getElementsByClassName('btn-delete');
   btnTotalPrice.onclick = getTotalPrice;
-  /* createItemButton.onclick = createNewItem; */
+  createItemButton.onclick = createNewItem;
 
   for (var i = 0; i<deleteButtons.length; i++) {
     console.log("asignado evento onclick al botón delete n: " + i);
@@ -47,13 +47,56 @@ function getTotalPrice() {
   document.getElementById("total-price").innerHTML = total;
 }
 
-
+/*
+//
+//
+//
+*/
 function deleteItem() {
   console.log("FUNCTION deleteItem");
   fatherProduct = this.parentElement.parentElement;
   if (fatherProduct) {
     fatherProduct.innerHTML="";
+    getTotalPrice()
   }
 }
 
 
+/*
+//
+//
+//
+*/
+function createNewItem() {
+  console.log("FUNCTION createNewItem");
+  newName = document.getElementById("newProductText").value;
+  newPrice = parseFloat(document.getElementById("newProductPrice").value);
+  
+  if (newName && newPrice >= 0) {
+    console.log(newName);
+    console.log(newPrice);
+
+    newProduct = document.createElement('section');
+    newProduct.classList.add("product", "flex", "justified", "marg-bot");
+
+        divName = document.createElement('div');
+        divName.classList.add("product-name", "width-L");
+            spanName = document.createTextNode(newName);
+            divName.appendChild(spanName);
+        newProduct.appendChild(divName);
+
+        divPrice = document.createElement('div');
+        divPrice.classList.add("width-S");
+            dollar = document.createTextNode("$");
+            divPrice.appendChild(dollar);
+              spanPrice = document.createTextNode(newPrice);
+              dollar.appendChild(spanPrice);
+        newProduct.appendChild(divPrice);
+
+    
+    document.getElementById("product-list").appendChild(newProduct);
+  }
+  else{
+    alert("Enter a valid name and price for the new product!!");
+  }
+}
