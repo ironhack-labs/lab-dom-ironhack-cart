@@ -12,98 +12,68 @@
 
   <h1> Ironhack Merchandising Shop </h1>
 
-  <div class="product">
+  <div id="all-products-div">
+    <div class="item">
+       <div class="item-row">
+          <span class="product-name"> IronBubble-head </span>
+          <span class="price-per-unit">25.00$</span>
+       </div>
+    
+        <div class="quantity-form">
+          <label for "amount">QTY</label>
+          <input class="quantity" type="number" min=0>
+         </div>
 
-    <div class="product-name">
-
-      <span class="item"> IronBubble-head </span>
-
+        <div class="total-price-div">
+          <span class="total-price-per-product"> $0.00 </span>
+        </div>
+        <div class="delete">
+           <button class="btn btn-delete" type="button">Delete</button>
+        </div>
     </div>
 
-    <div class="price-unit">
-
-    <span class="price-per-unit">25$</span>
-
-    </div>
-
-    <div class="input">
-
-      <label>QTY</label>
-
-      <input class="quantity" type="number" min=0>
-
-    </div>
-
-    <div class="total-price-div">
-
-    <span class="total-price-per-product"> $0.00 </span>
-
-    </div>
-
-    <div class="delete">
-
+  <hr>
+    <div class="item">
+      <div class="item-row">
+       <span class="product-name"> Ironshirt </span>
+       <span class="price-per-unit">15$</span>
+      </div>
+    
+      <div class="input">
+       <label>QTY</label>
+       <input class="quantity" type="number" min=0>
+      </div>
+    
+      <div class="total-price-div">
+       <span class="total-price-per-product"> $0.00 </span>
+      </div>
+    
+      <div class="delete">
         <button class="btn btn-delete" type="button">Delete</button>
-
+      </div>
+  
     </div>
 
-
+   <hr>
   </div>
 
-  <hr>
-
-  <div class="product">
-    
-    <div class="product-name">
-    
-      <span class="item"> Ironshirt </span>
-    
-    </div>
-    
-    <div class="price-unit">
-    
-    <span class="price-per-unit">15$</span>
-    
-    </div>
-    
-    <div class="input">
-    
-      <label>QTY</label>
-    
-      <input class="quantity" type="number" min=0>
-    
-    </div>
-    
-    <div class="total-price-div">
-    
-      <span class="total-price-per-product"> $0.00 </span>
-    
-    </div>
-    
-    <div class="delete">
-    
-      <button class="btn btn-delete" type="button">Delete</button>
-    
-    </div>
-    
-    
-  </div>
-
-  <hr>
-
-
-     
 
   <div class="calculate-total-price">
-
       <button class="btn btn-success" id="calc-prices-button" type="button">Calculate Prices</button>
-
   </div>
 
   <div id="show-total-price">
-
-    <h1>Total Price:$ <span id="total-price"> 0 </span></h1>
-
+    <h1>Total Price: $ <span id="total-price">0.00 </span></h1>
   </div>
+
+  <div class="create-new-item">
+      
+          <input type="text" placeholder="Insert new item's name" id="new-item-name">
+          <input type="text" placeholder="Insert new item's price" id="new-item-price">
+          <button class="btn" id="new-item-create"> Add new products </button>
+  </div>
+           
+  
 
 
   <script type="text/javascript" src="./js/index.js"></script>

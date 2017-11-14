@@ -11,7 +11,7 @@ input {
   border: solid 1px black;
 }
 
-.item {
+.productName{
   font-weight: bold;
 }
 
@@ -48,7 +48,6 @@ hr {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
-    border: 4px solid pink;
     margin-top: 5vh;
 }
 
@@ -80,16 +79,27 @@ hr {
   margin-top: 2vh;
   margin-bottom: 2vh;
 }
-.new-row {
+.item {
   display:flex;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: space-between;
 }
 
-.product > div {
+.item > div {
   width: 30%;
 }
 
 .product-name {
   margin-left: 10vw;
+}
+
+.item-row {
+  display: flex;
+  justify-content: space-between;
+  width: 15vw;
+  margin-left: 3vw;
+  margin-right: 5vw;
+}
+
+#new-item-create{
+  margin-left: 78%;
 }
