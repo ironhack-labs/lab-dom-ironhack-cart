@@ -1,9 +1,22 @@
+body{
+  width: 1200px;
+  box-sizing: border-box;
+}
 input {
   border: solid 1px black;
 }
-
+header {
+  display: flex;
+  justify-content: center;
+  width: 1200px;
+  background-color: #FFF;
+  padding: 5px 0 5px 0;
+}
+h1 {
+  width: 30%;
+  text-align: left;
+}
 .btn {
-  display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
   font-size: 14px;
@@ -23,13 +36,26 @@ input {
   border: 1px solid transparent;
   border-radius: 4px;
 }
-
+.product-container{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  width: 100%;
+}
+.calculate-price{
+    width: 100%;
+    margin: 20px 95px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    clear: both;
+    align-items: center;
 }
-
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
@@ -37,5 +63,17 @@ input {
 }
 
 .quantity {
-  margin: 0 5px;
+  margin: 0 25px;
+}
+.product-name {
+  margin: 0 25px;
+}
+.product-prize {
+  margin: 0 25px;
+}
+.quantity {
+  margin: 0 25px;
+}
+.total-price {
+  margin: 0 25px;
 }
