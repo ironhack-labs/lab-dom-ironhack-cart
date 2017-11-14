@@ -2,6 +2,22 @@ input {
   border: solid 1px black;
 }
 
+body h1 {
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+}
+
+.product{
+  display: flex;
+  justify-content: space-between;
+  padding: 2px 50px;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -24,6 +40,8 @@ input {
   border-radius: 4px;
 }
 
+
+
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
@@ -34,6 +52,12 @@ input {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+}
+
+#calc-prices-button {
+  color: white;
+  background-color: green;
+  margin: 5% 10% 1% 60%;
 }
 
 .quantity {
