@@ -92,9 +92,9 @@ function createNewItem() {
             labelQty = document.createElement('label');
             labelQty.appendChild(document.createTextNode("QTY"));
             divQty.appendChild(labelQty);
-            inputQty = document.createElement('input');
-            inputQty.setAttribute('class', "units");
-            inputQty.setAttribute('class',  "width-F");
+            inputQty = document.createElement("input");
+            inputQty.setAttribute("class", "units");
+            inputQty.setAttribute("class",  "width-F");
             inputQty.setAttribute('type', 'number');
             inputQty.setAttribute('min', '0');
             inputQty.setAttribute('value', '0');
