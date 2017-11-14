@@ -1,5 +1,11 @@
+body {
+  background-color: #ececec;
+  color: #444;
+}
+
 input {
   border: solid 1px black;
+  background-color: transparent;
 }
 
 .btn {
@@ -38,4 +44,68 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+input {
+  color: #444;
+  border-color: #444;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+input:focus {
+  background-color: #fff;
+}
+
+h1, h2, h3 {
+  text-align: center;
+}
+
+.flexbox-container {
+  display: flex;
+}
+
+.page-wrapper {
+  flex-direction: column;
+}
+
+.create-product {
+  width: 90%;
+  flex-direction: row;
+  flex-basis: 100%;
+  margin: 0 auto;
+}
+
+h3 {
+  margin-top: 40px;
+}
+
+.create-product input {
+  flex-basis: 40%;
+  margin-right: 5px;
+}
+
+.product-wrapper {
+  width: 90%;
+  margin: 0 auto 20px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 100%;
+  padding: 20px 0;
+  border-bottom: 1px solid #999;
+}
+
+.calculate-prices-container {
+  justify-content: center;
+}
+
+.product-name {
+  flex-basis: 25%;
+  font-weight: bold;
+}
+
+.cost-unit::before, .total-product-price::before, #total-price-span::before {
+  content: "$";
 }

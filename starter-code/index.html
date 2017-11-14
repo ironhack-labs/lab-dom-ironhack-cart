@@ -10,5 +10,59 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <h1>Ironhack Merchandising Shop</h1>
+  <div id="page-wrapper" class="flexbox-container page-wrapper">
+    <div class="product-wrapper flexbox-container">
+      <div class="product-name">
+        <span>IronBubble-head</span>
+      </div>
+      <div>
+        <span class="cost-unit">25</span>
+      </div>
+      <div class="quantity">
+        <label for="product-quantity">QTY: </label>
+        <input class="product-quantity" type="number" name="product-quantity" value="0" min="0">
+      </div>
+      <div class="total-product-price">
+        <span>0</span>
+      </div>
+      <div class="btn-delete-container">
+        <button type="button" class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+
+    <div class="product-wrapper flexbox-container">
+      <div class="product-name">
+        <span>IronShirt</span>
+      </div>
+      <div>
+        <span class="cost-unit">15</span>
+      </div>
+      <div class="quantity">
+        <label for="product-quantity">QTY: </label>
+        <input class="product-quantity" type="number" name="product-quantity" value="0" min="0">
+      </div>
+      <div class="total-product-price">
+        <span>0</span>
+      </div>
+      <div class="btn-delete-container">
+        <button type="button" class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="calculate-prices-container flexbox-container">
+    <button id="calc-prices-button" type="button" class="btn btn-success">Calculate prices</button>
+  </div>
+
+  <h2>Total Price: <span id="total-price-span">0</span></h2>
+
+  <h3>Create a new item</h3>
+
+  <div class="create-product flexbox-container">
+    <input type="text" id="new-product-name" name="new-product-name" placeholder="Enter new product name">
+    <input type="number" id="new-product-price" name="new-product-price" min="0" placeholder="Enter new product price">
+    <button id="new-item-create" type="button" class="create-button">Create</button>
+  </div>
 </body>
 </html>
