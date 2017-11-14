@@ -11,36 +11,63 @@
 </head>
 <body>
   <h1>Ironhack Merchandising Shop</h1>
-    <div class="full-container">
-      <div id="product1">
-        <span>IronT-shirt </span>
-      </div>
-      <div>
-        €<span id="price-product1">20</span>
-      </div>
-      <div>
-        <label >
-          Quantity
-        </label>
-        <input type="text" id="quantity1">
-      </div>
-      <div >
-        <span id="total-price1">
-          0
-        </span>
-      </div>
-      <div>
-        <button class="btn-delete btn">
-          Delete
-        </button>
-      </div>
+  <div id="shoppingList">
+    <div productId="1" id="product1" class="full-container">
+        <div>
+          <span>IronT-shirt </span>
+        </div>
+        <div>
+          €<span id="price-product1">20</span>
+        </div>
+        <div>
+          <label >
+            Quantity
+          </label>
+          <input type="text" id="quantity1">
+        </div>
+        <div >
+          <span id="total-price1" class="product">
+            0
+          </span>
+        </div>
+        <div>
+          <button id="delete1" class="btn-delete btn">
+            Delete
+          </button>
+        </div>
     </div>
-    <div class="clear"></div><br>
-      <div class="btn-calculate">
-        <button id="calc-prices-button" class="btn ">
-        Calculate Price
-        </button>
+    <div productId="2" id="product2" class="full-container">
+        <div>
+          <span>IronBottle </span>
+        </div>
+        <div>
+          €<span id="price-product2">10</span>
+        </div>
+        <div>
+          <label >
+            Quantity
+          </label>
+          <input type="text" id="quantity2">
+        </div>
+        <div >
+          <span id="total-price2" class="product">
+            0
+          </span>
+        </div>
+        <div>
+          <button id="delete2" class="btn-delete btn">
+            Delete
+          </button>
+        </div>
       </div>
+      <div class="clear"></div><br>
+        <div class="btn-calculate">
+          <button id="calc-prices-button" class="btn ">
+          Calculate Price
+          </button>
+      <h2>Total Price: $<span id="totalProducts">0</span></h2>
+        </div>
+  </div>
 <script type="text/javascript" src="./js/index.js"></script>
 </body>
 

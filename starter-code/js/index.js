@@ -9,27 +9,56 @@
 //
 // }
 
-function getTotalPrice() {
-  price = document.getElementById("price-product1").innerText;
-  amount = document.getElementById("quantity1").value;
-  total = document.getElementById("total-price1");
+function getTotalPrice(product) {
+  console.log(product);
+  price = document.getElementById("price-product"+product).innerText;
+  amount = document.getElementById("quantity"+product).value;
+  total = document.getElementById("total-price"+product);
   totalPrice = price * amount;
-  total.innerHTML = "$ " + totalPrice;
+  total.innerHTML =  totalPrice;
+}
+
+function getTotal(){
+  products = document.getElementsByClassName("product");
+  productTotal = 0;
+  totalEl = document.getElementById("totalProducts");
+  for(i = 0; i<products.length; i++){
+    productTotal += Number(products[i].innerText);
+  }
+  totalEl.innerHTML = "";
+  totalEl.appendChild(document.createTextNode(productTotal));
+  return productTotal;
 }
 
 var button = document.getElementById("calc-prices-button");
 console.log(button);
 button.onclick = function(){
-  getTotalPrice();
+  getTotalPrice(1);
+  getTotalPrice(2);
+  getTotal();
 };
+var deleteButtons = document.getElementsByClassName("btn-delete");
+  for(i = 0; i<deleteButtons.length; i++){
+    (function (i){
+        deleteButtons[i].onclick = function(){
+          console.log('trying remove ', i + 1);
+          createDeleteButton(i + 1);
+        };
+    })(i);
+    }
+
+
+
 
 // function createQuantityInput(){
 //
 // }
 //
-// function createDeleteButton(){
-//
-// }
+function createDeleteButton(product){
+  var parent = document.getElementById("shoppingList");
+  var child = document.getElementById("product"+ product);
+  parent.removeChild(child);
+}
 //
 // function createQuantityNode(){
 //
