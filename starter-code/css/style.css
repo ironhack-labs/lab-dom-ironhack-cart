@@ -35,6 +35,8 @@ body h1 {
   border-radius: 4px;
 }
 
+
+
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
@@ -45,6 +47,12 @@ body h1 {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+}
+
+#calc-prices-button {
+  color: white;
+  background-color: green;
+  margin: 5% 10% 1% 60%;
 }
 
 .quantity {
