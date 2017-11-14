@@ -75,23 +75,40 @@ function createNewItem() {
   if (newName && newPrice >= 0) {
     console.log(newName);
     console.log(newPrice);
-
+  /*Creamos la section del nuevo producto y lo insertamos */
     newProduct = document.createElement('section');
     newProduct.classList.add("product", "flex", "justified", "marg-bot");
-
+        /*Creamos el div del nombre y lo insertamos */
         divName = document.createElement('div');
         divName.classList.add("product-name", "width-L");
             spanName = document.createTextNode(newName);
             divName.appendChild(spanName);
         newProduct.appendChild(divName);
-
+        /*Creamos el div del precio y lo insertamos */
         divPrice = document.createElement('div');
         divPrice.classList.add("width-S");
             dollar = document.createTextNode("$");
             divPrice.appendChild(dollar);
-              spanPrice = document.createTextNode(newPrice);
-              dollar.appendChild(spanPrice);
+            spanPrice = document.createElement('span');
+            spanPrice.classList.add("product-cost");
+            nodePrice = document.createTextNode(newPrice);
+            spanPrice.appendChild(nodePrice);
+            divPrice.appendChild(spanPrice);
         newProduct.appendChild(divPrice);
+        /*Creamos el div de la cantidad y lo insertamos */
+        divQty = document.createElement('div');
+        divQty.classList.add("product-units", "width-S");
+            labelQty = document.createElement('label');
+            labelQty.appendChild(document.createTextNode("QTY"));
+            divQty.appendChild(labelQty);
+            inputQty = document.createElement('input');
+            inputQty.setAttribute('class', "units");
+            inputQty.setAttribute('class',  "width-F");
+            inputQty.setAttribute('type', 'number');
+            inputQty.setAttribute('min', '0');
+            inputQty.setAttribute('value', '0');
+            divQty.appendChild(inputQty);
+        newProduct.appendChild(divQty);
 
     
     document.getElementById("product-list").appendChild(newProduct);
