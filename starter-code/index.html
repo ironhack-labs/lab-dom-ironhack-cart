@@ -20,7 +20,7 @@
         <span class="cost-unit">25</span>
       </div>
       <div class="quantity">
-        <label for="product-quantity">QTY</label>
+        <label for="product-quantity">QTY: </label>
         <input class="product-quantity" type="number" name="product-quantity" value="0" min="0">
       </div>
       <div class="total-product-price">
@@ -30,9 +30,30 @@
         <button type="button" class="btn btn-delete">Delete</button>
       </div>
     </div>
+
+    <div class="product-wrapper flexbox-container">
+      <div class="product-name">
+        <span>IronShirt</span>
+      </div>
+      <div>
+        <span class="cost-unit">15</span>
+      </div>
+      <div class="quantity">
+        <label for="product-quantity">QTY: </label>
+        <input class="product-quantity" type="number" name="product-quantity" value="0" min="0">
+      </div>
+      <div class="total-product-price">
+        <span>0</span>
+      </div>
+      <div class="btn-delete-container">
+        <button type="button" class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+
     <div class="calculate-prices-container flexbox-container">
       <button id="calc-prices-button" type="button" class="btn btn-success">Calculate prices</button>
     </div>
   </div>
+  <h2>Total Price: <span id="total-price-span">0</span></h2>
 </body>
 </html>

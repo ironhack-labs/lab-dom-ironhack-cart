@@ -1,5 +1,11 @@
+body {
+  background-color: #ececec;
+  color: #444;
+}
+
 input {
   border: solid 1px black;
+  background-color: transparent;
 }
 
 .btn {
@@ -40,8 +46,20 @@ input {
   margin: 0 5px;
 }
 
-h1 {
-  margin-left: 20px;
+input {
+  color: #444;
+  border-color: #444;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+input:focus {
+  background-color: #fff;
+}
+
+h1, h2 {
+  text-align: center;
 }
 
 .flexbox-container {
@@ -53,14 +71,25 @@ h1 {
 }
 
 .product-wrapper {
-  padding: 0 20px;
+  width: 90%;
+  margin: 0 auto 20px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   flex-basis: 100%;
-  margin-bottom: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid #999;
 }
 
 .calculate-prices-container {
   justify-content: center;
+}
+
+.product-name {
+  flex-basis: 25%;
+  font-weight: bold;
+}
+
+.cost-unit::before, .total-product-price::before, #total-price-span::before {
+  content: "$";
 }
