@@ -1,14 +1,22 @@
-var IronBubblePrice = 25;
-var udCost = document.getElementById ("ud-cost");
-udCost.innerHTML = IronBubblePrice + " €";
+// Código inicial pero luego descartado
+//var IronBubblePrice = 25;
+//var udCost = document.getElementById ("ud-cost");
+//udCost.innerHTML = IronBubblePrice + " €";
 
 var productPrice = document.getElementById("calc-prices-button");
 productPrice.onclick = function (){
-  var units = document.getElementsByTagName("input")[0];
-  var price = document.getElementsByClassName ("price");
-  [].slice.call(price).forEach ( function(price) {
-    price.innerHTML = units.value * IronBubblePrice + " €";
-  });
+for (var i=0; i< document.getElementsByClassName("ud-cost").length; i++){
+    var udCost = document.getElementsByClassName("ud-cost")[i];
+    var units = document.getElementsByClassName("quantity")[i];
+    var price = document.getElementsByClassName ("price")[i];
+//    [].slice.call(units).forEach (function (units){
+//      [].slice.call(udCost).forEach (function(udCost){
+//        [].slice.call(price).forEach (function(price) {
+          price.innerHTML = units.value * udCost.innerHTML + " €";
+//        });
+//      });
+//    });
+  }
 };
 
 function deleteItem(e){
