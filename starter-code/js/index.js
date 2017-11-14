@@ -3,6 +3,7 @@ function deleteItem(e){
   var allProducts = product.parentNode;
   allProducts.removeChild(product);
   getTotalPrice();
+  console.log('hola');
 }
 
 function getPriceByProduct(itemNode){
