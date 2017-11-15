@@ -5,16 +5,16 @@ function deleteItem(e){
 }
 
 function getPriceByProduct(itemNode){
-	return parseInt(itemNode.innerHTML.replace("$",""));
+	return parseFloat(itemNode.innerHTML.replace("$",""), 10);
 }
 
 function updatePriceByProduct(productPrice, index){
 	var totalItems = document.getElementsByClassName('quantity');
 	var totalPrice = document.getElementsByClassName('price');
 	if(totalItems[index].value >= 0){
-		totalPrice[index].innerHTML = "$" + (totalItems[index].value * productPrice).toFixed(2);
+		totalPrice[index].innerHTML = "$" + parseFloat((totalItems[index].value * productPrice), 10).toFixed(2);
 	} else totalPrice[index].innerHTML = "$0.00";
-	return parseInt(totalPrice[index].innerHTML.replace("$",""));
+	return parseFloat(totalPrice[index].innerHTML.replace("$",""), 10);
 }
 
 function getTotalPrice() {
@@ -75,7 +75,7 @@ function createPriceNode(price) {
 function createNamePriceDiv() {
 	var nameText = document.getElementById("item-name");
 	var priceText = document.getElementById("item-price");
-	priceText = parseInt(priceText.value.replace("$","")).toFixed(2);
+	priceText = parseFloat(priceText.value.replace("$",""), 10).toFixed(2);
 	var namePriceDiv = document.createElement('div');
 	namePriceDiv.className = "item-row";
 	namePriceDiv.appendChild(createNameNode(nameText.value));
