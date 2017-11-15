@@ -109,12 +109,18 @@ function createItemRow() {
 	return rowNode;
 }
 
+function clearInputs() {
+	document.getElementById("item-name").value = "";
+  document.getElementById("item-price").value = "";
+}
+
 function createNewItem(){
   var parentNode = document.getElementById('items-div');
 	var divNode = createItemRow();
 	if(divNode.childNodes[0].childNodes[0].innerHTML && divNode.childNodes[0].childNodes[1].innerHTML!=="$NaN"){
 		parentNode.appendChild(divNode);
 	}
+	clearInputs();
 }
 
 window.onload = function(){
