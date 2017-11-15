@@ -5,10 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+
   <title>Ironhack cart</title>
 </head>
 <body>
+  <header>
+    <h1 id="title">Ironhack Merchandising Shop</h1>
+  </header>
+  <div id="items-div">
+    <div class="item">
+          <div class="item-row">
+            <span class="productName">IronBubble-head</span>
+            <span class="unit-price">$25.00</span>
+          </div>
+          <div class="quantity-form">
+            <label for="amount">QTY</label>
+            <input type="number" min="0" name="amount" value=0 class="quantity">
+          </div>
+          <span class="price">$0.00</span>
+          <button class="btn-delete">Delete</button>
+    </div>
+
+    <div class="item">
+          <div class="item-row">
+            <span class="productName">IronBubble-Shirt</span>
+            <span class="unit-price">$15.00</span>
+          </div>
+          <div class="quantity-form">
+            <label for="amount">QTY</label>
+            <input type="number" min="0" name="amount" value=0 class="quantity">
+          </div>
+          <span class="price">$0.00</span>
+          <button class="btn-delete">Delete</button>
+    </div>
+  </div>
+
+  <div class="calculate-price">
+    <button type="button" name="Price" id="calc-prices-button">Calculate Prices</button>
+  </div>
+
+  <div id="total-price-div">
+    <h1>Total Price: $<span id="total-price">0.00</span></h1>
+  </div>
+
+  <div id="new-item">
+  	<input type="text" placeholder="Item´s name..." id="item-name">
+  	<input type="text" placeholder="Item´s price..." id="item-price">
+  	<button id="new-item-create">Create Item</button>
+  </div>
+
+  <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>

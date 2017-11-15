@@ -1,41 +1,126 @@
-function deleteItem(e){
 
+function deleteItem(e){
+	var node = e.currentTarget.parentNode;
+  node.parentNode.removeChild(node);
 }
 
 function getPriceByProduct(itemNode){
-
+	return parseFloat(itemNode.innerHTML.replace("$",""), 10);
 }
 
 function updatePriceByProduct(productPrice, index){
-
+	var totalItems = document.getElementsByClassName('quantity');
+	var totalPrice = document.getElementsByClassName('price');
+	if(totalItems[index].value >= 0){
+		totalPrice[index].innerHTML = "$" + parseFloat((totalItems[index].value * productPrice), 10).toFixed(2);
+	} else totalPrice[index].innerHTML = "$0.00";
+	return parseFloat(totalPrice[index].innerHTML.replace("$",""), 10);
 }
 
 function getTotalPrice() {
-
+	var itemNode = document.getElementsByClassName('unit-price');
+	var totalMoney = 0;
+	for(var i = 0; i < itemNode.length; i++){
+		totalMoney += updatePriceByProduct(getPriceByProduct(itemNode[i]), i);
+	}
+	var totalMoneyNode = document.getElementById('total-price');
+	totalMoneyNode.innerHTML = totalMoney.toFixed(2);
 }
 
 function createQuantityInput(){
+  var qtyNode = document.createElement('div');
+  qtyNode.className = "quantity-form";
+  var label = document.createElement('label');
+  label.innerHTML = "QTY";
+	label.for = "amount";
+  var input = document.createElement('input');
+  input.type = "number";
+  input.value = 0;
+  input.className = "quantity";
+	input.name = "amount";
+  qtyNode.appendChild(label);
+  qtyNode.appendChild(input);
+	return qtyNode;
+}
 
+function createResultNode() {
+	var result = document.createElement('span');
+	result.className = "price";
+	result.innerHTML = "$0.00";
+	return result;
 }
 
 function createDeleteButton(){
+  var deleteBtn = document.createElement('button');
+  deleteBtn.className = "btn-delete";
+	deleteBtn.innerHTML = "Delete";
+	deleteBtn.onclick = deleteItem;
+	return deleteBtn;
+}
 
+function createNameNode(name) {
+	var nameNode = document.createElement('span')
+	nameNode.className = "productName";
+	nameNode.innerHTML = name;
+	return nameNode;
+}
+
+function createPriceNode(price) {
+	var priceNode = document.createElement('span');
+	priceNode.className = "unit-price";
+	priceNode.innerHTML = price;
+	return priceNode;
+}
+
+function createNamePriceDiv() {
+	var nameText = document.getElementById("item-name");
+	var priceText = document.getElementById("item-price");
+	priceText = parseFloat(priceText.value.replace("$",""), 10).toFixed(2);
+	var namePriceDiv = document.createElement('div');
+	namePriceDiv.className = "item-row";
+	namePriceDiv.appendChild(createNameNode(nameText.value));
+	namePriceDiv.appendChild(createPriceNode("$" + priceText));
+	return namePriceDiv;
 }
 
 function createQuantityNode(){
-
+	var qntNode = document.createElement(div);
+	qntNode.className = "quantity-form";
+	var label = document.createElement(label);
+	label.for = "amount";
+	label.innerHTML = "QTY";
+	var input = document.createElement(input);
+	input.className = "quantity";
+	input.type = "number";
+	input.min = "0";
+	input.name = "amount"
+	qntNode.appendChild(label);
+	qntNode.appenChild(input);
+	return qntNode;
 }
 
-function createItemNode(dataType, itemData){
-
+function createItemRow() {
+	var rowNode = document.createElement("div");
+	rowNode.className = "item";
+	rowNode.appendChild(createNamePriceDiv());
+	rowNode.appendChild(createQuantityInput());
+	rowNode.appendChild(createResultNode());
+	rowNode.appendChild(createDeleteButton());
+	return rowNode;
 }
 
-function createNewItemRow(itemName, itemUnitPrice){
-
+function clearInputs() {
+	document.getElementById("item-name").value = "";
+  document.getElementById("item-price").value = "";
 }
 
 function createNewItem(){
-
+  var parentNode = document.getElementById('items-div');
+	var divNode = createItemRow();
+	if(divNode.childNodes[0].childNodes[0].innerHTML && divNode.childNodes[0].childNodes[1].innerHTML!=="$NaN"){
+		parentNode.appendChild(divNode);
+	}
+	clearInputs();
 }
 
 window.onload = function(){
