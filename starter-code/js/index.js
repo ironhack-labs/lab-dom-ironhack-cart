@@ -111,6 +111,7 @@ function createDeleteButton() {
   buttonTag.setAttribute('class', 'btn-delete btn');
   text = document.createTextNode('Delete');
   buttonTag.appendChild(text);
+  buttonTag.onclick = deleteItem;
   divTag.appendChild(buttonTag);
   return divTag;
 }
