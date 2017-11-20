@@ -19,16 +19,12 @@ function getTotalPrice() {
   unitCost = document.getElementsByClassName("cost-unit-span");
   units = document.getElementsByClassName("quantity-input");
   totalCost = document.getElementsByClassName('span-total');
-  // if(typeof(units.value) instanceof Number){
   totalPrice = 0;
   for (i = 0; i < unitCost.length; i++) {
     totalCost[i].innerHTML = unitCost[i].innerText * units[i].value;
     totalPrice += unitCost[i].innerText * units[i].value;
   }
   document.getElementById("total-price").innerHTML = totalPrice;
-  // }else{
-  // alert("The quantity has to be a number value");
-  // }
 }
 
 function createSpanProductName() {
@@ -108,7 +104,7 @@ function createDeleteButton() {
   // </div>
   divTag = document.createElement('div');
   buttonTag = document.createElement('button');
-  buttonTag.setAttribute('class', 'btn-delete btn');
+  buttonTag.setAttribute('class', 'btn btn-delete');
   text = document.createTextNode('Delete');
   buttonTag.appendChild(text);
   buttonTag.onclick = deleteItem;
@@ -124,11 +120,7 @@ function createItemNode(dataType, itemData) {
 
 }
 
-function createNewItemRow(itemName, itemUnitPrice) {
-
-}
-
-function createNewItem() {
+function createNewItemRow(){//itemName, itemUnitPrice) {
   container = document.getElementById('container');
   lastChild = document.getElementById('div-calculate-prices');
   divTag2 = document.createElement('div');
@@ -147,7 +139,7 @@ window.onload = function() {
   var createItemButton = document.getElementById('new-item-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
   calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
+  createItemButton.onclick = createNewItemRow;
 
   for (var i = 0; i < deleteButtons.length; i++) {
     deleteButtons[i].onclick = deleteItem;
