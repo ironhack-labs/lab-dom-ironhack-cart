@@ -63,5 +63,12 @@ h1{
 }
 .div-create-new-item{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin: 0 8%;
+}
+.new-items-inputs{
+}
+#new-element-price{
+}
+#new-item-create{
 }
