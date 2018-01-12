@@ -14,6 +14,10 @@ function getTotalPrice() {
   document.getElementById('totalPrice').innerHTML=
   document.getElementById('value').value *
   document.getElementById('price').innerHTML;
+
+  document.getElementById('totalPrice2').innerHTML=
+  document.getElementById('value2').value *
+  document.getElementById('price2').innerHTML;
 }
 
 function createQuantityInput(){
