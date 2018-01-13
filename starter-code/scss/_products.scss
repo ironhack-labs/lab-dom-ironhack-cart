@@ -1,0 +1,49 @@
+.products {
+    .products-header {
+        font-size: .7rem;
+        color: $light-blue;
+        font-weight: 700;
+        font-family: 'Roboto Mono', monospace;
+        margin-bottom: 25px;
+    }
+    .products-wrapper {
+        .product {
+            &.row {
+                
+                &:after {
+                    padding-top: 40px;
+                    content: '';
+                    width: 100%;
+                    border-bottom: 1px dotted $chalk;
+                    margin: 0 5% 40px 5%;
+                }
+            }
+            .product-qty {
+                input {
+                    width: 60px;
+                    border: none;
+                    border-bottom: 1px solid $chalk;
+                    text-align: center;
+                }
+                label {
+                    margin-right: 7px;
+                    font-size: .7rem;
+                    color: $chalk;
+                }
+            }
+            .col,
+            .col input {
+                font-size: .95rem;
+            }
+            .product-remove {
+                button {
+                    &:after {
+                        content: '\f014';
+                        font-family: fontawesome;
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
