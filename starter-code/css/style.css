@@ -2,6 +2,25 @@ input {
   border: solid 1px black;
 }
 
+.product-div > div {
+display: inline-flex;
+padding: 5% 5%;
+background-color: red;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding-top: 2%;
+  margin: 0;
+  font-size: 2.5em;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+}
 
 .btn {
   display: inline-block;
@@ -29,6 +48,7 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+
 }
 
 .btn-delete {
