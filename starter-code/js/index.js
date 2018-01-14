@@ -1,5 +1,5 @@
 function deleteItem(e){
-
+  e.path[1].remove()
 }
 
 function getPriceByProduct(itemNode){
@@ -11,7 +11,7 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-  
+
   var prodPrices = document.getElementsByClassName("prod-price");
   var prodQuantities= document.querySelectorAll(".prod-quantity input");
   var totalPrices = document.querySelectorAll(".prod-total-price span");
@@ -57,9 +57,9 @@ window.onload = function(){
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
   calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
+  //createItemButton.onclick = createNewItem;
 
-  for(var i = 0; i<deleteButtons.length ; i++){
+  for(var i = 0; i< deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
   }
 };
