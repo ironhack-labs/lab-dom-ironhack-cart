@@ -50,7 +50,6 @@ function createNewItemRow(itemName, itemUnitPrice){
 }
 
 function createNewItem(){
-  createDelete();
   var orig = document.getElementById('original');
   var copy = orig.cloneNode(true);
 
