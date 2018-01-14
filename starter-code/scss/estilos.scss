@@ -13,8 +13,9 @@ nav grey: #5b5e6d;
 
 @import 'reset';
 @import 'bootstrap/bootstrap';
-@import 'colors.scss';
-@import 'base.scss';
-@import 'hero.scss';
-@import 'products.scss';
+@import 'colors';
+@import 'base';
+@import 'hero';
+@import 'modals';
+@import 'products';
 @import 'helpers';

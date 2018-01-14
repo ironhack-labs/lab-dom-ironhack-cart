@@ -9,7 +9,6 @@
     .products-wrapper {
         .product {
             &.row {
-                
                 &:after {
                     padding-top: 40px;
                     content: '';
@@ -43,6 +42,22 @@
                         margin-left: 10px;
                     }
                 }
+            }
+        }
+    }
+    .cart-total-wrapper {
+        margin-bottom: 50px;
+        .cart-total-box {
+            border: 1px solid $chalk;
+            border-radius: 4px;
+            padding: 25px;
+            h3 {
+                @extend .products-header;
+            }
+            #total-cart-result {
+                font-size: 3rem;
+                font-weight: 300;
+                color: $intense-orange;
             }
         }
     }
