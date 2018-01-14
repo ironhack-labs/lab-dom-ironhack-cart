@@ -127,8 +127,6 @@ function getCartTotal() {
 remove item
 ===============================*/
 
-// var removeProductBtn;
-
 function listenerRemoveButtons() {
       var removeProductBtn = [].slice.call(document.getElementsByClassName('remove-product-btn'));
       removeProductBtn.forEach(function (btn, i) {
