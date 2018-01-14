@@ -8,6 +8,14 @@
     }
     .products-wrapper {
         .product {
+            &:before {
+                content: '\f0da';
+                font-family: fontawesome;
+                position: relative;
+                left: -5px;
+                top: 3px;
+                color: $chalk;
+            }
             &.row {
                 &:after {
                     padding-top: 40px;
@@ -48,6 +56,7 @@
     .cart-total-wrapper {
         margin-bottom: 50px;
         .cart-total-box {
+            background: #d8e7e529;
             border: 1px solid $chalk;
             border-radius: 4px;
             padding: 25px;
@@ -70,6 +79,14 @@
                 font-weight: 300;
                 color: $intense-orange;
             }
+        }
+    }
+}
+
+@media screen and (max-width:767px) {
+    .products {
+        .cart-total-box {
+            margin-top: 30px;
         }
     }
 }

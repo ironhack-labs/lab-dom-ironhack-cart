@@ -56,6 +56,13 @@ p {
 .btn {
     &[data-target="#addProductModal"] {
         font-size: 1.2rem;
+        padding: 10px 20px;
+        &:after {
+            content: '\f055';
+            font-family: fontawesome;
+            vertical-align: text-top;
+            margin-left: 10px;
+        }
     }
     &.btn-success {
         color: #fff;

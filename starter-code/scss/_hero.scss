@@ -15,3 +15,15 @@
         }
     }
 }
+
+@media screen and (max-width:767px) {
+    .hero {
+        .container-fluid {
+            .row {
+                .text-right {
+                    text-align: initial!important;
+                }
+            }
+        }
+    }
+}

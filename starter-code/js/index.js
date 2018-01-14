@@ -31,11 +31,13 @@ var stock = [{
       }
 ];
 
+//duplicar stock array para el user: modificar el array para cada user sin modificar el stock de la tienda
 var userCart = stock;
 
 /*===============================
-variables para qty btn
+crear qty btn
 ===============================*/
+//variables para qty btns
 var qtyInputs;
 var qtyInputsArr;
 
@@ -81,7 +83,7 @@ var addItemBtn = document.getElementById('addProductBtn').addEventListener('clic
       $('#addProductModal').modal('hide');
 });
 
-function createNewItem(newItemName, newItemPrice, defaultQty) {
+function createNewItem(newItemName, newItemPrice) {
       var newItem = {
             name: newItemName,
             price: parseInt(newItemPrice)
@@ -103,7 +105,7 @@ function showStock(products) {
 
       products.forEach(function (product, i) {
 
-            var product = '<div class="row product"><div class="align-self-center col product-title"><span>' + product.name + '</span></div><div class="align-self-center col col-2 product-price"><span class="span-price">' + product.price + '</span><span> €</span></div><div class="align-self-center col col-2 product-qty"><label for="qty">Nº of items: </label><input class="qty-input" type="number" name="quantity" min="0" value="1"> </div><div class="align-self-center col col-2 product-total-price"><span class="span-total-price">' + product.price + '</span><span> €</span></div><div class="align-self-center col product-remove"><button type="button" class="btn btn-outline-danger remove-product-btn">Delete</button></div></div>';
+            var product = '<div class="row product"><div class="align-self-center col-sm product-title"><span>' + product.name + '</span></div><div class="align-self-center col-sm-2 product-price"><span class="span-price">' + product.price + '</span><span> €</span></div><div class="align-self-center col-sm-2 product-qty"><label for="qty">Nº of items: </label><input class="qty-input" type="number" name="quantity" min="0" value="1"> </div><div class="align-self-center col-sm-2 product-total-price"><span class="span-total-price">' + product.price + '</span><span> €</span></div><div class="align-self-center col-sm product-remove"><button type="button" class="btn btn-outline-danger remove-product-btn">Delete</button></div></div>';
 
             productsList.innerHTML += product;
       });
@@ -125,20 +127,18 @@ function getCartTotal() {
 remove item
 ===============================*/
 
-var removeProductBtn;
+// var removeProductBtn;
 
 function listenerRemoveButtons() {
-      removeProductBtn = [].slice.call(document.getElementsByClassName('remove-product-btn'));
+      var removeProductBtn = [].slice.call(document.getElementsByClassName('remove-product-btn'));
       removeProductBtn.forEach(function (btn, i) {
             btn.addEventListener('click', function () {
                   deleteItem(btn, i);
             });
       })
 }
-var thisQty = 0;
+
 function deleteItem(btn, i) {
-      var thisProduct = btn.closest('.product');
-      thisQty = thisProduct.querySelector('.qty-input').value;
       btn.closest('.product').remove();
       userCart.splice(i, 1);
       getCartTotal();
