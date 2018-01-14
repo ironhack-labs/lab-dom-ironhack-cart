@@ -53,9 +53,12 @@ input {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 
 .center{
   text-align: center;
+}
+.prod-total-price{
+  width: 100px;
 }

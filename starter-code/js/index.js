@@ -11,9 +11,18 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-  var prodPrice = parseFloat(document.querySelector(".prod-price span").innerHTML);
-  var prodQuantity = document.querySelector(".prod-quantity input").value;
-  document.querySelector(".prod-total-price span").innerHTML = (prodPrice * prodQuantity).toFixed(2) + "€";
+  var prodPrices = document.getElementsByClassName("prod-price");
+  var prodQuantities= document.querySelectorAll(".prod-quantity input");
+  var totalPrices = document.querySelectorAll(".prod-total-price span");
+
+  console.log(prodPrices)
+  console.log(prodQuantities)
+  console.log(totalPrices)
+  
+  for(i = 0; i < prodPrices.length; i++) {
+    totalPrices[i].innerHTML = (parseFloat(prodPrices[i].innerHTML) * prodQuantities[i].value).toFixed(2) + "€";
+  }
+  
 }
 
 function createQuantityInput(){
