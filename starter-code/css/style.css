@@ -1,3 +1,12 @@
+body{
+  font-family: Helvetica, Arial, sans-serif;
+  padding-top: 30px;
+}
+h1{
+  text-align: center;
+  margin-bottom: 80px;
+}
+
 input {
   border: solid 1px black;
 }
@@ -38,4 +47,15 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.prod-container{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.center{
+  text-align: center;
 }
