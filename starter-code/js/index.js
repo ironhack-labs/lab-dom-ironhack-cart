@@ -1,5 +1,5 @@
 function deleteItem(e){
-
+console.log(e);
 }
 
 function getPriceByProduct(itemNode){
@@ -11,9 +11,17 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-  // document.getElementById('total-line').innerText =
-  // (document.getElementById('quantity').value*
-  // document.getElementById('price').innerHTML);
+  var quantityArray = document.getElementsByClassName('quantity-input');
+  var priceArray = document.getElementsByClassName('price');
+  for (var i = 0; i < quantityArray.length; i++){
+    document.getElementsByClassName('total-line')[i].innerText = quantityArray[i].value * priceArray[i].innerHTML;
+  }
+  var totalLine = document.getElementsByClassName('total-line');
+  var total = document.getElementById('total').innerHTML;
+  for (var i = 0; i<totalLine.length; i++){
+    total = parseInt(total) + parseInt(totalLine[i].innerText);
+  }
+  document.getElementById('total').innerText = parseInt(total);
 }
 
 function createQuantityInput(){

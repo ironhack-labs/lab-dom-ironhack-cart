@@ -30,7 +30,7 @@ input {
     background-color: #5cb85c;
     border-color: #4cae4c;
 }
-#product {
+.product {
   text-align: center;
 }
 
