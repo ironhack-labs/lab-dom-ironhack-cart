@@ -4,6 +4,8 @@ function deleteItem(e){
 
 function getPriceByProduct(itemNode){
 
+
+
 }
 
 function updatePriceByProduct(productPrice, index){
@@ -11,7 +13,11 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-
+  var array= document.getElementsByClassName("total");
+  for (i=0; i<array.length; i++)
+  document.getElementsByClassName("total")[i].innerHTML=
+  document.getElementsByClassName("precio")[i].innerHTML * 
+  document.getElementsByClassName("input")[i].value;
 }
 
 function createQuantityInput(){

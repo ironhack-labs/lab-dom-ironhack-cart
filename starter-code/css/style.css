@@ -28,6 +28,15 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    width: 100%;
+    text-align: center
+
+
+    
+}
+
+h1 {
+  text-align: center;
 }
 
 .btn-delete {
@@ -35,7 +44,37 @@ input {
     background-color: #CF000F;
     border-color: #CF000F;
 }
+.calculate {
+  width: 15%;
+  margin: 0 auto;
+  padding-top: 3% 
+}
 
 .quantity {
   margin: 0 5px;
+
+}
+.wrapper {
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+  padding: .9%
+}
+.wrapper2 {
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+  padding: .9%
+}
+
+h2 {
+  text-align: center
 }
