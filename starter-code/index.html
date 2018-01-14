@@ -12,51 +12,65 @@
 <body>
 
   <h1>Ironhack Merchandising Shop</h1>
+  <hr>
 
-  <div id="prod-container-all">
+  <table id="prod-container-all">
 
-    <div id="prod-1" class="prod-container">
-      <div class="prod-name">
+    <tr id="prod-1" class="prod-container">
+      <td>
         <span>Product 1</span>
-      </div>
-      <div>
+      </td>
+      <td>
         <span class="prod-price">35.40€</span>
-      </div>
-      <div class="prod-quantity">
+      </td>
+      <td class="prod-quantity">
         <label for="prod-quantity-input">Quantity:</label>
         <input id="prod-quantity-input-1" type="text" value="0">
-      </div>
-      <div class="prod-total-price">
+      </td>
+      <td class="prod-total-price">
         <span>0.00€</span>
-      </div>
-      <button class="btn btn-delete" type="button">Delete</button>
-    </div>
+      </td>
+      <td>
+        <button class="btn btn-delete" type="button">Delete</button>
+      </td>
+      
+    </tr>
 
-    <div id="prod-2" class="prod-container">
-        <div class="prod-name">
+    <tr id="prod-2" class="prod-container">
+        <td>
           <span>Product 2</span>
-        </div>
-        <div>
+        </td>
+        <td>
           <span class="prod-price">23.75€</span>
-        </div>
-        <div class="prod-quantity">
+        </td>
+        <td class="prod-quantity">
           <label for="prod-quantity-input">Quantity:</label>
           <input id="prod-quantity-input-2" type="text" value="0">
-        </div>
-        <div class="prod-total-price">
+        </td>
+        <td class="prod-total-price">
           <span>0.00€</span>
-        </div>
-        <button class="btn btn-delete" type="button">Delete</button>
-    </div>
+        </td>
+        <td>
+          <button class="btn btn-delete" type="button">Delete</button>
+        </td>
+    </tr>
 
-  </div>
-  <div id="items-creation-container">
-    <div class="new-prod-inputs">
+  </table>
+  <table id="items-creation-container">
+    <tr>
+    <td>
       <input id="new-prod-name" type="text" placeholder="product name">
+    </td>
+    <td>
       <input id="new-prod-price" type="text" placeholder="product price">
-    </div>
-    <button id="create-prod-btn" class="btn btn-create" type="button">Create</button>  
-  </div>
+    </td>
+    <td></td>
+    <td></td>
+    <td>
+      <button id="create-prod-btn" class="btn btn-create" type="button">Create</button> 
+    </td> 
+   </tr>
+  </table>
   <div class="center">
     <button id="calc-prices-button" class="btn btn-success">Calculate prices</button>
   </div>

@@ -4,7 +4,12 @@ body{
 }
 h1,h2{
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
+}
+
+hr{
+  border: 1px solid #ccc;
+  border-top: 0;
 }
 
 input {
@@ -40,7 +45,7 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
-    margin-bottom: 20px;
+    margin: 40px 0 20px 0;
 }
 
 .btn-delete {
@@ -57,25 +62,35 @@ input {
   margin: 0 5px;
 }
 
-.prod-container,
-#items-creation-container{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 40px 40px 40px;
+table{
+  width: 100vw;
+  padding: 10px 30px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+table tr td:nth-child(1),
+table tr td:nth-child(2){
+  width: 150px;
+}
+table tr td{
+  padding: 10px 5px;
+}
+table tr td:last-child{
+  text-align: right;
 }
 
 .center{
   text-align: center;
 }
 
+.prod-quantity input{
+  width: 50px;
+}
+
 .prod-total-price{
   width: 100px;
 }
 
-.new-prod-inputs input{
-  margin-right: 8vw;
-}
 
 input::placeholder{
   font-size: 14px;
