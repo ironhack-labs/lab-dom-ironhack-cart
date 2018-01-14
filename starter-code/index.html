@@ -15,37 +15,17 @@
   <hr>
 
   <table id="prod-container-all">
-
-    <tr id="prod-1" class="prod-container">
-      <td>
-        <span>Product 1</span>
-      </td>
-      <td>
-        <span class="prod-price">35.40€</span>
-      </td>
-      <td class="prod-quantity">
-        <label for="prod-quantity-input">Quantity:</label>
-        <input id="prod-quantity-input-1" type="text" value="0">
-      </td>
-      <td class="prod-total-price">
-        <span>0.00€</span>
-      </td>
-      <td>
-        <button class="btn btn-delete" type="button">Delete</button>
-      </td>
-      
-    </tr>
-
-    <tr id="prod-2" class="prod-container">
+    <tbody>
+      <tr id="prod-1" class="prod-container">
         <td>
-          <span>Product 2</span>
+          <span>Product 1</span>
         </td>
         <td>
-          <span class="prod-price">23.75€</span>
+          <span class="prod-price">35.40€</span>
         </td>
-        <td class="prod-quantity">
-          <label for="prod-quantity-input">Quantity:</label>
-          <input id="prod-quantity-input-2" type="text" value="0">
+        <td class="">
+          <label for="prod-quantity-input-1">Quantity:</label>
+          <input id="prod-quantity-input-1" class="prod-quantity" type="text" value="0">
         </td>
         <td class="prod-total-price">
           <span>0.00€</span>
@@ -53,23 +33,45 @@
         <td>
           <button class="btn btn-delete" type="button">Delete</button>
         </td>
-    </tr>
+      </tr>
 
+      <tr id="prod-2" class="prod-container">
+          <td>
+            <span>Product 2</span>
+          </td>
+          <td>
+            <span class="prod-price">23.75€</span>
+          </td>
+          <td>
+            <label for="prod-quantity-input-2">Quantity:</label>
+            <input id="prod-quantity-input-2" class="prod-quantity" type="text" value="0">
+          </td>
+          <td class="prod-total-price">
+            <span>0.00€</span>
+          </td>
+          <td>
+            <button class="btn btn-delete" type="button">Delete</button>
+          </td>
+      </tr> 
+
+    </tbody>
   </table>
   <table id="items-creation-container">
-    <tr>
-    <td>
-      <input id="new-prod-name" type="text" placeholder="product name">
-    </td>
-    <td>
-      <input id="new-prod-price" type="text" placeholder="product price">
-    </td>
-    <td></td>
-    <td></td>
-    <td>
-      <button id="create-prod-btn" class="btn btn-create" type="button">Create</button> 
-    </td> 
-   </tr>
+    <tbody>
+      <tr>
+        <td>
+          <input id="new-prod-name" type="text" placeholder="product name">
+        </td>
+        <td>
+          <input id="new-prod-price" type="text" placeholder="product price">
+        </td>
+        <td></td>
+        <td></td>
+        <td>
+          <button id="create-prod-btn" class="btn btn-create" type="button">Create</button> 
+        </td> 
+    </tr>
+    </tbody>
   </table>
   <div class="center">
     <button id="calc-prices-button" class="btn btn-success">Calculate prices</button>

@@ -16,7 +16,7 @@ function updatePriceByProduct(productPrice, index){
 function getTotalPrice() {
 
   var prodPrices = document.getElementsByClassName("prod-price");
-  var prodQuantities= document.querySelectorAll(".prod-quantity input");
+  var prodQuantities= document.querySelectorAll(".prod-quantity");
   var totalPrices = document.querySelectorAll(".prod-total-price span");
   var totalPriceAll = 0;
   
@@ -30,36 +30,49 @@ function getTotalPrice() {
   
 }
 
-function createQuantityInput(){
-
+function createDeleteButton(productRow){
+  var newDeleteBtn = document.createElement("button");
+  newDeleteBtn.className = "btn btn-delete";
+  newDeleteBtn.setAttribute("type","button");
+  newDeleteBtn.innerHTML = "Delete";
+  newDeleteBtn.onclick = deleteItem;
+  productRow[4].appendChild(newDeleteBtn);
 }
 
-function createDeleteButton(){
-
+function createQuantityNode(productRow){
+  productRow[3].className = "prod-total-price";
+  productRow[3].innerHTML = "<span>0.00€</span>"
 }
 
-function createQuantityNode(){
-
+function createQuantityInput(productRow){
+  productRow[2].innerHTML = "<label for='prod-quantity-input-" + totalProducts + "'>Quantity:</label> <input id='prod-quantity-input-" + totalProducts + "' class='prod-quantity' type='text' value='0'>"
 }
 
-function createItemNode(dataType, itemData){
-  var nameNode = document.createElement("div");
- // nameNode.innerHTML = 
+function createItemNode(dataType, itemData, productRow){
+  productRow[0].innerHTML = "<span>" + dataType + "</span>";
+  productRow[1].innerHTML = "<span class='prod-price'>" + parseFloat(itemData).toFixed(2) + "€</span>";
 }
 
 function createNewItemRow(itemName, itemUnitPrice){
-  var prodContainer = document.createElement("div");
+  var prodContainer = document.createElement("tr");
   prodContainer.id = "prod-" + ++totalProducts;
   prodContainer.className = "prod-container"; 
-  console.log(totalProducts)
-  document.getElementById("prod-container-all").appendChild(prodContainer)
+  document.querySelector("#prod-container-all tbody").appendChild(prodContainer);
+  for (i = 0; i < 5; i++){
+    var cell = document.createElement("td");
+    document.getElementById("prod-" + totalProducts).appendChild(cell);
+  }
 }
 
 function createNewItem(){
   var newProductName = document.getElementById("new-prod-name").value;
-  var newProductPrice = document.getElementById("new-prod-name").value;
+  var newProductPrice = document.getElementById("new-prod-price").value;
   createNewItemRow();
-  createItemNode(newProductName, newProductPrice);
+  var newProductRow = document.querySelectorAll("#prod-" + totalProducts + " td")
+  createItemNode(newProductName, newProductPrice, newProductRow);
+  createQuantityInput(newProductRow);
+  createQuantityNode(newProductRow);
+  createDeleteButton(newProductRow);
 }
 
 window.onload = function(){

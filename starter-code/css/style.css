@@ -58,10 +58,6 @@ input {
   border: 1px solid #999;
 }
 
-.quantity {
-  margin: 0 5px;
-}
-
 table{
   width: 100vw;
   padding: 10px 30px;
@@ -75,6 +71,7 @@ table tr td:nth-child(2){
 table tr td{
   padding: 10px 5px;
 }
+
 table tr td:last-child{
   text-align: right;
 }
@@ -83,7 +80,7 @@ table tr td:last-child{
   text-align: center;
 }
 
-.prod-quantity input{
+.prod-quantity{
   width: 50px;
 }
 
