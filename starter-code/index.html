@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,96 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+  <h1>Ironhack<br/>Merchandising Shop</h1>
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <div class="product_name">
+            <span>IronBuble-head</span>
+          </div>
+        </td>
+        <td>
+          <div class="cost">
+            <span>$25.00</span>
+          </div>
+        </td>
+        <td>
+          <div>
+            <label>QTY</label>
+            <input class="quantity" type="number">
+          </div>
+        </td>
+        <td>
+          <div class="total_price">
+            <span>$0.00</span>
+          </div>
+        </td>
+        <td>
+          <div>
+            <button class="btn btn-delete" type="button">Delete</button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+          <td>
+            <div class="product_name">
+              <span>IronShirt</span>
+            </div>
+          </td>
+          <td>
+            <div class="cost">
+              <span>$15.00</span>
+            </div>
+          </td>
+          <td>
+            <div>
+              <label>QTY</label>
+              <input class="quantity" type="number">
+            </div>
+          </td>
+          <td>
+            <div class="total_price">
+              <span>0</span>
+            </div>
+          </td>
+          <td>
+            <div>
+              <button class="btn btn-delete" type="button">Delete</button>
+            </div>
+          </td>
+        </tr>
+        <tr id="create">
+            <td>
+              <div class="product_name">
+                <input type="text" name="" id="input_product">
+              </div>
+            </td>
+            <td>
+              <div class="cost">
+              <input type="number" id="input_cost">
+              </div>
+            </td>
+            <td>
+            </td>
+            <td>
+            </td>
+            <td>
+              <div>
+                <button id="new-item-create" type="button">Create</button>
+              </div>
+            </td>
+          </tr>
+    </tbody>
+  </table>
+  <div class="btn_calcul" >
+    <button id="calc-prices-button" class= "btn btn-success" type="button">Calculate Prices</button>
+  </div>
+  <div class= "total">
+      <h2>Total Price: <span>$0</span></h2>
+  </div>
 </body>
+
 </html>
