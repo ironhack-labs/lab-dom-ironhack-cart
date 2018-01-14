@@ -1,13 +1,13 @@
 function deleteItem(e){
-console.log(e);
+var remove = e.currentTarget.parentNode.parentNode;
+var container = remove.parentNode;
+container.removeChild(remove);
 }
 
 function getPriceByProduct(itemNode){
-
 }
 
 function updatePriceByProduct(productPrice, index){
-
 }
 
 function getTotalPrice() {
