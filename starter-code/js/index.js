@@ -11,8 +11,7 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-
-}
+document.getElementById("span-price-unit");
 
 function createQuantityInput(){
 
