@@ -24,6 +24,10 @@ var stock = [{
       {
             name: "TA's extra help for back-end stuff",
             price: 120
+      },
+      {
+            name: "IronBeers - Sixpack",
+            price: 8
       }
 ];
 
@@ -59,6 +63,7 @@ function getTotalPrice(thisProductPrice, numItems, thisProduct) {
       //setear el innerHTML con el valor multiplicado
       thisProduct.getElementsByClassName('span-total-price')[0].innerHTML = thisProductPrice * numItems;
       getCartTotal();
+      itemsInCart();
 }
 
 /*===============================
@@ -86,6 +91,7 @@ function createNewItem(newItemName, newItemPrice, defaultQty) {
       createQuantityInput();
       listenerRemoveButtons();
       getCartTotal();
+      itemsInCart();
 }
 
 /*===============================
@@ -129,63 +135,41 @@ function listenerRemoveButtons() {
             });
       })
 }
-
+var thisQty = 0;
 function deleteItem(btn, i) {
+      var thisProduct = btn.closest('.product');
+      thisQty = thisProduct.querySelector('.qty-input').value;
       btn.closest('.product').remove();
-      userCart.splice(i,1);
+      userCart.splice(i, 1);
       getCartTotal();
+      itemsInCart();
 }
 
-// function getPriceByProduct(product) {
-//       return product.price;
-// }
+/*===============================
+number of items in cart
+===============================*/
 
-// function updatePriceByProduct(productPrice, index){
-
-// }
-
-
-
-
-// function createDeleteButton(){
-
-// }
-
-// function createQuantityNode(){
-
-// }
-
-// function createItemNode(dataType, itemData){
-
-// }
-
-// function createNewItemRow(prodName, prodPrice) {
-
-// }
-
-
-
+function itemsInCart(){
+      var span = document.getElementById('total-items-in-cart');
+      var numItems = 0;
+      var qtyInputs = [].slice.call(document.getElementsByClassName('qty-input'));
+      qtyInputs.forEach(function (input, i) {
+            var thisProduct = input.closest('.product');
+            var thisProductQty = [].slice.call(thisProduct.getElementsByClassName('qty-input'));
+            var thisProductQtyVal = parseInt(thisProductQty[0].value);
+            numItems += thisProductQtyVal;
+      });
+      span.innerHTML = numItems;
+}
 
 /*===============================
 onload event
 ===============================*/
 
 window.onload = function () {
-      //pintar array stock
       showStock(userCart);
       createQuantityInput();
       getCartTotal();
       listenerRemoveButtons();
-
-      // getTotalPrice();
-      //   var calculatePriceButton = document.getElementById('calc-prices-button');
-      //   var createItemButton = document.getElementById('new-item-create');
-      //   var deleteButtons = document.getElementsByClassName('btn-delete');
-
-      //   calculatePriceButton.onclick = getTotalPrice;
-      //   createItemButton.onclick = createNewItem;
-
-      //   for(var i = 0; i<deleteButtons.length ; i++){
-      //     deleteButtons[i].onclick = deleteItem;
-      //   }
+      itemsInCart();
 };

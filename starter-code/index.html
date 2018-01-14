@@ -61,6 +61,7 @@
           <div class="col col-4">
             <div class="cart-total-box">
               <h3>Cart Total:</h3>
+              <p class="cart-details">You have <span id="total-items-in-cart"></span> items in Cart.</p>
               <p id="total-cart-result"></p>
             </div>
           </div>
@@ -73,16 +74,17 @@
   <div class="modal fade" id="addProductModal" tabindex="-1" role="dialog" aria-labelledby="createProductModal" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
-        <div class="modal-header text-center">
-          <h5 class="modal-title" id="exampleModalLabel">Add new product</h5>
+        <div class="modal-header">
+          <h5 class="modal-title">Add new product</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <p class="small intense-orange"> After adding a new product, the nº of items for each product will be set to 1.</p>
           <input id="new-item-name-input" class="text-center" type="text" placeholder="Product name" value="">
-          <input id="new-item-price-input" class="text-center" type="number" placeholder="Product price, just numbers"> </div>
+          <input id="new-item-price-input" class="text-center" type="number" placeholder="Product price, just numbers"> 
+          <p class="small text-center intense-orange"> After adding a new product, the nº of items for each product will be set to 1.</p>
+        </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Discard</button>
           <button id="addProductBtn" type="button" class="btn btn-outline-success">Save product</button>

@@ -53,6 +53,17 @@
             padding: 25px;
             h3 {
                 @extend .products-header;
+                margin-bottom: 10px;
+            }
+            .cart-details {
+                font-size: .7rem;
+                margin:0 0 10px 0;
+                font-weight: 300;
+                color: $light-blue;
+                span {
+                    font-weight: 600;
+                    font-size: .9rem;
+                }
             }
             #total-cart-result {
                 font-size: 3rem;

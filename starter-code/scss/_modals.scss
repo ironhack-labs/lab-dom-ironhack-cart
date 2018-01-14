@@ -1,6 +1,11 @@
 .modal {
+      .modal-header,.modal-footer {
+            border: none;
+      }
       .modal-header {
             color: $celeste;
+            border: none;
+            margin-bottom: 50px;
             .close {
                   color:$light-blue;
             }
