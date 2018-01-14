@@ -1,7 +1,9 @@
+h1{
+text-align: center;
+}
 input {
   border: solid 1px black;
 }
-
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -23,13 +25,14 @@ input {
   border: 1px solid transparent;
   border-radius: 4px;
 }
-
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
 }
-
+#product {
+  text-align: center;
+}
 
 .btn-delete {
     color: #fff;

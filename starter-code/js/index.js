@@ -11,9 +11,9 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-  document.getElementById('total-line').innerText =
-  (document.getElementById('quantity').value *
-  document.getElementById('price').innerHTML);
+  // document.getElementById('total-line').innerText =
+  // (document.getElementById('quantity').value*
+  // document.getElementById('price').innerHTML);
 }
 
 function createQuantityInput(){
