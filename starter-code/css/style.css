@@ -9,6 +9,9 @@ h1,h2{
 
 input {
   border: solid 1px black;
+  width: 100px;
+  padding: 2px 5px;
+  font-size: 14px;
 }
 
 .btn {
@@ -46,20 +49,34 @@ input {
     border-color: #CF000F;
 }
 
+.btn-create{
+  border: 1px solid #999;
+}
+
 .quantity {
   margin: 0 5px;
 }
 
-.prod-container{
+.prod-container,
+#items-creation-container{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px;
+  margin: 0 40px 40px 40px;
 }
 
 .center{
   text-align: center;
 }
+
 .prod-total-price{
   width: 100px;
+}
+
+.new-prod-inputs input{
+  margin-right: 8vw;
+}
+
+input::placeholder{
+  font-size: 14px;
 }
