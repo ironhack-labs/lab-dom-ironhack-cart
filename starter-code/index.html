@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,94 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+
+  <h1>Ironhack</br>Merchandising Shop</h1>
+
+  <div id="items-list">
+
+    
+      <div class="item">
+        <div class="product-name">
+          <span>IronBubble-head</span>
+        </div>
+        <div class="unit-cost-div">
+          <span class="unit-cost">$25.00</span>
+        </div>
+        <div class="units-bought">
+          <label for="item-quantity" class="quantity">QTY</label>
+          <input name="item-quantity" type="text">
+        </div>
+        <div class="total-price-by-product-div">
+          <span class="total-price-by-product">$0.00</span>
+        </div>
+        <div>
+          <button class="btn btn-delete">Delete</button>
+        </div>
+      </div>
+   
+        <div class="item">
+          <div class="product-name">
+            <span>IronShirt</span>
+          </div>
+          <div class="unit-cost-div">
+            <span class="unit-cost">$15.00</span>
+          </div>
+          <div class="units-bought">
+            <label for="item-quantity" class="quantity">QTY</label>
+            <input name="item-quantity" type="text">
+          </div>
+          <div class="total-price-by-product-div">
+            <span class="total-price-by-product">$0.00</span>
+          </div>
+          <div>
+            <button class="btn btn-delete">Delete</button>
+          </div>
+        </div>
+     
+          <div class="item">
+            <div class="product-name">
+              <span>IronCup</span>
+            </div>
+            <div class="unit-cost-div">
+              <span class="unit-cost">$10.00</span>
+            </div>
+            <div class="units-bought">
+              <label for="item-quantity" class="quantity">QTY</label>
+              <input name="item-quantity" type="text">
+            </div>
+            <div class="total-price-by-product-div">
+              <span class="total-price-by-product">$0.00</span>
+            </div>
+            <div>
+              <button class="btn btn-delete">Delete</button>
+            </div>
+          </div>
+
+
+        
+
+  </div>
+  
+  <div class="add-item">
+      <div><input type="text" id="add-item-name"></div>
+      <div><input type="text" id="add-item-cost"></div>
+      <div></div>
+      <div></div>
+      <div>
+          <button class="btn btn-create" id="new-item-create">Create</button>
+      </div>
+  </div>
+
+
+  <div class="center-align">
+  <button class="btn btn-success" id="calc-prices-button">Calculate Prices</button>
+  </div>
+
+
+  <h2>Total Price: <span id="total-price" >$0.00</span></h2>
+
 </body>
+
 </html>

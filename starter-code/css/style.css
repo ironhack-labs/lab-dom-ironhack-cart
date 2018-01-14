@@ -36,6 +36,59 @@ input {
     border-color: #CF000F;
 }
 
+
+.btn-create {
+  color: #fff;
+  background-color: rgb(14, 0, 207);
+  border-color: rgb(14, 0, 207);
+}
+
 .quantity {
   margin: 0 5px;
+}
+
+.item{
+  display: flex;
+  width: 100%;
+  flex-wrap: nowrap; /*display items in one row*/ 
+  justify-content: flex-right;
+  margin-top: 20px; 
+  margin-left: 20px;
+}
+
+.item div{
+  width: 20%;
+}
+
+h1 {
+  text-align: justify;
+  margin-top: 50px;
+  margin-left: 45%;
+  
+}
+
+
+.center-align{
+  text-align: center;
+}
+
+h2{
+  text-align: justify;
+  margin-top: 50px;
+  margin-left: 45%;
+  
+}
+
+.add-item{
+  display: flex;
+  width: 100%;
+  flex-wrap: nowrap; /*display items in one row*/ 
+  justify-content: flex-right;/*flex-space-between;*/
+  margin-top: 20px; 
+  margin-left: 20px;
+}
+
+
+.add-item  div{
+  width: 20%;
 }
