@@ -1,5 +1,22 @@
+body{
+  font-family: Helvetica, Arial, sans-serif;
+  padding-top: 30px;
+}
+h1,h2{
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+hr{
+  border: 1px solid #ccc;
+  border-top: 0;
+}
+
 input {
   border: solid 1px black;
+  width: 100px;
+  padding: 2px 5px;
+  font-size: 14px;
 }
 
 .btn {
@@ -28,6 +45,7 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin: 40px 0 20px 0;
 }
 
 .btn-delete {
@@ -36,6 +54,41 @@ input {
     border-color: #CF000F;
 }
 
-.quantity {
-  margin: 0 5px;
+.btn-create{
+  border: 1px solid #999;
+}
+
+table{
+  width: 100vw;
+  padding: 10px 30px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+table tr td:nth-child(1),
+table tr td:nth-child(2){
+  width: 150px;
+}
+table tr td{
+  padding: 10px 5px;
+}
+
+table tr td:last-child{
+  text-align: right;
+}
+
+.center{
+  text-align: center;
+}
+
+.prod-quantity{
+  width: 50px;
+}
+
+.prod-total-price{
+  width: 100px;
+}
+
+
+input::placeholder{
+  font-size: 14px;
 }
