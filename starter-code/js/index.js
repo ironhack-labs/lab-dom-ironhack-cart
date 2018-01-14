@@ -50,6 +50,7 @@ function createNewItemRow(itemName, itemUnitPrice){
 }
 
 function createNewItem(){
+  createDelete();
   var orig = document.getElementById('original');
   var copy = orig.cloneNode(true);
 
@@ -60,13 +61,7 @@ function createNewItem(){
   
   var div = document.createElement('div');
 
-  document.getElementsByClassName('body').appendChild(div).appendChild(copy);
-
- 
-  // var div = document.createElement('div');
-  // var text = document.createTextNode('ciao');
-  // document.getElementsByClassName('item')[0].appendChild(div).appendChild(newName);
-
+  document.getElementsByClassName('item')[0].appendChild(div).appendChild(copy);
 }
 
   
