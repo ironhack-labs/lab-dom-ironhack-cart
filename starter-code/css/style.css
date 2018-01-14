@@ -33,13 +33,23 @@ input {
 .product {
   text-align: center;
 }
-
+.product-create {
+  text-align: center;
+}
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
 }
-
 .quantity {
   margin: 0 5px;
+}
+.input-name-create{
+  display: inline-block;
+}
+.price-create{
+  display: inline-block;
+}
+.btn-create{
+  border: solid 1px black;
 }

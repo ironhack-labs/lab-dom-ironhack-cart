@@ -12,43 +12,50 @@
 
 <body>
   <h1>Ironhack 0118</h1>
-  <div class="main-wrapper">
-    <div class="product">
-      <div class="btn">
-        <span>Cerveza</span>
-      </div>
-      <div class="btn">
-        <span>$</span>
-        <span class="price">3</span>
-      </div>
-      <div class="btn">
-        <label class="quantity">QTY</label>
-        <input class="quantity-input" value="0">
-      </div>
-      <div class="btn">
-        <span class="total-line">$0</span>
-      </div>
-      <div class="btn">
-        <button class="btn-delete btn">Delete</button>
-      </div>
+  <div id="product-wrapper">
+  <div class="product">
+    <div class="btn">
+      <span class="name">Cerveza</span>
     </div>
-    <div class="product">
-      <div class="btn">
-        <span>Sidra</span>
-      </div>
-      <div class="btn">
-        <span>$</span>
-        <span class="price">4</span>
-      </div>
-      <div class="btn">
-        <label class="quantity">QTY</label>
-        <input class="quantity-input" value="0">
-      </div>
-      <div class="btn">
-        <span class="total-line">$0</span>
-      </div>
+    <div class="btn">
+      <span>$</span>
+      <span class="price">3</span>
+    </div>
+    <div class="btn">
+      <label class="quantity">QTY</label>
+      <input class="quantity-input" value="0">
+    </div>
+    <div class="btn">
+      <span class="total-line">$0</span>
+    </div>
+    <div class="btn">
       <button class="btn-delete btn">Delete</button>
     </div>
+  </div>
+  <div class="product">
+    <div class="btn">
+      <span class="name">Sidra</span>
+    </div>
+    <div class="btn">
+      <span>$</span>
+      <span class="price">4</span>
+    </div>
+    <div class="btn">
+      <label class="quantity">QTY</label>
+      <input class="quantity-input" value="0">
+    </div>
+    <div class="btn">
+      <span class="total-line">$0</span>
+    </div>
+    <div class="btn">
+      <button class="btn-delete btn">Delete</button>
+    </div>
+  </div>
+</div>
+  <div class="product-create">
+    <input class="input-name-create">
+    <input class="price-create">
+    <button id="new-item-create" class "btn btn-create">Create</button>
   </div>
   <button id="calc-prices-button" class="btn-success">Calculate Prices</button>
   <h2>Total Price:
