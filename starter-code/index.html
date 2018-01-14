@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -10,5 +10,71 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+	<header class="centered-text">
+		<h1>Ironhack <br /> Merchandising Shop</h1>
+	</header>
+	<div id="main">
+		<div class="items-wrapper">
+			<div class="item">
+				<span>IronBubble-head</span>
+			</div>
+			<div class="item">
+				<span>$25.00</span>
+			</div>
+			<div class="item">
+				<div>
+					<label>QTY </label>
+					<input class="quantity" value="0" />
+				</div>
+			</div>
+			<div class="item">
+				<span class="total">$0.00</span>
+			</div>
+			<div class="item">
+				<button class="btn-delete btn">Delete</button>
+			</div>
+		</div>
+		<div class="items-wrapper">
+			<div class="item">
+				<span>IronShirt</span>
+			</div>
+			<div class="item">
+				<span>$15.00</span>
+			</div>
+			<div class="item">
+				<div>
+					<label>QTY </label>
+					<input class="quantity" value="0" />
+				</div>
+			</div>
+			<div class="item">
+				<span class="total">$0.00</span>
+			</div>
+			<div class="item">
+				<button class="btn-delete btn">Delete</button>
+			</div>
+		</div>
+	</div>
+	<div class="items-wrapper">
+		<div class="item">
+			<input id="new-name" />
+		</div>
+		<div class="item">
+			<input id="new-quantity" />
+		</div>
+		<div class="item">
+		</div>
+		<div class="item">
+		</div>
+		<div class="item">
+			<button id="new-item-create" class="btn">Create</button>
+		</div>
+	</div>
+	<div class="centered-text">
+		<button id="calc-prices-button" class="btn-success btn">Calculate Prices</button>
+	</div>
+	<footer class="centered-text">
+		<h1>Total Price: <span id="total-price">$0</span></h1>
+	</footer>
 </body>
 </html>
