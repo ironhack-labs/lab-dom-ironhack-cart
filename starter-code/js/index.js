@@ -14,16 +14,21 @@ function getTotalPrice() {
   
   var prices = document.querySelectorAll(".price-per-unit");
   var inputs = document.querySelectorAll(".quantity-input");
+  var total = 0;
   for(i=0; i < prices.length; i++){
     var totalPrices = document.querySelectorAll(".total-price")
     var price = prices[i].children[0].innerHTML;
     var quantity = inputs[i].children[0].children[0].value;
     var totalPerProduct = parseFloat(price)*Number(quantity);
-    totalPrices[i].children[0].innerText = totalPerProduct;
-    
-    console.log("iteration: "+i +" price: "+ parseFloat(price)+" quantity: " + Number(quantity));
+    totalPrices[i].children[0].innerText = totalPerProduct;    
+    total += totalPerProduct;    
   }
-  console.log(totalPrices);
+  var tot = document.getElementById("grand-total") 
+  tot.innerText = total;
+  
+  
+
+  
 }
 
 function createQuantityInput(){
