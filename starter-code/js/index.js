@@ -14,10 +14,10 @@ function updatePriceByProduct(productPrice, index){
 function getTotalPrice() {
   var productCost = document.querySelectorAll('.cost');
   var productCount = document.querySelectorAll('.quantity');
-  var grandTotal = parseFloat(productCost[0].innerText) * parseInt(productCount[0].value);
+  var grandTotal = parseInt(productCost[0].innerText) * parseInt(productCount[0].value);
   var total = document.querySelectorAll('.total');
   total[0].innerText = grandTotal.toFixed(2);
-  return grandTotal;
+  // return grandTotal;
 }
 
 function createQuantityInput(){
@@ -41,6 +41,17 @@ function createNewItemRow(itemName, itemUnitPrice){
 }
 
 function createNewItem(){
+//   var original = document.getElementById('repeat-this');
+//   var newItem = document.createElement(item);
+var i = 0;
+//   var clone = original.cloneNode(true);
+//   clone.id = "repeat-this" + ++i; 
+
+  // original.parentNode.appendChild(clone);
+var original = document.getElementById('repeat-this');
+var clone = original.cloneNode(true); // "deep" clone
+// clone.id = "repeat-this" + ++i; // there can only be one element with an ID
+original.parentNode.appendChild(clone);
 
 }
 
@@ -50,7 +61,7 @@ window.onload = function(){
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
   calculatePriceButton.onclick = getTotalPrice;
-  // createItemButton.onclick = createNewItem;
+  createItemButton.onclick = createNewItem;
 
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
