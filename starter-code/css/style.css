@@ -1,3 +1,9 @@
+body {
+  display: flex;
+  justify-content: center;
+  padding: 100px;
+}
+
 input {
   border: solid 1px black;
 }
@@ -38,4 +44,23 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 20px;
+  border: 1px grey solid;
+  border-radius: 5px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.calculate {
+  text-align: center;
+  margin-top: 100px;
 }

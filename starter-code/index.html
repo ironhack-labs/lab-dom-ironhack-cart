@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,68 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+  <div class="wrapper">
+    <div class="container">
+      <div>
+        <span>
+          IronBubble-head
+        </span>
+      </div>
+      <div>
+        $
+        <span class="unit-price">
+          50
+        </span>
+      </div>
+      <div>
+        <span class="quantity">QTY</span>
+        <input type="text" class="quantity-items" name="qty" placeholder="0">
+      </div>
+      <div>
+        $
+        <span class="total-price">
+          0.00
+        </span>
+      </div>
+      <div>
+        <button class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+    <div class="container">
+      <div>
+        <span>
+          IronBubble-head
+        </span>
+      </div>
+      <div id="paco">
+        $
+        <span class="unit-price">
+          10
+        </span>
+      </div>
+      <div>
+        <span class="quantity">QTY</span>
+        <input type="text" class="quantity-items" name="qty" placeholder="0">
+      </div>
+      <div>
+        $
+        <span class="total-price">
+          0.00
+        </span>
+      </div>
+      <div>
+        <button class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+    <div class="calculate">
+      <button class="btn btn-success" id="calc-prices-button">Calculate Price</button>
+    </div>
+    <div class="total-pedido">
+      El importe total del pedido es:
+      <span id="importe-total">0,00</span> €
+    </div>
 </body>
+
 </html>
