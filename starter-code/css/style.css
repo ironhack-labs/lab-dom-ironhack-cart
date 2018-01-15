@@ -39,3 +39,60 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+div#cart div.row div.row-in{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+div#cart div.row div.name,
+div#cart div.row div.price,
+div#cart div.row div.units,
+div#cart div.row div.total-price,
+div#cart div.row div.delete{
+  font-size: 12px;
+}
+
+div#cart div#btn-bottom{
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+div#cart div#btn-bottom button:first-child{
+  background: #03A9F4;
+  border: #03A9F4;
+  color: #fff;
+}
+
+div#cart div.units label{
+  margin-right: 5px;
+}
+
+div#cart{
+  width: 80%;
+  margin: 100px auto 0 auto;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 50px;
+  text-align: center;
+}
+
+div#cart h1{
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+p{
+  display: inline-block;
+}
+
+h2{
+  margin: 50px 0;
+  text-align: right;
+}
