@@ -1,8 +1,9 @@
-function deleteItem(e){
-  console.log('eeeeh');
-  
-  
+'use strict';
 
+
+function deleteItem(event){
+  event.currentTarget.parentNode.remove();
+  getTotalPrice();
 }
 
 function getPriceByProduct(itemNode){
@@ -61,7 +62,7 @@ window.onload = function(){
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
   calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
+  // createItemButton.onclick = createNewItem;
 
   for(var i = 0; i < deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
