@@ -39,3 +39,30 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.title-tienda {
+  text-align: center;
+}
+
+.contenedor-producto {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 5%;
+}
+
+@media (max-width: 650px) {
+  .contenedor-producto {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 5%;
+  }
+
+  .contenedor-producto > div {
+    margin-top: 10px;
+  }
+
+}

@@ -1,8 +1,13 @@
 function deleteItem(e){
 
+  var searchParent = e.currentTarget.parentNode.parentNode; 
+  var foundParent = searchParent.parentNode;
+  foundParent.removeChild(searchParent);
+
 }
 
 function getPriceByProduct(itemNode){
+
 
 }
 
@@ -11,7 +16,13 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
+  console.log("He entrado");
+  var calcularPrecio = document.getElementsByClassName('precio-producto')[0].innerText;
+  console.log(calcularPrecio);
+  var recogerProducto = document.getElementsByClassName('cantidad_input')[0].value;
+  console.log(recogerProducto);
 
+  document.getElementById('cantidad_total').innerHTML = calcularPrecio * recogerProducto + "€";
 }
 
 function createQuantityInput(){
@@ -27,6 +38,8 @@ function createQuantityNode(){
 }
 
 function createItemNode(dataType, itemData){
+
+  var nodoNuevo = nodoDiv.cloneNode();
 
 }
 

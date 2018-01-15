@@ -7,8 +7,64 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
   <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
+  <title>Ironhack carrito DOM</title>
 </head>
+
 <body>
+  <div class="title-tienda">
+    <h2>Tienda to flama de Ironhack</h2>
+  </div>
+  <div class="container">
+    <div class="contenedor-producto">
+      <div class="nombre-producto">
+        <span>Camiseta to flama Ironhack</span>
+      </div>
+      <div>
+        <span class="precio-producto">25</span>
+      </div>
+      <div class="label-input">
+        <label for="cantidad">Cantidad
+          <input class="cantidad_input" value="0"/>
+        </label>
+      </div>
+      <div>
+        <span id="cantidad_total">0€</span>
+      </div>
+      <div class="delete-button">
+        <button type="button" class="btn-delete" onclick="deleteItem()">Eliminar</button>
+      </div>
+      <div class="button">
+        <button type="button" class="btn-success" id="calc-prices-button">Calcular precio</button>
+      </div>
+      <div class="button-create">
+        <button type="button" class="btn-success" id="new-item-create">Crear nuevo</button>
+      </div>
+    </div>
+    <div class="contenedor-producto">
+      <div class="nombre-producto">
+        <span>Camiseta to flama Ironhack</span>
+      </div>
+      <div>
+        <span class="precio-producto">10</span>
+      </div>
+      <div class="label-input">
+        <label for="cantidad">Cantidad
+          <input class="cantidad_input" value="0" />
+        </label>
+      </div>
+      <div>
+        <span id="cantidad_total">0€</span>
+      </div>
+      <div class="delete-button">
+        <button type="button" class="btn-delete" onclick="deleteItem()">Eliminar</button>
+      </div>
+      <div class="button">
+        <button type="button" class="btn-success" id="calc-prices-button">Calcular precio</button>
+      </div>
+      <div class="button-create">
+        <button type="button" class="btn-success" id="new-item-create">Crear nuevo</button>
+      </div>
+    </div>
 </body>
+
 </html>
