@@ -3,6 +3,7 @@ function deleteItem(e){
 }
 
 function getPriceByProduct(itemNode){
+  
 
 }
 
@@ -11,7 +12,10 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-
+  document.getElementsByClassName("total-price-span")[0].innerHTML =
+  document.getElementsByClassName("span-price")[0].innerHTML *
+  document.getElementsByClassName("qty-value")[0].value
+  
 }
 
 function createQuantityInput(){
@@ -40,6 +44,7 @@ function createNewItem(){
 
 window.onload = function(){
   var calculatePriceButton = document.getElementById('calc-prices-button');
+
   var createItemButton = document.getElementById('new-item-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
