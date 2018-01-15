@@ -35,7 +35,8 @@ function createNewItemRow(itemName, itemUnitPrice){
 }
 
 function createNewItem(){
-
+  var product = document.createElement('p');
+  
 }
 
 window.onload = function(){
