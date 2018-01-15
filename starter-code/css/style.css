@@ -1,3 +1,9 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
 input {
   border: solid 1px black;
 }
@@ -28,6 +34,8 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    text-align: center;
+    flex-direction: row;
 }
 
 .btn-delete {
@@ -36,6 +44,51 @@ input {
     border-color: #CF000F;
 }
 
-.quantity {
-  margin: 0 5px;
+
+.wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  /* margin: 30vh auto; */
+
 }
+.product{
+  flex-shrink:1;
+  width: 10%;
+  text-align: center;
+  padding: 1vh;
+  
+}
+#cost #cost2{
+  width: 10%;
+  text-align: center;
+  padding: 1vh;
+}
+.label-input{
+  width: 20%;
+  text-align: center;
+  padding: 1vh;
+}
+#price #price2{
+  width: 10%;
+  text-align: center;
+  padding: 1vh;
+}
+.delete{
+   width: 10%;
+  text-align: center;
+}
+.qty{
+  margin-right:1vh;
+}
+.header{
+  /* background-color: red; */
+  width: 20%;
+  height: 20vh;
+  margin: 15vh 40vw 0 44vw;
+}
+.result{
+  font-size: 24px;
+  font-weight: bold;
+}
+
