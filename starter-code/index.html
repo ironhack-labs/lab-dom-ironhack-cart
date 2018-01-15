@@ -10,5 +10,52 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <div class="shop-name">
+    <h1>Matt's Funky Shop</h1>
+  </div>
+  <div class="prod-wrapper">
+    <div class="prod-name-box">
+      <span class="prod-info prod-name">Block of Cheese</span>  
+    </div>
+    <div class="prod-info unit-cost-box">
+      <span class="unit-cost">9.99</span>  
+    </div>
+    <div class="prod-info cost-input-box">
+      <label for="qty-input88">QTY</label>
+      <input type="text" name="qty" class="qty-input" value="0">
+    </div>
+    <div class="prod-info cost-output-box">
+      <span class="cost-output">0.00</span>
+    </div>
+    <div class="prod-info delete-box">
+      <button onclick="deleteItem()" class="btn btn-delete" type="button">Delete</button>
+    </div>          
+  </div><!--End prod-wrapper-->
+  <div class="prod-wrapper">
+      <div class="prod-name-box">
+        <span class="prod-info prod-name">Can of Peas</span>  
+      </div>
+      <div class="prod-info unit-cost-box">
+        <span class="unit-cost">1.25</span>  
+      </div>
+      <div class="prod-info cost-input-box">
+        <label for="qty-input88">QTY</label>
+        <input type="text" name="qty" class="qty-input" value="0">
+      </div>
+      <div class="prod-info cost-output-box">
+        <span class="cost-output">0.00</span>
+      </div>
+      <div class="prod-info delete-box">
+        <button onclick="deleteItem()" class="btn btn-delete" type="button">Delete</button>
+      </div>          
+    </div><!--End prod-wrapper-->
+  <div class="calc-button-box">
+    <button onclick="productTotal()" id="calc-prices-button" class="btn calculate" type="button">Calculate</button>
+  </div>
+  <div class="grand-total-box">
+      <h2>Total Price: <span id='grand-total'>$0</span></h2>
+  </div>     
 </body>
+<span>TD: Add dollars</span>
+<span>TD: product total always float</span>
 </html>
