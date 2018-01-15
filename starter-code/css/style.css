@@ -1,5 +1,6 @@
 input {
   border: solid 1px black;
+
 }
 
 .btn {
@@ -38,4 +39,21 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+
+.shop-wrapper {
+  display: flex;
+ text-align: right;
+}
+
+#item-wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.second-item {
+  display: flex;
+  justify-content: space-around;
 }
