@@ -28,14 +28,23 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    width: 150px;
+    height: 25%px;
+    text-align: center;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    width: 50px;
 }
 
 .quantity {
   margin: 0 5px;
+}
+#contain{ 
+  display: flex;
+  justify-content: space-around;
+
 }

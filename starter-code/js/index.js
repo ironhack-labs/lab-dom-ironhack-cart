@@ -1,3 +1,13 @@
+var productos = [
+  {name:"mechero", price:10 },
+  {name:"pantalones", price:15},
+  {name:"gorra", price:10 },
+  {name:"chaqueta", price:25},
+  {name:"pantalones", price:5},
+  {name:"posavasos", price: 3 },
+  {name:"pin", price: 12}
+]
+
 function deleteItem(e){
 
 }
