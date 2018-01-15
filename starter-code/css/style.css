@@ -2,6 +2,10 @@ input {
   border: solid 1px black;
 }
 
+div{
+  display: inline-block;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -38,4 +42,8 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+h1{
+  text-align: center;
 }
