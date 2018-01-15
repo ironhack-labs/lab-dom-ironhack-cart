@@ -39,3 +39,15 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+#bubbleWrapper, #ironShirtWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.totalPriceDisplay {
+  width: 100px;
+}
