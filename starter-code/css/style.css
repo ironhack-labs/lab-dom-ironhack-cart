@@ -4,8 +4,8 @@ input {
 
 .product-div > div {
 display: inline-flex;
+justify-content: space-around;
 padding: 5% 5%;
-background-color: red;
 }
 
 .title {
@@ -59,4 +59,9 @@ background-color: red;
 
 .quantity {
   margin: 0 5px;
+}
+
+#createBtn {
+  float: right;
+  margin-right: 10%;
 }
