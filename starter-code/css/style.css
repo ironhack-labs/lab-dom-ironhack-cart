@@ -1,3 +1,15 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  text-align: center;
+}
+.wrapper {
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 input {
   border: solid 1px black;
 }
