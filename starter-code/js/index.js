@@ -1,9 +1,12 @@
-function deleteItem(e){
 
+
+function deleteItem(e){
+  var remove = e.currentTarget.parentNode.parentNode;
+  var container = remove.parentNode;
+  container.removeChild(remove);
 }
 
 function getPriceByProduct(itemNode){
-
 }
 
 function updatePriceByProduct(productPrice, index){
@@ -11,7 +14,19 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
+  var singlePrice = document.getElementsByClassName('single-price');
+  var quantity = document.getElementsByClassName('quantity');
 
+  for(i=0;i<singlePrice.length;i++){
+    document.getElementsByClassName('price-per-product')[i].innerHTML = singlePrice[i].innerHTML * quantity[i].value;
+  }
+
+  var pricePerProduct = document.getElementsByClassName('price-per-product');
+  var num = 0;
+  for(i=0;i<singlePrice.length;i++){
+    num += parseInt(pricePerProduct[i].innerHTML);
+    document.getElementById('total').innerHTML = num;
+  }
 }
 
 function createQuantityInput(){
@@ -35,8 +50,20 @@ function createNewItemRow(itemName, itemUnitPrice){
 }
 
 function createNewItem(){
+  var orig = document.getElementById('original');
+  var copy = orig.cloneNode(true);
 
+  console.log(copy);
+
+  var newName = document.getElementById('name').value;
+  var newPrice = document.getElementById('price').value;
+  
+  var div = document.createElement('div');
+
+  document.getElementsByClassName('item')[0].appendChild(div).appendChild(copy);
 }
+
+  
 
 window.onload = function(){
   var calculatePriceButton = document.getElementById('calc-prices-button');

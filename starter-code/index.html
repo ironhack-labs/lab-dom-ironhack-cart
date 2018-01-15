@@ -9,6 +9,61 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
-<body>
+<body class="body">
+    <h1 class="center">Hironhack Merchandising Shop</h1>
+  <div class="item" id="original">
+      <div class="product inline">
+          <span>Iron Bubble</span>
+        </div>
+        <div class="product-price inline">
+          $<span class="single-price">25.00</span>
+        </div>
+        <div class="units inline">
+          <label for="">QTY</label>
+          <input type="text" placeholder="0" class="quantity" value="1">
+        </div>
+        <div class="inline">
+          $<span class="price-per-product">0.00</span>
+        </div>
+        <div class="inline">
+          <button class="btn btn-delete delete"> Delete</button>
+        </div>
+  </div>
+
+  <div class="item">
+      <div class="product inline">
+          <span>Iron shirt</span>
+        </div>
+        <div class="product-price inline">
+          $<span class="single-price">15.00</span>
+        </div>
+        <div class="units inline">
+          <label for="">QTY</label>
+          <input type="text" placeholder="0" class="quantity" value="1">
+        </div>
+        <div class="inline">
+          $<span class="price-per-product">0.00</span>
+        </div>
+        <div class="inline">
+          <button class="btn btn-delete delete">Delete</button>
+        </div>
+  </div>
+  <div class="item">
+    <div class="inline">
+      <input type="text" id="name">
+    </div>
+    <div class="inline">
+      <input type="text" id="price">
+    </div>
+    <div class="inline">
+        <button class="btn" id="new-item-create">Create</button>
+      </div>
+  </div>
+  <div class="flex">
+      <button class="btn btn-success" id="calc-prices-button">Calculate</button>
+  </div>
+  <div>
+      <h2>Total Price: $<span id="total">0</span></h2>
+  </div>
 </body>
 </html>
