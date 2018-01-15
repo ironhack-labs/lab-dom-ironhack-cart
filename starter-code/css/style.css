@@ -1,8 +1,8 @@
 input {
   border: solid 1px black;
-}
-
-.btn {
+ }
+ 
+ .btn {
   display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
@@ -22,20 +22,47 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
-}
-
-.btn-success {
+ }
+ 
+ .btn-success {
     color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
-}
-
-.btn-delete {
+    background-color: #5cb85c ;
+    border-color: #4cae4c ;
+ }
+ 
+ .btn-delete {
     color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
-}
-
-.quantity {
+    background-color: #CF000F ;
+    border-color: #CF000F ;
+ }
+ 
+ .quantity {
   margin: 0 5px;
-}
+ }
+ 
+ .title-tienda {
+  text-align: center;
+ }
+ 
+ .contenedor-producto {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 5%;
+ }
+ 
+ @media (max-width: 650px) {
+  .contenedor-producto {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin-top: 5%;
+  }
+ 
+  .contenedor-producto > div {
+    margin-top: 10px;
+  }
+ 
+ }
