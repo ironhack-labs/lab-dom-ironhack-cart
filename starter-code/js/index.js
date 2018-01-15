@@ -89,7 +89,9 @@ function createNewItem(newItemName, newItemPrice) {
             price: parseInt(newItemPrice)
       };
       stock.push(newItem);
-      showStock(userCart);
+      userCart.push(newItem);
+      // showStock(userCart);
+      generateProductTemplate(newItem);
       createQuantityInput();
       listenerRemoveButtons();
       getCartTotal();
@@ -99,18 +101,16 @@ function createNewItem(newItemName, newItemPrice) {
 /*===============================
 pintar stock
 ===============================*/
+var productsList = document.getElementById('product-list');
 function showStock(products) {
-      var productsList = document.getElementById('product-list');
-      productsList.innerHTML = '';
-
       products.forEach(function (product, i) {
-
-            var product = '<div class="row product"><div class="align-self-center col-sm product-title"><span>' + product.name + '</span></div><div class="align-self-center col-sm-2 product-price"><span class="span-price">' + product.price + '</span><span> €</span></div><div class="align-self-center col-sm-2 product-qty"><label for="qty">Nº of items: </label><input class="qty-input" type="number" name="quantity" min="0" value="1"> </div><div class="align-self-center col-sm-2 product-total-price"><span class="span-total-price">' + product.price + '</span><span> €</span></div><div class="align-self-center col-sm product-remove"><button type="button" class="btn btn-outline-danger remove-product-btn">Delete</button></div></div>';
-
-            productsList.innerHTML += product;
+            return generateProductTemplate(product);
       });
 }
-
+function generateProductTemplate(product) {
+      var product = '<div class="row product"><div class="align-self-center col-sm product-title"><span>' + product.name + '</span></div><div class="align-self-center col-sm-2 product-price"><span class="span-price">' + product.price + '</span><span> €</span></div><div class="align-self-center col-sm-2 product-qty"><label for="qty">Nº of items: </label><input class="qty-input" type="number" name="quantity" min="0" value="1"> </div><div class="align-self-center col-sm-2 product-total-price"><span class="span-total-price">' + product.price + '</span><span> €</span></div><div class="align-self-center col-sm product-remove"><button type="button" class="btn btn-outline-danger remove-product-btn">Delete</button></div></div>';
+      productsList.innerHTML += product;
+}
 /*===============================
 get cart total
 ===============================*/
