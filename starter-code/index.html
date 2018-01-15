@@ -1,14 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700|Roboto:300,400,700" rel="stylesheet">
+  <!-- el normalize va dentro del sass -->
+  <link rel="stylesheet" href="./css/estilos.css">
   <title>Ironhack cart</title>
 </head>
+
 <body>
+  <header>
+    <section class="hero">
+      <div class="container-fluid ">
+        <div class="row align-items-center">
+          <div class="col-sm-5 text-right">
+            <img src="img/logo.svg" alt="IronHack" class="img-wrapper"> </div>
+          <div class="col-sm d-flex flex-column align-self-center pad-top-20">
+            <h1>Ironhack Merch Marketplace</h1>
+            <p>Cart</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </header>
+  <main>
+    <section class="products text-center" id="product-header">
+      <div class="container">
+        <!-- products header -->
+        <div class="row products-header">
+          <div class="col-sm">
+            <span>Product</span>
+          </div>
+          <div class="col-sm-2">
+            <span>Price</span>
+          </div>
+          <div class="col-sm-2">
+            <span>Add Items</span>
+          </div>
+          <div class="col-sm-2">
+            <span>Total</span>
+          </div>
+          <div class="col-sm">Actions</div>
+        </div>
+      </div>
+    </section>
+    <!-- product section -->
+    <section class="products text-center" id="products-section">
+      <!-- product listing -->
+      <div class="container products-wrapper" id="product-list"> </div>
+      <!-- // product listing -->
+      <!-- add product / total cart row -->
+      <div class="container cart-total-wrapper">
+        <div class="row justify-content-around  align-items-center" id="cart-total">
+          <div class="col-sm-3">
+            <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#addProductModal">Add new product</button>
+          </div>
+          <div class="col-sm-4">
+            <div class="cart-total-box">
+              <h3>Cart Total:</h3>
+              <p class="cart-details">You have <span id="total-items-in-cart"></span> items in Cart.</p>
+              <p id="total-cart-result"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //add product / total cart row -->
+    </section>
+  </main>
+  <!-- add product modal -->
+  <div class="modal fade" id="addProductModal" tabindex="-1" role="dialog" aria-labelledby="createProductModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Add new product</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <input id="new-item-name-input" class="text-center" type="text" placeholder="Product name" value="">
+          <input id="new-item-price-input" class="text-center" type="number" placeholder="Product price, just numbers"> 
+          <p class="small text-center intense-orange"> After adding a new product, the nº of items for each product will be set to 1.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Discard</button>
+          <button id="addProductBtn" type="button" class="btn btn-outline-success">Save product</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- // add product modal -->
+  <script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="./js/tether.min.js"></script>
+  <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="./js/index.js"></script>
 </body>
+
 </html>

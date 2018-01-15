@@ -1,0 +1,24 @@
+.modal {
+      .modal-header,.modal-footer {
+            border: none;
+      }
+      .modal-header {
+            color: $celeste;
+            border: none;
+            margin-bottom: 50px;
+            .close {
+                  color:$light-blue;
+            }
+      }
+      .modal-body {
+            input {
+                  width: 70%;
+                  display: block;
+                  border-radius: 4px;
+                  margin: 0 auto 20px auto;
+                  border: 1px solid $chalk;
+                  font-size: .8rem;
+                  height: 50px;
+            }
+      }
+}

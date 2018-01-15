@@ -1,0 +1,103 @@
+.products {
+    .products-header {
+        font-size: .7rem;
+        color: $light-blue;
+        font-weight: 700;
+        font-family: 'Roboto Mono', monospace;
+        margin-bottom: 45px;
+        border-bottom: 1px dotted $chalk;
+        padding-bottom: 10px;
+    }
+    .products-wrapper {
+        .product {
+            &:before {
+                content: '\f0da';
+                font-family: fontawesome;
+                position: relative;
+                left: -5px;
+                top: 3px;
+                color: $chalk;
+            }
+            &.row {
+                &:after {
+                    padding-top: 40px;
+                    content: '';
+                    width: 100%;
+                    border-bottom: 1px dotted $chalk;
+                    margin: 0 5% 40px 5%;
+                }
+            }
+            .product-qty {
+                input {
+                    width: 60px;
+                    border: none;
+                    border-bottom: 1px solid $chalk;
+                    text-align: center;
+                }
+                label {
+                    margin-right: 7px;
+                    font-size: .7rem;
+                    color: $chalk;
+                }
+            }
+            .col,
+            .col input {
+                font-size: .95rem;
+            }
+            .product-remove {
+                button {
+                    &:after {
+                        content: '\f014';
+                        font-family: fontawesome;
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+    .cart-total-wrapper {
+        margin-top: 50px;
+        margin-bottom: 50px;
+        background: #fbfbfbb7;
+        border-radius: 5px;
+        border: 1px solid rgb(212, 212, 212);
+        padding: 40px 0;
+        .cart-total-box {
+            -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1);
+            -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1);
+            box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.1);
+
+            background: #d8e7e529;
+            border: 1px solid $chalk;
+            border-radius: 4px;
+            padding: 25px;
+            h3 {
+                @extend .products-header;
+                margin-bottom: 10px;
+            }
+            .cart-details {
+                font-size: .7rem;
+                margin:0 0 10px 0;
+                font-weight: 300;
+                color: $light-blue;
+                span {
+                    font-weight: 600;
+                    font-size: .9rem;
+                }
+            }
+            #total-cart-result {
+                font-size: 3rem;
+                font-weight: 300;
+                color: $intense-orange;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:767px) {
+    .products {
+        .cart-total-box {
+            margin-top: 30px;
+        }
+    }
+}

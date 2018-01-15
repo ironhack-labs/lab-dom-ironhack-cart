@@ -1,0 +1,101 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: $main;
+}
+
+section:not(.hero) {
+    padding: 100px 0;
+    &#product-header {
+        padding-bottom: 0;
+    }
+    &#products-section {
+        padding-top: 0;
+    }
+}
+
+input {
+    border: solid 1px black;
+}
+
+p {
+    &.small {
+        font-size: .7rem;
+        margin: 0 0 50px;
+        &:before {
+            content: '\f071';
+            font-family: fontawesome;
+            margin-right: 5px;
+            font-size: 1rem;
+        }
+    }
+}
+
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid inherit;
+    border-radius: 4px;
+}
+
+.btn {
+    &[data-target="#addProductModal"] {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+        &:after {
+            content: '\f055';
+            font-family: fontawesome;
+            vertical-align: text-top;
+            margin-left: 10px;
+        }
+    }
+    &.btn-success {
+        color: #fff;
+        background-color: #5cb85c;
+        border-color: #4cae4c;
+    }
+    &.btn-delete {
+        color: #fff;
+        background-color: #CF000F;
+        border-color: #CF000F;
+    }
+}
+
+.quantity {
+    margin: 0 5px;
+}
+
+::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: $light-blue;
+}
+
+ ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: $light-blue;
+}
+
+ :-ms-input-placeholder {
+    /* IE 10+ */
+    color: $light-blue;
+}
+
+ :-moz-placeholder {
+    /* Firefox 18- */
+    color: $light-blue;
+}

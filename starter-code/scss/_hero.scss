@@ -1,0 +1,29 @@
+.hero {
+    .container-fluid {
+        .row {
+            height: 300px;
+            background: $chalk;
+            font-family: 'Roboto Mono', monospace;
+            h1 {
+                font-size: 1rem;
+                color: $celeste;
+            }
+            p {
+                color: $orange;
+                font-size: .7rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:767px) {
+    .hero {
+        .container-fluid {
+            .row {
+                .text-right {
+                    text-align: initial!important;
+                }
+            }
+        }
+    }
+}
