@@ -1,6 +1,12 @@
-function deleteItem(e){
 
+function deleteItem(e) {
+  console.log(e);
+  var remove = e.currentTarget.parentNode.parentNode;
+  var container = remove.parentNode;
+  container.removeChild(remove);
 }
+
+/*
 
 function getPriceByProduct(itemNode){
 
@@ -37,7 +43,7 @@ function createNewItemRow(itemName, itemUnitPrice){
 function createNewItem(){
 
 }
-
+*/
 window.onload = function(){
   var calculatePriceButton = document.getElementById('calc-prices-button');
   var createItemButton = document.getElementById('new-item-create');

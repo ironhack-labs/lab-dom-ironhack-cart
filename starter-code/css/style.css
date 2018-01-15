@@ -1,5 +1,28 @@
+/* */
+body {
+  width: 100% auto;
+}
+
+
+.products {
+  width: 100% auto;
+  display: flex;
+  margin: 40px 40px 10px 40px;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+h1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 50px 10px 10px 10px;
+}
 input {
   border: solid 1px black;
+  display: inherit;
+  align-items: center;
 }
 
 .btn {
@@ -24,18 +47,38 @@ input {
   border-radius: 4px;
 }
 
+.calculate-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 .btn-success {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 50px 10px 10px 10px;  
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    border-radius: 5px;
+    height: 40px; 
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    border-radius: 5px;
+    height: 40px; 
+    width: 80px;
 }
 
 .quantity {
   margin: 0 5px;
+  display: inherit;
+  align-items: center;
+}
+
+.quantity>p {
+  padding-right: 10px;
 }
