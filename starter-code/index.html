@@ -10,5 +10,51 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+<div class="container">
+<div class="title"><p>IronHack Merchandising Shop</p></div>
+<div class="product-div">
+  <div class="product-name-container">
+    <span class="product-name">IronBubble-head</span>
+  </div>
+<div class="product-price-container">
+  <span class="product-price">$25.00</span>
+</div>
+
+<div class="label-input">
+  <label for="quantity" class="quantity">QTY <input type="text" class="quantity" name="quantity" value="0"></label>
+</div>
+<div class="total-product-price-container">
+  <span class="total-product-price">$0.00</span>
+</div>
+<div class="delete-button">
+  <button type="button" class="btn-delete btn">Delete</button>
+</div>
+</div>
+<div class="product-div">
+    <div class="product-name-container">
+      <span class="product-name">Ironshirt</span>
+    </div>
+  <div class="product-price-container">
+    <span class="product-price">$15.00</span>
+  </div>
+  <div class="label-input">
+    <label class="quantity" for="quantity">QTY <input type="text" name="quantity" class="quantity" value="0"></label>
+  </div>
+  <div class="total-product-price-container">
+    <span class="total-product-price">$0.00</span>
+  </div>
+  <div class="delete-button">
+    <button onclick="deleteRow()" type="button" class="btn-delete btn">Delete</button>
+  </div>
+  </div>
+<div class="button">
+  <button onclick="getPriceByProduct()" type="button" class="btn-success btn button" id="calc-prices-button">Calculate price</button>
+</div>
+</div>
+<div class="btn totalPay">
+  <h2>Total Price: $<span id="spanTotalPrice">0</span></h2>
+</div>
+<script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>
+
