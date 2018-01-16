@@ -28,6 +28,10 @@ function getTotalPrice(product) {
 
 
 
+function deleteItem(e){
+  e.currentTarget.parentNode.parentNode.remove();
+}
+
 
 
 
@@ -59,14 +63,6 @@ function getTotalPrice(product) {
 // });
 
 
-
-function getPriceByProduct(itemNode){
-
-}
-
-function deleteItem(e){
-
-}
 
 
 function createQuantityInput(){
