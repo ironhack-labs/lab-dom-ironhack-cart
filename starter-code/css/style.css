@@ -39,3 +39,39 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.first-item{
+  display: block;
+}
+
+.main-title{
+  display: block;
+  justify-content: center;
+  align-content: center;
+}
+
+.item-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-content: center;
+  margin-bottom: 5%;
+}
+
+.total,
+ #totalTotal{
+  display: flex;
+  justify-content: center
+}
+
+#totalTotal{
+  margin-top: 2%;
+  font-size: 3rem;
+}
+
+.create-pos{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5%;
+  margin-bottom: 3%;
+}
