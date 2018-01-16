@@ -3,10 +3,6 @@ body {
   text-align: center;
 }
 
-h1 {
-  
-}
-
 input {
   border: solid 1px black;
 }
@@ -63,4 +59,8 @@ input {
   margin: 0 auto 10px auto;
   padding-right: 20px;
   padding-left: 20px;
+}
+
+.create-product {
+  padding: 20px 0;
 }
