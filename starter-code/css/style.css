@@ -1,3 +1,15 @@
+
+
+.product-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#price {
+  border: 0px solid;
+}
+
 input {
   border: solid 1px black;
 }
