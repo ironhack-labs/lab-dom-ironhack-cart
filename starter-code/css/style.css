@@ -1,4 +1,14 @@
-input {
+#title {
+  text-align: center;
+}
+
+.product {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px auto;
+  width: 90%;
+}
+  input {
   border: solid 1px black;
 }
 
@@ -28,12 +38,14 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin: 0 30px;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    
 }
 
 .quantity {
