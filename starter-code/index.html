@@ -12,53 +12,17 @@
 <body>
   <div class="wrapper" id="wrapper">
     <h1>IronHack Merchandising Shop</h1>
-    <div class="product-item">
-      <div class="product-name">
-        <span>Product 1</span>
-      </div>
-      <div class="product-cost">
-        <span>25.43</span>
-      </div>
-      <div class="product-qty">
-        <label class="quantity">QTY</label>
-        <input class="product-quantity" type="number" value="0" />
-      </div>
-      <div>
-        <span class="product-total">0</span>
-      </div>
-      <div class="btn btn-delete">
-        <span>Delete</span>
-      </div>
-    </div>
-    <!-- End of item -->
-    <div class="product-item">
-      <div class="product-name">
-        <span>Product 2</span>
-      </div>
-      <div class="product-cost">
-        <span>10</span>
-      </div>
-      <div class="product-qty">
-        <label class="quantity">QTY</label>
-        <input class="product-quantity" type="number" value="0" />
-      </div>
-      <div>
-        <span class="product-total">0</span>
-      </div>
-      <div class="btn btn-delete">
-        <span>Delete</span>
-      </div>
-    </div>
-    <div class="product-item">
+    <div id="product-list">
+      <div class="product-item">
         <div class="product-name">
-          <span>Product 3</span>
+          <span>Product 1</span>
         </div>
         <div class="product-cost">
-          <span>11.89</span>
+          <span>25.43</span>
         </div>
         <div class="product-qty">
           <label class="quantity">QTY</label>
-          <input class="product-quantity" type="number" value="0" />
+          <input class="product-quantity" type="number" value=0 />
         </div>
         <div>
           <span class="product-total">0</span>
@@ -67,6 +31,51 @@
           <span>Delete</span>
         </div>
       </div>
+      <!-- End of item -->
+      <div class="product-item">
+        <div class="product-name">
+          <span>Product 2</span>
+        </div>
+        <div class="product-cost">
+          <span>10.00</span>
+        </div>
+        <div class="product-qty">
+          <label class="quantity">QTY</label>
+          <input class="product-quantity" type="number" value=0 />
+        </div>
+        <div>
+          <span class="product-total">0</span>
+        </div>
+        <div class="btn btn-delete">
+          <span>Delete</span>
+        </div>
+      </div>
+      <div class="product-item">
+        <div class="product-name">
+          <span>Product 3</span>
+        </div>
+        <div class="product-cost">
+          <span>11.89</span>
+        </div>
+        <div class="product-qty">
+          <label class="quantity">QTY</label>
+          <input class="product-quantity" type="number" value=0 />
+        </div>
+        <div>
+          <span class="product-total">0</span>
+        </div>
+        <div class="btn btn-delete">
+          <span>Delete</span>
+        </div>
+      </div>
+    </div>
+    <div class="creator">
+      <input type="text" placeholder="Product name" id="create-name" />
+      <input type="text" placeholder="Price" id="create-price" />
+      <div class="btn" id="new-item-create">
+        <span>Create new Item</span>
+      </div>  
+    </div>
     <!-- Green Button -->
     <div class="btn btn-success" id="calc-prices-button">
       <span>Calculate Prices</span>
