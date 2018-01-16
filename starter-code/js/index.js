@@ -1,5 +1,8 @@
 function deleteItem(e){
-
+  var table = e.currentTarget.parentNode.parentNode.parentNode;
+  var row = e.currentTarget.parentNode.parentNode;
+  table.removeChild(row);
+  console.log(row);
 }
 
 function getPriceByProduct(itemNode){
@@ -25,10 +28,6 @@ function getTotalPrice() {
   }
   var tot = document.getElementById("grand-total") 
   tot.innerText = total;
-  
-  
-
-  
 }
 
 function createQuantityInput(){
@@ -52,6 +51,15 @@ function createNewItemRow(itemName, itemUnitPrice){
 }
 
 function createNewItem(){
+  var newProdName = document.getElementById("new-prod-name").value;
+  var newProdPrice = document.getElementById("new-prod-price").value;
+  var table = document.querySelector(".product-table");
+  var row = document.querySelector(".product-row");
+  var clonedRow = row.cloneNode(true);
+  clonedRow.children[0].children[0].innerText = newProdName;
+  clonedRow.children[1].children[0].innerText = newProdPrice;
+  table.appendChild(clonedRow);
+  console.log('vavavooma')
 
 }
 
