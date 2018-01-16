@@ -9,6 +9,48 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+
+  <div class="header">
+      <h1>Ironhack Merchandise Cart</h1>
+  </div>
+  <div class="container">
+      <div class="product-table">
+          <div class="product-row">
+              <div class="product-name"><span>ProductName</span></div>
+              <div class="price-per-unit"><span class="quantity">24,00</span></div>
+              <div class="quantity-input"><label>QTY<input class="input" type="text"></label></div>
+              <div class="total-price"><span class="quantity">0,00</span></div>
+              <div class="delete-button-wrapper"><button class="btn btn-delete">Delete</button></div>
+          </div>
+          <div class="product-row">
+              <div class="product-name"><span>ProductName</span></div>
+              <div class="price-per-unit"><span class="quantity">2,00</span></div>
+              <div class="quantity-input"><label>QTY<input class="input" type="text"></label></div>
+              <div class="total-price"><span class="quantity">0,00</span></div>
+              <div class="delete-button-wrapper"><button class="btn btn-delete">Delete</button></div>
+          </div>
+          <div class="product-row">
+              <div class="product-name"><span>ProductName</span></div>
+              <div class="price-per-unit"><span class="quantity">4,00</span></div>
+              <div class="quantity-input"><label>QTY<input class="input" type="text"></label></div>
+              <div class="total-price"><span class="quantity">0,00</span></div>
+              <div class="delete-button-wrapper"><button class="btn btn-delete">Delete</button></div>
+          </div>
+          <div class="product-row">            
+            <div class="quantity-input" ><label><input class="input"  id="new-prod-name" placeholder="Product name" type="text"></label></div>
+            <div class="quantity-input" ><label><input class="input" id="new-prod-price" placeholder="Product price" type="text"></label></div>            
+            <div class="delete-button-wrapper"><button class="btn" id="new-item-create">Create</button></div>
+        </div>
+      </div> 
+      <button class="btn btn-success" id="calc-prices-button">Calculate prices</button>
+      <div class="total">
+        <h2><strong>Total:<span class="quantity" id="grand-total"></span></strong></h2>
+      </div> 
+  </div>
+
+  
+    
 </body>
 </html>

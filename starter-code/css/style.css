@@ -39,3 +39,26 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+
+
+.container{
+  margin: 30px; 
+}
+
+.product-row{
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  margin-bottom: 15px;  
+  /* flex-direction: column; */
+}
+
+
+/* .product-row{
+  margin: 0 auto;
+}
+
+.product-row>div{
+  display: inline-block;
+} */
