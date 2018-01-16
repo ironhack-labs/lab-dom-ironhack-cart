@@ -18,7 +18,7 @@ function getTotalPrice() {
   var len = document.querySelectorAll('.unit-price').length;
 
   var unitPriceArr = document.querySelectorAll('.unit-price');
-  var numberItemsArr = Number(document.querySelectorAll('.number-Items'));
+  var numberItemsArr = document.querySelectorAll('.number-Items');
   var indTotalArr = document.querySelectorAll('.total');
   var basketTotal = document.querySelector('#totalTotal');
 
@@ -26,7 +26,7 @@ function getTotalPrice() {
 
   for (var i = 0; i < len; i++) {
     var unitPrice = unitPriceArr[i].innerText;
-    var numberItems = numberItemsArr[i].value;
+    var numberItems = Number(numberItemsArr[i].value);
 
     var totalItem = Number(unitPrice.slice(1)) * numberItems;
     total += totalItem;
@@ -34,7 +34,7 @@ function getTotalPrice() {
     indTotalArr[i].innerText = "$" + totalItem.toFixed(2);
   }
 
-  basketTotal.innerText = "$" + total.toFixed(2);
+  basketTotal.innerText = "Total Price $" + total.toFixed(2);
 }
 
 function createQuantityInput(){

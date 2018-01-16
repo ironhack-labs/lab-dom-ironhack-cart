@@ -54,6 +54,7 @@ input {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-content: center;
   margin-bottom: 5%;
 }
 
@@ -72,4 +73,5 @@ input {
   display: flex;
   justify-content: flex-end;
   margin-right: 5%;
+  margin-bottom: 3%;
 }
