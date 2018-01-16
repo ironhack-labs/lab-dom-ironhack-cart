@@ -17,17 +17,24 @@ function getTotalPrice() {
 
   var len = document.querySelectorAll('.unit-price').length;
 
+  var unitPriceArr = document.querySelectorAll('.unit-price');
+  var numberItemsArr = Number(document.querySelectorAll('.number-Items'));
+  var indTotalArr = document.querySelectorAll('.total');
+  var basketTotal = document.querySelector('#totalTotal');
+
   var total = 0;
+
   for (var i = 0; i < len; i++) {
-    var unitPrice = document.querySelectorAll('.unit-price')[i].innerText;
-    var numberItems = Number(document.querySelectorAll('.number-Items')[i].value);
+    var unitPrice = unitPriceArr[i].innerText;
+    var numberItems = numberItemsArr[i].value;
+
     var totalItem = Number(unitPrice.slice(1)) * numberItems;
     total += totalItem;
-    document.querySelectorAll('.total')[i].innerText = "$" + totalItem.toFixed(2);
+
+    indTotalArr[i].innerText = "$" + totalItem.toFixed(2);
   }
 
-  document.querySelector('.totalTotal').innerText = "$" + total.toFixed(2);
-
+  basketTotal.innerText = "$" + total.toFixed(2);
 }
 
 function createQuantityInput(){

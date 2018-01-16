@@ -58,12 +58,18 @@ input {
 }
 
 .total,
- .totalTotal{
+ #totalTotal{
   display: flex;
   justify-content: center
 }
 
-.totalTotal{
+#totalTotal{
   margin-top: 2%;
   font-size: 3rem;
+}
+
+.create-pos{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 5%;
 }
