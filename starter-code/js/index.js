@@ -72,8 +72,9 @@ function createItemNode(dataType, itemName, itemUnitPrice){
   itemWrapper.appendChild(quantityNode);
 
   var totalValueDiv = document.createElement('div');
+  totalValueDiv.innerText = '$ ';
   var totalValueSpan = document.createElement('span');
-  var totalValueSpanValue = document.createTextNode('$0');
+  var totalValueSpanValue = document.createTextNode('0');
   totalValueSpan.appendChild(totalValueSpanValue);
   totalValueSpan.classList.add('total-value');
   totalValueDiv.appendChild(totalValueSpan);
