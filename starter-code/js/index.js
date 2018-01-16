@@ -4,16 +4,16 @@ function deleteItem(e){
 
 // function getPriceByProduct(nodeItem)
 function getPriceByProduct(){
-  var priceItem = document.querySelectorAll('.price-item');
+  var priceItem = document.getElementsByClassName('.price-item');
   priceItem = parseInt(priceItem[0].innerText); 
   return priceItem;
 }
 
 function updatePriceByProduct(productPrice, index){
-  var subtotal = document.querySelectorAll('subtotal');
+  var subtotal = document.getElementsByClassName('subtotal');
   subtotal = parseInt(subtotal[0].innerText);
 
-  var quantity = document.querySelectorAll('quantity');
+  var quantity = document.getElementsByClassName('quantity');
   quantity = parseInt(quantity[0].value);
   subtotal = getPriceByProduct() * quantity;
   return subtotal;
