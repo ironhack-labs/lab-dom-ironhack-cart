@@ -3,20 +3,33 @@ function deleteItem(e){
 e.target.parentElement.parentElement.remove();
 }
 
-function getPriceByProduct(itemNode){
 
-}
+// function getPriceByProduct(itemNode){
+//   var productCost = document.querySelectorAll('.cost');
+//   var productCount = document.querySelectorAll('.quantity');
+//   var grandTotal = parseInt(productCost[0].innerText) * parseInt(productCount[0].value);
+//   var total = document.querySelectorAll('.total');
+//   total[0].innerText = grandTotal.toFixed(2);
+// }
 
 function updatePriceByProduct(productPrice, index){
 
 }
 
 function getTotalPrice() {
-  var productCost = document.querySelectorAll('.cost');
-  var productCount = document.querySelectorAll('.quantity');
-  var grandTotal = parseInt(productCost[0].innerText) * parseInt(productCount[0].value);
-  var total = document.querySelectorAll('.total');
-  total[0].innerText = grandTotal.toFixed(2);
+  // var start = 0;
+  // var productIndex = productCost.indexOf
+
+
+
+  var productCost = document.querySelector('.cost');
+  var productCount = document.querySelector('.quantity');
+  var grandTotal = parseInt(productCost.innerText) * parseInt(productCount.value);
+  var total = document.querySelector('.total');
+  total.innerText = grandTotal.toFixed(2);
+
+
+
   // return grandTotal;
 }
 
