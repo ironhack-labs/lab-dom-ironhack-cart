@@ -25,7 +25,7 @@ function getTotalPrice() {
   var totalCartValue = 0;
   for (var i = 0; i < numOfProducts.length; i++) {
     var productPrice = Number(document.querySelectorAll('.value')[i].innerText);
-    var quantity = document.querySelectorAll('.quantity')[i].valueAsNumber;
+    var quantity = Number(document.querySelectorAll('.quantity')[i].value);
     var totalField = document.querySelectorAll('.total-value')[i];
     var total = productPrice * quantity;
     totalField.innerText = total;
@@ -39,15 +39,18 @@ function createQuantityInput(){
   var inputField = document.createElement('input');
   inputField.setAttribute("type", "text");
   inputField.setAttribute("value", "0");
+  inputField.classList.add('quantity');
   return inputField;
 }
 
 function createDeleteButton(){
+  var deleteBtnDiv = document.createElement('div');
   var deleteButton = document.createElement('button');
   var deleteBtnText = document.createTextNode("Delete");
   deleteButton.appendChild(deleteBtnText);
   deleteButton.classList.add('btn', 'btn-delete');
-  return deleteButton;
+  deleteBtnDiv.appendChild(deleteButton);
+  return deleteBtnDiv;
 }
 
 function createQuantityNode(){
@@ -63,9 +66,7 @@ function createItemNode(dataType, itemName, itemUnitPrice){
   var itemWrapper = document.createElement('div');
   itemWrapper.classList.add('product-list-item');
 
-  var itemNP = createNewItemRow(itemName, itemUnitPrice);
-  console.log(itemNP);
-  //itemWrapper.appendChild(itemNP);
+  createNewItemRow(itemWrapper, itemName, itemUnitPrice);
 
   var quantityNode = createQuantityNode();
   itemWrapper.appendChild(quantityNode);
@@ -74,6 +75,7 @@ function createItemNode(dataType, itemName, itemUnitPrice){
   var totalValueSpan = document.createElement('span');
   var totalValueSpanValue = document.createTextNode('$0');
   totalValueSpan.appendChild(totalValueSpanValue);
+  totalValueSpan.classList.add('total-value');
   totalValueDiv.appendChild(totalValueSpan);
   itemWrapper.appendChild(totalValueDiv);
 
@@ -83,20 +85,25 @@ function createItemNode(dataType, itemName, itemUnitPrice){
   return itemWrapper;
 }
 
-function createNewItemRow(itemName, itemUnitPrice){
+function createNewItemRow(parent, itemName, itemUnitPrice){
   var productNameContainer = document.createElement('div');
   var spanName = document.createElement('span');
   var productName = document.createTextNode(itemName);
   spanName.appendChild(productName);
+  spanName.classList.add('product');
   productNameContainer.appendChild(spanName);
 
   var productPriceContainer = document.createElement('div');
+  productPriceContainer.innerText = "$ ";
   var spanPrice = document.createElement('span');
-  var productPrice = document.createTextNode("$" + itemUnitPrice);
-  spanPrice.appendChild(productPrice);
+  spanPrice.innerText = itemUnitPrice;
+  spanPrice.classList.add('value');
   productPriceContainer.appendChild(spanPrice);
+  /* productNameContainer.insertAdjacentElement('afterend', productPriceContainer); */
 
-  return [productNameContainer, productPriceContainer];
+  parent.appendChild(productNameContainer);
+  parent.appendChild(productPriceContainer);
+  
 }
 
 function createNewItem(){
@@ -104,13 +111,18 @@ function createNewItem(){
   var productList = document.querySelector('.wrapper-list');
   var newNode = createItemNode(undefined, data[0].value, data[1].value);
   productList.appendChild(newNode);
+
+
+  var deleteButtons = document.getElementsByClassName('btn-delete');
+  for (var i = 0; i < deleteButtons.length; i++) {
+    deleteButtons[i].onclick = deleteItem;
+  }
 }
 
 window.onload = function(){
   var calculatePriceButton = document.getElementById('calc-prices-button');
   var createItemButton = document.getElementById('new-item-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
-
   calculatePriceButton.onclick = getTotalPrice;
   createItemButton.onclick = createNewItem;
 
