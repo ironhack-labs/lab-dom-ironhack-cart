@@ -10,31 +10,42 @@
   <title>Ironhack cart</title>
 </head>
 <body>
-
   <div class="header"><h2>Ironhack Merchandising Shop</h2></div>
+
   <div class="all-products">
-  <div class="wrapper" id="repeat-this">
-    <div id="name"><span class="product-name">IronBubble-head</span></div>
-    <div><span class="cost">25.00</span></div>
-    <div><label for="QTY">QTY</label> <input id="input" class="quantity" type="number" value="0"></div>
-    <div class="total"><span>$0.00</span></div>
-    <div ><button class="btn btn-delete">Delete</button></div>
-
-  </div>
-
-  <div class="wrapper" id="repeat-this">
+    <div class="wrapper" id="repeat-this">
       <div id="name"><span class="product-name">IronBubble-head</span></div>
       <div><span class="cost">25.00</span></div>
-      <div><label for="QTY">QTY</label> <input id="input" class="quantity" type="number" value="0"></div>
+      <div>
+          <label for="QTY">QTY</label> 
+          <input id="input" class="quantity" type="number" value="0">
+      </div>
+      <div class="total"><span>$0.00</span></div>
+      <div >
+        <button class="btn btn-delete">Delete</button>
+      </div>
+   </div>
+
+    <div class="wrapper" id="repeat-this">
+      <div id="name"><span class="product-name">IronBubble-head</span></div>
+      <div><span class="cost">25.00</span></div>
+      <div>
+        <label for="QTY">QTY</label> 
+        <input id="input" class="quantity" type="number" value="0">
+      </div>
       <div class="total"><span>$0.00</span></div>
       <div ><button class="btn btn-delete">Delete</button></div>
-  
     </div>
+    
+    
 </div>
+
   <div><button class="btn-success" id="new-item-create">New Item</button></div>
 
 
   <div><button class="btn-success" id="calc-prices-button">Calculate Price</button></div>
+
+  <h1 class="total-price">Total Price: </h1>
 
 </body>
 </html>

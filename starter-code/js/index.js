@@ -3,6 +3,8 @@ function deleteItem(e){
 e.target.parentElement.parentElement.remove();
 }
 
+// var input = document.querySelectorAll[i]('input');
+// input.addEventListener("keyup",)
 
 // function getPriceByProduct(itemNode){
 //   var productCost = document.querySelectorAll('.cost');
@@ -19,17 +21,22 @@ function updatePriceByProduct(productPrice, index){
 function getTotalPrice() {
   // var start = 0;
   // var productIndex = productCost.indexOf
+  var sumPrice = 0;
+
+for (var i=0; i < document.querySelectorAll('.product-name').length; i++) {
 
 
 
-  var productCost = document.querySelector('.cost');
-  var productCount = document.querySelector('.quantity');
+  var productCost = document.querySelectorAll('.cost')[i];
+  var productCount = document.querySelectorAll('.quantity')[i];
   var grandTotal = parseInt(productCost.innerText) * parseInt(productCount.value);
-  var total = document.querySelector('.total');
+  var total = document.querySelectorAll('.total')[i];
   total.innerText = grandTotal.toFixed(2);
+  sumPrice += grandTotal;
 
 
-
+}
+document.querySelector(".total-price").innerHTML = "Total Price: $" + sumPrice;
   // return grandTotal;
 }
 
