@@ -39,3 +39,34 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.product {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.second-product {
+  margin-top: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+#total-price-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+#total-price-sentence {
+  display : flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.finalprice {
+  font-size: 20px;
+  color: blue;
+}
