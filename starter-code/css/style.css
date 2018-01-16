@@ -1,6 +1,11 @@
 input {
   border: solid 1px black;
 }
+.header{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
 
 .btn {
   display: inline-block;
@@ -23,11 +28,16 @@ input {
   border: 1px solid transparent;
   border-radius: 4px;
 }
+.sucs{
+  display: flex;
+  justify-content: center;
+}
 
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    text-align: center;
 }
 
 .btn-delete {
@@ -38,4 +48,13 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+.wrapper{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+}
+.final-total{
+  text-align: center;
+  font-size: 30px;
 }
