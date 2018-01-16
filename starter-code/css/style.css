@@ -1,3 +1,14 @@
+
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 50px;
+  
+}
+
+
 input {
   border: solid 1px black;
 }
@@ -28,6 +39,9 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    flex-grow: 2;
+    
+    
 }
 
 .btn-delete {
@@ -38,4 +52,8 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.title {
+  flex: 1 0 100%;
 }
