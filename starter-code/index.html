@@ -13,7 +13,7 @@
   <div class="shop-name">
     <h1>Matt's Funky Shop</h1>
   </div>
-  <div class="prod-wrapper">
+  <div class="prod-wrapper" id="0">
     <div class="prod-name-box">
       <span class="prod-info prod-name">Block of Cheese</span>  
     </div>
@@ -28,10 +28,10 @@
       <span class="cost-output">0.00</span>
     </div>
     <div class="prod-info delete-box">
-      <button onclick="deleteItem()" class="btn btn-delete" type="button">Delete</button>
+      <button onclick="deleteItem('0')" class="btn btn-delete" type="button">Delete</button>
     </div>          
   </div><!--End prod-wrapper-->
-  <div class="prod-wrapper">
+  <div class="prod-wrapper" id="1">
       <div class="prod-name-box">
         <span class="prod-info prod-name">Can of Peas</span>  
       </div>
@@ -46,7 +46,7 @@
         <span class="cost-output">0.00</span>
       </div>
       <div class="prod-info delete-box">
-        <button onclick="deleteItem()" class="btn btn-delete" type="button">Delete</button>
+        <button onclick="deleteItem('1')" class="btn btn-delete" type="button">Delete</button>
       </div>          
     </div><!--End prod-wrapper-->
   <div class="calc-button-box">
