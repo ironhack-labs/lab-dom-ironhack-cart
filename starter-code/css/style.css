@@ -1,3 +1,21 @@
+.card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0px;
+}
+
+.main {
+  align-items: center;
+}
+
+.calculate {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
 input {
   border: solid 1px black;
 }
