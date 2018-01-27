@@ -36,6 +36,12 @@ input {
     border-color: #CF000F;
 }
 
+.container {
+  margin: 10px 0px;
+}
 
+.delete {
+  margin-bottom: 5px;
+}
 
 

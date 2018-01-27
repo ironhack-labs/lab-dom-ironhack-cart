@@ -56,8 +56,18 @@ window.onload = function(){
 
     var quantity = document.querySelector(".quant-class");
     console.log(quantity.value);
-    // var newQuant = document.querySelector(quantity);
-    // console.log(newQuant.value);
+
+    quantity = quantity.value;
+    
+    var price = quantity * newUnitPrice;
+    console.log(price);
+
+    var total = document.getElementById("total") 
+    
+    total.innerHTML = price;
+    // console.log(total.innerHTML = price);
+   
+
     
   };
 
