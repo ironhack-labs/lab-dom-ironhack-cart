@@ -47,8 +47,10 @@ window.onload = function(){
   calculatePriceButton.onclick = function getTotalPrice() {
     // variable for unit price
     // variable for quantity of items
-    // innerhtml to the total className
+    // innerhtml to the total id tag
+
     var unitPrice = document.getElementById("initial");
+
     var newUnitPrice = unitPrice.innerHTML;
     newUnitPrice = newUnitPrice.slice(1, unitPrice.length);
 
@@ -65,9 +67,8 @@ window.onload = function(){
     var total = document.getElementById("total") 
     
     total.innerHTML = price;
-    // console.log(total.innerHTML = price);
    
-
+    // now need to get above code to work for a second product
     
   };
 
