@@ -4,11 +4,72 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
+  <link rel="stylesheet" href="css/normalize.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="text/javascript" src="js/index.js"></script>
+  <script src="https://use.fontawesome.com/4d6444a431.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+    <div class="info-container">
+        <h1>IronHack Merchandising Shop</h1>
+    </div>
+    <div class="container" id="container">     
+        <div class="item" name="product">
+            <div class="col">
+                <span name="name">IronBubble-head</span>
+            </div>
+            <div class="col">
+                <span class="price" name="price">$25.00</span>
+            </div>
+            <div class="col">
+                <label>QTY</label>
+                <input class="quantity" type="number" name="quantity" value="0"/>
+            </div>
+            <div class="col">
+                <span class="total-price" name="total-price">$0.00</span>
+            </div>
+            <div class="col">
+                <button class="btn btn-delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
+            </div>
+        </div>
+        <div class="item" name="product">
+            <div class="col">
+                <span name="name">Ironshirt-head</span>
+            </div>
+            <div class="col">
+                <span class="price" name="price">$15.00</span>
+            </div>
+            <div class="col">
+                <label>QTY</label>
+                <input class="quantity" type="number" name="quantity" value="0"/>
+            </div>
+            <div class="col">
+                <span class="total-price" name="total-price">$0.00</span>
+            </div>
+            <div class="col">
+                <button class="btn btn-delete"><i class="fa fa-trash" aria-hidden="true"></i></button>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="col">
+            <input type="text" id="name"/>
+        </div>
+        <div class="col">
+            <input type="number" id="price"/>
+        </div>
+        <div class="col"> &nbsp; </div>
+        <div class="col"> &nbsp; </div>
+        <div class="col">
+            <button class="btn" id="new-item-create">Create</button>
+        </div>
+    </div>
+    <div class="info-container">
+        <button class="btn btn-success" id="calc-prices-button">Calculate Prices</button>
+    </div>
+    <div class="info-container">
+        <h1>Total Price <span id="gran-total">$0.00</span></h1>
+    </div>
 </body>
 </html>
