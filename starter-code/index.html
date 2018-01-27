@@ -1,14 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Ironhack cart</title>
+  </head>
+  <body>
+    <h1 id="example">Ironhack Merchandising Shop</h1>
+
+    <div class="product-container">
+
+      <div class="flex-item">
+       <span>IronBobble-Head</span> 
+      </div>
+
+      <div class="flex-item">
+          $<span class="product-cost">25.00</span>
+      </div>
+
+      <div class="flex-item">
+        <label for="quantity">QTY <input class="product-qty" type="number"></label>
+      </div>
+
+      <div class="flex-item">
+          $<span class="product-total">0.00</span>
+      </div>
+
+      <div class="flex-item">
+        <button class="btn-delete">Delete</button>
+      </div>
+
+    </div>
+  
+    <div class="product-container">
+
+        <div class="flex-item">
+         <span>Ironshirt</span> 
+        </div>
+  
+        <div class="flex-item">
+            $<span class="product-cost">15.00</span>
+        </div>
+  
+        <div class="flex-item">
+          <label for="quantity">QTY <input class="product-qty" type="number"></label>
+        </div>
+  
+        <div class="flex-item">
+            $<span class="product-total">0.00</span>
+        </div>
+  
+        <div class="flex-item">
+          <button class="btn-delete">Delete</button>
+        </div>
+  
+      </div>
+
+      <div class="product-container">
+
+          <div class="flex-item">
+           <span><input class="new-item" type="text" placeholder="add new item"></span> 
+          </div>
+    
+          <div class="flex-item">
+              <span><input class="new-cost" type="text" placeholder="add new cost"></span> 
+          </div>
+    
+          <div class="flex-item">
+            <!-- <label for="quantity">QTY <input class="product-qty" type="number"></label> -->
+          </div>
+    
+          <div class="flex-item">
+              <!-- $<span class="product-total">0.00</span> -->
+          </div>
+    
+          <div class="flex-item">
+            <button class="add-btn">Add New Item</button>
+          </div>
+    
+        </div>
+  
+      <div class="product-container">
+        <button class="btn-success">Calculate Prices</button>
+      </div>
+
+      <div>
+        <h1>Total Price $<span class="total-price">0.00</span></h1>
+      </div>      
+
+      
+    <script type="text/javascript" src="js/index.js"></script>
+  </body>
 </html>

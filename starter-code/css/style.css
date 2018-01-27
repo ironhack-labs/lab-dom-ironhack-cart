@@ -28,6 +28,7 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin: 50px auto;
 }
 
 .btn-delete {
@@ -39,3 +40,25 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+/* user styling begins here */
+h1{
+  text-align: center;
+  margin: 50px auto;
+}
+
+.product-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.flex-item{
+  padding-left: 5%;
+  margin: 3% 0;
+  flex-basis: 20%;
+}
+
+
