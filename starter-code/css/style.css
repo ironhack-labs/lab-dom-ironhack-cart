@@ -1,3 +1,8 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 input {
   border: solid 1px black;
 }
@@ -36,6 +41,11 @@ input {
   border-color: #cf000f;
 }
 
+.btn-create {
+  color: #fff;
+  background-color: #0000ff;
+  border-color: #0000ff;
+}
 .quantity {
   margin: 0 5px;
 }
@@ -49,8 +59,6 @@ header h1 {
   flex-direction: column;
   justify-content: space-evenly;
   width: 100%;
-  margin: 40px;
-  padding: 20px;
 }
 
 .container {
@@ -60,6 +68,15 @@ header h1 {
   margin: 30px;
 }
 
-.calculate-btn {
+#create-item {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
+}
+
+#calculate-btn,
+#product-total-cost {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
 }
