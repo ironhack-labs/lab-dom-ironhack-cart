@@ -36,6 +36,20 @@ input {
     border-color: #CF000F;
 }
 
-.quantity {
-  margin: 0 5px;
+.container {
+  margin: 10px 0px;
+}
+
+.delete {
+  margin-bottom: 5px;
+}
+
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px !important;
+}
+
+.totalh2 {
+  margin-top: 15px;
 }
