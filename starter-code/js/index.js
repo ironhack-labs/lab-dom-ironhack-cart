@@ -16,22 +16,26 @@ button.onclick=function(){
         //Find the product's total price and send to the DOM for each product
       for(var i=0; i<products.length; i++){
         var element = document.getElementsByClassName("unit-price");
+        // console.log(element);
         var unitPrice = element[i].innerHTML;
+        // console.log(unitPrice);
         var input = document.getElementsByClassName('input');
         var quantity = input[i].value;
-        console.log (unitPrice, quantity);
+        console.log (input, unitPrice, quantity);
   
         var productTotalPrice=quantity * unitPrice;
         console.log(productTotalPrice);
   
         var totalPrices = document.getElementsByClassName("total-price");
         totalPrices[i].innerHTML = productTotalPrice;
+        console.log(totalPrices[i])
       }
 
       var totalPrices2 = document.getElementsByClassName("total-price");
       var total=0;
       for(var j=0; j<totalPrices2.length; j++){
           total = total + parseInt(totalPrices2[j].innerHTML);
+          console.log(total, totalPrices[j])
       }
       console.log(total);
 
@@ -91,7 +95,7 @@ function deleteItem(e){
 }
 
 function getPriceByProduct(itemNode){
-
+     
 }
 
 function updatePriceByProduct(productPrice, index){
@@ -121,9 +125,10 @@ function createQuantityNode(){
     // console.log(unitPrice.value);
 //use getAttribute for type and data
 function createItemNode(dataType, itemData){
-  
-        if(dataType='text'){
-        //Create new Div
+        // console.log(dataType, itemData)
+        if(dataType==='text'){
+        // console.log('true')
+          //Create new Div
         var newDiv=document.createElement('div');
         //Create Span element with Text
         var usernameNode = document.createElement('span');
@@ -135,17 +140,18 @@ function createItemNode(dataType, itemData){
         return newDiv
         }
 
-        if(dataType="number"){
-            //Create new Div
-            var newDiv=document.createElement('div');
+        else if(dataType==='number'){
+            // console.log('number true')  
+          //Create new Div
+            var newDiv2=document.createElement('div');
             //Create Span element with Text
-            var usernameNode = document.createElement('span');
-            usernameNode.className="unit-price";
+            var priceNode = document.createElement('span');
+            priceNode.className="unit-price";
             var textNode = document.createTextNode(itemData);
-            usernameNode.appendChild(textNode); 
+            priceNode.appendChild(textNode); 
             //Add Span to Div
-            newDiv.appendChild(usernameNode);
-            return newDiv
+            newDiv2.appendChild(priceNode);
+            return newDiv2
             }
 }
 
@@ -162,8 +168,8 @@ function createNewItemRow(itemName, itemUnitPrice){
   //Select Unit Price Div and Replace with New Unit Price Div
   var unit = container.children[1];
   var newItem2= createItemNode('number', itemUnitPrice);
-  container.replaceChild(newItem2, unit)
-  
+  container.replaceChild(newItem2, unit);
+
   return container;
 }
 
@@ -175,12 +181,13 @@ function createNewItem(){
   var input1= document.getElementById("name");
   var username = input1.value;
   var input2=document.getElementById('unit price');
-  var unitPrice = input2.value; 
+  var unitPrice = "$" + input2.value + ".00"; 
   
   var container = createNewItemRow(username, unitPrice);
   var parent = document.getElementsByTagName('body')[0];
   var newRow = document.getElementsByClassName('new-row')[0];
   parent.insertBefore(container, newRow);
+  // console.log(container);
 }
 }
 
