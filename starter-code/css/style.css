@@ -1,3 +1,7 @@
+body{
+  margin:0;
+}
+
 input {
   border: solid 1px black;
 }
@@ -39,3 +43,51 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+h1{
+  text-align: center;
+}
+
+.container{
+  width: 100%;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.container div{
+  flex-basis: 20%;
+  margin: 0 20px;
+}
+
+.container span{
+  font-size: 0.8em;
+}
+
+.input-container{
+ 
+  margin: 20px 20px;
+}
+.input-container button{
+  float: right;
+  text-align: center;
+  margin-right: 20px;
+  border: 1px solid black;
+}
+
+.bottom-button{
+  display: flex;
+  justify-content: center;
+  margin: 2em 0px;
+}
+
+.total{
+  text-align: center;
+  margin: 60px;
+  font-size: 1.2em;
+}
+
+
