@@ -145,6 +145,7 @@ function createItemNode(dataType, itemData){
           //Create new Div
             var newDiv2=document.createElement('div');
             //Create Span element with Text
+            newDiv2.innerHTML = "$";
             var priceNode = document.createElement('span');
             priceNode.className="unit-price";
             var textNode = document.createTextNode(itemData);
@@ -181,7 +182,7 @@ function createNewItem(){
   var input1= document.getElementById("name");
   var username = input1.value;
   var input2=document.getElementById('unit price');
-  var unitPrice = "$" + input2.value + ".00"; 
+  var unitPrice = input2.value; 
   
   var container = createNewItemRow(username, unitPrice);
   var parent = document.getElementsByTagName('body')[0];
