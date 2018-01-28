@@ -84,11 +84,15 @@ button.onclick=function(){
 
 function deleteItem(e){
   var deleteButtons = document.getElementsByClassName('btn-delete');
+  console.log(deleteButtons)
   for(var i=0; i<deleteButtons.length; i++){
     deleteButtons[i].onclick=function(e){
        var parent = e.currentTarget.parentElement;
+       console.log(parent)
        var container= parent.parentElement;
+       console.log(container)
       var body = container.parentElement;
+      console.log(body)
       body.removeChild(container);
     }
   }
@@ -188,6 +192,8 @@ function createNewItem(){
   var parent = document.getElementsByTagName('body')[0];
   var newRow = document.getElementsByClassName('new-row')[0];
   parent.insertBefore(container, newRow);
+
+  deleteItem();
   // console.log(container);
 }
 }

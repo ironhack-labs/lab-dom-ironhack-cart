@@ -73,7 +73,9 @@ h1{
 }
 .input-container button{
   float: right;
-  padding-right: 40px;
+  text-align: center;
+  margin-right: 20px;
+  border: 1px solid black;
 }
 
 .bottom-button{
