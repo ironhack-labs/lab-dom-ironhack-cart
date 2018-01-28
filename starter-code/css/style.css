@@ -1,5 +1,11 @@
+
 input {
   border: solid 1px black;
+}
+
+h1{
+  margin: 0 auto;
+  width: 350px;;
 }
 
 .btn {
@@ -28,6 +34,7 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    
 }
 
 .btn-delete {
@@ -38,4 +45,61 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+
+.product{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  width: 80%;
+  margin: 20px auto;
+}
+
+.product * {
+  width: 300px;
+}
+
+.product input{
+  width: 100px;
+}
+
+
+.calculate-button{
+  display: flex;
+  justify-content: center;
+  margin-top: 50px ;
+}
+
+.products-container{
+  display: flex;
+  align-items: baseline;
+  flex-flow: column;
+}
+
+.product span{
+  width: 100px;
+}
+
+.create-product{
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  padding-top: 45px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.create-product button{
+  background-color: blue;
+  color: white;
+  border-radius: 3px;
+}
+
+
+
+.price-all{
+  text-align: center;
+  margin-top: 40px;
 }
