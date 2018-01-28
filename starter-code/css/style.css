@@ -1,3 +1,8 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 input {
   border: solid 1px black;
 }
@@ -25,17 +30,53 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #cf000f;
+  border-color: #cf000f;
 }
 
+.btn-create {
+  color: #fff;
+  background-color: #0000ff;
+  border-color: #0000ff;
+}
 .quantity {
   margin: 0 5px;
+}
+
+/* custom css*/
+header h1 {
+  text-align: center;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 30px;
+}
+
+#create-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#calculate-btn,
+#product-total-cost {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
 }
