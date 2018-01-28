@@ -39,3 +39,35 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+h1{
+  text-align: center;
+}
+
+.container{
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.container div{
+  margin: 20px 0;
+  display: inline-block;
+}
+
+.container span{
+  font-size: 0.8em;
+}
+
+.bottom-button{
+  display: flex;
+  justify-content: center;
+  margin: 2em 0px;
+}
+
+.total{
+  text-align: center;
+  margin: 60px;
+  font-size: 1.2em;
+}
