@@ -9,6 +9,63 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
+<h1>Ironhack Merchandising Shop</h1>
+<!-- A wrapper div that contains all the HTML for that product. -->
+
 <body>
+   <div class="item-0">
+
+    <!-- A div with a span, showing the product name. -->
+      <div><span class="product-0">IronBobble-head</span></div>
+
+      <!-- A div with a span, showing the cost of one unit. -->
+      <div>$<span class="cost-item-0">25.00</span></div>
+
+      <!-- A div with one label and one input, where the user will indicate how 
+        many units they will buy. -->
+      <div>
+        QTY <input id="quantity-item-0">
+      </div>
+
+      <!-- A div with a span, showing the total price for this product. This number should be the result 
+      of multiplying the amount of units multiplied by the price of one unit of that product. 
+      The default total price should be 0. -->
+ 
+      <div>$<span id=total-price-item-0>0.00</span></div>
+
+      <!-- A div with a delete button, to remove the product from the list. -->
+
+      <div><button type="button" class="btn-delete-item-0 btn">Delete</button></div>
+
+      
+ </div>
+
+
+  <div class="item-1">
+    <div class="product-1"><span>IronShirt</span></div>
+    <div>$<span class="cost-item-1">15.00</span></div>
+    <div> QTY <input id="quantity-item-1"> </div>
+    <div>$<span class="total-price-item-1">0.00</span></div>
+    <div><button type="button" class="btn-delete-item-1 btn">Delete</button></div>
+    
+    </div>
+
+  </div>
+
+  <section class="total-section">
+  <div><button type="button" class="btn-success btn", >Calculate Prices</button></div>
+  </section>
+  <section class="total-section">
+  <div><h2 id="combined-total">Total Price: $<span>0.00</span></h2></div>
+  </section>
+
 </body>
 </html>
+
+
+
+
+
+
+
