@@ -30,7 +30,7 @@ input {
     border-color: #4cae4c;
 }
 
-.btn-delete {
+.btn-delete-item-0, .btn-delete-item-1 {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
@@ -38,4 +38,27 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+.item-0 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  padding: 20px;
+
+}
+.item-1{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.total-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  padding: 20px;
 }
