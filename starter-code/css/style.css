@@ -1,7 +1,41 @@
 input {
   border: solid 1px black;
 }
-
+h1{
+  text-align: center;
+}
+.product1 > div {
+  float: left;
+  margin:0 100px 0 100px;
+}
+.clear-floats{
+  clear: both;
+}
+.total-price-text{
+  text-align: center;
+}
+.product2 > div{
+  margin:0 130px 0 100px;
+  float: left;
+}
+.button-delete {
+  color:white;
+  background-color: darkred;
+  border: 2px solid darkred;
+  border-radius: 5px;
+  height:30px;
+  margin-top: -10px;
+}
+.button-calculate {
+  color:white;
+  background-color: green;
+  border: 2px solid green;
+  border-radius: 5px;
+  height:30px;
+  margin-top: 50px;
+  margin-left: 800px;
+  text-align: center;
+}
 .btn {
   display: inline-block;
   padding: 6px 12px;
