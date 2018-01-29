@@ -1,17 +1,28 @@
 function deleteItem(e){
-
+var item = e.currentTarget.parentNode.parentNode;
+var container = document.getElementById("container");
+container.removeChild(item);
 }
 
 function getPriceByProduct(itemNode){
 
 }
-
+var prices = document.getElementsByClassName("price");
+var quantity = document.getElementsByClassName("quantity");
+console.log(prices);
 function updatePriceByProduct(productPrice, index){
 
 }
 
 function getTotalPrice() {
 
+var totalPrice = 0;
+for(var i = 0; i < prices.length; i++)
+{
+document.getElementsByClassName("total-price")[i].innerHTML = "$" + (prices[i].innerHTML.slice(1)*quantity[i].value).toFixed(2);
+totalPrice += prices[i].innerHTML.slice(1)*quantity[i].value;
+}
+document.getElementById("total-price-id").innerHTML = "$" + totalPrice.toFixed(2);
 }
 
 function createQuantityInput(){
