@@ -13,7 +13,7 @@
         <h1>IronHack Merchandising Shop</h1>
     </div>
     <div class="container" id="container">     
-        <div class="item" name="product">
+        <div class="item" name="product" id="item1">
             <div class="col">
                 <span name="name">IronBubble-head</span>
             </div>
@@ -28,16 +28,39 @@
                 <span class= "totalP" name="total-price">$0.00</span>
             </div>
             <div class="col">
-                <button class="btn btn-delete">Delete</button>
+                <button class="btn btn-delete" >Delete</button>
+
+                
             </div>
         </div>
+
+        <div class="item" name="product">
+            <div class="col">
+                <span name="name">Iron shirt</span>
+            </div>
+            <div class="col">
+                <span class="precio-x" name="price" value="25">$15.00</span>
+            </div>
+            <div class="col">
+                <label>QTY</label>
+                <input class="quantidad-y" type="number" name="quantity" value="0"/>
+            </div>
+            <div class="col">
+                <span class= "totalP" name="total-price">$0.00</span>
+            </div>
+            <div class="col">
+                <button class="btn btn-delete" onclick="functionXX" >Delete</button>
+            </div>
+        </div>
+
+
     </div>
     <div class="container">
         <div class="col">
             <input type="text" id="name"/>
         </div>
         <div class="col">
-            <input type="text" id="price"/>
+            <input type="number" id="price"/>
         </div>
         <div class="col"> &nbsp; </div>
         <div class="col"> &nbsp; </div>
