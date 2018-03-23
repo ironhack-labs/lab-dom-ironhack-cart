@@ -1,5 +1,28 @@
+body {
+  
+}
+
+header{
+  text-align: center;
+  background-color: lightgrey;
+
+}
+
+main {
+  margin: 40px 0 0 0;
+  padding: 0 10%;
+  background-color: #eeeeee;
+}
+
 input {
   border: solid 1px black;
+  padding:5px;
+  border-radius: 3px;
+}
+
+footer{
+  background-color: #e0e0e0;
+
 }
 
 .btn {
@@ -32,10 +55,32 @@ input {
 
 .btn-delete {
     color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+    background-color: rgb(161, 25, 34);
+    border-color: rgb(83, 15, 20);
+    padding: 10px 10px;
+    border-radius: 5px;
+
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+
+.flexbox{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+}
+
+label {
+  margin: 0 20px 0 0; 
+}
+
+.inline {
+  display: inline-block;
+}
+
+.float-right {
+  float: right;
 }
