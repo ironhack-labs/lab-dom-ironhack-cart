@@ -10,10 +10,7 @@ function updatePriceByProduct(productPrice, index){
 
 }
 
-function getTotalPrice() {
-  return itemPrice * itemQuant;
 
-}
 
 function createQuantityInput(){
 
@@ -47,14 +44,20 @@ window.onload = function(){
   var itemPrice = element.getAttribute("value");
   var itemQuant = document.getElementById("p1q").value;
 
+  function getTotalPrice() {
+    var totalPriceCalc = itemPrice * itemQuant;
+    var totalPrice = document.createTextNode("$ " + totalPriceCalc);
+    var parent = document.getElementById('total-price');
+  }
 
   calculatePriceButton.onclick = getTotalPrice;
-  
+
   //createItemButton.onclick = createNewItem;
 
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
   }
+  
 };
 
 
