@@ -1,9 +1,16 @@
+* {
+  margin:0;
+  padding:0;
+}
+
 input {
   border: solid 1px black;
+  padding-left: 5px;
 }
 
 .btn {
   display: inline-block;
+  /* display: block; */
   padding: 6px 12px;
   margin-bottom: 0;
   font-size: 14px;
@@ -28,6 +35,28 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin:30px auto;
+    width:132px;
+    /* display: inline-block; */
+    display: block;
+    padding: 6px 12px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    /* vertical-align: middle; */
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
 }
 
 .btn-delete {
@@ -38,4 +67,63 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.item {
+  width:900px;
+  margin:10px auto;
+  padding-bottom: 10px;
+  clear: both;
+  height: 20px;
+}
+
+.item label {
+  width:30px;
+  float: left;
+}
+
+.item input {
+  float: left;
+}
+
+.item > div, .item > button {
+  float: left;
+}
+
+.item > div {
+  margin-top:10px;
+}
+
+.clear {
+  clear: both;
+}
+
+.productName {
+  width:250px;
+  /* margin-right: :50px; */
+}
+
+.cost {
+  width:100px;
+}
+
+.quantityWrap {
+  width:300px;
+}
+
+.itemTotal {
+  width:100px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.addDiv {
+  margin: 30px auto;
+  width:470px;
+}
+
+#new-item-create {
+  float: right;;
 }
