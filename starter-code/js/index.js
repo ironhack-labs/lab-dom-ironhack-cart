@@ -11,7 +11,10 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-
+  var unitPrice = document.getElementById("unit-price").value;
+  var quantity = document.getElementById("quantity").value;
+  var totalPrice = document.getElementById("total-price").value;
+  console.log(unitPrice);
 }
 
 function createQuantityInput(){

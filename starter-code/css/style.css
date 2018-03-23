@@ -1,3 +1,7 @@
+body {
+  text-align: center;
+}
+
 input {
   border: solid 1px black;
 }
@@ -38,4 +42,10 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.product {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
