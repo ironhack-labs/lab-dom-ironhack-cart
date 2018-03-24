@@ -1,4 +1,4 @@
-input {
+°°input {
   border: solid 1px black;
 }
 
@@ -38,4 +38,33 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.container {
+  width: 100%;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.product-wrapper {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 60px;
+  text-align: center;
+}
+
+.product-wrapper > * {
+  width: 20%;
+}
+
+.calculate {
+  display: flex;
+  justify-content: center;
+  padding-top: 80px;
 }
