@@ -11,8 +11,18 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
+    console.log("Hello");
 
+    var precio = document.getElementById("cost").textContent ;
+    var cantidad = document.getElementById("quantity").input;
+    console.log(precio+" "+cantidad);
+
+    var precioTotal = precio * cantidad;
+    console.log(precioTotal);
+
+    document.getElementById('total').innerHTML = '$' + precioTotal; 
 }
+
 
 function createQuantityInput(){
 

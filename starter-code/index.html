@@ -26,17 +26,17 @@
       </span>
     </div>
 
-    <div class="cost">
-      <span>
+    <div>
+      <span id="cost">
         $25.00
       </span>
     </div>
-    <div class="quantity">
-        <label>QTY</label><input type="number">
+    <div>
+        <label>QTY</label><input id="quantity" type="number">
     </div>
 
-    <div class="total">
-      <span>
+    <div>
+      <span id="total">
         $0.00
       </span>
     </div>
@@ -50,7 +50,7 @@
 
 <footer>
     <div>
-        <button class="btn btn-success">Calculate Prices</button>
+        <button id="calc-prices-button" class="btn btn-success" onclick="getTotalPrice()" >Calculate Prices</button>
       </div>
 </footer>
 
