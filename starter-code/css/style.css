@@ -4,8 +4,7 @@ input {
 
 .btn {
   display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
+  padding: 6px 12px; 
   font-size: 14px;
   font-weight: 400;
   line-height: 1.42857143;
@@ -39,3 +38,17 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.btest {
+  border: 1px solid #000000;
+}
+
+.wrap {
+  height: 200px;;
+  width: 80%;
+  margin: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
