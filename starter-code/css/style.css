@@ -1,4 +1,4 @@
-°°input {
+input {
   border: solid 1px black;
 }
 
@@ -67,4 +67,10 @@
   display: flex;
   justify-content: center;
   padding-top: 80px;
+}
+
+.total-price-total {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
 }
