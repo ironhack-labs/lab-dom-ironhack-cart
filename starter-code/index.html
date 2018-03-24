@@ -10,30 +10,55 @@
   <title>Ironhack cart</title>
 </head>
 <body>
-  <div class="container">
-      <div class="item-txt"><h1>IronHack Merchandising Shop</h1></div>
-      <div class="item" id="first-item">
-          <p>IronBubble-head</p>
-          <p>$25</p>
-          <div class="price">
-              <p>QTY</p>
-              <input type="number">
-          </div>
-          <p>$0.00</p>
-          <button class="btn btn-delete">Delete</button>
+    <div class="item">
+            <h1>IronHack Merchandising Shop</h1>     
+    </div>
+    <div class="container">
+      <div class="item">
+            <p class="sub-item">IronBubble-head</p>
+            <p class="sub-item">$25</p>
+            <div class="price sub-item">
+                <p class="qty">QTY</p>
+                <input type="text">
+            </div>
+            <p class="sub-item">$0.00</p>
+            <div class="sub-item">
+                <button class="btn btn-delete">Delete</button>
+            </div>
         </div>
-        <div class="item" id="second-item">
-            <p>IronBubble-head</p>
-          <p>$25</p>
-          <div class="price">
-              <p>QTY</p>
-              <input type="number">
-          </div>
-          <p>$0.00</p>
-          <button class="btn btn-delete">Delete</button>
+        <div class="item">
+            <p class="sub-item">IronBubble-head</p>
+            <p class="sub-item">$25</p>
+            <div class="sub-item">
+                <p class="qty">QTY</p>
+                <input type="text">
+            </div>
+            <p class="sub-item">$0.00</p>
+            <div class="sub-item">
+                <button class="btn btn-delete">Delete</button>              
+            </div>
         </div>
-      <div class="item-txt"><h1>Total Price: <span id="total-price">$0.00</span></h1></div>
-        
-  </div>
+        <div class="item">
+            <div class="sub-item">
+                <input type="text">
+            </div>
+            <div class="sub-item">
+                <input type="text">
+            </div>
+            <div class="sub-item"></div>
+            <div class="sub-item"></div>
+            <div class="sub-item">
+                <button class="btn btn-create">Create</button>
+            </div>
+        </div>
+        <div class="item">
+            <div class="sub-item">
+                <div class="btn btn-success">Calculate prices</div>   
+            </div>
+        </div>
+        <div class="item">
+            <h1>Total Price: <span id="total-price">$0.00</span></h1>           
+        </div>
+    </div>
 </body>
 </html>

@@ -10,9 +10,13 @@ function updatePriceByProduct(productPrice, index){
 
 }
 
-function getTotalPrice() {
 
-}
+  
+   
+  
+    
+  
+
 
 function createQuantityInput(){
 
@@ -49,4 +53,8 @@ window.onload = function(){
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
   }
+  
+  document.getElementsByClassName("btn").onclick = function() {
+    console.log("fdsadvsdv")
+  } 
 };
