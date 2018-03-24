@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,57 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+  <div class="container">
+    <div class="title">
+      <h1>Ironhack Merchandising Shop</h1>
+    </div>
+    <div class="shopping-cart" id="shopping-cart">
+      <div class="product-wrapper">
+        <span class="product-name">IronBubble-head</span>
+        <span class="cost-per-unit" value="25.00">$25.00</span>
+        <div class="quantity">
+          <label for="quantity-text">QTY</label>
+          <input type="text" class="quantity-text" placeholder="0">
+        </div>
+        <div class="total-price-product" value="0">$0.00</div>
+        <div class="delete">
+          <button class="btn-delete">Delete</button>
+        </div>
+      </div>
+      <div class="product-wrapper">
+        <span class="product-name">IronShirt</span>
+        <span class="cost-per-unit" value="15.00">$15.00</span>
+        <div class="quantity">
+          <label for="quantity-text">QTY</label>
+          <input type="text" class="quantity-text" placeholder="0">
+        </div>
+        <div class="total-price" value="0">$0.00</div>
+        <div class="delete">
+          <button class="btn-delete">Delete</button>
+        </div>
+      </div>
+    </div>
+    <div class="product-wrapper product-creator" id="product-creator">
+      <input type="text" id="new-item-name" placeholder="Nombre del producto...">
+      <input type="text" id="new-item-price" placeholder="Precio del producto...">
+      <div class="quantity">
+      </div>
+      <div class="total-price"></div>
+      <div class="create">
+        <button class="btn-create" id="new-item-create">Create</button>
+      </div>
+    </div>
+    <div class="calculate">
+      <button id="calc-prices-button" class="btn-success">Calculate prices</button>
+    </div>
+  </div>
+  <div class="total-price-total">
+    <h2>Total Price:
+      <span id="total-price-total" value="0">$0</span>
+    </h2>
+  </div>
 </body>
+
 </html>
