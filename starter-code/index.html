@@ -6,34 +6,33 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
     <div class="item">
-            <h1>IronHack Merchandising Shop</h1>     
+        <h1>IronHack Merchandising Shop</h1>     
     </div>
     <div class="container">
       <div class="item">
-            <p class="sub-item">IronBubble-head</p>
-            <p class="sub-item">$25</p>
+            <p class="sub-item"><span class="product">IronBubble-head</span></p>
+            <p class="sub-item">$<span class="price" id="price1">25</span></p>
             <div class="price sub-item">
                 <p class="qty">QTY</p>
-                <input type="text">
+                <input type="number" value="0" id="input1">
             </div>
-            <p class="sub-item">$0.00</p>
+            <p class="sub-item">$<span class="price-subtotal" id="subtotal1">0.00</span></p>
             <div class="sub-item">
-                <button class="btn btn-delete">Delete</button>
+                <button class="btn btn-delete" id="btn1">Delete</button>
             </div>
         </div>
         <div class="item">
-            <p class="sub-item">IronBubble-head</p>
-            <p class="sub-item">$25</p>
+            <p class="sub-item"><span class="product">IronShirt</span></p>
+            <p class="sub-item">$<span class="price">25</span></p>
             <div class="sub-item">
                 <p class="qty">QTY</p>
-                <input type="text">
+                <input type="number" value="0">
             </div>
-            <p class="sub-item">$0.00</p>
+            <p class="sub-item">$<span class="price-subtotal">0.00</span></p>
             <div class="sub-item">
                 <button class="btn btn-delete">Delete</button>              
             </div>
@@ -53,12 +52,14 @@
         </div>
         <div class="item">
             <div class="sub-item">
-                <div class="btn btn-success">Calculate prices</div>   
+                <div class="btn btn-success" id="calculate">Calculate prices</div>   
             </div>
         </div>
         <div class="item">
-            <h1>Total Price: <span id="total-price">$0.00</span></h1>           
+            <h1>Total Price: $<span id="price-total">0.00</span></h1>           
         </div>
     </div>
 </body>
+<script type="text/javascript" src="./js/index.js"></script>
+
 </html>

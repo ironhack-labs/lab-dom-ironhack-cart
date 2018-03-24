@@ -8,7 +8,9 @@ input {
   width: 160px;
   padding: 0 10px;
 }
-
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
 .btn {
   display: inline-block;
   padding: 6px 12px;
