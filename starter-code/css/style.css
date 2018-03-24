@@ -74,3 +74,9 @@ input {
   justify-content: center;
   padding-top: 40px;
 }
+
+.product-creator > input {
+  width: 20%;
+  margin-right: 1%;
+  padding-left: 1%;
+}
