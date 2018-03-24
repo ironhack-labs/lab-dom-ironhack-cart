@@ -3,7 +3,8 @@ function deleteItem(e){
 }
 
 function getPriceByProduct(itemNode){
-
+  var price = itemNode.getAttribute('value');
+  return price;
 }
 
 function updatePriceByProduct(productPrice, index){
@@ -11,6 +12,16 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
+  var prices = document.getElementsByClassName('price');
+  var sum = 0;
+  
+  for (var i = 0; i < prices.length; i++) {
+    var price = getPriceByProduct(prices[i]);
+    var qty = document.getElementsByClassName('quantity')[i].getAttribute('value');
+    var sumPrice = price * qty;
+    sum += sumPrice;
+  }
+  document.getElementById("total-price").innerHTML=sum;
 
 }
 
