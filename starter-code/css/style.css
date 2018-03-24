@@ -22,12 +22,17 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  
 }
 
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+   
 }
 
 .btn-delete {
@@ -38,4 +43,9 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+h1{
+  display: flex;
+  justify-content: center;
+  
 }
