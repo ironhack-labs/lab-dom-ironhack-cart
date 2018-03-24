@@ -28,6 +28,8 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    align-self: center;
+    justify-content: center;
 }
 
 .btn-delete {
@@ -39,3 +41,25 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.container div{
+  align-self: center;
+  
+}
+
+footer div {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
