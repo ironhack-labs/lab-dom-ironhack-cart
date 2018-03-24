@@ -64,7 +64,6 @@ function createQuantityInput() {
 }
 
 function createDeleteButton() {
-  alert("entra");
 
   var item = document.getElementById("all-products").lastChild;
   var divDeleteBtn = document.createElement("div");
@@ -118,7 +117,7 @@ function createNewItemRow(itemName, itemUnitPrice) {
   var span = document.createElement("span");
   span.value = itemUnitPrice;
   //añadimos el value
-  span.innerHTML = itemUnitPrice;
+  span.innerHTML = "$"+itemUnitPrice;
   element.appendChild(span);
   padre.appendChild(element);
 
@@ -128,7 +127,7 @@ function createNewItemRow(itemName, itemUnitPrice) {
   createQuantityNode() ;
   createDeleteButton();
 
-
+window.onload();
   /* var parent = document.getElementsByTagName('body')[0]
  parent.appendChild(element); */
   /* 
@@ -162,3 +161,4 @@ window.onload = function() {
     deleteButtons[i].onclick = deleteItem;
   }
 };
+
