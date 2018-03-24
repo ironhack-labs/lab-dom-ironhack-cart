@@ -8,18 +8,43 @@
   <link rel="stylesheet" href="./css/style.css">
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
-
-  <div class="horizontal">
-    <div> <span> IronBubble-head</span></div>
-    <div class="price-by-product"> <span value="25"> $25.00 </span></div>
-    <!--idea: llamar a los div por numeros para facilitar cuando haya muchos-->
-    <div> QTY <input type="text" name="QTY" value="0"><br> </div>
-    <div> <span> $0.00 </span></div>
-    <div> <button type="button" class=".btn-delete">Delete </button></div>
-
-  </div>
-  <div> <button type="button" class="btn-success" >Calculate Prices </button></div>
 </head>
+
+
 <body>
+  <div id="all-products">
+    <div class="product horizontal">
+        <div> <span> IronBubble-head</span></div>
+        <div class="0"> <span value="25">$25.00</span></div>
+        <!--idea: llamar a los div por numeros para facilitar cuando haya muchos-->
+        <div class="QTY"> QTY <input type="text" name="QTY" value="0"><br> </div>
+        <div class="total-product-price"> <span> $0.00 </span></div>
+        <div class="delete"> <button type="button" class="btn-delete btn">Delete </button></div>
+      </div>
+      
+      <!-- Second product  -->
+      <div class="product horizontal">
+        <div> <span> IronBubble-head</span></div>
+        <div class="1"> <span value="25">$30.00</span></div>
+        <!--idea: llamar a los div por numeros para facilitar cuando haya muchos-->
+        <div class="QTY"> QTY <input type="text" name="QTY" value="0"><br> </div>
+        <div class="total-product-price"> <span> $0.00 </span></div>
+        <div class="delete"> <button type="button" class="btn-delete btn">Delete </button></div>
+      </div>
+    </div>
+    <div> <button type="button" class="btn-success btn" id="calc-prices-button">Calculate Prices </button></div>
+      
+    <div class="total-price"> <h2>Total Price: <span>$0</span></h2></div>
+    <div class="horizontal">
+    <div id="new-item-name">  <input type="text" name="" value="nada"><br> </div>
+    <div id="new-price-unit">  <input type="text" name="" value="0"><br> </div>
+    <div> <button type="button" class="" id="new-item-create" >Create </button></div>
+      
+  </div>
+    
+    
+
+
+    </div>
 </body>
 </html>
