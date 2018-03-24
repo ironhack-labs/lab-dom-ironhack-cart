@@ -4,6 +4,9 @@ function deleteItem(e){
 
 function getPriceByProduct(itemNode){
 
+  var price = document.getElementsByClassName(itemNode)[0].getElementsByTagName("span")[0].innerHTML;
+  //deberia devolver el precio unitario 
+  console.log(price);
 }
 
 function updatePriceByProduct(productPrice, index){
