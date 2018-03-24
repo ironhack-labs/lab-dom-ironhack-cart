@@ -13,9 +13,12 @@ function updatePriceByProduct(productPrice, index){
 function getTotalPrice() {
 
   // accedemos y guardamos en una variable los valores
-  var costeUnitario = document.getElementById("coste-unitario").getAttribute("value");
-  var quantity = document.getElementById("quantity").value;
-  var totalPrecio = document.getElementById("total-precio");
+  var costeUnitario = document.getElementsByClassName("coste-unitario").getAttribute("value");
+  for (i=0; i<costeUnitario.length; i++) {
+    costeUnitario[i]
+  }
+  var quantity = document.getElementsByClassName("quantity").value;
+  var totalPrecio = document.getElementsByClassName("total-precio");
 
   //Le añadimos a la etiqueta total-precio el atributo value, con el valor de la multiplicación.
   totalPrecio.setAttribute("value", costeUnitario * quantity);

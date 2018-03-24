@@ -13,25 +13,50 @@
 
 <body>
   <h1>Ironhack Merchandising Shop</h1>
-
-  <div class="btn">
+    <!-- Primer Producto -->
+  <div class="producto btn">
 
     <div>
-    <!-- He quitado la clase a producto porque no es necesario -->
+      <!-- He quitado la clase a producto porque no es necesario -->
       <span>IronBubble-head</span>
     </div>
     <!-- En vez de acceder por clase, accedemos por id que es más fácil y no nos devolvera mas span -->
     <div>
-      <span id="coste-unitario" value="25">$25.00</span>
+      <span class="coste-unitario" value="25">$25.00</span>
     </div>
 
     <div>
       <label for="quantity">QTY</label>
-      <input type="text" id="quantity" class="quantity" value="">
+      <input type="text" class="quantity" value="">
     </div>
 
     <div>
-      <span id="total-precio" value="0">$0.00</span>
+      <span class="total-precio" value="0">$0.00</span>
+    </div>
+
+    <div>
+      <button class="btn btn-delete">Delete</button>
+    </div>
+
+  </div>
+      <!-- Segundo Producto -->
+  <div class="producto btn">
+
+    <div>
+      <span>IronShirt</span>
+    </div>
+
+    <div>
+      <span class="coste-unitario" value="15">$15.00</span>
+    </div>
+
+    <div>
+      <label for="quantity">QTY</label>
+      <input type="text" class="quantity" value="">
+    </div>
+
+    <div>
+      <span class="total-precio" value="0">$0.00</span>
     </div>
 
     <div>
@@ -40,9 +65,9 @@
 
   </div>
   <footer>
-      <div class="btn">
-        <button id="calc-prices-button" class=" btn btn-success" >Calculate Prices</button>
-      </div>
+    <div class="btn">
+      <button id="calc-prices-button" class=" btn btn-success">Calculate Prices</button>
+    </div>
   </footer>
 </body>
 
