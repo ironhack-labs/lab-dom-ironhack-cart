@@ -16,7 +16,8 @@ function getTotalPrice() {
   span[0].children[0].getAttribute("value");
 
   for(i=0;i<span.length;i++){
-    document.getElementsByClassName("product-price");
+    document.getElementsByClassName("product-total-price");
+    span
   }
 }
 
