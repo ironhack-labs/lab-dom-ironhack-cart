@@ -46,8 +46,8 @@ input {
   margin: 0 5px;
 }
 
-#product {
-  height: 25px;
+.product {
+  height: 30px;
   width: auto;
   background-color: orange;
   display: flex;
@@ -69,9 +69,14 @@ input {
 
 .create-button {
   height: 20px;
-  background-color: peru;
+  background-color:greenyellow;
 }
 
-#calculate {
+.calc-prices-button {
+  background-color: green;
+}
+
+footer {
+  align-content: center;
   
 }
