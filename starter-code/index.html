@@ -6,9 +6,62 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+  <h1>Ironhack Merchandising Shop</h1>
+  <div id="hidden" class="product">
+    <div><span class="name">IronProduct</span></div>
+    <div>$<span class="price">0.00</span></div>
+    <div><label for="">QTY</label><input value="0" type="text" class="qty"></div>
+    <div>$<span class="totalProductPrice">0.00</span></div>
+    <div><button class="btn btn-delete" type="button">Delete</button></div>
+  </div>
+  <div class="product">
+    <div><span class="name">IronBubble-head</span></div>
+    <div>$<span class="price">25.00</span></div>
+    <div><label for="">QTY</label><input value="0" type="text" class="qty"></div>
+    <div>$<span class="totalProductPrice">0.00</span></div>
+    <div><button class="btn btn-delete" type="button">Delete</button></div>
+  </div>
+  <div class="product">
+    <div><span class="name">IronShirt</span></div>
+    <div>$<span class="price">15.00</span></div>
+    <div><label for="">QTY</label><input value="0" type="text" class="qty"></div>
+    <div>$<span class="totalProductPrice">0.00</span></div>
+    <div><button class="btn btn-delete" type="button">Delete</button></div>
+  </div>
+  <div class="product">
+    <div><span class="name">IronCup</span></div>
+    <div>$<span class="price">10.00</span></div>
+    <div><label for="">QTY</label><input value="0" type="text" class="qty"></div>
+    <div>$<span class="totalProductPrice">0.00</span></div>
+    <div><button class="btn btn-delete" type="button">Delete</button></div>
+  </div>
+  <div class="product">
+    <div><span class="name">IronSticker</span></div>
+    <div>$<span class="price">1.00</span></div>
+    <div><label for="">QTY</label><input value="0" type="text" class="qty"></div>
+    <div>$<span class="totalProductPrice">0.00</span></div>
+    <div><button class="btn btn-delete" type="button">Delete</button></div>
+    </div>
+  <div class="product">
+    <div><span class="name">IronAxe</span></div>
+    <div>$<span class="price">100.00</span></div>
+    <div><label for="">QTY</label><input value="0" type="text" class="qty"></div>
+    <div>$<span class="totalProductPrice">0.00</span></div>
+    <div><button class="btn btn-delete" type="button">Delete</button></div>
+  </div>
+  <div>
+    <div><input id="nameProduct" type="text"></div>
+    <div><input id="asignedPrice" type="text"></div>
+    <div></div>
+    <div></div>
+    <div><button type="button" id="new-item-create" class="btn">Create</button></div>    
+  </div>
+  <button type="button" id="calc-prices-button" class="btn btn-success">Calculate Prices</button>
+  <h2>Total Price: $<span id="total-price">0.00</span></h2>
+
+  <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>
