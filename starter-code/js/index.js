@@ -20,18 +20,21 @@ window.onload = function() {
   var calculatePriceButton = document.getElementById("calc-prices-button");
   var createItemButton = document.getElementById("new-item-create");
   var deleteButtons = document.getElementsByClassName("btn-delete");
-  var element = document.getElementById("product1");
-  var itemPrice = element.getAttribute("value");
+  var productOnePrice = document
+    .getElementById("product-one")
+    .getAttribute("value");
 
-  
   function getTotalPrice() {
-    var totalPrice = itemPrice * itemQuantity;
-    var noPrice = document.getElementById("no-price");
-    var parent = document.getElementById("price-tag");
-    noPrice.innerHTML = "$ " + totalPrice.toFixed(2);
+    var productOneQuantity = document
+      .getElementById("product-quantity-one")
+      .value;
+    var totalPrice = productOnePrice * productOneQuantity;
+    console.log(productOnePrice);
+    console.log(productOneQuantity);
     console.log(totalPrice);
-    console.log(itemPrice);
-    console.log(itemQuantity);
+    var parent = document.getElementById("price");
+    console.log(totalPrice);
+    parent.innerHTML = totalPrice.toFixed(2);
   }
 
   calculatePriceButton.onclick = getTotalPrice;
