@@ -1,7 +1,36 @@
 input {
   border: solid 1px black;
 }
-
+h1{
+  text-align: left;
+  margin: 30px  86px 30px 394px;
+}
+div{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  text-align: end;
+  align-content: space-around;
+} 
+div span, div label{
+  align-self: center;
+}
+.margin{
+  margin-bottom: 30px;
+}
+.user{
+  display: flex;
+  justify-content: space-between;
+}
+  .user input{
+    margin: 20px 25px;
+    width: 124px;
+  }
+  .user div{
+    justify-content: flex-end;
+    padding: 20px;
+    font-size: 11.5px;
+  }
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -28,6 +57,7 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin-top: 50px;
 }
 
 .btn-delete {
