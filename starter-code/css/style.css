@@ -1,3 +1,7 @@
+* {
+  line-height: 50px;
+}
+
 input {
   border: solid 1px black;
 }
@@ -28,7 +32,9 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
-}
+    margin-top: 50px;
+    margin-left: 700px;
+  }
 
 .btn-delete {
     color: #fff;
@@ -38,4 +44,18 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.products div div {
+  display: inline;
+  margin-right: 150px;
+  margin-left: 50px;
+}
+
+.header {
+  margin-left: 670px;
+}
+
+.total-price {
+  margin-left: 670px;
 }
