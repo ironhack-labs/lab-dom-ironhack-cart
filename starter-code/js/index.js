@@ -29,17 +29,38 @@ window.onload = function() {
     .getElementById("product-two-price")
     .getAttribute("value");
 
+
+    //function getTotalPrice
+
   function getTotalPrice() {
+
+
     var productOneQuantity = document
       .getElementById("product-one-quantity").value;
-    document.getElementById("price-one").innerHTML = (productOnePrice * productOneQuantity).toFixed(2);
+      var totalPriceOne = (productOnePrice * productOneQuantity).toFixed(2);
+    document.getElementById("price-one").innerHTML = totalPriceOne
 
     var productTwoQuantity = document
       .getElementById("product-two-quantity").value;
-    document.getElementById("price-two").innerHTML = (productTwoPrice * productTwoQuantity).toFixed(2);
+      var totalPriceTwo = (productTwoPrice * productTwoQuantity).toFixed(2);
+    document.getElementById("price-two").innerHTML = totalPriceTwo;
+
+
+    prices = [parseFloat(totalPriceOne), parseFloat(totalPriceTwo)];
+ 
+    var totalPrice = 0;
+
+    for (i = 0; i < prices.length; i ++) {
+      totalPrice += prices [i]
+    }
+
+    document.getElementById ("total-price").innerHTML = "$" + totalPrice;
+  
   }
 
+
   calculatePriceButton.onclick = getTotalPrice;
+
 
   //createItemButton.onclick = createNewItem;
 
@@ -47,3 +68,10 @@ window.onload = function() {
     deleteButtons[i].onclick = deleteItem;
   }
 };
+
+
+
+//Delete buttons;
+
+var deleteButton = document.getElementsByClassName ("btn-delete");
+
