@@ -59,3 +59,10 @@ input {
   border: 1px solid #000000;
 }
 
+#client-input {
+  background-color: aqua;
+  height: 50px;
+  display: flex;
+  justify-content: left;
+  
+}
