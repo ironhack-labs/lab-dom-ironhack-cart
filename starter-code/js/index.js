@@ -32,9 +32,7 @@ window.onload = function() {
     console.log(productOnePrice);
     console.log(productOneQuantity);
     console.log(totalPrice);
-    var parent = document.getElementById("price");
-    console.log(totalPrice);
-    parent.innerHTML = totalPrice.toFixed(2);
+    document.getElementById("price").innerHTML = totalPrice.toFixed(2);
   }
 
   calculatePriceButton.onclick = getTotalPrice;
