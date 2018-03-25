@@ -54,6 +54,7 @@ header {
 
 .container div{
   align-self: center;
+  width: 15%;
   
 }
 
@@ -62,4 +63,6 @@ footer div {
   display: flex;
   justify-content: center;
 }
+
+
 

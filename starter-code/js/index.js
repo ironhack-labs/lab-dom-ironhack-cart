@@ -17,8 +17,8 @@ function getTotalPrice() {
     var cantidad = document.getElementById("quantity").value;
     var precioLimpio = precio.slice(1);
   
-    console.log(precio+" "+cantidad);
-    console.log("PrecioLimpio " + precioLimpio);
+    /* console.log(precio+" "+cantidad);
+    console.log("PrecioLimpio " + precioLimpio); */
 
     var precioTotal = precioLimpio * cantidad;
     /* console.log(precioTotal); */ 
