@@ -1,9 +1,27 @@
+body {
+  text-align: center;
+}
+
+body > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px 0;
+}
+
+div > div {
+  width: 20%;
+  padding-left: 40px;
+  display: inline-flex;
+}
+
 input {
   border: solid 1px black;
+  margin: 0 10px;
 }
 
 .btn {
-  display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
   font-size: 14px;
@@ -20,8 +38,9 @@ input {
   -ms-user-select: none;
   user-select: none;
   background-image: none;
-  border: 1px solid transparent;
+  border: 1px solid grey;
   border-radius: 4px;
+  min-width: 70px;
 }
 
 .btn-success {
