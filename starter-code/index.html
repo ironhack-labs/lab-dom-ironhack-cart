@@ -10,5 +10,36 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <h1>Ironhack Merchandising Shop</h1>
+  <div class="all-products">
+  <div class="each-product">
+    <div><span class="products-name">Product's name</span></div>
+    <div><span class="price-of-one-product">$3.25</span></div>
+    <div><label for="quantity">QTY</label><input type="number" id="quantity" class="qty"></div>
+    <div><span class="total-products-price">$3.25</span></div>
+    <div><button class="btn btn-delete">Delete</button></div>
+  </div>
+  <div class="clear"></div>
+  <div class="each-product">
+    <div><span class="products-name">Product's name</span></div>
+    <div><span class="price-of-one-product">$3.25</span></div>
+    <div><label for="quantity">QTY</label><input type="number" id="quantity" class="qty"></div>
+    <div><span class="total-products-price">$3.25</span></div>
+    <div><button class="btn btn-delete">Delete</button></div>
+  </div> <!-- products -->
+  <div class="clear"></div>
+  <div id="before"></div>
+  <div class="new-product">
+      <div class="input"><input type="text" class="new-product-name"></div>
+      <div class="input"><input type="text" class="new-price"></div>
+      <div class="btn-add-div"><button class="btn btn-add">Add</button></div>
+    </div>
+  </div> <!-- all-products-->
+  <div>
+  <div class="clear"></div>
+    <button class="btn btn-success calculate-price">Calculate</button>
+    <h2 class="total-cart-price">Total: $0.00</h2>
+  </div><!--  calculating prices -->
+  <script src="./js/index.js"></script>
 </body>
 </html>
