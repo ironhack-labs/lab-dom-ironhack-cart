@@ -1,5 +1,18 @@
+.wrapper, .wrapper2 {
+  width: 80%;
+  margin: 100px auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 input {
   border: solid 1px black;
+}
+
+.center {
+  width: 100%;
+  text-align: center;
 }
 
 .btn {
@@ -38,4 +51,9 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.green-button-position {
+  text-align :center;
+  margin: 50px 0;
 }

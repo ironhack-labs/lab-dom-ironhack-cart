@@ -1,14 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
-</head>
-<body>
-</body>
-</html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Ironhack cart</title>
+  </head>
+  
+  <body>
+    <div class="wrapper">
+      <div><span>IronBubble-head</span></div>
+
+      <div>$<span class="unit-price" id="unit-price">25</span></div>
+
+      <div>
+        <label for="units" class="quantity">QTY</label>
+        <input class="unit-quantity" id="units" placeholder="Buy ALL the things!">
+      </div>
+
+      <div>$<span class="total-price" id="total-price">0.00</span></div>
+
+      <div>
+        <button class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+
+    <div class="wrapper2">
+        <div><span>Iron shirt</span></div>
+  
+        <div>$<span class="unit-price" id="unit-price2">15</span></div>
+  
+        <div>
+          <label for="units" class="quantity">QTY</label>
+          <input class="unit-quantity" id="units2" placeholder="Buy ALL the things!">
+        </div>
+  
+        <div>$<span class="total-price" id="total-price2">0.00</span></div>
+  
+        <div>
+          <button class="btn btn-delete">Delete</button>
+        </div>
+      </div>
+  
+    <div class="green-button-position">
+      <button class="btn btn-success">Calculate prices</button>
+    </div>
+
+    <div class="center">
+      <h2>Global price: $<span class="global-price">0.00</span></h2>
+    </div>
+
+      <script type="text/javascript" src="./js/index.js"></script>
+
+  </body>
+  </html>
+  
