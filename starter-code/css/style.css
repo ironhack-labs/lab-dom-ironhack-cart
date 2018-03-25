@@ -65,5 +65,29 @@ footer div {
   justify-content: center;
 }
 
+.nuevos-items {
+  display: flex;
+  justify-content: flex-start;
+  width: 50%;
+  padding-top: 30px
+}
+
+.newNombre {
+  display: flex;
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+.newPrecio {
+  display: flex;
+  margin-right: 30px;
+}
+
+.newButton {
+  display: flex;
+  margin-right: 30px;
+}
+
+
 
 
