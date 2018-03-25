@@ -11,30 +11,18 @@
 </head>
 <body>
   <h1>Ironhack Merchandising Shop</h1>
-  <div class="container">
-    <div class="cart-element">
-      <div><span>IronBubble-Head</span></div>
-      <div><span class="price" value="25">$25.00</span></div>
-      <div><label for="qty">QTY</label> <input type="text" class="quantity" label="QTY" value="4" name="qty"></div>
-      <div><span>$0.00</span></div>
-      <div><button type="submit" class="btn-delete" id="btn-delete">Delete</button></div>
-    </div>
-    <div class="cart-element">
-        <div><span>Ironcup</span></div>
-        <div><span class="price" value="25">$5.00</span></div>
-        <div><label for="qty">QTY</label> <input type="text" class="quantity" label="QTY" value="2" name="qty"></div>
-        <div><span class="price-per-qty">$0.00</span></div>
-        <div><button type="submit" class="btn-delete">Delete</button></div>
-      </div>
+  <div id="container">
   </div>
   <div class="create">
     <input type="text" id="product" placeholder="product name">
     <input type="text" id="product-price" placeholder="price">
-    <button class="btn-create" id="new-item-create">Create</button>
+    <input type="hidden">
+    <input type="hidden">
+    <button class="new-item-create" id="new-item-create">Create</button>
   </div>
   <div class="boton">
     <button class="btn-success" id="calc-prices-button">Calculate Prices</button>
   </div>
-  <h1 id="total-price"></h1>
+  <h2 id="total-price">Total Price: <span>$0</span></h2>
 </body>
 </html>

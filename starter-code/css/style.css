@@ -1,7 +1,7 @@
 input {
   border: solid 1px black;
 }
-h1 {
+h2, h1 {
   text-align: center;
 }
 .btn {
@@ -37,12 +37,13 @@ h1 {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    margin-bottom: 10px;
 }
 
 .quantity {
   margin: 0 5px;
 }
-.container {
+#container {
   width: 100%;
 }
 
@@ -60,7 +61,7 @@ h1 {
   width: 100%;
   display: flex;
   padding-left: 50px;
-  justify-content: flex-start;
+  justify-content: space-around;
 }
 .create > button {
   justify-self: flex-end;
