@@ -3,8 +3,8 @@ function deleteItem(e){
 }
 
 function getPriceByProduct(itemNode){
-  var precio = document.getElementsByClassName(itemNode)[0].innerHTML;
-  console.log(precio);
+  var precio = document.getElementsByClassName("cost")[itemNode].innerHTML;
+  return parseInt(precio);
 }
 
 function updatePriceByProduct(productPrice, index){
@@ -13,16 +13,19 @@ function updatePriceByProduct(productPrice, index){
   console.log(productPrice, index, cantidad)
   document.getElementsByClassName("total-item")[index].innerHTML ="$" + productPrice * cantidad;
   
+  return productPrice * cantidad;
 }
 
 function getTotalPrice() {
-  var lista = document.getElementsByClassName(producto).length;
-
-  for (var i=0; i<lista, i++) {
-    precioTotal += updatePriceByProduct(getPriceByProduct(i));
+  var lista = document.getElementsByClassName("producto").length;
+  console.log(lista);
+  var precioTotal = 0;
+  for (var i=0; i<lista; i++) {
+    precioTotal += updatePriceByProduct(getPriceByProduct(i),i);
   }
-
-  document.getElementById(total-price).getElementsByTagName("h2").getElementsByTagName("span").innerHTML = "$" . precioTotal;
+  console.log(precioTotal);
+  document.getElementById("total-price")[0].getElementsByTagName("h2")[0].getElementsByTagName("span")[0].innerHTML = "$" + precioTotal;
+  
 }
 
 function createQuantityInput(){
