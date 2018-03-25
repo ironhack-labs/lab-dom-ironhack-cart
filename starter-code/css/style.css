@@ -73,3 +73,8 @@ h1{
   justify-content: center;
   
 }
+.footer{
+  display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
