@@ -57,3 +57,13 @@ input {
   width: 20%;
   margin: 20px auto;
 }
+
+
+h2
+  {
+    color:black;
+    display: block;
+    width: 20%;
+    margin: 20px auto;
+    text-align: center;
+  }
