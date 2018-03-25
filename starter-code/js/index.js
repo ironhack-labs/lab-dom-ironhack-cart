@@ -1,13 +1,18 @@
-function deleteItem(e){
-
-}
+/* function deleteItem(e){
+  borrara una linea
+} */
 
 function getPriceByProduct(itemNode){
-
+  var priceList = documen.getElementsByClassName("cost");
 }
 
 function updatePriceByProduct(productPrice, index){
+    /* actualiza el total */
+for (var index = 0; index < productPrice.length ; i++) {
+  document.getElementsByClassName("total[index]").innerHTML = '$' + productPrice;
+}
 
+    
 }
 
 function getTotalPrice() {
@@ -27,15 +32,16 @@ function getTotalPrice() {
 }
 
 
-function createQuantityInput(){
-
+/* function createQuantityInput(){
+    coge la cantidad
 }
 
 function createDeleteButton(){
 
 }
 
-function createQuantityNode(){
+function createQuantityNode(){  
+  var quantityList = document.getElementsByClassName("quantity");
 
 }
 
@@ -44,12 +50,12 @@ function createItemNode(dataType, itemData){
 }
 
 function createNewItemRow(itemName, itemUnitPrice){
-
+  nueva linea
 }
 
 function createNewItem(){
-
-}
+  crea un nuevo item
+} */
 
 window.onload = function(){
   var calculatePriceButton = document.getElementById('calc-prices-button');
