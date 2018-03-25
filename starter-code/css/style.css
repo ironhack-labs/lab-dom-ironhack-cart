@@ -39,3 +39,37 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.row{
+  overflow: auto;
+}
+.row div{
+  float: left;
+  padding: 0 50px;
+}
+
+.title{
+  text-align: center;
+}
+
+.unit-name{
+  display: block;
+  width: 80px;
+}
+
+.unit-price{
+  display: block;
+  width: 50px;
+}
+
+.row-item{
+  margin-bottom: 25px;
+}
+.new-item-row,
+.total-row{
+  text-align: center;
+}
+
+.total-row{
+  margin-top: 15px;
+}
