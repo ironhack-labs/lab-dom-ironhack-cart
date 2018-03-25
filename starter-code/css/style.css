@@ -66,3 +66,12 @@ input {
   justify-content: left;
   
 }
+
+.create-button {
+  height: 20px;
+  background-color: peru;
+}
+
+#calculate {
+  
+}
