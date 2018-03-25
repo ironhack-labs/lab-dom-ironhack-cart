@@ -1,8 +1,13 @@
+
+/*Función que borra un producto entero 
+determinado (el asociado al botón de borrar que se pulsara)*/ 
 function deleteItem(e) {
+//e.currentTarget => el botón que se ha pulsado
   var contenedorProducto = e.currentTarget.parentNode.parentNode;
   contenedorProducto.remove();
 }
 
+//función que recoge el precio por unidad. Tiene esta forma: $0.00
 function getPriceByProduct(itemNode) {
   var price = document
     .getElementsByClassName(itemNode)[0]
@@ -10,12 +15,12 @@ function getPriceByProduct(itemNode) {
   //deberia devolver el precio unitario
   var priceWithoutDolar = price.substring(1);
 
+  //devuelve el numero sin el dolar
   return parseFloat(priceWithoutDolar);
 }
 
-//function updatePriceByProduct(productPrice, index){
+/*Esta función actualiza el precio por producto (cantidad * precio unitario) */ 
 function updatePriceByProduct(productPrice, index) {
-  // function updatePriceByProduct(){
 
   //accedemos a la cantidad que haya de ese producto en concreto
   var QTY = document
@@ -23,21 +28,23 @@ function updatePriceByProduct(productPrice, index) {
     [index].getElementsByTagName("input")[0].value;
 
   //accedemos al precio
-  // var  priceByProduct = getPriceByProduct(index);
-
   document
     .getElementsByClassName("total-product-price")
     [index].getElementsByTagName("span")[0].innerHTML =
     "$" + productPrice * QTY;
+
   return productPrice * QTY;
-  // console.log(totalPerProduct);
+  
 }
 
+//función que calcula el precio total de todos los productos (y sus cantidades)
 function getTotalPrice() {
   var cuantosProductsHay = document.getElementsByClassName("product").length;
 
   var precioTotal = 0;
   for (var i = 0; i < cuantosProductsHay; i++) {
+    //dado que las clases que contienen a cada producto están numeradas del 0 - (length-1), 
+    //hay que hacer un parseo i a String para que luego se pase directamente al getElementsByClassName. 
     var istring = String(i);
     precioTotal += updatePriceByProduct(getPriceByProduct(istring), i);
   }
@@ -51,19 +58,31 @@ function getTotalPrice() {
   return precioTotal;
 }
 
+
 function createQuantityInput() {
+  //El div creado tiene que tener esta forma: 
   //   <div class="QTY"> QTY <input type="text" name="QTY" value="0"><br> </div>
+
+
+  var item = document.getElementById("all-products").lastChild;
 
   var quantityInput = document.createElement("div");
   quantityInput.classList.add("QTY");
   quantityInput.innerHTML = "QTY";
 
-  var item = document.getElementById("all-products").lastChild;
+  var input = document.createElement('input');
+
+  input.setAttribute("type", "text");
+  input.setAttribute("value", "0");
+  input.setAttribute("name", "QTY");
+
   quantityInput.appendChild(document.createElement("input"));
   item.appendChild(quantityInput);
 }
 
 function createDeleteButton() {
+//El botón creado tiene que tener esta forma: 
+  // <div class="delete"> <button type="button" class="btn-delete btn">Delete </button></div>
 
   var item = document.getElementById("all-products").lastChild;
   var divDeleteBtn = document.createElement("div");
@@ -76,11 +95,10 @@ function createDeleteButton() {
   divDeleteBtn.appendChild(boton)
   item.appendChild(divDeleteBtn);
 
-  // <div class="delete"> <button type="button" class="btn-delete btn">Delete </button></div>
 }
 
 function createQuantityNode() {
-
+//El div creado tiene que tener esta forma: 
  // <div class="total-product-price"> <span> $0.00 </span></div>
  var item = document.getElementById("all-products").lastChild;
  var totalProductPrice = document.createElement("div");
@@ -96,6 +114,11 @@ function createQuantityNode() {
 function createItemNode(dataType, itemData) {}
 
 function createNewItemRow(itemName, itemUnitPrice) {
+
+  /*Tiene que tener esta forma
+  <div> <span> IronBubble-head</span></div>
+<div class="1"> <span value="25">$30.00</span></div>
+ */
   var cuantosItemsHay = document.getElementsByClassName("product").length;
 
   var padre = document.createElement("div");
@@ -116,7 +139,8 @@ function createNewItemRow(itemName, itemUnitPrice) {
   element.classList.add(cuantosItemsHay);
   var span = document.createElement("span");
   span.value = itemUnitPrice;
-  //añadimos el value
+
+  //añadimos el itemUnitPrice
   span.innerHTML = "$"+itemUnitPrice;
   element.appendChild(span);
   padre.appendChild(element);
@@ -127,13 +151,8 @@ function createNewItemRow(itemName, itemUnitPrice) {
   createQuantityNode() ;
   createDeleteButton();
 
-window.onload();
-  /* var parent = document.getElementsByTagName('body')[0]
- parent.appendChild(element); */
-  /* 
-<div> <span> IronBubble-head</span></div>
-<div class="1"> <span value="25">$30.00</span></div>
- */
+actualizar();
+
 }
 
 function createNewItem() {
@@ -148,7 +167,10 @@ function createNewItem() {
   createNewItemRow(newItemName, newUnitPrice);
 }
 
-window.onload = function() {
+//función genérica para actualizar => si se añade algún elemento en el DOM que se necesita que tenga 
+//asociado una acción, se debe llamar a este método. 
+//Ahora mismo solo contempla: Crear nuevos productos, Calcular el precio total y eliminar productos. 
+function actualizar () {
   var calculatePriceButton = document.getElementById("calc-prices-button");
   var createItemButton = document.getElementById("new-item-create");
   var deleteButtons = document.getElementsByClassName("btn-delete");
@@ -162,3 +184,10 @@ window.onload = function() {
   }
 };
 
+/*window.onload => se dispara cuando todo el documento se ha terminado de cargar
+Si le asociamos una función, cuando se termine de cargar, se disparará esa función. 
+En este caso, tiene asociado la función actualizar, que es la encargada de asociar eventos 
+de determinadas funciones con los botónes creados. 
+Si se crean nuevos botones.... sorpresa, hay que llamar a la función actualizar que creará dichas asociaciones. 
+*/
+window.onload = actualizar;
