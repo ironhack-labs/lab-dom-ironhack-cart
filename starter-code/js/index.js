@@ -1,5 +1,4 @@
 function deleteItem(){
-  console.log('PULSADO')
   var p = this.parentNode.parentNode.parentNode;
   var c = this.parentNode.parentNode;
   p.removeChild(c);
@@ -71,8 +70,10 @@ function createNewItem(){
     productInfo.getElementsByClassName('price')[0].innerHTML = price;
     var products = document.getElementsByClassName('product');
     p.insertBefore(productInfo, products[(products.length-1)].nextSibling);
-    console.log(deleteButtons = document.getElementsByClassName('btn-delete'))
-    return deleteButtons = document.getElementsByClassName('btn-delete');
+    deleteButtons = document.getElementsByClassName('btn-delete');
+    for(var i = 0; i < deleteButtons.length ; i++){
+      deleteButtons[i].onclick = deleteItem;
+    }
   }
 }
 
@@ -83,11 +84,8 @@ window.onload = function(){
 
   calculatePriceButton.onclick = getTotalPrice;
   createItemButton.onclick = createNewItem;
-  console.log(createNewItem)
-  console.log(deleteButtons)
 
   for(var i = 0; i < deleteButtons.length ; i++){
-    console.log(deleteButtons.length)
     deleteButtons[i].onclick = deleteItem;
   }
 };
