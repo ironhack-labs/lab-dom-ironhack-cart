@@ -1,4 +1,21 @@
-input {
+body {
+  text-decoration: none;
+  margin: 50px;
+}
+
+.line {
+  display: inline;
+  align-items: center;
+  text-align: center;
+  font-size: 20px;
+  margin : auto 40px;
+}
+ 
+.quantity {
+  margin: 0 5px;
+}
+ 
+.input {
   border: solid 1px black;
 }
 
@@ -28,6 +45,8 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin : 20px auto;
+    float: center;
 }
 
 .btn-delete {
