@@ -1,47 +1,39 @@
-/* function deleteItem(e){
-  borrara una linea
-} */
+function deleteItem(e){
+
+}
 
 function getPriceByProduct(itemNode){
-  var priceList = documen.getElementsByClassName("cost");
+  var precio = document.getElementsByClassName(itemNode)[0].innerHTML;
+  console.log(precio);
 }
 
 function updatePriceByProduct(productPrice, index){
-    /* actualiza el total */
-for (var index = 0; index < productPrice.length ; i++) {
-  document.getElementsByClassName("total[index]").innerHTML = '$' + productPrice;
-}
-
-    
+  //coge que cantidad hay del input y actualiza el total con la multiplicacion por el precio
+  var cantidad = document.getElementsByClassName("quantity")[index].getElementsByTagName("input")[0].value;
+  console.log(productPrice, index, cantidad)
+  document.getElementsByClassName("total-item")[index].innerHTML ="$" + productPrice * cantidad;
+  
 }
 
 function getTotalPrice() {
-    /* console.log("Hello"); */
+  var lista = document.getElementsByClassName(producto).length;
 
-    var precio = document.getElementById("cost").innerHTML ;
-    var cantidad = document.getElementById("quantity").value;
-    var precioLimpio = precio.slice(1);
-  
-    /* console.log(precio+" "+cantidad);
-    console.log("PrecioLimpio " + precioLimpio); */
+  for (var i=0; i<lista, i++) {
+    precioTotal += updatePriceByProduct(getPriceByProduct(i));
+  }
 
-    var precioTotal = precioLimpio * cantidad;
-    /* console.log(precioTotal); */ 
-
-    document.getElementById('total').innerHTML = '$' + precioTotal; 
+  document.getElementById(total-price).getElementsByTagName("h2").getElementsByTagName("span").innerHTML = "$" . precioTotal;
 }
 
+function createQuantityInput(){
 
-/* function createQuantityInput(){
-    coge la cantidad
 }
 
 function createDeleteButton(){
 
 }
 
-function createQuantityNode(){  
-  var quantityList = document.getElementsByClassName("quantity");
+function createQuantityNode(){
 
 }
 
@@ -50,12 +42,12 @@ function createItemNode(dataType, itemData){
 }
 
 function createNewItemRow(itemName, itemUnitPrice){
-  nueva linea
+
 }
 
 function createNewItem(){
-  crea un nuevo item
-} */
+
+}
 
 window.onload = function(){
   var calculatePriceButton = document.getElementById('calc-prices-button');

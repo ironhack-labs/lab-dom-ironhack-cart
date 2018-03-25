@@ -47,13 +47,13 @@ header {
   margin-bottom: 40px;
 }
 
-.container {
+.producto {
   display: flex;
   justify-content: space-around;
   margin-top: 20px;
 }
 
-.container div{
+.producto div{
   align-self: center;
   width: 15%;
   
