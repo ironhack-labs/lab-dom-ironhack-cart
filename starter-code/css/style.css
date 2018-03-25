@@ -25,13 +25,15 @@ input {
 }
 .product {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-content: center;
   text-align: center;
 }
 
-.product p {
-  display: inline;
+.product > * {
+  width: 20%;
+  margin: auto;
+  text-align: center;
 }
 
 .btn-success {
@@ -46,6 +48,12 @@ input {
     border-color: #CF000F;
 }
 
-.quantity {
-  margin: 0 5px;
+
+#calc-prices-button {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+  display: block;
+  width: 20%;
+  margin: 20px auto;
 }

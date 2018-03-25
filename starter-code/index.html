@@ -11,18 +11,34 @@
 </head>
 <body>
   <h1>Ironhack Merchandising Shop</h1>
-  <div class="product">
-    <div class="product-name"><span>IronBubble-Head</span></div>
-    <div id="product-one" value="25"><span >$25.00</span></div>
-    <form method="POST" action="">
-      <p>QTY<input type="number" id="product-quantity-one" value="0"></p>      
+
+  <div class="product" id="product-one">
+    <div class="product-name" id="product-one-name">IronBubble-Head</div>
+    <div class= "product-price" id="product-one-price" value="25"><span >$25.00</span></div>
+    <form method="POST" action="" id="product-one-form">
+      <p>QTY<span><input type="number" id="product-one-quantity" value="0"></span></p>      
     </form>
-    <div id="price-tag">
-      <p>$ <span id="price"> 0.00</span></p>
+    <div class="price-tag">
+      <p>$ <span id="price-one"> 0.00</span></p>
     </div>
     <div class="delete-button">
       <button type="button" class="btn btn-delete">Delete</button>
     </div>
+  </div>
+
+  <div class="product" id="product-two">
+    <div class="product-name" id="product-two-name"><span>Iron T-Shirt</span></div> 
+    <div class="product-price" id="product-two-price" value="15"><span>$15.00</span></div>
+    <form method="POST" action="" id="product-two-form">
+        <p>QTY<input type="number" id="product-two-quantity" value="0"></p>      
+      </form>
+      <div class="price-tag">
+        <p>$ <span id="price-two"> 0.00</span></p>
+      </div>
+      <div class="delete-button">
+        <button type="button" class="btn btn-delete">Delete</button>
+      </div>
+    </div>   
   </div>
   <button type="button" class="btn" id="calc-prices-button">Calculate Prices</button>
 </body>
