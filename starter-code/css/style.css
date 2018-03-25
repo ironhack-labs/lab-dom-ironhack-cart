@@ -58,3 +58,7 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+#hidden {
+  display: none;
+}

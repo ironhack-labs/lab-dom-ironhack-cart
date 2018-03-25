@@ -1,4 +1,5 @@
 function deleteItem(){
+  console.log('PULSADO')
   var p = this.parentNode.parentNode.parentNode;
   var c = this.parentNode.parentNode;
   p.removeChild(c);
@@ -21,9 +22,15 @@ function getTotalPrice() {
   for(var i = 0; i < products.length ; i++){
     price = products[i].getElementsByClassName('price')[0].innerHTML;
     qty = products[i].getElementsByClassName('qty')[0].value;
-    totalProductPrice = price * qty;
-    products[i].getElementsByClassName('totalProductPrice')[0].innerHTML = totalProductPrice.toFixed(2);
-    totalPrice += totalProductPrice;
+    if (isNaN(qty)){
+      alert('Please, insert the quantity of products you want')
+    } else if (qty === '') {
+      products[i].getElementsByClassName('qty')[0].value = 0;
+    } else {
+      totalProductPrice = price * qty;
+      products[i].getElementsByClassName('totalProductPrice')[0].innerHTML = totalProductPrice.toFixed(2);
+      totalPrice += totalProductPrice;
+    }
   }
   return document.getElementById('total-price').textContent = totalPrice.toFixed(2);
 }
@@ -59,10 +66,13 @@ function createNewItem(){
     var name = document.getElementsByClassName('name')[0].innerHTML;
     var productPrice = document.getElementsByClassName('price')[0].innerHTML;
     var productInfo = c.cloneNode(true);
+    productInfo.removeAttribute('id');
     productInfo.getElementsByClassName('name')[0].innerHTML = product;
     productInfo.getElementsByClassName('price')[0].innerHTML = price;
     var products = document.getElementsByClassName('product');
     p.insertBefore(productInfo, products[(products.length-1)].nextSibling);
+    console.log(deleteButtons = document.getElementsByClassName('btn-delete'))
+    return deleteButtons = document.getElementsByClassName('btn-delete');
   }
 }
 
@@ -71,23 +81,13 @@ window.onload = function(){
   var createItemButton = document.getElementById('new-item-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
-  /*console.log(document.getElementById('total-price').textContent)*/
-
   calculatePriceButton.onclick = getTotalPrice;
   createItemButton.onclick = createNewItem;
+  console.log(createNewItem)
+  console.log(deleteButtons)
 
   for(var i = 0; i < deleteButtons.length ; i++){
+    console.log(deleteButtons.length)
     deleteButtons[i].onclick = deleteItem;
   }
-
-  /*for(var i = 0; i < deleteButtons.length ; i++){
-    deleteButtons[i].onclick = function(){
-      console.log("PULSADO")
-    }
-  }*/
-
 };
-
-/*var prices = document.getElementsByClassName(price);
-
-var qty = document.getElementsByClassName(qty).value = 0;*/
