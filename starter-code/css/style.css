@@ -1,8 +1,106 @@
+body h1 h2 {
+  margin:0;
+  font-family: 'IBM Plex Sans', sans-serif; 
+}
+
+
+h1 {
+  font-family:  'IBM Plex Sans', sans-serif;
+}
+
+h2 {
+  margin: 0;
+}
+
+main {
+  height: calc(100vh - 80px);
+  padding: 0 40px;
+  margin-top: 80px;
+}
+
+header {
+  background-color: white;
+  top: 0px;
+  width: 100%;
+  box-shadow: lightgrey 0px 0px 5px;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  padding: 0 40px;
+}
+
+header img{
+  
+  margin-right: 40px;
+}
+
+.columnHeaders {
+  border-bottom: 1px solid #d4d4d4;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+  font-weight: 200;
+  font-size: 14pt;
+}
+
+.col-5 {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 20%;
+  height: 40px;
+}
+
+
+footer {
+  position: fixed;
+  bottom: 0;
+  right:0;
+  width: 100%;
+  height: 60px;
+  padding: 20px 40px;
+  margin: 40px 0 0 0;
+  display: flex;  
+  justify-content: flex-end;
+  align-items: center;
+  box-shadow: lightgrey 0px -2px 2px;
+
+}
+
 input {
-  border: solid 1px black;
+  font-family: 'IBM Plex Sans', sans-serif; 
+  border: solid 1px rgb(177, 177, 177);
+  border-radius: 3px;
+  padding: 5px;
+  width: 120px;
+}
+
+h1 {
+  color: black;
+}
+
+.productRow{
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  margin: 0 0 20px 0;
+}
+
+.newProductRow{
+  
+  display: flex;
+  flex-direction: row;
+  align-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 20px 0;
+  ;
 }
 
 .btn {
+  font-family: 'IBM Plex Sans', sans-serif; 
   display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
@@ -22,7 +120,11 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+  background-color: #285ab8;
+  color: white;
 }
+
+
 
 .btn-success {
     color: #fff;
@@ -36,6 +138,8 @@ input {
     border-color: #CF000F;
 }
 
-.quantity {
-  margin: 0 5px;
+
+
+.cartTotal {
+  margin: 20px 20px;
 }
