@@ -15,13 +15,13 @@ function getTotalPrice() {
 
     var precio = document.getElementById("cost").innerHTML ;
     var cantidad = document.getElementById("quantity").value;
-    var precioLimpio = parseInt(precio.slice(10));
+    var precioLimpio = precio.slice(1);
   
-    /* console.log(precio+" "+cantidad);
-    console.log("PrecioLimpio " + precioLimpio); */
+    console.log(precio+" "+cantidad);
+    console.log("PrecioLimpio " + precioLimpio);
 
     var precioTotal = precioLimpio * cantidad;
-    /* console.log(precioTotal); */
+    /* console.log(precioTotal); */ 
 
     document.getElementById('total').innerHTML = '$' + precioTotal; 
 }
