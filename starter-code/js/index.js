@@ -1,3 +1,7 @@
+function deleteItem(e) {
+  console.log("hola")
+}
+
 function getPriceByProduct(itemNode) {}
 
 function updatePriceByProduct(productPrice, index) {}
@@ -18,6 +22,7 @@ window.onload = function() {
   var calculatePriceButton = document.getElementById("calc-prices-button");
   var createItemButton = document.getElementById("new-item-create");
   var deleteButtons = document.getElementsByClassName("btn-delete");
+  var totalPrice = 0;
   
   var productOnePrice = document
     .getElementById("product-one-price")
@@ -30,12 +35,10 @@ window.onload = function() {
 
     //function getTotalPrice
 
+  productList = document.getElementsByClassName("product")
   function getTotalPrice() {
-
-
-    var productOneQuantity = document
+/*     var productOneQuantity = document
       .getElementById("product-one-quantity").value;
-<<<<<<< HEAD
     var productOneTotal = (productOnePrice * productOneQuantity).toFixed(2)
     document.getElementById("price-one").innerHTML = productOneTotal;
 
@@ -45,28 +48,13 @@ window.onload = function() {
     document.getElementById("price-two").innerHTML = productTwoTotal;
 
     var total = parseFloat(productOneTotal) + parseFloat(productTwoTotal)
-    document.getElementById("total-price").innerHTML = total.toFixed(2);
-=======
-      var totalPriceOne = (productOnePrice * productOneQuantity).toFixed(2);
-    document.getElementById("price-one").innerHTML = totalPriceOne
-
-    var productTwoQuantity = document
-      .getElementById("product-two-quantity").value;
-      var totalPriceTwo = (productTwoPrice * productTwoQuantity).toFixed(2);
-    document.getElementById("price-two").innerHTML = totalPriceTwo;
-
-
-    prices = [parseFloat(totalPriceOne), parseFloat(totalPriceTwo)];
- 
-    var totalPrice = 0;
-
-    for (i = 0; i < prices.length; i ++) {
-      totalPrice += prices [i]
+    document.getElementById("total-price").innerHTML = total.toFixed(2); */
+    for (var i = 0; i < productList.length; i++){    
+      var value = productList[i].querySelector(".product-price").getAttribute("value");
+      var quantity = productList[i].querySelector(".product-price").getAttribute("value");
+      totalPrice = value * quantity;
+      console.log(totalPrice)
     }
-
-    document.getElementById ("total-price").innerHTML = "$" + totalPrice;
-  
->>>>>>> 0c7463f52af89978da9d8340b44bf608c303e1bd
   }
 
 
@@ -77,9 +65,6 @@ window.onload = function() {
 
 
   //Delete Items
-function deleteItem(i){
-
-}
 
   for (var i = 0; i < deleteButtons.length; i++) {
     deleteButtons[i].onclick = deleteItem;
