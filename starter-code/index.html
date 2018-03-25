@@ -1,68 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:200,400,600,700" rel="stylesheet">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 
-
 <body>
-
   <header>
-    <h1>Ironhack Merchandising shop</h1>
+    
+    <div>
+        <img height="40px" src="https://i.imgur.com/1QgrNNw.png">
+    </div>
+    <div>
+        <h1>Ironhack Merchandising Shop</h1>
+    </div>
+    
   </header>
-
   <main>
-    <div class="flexbox">
-      <div>
-          <span>Product Name</span>
+
+      <div class="columnHeaders">
+          <div class="col-5">Item</div>
+          <div class="col-5">Unit price</div>
+          <div class="col-5">Quantity</div>
+          <div class="col-5">Total price</div>
+          <div class="col-5"> </div>
       </div>
-      <div>
-        <span id="priceValue">24</span>
-      </div>
-      <div>
-        <label>QTY</label><input id="quantity" value="1000" placeholder="1000">
-      </div>
-      <div>
-        <span id="totalPrice">0</span>
-      </div>
-      <div>
-        <button class="btn-delete" value="">Delete</button>
-      </div>
+   
+      
+    <div class="newProductRow">
+        <div class="col-5">
+            <input id="newProductName" placeholder="Product name" value=""> 
+        </div>
+        
+        <div class="col-5">
+            <input id="newProductPrice" type="number" placeholder="Unit price" value="">
+
+        </div>
+
+        <div class="col-5">
+        </div>
+
+        <div class="col-5">
+          
+        </div>
+
+        <div class="col-5">
+          <button id="new-item-create" class="btn"><i class="fas fa-plus"></i></button>
+        </div>
 
     </div>
-
-    <!--<div class="flexbox">
-        <div>
-            <input>
-        </div>
-        <div>
-            <input>
-        </div>
-        <div>
-          
-        </div>
-        <div>
-          
-        </div>
-        <div>
-          <button class="" value="">Create</button>
-        </div>
-  
-      </div> -->
-
-
-
-
+    
   </main>
+
   <footer>
-      <button id="calc-prices-button" onClick="getTotalPrice()" >Calculate price</button>
-      <p>Total price</p>
-    </footer>
+
+    <div>
+        <h2>Total Price: <span class="cartTotal">$0</span></h2>
+    </div>
+
+    <button id="calc-prices-button" class="btn btn-success">
+        Calculate price
+    </button>
+
+  </footer>
+
 </body>
+
 </html>
