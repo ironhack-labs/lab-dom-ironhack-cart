@@ -1,3 +1,13 @@
+.horizontal{
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding: 15px;
+  
+}
+
 input {
   border: solid 1px black;
 }
@@ -24,10 +34,16 @@ input {
   border-radius: 4px;
 }
 
+.centrar{
+  display: flex;
+  justify-content: center;
+}
+
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+   
 }
 
 .btn-delete {
