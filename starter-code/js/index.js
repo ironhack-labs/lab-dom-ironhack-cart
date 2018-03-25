@@ -8,7 +8,11 @@ function getPriceByProduct(itemNode){
 }
 
 function updatePriceByProduct(productPrice, index){
-
+  var qty = document.getElementsByClassName('quantity')[index].getAttribute('value');
+  var price = productPrice * qty;
+  var text = "$" + price;
+  document.getElementsByClassName('price-per-qty')[index].removeChild;
+  document.getElementsByClassName('price-per-qty')[index].appendChild(text);
 }
 
 function getTotalPrice() {
@@ -21,7 +25,7 @@ function getTotalPrice() {
     var sumPrice = price * qty;
     sum += sumPrice;
   }
-  document.getElementById("total-price").innerHTML=sum;
+  document.getElementById("total-price").innerHTML="Total price: $" + sum;
 
 }
 

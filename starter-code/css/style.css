@@ -59,6 +59,7 @@ h1 {
 .create {
   width: 100%;
   display: flex;
+  padding-left: 50px;
   justify-content: flex-start;
 }
 .create > button {
