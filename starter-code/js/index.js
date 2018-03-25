@@ -11,14 +11,17 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-    console.log("Hello");
+    /* console.log("Hello"); */
 
-    var precio = document.getElementById("cost").textContent ;
-    var cantidad = document.getElementById("quantity").input;
-    console.log(precio+" "+cantidad);
+    var precio = document.getElementById("cost").innerHTML ;
+    var cantidad = document.getElementById("quantity").value;
+    var precioLimpio = parseInt(precio.slice(10));
+  
+    /* console.log(precio+" "+cantidad);
+    console.log("PrecioLimpio " + precioLimpio); */
 
-    var precioTotal = precio * cantidad;
-    console.log(precioTotal);
+    var precioTotal = precioLimpio * cantidad;
+    /* console.log(precioTotal); */
 
     document.getElementById('total').innerHTML = '$' + precioTotal; 
 }
