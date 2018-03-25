@@ -1,5 +1,11 @@
-function deleteItem(e){
-
+function deleteItem(e) {
+  var boton = e.currentTarget.parentNode; //controlo el evento, y le asigno un padre,
+  // lo que nos interesa es subir un nivel más de padre ( si no nos estariamos refiriendo al botón solo)
+  var padreBoton = boton.parentNode; //está apuntando al div= producto y diciendo que es su padre.
+  // creamos el objeto body
+  var body = document.getElementsByTagName("body")[0];
+  //eliminamos de body el bloque de producto
+  body.removeChild(padreBoton);
 }
 
 function getPriceByProduct(itemNode){
