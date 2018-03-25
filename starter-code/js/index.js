@@ -12,18 +12,20 @@ function updatePriceByProduct(productPrice, index){
 
 function getTotalPrice() {
 
-  // accedemos y guardamos en una variable los valores
-  var costeUnitario = document.getElementsByClassName("coste-unitario").getAttribute("value");
-  for (i=0; i<costeUnitario.length; i++) {
-    costeUnitario[i]
-  }
-  var quantity = document.getElementsByClassName("quantity").value;
-  var totalPrecio = document.getElementsByClassName("total-precio");
+  var producto = document.getElementsByClassName("producto");
+  console.log(producto);
+  for(var i = 0; i < producto.length; i++){
+    
+    var costeUnitario = producto[i].getElementsByClassName("coste-unitario")[0].getAttribute("value");
+    console.log(costeUnitario)
+    var quantity = producto[i].getElementsByClassName("quantity")[0].value;
+    console.log(quantity)
+    var totalPrecio = producto[i].getElementsByClassName("total-precio")[0];
+    console.log(totalPrecio)
 
-  //Le añadimos a la etiqueta total-precio el atributo value, con el valor de la multiplicación.
-  totalPrecio.setAttribute("value", costeUnitario * quantity);
-  //Modificamos el valor en el html
-  totalPrecio.innerHTML = costeUnitario * quantity;
+    totalPrecio.setAttribute("value", costeUnitario * quantity);
+    totalPrecio.innerHTML = costeUnitario * quantity;
+  }
 
 }
 
