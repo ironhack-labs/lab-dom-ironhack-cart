@@ -13,7 +13,7 @@
         <h1>IronHack Merchandising Shop</h1>     
     </div>
     <div id="container">
-        <div class="item row">
+        <div class="item row" id="row-model">
             <p class="sub-item"><span class="product">IronBubble-head</span></p>
             <p class="sub-item">$<span class="price">25</span></p>
             <div class="sub-item">
@@ -37,17 +37,17 @@
                 <button class="btn btn-delete">Delete</button>              
             </div>
         </div>
-        <div class="item">
+        <div class="item" id="create-row">
             <div class="sub-item">
-                <input type="text" placeholder="Product">
+                <input type="text" placeholder="Product" id="input-product">
             </div>
             <div class="sub-item">
-                <input type="text" placeholder="Price">
+                <input type="text" placeholder="Price" id="input-price">
             </div>
             <div class="sub-item"></div>
             <div class="sub-item"></div>
             <div class="sub-item">
-                <button class="btn btn-create">Create</button>
+                <button class="btn btn-create" id="create">Create</button>
             </div>
         </div>
         <div class="item">
