@@ -2,6 +2,17 @@ input {
   border: solid 1px black;
 }
 
+.title{
+  text-align: center;
+}
+
+.product-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin : 40px;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -28,6 +39,7 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+  
 }
 
 .btn-delete {
