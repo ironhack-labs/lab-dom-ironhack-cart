@@ -56,31 +56,43 @@
 console.log("connected");
 
 var calculate = document.getElementById("calculate");
-
+var total = document.getElementById("price-total");
+var container = document.getElementById("container");
+var create = document.getElementById("create")
+var doom = document.getElementsByClassName("btn-delete");
 var items = document.getElementsByClassName("item");
 var prices = document.getElementsByClassName("price");
-var inputs = document.getElementsByTagName("input");
 var subtotals = document.getElementsByClassName("price-subtotal")
+var rows = document.getElementsByClassName("row");
+var button = document.getElementsByTagName("button");
+var inputs = document.getElementsByTagName("input");
+
 
 for (var i = 0; i < inputs.length; i++) {
   inputs[i].onclick = function () {
     this.setAttribute("value", "");
   }
-}
+};
+
+calculate.onclick = function () {
+  var counterTotal = 0;
+  for (var i = 0; i < rows.length; i++) {
+    subtotals[i].innerHTML = parseFloat(inputs[i].value) * parseFloat(prices[i].innerHTML);
+    counterTotal += +subtotals[i].innerHTML;
+    total.innerHTML = counterTotal;
+  } 
+};
+
+for (var i = 0; i < doom.length; i++) {
+  doom[i].onclick = function (e) {
+    container.removeChild(e.currentTarget.parentNode.parentNode);
+  }
+
+};
 
 
 
-  calculate.onclick = function () {
-    for (var i = 0; i < items.length; i++) {
-    var counter = 0;
-    var inputValue = parseFloat(inputs[i].value);
-    var priceValue = parseFloat(prices[i].innerHTML);
-    counter = priceValue * inputValue;
-    subtotals[i].innerHTML = counter;
-    console.log("hola")
-    }
-    
-}
+
 
 
 
