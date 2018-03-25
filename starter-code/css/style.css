@@ -25,17 +25,59 @@ input {
 }
 
 .btn-success {
+  height: 40px;
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
+    color: white;
     background-color: #CF000F;
     border-color: #CF000F;
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+.titulo {
+  display: flex;
+  justify-content: center;
+  margin :30px;
+}
+.productoAndPrecio {
+  width:100%;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 30px;
+  text-align: center;
+}
+.nombreProducto {
+  margin: 50px;
+}
+
+.calcular {
+  display: flex;
+  justify-content: center;
+  padding-top: 80px;
+}
+
+.total-precio-total {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+.product-creator{
+  width:100%;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 30px;
+}
+.btn-create {
+  height: 70px;
+ margin: 50px 0px 0px 660px;
+  display: flex;
+  align-self: center;
 }
