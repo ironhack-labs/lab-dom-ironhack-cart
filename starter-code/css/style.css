@@ -1,3 +1,22 @@
+.container{
+  display:flex;
+  justify-content: space-around;
+  margin-top:100px;
+  
+ }
+
+ .container2{
+  display:flex;
+  justify-content: space-around;
+  margin-top:100px;
+ }
+
+ .container3{
+  display:flex;
+  justify-content: space-around;
+  margin-top:100px;
+ }
+
 input {
   border: solid 1px black;
 }
@@ -38,4 +57,22 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.last{
+  clear: both;
+  position: relative;
+  left: 45%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+h1{
+  margin-left: 600px;
+
+}
+
+.tota{
+  margin-left: 600px;
+  margin-top: 20px;
 }
