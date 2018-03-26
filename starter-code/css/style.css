@@ -1,3 +1,8 @@
+#product{
+  display:flex;
+  justify-content: space-between;
+  padding-top:300px;
+}
 input {
   border: solid 1px black;
 }
