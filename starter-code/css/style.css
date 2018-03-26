@@ -1,6 +1,35 @@
+
+h1{
+  display:block;
+  text-align:center;
+}
+.big-container{
+  display:flex;
+  display:table;  
+  align-items:baseline;
+  width:100vw;  
+  height:10vh;
+}
+.product{
+  display:table-row;
+  text-align:center;
+  width:95vw;  
+  align-items: baseline;
+}
 input {
   border: solid 1px black;
 }
+.product-name{
+  margin-left:20px;
+  text-align:left;
+}
+.product-name,.product-cost,.product-quantity,.product-total-price,.product-delete-btn{
+   display: table-cell;
+   float: left;
+   padding: 1px 10px;
+   width: 18vw;;
+   height: 1vh;
+   }
 
 .btn {
   display: inline-block;
@@ -28,14 +57,39 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    display:block;
+    margin:auto;
+    margin-top:100px;
+    padding:10px;
+    border-radius: 4px;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    padding:8px;
+    border-radius: 4px;
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+#calc-prices-button{
+  color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    display:block;
+    margin:auto;
+    margin-top:100px;
+    padding:10px;
+    border-radius: 4px;
+}
+.clearfix{
+  clear:both;
+}
+.total-price-text{
+  margin-top:100px;
+  text-align: center;
 }
