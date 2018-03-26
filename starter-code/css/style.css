@@ -39,3 +39,9 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.all-products {
+  display: flex;
+  justify-content: space-around;
+  
+}
