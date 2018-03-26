@@ -1,11 +1,33 @@
+productList = document.getElementsByClassName("product");
+var priceList = [];
+
 function deleteItem(e) {
   var toEliminate = e.currentTarget.parentNode.parentNode;
   document.body.removeChild(toEliminate);
 }
 
-function getPriceByProduct(itemNode) {}
+function getTotalPrice() {
+  for (var i = 0; i < productList.length; i++) {
+    var value = productList[i]
+      .querySelector(".product-price")
+      .getAttribute("value");
+    var quantity = productList[i].querySelector(".quantity").value;
+    itemTotal = value * quantity;
 
-function updatePriceByProduct(productPrice, index) {}
+    productList[i].querySelector(".price").innerHTML =
+      "$ " + itemTotal.toFixed(2);
+    console.log(quantity);
+    priceList.push(itemTotal);
+    console.log(priceList);
+  }
+  var total = priceList.reduce(add, 0);
+  function add(a, b) {
+    return a + b;
+  }
+  console.log(total)
+  document.getElementById("total-price").innerHTML = total.toFixed(2)
+}
+
 
 function createQuantityInput() {}
 
@@ -22,35 +44,12 @@ function createNewItem() {}
 window.onload = function() {
   var calculatePriceButton = document.getElementById("calc-prices-button");
   var createItemButton = document.getElementById("new-item-create");
-  
-  productList = document.getElementsByClassName("product");
+  var deleteButtons = document.getElementsByClassName("btn-delete");
 
-  function getTotalPrice() {
-    var priceList = [];
-    for (var i = 0; i < productList.length; i++) {
-      var value = productList[i]
-        .querySelector(".product-price")
-        .getAttribute("value");
-      var quantity = productList[i].querySelector(".quantity").value;
-      itemTotal = value * quantity;
-
-      productList[i].querySelector(".price").innerHTML =
-        "$ " + itemTotal.toFixed(2);
-      console.log(quantity);
-      priceList.push(itemTotal);
-      console.log(priceList);
-    }
-    var total = priceList.reduce(add, 0);
-    function add(a, b) {
-      return a + b;
-    }
-    console.log(total)
-    document.getElementById("total-price").innerHTML = total.toFixed(2)
-  }
 
   calculatePriceButton.onclick = getTotalPrice;
 
-  createItemButton.onclick = createNewItem;
+  //createItemButton.onclick = createNewItem;
 
   //Delete Items
 
@@ -61,4 +60,4 @@ window.onload = function() {
 
 //Delete buttons;
 
-var deleteButtons = document.getElementsByClassName("btn-delete");
+
