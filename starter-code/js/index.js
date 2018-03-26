@@ -1,20 +1,39 @@
+
+function calculatePrice () {
+  var buttonElement = document.querySelector('.buttonPrice');
+  var handleClick = function (event) {
+    getPriceByProduct();
+    ('click', getPriceByProduct)
+  }
+
+   
+
+}
+
 function deleteItem(e){
 
 }
 
-function getPriceByProduct(itemNode){
-
+function getPriceByProduct(){
+  var priceProduct = document.querySelector('.product-price').innerHTML;
+  // console.log(priceProduct)
+  return Number(priceProduct);
 }
 
 function updatePriceByProduct(productPrice, index){
 
+
 }
 
 function getTotalPrice() {
+  return getPriceByProduct()*createQuantityInput();
+
 
 }
 
 function createQuantityInput(){
+  var quantityItem = document.querySelector('.qty').value;
+  return Number(quantityItem);
 
 }
 
