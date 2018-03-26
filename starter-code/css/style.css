@@ -39,3 +39,19 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+
+h1 {
+  text-align: center;
+}
+.wraper {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+#total-container {
+  display: flex;
+  justify-content: center;
+
+}
