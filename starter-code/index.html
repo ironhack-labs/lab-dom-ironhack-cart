@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,30 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+  <!--Every product will have:
+
+  A wrapper div that contains all the HTML for that product.
+  A div with a span, showing the product name.
+  A div with a span, showing the cost of one unit.
+  A div with one label and one input, where the user will indicate how many units they will buy.
+  A div with a span, showing the total price for this product. This number should be the result of multiplying the amount of units multiplied by the price of one unit of that product. The default total price should be 0.
+  A div with a delete button, to remove the product from the list.-->
+
+  <h1>Ironhack<br>Merchandising Shop</h1>  
+  <div class="wrapper">
+      <div class="product-table"><span>IronBubble-head</span></div>
+      <div class="product-table"><span id="priceProduct">$25.00</span></div>
+      <div class="product-table"><form><label></label><input id="quantityItems" type="number" value="1"></form></div>
+      <div class="product-table"><span id="totalPrice" value="0"></span>$0.00</div>
+      <div class="product-table"><button class="btn btn-delete">Delete</button></div>
+    </div>
+    <div>
+      <button class="btn btn-success" id="calc-prices-button">Calculate Prices</button>
+    </div>
+
+
+
 </body>
 </html>
