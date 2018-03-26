@@ -28,14 +28,55 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    padding: 5px;
+    border-radius: 10%;
+    width: 35px;
+    font-size: 10px;
 }
+
 
 .quantity {
   margin: 0 5px;
+}
+
+.product {
+  height: 30px;
+  width: auto;
+  background-color: orange;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btest {
+  border: 1px solid #000000;
+}
+
+#client-input {
+  background-color: aqua;
+  height: 50px;
+  display: flex;
+  justify-content: left;
+  
+}
+
+.create-button {
+  height: 20px;
+  background-color:greenyellow;
+}
+
+.calc-prices-button {
+  background-color: green;
+}
+
+footer {
+  align-content: center;
+  
 }
