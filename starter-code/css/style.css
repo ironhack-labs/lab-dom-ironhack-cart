@@ -1,3 +1,19 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 50px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+  align-items: center;
+  width: 100%;
+}
+
 input {
   border: solid 1px black;
 }
