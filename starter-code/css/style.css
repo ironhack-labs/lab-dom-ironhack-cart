@@ -1,3 +1,7 @@
+body{
+  text-align: center;
+}
+
 input {
   border: solid 1px black;
 }
@@ -38,4 +42,29 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.each-product,
+.new-product{
+  width: 100%; 
+  padding: 20px;
+}
+
+.each-product div,
+.input{
+  float: left;
+  width: 250px;
+}
+
+.clear{
+  clear: both;
+}
+
+.btn-add-div{
+  float:right;
+  margin-right: 200px;
+}
+
+.all-products{
+  margin-bottom: 50px;
 }
