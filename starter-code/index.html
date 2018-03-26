@@ -14,16 +14,35 @@
 
   <div class="wrapper">
     <div class ="flexer">
+      <div class="title-row">
+          <div><span >Item Name</span></div>
+          <div><span >Item price</span></div>
+          <div><span >Quantity</span></div>
+          <div><span >Item total</span></div>
+          <div><span >Remove Item</span></div>
+      </div>
       <div class="product">
         <div><span class="product-name">Helado</span></div>
-        <div><span class="price">3</span></div>
-        <div><label id="quantity" for="quantity" >QTY:</label><input type="text" value=""></div>
-        <div><span class="total">$0.00</span></div>
+        <div><span class="price">$13.11</span></div>
+        <div><label for="quantity" >QTY:</label><input class="quantity" type="text" value="11"></div>
+        <div><span class="total">$0</span></div>
         <div><button class="btn btn-delete">Delete</button></div>
+      </div>
+      <div class="product">
+          <div><span class="product-name">Helado</span></div>
+          <div><span class="price">$3.1</span></div>
+          <div><label for="quantity" >QTY:</label><input class="quantity" type="text" value="3"></div>
+          <div><span class="total">$0</span></div>
+          <div><button class="btn btn-delete">Delete</button></div>
+      </div>
+      <div class="create-row">
+        <label for="">New name: <input class="newName" type="text"></label>
+        <label for="">New price: <input class="newPrice" type="text" placeholder="0"></label>
+        <button class="btn" id="new-item-create">Create</button>
       </div>
     </div>
   </div>
-
+  <section class="flexer sum-section"><p class="sum-container">TOTAL: <span id="sum">$0</span></p></section>
   <section class="flexer"><button class="btn btn-success" id="calc-prices-button">Calculate Prices</button></section>
 </body>
 </html>
