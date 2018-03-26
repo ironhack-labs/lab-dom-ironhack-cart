@@ -49,12 +49,12 @@ create.onclick = function () {
   var newRow = model.cloneNode(true);
   container.insertBefore(newRow,createRow);
   for (var i = 0; i < rows.length; i++) {
-      if (i = rows.length-1) {
-        products[i].innerHTML = inputProduct.value;
-        prices[i].innerHTML = inputPrice.value;
-        subtotals[i].innerHTML = "0.00";
-        inputs[i].value = 0;
-      }
+    if (i = rows.length - 1) {
+      products[i].innerHTML = inputProduct.value;
+      prices[i].innerHTML = inputPrice.value;
+      subtotals[i].innerHTML = "0.00";
+      inputs[i].value = 0;
+    } 
   }
   inputProduct.value = "";
   inputPrice.value = "";
