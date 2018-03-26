@@ -1,9 +1,21 @@
+var quantity = document.createElement("button");
+var quantity_text = document.createTextNode("Calculate Prices");
+quantity.appendChild(quantity_text);
+document.body.appendChild(quantity);
+
+
+
+var price = document.getElementsByClassName('price');
+price.innerHTML;
+var quantity = parseFloat(price[0].innerHTML) * parseFloat(document.querySelector('input').innerHTML) ;
+
+
 function deleteItem(e){
 
 }
 
 function getPriceByProduct(itemNode){
-
+  return document.getElementsByClassName("price").innerHTML;
 }
 
 function updatePriceByProduct(productPrice, index){
@@ -11,7 +23,7 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-
+  ;
 }
 
 function createQuantityInput(){
