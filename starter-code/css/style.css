@@ -2,6 +2,10 @@ input {
   border: solid 1px black;
 }
 
+h1{
+  text-align:center;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -24,18 +28,35 @@ input {
   border-radius: 4px;
 }
 
-.btn-success {
+.calc-btn {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
 }
 
-.btn-delete {
+.del-btn {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
 }
 
-.quantity {
+.qty {
   margin: 0 5px;
+  float:left;
+  width:30%;  
+}
+
+/* added css for divs */
+
+
+
+.html-container{
+  display:flex;
+  justify-content: space-around;
+  margin-top:100px;
+}
+
+.calculate{
+  text-align:center;
+  margin-top:100px;
 }
