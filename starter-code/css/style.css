@@ -39,3 +39,10 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+div{
+  display: inline-block;
+  padding: 0 12px;
+  margin: 0 auto;
+  
+}
