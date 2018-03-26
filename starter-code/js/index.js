@@ -1,5 +1,6 @@
 function deleteItem(e) {
-  console.log("hola");
+  var toEliminate = e.currentTarget.parentNode.parentNode;
+  document.body.removeChild(toEliminate);
 }
 
 function getPriceByProduct(itemNode) {}
