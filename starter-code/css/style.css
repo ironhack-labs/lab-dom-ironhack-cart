@@ -28,6 +28,8 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    align-self: center;
+    justify-content: center;
 }
 
 .btn-delete {
@@ -39,3 +41,53 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.producto {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.producto div{
+  align-self: center;
+  width: 15%;
+  
+}
+
+footer div {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.nuevos-items {
+  display: flex;
+  justify-content: flex-start;
+  width: 50%;
+  padding-top: 30px
+}
+
+.newNombre {
+  display: flex;
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+.newPrecio {
+  display: flex;
+  margin-right: 30px;
+}
+
+.newButton {
+  display: flex;
+  margin-right: 30px;
+}
+
+
+
+
