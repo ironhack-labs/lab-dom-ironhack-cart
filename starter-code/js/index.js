@@ -1,3 +1,5 @@
+/*
+
 function deleteItem(e){
 
 }
@@ -50,3 +52,35 @@ window.onload = function(){
     deleteButtons[i].onclick = deleteItem;
   }
 };
+*/
+
+function main () {
+
+var costArray = document.querySelectorAll(".cost");
+var quantityArray = document.querySelectorAll(".quantity");
+var totalPrice = 0;
+
+
+var calculateButton = document.getElementById("calculate-btn");
+var totalAmmount = document.querySelector(".total");
+
+  var calculatePrice = function() {
+      for (var i = 0; i < quantityArray.length; i++) {
+        totalPrice+= costArray[i] * quantityArray[i];
+      }
+      // calculateButton.removeEventListener
+      console.log("monkeyBusiness");
+     totalAmmount.innerHTML = totalPrice;
+  };
+  
+  calculateButton.addEventListener("click", calculatePrice )
+                 
+        
+  
+
+                 
+                 
+                 
+}
+
+main()
