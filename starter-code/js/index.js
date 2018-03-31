@@ -1,52 +1,53 @@
-function deleteItem(e){
 
-}
 
-function getPriceByProduct(itemNode){
+$("#create").click(function () {
+  // find the input item and price
+  var newItem = $(".new-item").val();
+  var newPrice = $(".new-price").val();
 
-}
+  // create an <li> with the text
+  var newLi =
+    $("<li class='row'><span class='col-md-2'>" + newItem + "</span> <span class='price col-md-2'>$" + newPrice + "</span> <input placeholder='Quantity' type='number' class='quantity col-md-2'></input> <p class='item-price col-md-2'>$</p><button class='btn-delete delete btn col-md-2'>Delete</button></li>");
 
-function updatePriceByProduct(productPrice, index){
 
-}
+  // find the <button> inside the <li>
+  newLi.find(".delete").click(function () {
+    var deleteBtn = $(event.target);
+    // find the closest <li> ancestor
+    deleteBtn.closest("li").remove();
+  });
 
-function getTotalPrice() {
+  // add the <li> to the list
+  $("#shopping-list").append(newLi);
 
-}
+  // remove the text from the inputs
+  $(".new-item").val("");
+  $(".new-price").val("");
 
-function createQuantityInput(){
+  // row-price = tot;
+  $(".quantity").keydown(function(e) {
+    if(e.which == 13) {
+      var quantity = $(this).val();
+      tot = quantity*newPrice;
+      rowprice = tot;
+      $(this).closest("li").find("p").html("$" + tot.toString());
+    }
+  });
+});
 
-}
 
-function createDeleteButton(){
 
-}
 
-function createQuantityNode(){
-
-}
-
-function createItemNode(dataType, itemData){
-
-}
-
-function createNewItemRow(itemName, itemUnitPrice){
-
-}
-
-function createNewItem(){
-
-}
-
-window.onload = function(){
-  var calculatePriceButton = document.getElementById('calc-prices-button');
-  var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');
-
-  calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
-
-  for(var i = 0; i<deleteButtons.length ; i++){
-    deleteButtons[i].onclick = deleteItem;
+$("#calculate").click(function(){
+  prices = $(".item-price").find("p").prevObject;
+  len = prices.length;
+  sum = 0;
+  for (var i = 0; i < len; i++){
+    str = $(".item-price").find("p").prevObject[i].innerHTML;
+    if (str.length > 0){
+    number = parseFloat(str.slice(1));
+    sum += number;
+    };
   }
-};
+  $("#total-price > p").html("Total price : $ " + sum);
+})

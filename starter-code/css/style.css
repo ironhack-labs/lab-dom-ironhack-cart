@@ -2,10 +2,15 @@ input {
   border: solid 1px black;
 }
 
+h1{
+  text-align: center;
+  margin: 8vh 0;
+}
+
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
-  margin-bottom: 0;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.42857143;
@@ -28,6 +33,9 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin-left: 46%;
+    margin-top: 5vh;
+    margin-bottom: 4vh;
 }
 
 .btn-delete {
@@ -39,3 +47,13 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.row{
+  margin: 2vh 0;
+}
+
+#shopping-list li{
+  list-style-type: none;
+};
+
+
