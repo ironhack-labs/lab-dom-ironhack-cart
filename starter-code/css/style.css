@@ -39,3 +39,21 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.Iron-title{
+  
+  text-align: center;
+}
+.product{
+  margin-right: auto;
+  margin-left: auto;
+  position:inline;
+  margin: 60px 300px;
+  padding:0px 30px;
+}
+
+
+button{
+  background-color:red;
+  color:white;
+}
