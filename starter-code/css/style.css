@@ -49,10 +49,28 @@ body h1:first-child{
     background-color: #CF000F;
     border-color: #CF000F;
 }
-
+#btn-create {
+  color: rgb(255, 255, 255);
+  background-color: rgb(29, 40, 185);
+  border: none;
+  align-self: flex-end;
+  margin-right: 2px;
+}
 .quantity {
   margin: 0 5px;
 }
+
+#add-product{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30px 7.5% 30px 7.5%;
+}
+#add-product #add-product-cost{
+  margin-right: 44%;
+}
+
+
 
 .btn-success ~ div{
   margin-left: 45%;
