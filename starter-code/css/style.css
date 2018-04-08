@@ -1,3 +1,8 @@
+.flex-container{
+  display: flex;
+  justify-content: space-around;
+}
+
 input {
   border: solid 1px black;
 }
@@ -21,21 +26,38 @@ input {
   user-select: none;
   background-image: none;
   border: 1px solid transparent;
-  border-radius: 4px;
+  border-radius: 3%;
+  
+}
+
+.product-wrapper{
+  border: 1px solid grey;
+  padding: 10px;
 }
 
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    border-radius: 3%;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    border-radius: 3%;
 }
 
 .quantity {
   margin: 0 5px;
 }
+
+.calc-prices-button {
+  margin-top: 40px;
+}
+
+.new-item-create{
+
+}
+
