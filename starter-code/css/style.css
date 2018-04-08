@@ -1,3 +1,11 @@
+body {
+  margin: 30px 30px;
+}
+
+h1 {
+  margin-bottom: 30px;
+}
+
 input {
   border: solid 1px black;
 }
@@ -36,6 +44,27 @@ input {
     border-color: #CF000F;
 }
 
-.quantity {
+.itemQuantity {
   margin: 0 5px;
+}
+
+.item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.newItem {
+  display: flex;
+}
+
+.newItem form {
+  padding-right: 30px;
+}
+
+.calculate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
 }

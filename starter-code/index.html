@@ -4,11 +4,72 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link type="text/css" rel="stylesheet" href="./css/normalize.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+
+  <h1>Ironhack Merchandising Shop</h1>
+  <div class="item">
+    <div>
+      <span class="productName">Ironhack T-Shirt</span>
+    </div>
+    <div>
+        $<span class="costPerUnit">20.00</span>
+    </div>
+    <div>
+      <form>
+        QTY <input class="itemQuantity" type="text" name="quantity">
+      </form>
+    </div>
+    <div>
+      $<span class="totalPrice">0.00</span>
+    </div>
+    <div class="btn">
+      <button type="button" class="btn btn-delete">Delete</button>
+    </div>
+  </div>
+
+  <div class="item">
+    <div>
+      <span class="productName">Ironhack Baseball Cap</span>
+    </div>
+    <div>
+        $<span class="costPerUnit">12.00</span>
+    </div>
+    <div>
+      <form>
+        QTY <input class="itemQuantity" type="text" name="quantity">
+      </form>
+    </div>
+    <div>
+      $<span class="totalPrice">0.00</span>
+    </div>
+    <div class="btn">
+      <button type="button" class="btn btn-delete">Delete</button>
+    </div>
+  </div>
+
+  <div class="newItem">
+    <form>
+      <input class="itemName" type="text" name="quantity" placeholder="Item Name">
+    </form>
+    <form>
+      <input class="itemPrice" type="text" name="quantity" placeholder="Item Price">
+    </form>
+    <button type="button" class="btn" id="new-item-create">Create</button>
+    </div>
+
+  <div class="btn calculate">
+      <button type="button" class="btn btn-success" id="calc-prices-button">Calculate Prices</button> 
+  </div>
+
+  <div class="finalTotal">
+    <h2>Total Price: $<span>0</span></h2>
+  </div>
+
 </body>
 </html>
