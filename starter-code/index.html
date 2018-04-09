@@ -3,12 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ironhack cart</title>
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+  
 </head>
 <body>
+
+<main>
+	
+	<div class="container" id="contenedor">
+		
+		<h1>Ironhack Merchandising Shop</h1>
+
+		<div class="wrapper">
+			
+			<div id="product"><span>Iron Bubble Head</span></div>
+			<div id="cost">$<span>25</span></div>
+			<div id="units">
+				<label for="">QTY</label>
+				<input id="unidades" type="number" value="0">
+			</div>
+			<div id="total">$<span>0</span></div>
+			<div id="delete"><button class="btn btn-delete" id="borrar" class="borrar">Borrar</button></div>
+
+		</div>
+
+		<div class="newWrapper" id="newWrapper"></div>
+
+		<div class="addWrapper">
+			<input type="text" id="addProduct" value="Añade un producto">
+			<input type="number" id="addCost" value="0">
+			<button id="create" class="btn btn-create">Crear</button>
+		</div>
+
+
+
+		<!-- <div class="wrapper">
+			
+			<div id="product"><span>a</span></div>
+			<div id="cost"><span>a</span></div>
+			<div id="units">
+				<label for="">QTY</label>
+				<input id="unidades" type="number" value="0">
+			</div>
+			<div id="total">$<span>3</span></div>
+			<div id="delete"><button class="btn btn-delete" id="borrar">Borrar</button></div>
+
+		</div> -->
+
+		<div id="test"></div>
+
+		<div class="calcular">
+			<button class="btn btn-success" id="calcular">CALCULAR</button>
+		</div>
+
+		<div id="acum"></div>
+
+	</div>
+
+</main>
+
+<script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>
