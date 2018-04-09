@@ -1,41 +1,58 @@
-input {
-  border: solid 1px black;
+html {
+  margin: 0 auto;
 }
 
-.btn {
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
+#title, #total-price{
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 50px;
 }
 
-.btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+#product-1, #product-2, #product-3, #product-4, #product-5, #product-6, #product-7{
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  align-content: stretch;
+  justify-content: stretch;
 }
 
-.btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+#product-1 div, #product-2 div, #product-3 div, #product-4 div, #product-5 div, #product-6 div, #product-7 div{
+  width: 12.5%;
 }
 
-.quantity {
-  margin: 0 5px;
+.sign-cost, .sign-total{
+  display: flex;
+  justify-content: flex-end;
 }
+
+#total{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+#total .button-final button{
+  color: white;
+  font-size: 1.2em;
+  background-color: #4CAF50;
+  border: 2px solid #4CAF50;
+  border-radius: 100px;
+  height: 40px;
+}
+
+.button-delete button{
+  color: white;
+  font-size: 1.2em;
+  background-color: red;
+  border: 2px solid red;
+  border-radius: 100px;
+  height: 40px;
+}
+
