@@ -4,6 +4,8 @@ function deleteItem(e){
 
 function getPriceByProduct(itemNode){
 
+  object.onclick = function(){myScript};
+
 }
 
 function updatePriceByProduct(productPrice, index){

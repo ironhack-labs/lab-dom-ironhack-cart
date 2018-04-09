@@ -1,3 +1,21 @@
+
+.flex-container {
+  display: flex;
+}
+
+.products {
+  display: flex;
+  justify-content: row;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+.productName {
+  margin: 0 5px;
+}
+
+
 input {
   border: solid 1px black;
 }
@@ -37,5 +55,12 @@ input {
 }
 
 .quantity {
-  margin: 0 5px;
+  margin: 0px 5px;
+}
+
+.quantityClass {
+  flex-direction: column;
+}
+header {
+  text-align: center;
 }
