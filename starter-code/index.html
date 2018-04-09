@@ -10,5 +10,93 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <div class="permanent-item-wrapper">
+    <h1 class="page-title">Ironhack Merchandising Shop</h1>
+  </div>
+
+
+
+
+
+  <div class="product-wrapper">
+    
+    <div class="name-wrapper inner-product-wrapper">
+      <span class="product-name">IronBubble-head</span>
+    </div>
+    
+    <div class="cost-wrapper inner-product-wrapper">
+      <span class="dollar-symbol">$</span><span class="unit-cost">25.95</span>
+    </div>
+
+    <div class="quantity-wrapper inner-product-wrapper">
+      <label for="quantity">QTY</label>
+      <input type="text" class="quantity" name="amount-input" placeholder="0">
+    </div>
+
+    <div class="item-total-wrapper inner-product-wrapper">
+      <span class="dollar-symbol">$</span><span class="total-individual-price">0.00</span>
+    </div>
+
+    <div class="delete-button-wrapper inner-product-wrapper">
+      <button class="delete-button btn btn-delete" type="button">Delete</button>
+    </div>
+  </div>
+
+
+
+  <div class="product-wrapper">
+    
+    <div class="name-wrapper inner-product-wrapper">
+      <span class="product-name">IronShirt</span>
+    </div>
+    
+    <div class="cost-wrapper inner-product-wrapper">
+      <span class="dollar-symbol">$</span><span class="unit-cost">15.95</span>
+    </div>
+
+    <div class="quantity-wrapper inner-product-wrapper">
+      <label for="quantity">QTY</label>
+      <input type="text" class="quantity" name="amount-input" placeholder="0">
+    </div>
+
+    <div class="item-total-wrapper inner-product-wrapper">
+      <span class="dollar-symbol">$</span><span class="total-individual-price">0.00</span>
+    </div>
+
+    <div class="delete-button-wrapper inner-product-wrapper">
+      <button class="delete-button btn btn-delete" type="button">Delete</button>
+    </div>
+  </div>
+
+
+  
+  <div id="create" class="create">
+    <div class="create-product-name-wrapper inner-product-wrapper">
+      <input type="text" id="create-product-name" name="create-product-name">
+    </div>
+    <div class="create-product-price-wrapper inner-product-wrapper">
+      <input type="text" id="create-product-price" name="create-product-price">
+    </div>
+
+    <div class="inner-product-wrapper space"></div>
+
+    <div class="create-button-wrapper inner-product-wrapper">
+        <button id="new-item-create" class="create-button btn" type="button">Create</button>
+    </div>
+  </div>
+
+
+
+
+  <div class="permanent-item-wrapper">
+    <button id="calc-prices-button" class="calc-prices-button btn btn-success" type="button">Calculate Prices</button>
+  </div>
+
+  <div class="permanent-item-wrapper">
+    <h1 id="grand-total-price" class="hidden"></h1>
+  </div>
+  
+
+
 </body>
 </html>
