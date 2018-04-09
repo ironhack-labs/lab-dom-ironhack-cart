@@ -1,3 +1,33 @@
+
+h1 {
+display: flex;
+justify-content: center;
+}
+.content{ 
+  width: 100vw;
+  height: 100vh;
+}
+.product{
+  display: flex;
+ flex-direction: row;
+justify-content: space-around; 
+line-height: 3;
+}
+
+.btn-success {
+  display:flex;
+  flex-direction: row;
+  
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+  border-radius: 4px;
+  margin: 0 auto;
+}
+
+
+
+
 input {
   border: solid 1px black;
 }
@@ -28,12 +58,16 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    border-radius: 4px;
+    padding: 6px;
+    width: 70px;
 }
 
 .quantity {
