@@ -1,77 +1,83 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head >
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ironhack cart</title>
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-  
+
+  <title>Ironhack Cart</title>
+
 </head>
 <body>
+  <div class="container" id = "something">
+    <h1>Ironhack SuperChill Shop</h1>
+    <h3> Where the Cool Kids Buy all their Stuff<h3>
 
-<main>
-	
-	<div class="container">
-		
-		<h1>Ironhack Merchandising Shop</h1>
+    <div class="row">
+        <div class="col-xs-5">
+          <span class="productName">IronBubble-head</span>
+        </div>
+        <div class="col-xs-5">
+          <span class="productCost">$25.00</span>
+        </div>
+        <div class="col-xs-5">
+          <label for="qty">QTY</label>
+          <input type="text" value="0" class="qty">
+        </div>
+        <div class="col-xs-5">
+          $<span class="totalProductPrice">0.00</span>
+        </div>
+        <div class="col-xs-5 delete">
+          <button class="btn btn-delete">DELETE</button>
+        </div>
+    </div>
 
-		<div class="wrapper">
-			
-			<div id="product"><span>Iron Bubble Head</span></div>
-			<div id="cost">$<span>25</span></div>
-			<div id="units">
-				<label for="">QTY</label>
-				<input id="unit" type="number" value="0">
-			</div>
-			<div id="total">$<span>0</span></div>
-			<div id="deleteThis"><button class="btn btn-delete">Delete</button></div>
+    <div class="row">
+      <div class="col-xs-5">
+        <span class="productName">Ironshirt</span>
+      </div>
+      <div class="col-xs-5">
+        <span class="productCost">$15.00</span>
+      </div>
+      <div class="col-xs-5">
+        <label for="qty">QTY</label>
+        <input type="text" value="0" class="qty">
+      </div>
+      <div class="col-xs-5">
+        $<span class="totalProductPrice">0.00</span>
+      </div>
+      <div class="col-xs-5 delete">
+        <button class="btn btn-delete">DELETE</button>
+      </div>
+    </div>
 
-		</div>
+      </div>
 
-		<div class="newWrapper" id="newWrapper"></div>
+    <div class="row">
+      <div class="col-xs-5">
+        <input id="productNameValue" type="text" placeholder="Product Name">
+      </div>
 
-		<div class="addWrapper">
-			<input type="text" id="addProduct" value="Add a Product">
-			<input type="number" id="addCost" value="0">
-			<button id="create" class="btn btn-create">Create</button>
-		</div>
+      <div class="col-xs-5">
+        <input id="productCostValue" type="text" placeholder="Product Cost">
+      </div>
+
+      <div id="create">
+        <button class="btn btn-success" id="createBtn" type="button" >CREATE</button>
+      </div>
+    </div>
+
+    <div class="row calculate">
+        <button id="calc-prices-button" class="btn btn-success" onclick="calculatePrices()">CALCULATE PRICES</button>
+    </div>
+
+    <div class="row totalPrice">
+      <h2>Total Price: $<span id="spanTotal">0</span></h2>
+    </div>
 
 
-
-		<div id="test"></div>
-
-		<div class="calculate">
-			<button class="btn btn-success" id="calculate">CALCULATE</button>
-		</div>
-
-		<div id="sum"></div>
-
-	</div>
-
-</main>
-
-<script type="text/javascript" src="./js/index.js"></script>
+  <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>
-
-
-
-
-
-<!-- 
-Every product will have:
-
-A wrapper div that contains all the HTML for that product.
-A div with a span, showing the product name.
-A div with a span, showing the cost of one unit.
-A div with one label and one input, where the user will indicate how many units they will buy.
-A div with a span, showing the total price for this product. This number should be the result of multiplying the amount of units multiplied by the price of one unit of that product. The default total price should be 0.
-A div with a delete button, to remove the product from the list.
-
-name --- price --- qty [form input] -- price -- delete/remove button -->
