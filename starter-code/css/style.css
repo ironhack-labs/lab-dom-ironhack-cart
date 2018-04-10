@@ -4,7 +4,7 @@
 }
 
 input {
-  border: solid 1px black;
+  border: solid 1px grey;
 }
 
 .btn {
@@ -25,14 +25,13 @@ input {
   -ms-user-select: none;
   user-select: none;
   background-image: none;
-  border: 1px solid transparent;
+  border: 1px solid grey;
   border-radius: 3%;
-  
 }
 
 .product-wrapper{
   border: 1px solid grey;
-  padding: 10px;
+  padding: 15px;
 }
 
 .btn-success {
@@ -40,6 +39,7 @@ input {
     background-color: #5cb85c;
     border-color: #4cae4c;
     border-radius: 3%;
+    padding: 10px;
 }
 
 .btn-delete {
@@ -47,6 +47,15 @@ input {
     background-color: #CF000F;
     border-color: #CF000F;
     border-radius: 3%;
+}
+
+.create-new-item{
+  color: rgb(0, 0, 0);
+  background-color: white;
+  border-color: #cfd4cf;
+  border-radius: 3%;
+  padding: 6px 6px;
+  margin-left: 50px;
 }
 
 .quantity {

@@ -11,36 +11,46 @@
 </head>
 <body>
 
-<h1>IronHack Merch</h1>
+<h1 class="flex-container">IronHack Store</h1>
 
 <div class="product-wrapper flex-container"> 
-<div>
-    <span id="product-name">IronHack Bobble Head</span>
-  </div>
 
-  <div>
-    <span id="cost-of-item">$25.00</span>
-  </div>
+    <div>
+      <span id="product-name">IronHack Bobble Head</span>
+    </div>
 
+    <div>
+      <span id="cost-of-item">$25.00</span>
+    </div>
 
-  <div>
-    <label for="qty">QTY:</label>
-    <input id="qty-input" type="text" label="QTY">
-  </div>
+    <div>
+      <label for="qty">QTY:</label>
+      <input id="qty-input" type="text" value="" label="QTY">
+    </div>
 
-  <div >
-    <span id="total-price">$0</span>
-  </div>
+    <div >
+      <label for="total=price">Total Price:</label>
+      <span id="total-price">$0</span>
+    </div>
 
-  <div class=".btn">
-    <button class="btn-delete" type="submit">Delete</button>
-  </div>
+    <div class=".btn">
+      <button class="btn-delete" type="submit">Delete</button>
+    </div>
+
 </div>
 
 <div class="flex-container">
+
   <button onclick="calculatePriceButton()" class="btn-success calc-prices-button">Calculate Total</button>
+
 </div>
 
+
+<button onclick="createNewItem()" class="create-new-item btn-success">Create</button>
+
+<div class="flex-container">
+  <h2>Total Price: <span>$0</span></h2>
+</div>
 
 </body>
 </html>
