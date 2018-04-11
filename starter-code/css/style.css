@@ -1,3 +1,7 @@
+body{
+  margin: 0 10%;
+}
+
 input {
   border: solid 1px black;
 }
@@ -36,6 +40,73 @@ input {
     border-color: #CF000F;
 }
 
+.header-wrapper{
+  display: flex;
+  justify-content: center;
+}
+
+.header-wrapper h1{
+  width: 325px;
+  /* justify-content: center; */
+}
+
 .quantity {
   margin: 0 5px;
+}
+
+.item-wrapper{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.item-wrapper div{
+  flex-basis: 10%;
+}
+
+.input-wrapper{
+  display: flex;
+  flex-flow: row;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.btn-calculate-wrapper{
+  display: flex;
+  justify-content: center;
+}
+
+#totalPrice{
+  display: flex;
+  justify-content: center;
+}
+
+.input-wrapper label{
+  padding-right: 5px;
+}
+
+.new-item-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.new-item-wrapper div{
+  flex-basis: 10%;
+}
+
+.new-item-price{
+  margin-left: 5%;
+}
+
+.btn-create {
+  color: #fff;
+  background-color: #00F;
+  border-color: #00F;
+}
+
+.new-item-button-wrapper{
+  margin-left: 5px;
 }
