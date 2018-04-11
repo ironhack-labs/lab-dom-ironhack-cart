@@ -1,52 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+    crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
-  <div class = "product-wrapper">
-    <div class= "product-name">
-      <span>
-        Product
-
-      </span>
-    
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-lg-offset-4">
+        <h1>Ironhack Merchandising Shop</h1>
+      </div>
     </div>
-    <div class = "product-cost">
-
-      <span>
-        Cost
-        
-      </span>
+    <br>
+    <br>
+    <!-- first product -->
+    <div class="row">
+      <div class="col-lg-2">
+        <span class="product-name"> Product 1</span>
+      </div>
+      <div class="col-lg-2">
+        <span class ="dollar-sign">$</span>
+        <span class="single-item-price">25.00</span>
+      </div>
+      <div class="col-lg-4">
+        <label for="">QTY</label>
+        <input type="text" name="" id="" placeholder="0" class="qty-input">
+      </div>
+      <div class="col-lg-2">
+        <span class ="dollar-sign">$</span>
+        <span class="total-single-item-price">0</span>
+      </div>
+      <div class="col-lg-2">
+        <button type="button" class="btn btn-danger">DELETE</button>
+      </div>
+    </div>
+    <!-- end of first product-->
+    <br>
+    <br>
+    <!-- second product-->
+    <div class="row">
+      <div class="col-lg-2">
+        <span class="product-name"> Product 2</span>
+      </div>
+      <div class="col-lg-2">
+        <span class ="dollar-sign">$</span>
+        <span class="single-item-price">11.00</span>
+      </div>
+      <div class="col-lg-4">
+        <label for="">QTY</label>
+        <input type="text" name="" id="" placeholder="0" class="qty-input">
+      </div>
+      <div class="col-lg-2">
+        <span class ="dollar-sign">$</span>
+        <span class="total-single-item-price">0</span>
+      </div>
+      <div class="col-lg-2">
+        <button type="button" class="btn btn-danger">DELETE</button>
+      </div>
+    </div>
+    <!-- end of second product-->
+    <br><br>
+    <div class="row" id="create">
+      <div class="col-lg-2">
+        <input type = "text" name ="" id="new-product-name" placeholder="Product Name">
+      </div>
+      <div class="col-lg-2">
+          <input type = "text" name ="" id="new-product-price" placeholder="Product Price">
+      </div>
+      <div class = "col-lg-2 col-lg-offset-6">
+        <button type ="button" class ="btn btn-success" id = "new-item-create">CREATE</button>
+      </div>
     </div>
 
 
-    <div>
-      <form class = "form-contain">
-          <input class = "units" type = "text">
-        <label>
-        
-      </label>
-      </form>
-
-      <div class = "product-price">
-        <span class = "price">
-          0
-        </span>
+    <!-- calculate button-->
+    <div class="row">
+      <div class="col-lg-12 col-lg-offset-4">
+        <button type="button" id="calc-prices-button" class="btn btn-success">CALCULATE PRICE</button>
+      </div>
+    </div>
+    <!-- end of calculate button-->
+    <!-- total price display-->
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-lg-12 col-lg-offset-4">
+        <span>Total Price is: $ </span>
+        <span id="final-price">0</span>
       </div>
     </div>
 
 
   </div>
-
-
-
-
+  <!--end of container-->
 </body>
+
 </html>
