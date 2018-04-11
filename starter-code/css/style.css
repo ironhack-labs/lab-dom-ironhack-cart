@@ -1,3 +1,19 @@
+/* .firstClassCart {
+  display: flex;
+}
+*/
+
+ul li {
+  display: inline-block;
+  margin-left: 33%;
+}
+
+.align1 {
+  margin-left: -10%;
+}
+
+
+
 input {
   border: solid 1px black;
 }
@@ -24,18 +40,78 @@ input {
   border-radius: 4px;
 }
 
+div h2:first-child {
+
+  position: relative;
+  margin-bottom: 0%;
+  margin-top: 0%;
+  margin-left: 135%;
+  margin-top: 21%;
+  font-size: 33px;
+
+
+}
+div h2:nth-child(2) {
+
+  margin-top: 0%;
+  margin-left: 135%;
+  margin-bottom: 10%;
+  font-size: 33px;
+
+}
+
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    -ms-flex-align: start;
+    margin-left: 135%;
+    margin-top: 15%;
+    width: 30%;
+    height: 45px;
+    border-radius: 8%;
+    margin-bottom: 10%;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    width: 160%;
+    height: 45px;
+    border-radius: 18%;
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+#justifyProducts {
+  
+  margin-left: 46%;
+  
+}
+
+#totalPrice {
+  
+  font-size: 30px;
+  text-align: justify;
+  margin-left: 115%;
+  font-weight: bolder;
+  
+  
+}
+
+.input1 {
+  
+  margin-left: -75%;
+  
+}
+
+.create {
+  
+  
+  
+  margin-left: 22%;
+  margin-top: 0%;
 }
