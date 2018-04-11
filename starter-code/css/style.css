@@ -2,6 +2,11 @@ input {
   border: solid 1px black;
 }
 
+h1 {
+  text-align: center;
+}
+
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -25,15 +30,15 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #cf000f;
+  border-color: #cf000f;
 }
 
 .quantity {
