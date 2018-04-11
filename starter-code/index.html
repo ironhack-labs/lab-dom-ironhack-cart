@@ -5,10 +5,87 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/style.css">
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+  <div class="container">
+    <!-- FIRST PRODUCT -->
+    <div clas="row">
+      <div class="col-lg-offset-3">
+      <h1>Ironhack Merchandising Shop</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-2">
+        <span class="product-name">Product 1</span>
+      </div>
+      <div class="col-lg-2">
+        <span>$</span> <span class="single-item-price">25.00</span>
+      </div>
+      <div class="col-lg-4">
+        <label for="">QTY</label>
+        <input type="text" name="" id="" placeholder="0" class="quantity-input">
+      </div>
+      <div class="col-lg-2">
+          <span>$</span> <span class="total-single-item-price">0</span>
+        </div>
+      <div class="col-lg-2">
+        <button type="button" class="btn btn-delete">DELETE</button>
+      </div>
+
+    </div>
+    
+  </div>
+<br> <br>
+  <!-- SECOND PRODUCT -->
+
+  <div class="container">
+      <div clas="row">
+      </div>
+      <div class="row">
+        <div class="col-lg-2">
+          <span class="product-name">Product 1</span>
+        </div>
+        <div class="col-lg-2">
+          <span>$</span> <span class="single-item-price">11.00</span>
+        </div>
+        <div class="col-lg-4">
+          <label for="">QTY</label>
+          <input type="text" name="" id="" placeholder="0" class="quantity-input">
+        </div>
+        <div class="col-lg-2">
+          <span>$</span> <span class="total-single-item-price">0</span>
+
+        </div>
+        <div class="col-lg-2">
+          <button type="button" class="btn btn-delete">DELETE</button>
+        </div>
+  
+      </div>
+      
+    </div>
+   
+    <BR> <br> <br>
+    <!-- CALCULATE BUTTON -->
+
+    <div class="row">
+      <div class="col-lg-12 col-lg-offset-4">
+        <button type"button" class="btn btn-success" id="calc-prices-button">CALCULATE PRICE</button>
+
+      </div>
+    </div>
+
+    <br> <br>
+
+    <div class="row">
+      <div class="col-lg-12 col-lg-offset-4">
+      <span>toal price is $</span> <span id="final-price">0</span>
+    </div>
+    </div>
+
+  
 </body>
 </html>

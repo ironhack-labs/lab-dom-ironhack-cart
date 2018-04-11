@@ -39,3 +39,7 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.iron-title {
+  text-align: center;
+}
