@@ -1,52 +1,61 @@
-function deleteItem(e){
 
+function product(){
+  var product = document.getElementsByClassName('product-name');
+  product.innerHTML = 'beto';
+  
 }
 
-function getPriceByProduct(itemNode){
+product();
 
-}
+// function deleteItem(e){
 
-function updatePriceByProduct(productPrice, index){
+// }
 
-}
+// function getPriceByProduct(itemNode){
 
-function getTotalPrice() {
+// }
 
-}
+// function updatePriceByProduct(productPrice, index){
 
-function createQuantityInput(){
+// }
 
-}
+// function getTotalPrice() {
 
-function createDeleteButton(){
+// }
 
-}
+// function createQuantityInput(){
 
-function createQuantityNode(){
+// }
 
-}
+// function createDeleteButton(){
 
-function createItemNode(dataType, itemData){
+// }
 
-}
+// function createQuantityNode(){
 
-function createNewItemRow(itemName, itemUnitPrice){
+// }
 
-}
+// function createItemNode(dataType, itemData){
 
-function createNewItem(){
+// }
 
-}
+// function createNewItemRow(itemName, itemUnitPrice){
 
-window.onload = function(){
-  var calculatePriceButton = document.getElementById('calc-prices-button');
-  var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');
+// }
 
-  calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
+// function createNewItem(){
 
-  for(var i = 0; i<deleteButtons.length ; i++){
-    deleteButtons[i].onclick = deleteItem;
-  }
-};
+// }
+
+// window.onload = function(){
+//   var calculatePriceButton = document.getElementById('calc-prices-button');
+//   var createItemButton = document.getElementById('new-item-create');
+//   var deleteButtons = document.getElementsByClassName('btn-delete');
+
+//   calculatePriceButton.onclick = getTotalPrice;
+//   createItemButton.onclick = createNewItem;
+
+//   for(var i = 0; i<deleteButtons.length ; i++){
+//     deleteButtons[i].onclick = deleteItem;
+//   }
+// };
