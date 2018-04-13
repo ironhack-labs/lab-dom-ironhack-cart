@@ -36,17 +36,9 @@ input {
     background-color: #CF000F;
     border-color: #CF000F;
     float: right;
-    margin: -5px 15% 0 0;
+    margin: -25px 15% 0 0;
 }
 
-#calc-prices-button {
-  display: flex;
-  flex-flow: row wrap;
-  margin: 80px 0 0 60%;
-}
-
-.col-5 {
-  width: 15%;
-  float: left;
-  margin: 0 10px;
+.row {
+  margin: 10px 0;
 }
