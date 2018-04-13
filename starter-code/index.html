@@ -8,10 +8,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
   <script type="text/javascript" src="./js/index.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
   <title>Ironhack cart</title>
 </head>
 <body>
-  <div class="Iron-title">
+  <!-- <div class="Iron-title">
     <h1> Ironhack<br>
      Merchandising Shop</h1>
   </div>
@@ -26,7 +28,98 @@
             <span class="total-price">
              <span>$</span>
             </span>
-            <span><button type="button">Delete</button></span> 
+            <span><button type="button">Delete</button></span>  -->
+ <!-- Add container fluid initially 
+ add containers insider. Use for layouts with extensive
+ containers  -->
+ <div class="container">
+   <div class="row">
+ <div class="col-lg-12 col-lg-offset-3"> 
+   <!-- offset 3= skip three columns,time saver tool to center without css adjusting -->
+     <h1>Ironhack Merchandising Shop</h1>
+   </div>
+</div>
+</div>
+<div class="row">
+  <div class="col-lg-2">
+    <span class="product-name">Product 1</span>
   </div>
+  <div class="col-lg-2">
+      <span class="dollar-sign">$</span><span class ="single-item-price">25.00</span>
+
+  </div>
+  
+<div class="col-lg-4">
+<label for="">Qty</label>
+<input type="text" name="" id="new-product-name" placeholder="e" class="quantity-input">
+</div>
+<div class="col-lg-2">
+    <span>$</span><span class ="total-single-item-price">0</span>
+
+</div>
+<div class="col-lg-2">
+  <button type="button" class="btn btn-delete"> DELETE</button>
+</div>
+</div>
+<!-- first product  -->
+<br><br>
+<!-- <div class="container">
+    <div class="row">
+  <div class="col-lg-12 col-lg-offset-3"> 
+    <!-- offset 3= skip three columns,time saver tool to center without css adjusting -->
+      <!-- <h1>Ironhack Merchandising Shop</h1>
+    </div> -->
+ <!-- </div> -->
+ <!-- </div> -->
+ <div class="row">
+   <div class="col-lg-2">
+     <!-- target product to grab values from these fields -->
+     <span class="product-name">Product 2</span>
+   </div>
+   <div class="col-lg-2">
+      <span>$</span><span class= "single-item-price">25.00</span>
+
+   </div>
+ <div class="col-lg-4">
+ <label for="">Qty</label>
+ <input type="text" name="" id="" placeholder="e" class="quantity-input">
+ </div>
+ <div class="col-lg-2">
+    <span>$</span><span class ="total-single-item-price">0</span>
+
+</div>
+ <div class="col-lg-2">
+   <button type="button" class="btn btn-delete"> DELETE</button>
+ </div>
+ </div>
+ <!-- second product  -->
+ <!-- //Need to create  manipulation -->
+<div class="row">
+  <div class="col-lg-2">
+    <input type="text" name="" id="new-product-name" placeholder="product name">
+    </div>
+      <div class="col-lg-2">
+        <input type="text" name="" id="" placeholdrer="product price">
+      <div class="col-lg-2 col-lg-offset-6"
+      <button type="button" class="btn btn-success" id='new-item-create'>CREATE =
+    </div>
+</div>
+
+ <!-- calculate button -->
+ <div class="row">
+   <div class="col-lg-12 col-lg-offset-4">  
+      <button type="button" class="btn btn-success" id="calc-prices-button">CALCULATE</button>
+    </div>
+  </div>
+<!-- calculate button -->
+<!-- Total price display -->
+<div class="row">
+    <div class="col-lg-2">
+  <span> Total price is: $<span><span id="final-price">0</span>
+    </div>
+</div>
+
+
+
 </body>
 </html>
