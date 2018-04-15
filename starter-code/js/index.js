@@ -37,14 +37,12 @@ function deleteItem(e){
     return a+b;
   }
   
-  
-  
   function getTotalPrice() {
     getPriceByProduct();
     var newPricesArray = [];
     for(var i=0; i< allProducts.length; i++){
       var singleProductTotalPrice = Number(updatedPricesArray[i].innerHTML);
-      console.log("blah: ", singleProductTotalPrice);
+      // console.log("blah: ", singleProductTotalPrice);
       newPricesArray.push(singleProductTotalPrice);
       console.log("newPricesArray: ", newPricesArray)
     }
@@ -57,35 +55,43 @@ function deleteItem(e){
   function createNameNode (newName){
     var productDiv = document.createElement('div');
     productDiv.setAttribute("class", "col-lg-2");
+
     console.log("productDiv", productDiv);
+
     var productSpan =document.createElement("span");
+
     productSpan.setAttribute("class", "product-name");
     productSpan.innerHTML = newName;
     productDiv.appendChild(productSpan);
+
     return productDiv;
 
   }
 
   //2nd create price 
   function createSinglePriceNode(newPrice){
+
     var priceDiv = document.createElement("div");
     priceDiv.setAttribute("class", "col-lg-2");
+
     var dollarSpan = document.createElement("span");
+
     dollarSpan.innerHTML = "$";
     dollarSpan.setAttribute("class", "dollar-sign");
+
     var priceSpan = document.createElement("span");
+
     priceSpan.setAttribute("class", "single-item-price");
     priceSpan.innerHTML = newPrice;
     priceDiv.appendChild(priceSpan);
+
     console.log("priceDiv: ", priceDiv);
     return priceDiv;
 
   }
-  return 
+  
 
   //3rd reate whole row
-
-  function createNewItem()
   
   // function createQuantityInput(){
   
@@ -111,14 +117,16 @@ function deleteItem(e){
     var productPrice = createSinglePriceNode (itemPrice);
     productRow.appendChild(productName);
     productRow.appendChild(productPrice);
+
+    return productRow; 
   }
-return productRow;  
+ 
 
   //4th sets the row on the DOM, position it above input fields
   function createNewItem(){
     var singleProductName = document.getElementById("new-product-name");
     var singleProductPrice = document.getElementById("new-product-name");
-    console.
+    
   }
   // }
   
@@ -129,7 +137,7 @@ return productRow;
   var newItem = createNewItemRow(singleProductName, singleProductPrice);
   var newDiv = document.getElementById("create");
 
-
+  }
   // }
   
   // 
@@ -142,6 +150,8 @@ return productRow;
     // createItemButton.onclick = createNewItem;
   
     // for(var i = 0; i<deleteButtons.length ; i++){
+      for(var i = 0; i<deleteButtons.length ; i++){
       deleteButtons[i].onclick = deleteItem;
+      }
     // }
   };
