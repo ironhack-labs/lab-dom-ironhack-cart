@@ -1,3 +1,70 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+}
+
+.container h1 {
+  text-align: center;
+  margin: 0;
+  padding: 50px 0;
+}
+
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.wrapper > div {
+  width: 20%;
+}
+
+.addWrapper {
+  width: 80%;
+  margin: 0 auto;
+  height: 100px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.addWrapper input {
+  height: 40px;
+  padding: 0 10px;
+  color: #999;
+  border-radius: 4px;
+  border: solid 1px #ccc;
+  margin-right: 15px;
+}
+
+.wrapper span {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.wrapper #units input {
+  width: 50%;
+  height: 40px;
+  display: inline;
+  padding: 0 10px;
+  color: #999;
+  border-radius: 4px;
+  border: solid 1px #ccc;
+}
+
+.wrapper #units label {
+  padding-right: 15px;
+}
+
 input {
   border: solid 1px black;
 }
@@ -25,17 +92,67 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+}
+
+.btn-create {
+  color: #fff;
+  background-color: #1280b5;
+  border-color: #1280b5;
+}
+
+.btn-create:hover {
+  background-color: #0f6c91;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #CF000F;
+  transition: all 0.4s ease;
+}
+.btn-delete:hover {
+    background-color: #960412;
 }
 
 .quantity {
   margin: 0 5px;
 }
+
+.calcular {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+}
+
+.total {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+}
+
+#test {
+  display: flex;
+  justify-content: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 30px;
+  margin-top: 20px;
+  width: 100%;
+  height: 50px;
+}
+
+.calcular button {
+  border-radius: 4px;
+  font-family: 'Open Sans', sans-serif;
+  padding: 0 35px;
+  transition: all 0.4s ease;
+}
+
+.calcular button:hover {
+  background-color: #009045;
+}
+
