@@ -50,6 +50,9 @@ h1 {
   justify-content: space-around;
 }
 
-.flex-item {
-  text-align: center;
+.btn-flex {
+  -ms-box-orient: horizontal;
+  display: flex;
+  justify-content: center;
+  margin-top: 3em;
 }
