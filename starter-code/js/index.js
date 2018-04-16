@@ -51,20 +51,27 @@ window.onload = function(){
   }
 
   // Create a click event for the Calculate Prices button
-  let node = document.getElementById('unit-price').innerHTML; // access unit price node
+
   let button = document.getElementsByClassName('btn-success')[0]; // access button
 
-  button.onclick = function(){
-    let input = document.getElementsByTagName('input')[0]; // get the users input
-    let updated = updatePriceByProduct(getPriceByProduct(node), input.value); // multiply item-price * qty
-    let text = document.createTextNode('$' + updated.toString() + '.00'); // convert product into textNode
-    let child = document.getElementById('items-price'); // define child to remove
-    let parent = document.getElementById('parent'); // define parent to remove/appendChild
-    let span = document.createElement('span'); // create span element
-    span.setAttribute('id', 'items-price'); // set id attibute to span
-    parent.removeChild(child); // remove outdated item price
-    parent.appendChild(span); // append span element to div
-    span.appendChild(text); // append updated price to span
+  button.onclick = function() {
+    let children = document.getElementsByClassName('items-price'); // define an array of children to remove
+    let parents = document.getElementsByClassName('parent'); // define an array of parents to remove/appendChild
+    let pArr = Array.prototype.slice.call(parents); // convert HTML Collection into an Array
+    let cArr = Array.prototype.slice.call(children); // convert HTML Collection into an Array
+    let node, input, updated, text, span;
+
+    for (let i = 0; i < pArr.length; i++) {
+      node = document.getElementsByClassName('unit-price')[i].innerHTML; // access unit price node
+      input = document.getElementsByTagName('input')[i]; // get the users input
+      updated = updatePriceByProduct(getPriceByProduct(node), input.value); // multiply item-price * qty
+      text = document.createTextNode('$' + updated.toString() + '.00'); // convert product into textNode
+      span = document.createElement('span'); // create span element
+      span.setAttribute('class', 'items-price'); // set class attibute to span
+      pArr[i].removeChild(cArr[i]); // remove outdated item price
+      pArr[i].appendChild(span); // append span element to div
+      span.appendChild(text); // append updated price to span
+    }
   }
 
 };

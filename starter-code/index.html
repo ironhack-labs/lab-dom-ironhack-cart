@@ -11,15 +11,27 @@
 </head>
 <body>
   <header><h1>Ironhack Merchandising Shop</h1></header>
-  <div class="flex-container">
-    <div><span>IronBubble-head</span></div>
-    <div><span id="unit-price">$25.00</span></div>
-    <div>
-      <label>QTY</label>
-      <input id="qty" type="number" min="0" placeholder="0">
+  <div>
+    <div class="item-row flex-container">
+      <div><span>IronBubble-head</span></div>
+      <div><span class="unit-price">$25.00</span></div>
+      <div>
+        <label>QTY</label>
+        <input class="qty" type="number" min="0" placeholder="0">
+      </div>
+      <div class="parent"><span class="items-price">$0.00</span></div>
+      <div><button class="btn btn-delete" type="button">Delete</button></div>
     </div>
-    <div id="parent"><span id="items-price">$0.00</span></div>
-    <div><button class="btn btn-delete" type="button">Delete</button></div>
+    <div class="item-row flex-container">
+        <div><span>IronShirt</span></div>
+        <div><span class="unit-price">$15.00</span></div>
+        <div>
+          <label>QTY</label>
+          <input class="qty" type="number" min="0" placeholder="0">
+        </div>
+        <div class="parent"><span class="items-price">$0.00</span></div>
+        <div><button class="btn btn-delete" type="button">Delete</button></div>
+      </div>
   </div>
   <div class="btn-flex"><button id="calc-prices-button" class="btn btn-success" type="button">Calculate Prices</button></div>
 </body>
