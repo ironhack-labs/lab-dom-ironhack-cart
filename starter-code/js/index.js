@@ -4,8 +4,7 @@ function deleteItem(e){
 
 function getPriceByProduct(itemNode){
   var item = document.getElementById(itemNode);
-  console.log(item)
-  var price = item.getElementsByClassName('productPrice').textContent;
+  var price = item.getElementsByClassName('productPrice')[0].textContent;
   // var price = document.getElementsByClassName('productPrice').textContent;
   console.log(price);
   return price;
@@ -14,23 +13,25 @@ function getPriceByProduct(itemNode){
 function getQuantityByProduct(itemNode){
   // var quantityObject = document.getElementsByTagName('input');
   // var quantity =quantityObject.value
-  var item = document.getElementById(itemNode)
-  var quantity = document.getElementsByClassName('input').value;
+  var item = document.getElementById(itemNode);
+  console.log(item);
+  var quantity = item.getElementsByTagName('input')[0].value;
   console.log(quantity);
   return quantity;
 }
 
-function updatePriceByProductRefresh(productPrice, index){
-
-  var price = document.getElementsByClassName('productPrice')[0].textContent;
-  var quantityObject = document.getElementsByTagName('input')[0];
-  var quantity = quantityObject.value;
-  var itemTotalPrice = quantity * price;
-  document.getElementsByClassName('TotalPriceItem')[0].textContent = "Total Price: $ " + itemTotalPrice;
-  return(itemTotalPrice);
-
+function updatePriceByProductRefresh(){
+    var elements = document.getElementsByClassName('product')
+    for (var i=0; i<elements.length; i++) {
+    var price = elements[i].getElementsByClassName('productPrice')[0].textContent;
+    var quantityObject = elements[i].getElementsByTagName('input')[0];
+    console.log(quantityObject)
+    var quantity = quantityObject.value;
+    console.log(quantity)
+    var itemTotalPrice = quantity * price;
+    elements[i].getElementsByClassName('TotalPriceItem')[0].textContent = "Total Price: $ " + itemTotalPrice;
   //length of amount of rows to loop the index and place the total price for each item
-}
+}}
 
 function getNumberElements(){
   var total = 0
@@ -45,7 +46,7 @@ function getTotalPrice()   {
   var totalCart = 0;
   var elements = document.getElementsByClassName('product')
   for (var i=0; i<elements.length; i++) {
-    id = "cart_" + elements[i].getAttribute('id').toString();
+    id = elements[i].getAttribute('id');
     console.log(id);  
     var price = getPriceByProduct(id);
     var quantity = getQuantityByProduct(id);
