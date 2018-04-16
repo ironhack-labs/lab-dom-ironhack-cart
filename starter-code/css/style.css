@@ -2,6 +2,10 @@ input {
   border: solid 1px black;
 }
 
+body {
+  margin: 20px
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;

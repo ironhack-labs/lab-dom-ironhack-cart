@@ -5,10 +5,86 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+  
+  <div class="container-fluid">
+
+    <div class="title-container  text-center">
+      <h1><strong>Ironhack <br>Merchandising Shop</strong></h1>
+    </div>
+<!-- Product One -->
+    <div class="row product" id="product1">
+      
+      <div class="col">
+        <span id="productOne">Ironbubble-head</span>
+      </div>
+
+      <div class="col">
+          <span class="productPrice">5.00</span>
+      </div>
+
+      <div class="col form-inline">
+
+        <div class="form-group">
+          <label for="units">QTY  </label>
+          <input type="number" class="form-control" id="productOne" placeholder="Quantity" value=""> 
+        </div>
+
+      </div>
+
+      <div class="col">
+        <span class="TotalPriceItem">Total Price: $0.0 </span>
+      </div>  
+
+      <div>
+        <button class="btn btn-sm btn-danger fa fa-trash">
+      </div>
+
+    </div>
+<!-- Product Two -->
+    <div class="row product" id="product2">
+      
+        <div class="col">
+          <span id="productTwo">IronShirt</span>
+        </div>
+    
+        <div class="col">
+            <span class="productPrice">15.00</span>
+        </div>
+    
+        <div class="col form-inline">
+    
+          <div class="form-group">
+            <label for="units">QTY  </label>
+            <input type="number" class="form-control" placeholder="Quantity" value=""> 
+          </div>
+    
+        </div>
+    
+        <div class="col">
+            <span class="TotalPriceItem">Total Price: $0.0 </span>
+        </div>  
+
+        <div>
+            <button class="btn btn-sm btn-danger btn-delete fa fa-trash">
+        </div>
+    
+    </div>
+    <br>
+<!--Calculate Button Total  -->
+    <div= class="row justify-content-center">
+      <button class="btn align-middle" type="button" id="calc-prices-button">Calculate Prices</button>
+<!--Calculate Button Total  -->
+      <button class="btn align-middle" type="button" id="calc-items-button">Refresh items</button>
+    </div>
+<!--Total Cart  -->
+    <span class="row justify-content-center" style="padding-top: 20px;" id="total-Cart"><h2>Total Price: $0</h2></span>
+  </div>
+  <script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>
