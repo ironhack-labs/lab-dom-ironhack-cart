@@ -39,3 +39,36 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.wrapper {
+  margin: 4% 0 1% 25%;
+  width: 100%;
+}
+
+h1 {
+  margin:  2% 0 1% 45%; 
+}
+
+.floats {
+  float: left;
+}
+
+.space {
+  margin: 0 2%;
+  text-align: center;
+}
+
+.clearAndSpace {
+  clear: both;
+  margin: 4% 0 0 45%;
+}
+
+#object1price {
+  float: right;
+  margin: 0;
+  padding: 0;
+}
+
+.decoration {
+  text-decoration-style:none;
+}
