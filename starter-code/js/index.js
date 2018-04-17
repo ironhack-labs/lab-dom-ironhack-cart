@@ -5,9 +5,13 @@ function deleteItem(e){
 }
 
 function getPriceByProduct(){
-  var obj1Elem = document.getElementById("object1price").textContent;
-  var actualPrice = Number(obj1Elem);
-  return actualPrice;
+  var obj1Elem = document.getElementsByTagName("p");
+  var actualPrices = [];
+    for (i=0; i < obj1Elem.length; i++)
+    {
+      actualPrices.push(Number(obj1Elem[i].textContent));
+    }
+  return actualPrices;
 }
 
 
@@ -17,19 +21,52 @@ function updatePriceByProduct(){
   button.onclick = function(){
     var productPrice = getPriceByProduct();
     var productInput = createQuantityInput();
-    return productPrice*productInput;
-  };
-  
+
+      for (i=0; i < productInput.length; i++)
+      {
+        var newTotal = productPrice[i]*productInput[i];
+        var newElem = document.getElementsByClassName('total');
+        newElem[i].innerHTML = "$" + newTotal;
+      }
+      getTotalPrice();
+    };
 }
 
 function getTotalPrice() {
+  var grandTotal = document.getElementsByClassName('total');
+    var preGrandTotalArray = [];
+    var grandTotalArray = [];
+      
+      for (i = 0; i < grandTotal.length; i++)
+      {
+        
+        // pushing the text from the totals using class names and removing the $ sign
+        
+        preGrandTotalArray.push(grandTotal[i].textContent.replace('$', ''));
+        
+        // turning the text into numbers
 
-}
+        grandTotalArray.push(Number(preGrandTotalArray[i]));
+      }
+     
+      // using reduce on the numbers to get the total sum
+      total = grandTotalArray.reduce(function(a,b){
+        return a+b;
+      },0);
+    
+      var totalNewText = document.querySelector('h2 span');
+      totalNewText.innerHTML = '$' + total;
+    }
 
 function createQuantityInput(){
-  var inputQuantity = document.getElementsByTagName("input")[0].value;
-  var actualInput = Number(inputQuantity);
-  return actualInput;
+  var inputQuantity = document.getElementsByTagName("input");
+  var actualInputs = [];
+    for (i=0; i < inputQuantity.length; i++)
+    {
+      actualInputs.push(Number(inputQuantity[i].value));
+    }
+  return actualInputs;
+  
 }
 
 
