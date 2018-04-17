@@ -39,3 +39,24 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+
+.product-wrapper {
+  display:flex;
+  justify-content: space-between;
+  margin:30px;
+}
+.product {
+  width: 200px;
+}
+.product-name{
+  margin-right: 15px;
+}
+.calculate-price{
+  display: flex;
+  justify-content: center;
+}
+.show-total{
+  display: flex;
+  justify-content: center;
+}
