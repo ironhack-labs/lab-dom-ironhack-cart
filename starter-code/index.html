@@ -10,5 +10,60 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <div>
+  <div id="product-1" class="product-wrapper">
+    <span class="product-name">Iron Bubble-head</span>
+    <div>
+      <span class="dolar-sign">$</span>
+      <span class="product-price">25.00</span>
+    </div>
+    <div>
+      <label>Quantity</label><input type="number" name="qty" class="input product-qty" value="1" onchange="updateProductPrice()" />
+    </div>
+    <div>
+      <span>$</span>
+      <span class="total-price">0.00</span>
+    </div>
+    <div>
+      <button class="btn-delete" onclick="deleteProduct('product-1')">Delete</button>
+    </div>
+  </div>
+</div>
+  
+  <div>
+  <div id="product-2" class="product-wrapper">
+    <span class="product-name">Iron Shirt</span>
+    <div>
+      <span class="dolar-sign">$</span>
+      <span class="product-price">15.00</span>
+    </div>
+    <div>
+      <label>Quantity </label><input type="number" name="qty" class="input product-qty" value="1" onchange="updateProductPrice()" />
+    </div>
+    <div>
+      <span>$</span>
+      <span class="total-price">0.00</span>
+    </div>
+    <div>
+      <button class="btn-delete" onclick="deleteProduct('product-2')">Delete</button>
+    </div>
+  </div>
+</div>
+
+  <div class="calculate-price">
+    <button class="btn-success" onclick="calculateFinalPrice()">Calculate Prices</button>
+  </div>
+
+  <div class="show-total">
+    <h2>Total Price: <span>$</span><span class="final-price">0.00</span></h2>
+  </div>
+
+  <div id="create-product">
+    <h3>Create your products</h3>
+    <label>Product name </label><input type="text" id="product-name" />
+    <label>Product price </label><input type="number" id="product-price" />
+    <button onclick="createProduct()">Create</button>
+  </div>
+
 </body>
 </html>
