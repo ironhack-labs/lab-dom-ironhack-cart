@@ -1,14 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+  <div class="container">
+    <!-- 1st row -->
+    <div class="row">
+      <div class="col-12">
+        <h1>Ironhack Merchandising Shop</h1>
+      </div>
+    </div>
+
+    <!-- 2nd row -->
+    <div class="row">
+      <!-- Items -->
+      <div class="col">
+        <span>IronBubble-head</span>
+      </div>
+      <!-- Price -->
+      <div class="col">
+        <span class="price">$25.00</span>
+      </div>
+      <!-- Qty -->
+      <div class="col">
+        <label>
+          QTY
+          <input type="number" min="0" name="quantity" value="0" class="quantity">
+        </label>
+      </div>
+      <!-- Total -->
+      <div class="col">
+        $
+        <span class="product-price">0</span>
+      </div>
+      <!-- Delete/Create -->
+      <div class="col btn btn-delete">
+        Delete
+      </div>
+    </div>
+    <div class="row">
+      <!-- Items -->
+      <div class="col">
+        <span>IronShirt</span>
+      </div>
+      <!-- Price -->
+      <div class="col">
+        <span class="price">$15.00</span>
+      </div>
+      <!-- Qty -->
+      <div class="col">
+        <label>
+          QTY
+          <input type="number" min="0" name="quantity" value="0" class="quantity">
+        </label>
+      </div>
+      <!-- Current Total -->
+      <div class="col">
+        $
+        <span class="product-price">0</span>
+      </div>
+      <!-- Delete/Create -->
+      <div class="col btn btn-delete">
+        Delete
+      </div>
+    </div>
+
+
+    <!-- 3rd row -->
+    <div class="row">
+      <!-- Calculate btn -->
+      <div class="col calc-prices">
+        <button id="calc-prices-button" class="btn btn-success">Calculate Prices</button>
+      </div>
+      <!-- Total Price Display -->
+      <div class="col">
+        <h3>Total Price: $
+          <span class="total-price">0</span>
+        </h3>
+      </div>
+
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="./js/index.js"></script>
+
 </body>
+
 </html>

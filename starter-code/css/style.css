@@ -1,11 +1,22 @@
+body {
+  background-color: #fff;
+}
+
 input {
   border: solid 1px black;
+  text-align: center;
 }
+
+h1 {
+  text-align: center;
+}
+
 
 .btn {
   display: inline-block;
   padding: 6px 12px;
-  margin-bottom: 0;
+  margin-bottom: 69px;
+  margin-top: -6px;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.42857143;
@@ -25,17 +36,31 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #cf000f;
+  border-color: #cf000f;
 }
 
-.quantity {
+h1,
+h2 {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.item {
+  margin: 20px 0;
+  width: 100%;
+}
+
+.calc-price {
+  margin: 20px;
+}
+
+.product-qty {
   margin: 0 5px;
 }
