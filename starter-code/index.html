@@ -13,13 +13,13 @@
   <h1>Ironhack <br> Merchandising Shop</h1>
 
   <div class="item">
-  <div><span>IronBubble-head</span></div>
+  <div><span class="item-name">IronBubble-head</span></div>
   <div> $<span class="price">25.00</span></div>
   <div><label>
     QTY <input type="number" min="0" name="quantity" value="0" class="quantity">
   </label></div>
   <div>$<span class="product-price">0</span></div>
-  <div class="btn btn-delete">Delete</div>
+  <div><button class="btn btn-delete">Delete</button></div>
   </div>
 
   <div class="item">
@@ -29,7 +29,13 @@
     QTY <input type="number" min="0" name="quantity" value="0" class="quantity">
   </label></div>
   <div>$<span class="product-price">0</span></div>
-  <div class="btn btn-delete">Delete</div>
+  <div><button class="btn btn-delete">Delete</button></div>
+  </div>
+
+  <div class="new-item-create">
+    <div><input class="text-input" type="text" name="product-name" value=""></div>
+    <div><input class="price-input" min="0" type="number" name="product-price" value="0"></div>
+    <button id="new-item-create" class="create">Create</button>
   </div>
 
 

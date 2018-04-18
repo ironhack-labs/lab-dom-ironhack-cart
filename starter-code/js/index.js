@@ -1,10 +1,8 @@
 function deleteItem(e) {
-    e.currentTarget.parentNode;
-    for (var i = 0; i < this.deleteButtons.length; i++){
-    let x = document.getElementsByClassName('item')[i];
-    let body = document.getElementsByTagName('body')[i];
-    body.removeChild(x);
-}}
+  var rowToBeDeleted = e.currentTarget.parentNode.parentNode;
+  var itemList = rowToBeDeleted.parentNode;
+  itemList.removeChild(rowToBeDeleted);
+}
 
 //calculate's product's individual price
 // let button = document.getElementById("calc-price")
@@ -45,17 +43,44 @@ function getTotalPrice() {
   document.getElementsByClassName("total-price")[0].innerHTML = pop;
 }
 
-function createQuantityInput() {}
+function createQuantityInput() {
+  document.getElementsByClassName('quantity')[0].parentNode;
+  
+}
 
 function createDeleteButton() {}
 
-function createQuantityNode() {}
+function createQuantityNode() {
+  return document.getElementsByClassName('price-input')[0].value;
 
-function createItemNode(dataType, itemData) {}
+}
 
-function createNewItemRow(itemName, itemUnitPrice) {}
+function createItemNode(dataType, itemData) {
+  return document.getElementsByClassName('text-input')[0].value;
+}
 
-function createNewItem() {}
+function createNewItemRow(/*itemName, itemUnitPrice*/) {
+  //Creates new item
+  // let newItem = document.createElement('div');
+  let oldItem = document.getElementsByClassName('item')[0];
+  newItem = oldItem.cloneNode(true);
+  // newItem.appendChild(itemClone);
+  //Gets name input, turns into text node and inserts into newItem.itemName
+  let textNode = document.createTextNode(document.getElementsByClassName('text-input')[0].value);  
+  let itemName = newItem.getElementsByClassName('item-name')[0];
+  itemName.replaceChild(textNode, itemName.childNodes[0]);
+  //Gets quantity input
+  let priceNode = document.createTextNode(document.getElementsByClassName('price-input')[0].value)
+  let itemPrice = newItem.getElementsByClassName('price')[0];
+  itemPrice.replaceChild(priceNode, itemPrice.childNodes[0]);
+  return newItem;
+}
+
+function createNewItem() {
+  let createRow = document.getElementsByClassName('new-item-create')[0];
+  let body = document.getElementsByTagName('body')[0];
+  body.insertBefore(createNewItemRow(), createRow)
+}
 
 window.onload = function() {
   var calculatePriceButton = document.getElementById("calc-prices-button");
@@ -65,7 +90,7 @@ window.onload = function() {
   calculatePriceButton.onclick = getTotalPrice;
   createItemButton.onclick = createNewItem;
 
-  deleteButtons = function(){for (var i = 0; i < deleteButtons.length; i++) {
+  for (var i = 0; i < deleteButtons.length; i++) {
     deleteButtons[i].onclick = deleteItem;
-  }}
+  }
 };
