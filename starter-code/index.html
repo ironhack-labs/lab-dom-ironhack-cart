@@ -10,5 +10,79 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <h1>Ironhack <br> Merchandising Shop</h1>
+
+  <div class="item">
+  <div><span class="item-name">IronBubble-head</span></div>
+  <div> $<span class="price">25.00</span></div>
+  <div><label>
+    QTY <input type="number" min="0" name="quantity" value="0" class="quantity">
+  </label></div>
+  <div>$<span class="product-price">0</span></div>
+  <div><button class="btn btn-delete">Delete</button></div>
+  </div>
+
+  <div class="item">
+  <div><span>IronShirt</span></div>
+  <div>$<span class="price">15.00</span></div>
+  <div><label>
+    QTY <input type="number" min="0" name="quantity" value="0" class="quantity">
+  </label></div>
+  <div>$<span class="product-price">0</span></div>
+  <div><button class="btn btn-delete">Delete</button></div>
+  </div>
+
+  <div class="new-item-create">
+    <div><input class="text-input" type="text" name="product-name" value=""></div>
+    <div><input class="price-input" min="0" type="number" name="product-price" value="0"></div>
+    <button id="new-item-create" class="create">Create</button>
+  </div>
+
+
+  <div class="calc-price">
+      <button id="calc-prices-button" class="btn btn-success">Calculate Prices</button>
+  </div>
+  
+  <div>
+    <h2>Total Price: $<span class="total-price">0</span></h2>
+  </div>
+
+
+<script>
+// for (var i = 0; i< document.getElementsByClassName('price').length; i++){
+//   let x = document.getElementsByClassName('price')[i].textContent;
+//   let y = document.getElementsByClassName('quantity').value;
+//   let productPrice = pPrice * y;
+//   document.getElementsByClassName('priceq')[i].innerHTML = "$" + x;
+//   }
+// for (var i=0; i< document.getElementsByClassName('price').length; i++){
+//   let x = document.getElementsByClassName('price')[i].textContent;
+//   let y = document.getElementsByClassName('quantity')[i].value;
+//   pPrice = x*y;
+//   document.getElementsByClassName('priceq')[i].innerHTML = '$' + pPrice;
+// }
+// let x = document.getElementsByClassName('price').length
+// document.getElementsByClassName('priceq')[0].innerHTML = x;
+// for (var i = 0; i< document.getElementsByClassName('price').length; i++){
+//   let x = document.getElementsByClassName('price')[i].textContent;
+//   let y = document.getElementsByClassName('quantity').value;
+//   let productPrice = pPrice * y;
+//   document.getElementsByClassName('priceq')[i].innerHTML = "$" + x;
+//   }
+  // for (var i = 0; i< document.getElementsByClassName('price').length; i++){
+  // let x = document.getElementsByClassName('price')[i].textContent;
+  // let y = document.getElementsByClassName('quantity').value;
+  // let productPrice = pPrice * y;
+  // document.getElementsByClassName('priceq')[i].innerHTML = "$" + x;
+  // }
+//   function getTotalPrice() {
+//   let x = document.getElementsByClassName('price')[1];
+//   let pPrice = x.textContent;
+//   let y = document.getElementsByClassName('quantity').value;
+//   let productPrice = pPrice * y;
+//   return x;
+// } document.getElementsByClassName('priceq')[1].innerHTML = "$" + getTotalPrice();
+</script>
+
 </body>
 </html>
