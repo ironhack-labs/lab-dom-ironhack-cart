@@ -28,6 +28,7 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin: 4% 47%;
 }
 
 .btn-delete {
@@ -38,4 +39,38 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+h1,h2 {
+  margin:  2% 0 3% 45%; 
+}
+
+.nodeWrapper {
+  justify-content: flex-end;
+  margin-left: 20%;
+  display: flex;
+  width: 65%;
+}
+
+.space {
+  margin: 2% 6%;
+}
+
+.newItemSpace1 {
+  margin: 2% 9% 0 0;
+}
+
+.newItemSpace2 {
+  margin: 2% 46% 0 0;
+}
+
+.newItemWidth {
+  width: 50px;
+}
+@media (min-width: 1024px) {
+  width: 30%;
+}
+
+.list {
+  list-style: none;
 }
