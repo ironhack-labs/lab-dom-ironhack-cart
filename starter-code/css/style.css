@@ -28,6 +28,7 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin: 4% 47%;
 }
 
 .btn-delete {
@@ -40,35 +41,36 @@ input {
   margin: 0 5px;
 }
 
-.wrapper {
-  margin: 4% 0 1% 25%;
-  width: 100%;
+h1,h2 {
+  margin:  2% 0 3% 45%; 
 }
 
-h1 {
-  margin:  2% 0 1% 45%; 
-}
-
-.floats {
-  float: left;
+.nodeWrapper {
+  justify-content: flex-end;
+  margin-left: 20%;
+  display: flex;
+  width: 65%;
 }
 
 .space {
-  margin: 0 2%;
-  text-align: center;
+  margin: 2% 6%;
 }
 
-.clearAndSpace {
-  clear: both;
-  margin: 4% 0 0 45%;
+.newItemSpace1 {
+  margin: 2% 9% 0 0;
 }
 
-#object1price {
-  float: right;
-  margin: 0;
-  padding: 0;
+.newItemSpace2 {
+  margin: 2% 46% 0 0;
 }
 
-.decoration {
-  text-decoration-style:none;
+.newItemWidth {
+  width: 50px;
+}
+@media (min-width: 1024px) {
+  width: 30%;
+}
+
+.list {
+  list-style: none;
 }
