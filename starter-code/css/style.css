@@ -39,3 +39,77 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.flex-main {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.flex-product {
+  display: flex;
+  padding: 12px 0px 22px 0px;
+  width: 90%;
+  align-items: center;
+}
+
+.flex-items {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: left;
+}
+
+.flex-column4 {
+  justify-content: center;
+}
+
+.flex-column5 {
+  justify-content: flex-end;
+}
+
+.spacing-calc-btn {
+  padding: 25px 0;
+}
+
+.label-spacing {
+  padding: 3px 5px 0 0;
+}
+
+.flex-input {
+  display: flex;
+  padding: 12px 0px 22px 0px;
+  width: 90%;
+  justify-content: left;
+}
+
+.input-2 {
+  margin-left: 50px;
+}
+
+#new-item-create {
+  display: inline-block;
+  padding: 2px 6px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: #000;
+  background-color: #fff;
+  border-color: #DFE1E1;
+  margin-right: 5px;
+}
