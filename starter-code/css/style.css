@@ -1,7 +1,21 @@
-input {
-  border: solid 1px black;
+body{
+  margin: 40px;
 }
-
+h1{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+h2{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+input {
+  border: solid 1px transparent;
+  padding-left: 0px;
+  background-color: #f1f1f1;
+}
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -23,19 +37,51 @@ input {
   border: 1px solid transparent;
   border-radius: 4px;
 }
-
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+  margin-top: 20px;  
 }
-
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #CF000F;
+  border-color: #CF000F;
 }
-
 .quantity {
   margin: 0 5px;
+}
+.container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 20px 0;
+}
+.input-width{
+  width: 8em
+}
+.input-name-width{
+  width: 10em;
+}
+#btn-create{
+  display: flex;
+  justify-content: flex-end;
+}
+#btn-price{
+  display: flex;
+  justify-content: center;
+}
+div{
+  width: 100%;
+}
+.center{
+  display: flex;
+  justify-content: center;
+}
+.end{
+  display: flex;
+  justify-content: flex-end;
+}
+.shift{
+  padding-left: 60px;
 }
