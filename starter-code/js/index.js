@@ -49,4 +49,9 @@ window.onload = function(){
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
   }
+  
+  calculatePriceButton.onclick = function() {
+    alert("lol");
+  };
 };
+

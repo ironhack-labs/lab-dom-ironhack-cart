@@ -39,3 +39,15 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.item-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+
+#calculate-prices-container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
