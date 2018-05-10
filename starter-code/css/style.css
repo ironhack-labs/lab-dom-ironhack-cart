@@ -41,13 +41,22 @@ input {
 }
 
 .item-container {
-  display: flex;
-  flex-wrap: nowrap;
+  display: flex;  
   justify-content: space-around;
+  margin: 20px 0;
+}
+
+.item-container div {
+  width: 300px;
+  display: flex;  
+  justify-content: center;
 }
 
 #calculate-prices-container {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-around;
+  display: flex;  
+  justify-content: center;
+}
+
+#cart-total-price, #cart-title {
+  text-align: center;
 }
