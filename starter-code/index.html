@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +7,31 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+  
+  <div class="wrapper">
+    <h1>Ironhack merchandising shop</h1>
+  </div>
+  
+  <div class="container">
+    <div class="flex" data-count="0" style="margin:5px; display:none">
+      <div><span>Iron bubble head</span></div>
+      <div><span>$25</span></div>
+      <div class="quantity"><label for="">QTY <input id="quantity" type="text" value="0"></label></div>
+      <span class="total" style="width:70px; height: 30px;"><span></span></span>
+      <div><button class="btn btn-delete">Delete</button></div>
+    </div>
+  </div>
+  
+  <div class="flex2">
+    <div id="new-item-create" class="btn">Create product</div>
+    <div class="btn btn-success calculate">Calculate price</div>
+  </div>
+
+  <span class="totalSum" style="font-size:80px;width:70px; height: 30px; text-align:center; display:block; margin:0 auto;"></span>
+
+  <script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>

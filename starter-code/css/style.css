@@ -28,8 +28,26 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin: 20px auto;
+    display: block;
+    text-align: center;
+    width: 200px;
 }
 
+#new-item-create{
+  color: #fff;
+  background-color: blue;
+  border-color: #4cae4c;
+  margin: 20px auto;
+  display: block;
+  text-align: center;
+  width: 200px;
+}
+
+.btn{
+  border-radius: 3px;
+
+}
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
@@ -38,4 +56,25 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.wrapper{
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+
+.flex{
+  display: flex;
+  justify-content: space-around;
+}
+
+.flex2{
+  display: flex;
+  /* justify-content: space-around; */
+  flex-flow: row-reverse wrap;
+}
+
+input{
+  width: 100px;
 }
