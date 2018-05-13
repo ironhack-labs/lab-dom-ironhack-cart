@@ -2,6 +2,65 @@ input {
   border: solid 1px black;
 }
 
+.container {
+  width: 90%;
+  min-width: 800px;
+  margin: 0 auto;
+}
+
+.info-container {
+    margin: 2vh auto;
+    text-align: center;
+}
+
+.item {
+	font-size: 0;
+  margin: 30px 0;
+}
+
+.row {
+  width: 100%;
+}
+
+.col-xs-2 {
+  font-size: 14px;
+  display: inline-block;
+  width: 16.5%;
+}
+
+.col-xs-3 {
+  font-size: 14px;
+  display: inline-block;
+  width: 24.5%;
+}
+
+.col-xs-5 {
+  font-size: 14px;
+  display: inline-block;
+  width: 41%;
+}
+
+.col-xs-4 {
+  font-size: 14px;
+  display: inline-block;
+  width: 33%;
+}
+
+.col-xs-7 {
+  font-size: 14px;
+  display: inline-block;
+  width: 58%;
+}
+.item-subtotal{
+  text-align: center;
+}
+.item-delete{
+  text-align: center;
+}
+.item-price{
+  text-align: center;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -38,4 +97,5 @@ input {
 
 .quantity {
   margin: 0 5px;
+  text-align: center;
 }
