@@ -81,6 +81,7 @@ function createNewItemRow(itemName, itemUnitPrice) {
 
   var rows = document.querySelectorAll(".row-content");
   rows[rows.length-1].insertAdjacentElement("afterend", divContainer);
+  
   onClicks();
 }
 
