@@ -39,3 +39,39 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+
+.row-content{
+  padding: 10px 20px 10px 20px;
+  display: flex;
+  justify-content: space-around;
+}
+.row-content div{
+  width: 207px;
+}
+
+.header{
+  display: flex;
+  justify-content: center;
+}
+.calculate{
+  display: flex;
+  justify-content: center;
+}
+
+.createElement{
+  padding: 10px 20px 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+.createElement div{
+  padding-left: 100px;
+}
+
+.totalPrice{
+  padding-right: 100px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+
