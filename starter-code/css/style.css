@@ -1,5 +1,6 @@
 input {
   border: solid 1px black;
+  width:100px;
 }
 
 .btn {
@@ -38,4 +39,25 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+div {
+  display: inline-block;
+  margin: 5px 30px;
+}
+
+.products-container {
+  width: 100%;
+  margin: 0;
+}
+
+
+div span {
+  
+  display: inline-block;
+}
+
+.block {
+  display: block;
+  margin-top: 10px;
 }
