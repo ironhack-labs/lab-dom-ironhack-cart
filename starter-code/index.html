@@ -12,31 +12,39 @@
 <body>
   <h1 id="cart-title">Ironhack Merchandising Shop</h1>
   <div id="cart">
-      <div id="item1" class="item-container">
-        <div><span>IronBubble-head</span></div>
+
+    <div class="item-container">
+      <div class="item-name"><span>IronBubble-head</span></div>
+      <div class="unit-price">$<span>25.00</span></div>
+      <div>
+        <label>QTY</label>
+        <input type="number" name="quantity" class="qty-input">
+      </div>
+      <div class="total-price">$<span>0.00</span></div>
+      <div><button class="btn-delete">Delete</button></div>
+    </div>
+
+    <div class="item-container">
+        <div class="item-name"><span>IronBubble-head</span></div>
         <div class="unit-price">$<span>25.00</span></div>
         <div>
-          <label for="qty">QTY</label>
+          <label>QTY</label>
           <input type="number" name="quantity" class="qty-input">
         </div>
         <div class="total-price">$<span>0.00</span></div>
         <div><button class="btn-delete">Delete</button></div>
       </div>
-      <div id="item2" class="item-container">
-        <div><span>IronShirt</span></div>
-        <div class="unit-price">$<span>15.00</span></div>
-        <div>
-          <label for="qty">QTY</label>
-          <input type="number" name="quantity" class="qty-input">
-        </div>
-        <div class="total-price">$<span>0.00</span></div>
-        <div><button class="btn-delete">Delete</button></div>
-      </div>
-      <div id="calculate-prices-container">
-        <button class="btn-success" id="calc-prices-button">Calculate Prices</button>      
-      </div>
-      <h1 id="cart-total-price">Total Price: $<span>0</span></h1>
-    </div>
+
   </div>
+
+  <div>
+    <input type="text" name="name" id="name-input" class="qty-input">
+    <input type="number" name="quantity" id="quantity-input" class="qty-input">
+    <button id="new-item-create">New item</button>
+  </div>
+  <div id="calculate-prices-container">
+    <button class="btn-success" id="calc-prices-button">Calculate Prices</button>              
+  </div>      
+  <h1 id="cart-total-price">Total Price: $<span>0</span></h1>  
 </body>
 </html>

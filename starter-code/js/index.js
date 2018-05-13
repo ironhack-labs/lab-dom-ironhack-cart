@@ -1,13 +1,6 @@
-function deleteItem(e){
-
-}
-
-function getPriceByProduct(itemNode){
-
-}
-
-function updatePriceByProduct(productPrice, index){
-
+function deleteItem(e){  
+  e.currentTarget.parentNode.parentNode.parentNode.removeChild(e.currentTarget.parentNode.parentNode);
+  getTotalPrice();
 }
 
 function getTotalPrice() {
@@ -21,39 +14,37 @@ function getTotalPrice() {
   }
 }
 
-function createQuantityInput(){
+function createNewItem(btn){
+  var newItem = document.createElement('div');
+  var itemName = btn.parentNode.querySelector('#name-input').value;
+  var itemPrice = btn.parentNode.querySelector('#quantity-input').value;
 
+  btn.parentNode.querySelector('#name-input').value = '';
+  btn.parentNode.querySelector('#quantity-input').value = 0;
+  
+  newItem.setAttribute('class', 'item-container');
+  newItem.innerHTML = '<div class="item-name"><span>IronBubble-head</span></div>  <div class="unit-price">$<span>25.00</span></div>  <div>    <label>QTY</label>    <input type="number" name="quantity" class="qty-input">  </div>  <div class="total-price">$<span>0.00</span></div>  <div><button class="btn-delete">Delete</button></div>';  
+  newItem.querySelector('.item-name span').innerText = itemName;
+  newItem.querySelector('.unit-price span').innerText = itemPrice;
+
+  document.getElementById("cart").appendChild(newItem);
+
+  updateDeleteButtons();
 }
 
-function createDeleteButton(){
-
-}
-
-function createQuantityNode(){
-
-}
-
-function createItemNode(dataType, itemData){
-
-}
-
-function createNewItemRow(itemName, itemUnitPrice){
-
-}
-
-function createNewItem(){
-
+function updateDeleteButtons() {
+  var deleteButtons = document.getElementsByClassName('btn-delete');  
+  for(var i = 0; i<deleteButtons.length ; i++){
+    deleteButtons[i].onclick = deleteItem;
+  }
 }
 
 window.onload = function(){
   var calculatePriceButton = document.getElementById('calc-prices-button');
-  var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');  
+  var createItemButton = document.getElementById('new-item-create');  
 
   calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
+  createItemButton.onclick = function() { createNewItem(this); }
 
-  for(var i = 0; i<deleteButtons.length ; i++){
-    deleteButtons[i].onclick = deleteItem;
-  }
+  updateDeleteButtons();
 };
