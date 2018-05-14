@@ -7,8 +7,71 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
   <script type="text/javascript" src="./js/index.js"></script>
+
+
   <title>Ironhack cart</title>
 </head>
 <body>
+    <div>
+      <h1>Ironhack Merchandising Shop</h1>
+    </div>
+
+    <div class="fullproduct">
+      <div id="title-1" style="display: inline-block;margin: 2em;">
+        <span>IronBubble</span>
+      </div>
+      <div id="fixedPrice-1" style="display: inline-block;margin: 2em;">
+        <span>$25.00</span>
+      </div>
+      <div style="display: inline-block;margin: 2em">
+        <span>QTY <input id="quantity-1" type="text" value="1"></span>
+      </div>
+      <div style="display: inline-block;margin: 2em;">
+        <span id="totalPrice-1">300</span>
+      </div>
+      <div style="display: inline-block;margin: 2em;">
+        <span>
+          <button id="btn-delete-1" class="btn-delete">Delete</button>
+        </span>
+      </div>
+
+    <div class="fullproduct">
+      <div id="title-2" style="display: inline-block;margin: 2em;">
+        <span>Ironshirt</span>
+      </div>
+      <div id="fixedPrice-2" style="display: inline-block;margin: 2em;">
+        <span>$15.00</span>
+      </div>
+      <div style="display: inline-block;margin: 2em">
+        <span>QTY <input id="quantity-2" type="text" value="1"></span>
+      </div>
+      <div style="display: inline-block;margin: 2em;">
+        <span id="totalPrice-2">300</span>
+      </div>
+      <div style="display: inline-block;margin: 2em;">
+        <span>
+          <button id="btn-delete-2" class="btn-delete">Delete</button>
+        </span>
+      </div>      
+
+
+    <div>
+      <span style="display: block;">
+        <button id="calc-prices-button" class="btn-success">Calculate Prices</button>
+      </span>
+    </div>
+
+<br>
+
+      <div>
+        Total Price: <span id="sumTotalPrices"></span>
+      </div>
+
+
+
+    </div>
+    
+
+    
 </body>
 </html>
