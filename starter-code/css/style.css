@@ -39,3 +39,42 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.nameShop{
+  width: 25%;
+  margin-left: 45%;
+}
+.wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+.container{
+  width: 20%;
+  text-align: center;
+}
+.qtyInput{
+  width: 70%;
+}
+.calcBtn{
+  margin-top: 5vh;
+  display: flex;
+  justify-content: center;
+}
+#totalPrice{
+  margin-top: 5vh;
+  display: flex;
+  justify-content: center;
+}
+.newElements{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4vh;
+  margin-bottom: 2vh;
+}
+.newElements div input{
+  width: 80%;
+}
