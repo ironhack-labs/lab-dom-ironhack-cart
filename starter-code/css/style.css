@@ -1,41 +1,84 @@
-input {
-  border: solid 1px black;
-}
+  input {
+    border: solid 1px black;
+  }
+  .body{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-items: center;
+    
+  }
 
-.btn {
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
-}
+  .btn {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+  }
 
-.btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
-}
+  .btn-success {
+      color: #fff;
+      background-color: #5cb85c;
+      border-color: #4cae4c;
+  }
 
-.btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
-}
+  .btn-delete {
+      color: #fff;
+      background-color: #CF000F;
+      border-color: #CF000F;
+  }
 
-.quantity {
-  margin: 0 5px;
-}
+  .quantity {
+    margin: 0 5px;
+  }
+  .header{
+    width: 500px;
+    height: 300px;
+    padding: 10px;
+    border: 10px solid #49729b;
+    margin: 20px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  h1{
+    text-align: center;
+    flex-direction: row;
+    color: #49729b;
+    
+  }
+
+  .container{
+    width: 95%;
+    height: 300px;
+    padding: 10px;
+    border: 10px solid #49729b;
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center; 
+    align-content: center;       
+  }
+
+  .calcula{
+    flex-direction: column;
+    justify-items: center;
+  }
