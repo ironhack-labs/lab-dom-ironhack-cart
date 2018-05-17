@@ -1,13 +1,16 @@
 
-h2 {
-  text-align: right;
+p {
+  text-align: left;
   padding-right: 100px;
-
+  padding-left: 550px;
+  width: 400px;
+  font-size: 40px;
+  font-weight: bold;
 }
 
 span {
   display:inline-block;
-  padding-right: 100px;
+  padding-right: 140px;
 }
 
 .quantity input {
