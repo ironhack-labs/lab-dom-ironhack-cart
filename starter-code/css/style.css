@@ -1,3 +1,28 @@
+
+h2 {
+  text-align: right;
+  padding-right: 100px;
+
+}
+
+span {
+  display:inline-block;
+  padding-right: 100px;
+}
+
+.quantity input {
+  width: 30px;
+}
+
+div.productWrapper {
+  padding-left: 10px;
+}
+
+#wrapper {
+  padding: 50px;
+ }
+
+ 
 input {
   border: solid 1px black;
 }
