@@ -8,7 +8,82 @@
   <link rel="stylesheet" href="./css/style.css">
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
-</head>
-<body>
-</body>
-</html>
+  <body>
+      <h1 class="title">Ironhack Merchandising Shop</h1>
+      <div id="product-list">
+        <div class="product">
+          <div>
+            <span class="name">IronBubble-head</span>
+          </div>
+          <div>
+            <span class="price">$25.00</span>
+          </div>
+          <div>
+            <label>QYT</label>
+            <!Se usa min=0 para empezar con un minimo en nuestro carrito indice>
+            <input type="number" name="quantity" class="quantity" min="0" />
+          </div>
+          <div>
+            <!Recordar poner clases que sirvan para todos no solo para ti, buscar como debo separar las palabras>
+            <!totalpp>
+            <span class="total-product-price">$0.00</span>
+          </div>
+          <div>
+            <button class="btn btn-delete">Delete</button>
+          </div>
+        </div>
+        <div class="product">
+          <div>
+            <span class="name">IronShirt</span>
+          </div>
+          <div>
+            <span class="price">$15.00</span>
+          </div>
+          <div>
+            <label>QYT</label>
+            <!se añade value  representa el valor que será enviado al enviar el formulario 
+            si una determinada opción está seleccionada. 
+            Si se omite el atributo el valor  se tomará del texto del contenido del elemento >
+            <input type="number" name="quantity" class="quantity" min="0" value="0" />
+          </div>
+          <div>
+            <span class="total-product-price">$0.00</span>
+          </div>
+          <div>
+            <button class="btn btn-delete">Delete</button>
+          </div>
+        </div>
+      </div>
+      <! poner clase normal  es dificil de recordar anewproduct>
+      <div class="anewproduct">
+        <div>
+          <input type="text" name="name" />
+        </div>
+        <div>
+          <input type="number" name="price" min="0" value="0" />
+        </div>
+        <div></div>
+        <div></div>
+        <div>
+          <button class="btn" id="new-item-create">Create</button>
+        </div>
+      </div>
+      <button id="calc-prices-button" class="btn btn-success">Calculate Prices</button>
+      <h2>Total Price:
+        <span id="total-price">$0</span>
+      </h2>
+    </body>
+    </head>    
+  <body>
+  </body>
+  </html>
+  
+
+
+
+
+
+
+
+
+

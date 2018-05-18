@@ -39,3 +39,25 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+
+/* recuerda que puede tener varias class o id con la  misma informacion
+prueba si se ve igual juntalo en ese caso no se porque no queda igual*/ 
+
+.product,
+.anewproduct {
+  flex-wrap: wrap;
+  display: flex;
+}
+
+/* repasar selectores, > ñ.....*/
+.product > div,
+.anewproduct > div {
+  box-sizing: border-box;
+  flex-grow: 1;
+  padding: 30px;
+  /*siempre hace referencia a la anchura del contenido de cada elemento*/
+  width:50px;
+}
+
+
