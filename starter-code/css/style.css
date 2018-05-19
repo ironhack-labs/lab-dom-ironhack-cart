@@ -28,14 +28,17 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin: 20px 0 0 0;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    float: right;
+    margin: -25px 15% 0 0;
 }
 
-.quantity {
-  margin: 0 5px;
+.row {
+  margin: 10px 0;
 }
