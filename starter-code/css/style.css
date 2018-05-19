@@ -39,3 +39,20 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.float {
+float: left;
+}
+.container1 {
+width: 500px;
+ }
+.block{
+display: inline-block;
+}
+.clear{
+  clear: both;
+}
+.margin{
+  margin-right: 20px;
+  margin-top:20px;
+}

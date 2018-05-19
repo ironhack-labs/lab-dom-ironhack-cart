@@ -1,3 +1,13 @@
+var calculatePriceButton = document.getElementById("calculate-price");
+calculatePriceButton.onclick = function() {
+  var unitPrice = document.getElementById('price').innerText;
+  var price = Number(unitPrice.replace("$", " "));
+  var totalItems = document.getElementById('unit-input').value;
+  var totalPrice = (price * totalItems).toFixed(2);
+  document.getElementById('total-price').innerText = "$" + totalPrice;
+}
+
+
 function deleteItem(e){
 
 }
