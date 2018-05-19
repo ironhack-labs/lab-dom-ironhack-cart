@@ -5,7 +5,13 @@ calculatePriceButton.onclick = function() {
   var totalItems = document.getElementById('unit-input').value;
   var totalPrice = (price * totalItems).toFixed(2);
   document.getElementById('total-price').innerText = "$" + totalPrice;
+  var unitPrice2= document.getElementById('price2').innerText;
+  var price2 = Number(unitPrice2.replace("$", " "));
+  var totalItems2 = document.getElementById('unit-input2').value;
+  var totalPrice2 = (price2 * totalItems2).toFixed(2);
+  document.getElementById('total-price2').innerText = "$" + totalPrice2;
 }
+
 
 
 function deleteItem(e){

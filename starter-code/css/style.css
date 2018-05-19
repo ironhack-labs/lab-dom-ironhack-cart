@@ -43,9 +43,7 @@ input {
 .float {
 float: left;
 }
-.container1 {
-width: 500px;
- }
+
 .block{
 display: inline-block;
 }
