@@ -16,6 +16,19 @@ calculatePriceButton.onclick = function() {
   document.getElementById("total-price-cart").innerText = '$' + totalPrice;
 }
 
+var deleteButtons = document.getElementsByClassName('btn-delete');
+deleteButtons[0].onclick = function(){
+  var container = document.getElementById('products');
+  var product = document.getElementById('container1');
+  container.removeChild(product);
+}
+
+deleteButtons[1].onclick = function(){
+  var container = document.getElementById('products');
+  var product = document.getElementById('container2');
+  container.removeChild(product);
+}
+
 
 function getTotalPrice(id, totalPrice) {
 document.getElementById(id).innerText= totalPrice;
