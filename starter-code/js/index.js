@@ -1,18 +1,25 @@
 var calculatePriceButton = document.getElementById("calculate-price");
 calculatePriceButton.onclick = function() {
   var unitPrice = document.getElementById('price').innerText;
-  var price = Number(unitPrice.replace("$", " "));
+  var priceNumber = Number(unitPrice.replace("$", " "));
   var totalItems = document.getElementById('unit-input').value;
-  var totalPrice = (price * totalItems).toFixed(2);
-  document.getElementById('total-price').innerText = "$" + totalPrice;
+  var Price = Number((priceNumber * totalItems).toFixed(2));
+  var PriceProduct1 = "$" + Price
+  document.getElementById('total-price').innerText = PriceProduct1;
   var unitPrice2= document.getElementById('price2').innerText;
-  var price2 = Number(unitPrice2.replace("$", " "));
+  var priceNumber2 = Number(unitPrice2.replace("$", " "));
   var totalItems2 = document.getElementById('unit-input2').value;
-  var totalPrice2 = (price2 * totalItems2).toFixed(2);
-  document.getElementById('total-price2').innerText = "$" + totalPrice2;
+  var Price2 = Number((priceNumber2 * totalItems2).toFixed(2));
+  var PriceProduct2 = "$" + Price2
+  document.getElementById('total-price2').innerText = PriceProduct2;
+  var totalPrice = Price + Price2;
+  document.getElementById("total-price-cart").innerText = '$' + totalPrice;
 }
 
 
+function getTotalPrice(id, totalPrice) {
+document.getElementById(id).innerText= totalPrice;
+}
 
 function deleteItem(e){
 
