@@ -1,3 +1,9 @@
+
+body {
+  text-align: center; 
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 input {
   border: solid 1px black;
 }
@@ -38,4 +44,19 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.product,
+.add-new-product {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product > div,
+.add-new-product > div {
+  box-sizing: border-box;
+  flex-grow: 1;
+  padding: 0.8em 1.2em;
+  overflow: hidden;
+  width: 16.6%;
 }
