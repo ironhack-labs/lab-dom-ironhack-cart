@@ -61,6 +61,7 @@ window.onload = function(){
   }
 
   calculatePriceButton.onclick = function() {
+    totalOverall.innerText = '0';
     for (var i = 0; i < productPrice.length; i++) {
       total[i].innerText = Math.round(Number(productPrice[i].innerHTML) * Number(quantity[i].value) * 100) / 100;
       totalOverall.innerText =  Number(totalOverall.innerText) + Number(total[i].innerText);
