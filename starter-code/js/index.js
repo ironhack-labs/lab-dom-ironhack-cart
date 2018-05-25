@@ -8,7 +8,9 @@ function getPriceByProduct(itemNode) {
 
 function updatePriceByProduct(productPrice, index) {
   var totalProductCostNode = document.getElementById(index).getElementsByClassName("totalProductCost")[0];
-  totalProductCostNode.setAttribute("value", productPrice);
+  var quantityNode = document.getElementById(index).getElementsByClassName("productQuantity")[0];
+  console.log(quantityNode);
+  totalProductCostNode.value = productPrice * quantityNode.value;
   totalProductCostNode.innerHTML = productPrice + "€";
 }
 
@@ -18,7 +20,7 @@ function getTotalPrice() {
   for (i = 0; i < products.length; i++) {
     var productPrice = getPriceByProduct(products[i]);
 
-    var productQuantity = products[i].getElementsByClassName("productQuantity")[0].getAttribute("value");
+    var productQuantity = products[i].getElementsByClassName("productQuantity")[0].value;
 
     updatePriceByProduct(productPrice * productQuantity, i);
 
