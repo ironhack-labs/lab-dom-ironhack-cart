@@ -7,22 +7,31 @@ function getPriceByProduct(itemNode) {
 }
 
 function updatePriceByProduct(productPrice, index) {
-  var totalProductCostNode = document.getElementById(index).getElementsByClassName("totalProductCost")[0];
-  var quantityNode = document.getElementById(index).getElementsByClassName("productQuantity")[0];
-  console.log(quantityNode);
-  totalProductCostNode.value = productPrice * quantityNode.value;
+  var product = document.getElementById(index);
+  var totalProductCostNode = product.getElementsByClassName("totalProductCost")[0];
+  var quantityNode = product.getElementsByClassName("productQuantity")[0];
+  totalProductCostNode.value = productPrice;
   totalProductCostNode.innerHTML = productPrice + "€";
+
+  return totalProductCostNode.value;
 }
 
 function getTotalPrice() {
   var products = document.getElementsByClassName("product");
+
+  var totalCost = 0;
 
   for (i = 0; i < products.length; i++) {
     var productPrice = getPriceByProduct(products[i]);
 
     var productQuantity = products[i].getElementsByClassName("productQuantity")[0].value;
 
-    updatePriceByProduct(productPrice * productQuantity, i);
+    totalCost += updatePriceByProduct(productPrice * productQuantity, i);
+    console.log(totalCost);
+
+    document.getElementById("totalShoppingPrice").value = totalCost;
+
+    document.getElementById("totalShoppingPrice").innerHTML = totalCost + "€";
 
   }
 
