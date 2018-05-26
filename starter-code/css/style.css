@@ -39,3 +39,49 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+
+
+body
+{
+  text-align: center;
+}
+.title
+{
+  margin: 100px 0 0 0;
+}
+.list-items
+{
+  list-style-type: none;
+}
+.list-items .item, .list-items .new
+{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.list-items li div, .list-items li button
+{
+  margin: 40px 80px;
+}
+.list-items li div.button
+{
+  margin: 0;
+}
+.new .inputs
+{
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.name, .unitPrice, .totalPrice, .btn-delete
+{
+  width: 150px;
+}
+.amount
+{
+  width: 300px;
+}
