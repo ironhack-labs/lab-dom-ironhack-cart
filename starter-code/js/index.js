@@ -52,13 +52,6 @@ window.onload = function(){
   //calculatePriceButton.onclick = getTotalPrice;
   //createItemButton.onclick = createNewItem;
 
-  for(var i = 0; i<deleteButtons.length ; i++){
-    var productWrapper = deleteButtons[i].parentElement;
-    deleteButtons[i].onclick = function() {
-      productsListContainer.removeChild(productWrapper);
-    }
-    //deleteButtons[i].onclick = deleteItem;
-  }
 
   calculatePriceButton.onclick = function() {
     totalOverall.innerText = '0';
@@ -75,10 +68,32 @@ window.onload = function(){
     cln.getElementsByClassName("product-price")[0].innerText = document.getElementById("product-price").value;
 
     productsListContainer.appendChild(cln);   
+    //call deleteItems here again so we can delete items we build dynamically
+    deleteItems();
     //var newElement = document.createElement("div");
     //newElement.innerHTML = ;
     //productsListContainer.appendChild(newElement);
   }
+
+  function deleteItems (){
+    
+    for(var i = 0; i<deleteButtons.length; i++){
+      var productWrapper = deleteButtons[i].parentElement;
+      deleteButtons[i].onclick = function() {
+        //use this to refer to this button and remove parent element
+        this.parentElement.remove();
+        //old code:productsListContainer.removeChild(productWrapper);
+      }
+      //deleteButtons[i].onclick = deleteItem;
+    }
+  }
+
+  deleteItems();
+
+
+
+
+
 
 
 };
