@@ -6,9 +6,62 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
+  
   <title>Ironhack cart</title>
 </head>
 <body>
+  <div class="page-wrapper">
+    <img src="https://building.co/wp-content/uploads/2016/04/ironhack-logo-1.jpg" alt="Ironhack Logo" id="logo"><br>
+    <h1>Ironhack Gear</h1>
+    <hr><br>
+    
+    <div id="products">
+      <div class="product">
+        <span class="product-name">Ironhack Bubblehead</span>
+        <span class="product-cost">25.00</span>
+        <span class="product-qty">
+          <label for="quantity">QTY </label><input class="quantity" name="quantity" type="text" value="0">
+        </span>
+        <span class="total">0.00</span>
+        <span class="delete"> <button class="btn btn-delete">Delete</button></span>
+      </div>
+      <div class="product">
+        <span class="product-name">IronShirt</span>
+        <span class="product-cost">15.00</span>
+        <span class="product-qty">
+          <label for="quantity">QTY </label><input class="quantity" name="quantity" type="text" value="0">
+        </span>
+        <span class="total">0.00</span>
+        <span class="delete"> <button class="btn btn-delete">Delete</button></span>
+      </div>
+    </div>
+    
+    
+    <div class="insert-product"></div>
+    <br><br>
+    <div class="product">
+      <span class="product-name new-product">
+        <label for="new-product"></label><input id="new-product" name="new-product" type="text">
+      </span>
+      <span class="product-cost">
+        <label for="new-price"></label><input id="new-price" name="new-price" type="text">
+      </span>
+      <span class="product-qty">
+      </span>
+      <span class="total">
+      </span>
+      <span><button id="add" class="btn btn-add">Add Product</button></span>
+    </div>
+    <br><br><hr>
+    
+    
+    <div class="grand-total">
+      <h2>Total Price: <span class="total-price">0.00</span>
+        <span class="calculate"><button id="calc" class="btn btn-success">Calculate Prices</button></span>
+      </h2>
+    </div>
+    
+  </div>
+  <script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>

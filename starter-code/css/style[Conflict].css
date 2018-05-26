@@ -1,41 +1,27 @@
 input {
   border: solid 1px black;
 }
-#logo {
-  width: 100px;
-}
+
 .page-wrapper {
-  width: 700px;
+  width: 800px;
   margin: 0 auto;
 }
-.product > span {
+
+span {
   margin: 0 10px;
   float: left;
+  width: 150px;
 }
-span.product-name { width: 200px }
-span.product-cost { width: 70px; text-align: right }
-span.product-qty  { width: 120px}
-span.total        { width: 60px; text-align: right  }
-span.delete       { width: 40px }
 
 .product {
   clear: both; 
-  margin-bottom: 10px;
 }
-.grand-total {
-  display: inline;
-  text-align: center; 
-}
-input {
-  width: 50px;
-}
-.new-product > input {
-  width: 200px;
-}
+
+
 .btn {
   display: inline-block;
-  padding: 3px 12px;
-  margin-bottom: 20px;
+  padding: 6px 12px;
+  margin-bottom: 0;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.42857143;
@@ -53,25 +39,19 @@ input {
   border: 1px solid transparent;
   border-radius: 4px;
 }
+
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
-    margin-left: 15px;
 }
+
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
 }
-.btn-add {
-  color: #fff;
-  background-color: grey;
-  border-color: grey;
-}
+
 .quantity {
   margin: 0 5px;
-}
-.recalc {
-  font-size: 10px;
 }
