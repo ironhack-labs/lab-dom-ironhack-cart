@@ -63,7 +63,7 @@ body
 }
 .list-items li div, .list-items li button
 {
-  margin: 40px 80px;
+  margin: 40px 50px;
 }
 .list-items li div.button
 {
@@ -79,7 +79,7 @@ body
 }
 .name, .unitPrice, .totalPrice, .btn-delete
 {
-  width: 150px;
+  width: 200px;
 }
 .amount
 {

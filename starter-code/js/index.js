@@ -1,9 +1,3 @@
-// Use at least 3 onclick events
-// Use at least one getElementById
-// Use at least one getElementsByTagName
-// Use at least one getElementsByClassName
-
-
 function deleteItem(e){
 
 }
@@ -19,13 +13,13 @@ function getTotalPrice() {
   var listItems = document.querySelectorAll('.list-items .item');
   var total = 0;
   var totalPrice = 0;
-  listItems.forEach(function(item){
+  listItems.forEach(function(item, index){
     totalPrice = getPriceByProduct(item);
-    console.log("totalPrice: " + totalPrice);
+    console.log("totalPrice, index: " + totalPrice +', '+index);
     item.getElementsByClassName('total')[0].innerHTML = parseFloat(totalPrice.toFixed(2));
     total += parseFloat(item.getElementsByClassName('total')[0].innerHTML);
   });
-  if (totalPrice > 0) document.querySelector('#total span').innerHTML = '$' + total;
+  if (totalPrice >= 0) document.querySelector('#total span').innerHTML = '$' + total;
 }
 
 function deleteItem(e){
@@ -35,8 +29,8 @@ function deleteItem(e){
 }
 
 function createItem(e){
-  var name_field = e.currentTarget.parentElement.parentElement.getElementsByClassName('input-name')[0];
-  var price_field = e.currentTarget.parentElement.parentElement.getElementsByClassName('input-price')[0];
+  var name_field = e.currentTarget.parentElement.parentElement.getElementsByTagName('input')[0];
+  var price_field = e.currentTarget.parentElement.parentElement.getElementsByTagName('input')[1];
   if (name_field.value != "" && price_field.value != "") createNewItemRow(name_field.value, price_field.value);
   name_field.value = "";
   price_field.value = "";
