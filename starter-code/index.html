@@ -7,7 +7,6 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 
@@ -17,7 +16,7 @@
       <div id='cartTitle'>
         <p>Ironhack Merchandising Shop </p>
       </div>
-      <div class='itemsWrapper'>
+      <div id='itemsWrapper'>
         <div class='productWrapper' id='IronBubble-head'>
           <span class='productName'> IronBubble-head</span>
           <span class='unitPrice'> $25.00</span>
@@ -32,12 +31,14 @@
             <input type="button" class='btn btn-delete' value='Delete'>
           </span>
         </div>
-        <div>
-        </div>
-        <input type="button" class='btn btn-success' value='Calculate Prices'>
+      </div>
+      <div>
+          <input type="button" class='btn btn-success' 
+          id='calc-prices-button' value='Calculate Prices'>
       </div>
     </div>
   </div>
+  <script type="text/javascript" src="./js/index.js"></script>
 </body>
 
 </html>
