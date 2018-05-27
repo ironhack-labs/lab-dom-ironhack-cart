@@ -14,11 +14,7 @@ function updatePriceByProduct(productPrice, index) {
 }
 
 function getTotalPrice() {
-  const items = Array.from(document.getElementById('itemsWrapper').children);
-  const grandTotalPrice = items.reduce((prev, item) => {
-
-  }, 0);
-  return `$ ${grandTotalPrice}`;
+ 
 }
 
 function createQuantityInput() {
