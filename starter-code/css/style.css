@@ -1,3 +1,6 @@
+*{
+  border: 1px;
+}
 input {
   border: solid 1px black;
 }
@@ -38,4 +41,23 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.invoiceItems{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+h1{
+  margin:0;
+}
+nav, footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:40px;
 }
