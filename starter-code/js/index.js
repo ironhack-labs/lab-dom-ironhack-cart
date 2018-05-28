@@ -16,8 +16,8 @@ calculatePriceButton.onclick = function() {
   document.getElementById("total-price-cart").innerText = '$' + totalPrice;
 }
 
-var deleteButtons = document.getElementsByClassName('btn-delete');
 
+var deleteButtons = document.getElementsByClassName('btn-delete');
 deleteButtons[0].onclick = function(){
   var container = document.getElementById('products');
   var product = document.getElementById('container1');
@@ -30,46 +30,121 @@ deleteButtons[1].onclick = function(){
   container.removeChild(product);
 }
 
+
 var createItemButton = document.getElementById('new-item-create');
 createItemButton.onclick = function(){
 
-  //antes habrá que borrar los formularios de entrada de datos y volverlos a poner debajo
-  
+//borrar los formularios de entrada de datos
+var productNameValue = document.getElementById('product-name').value;
+var productUnitPriceValue = document.getElementById('product-unit-price').value;
+var container3 = document.getElementById("container3");
+container3.innerHTML = "";
 
-  //Recoger valores del formuario y crear los nuevos elementos
-  //1. Crear las tags del DOM donde se van a incluir los elementos
-  var productName = document.createElement('span');
-  var productUnitPrice = document.createElement('span');
-  
-  //2. Recoger valor de los formularios de nombre y precio unitario
-  var productNameValue = document.getElementById('product-name').value;
-  var productUnitPriceValue = document.getElementById('product-unit-price').value;
+//Creamos el container div de todos los elementos
+var productsContainer = document.getElementById('products');
+var container = document.createElement('div');
+container.classList.add("clear");
+productsContainer.appendChild(container);
 
-  //3. Crear los nuevos TextNode con los valores del formulario y meterlos en las tags
-  productName.innerText = document.createTextNode(productNameValue);
-  productUnitPrice.innerText = document.createTextNode(productUnitPriceValue);
+//Creamos el resto de elementos que van dentro del div
+var productName = document.createElement('span');
+productName.classList.add("float", "block", "margin");
+productName.innerText = productNameValue;
 
 
-  //Crear nuevo formulario para recoger cantidad de producto
-  //1. Crear tags del DOM donde se van a recoger los valores
-  var formContainer = document.createElement('div');
-  var formUnit = document.createElement('form');
-  var inputUnit = document.createElement('input');
-  var inputUnitLabel = document.createElement('label');
+var productUnitPrice = document.createElement('span');
+productUnitPrice.classList.add("float", "margin");
+productUnitPrice.innerText = "$" + productUnitPriceValue;
 
-  //Meter tags dentro de sus tags correspndientes
 
-  formContainer.appendChild(formUnit, inputUnit, inputUnitLabel);
+//formulario
 
-  //Meter todos los elementos en el DIV
-  var container = document.createElement('div');
-  
-  container.appendChild(productName, productUnitPrice, formContainer);
-  var productsContainer = document.getElementById('products');
+var formContainer = document.createElement('div');
+formContainer.classList.add("float", "margin");
 
-  productsContainer.appendChild(container);
-  
+var formUnit = document.createElement('form');
+formUnit.classList.add("quantity");
+
+var inputUnit = document.createElement('input');
+inputUnit.classList.add("input");
+inputUnit.setAttribute("type", "number");
+inputUnit.setAttribute("name", "x");
+
+var inputUnitLabel = document.createElement('label');
+inputUnitLabel.setAttribute("for", "QTY");
+inputUnitLabel.innerText = "QTY";
+
+formContainer.appendChild(formUnit);
+formContainer.appendChild(inputUnit);
+formContainer.appendChild(inputUnitLabel);
+
+
+var totalPriceContainer = document.createElement('div');
+var totalPrice = document.createElement('span');
+totalPrice.classList.add("float", "margin", "block");
+totalPrice.innerText = "$0.00";
+totalPriceContainer.appendChild(totalPrice);
+
+var deleteButtonContainer = document.createElement('div');
+var deleteButton = document.createElement('button');
+deleteButton.classList.add("btn-delete", "float", "block", "margin");
+deleteButton.setAttribute("type", "button");
+deleteButton.innerText = "Delete";
+deleteButtonContainer.appendChild(deleteButton);
+
+//incluimos todos los elementos dentro del div contenedor
+container.appendChild(productName);
+container.appendChild(productUnitPrice);
+container.appendChild(formContainer);
+container.appendChild(totalPriceContainer);
+container.appendChild(deleteButtonContainer);
+
+//crear el formulario de entrada de otro elemento
+var formProductName = document.createElement('form');
+formProductName.classList.add("float");
+
+var labelProductName = document.createElement('label');
+labelProductName.classList.add("margin");
+labelProductName.setAttribute("for", "product-name");
+labelProductName.innerText = "Product Name";
+
+var inputProductName = document.createElement('input');
+inputProductName.classList.add("input", "margin");
+inputProductName.setAttribute("type", "text");
+inputProductName.setAttribute("name", "x");
+
+formProductName.appendChild(labelProductName);
+formProductName.appendChild(inputProductName);
+
+var formProductPrice = document.createElement('form');
+formProductPrice.classList.add("float");
+
+var labelPoductPrice = document.createElement('label');
+labelPoductPrice.classList.add("margin");
+labelPoductPrice.setAttribute("for", "product-unit-price");
+labelPoductPrice.innerText = "Product Unit Price";
+
+var inputProductPrice = document.createElement('input');
+inputProductPrice.classList.add("input", "margin");
+inputProductPrice.setAttribute("name", "x");
+
+formProductPrice.appendChild(labelPoductPrice);
+formProductPrice.appendChild(inputProductPrice);
+
+var buttonNewProduct = document.createElement('button');
+buttonNewProduct.setAttribute("type", "button");
+buttonNewProduct.classList.add("margin");
+buttonNewProduct.innerText = "Create";
+
+container3.appendChild(formProductName);
+container3.appendChild(formProductPrice);
+container3.appendChild(buttonNewProduct);
+
+productsContainer.insertBefore(container, container3);
 }
+
+
+
 
 
 
