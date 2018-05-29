@@ -1,9 +1,10 @@
-function deleteItem(e) {
-
+function deleteProduct(e) {
+  var product = e.currentTarget.parentNode.parentNode;
+  product.remove();
 }
 
 function getPriceByProduct(itemNode) {
-  return itemNode.textContent.slice(1);
+  return parseFloat(itemNode.textContent).toFixed(2);
 }
 
 function updatePriceByProduct(productPrice, index) {
@@ -26,78 +27,34 @@ function getTotalPrice() {
 }
 
 function createQuantityInput() {
-  var input = document.createElement('input');
-  input.type = 'number';
-  input.className = 'product-input input';
-  return input;
 }
 
 function createDeleteButton() {
-  var buttonColumn = createProductColumn();
-  var button = document.createElement('button');
-  button.appendChild(document.createTextNode('DELETE'));
-  button.className = 'btn btn-delete';
-  buttonColumn.appendChild(button);
-  return buttonColumn;
 }
 
 function createQuantityNode() {
-  var quantityNode = createProductColumn();
-  var qtySpan = document.createElement('span');
-
-  qtySpan.appendChild(document.createTextNode('QTY'));
-  quantityNode.appendChild(qtySpan);
-  quantityNode.appendChild(createQuantityInput());
-  return quantityNode;
 }
 
 function createProductColumn() {
-  var column = document.createElement('div');
-  column.className = 'column';
-  return column;
 }
 
 function createNewProductTotal() {
-  var column = createProductColumn();
-  var productTotal = document.createElement('span');
-
-  productTotal.appendChild(document.createTextNode('$0.00'));
-  productTotal.className = 'product-total';
-  column.appendChild(productTotal);
-  return column;
 }
 
 function createNewItemName(itemName, itemUnitPrice) {
-  var prodName = createProductColumn();
-  var prodPrice = createProductColumn();
-  var prodNameSpan = document.createElement('span');
-  var prodPriceSpan = document.createElement('span');
-  var namePriceFragment = document.createDocumentFragment();
-
-  prodNameSpan.appendChild(document.createTextNode(itemName));
-  prodNameSpan.className = 'product-name';
-  prodPriceSpan.appendChild(document.createTextNode(`$${ parseFloat(itemUnitPrice) }`));
-  prodPriceSpan.className = 'product-price';
-
-  prodName.appendChild(prodNameSpan);
-  prodPrice.appendChild(prodPriceSpan);
-
-  namePriceFragment.appendChild(prodName);
-  namePriceFragment.appendChild(prodPrice);
-  return namePriceFragment;
 }
 
 function createNewItem() {
   var parent = document.querySelector('.product-container');
-  var newProduct = document.createElement('div');
   var newProdName = document.getElementById('new-product-name').value;
-  var newProdPrice = document.getElementById('new-product-price').value;
-
+  var newProdPrice = parseFloat(document.getElementById('new-product-price').value).toFixed(2);
+  var newProduct = document.createElement('div');
   newProduct.className = 'product flex';
-  newProduct.appendChild(createNewItemName(newProdName, newProdPrice));
-  newProduct.appendChild(createQuantityNode());
-  newProduct.appendChild(createNewProductTotal());
-  newProduct.appendChild(createDeleteButton());
+  newProduct.innerHTML = `<div class="column"><span class="product-name">${ newProdName }</span></div>
+  <div class="column"><span>$</span><span class=product-price>${ newProdPrice }</span></div>
+  <div class="column"><span>QTY </span><input type="number" placeholder=" 0" class="product-quantity input"></div>
+  <div class="column"><span>$</span><span class="product-total">0.00</span></div>
+  <div class="column"><button class="btn btn-delete">DELETE</button></div>`;
   parent.appendChild(newProduct);
 }
 
@@ -110,6 +67,6 @@ window.onload = function () {
   createItemButton.onclick = createNewItem;
 
   for (var i = 0; i < deleteButtons.length; i++) {
-    deleteButtons[i].onclick = deleteItem;
+    deleteButtons[i].onclick = deleteProduct;
   }
 };
