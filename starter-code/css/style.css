@@ -38,12 +38,17 @@ input {
     background-color: #CF000F;
     border-color: #CF000F;
 }
+.btn-create {
+  color: #fff;
+  background-color:blue;
+  border-color:blue;
+}
 
 .quantity {
   margin: 0 5px;
 }
 
-.invoiceItems{
+.invoice-items{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -56,8 +61,8 @@ h1{
 }
 nav, footer{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
     margin:40px;
 }

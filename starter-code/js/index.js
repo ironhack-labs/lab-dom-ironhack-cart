@@ -1,5 +1,6 @@
 function deleteItem(e) {
 
+
 }
 
 function getPriceByProduct(itemNode) {
@@ -11,22 +12,39 @@ function updatePriceByProduct(productPrice, index) {
 }
 
 function getTotalPrice() {
-   var qty = document.getElementsByTagName('input').value;
-   console.log(qty);
+    var qty = document.getElementsByTagName('input').value;
+    console.log(qty);
 }
 
 function createQuantityInput() {
-   return (`<div><label for = 'quantity'> QTY </label>
-            <input type = 'number' ></div>`);
+    var newDiv = document.createElement("div");
+    var newLabel = document.createElement("label");
+    var newInput = document.createElement("input");
+
+    newLabel.setAttribute("for", "quantity");
+    newLabel.setAttribute("name", "QTY");
+    newInput.setAttribute("type", "number");
+    newDiv.appendChild(newLabel);
+    newDiv.appendChild(newInput);
+    return newDiv;
+    //<div><label for = "quantity"> QTY </label><input type = "number"></div>
 }
 
 function createDeleteButton() {
-    return (`<div><button class='btn-delete btn' type='submit'>
-            delete</button></div>`);
+    var newDiv = document.createElement("div");
+    var newButton = document.createElement("button");
+
+    newButton.setAttribute("class", "btn-delete");
+    newButton.setAttribute("type", "submit");
+    newButton.setAttribute("name", "delete");
+    newDiv = appendChild(newButton);
+    return newDiv;
+
+    //<div><button class="btn-delete btn" type="submit">delete</button></div>)
 }
 
 function createQuantityNode() {
- 
+
 }
 
 function createItemNode(dataType, itemData) {
@@ -34,27 +52,37 @@ function createItemNode(dataType, itemData) {
 }
 
 function createNewItemRow(itemName, itemUnitPrice) {
-    return test = (`<div> <span>${itemName}</span></div><div><span>${itemUnitPrice}</span></div>
-                    ${createQuantityInput()}<div ><span> $0 .00 </span></div>${createDeleteButton()}`);
+    var newDiv = document.createElement("div");
+    var newSpan = document.createElement("span");
+
+    return newDiv;
+    //<div> <span>itemName</span></div>
+    //<div><span>{itemUnitPrice</span></div>
+    //<div ><span> 0 .00 </span > < /div>
 }
 
 function createNewItem() {
-var invoiceItems = document.getElementsByClassName('invoiceItems');
-    var newItemInvoice=createNewItemRow('test', '25.00');
-    console.log(invoiceItems);
-    console.log(newItemInvoice);
-    //invoiceItems.appendChild(newItemInvoice);
-}
+    var invoiceItems = document.getElementsByClassName('invoice-items');
+    var newDiv = document.createElement("div");
 
+    newDiv.appendChild(createNewItemRow("test", "25.00"));
+    // newDiv.appendChild();
+    newDiv.appendChild(createDeleteButton());
+
+
+    console.log(invoiceItems);
+
+    invoiceItems.appendChild(newDiv);
+}
 window.onload = function () {
     var calculatePriceButton = document.getElementsByClassName('btn-success');
-    var createItemButton = document.getElementsByClassName('new-item-create');
+    var createItemButton = document.getElementsByClassName('btn-create');
     var deleteButtons = document.getElementsByClassName('btn-delete');
 
     calculatePriceButton.onClick = getTotalPrice();
     createItemButton.onClick = createNewItem();
 
-    for (var i = 0; i < deleteButtons.length; i++) {
-        deleteButtons[i].onClick = deleteItem;
+    for (let Button of  deleteButtons) {
+        Button.onClick = deleteItem();
     }
 };
