@@ -36,6 +36,44 @@ input {
     border-color: #CF000F;
 }
 
+.btn-create {
+  color: #FFF;
+  background-color: #4caeFF;
+  border-color: #4caeFF;
+  /* align-self: flex-end; */
+}
+
 .quantity {
   margin: 0 5px;
+}
+
+.flex {
+  display: flex;
+}
+
+.container {
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-container {
+  width: 90%;
+  flex-direction: column;
+  background-color: #EEE;
+  border-radius: 20px;
+}
+
+.product {
+  margin: 3em 0;
+}
+
+.create {
+  justify-content: center;
+  width: 90%;
+  margin: 2em;
+}
+
+.column {
+  width: 20%;
+  text-align: center;
 }
