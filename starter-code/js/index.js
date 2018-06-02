@@ -44,7 +44,6 @@ function createQuantityNode() {
 
 function createItemNode(dataType, itemData) {
 
-
 }
 
 function createNewItemRow(itemName, itemUnitPrice) {
@@ -58,39 +57,35 @@ function createNewItemRow(itemName, itemUnitPrice) {
   var newSpanPrice = document.createElement("span");
   var newSpanResult = document.createElement("span");
  
-
-  newSpanResult.innerHTML = "0.00";
-  newDivResult.appendChild(newSpanResult);
-
+  newSpanResult.innerHTML = "$0.00";
   newSpanName.innerHTML = itemName;
   newSpanPrice.innerHTML = itemUnitPrice;
-  newDiv.appendChild(newSpanName);
-  newDiv.appendChild(newSpanPrice);
-  newDiv.appendChild(createQuantityInput());
-  newDiv.appendChild(newDivResult);
-  newDiv.appendChild(createDeleteButton());
-  newDiv.setAttribute("class", "line-invoice");
 
-  newItem.appendChild(newDiv);
-
+  console.log(itemName+"<>"+itemUnitPrice);
+  newDivResult.appendChild(newSpanResult);
+  newItem.appendChild(newSpanName);
+  newItem.appendChild(newSpanPrice);
+  newItem.appendChild(createQuantityInput());
+  newItem.appendChild(newDivResult);
+  newItem.appendChild(createDeleteButton());
+  newItem.setAttribute("class", "invoice-line");
+  invoiceItems.appendChild(newItem);
 }
 
 function createNewItem() {
   var textItem = document.getElementById("text-new-item");
   var costItem = document.getElementById("cost-new-item");
-  createNewItemRow("test", "33.00");
+  createNewItemRow("test", "$33.00");
 }
+
 window.onload = function () {
   var calculatePriceButton = document.getElementsByClassName('btn-success');
   var createItemButton = document.getElementsByClassName('btn-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
-  calculatePriceButton.onClick = getTotalPrice();
-  createItemButton.onClick = createNewItem();
+  calculatePriceButton.onclick = getTotalPrice;
+  createItemButton.onclick, createNewItem;
 
-  // for (let button of deleteButtons) {
-  //   button.onClick = deleteItem;
-  // }
   for (var i = 0; i < deleteButtons.length; i++) {
     deleteButtons[i].onclick = deleteItem; 
   }
