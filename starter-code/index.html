@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/invoice.js"></script>
+  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 
@@ -18,30 +18,57 @@
       <h1>merchandising Shop</h1>
     </div>
   </nav>
-<div class="invoice-items" id="invoice-items">
+
+  <ul class="invoice-items" id="invoice-items">
+    <li class="invoice-line">
+      <div> <span>IronBubble-head</span></div>
+      <div><span>$25.00</span></div>
+      <div> <label>QTY </label><input type="number"></div>
+      <div><span>$0.00</span></div> 
+      <div> <button class="btn-delete btn" type="submit">delete</button></div> 
+    </li>
+    <li class="invoice-line">
+      <div><span>IronShirt</span></div> 
+      <div><span>$15.00</span></div> 
+      <div><label>QTY </label><input type="number"></div> 
+      <div><span>$0.00</span></div> 
+      <div> <button class="btn-delete btn" type="submit">delete</button></div> 
+    </li>
+    <li class="invoice-line">
+      <div><span>IronCup</span></div>
+      <div><span>$0.00</span></div>
+      <div><label>QTY </label><input type="number"></div>
+      <div><span>$10.00</span></div>
+      <div><button class="btn-delete btn" type="submit">delete</button></div>
+    </li>
+    <li class="invoice-line">
+      <div><span>IronSticker</span></div>
+      <div><span>$1.00</span></div>
+      <div><label>QTY </label><input type="number"></div>
+      <div><span>$0.00</span></div>
+      <div><button class="btn-delete btn" type="submit">delete</button></div>
+    </li>
+    <li class="invoice-line">
+      <div><span>IronAxe</span></div>
+      <div><span>$100.00</span></div>
+      <div><label>QTY </label><input type="number"></div>
+      <div><span>$0.00</span></div>
+      <div><button class="btn-delete btn" type="submit">delete</button></div>
+    </li>
+  </ul>
+
+  <ul class="create-items">
+    <div><input type="text" id="text-new-item"></div>
+    <div><input type="number" id="cost-new-item"></div>
+    <div></div> <div></div>
     <div>
-      <span>product name</span>
+      <button class="btn-create btn" type="submit">new item</button>
     </div>
-    <div>
-      <span>$25.00</span>
-    </div>
-    <div>
-      <label for="quantity">QTY  </label>
-      <input type="number">
-    </div>
-    <div>
-      <span>$0.00</span>
-    </div>
-    <div>
-      <button class="btn-delete btn" type="submit">delete</button>
-    </div>
-  </div>
+  </ul>
+
   <footer>
     <div>
       <button class="btn-success btn" type="submit">calculate prices</button>
-    </div>
-    <div>
-      <button class="btn-create btn" type="submit">new item</button>
     </div>
     <div>
       <h2>Total Price:
