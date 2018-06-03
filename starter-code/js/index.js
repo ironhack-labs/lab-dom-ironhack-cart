@@ -11,19 +11,24 @@ function updatePriceByProduct(productPrice, index) {
 }
 
 function getTotalPrice() {
-  //TODO: Control de errores
+  //TODO: mejorar control de errores
   var amounts = document.getElementsByClassName("qty");
-  var prices=document.getElementsByClassName("cost");
-  var subTotal=document.getElementsByClassName("total");
-  var grandTotal=document.getElementById("total-price");
-  var total=0.0;
+  var prices = document.getElementsByClassName("cost");
+  var subTotal = document.getElementsByClassName("total");
+  var grandTotal = document.getElementById("total-price");
+  var total = 0.0, tempSubTotal= 0.0;
 
-  for(var i=0 ; i<prices.length; i++){
-    console.log(subTotal[i]);    console.log(amounts[i]);    console.log(prices[i]);
-    subTotal[i].textContent=(parseFloat(amounts[i].value)*parseFloat(prices[i].textContent)).toFixed(2);
-    total+=parseFloat(subTotal[i].textContent);
+  for (var i = 0; i < prices.length; i++) {
+    tempSubTotal= (parseFloat(amounts[i].value) * 
+                   parseFloat(prices[i].textContent.substr(1, prices[i].textContent.length))).toFixed(2);
+    
+    if (tempSubTotal > 0){total += parseFloat(tempSubTotal); }
+
+    if (tempSubTotal > 0){subTotal[i].textContent ="$"+ tempSubTotal;}
+    else{subTotal[i].textContent ="$0.00";}
   }
-  grandTotal.textContent=total;  
+  if (total > 0) {grandTotal.textContent = "$"+total;}
+  else{grandTotal.textContent = "$0.00";}
 }
 
 function createQuantityInput() {
@@ -71,8 +76,8 @@ function createNewItemRow(itemName, itemUnitPrice) {
   var newSpanResult = document.createElement("span");
  
   newSpanName.innerHTML = itemName;
-  newSpanPrice.innerHTML = parseFloat(itemUnitPrice).toFixed(2);
-  newSpanResult.innerHTML = "0.00";
+  newSpanPrice.innerHTML = "$"+parseFloat(itemUnitPrice).toFixed(2);
+  newSpanResult.innerHTML = "$0.00";
  
   newDivName.appendChild(newSpanName);
   newDivPrice.appendChild(newSpanPrice);

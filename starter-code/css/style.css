@@ -49,7 +49,7 @@ input {
   .invoice-line, .create-items {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: nowrap; 
   justify-content: space-around;
   align-items: center;
   margin: 10px;
