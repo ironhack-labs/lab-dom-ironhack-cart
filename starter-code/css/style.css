@@ -1,3 +1,4 @@
+
 input {
   border: solid 1px black;
 }
@@ -35,7 +36,37 @@ input {
     background-color: #CF000F;
     border-color: #CF000F;
 }
+.btn-create {
+  color: #fff;
+  background-color:blue;
+  border-color:blue;
+}
 
 .quantity {
   margin: 0 5px;
+}
+
+  .invoice-line, .create-items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap; 
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px;
+}
+.invoice-line div,
+.create-items div{
+  width: 20%;
+  text-align: left;
+}
+ 
+h1{
+  margin:0;
+}
+nav, footer{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin:40px;
 }
