@@ -22,38 +22,38 @@
   <ul class="invoice-items" id="invoice-items">
     <li class="invoice-line">
       <div> <span>IronBubble-head</span></div>
-      <div><span>$25.00</span></div>
-      <div> <label>QTY </label><input type="number"></div>
-      <div><span>$0.00</span></div> 
-      <div> <button class="btn-delete btn" type="submit">delete</button></div> 
+      <div><span class="cost">25.00</span></div>
+      <div> <label>QTY </label><input class="qty" type="number"></div>
+      <div><span class="total">0.00</span></div> 
+      <div> <button class="btn-delete btn">delete</button></div> 
     </li>
     <li class="invoice-line">
       <div><span>IronShirt</span></div> 
-      <div><span>$15.00</span></div> 
-      <div><label>QTY </label><input type="number"></div> 
-      <div><span>$0.00</span></div> 
-      <div> <button class="btn-delete btn" type="submit">delete</button></div> 
+      <div><span class="cost">15.00</span></div> 
+      <div><label>QTY </label><input class="qty" type="number"></div> 
+      <div><span class="total">0.00</span></div> 
+      <div> <button class="btn-delete btn">delete</button></div> 
     </li>
     <li class="invoice-line">
       <div><span>IronCup</span></div>
-      <div><span>$0.00</span></div>
-      <div><label>QTY </label><input type="number"></div>
-      <div><span>$10.00</span></div>
-      <div><button class="btn-delete btn" type="submit">delete</button></div>
+      <div><span class="cost">10.00</span></div>
+      <div><label>QTY </label><input class="qty" type="number"></div>
+      <div><span class="total">0.00</span></div>
+      <div><button class="btn-delete btn">delete</button></div>
     </li>
     <li class="invoice-line">
       <div><span>IronSticker</span></div>
-      <div><span>$1.00</span></div>
-      <div><label>QTY </label><input type="number"></div>
-      <div><span>$0.00</span></div>
-      <div><button class="btn-delete btn" type="submit">delete</button></div>
+      <div><span class="cost">1.00</span></div>
+      <div><label>QTY </label><input class="qty" type="number"></div>
+      <div><span class="total">0.00</span></div>
+      <div><button class="btn-delete btn">delete</button></div>
     </li>
     <li class="invoice-line">
       <div><span>IronAxe</span></div>
-      <div><span>$100.00</span></div>
-      <div><label>QTY </label><input type="number"></div>
-      <div><span>$0.00</span></div>
-      <div><button class="btn-delete btn" type="submit">delete</button></div>
+      <div><span class="cost">100.00</span></div>
+      <div><label>QTY </label><input class="qty" type="number"></div>
+      <div ><span class="total">0.00</span></div>
+      <div><button class="btn-delete btn">delete</button></div>
     </li>
   </ul>
 
@@ -62,17 +62,17 @@
     <div><input type="number" id="cost-new-item"></div>
     <div></div> <div></div>
     <div>
-      <button class="btn-create btn" type="submit">new item</button>
+      <button id="btn-create" class="btn-create btn" type="submit">new item</button>
     </div>
   </ul>
 
   <footer>
     <div>
-      <button class="btn-success btn" type="submit">calculate prices</button>
+      <button id="btn-success" class="btn-success btn" type="submit">calculate prices</button>
     </div>
     <div>
-      <h2>Total Price:
-        <span>$0</span>
+      <h2 class="total-price">Total Price:
+        <span>0</span>
       </h2>
     </div>
   </footer>
