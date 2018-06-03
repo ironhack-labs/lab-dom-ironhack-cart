@@ -15,15 +15,15 @@ function getTotalPrice() {
   var amounts = document.getElementsByClassName("qty");
   var prices=document.getElementsByClassName("cost");
   var subTotal=document.getElementsByClassName("total");
-  var totalPrice=document.getElementById("total-price");
-  var total=0;
+  var grandTotal=document.getElementById("total-price");
+  var total=0.0;
 
   for(var i=0 ; i<prices.length; i++){
     console.log(subTotal[i]);    console.log(amounts[i]);    console.log(prices[i]);
-    subTotal[i].textContent=(parseFloat(amounts[i].textContent)*parseFloat(prices[i].textContent)).toFixed(2);
+    subTotal[i].textContent=(parseFloat(amounts[i].value)*parseFloat(prices[i].textContent)).toFixed(2);
     total+=parseFloat(subTotal[i].textContent);
   }
-  totalPrice.textContent=total;  
+  grandTotal.textContent=total;  
 }
 
 function createQuantityInput() {
