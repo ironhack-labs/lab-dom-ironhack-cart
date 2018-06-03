@@ -28,14 +28,53 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin: 20px;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    margin: 20px;
 }
 
 .quantity {
   margin: 0 5px;
 }
+
+
+/* --------- Style ------ */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  background-color: lightyellow;
+  display: flex;
+  height: 300px;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+li {
+  list-style: none;
+}
+
+h1 {
+  background-color: lightsalmon;
+  text-align: center;
+  padding: 45px;
+}
+
+.container2 {
+  margin-left: 25%;
+  color: green;
+  font-weight: bold;
+}
+
+h2 {
+  text-align: center;
+}
+
+
