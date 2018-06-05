@@ -1,3 +1,17 @@
+body {
+  margin: 0 auto;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
 input {
   border: solid 1px black;
 }
@@ -28,6 +42,7 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    align-self: center;
 }
 
 .btn-delete {
@@ -39,3 +54,13 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px 0;
+}
+
+
+
+
