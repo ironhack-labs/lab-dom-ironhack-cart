@@ -7,8 +7,34 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
   <script type="text/javascript" src="./js/index.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <title>Ironhack cart</title>
 </head>
-<body>
+<body> 
+  <div>
+      <h1>Ironhack Merchandising Shop</h1>
+  </div>
+  <div id="products">
+      <div class="product">
+          <span class="product-title">Product Name</span>
+          <span class="cost-title"><span id="value">Product Price</span><span class="currency">($)</span></span>
+          <span class="qty-title">Quantity</span>
+          <span id="total-price-title">Total Price</span>
+          <span class="add-btn"><button class="btn" type="button">Add Product</button></span>
+        </div>
+
+  </div>
+  <br>
+  <div class="add-btn">
+    
+  </div>
+  <br>
+    <div class="calculate">
+      <button class="btn-checkout"type="button">Calculate Prices</button>
+    </div>
+    <div style="text-align:center">
+        <h2>Total Price: <span class="currency">$</span><span id="grand-total">0</span></h2>
+    </div>
+    
 </body>
 </html>
