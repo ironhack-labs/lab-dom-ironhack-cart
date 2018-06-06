@@ -1,3 +1,8 @@
+body {
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
 input {
   border: solid 1px black;
 }
@@ -28,6 +33,7 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    text-align: center;
 }
 
 .btn-delete {
@@ -38,4 +44,30 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+h1 {
+  text-align: center;
+}
+
+div {
+  display: flex;
+  justify-content: space-between;
+}
+.cart {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex; 
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.itemName {
+  width: 115px;
+}
+.unit-price {
+  width: 10px;
 }
