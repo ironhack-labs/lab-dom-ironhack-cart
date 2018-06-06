@@ -1,3 +1,8 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+}
+
 input {
   border: solid 1px black;
 }
@@ -28,6 +33,7 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin: 20px 0 0 500px;
 }
 
 .btn-delete {
@@ -36,6 +42,44 @@ input {
     border-color: #CF000F;
 }
 
-.quantity {
+h1 {
+  margin: 0 0 30px 500px;
+  padding-bottom: 5px;
+  line-height: 10%;
+}
+
+.all-containt {
+  display: flex;
+  padding: 25px 50px 10px 60px;
+  /* text-align: left; */
+  /* box-sizing: content-box; */
+  /* width: 100%; */
+ }
+
+ .quantity {
+  float: left;
   margin: 0 5px;
+  width: 55%
+}
+
+ .productName {
+   float: left;
+   padding: 10px 20px 0 0;
+   width: 20%;
+ }
+
+ .costOfOneUnit {
+  float: left;
+  padding: 10px 0 0 40px;
+  width: 30%;
+}
+
+.total {
+  float: left;
+  padding-top: 10px;
+  width: 48%;
+}
+
+  h2 {
+  margin: 40px 0 0 500px;
 }
