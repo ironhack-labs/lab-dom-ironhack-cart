@@ -76,13 +76,6 @@ function createDeleteButton(parentNode){
   btnBtnDelete.innerHTML = "Delete";
   console.log(btnBtnDelete);
 
-  var deleteButtons = document.getElementsByClassName('btn-delete');
-  deleteButtons.onclick = deleteItem;
-
-  for(var i = 0; i<deleteButtons.length ; i++){
-    deleteButtons[i].onclick = deleteItem;
-  }
-
   
 }
 

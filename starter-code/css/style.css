@@ -1,3 +1,22 @@
+* {
+  /* border: 1px solid red; */
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+.product-wrap {
+  /* border: 1px solid grey; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 input {
   border: solid 1px black;
 }
@@ -35,6 +54,19 @@ input {
     background-color: #CF000F;
     border-color: #CF000F;
 }
+
+.btn-create {
+  color: #fff;
+  background-color: blue;
+  border-color: blue;
+}
+
+
+.container-success {
+  display: flex;
+  justify-content: space-around;
+}
+
 
 .quantity {
   margin: 0 5px;
