@@ -5,10 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
-</body>
+  <h1>Ironhack<br />
+  Merchandising shop</h1>
+  <div class="product">
+    <table>
+      <tr>
+        <td><span>IronBubble-head</span></td>
+        <td>$<span id="ironBubbleHeadUnitPrice"></span></td>
+        <td><span>QTY</span> =
+          <input class="quantity" type="text" name="" value="">
+        </td>
+        <td>$<span id="ironBubbleHeadTotalPrice"></span></td>
+        <td><button id="calculatePrice" type="button" name="button">Calculate</button> </td>
+      </tr>
+    </table>
+  </div>
+  <script type="text/javascript">
+    window.onload=function() {
+      // Define price for product
+      var ironBubbleHeadUnitPrice =  document.getElementById('ironBubbleHeadUnitPrice').innerHTML;
+      ironBubbleHeadUnitPrice = 25;
+
+      // Calculate price for products
+      // var quantity = 0;
+      var quantityElmt = document.getElementsByClassName('quantity')[0];
+
+      quantityElmt.onchange = function(e) {
+        console.log("ok")
+        quantity = quantityElmt.value;
+        var totalPrice = document.getElementById('ironBubbleHeadTotalPrice');
+        var calculatePrice = document.getElementById('calculatePrice');
+        totalPrice.innerHTML = ironBubbleHeadUnitPrice * quantity;
+      }
+    }
+    </script>
+  </body>
+
 </html>
