@@ -28,14 +28,34 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    padding: 10px;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    padding: 10px;
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+.cart-element{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart-element div{
+  margin:3%;
+}
+
+h1{
+  text-align: center;
+}
+
+.total-price{
+  text-align: center;
 }
