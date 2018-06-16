@@ -91,14 +91,14 @@ function createNewItem(nombre,precio){
     inputVar.setAttribute("type","number");
     inputVar.className="cantidad";
     inputVar.value=1;
-    /*inputVar.addEventListener("change",function(){
+    inputVar.addEventListener("change",function(){
       getTotalPrice()
     });
     inputVar.addEventListener("keydown",function(event){
       if (event.key==="Enter")
       inputVar.blur();
     
-    })*/
+    })
     quantityDiv.appendChild(labelVar);
     quantityDiv.appendChild(inputVar);
     producto.appendChild(quantityDiv);
@@ -131,9 +131,9 @@ window.onload = function(){
   var deleteButtons = document.getElementsByClassName('btn-delete');
   document.getElementById("name").value="Producto 1"
   createNewItem()
-  calculatePriceButton.onclick = getTotalPrice;
+  //calculatePriceButton.onclick = getTotalPrice;
   createItemButton.onclick = createNewItem;
-  /*var n=document.getElementById("name");
+  var n=document.getElementById("name");
   var p=document.getElementById("price");
   n.addEventListener("keydown",function(event){
         if (event.key==="Enter")
@@ -144,7 +144,7 @@ window.onload = function(){
     if (event.key==="Enter")
     p.blur();
   
-  })*/
+  })
   
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
