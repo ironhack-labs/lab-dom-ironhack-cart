@@ -1,5 +1,8 @@
 function deleteItem(e){
+  var container = document.getElementById('products-wrp');
+  var productNode = e.currentTarget.parentNode.parentNode;
 
+  container.removeChild(productNode);
 }
 
 function getPriceByProduct(itemNode){
