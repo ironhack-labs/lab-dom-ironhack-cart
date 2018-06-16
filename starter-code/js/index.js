@@ -7,8 +7,10 @@ function getPriceByProduct(itemNode){
 
   var price = parseFloat(document.getElementById('product' + productIndex + '-price').innerText.replace('$', ''));
   var qty = parseInt(itemNode.getElementsByTagName('input')[0].value);
+  var total = (price * qty).toFixed(2);
 
-  return '$' + (price * qty).toFixed(2);
+  document.getElementById('product' + productIndex + '-total').innerText = '$' + total;
+  return total;
 }
 
 function updatePriceByProduct(productPrice, index){
@@ -17,13 +19,13 @@ function updatePriceByProduct(productPrice, index){
 
 function getTotalPrice() {
   var products = getProducts();
+  var total = 0;
 
   for (var i = 0; i < products.length; i++) {
-    var price = getPriceByProduct(products[i]);
-    var productIndex = products[i].getAttribute('data-index');
-
-    document.getElementById('product' + productIndex + '-total').innerText = price;
+    total += parseFloat(getPriceByProduct(products[i]));
   }
+
+  document.getElementById('total-price').innerHTML = '$' + total.toFixed(2);
 }
 
 function getProducts() {
