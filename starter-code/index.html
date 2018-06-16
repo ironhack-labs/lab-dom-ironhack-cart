@@ -9,6 +9,40 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
-<body>
+<body id="body">
+  <article id="containerProduct">
+    <h1>Ironhack Merchandising Shop</h1>
+    <div class="container">
+    <span>IronBubble-Head</span>
+    <div><span>$</span><span class="precio">25.90</span></div>
+    <div>
+      <label class="quantity" for="input">QTY</label>
+      <input class="input" type="number">
+    </div>
+    <div><span>$</span><span class="pPQuantity">0.00</span></div>
+    <div><button class="btn btn-delete">Delete</button></div>
+    </div>
+    <div class="container">
+      <span>Ironhack Shirt</span>
+      <div><span>$</span><span class="precio">10.90</span></div>
+      <div>
+        <label class="quantity" for="input">QTY</label>
+        <input class="input" type="number">
+      </div>
+      <div><span>$</span><span class="pPQuantity">0.00</span></div>
+      <div><button class="btn btn-delete">Delete</button></div>
+    </div>
+  </article>
+  <div class="create">
+    <input id="product" type="text">
+    <input id="price" type="number">
+    <button id="new-item-create">Create</button>
+  </div>
+  <div class="containerBtn">
+    <button class="btn btn-success" id="calc-prices-button">
+      Calculate Prices
+    </button>
+  </div>
+  <h2>Total Price: <span>$</span><span class="total">0</span></h2>
 </body>
 </html>
