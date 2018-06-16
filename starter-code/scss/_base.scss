@@ -56,3 +56,7 @@ input {
   justify-content: flex-start;
   padding-left: 45%;
 }
+
+.unit:before {
+  content: '$';
+}
