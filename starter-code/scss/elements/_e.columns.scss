@@ -1,7 +1,9 @@
-
-
-.col2 {
+.column {
   display: flex;
-  justify-content: left;
-
+  flex-direction: column;
 }
+  
+.column span{
+  padding: 20px 20px;
+}
+  
