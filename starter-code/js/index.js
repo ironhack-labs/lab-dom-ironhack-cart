@@ -47,10 +47,16 @@ function createDeleteButton(){
     type: 'button',
     class: 'btn btn-delete'
   });
+  var icon = createItemNode('i', {
+    class: 'fas fa-trash icon'
+  })
+  btn.appendChild(icon);
   btn.appendChild(document.createTextNode('Delete'));
   btn.onclick = deleteItem;
 
-  var div = createItemNode('div');
+  var div = createItemNode('div', {
+    class: 'text-right'
+  });
   div.appendChild(btn);
 
   return div;
