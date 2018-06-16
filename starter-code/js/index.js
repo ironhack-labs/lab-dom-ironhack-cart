@@ -10,8 +10,8 @@ function updatePriceByProduct(productPrice, index){
 
 }
 
-function getTotalPrice() {
-
+function getTotalPrice(item,price) {
+  return item*price;
 }
 
 function createQuantityInput(){
