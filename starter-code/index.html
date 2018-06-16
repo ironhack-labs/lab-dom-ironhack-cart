@@ -25,33 +25,62 @@
   </nav>
 
   <header>
-    <div>
-
-    </div>
+      <h1>Ironhack Merchandising Shop</h1>
   </header>
 
-  <section id="cart">
-    <div class="productRow" id="product-1">
-      <div class="productName">
-        <span>Product Name</span>
+  <section>
+    <div id="cart">
+      <div class="productRow" id="product-1">
+        <div class="productName">
+          <span>IronBubble-head</span>
+        </div>
+
+        <div class="productCost">
+          <span>$25.00</span>
+        </div>
+
+        <div class="productQuantity">
+          <span class="quantity">QTY</span>
+          <input type="number" value="0">
+        </div>
+
+        <div class="totalProductAmount">
+          <span>$0.00</span>
+        </div>
+
+        <div class="deleteProduct">
+          <input type="button" value="Delete" class="btn btn-delete">
+        </div>
       </div>
 
-      <div class="productCost">
-        <span>Product cost</span>
+      <div class="productRow" id="product-2">
+        <div class="productName">
+          <span>Product Name</span>
+        </div>
+
+        <div class="productCost">
+          <span>Product cost</span>
+        </div>
+
+        <div class="productQuantity">
+          <span class="quantity">QTY</span>
+          <input type="number" value="0">
+        </div>
+
+        <div class="totalProductAmount">
+          <span>Total amount</span>
+        </div>
+
+
+        <div class="deleteProduct">
+          <input type="button" value="Delete" class="btn btn-delete">
+        </div>
       </div>
 
-      <div class="productQuantity">
-        <span>Quantyty</span>
-        <input type="number">
-      </div>
+      <input type="button" value="Calculate Prices" class="btn btn-success">
 
-      <div class="totalAmount">
-        <span>Total amount</span>
-      </div>
-
-
-      <div class="deleteProduct">
-        <input type="button">
+      <div>
+        <h2>Total Price: <span>$0</span></h2>
       </div>
     </div>
   </section>

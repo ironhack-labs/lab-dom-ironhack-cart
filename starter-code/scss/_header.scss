@@ -1,0 +1,28 @@
+header {
+  min-height: 200px;
+  background-image: $header-background-image;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    color: $header-font-color;
+    text-shadow: 0 2px 5px #808080;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 48px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 28px;
+  }
+}

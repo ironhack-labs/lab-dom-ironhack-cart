@@ -1,6 +1,25 @@
 //Varfile
 $img-path: '../images';
 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+$font: 'Open Sans', sans-serif;
+
+
 //Nav vars
 $nav-background-color: #2D354C;
-$nav-bar-font-color: white;
+$nav-font-color: white;
+
+
+//Header vars
+$header-background-image: url('http://www.ironhack.com/cb6a98fa11c643eabedabb9489e644d7.jpg');
+$header-font-color: #464D61;
+
+
+//Section vars
+
+
+//Div container vars
+$div-container-background-color: #F8F8F8;
+$div-container-font-color: #464D61;
+$div-container-box-shadow: 0 10px 15px #CCC;
+$div-container-border-radius: 5px;
