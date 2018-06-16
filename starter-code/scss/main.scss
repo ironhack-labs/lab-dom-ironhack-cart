@@ -1,0 +1,17 @@
+@import "_wrapper";
+@import "_button";
+
+
+input {
+    border: solid 1px black;
+}
+  
+.quantity {
+    margin: 0 5px;
+}
+
+body{
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+}

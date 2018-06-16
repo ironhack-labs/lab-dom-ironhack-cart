@@ -1,3 +1,5 @@
+
+
 function deleteItem(e){
 
 }
@@ -11,7 +13,19 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
+  var total=0;
 
+  var productPriceArr=document.getElementsByClassName("product-price");
+  var quantityArr=document.getElementsByClassName("quantity");
+  var totalPriceArr=document.getElementsByClassName("total-price");
+ 
+  for(var i=0; i<productPriceArr.length; i++){
+
+    var price=parseFloat(productPriceArr[i].innerHTML.slice(1));
+    
+    
+    totalPriceArr[i].innerHTML="$"+(price*parseInt(quantityArr[i].value)); 
+  }
 }
 
 function createQuantityInput(){
@@ -39,14 +53,19 @@ function createNewItem(){
 }
 
 window.onload = function(){
+
   var calculatePriceButton = document.getElementById('calc-prices-button');
   var createItemButton = document.getElementById('new-item-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
   calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
+  //createItemButton.onclick = createNewItem;
 
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
   }
 };
+
+
+var calculatePriceButton = document.getElementById('calc-prices-button');
+
