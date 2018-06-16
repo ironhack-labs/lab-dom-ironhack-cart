@@ -34,8 +34,16 @@ function createNewItemRow(itemName, itemUnitPrice){
 
 }
 
-function createNewItem(){
-
+function createNewItem(name,price){
+this.name=name;
+this.price=price;
+this.qty=1;
+}
+createNewItem.prototype = function(){
+  return this.price * this.qty;
+}
+changeQuatity = function(qty){
+  this.qty = qty;
 }
 
 window.onload = function(){
