@@ -1,3 +1,15 @@
+.container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 100px;
+}
+
+h1 {
+  width: 100vw;
+  text-align: center;
+}
+
 input {
   border: solid 1px black;
 }
@@ -24,6 +36,12 @@ input {
   border-radius: 4px;
 }
 
+.containerBtn{
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
+
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
@@ -38,4 +56,10 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+.create{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 100px;
 }
