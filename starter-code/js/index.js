@@ -18,14 +18,17 @@ function getTotalPrice() {
   var productPriceArr=document.getElementsByClassName("product-price");
   var quantityArr=document.getElementsByClassName("quantity");
   var totalPriceArr=document.getElementsByClassName("total-price");
+  var itemTotal=0;
+  var sumTotal=0;
  
   for(var i=0; i<productPriceArr.length; i++){
-
-    var price=parseFloat(productPriceArr[i].innerHTML.slice(1));
-    
-    
-    totalPriceArr[i].innerHTML="$"+(price*parseInt(quantityArr[i].value)); 
+    itemTotal=parseFloat((productPriceArr[i].innerHTML.slice(1))*parseInt(quantityArr[i].value));
+    totalPriceArr[i].innerHTML="$"+itemTotal;
+    sumTotal+=itemTotal;
   }
+  var totalMsg = document.getElementById("total-money");
+  totalMsg.innerHTML="$"+sumTotal;
+ 
 }
 
 function createQuantityInput(){
