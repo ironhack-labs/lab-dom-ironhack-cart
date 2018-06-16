@@ -1,10 +1,39 @@
+//Function that returns the price given a product
+function getPriceByProduct(itemNode){
+  return itemNode.getElementsByClassName("productCost")[0].getElementsByTagName("span")[0].innerHTML.slice(1)
+}
+
+//Function that returns the quantity given a product
+function getQuantityByProduct(itemNode) {
+  return itemNode.getElementsByClassName("productQuantity")[0].getElementsByTagName("input")[0].value
+}
+
+//Function that calculates the total price given a product
+function getTotalPriceByProduct(itemNode) {
+  return getPriceByProduct(itemNode) * getQuantityByProduct(itemNode)
+}
+
+//Function that updates the total price given a product
+function updateTotalPriceByProduct(index) {
+  document.getElementById("product-" + parseInt(index + 1)).getElementsByClassName("totalProductAmount")[0].getElementsByTagName("span")[0].innerHTML = ("$" + getTotalPriceByProduct(document.getElementById("product-" + parseInt(index + 1))))
+}
+
+
+
+
+
+
+
+
+
+
+
+
 function deleteItem(e){
 
 }
 
-function getPriceByProduct(itemNode){
 
-}
 
 function updatePriceByProduct(productPrice, index){
 
