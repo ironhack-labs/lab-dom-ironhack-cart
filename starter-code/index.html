@@ -28,7 +28,7 @@
             </div>
             <div class="item-qty">
                 <span>QTY</span>
-                    <input class="quantity" type="number" name="QTY" value="0"> 
+                    <input class="quantity" type="number" name="QTY" onchange="updatePriceByProduct(this);" value="0"> 
             </div>
             <div class="item-count">
                 <span>$</span>
@@ -36,9 +36,9 @@
             </div>    
             
             <div class="delete-item">
-            <button class="delete-btn"> Delete</button>
+            <button class="delete-btn" onclick="deleteItem(this);"> Delete</button>
             </div>
-    </div>
+        </div>
         <div class="item">
             <div class="item-name">
                 <span>IronShirt</span>
@@ -50,7 +50,7 @@
                 </div>
                 <div class="item-qty">
                     <span>QTY</span>
-                        <input class="quantity" type="number" name="QTY" value="0"> 
+                        <input class="quantity" type="number" name="QTY" onchange="updatePriceByProduct(this);" value="0"> 
                 </div>
                 <div class="item-count">
                     <span>$</span>
@@ -58,17 +58,17 @@
                 </div>    
                 
                 <div class="delete-item">
-                <button class="delete-btn"> Delete</button>
+                <button class="delete-btn" onclick="deleteItem(this);"> Delete</button>
                 </div>
-    </div>
+        </div>
 
-          </div>
+    </div>
 
           <div class="input-product">
                 <input type="text" name="product" id="createName">
                 <input type="number" name="price" id="createPrice">
                 <button id="new-item-create"  onclick="createNewItemRow();" class="create-btn">Create</button>
-              </div>
+        </div>
             
         
               <div>
