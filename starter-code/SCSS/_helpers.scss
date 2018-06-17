@@ -1,0 +1,39 @@
+body{
+     .wrapper{
+          .units-number-div{
+               input{
+                    border: solid 1px black;
+               }
+          }
+     }
+}
+
+body{
+     .wrapper{
+          .delete-button{
+               button{
+               color: $btn-delete-color;
+               background-color: $btn-delete-background-color;
+               border-color: $btn-delete-border-color;
+               }
+          }
+     }
+}
+
+body{
+     .calc{
+          button{
+          color: $btn-success-color;
+          background-color: $btn-success-background-color;               border-color: $btn-success-border-color;
+               }
+          }
+}
+
+
+body{
+     .crear-objeto{
+          input{
+               border: solid 1px black;
+          }
+     }
+}
