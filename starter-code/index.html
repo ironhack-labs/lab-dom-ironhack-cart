@@ -45,11 +45,41 @@
       </div>
     </div>
 
+    <div class="productos">
+        <span>Iron-producto3-head</span>
+        <span class="precio">30.00</span>
+        <div>
+          <label>QTY</label>
+          <input class="cantidad" type="number" onchange="getPriceByProduct()">
+        </div>
+        <div>
+          <span class="totalproducto" onchange="getPriceByProduct()">$0.00</span>
+        </div>
+        <div>
+          <button class="delete">delete</button>
+        </div>
+      </div>
+
+      <div class="productos">
+          <span>Iron-producto4-head</span>
+          <span class="precio">30.00</span>
+          <div>
+            <label>QTY</label>
+            <input class="cantidad" type="number" onchange="getPriceByProduct()">
+          </div>
+          <div>
+            <span class="totalproducto" onchange="getPriceByProduct()">$0.00</span>
+          </div>
+          <div>
+            <button class="delete">delete</button>
+          </div>
+        </div>
+
   <div id="claculate">
     <button onclick="getTotalPrice()" class="calcular"name= calcularprecios >calculate prices</button>
   </div>
   <div>
-    <span>precio total = </span> <span>0.00</span>
+    <h2 class="preciototal">precio total = </h2> <h2 class="preciototal" id="global">0.00</h2>
   </div>
   
 
