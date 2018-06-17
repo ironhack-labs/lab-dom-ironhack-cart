@@ -4,12 +4,13 @@
 
 body {
   font-size: 16px;
-  font-family: 'Lato', sans-serif;
+  font-family: $font;
 }
 
 h1, h2 {
-  font-family: 'Pacifico', cursive;
+  font-family: $fontTitles;
   font-weight: 400;
+  margin: 0;
 }
 
 h1 {
