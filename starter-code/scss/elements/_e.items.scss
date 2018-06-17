@@ -25,14 +25,20 @@
 }
 
 .item-row{
-    display: inline-flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%;
-    padding: 30px 20px;
-}
-.item-row input{
+    
+    display: flex;
+    /*justify-content: space-between;*/
+    flex-direction: column;
+    width: 100%; 
+    /*padding: 30px 20px;
+*/}
+/*.item-row input{
     align-content: center;
+}*/
+.price{
+width: 100px;
+margin: 10px;
+height: 100px;
 }
 .item .price-value {
   

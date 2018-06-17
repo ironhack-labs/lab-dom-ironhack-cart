@@ -22,18 +22,21 @@
                 <span>Iron-Bubble-head</span>
             </div>
             <div class="item-price">
-                <span>$25.00</span>
+                <span class="price-element">$ </span>
+                <span  class="unit-price">25.00</span>
+     
             </div>
             <div class="item-qty">
-                <label>QTY</label>
-                    <input type="number" name="numer" value="0"> 
+                <span>QTY</span>
+                    <input class="quantity" type="number" name="QTY" value="0"> 
             </div>
             <div class="item-count">
-                <span>$0.00</span>
+                <span>$</span>
+                <span class="total-price">0.00</span>
             </div>    
             
             <div class="delete-item">
-            <button class="delete-btn" onclick="">Delete</button>
+            <button class="delete-btn"> Delete</button>
             </div>
     </div>
         <div class="item">
@@ -41,103 +44,46 @@
                 <span>IronShirt</span>
             </div>
             <div class="item-price">
-                <span>$15.00</span>
-            </div>
-            <div class="item-qty">
-                <label>QTY</label>
-                    <input type="number" name="numer" value="0"> 
-            </div>
-            <div class="item-count">
-                <span>$0.00</span>
-            </div>    
-            
-            <div class="delete-item">
-            <button class="delete-btn" onclick="">Delete</button>
-            </div>
-    </div>
-    <div class="item">
-        <div class="item-name">
-            <span>IronCup</span>
-        </div>
-        <div class="item-price">
-            <span>$10.00</span>
-        </div>
-        <div class="item-qty">
-            <label>QTY</label>
-                <input type="number" name="numer" value="0"> 
-        </div>
-        <div class="item-count">
-            <span>$0.00</span>
-        </div>    
-        
-        <div class="delete-item">
-        <button class="delete-btn" onclick="">Delete</button>
-        </div>
-    </div>
-    <div class="item">
-        <div class="item-name">
-            <span>IronSticker</span>
-        </div>
-        <div class="item-price">
-            <span>$1.00</span>
-        </div>
-        <div class="item-qty">
-            <label>QTY</label>
-                <input type="number" name="numer" value="0"> 
-        </div>
-        <div class="item-count">
-            <span>$0.00</span>
-        </div>    
-        
-        <div class="delete-item">
-        <button class="delete-btn" onclick="">Delete</button>
-        </div>
-    </div>
-    <div class="item">
-        <div class="item-name">
-            <span>IronAxe</span>
-        </div>
-        <div class="item-price">
-            <span>$100.00</span>
-        </div>
-        <div class="item-qty">
-            <label>QTY</label>
-                <input type="number" name="numer" value="0"> 
-        </div>
-        <div class="item-count">
-            <span>$0.00</span>
-        </div>    
-        
-        <div class="delete-item">
-        <button class="delete-btn" onclick="">Delete</button>
-        </div>
+                    <span class="price-element">$ </span>
+                    <span class="unit-price">25.00</span>
+         
+                </div>
+                <div class="item-qty">
+                    <span>QTY</span>
+                        <input class="quantity" type="number" name="QTY" value="0"> 
+                </div>
+                <div class="item-count">
+                    <span>$</span>
+                    <span class="total-price">0.00</span>
+                </div>    
+                
+                <div class="delete-item">
+                <button class="delete-btn"> Delete</button>
+                </div>
     </div>
 
-      <!--<div class="container-items">-->
-        <div class="item">
-            <div>
-                <input type="text" name="item" value="">
-            </div>
-            <div class="price-value">
-                <input type="text" name="priceItem" value="">
-            </div>
-           
-            <div class="create-item">
-                <button class="create-btn">Create</button>
-            </div>
-        </div>
-        <div class="item-row">
-            <div class="price">
-              <button class="price-btn">Calculate Prices</button>
           </div>
-        </div>
 
-        <div class="item-row">
-            <div class="total"><h2>Total Price: $</h2><span class="total-price"></span></div>
-        </div>
-       
-     <!-- </div>-->
-    </div>
+          <div class="input-product">
+                <input type="text" name="product" id="createName">
+                <input type="number" name="price" id="createPrice">
+                <button id="new-item-create"  onclick="createNewItemRow();" class="create-btn">Create</button>
+              </div>
+            
+        
+              <div>
+                <h2>Total Price: $
+                  <span id="total-cart">0</span>
+                </h2>
+              </div>
+              <br>
+            
+           
+              <div>
+                <button id="calc-prices-button" class="price-btn">Calculate Prices</button>
+              </div>
+              <script type="text/javascript" src="./js/index.js"></script>
+
 </main>
   
 

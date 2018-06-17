@@ -1,6 +1,6 @@
 
     .container {
-        min-height: 400px;
+        min-height: 200px;
         display: flex;
         display: -webkit-flex;
         flex-wrap: wrap;
@@ -18,7 +18,7 @@
 
     
       .container-items{
-        min-height: calc(100vh - 300px);
+        min-height: calc(100vh - 200px);
         display: flex;
         display: -webkit-flex;
         flex-wrap: wrap;
@@ -27,10 +27,14 @@
         align-items: center;
         align-content: center;
     }
-    .price{
-        display: table-cell;
-    vertical-align: middle;
-    }
+  
+    /*.price{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+    }*/
     
     
     
