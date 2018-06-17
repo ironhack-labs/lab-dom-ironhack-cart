@@ -1,4 +1,20 @@
-.wrapper {
+.product {
+    display: flex;
+    padding: 10px 0;
+          
+    div {
+        flex: 1;
+    }
+
+    .button {
+        flex: 0;
+    }
+    
+
+}
+
+
+.new-product {
     display: flex;
     padding: 10px 0;
           
