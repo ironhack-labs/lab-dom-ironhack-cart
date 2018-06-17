@@ -1,0 +1,13 @@
+$black: #000000;
+$header: 'Helvetica';
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: $black;
+
+    h1 {
+        font-family: $header;
+    }
+    
+}

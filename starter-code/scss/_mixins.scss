@@ -1,0 +1,11 @@
+body {
+    display: flex;
+
+    .shop-name {
+        align-items: flex-end;
+        padding: 20% 5% 20% 40%;
+        flex-basis: row;
+        flex-wrap: nowrap;
+    }
+
+}

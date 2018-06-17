@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700");
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  color: #000000;
+}
+
+body h1 {
+  font-family: "Helvetica";
+}
+
+body {
+  color: #000000;
+}
+
+button {
+  color: #fff;
+}
+
+button.btn-delete {
+  background-color: #CF000F;
+}
+
+button.btn-calc {
+  background-color: #36b11d;
+}
+
+body .shop-name {
+  font-family: "Helvetica";
+  font-weight: bold;
+  font-size: 2.5em;
+}
+
+body .product {
+  font-family: "Source Sans Pro";
+  font-weight: normal;
+  font-size: 1em;
+}
+
+body {
+  display: flex;
+}
+
+body .shop-name {
+  align-items: flex-end;
+  padding: 20% 5% 20% 40%;
+  flex-basis: row;
+  flex-wrap: nowrap;
+}
+/*# sourceMappingURL=main.css.map */
