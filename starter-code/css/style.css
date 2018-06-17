@@ -39,3 +39,52 @@ input {
 .quantity {
   margin: 0 5px;
 }
+.firstItem{
+  padding-block-start: 20%;
+  height: 50px;
+  flex-direction: row;
+}
+.firstItem button{
+  background-color: #CF000F;
+  color: #fff;
+}
+.secondItem{
+  padding-block-start: 20%;
+  height: 50px;
+}
+.secondItem button{
+  background-color: #CF000F;
+  color: #fff;
+}
+.thirdItem{
+  padding-block-start: 20%;
+  height: 50px;
+}
+.thirdItem button{
+  background-color: #CF000F;
+  color: #fff;
+}
+.fourItem{
+  padding-block-start: 20%;
+  height: 50px;
+} 
+.fourItem button{
+  background-color: #CF000F;
+  color: #fff;
+}
+.fiveItem{
+  padding-block-start: 20%;
+  height: 50px;
+}
+.fiveItem button{
+  background-color: #CF000F;
+  color: #fff;
+}
+.click button{
+  text-align: center;
+  margin-left: 21.5%
+}
+footer input{
+  text-align: center;
+  margin-left: 20%
+}
