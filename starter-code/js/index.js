@@ -18,6 +18,16 @@ function updateTotalPriceByProduct(index) {
   document.getElementById("product-" + parseInt(index + 1)).getElementsByClassName("totalProductAmount")[0].getElementsByTagName("span")[0].innerHTML = ("$" + getTotalPriceByProduct(document.getElementById("product-" + parseInt(index + 1))))
 }
 
+//Function that calculates the total price of all products
+function getTotalPrice() {
+  var elements = document.getElementsByClassName("productRow")
+  var total = 0
+  for (var i = 0; i < elements.length; i++) {
+    updateTotalPriceByProduct(i)
+    total += parseFloat(elements[i].getElementsByClassName("totalProductAmount")[0].getElementsByTagName("span")[0].innerHTML.slice(1))
+  }
+  document.getElementById("totalCartAmount").getElementsByTagName("span")[0].innerHTML = "$" + total
+}
 
 
 
@@ -39,9 +49,6 @@ function updatePriceByProduct(productPrice, index){
 
 }
 
-function getTotalPrice() {
-
-}
 
 function createQuantityInput(){
 
