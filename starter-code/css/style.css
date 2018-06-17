@@ -28,14 +28,26 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin-top:100px;
+    float: left;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+span {
+  float: left;
+  margin: 20px 20px;
+}
+
+.product {
+  float: left;
 }
