@@ -71,6 +71,7 @@ function createDeleteButton() {
   btn.setAttribute("onclick","deleteItem()");
   btn.setAttribute("type","delete");
   btn.setAttribute("value","submit");
+  btn.addEventListener("click",deleteItem());
   div.appendChild(btn);
   var texto=document.createTextNode("Delete");
   btn.appendChild(texto);
