@@ -95,6 +95,7 @@ function createNewItem(e){
   innerElement=document.createElement("button");
   innerElement.setAttribute("class", "btn btn-delete");
   innerElement.innerHTML="Delete";
+  innerElement.onclick = deleteItem;
   wrapperElement.appendChild(innerElement);
   newWrapper.appendChild(wrapperElement);
 

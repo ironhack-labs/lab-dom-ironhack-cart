@@ -31,3 +31,13 @@
       background-color: #CF000F;
       border-color: #CF000F;
   }
+
+  #new-product-textfields{
+      display: flex;
+      justify-content: space-between;
+      width: 400px;
+
+      input{
+          width: 150px;
+      }
+  }
