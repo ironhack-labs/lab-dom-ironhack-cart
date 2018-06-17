@@ -37,6 +37,14 @@ body #item-list {
       flex-direction: row; }
       body #item-list article .qty-node input {
         width: 80%; }
+body #add-item {
+  display: flex;
+  justify-content: space-between;
+  width: 90%; }
+  body #add-item #input-container {
+    display: flex;
+    margin: 5px;
+    justify-content: space-around; }
 body #calculate-container {
   position: relative;
   left: 50%; }

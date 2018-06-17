@@ -29,6 +29,16 @@ body{
             }
         }
     }
+    #add-item{
+        display: flex;
+        justify-content: space-between;
+        width: $article-width;
+        #input-container{
+            display: flex;
+            margin: 5px;
+            justify-content: space-around;
+        }
+    }
     #calculate-container{
         position: relative;
         left: 50%;
