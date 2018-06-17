@@ -6,9 +6,61 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+  <h1>Ironhack Merchandising Shop</h1>
+  <div id="item-list">
+    <article>
+      <div class="item-name">
+        <span>IronBubble-head</span>
+      </div>
+      <div class="item-price-container">
+        <span class="item-price money">25.00</span>
+      </div>
+      <div class="qty-node">
+        <span>QTY</span>
+        <input type="number" class="quantity-input" value="0">
+      </div>
+      <div class="total-price">
+        <span class="product-price money">0.00</span>
+      </div>
+      <div class="delete-container">
+        <button class="btn-delete btn">Delete</button>
+      </div>
+    </article>
+    <article>
+      <div class="item-name">
+        <span>IronShirt</span>
+      </div>
+      <div class="item-price-container">
+        <span class="item-price money">15.00</span>
+      </div>
+      <div class="qty-node">
+        <span>QTY</span>
+        <input type="number" class="quantity-input" value="0">
+      </div>
+      <div class="total-price">
+        <span class="product-price money">0.00</span>
+      </div>
+      <div class="delete-container">
+        <button class="btn-delete btn">Delete</button>
+      </div>
+    </article>
+  </div>
+  <div id= "add-item">
+    <div id="input-container">
+      <input type="text" id="name-input" placeholder="Insert a product">
+      <input type="number" id="price-input" placeholder="Insert a price">
+    </div>
+    <button id="new-item-create" class="btn-create btn">Create</button>
+  </div>
+  <div id="calculate-container">
+    <button id="calc-prices-button" class="calc-prices-btn btn">Calculate Prices</button>
+  </div>
+  <div id="total-price-container">
+    <h2 id="total-price">Total Price: 0.00$</h2>
+  </div>
+  <script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>

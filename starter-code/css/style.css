@@ -1,41 +1,55 @@
-input {
-  border: solid 1px black;
-}
-
 .btn {
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
+  border: none;
+  color: white;
   border-radius: 4px;
-}
-
-.btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
-}
+  text-align: center;
+  text-decoration: none;
+  padding: 5px 10px;
+  margin: 5px 5px;
+  cursor: pointer; }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
-}
+  background-color: #D21D0C; }
 
-.quantity {
-  margin: 0 5px;
-}
+.calc-prices-btn {
+  background-color: #57B55B; }
+
+* {
+  font-size: 18px;
+  font-family: "sans-serif"; }
+
+body h1 {
+  text-align: center; }
+body #item-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  body #item-list article {
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+    align-items: center; }
+    body #item-list article > * {
+      width: 20%;
+      text-align: center; }
+    body #item-list article .qty-node {
+      display: flex;
+      flex-direction: row; }
+      body #item-list article .qty-node input {
+        width: 80%; }
+body #add-item {
+  display: flex;
+  justify-content: space-between;
+  width: 90%; }
+  body #add-item #input-container {
+    display: flex;
+    margin: 5px;
+    justify-content: space-around; }
+body #calculate-container {
+  position: relative;
+  left: 50%; }
+
+.money::before {
+  content: "$"; }
+
+/*# sourceMappingURL=style.css.map */
