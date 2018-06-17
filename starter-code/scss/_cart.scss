@@ -17,31 +17,39 @@ div {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+  }
 
-    .productName {
-      flex-basis: 25%;
+  &.placeHolderRow {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &.productName {
+    flex-basis: 25%;
+  }
+
+  &.productCost {
+    flex-basis: 25%;
+  }
+
+  &.productQuantity {
+    flex-basis: 20%;
+
+    input {
+      width: 40px;
     }
+  }
 
-    .productCost {
-      flex-basis: 25%;
-    }
+  &.totalProductAmount {
+    flex-basis: 20%;
+    text-align: center;
+  }
 
-    .productQuantity {
-      flex-basis: 20%;
-
-      input {
-        width: 40px;
-      }
-    }
-
-    .totalProductAmount {
-      flex-basis: 20%;
-      text-align: center;
-    }
-
-    .deleteProduct {
-      flex-basis: 10%;
-      text-align: right;
-    }
+  &.deleteProduct {
+    flex-basis: 10%;
+    text-align: right;
   }
 }

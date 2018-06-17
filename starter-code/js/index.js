@@ -35,38 +35,86 @@ function deleteItem(e){
 }
 
 
+//Function that creates a productName node
+function createProductNameNode(itemName) {
+  var div = document.createElement("div")
+  div.setAttribute("class", "productName")
+  var span = document.createElement("span")
+  span.appendChild(document.createTextNode(itemName))
+  div.appendChild(span)
+  return div
+}
 
+//Function that creates a productCost node
+function createProductCostNode(itemCost) {
+  var div = document.createElement("div")
+  div.setAttribute("class", "productCost")
+  var span = document.createElement("span")
+  span.appendChild(document.createTextNode("$"+itemCost))
+  div.appendChild(span)
+  return div
+}
 
+//Function that creates a productQuantity node
+function createProductQuantityNode() {
+  var div = document.createElement("div")
+  div.setAttribute("class", "productQuantity")
+  var span = document.createElement("span")
+  span.setAttribute("class", "quantity")
+  span.appendChild(document.createTextNode("QTY"))
+  var input = document.createElement("input")
+  input.setAttribute("type", "number")
+  input.setAttribute("value", "0")
+  input.setAttribute("min", "0")
+  div.appendChild(span)
+  div.appendChild(input)
+  return div
+}
 
+//Function that creates a totalProductAmount node
+function createTotalProductAmountNode() {
+  var div = document.createElement("div")
+  div.setAttribute("class", "totalProductAmount")
+  var span = document.createElement("span")
+  span.appendChild(document.createTextNode("$0.00"))
+  div.appendChild(span)
+  return div
+}
 
-function updatePriceByProduct(productPrice, index){
-
+//Function that creates a deleteProduct node
+function createDeleteProductNode() {
+  var div = document.createElement("div")
+  div.setAttribute("class", "deleteProduct")
+  var input = document.createElement("input")
+  input.setAttribute("type", "button")
+  input.setAttribute("value", "Delete")
+  input.setAttribute("class", "btn btn-delete")
+  input.onclick = deleteItem
+  div.appendChild(input)
+  return div
 }
 
 
-function createQuantityInput(){
-
+//Function that creates a new product row
+function createNewItem() {
+  if (document.getElementById("newProductName").value == "") {
+    alert("You must introduce a prodcut name")
+  } else if (document.getElementById("newProductCost").value == "") {
+    alert("You must introduce a product unitary cost")
+  } else {
+    var newItem = document.createElement("div")
+    newItem.setAttribute("class", "productRow");
+    newItem.appendChild(createProductNameNode(document.getElementById("newProductName").value))
+    newItem.appendChild(createProductCostNode(document.getElementById("newProductCost").value))
+    newItem.appendChild(createProductQuantityNode())
+    newItem.appendChild(createTotalProductAmountNode())
+    newItem.appendChild(createDeleteProductNode())
+    document.getElementById("cart").insertBefore(newItem, document.getElementsByClassName("placeHolderRow")[0])
+    document.getElementById("newProductName").value = ""
+    document.getElementById("newProductCost").value = ""
+  }
 }
 
-function createDeleteButton(){
-
-}
-
-function createQuantityNode(){
-
-}
-
-function createItemNode(dataType, itemData){
-
-}
-
-function createNewItemRow(itemName, itemUnitPrice){
-
-}
-
-function createNewItem(){
-
-}
 
 window.onload = function(){
   var calculatePriceButton = document.getElementById('calc-prices-button');
@@ -74,7 +122,7 @@ window.onload = function(){
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
   calculatePriceButton.onclick = getTotalPrice;
-  //createItemButton.onclick = createNewItem;
+  createItemButton.onclick = createNewItem;
 
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
