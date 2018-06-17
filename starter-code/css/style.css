@@ -25,8 +25,18 @@ input {
 }
 .new-container{
   display: flex;
-  justify-content: space-around;
+  justify-content: stretch;
   align-items: center;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+.aju{
+  padding-left: 2%;
+  padding-right: 1%;
+}
+.aju1{
+  width: 11%;
+  padding-left: 54%;
 }
 .btn-success {
     color: #fff;
@@ -47,6 +57,7 @@ input {
     display: flex;
     justify-content: space-between;
     align-items: center;  
+    padding-top: .5%;
 
 }
 .container div{
