@@ -7,7 +7,6 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice(){
-  debugger
   items=document.getElementsByClassName("mainwrapper");
   for (i=0; i<items.length; i++){
   var Price = document.getElementsByTagName("span")[0+i].innerHTML;
@@ -20,16 +19,15 @@ function getTotalPrice(){
   sumaCarta();
 }
 function sumaCarta(){
-  debugger;
   items=document.getElementsByClassName("mainwrapper");
   var suma = 0;
   for (i=0; i<items.length; i++){
   var totalpantalla = document.getElementsByClassName("Total")[i].innerHTML;
   var totalpantallaNum = parseInt(totalpantalla);
   suma += totalpantallaNum;
-  var sumapantalla = document.getElementsByClassName("lacuenta");
+  sumapantalla = document.getElementsByClassName("lacuenta")[0];
   }
-  sumapantalla.innerHTML = suma;
+  sumapantalla.innerHTML = " " + suma + " $";
 }
 
 
@@ -39,7 +37,6 @@ function sumaCarta(){
 
   
 //function createDeleteButton(){
-
 
 
 

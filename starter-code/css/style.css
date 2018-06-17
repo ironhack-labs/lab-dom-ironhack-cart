@@ -618,7 +618,7 @@ h1 {
   margin: 10px 5px; }
 
 .mainwrapper {
-  margin: 0, auto;
+  margin-left: 100px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
