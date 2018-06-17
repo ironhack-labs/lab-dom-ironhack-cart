@@ -1,12 +1,29 @@
+body {
+  font-size: 14px;
+  font-family: Helvetica, Arial, sans-serif
+}
+
+h2 {
+  font-size: 1.8em;
+  padding: 0px;
+}
+
+.textoItem {
+  padding-left: 2px;
+}
+
 input {
   border: solid 1px black;
+  width: 53%;
+  padding-left: 4px;
 }
 
 .btn {
+  height: 25px;
   display: inline-block;
-  padding: 6px 12px;
+  padding: 1px 12px;
   margin-bottom: 0;
-  font-size: 14px;
+  font-size: 1em;
   font-weight: 400;
   line-height: 1.42857143;
   text-align: center;
@@ -24,13 +41,18 @@ input {
   border-radius: 4px;
 }
 
-.btn-success {
+#borrar {
+  color: white;
+  background-color: #CF000F;
+}
+
+#success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
 }
 
-.btn-delete {
+#delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
@@ -39,3 +61,71 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.cajaProducto {
+  width: 850px;
+  padding-top: 40px;
+  margin: auto;
+}
+
+.cajaTitulo {
+  padding-left:45%;
+  padding-right: 25%;
+  display: flex;
+}
+
+
+.itemBox{
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+} 
+
+.columnaTexto {
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+}
+
+
+.columnaQty {
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+}
+
+.columnaQty span {
+  padding-right: 8px;
+}
+
+
+
+.columnaCantidad {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+}
+
+.columnaBorrar {
+  width: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.calculaPrecio{
+  padding-left: 45.3%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 40px;
+} 
+
