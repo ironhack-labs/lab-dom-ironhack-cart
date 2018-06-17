@@ -1,5 +1,4 @@
 function deleteItem(e) {
-var borra = document.getElementsByClassName("delete-button");
 e.currentTarget.parentNode.parentNode.remove();
 }
 
@@ -68,10 +67,9 @@ function createDeleteButton() {
   div.setAttribute("class","delete-button");
   var btn = document.createElement("button")
   btn.setAttribute("class","btn-delete");
-  btn.setAttribute("onclick","deleteItem()");
   btn.setAttribute("type","delete");
   btn.setAttribute("value","submit");
-  btn.addEventListener("click",function(){deleteItem()});
+  btn.addEventListener("click",deleteItem);
   div.appendChild(btn);
   var texto=document.createTextNode("Delete");
   btn.appendChild(texto);
