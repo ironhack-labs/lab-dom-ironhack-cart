@@ -15,7 +15,7 @@ function getTotalPriceByProduct(itemNode) {
 
 //Function that updates the total price given a product
 function updateTotalPriceByProduct(index) {
-  document.getElementById("product-" + parseInt(index + 1)).getElementsByClassName("totalProductAmount")[0].getElementsByTagName("span")[0].innerHTML = ("$" + getTotalPriceByProduct(document.getElementById("product-" + parseInt(index + 1))))
+  document.getElementsByClassName("productRow")[index].getElementsByClassName("totalProductAmount")[0].getElementsByTagName("span")[0].innerHTML = ("$" + getTotalPriceByProduct(document.getElementsByClassName("productRow")[index]))
 }
 
 //Function that calculates the total price of all products
@@ -29,19 +29,13 @@ function getTotalPrice() {
   document.getElementById("totalCartAmount").getElementsByTagName("span")[0].innerHTML = "$" + total
 }
 
-
-
-
-
-
-
-
-
-
-
+//Function that deletes an item from the cart
 function deleteItem(e){
-
+  e.currentTarget.parentNode.parentNode.parentNode.removeChild(e.currentTarget.parentNode.parentNode)
 }
+
+
+
 
 
 
@@ -80,7 +74,7 @@ window.onload = function(){
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
   calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
+  //createItemButton.onclick = createNewItem;
 
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
