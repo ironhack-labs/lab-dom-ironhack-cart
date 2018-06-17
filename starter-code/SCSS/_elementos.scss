@@ -14,14 +14,29 @@ body{
 body{
      .titulo{
           display:flex;
-          justify-content: flex-end;
-          width:71%;
+          justify-content: center;
+          height:100px;
+          background-image: url("../images/cart.png");
+          background-repeat: no-repeat;
+          background-size:5%;
+          background-position-y:20px;
+          background-position-x:50px;
+          align-items: center;
+
           h1{
                width:33%;
           }
      }
 }
 
+body{
+  .titulo{
+    img{
+      
+      height:100%;
+    }
+  }
+}
 
 body button{
   display: inline-block;
@@ -48,6 +63,8 @@ body button{
 
 body{
      .wrapper{
+       border-bottom:.5px solid grey ;
+       padding-bottom: 5%;
           div{
                width:$wrapper-div-width;
           }
@@ -84,9 +101,6 @@ body{
     width:100%;
     margin-left:$nuevo-objeto-margin;
     margin-top:$nuevo-objeto-margin;
-    .new-price{
-      margin-left:5%;
-    }
   }
 }
 
@@ -116,6 +130,52 @@ body{
       .total-price-span:before{
         content:"$"
       }
+    }
+  }
+}
+
+body{
+  .crear-objeto{
+    .nuevo-producto{
+      display:flex;
+      flex-direction: column;
+    }
+  }
+}
+
+body{
+  .crear-objeto{
+    display:flex;
+    align-items: center;
+    .nuevos-datos{
+      width:50%;
+      display:flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .btn-create1{
+      margin-left:50%;
+    }
+  }
+}
+
+body{
+  .crear-objeto{
+    .nuevo-precio{
+      display:flex;
+      flex-direction: column;
+      margin-left:20%;
+    }
+  }
+}
+
+body{
+  .crear-objeto{
+    .nuevos-datos{
+      .nuevo-producto{
+        width:70%;
+      }
+      
     }
   }
 }

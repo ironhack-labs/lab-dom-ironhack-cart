@@ -1,64 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/compilado.css">
-  <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="./css/compilado.css">
+    <script type="text/javascript" src="./js/index.js"></script>
+    <title>Ironhack cart</title>
 </head>
+
 <body>
-  <div class="titulo">
-  <h1>Ironhack Merchadising Shop</h1>
-  </div>
-  <div class="container">
-  <div class="wrapper">
-    <div class="name"><span>IronBubble-head</span></div>
-    <div class="cost"><span  class="cost-span">25.00</span></div>
-    <div class="units-number-div"><span>QTY</span><input type="number" name="IronBubble-head" placeholder="0" class="units-number" onchange="getPriceByProduct();"></div>
-    <div class="total-price"><span class="total-price-span">0.00</span></div>
-    <div class="delete-button"><button onclick="deleteItem()" type="delete" value="Submit" class="btn-delete">Delete</button></div>
-  </div>
-  <div class="wrapper">
-      <div class="name"><span>IronShirt</span></div>
-      <div class="cost"><span  class="cost-span">15.00</span></div>
-      <div class="units-number-div"><span>QTY</span><input type="number" name="IronShirt" placeholder="0" class="units-number" onchange="getPriceByProduct();"></div>
-      <div class="total-price"><span class="total-price-span">0.00</span></div>
-      <div class="delete-button"><button onclick="deleteItem()" type="delete" value="Submit" class="btn-delete">Delete</button></div>
-  </div>
-  <div class="wrapper">
-      <div class="name"><span>IronCup</span></div>
-      <div class="cost"><span class="cost-span">10.00</span></div>
-      <div class="units-number-div"><span>QTY</span><input type="number" name="IronCup" placeholder="0" class="units-number" onchange="getPriceByProduct();"></div>
-      <div class="total-price"><span class="total-price-span">0.00</span></div>
-      <div class="delete-button"><button onclick="deleteItem()" type="delete" value="Submit" class="btn-delete">Delete</button></div>
-  </div>
-  <div class="wrapper">
-      <div class="name"><span>IronSticker</span></div>
-      <div class="cost"><span class="cost-span">1.00</span></div>
-      <div class="units-number-div"><span>QTY</span><input type="number" name="IronSticker" placeholder="0" class="units-number" onchange="getPriceByProduct();"></div>
-      <div class="total-price"><span class="total-price-span">0.00</span></div>
-      <div class="delete-button"><button onclick="deleteItem()" type="delete" value="Submit" class="btn-delete">Delete</button></div>
+    <div class="titulo">
+        <h1>Ironhack Merchadising Shop</h1>
     </div>
-    <div class="wrapper">
-        <div class="name"><span>IronAxe</span></div>
-        <div class="cost"><span class="cost-span">100.00</span></div>
-        <div class="units-number-div"><span>QTY</span><input type="number" name="IronAxe" placeholder="0" class="units-number" onchange="getPriceByProduct();"></div>
-        <div class="total-price"><span class="total-price-span">0.00</span></div>
-        <div class="delete-button"><button onclick="deleteItem()" type="delete" value="Submit" class="btn-delete">Delete</button></div>
-      </div>
+    <div class="container">
+        <div class="wrapper">
+            <div class="name">
+                <span>IronBubble-head</span>
+            </div>
+            <div class="cost">
+                <span class="cost-span">25.00</span>
+            </div>
+            <div class="units-number-div">
+                <span>QTY</span>
+                <input type="number" name="IronBubble-head" placeholder="0" class="units-number" onchange="getPriceByProduct();">
+            </div>
+            <div class="total-price">
+                <span class="total-price-span">0.00</span>
+            </div>
+            <div class="delete-button">
+                <button onclick="deleteItem()" type="delete" value="Submit" class="btn-delete">Delete</button>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="name">
+                <span>IronShirt</span>
+            </div>
+            <div class="cost">
+                <span class="cost-span">15.00</span>
+            </div>
+            <div class="units-number-div">
+                <span>QTY</span>
+                <input type="number" name="IronShirt" placeholder="0" class="units-number" onchange="getPriceByProduct();">
+            </div>
+            <div class="total-price">
+                <span class="total-price-span">0.00</span>
+            </div>
+            <div class="delete-button">
+                <button onclick="deleteItem()" type="delete" value="Submit" class="btn-delete">Delete</button>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="name">
+                <span>IronCup</span>
+            </div>
+            <div class="cost">
+                <span class="cost-span">10.00</span>
+            </div>
+            <div class="units-number-div">
+                <span>QTY</span>
+                <input type="number" name="IronCup" placeholder="0" class="units-number" onchange="getPriceByProduct();">
+            </div>
+            <div class="total-price">
+                <span class="total-price-span">0.00</span>
+            </div>
+            <div class="delete-button">
+                <button onclick="deleteItem()" type="delete" value="Submit" class="btn-delete">Delete</button>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="name">
+                <span>IronSticker</span>
+            </div>
+            <div class="cost">
+                <span class="cost-span">1.00</span>
+            </div>
+            <div class="units-number-div">
+                <span>QTY</span>
+                <input type="number" name="IronSticker" placeholder="0" class="units-number" onchange="getPriceByProduct();">
+            </div>
+            <div class="total-price">
+                <span class="total-price-span">0.00</span>
+            </div>
+            <div class="delete-button">
+                <button onclick="deleteItem()" type="delete" value="Submit" class="btn-delete">Delete</button>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="name">
+                <span>IronAxe</span>
+            </div>
+            <div class="cost">
+                <span class="cost-span">100.00</span>
+            </div>
+            <div class="units-number-div">
+                <span>QTY</span>
+                <input type="number" name="IronAxe" placeholder="0" class="units-number" onchange="getPriceByProduct();">
+            </div>
+            <div class="total-price">
+                <span class="total-price-span">0.00</span>
+            </div>
+            <div class="delete-button">
+                <button onclick="deleteItem()" type="delete" value="Submit" class="btn-delete">Delete</button>
+            </div>
+        </div>
     </div>
     <div class="crear-objeto">
-        <input type="" name="new-object" class="new-name">
-        <input type="" name="new-object-price"  class="new-price">
+        <div class="nuevos-datos">
+            <div class="nuevo-producto">
+                <span>Nombre producto:</span>
+                <input type="" name="new-object" class="new-name">
+            </div>
+            <div class="nuevo-precio">
+                <span>Introduce el precio:</span>
+                <input type="" name="new-object-price" class="new-price">
+            </div>
+        </div>
         <button type="create" value="Submit" id="btn-create" class="btn-create1">Create</button>
     </div>
     <div class="calc">
         <button type="Calcula Precio" value="Submit" id="btn-calc" onclick="getTotalPrice()">Calculate Prices</button>
-        <h2>Total Price: <span id="total-price">$0.00</span></h2>
+        <h2>Total Price:
+            <span id="total-price">$0.00</span>
+        </h2>
     </div>
 </body>
+
 </html>
- 
