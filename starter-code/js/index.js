@@ -9,8 +9,8 @@ function deleteItem(e){
 function getPriceByProduct(itemNode){
   var numberOfProducts = itemNode.getElementsByTagName('input')[0].value;
   var priceHolder = itemNode.getElementsByClassName('price')[0].innerText;
-  priceHolder = parseFloat(priceHolder.slice(1)) * numberOfProducts;
-  itemNode.getElementsByClassName('total')[0].getElementsByTagName('span')[0].innerHTML = "$" + priceHolder;
+  priceHolder = parseFloat(priceHolder) * numberOfProducts;
+  itemNode.getElementsByClassName('total')[0].getElementsByTagName('span')[0].innerHTML = priceHolder;
   return priceHolder;
 }
 
@@ -20,7 +20,7 @@ function getTotalPrice() {
   for(var i= 0;i < products.length; i++){
     total += getPriceByProduct(products[i]);
   }
-  document.getElementById('total-sum').innerHTML = "$"+ total;
+  document.getElementById('total-sum').innerHTML = total;
 }
 
 /*CREATE MORE ELEMENTS*/
@@ -33,6 +33,7 @@ function createQuantityInput(element){
   element.appendChild(quantity);
   quantity.setAttribute("class","quantity");
   quantity.setAttribute("type","number");
+  quantity.value = 1;
 }
 function createDeleteNode(element){
   var deleteNode = document.createElement('div');
@@ -61,7 +62,7 @@ function createTotalNode(element){
 }
 function createTotal(element){
   var totalValue = document.createElement('span');
-  totalValue.innerText = "$0.00";
+  totalValue.innerText = "0.00";
   element.appendChild(totalValue);
 }
 
@@ -79,7 +80,7 @@ function createPriceNode(element, value){
   priceNode.setAttribute('class','price')
   element.appendChild(priceNode);
   var priceValue = document.createElement('span');
-  priceValue.innerText = '$' +value;
+  priceValue.innerText = value;
   priceNode.appendChild(priceValue);
 }
 
