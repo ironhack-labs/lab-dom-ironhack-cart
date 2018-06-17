@@ -15,14 +15,33 @@ function getTotalPrice(){
   var Quantity = document.getElementsByClassName("quantity")[i].value;
   var Total = PriceNum * Quantity;
   var totalpantalla = document.getElementsByClassName("Total")[i];
-  totalpantalla.innerHTML = Total + " $";
+  totalpantalla.innerHTML = Total;
   }
+  sumaCarta();
 }
+function sumaCarta(){
+  debugger;
+  items=document.getElementsByClassName("mainwrapper");
+  var suma = 0;
+  for (i=0; i<items.length; i++){
+  var totalpantalla = document.getElementsByClassName("Total")[i].innerHTML;
+  var totalpantallaNum = parseInt(totalpantalla);
+  suma += totalpantallaNum;
+  var sumapantalla = document.getElementsByClassName("lacuenta");
+  }
+  sumapantalla.innerHTML = suma;
+}
+
+
+
+
+
 
   
-function createDeleteButton(){
+//function createDeleteButton(){
 
-}
+
+
 
 function createQuantityNode(){
 }
