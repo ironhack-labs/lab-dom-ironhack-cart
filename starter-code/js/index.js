@@ -2,15 +2,31 @@ function deleteItem(e){
 
 }
 
-function getPriceByProduct(itemNode){
+function getPriceByProduct(){
+var total = document.getElementsByClassName("totalproducto")
+var precio = document.getElementsByClassName("precio");
+var cantidad = document.getElementsByClassName("cantidad")
 
+for(var i = 0; i<total.length; i++){
+  var precio2 = precio[i].innerHTML;
+  var cantidad2 = cantidad[i].value
+  console.log(precio2);
+  console.log(cantidad2);
+  var total1 = parseInt(precio2)*parseInt(cantidad2)
+  console.log(total1)
+  total[i].innerHTML = total1
+}
 }
 
 function updatePriceByProduct(productPrice, index){
 
 }
 
+
+//calcularprecios.onclick = document.getElementsByClassName("calcular")
 function getTotalPrice() {
+
+
 
 }
 
