@@ -3,6 +3,10 @@
   justify-content: space-around;
   align-items: center;
   margin: $marginSpace;
+  
+  .product-name{
+    min-width: 18%;
+  }
 }
 
 input {
