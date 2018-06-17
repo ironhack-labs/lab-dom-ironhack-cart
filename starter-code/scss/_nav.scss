@@ -1,0 +1,59 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: $nav-background-color;
+  color: $nav-font-color;
+
+  #ironHackLogo {
+    margin: 20px;
+  }
+
+  ul {
+    margin: 0 18px 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    li {
+      list-style: none;
+      flex-direction: row;
+      margin-left: 15px;
+
+      &:last-child {
+        border: 1px solid white;
+        border-radius: 5px;
+        padding: 8px 15px;
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  #hamburgerMenuIcon {
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #hamburgerMenuIcon {
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  #menu {
+    display: none;
+  }
+
+  #hamburgerMenuIcon {
+    display: flex;
+  }
+}
