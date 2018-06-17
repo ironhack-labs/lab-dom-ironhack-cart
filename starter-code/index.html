@@ -5,10 +5,89 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Lato|Pacifico" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+  <header>
+    <div class="container text-center">
+        <h1>Ironhack Merchandising Shop</h1>
+    </div>
+  </header>
+  <main>
+    <section id="products-wrp" class="container">
+      <div class="product" data-index="0">
+        <div>
+          <span>IronBubble-head</span>
+        </div>
+        <div>
+          <span id="product0-price">$25.00</span>
+        </div>
+        <div>
+          <label for="product0-qty">Qty</label>
+          <input type="number" name="product0-qty" id="product0-qty" value="0">
+        </div>
+        <div>
+          <span id="product0-total"></span>
+        </div>
+        <div class="text-right">
+          <button type="button" class="btn btn-delete">
+            <i class="fas fa-trash icon"></i>Delete
+          </button>
+        </div>
+      </div>
+      <div class="product" data-index="1">
+        <div>
+          <span>IronShirt</span>
+        </div>
+        <div>
+          <span id="product1-price">$15.00</span>
+        </div>
+        <div>
+          <label for="product1-qty">Qty</label>
+          <input type="number" name="product1-qty" id="product1-qty" value="0">
+        </div>
+        <div>
+          <span id="product1-total"></span>
+        </div>
+        <div class="text-right">
+            <button type="button" class="btn btn-delete">
+              <i class="fas fa-trash icon"></i>Delete
+            </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="add-wrp">
+      <div class="container">
+        <div>
+          <input type="text" name="product-name" id="product-name" placeholder="Product name">
+          <input type="number" name="product-price" id="product-price" placeholder="Product price">
+        </div>
+        <div class="text-right">
+          <button id="new-item-create" type="button" class="btn">
+            <i class="fas fa-cart-plus icon"></i>Create
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <section id="total-wrp" class="container">
+        <div>
+          <button id="calc-prices-button" type="button" class="btn btn-success">
+            <i class="fas fa-calculator icon"></i>Calculate Prices
+          </button>
+        </div>
+        <div>
+          <h2 class="text-right">
+            Total price: <span id="total-price"></span>
+          </h2>
+        </div>
+      </section>
+  </footer>
 </body>
 </html>

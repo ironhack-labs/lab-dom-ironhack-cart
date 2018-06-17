@@ -1,0 +1,19 @@
+#add-wrp {
+  height: 90px;
+  padding-top: 28px;
+  padding-bottom: 28px;
+  margin-top: 30px;
+  margin-bottom: 70px;
+  background: $lightGreyBg;
+  border-top: 1px solid $lightGrey;
+  > .container {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    > div {
+      &:first-child {
+        display: flex;
+      }
+    }
+  }
+}
