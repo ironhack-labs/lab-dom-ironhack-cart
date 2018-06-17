@@ -3,30 +3,34 @@ function renumeraItems(){
   var rowCount = lineItems.length;
   for (var i=0; i < lineItems.length; i++){
     lineItems[i].id="item"+i;
-    lineItems[i].firstChild.nextSibling.firstChild.id="itemName"+i;
-    sibling=lineItems[i].firstChild.nextSibling;
-    console.log("iteracion: " + i + " "+sibling);
-    console.log(sibling);
-    sibling=sibling.nextSibling;
-    sibling=sibling.nextSibling;
-    console.log("iteracion: " + i + " "+sibling);
-    console.log(sibling);
-    sibling.firstChild.id="itemPrice"+i;
-    sibling=sibling.nextSibling;
-    sibling=sibling.nextSibling;
-    console.log("iteracion: " + i + " "+sibling);
-    console.log(sibling);
-    sibling.firstChild.nextSibling.id="itemQty"+i;
-    sibling=sibling.nextSibling;
-    sibling=sibling.nextSibling;
-    console.log("iteracion: " + i + " "+sibling);
-    console.log(sibling);
-    sibling.firstChild.id="itemTotal"+i;
-    sibling=sibling.nextSibling;
-    sibling=sibling.nextSibling;
-    console.log("iteracion: " + i + " "+sibling);
-    console.log(sibling);
-    sibling.firstChild.id="delete"+i;
+
+    if (i < 2){    
+      lineItems[i].firstChild.nextSibling.firstChild.id="itemName"+i;
+      sibling=lineItems[i].firstChild.nextSibling;
+
+      sibling=sibling.nextSibling;
+      sibling=sibling.nextSibling;
+      sibling.firstChild.id="itemPrice"+i;
+      sibling=sibling.nextSibling;
+      sibling=sibling.nextSibling;
+      sibling.firstChild.nextSibling.id="itemQty"+i;
+      sibling=sibling.nextSibling;
+      sibling=sibling.nextSibling;
+      sibling.firstChild.id="itemTotal"+i;
+      sibling=sibling.nextSibling;
+      sibling=sibling.nextSibling;
+      sibling.firstChild.id="delete"+i;
+    } else {
+      lineItems[i].firstChild.firstChild.id="itemName"+i;
+      sibling=lineItems[i].firstChild.nextSibling;
+      sibling.id="itemPrice"+i;
+      sibling=sibling.nextSibling;
+      sibling.firstChild.nextSibling.id="itemQty"+i;    
+      sibling=sibling.nextSibling;   
+      sibling.firstChild.id="itemTotal"+i;
+      sibling=sibling.nextSibling;
+      sibling.firstChild.id="delete"+i;
+    }
 
   }
 }
