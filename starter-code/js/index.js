@@ -15,7 +15,7 @@ function getTotalPriceByProduct(itemNode) {
 
 //Function that updates the total price given a product
 function updateTotalPriceByProduct(index) {
-  document.getElementsByClassName("productRow")[index].getElementsByClassName("totalProductAmount")[0].getElementsByTagName("span")[0].innerHTML = ("$" + getTotalPriceByProduct(document.getElementsByClassName("productRow")[index]))
+  document.getElementsByClassName("productRow")[index].getElementsByClassName("totalProductAmount")[0].getElementsByTagName("span")[0].innerHTML = ("$" + parseFloat(getTotalPriceByProduct(document.getElementsByClassName("productRow")[index])).toFixed(2))
 }
 
 //Function that calculates the total price of all products
@@ -26,7 +26,7 @@ function getTotalPrice() {
     updateTotalPriceByProduct(i)
     total += parseFloat(elements[i].getElementsByClassName("totalProductAmount")[0].getElementsByTagName("span")[0].innerHTML.slice(1))
   }
-  document.getElementById("totalCartAmount").getElementsByTagName("span")[0].innerHTML = "$" + total
+  document.getElementById("totalCartAmount").getElementsByTagName("span")[0].innerHTML = "$" + parseFloat(total).toFixed(2)
 }
 
 //Function that deletes an item from the cart
@@ -105,7 +105,7 @@ function createNewItem() {
     var newItem = document.createElement("div")
     newItem.setAttribute("class", "productRow");
     newItem.appendChild(createProductNameNode(document.getElementById("newProductName").value))
-    newItem.appendChild(createProductCostNode(document.getElementById("newProductCost").value))
+    newItem.appendChild(createProductCostNode(parseFloat(document.getElementById("newProductCost").value).toFixed(2)))
     newItem.appendChild(createProductQuantityNode())
     newItem.appendChild(createTotalProductAmountNode())
     newItem.appendChild(createDeleteProductNode())

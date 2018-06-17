@@ -11,6 +11,17 @@ div {
     border-radius: $div-container-border-radius;
   }
 
+  &.productHead {
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #464D61;
+    font-weight: bold;
+  }
+
   &.productRow {
     margin-bottom: 18px;
     display: flex;
@@ -51,5 +62,9 @@ div {
   &.deleteProduct {
     flex-basis: 10%;
     text-align: right;
+  }
+
+  h2 {
+    margin-bottom: 0;
   }
 }
