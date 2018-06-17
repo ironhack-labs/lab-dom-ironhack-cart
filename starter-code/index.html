@@ -9,6 +9,7 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  
   <header id="header">
     <h1>Ironhack <br> Merchandising Shop</h1>
   </header>
@@ -16,18 +17,19 @@
   
   <main>
     <div id="container">
-        <div class="wrapper">
+      <div class="allproducts">
+        <div class="product">
           <div class="product-name">
             <span>IronBubble-head</span>
           </div>
           <div class="product-price">
             <span>$25.00</span>
           </div>
-          <div class="units">
-            <label for="qty">QTY</label>
-            <input type="number" class="quantity" value="0" min="0">
+          <div>
+            <label for="product-qty">QTY</label>
+            <input type="number" class="product-qty" value="0" min="0">
           </div>
-          <div class="total-price">
+          <div class="product-total-price" onchange="updatePriceByProduct()">
             <span>$0.00</span>
           </div>
           <div class="button">
@@ -35,44 +37,45 @@
           </div>
         </div>
         
-        <div class="wrapper">
+        <div class="product">
           <div class="product-name">
             <span>IronShirt</span>
           </div>
           <div class="product-price">
             <span>$15.00</span>
           </div>
-          <div class="units">
-            <label for="qty">QTY</label>
-            <input type="number" class="quantity" value="0" min="0">
+          <div>
+            <label for="product-qty">QTY</label>
+            <input type="number" class="product-qty" value="0" min="0">
           </div>
-          <div class="total-price">
+          <div class="product-total-price" onchange="updatePriceByProduct()">
             <span>$0.00</span>
           </div>
           <div class="button">
             <button type="submit" class="btn btn-delete">Delete</button>
           </div>
         </div>
+      </div>
 
-        <div class="wrapper new-wrapper">
+        <div class="new-product">
           <div>
             <input type="text" id="new-name" placeholder="Name your product">
           </div>
           <div>
-            $<input type="number" id="new-price" placeholder="$0.00" min="0">
+            <input type="number" id="new-price" placeholder="$0.00" min="0">
           </div>
           <div></div>
           <div></div>
-          <div class="button" id="btn btn-create">
-            <button type="submit">Create</button>
+          <div class="button">
+            <button type="submit" id="btn-create">Create</button>
           </div>
         </div>
       </div>
       
       <div id="calc-total">
         <button type="submit" class="btn" id="btn-success">Calculate Prices</button>
-        <div class="precio-total">
-          <h2>Total Price: $ <span id="total">0</span></h2>
+        <div>
+          <h2>Total Price: $ <span id="total-price">0</span></h2>
         </div>
       </div>
       
