@@ -9,6 +9,53 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
-<body>
+<body id="bod">
+  <header class="center"><h1>Ironhack<br>Merchandising Shop</h1></header>
+  <div id="big">
+  <div class="container">
+    <div><span>IronBublle-head</span></div>
+    <div><span class="unit" >25.00</span></div>
+    <div><label>QTY<input type="number" placeholder="0" class="qty" onchange="updatePriceByProduct()"></label></div>
+    <div><span class="totalUnit" onchange="updatePriceByProduct()" >$0.00</span></div>
+    <div><button class="btn btn-delete" onclick="deleteItem()">Delete</button></div>
+  </div>
+  <div class="container">
+      <div><span>IronShirt</span></div>
+      <div><span class="unit">15.00</span></div>
+      <div><label>QTY<input type="number" placeholder="0" class="qty" onchange="updatePriceByProduct()"></label></div>
+      <div><span class="totalUnit" onchange="updatePriceByProduct()">$0.00</span></div>
+      <div><button class="btn btn-delete">Delete</button></div>
+    </div>
+    <div class="container">
+        <div><span>IronCup</span></div>
+        <div><span class="unit">10.00</span></div>
+        <div><label>QTY<input type="number" placeholder="0" class="qty" onchange="updatePriceByProduct()"></label></div>
+        <div><span class="totalUnit" onchange="updatePriceByProduct()">$0.00</span></div>
+        <div><button class="btn btn-delete">Delete</button></div>
+      </div>
+      <div class="container">
+          <div><span>IronSticker</span></div>
+          <div><span class="unit">1.00</span></div>
+          <div><label>QTY<input type="number" placeholder="0" class="qty" onchange="updatePriceByProduct()"></label></div>
+          <div><span class="totalUnit" onchange="updatePriceByProduct()">$0.00</span></div>
+          <div><button class="btn btn-delete">Delete</button></div>
+        </div>
+        <div class="container">
+            <div><span>IronAxe</span></div>
+            <div><span class="unit">100.00</span></div>
+            <div><label>QTY<input type="number" placeholder="0" class="qty" onchange="updatePriceByProduct()"></label></div>
+            <div><span class="totalUnit" onchange="updatePriceByProduct()">$0.00</span></div>
+            <div><button class="btn btn-delete">Delete</button></div>
+          </div>
+        </div>
+          <div class="new-container" id="last">
+            <div><input  placeholder="0" class="new-name" id="n-name"></div>
+            <div><input type="number" placeholder="0" class="new-price" id="n-price"></div>
+            <div><button class="btn" id="new-item-create" >create</button></div>
+          </div>
+          
+    <div class="center"><button class="btn btn-success" id="calc-prices-button" onclick="getTotalPrice()">Calculate Prices</button></div>
+    <div class="center"><h2>Total Price: <span id="total" >$0.00</span></h2></div>
+  
 </body>
 </html>
