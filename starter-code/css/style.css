@@ -1,10 +1,19 @@
+body {
+  font-family: "Tajawal", sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
 input {
   border: solid 1px black;
+  height: 20px;
 }
 
 .btn {
   display: inline-block;
-  padding: 6px 12px;
+  padding: 10px 10px;
   margin-bottom: 0;
   font-size: 14px;
   font-weight: 400;
@@ -24,18 +33,31 @@ input {
   border-radius: 4px;
 }
 
-.btn-success {
+#btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    font-family: "Tajawal", sans-serif;
+    display: inline-block;
+    bottom: 0;
 }
 
-.btn-delete {
+#btn-delete, #btn-delete2 {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    font-family: "Tajawal", sans-serif;
 }
 
 .quantity {
   margin: 0 5px;
 }
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+}
+
+
