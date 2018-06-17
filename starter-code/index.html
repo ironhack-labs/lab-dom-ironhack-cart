@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,98 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+  <div class="title">
+      <h1>IronHack Merchandising Shop</h1>
+  </div>
+  <div class="bodyWrapper">
+    <div class="itemContainer">
+      <div class="itemName wrappers">
+        <span id="name" class="name">IronHack Bubble Head</span>
+      </div>
+      <div class="wrappers">
+        <span class="price">$25</span>
+      </div>
+      <div class="wrappers">
+        <label for="quantity">QTY</label>
+        <input type="number" name="quantity" value="0" class="quantity">
+      </div>
+      <div class="wrappers">
+        <span class="totalPrice">$0</span>
+      </div>
+      <div class="wrappers">
+        <button class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+
+    <div class="itemContainer">
+      <div class="itemName wrappers">
+        <span>IronShirt</span>
+      </div>
+      <div class="wrappers">
+        <span class="price">$15</span>
+      </div>
+      <div class="wrappers">
+        <label for="quantity">QTY</label>
+        <input type="number" name="quantity" value="0">
+      </div>
+      <div class="wrappers">
+        <span class="totalPrice">$0</span>
+      </div>
+      <div class="wrappers">
+        <button class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="createContainer">
+    <div class="wrappers">
+      <input type="text" id="productName" value="Name">
+    </div>
+    <div class="wrappers">
+      <input type="number" id="productPrice" value="0">
+    </div>
+    <div class="hidden wrappers"></div>
+    <div class="hidden wrappers"></div>
+    <div class="wrappers">
+      <button id="new-item-create" class="btn">Create</button>
+    </div>
+  </div>
+
+  <div class="calculatePrices">
+    <button class="btn btn-success" id="calc-prices-button">Calculate prices</button>
+  </div>
+
+  <div class="total">
+    <h2>Total Price:
+      <span id="totalPrices">$0</span>
+    </h2>
+  </div>
+
+
+
+<!- Se crea este div porque la creacion de un nuevo producto se hace clonando un modelo,
+se podria haber hecho creando cada tag de html por separado y juntando todo, pero
+por falta de tiempo no puedo modificarlo ->
+  <div class="itemContainer none" id="clone">
+      <div class="itemName wrappers">
+        <span id="name" class="name">IronHack Bubble Head</span>
+      </div>
+      <div class="wrappers">
+        <span class="price">$25</span>
+      </div>
+      <div class="wrappers">
+        <label for="quantity">QTY</label>
+        <input type="number" name="quantity" value="0" class="quantity">
+      </div>
+      <div class="wrappers">
+        <span class="totalPrice">$0</span>
+      </div>
+      <div class="wrappers">
+        <button class="btn btn-delete">Delete</button>
+      </div>
+    </div>
 </body>
+
 </html>
