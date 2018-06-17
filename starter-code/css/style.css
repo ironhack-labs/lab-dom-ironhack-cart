@@ -66,9 +66,11 @@ input {
 {
   display: flex;
   justify-content: center;
+  margin: 30px 0;
 }
 
 .addItem {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
+  margin: 0 5px;
 }
