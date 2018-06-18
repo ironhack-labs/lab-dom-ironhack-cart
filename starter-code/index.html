@@ -10,5 +10,52 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <header class="center">
+    <h1>Ironhack <br> Merchandising Shop</h1>
+  </header>
+    <div class="flex">
+      <div><span>IronBubble-head</span></div>
+      <div><span class="price">$25.00</span></div>
+      <div><label for="">QTY<input class="qty-input" type="number" placeholder= "0" onchange="getPriceByProduct()"></label></div>
+      <div><span class="total-price margin-left">$0.00</span></div>
+      <div class="button"><button class="btn btn-delete">Delete</button></div>
+    </div>
+    <div class="flex">
+      <div><span>IronShirt</span></div>
+      <div><span class="price">$15.00</span></div>
+      <div><label for="">QTY<input class="qty-input" type="number" placeholder= "0" onchange="getPriceByProduct()"></label></div>
+      <div><span class="total-price margin-left">$0.00</span></div>
+      <div><button class="btn btn-delete">Delete</button></div>
+    </div>
+    <div class="flex">
+      <div><span>IronCup</span></div>
+      <div><span class="price">$10.00</span></div>
+      <div><label for="">QTY<input class="qty-input" type="number" placeholder= "0" onchange="getPriceByProduct()"></label></div>
+      <div><span class="total-price margin-left">$0.00</span></div>
+      <div><button class="btn btn-delete">Delete</button></div>
+    </div>
+    <div class="flex">
+      <div><span>IronSticker</span></div>
+      <div><span class="price">$1.00</span></div>
+      <div><label for="">QTY<input class="qty-input" type="number" placeholder= "0" onchange="getPriceByProduct()"></label></div>
+      <div><span class="total-price margin-left">$0.00</span></div>
+      <div><button class="btn btn-delete">Delete</button></div>
+    </div>
+      <div class="flex">
+      <div><span>IronAxe</span></div>
+      <div><span class="price">$100.00</span></div>
+      <div><label for="">QTY<input class="qty-input" type="number" placeholder= "0" onchange="getPriceByProduct()"></label></div>
+      <div><span class="total-price margin-left">$0.00</span></div>
+      <div><button class="btn btn-delete">Delete</button></div>
+    </div>
+    <div class="center">
+      <button id="calc-prices-button" class="btn btn-success ">Calculate Prices</button>
+    </div>
+    <div class="center">
+      <h2>Total Price: <span id = "result">$0</span></h2>
+    </div>
+    
+  
 </body>
 </html>
+
