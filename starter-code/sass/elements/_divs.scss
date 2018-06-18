@@ -1,0 +1,85 @@
+.cajaProducto {
+    width: 850px;
+    padding-top: 40px;
+    margin: auto;
+  }
+  
+  .cajaTitulo {
+    padding-left:45%;
+    padding-right: 25%;
+    display: flex;
+  }
+  
+  
+  .itemBox{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+  } 
+  
+  .columnaTexto {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+  }
+  
+  
+  .columnaQty {
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+  }
+  
+  .columnaQty > span {
+    padding-right: 8px;
+  }
+  
+  #itemContainer {
+    display: flex;
+    width: 100%;
+  }
+  
+  .columnaCantidad {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+  }
+  
+  .columnaBorrar {
+    width: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  .calculaPrecio{
+    padding-left: 47.3%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 40px;
+  } 
+
+  .tituloItem {
+    padding-left: 2px;
+  }
+  
+  .precioItem {
+    padding-left: 2px;
+  }
+  
+  .qtyItem {
+    padding-left: 2px;
+  }
+  
+  .finalItem {
+    padding-left: 2px;
+  }
