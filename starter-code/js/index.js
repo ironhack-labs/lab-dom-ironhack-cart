@@ -1,5 +1,9 @@
 function deleteItem(e) {
+  var btn = e.currentTarget;
+  var producto = btn.parentElement;
+  var productContainer = producto.parentElement;
 
+  productContainer.removeChild(producto);
 }
 
 function getPriceByProduct() {
@@ -25,7 +29,7 @@ function getTotalPrice() {
     precioFinal += totalProducto;
     totalPrecios[i].innerHTML = '$'+ totalProducto.toFixed(2);
   }
-  
+
   tituloPrecio.innerHTML = 'Total Price $'+ precioFinal.toFixed(2);
 }
 
@@ -62,7 +66,7 @@ window.onload = function(){
 
   //createItemButton.onclick = createNewItem;
 
-  //for(var i = 0; i<deleteButtons.length ; i++){
-  //  deleteButtons[i].onclick = deleteItem;
-  //}
+  for(var i = 0; i<deleteButtons.length ; i++){
+    deleteButtons[i].onclick = deleteItem;
+  }
 };
