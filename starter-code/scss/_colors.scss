@@ -1,0 +1,21 @@
+
+
+body {
+    color: $black;
+}
+
+.product {
+    color: $border;
+}
+
+button {
+    color: $white;
+}
+
+button.btn-delete {
+    background-color: $red;
+}
+
+button.btn-calc {
+    background-color: $green;
+}

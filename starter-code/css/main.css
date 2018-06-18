@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700");
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  color: #000000;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%; }
+  body h1 {
+    font-family: "Helvetica";
+    justify-content: flex-end;
+    width: 100%;
+    padding: 5% 5% 5% 50%; }
+  body .product {
+    display: inline-flex;
+    text-align: center;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    position: relative;
+    border: 2px solid #39423c;
+    justify-content: space-around;
+    margin: auto;
+    padding: 3% 5%;
+    width: 100%;
+    float: left;
+    box-sizing: border-box;
+    border: 2px solid #39423c; }
+    body .product .btn-delete {
+      border: 2% solid;
+      border-radius: 2%;
+      width: 17%; }
+  body .total-cost {
+    width: 100%;
+    float: left;
+    align-items: flex-start;
+    justify-content: center; }
+  body .btn-delete {
+    border: 2% solid #46b11d;
+    border-radius: 2%;
+    width: 17%; }
+
+body {
+  color: #000000; }
+
+.product {
+  color: #39423c; }
+
+button {
+  color: #fff; }
+
+button.btn-delete {
+  background-color: #CF000F; }
+
+button.btn-calc {
+  background-color: #36b11d; }
+
+body .shop-name {
+  font-family: "Helvetica";
+  font-weight: bold;
+  font-size: 1.5em; }
+body .product {
+  font-family: "Source Sans Pro";
+  font-size: 0.9em; }
+  body .product button {
+    font-size: 0.8em; }
+
+body {
+  max-width: 100%;
+  margin: 0;
+  display: flex; }
+
+/*# sourceMappingURL=main.css.map */

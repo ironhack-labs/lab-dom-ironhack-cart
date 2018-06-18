@@ -1,0 +1,17 @@
+
+body {
+    .shop-name {
+        font-family: $header;
+        font-weight: bold;
+        font-size: 1.5em;
+    }
+
+    .product {
+        font-family: $main-text;
+        font-size: 0.9em;
+    
+        button {
+            font-size: 0.8em;
+        }
+    }
+}
