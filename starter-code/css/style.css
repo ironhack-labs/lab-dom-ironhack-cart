@@ -23,7 +23,21 @@ input {
   border: 1px solid transparent;
   border-radius: 4px;
 }
-
+.new-container{
+  display: flex;
+  justify-content: stretch;
+  align-items: center;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+.aju{
+  padding-left: 2%;
+  padding-right: 1%;
+}
+.aju1{
+  width: 11%;
+  padding-left: 54%;
+}
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
@@ -38,4 +52,33 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+    padding-top: .5%;
+
+}
+.container div{
+display: flex;
+justify-content: flex-start;
+width: 20%;
+
+}
+.container >   div{
+padding-left: 50px;
+
+
+}
+.center{
+  text-align: center;
+  
+}
+/*Puse la class Center a un Div que aunaba los dos elementos el botons de calculate price y el texto de total price con los argumentos definidos en la clase
+center y lo que ocurria era que el boton de calculate price aumentaba su tamaño en cambio cuando hago dos divs para cada uno de los elementeos nombrados si funciona
+correctamente POR QUE??*/
+
+.unit:before{
+  content:"$"
 }
