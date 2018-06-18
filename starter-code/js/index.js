@@ -93,4 +93,10 @@ window.onload = function(){
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
   }
+<<<<<<< HEAD
 };
+||||||| merged common ancestors
+}; 
+=======
+};
+>>>>>>> 377280ef618098769282515dd41786cdff9b1223
