@@ -85,7 +85,9 @@ function createNewItem(e, cartItemTemplate){
     }));
   } else {
     alert("Please enter the name and price for the new item");
-  }  
+  }
+  e.currentTarget.parentNode.parentNode.children[0].children[0].value = "";
+  e.currentTarget.parentNode.parentNode.children[1].children[1].value = 0;
 }
 
 window.onload = function(){
