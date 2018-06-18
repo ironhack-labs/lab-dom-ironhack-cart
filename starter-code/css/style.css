@@ -47,19 +47,15 @@ body {
   flex-direction: column;
   align-items: center;
 }
-body > * {
-  height: fit-content;
-  width: fit-content;
-}
 
-.cart-items {
+.cart-items, .new-item-section {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.single-item {
+.single-item, .new-item {
   padding-top: 5px;
   width: 70%;
   display: flex;
@@ -68,33 +64,34 @@ body > * {
   align-items: baseline;
 }
 
-.item-price-field, .item-total-field, .item-quantity {
+.item-name-field, .new-item-name-field {
+  width: 300px;
+}
+
+.item-price-field, .item-total-field {
   width: 90px;
 }
 
-.item-name-field {
-  width: 300px;
+.item-quantity-field{
+  width: 130px;
+}
+
+.item-quantity {
+  width: 90px;
 }
 
 .total-price-field, .total-price {
   width: 300px;
 }
-.new-item-section, .new-item {
-  width: 70%;
-  display: flex;
-  flex-direction: row;
-  align-items: baseline;
-  margin-top: 3px;
-}
 
-.new-item-name {
-  margin-left: 43px;
+.item-delete-field {
+  width: 70px;
 }
 
 .new-item-price-field {
   display: flex;
   justify-content: flex-start;
-  margin-left: 197px;
+  align-items: baseline;
   width: 90px;
 }
 
@@ -102,11 +99,26 @@ body > * {
   width: 70px;
 }
 
+.new-item-filler1 {
+  width: 130px;
+}
+
+.new-item-filler2 {
+  width: 90px;
+}
+
 .calculate-button-section {
   padding-top: 10px;
 }
 
+.new-item-create-field {
+  width: 70px;
+}
+
 .create-button {
   border-radius: 5px;
-  margin-left: 497px;
+}
+
+.new-item-filler {
+  width: 90px;
 }

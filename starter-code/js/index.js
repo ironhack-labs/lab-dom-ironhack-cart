@@ -80,9 +80,9 @@ function createNewItem(e, cartItemTemplate){
     //Add new item to cart
     document.getElementsByClassName("cart-items")[0].appendChild(newItem);
     //Add delete button functionality
-    console.log(newItem.children[4].children[0].addEventListener("click", function() {
+    newItem.children[4].children[0].addEventListener("click", function() {
       deleteItem(event);
-    }));
+    });
   } else {
     alert("Please enter the name and price for the new item");
   }
