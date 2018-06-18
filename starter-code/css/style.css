@@ -2,6 +2,11 @@ input {
   border: solid 1px black;
 }
 
+body {
+  font-family: Avenir, Arial;
+  padding-top: 40px;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -22,12 +27,15 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+  font-family: Avenir, Arial;
 }
 
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin: 0 auto;
+    display: block;
 }
 
 .btn-delete {
@@ -38,4 +46,23 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.product-wrapper, .new-product-wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  padding: 20px 50px;
+}
+
+h1 {
+  text-align: center;
+}
+
+#calc-prices-button {
+  padding: 20px;
+}
+
+#total-price {
+  text-align: center;
 }
