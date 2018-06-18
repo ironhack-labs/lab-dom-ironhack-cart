@@ -1,8 +1,12 @@
-input {
+h1{
+  text-align: center;
+}
+
+.unit {
   border: solid 1px black;
 }
 
-.btn {
+div {
   display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
@@ -24,18 +28,32 @@ input {
   border-radius: 4px;
 }
 
-.btn-success {
+#calculate {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 590px;
+    margin-top: 30px;
 }
 
-.btn-delete {
+#delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
 }
 
-.quantity {
+#total {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.cuantity {
   margin: 0 5px;
 }
