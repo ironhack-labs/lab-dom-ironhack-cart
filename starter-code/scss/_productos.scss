@@ -1,6 +1,8 @@
 .productos{
     display: flex;
-    justify-content: space-around
+    justify-content: space-around;
+    margin: 20px;
+    margin-left: 10px;
 }
 
 .delete{
@@ -16,3 +18,4 @@
     display: flex;
     justify-content: center;
 }
+

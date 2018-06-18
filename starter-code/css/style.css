@@ -1,6 +1,19 @@
 .productos {
   display: flex;
-  justify-content: space-around; }
+  justify-content: space-around;
+  margin-top: 35px; 
+  border-bottom: 1.2px solid rgb(111, 107, 107);
+  padding: 20px;
+
+}
+
+#linea{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: space-around;
+  background: #ebe9e9;
+}
 
 .delete {
   background-color: red;
