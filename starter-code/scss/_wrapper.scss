@@ -1,0 +1,28 @@
+.wrapper{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+    padding: 10px;
+ 
+
+    .product-name {
+        width:200px;
+
+    }
+
+    .product-price, .total-price {
+        width: 100px;
+    }
+    
+    input{
+        width: 150px;
+    }
+}
+
+.new-wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 50px 0;
+}

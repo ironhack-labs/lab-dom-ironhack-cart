@@ -1,0 +1,19 @@
+@import "_wrapper";
+@import "_elements";
+
+
+input {
+    border: solid 1px black;
+}
+  
+.quantity {
+    margin: 0 5px;
+}
+
+body{
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      box-sizing: border-box;
+}
