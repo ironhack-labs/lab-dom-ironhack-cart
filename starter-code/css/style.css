@@ -72,9 +72,8 @@ padding-left: 50px;
 
 }
 .center{
-  display: flex;
-  justify-content: flex-start;
-  padding-left: 46%;
+  text-align: center;
+  
 }
 /*Puse la class Center a un Div que aunaba los dos elementos el botons de calculate price y el texto de total price con los argumentos definidos en la clase
 center y lo que ocurria era que el boton de calculate price aumentaba su tamaño en cambio cuando hago dos divs para cada uno de los elementeos nombrados si funciona

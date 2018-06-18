@@ -87,7 +87,6 @@ function createItemNode(){
   var newDiv=document.createElement("div")
   var text=document.createTextNode(texto.value)
   spa.appendChild(text)
-  //spa.setAttribute("class","btn btn-delete") no tiene clases
   newDiv.appendChild(spa)
   return newDiv
 
@@ -106,9 +105,7 @@ function createNewItem(){
   newDiv.appendChild(createQuantityInput())
   newDiv.appendChild(createQuantityNode())
   newDiv.appendChild(createDeleteButton())
-
   b.appendChild(newDiv)
- // document.getElementById("big").appendChild(d)
   
 }
 
