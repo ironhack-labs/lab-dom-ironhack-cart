@@ -85,3 +85,12 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.totalPurchase{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  height: 60px;
+
+}

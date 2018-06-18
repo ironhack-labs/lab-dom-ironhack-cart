@@ -54,11 +54,29 @@ window.onload = function(){
 function getTotalPrice(){
 
     for(i=0; i<2; i++){
+      
       var productPrice = document.getElementById('productPrice'+i);
       var productQuantity = document.getElementById('productQuantity'+i);
       var lineTotal = document.getElementById('lineTotal'+i);
     
       lineTotal.innerHTML = Number(productPrice.innerHTML)*Number(productQuantity.value);
+    }
+
+    var prices = Number(document.getElementsByClassName('productPrice')[0].innerHTML);
+    console.log(prices);
+
+    var totalPurchase = document.getElementById('totalPurchase');
+    console.log(totalPurchase);
+
+    for(i=0; i<2; i++){
+      var lineTotal;
+      var totalPurchase;
+
+      lineTotal +=  Number(document.getElementsByClassName('productPrice')[i].innerHTML);
+      totalPurchase = document.getElementById('totalPurchase');
+      
+      totalPurchase.innerText = lineTotal;
+      
     }
 };
 
