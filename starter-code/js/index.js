@@ -33,6 +33,7 @@ calculatePriceButton.onclick = function() {
 //delete item click event: 
 for(var i = 0; i < deleteButtons.length; i++) {
   deleteButtons[i].onclick = function(){
+    
     deleteItem(this);
   }
 }
@@ -42,6 +43,7 @@ function deleteItem(e){
   var wrap = document.getElementById('wrapper');
   wrap.removeChild(item);
 }
+
 
 
 function getPriceByProduct(price){
