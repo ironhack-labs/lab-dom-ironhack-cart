@@ -10,5 +10,83 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <header>
+    <h1>Ironhack merchandising shop</h1>
+  </header>
+
+  <div id="linea">
+  <div class="productos">
+    <span>IronBubbie-head</span>
+    <span class="precio">25.00</span>
+    <div>
+      <label>QTY</label>
+      <input class="cantidad" type="number" onchange="getPriceByProduct()">
+    </div>
+    <div>
+      <span class="totalproducto" onchange="getPriceByProduct()">$0.00</span>
+    </div>
+    <div>
+      <button class="delete">delete</button>
+    </div>
+  </div>
+
+
+  <div class="productos">
+      <span>Iron-producto2-head</span>
+      <span class="precio">30.00</span>
+      <div>
+        <label>QTY</label>
+        <input class="cantidad" type="number" onchange="getPriceByProduct()">
+      </div>
+      <div>
+        <span class="totalproducto" onchange="getPriceByProduct()">$0.00</span>
+      </div>
+      <div>
+        <button class="delete">delete</button>
+      </div>
+    </div>
+
+    <div class="productos">
+        <span>Iron-producto3-head</span>
+        <span class="precio">35.00</span>
+        <div>
+          <label>QTY</label>
+          <input class="cantidad" type="number" onchange="getPriceByProduct()">
+        </div>
+        <div>
+          <span class="totalproducto" onchange="getPriceByProduct()">$0.00</span>
+        </div>
+        <div>
+          <button onclick="deleteItem" class="delete">delete</button>
+        </div>
+      </div>
+
+      <div class="productos">
+          <span>Iron-producto4-head</span>
+          <span class="precio">40.00</span>
+          <div>
+            <label>QTY</label>
+            <input class="cantidad" type="number" onchange="getPriceByProduct()">
+          </div>
+          <div>
+            <span class="totalproducto" onchange="getPriceByProduct()">$0.00</span>
+          </div>
+          <div>
+            <button class="delete">delete</button>
+          </div>
+        </div>
+      </div>
+
+  <div id="claculate">
+    <button onclick="getTotalPrice()" class="calcular"name= calcularprecios >calculate prices</button>
+  </div>
+  <div>
+    <h2 class="preciototal">precio total = </h2> <h2 class="preciototal" id="global">0.00</h2>
+  </div>
+  
+
+
+
+
 </body>
 </html>
