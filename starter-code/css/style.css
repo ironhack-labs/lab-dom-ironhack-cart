@@ -29,7 +29,11 @@ input {
     background-color: #5cb85c;
     border-color: #4cae4c;
 }
-
+.success{
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
@@ -38,4 +42,16 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+header{
+  display: flex;
+  justify-content: center;
+}
+.IronBubble-head{
+  display: flex;
+    justify-content: space-around;
+}
+h2{
+  display: flex;
+    justify-content: center;
 }
