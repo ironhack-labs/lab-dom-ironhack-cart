@@ -15,12 +15,12 @@ function getTotalPrice() {
   var cantidad = document.getElementsByName("qty");
   var totalPrecios = document.getElementsByClassName("total");
 
-  for(var i = 0; i<precios.length; i+=1){
+  for(var i = 0; i < precios.length; i+=1){
     var total= 0
     var numPrecio = parseFloat(precios[i].innerHTML.replace("$",""));
-    var numCantidad= parseFloat(cantidad[i].value);
+    var numCantidad = parseFloat(cantidad[i].value);
     total = numCantidad * numPrecio;
-    totalPrecios[i].innerHTML= '$'+ total.toFixed(2);
+    totalPrecios[i].innerHTML = '$'+ total.toFixed(2);
   }
 }
 
