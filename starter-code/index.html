@@ -22,21 +22,23 @@
     <div>Delete</div>
   </div>
   
-  <div class="productLines" id="0">
+  <div id="productLinesContainer">
+  <div class="productLines">
     <div><span for="productName">IronBubblehead</span></div>
     <div><p>$<span class="productPrice" name="productPrice" id="productPrice0">25.00</span></p></div>
     <div><input name="productQuantity" id="productQuantity0" type="number" value="1"></div>
-    <div><p>$<span name="lineTotal" id="lineTotal0" >0</span></p></div>
+    <div><p>$<span class= "lineTotal" name="lineTotal" id="lineTotal0" >0</span></p></div>
     <div><button class=" btn btn-delete" type="button">Delete</button></div>
   </div>
   
-  <div class="productLines" id="1">
+  <div class="productLines">
       <div><span for="productName">IronShirt</span></div>
       <div><p>$<span class="productPrice" name="productPrice" id="productPrice1">15.00</span></p></div>
       <div><input name="productQuantity" id="productQuantity1" type="number" value="1"></div>
-      <div><p>$<span name="lineTotal" id="lineTotal1" >0</span></p></div>
+      <div><p>$<span class= "lineTotal" name="lineTotal" id="lineTotal1" >0</span></p></div>
       <div><button class=" btn btn-delete" type="button">Delete</button></div>
     </div>
+  </div>
 
   <div class="calculatePrices">
     <button class="btn btn-success" id="calc-prices-button" type="button">Calculate Prices</button>
@@ -46,6 +48,10 @@
 
   <div class="totalPurchase">
     <h2>Total Purchase: $<span name="totalPurchase" id="totalPurchase" >0</span></h2>
+  </div>
+
+  <div class="createItem">
+    <button class="btn btn-success" id="new-item-create" type="button">Create Item</button>
   </div>
 
   <script type="text/javascript" src="./js/index.js"></script>

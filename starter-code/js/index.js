@@ -1,6 +1,6 @@
-function deleteItem(e){
+// function deleteItem(e){
 
-}
+// }
 
 function getPriceByProduct(itemNode){
 
@@ -10,9 +10,9 @@ function updatePriceByProduct(productPrice, index){
 
 }
 
-function getTotalPrice() {
+// function getTotalPrice() {
 
-}
+// }
 
 function createQuantityInput(){
 
@@ -34,9 +34,9 @@ function createNewItemRow(itemName, itemUnitPrice){
 
 }
 
-function createNewItem(){
+// function createNewItem(){
 
-}
+// }
 
 window.onload = function(){
   var calculatePriceButton = document.getElementById('calc-prices-button');
@@ -44,7 +44,8 @@ window.onload = function(){
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
   calculatePriceButton.onclick = getTotalPrice;
-  // createItemButton.onclick = createNewItem;
+  createItemButton.onclick = createNewItem;
+  deleteButtons.onclick = deleteItem;
 
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
@@ -58,50 +59,42 @@ function getTotalPrice(){
       var productPrice = document.getElementById('productPrice'+i);
       var productQuantity = document.getElementById('productQuantity'+i);
       var lineTotal = document.getElementById('lineTotal'+i);
-    
+  
       lineTotal.innerHTML = Number(productPrice.innerHTML)*Number(productQuantity.value);
     }
 
-    var prices = Number(document.getElementsByClassName('productPrice')[0].innerHTML);
-    console.log(prices);
-
+    var lineTotals = document.getElementsByClassName('lineTotal');
+    var lineTotalSum = 0;
     var totalPurchase = document.getElementById('totalPurchase');
-    console.log(totalPurchase);
-
-    for(i=0; i<2; i++){
-      var lineTotal;
-      var totalPurchase;
-
-      lineTotal +=  Number(document.getElementsByClassName('productPrice')[i].innerHTML);
-      totalPurchase = document.getElementById('totalPurchase');
+    
+    for(i=0; i< lineTotals.length; i++){
       
-      totalPurchase.innerText = lineTotal;
-      
+      lineTotalSum +=  Number(document.getElementsByClassName('lineTotal')[i].innerHTML);
     }
+
+    totalPurchase.innerText = lineTotalSum;
 };
 
-// theButton.onclick = function(){
+function createNewItem(){
 
-//   var howManyTimes = document.getElementById('quantity');
-//   var quantity = howManyTimes.value;
+  var newRow = document.createElement('div');
   
-//   if(quantity ===""){quantity = 1};
+  newRow.innerHTML = `
+  <div class="productLines">
+      <div><span for="productName">IronShirt</span></div>
+      <div><p>$<span class="productPrice" name="productPrice" >15.00</span></p></div>
+      <div><input name="productQuantity" type="number" value="1"></div>
+      <div><p>$<span class= "lineTotal" name="lineTotal">0</span></p></div>
+      <div><button class=" btn btn-delete" type="button">Delete</button></div>
+    </div>`
 
-//   for(var i = 0; i < quantity; i++){
+    document.getElementById('productLinesContainer').appendChild(newRow);
 
-//   var theInput = document.getElementById('the-input');
+}
 
-//   var whatToAppend = theInput.value;
+function deleteItem(e){
 
-//   var newNew = document.createElement('li');
+  console.log(event.currentTarget.parentNode.parentNode);
+  event.currentTarget.parentNode.parentNode.remove(); 
 
-//   newNew.innerHTML = whatToAppend;
-
-//   theList.appendChild(newNew);
-//   }
-
-//   theInput.value = "";
-//   howManyTimes.value = "";
-
-
-// }
+}

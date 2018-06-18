@@ -94,3 +94,12 @@ input {
   height: 60px;
 
 }
+
+.createItem{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  height: 100px;
+
+}
