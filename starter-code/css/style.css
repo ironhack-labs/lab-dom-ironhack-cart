@@ -1,5 +1,6 @@
 input {
   border: solid 1px black;
+  width: 100%;
 }
 
 .btn {
@@ -25,17 +26,33 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #cf000f;
+  border-color: #cf000f;
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+.product {
+  margin-bottom: 20px;
+}
+
+.product div {
+  display: inline-block;
+  margin: 0;
+  border: 0;
+  width: 18%;
+}
+
+.new-product-inputs div {
+  width: 20%;
+  display: inline-block;
 }
