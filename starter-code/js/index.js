@@ -1,9 +1,17 @@
 function deleteItem(e){
 
 }
-
-function getPriceByProduct(itemNode){
-
+var btn = document.getElementsByClassName("btn-success");
+var price = document.getElementsByClassName("price");
+var input = document.getElementsByTagName("input");
+btn.onclick = function(){
+  getPriceByProduct();
+}
+function getPriceByProduct(){
+  var span = document.getElementsByClassName("dolar");
+  var priceInpu = price * input;
+  span.innerHTML = priceInpu;  
+  ; 
 }
 
 function updatePriceByProduct(productPrice, index){
