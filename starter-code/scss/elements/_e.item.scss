@@ -1,0 +1,27 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  align-items: center;
+  margin-bottom: 20px;
+  div {
+    width: 10%;
+
+  }
+
+
+
+}
+
+
+
+#new-item-create {
+  margin: 0 auto;
+  
+}
+
+.input-product input {
+  margin-left: 3em;
+  margin-right: 2em;
+}
+

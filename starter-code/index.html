@@ -5,10 +5,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
+  <link rel="stylesheet" href="css/main.css">
+
   <title>Ironhack cart</title>
 </head>
 <body>
+  <header>
+    <h1>Ironhack<br> Merchandising Shop</h1>
+  </header>
+  
+  <ul id="container">
+    <li class="item">
+      <div>
+        <span>Iron-bubble-head</span>
+      </div>
+      <div>
+        <span>$</span><span class="price">25.00</span>
+      </div>
+      <div>
+        <label for="QTY">QTY</label>
+        <input class="quantity" type="number">
+      </div>
+      <div>
+          <span>$</span><span class="totalPriceItem">0.00</span>
+      </div>
+      <div>
+        <button class="btn btn-delete">Delete</button>
+      </div>
+    </li>
+
+    <li class="item">
+      <div>
+        <span>IronShirt</span>
+      </div>
+      <div>
+          <span>$</span><span class="price">15.00</span>
+      </div>
+      <div>
+        <label for="QTY">QTY</label>
+        <input class="quantity" type="number">
+      </div>
+      <div>
+          <span>$</span><span class="totalPriceItem">0.00</span>
+      </div>
+      <div>
+        <button class="btn btn-delete">Delete</button>
+      </div>
+    </li>  
+  </ul>    
+
+        <!-- input item -->
+      <div class="input-product">
+        <input type="text" id="createName" placeholder="Name of product">
+        <input type="number" id="createPrice" placeholder="Price">
+        <button id="new-item-create" class="btn btn-create">Create</button>
+      </div>
+
+
+        <!-- Calculate price -->
+      <div>
+        <button id="calc-prices-button" class="btn btn-success">Calculate Prices</button>
+      </div>
+
+
+        <!-- Total price -->
+      <div>
+        <h2>Total Price: $<span id="total-cart">0</span></h2>
+      </div>
+
+
+    <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>
