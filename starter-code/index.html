@@ -4,11 +4,112 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script> -->
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
+  <title>Ironhack Shopping Cart</title>
 </head>
 <body>
+  <div class = "title">
+Ironhack Merchandising Shop
+  </div>
+  
+  <!-- SHOPPING CART -->
+  
+  <div id="cart">
+  
+  <!-- ITEM # 1 -->
+  
+    <div class="item">
+      <div class="item-name">
+        <!-- NAME OF ITEM GOES HERE -->
+        <span>Iron Bobble-head</span>
+      </div>
+
+      <div class="price">
+          <span>$ <span class="prices">25.00</span></span>
+        <!-- PRICE OF ITEM GOES HERE -->
+      </div>
+
+      <div class="qty">
+        <label>QTY </label><input class = "quantities" type = "number" value="1" min="0">
+      </div>
+
+      <div class="subtotal-container">
+        <span>$ <span class="subtotals">0.00</span></span>
+        <!-- SUBTOTAL OF ITEM * QUANTITY GOES HERE -->
+      </div>
+
+      <div class="delete-button">
+          <button class = "btn-delete btn">DELETE</button>
+      </div>
+  </div>
+
+<!-- ITEM # 2 -->
+
+<div class="item">
+    <div class="item-name">
+      <!-- NAME OF ITEM GOES HERE -->
+      <span>Iron Shirt</span>
+    </div>
+
+    <div class="price">
+        <span>$ <span class="prices">15.00</span></span>
+      <!-- PRICE OF ITEM GOES HERE -->
+    </div>
+
+    <div class="qty">
+      <label>QTY </label><input class = "quantities" type = "number" value="1" min="0">
+    </div>
+
+    <div class="subtotal-container">
+      <span>$ <span class="subtotals">0.00</span></span>
+      <!-- SUBTOTAL OF ITEM * QUANTITY GOES HERE -->
+    </div>
+
+    <div class="delete-button">
+        <button class = "btn-delete btn">DELETE</button>
+    </div>
+</div>
+
+<!-- CREATE ITEM INPUTS -->
+
+<div id="create-item">
+    <div id ="new-item-name">
+      <input id = "new-product-name" type = "text" placeholder="New Item Name">
+    </div>
+
+    <div id="new-item-price">
+        <input id = "new-product-price" type = "number" placeholder="New Product Price" min="0">
+      <!-- PRICE OF ITEM GOES HERE -->
+    </div>
+
+    <div id = "new-item-qty">
+      <label>QTY </label><input id="new-product-qty" type = "number" value="1" min="0">
+    </div>
+
+    <div id="create-button">
+        <button id="create-btn" class = "btn">CREATE</button>
+    </div>
+</div>
+
+</div>
+
+<!-- CALCULATE TOTAL PRICE BUTTON -->
+
+  <div class = "calculate-prices">
+    <button id="calculatePriceButton" class = "btn-success btn">CALCULATE PRICES</button>
+  </div>
+
+<!-- TOTAL PRICE READOUT -->
+
+  <div class = "total-price">
+    <P>TOTAL PRICE: $ <span id="grand-total"> 0.00</P>
+  </div>
+  <script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>
