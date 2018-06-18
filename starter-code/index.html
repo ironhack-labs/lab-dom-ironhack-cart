@@ -1,14 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+  
+  <div class="heading">Ironhack Merchandising Shop</div>
+  
+  <div class="productLinesHeading">
+    <div>Product</div>
+    <div>Price</div>
+    <div>Quantity</div>
+    <div>Total</div>
+    <div>Delete</div>
+  </div>
+  
+  <div id="productLinesContainer">
+  <div class="productLines">
+    <div><span for="productName">IronBubblehead</span></div>
+    <div><p>$<span class="productPrice" name="productPrice" id="productPrice0">25.00</span></p></div>
+    <div><input name="productQuantity" id="productQuantity0" type="number" value="1"></div>
+    <div><p>$<span class= "lineTotal" name="lineTotal" id="lineTotal0" >0</span></p></div>
+    <div><button class=" btn btn-delete" type="button">Delete</button></div>
+  </div>
+  
+  <div class="productLines">
+      <div><span for="productName">IronShirt</span></div>
+      <div><p>$<span class="productPrice" name="productPrice" id="productPrice1">15.00</span></p></div>
+      <div><input name="productQuantity" id="productQuantity1" type="number" value="1"></div>
+      <div><p>$<span class= "lineTotal" name="lineTotal" id="lineTotal1" >0</span></p></div>
+      <div><button class=" btn btn-delete" type="button">Delete</button></div>
+    </div>
+  </div>
+
+  <div class="calculatePrices">
+    <button class="btn btn-success" id="calc-prices-button" type="button">Calculate Prices</button>
+  </div>
+  
+  
+
+  <div class="totalPurchase">
+    <h2>Total Purchase: $<span name="totalPurchase" id="totalPurchase" >0</span></h2>
+  </div>
+
+  <div class="createItem">
+    <button class="btn btn-success" id="new-item-create" type="button">Create Item</button>
+  </div>
+
+  <script type="text/javascript" src="./js/index.js"></script>
 </body>
+
 </html>
