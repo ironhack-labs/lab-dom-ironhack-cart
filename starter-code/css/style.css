@@ -1,5 +1,41 @@
+*{
+  font-family: 'Poppins', sans-serif;
+}
+.container{
+  display: flex;
+  justify-content: center;
+}
+
+h1{
+  font-size: 2em;
+  text-align: left;
+  width: 30%;
+}
+h2{
+  text-align: center;
+}
+section{
+  margin: 0 10%
+}
+#item-container > div{
+  padding: 0 3em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.3em;
+}
+span{
+  width: 100%;
+}
+.createContainer{
+  padding: 0 3em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 input {
   border: solid 1px black;
+  text-align: right;
 }
 
 .btn {
@@ -25,17 +61,34 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #CF000F;
+  border-color: #CF000F;
 }
 
 .quantity {
   margin: 0 5px;
+}
+.prices{
+  text-align: center;
+}
+.total{
+  text-align: right;
+  margin-right: 2%;
+}
+div.div-input{
+  width: 100%
+}
+div.div-input > label {
+  display:  inline-block;
+}
+
+div.div-input > input {
+  width: 80%;
 }
