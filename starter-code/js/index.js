@@ -14,14 +14,19 @@ function getTotalPrice() {
   var precios = document.getElementsByClassName("prices");
   var cantidad = document.getElementsByName("qty");
   var totalPrecios = document.getElementsByClassName("total");
+  var tituloPrecio = document.getElementById("totalPrice");
+  var precioFinal = 0;
 
   for(var i = 0; i < precios.length; i+=1){
-    var total= 0
+    var totalProducto = 0
     var numPrecio = parseFloat(precios[i].innerHTML.replace("$",""));
     var numCantidad = parseFloat(cantidad[i].value);
-    total = numCantidad * numPrecio;
-    totalPrecios[i].innerHTML = '$'+ total.toFixed(2);
+    totalProducto = numCantidad * numPrecio;
+    precioFinal += totalProducto;
+    totalPrecios[i].innerHTML = '$'+ totalProducto.toFixed(2);
   }
+  
+  tituloPrecio.innerHTML = 'Total Price $'+ precioFinal.toFixed(2);
 }
 
 function createQuantityInput(){
