@@ -1,9 +1,13 @@
+body{
+  margin: 10px 50px;
+}
+
 input {
   border: solid 1px black;
 }
 
 .btn {
-  display: inline-block;
+  display: block;
   padding: 6px 12px;
   margin-bottom: 0;
   font-size: 14px;
@@ -28,6 +32,8 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .btn-delete {
@@ -39,3 +45,59 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+header {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+header h1{
+  text-align: center;
+}
+
+body > div {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+body .product div {
+  width: 20%;
+  text-align: center;
+}
+
+body .product div:first-child {
+  text-align: left;
+}
+
+body .product div button{
+  margin: 0 auto;
+}
+
+.product {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around
+}
+
+.create {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around
+}
+
+body .create div {
+  width: 20%;
+  text-align: center;
+}
+
+body .create div:first-child {
+  text-align: left;
+}
+
+body .create div button{
+  margin: 0 auto;
+}
+
+
