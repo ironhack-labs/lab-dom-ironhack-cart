@@ -1,10 +1,19 @@
 .item {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   padding: 20px 40px;
-  
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 
+#new-item-create {
+  margin: 0 auto;
+  
+}
+
+.input-product input {
+  margin-left: 3em;
+  margin-right: 2em;
+}
 
