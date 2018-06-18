@@ -3,15 +3,30 @@ function deleteItem(e){
 }
 
 function getPriceByProduct(itemNode){
-
+  return itemNode.getElementsByClassName("unit-cost")[0].substr(1);
 }
+
 
 function updatePriceByProduct(productPrice, index){
+  var product = document.getElementById(index);
+  var productsCost = product.getElementsByClassName("products-price")[0];
+  var quantity = product.getElementsByClassName("qty")[0];
+  productsCost.innerHTML = "$" + productPrice;
 
+  return productsCost;
 }
-
 function getTotalPrice() {
+  var products = document.getElementsByClassName("container");
+  var totalCost = 0;
+  for( var i = 0; i < products.length; i++){
+    var productPrice = getPriceByProduct(products[i]);
+    var quantity = products[i].getElementsByClassName("qty")[0];
 
+    totalCost += updatePriceByProduct(productPrice * quantity, i);
+    
+    document.getElementById("total-price").innerHTML = "$"+totalCost;
+
+  }
 }
 
 function createQuantityInput(){
