@@ -1,3 +1,4 @@
+
 input {
   border: solid 1px black;
 }
@@ -28,14 +29,68 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    height: 40px;
+    width: 150px;
+
+
+
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    height: 40px;
+    width: 150px;
+    
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+.product{
+
+display: flex;
+justify-content: space-around;
+align-items: center;
+
+
+
+}
+
+.mainTitle {
+
+  display: flex;
+  justify-content: center;
+ 
+  border: #CF000F 2px solid;
+
+  
+
+}
+
+.buttonSuccessBox{
+  display: flex;
+justify-content: center;
+
+margin-top: 30px;   
+
+}
+
+.createBox{
+  display: flex;
+
+}
+
+.createFormsBox{
+  display: flex;
+  justify-content: space-around;
+  width: 35%;
+
+}
+
+.totalPrice{
+font-size: 20px;
+
 }
