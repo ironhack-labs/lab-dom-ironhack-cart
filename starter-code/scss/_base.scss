@@ -1,13 +1,59 @@
 $black: #000000;
+$white: #fff;
+$red: #CF000F;
+$green: #36b11d;
+$green-border: #46b11d;
+$border:  #39423c;
 $header: 'Helvetica';
+$main-text: 'Source Sans Pro';
 
 body {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 16px;
     color: $black;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
 
     h1 {
         font-family: $header;
+        justify-content: flex-end;
+        width: 100%;
+        padding: 5% 5% 5% 50%;
     }
     
+    .product {
+        display: inline-flex;
+        text-align: center;
+        align-items: flex-start;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        position: relative;
+        border: 2px solid $border;
+        justify-content: space-around;
+        margin: auto;
+        padding: 3% 5%;
+        width: 100%; 
+        float: left;
+        box-sizing: border-box;
+        border: 2px solid $border;
+
+        .btn-delete {
+            border: 2% solid;
+            border-radius: 2%;
+            width: 17%;
+        }
+    }
+        .total-cost {
+            width: 100%;
+            float: left;
+            align-items: flex-start;
+            justify-content: center;
+
+        }
+        .btn-delete{
+        border: 2% solid $green-border;
+        border-radius: 2%;
+        width: 17%;
+    }
 }
