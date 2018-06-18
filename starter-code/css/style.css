@@ -1,7 +1,10 @@
+body {
+  margin: 0 auto;
+  padding: 0 auto;
+}
 input {
   border: solid 1px black;
 }
-
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -23,12 +26,17 @@ input {
   border: 1px solid transparent;
   border-radius: 4px;
 }
+.center {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
 
+}
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
-}
+  }
 
 .btn-delete {
     color: #fff;
@@ -38,4 +46,15 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 30px;
+}
+h1 {
+  display: flex;
+  justify-content: center;
 }
