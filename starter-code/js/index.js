@@ -38,7 +38,16 @@ function createQuantityInput(){
 }
 
 function createDeleteButton(){
+  wrapperElement=document.createElement("div");
+  wrapperElement.setAttribute("class", "delete-button");
+  innerElement=document.createElement("button");
+  innerElement.setAttribute("class", "btn btn-delete");
+  innerElement.innerHTML="Delete";
+  innerElement.onclick = deleteItem;
+  wrapperElement.appendChild(innerElement);
+  newWrapper.appendChild(wrapperElement);
 
+  parent.insertBefore(newWrapper, document.getElementsByClassName("new-wrapper")[0]);
 }
 
 function createQuantityNode(){
@@ -90,16 +99,7 @@ function createNewItem(e){
   newWrapper.appendChild(wrapperElement);
 
   //create an add the delete button
-  wrapperElement=document.createElement("div");
-  wrapperElement.setAttribute("class", "delete-button");
-  innerElement=document.createElement("button");
-  innerElement.setAttribute("class", "btn btn-delete");
-  innerElement.innerHTML="Delete";
-  innerElement.onclick = deleteItem;
-  wrapperElement.appendChild(innerElement);
-  newWrapper.appendChild(wrapperElement);
-
-  parent.insertBefore(newWrapper, document.getElementsByClassName("new-wrapper")[0]);
+  createDeleteButton();
 
   //clear inputs
   document.getElementById("new-name").value="";
