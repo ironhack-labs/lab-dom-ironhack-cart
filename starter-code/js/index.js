@@ -1,9 +1,20 @@
 function deleteItem(e){
-
+e.currentTarget.parentNode.parentNode.remove();
 }
 
 function getPriceByProduct(itemNode){
-
+  var total = document.getElementsByClassName('total-price-span');
+  var coste = document.getElementsByClassName('cost-span');
+  var valor = document.getElementsByClassName('units-number');
+  for (i = 0; i < valor.length; i++) {
+    if(parseInt(valor[i].value)>0){
+      total[i].innerHTML= (parseInt(coste[i].innerHTML) * parseInt(valor[i].value))+".00";
+    }
+    else{
+      total[i].innerHTML="0.00"
+    }
+  }
+   }
 }
 
 function updatePriceByProduct(productPrice, index){
