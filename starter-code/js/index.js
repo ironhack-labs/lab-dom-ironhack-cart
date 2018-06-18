@@ -1,8 +1,20 @@
-function deleteItem(e){
+var input = document.getElementById("input");
+var precio1 = document.getElementsByClassName("product")[2];
+var operation = document.getElementsByTagName("span")[0];
+var operation1 = document.getElementsByTagName("span")[1]
+var calculate = document.getElementsByClassName("btn-success");
+var borrar = document.getElementsByClassName("btn-delete");
+var div = document.getElementsByClassName("product")
+
+borrar.onclick = function deleteItem(e){
+
+  operation = 
 
 }
 
 function getPriceByProduct(itemNode){
+
+
 
 }
 
@@ -43,10 +55,10 @@ window.onload = function(){
   var createItemButton = document.getElementById('new-item-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
-  calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
+  //calculatePriceButton.onclick = getTotalPrice;
+  //createItemButton.onclick = createNewItem;
 
-  for(var i = 0; i<deleteButtons.length ; i++){
-    deleteButtons[i].onclick = deleteItem;
-  }
-};
+  //for(var i = 0; i<deleteButtons.length ; i++){
+   // deleteButtons[i].onclick = deleteItem;
+// }
+//};
