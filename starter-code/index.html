@@ -8,7 +8,212 @@
   <link rel="stylesheet" href="./css/style.css">
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
+
 </head>
 <body>
+  <div class="heading">
+        <h1 class="title"> IronHack<br>Merchandising Shop</h1>
+  </div>
+
+  <section class="wrapper">
+    <div class="product">
+
+        <p> <span class="name">IronBubble-head</span> </p>
+
+    </div>
+    </div class="cost">
+
+    <p> <span class="number">$ 25.00</span> </p>
+
+    </div>
+
+    <div class="units">
+
+        <label class="label" > QTY</label>
+        <input type="quantity-bar"  name="grey-box" onchange="getPriceByProduct();" value="0" class="barra"></input>
+
+
+
+    </div>
+
+    <span class="total-price">
+
+        <span class="multiplication"> 0.00</span>
+        
+    </span>
+    
+
+    <div class="delete">
+
+        <button  type="button" class="btn-delete" name="button">Delete</button>
+
+    </div>
+
+
+  </section>
+
+  <section class="wrapper">
+    <div class="product">
+
+        <p> <span class="name">IronShirt</span> </p>
+
+    </div>
+    </div class="cost">
+
+    <p> <span class="number">$ 15.00</span> </p>
+
+    </div>
+
+    <div class="units">
+
+        <label class="label"> QTY</label>
+        <input type="quantity-bar" onchange="getPriceByProduct();" name="grey-box" value="0" class="barra"></input>
+
+
+
+    </div>
+
+    <span class="total-price">
+
+        <span class="multiplication"> 0.00</span>
+        
+    </span>
+
+    <div class="delete">
+
+        <button  type="button" class="btn-delete" name="button">Delete</button>
+
+    </div>
+
+
+  </section>
+  <section class="wrapper">
+    <div class="product">
+
+        <p> <span class="name">IronCup</span> </p>
+
+    </div>
+    </div class="cost">
+
+    <p> <span class="number">$ 10.00</span> </p>
+
+    </div>
+
+    <div class="units">
+
+        <label class="label"> QTY</label>
+        <input type="quantity-bar" onchange="getPriceByProduct();" name="grey-box" value="0" class="barra"></input>
+
+
+
+    </div>
+
+    <span class="total-price">
+
+        <span class="multiplication"> 0.00</span>
+        
+    </span>
+    
+
+    <div class="delete">
+
+        <button  type="button" class="btn-delete" name="button">Delete</button>
+
+    </div>
+
+
+  </section>
+  <section class="wrapper">
+    <div class="product">
+
+        <p> <span class="name">IronSticker</span> </p>
+
+    </div>
+    </div class="cost">
+
+    <p> <span class="number">$ 1.00</span> </p>
+
+    </div>
+
+    <div class="units">
+
+        <label class="label"> QTY</label>
+        <input type="quantity-bar" onchange="getPriceByProduct();" name="grey-box" value="0" class="barra"></input>
+
+
+
+    </div>
+
+    <span class="total-price">
+
+        <span class="multiplication"> 0.00</span>
+        
+    </span>
+
+    <div class="delete">
+
+        <button  type="button" class="btn-delete" name="button">Delete</button>
+
+    </div>
+
+
+  </section>
+  <section class="wrapper">
+    <div class="product">
+
+        <p> <span class="name">IronAxe</span> </p>
+
+    </div>
+    </div class="cost">
+
+    <p> <span class="number">$ 100.00</span> </p>
+
+    </div>
+
+    <div class="units">
+
+        <label class="label"> QTY</label>
+        <input type="quantity-bar" onchange="getPriceByProduct();" name="grey-box" value="0" class="barra"></input>
+
+
+
+    </div>
+
+    <div class="total-price">
+
+        <span class="multiplication">  0.00</span>
+        
+    </div>
+
+    <span class="delete">
+
+        <button  type="button" class="btn-delete" name="button">Delete</button>
+
+    </span>
+
+
+  </section>
+
+</div>
+
+<div class ="create">
+
+    <input type="product-bar"  name="grey-box"  class="barra2"></input>
+    <input type="product-bar"  name="grey-box"  class="barra3"></input>
+  
+  <button class="new-item-create"  type="button" class="btn-create" name="calculatePriceButton">Create</button>
+
+</div>
+
+<div class="total">
+
+    <button id="calc-prices-button"  type="button" class="btn-success" name="calculatePriceButton" >Calculate Prices</button>
+    <h2>Total Price: <span id="buy">0.00</span></h2>
+
+</div>
+
+
+
+
 </body>
 </html>
