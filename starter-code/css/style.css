@@ -82,13 +82,13 @@ input {
   text-align: right;
   margin-right: 2%;
 }
-div.div-input{
-  width: 100%
-}
 div.div-input > label {
   display:  inline-block;
 }
 
 div.div-input > input {
   width: 80%;
+}
+div div{
+  display: inline-block;
 }
