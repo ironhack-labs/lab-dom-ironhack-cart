@@ -38,4 +38,75 @@ input {
 
 .quantity {
   margin: 0 5px;
+} 
+
+body {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body > * {
+  height: fit-content;
+  width: fit-content;
+}
+
+.cart-items {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.single-item {
+  padding-top: 5px;
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+.item-price-field, .item-total-field, .item-quantity {
+  width: 90px;
+}
+
+.item-name-field {
+  width: 300px;
+}
+
+.total-price-field, .total-price {
+  width: 300px;
+}
+.new-item-section, .new-item {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin-top: 3px;
+}
+
+.new-item-name {
+  margin-left: 43px;
+}
+
+.new-item-price-field {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 197px;
+  width: 90px;
+}
+
+.new-item-price {
+  width: 70px;
+}
+
+.calculate-button-section {
+  padding-top: 10px;
+}
+
+.create-button {
+  border-radius: 5px;
+  margin-left: 497px;
 }
