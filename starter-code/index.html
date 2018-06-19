@@ -9,6 +9,42 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
+
 <body>
+<div>
+  <div> 
+    <h1>Ironhack <br>Merchandising Shop</h1>
+  </div>  
+
+  <div class=itemInfo>
+    <span class=itemName>IronBubble-head</span>
+    <span class="price">$25</span>
+    <form>
+        <label for="quantity">QTY</label>
+        <input type="number" min="0" class="quantity" name="orderQty" value="0">
+    </form>
+    <span class="totalPricePerItem"><!--getPriceByProduct--></span>
+    <button type="button" class="btn btn-delete">Delete</button>
+  </div>
+
+  <div class=itemInfo>
+      <span class=itemName>IronShirt</span>
+      <span class="price">$10</span>
+      <form>
+          <label for="quantity">QTY</label>
+          <input type="number" min="0" class="quantity" name="orderQty" value="0">
+      </form>
+      <span class="totalPricePerItem"><!--getPriceByProduct--></span> 
+      <button type="button" class="btn btn-delete">Delete</button>
+  </div>
+
+<div class="wrapper"> 
+<button type="button" class="btn" id="btn-success">Calculate Prices</button>  
+</div>
+
+<h2>Total Price: <span id="totalItemsPrice">$<!--getTotalPrice-->  </span></h2>
+
+</div>  
 </body>
 </html>
