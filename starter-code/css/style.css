@@ -1,3 +1,16 @@
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
 input {
   border: solid 1px black;
 }
@@ -38,4 +51,9 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
 }
