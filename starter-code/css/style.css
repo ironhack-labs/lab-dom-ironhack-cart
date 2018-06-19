@@ -1,3 +1,29 @@
+/* --- layout --- */
+
+body .container {
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+  margin-bottom: 30px;
+}
+
+body .container div {
+  width: 20%;
+}
+
+body h1 {
+  margin-left: 45%;
+  width: 360px;
+  margin-top: 40px;
+}
+
+body .calc-price {
+  padding-top: 40px;
+  margin-left: 45%;
+}
+
+/* --- formats --- */
+
 input {
   border: solid 1px black;
 }
