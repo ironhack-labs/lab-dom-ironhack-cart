@@ -1,3 +1,16 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0 20px;
+  padding: 0;
+}
+
 input {
   border: solid 1px black;
 }
@@ -38,4 +51,24 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+body div {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+#calculate {
+  background-color: #5cb85c;
+  display: block;
+  width: 20%;
+  color: #fff;
+  margin: auto;
+  padding: 8px 0px;
+  margin-top: 15px;
+}
+
+#delete {
+  background-color: lightcoral;
+  padding: 8px 5px;
 }

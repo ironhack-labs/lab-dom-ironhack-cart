@@ -1,4 +1,26 @@
-function deleteItem(e){
+function main () {
+  var button = document.getElementById("calculate");
+  var x = 0;
+  var itClicks = function (){
+    var div = document.querySelector("#total-div");
+    var deleter = document.querySelector("#total");
+    console.log("getting sum");
+    var input = document.querySelector("#input");
+    var total = document.createElement('span');
+    total.innerText = input.value*25.00;
+    x++;
+    if (x === 1) {
+      div.removeChild(deleter);
+    }
+    
+    div.appendChild(total);
+  }
+  button.addEventListener('click',itClicks);
+}
+
+window.addEventListener('load', main);
+/*
+function deleteItem(){
 
 }
 
@@ -50,3 +72,4 @@ window.onload = function(){
     deleteButtons[i].onclick = deleteItem;
   }
 };
+*/
