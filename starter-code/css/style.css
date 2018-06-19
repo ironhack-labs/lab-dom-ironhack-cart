@@ -1,3 +1,16 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+.total {
+  text-align: center;
+}
+
+/*---------*/
+
 input {
   border: solid 1px black;
 }
