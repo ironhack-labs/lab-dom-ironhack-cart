@@ -46,25 +46,29 @@ function getTotalPrice() {
   totalLabel.textContent = "$" + totalPrice.toFixed(2);
 }
 
-function createQuantityInput(){
 
-}
+// //Provided functions not used due to cloning of original item row object
+// //at the beginning of the program
 
-function createDeleteButton(){
+// function createQuantityInput(){
 
-}
+// }
 
-function createQuantityNode(){
+// function createDeleteButton(){
 
-}
+// }
 
-function createItemNode(dataType, itemData){
+// function createQuantityNode(){
 
-}
+// }
 
-function createNewItemRow(itemName, itemUnitPrice){
+// function createItemNode(dataType, itemData){
 
-}
+// }
+
+// function createNewItemRow(itemName, itemUnitPrice){
+
+// }
 
 function createNewItem(e, cartItemTemplate){
   var newItemName = e.currentTarget.parentNode.parentNode.children[0].children[0].value;
@@ -99,6 +103,7 @@ window.onload = function(){
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
   calculatePriceButton.onclick = getTotalPrice;
+  
   createItemButton.onclick = function(e) {
     createNewItem(e, cartItemTemplate);
   }
