@@ -10,5 +10,79 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <div>
+    <h1 class="title">Ironhack Merchandising Shop</h1>
+
+
+
+
+    <div class="itemRow">
+
+      <div class="itemName">
+      <span>IronBubble-Head</span>
+      </div>
+      <div class="itemCost">
+          <span id="itemCost">$25.00</span>
+      </div>
+      <div class="quantity">
+        <label>QTY 
+          <input 
+            id="quantity"
+            class="input"
+            type="number"
+            placeholder="0"
+            onchange="updatePriceByProduct(itemCost, itemRow)"
+            min="0"
+            >
+        </label>
+      </div>
+      <div id="totalPrice" class="totalProductPrice">
+        <span> $0.00</span>
+      </div>
+      <div>
+        <button id="deleteButton" class="btn-delete">Delete</button>
+      </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="itemRow">
+        <div class="itemName">
+        <span>IronShirt</span>
+        </div>
+        <div class="itemCost">
+            <span id="secondItemCost">$15.00</span>
+        </div>
+        <div class="quantity">
+          <label>QTY 
+            <input 
+              id="secondQuantity"
+              class="input"
+              type="number"
+              placeholder="0"
+              onchange="changestuff()"
+              min="0"
+              >
+          </label>
+        </div>
+        <div id="secondTotalPrice" class="totalPrice">
+          <span> $0.00</span>
+        </div>
+        <div>
+          <button id="secondDeleteButton" class="btn-delete">Delete</button>
+        </div>
+      </div>
+
+
+
+    <div class="secondRow">
+        <button id="calculatePricesButton" class="btn-success">Calculate Prices </button>
+      <div/>
+    </div>
+  </div>
 </body>
 </html>
