@@ -1,6 +1,10 @@
 function deleteItem(e){
-
+  function removeAll(){
+    document.getElementById("check-list").innerHTML = "IronBubble-head";
 }
+}
+/*function removeItem(item){
+  var itemToRemove = document.getElementById(item);*/
 
 function getPriceByProduct(itemNode){
 
@@ -50,3 +54,5 @@ window.onload = function(){
     deleteButtons[i].onclick = deleteItem;
   }
 };
+
+window.addEventListener(‘load’, main);
