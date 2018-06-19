@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"> 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,5 +10,66 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <h1>Ironhack Merchandising Shop</h1>
+  <div class="cart-items" id="cart-items">
+    <div class="single-item">
+      <div class="item-name-field">
+        <span class="item-name">IronBubble-head</span>
+      </div>
+      <div class="item-price-field">
+        <span class="item-price">$25.00</span>
+      </div>
+      <div class="item-quantity-field">
+        <label for="item-quantity">QTY</label>
+        <input class="item-quantity" type="number" name="item-quantity" value="0" min="0"> 
+      </div>
+      <div class="item-total-field">
+        <span class="item-total">$0.00</span>
+      </div>
+      <div class="item-delete-field">
+        <button class="btn btn-delete" >Delete</button>
+      </div>
+    </div>
+    <div class="single-item">
+      <div class="item-name-field">
+        <span class="item-name">IronShirt</span>
+      </div>
+      <div class="item-price-field">
+        <span class="item-price">$15.00</span>
+      </div>
+      <div class="item-quantity-field">
+        <label for="item-quantity">QTY</label>
+        <input class="item-quantity" type="number" name="item-quantity" value="0" min="0"> 
+      </div>
+      <div class="item-total-field">
+        <span class="item-total">$0.00</span>
+      </div>
+      <div class="item-delete-field">
+        <button class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+  </div>
+  <div class="new-item-section">
+    <div class="new-item">
+      <div class="new-item-name-field">
+        <input type="text" class="new-item-name">
+      </div>
+      <div class="new-item-price-field">
+        <label class="new-item-price-label">$ </label>
+        <input type="number" class="new-item-price" value="0" min="0">
+      </div>
+      <div class="new-item-filler1"></div>
+      <div class="new-item-filler2"></div>
+      <div class="new-item-create-field">
+        <button class="create-button" id="new-item-create">Create</button>
+      </div>
+    </div>    
+  </div>
+  <div class="calculate-button-section">
+    <button class="btn btn-success" id="calc-prices-button">Calculate Prices</button>
+  </div>
+  <div class="total-price-field">
+    <h2>Total Price:<span class="total-price" id="total-price">$0</span></h2>
+  </div>
 </body>
 </html>
