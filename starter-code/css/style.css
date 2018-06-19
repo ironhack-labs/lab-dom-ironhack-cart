@@ -2,6 +2,30 @@ input {
   border: solid 1px black;
 }
 
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.shopping {
+  display: flex;
+  flex-direction: row;
+  background-color: lightblue;
+  width: 100%;
+  justify-content: space-around;
+
+}
+
+.product-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 70%;
+  align-items: center;
+
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
