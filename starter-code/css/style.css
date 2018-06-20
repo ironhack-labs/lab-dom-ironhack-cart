@@ -1,5 +1,35 @@
+.frontEnd {
+  padding: 1em;
+  margin: auto;
+  width: 100%;
+}
+
+.frontEnd h2 {
+  display: flex;
+  justify-content: flex-end;
+  margin: 3% 27% 5% 0;
+}
+
+.shoppingCart {
+  /* display: flex;
+  justify-content: space-between;
+  margin: 5%; */
+  width: 100%;
+  clear: both;
+  padding: 2em;
+}
+
+.col-xs-5 {
+  width: calc(100% / 5);
+  float: left;
+}
+
 input {
   border: solid 1px black;
+}
+
+.itemQty {
+  margin: 0 5px;
 }
 
 .btn {
@@ -36,6 +66,30 @@ input {
     border-color: #CF000F;
 }
 
-.quantity {
-  margin: 0 5px;
+.row {
+  width: 100%;
+  clear: both;
+  padding: 2em;
+}
+
+/* #createNew input {
+  width: 100%;
+} */
+
+#createBtn {
+  float: right;
+  text-align: center;
+  margin-right: 204px;
+}
+
+.calculate {
+  text-align: center;
+  margin-top: 100px;
+  clear: both;
+}
+
+.totalPrice {
+  display: flex;
+  justify-content: center;
+  margin-top: -3%;
 }
