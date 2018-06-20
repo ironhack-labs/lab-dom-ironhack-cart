@@ -2,6 +2,23 @@ input {
   border: solid 1px black;
 }
 
+.wrapper {
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 890px;
+  margin: 0 auto;
+}
+
+div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -51,3 +68,4 @@ span {
 .product {
   float: left;
 }
+

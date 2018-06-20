@@ -30,11 +30,8 @@ function getTotalPrice() {
 };
 
 
-
 function createQuantityInput(){
   var span = document.createElement("SPAN"); 
-
-
 
   var qtyInput = document.createElement("INPUT");
   var text = document.createTextNode("QTY");
@@ -62,37 +59,65 @@ function createDeleteButton(){
   return span;
 }
 
-// function createQuantityNode(){
+function createQuantityNode(){
+  var span = document.createElement("SPAN");
 
-// }
+  var productValue = document.createTextNode(itemUnitPrice);
+  var itemUnitPrice = document.getElementById("productPrice").value;
+  
+  var totalPrice = itemUnitPrice * productValue;
+  span.appendChild(totalPrice);
+
+  return span;
+}
 
 // function createItemNode(dataType, itemData){
 
 // }
 
 function createNewItemRow(itemName, itemUnitPrice){
+
+  // Div que recoge todo el producto
   var div = document.createElement("DIV");
+  div.setAttribute("class", "product");
   document.body.appendChild(div);
   
+  // nombre del producto
+  
+  var productTextSpan = document.createElement("SPAN");
+  div.appendChild(productTextSpan);
   var p = document.createElement("P");
-  div.appendChild(p);
+  productTextSpan.appendChild(p);
 
   var nameText = document.createTextNode(itemName);
   p.appendChild(nameText);
 
-  
+  // precio unitario del nuevo producto
   var pValue = document.createElement("P");
+  pValue.setAttribute("class", "unit-price");
   div.appendChild(pValue);
+
   var productValue = document.createTextNode(itemUnitPrice);
   pValue.appendChild(productValue);
 
-
+  // cantidad de productos
   var quantity = createQuantityInput();
+  quantity.setAttribute("class", "quantity");
   div.appendChild(quantity);
+
+  // precio total del nuevo producto
+  var pProductSpan = document.createElement("SPAN");
+  div.appendChild(pProductSpan);
+
+  var pProductTotalPrice = document.createElement("P");
+  pProductTotalPrice.setAttribute("class", "total-price");
+  pProductSpan.appendChild(pProductTotalPrice);
+
+  var productTotalPrice = document.createTextNode("$0.00");
+  pProductTotalPrice.appendChild(productTotalPrice);
 
   var btn = createDeleteButton();
   div.appendChild(btn);
-
 
 }
 
@@ -100,7 +125,7 @@ function createNewItem(){
 
   var itemName = document.getElementById("productName").value;
   var itemUnitPrice = document.getElementById("productPrice").value;
-  createNewItemRow(itemName, itemUnitPrice);
+  createNewItemRow(itemName, "$" + itemUnitPrice);
 
   
 };
