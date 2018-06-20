@@ -1,5 +1,6 @@
 input {
   border: solid 1px black;
+  
 }
 
 .btn {
@@ -38,4 +39,53 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.product-list {
+  margin: 50px 0;
+  text-align: center;
+}
+.product-list > button{
+  margin-top:50px;
+}
+.product-list .product{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+}
+
+.title {
+  font-size: 36px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 45%;
+}
+.add{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+}
+.add button{
+  margin-left: 35px;
+}
+.add > div {
+  width: 100px;
+}
+.product > div {
+  width: 20%;
+  margin-bottom: 20px;
+}
+
+.product .qty input {
+  width: 180px;
+}
+#create-item {
+  border-radius: 6%;
+  border-color: lightgrey;
+}
+
+#total-price{
+  text-align: center;
 }
