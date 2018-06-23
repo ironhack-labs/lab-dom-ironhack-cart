@@ -49,7 +49,7 @@ input {
 }
 
 .cart-element div{
-  margin:3%;
+  margin: 10px 3%;
 }
 
 h1{
@@ -57,5 +57,33 @@ h1{
 }
 
 .total-price{
+  text-align: center;
+}
+
+#products-board{
+  width:800px;
+	height:200px;
+	padding:10px;
+	margin:0px auto;
+}
+
+.product-item{
+	width:110px;
+	height:20px;
+	float:left;
+	margin:5px;
+	padding:10px 5px;
+	font-size:1.2em;
+  background-color: gray;
+  border: 1px solid black;
+  text-align: center;
+}
+
+#basket{
+  border: 1px solid black;
+  margin: 10px;
+}
+
+h2{
   text-align: center;
 }
