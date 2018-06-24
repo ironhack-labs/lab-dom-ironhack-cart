@@ -1,3 +1,28 @@
+
+
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product{
+  display: flex;
+  flex-direction: row;
+}
+
+.product div{
+  display: flex;
+  width:100;
+  flex:1;
+  margin: 2vh 2vw;
+  align-items: center;
+}
+
+span{
+  flex:1;
+}
+
 input {
   border: solid 1px black;
 }
@@ -11,7 +36,7 @@ input {
   line-height: 1.42857143;
   text-align: center;
   white-space: nowrap;
-  vertical-align: middle;
+  vertical-align: bottom;
   -ms-touch-action: manipulation;
   touch-action: manipulation;
   cursor: pointer;
@@ -39,3 +64,4 @@ input {
 .quantity {
   margin: 0 5px;
 }
+ 
