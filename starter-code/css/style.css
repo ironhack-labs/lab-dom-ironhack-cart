@@ -1,3 +1,32 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.container-create {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.container2 {
+  display: flex;  
+  justify-content: center;
+  flex-direction: column;
+  width: 20%;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.container-create div {
+  padding: 2em;
+}
+
+.container div,h2 {
+  padding: 2em;
+}
+
 input {
   border: solid 1px black;
 }
@@ -34,6 +63,12 @@ input {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+}
+
+.btn-create {
+  color: #fff;
+  background-color: grey;
+  border-color: grey;
 }
 
 .quantity {
