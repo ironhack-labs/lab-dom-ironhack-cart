@@ -10,5 +10,47 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <header>
+    <h1>Ironhack Merchandising Shop</h1>
+  </header>
+  <section class="cart" id="cart">
+      <div class="row cart-header">
+          <div class="col-20">Name</div>
+          <div class="col-20">Price</div>
+          <div class="col-20">Quantity</div>
+          <div class="col-20">Total Price</span></div>
+          <div class="col-20"></div>
+      </div>
+      <div class="row product-info">
+        <div class="col-20"><span class="product-name">IronBubble-head</span></div>
+        <div class="col-20">$<span class="unit-price">25.00</span></div>
+        <div class="col-20"><span>QTY</span> <input class="qty" type="text" value="0"></div>
+        <div class="col-20">$<span class="product-price-total">0.00</span></div>
+        <div class="col-20"><button class="btn btn-delete">Delete</button></div>
+      </div>
+      <div class="row product-info">
+          <div class="col-20"><span class="product-name">IronShirt</span></div>
+          <div class="col-20">$<span class="unit-price">15.00</span></div>
+          <div class="col-20"><span>QTY</span> <input class="qty" type="text" value="0"></div>
+          <div class="col-20">$<span class="product-price-total">0.00</span></div>
+          <div class="col-20"><button class="btn btn-delete">Delete</button></div>
+        </div>
+  </section>
+  <section class="total-prices-section">
+      <div class="row align-center">
+          <button class="btn btn-success" id="calc-prices-button">Calculate prices</button>
+        </div>
+        <div class="row align-center">
+          <div class="total-price"><h2>Total price: $<span class="cart-total">0.00</span></h2></div>
+        </div>
+  </section>
+  <section class="add-prducts">
+    <div class="row space-between">
+      <h2>Create a new product</h2>
+      <input id="new-product-name" placeholder="Product name">
+      <input type="text" id="new-product-price" placeholder="Product price">
+      <button id="new-item-create" class="btn btn-success">Create</button>
+    </div>
+  </section>
 </body>
 </html>
