@@ -1,52 +1,78 @@
-function deleteItem(e){
+var realTotalPrice = document.getElementById('spanTotal')
+console.log('total price div', realTotalPrice)
 
-}
+var singleProductCost = document.getElementsByClassName('price')
+console.log=('single product price', singleProductCost)
 
-function getPriceByProduct(itemNode){
+var theQuantity= document.getElementsByClassName('qty')
+console.log('quantity', theQuantity)
 
-}
+var totalProductPrice=document.getElementsByClassName('totalProductPrice');
+console.log('total price price', totalProductPrice);
 
-function updatePriceByProduct(productPrice, index){
+var calcPricesButton = document.getElementById('calc-prices-button')
 
-}
 
-function getTotalPrice() {
 
-}
+// var calculatePriceButton = document.getElementById('calc-prices-button');
+// var productPrice = document.getElementsByClassName("itemPrice");
 
-function createQuantityInput(){
+// // calculatePriceButton.onclick = function (){
+// //   console.log("clicked")
+// // }
+// var elementList=document.querySelectorAll("itemPrice");
+// console.log(elementList)
+// function deleteItem(e){
 
-}
+// }
 
-function createDeleteButton(){
+// function getPriceByProduct(itemNode){
 
-}
+// }
 
-function createQuantityNode(){
+// function updatePriceByProduct(productPrice, index){
 
-}
+// }
 
-function createItemNode(dataType, itemData){
 
-}
 
-function createNewItemRow(itemName, itemUnitPrice){
+// function getTotalPrice() {
 
-}
+// }
 
-function createNewItem(){
+// function createQuantityInput(){
 
-}
+// }
 
-window.onload = function(){
-  var calculatePriceButton = document.getElementById('calc-prices-button');
-  var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');
+// function createDeleteButton(){
 
-  calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
+// }
 
-  for(var i = 0; i<deleteButtons.length ; i++){
-    deleteButtons[i].onclick = deleteItem;
-  }
-};
+// function createQuantityNode(){
+
+// }
+
+// function createItemNode(dataType, itemData){
+
+// }
+
+// function createNewItemRow(itemName, itemUnitPrice){
+
+// }
+
+// function createNewItem(){
+
+// }
+
+// // window.onload = function(){
+// //   var calculatePriceButton = document.getElementById('calc-prices-button');
+// //   var createItemButton = document.getElementById('new-item-create');
+// //   var deleteButtons = document.getElementsByClassName('btn-delete');
+// // 
+// //   calculatePriceButton.onclick = getTotalPrice;
+// //   createItemButton.onclick = createNewItem;
+// // 
+// //   for(var i = 0; i<deleteButtons.length ; i++){
+// //     deleteButtons[i].onclick = deleteItem;
+// //   }
+// // };
