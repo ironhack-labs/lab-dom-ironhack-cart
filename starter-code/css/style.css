@@ -38,4 +38,22 @@ input {
 
 .quantity {
   margin: 0 5px;
+  display:flex;
+}
+
+
+.header{
+  text-align: center;
+}
+
+
+
+.section{
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.calculate{
+  text-align: center;
 }
