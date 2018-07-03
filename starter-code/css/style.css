@@ -1,3 +1,19 @@
+html {
+  font-size: 10px;
+}
+
+.main-header, h2 {
+  text-align: center;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
 input {
   border: solid 1px black;
 }
@@ -28,6 +44,8 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    display: block;
+    margin: 2em auto;
 }
 
 .btn-delete {
@@ -38,4 +56,30 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.wrapper {
+  padding: 2em 3em;
+  font-size: 1.6em;
+  width: 100%;
+  margin: 0 auto;
+  /* display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-grow: 1; */
+}
+
+.col-5 {
+  float: left;
+  width: 20%; 
+}
+
+input {
+  width: 50%;
+}
+
+.col-5-right {
+  float:right;
+  width: 20%;
+  text-align: left;
 }
