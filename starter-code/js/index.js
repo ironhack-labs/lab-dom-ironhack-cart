@@ -12,6 +12,16 @@ function updatePriceByProduct(productPrice, index){
 
 function getTotalPrice() {
 
+  var unitPrice=document.getElementsByClassName("product-price");
+  var qtItems = document.getElementsByClassName("total-of-products");
+  var totalPrice = document.getElementsByClassName("total-price");
+  var totalCost=0;
+
+  for(var i = 0; i < totalPrice.length; i++){
+    totalCost += unitPrice[i].innerHTML*qtItems[i].value;
+    totalPrice[0].innerHTML = totalCost;
+
+
 }
 
 function createQuantityInput(){
