@@ -1,3 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  /*font size is in percents to not overwrite user browser settings. It is 62,5% because we want it to be calculated to 10px (100% / default font size 16px) */
+  font-size: 62.5%;
+  font-family: "Lato", sans-serif;
+}
+
+body {
+  box-sizing: border-box;
+  line-height: 1.6;
+  font-weight: 300;
+
+  font-size: 2rem;
+  font-family: inherit;
+}
+
 input {
   border: solid 1px black;
 }
@@ -25,17 +46,36 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #cf000f;
+  border-color: #cf000f;
+  transform: scale()
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+.product {
+  display: flex;
+  justify-content: space-around;
+  margin: 3rem;
+}
+
+.total-price__section{
+  display: flex;
+  flex-direction: column;
+  width: 50rem;
+  align-items: center;
+
+  margin: 0 auto;
+}
+
+#calc-prices-button {
 }

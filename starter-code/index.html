@@ -1,14 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+  <!-- 
+    A div with one label and one input, where the user will indicate how many units they will buy.
+    A div with a span, showing the total price for this product. This number should be the result of multiplying the amount of units multiplied by the price of one unit of that product. The default total price should be 0.
+    A div with a delete button, to remove the product from the list. -->
+  <div id="shop">
+    <div class="product product-1">
+      <div>
+        <span id="product-title-1">IronBubble-head</span>
+        <span>$</span>
+        <span id='product-price-1'>25</span>
+      </div>
+      <div>
+        <label for="product">QUANTITY</label>
+        <input id='input-1' type="number" name="product" class="quantity" />
+      </div>
+      <div>
+        <span>$</span>
+        <span class="sum" id='sum-1'>0</span>
+      </div>
+      <button class="btn-delete">DELETE PRODUCT</button>
+    </div>
+    <div class="product product-2">
+      <div>
+        <span id="product-title-2">IronShirt</span>
+        <span>$</span>
+        <span id='product-price-2'>20</span>
+      </div>
+      <div>
+        <label for="product">QUANTITY</label>
+        <input id='input-2' type="number" name="product" class="quantity" />
+      </div>
+      <div>
+        <span>$</span>
+        <span class="sum" id='sum-2'>0</span>
+      </div>
+      <button class="btn-delete">DELETE PRODUCT</button>
+    </div>
+  </div>
+
+  <!-- NEW PRODUCT -->
+
+  <div class="new-product">
+    <div>
+      <label for="product-name">PRODUCT NAME</label>
+      <input id='new-product-name' type="text" name="product-name" />
+
+      <label for="product-product-">PRODUCT PRICE</label>
+      <input id='new-product-price' type="number" name="product-price" />
+    </div>
+    <button id="new-item-create">CREATE NEW PRODUCT</button>
+
+  </div>
+
+  <div class="total-price__section">
+    <h2>TOTAL PRICE: $
+      <span id="total-price-value">0.00</span>
+    </h2>
+    <button id='calc-prices-button'>CALC PRICES</button>
+  </div>
+  <script type="text/javascript" src="./js/index.js"></script>
 </body>
+
 </html>
