@@ -52,7 +52,7 @@ input {
     display: flex;
     justify-content: space-between;
     width: 80vw;
-    margin: 100px auto;
+    margin: 50px auto;
     align-items: center;
 }
 
@@ -61,4 +61,27 @@ input {
     flex-direction: column;
     /* margin: 0 auto; */
     align-items: center;
+}
+
+.add-product {
+    display: flex;
+    width: 80vw;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#create-item {
+    color: #fff;
+    background-color: green;
+    border-color: green;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 15px;
+}
+
+.currency {
+    /* only at desktop */
+    margin-right: -50px;
+    padding-right: 0;
 }
