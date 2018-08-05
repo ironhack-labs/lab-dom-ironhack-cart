@@ -16,7 +16,7 @@
     A div with a span, showing the total price for this product. This number should be the result of multiplying the amount of units multiplied by the price of one unit of that product. The default total price should be 0.
     A div with a delete button, to remove the product from the list. -->
   <div id="shop">
-    <div class="product product-1">
+    <div class="product" id="product-1">
       <div>
         <span id="product-title-1">IronBubble-head</span>
         <span>$</span>
@@ -30,9 +30,9 @@
         <span>$</span>
         <span class="sum" id='sum-1'>0</span>
       </div>
-      <button class="btn-delete">DELETE PRODUCT</button>
+      <button id="delete-1" class="btn-delete">DELETE PRODUCT</button>
     </div>
-    <div class="product product-2">
+    <div class="product" id="product-2">
       <div>
         <span id="product-title-2">IronShirt</span>
         <span>$</span>
@@ -46,7 +46,7 @@
         <span>$</span>
         <span class="sum" id='sum-2'>0</span>
       </div>
-      <button class="btn-delete">DELETE PRODUCT</button>
+      <button id="delete-2" class="btn-delete">DELETE PRODUCT</button>
     </div>
   </div>
 
@@ -57,7 +57,7 @@
       <label for="product-name">PRODUCT NAME</label>
       <input id='new-product-name' type="text" name="product-name" />
 
-      <label for="product-product-">PRODUCT PRICE</label>
+      <label for="product-price">PRODUCT PRICE</label>
       <input id='new-product-price' type="number" name="product-price" />
     </div>
     <button id="new-item-create">CREATE NEW PRODUCT</button>
