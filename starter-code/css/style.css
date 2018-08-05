@@ -2,6 +2,56 @@ input {
   border: solid 1px black;
 }
 
+.container {
+  width: 90%;
+  min-width: 800px;
+  margin: 0 auto;
+}
+
+.info-container {
+  width: 25%;
+  margin: 50px auto 0;
+}
+
+.item {
+  font-size: 0;
+  margin: 30px 0;
+}
+
+.row {
+  width: 100%;
+}
+
+.col-xs-2 {
+  font-size: 14px;
+  display: inline-block;
+  width: 16.5%;
+}
+
+.col-xs-3 {
+  font-size: 14px;
+  display: inline-block;
+  width: 24.5%;
+}
+
+.col-xs-5 {
+  font-size: 14px;
+  display: inline-block;
+  width: 41%;
+}
+
+.col-xs-4 {
+  font-size: 14px;
+  display: inline-block;
+  width: 33%;
+}
+
+.col-xs-7 {
+  font-size: 14px;
+  display: inline-block;
+  width: 58%;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -25,15 +75,15 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #cf000f;
+  border-color: #cf000f;
 }
 
 .quantity {
