@@ -85,3 +85,27 @@ input {
     margin-right: -50px;
     padding-right: 0;
 }
+
+.product-name {
+    width: 15%;
+}
+
+.currency {
+    width: 5%;
+}
+
+.unit-cost {
+    width: 12%;
+}
+
+label {
+    width: 5%;
+}
+
+.input-qty {
+    width: 15%;
+}
+
+.total-cost {
+    width: 12%;
+}
