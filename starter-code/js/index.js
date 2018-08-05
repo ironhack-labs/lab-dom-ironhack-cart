@@ -22,17 +22,6 @@
     var calculatePriceButton = document.getElementById("total-price-value");
     calculatePriceButton.innerHTML = allPrices.toFixed(2);
   }
-  function updatePriceByProduct(productPrice, index) {}
-
-  function createQuantityInput() {}
-
-  function createDeleteButton() {}
-
-  function createQuantityNode() {}
-
-  function createItemNode(dataType, itemData) {}
-
-  function createNewItemRow(itemName, itemUnitPrice) {}
 
   function createNewItem() {
     let newProductName = document.querySelector("#new-product-name");
@@ -79,7 +68,7 @@
     element.parentElement.removeChild(element);
 
     //Update total price
-    getTotalPrice()
+    getTotalPrice();
   }
 
   function updateFields() {
@@ -95,14 +84,16 @@
   }
 
   window.onload = function() {
-    var createItemButton = document.getElementById("new-item-create");
-    var deleteButtons = document.getElementsByClassName("btn-delete");
+    let createItemButton = document.getElementById("new-item-create");
+    let deleteButtons = Array.from(document.getElementsByClassName("btn-delete"));
 
     updateFields();
-    createItemButton.onclick = createNewItem;
 
-    for (var i = 0; i < deleteButtons.length; i++) {
-      deleteButtons[i].onclick = deleteItem;
-    }
+    createItemButton.onclick = createNewItem;
+    document.querySelector(".new-product").onkeyup = function(e) {
+      if (e.keyCode == 13) {
+        createNewItem()
+      }
+    };    
   };
 })();
