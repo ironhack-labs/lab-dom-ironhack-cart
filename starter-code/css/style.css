@@ -1,3 +1,24 @@
+.content-wrapper, .interaction{
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.product-wrapper, .create-product-wrapper{
+
+  width: 80vw;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  margin: 15px 15px 15px 15px;
+
+}
+
+
 input {
   border: solid 1px black;
 }
@@ -39,3 +60,16 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.product-name-wrapper {
+  width: 15vw;
+}
+
+.calculate-prices{
+  display: flex;
+  width: 30vw;
+  height: 4vh;
+  justify-content: space-around;
+  align-items: center;
+}
+
