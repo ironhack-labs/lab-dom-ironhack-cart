@@ -15,12 +15,57 @@ body {
   line-height: 1.6;
   font-weight: 300;
 
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-family: inherit;
+}
+
+h1 {
+  font-size: 4rem;
+  text-align: center;
+  font-family: "Caveat", cursive;
+}
+
+#shop {
+  margin: 5rem;
+}
+
+.shop-header{
+  margin-bottom: 4rem;
+  border-bottom: 1px rgb(0, 17, 92) solid;
+
+  font-size: 2rem;
+}
+
+.shop-header li{
+  list-style: none;
 }
 
 input {
   border: solid 1px black;
+}
+.quantity {
+  width: 10rem;
+}
+
+.product {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.product-title {
+  grid-column: 1/2;
+
+  font-size: 2rem;
+}
+
+.product-quantity {
+  grid-column: 2/3;
+}
+
+.new-product {
+  display: flex;
+  justify-content: space-around;
 }
 
 .btn {
@@ -45,37 +90,15 @@ input {
   border-radius: 4px;
 }
 
-.btn-success {
-  color: #fff;
-  background-color: #5cb85c;
-  border-color: #4cae4c;
-}
-
 .btn-delete {
   color: #fff;
   background-color: #cf000f;
   border-color: #cf000f;
-  transform: scale()
+  transform: scale();
 }
 
-.quantity {
-  margin: 0 5px;
-}
 
-.product {
-  display: flex;
-  justify-content: space-around;
-  margin: 3rem;
-}
-
-.total-price__section{
-  display: flex;
-  flex-direction: column;
-  width: 50rem;
-  align-items: center;
-
-  margin: 0 auto;
-}
-
-#calc-prices-button {
+.total-price__section {
+  text-align: center;
+  margin-bottom: 5rem;
 }

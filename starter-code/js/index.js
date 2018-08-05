@@ -43,19 +43,19 @@
       let div = document.createElement("div");
       div.innerHTML = `<div class="product" id="product-${numberOfProducts +
         1}">
-      <div>
+      <div class="product-title">
         <span>${newProductName.value}</span>
         <span>$</span>
         <span id='product-price-${numberOfProducts + 1}'>${
         newProductPrice.value
       }</span>
       </div>
-      <div>
-        <label for="product">QUANTITY</label>
+      <div class="product-quantity">
+        <label for="product">Quantity</label>
         <input id='input-${numberOfProducts +
           1}' type="number" name="product" class="quantity" />
       </div>
-      <div>
+      <div class="product-sum">
         <span>$</span>
         <span class="sum" id='sum-${numberOfProducts + 1}'>0</span>
       </div>
@@ -95,14 +95,11 @@
   }
 
   window.onload = function() {
-    var calculatePriceButton = document.getElementById("calc-prices-button");
     var createItemButton = document.getElementById("new-item-create");
     var deleteButtons = document.getElementsByClassName("btn-delete");
 
     updateFields();
-    calculatePriceButton.onclick = getTotalPrice;
     createItemButton.onclick = createNewItem;
-    calculatePriceButton.onclick = getTotalPrice;
 
     for (var i = 0; i < deleteButtons.length; i++) {
       deleteButtons[i].onclick = deleteItem;
