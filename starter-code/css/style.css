@@ -52,7 +52,7 @@ input {
     display: flex;
     justify-content: space-between;
     width: 80vw;
-    margin: 0 auto;
+    margin: 100px auto;
     align-items: center;
 }
 
