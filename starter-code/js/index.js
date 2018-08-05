@@ -9,10 +9,17 @@ function getTotalPrice() {
     var unitCost = Array.from(document.querySelectorAll('.unit-cost')); //retrieves unit price
     var totalCostEl = Array.from(document.querySelectorAll('.total-cost')); //retrieves total cost
     var unitQuantity = Array.from(document.querySelectorAll('.input-qty input'));
+    var totalPrice = document.querySelector('#total-price');
+    const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
+    //HOW TO DO WITH FOR EACH?
+    var calcTotal = 0;
     for (var i = 0; i < cartItem.length; i++) {
-        totalCostEl[i].innerHTML = parseFloat(unitCost[i].innerHTML) * unitQuantity[i].value;
+        totalCostEl[i].innerHTML = unitCost[i].innerHTML * unitQuantity[i].value;
+        calcTotal += parseFloat(totalCostEl[i].innerHTML); //how to do with reduce method??
     }
+
+    totalPrice.innerHTML = calcTotal; //calculates the total cost of all items in cart
 
     return totalCostEl;
 }
