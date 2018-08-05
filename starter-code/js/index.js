@@ -5,16 +5,16 @@ function getPriceByProduct(itemNode) {}
 function updatePriceByProduct(productPrice, index) {}
 
 function getTotalPrice() {
-    var unitCost = document.querySelectorAll('.unit-cost'); //retrieves unit price
-    var totalCostEl = document.querySelectorAll('.total-cost'); //retrieves total cost
-    // var cartItem = Array.from(document.querySelectorAll('.cart-item'));
-    var unitQuantity = document.querySelectorAll('.input-qty input');
-    // console.log(unitQuantity);
-    var curTotal = 0;
+    var cartItem = Array.from(document.querySelectorAll('.cart-item')); //retrieves unit price
+    var unitCost = Array.from(document.querySelectorAll('.unit-cost')); //retrieves unit price
+    var totalCostEl = Array.from(document.querySelectorAll('.total-cost')); //retrieves total cost
+    var unitQuantity = Array.from(document.querySelectorAll('.input-qty input'));
 
-    totalCostEl.forEach(function() {});
+    for (var i = 0; i < cartItem.length; i++) {
+        totalCostEl[i].innerHTML = parseFloat(unitCost[i].innerHTML) * unitQuantity[i].value;
+    }
 
-    totalCostEl.innerHTML = parseFloat(unitCost.innerHTML) * unitQuantity.value; //it works querySelector - DO NOT DELETE***
+    return totalCostEl;
 }
 
 function createQuantityInput() {}
