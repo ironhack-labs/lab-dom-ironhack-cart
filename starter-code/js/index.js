@@ -65,6 +65,7 @@ function createQuantityInput() {
   var quantityInput = document.createElement("input");
   quantityInput.value = 0;
   quantityInput.type = "number"
+  quantityInput.min = 0;
 
   qInput.appendChild(qty);
   qInput.appendChild(quantityInput);
