@@ -2,6 +2,12 @@ input {
   border: solid 1px black;
 }
 
+body {
+  margin: 5%;
+}
+
+div .fl
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -38,4 +44,9 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.flex-box {
+  display: flex;
+  align-content: space-around;
 }
