@@ -1,52 +1,66 @@
-function deleteItem(e){
+window.onload = function(){
 
-}
+// function deleteItem(e){
 
-function getPriceByProduct(itemNode){
 
-}
+// }
 
-function updatePriceByProduct(productPrice, index){
+// function getPriceByProduct(itemNode){
 
-}
+// }
+
+// function updatePriceByProduct(productPrice, index){
+
+// }
 
 function getTotalPrice() {
+  console.log("coucou");
+  var itemUnit = document.querySelector("input").value;
+  var itemPrice = document.querySelector(".cost-per-unit").innerHTML;
 
+  var ro = itemUnit * itemPrice;
+  document.querySelector(".total").innerHTML = "$" + ro;
 }
 
-function createQuantityInput(){
+var calculatePriceButton = document.querySelector('#calc-prices-button');
 
+calculatePriceButton.onclick = function() {
+  getTotalPrice();
 }
 
-function createDeleteButton(){
 
-}
 
-function createQuantityNode(){
 
-}
+// var newStudd= document.up
+// function createQuantityInput(){
 
-function createItemNode(dataType, itemData){
+// }
 
-}
+// function createDeleteButton(){
 
-function createNewItemRow(itemName, itemUnitPrice){
+// }
 
-}
+// function createQuantityNode(){
 
-function createNewItem(){
+// }
 
-}
+// function createItemNode(dataType, itemData){
 
-window.onload = function(){
-  var calculatePriceButton = document.getElementById('calc-prices-button');
-  var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');
+// }
 
-  calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
+// function createNewItemRow(itemName, itemUnitPrice){
 
-  for(var i = 0; i<deleteButtons.length ; i++){
-    deleteButtons[i].onclick = deleteItem;
-  }
+// }
+
+// function createNewItem(){
+
+// }
+//   var createItemButton = document.getElementById('new-item-create');
+//   var deleteButtons = document.getElementsByClassName('btn-delete');
+
+//   createItemButton.onclick = createNewItem;
+
+//   for(var i = 0; i<deleteButtons.length ; i++){
+//     deleteButtons[i].onclick = deleteItem;
+//   }
 };
