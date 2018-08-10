@@ -19,12 +19,17 @@ function getTotalPrice() {
 
   // Obtenemos el elemento de la columna total por producto - Array
   var totalByProduct = document.getElementsByClassName("total-by-product");
-
+  var totalPrice = document.getElementById("total-price");
+  var total = 0;
   for (i = 0; i < inputValue.length; i++) {
+    var antTotal = total;
+    total = inputValue[i].value * valueQ[i].innerHTML;
     // Calculo del precio total por artículo
-    var total = inputValue[i].value * valueQ[i].innerHTML;
-     totalByProduct[i].innerHTML = total;
+    totalByProduct[i].innerHTML = total;
+    // Calculo de Precio Total
+    totalPrice.innerHTML = total + antTotal;
   };
+
 
 }
 

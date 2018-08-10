@@ -1,5 +1,9 @@
 input {
+  padding: 5px;
   border: solid 1px black;
+  width: 35%;
+  border-radius: 7px;
+  text-align: center;
 }
 
 .btn {
@@ -42,8 +46,9 @@ input {
   margin: 0 5px;
 }
 
-div {
-  
+.div-center-calc {
+  display: flex;
+  justify-content: center;
 }
 
 h1 {
@@ -53,8 +58,11 @@ h1 {
 }
 
 .fila {
+  padding: 5px;
 margin: 30px 30px;
 display: flex;
+justify-content: flex-start;
+background-color: lightgray;
   /* justify-content: space-around; */
   /* flex-wrap: nowrap; */
 }
