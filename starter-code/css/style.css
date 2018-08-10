@@ -27,7 +27,8 @@ input {
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
-    border-color: #4cae4c;
+    border-color: #4cae4c; 
+    text-align: center;
 }
 
 .btn-delete {
@@ -38,4 +39,45 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.product {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.calculate-prices {
+  text-align: center;
+  margin: 5%;
+}
+
+.product-name, .one-unit-cost, .result,  .quantity, .product-name-input, .one-unit-cost-input {
+  width: 20%;
+  
+}
+
+h1{
+  margin-left: 40%;
+
+}
+
+.product-input {
+  justify-content: flex-start;
+  
+}
+
+.product-name-input, .one-unit-cost-input {
+  width: 15%;
+  margin-right: 1%;
+  margin-left: 1%;
+}
+
+.create-btn {
+  margin-left: 59%;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding-top: 0;
+  padding-bottom: 0;
+
 }
