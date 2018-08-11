@@ -1,7 +1,9 @@
 input {
   border: solid 1px black;
 }
-
+body {
+  text-align: center;
+}
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -25,17 +27,27 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #cf000f;
+  border-color: #cf000f;
 }
 
 .quantity {
   margin: 0 5px;
+}
+.title {
+  height: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.item {
+  display: inline-block;
+  width: 15%;
+  height: 100px;
 }
