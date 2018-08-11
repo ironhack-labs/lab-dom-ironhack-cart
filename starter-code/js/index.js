@@ -111,14 +111,13 @@ function createNewItem() {
   var input = document.getElementsByClassName("container")[0];
   var name = document.getElementById("input-name");
   var price = document.getElementById("input-price");
-  input.appendChild(createNewItemRow(name.value, price.value));
+  var newDiv = createNewItemRow(name.value, price.value);
+  var lastChild = document.getElementsByClassName("div-add")[0];
+  input.insertBefore(newDiv, lastChild);
 
+  //Clean inputs
   name.value = '';
   price.value = 0;
-
-  var parent = document.getElementsByClassName("container")[0];
-  var lastChild = document.getElementsByClassName("div-add")[0];
-  parent.insertBefore(input, lastChild);
 }
 
 window.onload = function() {
