@@ -25,7 +25,7 @@ function getTotalPrice() {
     allPrices.push(parseFloat(costs[i].innerHTML.replace("$", "")));
     allQuantities.push(parseInt(quantities[i].value));
     price = allPrices[i] * allQuantities[i];
-    totales[i].innerHTML = "$" + price;
+    totales[i].innerHTML = "$" + parseFloat(price).toFixed(2);
     totalPrices += price;
   }
 
@@ -34,7 +34,7 @@ function getTotalPrice() {
 
 function createQuantityInput(totalPrices) {
   var h2Tag = document.getElementsByTagName("h2");
-  h2Tag[0].innerHTML = "Total Price: $" + totalPrices;
+  h2Tag[0].innerHTML = "Total Price: $" + parseFloat(totalPrices).toFixed(2);
 }
 
 function createDeleteButton() {
@@ -79,7 +79,7 @@ function createCostNode(itemUnitPrice) {
   var div = document.createElement("div");
   var span = document.createElement("span");
   span.className = "unit-price";
-  span.innerHTML = "$" + parseFloat(itemUnitPrice);
+  span.innerHTML = "$" + parseFloat(itemUnitPrice).toFixed(2);
   div.appendChild(span);
 
   return div;
