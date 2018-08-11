@@ -44,7 +44,7 @@ h1 {
   text-align: center;
 }
 
-.container {
+.wraper {
   padding: 0;
   margin: 5% 0;
   display: flex;
@@ -52,8 +52,20 @@ h1 {
   justify-content: space-around;
 }
 
-.div-btn-success, .div-total {
+h2, .div-btn-success {
   display: flex;
   justify-content: center;
   margin: 2% 0;
+}
+
+.product-name {
+  min-width: 117px;
+}
+
+.div-add {
+  padding: 0;
+  margin: 5% 0;
+  display: flex;
+  align-items: left;
+  justify-content: space-evenly;
 }
