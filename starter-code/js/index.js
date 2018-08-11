@@ -1,7 +1,10 @@
 function deleteItem(e) {
   var container = document.getElementsByClassName("container")[0];
-  currentParent = e.path[2];
-  container.removeChild(currentParent);
+  //currentParent = e.path[2];
+  //container.removeChild(currentParent);
+  currentParent = e.currentTarget.parentNode;
+  div = currentParent.parentNode;
+  container.removeChild(div);
   return getTotalPrice();
 }
 
