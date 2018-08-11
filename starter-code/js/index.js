@@ -113,6 +113,9 @@ function createNewItem() {
   var price = document.getElementById("input-price");
   input.appendChild(createNewItemRow(name.value, price.value));
 
+  name.value = '';
+  price.value = 0;
+
   var parent = document.getElementsByClassName("container")[0];
   var lastChild = document.getElementsByClassName("div-add")[0];
   parent.insertBefore(input, lastChild);
