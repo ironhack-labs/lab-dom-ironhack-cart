@@ -39,3 +39,24 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+
+h1{
+  width: 600px;
+  margin: 100px auto;
+}
+
+.calculate,.total-price{
+  width: 300px;
+  margin: 50px auto;
+}
+
+.row{
+  justify-content: center;
+  margin: 20px auto;
+}
+
+body{
+  background: darkslategray;
+  color: bisque;
+}
