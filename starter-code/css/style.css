@@ -25,38 +25,41 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
-}
-
-.quantity {
-  margin: 0 5px;
+  color: #fff;
+  background-color: #CF000F;
+  border-color: #CF000F;
 }
 
 
-h1{
+h1 {
   width: 600px;
   margin: 100px auto;
 }
 
-.calculate,.total-price{
-  width: 300px;
-  margin: 50px auto;
+#calculate, #total-price {
+  margin: 30px 40px;
 }
 
-.row{
+.row {
   justify-content: center;
   margin: 20px auto;
 }
 
-body{
+.add-item .col{
+  margin-left: 25px;
+  padding: 0px;
+}
+
+
+
+/* NEED TO DELETE BEFORE FINAL COMMIT  */
+body {
   background: darkslategray;
   color: bisque;
 }
