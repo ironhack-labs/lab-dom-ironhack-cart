@@ -4,14 +4,6 @@ function deleteItem(e){
  getTotalPrice();
 }
 
-function getPriceByProduct(itemNode){
-
-}
-
-function updatePriceByProduct(productPrice, index){
-
-}
-
 function getTotalPrice() {
   var prices  = document.getElementsByClassName('price');
   var quantities = document.getElementsByClassName('quantity');
