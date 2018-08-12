@@ -9,6 +9,32 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
-<body>
+<body id='parent'>
+  <h1>La narcotiendita</h1>
+  <div class="lista">
+  <div class="wrapper">
+    <div><span>Chicles con droga</span></div>
+    <div><span class="precio">$53</span></div>
+    <div><label for="">CANT.</label><input type="text" class="input"></div>
+    <div><span class="total"></span></div>
+    <div><button class="btn btn-delete">Delete</button></div>
+  </div>
+  <div class="wrapper">
+    <div><span>Boings con mariguana</span></div>
+    <div><span class="precio">$87</span></div>
+    <div><label for="">CANT.</label><input type="text" class="input"></div>
+    <div><span class="total"></span></div>
+    <div><button class="btn btn-delete">Delete</button></div>
+  </div>
+  </div>
+  <div class="wrapper">
+    <div><input type="text" id="new-name"></div>
+    <div><input type="text" id="new-price"></div>
+    <div><button class="btn btn-create" id="new-item-create">Create</button></div>
+  </div>
+  <div>
+    <button class="btn btn-success" id="calc-prices-button">Calculate prices</button>
+    <h2 id="sumasuma">Total Price: <span>$0</span></h2>
+  </div>
 </body>
 </html>
