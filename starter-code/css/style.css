@@ -46,6 +46,12 @@ input {
   flex-flow: row wrap;
   justify-content: space-around;
 }
+.col{
+  width: 100vw;
+}
+.col-5{
+  width: 20%;
+}
 
 body{
   text-align: center;
