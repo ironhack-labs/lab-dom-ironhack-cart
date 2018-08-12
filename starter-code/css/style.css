@@ -22,6 +22,8 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+  
+  
 }
 
 .btn-success {
@@ -39,3 +41,15 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.produit{
+  border: 2px solid red;
+  display: flex;
+  justify-content: space-around;
+}
+
+/*.produit2{
+  border: 2px solid red;
+  display: flex;
+  justify-content: space-around;
+} */
