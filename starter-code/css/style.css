@@ -1,3 +1,8 @@
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
 input {
   border: solid 1px black;
 }
@@ -30,6 +35,11 @@ input {
     border-color: #4cae4c;
 }
 
+.align-btn {
+  display: flex;
+  justify-content: center;
+}
+
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
@@ -38,4 +48,8 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+h1{
+  text-align: center;
 }
