@@ -9,6 +9,77 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+
+  <header>
+    <h1>Ironhack Merchandising Shop</h1>
+  </header>
+  <div id="existingItems">
+    <div class="item">
+      <div>
+        <span class="itemName">IronBubble-head</span>
+      </div>
+      <div>
+        $
+        <span class="itemPrice">25.00</span>
+      </div>
+      <div>
+        <label>QTY
+          <input type="number" placeholder="0" value="1" class="itemQuantity quantity">
+        </label>
+      </div>
+      <div>
+        <span class="itemTotal">$0.00</span>
+      </div>
+      <div>
+        <button class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+  
+    <div class="item">
+      <div>
+        <span>Ironshirt</span>
+      </div>
+      <div>
+        $
+        <span class="itemPrice">15.00</span>
+      </div>
+      <div>
+        <label>QTY
+          <input type="number" placeholder="0" value="0" class="itemQuantity quantity">
+      </label>
+      </div>
+      <div>
+        <span class="itemTotal">$0.00</span>
+      </div>
+      <div>
+        <button class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+  </div>
+  
+  <div id="newItem">
+    <div>
+      <input type="text" class="newName" placeholder="Name">
+    </div>
+    <div>
+      <input type="number" class="newPrice" placeholder="Price">
+    </div>
+    <div></div>
+    <div></div>
+    <div>
+      <button class="btn" id="new-item-create">Create</button>
+    </div>
+  </div>
+
+  <footer>
+    <div>
+    <button class="btn btn-success" id="calc-prices-button">Calculate Prices</button>
+    </div>
+    <div>
+        <h2>Total Price: <span id="totalPrice">$0</span></h2>
+    </div>
+  </footer>
 </body>
 </html>
