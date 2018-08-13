@@ -1,6 +1,5 @@
 function deleteItem() {
   var parent = document.getElementById("body");
-  var deleteFile = document.getElementsByClassName("fila");
   var i = 0
   for (i; i < deleteButtons.length; i++) {
     deleteButtons[i].onclick = function () {
@@ -10,11 +9,12 @@ function deleteItem() {
       var removeMid = event.currentTarget.parentElement;
       var removePar = removeMid.parentElement;
       parent.removeChild(removePar);
+      // Se vuelve a llamar a la funcion para recalcular el precio
+      getTotalPrice();
     };
 
 
-    // Se vuelve a llamar a la funcion para recalcular el precio
-    getTotalPrice();
+
   }
 
 
@@ -39,6 +39,10 @@ function getTotalPrice() {
   var totalByProduct = document.getElementsByClassName("total-by-product");
   var totalPrice = document.getElementById("total-price");
   var total = 0;
+
+  // If cuando se borraron todos los elementos regresa 0 en suma
+  if (inputValue.length == 0) totalPrice.innerHTML = 0;
+
   for (i = 0; i < inputValue.length; i++) {
     var antTotal = total;
     total = inputValue[i].value * valueQ[i].innerHTML;
@@ -84,10 +88,10 @@ calculatePriceButton.onclick = getTotalPrice;
 // createItemButton.onclick = createNewItem;
 
 
-// for (var i = 0; i < deleteButtons.length; i++) {
-//   deleteButtons[i].onclick = deleteItem;
-//   console.log(deleteButtons[i])
-// }
+for (var i = 0; i < deleteButtons.length; i++) {
+  deleteButtons[i].onclick = deleteItem;
+  console.log(deleteButtons[i])
+}
 deleteItem();
 
 // };
