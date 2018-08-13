@@ -1,4 +1,22 @@
-function deleteItem(e) {
+function deleteItem() {
+  var parent = document.getElementById("body");
+  var deleteFile = document.getElementsByClassName("fila");
+  var i = 0
+  for (i; i < deleteButtons.length; i++) {
+    deleteButtons[i].onclick = function () {
+      // El elemento padre esta dos niveles arriba que button
+      // se sube con removeMid al primer nivel div y
+      // con removePar hasta la clase "fila" que es la fila padre a eliminar
+      var removeMid = event.currentTarget.parentElement;
+      var removePar = removeMid.parentElement;
+      parent.removeChild(removePar);
+    };
+
+
+    // Se vuelve a llamar a la funcion para recalcular el precio
+    getTotalPrice();
+  }
+
 
 }
 
@@ -56,16 +74,20 @@ function createNewItemRow(itemName, itemUnitPrice) {
 function createNewItem() {
 
 }
+var deleteButtons = document.getElementsByClassName('btn-delete');
 
-window.onload = function () {
-  var calculatePriceButton = document.getElementById('calc-prices-button');
-  var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');
+// window.onload = function () { - SE ELIMINA EL window.onload COLOCANDO EL JS EN EL INDEX.HTML HASTA ABAJO EN EL BODY
+var calculatePriceButton = document.getElementById('calc-prices-button');
+// var createItemButton = document.getElementById('new-item-create');
 
-  calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
+calculatePriceButton.onclick = getTotalPrice;
+// createItemButton.onclick = createNewItem;
 
-  for (var i = 0; i < deleteButtons.length; i++) {
-    deleteButtons[i].onclick = deleteItem;
-  }
-};
+
+// for (var i = 0; i < deleteButtons.length; i++) {
+//   deleteButtons[i].onclick = deleteItem;
+//   console.log(deleteButtons[i])
+// }
+deleteItem();
+
+// };

@@ -7,11 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 
-<body>
+<body id="body">
   <h1>Ironhack Merchadising Shop</h1>
   <!-- PRIMERA FILA -->
   <div class="fila">
@@ -27,10 +26,11 @@
       <input type="text" class="qty">
     </div>
     <div>
-      $<span class="total-by-product">0.0</span>
+      $
+      <span class="total-by-product">0.0</span>
     </div>
     <div>
-      <button class="btn-delete btn">Delete</button>
+      <button class="btn-delete btn">Delete 1</button>
     </div>
   </div>
 
@@ -48,10 +48,11 @@
       <input type="text" class="qty">
     </div>
     <div>
-      $<span class="total-by-product">0.0</span>
+      $
+      <span class="total-by-product">0.0</span>
     </div>
     <div>
-      <button class="btn-delete btn">Delete</button>
+      <button class="btn-delete btn">Delete 2</button>
     </div>
   </div>
 
@@ -60,10 +61,16 @@
     <button id="calc-prices-button" class="btn-success btn">Calculate Prices</button>
   </div>
 
-<!-- TOTAL PRICE -->
-<div class="div-center-calc">
-  <h2>Total Price: $<span id="total-price">0.0</span></h2>
-</div>
+  <!-- TOTAL PRICE -->
+  <div class="div-center-calc">
+    <h2>Total Price: $
+      <span id="total-price">0.0</span>
+    </h2>
+  </div>
+
+
+  <!-- JAVASCRIPT -->
+  <script type="text/javascript" src="./js/index.js"></script>
 
 </body>
 
