@@ -2,6 +2,12 @@ input {
   border: solid 1px black;
 }
 
+h1, h2 {
+  text-align: center;
+  margin: 30px;
+}
+
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -10,7 +16,7 @@ input {
   font-weight: 400;
   line-height: 1.42857143;
   text-align: center;
-  white-space: nowrap;
+  white-space: nowra
   vertical-align: middle;
   -ms-touch-action: manipulation;
   touch-action: manipulation;
@@ -28,6 +34,13 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+
+}
+
+.green-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
 }
 
 .btn-delete {
@@ -38,4 +51,45 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px; 
+  margin-right: 40px;
+  margin-left: 40px;
+}
+
+.container2 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  margin-right: 40px;
+  margin-left: 40px;
+}
+
+.itemName {
+  padding: 20px;
+}
+
+.align {
+  width: 200px;
+}
+
+#create {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 40px;
+  margin-right: 40px;
+  margin-left: 40px;
+  padding: 0 20px;
+}
+
+.newProductName {
+  margin-right: 20px;
+}
+
+.newProductPrice {
+  margin: 0 20px;
 }

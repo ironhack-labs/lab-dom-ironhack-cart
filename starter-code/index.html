@@ -6,9 +6,82 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
+  
   <title>Ironhack cart</title>
 </head>
+
 <body>
+
+  <h1>IronHack Merchandise Shop</h1>
+
+<section class="products">
+<div class="container">
+  <div class="align">
+    <span class="itemName">IronBubble-head</span>
+  </div>
+
+  <div>
+    <span class="itemUnitPrice">25.00</span>
+  </div>
+
+  <div>
+    <label>QTY</label>
+    <input class="quantity" type="number" placeholder="0"/>
+  </div>
+
+  <div>
+    <span class="productPrice">$0.00</span>
+  </div>
+
+  
+  <button class="btn btn-delete">Delete</button>
+  
+
+</div>
+
+<div class="container2">
+  <div class="align">
+      <span class="itemName">IronShirt</span>
+  </div>
+
+  <div>
+      <span class="itemUnitPrice">15.00</span>
+    
+  </div>
+  
+  <div>
+      <label>QTY</label>
+      <input class="quantity" type="number" placeholder="0"/>
+  </div>
+  
+  <div>
+      <span class="productPrice">$0.00</span>
+  </div>
+  
+    
+  <button class="btn btn-delete">Delete</button>
+    
+
+</div>
+
+
+</section>
+
+<section id="create">
+<input class="newProductName" type="text" placeholder="new product"/>
+<input class="newProductPrice" type="text" placeholder="newProductPrice"/>
+<button id="new-item-create" class="btn">CREATE</button>
+</section>
+
+<div class="green-btn">
+<div>
+    <button id="calc-prices-button" class="btn btn-success">Calculate Prices</button>
+</div>
+</div>
+<div>
+  <h2>Total Price: <span class="sum">$0</span></h2>
+</div>
+
+<script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>
