@@ -12,12 +12,7 @@ function deleteItem() {
       // Se vuelve a llamar a la funcion para recalcular el precio
       getTotalPrice();
     };
-
-
-
   }
-
-
 }
 
 function getPriceByProduct(itemNode) {
@@ -67,25 +62,35 @@ function createQuantityNode() {
 
 }
 
-function createItemNode(dataType, itemData) {
-
+function createItemNode() {
 }
 
-function createNewItemRow(itemName, itemUnitPrice) {
-
+function createNewItemRow() {
+  var parentNode = document.querySelector("body")
+  var newRow = document.createElement("div");
+  newRow.innerHTML = '<div class="fila"><div><span>' + newItem.value + '</span></div><div>$<span class="values">' + newItemPrice.value + '</span></div><div><label for="text">QTY</label><input type="text" class="qty"></div><div>$<span class="total-by-product">0.0</span></div><div><button class="btn-delete btn">Delete</button></div></div>';
+  parentNode.insertBefore(newRow, parentNode.querySelector("#new-item-create"));
+  for (var i = 0; i < deleteButtons.length; i++) {
+    deleteButtons[i].onclick = deleteItem;
+    console.log(deleteButtons[i])
+  }
+  deleteItem();
 }
 
 function createNewItem() {
+
 
 }
 var deleteButtons = document.getElementsByClassName('btn-delete');
 
 // window.onload = function () { - SE ELIMINA EL window.onload COLOCANDO EL JS EN EL INDEX.HTML HASTA ABAJO EN EL BODY
 var calculatePriceButton = document.getElementById('calc-prices-button');
-// var createItemButton = document.getElementById('new-item-create');
+var createItemButton = document.getElementById('btn-create');
+var newItem = document.getElementById("product");
+var newItemPrice = document.getElementById("priceUnit");
 
 calculatePriceButton.onclick = getTotalPrice;
-// createItemButton.onclick = createNewItem;
+createItemButton.onclick = createNewItemRow;
 
 
 for (var i = 0; i < deleteButtons.length; i++) {

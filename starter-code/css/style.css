@@ -6,6 +6,14 @@ input {
   text-align: center;
 }
 
+.input-product {
+  padding: 5px;
+  border: solid 1px black;
+  width: 83%;
+  border-radius: 7px;
+  text-align: center;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -42,6 +50,13 @@ input {
   border-color: #CF000F;
 }
 
+.btn-create{
+  display: flex;
+  justify-items: end;
+  color: white;
+  background-color: cadetblue;
+}
+
 .quantity {
   margin: 0 5px;
 }
@@ -59,14 +74,14 @@ h1 {
 
 .fila {
   padding: 5px;
-margin: 30px 30px;
-display: flex;
-justify-content: flex-start;
-background-color: lightgray;
+  margin: 30px 30px;
+  display: flex;
+  justify-content: flex-start;
+  background-color: lightgray;
   /* justify-content: space-around; */
   /* flex-wrap: nowrap; */
 }
 
-.fila > div{
+.fila>div {
   width: 20%;
 }
