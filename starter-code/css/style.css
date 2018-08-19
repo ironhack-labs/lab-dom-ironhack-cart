@@ -24,6 +24,13 @@ input {
   border-radius: 4px;
 }
 
+#allProducts {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
@@ -38,4 +45,58 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.product {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 3vw;
+}
+
+.product>* {
+  flex: 0 1 18vw;
+  justify-self: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+.priceButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 10vw;
+}
+
+#grandTotal {
+  display: flex;
+  justify-content: center;
+}
+
+#addItems {
+  display: flex;
+  justify-content: space-between;
+  margin: 4vw 5vw;
+  
+
+}
+.inputs {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex: 1 1 18vw;
+  width: 30vw;
+}
+
+.inputs>* {
+  margin-left: 2vw;
+}
+
+.btnborder {
+  border: 1px solid black;
+  margin-right: 10vw;
 }
