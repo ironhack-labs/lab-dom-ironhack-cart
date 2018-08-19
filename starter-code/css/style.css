@@ -39,3 +39,41 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.product-list {
+display: flex;
+flex-flow: column;
+align-items: center;
+justify-content: space-evenly;
+width: 95vw;
+/* height: 80vh; */
+}
+
+.products, #new-product {
+  display: flex;
+  justify-content: space-between;
+  width: 95vw;
+  padding: 2vh 1vh;
+    align-items: center;
+}
+
+main {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 90vh;
+}
+
+.product-name {
+width: 18vw;
+}
+
+.prices, .subtotal {
+  width: 18vw;
+  margin-left: 1vw;
+}
+
+#productPrice {
+  max-width: 17vw;
+}

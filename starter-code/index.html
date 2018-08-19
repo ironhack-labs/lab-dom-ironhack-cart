@@ -10,5 +10,65 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <main>
+    <h1>Ironhack Mechandising Shop</h1>
+    <div id="product-list">
+      <div id="product1" class="products">
+        <span class="product-name">IronBubble-head</span>
+        <span class="prices" id="price1">$25.00</span>
+        <label>QTY</label>
+        <input id="qty1" class="quantities" type="number" placeholder="QTY">
+        <span class="subtotal">$0.00</span>
+        <button type="button" name="button" class="btn btn-delete">Delete</button>
+      </div>
+      <div id="product2" class="products">
+        <span class="product-name">IronShirt</span>
+        <span class="prices">$15.00</span>
+        <label>QTY</label>
+        <input id="qty2" class="quantities" type="number" placeholder="QTY">
+        <span class="subtotal">$0.00</span>
+        <button type="button" name="button" class="btn btn-delete">Delete</button>
+        </div>
+        <div id="product3" class="products">
+          <span class="product-name">IronCup</span>
+          <span class="prices">$10.00</span>
+          <label>QTY</label>
+          <input id="qty3" class="quantities" type="number" placeholder="QTY">
+          <span class="subtotal">$0.00</span>
+          <button type="button" name="button" class="btn btn-delete">Delete</button>
+        </div>
+        <div id="product4" class="products">
+          <span class="product-name">IronSticker</span>
+          <span class="prices">$1.00</span>
+          <label>QTY</label>
+          <input id="qty4" class="quantities" type="number" placeholder="QTY">
+          <span class="subtotal">$0.00</span>
+          <button type="button" name="button" class="btn btn-delete">Delete</button>
+        </div>
+        <div id="product5" class="products">
+          <span class="product-name">IronAxe</span>
+          <span class="prices">$100.00</span>
+          <label>QTY</label>
+          <input id="qty5" class="quantities" type="number" placeholder="QTY">
+          <span class="subtotal">$0.00</span>
+          <button type="button" name="button" class="btn btn-delete">Delete</button>
+        </div>
+      </div> <!-- end of product-list-->
+      <div id="new-product" class="products">
+        <div>
+          <input id="productInput"  class="product-name" placeholder="Product name">
+          <input id="productPrice" placeholder="Product price">
+        </div>
+        <button type="button" name="button" id="new-item-create">Create</button>
+        <!-- <label>QTY</label>
+        <input id="qty6" type="number" placeholder="QTY">
+        <span class="subtotal">$0.00</span>
+        <button type="button" name="button" class="btn btn-delete">Delete</button> -->
+        
+      </div>
+    <button type="button" name="button" id="calc-prices-button" class="btn btn-success">Calculate Prices</button>
+      <h2 id="total-price">Total Price: </h2>
+  </main>
+
 </body>
 </html>
