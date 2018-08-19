@@ -1,6 +1,10 @@
-input {
-  border: solid 1px black;
+body{
+  /* background-color: red */
 }
+
+/* .input1{
+
+} */
 
 .btn {
   display: inline-block;
@@ -25,9 +29,9 @@ input {
 }
 
 .btn-success {
-    color: #fff;
+    /* color: #fff;
     background-color: #5cb85c;
-    border-color: #4cae4c;
+    border-color: #4cae4c; */
 }
 
 .btn-delete {
@@ -38,4 +42,21 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.test1{
+  text-align: center
+}
+
+.table-body tr td:nth-child(3){
+  /* background-color: red */
+}
+
+.greenButton{
+  text-align: center
+}
+
+
+.allProducts{
+  /* background-color: red */
 }
