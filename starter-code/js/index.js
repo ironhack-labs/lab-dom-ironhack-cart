@@ -1,5 +1,8 @@
-function deleteItem(e){
-
+function deleteItem(event){
+  let btn = event.currentTarget;
+  let parentOfBtn = btn.parentElement;
+  console.log(parentOfBtn)
+  parentOfBtn.parentNode.removeChild(parentOfBtn);
 }
 
 function getPriceByProduct(itemNode){
@@ -29,7 +32,6 @@ function getTotalPrice() {
   var totalPrice = itemSubtotal.reduce((total, eachNum)=>{
     return total + eachNum
   },0)  //  calculate total price
-  // input total price into HTML
   let totalAllProducts = ['Total Price $',(totalPrice).toFixed(2)].join('');
   let shoppingTotal = document.getElementById('total-price');
   shoppingTotal.innerHTML =totalAllProducts;
@@ -52,6 +54,9 @@ function createDeleteButton(parentDiv){
   deleteButton.className= "btn btn-delete";
   deleteButton.innerHTML= "Delete";
   parentDiv.appendChild(deleteButton);
+  deleteButton.onclick = (event) => { // initiate delete function
+  deleteItem(event);
+  }
 }
 
 function createQuantityNode(parentDiv){
@@ -101,14 +106,14 @@ function createNewItem(){
 }
 
 window.onload = function(){
-var calculatePriceButton = document.getElementById('calc-prices-button');
-var createItemButton = document.getElementById('new-item-create');
-//   var deleteButtons = document.getElementsByClassName('btn-delete');
-
-calculatePriceButton.onclick = getTotalPrice;
-createItemButton.onclick = createNewItem;
-
-//   for(var i = 0; i<deleteButtons.length ; i++){
-//     deleteButtons[i].onclick = deleteItem;
-//   }
+  var calculatePriceButton = document.getElementById('calc-prices-button');
+  var createItemButton = document.getElementById('new-item-create');
+  var deleteButtons = document.getElementsByClassName('btn-delete');
+  calculatePriceButton.onclick = getTotalPrice;
+  createItemButton.onclick = createNewItem;
+  for(var i = 0; i<deleteButtons.length ; i++){
+    deleteButtons[i].onclick = (event) => { 
+      deleteItem(event);
+    }
+  }
 };
