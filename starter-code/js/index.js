@@ -140,15 +140,49 @@ function createNewItemRow(itemName, itemUnitPrice){
   let newItemPrice = document.getElementbyId('newPrice').value;
 
   let newRow = newWrapper.createElement('div');
-  
+
 
 
 }
 
 function createNewItem(){
 
-  let newWrapper = document.getElementById('allProducts')
+  let newWrapper = document.getElementById('allProducts');
+  let newItemInput = document.getElementById('nameInput').value;
+  let newPriceInput = document.getElementById('newPrice').value;
+  let newPriceInputNum = parseInt(newPriceInput).toFixed(2);
 
+  console.log(newItemInput);
+  console.log(newPriceInput);
+
+  var newRow = document.createElement('div');
+
+  newRow.className = "product";
+
+  newRow.innerHTML = `
+  <div>
+    
+    <span class="productName">${newItemInput}</span>
+  </div>
+  
+  <div>
+    <span class="productPrice">$${newPriceInputNum}</span>
+  </div>
+  
+  <div class="productQty">
+    <label for="qty">QTY</label>
+    <input type="number" name="qty" class="quantity">
+  </div>
+  
+  <div >
+    <span class="itemTotalPrice">Total</span>
+  </div>
+  
+  <div>
+    <button class="btn-delete">Delete</button>
+  </div>`;
+
+newWrapper.appendChild(newRow);
 }
 
 window.onload = function(){
