@@ -1,5 +1,5 @@
 function deleteItem(e){
-
+  
 }
 
 function getPriceByProduct(itemNode){
@@ -11,6 +11,34 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
+
+  let totalArray = []
+
+  let prodArray = document.getElementsByClassName('row');
+
+  for (i = 0; i < prodArray.length; i++) {
+
+    let prodPrice = prodArray[i].querySelector('.productPrice').innerHTML;
+    
+    let productQuantity = prodArray[i].querySelector('.quantity').value;
+
+    let prodTotal = (parseFloat((prodPrice.substr(1))*productQuantity));
+
+    let roundedTotal = prodTotal.toFixed(2);
+
+    totalArray.push(roundedTotal);
+
+    prodArray[i].querySelector('.totalPrice').innerHTML = `$ ${roundedTotal}`;
+  }
+
+   let grandTotal =  totalArray.reduce((sum, price)=> {
+
+     return sum + parseFloat(price);
+   },0);
+
+   let totalSpan = document.getElementById('grandTotalSpan');
+
+   totalSpan.innerHTML = `$ ${grandTotal.toFixed(2)}`
 
 }
 
