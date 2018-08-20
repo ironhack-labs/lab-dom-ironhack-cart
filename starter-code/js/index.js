@@ -102,7 +102,7 @@ function createNewLine(){
     cellPrice.setAttribute("class", "allPrices");
 
     var cellQuantity = document.createElement("td");
-    cellQuantity.setAttribute("class", "allPrices");
+    // cellQuantity.setAttribute("class", "allPrices");
     cellQuantity.innerHTML = "QTY"
 
     var input = document.createElement('input');
@@ -118,8 +118,7 @@ function createNewLine(){
 
   var cellbutton = document.createElement("td");
   // cellbutton.setAttribute('class', 'allTotal')
-  var newButton = document.createElement('button'
-)
+  var newButton = document.createElement('button')
   newButton.setAttribute('type', 'button')
   newButton.setAttribute('class', 'btn-danger')
   newButton.setAttribute('value', 'carajo')
@@ -139,9 +138,9 @@ deleteRow()
 
 }
 function clickCreate(){
-  var createButton1 = document.querySelectorAll('.createButton1')
+  var createButton1 = document.querySelector('.createButton1')
 
-  createButton1[0].onclick = function(){
+  createButton1.onclick = function(){
     createNewLine()
     var createButton = document.querySelectorAll('.createButton1')
     this.parentNode.parentNode.remove()
@@ -193,7 +192,9 @@ function createYellow(){
     rowButton.appendChild(cellEmptyTotal)
     rowButton.appendChild(cellCreateButton)
     tableBody.appendChild(rowButton)
-    var createButton1 = document.querySelectorAll('.createButton1')
+    var createButton1 = document.querySelector('.createButton1')
+    clickCreate()
+
 }
 
 // function runProgram(){
