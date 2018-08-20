@@ -10,5 +10,84 @@
   <title>Ironhack cart</title>
 </head>
 <body>
-</body>
+  <h1>Doug's Shop of Cool Doug Stuff</h1>
+
+  <div id="allProducts">
+
+    
+      <div class="product">
+        <div>
+        
+        <span class="productName">Purely Decorative Wolf</span>
+        </div>
+      
+        <div>
+          <span class="productPrice">$45.23</span>
+        </div>
+      
+        <div class="productQty">
+            <label for="qty">QTY</label>
+            <input type="number" name="qty" class="quantity">
+        </div>
+      
+        <div >
+         <span class="itemTotalPrice">Total</span>
+        </div>
+      
+        <div id="deleteButton">
+         <button class="btn-delete">Delete</button>
+        </div>
+      </div>
+
+    <div class="product">
+      <div>
+        
+        <span class="productName">Discount Chihuahua</span>
+      </div>
+      
+      <div>
+        <span class="productPrice">$25.00</span>
+      </div>
+      
+      <div class="productQty">
+        <label for="qty">QTY</label>
+        <input type="number" name="qty" class="quantity">
+      </div>
+      
+      <div >
+        <span class="itemTotalPrice">Total</span>
+      </div>
+      
+      <div id="deleteButton2">
+        <button class="btn-delete">Delete</button>
+      </div>
+    </div>
+      
+    </div>
+    
+    <div id="addItems">
+
+      <div class="inputs">
+        <label for="newName">New Item:</label>
+        <input type="text" class="nameInput" id ="nameInput" name="newName">
+        <label for="newPrice">New Price:</label>
+        <input type="number" name="newPrice" id="newPrice" class="priceInput">
+        
+      </div>
+      <div class="createButton">
+        <button id="new-item-create" class="btn btnborder">Create</button>
+        
+      </div>
+    </div>
+
+    <div id="calculatePrices" class="priceButton">
+      <button class="btn-success" id="calc-prices-button">Calculate Prices</button>
+    </div>
+
+    <div id="grandTotal">
+        <h2>Total Price: <span id="grandTotalSpan">$0</span></h2>
+    </div>
+
+      
+  </body>
 </html>
