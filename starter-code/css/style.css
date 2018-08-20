@@ -39,3 +39,29 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+h1{
+  text-align: center;
+}
+
+
+
+.row {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 3vw;
+}
+
+.priceButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 5vw;
+}
+
+#grandTotal {
+  display: flex;
+  justify-content: center;
+}
