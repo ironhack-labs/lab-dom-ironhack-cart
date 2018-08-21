@@ -39,3 +39,35 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+
+.first-class {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+button {
+  /* background-color: red;
+  color: white; */
+  color: #fff;
+    background-color: #CF000F;
+    border-color: #CF000F;
+}
+
+h1 {
+  margin-left: 500px;
+}
+
+.calculate-prices button {
+  /* background-color: green;
+  color: white;
+ display: flex; */
+ color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+ margin-top: 40px;
+ margin-left: 670px;
+ 
+}
+
