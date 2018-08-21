@@ -1,3 +1,5 @@
+/* Provided Styles */
+
 input {
   border: solid 1px black;
 }
@@ -38,4 +40,81 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+/* My Styles */
+
+h2{
+  text-align: center;
+}
+
+#main-box{
+  display: block;
+  width: 100%;
+  
+}
+
+section > div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 10px 0;
+  
+}
+
+section div > div{
+  display: flex;
+  width: 20%;
+  margin: 0 5px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;  
+}
+
+footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+footer > button{
+  
+  font-size: 0.7em;
+  margin: 0 auto;
+  color: white;
+  background-color: green;
+  
+  border: solid green;
+}
+
+main button{
+  background-color: red;
+  font-size: 0.7em;
+  border: 1px solid red;
+  color: white;
+  
+}
+
+button{
+  border-radius: 5px;
+}
+
+#div-row-new button{
+  background-color: white;
+  border-color: grey;
+  color: black;
+}
+
+main label{
+  margin-right: 3px;
+}
+
+main input{
+  padding: 0 3px;
+  max-width: 70%;
+}
+
+section{
+  max-width: 80%;
+  margin: 20px auto;
 }
