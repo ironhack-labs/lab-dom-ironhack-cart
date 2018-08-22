@@ -1,11 +1,30 @@
+.all-rows{
+  display: flex;
+  flex-direction: column;
+
+}
+h1{
+  text-align: center;
+}
+body{
+  display: flex;
+  flex-direction: column;
+}
+
+.row{
+  display: flex;
+  margin: 50px;
+  justify-content: space-between;
+
+}
 input {
   border: solid 1px black;
 }
 
 .btn {
-  display: inline-block;
+  /* display: block; */
   padding: 6px 12px;
-  margin-bottom: 0;
+  margin-bottom: 10px;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.42857143;
@@ -25,6 +44,8 @@ input {
 }
 
 .btn-success {
+    /* display: block; */
+    justify-content: center;
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
@@ -36,6 +57,32 @@ input {
     border-color: #CF000F;
 }
 
-.quantity {
+.new-product{
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+#new-item-create{
+  color: navy;
+  background-color: lightblue;
+  border-color: navy;
+}
+
+quantity {
   margin: 0 5px;
 }
+
+.calculate-btn{
+  display: flex;
+  justify-content: center;
+}
+
+#total-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
