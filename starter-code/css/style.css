@@ -1,6 +1,33 @@
+
+
+/*
+background-grey: #F4F3F4;
+button-purple: #192592
+main-titles dark-grey: #2C303F;
+paragraph grey: #5b5e6d;
+nav grey: #5b5e6d;
+*/
+
+/*======================================= GLOBAL==========*/
+
+ul {
+  list-style: none;
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+
 input {
   border: solid 1px black;
 }
+header {
+  text-align: center;
+}
+footer {
+  text-align: center;
+}
+
+/*======================================= Buttons ==========*/
 
 .btn {
   display: inline-block;
@@ -36,6 +63,27 @@ input {
     border-color: #CF000F;
 }
 
+.btn-create {
+  border-color: lightgrey;
+  padding: 2px 8px;
+}
+
+
+/*======================================= Section product ==========*/
+
+
+.product-name {
+
+  width: 200px;
+}
+
 .quantity {
   margin: 0 5px;
 }
+
+.spacer {
+  color: white;
+}
+
+
+
