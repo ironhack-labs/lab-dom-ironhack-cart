@@ -5,7 +5,7 @@ function deleteItem(e){
 function getPriceByProduct(itemNode){
 	var price = document.getElementById('product1').innerHTML;
 	price = price.slice(1);
-	console.log(price);
+	return price;
 }
 
 function updatePriceByProduct(productPrice, index){
@@ -13,11 +13,17 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-	getPriceByProduct()
+	console.log( getPriceByProduct() * createQuantityInput());
+	
 }
 
 function createQuantityInput(){
-
+	var quantity = document.getElementById('quant1').value;
+	if (quantity === ''){
+		alert('Debes introducir un número');
+		return;
+	}
+	return parseInt(quantity);
 }
 
 function createDeleteButton(){
