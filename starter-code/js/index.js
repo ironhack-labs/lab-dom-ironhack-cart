@@ -8,16 +8,8 @@ var inventory = [
     product: 'ironShirt',
     price: 20
   },
-  // {
-  //   product: 'CARAJO',
-  //   price: 100
-  // },
-
 ]
 
-// var allProducts = document.querySelectorAll('.allProducts')
-// var allPrices = document.querySelectorAll('.allPrices')
-// var
 var calculateButton = document.querySelector('.calculate')
 
 
