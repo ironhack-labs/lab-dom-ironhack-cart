@@ -3,7 +3,9 @@ function deleteItem(e){
 }
 
 function getPriceByProduct(itemNode){
-
+  var priceOne = itemNode.getElementsByClassName('price')[0].innerHTML;
+  return priceOne;
+  
 }
 
 function updatePriceByProduct(productPrice, index){
@@ -11,6 +13,10 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
+  var price= getPriceByProduct(document.getElementsByClassName("products")[0])
+  var quantity = document.getElementsByClassName("products")[0].getElementsByClassName("quantity")[0].value;
+  console.log(price*quantity)
+  document.getElementsByClassName("total-price")[0].innerHTML=price*quantity;
 
 }
 
@@ -49,4 +55,9 @@ window.onload = function(){
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
   }
+
+
+
+
+
 };
