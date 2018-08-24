@@ -39,3 +39,34 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+/*----------------------------------*/
+.master-container {
+  text-align: center;
+}
+
+.master-container h1, .button-outside {
+  margin: 40px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.container-create input, #create-button {
+  margin: 40px;
+}
+
+.container-create input {
+  float: left;
+}
+
+#create-button {
+  float: right;
+}
+
+.button-outside {
+  clear: both;
+}
