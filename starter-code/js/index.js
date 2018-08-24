@@ -1,5 +1,11 @@
 function deleteItem(e){
-
+  //alert(e.currentTarget.parentNode.nodeName);;
+  //var arrayOfProduct = document.getElementsByClassName("wrapper");
+  //var outerParent = document.getElementById("outer-box");
+  //var thisProduct = e.currentTarget.parentNode
+  //var thisProduct = arrayOfProduct[e];
+  //outerParent.removeChild(e.currentTarget.parentNode);
+  e.onclick = alert("hola");
 }
 
 function getPriceByProduct(itemNode){
