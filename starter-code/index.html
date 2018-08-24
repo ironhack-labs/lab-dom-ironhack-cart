@@ -4,11 +4,74 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+
+
   <title>Ironhack cart</title>
 </head>
 <body>
+
+  <h1 class="title1"style="text-align: center">Ironhack <br>Merchandising Shop</h1>
+
+  <table class="table">
+
+                  <thead>
+                    <tr>
+                      <th scope="col">Product</th>
+                      <th scope="col">Price</th>
+                      <th class="test1" scope="col"> Quantity </th>
+                      <th scope="col">Total</th>
+                      <th scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody class="table-body">
+
+                    <tr>
+
+                      <td class="allProducts" >ironBubble-head</td>
+                      <td class="allPrices" id="price">$25.00</td>
+                      <td>QTY<input placeholder="0" class="qty" type="number" name="" value="">   </td>
+                      <td class="allTotal"></td>
+                      <td><button type="button" class="btn-danger " >Delete</button></td>
+
+                    </tr>
+                    <tr id="tbl">
+
+                      <td class="allProducts" >ironShirt</td>
+                      <td class="allPrices" id="price">$15.00</td>
+                      <td>QTY<input placeholder="0" class="qty" type="number" name="" value="">   </td>
+                      <td class="allTotal"></td>
+                      <td><button type="button" class="btn-danger " >Delete</button></td>
+
+                    </tr>
+                    <tr>
+
+                      <td><input id="newItem" type="text" name="" value="" placeholder="Item"> </td>
+                      <td> <input id="newPrice" type="text" name="" value="" placeholder="Price"> </td>
+                      <td></td>
+                      <td class=""></td>
+                      <td><button type="button" class="createButton1 btn-warning " id="createButton" >Create</button></td>
+
+                    </tr>
+
+
+
+                  </tbody>
+
+
+
+                </table>
+
+                <div class="greenButton">
+                    <button class="calculate btn-success "type="button" name="button">calculate Prices</button>
+                </div>
+<br>
+                <div class="totalPrice">
+                  <h2 style="text-align: center">Total Price: <span id="lastTotal">$0</span></h2>
+                </div>
+
+  <script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>
