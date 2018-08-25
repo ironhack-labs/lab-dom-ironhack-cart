@@ -27,7 +27,9 @@ function getTotalPrice() {
   total=total.reduce(function(acc,actual){
     return acc+=actual
   })
-  console.log(total)
+  //console.log(total);
+  //console.log(document.getElementById('total')[0]);
+  document.getElementById('total').innerHTML = total;
 }
 
 function createQuantityInput(){
