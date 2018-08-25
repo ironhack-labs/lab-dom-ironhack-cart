@@ -80,19 +80,7 @@ function createNewItem(e){
 
   var divProduct=document.createElement("div");
   divProduct.setAttribute("class","product");
-  var divN=document.createElement("div");
-  var spanN=document.createElement("span");
-  spanN.setAttribute("class","name");
-  spanN.innerHTML=newProductName;
-  divProduct.appendChild(divN);
-  divN.appendChild(spanN);
   
-  var divP=document.createElement("div");
-  var spanP=document.createElement("span");
-  spanP.setAttribute("class","price");
-  spanP.innerHTML=newProductPrice;
-  divProduct.appendChild(divP);
-  divP.appendChild(spanP);
   
   
   divProduct.innerHTML=productTemplate;
