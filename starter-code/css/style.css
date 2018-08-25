@@ -51,21 +51,19 @@ body {
   align-content: space-around;
   margin: 30px;
 }
-.product {
+.product, .product-create {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
 }
-.product div{
+.product div, .product-create div{
   margin-right: 2px;
-  
-}
-
-.product div:first-child{
-  width: 200px;
-  
+  width: 20%;
   text-align: left;
+  
 }
 
-*{border:1px solid black;}
+
+
+*{border:1px dotted grey;}

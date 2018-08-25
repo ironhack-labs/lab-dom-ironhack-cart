@@ -19,7 +19,7 @@ function updatePriceByProduct(productPrice, index){
 
 function getTotalPrice() {
   var products = document.getElementsByClassName('products')[0].getElementsByClassName('product');
-  //console.log(products.length);
+  console.log(products.length);
   var total=[];
   for (var i = 0; i < products.length; i++) {
     var product = products[i];
@@ -50,14 +50,59 @@ function createQuantityNode(){
 }
 
 function createItemNode(dataType, itemData){
-
+  
 }
 
 function createNewItemRow(itemName, itemUnitPrice){
 
 }
 
-function createNewItem(){
+function createNewItem(e){
+  var newProductToAdd = e.currentTarget.parentNode.parentNode;
+  var newProductName = newProductToAdd.getElementsByClassName("name")[0].value;
+  var newProductPrice = newProductToAdd.getElementsByClassName("price")[0].value;
+
+  var productTemplate="<div>"+
+  " <span class=\"name\">"+newProductName+"</span>"+
+  "</div>"+
+  " <div>$<span class=\"price\">"+newProductPrice+"</span>"+
+  "</div>"+
+  "<div>"+
+  "  <label for=\"qty\">QTY</label>"+
+  "  <input class=\"quantity\" type=\"text\" name=\"qyt\" placeholder=\"0\">"+
+  "</div>"+
+  "<div>$<span class=\"total-price\">0</span>"+
+  "</div>"+
+  "<div><button class=\"btn btn-delete\">Delete</button>"+
+  "</div>";
+
+  console.log(newProductName, newProductPrice);
+
+  var divProduct=document.createElement("div");
+  divProduct.setAttribute("class","product");
+  var divN=document.createElement("div");
+  var spanN=document.createElement("span");
+  spanN.setAttribute("class","name");
+  spanN.innerHTML=newProductName;
+  divProduct.appendChild(divN);
+  divN.appendChild(spanN);
+  
+  var divP=document.createElement("div");
+  var spanP=document.createElement("span");
+  spanP.setAttribute("class","price");
+  spanP.innerHTML=newProductPrice;
+  divProduct.appendChild(divP);
+  divP.appendChild(spanP);
+  
+  
+  divProduct.innerHTML=productTemplate;
+  divProduct.getElementsByClassName("btn-delete")[0].onclick=deleteItem;
+
+  console.log(newProductToAdd);
+  newProductToAdd.parentNode.insertBefore(divProduct,newProductToAdd);
+  //newProductToAdd.parentNode.insertBefore(divProduct,null);
+  console.log(divProduct.innerHTML);  
+
 
 }
 
@@ -69,7 +114,7 @@ window.onload = function(){
   //console.log(deleteButtons.length);
 
   calculatePriceButton.onclick = getTotalPrice;
-  //createItemButton.onclick = createNewItem;
+  createItemButton.onclick = createNewItem;
 
 
   for(var i = 0; i<deleteButtons.length ; i++){
