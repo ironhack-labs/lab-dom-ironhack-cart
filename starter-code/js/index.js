@@ -8,13 +8,14 @@ function deleteItem(e){
 
 function getPriceByProduct(itemNode){
   var getPrice = document.getElementsByClassName('price');
-  return parseInt(getPrice[0].innerHTML);
+  var numGetPrice = parseFloat(getPrice[0].innerHTML.slice(1));
+  return numGetPrice;
 
 }
 
 
 function updatePriceByProduct(productPrice, index){
-  var subPrice = getPriceByProduct() * createQuantityInput();
+  var subPrice = "$" + getPriceByProduct() * createQuantityInput();
   var getZero = document.getElementsByClassName('subTotal');
   getZero[0].innerHTML = subPrice;
   return subPrice;
