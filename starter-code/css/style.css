@@ -47,10 +47,25 @@ body {
 }
 .products{
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: baseline;
+  flex-direction: column;
+  align-content: space-around;
   margin: 30px;
 }
+.product {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.product div{
+  margin-right: 2px;
+  
+}
 
+.product div:first-child{
+  width: 200px;
+  
+  text-align: left;
+}
 
+*{border:1px solid black;}

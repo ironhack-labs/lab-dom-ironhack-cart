@@ -13,10 +13,17 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-  var price= getPriceByProduct(document.getElementsByClassName("products")[0])
-  var quantity = document.getElementsByClassName("products")[0].getElementsByClassName("quantity")[0].value;
-  console.log(price*quantity)
-  document.getElementsByClassName("total-price")[0].innerHTML=price*quantity;
+  var products = document.getElementsByClassName('products')[0].getElementsByClassName('product');
+  //console.log(products.length);
+
+  for (var i = 0; i < products.length; i++) {
+    var product = products[i];
+    var price = product.getElementsByClassName('price')[0].innerHTML;
+    var quantity = product.getElementsByClassName('quantity')[0].value;  
+    
+    product.getElementsByClassName("total-price")[0].innerHTML=price*quantity;
+    //console.log(price, quantity);
+  }
 
 }
 
