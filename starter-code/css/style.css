@@ -1,5 +1,40 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
 input {
   border: solid 1px black;
+}
+
+
+.title {
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+display: flex;
+justify-content: space-between;
+padding: 10px;
+}
+
+.calculate-price{
+  display: flex;
+  justify-content: center;
+  color: #fff;
+}
+
+#calc-prices-button{
+  background-color: #4cae4c;
+  color: #fff;
+  margin: 10px;
+  padding: 10px;
 }
 
 .btn {
@@ -25,17 +60,27 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #cf000f;
+  border-color: #cf000f;
+  margin: 0 auto;
+  padding: 0 auto;
 }
 
-.quantity {
-  margin: 0 5px;
+#total-prices{
+  display: flex;
+  justify-content: center;
 }
+
+/*
+.btn-calculate-price{
+  display: flex; 
+  justify-content: center;
+  }
+  */
