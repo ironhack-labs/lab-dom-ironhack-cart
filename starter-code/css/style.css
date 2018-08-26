@@ -39,3 +39,22 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+h1{
+  text-align: center;
+}
+#product{
+  display: flex;
+  justify-content: space-around;
+  width: 60%;
+  margin:0 auto;
+  padding: 20px;
+}
+.menu{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
+  margin:10px auto;
+  padding: 20px;
+}
