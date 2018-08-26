@@ -1,24 +1,16 @@
 function deleteItem(){
-  
-  console.log("removing this ", this.parentElement.parentElement)  
+  console.log(this, "entered deleteItem")
+  document.getElementById("products").removeChild(this.parentElement.parentElement); 
   /*this.parentElement.removeChild(this);*/
 }
 
 function getPriceByProduct(itemNode){
   //get the price and the quantity
-  prodPrice = Number(itemNode.childNodes[1].childNodes[0].innerHTML);
-  quantity = Number(itemNode.childNodes[2].childNodes[0].childNodes[0].lastChild.value);
-  
-  //html structure creation
-  priceByProductDiv = createItemNode("div",{"class" : "price-by-product"});
-  priceByProductSpan = createItemNode("span",{"innerHTML":quantity*prodPrice});
-  priceByProductDiv.appendChild(priceByProductSpan);
-  //return div node class price-by-product containing the span  
-   return priceByProductDiv;
+ 
 }
 
 function updatePriceByProduct(el){
-  getPriceByProduct(el)
+
 
 }
 
@@ -47,8 +39,9 @@ function createQuantityInput(){
 function createDeleteButton(){
   //Creates and returns a div with a <a> tag containing a delete button
   var deleteButtonDiv =createItemNode("div", {"class":"button-delete"});
-  var deleteButtonA =createItemNode("a", {"href":"#","onclick": "deleteItem()","class":"btn btn-delete","innerHTML":"Delete"});
+  var deleteButtonA =createItemNode("a", {"href":"#","id":"", "onclick": "deleteItem()","class":"btn btn-delete","innerHTML":"Delete"});
   deleteButtonDiv.appendChild(deleteButtonA);
+  console.log(deleteButtonA)
   return deleteButtonDiv;
 }
 
@@ -66,11 +59,11 @@ function createItemNode(dataType, properties){
       case "innerHTML":
       newItemNode.innerHTML=properties[property];
       case "class":
-      newItemNode.class=properties[property]
-      case "id":
-      newItemNode.id = properties[property]
+      newItemNode.class=properties[property];
       case "onclick":
-      newItemNode.onclick = properties[property]      
+      newItemNode.onclick = properties[property];     
+      case "id":
+      newItemNode.id = properties[property];
       default:
       newItemNode.setAttribute(property,properties[property]);
     };    
@@ -90,10 +83,18 @@ function createNewItemRow(itemName, itemUnitPrice){
   var spanPrice = createItemNode("span", {"innerHTML":itemUnitPrice});
   productPrice.appendChild(spanPrice);
   
+  defaultQuantity = 1
+  priceByProductDiv = createItemNode("div",{"class" : "price-by-product"});
+  priceByProductSpan = createItemNode("span",{"innerHTML":defaultQuantity*itemUnitPrice});
+  priceByProductDiv.appendChild(priceByProductSpan);
+  
   newProductRow.appendChild(productName);
   newProductRow.appendChild(productPrice);
+  newProductRow.appendChild(priceByProductDiv);
+
   return newProductRow
 }
+
 
 function createNewItem(){
   //get the name and price of the new item
@@ -105,7 +106,6 @@ productRow= createNewItemRow(pName, pPrice);
 
 //append to the row the quantity DOM element and the button
 productRow.appendChild(createQuantityNode());
-productRow.appendChild(getPriceByProduct(productRow));
 productRow.appendChild(createDeleteButton());
 
 //append the new product row to the #products div 
@@ -125,6 +125,7 @@ window.onload = function(){
   calculatePriceButton.onclick = getTotalPrice;
   createItemButton.onclick = createNewItem;
 
+  
   for(var i = 0; i<deleteButtons.length ; i++){
     console.log(productList[i])
     deleteButtons[i].onclick = deleteItem;
