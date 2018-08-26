@@ -28,13 +28,78 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    width: 12%;
+    align-self: center;
+    font-size: 1.2em;
+    border-radius: 5px;
+    border: none;
+    display: block;
+    margin: 50px 500px;
+    
+}
+h1 {
+  align-self: center;
+  font-size: 2.2em;
+  width: 25%;
+  margin-left: 50%
+}
+h2 {
+  align-self: center;
+  font-size: 2.2em;
+  width: 25%;
+  margin-left: 50%
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    
+    border-radius: 5px;
+    border: none;
 }
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 500px;
+  
+}
+.product {
+  /*border: 1px solid black;*/
+  display: flex;
+  justify-content: space-evenly;
+  width: 90%;
+  height: 20px;
+  align-self: center;
+  align-items: center;
+  
+}
+.product div{
+  width: 15%;
+  margin-top: 20px
+}
+.addproduct {
+  justify-content: left;
+  align-self: center;
+  justify-content: space-around;
+  width: 90%;
+  display: flex;
+  margin-top: 50px;
+}
+.addproduct .btn {
+  justify-content: right;
+  border-radius: 5px;
+  border: none;
+}
+.quant {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
 
 .quantity {
   margin: 0 5px;
