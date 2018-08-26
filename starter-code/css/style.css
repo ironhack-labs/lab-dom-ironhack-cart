@@ -34,8 +34,44 @@ input {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    display: flex;
+    align-content: space-between;
 }
 
 .quantity {
   margin: 0 5px;
+  display: flex;
+  align-content: space-between;
+  flex-direction: column;
+}
+
+.container-wrap{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+h1{
+  text-align: center;
+
+}
+.total {
+  text-align: center;
+  margin-top: 200px;
+}
+#totalNumber {
+  text-align: center;
+}
+span {
+  display: flex;
+  align-content: space-between;
+ 
+}
+.items {
+  display: flex;
+  align-content: space-between;
+  flex-direction: column;
+}
+h2 {
+  display: flex;
+  justify-content: center;
 }
