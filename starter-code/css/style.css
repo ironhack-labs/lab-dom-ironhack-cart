@@ -1,5 +1,18 @@
 input {
   border: solid 1px black;
+  width: 40px;
+}
+
+#price1,
+#price2,
+#price3,
+#price4,
+#price5,
+#price6 {
+  border: none;
+}
+table {
+  text-align: left;
 }
 
 .btn {
@@ -25,15 +38,15 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #cf000f;
+  border-color: #cf000f;
 }
 
 .quantity {
