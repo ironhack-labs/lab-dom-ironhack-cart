@@ -11,25 +11,40 @@
 </head>
 <body>
   
-  <div class="master-container"> 
+  <div id="master-container"> 
     <h1>Ironhack Merchandising Shop</h1>
-      
+      <div id="appendContainer">
         <div class="container">
           <span >Product Name</span>
-          <span id="product-price">35$</span>
-          <form id="formQTY" action="">
+          <span class="product-price">35$</span>
+          <form class="formQTY" action="">
               <label class="quantity" for="QTY">QTY</label>
-              <input name="QTY" type="text" id="QTY" value="">
+              <input name="QTY" type="text" class="QTY" value="">
           </form>
-          <span id="productsum">$0.00</span>
+          <span class="productsum">$0.00</span>
           <button class="btn btn-delete" >Delete</button>
         </div>
-      <div class="container-create">
-          <input type="text">
-          <input type="text">
-          <button id="create-button">Create</button>
+        <div class="container">
+          <span >Product Name</span>
+          <span class="product-price">35$</span>
+          <form class="formQTY" action="">
+              <label class="quantity" for="QTY">QTY</label>
+              <input name="QTY" type="text" class="QTY" value="">
+          </form>
+          <span class="productsum">$0.00</span>
+          <button class="btn btn-delete" data="2">Delete</button>
+        </div>
       </div>
+
+      <div class="container-create">
+          <input id="p-name" type="text">
+          <input id="p-price" type="text">
+          <button id="new-item-create">Create</button>
+      </div>
+
+
     <button id="calc-prices-button" class="btn btn-success button-outside">Calculate Prices</button>
+    <h2 >Total Price: <span id="finalPriceDisplay">$0</span></h2>
   </div>
   
 </body>
