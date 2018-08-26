@@ -42,7 +42,7 @@
       <span class="unit-price">$15.00</span>
 
       <label for="amount">QTY</label>
-      <input onclick="createQuantityInput()">
+      <input type="number" min="0" name="amount" value="0" class="quantity">
 
       <div>
         <span class="price">$0.00</span>
@@ -60,11 +60,9 @@
     <button type="button" name="Price" id="calc-prices-button">Calculate Prices</button>
   </div>
 
-  <div class="total-price">
-    <h1>Total Price: $
-      <span>0.00</span>
-    </h1>
-  </div>
+    <div id="total-prices">
+      <h1>Total Price: $<span id="total-price">0.00</span></h1>
+    </div>
 
 </body>
 
