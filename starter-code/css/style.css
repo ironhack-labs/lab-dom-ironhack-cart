@@ -24,7 +24,7 @@ input {
   border-radius: 4px;
 }
 
-.btn-success {
+#btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
@@ -38,4 +38,34 @@ input {
 
 .quantity {
   margin: 0 5px;
+  
 }
+h1{
+  
+    display:block;
+    text-align: center;
+    
+  
+  }
+h2{
+    display:block;
+    text-align:center;
+  }
+  
+}
+.main-container {
+  display:flex;
+  flex-direction: row;
+  justify-content:space-evenly;
+  
+}
+.container-cart-product-1{
+  width:auto;
+}
+.container-product-2{
+  width:auto;
+}
+.delete{
+  background-color: red;
+}
+.
