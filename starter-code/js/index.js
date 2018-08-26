@@ -2,10 +2,11 @@ function deleteItem(e) {}
 
 function getPriceByProduct(itemNode) {
   let row = document.getElementsByTagName("tr")[itemNode];
-  let priceCell = row.getElementsByTagName("td")[1];
-  return priceCell;
+  let priceCell = row.getElementsByTagName("td")[1].innerText;
+  let price = priceCell.replace("$", "");
   // let firstRowPrice = firstRow.getElementsByTagName("td")[1];
   // return firstRowPrice;
+  return price;
 }
 
 function updatePriceByProduct(productPrice, index) {

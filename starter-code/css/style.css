@@ -3,14 +3,6 @@ input {
   width: 40px;
 }
 
-#price1,
-#price2,
-#price3,
-#price4,
-#price5,
-#price6 {
-  border: none;
-}
 table {
   text-align: left;
 }
