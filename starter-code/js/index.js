@@ -4,6 +4,10 @@ function deleteItem(e){
 
 function getPriceByProduct(itemNode){
 
+  let price = document.getElementById('pro1').innerHTML;
+  price= price.slice(1)
+  return price;
+
 }
 
 function updatePriceByProduct(productPrice, index){
@@ -11,6 +15,8 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
+  let total = getPriceByProduct()*createQuantityInput();
+  return total
 
 }
 
@@ -23,6 +29,8 @@ function createDeleteButton(){
 }
 
 function createQuantityNode(){
+let price2= getTotalPrice= getTotalPrice();
+document.getElementById('total').innerHTML * Total2
 
 }
 
