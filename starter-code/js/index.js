@@ -34,31 +34,51 @@ function getTotalPrice() {
   }
   document.getElementById("grandTotal").innerHTML = "Total Price: $" + sum;
 }
-function createQuantityInput() {}
 
-function createDeleteButton() {}
+function createDeleteButton() { }
 
-function createQuantityNode() {}
+function createQuantityNode() { }
 
-function createItemNode(dataType, itemData) {}
+function createItemNode(dataType, itemData) { }
 
-function createNewItemRow(itemName, itemUnitPrice) {}
+function createNewItemRow(itemName, itemUnitPrice) { }
 
-function createNewItem() {
-  let numberOfRows = document.getElementById("someTable").rows.length;
-  // a function that creates a new row with input values
-  let newRow = table.insertRow(numberOfRows.length);
-  // cell creation for loop
-  for (i = 0; i < 6; i++) {
-    let cellVariable = "cell" + i;
-    newRow.insertCell(i);
-    return cellVariable;
-  }
-  cell0.innerHTML = document.getElementById("creationName");
-  cell1.innerHTML = document.getElementById("creationPrice");
+
+function createQuantityInput() {
+  let table = document.getElementById("someTable");
+  let rowNum = table.rows.length - 2;
+  let itemPrice = creationPrice.value;
+  let qtyString = "qty" + rowNum;
+  // change price and row number
+  let finalString = String.raw`<td><input type="text" id=${qtyString} onchange="updatePriceByProduct(${itemPrice},${rowNum})" value=""></td>`;
+  return finalString;
 }
 
-window.onload = function() {
+function createNewItem() {
+  let table = document.getElementById("someTable");
+  let rowNum = table.rows.length - 1;
+  let newRow = table.insertRow(rowNum);
+
+  let newCell0 = newRow.insertCell(0);
+  let newCell1 = newRow.insertCell(1);
+  let newCell2 = newRow.insertCell(2);
+  // let newCell3 = newRow.insertCell(3);
+  // let newCell4 = newRow.insertCell(4);
+  //      <td><input type="text" id="qty4" onchange="updatePriceByProduct(1,4)" value=""></td>
+
+  let creationName = document.getElementById("creationName");
+  let itemName = document.createTextNode(creationName.value);
+  let itemPrice = document.createTextNode(creationPrice.value);
+  let itemPriceFinal = "$" + itemPrice.textContent;
+
+  newCell0.append(itemName);
+  newCell1.append(itemPriceFinal);
+  // newCell2 create input
+  let finalString = createQuantityInput();
+  newCell2.append(finalString);
+}
+
+window.onload = function () {
   var calculatePriceButton = document.getElementById("calc-prices-button");
   var createItemButton = document.getElementById("new-item-create");
   var deleteButtons = document.getElementsByClassName("btn-delete");
