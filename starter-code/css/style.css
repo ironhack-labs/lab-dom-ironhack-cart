@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 input {
   border: solid 1px black;
 }
@@ -38,4 +43,51 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.clearfix {
+  clear: both;
+}
+
+body {
+  width: 100%;
+}
+
+h2 {
+  width: 70%;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.product-container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.product-name, .product-cost, .quantity, .total-price, .product-container button {
+  float: left;
+  width: 20%;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.success-button-container {
+  width: 20%;
+  margin: 0 auto;
+}
+
+.success-button-container .btn-success {
+  text-align: center;
+  padding: 5px;
+}
+
+.final-price-container {
+  width: 20%;
+  margin: 0 auto;
+}
+
+.final-price-container {
+  font-weight: 600;
+  text-align: center;
+  padding: 5px;
 }
