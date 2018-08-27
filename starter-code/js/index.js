@@ -38,6 +38,7 @@ function createQuantityInput(){
 }
 
 function createDeleteButton(){
+  
 
 }
 
@@ -52,8 +53,12 @@ function createItemNode(dataType, itemData){
 function createNewItemRow(itemName, itemUnitPrice){
 
 }
-
+var button = document.getElementById("add-item-button");ç
+button.onclick = function(){
+  console.log("adding an element to the list");
+}
 function createNewItem(){
+  
 
 }
 
