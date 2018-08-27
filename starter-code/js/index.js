@@ -1,3 +1,5 @@
+var price = 25;
+var quantity = 1;
 function deleteItem(e){
 
 }
@@ -10,7 +12,9 @@ function updatePriceByProduct(productPrice, index){
 
 }
 
-function getTotalPrice() {
+function getTotalPrice(price, quantity) {
+  return price*quantity;
+
 
 }
 
