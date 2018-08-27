@@ -28,12 +28,8 @@ function getTotalPrice() {
     productCostPrice = parseInt(productCostPrice);
     sum += productCostPrice;
   }
-  return sum;
-  // for (var j = 0, col; (col = row.cells[j]); j++) {
-  //   //iterate through columns
-  //   //columns would be accessed using the "col" variable assigned in the for loop
-  //   let productPrice = priceCell.replace("$", "");
-  // }
+  document.getElementById("grandTotal").innerHTML =
+    "The grand total is $" + sum;
 }
 function createQuantityInput() {}
 
