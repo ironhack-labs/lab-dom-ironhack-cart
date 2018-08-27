@@ -1,6 +1,34 @@
+.product {
+  display: flex;
+  justify-content: space-around;
+}
+
+ .product-name, .cost, .lbl, .input, .price, .quantity, .delete  {
+  display: flex;
+  flex-direction: column;
+} 
+
+.product-name > span, .cost > span, .price > span, .delete > button {
+  margin-bottom: 30px;
+}
+
+h1 {
+  text-align: center;
+}
+
 input {
   border: solid 1px black;
+  margin-bottom: 30px;
 }
+
+/* .create {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  border: solid 1px black;
+
+} */
 
 .btn {
   display: inline-block;
@@ -24,10 +52,15 @@ input {
   border-radius: 4px;
 }
 
-.btn-success {
+#btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    position: absolute;
+    left: 600px;
+    margin-top: 20px;
+
+
 }
 
 .btn-delete {
@@ -36,6 +69,4 @@ input {
     border-color: #CF000F;
 }
 
-.quantity {
-  margin: 0 5px;
-}
+
