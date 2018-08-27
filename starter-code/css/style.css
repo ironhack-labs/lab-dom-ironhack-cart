@@ -2,7 +2,7 @@ input {
   border: solid 1px black;
 }
 
-.btn {
+.ensamble div {
   display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
@@ -22,6 +22,131 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-flow: column wrap;
+  align-content: center;
+  justify-content: center;
+}
+.ensamble-2 div{
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-flow: column wrap;
+  align-content: center;
+  justify-content: center;
+
+}
+
+.ensamble-3 div{
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-flow: column wrap;
+  align-content: center;
+  justify-content: center;
+
+
+}
+.ensamble-4 div{
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-flow: row wrap;
+  align-content: center;
+  justify-content: center;
+
+}
+.ensamble-5 div{
+  display: inline-block;
+
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-flow: column wrap;
+  align-content: center;
+  justify-content: center;
+
+}
+.calculate{
+  position:fixed;
+  bottom: 200px;
 }
 
 .btn-success {
@@ -39,3 +164,4 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
