@@ -4,11 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+  <h2>Ironhack Merchandising Shop</h2>
+  <div id="outer-box">
+    <div class="wrapper">
+      <div class="name"><span>IronBubble-head</span></div>
+      <div><span class="price">$25.00</span></div>
+      <div class="label"><label for="qty">QTY</label><input type="text" placeholder="0" id="qty" value="0" class="input-quantity"></div>
+      <div>$<span class="total-product">0.00</span></div>
+      <button class="btn-delete btn">Delete</button>
+    </div>
+    <div class="wrapper">
+      <div class="name"><span>IronShirt</span></div>
+      <div><span class="price">$15.00</span></div>
+      <div class="label"><label for="qty">QTY</label><input type="text" placeholder="0" id="qty" value="0" class="input-quantity"></div>
+      <div>$<span class="total-product">0.00</span></div>
+      <button class="btn-delete btn">Delete</button>
+    </div>
+    <div class="wrapper">
+        <div class="name"><span>IronBeer</span></div>
+        <div><span class="price">$3.00</span></div>
+        <div class="label"><label for="qty">QTY</label><input type="text" placeholder="0" id="qty" value="0" class="input-quantity"></div>
+        <div>$<span class="total-product">0.00</span></div>
+        <button class="btn-delete btn" id="prueba">Delete</button>
+    </div>
+  </div>
+  <h2>Total Price: $<span id="final-total-price">0.00</span></h2>
+  <div><button class="btn-success btn" id="calc-prices-button">Calculate Prices</button></div>
 </body>
 </html>
