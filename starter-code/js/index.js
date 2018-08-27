@@ -1,4 +1,6 @@
-function deleteItem(e) {}
+function deleteItem(index) {
+  document.getElementById("someTable").deleteRow(index);
+}
 
 function getPriceByProduct(itemNode) {
   let row = document.getElementsByTagName("tr")[itemNode];
@@ -12,7 +14,7 @@ function updatePriceByProduct(productPrice, index) {
   let quantity = document.getElementById(qtyidString).value;
   let productCost = quantity * productPrice;
   pcidString = "productCost" + index;
-  document.getElementById("productCost1").innerHTML = productCost;
+  document.getElementById(pcidString).innerHTML = "$" + productCost;
 }
 
 function getTotalPrice() {}

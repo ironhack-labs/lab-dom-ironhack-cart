@@ -10,7 +10,7 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
   <h1>Ironhack Merchandising Shop</h1>
-  <table>
+  <table id="someTable">
     <tr>
       <th>item</th>
       <th>cost</th>
@@ -22,16 +22,16 @@
       <td>$25</td>
       <td><input type="text" id="qty1" onchange="updatePriceByProduct(25,1)" value=""></td>
       <td id="productCost1"></td>
-      <td><button class="btn-delete ">Delete</button></td>
-    </tr>
-    <!-- <tr>
-      <td>IronShirt</td>
-      <td>$15</td>
-      <td><input type="text "></td>
-      <td></td>
-      <td><button class="btn-delete ">Delete</button></td>
+      <td><button class="btn-delete" onclick="deleteItem(1)">Delete</button></td>
     </tr>
     <tr>
+      <td>IronShirt</td>
+      <td>$15</td>
+      <td><input type="text" id="qty2" onchange="updatePriceByProduct(15,2)" value=""></td>
+      <td id="productCost2"></td>
+      <td><button class="btn-delete" onclick="deleteItem(2)">Delete</button></td>
+    </tr>
+    <!--     <tr>
       <td>IronCup</td>
       <td>$10</td>
       <td><input type="text "></td>
