@@ -20,16 +20,19 @@ function updatePriceByProduct(productPrice, index) {
 function getTotalPrice() {
   let numberOfRows = document.getElementById("someTable").rows.length;
   sum = 0;
-  for (let i = 1; i < numberOfRows; i++) {
+  for (let i = 1; i < numberOfRows - 1; i++) {
     let row = document.getElementsByTagName("tr")[i];
     // for each row that exists
     let productCostCell = row.getElementsByTagName("td")[3].innerText;
     let productCostPrice = productCostCell.replace("$", "");
-    productCostPrice = parseInt(productCostPrice);
-    sum += productCostPrice;
+    if (productCostCell === "") {
+      sum += 0;
+    } else {
+      productCostPrice = parseInt(productCostPrice);
+      sum += productCostPrice;
+    }
   }
-  document.getElementById("grandTotal").innerHTML =
-    "The grand total is $" + sum;
+  document.getElementById("grandTotal").innerHTML = "Total Price: $" + sum;
 }
 function createQuantityInput() {}
 
@@ -41,7 +44,19 @@ function createItemNode(dataType, itemData) {}
 
 function createNewItemRow(itemName, itemUnitPrice) {}
 
-function createNewItem() {}
+function createNewItem() {
+  let numberOfRows = document.getElementById("someTable").rows.length;
+  // a function that creates a new row with input values
+  let newRow = table.insertRow(numberOfRows.length);
+  // cell creation for loop
+  for (i = 0; i < 6; i++) {
+    let cellVariable = "cell" + i;
+    newRow.insertCell(i);
+    return cellVariable;
+  }
+  cell0.innerHTML = document.getElementById("creationName");
+  cell1.innerHTML = document.getElementById("creationPrice");
+}
 
 window.onload = function() {
   var calculatePriceButton = document.getElementById("calc-prices-button");
