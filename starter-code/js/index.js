@@ -8,12 +8,10 @@ function getPriceByProduct(itemNode) {
 }
 
 function updatePriceByProduct(productPrice, index) {
-  // get quantity
-  // let row = document.getElementsByTagName("tr")[index];
   let idString = "qty" + index;
-  let quantityCell = document.getElementById(idString).value;
-
-  return quantityCell;
+  let quantity = document.getElementById(idString).value;
+  let productCost = quantity * productPrice;
+  return productCost;
 }
 
 function getTotalPrice() {}
