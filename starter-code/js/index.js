@@ -10,9 +10,10 @@ function getPriceByProduct(itemNode) {
 function updatePriceByProduct(productPrice, index) {
   // get quantity
   // let row = document.getElementsByTagName("tr")[index];
-  let quantity = document.getElementById("qty1").value;
-  let productCost = quantity * productPrice;
-  return productCost;
+  let idString = "qty" + index;
+  let quantityCell = document.getElementById(idString).value;
+
+  return quantityCell;
 }
 
 function getTotalPrice() {}
