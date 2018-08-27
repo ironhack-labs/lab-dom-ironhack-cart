@@ -28,6 +28,19 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin: 30px;
+    width: 10%;
+}
+
+.btn-create {
+  color: black;
+  background-color: goldenrod;
+  border-color: goldenrod;
+  width: 10%;
+  margin: 30px;
+  align-self: flex-end;
+
+
 }
 
 .btn-delete {
@@ -38,4 +51,31 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.list-content {
+  margin: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  
+}
+
+.list-content>div {
+  width: 20%;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  width: 80%;
 }
