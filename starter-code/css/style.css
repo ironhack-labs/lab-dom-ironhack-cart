@@ -39,3 +39,12 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.flex-container {
+  display: flex;
+  padding: 40px;
+
+}
+
+.flex-product {
+}
