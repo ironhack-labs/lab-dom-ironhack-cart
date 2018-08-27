@@ -1,6 +1,16 @@
+.container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
 input {
   border: solid 1px black;
 }
+
 
 .btn {
   display: inline-block;
@@ -24,18 +34,53 @@ input {
   border-radius: 4px;
 }
 
+
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
-}
-
-.btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+    margin-left: auto;
+    margin-right: auto;
+    display:block;
+    margin-top: 10%;
 }
 
 .quantity {
   margin: 0 5px;
 }
+
+
+.btn-delete {
+  color: #fff;
+  background-color: #CF000F;
+  border-color: #CF000F;
+  margin-right: 3vw;
+}
+
+h3 {
+  text-align: center;
+  width: 100%;
+}
+
+h5{
+  margin: 10%;
+  width: 150px;
+}
+
+.producto{
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.total{
+  width:20%;
+  margin-left: 40%;
+  margin-right: 40%;
+  display:block;
+  margin-top: 10%;
+}
+
+
