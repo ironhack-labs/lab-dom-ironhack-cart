@@ -3,16 +3,16 @@ function deleteItem(e) {}
 function getPriceByProduct(itemNode) {
   let row = document.getElementsByTagName("tr")[itemNode];
   let priceCell = row.getElementsByTagName("td")[1].innerText;
-  let price = priceCell.replace("$", "");
-  // let firstRowPrice = firstRow.getElementsByTagName("td")[1];
-  // return firstRowPrice;
-  return price;
+  let productPrice = priceCell.replace("$", "");
+  return productPrice;
 }
 
 function updatePriceByProduct(productPrice, index) {
-  let row = document.getElementsByTagName("tr")[rowNumber];
-  let quantity = row.getElementsByTagName("td")[2];
-  return quantity;
+  // get quantity
+  // let row = document.getElementsByTagName("tr")[index];
+  let quantity = document.getElementById("qty1").value;
+  let productCost = quantity * productPrice;
+  return productCost;
 }
 
 function getTotalPrice() {}
