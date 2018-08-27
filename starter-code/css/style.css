@@ -1,11 +1,12 @@
 input {
+  width: 70%;
   border: solid 1px black;
 }
 
 .btn {
   display: inline-block;
   padding: 6px 12px;
-  margin-bottom: 0;
+  margin-bottom: 10px;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.42857143;
@@ -31,11 +32,69 @@ input {
 }
 
 .btn-delete {
+    width: 50%;
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    border-radius: 10%;
 }
 
 .quantity {
   margin: 0 5px;
+}
+body>h1{
+  width: 50vw;
+}
+.global{
+  display: flex;
+}
+.section-one{
+  display: flex;
+  flex-direction: column;
+  width: 15vw;
+  margin-left: 6%;
+  
+}
+.section-one span{
+  margin-top: 20px;
+}
+.section-two{
+  display: flex;
+  flex-direction: column;
+  width: 15vw;
+  margin-left: 6%;
+  
+}
+.section-two span{
+  margin-top: 20px;
+}
+.section-three{
+  width: 15vw;
+  margin-left: 6%;
+  
+}
+.section-three label, .section-three input{
+  margin-top: 15px;
+}
+.section-four{
+  display: flex;
+  flex-direction: column;
+  width: 15vw;
+  margin-left: 6%;
+
+}
+.section-four span{
+  margin-top: 20px;
+}
+.section-five{
+  display: flex;
+  flex-direction: column;
+  width: 15vw;
+  margin-left: 6%; 
+}
+body>button{
+  margin-top:10px; 
+}
+.nuevos input{
+  width: 20%;
 }
