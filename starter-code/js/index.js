@@ -75,7 +75,8 @@ function createNewItem() {
   newCell1.append(itemPriceFinal);
   // newCell2 create input
   let finalString = createQuantityInput();
-  newCell2.append(finalString);
+  // newCell2.append(finalString);
+  newCell2.innerHTML = finalString;
 }
 
 window.onload = function () {
