@@ -4,11 +4,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+
+  <h1>Ironhack Merchandising Shop</h1>
+
+  <div id="items-container">
+
+    <div class="item" id="1">
+      <div class="item-name">
+        <span>IronBubble-head</span>
+      </div>
+      <div class="cost">
+        <span id="price-1">$25.00</span>
+      </div>
+      <div class="qty">
+        <label for="quantity"> QTY</label>
+        <input type="number" id="quantity-1" placeholder="0">
+      </div>
+      <div class="subtotal">
+        <span id="item-total-1">$0.00</span>
+      </div>
+      <div class="delete">
+        <a href="#" class="delete-button" id="delete-button-1">
+          Delete
+        </a>
+      </div>    
+    </div>
+
+    <div class="item" id="2">
+      <div class="item-name">
+        <span>Ironshirt</span>
+      </div>
+      <div class="cost">
+        <span id="price-2">$15.00</span>
+      </div>
+      <div class="qty">
+        <label for="quantity"> QTY</label>
+        <input type="number" id="quantity-2" placeholder="0">
+      </div>
+      <div class="subtotal">
+        <span id="item-total-2">$0.00</span>
+      </div>
+      <div class="delete">
+        <a href="#" class="delete-button" id="delete-button-2">
+          Delete
+        </a>
+      </div>    
+    </div>
+  </div>
+
+  <div class="new-item">
+    <input type="text" name="" id="item-name">
+    <input type="number" name="" id="item-price">
+    <a href="#" class="create-button" id="createbut">Create</a>
+  </div>
+  
+  <a href="#" id="calc-prices">Calculate Prices</a>
+  <script type="text/javascript" src="./js/index.js"></script>
+  <h2 id="final-price">Total Price: <span id="total-amount">$00.00</span></h2>
 </body>
 </html>
