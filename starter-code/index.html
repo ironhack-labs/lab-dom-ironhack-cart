@@ -13,12 +13,13 @@
 
 <body>
   <h1>IRONHACK MERCHANDISING SHOP</h1>
+  <div id="price-table">
   <div class="list-content">
     <div>IronBubble-Head</div>
     <div class="unit-price">25.00</div>
     <div>
       <form>QTY
-        <input type="text" name="quantity" placeholder="0" class="input-quantity" value="34">
+        <input type="number" name="quantity" placeholder="0" class="input-quantity" value="34">
       </form>
     </div>
     <div class="subtotal">0.00</div>
@@ -29,7 +30,7 @@
     <div class="unit-price">30.00</div>
     <div>
       <form>QTY
-        <input type="text" name="quantity" placeholder="0" class="input-quantity" value="34">
+        <input type="number" name="quantity" placeholder="0" class="input-quantity" value="34">
       </form>
     </div>
     <div class="subtotal">0.00</div>
@@ -40,13 +41,15 @@
       <div class="unit-price">30.00</div>
       <div>
         <form>QTY
-          <input type="text" name="quantity" placeholder="0" class="input-quantity" value="34">
+          <input type="number" name="quantity" placeholder="0" class="input-quantity" value="34">
         </form>
       </div>
       <div class="subtotal">0.00</div>
       <div class="btn btn-delete" id="btn-delete">Delete</div>
     </div>
+  </div>
   <div class="btn btn-success calc-prices-button" id="calc-prices-button">Calculate Price</div>
+  <div class="btn btn-create calc-prices-button" id="createItemButton">Create Product</div>
   <h2>Total price: <span class="total-price">$0</span></h2>
 </body>
 

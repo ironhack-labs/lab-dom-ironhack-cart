@@ -22,8 +22,7 @@ function getTotalPrice() {
     console.log(total)
     subtotal.innerText = "$"+calcSubtotal
   }
-  totalPrice = document.getElementsByClassName("total-price")[0].innerHTML
-  totalPrice.innerHtml = "$"+total;
+  document.querySelector("h2 span").innerHTML = "$" + total.toFixed(2);
 }
 
 function createQuantityInput(){
@@ -47,6 +46,11 @@ function createNewItemRow(itemName, itemUnitPrice){
 }
 
 function createNewItem(){
+  var div = document.createElement('div');
+  div.innerHTML = "<form><input type=\"text\" name=\"item\" placeholder=\"Item\" class=\"input-item\" value=\"Item\"></form>";
+  div.setAttribute('class', 'list-content');
+  document.getElementById("price-table").appendChild(div);
+
 
 }
 
@@ -55,8 +59,8 @@ window.onload = function(){
   var createItemButton = document.getElementById('new-item-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
-   calculatePriceButton.onclick = getTotalPrice;
-  // createItemButton.onclick = createNewItem;
+  calculatePriceButton.onclick = getTotalPrice;
+  createItemButton.onclick = createNewItem;
 
   for(var i = 0; i<deleteButtons.length ; i++){
      deleteButtons[i].onclick = deleteItem;
