@@ -1,6 +1,20 @@
 input {
   border: solid 1px black;
+  float: left;
 }
+body {
+  text-align: center;
+}
+
+#container {
+  display: flex;
+  justify-content: space-around;
+  padding: 2%;
+}
+p {
+  float: left;
+}
+
 
 .btn {
   display: inline-block;
@@ -39,3 +53,4 @@ input {
 .quantity {
   margin: 0 5px;
 }
+

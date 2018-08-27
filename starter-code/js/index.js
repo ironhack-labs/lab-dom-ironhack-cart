@@ -1,8 +1,27 @@
+
+
+
+var button = document.getElementById("button")
+
+var delete = document.getElementsByClassName("btn-delete")
+delete.addEventListener("click", e => {
+  delete.removeChild(e.target)
+})
+
+
+
+
+
+
+
 function deleteItem(e){
 
 }
 
 function getPriceByProduct(itemNode){
+  var costo = document.getElementsByClassName("cost")
+  var input = document.getElementById("input")
+  return  input*costo
 
 }
 
@@ -19,6 +38,7 @@ function createQuantityInput(){
 }
 
 function createDeleteButton(){
+  
 
 }
 
@@ -33,8 +53,12 @@ function createItemNode(dataType, itemData){
 function createNewItemRow(itemName, itemUnitPrice){
 
 }
-
+var button = document.getElementById("add-item-button");ç
+button.onclick = function(){
+  console.log("adding an element to the list");
+}
 function createNewItem(){
+  
 
 }
 
