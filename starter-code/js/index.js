@@ -17,8 +17,24 @@ function updatePriceByProduct(productPrice, index) {
   document.getElementById(pcidString).innerHTML = "$" + productCost;
 }
 
-function getTotalPrice() {}
-
+function getTotalPrice() {
+  let numberOfRows = document.getElementById("someTable").rows.length;
+  sum = 0;
+  for (let i = 1; i < numberOfRows; i++) {
+    let row = document.getElementsByTagName("tr")[i];
+    // for each row that exists
+    let productCostCell = row.getElementsByTagName("td")[3].innerText;
+    let productCostPrice = productCostCell.replace("$", "");
+    productCostPrice = parseInt(productCostPrice);
+    sum += productCostPrice;
+  }
+  return sum;
+  // for (var j = 0, col; (col = row.cells[j]); j++) {
+  //   //iterate through columns
+  //   //columns would be accessed using the "col" variable assigned in the for loop
+  //   let productPrice = priceCell.replace("$", "");
+  // }
+}
 function createQuantityInput() {}
 
 function createDeleteButton() {}

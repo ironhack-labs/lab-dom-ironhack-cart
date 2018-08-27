@@ -31,29 +31,30 @@
       <td id="productCost2"></td>
       <td><button class="btn-delete" onclick="deleteItem(2)">Delete</button></td>
     </tr>
-    <!--     <tr>
+    <tr>
       <td>IronCup</td>
       <td>$10</td>
-      <td><input type="text "></td>
-      <td></td>
-      <td><button class="btn-delete ">Delete</button></td>
+      <td><input type="text" id="qty3" onchange="updatePriceByProduct(10,3)" value=""></td>
+      <td id="productCost3"></td>
+      <td><button class="btn-delete" onclick="deleteItem(3)">Delete</button></td>
     </tr>
+
     <tr>
       <td>IronSticker</td>
       <td>$1</td>
-      <td><input type="text "></td>
-      <td></td>
-      <td><button class="btn-delete ">Delete</button></td>
-
+      <td><input type="text" id="qty4" onchange="updatePriceByProduct(1,4)" value=""></td>
+      <td id="productCost4"></td>
+      <td><button class="btn-delete" onclick="deleteItem(4)">Delete</button></td>
     </tr>
+
     <tr>
       <td>IronAxe</td>
       <td>$100</td>
-      <td><input type="text "></td>
-      <td></td>
-
-      <td><button class="btn-delete ">Delete</button></td>
+      <td><input type="text" id="qty5" onchange="updatePriceByProduct(100,5)" value=""></td>
+      <td id="productCost5"></td>
+      <td><button class="btn-delete" onclick="deleteItem(5)">Delete</button></td>
     </tr>
+    <!--
     <tr>
       <td><input type="text "></td>
       <td><input type="text "></td>
@@ -62,7 +63,7 @@
       <td><button class="btn ">create</button></td>
     </tr> -->
   </table>
-  <!-- <button onclick="getTotalPrice() " class="btn-success ">Calculate Prices</button> -->
+  <button onclick="getTotalPrice() " class="btn-success ">Calculate Prices</button>
 </head>
 
 <body>
