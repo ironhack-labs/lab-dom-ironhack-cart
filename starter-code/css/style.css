@@ -1,3 +1,14 @@
+.contenido {
+  width: 100%;
+  display: flex;
+  text-align: center;
+ 
+}
+
+h1{
+  text-align: center;
+}
+
 input {
   border: solid 1px black;
 }
@@ -28,14 +39,20 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    text-align: center;
+    float: none;;
+    height: 30px;
+    margin-left: 200px;
 }
 
 .btn-delete {
+    position:absolute;
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    height:40px;
 }
 
 .quantity {
-  margin: 0 5px;
+  margin: 0 1px;
 }
