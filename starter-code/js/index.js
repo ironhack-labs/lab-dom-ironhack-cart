@@ -1,10 +1,24 @@
+
+var input = document.getElementById('qty')
+var button = document.getElementById('button')
+var cantidad = document.getElementById("qty")
+var precio = document.getElementById("precio")
+
+
 function deleteItem(e){
-
+  list.addEventListener('click', e =>{
+    list.removeChild(e.target)
+  })
 }
 
-function getPriceByProduct(itemNode){
+button.addEventListener("click", ()=>{
+  var poner = document.createElement('numero')
+  var subtot = cantidad * precio;
+  poner.appendChild(subtot)
+  subtot.appendChild(poner)
+  input.value = ''
 
-}
+})
 
 function updatePriceByProduct(productPrice, index){
 
