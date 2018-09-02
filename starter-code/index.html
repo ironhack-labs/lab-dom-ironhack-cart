@@ -7,8 +7,49 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
   <script type="text/javascript" src="./js/index.js"></script>
+  
   <title>Ironhack cart</title>
 </head>
 <body>
+  
+  <h1 class="main-header">Ironhack Merchandising Shop</h1>
+  
+  <div id="all-product-rows"> <!--  start of all product rows -->
+
+  <div class="product-row"> <!--  start of product row 1 -->
+    <span class="product-name">IronBubble-head</span>
+    <span class= "product-price">$25.00</span>
+    <span class="product-quantity"><label>QTY<input class="quantity" type="number" placeholder="0"></label></span>
+    <span class="calculated-price">$0.00</span>
+    <button class="btn btn-delete" type="button">Delete</button>
+  </div> <!--  end of product row 1 -->
+
+  <div class="product-row"> <!--  start of product row 2 -->
+      <span class="product-name">IronShirt</span>
+      <span class= "product-cost">$15.00</span>
+      <span class="product-quantity"><label>QTY<input class="quantity" type="text" placeholder="0"></label></span>
+      <span class="calculated-price">$0.00</span>
+      <button class="btn btn-delete" type="button">Delete</button>
+  </div> <!--  end of product row 2 -->
+
+  
+  <section id="create-row"> <!--  create new product row using input fields for product name and price -->
+    <div>
+      <label>Product Name</label><input class ="create-title" type="text">
+    </div>
+    <div>
+      <label>Price</label><input class="create-price" type="number">
+    </div>
+    <button class="btn btn-create" id="create-item-btn" type="button">Create</button>
+  </section>
+  
+  </div> <!--  end of all product rows -->
+
+  <section id="calculations"> <!--  calculate prices button with total price return -->
+    <button class="btn btn-success" id="calculate" type="button">Calculate Prices</button>
+    <h1>Total Price<span id="calculated-total"></span></h1>
+  </section>
+
+
 </body>
 </html>
