@@ -1,3 +1,5 @@
+/*pre defined css*/
+
 input {
   border: solid 1px black;
 }
@@ -38,4 +40,90 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+/*my css*/
+
+header {
+  width: 29vw;
+  margin: auto;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  padding: 0;
+  width: 100%;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 6vh;
+}
+
+.container-create {
+  justify-content: center;
+  flex-flow: row wrap;
+  width: 16vw;
+  margin-left: 43vw;
+}
+
+.marg-top {
+  margin-top: 10vh;
+}
+
+.price {
+  color: black;
+}
+
+.total-price {
+  color: black;
+}
+
+.new-Item {
+  display: flex;
+}
+
+form {
+  margin-left: 8vw;
+}
+
+.btn-create{
+  border: 1px solid lightgray;
+  margin-left: 49vw;
+}
+
+.new-item-price {
+color: black;
+margin-left: 3vw;
+}
+
+.new-item-name {
+  color: black;
+}
+
+.item-quantity {
+color: black;
+}
+
+.main-container {
+color: black;
+}
+
+.grand-total {
+  color: black;
+}
+
+.span-style {
+  font-size: 40px;
+  font-weight: 900;
+}
+
+ ul li:first-child {
+  width: 150px;
 }
