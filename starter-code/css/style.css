@@ -54,6 +54,13 @@ h1{
   justify-content: center;
 }
 
+.totalPriceLines{
+  display:flex;
+  justify-content: center;
+  align-content: center;
+  padding-top: 60px;
+
+}
 .wrapper{
   display: flex;
   flex-flow: row nowrap;

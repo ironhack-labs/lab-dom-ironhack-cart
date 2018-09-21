@@ -24,13 +24,19 @@ function getTotalPrice() {
   var unitPrice=document.getElementsByClassName('unitPrice');
   var qty = document.getElementsByClassName('qty');
   var totalPrice=document.getElementsByClassName("totalPrice");
+  var totalPriceLines=document.getElementById("totalLines");
   // console.log(unitPrice.innerText);
   // console.log(qty.value);
 
+  var totalSum=0;
     for (var i=0;i<unitPrice.length;i++){
       var unitPriceNum = parseFloat(unitPrice[i].innerText.substr(1));
+      totalSum=totalSum+unitPriceNum*qty[i].value;
       totalPrice[i].innerHTML="$"+(unitPriceNum*qty[i].value);
     }
+
+    // console.log(totalSum);
+    totalPriceLines.innerText="$"+totalSum;
 
   
   // console.log(unitPriceNum);
