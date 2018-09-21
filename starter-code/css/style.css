@@ -22,20 +22,68 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+  outline:none;
 }
 
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    
 }
 
 .quantity {
   margin: 0 5px;
 }
+
+ /* body {
+  background-image: url("../back.png");
+  background-repeat: no-repeat;
+  background-position: center; 
+}  */
+
+h1{
+  display:flex;
+  justify-content: center;
+}
+
+.wrapper{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  width: 1073px;
+  height: 100px;
+  /* background:rgba(234,67,8,0.5); */
+}
+
+.productName {
+  /* background:rgba(8, 23, 234, 0.5); */
+}
+
+.unitPrice {
+  /* background:rgba(234, 8, 204, 0.5); */
+}
+
+.unitsOrder {
+  /* background:rgba(211, 234, 8, 0.5); */
+}
+
+.totalPrice {
+  /* background:rgba(230, 63, 193, 0.5); */
+}
+
+.calculatePrice {
+  display:flex;
+  justify-content: center;
+  align-content: center;
+}
+
