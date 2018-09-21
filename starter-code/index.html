@@ -10,5 +10,60 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <div class="flex-col">
+    <div class="products">
+    <h1>Ironhack<br> Merchandising Shop</h1>
+    <div class="flex">
+      <div>
+        <span >IronBubble-head</span>
+      </div>
+      <div >
+        <label>$</label>
+        <span class="price">25.00</span>
+      </div>
+      <div>
+        <label class="quantity">QTY</label>
+        <input placeholder="0">
+      </div>
+      <div>
+        <label>$</label>
+        <spam class="sumPrice">0.00</spam>
+      </div>
+      <div>
+        <button class="btn btn-delete" onclick="deleteItem()">Delete</button>
+      </div>
+    </div> 
+    <div class="flex">
+        <div>
+          <span >IronShirt</span>
+        </div>
+        <div >
+          <label>$</label>
+          <span class="price">15.00</span>
+        </div>
+        <div >
+          <label class="quantity">QTY</label>
+          <input placeholder="0">
+        </div>
+        <div>
+          <label>$</label>
+          <spam class="sumPrice">0.00</spam>
+        </div>
+        <div>
+          <button class="btn btn-delete" onclick="deleteItem()" >Delete</button>
+        </div>
+      </div>
+      </div> 
+      <div class="flex">
+        <input id="newName">
+        <input id="newPrice">
+        <button id="create" onclick="createNewItem()">create</button>
+      </div>
+      <div>
+        <button onclick="getTotalPrice()" class=" btn btn-success">Calculate prices</button>
+        <label>Total price:$</label>
+        <span id="totalsum">0.00</span>
+      </div>
+  </div>
 </body>
 </html>
