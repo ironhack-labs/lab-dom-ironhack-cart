@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,69 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
-<body>
+
+<body >
+
+<div class="globalOrder">
+
+  <h1>Ironhack merchandaising shop</h1>
+
+  <div id="main" class="totalWidth">
+  <wrapper class="order">
+  <div class="productWidth">
+    <span id="name">
+      iron bubble head
+    </span>
+  </div>
+  <div>
+    <span id="price" class="price">
+      $25
+    </span>
+  </div>
+  <div>QTY <input class="border quantity" type="text" placeholder="0" ></div>
+  <div>
+    <span class="itemsPrice" >
+      $0
+    </span>
+  </div>
+  <div>
+    <button onclick="createDeleteButton()" class="btn btn-delete">Delete</button>
+  </div>
+</wrapper>
+<wrapper class="order">
+    <div class="productWidth">
+      <span >
+        PopCorn
+      </span>
+    </div>
+    <div>
+      <span class="price">
+        $45
+      </span>
+    </div>
+    <div>QTY <input class="border quantity" type="text" placeholder="0" ></div>
+    <div>
+      <span class="itemsPrice" >
+        $0
+      </span>
+    </div>
+    <div>
+      <button onclick="createDeleteButton()" class="btn btn-delete">Delete</button>
+    </div>
+  </wrapper>
+  </div>
+  <div class="createNew">
+    <div>
+      <input class="insertName  " type="text" placeholder="Insert name" >
+      <input class="insertValue  " type="text" placeholder="Insert value" >
+    </div>
+      <button onclick="createNewItem()" class="btn ">Create</button>
+  </div>
+  
+  <button onclick="getTotalPrice()" class="btn btn-success" >Calculate Prices</button>
+
+<div><h2 >Total Price: <span id="finalPrice">$0</span></h2></div>
+</div>
 </body>
+
 </html>
