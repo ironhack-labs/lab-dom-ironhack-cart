@@ -21,17 +21,21 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-  var unitPrice=document.getElementById('unit-price');
-  var qty = document.getElementsByTagName('input')[0];
-  var totalPrice=document.getElementById("total-price");
-  //  console.log(unitPrice.innerText);
+  var unitPrice=document.getElementsByClassName('unitPrice');
+  var qty = document.getElementsByClassName('qty');
+  var totalPrice=document.getElementsByClassName("totalPrice");
+  // console.log(unitPrice.innerText);
   // console.log(qty.value);
 
+    for (var i=0;i<unitPrice.length;i++){
+      var unitPriceNum = parseFloat(unitPrice[i].innerText.substr(1));
+      totalPrice[i].innerHTML="$"+(unitPriceNum*qty[i].value);
+    }
 
-  var unitPriceNum = parseFloat(unitPrice.innerText.substr(1));
+  
   // console.log(unitPriceNum);
 
-  totalPrice.innerHTML="$"+(unitPriceNum*qty.value);
+  
 }
 
 function createQuantityInput(){
