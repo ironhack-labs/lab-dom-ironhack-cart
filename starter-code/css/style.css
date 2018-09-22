@@ -36,6 +36,54 @@ input {
     border-color: #CF000F;
 }
 
+.btn-create {
+  border: 1px solid #bbb;
+  margin-left: auto;
+}
+
 .quantity {
   margin: 0 5px;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+  .content > * {
+    margin: 1.5em 0;
+  }
+
+.page-title {
+  /* margin-left: 365px; */
+  text-align: center;
+  max-width: 350px;
+}
+
+.products-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.product, #add-product {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.product-total-price:before, .product-cost:before {
+  content: '$';
+}
+
+.product > div:first-child, .input-name {
+  width: 150px;
+}
+
+#add-product {
+  justify-content: flex-start;
 }
