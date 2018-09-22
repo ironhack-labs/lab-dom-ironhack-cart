@@ -39,3 +39,28 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+body {
+  padding: 100px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.cont {
+  display: flex;
+  flex-direction: row;
+}
+
+.product-list {
+  display: flex;
+  flex-direction: row;
+  width: 20%;
+}
+
+input {
+  margin-left: 10px;
+  width: 50px;
+  height: 20px;
+}
