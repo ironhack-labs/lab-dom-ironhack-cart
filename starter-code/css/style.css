@@ -2,6 +2,18 @@ input {
   border: solid 1px black;
 }
 
+h1 {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 100px; 
+}
+
+div {
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-around;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -28,6 +40,8 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    text-align: center;
+    margin-top: 30px; 
 }
 
 .btn-delete {
