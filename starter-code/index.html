@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +8,62 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
   <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
+  <title>IronHack cart </title>
 </head>
+
 <body>
+  <h1>IronHack Cart</h1>
+  <div class="products">
+    <div class="product-wrapper">
+      <div class="product-name">
+        <p>IronBubble-head</p>
+      </div>
+      <div class="unit-cost">
+        <p>$25.00</p>
+      </div>
+      <div class="units-input">
+        <label for="Name">QTY</label>
+        <input class="quantity" type="number" placeholder="0" >
+      </div>
+      <div class="total-product-price">
+        <p>$0.00</p>
+      </div>
+      <div class="delete-button">
+        <button class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+    <div class="product-wrapper">
+      <div class="product-name">
+        <p>IronShirt</p>
+      </div>
+      <div class="unit-cost">
+        <p>$15.00</p>
+      </div>
+      <div class="units-input">
+        <label for="Name">QTY</label>
+        <input class="quantity" type="number" placeholder="0" >
+      </div>
+      <div class="total-product-price">
+        <p>$0.00</p>
+      </div>
+      <div class="delete-button">
+        <button class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+  </div>
+  <div class="new-item-wrapper">
+    <div class="new-input-container">
+      <input class="item-name" type="text" value="">
+      Price<input class="unit-price" type="number" placeholder="0" >
+    </div>
+    <button class="btn" id="new-item-create">Create</button>
+  </div>
+  <div class="calculate-container">
+    <button class="btn btn-success" id="calc-prices-button">Calculate Prices</button>
+  </div>
+  <h2>Total Price:
+    <span>$0.00</span>
+  </h2>
 </body>
+
 </html>
