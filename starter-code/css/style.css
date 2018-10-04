@@ -42,5 +42,9 @@ input {
 }
 
 .product-container{
-  display: inline-block;
+  display: inline;
+}
+
+.inline-text {
+  display: inline;
 }

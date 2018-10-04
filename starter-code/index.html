@@ -10,7 +10,7 @@
   <title>Ironhack cart</title>
 </head>
 <body>
-  <div class="product-container">
+  <!--<div class="product-container">
     <div id="product-name"><span></span></div>
     <div id="product-price"><span></span></div>
     <div class="quantity">
@@ -18,7 +18,23 @@
     </div>
     <div><span id="product-total"></span></div>
     <div class="btn-delete"><input type="button" value="Delete"></div>
+  </div>-->
+<div class="product-container">
+  <div class="inline-text">
+      <input type="text"><span id="product-name"></span>
   </div>
-  <div><input type="button" id="calc-prices-button" class="btn btn-success" value="Calculate Price"></div>
+  <div class="inline-text">
+      <input type="number" value="0"><span id="product-price"></span>
+  </div>
+  <div class="inline-text">
+      <input type="button" value="Create"><span id="btn-create"></span>
+  </div>
+  <div class="inline-text">
+      <input type="button" value="Delete"><span id="btn-delete"></span>
+  </div>
+</div>
+<div>
+    <input type="button"id="calc-prices-button" class="btn btn-success" value="Calculate Price">
+</div>
 </body>
 </html>
