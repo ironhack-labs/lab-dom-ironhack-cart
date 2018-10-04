@@ -28,6 +28,7 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin: 40px 100px 30px 650px;
 }
 
 .btn-delete {
@@ -38,4 +39,13 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.product {
+  display: flex;
+  justify-content: space-around;
+}
+
+h1 {
+  margin: 0 100px 30px 650px;
 }

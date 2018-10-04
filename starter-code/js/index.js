@@ -3,6 +3,10 @@ function deleteItem(e){
 }
 
 function getPriceByProduct(itemNode){
+  var price = document.getElementById('price');
+  var quantity = document.getElementsByClassName('quantity');
+  for { 
+  }
 
 }
 
