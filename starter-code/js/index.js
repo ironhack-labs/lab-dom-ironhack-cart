@@ -1,9 +1,21 @@
+function calculateLinePrice(){
+var UnitPrice = document.getElementById("productPrice");
+var UnitQuantity = document.getElementById("UnitQuantity");
+var totalUnitPrice = document.getElementById("totalUnitPrice");
+var totalPrice = UnitPrice*UnitQuantity;
+totalUnitPrice.innerHTML = totalPrice;
+}
+
+
+
 function deleteItem(e){
+
+
 
 }
 
 function getPriceByProduct(itemNode){
-
+var element
 }
 
 function updatePriceByProduct(productPrice, index){
@@ -43,7 +55,8 @@ window.onload = function(){
   var createItemButton = document.getElementById('new-item-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
-  calculatePriceButton.onclick = getTotalPrice;
+  //calculatePriceButton.onclick = getTotalPrice;//
+  calculatePriceButton.onclick = calculateLinePrice();
   createItemButton.onclick = createNewItem;
 
   for(var i = 0; i<deleteButtons.length ; i++){

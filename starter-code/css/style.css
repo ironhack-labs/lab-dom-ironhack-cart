@@ -34,8 +34,20 @@ input {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+.flex-center{
+    display: flex;
+    justify-content: right;
+}
+
+.flex-center div{
+  padding: 15px;
+  max-width: 300px;
+  margin: 50px;
 }

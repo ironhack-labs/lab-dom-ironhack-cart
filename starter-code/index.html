@@ -10,5 +10,46 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+
+<center><h1>IRONHACK SHOPPING CART</h1></center>
+
+<!-- Product 1 -->
+<div class="flex-center">
+
+  <div><span>Product-Name1</span></div>
+  <div id="productPrice"><span>2</span></div>
+  <div>
+    <label>QTY</label>
+    <input id="UnitQuantity" type="number" required
+    minlength="1" maxlength="10"
+    placeholder="Quantity" />
+  </div>
+  <div id="totalUnitPrice"><span>0</span></div>
+  
+  <!-- Delete button -->
+  <div class="btn-delete btn"><span>Delete</span></div>
+</div>
+
+<!-- Product 2 -->
+
+<div class="flex-center">
+
+    <div><span>Product-Name2</span></div>
+    <div id="productPrice"><span>xx$</span></div>
+    <div>
+      <label>QTY</label>
+      <input id="UnitQuantity" type="text" required
+      minlength="1" maxlength="10"
+      placeholder="Quantity" />
+    </div>
+    <div id="totalUnitPrice"><span>yy$</span></div>
+    
+    <!-- Delete button -->
+    <div class="btn-delete btn"><span>Delete</span></div>
+  </div>
+
+  <!-- Calculate Prices button -->
+<center><div class="btn-success btn" id="calc-prices-button">Calculate Prices</div></center>
+
 </body>
 </html>
