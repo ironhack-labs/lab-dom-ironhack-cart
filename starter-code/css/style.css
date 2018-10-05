@@ -39,3 +39,22 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+#titre {
+  margin-left: 55%;
+}
+
+.element {
+  display: inline-block;
+  padding-left: 125px;
+}
+
+#buttonSuccess {
+  margin-left: 55%;
+  padding-top: 20px;
+}
+
+.userInput {
+  display: inline-block;
+  padding-left: 125px;
+}
