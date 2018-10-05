@@ -1,15 +1,30 @@
-function deleteItem(e){
+/*function deleteItem(e){
 
 }
 
+*/
 function getPriceByProduct(itemNode){
 
+var productPrice = itemNode.getElementByClass("product-price");
+var productQuantity = itemNode.getElementByClass("product-quantity");
+
+var totalPriceObject[0] = productPrice[0].textContext * productQuantity[0].textContext;
+
+return totalPriceObject[0];
 }
 
-function updatePriceByProduct(productPrice, index){
+ 
+function updatePriceByProduct(productPrices, index){
+var productPrice = itemNode.getElementByClass("product-price");
+var productQuantity = itemNode.getElementByClass("product-quantity");
+
+var totalPriceObject[i] = productPrice[i].textContext * productQuantity[i].textContext;
+  
+var element = document.getElementByClass("product-total-price");
+element.innerHTML = totalPriceObject[i];
 
 }
-
+/*
 function getTotalPrice() {
 
 }
@@ -50,3 +65,4 @@ window.onload = function(){
     deleteButtons[i].onclick = deleteItem;
   }
 };
+*/
