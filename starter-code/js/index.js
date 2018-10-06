@@ -1,9 +1,10 @@
 function calculateLinePrice(){
-var UnitPrice = document.getElementById("productPrice");
-var UnitQuantity = document.getElementById("UnitQuantity");
-var totalUnitPrice = document.getElementById("totalUnitPrice");
-var totalPrice = UnitPrice*UnitQuantity;
-totalUnitPrice.innerHTML = totalPrice;
+var UnitPrice = document.getElementsByClassName("productPrice");
+var UnitQuantity = document.getElementsByClassName("UnitQuantity");
+var totalUnitPrice = document.getElementsByClassName("totalUnitPrice");
+var totalPrice = (parseInt(UnitPrice[0]))*(parseInt(UnitQuantity[0]));
+console.log(totalPrice);
+totalUnitPrice[0].innerHTML = totalPrice;
 }
 
 
@@ -23,6 +24,15 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
+
+  var items = document.getElementsByClassName("items");
+    var itemCount = items.length;
+    var total = 0;
+    for(var i = 0; i < itemCount; i++)
+    {
+        total = total +  parseInt(items[i].value);
+    }
+    document.getElementById('tot').value = total;
 
 }
 
@@ -57,7 +67,7 @@ window.onload = function(){
 
   //calculatePriceButton.onclick = getTotalPrice;//
   calculatePriceButton.onclick = calculateLinePrice();
-  createItemButton.onclick = createNewItem;
+  //createItemButton.onclick = createNewItem;//
 
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;

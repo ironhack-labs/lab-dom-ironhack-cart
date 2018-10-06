@@ -17,32 +17,34 @@
 <div class="flex-center">
 
   <div><span>Product-Name1</span></div>
-  <div id="productPrice"><span>2</span></div>
+  <div><span class="productPrice">2</span></div>
   <div>
     <label>QTY</label>
-    <input id="UnitQuantity" type="number" required
+    <input class="UnitQuantity" type="number" required
     minlength="1" maxlength="10"
     placeholder="Quantity" />
   </div>
-  <div id="totalUnitPrice"><span>0</span></div>
+  <div><span class="totalUnitPrice">0</span></div>
   
   <!-- Delete button -->
   <div class="btn-delete btn"><span>Delete</span></div>
 </div>
 
-<!-- Product 2 -->
+<!-- Product 2 
 
 <div class="flex-center">
 
     <div><span>Product-Name2</span></div>
-    <div id="productPrice"><span>xx$</span></div>
+    <div id="productPrice"><span>3</span></div>
     <div>
       <label>QTY</label>
-      <input id="UnitQuantity" type="text" required
+      <input id="UnitQuantity" type="number" required
       minlength="1" maxlength="10"
       placeholder="Quantity" />
     </div>
-    <div id="totalUnitPrice"><span>yy$</span></div>
+    <div><span id="totalUnitPrice">0</span></div> 
+
+    -->
     
     <!-- Delete button -->
     <div class="btn-delete btn"><span>Delete</span></div>
@@ -50,6 +52,12 @@
 
   <!-- Calculate Prices button -->
 <center><div class="btn-success btn" id="calc-prices-button">Calculate Prices</div></center>
+  
+
+<!-- Total cart price goes here -->
+<h2>Total Price: <span>$0</span></h2>
+
+
 
 </body>
 </html>
