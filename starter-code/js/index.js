@@ -36,19 +36,18 @@ function createNewItemRow(itemName, itemUnitPrice){
   
 }
 
-window.onload = function (){
-  var createProduct = document.getElementById('btn-create');
-
-createProduct.onclick = function createNewItem(itemName, itemUnitPrice){
-  var itemName = document.getElementById(product-name).value;
-  var itemUnitPrice = document.getElementById(product-price).value;
-  var product = (name,price){
-    this.name = itemName;
-    this.price = itemUnitPrice;
+function createNewItem(itemName, itemUnitPrice){
+  console.log("LA FONCTION COMMENCE")
+  var name = document.getElementById(product-name).value;
+  var price = document.getElementById(product-price).value;
+  var product = {
+    name : name,
+    price : price
   }
+  console.log(product);
   productCatalog.push(product);
   };
-}
+
 console.log(productCatalog);
 
 window.onload = function(){
