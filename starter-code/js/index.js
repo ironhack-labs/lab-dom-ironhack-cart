@@ -1,8 +1,7 @@
 function deleteItem(e) {
   var btnDeleteID = e.currentTarget;
-  console.log(btnDeleteID);
-  var productId = btnDeleteID.parentNode.parentNode.id;
-  console.log(productId);
+  var productDiv = btnDeleteID.parentNode.parentNode;
+  productDiv.remove();
 };
 
 function getPriceByProduct(itemNode){
