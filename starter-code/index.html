@@ -9,6 +9,68 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+  <h1 class="flex"> Ironhack Merch Shack</h1>
+  <div class="flex" name="productWrapper">
+    <div id="productName"><span>Prod1 Name</span>
+      <!-- <label name="labelProductName">New Product</label>
+      <input type="text"> -->
+    </div>
+    <div><span id="productCost">2</span>
+      <!-- <label name="labelProductCost">Add Cost</label>
+      <input type="text"> -->
+    </div>
+    <div>
+      <label name="labelQty">Qty</label>
+      <input id="orderQty" type="text">
+    </div>
+    <div><span id="subTotal">0.00</span></div>
+    <input type="button" class="btn btn-delete" value="Delete" />  
+  </div>
+
+  <div class="flex" name="productWrapper">
+      <div id="productName"><span>Prod2 Name</span>
+        <!-- <label name="labelProductName">New Product</label>
+        <input type="text"> -->
+      </div>
+      <div><span id="productCost"> 4</span>
+        <!-- <label name="labelProductCost">Add Cost</label>
+        <input type="text"> -->
+      </div>
+      <div>
+        <label name="labelQty">Qty</label>
+        <input id="orderQty" type="text">
+      </div>
+      <div><span id="subTotal">0.00</span></div>
+      <input type="button" class="btn btn-delete" value="Delete" />  
+    </div>
+
+  <button id="new-item-create" class="btn btn-create"> Create new item</button>
+  <div class="flex" id="calc-prices-button" style="margin:auto;">
+    <input type="button" class="btn btn-success" value="Calculate Prices" />
+  </div>
+<div class="flex" name="createNewProductWrapper" style="display:none">
+  <div class="inLineDiv" name="productName"></div>
+</div>
 </body>
-</html>
+
+
+<!-- <body>
+    <h1>Ironhack Merchandising shop</h1>
+    <div class=“productWrapper”>
+      <div id=“productName”><span>IronBubble-head</span></div>
+      <div id=“productPrice”><span>$25.00</span></div>
+      <div id=“productQuantity”>
+        <label name=“labelQuantity”>Qty</label>
+        <input type=“text” name=“qty”>
+      </div>
+      <div id=“productCost”><span>$0.00</span></div>
+      <input type=“button” class=“btn btn-delete” value=“Delete”>
+    </div>
+    <div class=“successButton”>
+      <input type=“button” class=“btn btn-success” value=“Calculate Prices”>
+    </div>
+   </body>
+
+</html> -->
