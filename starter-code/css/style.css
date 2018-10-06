@@ -34,8 +34,17 @@ input {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    display: inline;
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+.product-container{
+  display: inline;
+}
+
+.inline-text {
+  display: inline;
 }
