@@ -11,8 +11,22 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-
+  var $button = document.getElementById('calc-prices-button')
+  $button.onclick = function() {
+    
+    var $qty = document.getElementById('input-qty').value;
+    
+    var $unitPrice = document.getElementById('price').value;
+    
+    var $totalPrice = $qty * $unitPrice + "€"
+    
+    document.getElementById('total').innerHTML = $totalPrice
+    
+    
+  }
 }
+
+
 
 function createQuantityInput(){
 

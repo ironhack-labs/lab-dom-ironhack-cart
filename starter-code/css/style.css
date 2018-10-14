@@ -1,3 +1,8 @@
+body {
+  font-family: sans-serif;
+}
+
+
 input {
   border: solid 1px black;
 }
@@ -38,4 +43,18 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+
+.header-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
 }
