@@ -25,9 +25,13 @@ input {
 }
 
 .btn-success {
+    display: block;
+    margin: 50px auto; 
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    
+
 }
 
 .btn-delete {
@@ -38,4 +42,32 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+/********** MY STYLES ************/
+
+body {
+  background-color: #D1DBBD;
+}
+
+h1 {
+  text-align: center;
+  margin: 0;
+}
+
+.container {
+  padding-top: 80px;
+  width: 70%;
+  margin: 0 auto;
+  height: 1000px;
+  background-color: white;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  border: solid green 3px;
+  width: 95%;
+  margin: 30px auto 0 30px;
+  padding: 15px 5px;
 }

@@ -5,10 +5,68 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="./css/normalize.css">
   <link rel="stylesheet" href="./css/style.css">
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+  
+  <div class="container">
+      <h1>Ironhack shopping cart</h1>
+      <div class="wrapper">
+        <div>
+          <span>Iron Coffe</span>
+        </div>
+        <div>
+          <span>7$</span>
+        </div>
+        <div>
+          <label for="">QTY</label>
+          <input class="input" data-price=7 placeholder="0" type="text">
+        </div>
+        <div>
+          <span class="total-item">0</span>
+          <label for="">$</label>
+
+        </div>
+        <div>
+          <button class="btn-delete">Delete</button>
+        </div>
+      </div>
+
+
+      <div class="wrapper">
+        <div>
+          <span>Iron Helmet</span>
+        </div>
+        <div>
+          <span>23</span>
+        </div>
+        <div>
+          <label for="">QTY</label>
+          <input class="input" data-price=23 placeholder="0" type="text">
+        </div>
+        <div>
+          <span class="total-item">0</span>
+          <label for="">$</label>
+        </div>
+        <div>
+          <button class="btn-delete">Delete</button>
+        </div>
+      </div>
+
+
+
+
+      <button id="calc-prices-button" class="btn-success">Calculate Prices</button>
+      <div>
+        <h2>Total Price: <label>$</label><span id="total">0</span></h2>
+      </div>
+
+
+      <script src="./js/index.js"></script>
+
+  </div>
 </body>
 </html>
