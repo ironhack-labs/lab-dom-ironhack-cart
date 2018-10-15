@@ -9,6 +9,55 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
-<body>
+<body id="body">
+<div class="title-text"><h1>Ironhack Merchandising Shop</h1>
+</div>
+
+<div class="all-products">
+
+<div class="product-container">
+  <div class="product-name"><span>IronBubble-head</span></div>
+  <div class="product-price">$<span>25.00</span></div>
+  <div class="quantity">
+    <label>QTY</label>
+    <input type="text" class="quantity" placeholder="0">
+  </div>
+  <div class="total-price">$0.00</div>
+  <div>
+    <button class="btn-delete btn">DELETE</button>
+  </div>
+</div>
+
+<div class="product-container">
+  <div class="product-name"><span>Iron Shirt</span></div>
+  <div class="product-price">$<span>15.00</span></div>
+  <div class="quantity">
+    <label>QTY</label>
+    <input type="text" class="quantity" placeholder="0">
+  </div>
+  <div class="total-price">$0.00</div>
+  <div>
+    <button class="btn-delete btn">DELETE</button>
+  </div>
+</div>
+</div>
+
+<div class="new-element">
+  <div class="new-element-fields">
+    <input type="text" class="new-product-name" placeholder="New Product Name">
+    <input type="text" class="new-product-price" placeholder="New Product Price">
+  </div>
+  <button id="new-item-create" class="create-btn btn">Create</button>
+</div>
+
+<div class="calc-btn-div">
+  <button id="calc-prices-button" class="btn">Calculate Prices</button>
+</div>
+
+<div class="grand-total">
+  <h2>Total Price: <span>$0</span></h2>
+</div>
+
+
 </body>
 </html>

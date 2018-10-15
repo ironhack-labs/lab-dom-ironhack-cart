@@ -1,6 +1,52 @@
+body {
+  margin: 20px;
+}
+
 input {
   border: solid 1px black;
 }
+
+.product-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.product-name {
+  width: 150px;
+}
+
+.title-text {
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap-reverse;
+
+}
+
+h1 {
+  width: 250px;
+}
+
+.new-element {
+  margin-top: 25px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+
+
+.new-element-fields {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 40%;
+}
+
 
 .btn {
   display: inline-block;
@@ -24,10 +70,25 @@ input {
   border-radius: 4px;
 }
 
-.btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+.grand-total {
+  display: flex;
+  justify-content: center;
+}
+
+#calc-prices-button {
+  margin-top: 50px;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+
+.calc-btn-div {
+  display: flex;
+  justify-content: center;
+}
+
+.create-btn {
+  border: 1px solid black;
 }
 
 .btn-delete {
