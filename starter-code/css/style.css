@@ -31,11 +31,16 @@ h1 {
   border-radius: 4px;
 }
 
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
-
+    text-align: center;
 }
 
 .btn-delete {
@@ -48,15 +53,32 @@ h1 {
   margin: 0 5px;
 }
 
+.qty-selector {
+  display: inline-block;
+}
+
 .product {
-  width: 100%;
-  margin: 20px O;
-  border: 1px solid black;
+  width: 90%;
+  margin-top: 20px;
+  border: 1px solid #CCCCCC;
+  border-radius: 4px;
   display: flex;
-  
-  justify-content: space-evenly;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
 }
 
 .product div {
   width: 20%;
+}
+
+
+ol {
+  list-style-type: none;
+}
+
+input {
+  width: 60%;
 }

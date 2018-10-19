@@ -1,27 +1,54 @@
 
-var product = document.querySelector(".product")
+var product = document.querySelectorAll(".product");
 var productName = document.querySelector(".product-name").innerHTML;
-var productPrice = document.querySelector(".product-price").innerHTML;
-var productQty = document.querySelector(".qty").value;
-var productTotalPrice = document.querySelector(".price-qty");
+var productPrice = document.querySelectorAll(".product-price")
+var productQty = document.querySelectorAll(".qty");
+var productTotalPrice = document.querySelectorAll(".price-qty");
 
 var calculatePrice = document.querySelector("#calc-prices-button");
 
 
 
-function calc (productPrice, productQty) {
+function calc () {
 
-	var productQty = document.querySelector(".qty").value;
+	var product = document.querySelectorAll(".product");
+	for (var i = 0; i < product.length; i++) {
 
-	var totalPrice = Number(productQty) * Number(productPrice);
-	productTotalPrice.innerHTML = totalPrice;
+		console.log(product.length);
+		console.log(Number(productQty[i].value));
+		console.log(Number(productPrice[i].innerHTML));
+
+		var totalPrice = Number(productQty[i].value) * Number(productPrice[i].innerHTML);
+
+		console.log(totalPrice);
+		productTotalPrice[i].innerHTML = totalPrice;
+
+	};
+
+
+	// var productQty = document.querySelector(".qty").value;
+
+	// var totalPrice = Number(productQty.value) * Number(productPrice.innerHTML);
+	// productTotalPrice.innerHTML = totalPrice;
 
 };
 
-calculatePrice.onclick = function () {
-	console.log("this should work");
-	calc(productPrice, productQty);
-}
+calculatePrice.onclick = function	() {
+	calc();
+	};
+
+// function () {
+// 	var product = document.querySelectorAll(".product").length;
+// 	for (var i = 0; i < product.length; i++) {
+
+// 		console.log(product.length);
+// 		console.log(Number(productQty[i].value));
+// 		console.log(Number(productPrice[i].innerHTML));
+
+// 		var totalPrice = Number(productQty[i].value) * Number(productPrice[i].innerHTML);
+// 		productTotalPrice[i].innerHTML = totalPrice;
+// 	};
+// };
 
 function deleteItem(e){
 
