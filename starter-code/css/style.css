@@ -1,41 +1,79 @@
-input {
-  border: solid 1px black;
+* {
+  margin: 0 10px;
 }
 
-.btn {
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.42857143;
+h1 {
   text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
+  padding-top: 20px;
+  margin-bottom: 50px;
 }
 
-.btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+.imgflex {
+  display: flex;
+  justify-content: space-around;
+  align-items: space-around;
+  flex-wrap: wrap;
 }
 
-.btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+.imgdisplay {
+  height: 200px;
+  width: 200px;
+  border: 2px solid black;
 }
 
-.quantity {
-  margin: 0 5px;
+
+#shoppingList {
+  padding-top: 30px; 
+}
+
+
+h2 {
+  text-decoration: underline;
+  padding-right: 50px; 
+}
+
+.itemsnamesOk{
+  display: flex;
+  justify-content: space-around;
+  align-items: space-around;
+  padding-top: 20px;
+}
+
+
+li{
+  text-decoration: none;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+}
+
+li div {
+  display: flex;
+  justify-content: space-around;
+}
+
+#total {
+  padding-top: 40px;
+}
+
+#total div {
+  padding-top: 40px;
+  border: 2px solid black; 
+  height: 0px;
+  width: 150px;
+}
+
+#total h2 {
+  margin-bottom: 10px;
+}
+
+.totalblock {
+  display: flex; 
+  align-items: center; 
+  justify-content: space-around;
+  padding-bottom: 35px;
+  font-family: "Arial Black"; 
+  font-size: 20px; 
+  color: red;
 }
