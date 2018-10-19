@@ -15,11 +15,14 @@ function initVariables() {
     x.innerHTML = Number(x.innerHTML).toFixed(2);
   })
 
+  getTotalPrice();
+
 
 }
 
 function deleteItem(e){
-  e.currentTarget.parentNode.parentNode.remove()
+  e.currentTarget.parentNode.parentNode.remove();
+  getTotalPrice();
 
 }
 
@@ -91,6 +94,7 @@ function createQuantityNode(){
   input.setAttribute("type", "number");
   input.setAttribute('step', '1');
   input.setAttribute('placeholder', "0");
+  input.onchange = getTotalPrice;
   out.appendChild(input);
 
   return out
@@ -183,7 +187,15 @@ window.onload = function(){
   calculatePriceButton.onclick = getTotalPrice;
   createItemButton.onclick = createNewItem;
 
+  // add event on change for quantity
+  document.querySelectorAll("input[class='qty-input']").forEach(input =>{
+    input.onchange = getTotalPrice;
+  });
+
+
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
   }
+
+
 };
