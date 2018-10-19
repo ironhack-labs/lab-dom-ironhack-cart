@@ -1,3 +1,28 @@
+
+var product = document.querySelector(".product")
+var productName = document.querySelector(".product-name").innerHTML;
+var productPrice = document.querySelector(".product-price").innerHTML;
+var productQty = document.querySelector(".qty").value;
+var productTotalPrice = document.querySelector(".price-qty");
+
+var calculatePrice = document.querySelector("#calc-prices-button");
+
+
+
+function calc (productPrice, productQty) {
+
+	var productQty = document.querySelector(".qty").value;
+
+	var totalPrice = Number(productQty) * Number(productPrice);
+	productTotalPrice.innerHTML = totalPrice;
+
+};
+
+calculatePrice.onclick = function () {
+	console.log("this should work");
+	calc(productPrice, productQty);
+}
+
 function deleteItem(e){
 
 }
@@ -43,8 +68,8 @@ window.onload = function(){
   var createItemButton = document.getElementById('new-item-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
-  calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
+  // calculatePriceButton.onclick = getTotalPrice;
+  // createItemButton.onclick = createNewItem;
 
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
