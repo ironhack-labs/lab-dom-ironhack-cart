@@ -1,5 +1,9 @@
+body{
+  margin: 10px 30px;
+}
+
 input {
-  border: solid 1px black;
+  border: solid 1px #999999;
 }
 
 .btn {
@@ -38,4 +42,53 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+
+.product{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px 0;
+
+}
+
+header h1{
+  text-align: center;
+}
+
+
+.calculate-div, .total-price-div{
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.money:before{
+  content: "$";
+}
+
+.product-name{
+  width: 140px;
+}
+
+.price-one-unit, .total-price{
+  width: 50px;
+}
+
+
+.input-span{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 260px;
+}
+
+.input-span .product-name{
+  width: 140px;
+}
+
+.input-span .price-one-unit{
+  width: 50px;
 }
