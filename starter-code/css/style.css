@@ -36,6 +36,13 @@ input {
     border-color: #CF000F;
 }
 
+.btn-create {
+  color: black;
+  background-color: white;
+  border-color: gray;
+
+}
+
 .quantity {
   margin: 0 5px;
 }
