@@ -1,10 +1,17 @@
 input {
   border: solid 1px black;
   border-radius: 4px;
+  text-align: center;
+  width: 60%;
 }
 
 h1 {
   font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+}
+h2 {
+  font-size: 30px;
   font-weight: 600;
   text-align: center;
 }
@@ -34,13 +41,25 @@ h1 {
 .btn-container {
   display: flex;
   justify-content: center;
+  margin-top: 20px;
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
-    text-align: center;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+  text-align: center;
+}
+
+.name-container {
+  display: flex;
+  text-align: flex-start;
+
+}
+
+.delete-btn {
+    display: flex;
+    justify-content: flex-end;
 }
 
 .btn-delete {
@@ -57,8 +76,12 @@ h1 {
   display: inline-block;
 }
 
+.products{
+  text-align: center;
+}
+
 .product {
-  width: 90%;
+  width: 80%;
   margin-top: 20px;
   border: 1px solid #CCCCCC;
   border-radius: 4px;
@@ -74,11 +97,52 @@ h1 {
   width: 20%;
 }
 
-
 ol {
   list-style-type: none;
+  margin : 0;
+  padding: 0;
 }
 
-input {
-  width: 60%;
+.new-item-container {
+  /*display: flex;
+  justify-content: space-around;*/
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #CCCCCC;
+  border-radius: 4px;
+  padding: 5px;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.user-input div {
+  width: 20%;
+}
+
+.user-input {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center; 
+}
+
+.user-input input {
+  border: 1px solid #000000;
+  text-align: center;
+}
+
+
+.create-btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.new-item-price-container {
+  display: flex;
+  justify-content: center;
+}
+
+.new-item-name-container {
+  
 }

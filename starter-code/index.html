@@ -12,14 +12,14 @@
 </head>
 <body>
 
-	<h1>Ironhack <br> Merchandising Shop</h1>
+	<h1>Ironhack <br>Merchandising Shop</h1>
 
 	<section class="products">
 		
 		<ol>
-			<li>
+			<li class="item">
 				<div class="product">
-					<div>
+					<div class="name-container">
 						<span class="product-name">IronBubble-Head</span>
 					</div>
 
@@ -30,12 +30,12 @@
 
 					<div class="qty-selector">
 						<label for="#qty">QTY</label>
-						<input type="text" placeholder="QUANTITY" class="qty" value="1">
+						<input type="number" placeholder="QUANTITY" class="qty" value="1" min="0">
 					</div>
 
 					<div>
-						<span class="price-qty"> 0 </span>
 						<span> $</span>
+						<span class="price-qty"> 0 </span>
 					</div>
 
 					<div class="delete-btn">
@@ -46,7 +46,7 @@
 
 			<li>
 				<div class="product">
-					<div>
+					<div class="name-container">
 						<span class="product-name">IronShirt</span>
 					</div>
 
@@ -57,7 +57,7 @@
 
 					<div class="qty-selector">
 						<label for="#qty">QTY</label>
-						<input type="text" placeholder="QUANTITY" class="qty" value="1">
+						<input type="number" placeholder="QUANTITY" class="qty" value="1" min="0">
 					</div>
 
 					<div>
@@ -73,10 +73,41 @@
 		</ol>
 	</section>
 
+	<div class="new-item-container">
+		
+		<div class="user-input">
+			<div class="new-item-name-container">
+				<input type="text" id="new-item-name" placeholder="New Item Name..." value="">
+				
+			</div>
+
+			<div class="new-item-price-container">
+				<input type="number" id="new-item-price" placeholder="New Item Price..." value="" min="0">
+			</div>
+
+			<div>
+				<span></span>
+			</div>
+
+			<div>
+				<span></span>
+			</div>
+
+			<div class="create-btn-container">
+				<button class="btn" id="new-item-btn">Create</button>
+			</div>
+		</div>
+	</div>
+
 	<div class="btn-container">
 		<button class="btn btn-success" id="calc-prices-button">Calculate Prices</button>
 	</div>
+	
+	<div>
+		<h2>Total Price: <span>$ </span> <span class="total-price">0</span></h2>
+	</div>
 
-  <script type="text/javascript" src="./js/index.js"></script>
+
+<script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>
