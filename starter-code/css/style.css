@@ -1,9 +1,9 @@
-body {
-  width: 75%;
-}
-
 input {
   border: solid 1px black;
+}
+
+h1 {
+  text-align: center;
 }
 
 .btn {
@@ -44,7 +44,22 @@ input {
   margin: 0 5px;
 }
 
+.item div, .new-item div {
+  width: 60%;
+  margin: 8px;
+}
+
+.disp-center {
+  display: flex;
+  justify-content: center;
+}
+
 .flex-disp {
   display: flex;
   justify-content: space-between;
+}
+
+.all-items {
+  width: 80%;
+  margin: 0 auto;
 }
