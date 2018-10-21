@@ -1,5 +1,56 @@
+body{
+  padding: 20px;
+  margin: 0;
+  font-family: 'Lucida Sans';
+}
+
+h1, h2{
+  text-align: center;
+}
+
 input {
   border: solid 1px black;
+}
+
+.product{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  
+}
+
+.product>div{
+  width: 20%;
+}
+
+.product-qty{
+  width: 50%;
+}
+
+#new-product{
+  display: flex;
+  flex-basis: auto;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#new-product-input{
+  width: 500px;
+  align-self: flex-start;
+}
+
+#new-product-name{
+  margin-right: 5%;
+}
+
+#new-product>button{
+justify-self: flex-end;
+margin-left: auto;
+margin-right: 15%;
 }
 
 .btn {
@@ -38,4 +89,9 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+#product-calculate-prices{
+  display: flex;
+  justify-content: center;
 }
