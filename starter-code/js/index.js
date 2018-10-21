@@ -77,8 +77,9 @@ function createNewItem() {
   arrName[arrName.length - 1].innerHTML = `${newName}`;
   arrPrice[arrPrice.length - 1].innerHTML = `$${newPrice}`;
   arrQuantity[arrQuantity.length - 1].value = 0;
-  document.getElementById('new-price').valeu = 0;
-  document.getElementById('newName').valeu = '';
+  arrPrice[arrPrice.length - 1].value = '$0.00';
+  document.getElementById('new-price').value = 0;
+  document.getElementById('newName').value = '';
 
 
 }
