@@ -1,14 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+  <h1>Ironhack Merchandise Shop</h1>
+  <div class="product-container">
+    <div class="product">
+      <div>
+        <span class="product-name">IronBUbble-head</span>
+      </div>
+      <div>
+        $<span class="product-price">25</span>
+      </div>
+      <div class="qty-selector">
+        <lebel for="#qty">QTY</lebel>
+        <input type="text" placeholder="Quantity" class="qty" value="1">
+      </div>
+      <div>
+        <span class="price-qty">
+
+        </span>
+      </div>
+      <div>
+        <button class="btn btn-delete">delete</button>
+
+      </div>
+    </div>
+    <div class="product">
+      <div>
+        <span class="product-name">IronShirt</span>
+      </div>
+      <div>
+        $<span class="product-price">15</span>
+      </div>
+      <div class="qty-selector">
+        <lebel for="#qty">QTY</lebel>
+        <input type="text" placeholder="Quantity" class="qty" value="2">
+      </div>
+      <div>
+        <span class="price-qty">
+
+        </span>
+      </div>
+      <div>
+        <button class="btn btn-delete">delete</button>
+
+      </div>
+    </div>
+  </div>
+  <div id="newProduct">
+    <div id="newProductName">
+      <input type="text">
+    </div>
+    <div id="newProductPrice">
+      <input type="text">
+    </div>
+
+    <div>
+      <button onclick="createNewItem()">create</button>
+    </div>
+  </div>
+
+
+  <section>
+    <button class="btn btn-success" id="calc-price-button" onclick="calculateTotalPrice()">calculate price</button>
+  </section>
+  <section>
+    <div>
+      <h2>Total Price: <span class="totalprice">$0</span></h2>
+    </div>
+  </section>
+
+  <script type="text/javascript" src="./js/index.js"></script>
 </body>
+
 </html>
