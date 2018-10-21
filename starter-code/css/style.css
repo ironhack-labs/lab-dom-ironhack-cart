@@ -1,3 +1,48 @@
+/* *{
+  border:1px solid red;
+  font-size: 16px;
+} */
+body{
+  margin:20px;
+}
+header{
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+}
+.productAll{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2px;
+}
+.productAll div{
+  width: 66px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+.create{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2px;
+}
+.create div{
+  width: 70px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.calculate{
+  display:flex;
+  justify-content: center;
+  align-content: center;
+}
+
+
 input {
   border: solid 1px black;
 }
@@ -20,8 +65,9 @@ input {
   -ms-user-select: none;
   user-select: none;
   background-image: none;
-  border: 1px solid transparent;
+  border: 1px solid black;
   border-radius: 4px;
+  
 }
 
 .btn-success {
@@ -38,4 +84,8 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+.total{
+  display: flex;
+  justify-content: flex-end;
 }
