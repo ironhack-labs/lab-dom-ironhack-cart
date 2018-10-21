@@ -1,7 +1,5 @@
  // Calculate the total price of one product
 
- var totalPrice = document.querySelector(".btn-success");
-
  function getTotalPrice (oneProduct) {
    var unitPrice = oneProduct.querySelector(".unit-cost");
    var price = unitPrice.innerHTML;
