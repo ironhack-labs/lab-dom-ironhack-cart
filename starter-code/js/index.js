@@ -25,18 +25,17 @@ function deleteItem(e){
 
 function getTotalPrice() {
   totalArr.splice(0, totalArr.length)
-  for(let i = 0; i < productPrice.length; i++){
-    totalPriceDisplay[i].textContent = productPrice[i].textContent * productQuantity[i].value;
-    totalArr.push(parseInt(totalPriceDisplay[i].textContent));
-  }
-  //totalPriceDisplay.innerText = productPrice * productQuantity; 
+  getPriceByProduct()
   totalValue = totalArr.reduce((acc, cv) => acc += cv);
   actualTotal.textContent = "$" + totalValue;
 }
 
-//function getPriceByProduct(itemNode){
-
-//}
+function getPriceByProduct(){
+  for(let i = 0; i < productPrice.length; i++){
+    totalPriceDisplay[i].textContent = productPrice[i].textContent * productQuantity[i].value;
+    totalArr.push(parseInt(totalPriceDisplay[i].textContent));
+  }
+}
 
 //function updatePriceByProduct(productPrice, index){
 
