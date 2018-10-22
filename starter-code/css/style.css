@@ -39,3 +39,9 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.flexbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}

@@ -1,9 +1,14 @@
 function deleteItem(e){
-
+  let lsProductName = document.getElementsByClassName("productName");
+  let lsUnitPrice = document.getElementsByClassName("unitPrice");
+  let lsQuantity = document.getElementById("quantity");
+  let lsTotalPrice = document.getElementsByClassName("totalPrice");
+  let lsButton = document.getElementsByTagName("button");
+  e.node.parentNode.removeChild(e);
 }
 
 function getPriceByProduct(itemNode){
-
+  // 
 }
 
 function updatePriceByProduct(productPrice, index){
@@ -19,6 +24,10 @@ function createQuantityInput(){
 }
 
 function createDeleteButton(){
+  let button = document.querySelector("button");
+  button.addEventListener("click", function() {
+    alert("delete!");
+  })
 
 }
 
