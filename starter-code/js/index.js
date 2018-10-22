@@ -4,7 +4,7 @@ function deleteItem(e){
   let lsQuantity = document.getElementById("quantity");
   let lsTotalPrice = document.getElementsByClassName("totalPrice");
   let lsButton = document.getElementsByTagName("button");
-  e.node.parentNode.removeChild(e);
+  e.nodgit e.parentNode.removeChild(e);
 }
 
 function getPriceByProduct(itemNode){
