@@ -6,9 +6,100 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
+
   <title>Ironhack cart</title>
+
 </head>
 <body>
+
+  <section class="section-total">
+  <header>
+    <h1>Ironhack <br> Merchandising Shop</h1>
+  </header>
+
+  <div class="tousproduits">
+
+    <!-- Product1 -->
+      <div class="general product1">
+
+              <div>
+                  <span>IronBubble-head</span>
+              </div>
+
+              <div >
+                  <span>$</span> <span class = "unique-price">25.00</span>
+              </div>
+
+              <div>
+                <label class="quantity" for="input">QTY</label>
+                <input class = "input-quantity" type="number" placeholder="0">
+              </div>
+
+              <div>
+                <span>$</span> <span class = "total-price">0.00</span>
+              </div>
+
+              <div>
+                <button class="btn btn-delete">delete</button>
+              </div>
+
+
+      </div>
+
+
+    <!-- Product2 -->
+      <div class="general product2">
+
+          <div>
+              <span>IronShirt</span>
+          </div>
+
+          <div >
+              <span>$</span> <span class = "unique-price">15</span>
+          </div>
+
+          <div>
+            <label class="quantity" for="input">QTY</label>
+            <input class = "input-quantity" type="number" placeholder="0">
+          </div>
+
+          <div>
+            <span>$</span> <span class = "total-price">0.00</span>
+          </div>
+
+          <div>
+            <button class="btn btn-delete">delete</button>
+          </div>
+
+
+    </div>
+</div>
+
+ <div class = "new-products">
+   <div>
+      <input type="text" placeholder="name" class= "input-name">
+   </div>
+
+   <div>
+      <input type="number" placeholder="price" class = "input-price">
+    </div>
+
+    <div>
+      <button class="creation">Create</button>
+    </div>
+ </div>
+
+  <div class="calcul">
+      <button class="btn btn-success">Calculate Prices</button>
+  </div>
+
+  <div class="footer">
+    <h2>TOTAL PRICE: $ <span class="final-price">00</span></h2>
+ 
+  </div>
+
+</section>
+
+<script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>

@@ -39,3 +39,43 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.general {
+  display: flex;
+  justify-content: space-around;
+}
+
+.section-total {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin : 0 auto;
+}
+
+.calcul {
+  margin : 30px auto; 
+}
+
+header {
+  margin : 15px auto;
+}
+
+div {
+  margin : 10px 0;
+}
+
+.new-products {
+  display: flex;
+  margin : 0 0 0 50px;
+  justify-content: flex-start;
+}
+
+.new-products div{
+  margin : 0 30px;
+}
+
+.footer{
+  display: flex;
+  justify-content: center;
+}
+  
