@@ -2,6 +2,30 @@ input {
   border: solid 1px black;
 }
 
+h1 {
+  text-align: center;
+}
+
+div {
+  display: inline;
+}
+
+span {
+  padding-right: 20px;
+}
+
+.wrapper {
+  width: 100%;
+  display: block;
+  margin: 20px auto;
+  padding: 50px 20px;
+}
+
+div .btn-success {
+  display: block;
+  margin: 0 auto;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -39,3 +63,4 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
