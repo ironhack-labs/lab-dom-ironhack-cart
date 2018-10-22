@@ -1,9 +1,15 @@
-input {
-  border: solid 1px black;
+body {
+  box-sizing: border-box;
+  width: 800px;
 }
 
-h1 {
-  text-align: center;
+input {
+  border: solid 1px black;
+  width: 100px;
+}
+
+h1, h2, .btn-success {
+  text-align: left;
 }
 
 div {
@@ -17,16 +23,18 @@ span {
 .wrapper {
   width: 100%;
   display: block;
-  margin: 20px auto;
-  padding: 50px 20px;
+  margin: 0 auto;
+  padding: 25px 80px;
 }
 
 div .btn-success {
   display: block;
   margin: 0 auto;
+  float: left;
 }
 
 .btn {
+  float: right;
   display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;

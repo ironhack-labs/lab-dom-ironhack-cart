@@ -9,7 +9,11 @@
   <title>Ironhack cart</title>
 </head>
 <body>
-  <h1>IRON HACK Merch alley</h1>
+<div>
+
+  <div class="wrapper">
+    <h1>IRON HACK Merch alley</h1>
+  </div>
   <!--FIRST PRODUCT-->
   <div class="wrapper">
     <div class="">
@@ -52,12 +56,32 @@
         <button  class="btn btn-delete">Delete</button>
       </div>
     </div>
+    
+</div>
+
+<!--CREATE NEW PRODUCT AREA-->
+<div class="wrapper">
+    <div>
+        <label class="">
+          Product:
+          <input id="product-name" class="input" type="text">
+        </label>
+      </div>
+      <div>
+          <label class="">
+            Price:
+            <input id="product-price" class="input product-name" type="number">
+          </label>
+      </div>
+      <button id="new-item-create" class="btn btn-create">Create</button>
+</div>
+
 <!--TOTAL PRICE BUTTON-->  
-  <div>
+  <div class="wrapper">
     <button id="calc-prices-button" class="btn btn-success">Calculate Prices</button>
   </div>
 <!--TOTAL PRICE-->
-  <div>
+  <div class="wrapper">
       <h2>Total Price: <span id="calc-prices">$0</span></h2>
   </div>
 
