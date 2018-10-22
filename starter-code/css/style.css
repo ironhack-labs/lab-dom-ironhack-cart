@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 input {
   border: solid 1px black;
 }
@@ -36,6 +41,83 @@ input {
     border-color: #CF000F;
 }
 
-.quantity {
-  margin: 0 5px;
+.btn-add {
+  color: black;
+  background-color: white;
+  border-color: black;
+}
+
+body > h2 {
+  margin: 20px 0 40px 0;
+  display: flex;
+ justify-content: center;
+}
+
+#products-content {
+  margin: 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+#calc-prices-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#products-add-content {
+  margin: 40px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#label-name {
+  display: block;
+  width: 23%;
+}
+
+#label-price {
+  display: block;
+  width: 21%;
+}
+#name-add {
+  width: 77%;
+}
+
+#price-add {
+  width: 79%;
+}
+
+#products-input-add-name, #products-input-add-price {
+  display: flex;
+}
+
+.product {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.product-name, .product-price,
+.product-button, .total-product-price {
+  width: 10%;
+}
+
+.span-name, .span-price, .span-total-product-price {
+  display: block;
+}
+
+.product-quantity {
+  display: flex;
+  width: 30%;
+}
+.product-quantity label {
+  display: block;
+  width: 28%;
+}
+
+.product-quantity input {
+  width: 72%;
 }
