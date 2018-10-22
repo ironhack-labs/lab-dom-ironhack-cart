@@ -39,3 +39,23 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.largura-h1 {
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+span {
+  flex-basis: auto;
+}
+
+h1 {
+  margin: 30px 400px;
+
+}
