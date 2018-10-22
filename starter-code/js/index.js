@@ -1,29 +1,28 @@
+
+
 function deleteItem(e){
 
 }
 
 function getPriceByProduct(){
   let itemNode = document.getElementsByClassName('cost');
-  for(let i=0; i < itemNode.length; i=+1){
-    console.log(itemNode.length, i);
-    let idProductClass = itemNode[i].id;
-    finalValue = itemNode[i].innerText.split('');
+  for(let i=0; i < itemNode.length; i +=1 ){
+    itemNode = itemNode[i].innerText;
+    finalValue = itemNode[i].split('');
     finalValue = finalValue.slice(1);
     finalValue = finalValue.join('');
-    i++;
-    // updatePriceByProduct(finalValue, idProductClass);
+    console.log(finalValue);
   }
-}
- getPriceByProduct();
-
-function updatePriceByProduct(productPrice, index){
-  
-  console.log(productPrice, index);
-
+  return finalValue;
 }
 
-function getTotalPrice() {
-  getPriceByProduct();
+function updatePriceByProduct(){
+let productPrice = document.getElementsByClassName('quantity');
+
+
+}
+
+function getTotalPrice(price,total) {
   let total = 0;
   for (let i = 0; i < arrTotalPrice.length; i += 1) {
     total += parseFloat(arrTotalPrice[i].textContent.split('').slice(1).join(''));
@@ -33,16 +32,16 @@ function getTotalPrice() {
   // var array1 = [1, 4, 9, 16];
 
   // // pass a function to map
-  // const map1 = array1.map(x => x * 2);
-}
+  // const map1 = array1.map(x => x * 2)
 
 function createQuantityInput(){
 
 }
 
-function createDeleteButton(){
 
-}
+function createDeleteButton(i) {
+
+  }
 
 function createQuantityNode(){
 
@@ -52,37 +51,14 @@ function createItemNode(dataType, itemData){
 
 }
 
-function createNewItemRow(itemName, itemUnitPrice){
+//function createNewItemRow(itemName, itemUnitPrice){
+function createNewRow(newElementId, parentElementId, elementType, className) {
 
 }
 
 function createNewItem(){
-  let newPrice = document.getElementById('new-price').value;
-  let newName = String(document.getElementById('newName').value);
 
-  newPrice = parseFloat(newPrice).toFixed(2);
-
-  if (isNaN(newPrice) || newPrice === 0) {
-    console.log('No price');
-    alert('Input an value for the price!');
-    return;
-  }
-  if (newName === '') {
-    console.log('No name');
-    alert('Input a name to the product!');
-    return;
-  }
-
-  const newRow = arrProducts[0].cloneNode(true);
-  arrProducts[arrProducts.length - 1].parentNode.insertBefore(newRow, null);
-
-  arrName[arrName.length - 1].innerHTML = `${newName}`;
-  arrPrice[arrPrice.length - 1].innerHTML = `$${newPrice}`;
-  arrQuantity[arrQuantity.length - 1].value = 0;
-  arrPrice[arrPrice.length - 1].value = '$0.00';
-  document.getElementById('new-price').value = 0;
-  document.getElementById('newName').value = '';
-};
+}
 
 // window.onload = function(){
 //   var calculatePriceButton = document.getElementById('calc-prices-button');
