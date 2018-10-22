@@ -1,5 +1,24 @@
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+.prod-1 {
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
+.calculate {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+
 input {
-  border: solid 1px black;
+  border: solid 1px grey;
 }
 
 .btn {
