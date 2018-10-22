@@ -28,6 +28,13 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+
+}
+
+.calculate-btn {
+  display: flex;
+  justify-content: center;
+  margin-left: 10%;
 }
 
 .btn-delete {
@@ -38,4 +45,19 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+
+
+h1 {
+  display: flex;
+  justify-content: center;
+  margin-left: 17%;
+}
+
+.wrapper-product {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px;
 }
