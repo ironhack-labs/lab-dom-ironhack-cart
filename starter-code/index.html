@@ -6,9 +6,87 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
+
+  <title>Ironhack Cart</title>
 </head>
+<header>
+<h1>Ironhack Merchandising Shop</h1>
+</header>    
+<div>
+    <body>
+      <div class="container">
+        <div class ="Wrapper">
+          <div>
+            <span class="productName">IronBalls</span>
+          </div>
+          <div>
+            <span class="unitCost">$50.00</span>
+          </div>
+          <div><label for="count">QTY</label><input class="productQty" type="number" name="count" value="0"></div>
+          <div>
+            <span class="totalPrice">$0.00</span>
+          </div>
+          <div>
+            <button class="btn btn-delete" onclick="getTotalPrice()"> Delete</button>
+          </div>
+        </div>
+        <div class ="Wrapper">
+          <div>
+            <span class="productName">IronBalls</span>
+          </div>
+          <div>
+            <span class="unitCost">$5.00</span>
+          </div>
+          <div><label for="count">QTY</label><input class="productQty" type="number" name="count" value="0"></div>
+          <div>
+            <span class="totalPrice">$0.00</span>
+          </div>
+          <div>
+            <button class="btn btn-delete" onclick="getTotalPrice()"> Delete</button>
+          </div>
+        </div>
+        <div class ="Wrapper">
+          <div>
+            <span class="productName">IronBalls</span>
+          </div>
+          <div>
+            <span class="unitCost">$50.00</span>
+          </div>
+          <div><label for="count">QTY</label><input class="productQty" type="number" name="count" value="0"></div>
+          <div>
+            <span class="totalPrice">$0.00</span>
+          </div>
+          <div>
+            <button class="btn btn-delete" onclick="getTotalPrice()"> Delete</button>
+          </div>
+        </div>
+        </div>
+            <div class="create">
+            <div>
+              <input id="newName" type="text">
+            </div>
+            <div>
+              <input id="new-price" type="number">
+            </div>
+            <div></div>
+            <div></div>
+            <button class="btn" id="new-item-create">Create</button>
+          </div>
+          <div class="calculate">
+            <button class="btn btn-success" id="calc-prices-button" onclick="totalCart()">Calculate</button>
+          </div>
+        
+          <div class="total">
+            <h2 id="total-price">Total Price: <span>$0</span></h2>
+          </div>
+        </body>
+        
+        </html>
+    
+
 <body>
+
+
+  <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>
