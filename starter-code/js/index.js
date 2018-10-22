@@ -13,6 +13,10 @@ let newProductPrice = document.getElementById("product-price");
 
 const parent = document.getElementsByTagName("div")[0];
 
+for(var i = 0; i<deleteButtons.length ; i++){
+  deleteButtons[i].onclick = deleteItem;
+}
+
 function deleteItem(e){
   console.log("know")
 
@@ -108,7 +112,9 @@ function createNewItem(){
   divWrapper.appendChild(div5);
   parent.appendChild(divWrapper);
 
-  deleteButtons = document.getElementsByClassName("btn-delete"); 
+  for(var i = 0; i<deleteButtons.length ; i++){
+    deleteButtons[i].onclick = deleteItem;
+  }
 } 
 
 window.onload = function(){
@@ -117,8 +123,4 @@ window.onload = function(){
 
   calculatePriceButton.onclick = getTotalPrice;
   createItemButton.onclick = createNewItem;
-
-  for(var i = 0; i<deleteButtons.length ; i++){
-    deleteButtons[i].onclick = deleteItem;
-  }
 };
