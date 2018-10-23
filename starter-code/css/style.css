@@ -1,5 +1,37 @@
+*{
+  box-sizing: border-box;
+}
+
 input {
   border: solid 1px black;
+  padding-left: 5px;
+}
+
+.header{
+  text-align: right;
+}
+.container{
+  margin:0 200px;
+}
+.row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px 0;
+}
+.product {
+  margin-right: 10px;
+}
+.prodTotal{
+  margin-right: 30px;
+}
+.submit{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#allTotal{
+  margin-right: 30px;
 }
 
 .btn {
