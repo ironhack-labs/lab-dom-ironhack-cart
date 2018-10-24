@@ -1,49 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Quicksand" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <script type="text/javascript" src="js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
   <header>
     <div class="header container">
+      <div id="logo">
+        <img src="images/logo-blue.png" alt="">
+      </div>
       <h1>IronHack Merchandising Shop</h1>
     </div>
   </header>
   <main>
-    <div class="container">
-      <div class="row">
-        <div class="product">
-          <span>IronBubble-Head</span>
-        </div>
-        <div>
-          <span>$</span>
-          <span class="price">25.00</span>
-        </div>
-        <div class="quantity">
-          <form action="">
-            <label for="quantity">QTY</label>
-            <input type="text" name="quantity" placeholder="0" class="qty">
-          </form>
-        </div>
-        <div class="prodTotal">
-            <span>$</span>
-            <span class="total">0.00</span>
-        </div>
-        <div class="delete">
-          <button class="btn btn-delete">Delete</button>
-        </div>
-      </div>
-      <div class="row">
-          <div class="product">
+    <div id="container">
+      <div id="products">
+        <div class="row product">
+          <div class="productName">
             <span>IronBubble-Head</span>
           </div>
-          <div>
+          <div class="productPrice">
             <span>$</span>
             <span class="price">25.00</span>
           </div>
@@ -54,14 +38,13 @@
             </form>
           </div>
           <div class="prodTotal">
-              <span>$</span>
-              <span class="total">0.00</span>
+            <span>$</span>
+            <span class="total">0.00</span>
           </div>
-          <div class="delete">
-            <button class="btn btn-delete">Delete</button>
-          </div>
+          <button class="btn btn-delete">Delete</button>
         </div>
-      <div class="row submit">
+      </div>
+      <div class="flex-container">
         <div id="allTotal">
           <span>Total:</span>
           <span>$</span>
@@ -69,7 +52,27 @@
         </div>
         <button class="btn btn-success" id="calc-prices-button">Calculate Price</button>
       </div>
+      <div id="newProduct" class="hide">
+          <div class="flex-container">
+            <form id="createNewProductForm" action="">
+              <input type="text" id="productName" placeholder="Name of the Product">
+              <input type="text" id="productPrice" placeholder="Product Price">
+            </form>
+            <button class="btn" id="submit">Submit</button>
+            <button class="btn" id="cancel">Cancel</button>
+          </div>
+        </div>
+      <div class="flex-container">
+          <button class="btn createElement" id="new-item-create">Create Product</button>
+      </div>
     </div>
   </main>
+  <footer>
+    <div class="flex-container">
+      Created by Rebeca Cabañas Arauz in 2018
+    </div>
+  </footer>
+  <script type="text/javascript" src="js/index.js"></script>
 </body>
+
 </html>

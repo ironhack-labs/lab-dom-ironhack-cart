@@ -1,43 +1,78 @@
-*{
+* {
   box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
 }
 
 input {
   border: solid 1px black;
-  padding-left: 5px;
+  padding: 5px 10px;
+  margin: 10px;
+  border-radius: 10px;
+  border: 1px solid rgb(194, 194, 194);
 }
 
-.header{
-  text-align: right;
+.header {
+  text-align: center;
 }
-.container{
-  margin:0 200px;
+
+#logo img {
+  width: 100px;
 }
-.row{
+
+#container {
+  margin: 50px 200px;
+}
+
+.container {
+  margin: 50px 200px;
+}
+
+
+.product {
+  margin-right: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 50px 0;
 }
-.product {
-  margin-right: 10px;
+
+.productName {
+  min-width: 150px;
 }
-.prodTotal{
+
+.productPrice {
+  min-width: 100px;
+  font-weight: bold;
+}
+
+.prodTotal {
   margin-right: 30px;
+  min-width: 50px;
+  font-weight: bold;
 }
-.submit{
+
+.submit {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-#allTotal{
+
+#allTotal {
   margin-right: 30px;
+  text-align: right;
+  font-weight: bold;
+  font-size: 2rem;
 }
+
 
 .btn {
   display: inline-block;
   padding: 6px 12px;
-  margin-bottom: 0;
+  margin: 15px;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.42857143;
@@ -57,17 +92,41 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #CF000F;
+  border-color: #CF000F;
+}
+
+
+#newProduct {
+  margin-top: 50px;
+}
+
+#createNewProductForm {
+  display: block;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .quantity {
   margin: 0 5px;
+  min-width: 150px;
+}
+
+.quantity input {
+  width: 50px;
+}
+
+.hide {
+  display: none;
 }
