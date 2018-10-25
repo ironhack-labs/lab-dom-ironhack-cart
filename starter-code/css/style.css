@@ -1,7 +1,10 @@
 input {
   border: solid 1px black;
 }
-
+div>div{
+  float:left;
+  padding: 20px;
+}
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -36,6 +39,6 @@ input {
     border-color: #CF000F;
 }
 
-.quantity {
+#quantity {
   margin: 0 5px;
 }
