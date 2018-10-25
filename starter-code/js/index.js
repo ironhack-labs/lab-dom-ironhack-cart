@@ -10,9 +10,17 @@ function updatePriceByProduct(productPrice, index){
 
 }
 
-function getTotalPrice() {
-
-}
+function getTotalPrice(itmPrice,QTY) {
+  var totalPrice
+  if (QTY > 0) {
+    totalPrice = itmPrice*QTY;
+  }
+  else {
+    totalPrice = 0;
+  }
+  document.totalPrice = totalPrice
+  return totalPrice;
+  }
 
 function createQuantityInput(){
 
