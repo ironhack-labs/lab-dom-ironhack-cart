@@ -11,7 +11,8 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-
+ var button = document.getElementsByTagName('btn')[0];
+ console.log(button.value);
 }
 
 function createQuantityInput(){
