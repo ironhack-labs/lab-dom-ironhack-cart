@@ -1,3 +1,18 @@
+body{
+  margin: 20px;
+}
+
+h1{
+margin-left:40%;
+}
+
+.product{
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 10px;
+  padding-bottom: 40px;
+}
+
 input {
   border: solid 1px black;
 }
@@ -28,6 +43,7 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin-left: 40%;
 }
 
 .btn-delete {
