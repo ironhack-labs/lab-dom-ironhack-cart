@@ -12,6 +12,12 @@ function updatePriceByProduct(productPrice, index){
 
 function getTotalPrice() {
 
+  console.log(document.querySelectorAll('.mainContainer')[0]);
+
+
+  var totalPrice = (document.querySelectorAll('.price')[0].innerHTML)* document.querySelectorAll('.quantity')[0].value;
+  document.querySelectorAll('.totalPrice')[0].innerHTML = parseFloat(totalPrice.toFixed(2));
+
 }
 
 function createQuantityInput(){
