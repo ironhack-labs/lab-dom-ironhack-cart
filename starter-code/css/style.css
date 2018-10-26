@@ -10,11 +10,17 @@ h2 {
 }
 
 .product {
-  margin: 20px 0 0 10px;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 20px 0 0 20px;
   }
 
   .item-price{
-    margin: 0 0 0 20px;
+    margin: 0 5px 0 30px;
   }
 
 
