@@ -53,4 +53,9 @@ input {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  margin-bottom: 1rem;
+}
+
+.product .title {
+  width: 10rem;
 }
