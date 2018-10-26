@@ -1,5 +1,6 @@
 function deleteItem(e){
-
+  console.log(e);
+  console.log(this.parent);
 }
 
 function getPriceByProduct(itemNode){
