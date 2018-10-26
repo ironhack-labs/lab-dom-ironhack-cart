@@ -27,8 +27,8 @@ function getTotalPrice() {
   console.log(quantity)
   console.log(price)
 
-
 }
+
 
 function createQuantityInput(){
 

@@ -49,6 +49,11 @@ h1 {
 .product{
   display: flex;
   justify-content: space-around;
+
+}
+
+.product div{
+  flex-basis: 20%;
 }
 
 .container-calculate{
@@ -62,3 +67,9 @@ h1 {
 }
 
 
+.name{
+
+  width: 15%;
+  border: 1px solid yellow
+
+}
