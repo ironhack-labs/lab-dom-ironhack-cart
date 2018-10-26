@@ -47,14 +47,37 @@ function addItemToCart(){
   let tempItem = this.classList[1]
   let currentItem = inventory.filter(obj => {return obj.id === tempItem})[0];
   if(shoppingCart.includes(currentItem)){
-    currentItem.quantity += 1
+    shoppingCart[shoppingCart.indexOf(currentItem)].quantity += 1
   }else{
     shoppingCart.push(currentItem)
   }
-  
 
-  console.log(currentItem)
-  setupCart()
+  // console.log(currentItem)
+  refreshCart()
+  setupTotal()
+}
+
+function removeItemFromCart(){
+  // alert("works")
+  let tempItem = this.parentNode.textContent[0]
+  let currentItem = shoppingCart.filter(obj => {return obj.name === tempItem})[0];
+
+  // console.log(currentItem)
+  // console.log(tempItem)
+  // console.log(shoppingCart)
+  // console.log( currentItem)
+
+  console.log(shoppingCart)
+  console.log(currentItem.quantity )
+  console.log(shoppingCart[shoppingCart.indexOf(currentItem)].quantity)
+  if(currentItem.quantity > 1){
+    shoppingCart[shoppingCart.indexOf(currentItem)].quantity -= 1
+  }else{
+    shoppingCart.splice(shoppingCart.indexOf(currentItem),1);
+  }
+
+  // console.log(shoppingCart)
+  refreshCart()
   setupTotal()
 }
 
@@ -63,11 +86,13 @@ for(let i = 1; i<=inventory.length; i++){
   document.querySelector(".item" + i).addEventListener("click", addItemToCart)
 }
 
-setupCart()
+
+
+refreshCart()
 setupTotal()
 
 
-function setupCart() {
+function refreshCart() {
   let itemlist = document.querySelector("#itemlist");
   let pricelist = document.querySelector("#itemprices");
 
@@ -85,9 +110,19 @@ function setupCart() {
 
     let tempobj = document.createElement("li");
     tempobj.textContent = shoppingCart[i].name +  " (" + shoppingCart[i].quantity + ")";
-    tempobj.className = "item"
+    tempobj.className = "item item"+i
     itemlist.appendChild(tempobj)
 
+    let removeButton = document.createElement("button");
+    removeButton.textContent = "-";
+    removeButton.className = "rmbutton remove-button" + i
+    let num = i+1
+    // removeButton.className += " item"+num
+
+    
+
+    tempobj.appendChild(removeButton)
+    // console.log(document.querySelector(".remove-button" + i) + " aa ")
 
     let tempprice = document.createElement("li");
     let priceres = Math.round(shoppingCart[i].price*shoppingCart[i].quantity * 100)/100
@@ -95,11 +130,23 @@ function setupCart() {
     tempprice.className = "item"
     pricelist.append(tempprice)
   }
+
+  // console.log(document.querySelector("remove-button0")+"AAAAAAAAAAAAAAAAAAAAAAA")
+  if(shoppingCart.length !== 0){
+    for(let i = 0; i<shoppingCart.length; i++){
+      // console.log(document.querySelector(".remove-button"+ i))
+      // console.log(document.querySelector(".item" + i).children[0])
+      let num = i+1
+      document.querySelector(".remove-button" + i).addEventListener("click", removeItemFromCart)
+    }
+  }
+  
 };
 
-function priceUnifier(money){
 
-  console.log(money)
+
+function priceUnifier(money){
+  // console.log(money)
   if(money == 0){
     return 0
   }
@@ -111,10 +158,7 @@ function priceUnifier(money){
   if(cents.length == 1){
     cents = Number(cents)*10
   }
-  return(moneySplit[0] + "." + cents.toString()  )
-
-
-
+  return(moneySplit[0] + "." + cents.toString())
 }
 
 function setupTotal() {
@@ -153,7 +197,7 @@ function updatePriceByProduct(productPrice, index) {
 
 function getTotalPrice(arr) {
   let sum =priceUnifier( Math.round(arr.reduce((a, b) => a + b.price*b.quantity, 0)*100)/100)
-  console.log(sum)
+  // console.log(sum)
   return (sum)
 }
 

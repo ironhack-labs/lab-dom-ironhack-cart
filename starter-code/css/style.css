@@ -63,6 +63,13 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
 }
 
 .shopitem:hover {
@@ -98,4 +105,21 @@ input {
   list-style-type: none;
   border-bottom: 1px solid black;
   border-top: 1px solid black;
+}
+
+.rmbutton{
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  cursor: pointer;
+  border: none;
+  background: rgba(228, 239, 243, 0.342);
+  height: 90%;
+  width: 20px;
+  float: right;
+  margin-right: 70%;
+}
+
+.rmbutton:hover{
+  background: rgba(228, 239, 243, 0.623);
 }
