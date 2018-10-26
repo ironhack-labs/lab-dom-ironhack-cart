@@ -1,3 +1,4 @@
+
 function deleteItem(e){
 
 }
@@ -10,17 +11,11 @@ function updatePriceByProduct(productPrice, index){
 
 }
 
-function getTotalPrice(itmPrice,QTY) {
-  var totalPrice
-  if (QTY > 0) {
-    totalPrice = itmPrice*QTY;
-  }
-  else {
-    totalPrice = 0;
-  }
-  document.totalPrice = totalPrice
-  return totalPrice;
-  }
+function getTotalPrice(){
+  var itmPrice = document.querySelectorAll(".unitPrice");
+  var quantity = document.getElementsByTagName('input')[0]; 
+  return parseFloat(itmPrice) * parseFloat(quantity);
+}
 
 function createQuantityInput(){
 
