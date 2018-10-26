@@ -1,5 +1,10 @@
+body {
+  padding: 20px;
+}
+
 input {
   border: solid 1px black;
+  width: 40px;
 }
 
 .btn {
@@ -37,13 +42,35 @@ input {
   border-color: #cf000f;
 }
 
-.quantity {
-  margin: 0 5px;
+.btn-border {
+  border: 0.5px solid black;
+  padding: 3px 6px;
 }
 
 .container {
   display: flex;
   width: 100%;
-  justify-content: space-around;
   margin-bottom: 15px;
+}
+
+.createLine {
+  justify-content: space-between;
+}
+
+.createLine input {
+  width: 100px;
+}
+
+.col {
+  width: 20%;
+  text-align: center;
+}
+
+.col.name,
+.col-left {
+  text-align: left;
+}
+
+.centered {
+  justify-content: center;
 }

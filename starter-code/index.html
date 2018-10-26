@@ -12,29 +12,70 @@
 </head>
 
 <body>
-  <div class="container">
+  <div class="container centered">
     <h1>Ironhack<br>Merchandising Shop</h1>
   </div>
-  <div class="container">
-    <div id="name">
-      <span>IronBubble-head</span>
+
+  <div class="products">
+    <div class="container product">
+      <div class="name col">
+        <span>IronBubble-head</span>
+      </div>
+      <div class="singlePrice col">
+        <span>25.00</span>
+      </div>
+      <div class="quantity col">
+        <label for="quantity">QTY</label>
+        <input id="quantity" type="number">
+      </div>
+      <div class="totalPrice col">
+        <span>0.00</span>
+      </div>
+      <div class="col">
+        <button type="delete" class="btn btn-delete">Delete</button>
+      </div>
     </div>
-    <div id="singlePrice">
-      <span>25.00</span>
-    </div>
-    <div>
-      <label for="quantity">QTY</label>
-      <input id="quantity" type="number">
-    </div>
-    <div>
-      <span>0.00</span>
-    </div>
-    <div>
-      <button type="delete" class="btn btn-delete">Delete</button>
+
+    <div class="container product">
+      <div class="name col">
+        <span>IronShirt</span>
+      </div>
+      <div class="singlePrice col">
+        <span>15.00</span>
+      </div>
+      <div class="col">
+        <label for="quantityShirt">QTY</label>
+        <input id="quantityShirt" type="number">
+      </div>
+      <div class="totalPrice col">
+        <span>0.00</span>
+      </div>
+      <div class="col">
+        <button type="delete" class="btn btn-delete">Delete</button>
+      </div>
     </div>
   </div>
-  <div class="container">
-    <button type="submit" class="btn btn-success" id="w">Calculate Prices</button>
+
+  <div class="container createLine">
+    <div class="col col-left">
+      <input id="nameNewProduct">
+    </div>
+    <div class="col">
+      <input id="priceNewProduct" type="number">
+    </div>
+    <div class="col"></div>
+    <div class="col"></div>
+    <div class="col">
+      <button type="submit" class="btn btn-border newItemButton">Create</button>
+    </div>
+  </div>
+
+  <div class="container centered">
+    <button type="submit" class="btn btn-success">Calculate Prices</button>
+  </div>
+
+  <div class="container centered">
+    <h2>Total Price: <span id="totalCart">0</span></h2>
   </div>
 </body>
 
