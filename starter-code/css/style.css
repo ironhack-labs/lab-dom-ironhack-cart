@@ -59,3 +59,7 @@ input {
 .product .title {
   width: 10rem;
 }
+
+h2 {
+  text-align: center;
+}

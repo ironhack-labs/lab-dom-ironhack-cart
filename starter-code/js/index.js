@@ -40,15 +40,19 @@ function createNewItem(){
 
 function calculatePrices() {
   var products = document.querySelectorAll('.product');
+  var totalProducts = 0;
 
   products.forEach(function(product) {
     var cantidad = Number(product.querySelectorAll("input")[0].value);
     var precio = parseFloat(product.querySelectorAll(".price span")[0].innerHTML);
+    var total = cantidad * precio;
 
-    product.querySelectorAll(".total span")[0].innerHTML = cantidad * precio;
+    product.querySelectorAll(".total span")[0].innerHTML = total;
 
-    console.log(`Total: ${cantidad * precio}`)
+    totalProducts += total;
   });
+
+  document.querySelectorAll("h2 span")[0].innerHTML = totalProducts;
 }
 
 window.onload = function(){
