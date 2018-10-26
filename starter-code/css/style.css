@@ -38,4 +38,27 @@ input {
 
 .quantity {
   margin: 0 5px;
+  margin-right: 5px;
 }
+
+
+h1 {
+  text-align: center;
+}
+
+.product{
+  display: flex;
+  justify-content: space-around;
+}
+
+.container-calculate{
+  display: flex;
+  justify-content: center;
+}
+
+
+.calculate-btn{
+  margin-top: 50px;
+}
+
+

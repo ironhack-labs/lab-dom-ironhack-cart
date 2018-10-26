@@ -4,14 +4,22 @@ function deleteItem(e){
 
 function getPriceByProduct(itemNode){
 
+
 }
 
 function updatePriceByProduct(productPrice, index){
+
+
+
+
 
 }
 
 function getTotalPrice() {
 
+
+
+  
 }
 
 function createQuantityInput(){
@@ -44,9 +52,14 @@ window.onload = function(){
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
   calculatePriceButton.onclick = getTotalPrice;
+
+
+
   createItemButton.onclick = createNewItem;
 
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
   }
 };
+
+
