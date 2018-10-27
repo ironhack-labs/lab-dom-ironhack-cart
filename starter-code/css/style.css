@@ -41,6 +41,10 @@ h1 {
 
 }
 
+.btn-create {
+  border: 1px solid black;
+}
+
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
@@ -59,29 +63,37 @@ h1 {
   margin: 10px 0;
 }
 
-.product .product-name-container {
+.product-name-container {
   width: 10%;
 
 }
 
-.product .price-container {
+ .price-container {
   width: 5%;
 }
 
-.product .quantity-container {
+ .quantity-container {
   width: 20%;
+
 }
 
-.product .totalByProduct-container {
+ .totalByProduct-container {
   width: 5%;
 }
 
-#products {
-
-
-
-}
 
 #footer {
   align-self: center;
 }
+
+#create {
+  display:flex;
+  justify-content: space-around;
+  align-items: baseline;
+  margin:0;
+}
+
+#create input{
+  width:100%;
+}
+

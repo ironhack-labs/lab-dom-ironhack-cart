@@ -12,7 +12,7 @@
 <body>
   <h1>Ironhack Merchandising Shop</h1>
   <section id="products">
-  <div class="product product0">
+  <div class="product">
     <div class="product-name-container"> 
       <span class="product-name">IronBubble-head</span>
     </div>
@@ -21,7 +21,7 @@
   </div>
   <div class="quantity-container">
     <label>Qty</label>
-    <input class="quantity" type="number" placeholder ="0" value ="2">
+    <input class="quantity" type="number" value ="2">
   </div>
   <div class="totalByProduct-container">
      $<span class="totalByProduct">2.00</span>
@@ -30,10 +30,8 @@
     <button class="btn btn-delete">Delete</button>
 
   </div>
-</section>
 
-<section id="products">
-<div class="product product0">
+<div class="product">
       <div class="product-name-container"> 
         <span class="product-name">IronBubble-head</span>
       </div>
@@ -51,7 +49,19 @@
       <button class="btn btn-delete">Delete</button>
 
     </div>
-</section>
+  </section>
+<div id="create">
+  <div class="product-name-container">
+      <input id="newName" type ="text" value="">
+  </div>
+  <div class="price-container">
+      <input id="newPrice" type ="number" value="">
+  </div>
+  <div class="quantity-container"></div>
+  <div class="totalByProduct-container"></div>
+
+    <button id="new-item-create" class="btn btn-create">Create</button>
+  </div>
 <section id="footer">
     <div>
         <button id ="calc-prices-button" class="btn btn-success">Calculate Prices</button>
