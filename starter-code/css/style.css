@@ -42,10 +42,15 @@ input {
   margin: 0 5px;
 }
 
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+}
+
 .containerProduct {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-content: flex-start;
   margin: 20px 0px;
 
 }
@@ -84,5 +89,9 @@ h2 {
 
 .newItem input {
   margin-right: 40px;
+}
+
+.itemName {
+  flex-basis: 150px;
 }
 
