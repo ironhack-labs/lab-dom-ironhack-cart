@@ -23,8 +23,8 @@ function getTotalPrice() {
 
     totalPrice += Number(productTotalPrice);
   }
-  // Total price of all products. Will update in the future
-  return totalPrice;
+
+  document.querySelector("#total-price").innerText = totalPrice.toFixed(2);
 }
 
 function createQuantityInput(){
