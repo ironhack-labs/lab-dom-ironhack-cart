@@ -1,5 +1,21 @@
+html, body {
+  width: 100%;
+  margin: 0;
+}
+h2 {
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  margin: 5% auto;
+}
 input {
   border: solid 1px black;
+}
+
+.align-product {
+  display: flex;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .btn {
@@ -36,6 +52,56 @@ input {
     border-color: #CF000F;
 }
 
+.btn-create {
+  color: #fff;
+  background-color: darkcyan;
+  border-color: darkcyan;
+}
+
 .quantity {
   margin: 0 5px;
+}
+
+.align-btn {
+  text-align: center;
+}
+
+#container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.spacer {
+  margin: 3% 0;
+}
+
+.name-left {
+  width: 20%;
+  text-align: left;
+}
+
+.value-center {
+  width: 20%;
+  text-align: center;
+}
+
+.little-container {
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+}
+
+.name-middle {
+  width: 20%;
+  margin: 0 5%;
+}
+
+.btn-right {
+  position: absolute;
+  right: 0;
+}
+
+.input-height {
+  height: 30px;
 }
