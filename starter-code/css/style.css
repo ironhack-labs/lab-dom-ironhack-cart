@@ -36,6 +36,20 @@ input {
     border-color: #CF000F;
 }
 
-.quantity {
+.result {
   margin: 0 5px;
+}
+.container{
+  display:flex;
+  justify-content: space-around;
+}
+
+.h1-container{
+  display: flex;
+  justify-content: center;
+}
+.btn-container{
+  text-align: center;
+  margin-top: 50px;
+
 }
