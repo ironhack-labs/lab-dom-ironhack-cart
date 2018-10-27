@@ -44,8 +44,10 @@ input {
 
 .containerProduct {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
+  margin: 20px 0px;
+
 }
 
 .buttonContainer {
@@ -53,8 +55,25 @@ input {
   justify-content: center;
 }
 
+.resultSection {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
 .container div {
 
+}
+
+h2 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.titleSection {
+  display: flex;
+  justify-content: center;
 }
 
 

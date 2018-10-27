@@ -1,34 +1,67 @@
 function deleteItem(e){
 
+  var product = document.querySelectorAll(`#id${e}`)[0]
+  product.parentNode.removeChild(product);
+
+  getTotalPrice();
+
 }
 
 function getPriceByProduct(itemNode){
+
+  var id = itemNode.getAttribute('id').split('d')[1];
+  var price = itemNode.querySelectorAll(`.price${id}`)[0].innerHTML.split('$')[1];
+  var quantity = itemNode.querySelectorAll(`.quantity${id}`)[0].value
+  
+  return price * quantity
 
 }
 
 function updatePriceByProduct(productPrice, index){
 
+  document.querySelectorAll(`.totalPriceProduct${index}`)[0].innerHTML = '$' + parseFloat(productPrice.toFixed(2));
+  return productPrice;
 }
 
 function getTotalPrice() {
 
-  console.log(document.querySelectorAll('.mainContainer')[0]);
+  var totalPrice = 0;
 
+    document.querySelectorAll('.containerProduct').forEach(function(product) {
 
-  var totalPrice = (document.querySelectorAll('.price')[0].innerHTML)* document.querySelectorAll('.quantity')[0].value;
-  document.querySelectorAll('.totalPrice')[0].innerHTML = parseFloat(totalPrice.toFixed(2));
+      var id = product.getAttribute('id').split('d')[1];
+      totalPrice += updatePriceByProduct(getPriceByProduct(product),id);
+
+    });
+  
+    document.querySelectorAll(`.totalPrice`)[0].innerHTML = '$' + parseFloat(totalPrice.toFixed(2));
 
 }
 
 function createQuantityInput(){
 
+  return document.createElement('input');
+
 }
 
 function createDeleteButton(){
 
+  return document.createElement('Button');
+
 }
 
 function createQuantityNode(){
+
+  var divTag = document.createElement('div');
+  var formTag = document.createElement('form');
+  var labelTag = document.createElement('label');
+
+/* <div>
+  <form action="">
+    <label for="">QTY</label>
+    <input class="quantity0" type="number">
+  </form>
+</div> */
 
 }
 
@@ -37,6 +70,9 @@ function createItemNode(dataType, itemData){
 }
 
 function createNewItemRow(itemName, itemUnitPrice){
+
+  var parent = document.querySelectorAll('.mainCointainer');
+  var divTag = document.createElement('div');
 
 }
 
