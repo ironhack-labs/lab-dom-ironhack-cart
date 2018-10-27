@@ -4,14 +4,6 @@ function deleteItem(event){
   parentNode.removeChild(productItem);
 }
 
-function getPriceByProduct(itemNode){
-
-}
-
-function updatePriceByProduct(productPrice, index){
-
-}
-
 function getTotalPrice() {
   const allProducts = document.querySelectorAll(".product");
   let totalPrice = 0;
@@ -27,26 +19,6 @@ function getTotalPrice() {
   }
 
   document.querySelector("#total-price").innerText = totalPrice.toFixed(2);
-}
-
-function createQuantityInput(){
-
-}
-
-function createDeleteButton(){
-
-}
-
-function createQuantityNode(){
-
-}
-
-function createItemNode(dataType, itemData){
-
-}
-
-function createNewItemRow(itemName, itemUnitPrice){
-
 }
 
 function createNewItem(){
