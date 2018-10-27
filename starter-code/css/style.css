@@ -4,6 +4,7 @@ input {
 h1 {
   text-align: center;
   padding-bottom: 15px;
+
 }
 .btn {
   display: inline-block;
@@ -45,8 +46,26 @@ h1 {
   margin: 0 5px;
 }
 
-.wrap {
+.product {
   display: flex;
   justify-content: space-around;
   align-items: baseline;
 }
+
+.product .product-name-container {
+  width: 10%;
+
+}
+
+.product .price-container {
+  width: 5%;
+}
+
+.product .quantity-container {
+  width: 20%;
+}
+
+.product .totalByProduct-container {
+  width: 5%;
+}
+

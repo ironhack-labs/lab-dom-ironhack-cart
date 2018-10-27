@@ -4,6 +4,8 @@ function deleteItem(e){
 
 function getPriceByProduct(itemNode){
 
+  return parseFloat(itemNode.querySelector('.price').textContent) * parseInt(itemNode.querySelector('.quantity').value);
+
 }
 
 function updatePriceByProduct(productPrice, index){
@@ -11,11 +13,10 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-    var product = document.querySelectorAll('.product-name')[0].innerHTML;
-    var price   =   parseFloat(document.querySelectorAll('.price')[0].innerHTML.substring(1));
-    var quantity = parseFloat(document.querySelectorAll('.quantity')[0].value); 
-    document.querySelectorAll(".totalByProduct")[0].innerHTML = `$${quantity * price}`;
-    
+
+        document.querySelectorAll('.product').forEach(function(product){
+        product.querySelector(".totalByProduct").innerHTML = getPriceByProduct(product);
+    });  
 }
 
 function createQuantityInput(){
