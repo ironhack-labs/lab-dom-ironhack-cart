@@ -1,52 +1,40 @@
-function deleteItem(e){
+function deleteItem(e) {}
 
-}
+function getPriceByProduct(itemNode) {}
 
-function getPriceByProduct(itemNode){
+function updatePriceByProduct(productPrice, index) {}
 
-}
+function getTotalPrice() {}
 
-function updatePriceByProduct(productPrice, index){
+function createQuantityInput() {}
 
-}
+function createDeleteButton() {}
 
-function getTotalPrice() {
+function createQuantityNode() {}
 
-}
+function createItemNode(dataType, itemData) {}
 
-function createQuantityInput(){
+function createNewItemRow(itemName, itemUnitPrice) {}
 
-}
+function createNewItem() {}
 
-function createDeleteButton(){
+window.onload = function() {
+  var calculatePriceButton = document.getElementById("calc-prices-button");
+  var createItemButton = document.getElementById("new-item-create");
+  var deleteButtons = document.getElementsByClassName("btn-delete");
 
-}
+  //var myButton = document.getElementsByTagName('button') [0]
+  //myButton.onclick = function(event) {
+  //  alert("TEST : moot")
+  //}
 
-function createQuantityNode(){
+  var price = 0;
+  // Number(price.Text.split(":")[1]);
 
-}
+  // calculatePriceButton.onclick = getTotalPrice;
+  // createItemButton.onclick = createNewItem;
 
-function createItemNode(dataType, itemData){
-
-}
-
-function createNewItemRow(itemName, itemUnitPrice){
-
-}
-
-function createNewItem(){
-
-}
-
-window.onload = function(){
-  var calculatePriceButton = document.getElementById('calc-prices-button');
-  var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');
-
-  calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
-
-  for(var i = 0; i<deleteButtons.length ; i++){
+  for (var i = 0; i < deleteButtons.length; i++) {
     deleteButtons[i].onclick = deleteItem;
   }
 };
