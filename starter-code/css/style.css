@@ -1,7 +1,40 @@
+
+.title{
+  margin-top: 5%; 
+  margin-bottom: 3%;
+  margin-left: 20%;
+  display: flex;
+  justify-content: center;
+}
+.span-price{
+
+
+}
+.calculate-result{
+  
+}
+.title span {
+  font-size: 35px;
+  font-weight: bold;
+  text-align: left;
+}
+.info-product{
+  margin-top: 2%;
+  margin-left: 2%;
+  margin-right: 2%;
+  display: flex;
+  justify-content: space-between;
+}
+.calculate-button{
+  margin-left: 10%;
+  margin-top: 3%;
+  display: flex;
+  justify-content: center;
+}
+
 input {
   border: solid 1px black;
 }
-
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -22,6 +55,7 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+  
 }
 
 .btn-success {
