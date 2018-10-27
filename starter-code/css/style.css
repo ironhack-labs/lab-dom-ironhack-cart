@@ -1,3 +1,4 @@
+
 input {
   border: solid 1px black;
 }
@@ -38,4 +39,22 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.product {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 3rem;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.prices {
+  display: flex;
+  justify-content: center;
 }
