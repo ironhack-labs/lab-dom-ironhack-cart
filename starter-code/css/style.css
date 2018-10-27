@@ -43,19 +43,22 @@ input {
   margin: 0 5px;
 }
 
-header{
+.header{
+  width: 100%;
   display: flex;
   justify-content: center;
 }
 
 
 .divlinear{
+  margin-top: 2rem;
   display: flex;
   justify-content: space-around;
 }
 
 
 .divcalculate{
+  margin-top: 2rem;
   display: flex;
   justify-content: center;
 }
