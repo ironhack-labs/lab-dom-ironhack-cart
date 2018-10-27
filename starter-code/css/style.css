@@ -1,6 +1,7 @@
 
 input {
   border: solid 1px black;
+  padding: 0.25rem;
 }
 
 .btn {
