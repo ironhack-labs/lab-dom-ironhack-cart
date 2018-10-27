@@ -54,7 +54,9 @@ function createQuantityInput(parent) {
   listProducts = document.getElementsByClassName("products")[0];
   var inputNode =createItemNode("INPUT" ,"0");
   inputNode.className="amount";
-  var divInput = createItemNode("div",inputNode);
+  var label = createItemNode("label","QTY");
+  var divInput = createItemNode("div",label);
+  divInput.appendChild(inputNode);
   parent.appendChild(divInput);
   
 }
@@ -62,8 +64,9 @@ function createQuantityInput(parent) {
 function createDeleteButton(parent) {
 
   listProducts = document.getElementsByClassName("products")[0];
-  var deleteButton =createItemNode("BUTTON","");
+  var deleteButton =createItemNode("BUTTON","delete");
   deleteButton.className="btn-delete";
+  deleteButton.onclick = deleteItem;
   parent.appendChild(deleteButton);
 }
 
@@ -90,8 +93,15 @@ function createItemNode(dataType, itemData) {
     tag.appendChild(itemData);
   }else if(dataType === "INPUT"){
     var tag = document.createElement(dataType);
+  }else if(dataType === "BUTTON"){
+    var tag = document.createElement(dataType);
+    var textNode = document.createTextNode(itemData);
+    tag.appendChild(textNode);
   }else{
     var tag = document.createElement(dataType);
+    var textNode = document.createTextNode(itemData);
+    tag.appendChild(textNode);
+    console.log(tag);
   }
 
 
@@ -110,7 +120,7 @@ function createNewItemRow(itemName, itemUnitPrice) {
   listProducts = document.getElementById("list-products");
   createQuantityInput(productDiv);
   createQuantityNode(productDiv);
-   createDeleteButton(productDiv);
+  createDeleteButton(productDiv);
   listProducts.appendChild(productDiv);
 
 
