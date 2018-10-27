@@ -49,11 +49,33 @@ function getTotalPrice() {
   document.getElementById("total-value").innerHTML = `$${priceTotal}`;
 }
 
-function createQuantityInput() {}
+function createQuantityInput(parent) {
+  
+  listProducts = document.getElementsByClassName("products")[0];
+  var inputNode =createItemNode("INPUT" ,"0");
+  inputNode.className="amount";
+  var divInput = createItemNode("div",inputNode);
+  parent.appendChild(divInput);
+  
+}
 
-function createDeleteButton() {}
+function createDeleteButton(parent) {
 
-function createQuantityNode() {}
+  listProducts = document.getElementsByClassName("products")[0];
+  var deleteButton =createItemNode("BUTTON","");
+  deleteButton.className="btn-delete";
+  parent.appendChild(deleteButton);
+}
+
+function createQuantityNode(parent) {
+
+  listProducts = document.getElementsByClassName("products")[0];
+  var spanQuantityNode = createItemNode("span", "$0.00");
+  spanQuantityNode.className = "price-amount";
+  var divQuantityNode  = createItemNode("div",spanQuantityNode);
+  parent.appendChild(divQuantityNode);
+
+}
 
 function createItemNode(dataType, itemData) {
 
@@ -63,10 +85,16 @@ function createItemNode(dataType, itemData) {
     var textNode = document.createTextNode(itemData);
     tag.appendChild(textNode);
   
-  }else{
+  }else if(dataType === "div"){
     var tag = document.createElement(dataType);
     tag.appendChild(itemData);
+  }else if(dataType === "INPUT"){
+    var tag = document.createElement(dataType);
+  }else{
+    var tag = document.createElement(dataType);
   }
+
+
     
 
 
@@ -74,12 +102,19 @@ function createItemNode(dataType, itemData) {
 }
 
 function createNewItemRow(itemName, itemUnitPrice) {
-  var generalDiv;
-  generalDiv = createItemNode("div",itemName);
-  generalDiv.appendChild(itemUnitPrice);
-  generalDiv.className = "product-section-one product";
+  var productDiv, listProducts;
+  productDiv = createItemNode("div",itemName);
+  productDiv.appendChild(itemUnitPrice);
+  productDiv.className = "product-section-one product";
 
-  console.log(generalDiv);
+  listProducts = document.getElementById("list-products");
+  createQuantityInput(productDiv);
+  createQuantityNode(productDiv);
+   createDeleteButton(productDiv);
+  listProducts.appendChild(productDiv);
+
+
+  
 
   
 }
