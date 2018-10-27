@@ -73,10 +73,27 @@ function createNewItemRow(itemName, itemUnitPrice){
 
   var parent = document.querySelectorAll('.mainCointainer');
   var divTag = document.createElement('div');
+  var spanTag = document.createElement('tag');
+
+  var name = document.createTextNode = itemName; 
+
+  spanTag.appendChild(name);
+
+  return divTag.parent.insertBefore(spanTag, firstChild);
+
 
 }
 
 function createNewItem(){
+
+  var lastChild = document.querySelectorAll(`.containerProduct`)[document.querySelectorAll(`.containerProduct`).length - 1];
+
+  var name = document.querySelectorAll(`.newName`)[0].value;
+  var price = document.querySelectorAll(`.newPrice`)[0].value;
+
+
+  var parent = document.querySelectorAll('.mainContainer');
+  parent.insertBefore(createNewItemRow(name,price),lastChild)
 
 }
 

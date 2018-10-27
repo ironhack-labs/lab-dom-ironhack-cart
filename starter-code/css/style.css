@@ -76,4 +76,13 @@ h2 {
   justify-content: center;
 }
 
+.newItem {
+  padding: 0px 60px;
+  display: flex;
+  
+}
+
+.newItem input {
+  margin-right: 40px;
+}
 
