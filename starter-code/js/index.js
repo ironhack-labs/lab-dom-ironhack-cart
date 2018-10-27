@@ -1,4 +1,6 @@
 function deleteItem(e){
+  var product = e.currentTarget.parentNode;
+  product.parentNode.removeChild(product);
 
 }
 
@@ -13,10 +15,15 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-
+    var totalPrice = 0;
         document.querySelectorAll('.product').forEach(function(product){
-        product.querySelector(".totalByProduct").innerHTML = getPriceByProduct(product);
+        var totalProductPrice = getPriceByProduct(product);
+        product.querySelector(".totalByProduct").innerHTML = totalProductPrice;
+        totalPrice += totalProductPrice;
+
     });  
+    document.querySelector('#totalSum').innerHTML = totalPrice;
+
 }
 
 function createQuantityInput(){
@@ -49,7 +56,7 @@ window.onload = function(){
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
   calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
+  // createItemButton.onclick = createNewItem;
 
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;

@@ -11,6 +11,7 @@
 </head>
 <body>
   <h1>Ironhack Merchandising Shop</h1>
+  <section id="products">
   <div class="product product0">
     <div class="product-name-container"> 
       <span class="product-name">IronBubble-head</span>
@@ -25,13 +26,14 @@
   <div class="totalByProduct-container">
      $<span class="totalByProduct">2.00</span>
   </div>
-  <div>
-    <button class="btn btn-delete">Delete</button>
-  </div>
-  </div>
 
-  
-  <div class="product product0">
+    <button class="btn btn-delete">Delete</button>
+
+  </div>
+</section>
+
+<section id="products">
+<div class="product product0">
       <div class="product-name-container"> 
         <span class="product-name">IronBubble-head</span>
       </div>
@@ -45,14 +47,18 @@
     <div class="totalByProduct-container">
        $<span class="totalByProduct">2.00</span>
     </div>
-    <div>
+
       <button class="btn btn-delete">Delete</button>
+
     </div>
-    </div>
-  
+</section>
+<section id="footer">
     <div>
         <button id ="calc-prices-button" class="btn btn-success">Calculate Prices</button>
     </div>
-  
+    <div>
+      <h2>Total Price: $<span id="totalSum">0</span></h2>
+    </div>
+  </section>
 </body>
 </html>

@@ -1,8 +1,13 @@
+body {
+  display: flex;
+  flex-direction: column;
+
+}
 input {
   border: solid 1px black;
 }
 h1 {
-  text-align: center;
+  align-self: center;
   padding-bottom: 15px;
 
 }
@@ -32,6 +37,7 @@ h1 {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin: 10px 0;
 
 }
 
@@ -50,6 +56,7 @@ h1 {
   display: flex;
   justify-content: space-around;
   align-items: baseline;
+  margin: 10px 0;
 }
 
 .product .product-name-container {
@@ -69,3 +76,12 @@ h1 {
   width: 5%;
 }
 
+#products {
+
+
+
+}
+
+#footer {
+  align-self: center;
+}
