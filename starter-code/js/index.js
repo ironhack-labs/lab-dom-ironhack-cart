@@ -21,7 +21,7 @@ function getTotalPrice() {
   document.querySelector("#total-price").innerText = totalPrice.toFixed(2);
 }
 
-function createNewItem(){
+function createNewItem() {
   const newProductNameInput = document.querySelector("#create-name");
   const newProductPriceInput = document.querySelector("#create-price");
 
