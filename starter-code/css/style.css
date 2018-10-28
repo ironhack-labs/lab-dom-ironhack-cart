@@ -1,3 +1,24 @@
+
+
+.header {
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.product-name{
+  width: 20%;
+}
+
+.container {
+  /* border: 1px solid red; */
+  display: flex;
+  /* flex-wrap: nowrap; */
+  overflow: hidden;
+  justify-content: space-between;
+  margin: 20px;
+}
 input {
   border: solid 1px black;
 }
@@ -24,6 +45,15 @@ input {
   border-radius: 4px;
 }
 
+.calculate-btn-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.total-container {
+  /* border: 2px solid black; */
+}
+
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
@@ -34,6 +64,13 @@ input {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+}
+
+.btn-create {
+  color: #fff;
+  background-color: #009999;
+  border-color: #009999;
+  
 }
 
 .quantity {
