@@ -2,6 +2,19 @@ input {
   border: solid 1px black;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row-style {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
