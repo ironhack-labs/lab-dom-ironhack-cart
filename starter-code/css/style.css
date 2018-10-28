@@ -10,7 +10,7 @@ input {
   font-weight: 400;
   line-height: 1.42857143;
   text-align: center;
-  white-space: nowrap;
+  /* white-space: nowrap;
   vertical-align: middle;
   -ms-touch-action: manipulation;
   touch-action: manipulation;
@@ -19,9 +19,7 @@ input {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
+  background-image: none; */
 }
 
 .btn-success {
@@ -34,8 +32,53 @@ input {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    border-radius: 4px;
+    /* margin-left: 4vh; */
 }
 
 .quantity {
   margin: 0 5px;
+}
+.product {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  flex-basis: 20vh;
+  margin: 1vh auto;
+}
+
+.product-name{
+  width: 10vh;
+  margin-left:10vh;
+}
+
+.lower-menu {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  height:15vh;
+}
+
+#add-product-form{
+  display:flex;
+  justify-content: space-around;
+  width:100vw;
+}
+
+#create-product-button{
+  margin-left: 30vw;
+  margin-right: 4vw;
+}
+
+#calc-prices-button{
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: green;
+  color:white;
+  width: 15vw;
+}
+
+#grand-total{
+  text-align:center;
 }
