@@ -1,12 +1,19 @@
-function deleteItem(e){
+function remove() {
 
 }
 
-function getPriceByProduct(itemNode){
-
+function getPriceByProduct() {
+  var currPrice = parseFloat(document.getElementsByClassName("price")[0].innerHTML);
+  var currQuantity = document.getElementById("quantity").value;
+  return currQuantity * currPrice
+}
+function getPriceByProduct2() {
+  var currPrice = parseFloat(document.getElementsByClassName("price")[1].innerHTML);
+  var currQuantity = document.getElementById("quantity2").value;
+  return currQuantity * currPrice
 }
 
-function updatePriceByProduct(productPrice, index){
+function updatePriceByProduct(productPrice, index) {
 
 }
 
@@ -14,39 +21,58 @@ function getTotalPrice() {
 
 }
 
-function createQuantityInput(){
+function createQuantityInput() {
 
 }
 
-function createDeleteButton(){
+function createDeleteButton() {
 
 }
 
-function createQuantityNode(){
+function createQuantityNode() {
 
 }
 
-function createItemNode(dataType, itemData){
+function createItemNode(dataType, itemData) {
 
 }
 
-function createNewItemRow(itemName, itemUnitPrice){
+function createNewItemRow(itemName, itemUnitPrice) {
 
 }
 
-function createNewItem(){
+function createNewItem() {
 
 }
 
-window.onload = function(){
+window.onload = function () {
   var calculatePriceButton = document.getElementById('calc-prices-button');
+  var calculatePriceButton2 = document.getElementById('calc-prices-button2')
   var createItemButton = document.getElementById('new-item-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
-  calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
+/*
+  function getPriceByProduct() {
+    var currPrice = parseFloat(document.getElementsByClassName("price")[0].innerHTML);
+    var currQuantity = document.getElementById("quantity").value;
+    return currQuantity * currPrice
+  }
+  */
 
-  for(var i = 0; i<deleteButtons.length ; i++){
+  calculatePriceButton.addEventListener('click', function () {
+    document.getElementsByClassName("total")[0].innerHTML = getPriceByProduct()
+  })
+  calculatePriceButton2.addEventListener('click', function () {
+    document.getElementsByClassName("total")[1].innerHTML = getPriceByProduct2()
+  })
+
+  //createItemButton.onclick = createNewItem;
+
+  deleteButtons[0].onclick = function () {    
+    deleteButtons[0].parentNode.remove()
+  }
+
+  for (var i = 0; i < deleteButtons.length; i++) {
     deleteButtons[i].onclick = deleteItem;
   }
 };

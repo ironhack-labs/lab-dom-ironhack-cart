@@ -28,9 +28,18 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    display: inline;
+    float: left;
+    margin: 40px 20px;
 }
 
 .btn-delete {
+    display: inline;
+    float: left;
+    text-align: center;
+    margin: 40px 20px;
+    height: 20px;
+    width: 60px;
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
@@ -38,4 +47,42 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.wrapper {
+  height: 200px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.wrapper h1 {
+  text-align: center;
+}
+
+span, label, input {
+  float: left;
+  margin: 50px 20px;
+}
+
+.wrapper2 {
+  clear: left;
+  height: 200px;
+  width: 80%;
+  text-align: left;
+}
+
+.price {
+  margin-left: 0;
+}
+
+.currency {
+  margin-right: 0;
+}
+
+.total {
+  margin-left: 0;
+}
+
+#calc-button-total {
+  margin: 0 auto;
 }
