@@ -64,11 +64,6 @@ function createDeleteButton(){
 
 }
 
-function getLastId() {
-
-  return document.querySelectorAll(`.containerProduct`).length;
-
-}
 
 function getLastChild(type) {
 
@@ -111,10 +106,9 @@ function createItemNode(dataType, itemData){
 
   var parent = document.querySelectorAll('.mainContainer')[0];
 
-  divTag.setAttribute("id", `id${getLastId()}`);
   divTag.className = "containerProduct";
 
-  parent.insertBefore(divTag, getLastChild(1))
+  parent.appendChild(divTag)
 
 }
 
@@ -136,7 +130,6 @@ function createNewItemRow(itemName, itemUnitPrice){
     }
 
     if (i === 1) {
-      
       spanTag.appendChild(text);
       spanTag.setAttribute('class', `price`)
       divTag.appendChild(spanTag);
