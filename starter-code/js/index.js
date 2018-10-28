@@ -7,8 +7,9 @@ var buttonTag = document.createElement('button');
 
 function deleteItem(e){
 
-  var product = document.querySelectorAll(`#id${e}`)[0]
-  product.parentNode.removeChild(product);
+  var parent = document.querySelectorAll('.mainContainer')[0];
+  var child = e.path[2];
+  parent.removeChild(child);
 
   getTotalPrice();
 
@@ -16,9 +17,8 @@ function deleteItem(e){
 
 function getPriceByProduct(itemNode){
 
-  var id = itemNode.getAttribute('id').split('d')[1];
-  var price = itemNode.querySelectorAll(`.price${id}`)[0].innerHTML.split('$')[1];
-  var quantity = itemNode.querySelectorAll(`.quantity${id}`)[0].value
+  var price = itemNode.querySelectorAll(`.price`)[0].innerHTML.split('$')[1];
+  var quantity = itemNode.querySelectorAll(`.quantity`)[0].value
   
   return price * quantity
 
@@ -26,7 +26,7 @@ function getPriceByProduct(itemNode){
 
 function updatePriceByProduct(productPrice, index){
 
-  document.querySelectorAll(`.totalPriceProduct${index}`)[0].innerHTML = '$' + parseFloat(productPrice.toFixed(2));
+  document.querySelectorAll(`.totalPriceProduct`)[index].innerHTML = '$' + parseFloat(productPrice.toFixed(2));
   return productPrice;
 }
 
@@ -34,10 +34,9 @@ function getTotalPrice() {
 
   var totalPrice = 0;
 
-    document.querySelectorAll('.containerProduct').forEach(function(product) {
+    document.querySelectorAll('.containerProduct').forEach(function(product, i) {
 
-      var id = product.getAttribute('id').split('d')[1];
-      totalPrice += updatePriceByProduct(getPriceByProduct(product),id);
+      totalPrice += updatePriceByProduct(getPriceByProduct(product),i);
 
     });
   
@@ -58,7 +57,7 @@ function createDeleteButton(){
 
   var text = document.createTextNode('Delete');
   buttonTag.appendChild(text);
-  buttonTag.setAttribute('onclick', `deleteItem(${getLastId() - 1})`)
+  buttonTag.setAttribute('onclick', `deleteItem(event)`)
   buttonTag.setAttribute('class', 'btn btn-delete');
   divTag.appendChild(buttonTag);
   getLastChild(0).appendChild(divTag);
@@ -96,21 +95,13 @@ function createQuantityNode(){
   formTag.appendChild(labelTag);
   formTag.appendChild(inputTag);
 
-  inputTag.setAttribute("class", `quantity${getLastId() - 1}`);
+  inputTag.setAttribute("class", `quantity`);
   inputTag.setAttribute('type', 'number');
 
   divTag.appendChild(formTag);
 
   getLastChild(0).appendChild(divTag);
 
-
-
-/* <div>
-  <form action="">
-    <label for="">QTY</label>
-    <input class="quantity0" type="number">
-  </form>
-</div> */
 
 }
 
@@ -147,7 +138,7 @@ function createNewItemRow(itemName, itemUnitPrice){
     if (i === 1) {
       
       spanTag.appendChild(text);
-      spanTag.setAttribute('class', `price${getLastId()-1}`)
+      spanTag.setAttribute('class', `price`)
       divTag.appendChild(spanTag);
       getLastChild(0).appendChild(divTag);
     }
@@ -170,7 +161,7 @@ function createNewItemRow(itemName, itemUnitPrice){
   spanTag = document.createElement('span')
 
   spanTag.appendChild(text);
-  spanTag.setAttribute('class', `totalPriceProduct${getLastId() - 1}`);
+  spanTag.setAttribute('class', `totalPriceProduct`);
   divTag.appendChild(spanTag);
 
   getLastChild(0).appendChild(divTag);
@@ -184,21 +175,17 @@ function createNewItem(){
   var name = document.querySelectorAll(`.newName`)[0].value;
   var price = document.querySelectorAll(`.newPrice`)[0].value;
 
-
   createItemNode();
   createNewItemRow(name,price);
   createDeleteButton();
 
-
-
-
-
-  // var parent = document.querySelectorAll('.mainContainer');
-  // parent.insertBefore(createNewItemRow(name,price),lastChild)
+  document.querySelectorAll(`.newName`)[0].value = '';
+  document.querySelectorAll(`.newPrice`)[0].value = '';
 
 }
 
 window.onload = function(){
+  
   var calculatePriceButton = document.getElementById('calc-prices-button');
   var createItemButton = document.getElementById('new-item-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
