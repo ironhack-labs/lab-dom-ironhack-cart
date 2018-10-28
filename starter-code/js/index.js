@@ -15,7 +15,8 @@ function getPriceByProduct(){
 /*Retrieves the quantity of items desired*/
 function getQuantityValue() {
   var qty = document.querySelectorAll(".get-qty");
-  var currentValQty = qty.map(function(item){
+  var currentValQty = [];
+  qty.forEach(function(item){
    currentValQty.push(parseFloat(item.value));
   });
   console.log(currentValQty);
