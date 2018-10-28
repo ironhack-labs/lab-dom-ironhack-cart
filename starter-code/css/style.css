@@ -68,3 +68,19 @@ input {
   align-items: center;
   padding: 2rem;
 }
+
+.name {
+  width: 250px;
+}
+
+.cost {
+  width: 100px;
+}
+
+#create-name {
+  margin: 0 13rem 0 5rem;
+}
+
+#new-item-create {
+  margin-right: 3.5rem;
+}

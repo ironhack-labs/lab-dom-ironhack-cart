@@ -28,7 +28,7 @@ function createNewItem(){
   const productNode = document.querySelector(".product").cloneNode(true);
   productNode.querySelector(".btn-delete").onclick = deleteItem;
   productNode.querySelector(".product-name").innerText = newProductNameInput.value;
-  productNode.querySelector(".product-cost").innerText = newProductPriceInput.value;
+  productNode.querySelector(".product-cost").innerText = Number(newProductPriceInput.value).toFixed(2);
   productNode.querySelector(".quantity-input").value = '';
   productNode.querySelector(".total-price").innerText = 0.00;
 
