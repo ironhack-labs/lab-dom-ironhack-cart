@@ -1,77 +1,24 @@
-function deleteItem(e) {
-
-}
-
-function getPriceByProduct(itemNode) {
-    return document.querySelectorAll(itemNode)[0].innerHTML;
-
-}
-
-function updatePriceByProduct(productPrice, index) {
-    document.querySelector('')
-}
-
-function getTotalPrice() {
-
-}
-
-function createQuantityInput() {
-
-}
-
-function createDeleteButton() {
-
-}
-
-function createQuantityNode() {
-
-}
-
-function createItemNode(dataType, itemData) {
-
-}
-
-function createNewItemRow(itemName, itemUnitPrice) {
-
-}
-
-function createNewItem() {
-
-}
-
-// window.onload = function(){
-var calculatePriceButton = document.getElementById('calc-prices-button');
-//   var createItemButton = document.getElementById('new-item-create');
-//   var deleteButtons = document.getElementsByClassName('btn-delete');
-
-// calculatePriceButton.onclick = getTotalPrice();
-//   createItemButton.onclick = createNewItem;
-
-//   for(var i = 0; i<deleteButtons.length ; i++){
-//     deleteButtons[i].onclick = deleteItem;
-//   }
-// };
-
-// function getTotalPrice() {
-//     document.querySelectorAll('.product').forEach(function (product) {
-//         unitCost = document.querySelector('.unit-cost').innerHTML;
-//         quantity = document.querySelector('.quantity').innerHTML;
-//         document.querySelector('.total-price').innerHTML = unitCost * quantity;
-//     })
-// };
-
-// function repeatProduct() {
-//     document.querySelector('body').innerHTML += "\n<br>\n" + document.querySelector('.product-container').innerHTML
-// }   
-
 function addProduct() {
-
-    let prodId = document.querySelectorAll('.product').length;
 
     let randomQty = Math.floor(Math.random() * 10)
 
     let prodName = document.querySelector('#product-name-input').value;
     let prodCost = document.querySelector('#product-cost-input').value;
+
+    //New Id generator: making sure no Ids repeat
+    let products = document.querySelectorAll('.product');
+    let usedIds = [];
+    products.forEach(function(product){
+        usedIds.push(parseInt(product.getAttribute('class').slice(9)))
+    });
+    let prodId = 0;
+    debugger
+    let i=-1;
+    do {
+        i++
+        prodId = i}
+    while (usedIds.includes(i));
+    //============================================
 
     newProduct = `<div class="product p${prodId}">
     <div>
