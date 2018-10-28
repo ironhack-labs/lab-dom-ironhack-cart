@@ -6,27 +6,81 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
   <title>Ironhack cart</title>
 </head>
 <body>
-  <div class="itemlist">
-    <div class="shopitem item1">a - 0.20$</div>
-    <div class="shopitem item2">b - 2.20$</div>
-    <div class="shopitem item3">c - 3.99$</div>
-    <div class="shopitem item4">d - 10.40$</div>
-    <div class="shopitem item5">e - 5.20$</div>
-    <div class="shopitem item6">f - 0.60$</div>
-    <div class="shopitem item7">g - 1.30$</div>
-    <div class="shopitem item8">h - 3.60$</div>
-    <div class="shopitem item9">i - 1.40$</div>
-    <div class="shopitem item10">j - 4.80$</div>
+
+  <nav>
+    <div class="nav-content">
+      <div>
+          <img src="./Ironhack-shop/static1.squarespace.png" alt="" class="logo">
+        </div>
+  
+    <div class="spacer"></div>
+    <div id="searchbar"> <i class="fas fa-search lupe"></i> <input type="text" class="searchinput">  </div>
+    
+    <div class="cart-logo"><i class="fas fa-shopping-cart"></i> <div  class="cart-and-counter">1</div> </div>
   </div>
+  </nav>
+
+  <div class="spotlight-container">
+      <div class="spotlight yellow">
+          <div class="spotlight-icon">
+              <img class="js-logo" src="./Ironhack-shop/JavaScript-logo.png " alt="">
+              <p>looking for a fun new language to pick up? Try javascript! Developed by "Brendan Javascript" in 1824, this language has been the primary means of delivering popups straight into your eyes.</p>  
+              <div class="add-to-cart"><i class="fas fa-shopping-cart" id="cart-below"></i> +</div>
+            </div>
+      </div>
+    </div>
+
+  <div class="itemlist">
+    <div class="shopitem" id="item0">
+       <ul>
+        <li class="shop-item-img"><img class="css-logo" src="./Ironhack-shop/CSS3_logo_and_wordmark.svg.png" alt=""></li>
+        <li class="shop-item-title">confusing but fun</li>
+        <li class="shop-item-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+        <li class="shop-item-price">17.99 -</li>
+      </ul>
+  </div>
+  <div class="shopitem" id="item1">
+      <ul>
+       <li class="shop-item-img"><img class="js-logo" src="./Ironhack-shop/JavaScript-logo.png " alt=""></li>
+       <li class="shop-item-title">the fun package</li>
+       <li class="shop-item-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+       <li class="shop-item-price">17.99 -</li>
+     </ul>
+ </div>
+ <div class="shopitem" id="item2">
+    <ul>
+     <li class="shop-item-img"><img class="node-logo" src="./Ironhack-shop/nodejs-new-pantone-black.png" alt=""></li>
+     <li class="shop-item-title">to lazy to learn ruby package</li>
+     <li class="shop-item-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+     <li class="shop-item-price">27.99 -</li>
+   </ul>
+</div>
+<div class="shopitem" id="item3">
+    <ul>
+     <li class="shop-item-img"><img class="html-logo" src="./Ironhack-shop/HTML_Logo.png" alt=""></li>
+     <li class="shop-item-title">not really a lot to learn package</li>
+     <li class="shop-item-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+     <li class="shop-item-price">17.99 -</li>
+   </ul>
+</div>
+<div class="shopitem" id="item4">
+    <ul>
+     <li class="shop-item-img"><img class="ironhack-logo" src="./Ironhack-shop/static1.squarespace.png" alt=""></li>
+     <li class="shop-item-title">headache package</li>
+     <li class="shop-item-content">Lorem stop reading my filler texts etur adipiscing elit.</li>
+     <li class="shop-item-price">49.99 -</li>
+   </ul>
+</div>
+</div>
 <div class="checkout">
-  <ul id="itemlist">
-  </ul>
-  <ul id="itemprices">
-    </ul>
+
+
+
 </div>
 
 <script type="text/javascript" src="./js/index.js"></script>

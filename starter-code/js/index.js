@@ -1,229 +1,206 @@
 const inventory = [
-  {name: "a",
-  price: 0.20,
+  {name: "css",
+  price: 17.99,
+  id: "item0",
+  quantity: 1},
+  {name: "Javascript",
+  price: 17.99,
   id: "item1",
   quantity: 1},
-  {name: "b",
-  price: 2.20,
+  {name: "NodeJs",
+  price: 27.99,
   id: "item2",
   quantity: 1},
-  {name: "c",
-  price: 3.99,
+  {name: "Html5",
+  price: 17.99,
   id: "item3",
   quantity: 1},
-  {name: "d",
-  price: 10.40,
+  {name: "CompletePackage",
+  price: 49.99,
   id: "item4",
-  quantity: 1},
-  {name: "e",
-  price: 5.20,
-  id: "item5",
-  quantity: 1},
-  {name: "f",
-  price: 0.60,
-  id: "item6",
-  quantity: 1},
-  {name: "g",
-  price: 1.30,
-  id: "item7",
-  quantity: 1},
-  {name: "h",
-  price: 3.60,
-  id: "item8",
-  quantity: 1},
-  {name: "i",
-  price: 1.40,
-  id: "item9",
-  quantity: 1},
-  {name: "j",
-  price: 4.80,
-  id: "item10",
   quantity: 1}
 ]
 
-let shoppingCart = []
+// let inventoryHTMLItems = {
+//   item7: theHtmlElement
+// }
 
-function addItemToCart(){
-  let tempItem = this.classList[1]
-  let currentItem = inventory.filter(obj => {return obj.id === tempItem})[0];
+let shoppingCart = [];
+
+for(let i = 0; i<inventory.length; i++){
+  document.querySelector("#item" +i).addEventListener("click", addToCart)
+  document.querySelector("#item" +i).addEventListener("click", changeColor)
+}
+
+function changeColor(e){
+  let currentItem = e.currentTarget.id
+  let background = document.querySelector(".spotlight")
+  let image = document.querySelector(".spotlight-icon img")
+
+  console.log(e.currentTarget.id)
+
+  switch(e.currentTarget.id){
+    case "item0":
+    background.style.backgroundColor = "#5978C5";
+    image.className = "css-logo"
+    image.src = "../Ironhack-shop/CSS3_logo_and_wordmark.svg.png"
+    break;
+    case "item1":
+    background.style.backgroundColor = "#F0DB4F";
+    image.className = "js-logo"
+    image.src = "../Ironhack-shop/JavaScript-logo.png"
+    break;
+    case "item2":
+    background.style.backgroundColor = "#71BA54";
+    image.className = "node-logo"
+    image.src = "../Ironhack-shop/nodejs-new-pantone-black.png"
+    break;
+    case "item3":
+    background.style.backgroundColor = "#F16529";
+    image.className = "html-logo"
+    image.src = "../Ironhack-shop/HTML_Logo.png"
+    break;
+    case "item4":
+    background.style.backgroundColor = "#4D5253";
+    image.className = "ironhack-logo"
+    image.src = "../Ironhack-shop/static1.squarespace.png"
+    break;
+  }
+}
+
+function addToCart(e){
+  let currentItem = inventory.find( (item)=>item.id==e.currentTarget.id);
   if(shoppingCart.includes(currentItem)){
-    shoppingCart[shoppingCart.indexOf(currentItem)].quantity += 1
+    shoppingCart.find( (item)=>item.id==e.currentTarget.id).quantity++
   }else{
     shoppingCart.push(currentItem)
   }
-
-  // console.log(currentItem)
-  refreshCart()
-  setupTotal()
+  // console.log(shoppingCart.length)
+  renderShoppingCart()
 }
 
-function removeItemFromCart(){
-  // alert("works")
-  let tempItem = this.parentNode.textContent[0]
-  let currentItem = shoppingCart.filter(obj => {return obj.name === tempItem})[0];
-
-  // console.log(currentItem)
-  // console.log(tempItem)
-  // console.log(shoppingCart)
-  // console.log( currentItem)
-
-  console.log(shoppingCart)
-  console.log(currentItem.quantity )
-  console.log(shoppingCart[shoppingCart.indexOf(currentItem)].quantity)
+function removeFromCart(e){
+    console.log(e.currentTarget.classList[1])
+    let currentItem = inventory.find( (item)=>item.id==e.currentTarget.classList[1]);
   if(currentItem.quantity > 1){
-    shoppingCart[shoppingCart.indexOf(currentItem)].quantity -= 1
+    shoppingCart.find( (item)=>item.id==e.currentTarget.classList[1]).quantity--
   }else{
-    shoppingCart.splice(shoppingCart.indexOf(currentItem),1);
+    shoppingCart.splice(shoppingCart.indexOf(currentItem),1)
   }
-
   // console.log(shoppingCart)
-  refreshCart()
-  setupTotal()
+  renderShoppingCart()
 }
 
+renderShoppingCart()
 
-for(let i = 1; i<=inventory.length; i++){
-  document.querySelector(".item" + i).addEventListener("click", addItemToCart)
-}
+function renderShoppingCart(){
+  let checkout = document.querySelector(".checkout")
 
-
-
-refreshCart()
-setupTotal()
-
-
-function refreshCart() {
-  let itemlist = document.querySelector("#itemlist");
-  let pricelist = document.querySelector("#itemprices");
-
-    while (itemlist.firstChild) {
-    itemlist.removeChild(itemlist.firstChild);
+  while (checkout.firstChild) {
+    checkout.removeChild(checkout.firstChild);
     }
 
-    while (pricelist.firstChild) {
-    pricelist.removeChild(pricelist.firstChild);
-    }
+  for(i of shoppingCart){
 
+    let priceContainer = document.createElement("div")
+    priceContainer.className = "itemcontainer " + i.id
 
-  for (let i = 0; i < shoppingCart.length; i++) {
-    
+    let name = document.createElement("li")
+    name.className = "item-name "+ i.id
+    name.textContent = inventory.find((item)=>item.id==name.classList[1]).name
 
-    let tempobj = document.createElement("li");
-    tempobj.textContent = shoppingCart[i].name +  " (" + shoppingCart[i].quantity + ")";
-    tempobj.className = "item item"+i
-    itemlist.appendChild(tempobj)
+    let quantity = document.createElement("li")
+    quantity.className = "item-quantity "+ i.id
+    quantity.textContent = "( " + inventory.find((item)=>item.id==quantity.classList[1]).quantity + " )"
 
-    let removeButton = document.createElement("button");
-    removeButton.textContent = "-";
-    removeButton.className = "rmbutton remove-button" + i
-    let num = i+1
-    // removeButton.className += " item"+num
+    let price = document.createElement("li")
+    price.className = "item-price "+ i.id
+    price.textContent =Number(inventory.find((item)=>item.id==price.classList[1]).price * shoppingCart.find((item)=>item.id==price.classList[1]).quantity).toLocaleString("en-GB", {style: "currency", currency: "GBP", minimumFractionDigits: 2})
 
-    
+    let removebtn = document.createElement("button") 
+    removebtn.className = "removebtn " + i.id
+    removebtn.textContent = "-"
 
-    tempobj.appendChild(removeButton)
-    // console.log(document.querySelector(".remove-button" + i) + " aa ")
+    let checkout = document.querySelector(".checkout");
 
-    let tempprice = document.createElement("li");
-    let priceres = Math.round(shoppingCart[i].price*shoppingCart[i].quantity * 100)/100
-    tempprice.textContent = priceUnifier(priceres);
-    tempprice.className = "item"
-    pricelist.append(tempprice)
+    checkout.append(priceContainer);
+    priceContainer.append(name)
+    priceContainer.append(quantity)
+    priceContainer.append(removebtn)
+    priceContainer.append(price)
+    // if(shoppingCart.includes(i))
+    document.querySelector("."+ i.id).addEventListener("click", removeFromCart)
   }
 
-  // console.log(document.querySelector("remove-button0")+"AAAAAAAAAAAAAAAAAAAAAAA")
-  if(shoppingCart.length !== 0){
-    for(let i = 0; i<shoppingCart.length; i++){
-      // console.log(document.querySelector(".remove-button"+ i))
-      // console.log(document.querySelector(".item" + i).children[0])
-      let num = i+1
-      document.querySelector(".remove-button" + i).addEventListener("click", removeItemFromCart)
-    }
-  }
-  
-};
+    let priceContainer = document.createElement("div")
+    priceContainer.className = "itemcontainer-total "
 
+    let name = document.createElement("li")
+    name.className = "item-name-total "
+    name.textContent = "total"
 
+    let price = document.createElement("li")
+    price.className = "item-price-total "
+    price.textContent =  (Math.round(shoppingCart.reduce((a, b) => a + b.price*b.quantity, 0)*100)/100).toLocaleString("en-GB", {style: "currency", currency: "GBP", minimumFractionDigits: 2})
 
-function priceUnifier(money){
-  // console.log(money)
-  if(money == 0){
-    return 0
-  }
-  if(money.toString().split("").includes(".")==false){
-    return(money + ".00")
-  }
-  let moneySplit = money.toString().split(".")
-  let cents = moneySplit[1]
-  if(cents.length == 1){
-    cents = Number(cents)*10
-  }
-  return(moneySplit[0] + "." + cents.toString())
-}
-
-function setupTotal() {
-  let itemlist = document.querySelector("#itemlist");
-  let pricelist = document.querySelector("#itemprices");
-
-  let tempobj = document.createElement("li");
-  tempobj.textContent = "total";
-  tempobj.className = "price"
-  itemlist.appendChild(tempobj)
-
-
-  let tempprice = document.createElement("li");
-  tempprice.className = "price"
-  tempprice.textContent = getTotalPrice(shoppingCart);
-  pricelist.append(tempprice)
+    checkout.append(priceContainer);
+    priceContainer.append(name)
+    priceContainer.append(price)
 }
 
 
-// console.log(document.querySelector(".checkout"))
+// function cartItem(price, name) {
+//   this.price = price
+//   this.name = name
+//   this.id = inventory.length - 1
+//   cartItem.prototype.counter++
+// }
+
+// cartItem.prototype.counter = 0
 
 
 
+// function deleteItem(e) {
 
-function deleteItem(e) {
+// }
 
-}
+// function getPriceByProduct(itemNode) {
 
-function getPriceByProduct(itemNode) {
+// }
 
-}
+// function updatePriceByProduct(productPrice, index) {
 
-function updatePriceByProduct(productPrice, index) {
+// }
 
-}
+// function getTotalPrice(arr) {
+//   let sum =priceUnifier( Math.round(arr.reduce((a, b) => a + b.price*b.quantity, 0)*100)/100)
+//   // console.log(sum)
+//   return (sum)
+// }
 
-function getTotalPrice(arr) {
-  let sum =priceUnifier( Math.round(arr.reduce((a, b) => a + b.price*b.quantity, 0)*100)/100)
-  // console.log(sum)
-  return (sum)
-}
+// function createQuantityInput() {
 
-function createQuantityInput() {
+// }
 
-}
+// function createDeleteButton() {
 
-function createDeleteButton() {
+// }
 
-}
+// function createQuantityNode() {
 
-function createQuantityNode() {
+// }
 
-}
+// function createItemNode(dataType, itemData) {
 
-function createItemNode(dataType, itemData) {
+// }
 
-}
+// function createNewItemRow(itemName, itemUnitPrice) {
 
-function createNewItemRow(itemName, itemUnitPrice) {
+// }
 
-}
+// function createNewItem() {
 
-function createNewItem() {
-
-}
+// }
 
 // window.onload = function(){
 //   var calculatePriceButton = document.getElementById('calc-prices-button');
