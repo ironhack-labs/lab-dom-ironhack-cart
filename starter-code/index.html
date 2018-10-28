@@ -12,21 +12,23 @@
 <body>
   <div class="container">
     <h1>Ironhack<br>Merchandising shop</h1>
-    <div class="row-style">
-      <div class="product-name"><span>IronBubble-head</span></div>
-      <div class="cost-one-unit">$<span>25.00</span></div>
-      <div class="qty-units"><label class="quantity" for="getQty">QTY</label><input name="getQty" class="get-qty" type="text" value="0"></div>
-      <div class="total-price">$<span>0.00</span></div>
-      <div class="remove-product"><button class="btn btn-delete">Delete</button></div>
+    <div id="productsList" class="product-list">
+      <div class="row-style">
+        <div class="product-name"><span>IronBubble-head</span></div>
+        <div class="cost-one-unit">$<span>25.00</span></div>
+        <div class="qty-units"><label class="quantity" for="getQty">QTY</label><input name="getQty" class="get-qty" type="text" value="0"></div>
+        <div class="total-price">$<span>0.00</span></div>
+        <div class="remove-product"><button class="btn btn-delete">Delete</button></div>
+      </div>
+      <div class="row-style">
+        <div class="product-name"><span>IronShirt</span></div>
+        <div class="cost-one-unit">$<span>15.00</span></div>
+        <div class="qty-units"><label class="quantity" for="getQty">QTY</label><input name="getQty" class="get-qty" type="text" value="0"></div>
+        <div class="total-price">$<span>0.00</span></div>
+        <div class="remove-product"><button class="btn btn-delete">Delete</button></div>
+      </div>
     </div>
-    <div class="row-style">
-      <div class="product-name"><span>IronShirt</span></div>
-      <div class="cost-one-unit">$<span>15.00</span></div>
-      <div class="qty-units"><label class="quantity" for="getQty">QTY</label><input name="getQty" class="get-qty" type="text" value="0"></div>
-      <div class="total-price">$<span>0.00</span></div>
-      <div class="remove-product"><button class="btn btn-delete">Delete</button></div>
+    <button onclick="updatePriceByProductNew()" class="btn btn-success calculate-prices" id="calculate-prices">Calculate Prices</button>
     </div>
-    <button onclick="updatePriceByProduct()" class="btn btn-success calculate-prices" id="calculate-prices">Calculate Prices</button>
-  </div>
 </body>
 </html>

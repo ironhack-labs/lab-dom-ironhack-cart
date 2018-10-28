@@ -1,5 +1,5 @@
 
-/*Iteration 1,2,3 */
+/*Version2: Iteration 1,2,3 */
 /*Retrieves the unit price of the product*/
 function getPriceByProduct(){
   var costOneUnit = document.querySelectorAll(".cost-one-unit span");
@@ -14,14 +14,13 @@ function getPriceByProduct(){
 
 /*Retrieves the quantity of items desired*/
 function getQuantityValue() {
-  var qty = document.querySelectorAll(".get-qty");
-  var currentValQty = [];
-  qty.forEach(function(item){
-   currentValQty.push(parseFloat(item.value));
+  var qty = Array.from(document.querySelectorAll(".get-qty"));
+  var currentValQty = qty.map(function(item){
+   return parseFloat(item.value);
   });
-  console.log(currentValQty);
   return currentValQty;
 }
+
 
 /*
 Calculates the total price based on this data
@@ -40,3 +39,26 @@ for (i = 0; i < qtyRows; i++){
   document.querySelectorAll(".total-price span")[i].innerHTML = calculatedPriceByProduct.toFixed(2);
     }
 }
+
+/*Version2: Iteration 1,2,3 in one function*/
+function updatePriceByProductNew() {
+  var items = document.querySelector("#productsList").children;
+for (var x=0;x<items.length;x++){
+  var itemQty = parseInt(items[x].getElementsByClassName("get-qty")[0].value);
+  var itemCostPerUnit = parseFloat(items[x].getElementsByClassName("cost-one-unit")[0].getElementsByTagName("span")[0].innerHTML);
+  items[x].getElementsByClassName("total-price")[0].getElementsByTagName("span")[0].innerHTML = (itemQty * itemCostPerUnit).toFixed(2);
+  
+}
+}
+
+window.onload = function () {
+  document.querySelectorAll(".remove-product").forEach(function(btn){
+  btn.addEventListener("click",deleteElement);
+});
+};
+
+/*Iteration4 */
+function deleteElement(e) {
+  document.getElementById("productsList").removeChild(e.currentTarget.parentNode);
+}
+
