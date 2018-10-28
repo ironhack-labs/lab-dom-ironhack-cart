@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,51 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+  <div class="totalProducts">
+    <div>
+      <div class="center">
+        <h1>Ironhack<br>Merchandising Shop</h1>
+      </div>
+      <div class="product">
+        <div>
+          <span class="product-name">IronBubble-head</span>
+        </div>
+        <div><span>$</span><span class="priceItems">25.00</span></div>
+        <div><label>QTY</label><input class="cost" type="number" placeholder="0"></div>
+        <div><span class="totalPrice"><span>$</span>0.00</span></div>
+        <div><button class="btn-delete">Delete</button></div>
+      </div>
+
+
+
+      <div class="product">
+        <div>
+          <span class="product-name">ironShirt</span>
+        </div>
+        <div class="corrector"><span>$</span><span class="priceItems">25.00</span></div>
+        <div><label>QTY</label><input class="cost" type="number" placeholder="0"></div>
+        <div><span>$</span><span class="totalPrice">0.00</span></div>
+        <div><button class="btn-delete">Delete</button></div>
+      </div>
+</div>
+    </div>
+    <div  class="new-product">
+      <div>
+    <input class="input create-input1" type="text" placeholder="New product">
+    <input class="input create-input2" type="number" placeholder="0.00">
+      </div>
+    <button class="create" id="new-item-create">Create</button>
+    </div>
+  
+
+  <div class="center"><button id="calc-prices-button" class="calculate-button">Calculate Prices</button></div>
+ 
+  <div class="position-total">
+    <h2>Total Price: $<span class="totalProductsPrice">0.00</span></h2>
+  </div>
 </body>
+
+
 </html>
