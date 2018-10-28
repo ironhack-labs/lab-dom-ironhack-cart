@@ -1,8 +1,8 @@
 function addProduct() {
 
-    let randomQty = Math.floor(Math.random() * 10)
+    let randomQty = Math.ceil(Math.random() * 10) //generates a random integer (lower than 11) used for the default value of the Quantity fields.
 
-    let prodName = document.querySelector('#product-name-input').value;
+    let prodName = document.querySelector('#product-name-input').value; 
     let prodCost = document.querySelector('#product-cost-input').value;
 
     //New Id generator: making sure no Ids repeat
@@ -15,7 +15,7 @@ function addProduct() {
     debugger
     let i=-1;
     do {
-        i++
+        i++;
         prodId = i}
     while (usedIds.includes(i));
     //============================================
