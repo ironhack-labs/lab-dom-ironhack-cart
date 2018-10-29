@@ -1,14 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
+    <h1>Iron Hack <br> Merchandise Shop</h1>
+    <div class = container>
+        <div class = "ams">
+            <div class = "new">
+                <span class="product">Shirt</span>
+            </div>
+            <div class ="new">
+                    <span>$<span class="item-price">100</span></span>
+            </div>
+            <div class = "neww">
+                <label>Quantity</label>
+                <input value="10" type='number'>
+            </div>
+            <div class = "old">
+                <span>$</span><span class="total-price">0.00</span>
+            </div>
+            <div class = "new">
+            <button class="btn-delete">Delete</button>
+            </div>
+        </div>
+
+        <div class = "ams">
+            <div class = "new">
+                <span class="product"> Shirt</span>
+            </div>
+            <div class ="new">
+                    <span>$<span class="item-price">100</span></span>
+            </div>
+            <div class = "neww">
+                <label>Quantity</label>
+                <input value="10" type='number'>
+            </div>
+            <div class = "old">
+                <span>$</span><span class="total-price">0.00</span>
+            </div>
+            <div class = "new">
+                <button>Delete</button>
+            </div>
+        </div>
+
+        <div class = "ams">
+            <div class = "new">
+                <span class="product"> Shirt</span>
+            </div>
+            <div class ="new">
+                    <span>$<span class="item-price">100</span></span>
+            </div>
+            <div class = "neww">
+                <label>Quantity</label>
+                <input value="10"  type='number'>
+            </div>
+            <div class = "old">
+                <span>$</span><span class="total-price">0.00</span>
+            </div>
+            <div class = "new">
+                <button>Delete</button>
+            </div>
+        </div>
+</div>
+
+<div class="button">
+    <button id="grandTotal">Calculate</button>
+</div>
+
+<div>
+ Total:<span id="showCaseTotal">00.00 </span>
+</div>
+    
+    <script src="./js/index.js"></script>
 </body>
 </html>
