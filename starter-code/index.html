@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="stylesheet" href="css/main.css">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,15 +10,52 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
-  <div>
   <h1>Ironhack Merchandising Shop</h1>
-  <div><span>Iron Bubble-head</span></div>
-  <div><span id = ProductPrice >25</span></div>
-  <div><span id = quantity>QTY</span><input type="text" name="QTY"></div>
-  <div><span id=totalPrice>0</span></div>
-  <div><button class=  btn-delete type="button">Delete</button></div>
-  <div id='calc-prices-button'><button class=  btn-success type="button">Calculate Prices</button></div>
-</div>
+  <div id=parent>
+    <section>
+      <div><span class=productName>Iron Bubble-head</span></div>
+      <div><span class=productPrice>25.65</span></div>
+      <div><span class=quantity>Quantity:</span><input type="text" name="QTY"></div>
+      <div><span class=priceByProduct>00,00</span><span>€</span></div>
+      <button class="btn btn-delete" type="button">Delete</button>
+    </section>
+    <section>
+      <div><span class=productName>Iron Shirt</span></div>
+      <div><span class=productPrice>67.87</span></div>
+      <div><span class=quantity>Quantity:</span><input type="text" name="QTY"></div>
+      <div><span class=priceByProduct>00,00</span><span>€</span></div>
+      <button class="btn btn-delete" type="button">Delete</button>
+    </section>
+    <!-- <section>
+      <div><span class=productName></span></div>
+      <div><span class=productPrice></span></div>
+      <div><span class=quantity></span><input type="text" name="QTY"></div>
+      <div><span class=priceByProduct></span><span>€</span></div>
+      <button class="btn btn-delete" type="button">Delete</button>
+    </section>
+    <section>
+      <div><span class=productName></span></div>
+      <div><span class=productPrice></span></div>
+      <div><span class=quantity></span><input type="text" name="QTY"></div>
+      <div><span class=priceByProduct></span><span>€</span></div>
+      <button class="btn btn-delete" type="button">Delete</button>
+    </section> -->
+  <div id='newItems'></div>
+  </div>
+  <section >
+      <div><input type="text" id="productNameInput"></div>
+      <div><input type="text" id="productPriceInput"></div>
+      <button id='new-item-create' class="btn btn-create" type="button">Create</button>
+    </section>
+  <section id='calc-prices-button'>
+    <button class="btn btn-success" type="button">Calculate Prices</button>
+  </section>
+  <section>
+    <span>Total Price</span><span id=totalPrice></span><span>€</span>
+  </section>
+
 </body>
+
 </html>

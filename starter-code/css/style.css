@@ -1,9 +1,13 @@
 input {
   border: solid 1px black;
 }
-div>div{
+section > div{
   float:left;
   padding: 20px;
+}
+section{
+  clear: both;
+  
 }
 .btn {
   display: inline-block;
@@ -38,7 +42,12 @@ div>div{
     background-color: #CF000F;
     border-color: #CF000F;
 }
-
+.btn-create {
+  color: #fff;
+  background-color: rgb(55, 0, 207);
+  border-color: rgb(131, 0, 207);
+}
 #quantity {
   margin: 0 5px;
 }
+
