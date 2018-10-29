@@ -1,3 +1,5 @@
+//
+
 
 
 let byClass = (theClass=>{return document.getElementsByClassName(theClass)})
