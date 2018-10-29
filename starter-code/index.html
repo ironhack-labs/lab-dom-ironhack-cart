@@ -10,5 +10,31 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <h1 class="container">Ironhack Merchandising Shop</h1>
+  <div id="shoppingItems">
+    <div class="row">
+      <ul>
+        <li class="name">Bubble Gum</li>
+        <li>$<span class="price">20</span></li>
+        <li><input class="q" type="number" value="0" name="" id=""></li>
+        <li>$<span class="subtotal">0</span></li>
+        <li><button class="btn btn-delete delete">Delete</button></li>
+      </ul>
+    </div>
+  </div> 
+
+    <div class="basket-total container">
+      <div class="total-text">
+        <h1>The total</h1>
+        <span>$</span><span id="baskettotal">0.00</span>
+      </div>
+      <button class="btn btn-success"id="calculate-total-btn">calculate total</button>
+    </div> 
+    <div class="container">
+        <h1>Add Items</h1>
+        <input id="nameItem" type="text" name="Name" placeholder="Productname">
+        <input id="priceItem" type="number" name="Price" placeholder="Productprice">
+        <button class="btn btn-success" id="addItem">Add item</button>
+    </div>
 </body>
 </html>

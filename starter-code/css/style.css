@@ -2,6 +2,38 @@ input {
   border: solid 1px black;
 }
 
+.container {
+  width: 100%;
+  text-align: center;
+  margin: 100px auto;
+}
+
+.shoppingItems {
+  width: 100%;
+  text-align: center;
+  margin: 100px auto;
+}
+
+.row {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.row ul {
+  text-align: left;
+  width: 100%;
+  padding:0;
+  display: flex;
+  justify-content: center;
+}
+
+.row li {
+  display: inline;
+  width: 250px;
+  margin-left: 5%;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -38,4 +70,7 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+.total-text {
+  margin-bottom: 20px;
 }
