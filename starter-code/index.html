@@ -6,9 +6,75 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+  <div class="container"> <!-- Container for the PRODUCTROWS-->
+    <h1>Ironhack Merchandising Shop</h1>
+
+    <!-- PRODUCTROW-->
+    <div class="wrapper">
+      <div><span class="product">IronBubble-head</span></div>
+      <div>$<span class="price">25.00</span></div>
+      <div>
+        <label>QTY</label>
+        <input type="number" value="0" class="quantity">
+      </div>
+      <div>$<span class="total">0.00</span></div>
+      <div>
+        <button type="button" class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+    <!-- PRODUCTROW-->
+    <div class="wrapper">
+      <div><span class="product">Ironhack toothpick</span></div>
+      <div>$<span class="price">05.00</span></div>
+      <div>
+        <label>QTY</label>
+        <input type="number" value="0" class="quantity">
+      </div>
+      <div>$<span class="total">0.00</span></div>
+      <div>
+        <button type="button" class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+
+    <!-- PRODUCTROW-->
+    <div class="wrapper">
+        <div><span class="product">Ironhack toiletpaper</span></div>
+        <div>$<span class="price">100.00</span></div>
+        <div>
+          <label>QTY</label>
+          <input type="number" value="0" class="quantity">
+        </div>
+        <div>$<span class="total">0.00</span></div>
+        <div>
+          <button type="button" class="btn btn-delete">Delete</button>
+        </div>
+    </div>
+  </div>
+
+  <!-- ADD new item section, did not style this as main focus is DOM-->
+  <div class="wrapperNewItem">
+    <div>
+      <input value="Name" id="newItem">
+    </div>
+    <div>
+      <input  value="price" id="newPrice">
+    </div>
+    <div>
+      <button type="button" id="addItem">Add Item</button>
+    </div>
+  </div>
+
+  <!-- Calculate Total Price Button-->
+  <div class="calculatePrices">
+    <button type="button" class="btn btn-success" id="calc-prices-button">Calculate Prices</button>
+  </div>
+
+    <!-- Total --->
+  <h2>Total Price: <span id="grandTotal">0</span></h2>
+
+  <script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>

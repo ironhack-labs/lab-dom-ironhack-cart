@@ -1,12 +1,28 @@
+body,html{
+  height: 100%
+}
+
+.container{
+  width: 88%;
+  margin: 0 auto;
+  position: relative;
+  top: 200px;
+}
+
+.wrapper{
+  width: 80%;
+  margin: 0 auto 50px auto;
+}
+
 input {
   border: solid 1px black;
 }
 
 .btn {
   display: inline-block;
-  padding: 6px 12px;
+  padding: 12px 20px;
   margin-bottom: 0;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.42857143;
   text-align: center;
@@ -38,4 +54,25 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+h1{
+  margin: 0 auto 50px auto;
+  width: 20%;
+}
+
+.wrapper > div {
+  display: inline-block;
+  margin-left: 100px;
+}
+
+.calculatePrices{
+  width: 17%;
+  margin: 0 auto;
+  margin-top:100px;
+}
+
+.wrapperNewItem{
+  position: relative;
+  top: 300px;
 }
