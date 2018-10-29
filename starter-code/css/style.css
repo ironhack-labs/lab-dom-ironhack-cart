@@ -39,3 +39,27 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+header {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+section {
+  width: 80%;
+  display: flex;
+  padding: 20px 60px;
+  flex-wrap: wrap;
+}
+
+article{
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
+}
+
+footer{
+  display: flex;
+  justify-content: center;
+}
