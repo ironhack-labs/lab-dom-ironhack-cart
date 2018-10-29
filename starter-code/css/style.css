@@ -1,3 +1,29 @@
+.padre{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.product{
+  margin-top: 2%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  justify-content: space-around;
+}
+
+h1{
+  text-align: left;
+}
+
+
+
+
+
+
+
+
 input {
   border: solid 1px black;
 }
@@ -28,6 +54,7 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin-top: 5%;
 }
 
 .btn-delete {
