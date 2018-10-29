@@ -55,10 +55,6 @@ input {
   margin: 0 auto;
 }
 
-.wrapper h1 {
-  text-align: center;
-}
-
 span, label, input {
   float: left;
   margin: 50px 20px;
@@ -69,6 +65,7 @@ span, label, input {
   height: 200px;
   width: 80%;
   text-align: left;
+  margin: 0 auto;
 }
 
 .price {
@@ -83,6 +80,17 @@ span, label, input {
   margin-left: 0;
 }
 
-#calc-button-total {
+.bottom {
+  height: 150px;
   margin: 0 auto;
+}
+#calc-button-total {
+  margin-left: 120px;
+}
+
+.bottom-total {
+  height: 150px;
+}
+.total {
+  float: left;
 }
