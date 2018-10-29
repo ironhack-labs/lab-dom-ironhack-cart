@@ -43,27 +43,27 @@ function changeColor(e){
     case "item0":
     background.style.backgroundColor = "#5978C5";
     image.className = "css-logo"
-    image.src = "../Ironhack-shop/CSS3_logo_and_wordmark.svg.png"
+    image.src = "./Ironhack-shop/CSS3_logo_and_wordmark.svg.png"
     break;
     case "item1":
     background.style.backgroundColor = "#F0DB4F";
     image.className = "js-logo"
-    image.src = "../Ironhack-shop/JavaScript-logo.png"
+    image.src = "./Ironhack-shop/JavaScript-logo.png"
     break;
     case "item2":
     background.style.backgroundColor = "#71BA54";
     image.className = "node-logo"
-    image.src = "../Ironhack-shop/nodejs-new-pantone-black.png"
+    image.src = "./Ironhack-shop/nodejs-new-pantone-black.png"
     break;
     case "item3":
     background.style.backgroundColor = "#F16529";
     image.className = "html-logo"
-    image.src = "../Ironhack-shop/HTML_Logo.png"
+    image.src = "./Ironhack-shop/HTML_Logo.png"
     break;
     case "item4":
     background.style.backgroundColor = "#4D5253";
     image.className = "ironhack-logo"
-    image.src = "../Ironhack-shop/static1.squarespace.png"
+    image.src = "./Ironhack-shop/static1.squarespace.png"
     break;
   }
 }
