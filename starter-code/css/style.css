@@ -1,5 +1,20 @@
+h1 {
+  text-align:center;
+}
+
+.wrapper {
+  width:100vw;
+  height:50px;
+  word-spacing:100px;
+  align-content:center;
+}
+
 input {
   border: solid 1px black;
+}
+
+.itemPrice {
+  
 }
 
 .btn {
