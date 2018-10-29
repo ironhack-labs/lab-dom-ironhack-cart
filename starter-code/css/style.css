@@ -2,6 +2,14 @@ input {
   border: solid 1px black;
 }
 
+header {
+  text-align: center;
+}
+
+.greenBtn {
+  text-align: center;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -28,6 +36,7 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    text-align: center;
 }
 
 .btn-delete {
@@ -38,4 +47,9 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-around;
 }
