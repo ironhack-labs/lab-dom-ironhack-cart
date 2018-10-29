@@ -1,52 +1,39 @@
 function deleteItem(e){
+	//acceder al item
+	var product = e.currentTarget.parentNode.parentNode;
+	//padre del item
+	var parentProduct = product.parentNode;
+	//elimina al elemento hijo
+	parentProduct.removeChild(product);
+	}
 
-}
+function getPriceByProduct(itemNode) {}
 
-function getPriceByProduct(itemNode){
+function updatePriceByProduct(productPrice, index) {}
 
-}
+function getTotalPrice() {}
 
-function updatePriceByProduct(productPrice, index){
+function createQuantityInput() {}
 
-}
+function createDeleteButton() {}
 
-function getTotalPrice() {
+function createQuantityNode() {}
 
-}
+function createItemNode(dataType, itemData) {}
 
-function createQuantityInput(){
+function createNewItemRow(itemName, itemUnitPrice) {}
 
-}
+function createNewItem() {}
 
-function createDeleteButton(){
+window.onload = function() {
+	var calculatePriceButton = document.getElementById('calc-prices-button');
+	var createItemButton = document.getElementById('new-item-create');
+	var deleteButtons = document.getElementsByClassName('btn-delete');
 
-}
+//	calculatePriceButton.onclick = getTotalPrice;
+//	createItemButton.onclick = createNewItem;
 
-function createQuantityNode(){
-
-}
-
-function createItemNode(dataType, itemData){
-
-}
-
-function createNewItemRow(itemName, itemUnitPrice){
-
-}
-
-function createNewItem(){
-
-}
-
-window.onload = function(){
-  var calculatePriceButton = document.getElementById('calc-prices-button');
-  var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');
-
-  calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
-
-  for(var i = 0; i<deleteButtons.length ; i++){
-    deleteButtons[i].onclick = deleteItem;
-  }
+	for (var i = 0; i < deleteButtons.length; i++) {
+		deleteButtons[i].onclick = deleteItem;
+	}
 };
