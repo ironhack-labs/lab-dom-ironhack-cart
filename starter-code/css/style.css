@@ -3,10 +3,10 @@ h1 {
 }
 
 .wrapper {
-  width:100vw;
-  height:50px;
-  word-spacing:100px;
-  align-content:center;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  
 }
 
 input {
@@ -14,7 +14,7 @@ input {
 }
 
 .itemPrice {
-  
+
 }
 
 .btn {
@@ -53,4 +53,9 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.calc-prices-button {
+  display:flex;
+  align-items:center;
 }
