@@ -59,7 +59,7 @@ function createNewItemRow(itemName, itemUnitPrice){
     <span>$<span class="totalPrice">0</span></span>   
   </div>
   <div>
-    <button class="btn btn-delete">Delete</button>
+    <button class="btn-delete">Delete</button>
   </div>
 </div>
 </div>

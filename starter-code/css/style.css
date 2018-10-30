@@ -2,6 +2,13 @@ input {
   border: solid 1px black;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  justify-content: space-evenly;
+}
+
 header {
   text-align: center;
 }
@@ -49,7 +56,35 @@ header {
   margin: 0 5px;
 }
 
+.productList {
+}
+
 .wrapper {
   display: flex;
   justify-content: space-around;
 }
+
+.wrapper span:first-child {
+  width: 20%;
+}
+
+.wrapper div:nth-child(3) {
+  width: 15%;
+}
+
+.newProduct {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 5.7%;
+  margin-right: 5.7%;
+}
+
+.newProduct input:first-child {
+  width: 20%;
+}
+
+.newProduct input:nth-child(2){
+  width: 6%;
+  margin-left: -40%;
+}
+

@@ -9,6 +9,7 @@
   <title>Ironhack cart</title>
 </head>
 <body> 
+  <main>
   <header>
     <h1>Ironhack Cart</h1>
   </header>
@@ -24,7 +25,7 @@
         <span>$<span class="totalPrice">0</span></span>   
       </div>
       <div>
-        <button class="btn btn-delete">Delete</button>
+        <button class="btn-delete">Delete</button>
       </div>
     </div>
     <div class="wrapper">
@@ -38,21 +39,22 @@
         <span>$<span class="totalPrice">0</span></span>   
       </div>
       <div>
-          <button class="btn btn-delete">Delete</button>
+          <button class="btn-delete">Delete</button>
       </div>
     </div>
   </div>
-  <div>
+  <div class="newProduct">
     <input type="text" id="productName">
     <input type="number" id="productPrice">
     <button id="new-item-create">Create</button>
   </div> 
   <div class="greenBtn">
-    <button class="btn btn-success calc-prices-button">Calculate Prices</button>
+    <button class="btn-success calc-prices-button">Calculate Prices</button>
   </div>
   <div class="greenBtn">
       <h2>Total Price: $<span class="finalTotal">0</span></h2>
   </div>
+</main>
   <script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>
