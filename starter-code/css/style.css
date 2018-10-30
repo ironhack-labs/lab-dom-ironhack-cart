@@ -43,6 +43,8 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    float:right;
+    margin-right:100px;
 }
 
 .btn-delete {
@@ -58,4 +60,10 @@ input {
 .calc-prices-button {
   display:flex;
   align-items:center;
+}
+
+.row {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 30px 0;
 }
