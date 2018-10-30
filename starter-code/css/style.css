@@ -1,3 +1,28 @@
+body{
+  margin: 15px;
+  padding: 20px;
+}
+h1{
+  text-align: center;
+}
+#totalCheck{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-form{
+color:white;
+background-color: tomato;
+height: 35px;
+width: 100px;
+}
+
+section{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 input {
   border: solid 1px black;
 }
@@ -38,4 +63,35 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+#calculate{
+  margin: 40px;
+  display: flex;
+  justify-content: center;
+}
+.total-price{
+  width: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#totalCheck p {
+  margin-right: 15px;
+}
+#inputs{
+  width: 400px;
+  display: flex;
+  justify-content: space-between;
+}
+.create-button {
+  color: white;
+  background-color: gray;
+  height: 35px;
+  width: 100px;
+}
+.firstMiddle{
+width: 10%;
+}
+.secondMiddle{
+width: 2%;
 }
