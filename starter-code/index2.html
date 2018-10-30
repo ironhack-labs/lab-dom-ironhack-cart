@@ -13,34 +13,49 @@
   <h2 id="blah">Ironhack House Plants</h2>
 
 <br><br><br>
-  <div class="row">
-    <span id="product-name">Ironhack House Plants</span>
-    </span>
-    <span id="product-price">  $25.00</span>
 
-    <label>QTY</label>
-    <input id="the-quantity" type="number">
+<div id="master div">
 
-    <span id="product-total-price">$0.00</span>
+          <div class="row">
+            <span class="product-name">Ironhack House Plants</span>
+          </span>
+          <span class="product-price">  $25.00</span>
+          
+          <label>QTY</label>
+          <input class="the-quantity" type="number">
+          
+          <span class="product-total-price">$0.00</span>
+          
+          <button class="btn btn-delete">Delete</button>
+        </div>
 
-    <button class="btn btn-delete">Delete</button>
-  </div>
+        <div class="row">
+          <span class="product-name">Super Deluxe Dual Action Whiteboard</span>
+        </span>
+        <span class="product-price">  $25.00</span>
 
-  <div class="row">
-      <span id="product-name">Super Deluxe Dual Action Whiteboard</span>
-      </span>
-      <span id="product-price">  $25.00</span>
+        <label>QTY</label>
+        <input class="the-quantity" type="number">
+
+        <span class="product-total-price">$0.00</span>
+
+        <button class="btn btn-delete">Delete</button>
+</div>
+
+</div>
+<div class="row">
+  <label>Product Name</label>
+  <input type="text" />
+  <label>Price</label>
+  <input type="text" />
   
-      <label>QTY</label>
-      <input id="the-quantity" type="number">
-  
-      <span id="product-total-price">$0.00</span>
-  
-      <button class="btn btn-delete">Delete</button>
-    </div>
+  <button id="create">Create</button>
+</div>
 
 <br><br>
 <button id="calc" class="btn btn.success">Calculate</button>
+
+<h3 id="actual-total">0.00</h3>
 
 
 </body>
