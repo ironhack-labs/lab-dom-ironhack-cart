@@ -16,6 +16,8 @@ function deleteItem(e){
 
 let buttonForGettingPricesByProduct  = document.getElementById('calculatePricesButton');
 
+
+
 //document.getElementById('QTY').getAttribute('value');
 
 buttonForGettingPricesByProduct.onclick = function() {
@@ -28,6 +30,16 @@ buttonForGettingPricesByProduct.onclick = function() {
 
   let nameOfTheWrittenProduct = document.getElementById('name').value;
 
+  let writtenValue2 = document.getElementById("QTY2").value;
+
+  let writtenPriceOfTheProduct2 = document.getElementById('price2').value;
+  
+  let getThePrice2 = Number(writtenValue2) * Number(writtenPriceOfTheProduct2);
+
+  let nameOfTheWrittenProduct2 = document.getElementById('name2').value;
+
+
+
   document.getElementById('priceNumber').innerHTML = '$' + getThePrice;
 
   document.getElementById('nameOfTheProduct').innerHTML = nameOfTheWrittenProduct;
@@ -35,6 +47,14 @@ buttonForGettingPricesByProduct.onclick = function() {
   document.getElementById('priceOfTheProduct').innerHTML = '$' + writtenPriceOfTheProduct;
 
   document.getElementById('inputBar').innerHTML = 'QTY: ' + writtenValue;
+
+  document.getElementById('priceNumber2').innerHTML = '$' + getThePrice2;
+
+  document.getElementById('nameOfTheProduct2').innerHTML = nameOfTheWrittenProduct2;
+
+  document.getElementById('priceOfTheProduct2').innerHTML = '$' + writtenPriceOfTheProduct2;
+
+  document.getElementById('inputBar2').innerHTML = 'QTY: ' + writtenValue2;
 }
 
 
@@ -57,36 +77,6 @@ buttonForDeletingItem2.onclick = function(){
 function deleteItem(e){
   
 }
-
-let buttonForGettingPricesByProduct2 = document.getElementById('calculatePricesButton');
-
-//document.getElementById('QTY').getAttribute('value');
-
-buttonForGettingPricesByProduct2.onclick = function() {
-
-  let writtenValue = document.getElementById("QTY2").value;
-
-  let writtenPriceOfTheProduct = document.getElementById('price2').value;
-  
-  let getThePrice = Number(writtenValue) * Number(writtenPriceOfTheProduct);
-
-  let nameOfTheWrittenProduct = document.getElementById('name2').value;
-
-  document.getElementById('priceNumber2').innerHTML = '$' + getThePrice;
-
-  document.getElementById('nameOfTheProduct2').innerHTML = nameOfTheWrittenProduct;
-
-  document.getElementById('priceOfTheProduct2').innerHTML = '$' + writtenPriceOfTheProduct;
-
-  document.getElementById('inputBar2').innerHTML = 'QTY: ' + writtenValue;
-
-  
-
-}
-
-
-
-
 
 
 function getPriceByProduct(itemNode){
