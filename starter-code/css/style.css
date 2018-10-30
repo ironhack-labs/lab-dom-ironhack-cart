@@ -28,6 +28,9 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin-top: 2vh;
+    float: right;
+    margin-right: 30vw;
 }
 
 .btn-delete {
@@ -39,3 +42,40 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+
+.row{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 30px 0;
+}
+
+#actual-total{
+  float: right;
+  margin-right: 30vw;
+}
+
+
+/* 
+nav {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+}
+
+.product{
+  display: flex;
+  justify-content: space-between;
+  padding-right: 4vw;
+  padding-left: 4vw;
+  padding-top: 1vh;
+  border: 1px solid black;
+  padding-bottom: 1vh;
+  align-items: center;
+}
+
+
+.newProduct {
+  margin-top: 3vh;
+  margin-left: 4vw;
+} */
