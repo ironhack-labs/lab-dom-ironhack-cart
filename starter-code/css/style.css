@@ -18,7 +18,12 @@ h1{
     justify-content: space-around;
     align-items: center;
 }
-
+.newItem {
+  /* border: 3px solid orange; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
 
 
 .btn {

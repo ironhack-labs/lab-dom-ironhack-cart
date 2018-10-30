@@ -11,7 +11,7 @@
 <body>
   <h1>Ironhack Shopping Cart</h1>
   <div id="container" class="container">
-    
+    <div id="wrapper">
       <div id="item1" class="item">
           <div class="itemName">
             IronBubble-hear
@@ -21,7 +21,8 @@
               40
           </div>
           <form id="form" class="quantity">
-              QTY <input class="inputQuantity" id="inputQuantity" type="text" >
+              <label for="inputQuantity">QTY</label>
+              <input class="inputQuantity" id="inputQuantity" type="text" >
           </form>
           <div id="itemTotalPrice" class="itemTotalPrice"> 0
               <!-- itemPrice * itemAmount -->
@@ -33,14 +34,15 @@
       </div>
 
       <div id="item2" class="item">
-        <p class="itemName">
+        <div class="itemName">
          SomethingAwesom
-        </p>
-        <p id="itemPrice2" class="itemPrice">
+        </div>
+        <div id="itemPrice2" class="itemPrice">
           60
-        </p>
-        <form id="form2" class="quantity">
-          QTY <input class="inputQuantity" id="inputQuantity2" type="text">
+        </div>
+        <form id="form2" class="quantity2">
+            <label for="inputQuantity">QTY</label>
+          <input class="inputQuantity" id="inputQuantity2" type="text">
         </form>
         <div id="itemTotalPrice2" class="itemTotalPrice">0
           <!-- itemPrice * itemAmount -->
@@ -48,11 +50,11 @@
         <div class="btn btn-delete">
           <button class="deleteButton"> Delete </button>
         </div>
-      
+  </div>
       </div>
       <div class="Blue">
         <input id="productName" type="text" placeholder="Product's Name">
-        <input type="number" placeholder="Price" required>
+        <input id="productPrice" type="number" placeholder="Price" required>
         <button id="blueButton" > Create Product </button>
 
       </div>

@@ -52,19 +52,58 @@ greenButton.onclick = function () {
 // ------ blue button variables ----
 
 blueButton.onclick = function () {
+  // let newGroup = [];
   let container = document.getElementById("container");
-  let firstDiv = document.getElementById("item1")
+  let firstDiv = document.getElementById("wrapper")
   let eachItem = document.getElementsByClassName("item");
 
-
-  let newItemName = document.createElement("div")
-  console.log(newItemName);
+  // ----creating the Name of the Product ---
+  let newItemName = document.createElement("p")
   let inputName = document.getElementById("productName").value;
-  console.log(inputName)
-  let nameText = document.createTextNode(inputName);
+  let nameText = document.createTextNode(inputName)
 
-  eachItem.appendChild(nameText);
-  container.insertBefore(newItemName , firstDiv)
+  // -----create the price of the product ----
+  let newItemPrice = document.createElement("p");
+  let inputPrice = document.getElementById("productPrice").value;
+  let priceText = document.createTextNode(inputPrice);
+
+  //  ---- create the new Input for amounts ---
+
+  let newItemAmount = document.createElement("input");
+  // let inputAmount = document.getElementById("productPrice").value;
+  let inputAmount = document.createTextNode(newItemAmount);
+
+// ------- create the new price calculation ----
+
+  let newItemTotal = document.createElement("p")
+  let totalText = document.createTextNode(total).innerHTML
+// ------ create new delete button ---
+
+
+// ------- adding the new Product---
+// ---- Product Name ---
+  newItemName.appendChild(nameText);
+  firstDiv.appendChild(newItemName);
+// -----Product Price ----
+  newItemPrice.appendChild(priceText);
+  firstDiv.appendChild(newItemPrice);
+  // -----Product Amount ----
+  newItemAmount.appendChild(inputAmount);
+  firstDiv.appendChild(newItemAmount);
+  // ------ new Total --------
+  newItemTotal.appendChild(totalText);
+  firstDiv.appendChild(newItemTotal);
+  // newGroup.push(nameText)
+
+  // let action = newItemName.appendChild(nameText)
+  // console.log(action)
+
+  // console.log(newItemName);
+  // console.log(inputName)
+  // // let nameText = document.createTextNode(inputName);
+
+  // eachItem.appendChild(nameText);
+  // container.insertBefore(newItemName , firstDiv)
 
 
   
