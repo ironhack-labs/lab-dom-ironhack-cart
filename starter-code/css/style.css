@@ -1,3 +1,19 @@
+.wrapper{
+  display:flex;
+  justify-content:space-around;
+  margin-bottom: 15px;
+
+}
+
+h1{
+  text-align: center;
+}
+
+.finalprice{
+  text-align: center;
+}
+
+
 input {
   border: solid 1px black;
 }
@@ -28,6 +44,8 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    display:block;
+    margin: 0 auto;
 }
 
 .btn-delete {
