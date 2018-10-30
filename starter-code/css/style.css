@@ -7,13 +7,13 @@ h1{
     align-items: center;
 }
 .container{
-  border: 2px solid purple;
+  /* border: 2px solid purple; */
       /* align-items: center;
     display: flex;
     justify-content: center; */
 }
 .item{
-  border: 3px solid orange;
+  /* border: 3px solid orange; */
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -58,6 +58,11 @@ h1{
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+}
+.btn-create {
+    color: #fff;
+    background-color: blue;
+    border-color: blue;
 }
 .buttonDiv{
       display: flex;

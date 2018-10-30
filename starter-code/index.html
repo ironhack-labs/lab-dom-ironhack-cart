@@ -18,44 +18,48 @@
           </div>
 
           <div id="itemPrice"class="itemPrice">
-              40
+              40.29
           </div>
           <form id="form" class="quantity">
               <label for="inputQuantity">QTY</label>
-              <input class="inputQuantity" id="inputQuantity" type="text" >
+              <input class="inputQuantity" id="inputQuantity" type="number" required >
           </form>
+          <label for="itemTotalPrice">$</label>
           <div id="itemTotalPrice" class="itemTotalPrice"> 0
               <!-- itemPrice * itemAmount -->
           </div>
-          <div class="btn btn-delete">
-          <button class="deleteButton"> Delete </button>
-          </div>
+         
+          <button class="btn btn-delete deleteButton"> Delete </button>
+          
           
       </div>
 
       <div id="item2" class="item">
         <div class="itemName">
-         SomethingAwesom
+         SomethingGreat
         </div>
         <div id="itemPrice2" class="itemPrice">
-          60
+          60.35
         </div>
         <form id="form2" class="quantity2">
             <label for="inputQuantity">QTY</label>
-          <input class="inputQuantity" id="inputQuantity2" type="text">
+          <input class="inputQuantity" id="inputQuantity2" type="number" required>
         </form>
+        <label for="itemTotalPrice2">$</label>
         <div id="itemTotalPrice2" class="itemTotalPrice">0
           <!-- itemPrice * itemAmount -->
         </div>
-        <div class="btn btn-delete">
-          <button class="deleteButton"> Delete </button>
-        </div>
+        
+          <button class="btn btn-delete deleteButton"> Delete </button>
+        
   </div>
       </div>
       <div class="Blue">
-        <input id="productName" type="text" placeholder="Product's Name">
+        <label for="productName">Product Name</label>
+        <input id="productName" type="text" placeholder="Name">
+        <label for="productPrice">Product Price</label>
         <input id="productPrice" type="number" placeholder="Price" required>
-        <button id="blueButton" > Create Product </button>
+        <button class="btn btn-create" id="blueButton" > Create Product </button>
 
       </div>
     
