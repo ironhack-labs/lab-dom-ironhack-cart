@@ -23,11 +23,11 @@ function getTotalPrice(){
   // let overallTotal = document.getElementsByClassName('totalTotal'[0]);
   // let returnTotalValue = 0;
   for(let i = 0; i <= qty.length; i++){
-    let currentPrice = Number(price.innerHTML);
-    let currentQty = Number(qty.value);
-    let currentTotal = 0;
-    currentTotal += currentPrice * currentQty;
-    total[i].value = currentTotal;
+    price.setAttribte("value" , Number);
+    console.log(price);
+    // let currentTotal = 0;
+    // currentTotal += currentPrice * currentQty;
+    // total[i].value = currentTotal;
   }
 }
 

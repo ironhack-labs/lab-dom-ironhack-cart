@@ -1,31 +1,46 @@
+//make an array
+let calculateButton = document.getElementById('calculate');
+calculateButton.onclick = function(){
+  let productPrices = document.getElementsByClassName("producPrice");
+  for(let i = 0; i < productPrices.length; i++){
+    productPrices[i].innerHTML.substr(1)
+    let qty = document.getElementsByClassName("quantity")[i].value
+    console.log(qty);
+    let productTotal = (productPrices * qty).toFixed(2);
+    console.log(productTotal);
+    let total = document.getElementsByClassName('total-product-price')[i]
+    console.log(total);
+    total.innerHTML = "$" + productTotal;
 
-function getTotalPrice(){
-  totalCost = 0;
-  let price = document.getElementsByClassName('priceColumn'[0]);
-  console.log(price);
-  let qty = document.getElementsByClassName('quantity'[0]);
-  console.log(qty);
-  let total = document.getElementsByClassName('cost')[0];
-  console.log(total);
-  // let overallTotal = document.getElementsByClassName('totalTotal'[0]);
-  // let returnTotalValue = 0;
-  for(let i = 0; i <= qty.length; i++){
-    let currentPrice = Number(price.innerHTML);
-    let currentQty = Number(qty.value);
-    let currentTotal = 0;
-    currentTotal += currentPrice * currentQty;
-    total[i].value = currentTotal;
   }
 }
-window.onload = function(){
-  let calculatePriceButton = document.getElementById('calc-prices-button');
-  // var createItemButton = document.getElementById('new-item-create');
-  // var deleteButtons = document.getElementsByClassName('btn-delete');
+  
+  
+  // let calculatePriceButton = document.getElementById('calc-prices-button');
+  // let price = document.getElementsByClassName('priceColumn');
+  // let qty = document.getElementsByClassName('quantity');
+  // let cost = document.getElementsByClassName("cost");
+  // let convertToNumber = document.getElementsByTagName("span");
+  
+  // calculatePriceButton.onclick = function(){
+  //   Document.get()
+    // price.setAttribute("span", Number);
+    // console.log(price);
+  // totalCost = 0;
+  // console.log(price);
+  // console.log(qty);
+  // let total = 0;
+  // price.innerHTML = " ";
+  // let overallTotal = document.getElementsByClassName('totalTotal'[0]);
+  // let returnTotalValue = 0;
+  
+  // console.log(convertToNumberQtytoNumber[0].value);
+  // for (let i = 0; i <= qty.length; i++){
 
-  calculatePriceButton.onclick = getTotalPrice;
-  // createItemButton.onclick = createNewItem;
-
-  // for(var i = 0; i<deleteButtons.length ; i++){
-  //   deleteButtons[i].onclick = deleteItem;
-  // }
-};
+      
+  //     console.log(qty[i].value);
+      // document.getElementsByClassName("cost")[i].innerHTML = "$" + ((Number((price[i].innerHTML).substr(1)))*Number(qty[i].value))
+      // total += ((Number((price[i].innerHTML).substr(1)))*Number(qty[i].value));
+      // console.log(total);
+// }
+// }
