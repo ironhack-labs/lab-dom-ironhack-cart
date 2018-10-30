@@ -1,19 +1,30 @@
-//make an array
-let calculateButton = document.getElementById('calculate');
-calculateButton.onclick = function(){
+let calculateButton = document.getElementById("calculate");
+calculateButton.onclick = function() {
   let productPrices = document.getElementsByClassName("producPrice");
-  for(let i = 0; i < productPrices.length; i++){
-    productPrices[i].innerHTML.substr(1)
-    let qty = document.getElementsByClassName("quantity")[i].value
-    console.log(qty);
-    let productTotal = (productPrices * qty).toFixed(2);
-    console.log(productTotal);
-    let total = document.getElementsByClassName('total-product-price')[i]
-    console.log(total);
+  for (let i = 0; i < productPrices.length; i++) {
+    let eachPrice = Number(productPrices[i].innerHTML.substr(1));
+    // console.log("price", Number(productPrices[i].innerHTML.substr(1)));
+    let qty = Number(document.getElementsByClassName("quantity")[i].value);
+    let productTotal = eachPrice * qty;
+    let total = document.getElementsByClassName("total-product-price")[i];
     total.innerHTML = "$" + productTotal;
-
   }
-}
+};
+//make an array
+// let calculateButton = document.getElementById('calculate');
+// calculateButton.onclick = function(){
+//   let productPrices = document.getElementsByClassName("producPrice");
+//   for(let i = 0; i < productPrices.length; i++){
+//     productPrices[i].innerHTML;
+//     let qty = document.getElementsByClassName("quantity")[i].value
+//     console.log(qty);
+//     let productTotal = Number((productPrices * qty));
+//     console.log(productTotal);
+//     let total = document.getElementsByClassName('total-product-price')[i]
+//     total.innerHTML = Number(productTotal);
+
+//   }
+// }
   
   
   // let calculatePriceButton = document.getElementById('calc-prices-button');
