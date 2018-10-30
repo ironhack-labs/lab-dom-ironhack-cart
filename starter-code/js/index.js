@@ -13,11 +13,11 @@
     let finalPrice = 0;
   
      for (let i = 0; i < unitPrice.length; i++){
-       totalUnitPrice[i].innerHTML = Number(quantity[i].value) * Number(unitPrice[i].innerHTML);
+       totalUnitPrice[i].innerHTML = (Number(quantity[i].value) * Number(unitPrice[i].innerHTML)).toFixed(2);
         finalPrice += Number(totalUnitPrice[i].innerText);
       }
 
-      return document.querySelector('#total-price').innerText = finalPrice;
+      return document.querySelector('#total-price').innerText = finalPrice.toFixed(2);
 
     })
     
@@ -64,7 +64,9 @@
 
     let productNameDiv = document.createElement('div');
     productNameDiv.innerText = addProductName;
+    productNameDiv
     newWrapper.appendChild(productNameDiv);
+
 
     let productUnitPrice = document.createElement('div');
     productUnitPrice.innerText = addProductPrice;
@@ -88,6 +90,24 @@
     deleteBtn.classList.add('btn-delete');
     deleteBtn.innerText = 'Delete'
     newWrapper.appendChild(deleteBtn);
+
+    
+    
+    
+    let deleteButton = document.querySelectorAll('.btn-delete');
+
+    let wrapper = document.querySelectorAll('.wrapper');
+
+    for ( let i = 0; i < deleteButton.length; i++){
+
+      deleteButton[i].addEventListener('click',function(){
+          wrapper[i].remove();
+      })
+      
+    }
+
+
+
   }
 
   
