@@ -1,6 +1,25 @@
 input {
   border: solid 1px black;
 }
+h1{
+      display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+  border: 2px solid purple;
+      /* align-items: center;
+    display: flex;
+    justify-content: center; */
+}
+.item{
+  border: 3px solid orange;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
 
 .btn {
   display: inline-block;
@@ -34,6 +53,11 @@ input {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+}
+.buttonDiv{
+      display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .quantity {

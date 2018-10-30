@@ -6,9 +6,69 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+  <h1>Ironhack Shopping Cart</h1>
+  <div id="container" class="container">
+    
+      <div id="item1" class="item">
+          <div class="itemName">
+            IronBubble-hear
+          </div>
+
+          <div id="itemPrice"class="itemPrice">
+              40
+          </div>
+          <form id="form" class="quantity">
+              QTY <input class="inputQuantity" id="inputQuantity" type="text" >
+          </form>
+          <div id="itemTotalPrice" class="itemTotalPrice"> 0
+              <!-- itemPrice * itemAmount -->
+          </div>
+          <div class="btn btn-delete">
+          <button class="deleteButton"> Delete </button>
+          </div>
+          
+      </div>
+
+      <div id="item2" class="item">
+        <p class="itemName">
+         SomethingAwesom
+        </p>
+        <p id="itemPrice2" class="itemPrice">
+          60
+        </p>
+        <form id="form2" class="quantity">
+          QTY <input class="inputQuantity" id="inputQuantity2" type="text">
+        </form>
+        <div id="itemTotalPrice2" class="itemTotalPrice">0
+          <!-- itemPrice * itemAmount -->
+        </div>
+        <div class="btn btn-delete">
+          <button class="deleteButton"> Delete </button>
+        </div>
+      
+      </div>
+      <div class="Blue">
+        <input id="productName" type="text" placeholder="Product's Name">
+        <input type="number" placeholder="Price" required>
+        <button id="blueButton" > Create Product </button>
+
+      </div>
+    
+    <div id="buttonDiv" class="buttonDiv">
+      <button id="calculate" class="btn btn-success">
+        Add to Total
+      </button>
+    </div>
+    <div>
+    <h2>Total Price: $<span id="totalValue">0</span></h2>
+    
+     </div>
+    
+
+      <script type="text/javascript" src="./js/index.js"></script>
+
 </body>
 </html>
