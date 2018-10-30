@@ -29,14 +29,20 @@ for ( let i = 0; i < DeleteButton.length; i++){
 let createButton = document.getElementsByClassName("create-button");
 
 createButton[0].onclick = function(){
+    
 
 let productName = document.getElementById("inputData1").value;
-console.log(productName);
+// console.log(productName);
 let priceName = document.getElementById("inputData2").value;
-console.log(priceName)
+// console.log(priceName)
+if (!productName || !priceName ){
+    return
+}
 let newSection = document.createElement("section");
-console.log(newSection)
-newSection.innerHTML = `<div class = "firstMiddle">
+newSection.className = "product";
+// console.log(newSection)
+newSection.innerHTML = `
+<div class = "firstMiddle">
 <span>${productName}</span> 
 </div>
 <div class = "secondMiddle">
@@ -53,8 +59,13 @@ newSection.innerHTML = `<div class = "firstMiddle">
 <button class = "button-form">Delete</button>
 </div>`;
 let productList  = document.getElementById("allProducts")
-productList.appendChild(newSection)
-
+productList.appendChild(newSection);
+document.getElementById("inputData1").value = "";
+// console.log(productName);
+document.getElementById("inputData2").value = "";
+newSection.getElementsByClassName("button-form")[0].onclick = function(event){
+    event.currentTarget.parentElement.parentElement.remove()
+}
 }
 
 
