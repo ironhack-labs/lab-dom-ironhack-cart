@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +7,43 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+<header>Ironhack's Merchandising Mart</header>
+
+<div class="productsList">
+  <div class="wrapper">
+    <div><span class="productName"> Product-A</span></div>
+    <div>$<span class="unitPrice">20</span></div>
+    <div class="quantity"> <label> QTY </label> <input  class="itemQuantity" type="number"> </div>
+    <div>$<span class="subTotal">0</span></div>
+    <div><button class="btn btn-delete">Delete</button></div>
+  </div>
+  <div class="wrapper">
+    <div><span class="productName"> Product-B</span></div>
+    <div>$<span class="unitPrice">5.99</span></div>
+    <div class="quantity"> <label> QTY </label> <input  class="itemQuantity" type="number"> </div>
+    <div>$<span class="subTotal">0</span></div>
+    <div><button class="btn btn-delete">Delete</button></div>
+  </div>
+</div>
+
+<div class="inputInfo">
+  <input type="text" id="nameProduct">
+  <input type="number" id="priceProduct">
+  <button id="newItemCreate" class="btn btn-add">Create</button>
+</div>
+
+
+<div class="bottomPart">
+<div><button class="btn btn-success calc-price-button">Calculate Prices</button></div>
+<div class="totalAmount"><h2>Total Price: $<span class="myTotal">0</span></h2></div>
+</div>
+
+
+
+
+<script type="text/javascript" src="./js/index.js"></script>
 </body>
-</html>
+</html> 

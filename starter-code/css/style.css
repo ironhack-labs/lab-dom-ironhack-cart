@@ -1,3 +1,13 @@
+
+ body{
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 50px;
+}
+header{
+  font-size: 40px;
+  padding-bottom: 100px;
+  margin-left: 300px;
+}
 input {
   border: solid 1px black;
 }
@@ -5,7 +15,7 @@ input {
 .btn {
   display: inline-block;
   padding: 6px 12px;
-  margin-bottom: 0;
+  margin-bottom: 05px;
   font-size: 14px;
   font-weight: 400;
   line-height: 1.42857143;
@@ -23,19 +33,52 @@ input {
   border: 1px solid transparent;
   border-radius: 4px;
 }
-
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
 }
-
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
 }
-
+.btn-add{
+  color: #fff;
+  background-color: darkblue;
+  border-color: darkblue;
+}
 .quantity {
   margin: 0 5px;
+}
+
+#storeFront{
+
+}
+.myTotal{
+
+
+}
+.productLine{
+
+}
+.wrapper{
+  padding: 5px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-content: center;
+}
+.inputInfo{
+  justify-content: space-around;
+}
+.itemQuantity{
+
+}
+.bottomPart{
+  padding: 5px;
+  margin-left: 700px;
+}
+.calc-price-button{
+
 }
