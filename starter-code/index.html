@@ -12,27 +12,50 @@
 <body>
   <div id="firstProduct">
     <div id="nameOfTheProduct">
-      <span>
-        <p>IronBubble-head</p>
-      </span>
+        <label for="name">Element:</label>
+        <input type="text" name="price" id="name" value=""><br>
     </div>
     <div id="priceOfTheProduct">
-      <span>
-        <p>$25.00</p>
-      </span>
+      <label for="priceOfTheElement">Price:</label>
+      <input type="text" name="price" id="price" value=""><br>
     </div>
     <div id="inputBar">
-      <label for="qty">QTY</label>
-      <input type="text" name="QTY" id="QTY" value="0"><br>
+        <label for="qty">QTY</label>
+        <input type="text" name="QTY" id="QTY" value=""><br>
     </div>
     <div id="totalPrice">
       <span>
-        <p>$0.00</p>
+        <p id="priceNumber">$0.00</p>
       </span>
     </div>
     <div id="deleteButton">
-      <button type="button" onclick="" class="btn-delete">Delete</button>
+        <button type="button" onclick="" class="btn-delete">Delete</button>
     </div>
+  </div>
+  <div id="secondProduct">
+      <div id="nameOfTheProduct2">
+          <label for="name">Element:</label>
+          <input type="text" name="price" id="name2" value=""><br>
+      </div>
+      <div id="priceOfTheProduct2">
+        <label for="priceOfTheElement">Price:</label>
+        <input type="text" name="price" id="price2" value=""><br>
+      </div>
+      <div id="inputBar2">
+          <label for="qty">QTY</label>
+          <input type="text" name="QTY" id="QTY2" value=""><br>
+      </div>
+      <div id="totalPrice2">
+        <span>
+          <p id="priceNumber2">$0.00</p>
+        </span>
+      </div>
+      <div id="deleteButton2">
+          <button type="button" onclick="" class="btn-delete">Delete</button>
+      </div>
+    </div>
+  <div id="calculatePricesButton">
+      <button type="button" onclick="" class="btn-success">Calculate Prices</button>
   </div>
   <script type="text/javascript" src="./js/index.js"></script>
 </body>

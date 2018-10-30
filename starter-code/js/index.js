@@ -1,24 +1,93 @@
-let button  = document.getElementById('deleteButton')
+let buttonForDeletingItem  = document.getElementById('deleteButton');
 
 
-button.onclick = function(){
+buttonForDeletingItem.onclick = function(){
 
-    let removeContent = document.querySelector('div');
+    let removeContent = document.getElementById('firstProduct');
 
   removeContent.innerHTML = '';
 
-  console.log(removeContent)
 
 }
-
-//var myNode = document.getElementById("foo");
-//myNode.innerHTML = '';
-//var text = document.createTextNode(data);
-
 
 function deleteItem(e){
   
 }
+
+let buttonForGettingPricesByProduct  = document.getElementById('calculatePricesButton');
+
+//document.getElementById('QTY').getAttribute('value');
+
+buttonForGettingPricesByProduct.onclick = function() {
+
+  let writtenValue = document.getElementById("QTY").value;
+
+  let writtenPriceOfTheProduct = document.getElementById('price').value;
+  
+  let getThePrice = Number(writtenValue) * Number(writtenPriceOfTheProduct);
+
+  let nameOfTheWrittenProduct = document.getElementById('name').value;
+
+  document.getElementById('priceNumber').innerHTML = '$' + getThePrice;
+
+  document.getElementById('nameOfTheProduct').innerHTML = nameOfTheWrittenProduct;
+
+  document.getElementById('priceOfTheProduct').innerHTML = '$' + writtenPriceOfTheProduct;
+
+  document.getElementById('inputBar').innerHTML = 'QTY: ' + writtenValue;
+}
+
+
+
+
+
+
+let buttonForDeletingItem2  = document.getElementById('deleteButton2');
+
+
+buttonForDeletingItem2.onclick = function(){
+
+    let removeContent2 = document.getElementById('secondProduct');
+
+  removeContent2.innerHTML = '';
+
+
+}
+
+function deleteItem(e){
+  
+}
+
+let buttonForGettingPricesByProduct2 = document.getElementById('calculatePricesButton');
+
+//document.getElementById('QTY').getAttribute('value');
+
+buttonForGettingPricesByProduct2.onclick = function() {
+
+  let writtenValue = document.getElementById("QTY2").value;
+
+  let writtenPriceOfTheProduct = document.getElementById('price2').value;
+  
+  let getThePrice = Number(writtenValue) * Number(writtenPriceOfTheProduct);
+
+  let nameOfTheWrittenProduct = document.getElementById('name2').value;
+
+  document.getElementById('priceNumber2').innerHTML = '$' + getThePrice;
+
+  document.getElementById('nameOfTheProduct2').innerHTML = nameOfTheWrittenProduct;
+
+  document.getElementById('priceOfTheProduct2').innerHTML = '$' + writtenPriceOfTheProduct;
+
+  document.getElementById('inputBar2').innerHTML = 'QTY: ' + writtenValue;
+
+  
+
+}
+
+
+
+
+
 
 function getPriceByProduct(itemNode){
 
@@ -52,9 +121,9 @@ function createNewItemRow(itemName, itemUnitPrice){
 
 }
 
-function createNewItem(){
+function createNewItem(){}
 
-}
+
 
 // window.onload = function(){
 //   var calculatePriceButton = document.getElementById('calc-prices-button');

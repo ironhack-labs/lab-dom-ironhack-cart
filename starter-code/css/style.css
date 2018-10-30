@@ -47,3 +47,19 @@ input {
   align-items: center;
   margin-top: 30px;
 }
+
+#secondProduct {
+  display: flex;
+  width: 100vw;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 30px;
+}
+
+#calculatePricesButton {
+  display: flex;
+  width: 100vw;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 30px;
+}
