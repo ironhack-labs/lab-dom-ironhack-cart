@@ -2,174 +2,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link rel="stylesheet" href="css/"> -->
+  <link rel="stylesheet" href="css/style.css">
   
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
 <body>
+  <div class="pageHeader">
   <h2>Ironhack Merchandising Shop</h2>
-  <div class="wrapper">
+  </div>
+  <div class="wrapper productDiv">
     <span class="productName">Iron Bubblehead</span>
     <span class="producPrice">$25.00</span>
     <span class="total-product-price"></span>
     <div>
-    <label></label>
+    <label>QTY</label>
     <input type="number" class="quantity">
     </div>
   <button class="delete">delete</button>
+  </div>
+  <div class="wrapper productDiv">
   <span class="productName">Iron shirt</span>
   <span class="producPrice">$55.00</span>
   <span class="total-product-price"></span>
   <div>
-  <label></label>
+  <label>QTY</label>
   <input type="number" class="quantity">
 </div>
 <button id="delete">delete</button>
-<button id="calculate">calculate</button>
-  </div>
+</div>
+<button id="calculate" class="btn-success btn">calculate</button>
+  
   <script src="practice.index.js"></script>
 </body>
 </html>
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <title>Ironhack cart</title>
-</head>
-<body>
-  <div id="wrapper">
-    <div id="pageHeader">
-    <h1>Ironhack Merchandising Shop</h1>
-    </div>
-    <div class="productDiv">
-      <div class="productName">
-        <span class="column">IronBubble-head</span>
-      </div>
-      <div class="priceColumn">
-        <span>25</span>
-      </div>
-      <div class="formDiv">
-        <form>
-          <label>QTY:</label>
-          <input type="text" class="quantity">
-        </form>
-      </div>
-      <div class="cost">
-        <span>0.00</span>
-      </div>
-      <div class="deleteButton">
-        <button class="delete btn btn-delete">Delete</button>
-      </div>
-    </div>
-    <div class="productDiv">
-      <div class="productName">
-        <span class="column">ironshirt</span>
-      </div>
-      <div class="priceColumn">
-        <span>5</span>
-      </div>
-      <div class="formDiv">
-        <form>
-          <label>QTY:</label>
-          <input type="text" class="quantity">
-        </form>
-      </div>
-      <div class="cost">
-        <span>0.00</span>
-      </div>
-      <div class="deleteButton">
-        <button class="delete btn btn-delete">Delete</button>
-      </div>
-    </div>
-    <div class="success">
-        <button class="btn-success btn" id="calc-prices-button">Calculate Price</button>
-        <div class="totalTotal"></div>
-    </div>
-  </div>
-  <script type="text/javascript" src="practice.index.js"></script>
-</body>
-</html> -->
-
-
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <title>Ironhack cart</title>
-</head>
-<body>
-
-  <div class="headerDiv">
-    <h1>Ironhack Merchandising Shop</h1>
-  </div>
-  
-  <div class="wrapper">
-
-    <div class="productName wrapper">
-      <span>IronBubble-head</span>
-    </div>
-    
-    <div class="productPrice wrapper">
-      <span class="price">25.00</span>
-    </div>
-
-    <div class="formDiv wrapper">
-      <label>QTY</label>
-      <input type="text" value="0" class="quantity">
-    </div>
-
-    <div class="totalCost wrapper">
-      <span id="total">$0.00</span>
-    </div>
-
-    <div class="deleteButton wrapper">
-      <button class="btn btn-delete">delete</button>
-    </div>
-
-  </div>
-  <div class="wrapper">
-
-      <div class="productName wrapper">
-        <span>Ironshirt</span>
-      </div>
-      
-      <div class="productPrice wrapper">
-        <span class="price">15.00</span>
-      </div>
-  
-      <div class="formDiv wrapper">
-        <label>QTY</label>
-        <input type="text" value="0" class="quantity">
-      </div>
-  
-      <div class="totalCost wrapper">
-        <span id="total2">$0.00</span>
-      </div>
-  
-      <div class="deleteButton wrapper">
-        <button class="btn btn-delete">delete</button>
-      </div>
-  
-    </div>
-  
-  <div class="btn-wrapper">
-  <button class="btn btn-success" id="calc-prices-button">Calculate Prices</button>
-  </div>
-  <h3>Total cost: <span id="totalTotal"></span></h3>
-
-
-<script type="text/javascript" src="./js/index.js"></script>
-
-</body>
-</html> -->
