@@ -1,14 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<link rel="stylesheet" href="./css/style.css">
+<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<title>Ironhack cart</title>
 </head>
 <body>
+<div class="container h-100 phone mt-5">
+  <div class="row">
+	<div class="flex-container">	  
+    <div id="logo">
+      <div> <img src="https://course_report_production.s3.amazonaws.com/rich/rich_files/rich_files/4017/s300/logo-ironhack-blue.png" id="h-logo"/> </div>
+    </div>
+    <div class="empty-cart" style="display:">
+      <h2>No products available... :(</h2>
+    </div>
+    </div>
+    <form>
+      <table id="product-table">
+        <tr>
+          <td>Ironbubble-head</td>
+          <td>$
+            <input type="number" name="price" placeholder="25.00" value="25" style="outline: none; border:0px" readonly></td>
+          <td>QTY
+            <input type="number" name="quantity" min="1" max="5" value="2"></td>
+          <td class="totalproduct">$ 0.00</td> 
+          <td><button type="button" class="btn btn-delete">Delete</button></td>
+        </tr>
+        <tr>
+          <td>Ironshirt</td>
+          <td>$
+            <input type="number" name="price" placeholder="25.00" value="15" style="outline: none; border:0px" readonly></td>
+          <td>QTY
+            <input type="number" name="quantity" min="1" max="5" value="3"></td>
+          <td class="totalproduct">$ 0.00</td>          
+          <td><button type="button" class="btn btn-delete">Delete</button></td>
+        </tr>
+        <tr class="addproduct">
+          <td><input type="text" placeholder="Enter product name..." name="pname" value=""></td>
+          <td><input type="number" placeholder="Enter product price..." name="pprice" value=""></td>
+          <td></td>
+          <td></td>
+          <td><button type="button" class="btn btn-create">Create</button></td>
+        </tr>
+      </table>
+      <div>
+        <button type="button" class="btn" onclick="calculatePrices()">Calculate prices</button>
+      </div>
+      <div>
+        <h2>The total price: $ <span id="totalprice"></span></h2>
+      </div>
+    </form>
+  </div>
+</div>
+	<script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>
