@@ -1,0 +1,28 @@
+body{
+    text-align: center;
+    font-family: "Raleway", sans-serif;
+}
+#labels{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 8%;
+    margin-bottom: 5%;
+}
+#createButton{
+    text-align:center;
+    margin-top:8%;
+    color: white;
+    background: lightgreen;
+    border: 1px solid white;
+    padding: 1%;
+    border-radius: 36px;
+    
+}
+#cancelButton{
+    color: white;
+    background: red;
+    border: 1px solid white;
+    border-radius: 51px;
+    padding: 8px;
+}
