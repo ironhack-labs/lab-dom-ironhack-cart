@@ -54,9 +54,10 @@ class structure{
 
     $("#maain").append(this.div); //pushing the whole div into the html
     
-    this.button.onclick = function(argument){
-      argument = this.$("input");
-      argument.val(0);
+    this.button.onclick = function(){
+      var parent = $(this).parent().parent();
+      parent.find("input").val(0);
+      parent.find("strong").html(0);
     };
     this.qtyInput.onchange = function(){ //method to calculate price
       
@@ -65,13 +66,9 @@ class structure{
       var priceChild = parseInt(price.find("#priceLabel").text());
       var total = 0;
 
-      console.log(quantity);
-      console.log(price)
-      console.log(priceChild)
-
       total = quantity*priceChild;
 
-      price.find("strong").html(total); //inserting total again
+      price.find("strong").html("$"+total); //inserting total again
     };
   }
 }
@@ -86,9 +83,20 @@ function toCreateClick(){
 function createElement(InputName, InputPrice){ //Is this "legal"?
   var aStruct = new structure(InputName, InputPrice);
   shoppingItems.push(aStruct);
-  console.log(shoppingItems[0]);
 
   //the variable aStruct only exists when the function is called,
   //since we want to store the structures we put it in an array
 }
-
+function calculateCheckOut(){
+  var total = 0;
+  shoppingItems.forEach(function(object){
+    var holder = object.totalPriceStrong.innerHTML;
+    var holderAux = holder.slice(1, 3);
+    if(holder.length > 3){
+      holderAux = holder.slice(1, 4);
+    }
+    total += parseInt(holderAux);
+  });
+  
+  $("#checkOut").text("$"+total.toString());
+}

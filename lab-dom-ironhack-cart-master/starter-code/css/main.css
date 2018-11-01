@@ -9,9 +9,8 @@ body{
     margin-top: 8%;
     margin-bottom: 5%;
 }
-#createButton{
+.createButton{
     text-align:center;
-    margin-top:8%;
     color: white;
     background: lightgreen;
     border: 1px solid white;
@@ -25,4 +24,11 @@ body{
     border: 1px solid white;
     border-radius: 51px;
     padding: 8px;
+}
+.createButton:hover{
+    background:red;
+}
+#checkOut{
+    margin-top:3%;
+    font-size:50px;
 }
