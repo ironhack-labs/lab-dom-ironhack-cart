@@ -1,3 +1,28 @@
+
+
+body span{
+  display: inline;
+  margin: 0 15px;
+  padding-left:100px;
+}
+
+body div{
+  padding: 20px 0;
+}
+
+.titulo{
+  width: 300px;
+  height:150px;
+  padding-left:400px;
+  text-align:center;
+}
+
+.btn-calcula{
+  margin:10px;
+  padding-top: 20px;
+  padding-left: 550px;
+}
+
 input {
   border: solid 1px black;
 }

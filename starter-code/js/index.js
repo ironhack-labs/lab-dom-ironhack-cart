@@ -1,3 +1,11 @@
+
+function calculatePrices(){
+  var precio = document.getElementById("precio")
+  var input = document.getElementById("p1")
+  var span = document.getElementById("p2")
+  span.innerText = input.value * precio.value
+}
+
 function deleteItem(e){
 
 }

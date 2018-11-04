@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="./css/style.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -10,5 +11,38 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <img src="https://course_report_production.s3.amazonaws.com/rich/rich_files/rich_files/4017/s300/logo-ironhack-blue.png" width="150px" height="150px">
+  <div class="titulo">
+  <h1>Ironhack Merchandising Shop</h1>
+  </div>
+  <div>
+    <span>
+      Producto 1
+    </span>
+    <span id="precio">
+      5
+    </span>Pesos
+    <span>
+      Cantidad
+    </span><input id="p1" type="number">
+    <span id="p2">0</span>MXN
+    <span><button id="obten" class="btn-delete" onclick="deleteItem">Delete</button> </span>
+  </div>
+  <div>
+      <span>
+        Producto 2
+      </span>
+      <span id="precio">
+        8
+      </span>Pesos
+      <span>
+        Cantidad
+      </span><input id="p1" type="number">
+      <span id="p2">0</span>MXN
+      <span><button id="obten" class="btn-delete" onclick="deleteItem">Delete</button> </span>
+    </div>
+  <div class="btn-calcula">
+    <button id="calcula" class="btn-success" onclick="calculatePrices">Calculate</button> </span> 
+  </div>
 </body>
 </html>
