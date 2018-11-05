@@ -19,30 +19,33 @@
     <span>
       Producto 1
     </span>
-    <span id="precio">
+    <span id="preciop1">
       5
     </span>Pesos
     <span>
       Cantidad
-    </span><input id="p1" type="number">
-    <span id="p2">0</span>MXN
-    <span><button id="obten" class="btn-delete" onclick="deleteItem">Delete</button> </span>
+    </span><input id="cantidadp1" type="number">
+    <span id="totalp1">$0</span>MXN
+    <span><button id="borrap1" class="btn-delete" onclick="deleteItem()">Delete</button> </span>
   </div>
   <div>
       <span>
         Producto 2
       </span>
-      <span id="precio">
+      <span id="preciop2">
         8
       </span>Pesos
       <span>
         Cantidad
-      </span><input id="p1" type="number">
-      <span id="p2">0</span>MXN
-      <span><button id="obten" class="btn-delete" onclick="deleteItem">Delete</button> </span>
+      </span><input id="cantidadp2" type="number">
+      <span id="totalp2">$0</span>MXN
+      <span><button id="borrap2" class="btn-delete" onclick="deleteItem()">Delete</button> </span>
     </div>
   <div class="btn-calcula">
-    <button id="calcula" class="btn-success" onclick="calculatePrices">Calculate</button> </span> 
+    <button id="calcula" class="btn-success" onclick="calculatePrices()">Calculate</button> </span> 
+  </div>
+  <div class="total">
+    <h2>Total price: <span id="totaltotal">0$</span></h2>
   </div>
 </body>
 </html>

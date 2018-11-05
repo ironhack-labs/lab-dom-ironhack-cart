@@ -8,6 +8,7 @@ body span{
 
 body div{
   padding: 20px 0;
+  flex-wrap:wrap;
 }
 
 .titulo{
@@ -47,6 +48,10 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+}
+
+.total{
+  text-align: center;
 }
 
 .btn-success {
