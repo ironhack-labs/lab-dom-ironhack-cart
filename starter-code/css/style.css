@@ -1,6 +1,13 @@
 input {
   border: solid 1px black;
 }
+body{
+  width: 100%;
+
+}
+h1{
+  padding-left: 47%;
+}
 
 .btn {
   display: inline-block;
@@ -27,7 +34,7 @@ input {
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
-    border-color: #4cae4c;
+    border-color: #5cb85c;
 }
 
 .btn-delete {
@@ -38,4 +45,17 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+.product{
+  margin: 30px 30px;
+
+}
+.success{
+  margin-left: 48%;
+}
+.space{
+  margin-left: 135px;
+}
+button{
+  border: 8px solid;
 }

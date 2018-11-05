@@ -9,6 +9,29 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
-<body>
+<body >
+
+<h1>Ironhack <br> Merchandising Shop</h1>
+<div class="product">
+  <div class="space btn">
+    <span>IronBubble-head </span>
+  </div>
+  <div class="space btn ">
+    <span id="unitprice"> $ 25.00 </span>
+  </div>
+  <div class="space btn">
+    <label for="QTY">QTY</label> <input onchange="getTotalPrice()" type="number" placeholder="0" >
+  </div>
+  <div class="space btn quantity">
+    $<span id="price"> 0.00</span>
+  </div>
+  <div class="space btn ">
+    <button class="btn-delete"> Delete</button>
+  </div> 
+</div>
+
+<div class="success btn ">
+    <button class="btn-success"> Calculate Prices </button>
+</div>
 </body>
 </html>
