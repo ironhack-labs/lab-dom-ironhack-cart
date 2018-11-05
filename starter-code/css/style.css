@@ -1,7 +1,20 @@
+*{
+    font-family: Circular, Helvetica, Arial, sans-serif;
+}
+
 input {
   border: solid 1px black;
 }
-
+#mainSection {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+}
+#mainSection section{
+    display: flex;
+    flex-direction: row;
+}
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -34,8 +47,10 @@ input {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    border-radius: 5px;
+    padding: 10px 24px;
 }
 
-.quantity {
+#quantity {
   margin: 0 5px;
 }
