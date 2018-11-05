@@ -1,5 +1,7 @@
 input {
   border: solid 1px black;
+  width: 60%;
+  text-align: center;
 }
 
 .btn {
@@ -38,4 +40,41 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+h1, h2{
+  text-align: center;
+}
+
+.articulo{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 20px 0px;
+}
+
+.centrado{
+  text-align: center;
+  width: 100%;
+}
+
+#create{
+  display: flex;
+  justify-content: space-around;
+}
+
+#new-item-create{
+  background-color: gray;
+  height: 20px;
+  color: white;
+}
+
+.inputs{
+  display: flex;
+}
+
+.inputs input{
+  margin: 10px;
+  text-align: center;
 }
