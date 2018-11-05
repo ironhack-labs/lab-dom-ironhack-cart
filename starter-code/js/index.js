@@ -21,14 +21,31 @@ function updatePriceByProduct(productPrice, index){
 // }
 
 // Iteration 2: Add another product
+// function getTotalPrice() {
+//   var price = document.getElementsByClassName('price');
+//   var quantity = document.getElementsByTagName('input');
+//   var totalPrice = document.getElementsByClassName("total")
+//   // Calcular totales
+//   for (var i=0; i<price.length; i++){
+//     totalPrice[i].innerText = price[i].innerText * quantity[i].value
+//   }
+// }
+
+// Iteration 3: Calculating the total price of all products
 function getTotalPrice() {
   var price = document.getElementsByClassName('price');
   var quantity = document.getElementsByTagName('input');
-  var totalPrice = document.getElementsByClassName("total")
-  // Calcular totales
+  var total = document.getElementsByClassName("total")
+  var totalPrice = document.getElementById("total-price")
+  // console.log(totalPrice)
+  // Calcular subtotales y total
+  var totalSum = 0
   for (var i=0; i<price.length; i++){
-    totalPrice[i].innerText = price[i].innerText * quantity[i].value
+    total[i].innerText = price[i].innerText * quantity[i].value
+    totalSum += Number(total[i].innerText)
   }
+  // console.log(totalSum)
+  totalPrice.innerText = totalSum
 }
 
 function createQuantityInput(){

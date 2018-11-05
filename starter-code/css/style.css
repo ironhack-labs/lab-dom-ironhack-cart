@@ -57,7 +57,8 @@ h1 {
   width: 20%;
 }
 
-.success-container {
+.container {
+  margin: 30px auto;
   display: flex;
   align-items: center;
   justify-content: center;
