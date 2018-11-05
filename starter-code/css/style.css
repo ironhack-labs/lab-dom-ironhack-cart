@@ -1,5 +1,50 @@
+/*div :not(:first-child) {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: space-between;
+  align-content: space-between;
+}*/
+
+
+
+
+.primerItem, .segundoItem {
+  display: flex;
+  justify-content: center;
+ 
+  
+}
+
+.primerItem > div {
+  margin: 10px;
+  text-align: center;
+  font-size: 20px;
+  
+}
+.segundoItem > div {
+  margin: 10px;
+  text-align: center;
+  font-size: 20px;
+  
+}
+
+
+
 input {
   border: solid 1px black;
+
+ 
+}
+
+button{
+  background: #CF000F;
+  border-radius: 5px;
+  width: 100px;
+  height: 50px;
+  color: white;
+
 }
 
 .btn {
