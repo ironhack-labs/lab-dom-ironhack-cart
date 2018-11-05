@@ -10,14 +10,25 @@ function updatePriceByProduct(productPrice, index){
 
 }
 
-// Iteration 1 
+// Iteration 1
 // Calculating the total price for the product
+// function getTotalPrice() {
+//   var price = document.getElementsByClassName('price')[0];
+//   var quantity = document.getElementsByTagName('input')[0];
+//   var total = price.innerText * quantity.value
+//   var totalPrice = document.getElementById("total")
+//   totalPrice.innerText = total
+// }
+
+// Iteration 2: Add another product
 function getTotalPrice() {
-  var price = document.getElementsByClassName('price')[0];
-  var quantity = document.getElementsByTagName('input')[0];
-  var total = price.innerText * quantity.value
-  var totalPrice = document.getElementById("total")
-  totalPrice.innerText = total
+  var price = document.getElementsByClassName('price');
+  var quantity = document.getElementsByTagName('input');
+  var totalPrice = document.getElementsByClassName("total")
+  // Calcular totales
+  for (var i=0; i<price.length; i++){
+    totalPrice[i].innerText = price[i].innerText * quantity[i].value
+  }
 }
 
 function createQuantityInput(){
