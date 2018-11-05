@@ -118,12 +118,27 @@ window.onload = function(){
   var createItemButton = document.getElementById('new-item-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
   
+
   calculatePriceButton.onclick = getTotalPrice;
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
    
   }
+
   createItemButton.onclick = createNewItem;
+  deleteButtons = createItemButton.addEventListener('click',function(){
+    var deleteButtons = document.getElementsByClassName('btn-delete');
+    
+    for(var i = 0; i<deleteButtons.length ; i++){
+      deleteButtons[i].onclick = deleteItem;
+     
+    }
+    
+  })
+  
+  
+
+  
   
 
   
