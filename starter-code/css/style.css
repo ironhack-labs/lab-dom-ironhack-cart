@@ -1,3 +1,32 @@
+*{
+  margin: 0;
+
+}
+
+#titulo{
+  display: flex;
+}
+
+
+h1{
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  padding-bottom: 100px;
+}
+
+#producto {
+  display: flex;
+}
+
+#producto div{
+  justify-content: space-around;
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
 input {
   border: solid 1px black;
 }
@@ -28,6 +57,7 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    justify-content: center;
 }
 
 .btn-delete {
