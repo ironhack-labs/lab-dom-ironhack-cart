@@ -1,5 +1,10 @@
+// Iteration 4: Deleting a product
 function deleteItem(e){
-
+  var button = e.currentTarget 
+  var buttonContainer = e.currentTarget.parentNode
+  var product = buttonContainer.parentNode
+  var body = document.getElementsByTagName("body")[0]
+  body.removeChild(product)
 }
 
 function getPriceByProduct(itemNode){
@@ -80,6 +85,7 @@ window.onload = function(){
   calculatePriceButton.onclick = getTotalPrice;
   // createItemButton.onclick = createNewItem;
 
+  // Iteration 4: Deleting a product
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
   }
