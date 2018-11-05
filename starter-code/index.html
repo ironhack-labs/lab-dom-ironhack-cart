@@ -27,7 +27,7 @@
         <span class="priceRow"></span>
       
       
-        <button class="btn-delete">Delete</button>
+        <button class="btn-delete" onclick="deleteItem(event)">Delete</button>
       
     </section>
     <section>
@@ -46,8 +46,13 @@
         <span class="priceRow"></span>
       
       
-        <button class="btn-delete">Delete</button>
+        <button class="btn-delete" onclick="deleteItem(event)">Delete</button>
       
+    </section>
+    <section id="createElement">
+      <lable>Descripcion: <input id="newElement" type=text"></lable>
+      <lable>Precio: <input id="newPrice" type="text"></lable>
+      <button id="create" onclick="createNewItem()">Crear</button>
     </section>
     <button onclick="getTotalPrice()">Clalcular</button>
     <h2 id="totalPrice"></h2>

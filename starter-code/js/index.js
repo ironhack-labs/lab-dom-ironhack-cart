@@ -1,5 +1,11 @@
 function deleteItem(e){
-
+    let parent = e.toElement.parentNode.parentNode;
+    //console.log(parent);
+    let elementRemoved = e.toElement.parentNode;
+    parent.removeChild(elementRemoved);
+    //console.log(elementRemoved.parentNode);
+    //console.log(elementRemoved)
+    //let parent = e.target.removeChild(elementRemoved);*/
 }
 console.log('working');
 function getPriceByProduct(e){
@@ -10,20 +16,19 @@ function getPriceByProduct(e){
 }
 
 window.addEventListener("load", function(e) {
-    console.log(e);
     let inputs = document.getElementsByClassName('quantity');
-    console.log(document.getElementsByClassName('quantity').length);
     for (let input of inputs){
         input.addEventListener('change',(e)=>{
-            console.log('Ola');
-            console.log(e.target);
             let price = e.target.parentNode.parentNode.querySelector('.price').innerText;
             let realPrice = price.substring(1, price.length);
             let totalPrice = e.target.parentNode.parentNode.querySelector('.priceRow');
-            console.log(totalPrice);
             totalPrice.innerHTML = input.value*realPrice;
         });
     }
+    /*let btnsDelete = document.getElementsByClassName('btn-delete');
+    for(let btn of btnsDelete){
+        btn.addEventListener('click',deleteItem(e),true);
+    }*/
 });
 
 function updatePriceByProduct(productPrice, index){
@@ -34,9 +39,7 @@ function getTotalPrice() {
     let pricesRow = document.getElementsByClassName('priceRow');
     let totalPrice = 0;
     for(let priceRow of pricesRow){
-        console.log('paseint del precio:'+parseInt(priceRow.innerText));
         totalPrice += parseInt(priceRow.innerText);
-
     }
     document.getElementById('totalPrice').innerHTML = totalPrice;
 }
@@ -62,7 +65,9 @@ function createNewItemRow(itemName, itemUnitPrice){
 }
 
 function createNewItem(){
-
+    let element = document.getElementById('newElement');
+    let price = document.getElementById('newPrice');
+    console.log(price.innerText);
 }
 
 /*window.onload = function(){
