@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script type="text/javascript" src="./js/index.js"></script>
+  <title>Ironhack cart</title>
+</head>
+<body>
+
+  <!----------------------SHOPPING CART---------------->
+    <section id = "shoppingCart">
+        <h1>Ironhack Merchandising Shop</h1>
+        
+        <div class = "item" id = "IronBubble-Head">
+            <div>
+              <span>IronBubble-head</span>
+            </div>
+            <div>
+              <p>$ <span id = price>25.00</span></p>
+            </div>
+            <div>
+              <label for="numberOfUnits"> QTY </label>
+              <input onchange = "calculatePrice()" type="text" id = "IronBubble-Head-units" value = "0">
+            </div>
+            <div>
+              <span id = "IronBubble-Head-total">0</span>
+            </div>
+            <div><button class = "btn-delete btn">Delete</button></div>
+        </div>
+
+        <div class = "item" id = "ironShirt">
+            <div>
+              <span>IronShirt</span>
+            </div>
+            <div>
+              <p>$ <span id = price>15.00</span></p>
+            </div>
+            <div>
+              <label for="numberOfUnits"> QTY </label>
+              <input onchange= "calculatePrice()" type="text" id = "ironShirt-units" value = "0">
+            </div>
+            <div>
+              <span id = "ironShirt-total">0</span>
+            </div>
+            <div><button class = "btn-delete btn">Delete</button></div>
+        </div>
+
+      <!----------CALCULATE TOTAL PRICE--------------->
+
+        <button class = "btn btn-success">Calculate Prices</button>
+
+    </section>
+
+
+
+
+
+<!----------------------ADD ITEM FORM---------------------->
+    <section id = "addItemForm">
+      <h2>Add Your Own Item</h2>
+      
+      <label for ="newItemName">Product Name</label>
+      <input id = "newItemName" type="text"><br>
+      
+      <label for="quantity">Quantity</label>
+      <input id ="quantity" type="text"><br>
+
+      <label for="pricePerUnit">Price per Unit</label>
+      <input id = "pricePerUnit" type="text"><br>
+
+      <button onclick = "addItem()" class = "btn">Add Item</button>
+    </section>
+
+
+</body>
+</html>
