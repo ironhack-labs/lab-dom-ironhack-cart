@@ -1,6 +1,23 @@
+body {
+  margin:0;
+  padding:0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:15px;
+}
+header h1{
+  text-align:center;
+}
+footer{
+  text-align:center;
+  margin-top:25px;
+  font-size:2em;
+  font-weight: 800;
+
+}
 input {
   border: solid 1px black;
 }
+
 
 .btn {
   display: inline-block;
@@ -38,4 +55,30 @@ input {
 
 .quantity {
   margin: 0 5px;
+  width:70%;
+
+}
+.producto{
+  width:85%;
+  height:100px;
+  margin:0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.crear{
+  justify-content: space-between;
+}
+.calcular{
+  width:80%;
+  display: flex;
+  justify-content:center;
+
+}
+.caja{
+  width:18%;
+}
+.caja1{
+  width:36%;
 }
