@@ -63,3 +63,21 @@ h1 {
   align-items: center;
   justify-content: center;
 }
+
+.new-product {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px 30px;
+}
+
+.new-product .btn-new-prod {
+  color: #fff;
+  background-color: #666666;
+  border-color: #666666;
+}
+
+.new-product div {
+  width: 20%;
+}
