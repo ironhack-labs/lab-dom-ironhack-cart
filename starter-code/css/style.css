@@ -24,10 +24,12 @@ input {
   border-radius: 4px;
 }
 
-.btn-success {
+#btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin-left: 330%
+    
 }
 
 .btn-delete {
@@ -38,4 +40,17 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.carrito{
+  width: 100%;
+  height:auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+h2{
+  text-align: center;
 }
