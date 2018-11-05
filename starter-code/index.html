@@ -10,5 +10,59 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <div class="flex_center">Ironhack Merchandising Shop</div>
+  <hr>
+  <div class="product">
+    <div class="flex">
+      <div>
+          <span>IronBubble-head</span>
+      </div>
+      <span id="IronBubble-head_price" class="product_price">$25</span>
+      <div>
+        <label for="price">QTY</label>
+        <input type="number" class="quantity">
+      </div>
+      <div>
+        <span class="total_producto">$0</span>
+      </div>
+      <div>
+        <button class="btn-delete" onclick="deleteItem(event)">Delete</button>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="product">
+      <div class="flex">
+        <div>
+            <span>IronShirt</span>
+        </div>
+        <span class="product_price">$15</span>
+        <div>
+          <label for="price">QTY</label>
+          <input type="number" class="quantity">
+        </div>
+        <div>
+          <span class="total_producto">$0</span>
+        </div>
+        <div>
+          <button class="btn-delete" onclick="deleteItem(event)">Delete</button>
+        </div>
+      </div>
+    </div>
+    <br>
+  <div id="new_product">
+    <input type="text" id="new_product_name">
+    <input type="text" id="new_product_price">
+    <button onclick="agregaProducto(event)">Add</button>
+  </div>
+
+  <hr>
+  <div class="flex_center_btn" id="calc-prices-button">
+    <button class="btn-success" onclick="getTotalPrice()">
+      Calculate price
+    </button>
+  </div>
+  <br>
+  <h2 id="total_carrito">Total price: <span>$0</span></h2>
 </body>
 </html>

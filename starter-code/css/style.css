@@ -1,6 +1,23 @@
 input {
   border: solid 1px black;
 }
+.flex{
+  display: flex;
+  justify-content: space-around;
+  align-items:center;
+}
+.flex_center{
+  display: flex;
+  justify-content: space-around;
+  align-items:center;
+  font-size: 50px;
+}
+
+.flex_center_btn{
+  display: flex;
+  justify-content: space-around;
+  align-items:center;
+}
 
 .btn {
   display: inline-block;
