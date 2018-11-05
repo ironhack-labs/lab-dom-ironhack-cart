@@ -17,7 +17,7 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-  console.log(price)
+  price.innerText = quantity.value * unitprice.innerText
   
 
 }
