@@ -1,3 +1,6 @@
+
+
+
 function deleteItem(e){
 
 }
@@ -11,6 +14,14 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
+  //cargo en una lista todos los productos que hay que son una item line
+  var items = document.getElementsByClassName("item-line");
+  console.log('ITEMS --> ', items);
+  var result=0;
+  // for(var i=0; i<items.length; i++){
+  //   //entramos en la lista y la recorremos 
+  //   var price =  
+  // }
 
 }
 
@@ -44,9 +55,10 @@ window.onload = function(){
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
   calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
+ // createItemButton.onclick = createNewItem;
 
   for(var i = 0; i<deleteButtons.length ; i++){
+    
     deleteButtons[i].onclick = deleteItem;
   }
 };

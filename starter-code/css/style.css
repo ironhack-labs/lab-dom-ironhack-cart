@@ -2,6 +2,17 @@ input {
   border: solid 1px black;
 }
 
+h1 {
+  text-align: center;
+}
+
+.item-line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding-top: 50px;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -38,4 +49,10 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.calc-button  {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
 }
