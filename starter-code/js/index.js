@@ -11,7 +11,16 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
+  var products = document.querySelectorAll(".chart > .product");
+  loop {
+    calculateProductPrice(products[i]);
+  }
+}
 
+function calculateProductPrice(product) {
+  var q;
+  var price;
+  var total = q * price;
 }
 
 function createQuantityInput(){
