@@ -1,5 +1,23 @@
+h1 {
+  text-align: center;
+}
+.product {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.calculate {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
 input {
   border: solid 1px black;
+  text-align: right;
+}
+
+.product-price:before{
+  content:'$';
 }
 
 .btn {
@@ -22,18 +40,26 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
 }
 
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 .quantity {

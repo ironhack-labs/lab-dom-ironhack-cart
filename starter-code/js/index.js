@@ -1,4 +1,19 @@
-function deleteItem(e){
+function productPriceTotal() {
+
+  var priceProduct = document.querySelector('.product .product-price span');
+  var priceProductNum = priceProduct.textContent;
+
+  var quantityProduct = document.querySelector('.product .product-quantity .qyt');
+  var quantityProductNum = quantityProduct.value;
+
+  var productPrice = priceProductNum * quantityProductNum;
+
+  var finalProductPrice = document.querySelector('.product .product-total-price span');
+  finalProductPrice.innerText = productPrice;
+}
+
+function deleteItem(event){
+  var deleteBtn = event.target;
 
 }
 
@@ -40,11 +55,11 @@ function createNewItem(){
 
 window.onload = function(){
   var calculatePriceButton = document.getElementById('calc-prices-button');
-  var createItemButton = document.getElementById('new-item-create');
+  //var createItemButton = document.getElementById('new-item-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
-  calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
+  calculatePriceButton.onclick = productPriceTotal;
+  //createItemButton.onclick = createNewItem;
 
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
