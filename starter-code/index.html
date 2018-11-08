@@ -14,7 +14,6 @@
 <body>
   <h1>Ironhack Merchandising  Shop</h1>
 
-<!---Products--->
   <div class="product">
     <div class="product-name">
       <span>IronBubble-head</span>
@@ -25,8 +24,8 @@
     </div>
 
     <div class="product-quantity">
-      <label for="qty">QTY</label>
-      <input class="qyt" type="text" value="0" placeholder="0">
+      <label>QTY</label>
+      <input class="qty" type="text" value="0" placeholder="0">
     </div>
 
     <div class="product-total-price">
@@ -38,7 +37,6 @@
     </div>
   </div>
 
-<!---PRODUCTS 2 --->
 <div class="product">
   <div class="product-name">
     <span>Ironpineapple hat</span>
@@ -49,8 +47,8 @@
   </div>
 
   <div class="product-quantity">
-    <label for="qty">QTY</label>
-    <input class="qyt" type="text" value="0" placeholder="0">
+    <label>QTY</label>
+    <input class="qty" type="text" value="0" placeholder="0">
   </div>
 
   <div class="product-total-price">
@@ -63,11 +61,11 @@
 </div>
 
 
+<div class="calculate">
+  <button class="btn-success" id="calc-prices-button" >Calculate prices</button>
+</div>
 
-<!--Calculate button-->
-  <div class="calculate">
-    <button class="btn-success" id="calc-prices-button" >Calculate prices</button>
-  </div>
+<h1 id="cart-total">Total Price: $<span>0</span></h1>  
 
 </body>
 </html>
