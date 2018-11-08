@@ -12,15 +12,15 @@ function updatePriceByProduct(productPrice, index){
 
 function getTotalPrice() {
   var products = document.querySelectorAll(".chart > .product");
-  loop {
+  for (var i=0; i<products.length; i++) {
     calculateProductPrice(products[i]);
   }
 }
 
 function calculateProductPrice(product) {
-  var q;
-  var price;
-  var total = q * price;
+  var quantity;
+  var price; 
+  return quantity * price;
 }
 
 function createQuantityInput(){
