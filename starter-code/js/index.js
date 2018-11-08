@@ -1,4 +1,4 @@
-var totalPrices = 0
+var totalPrices = 0;
 
 function getTotalPrice() {
   var myNodelist = document.querySelectorAll(".product");
@@ -20,9 +20,9 @@ function getTotalPrice() {
     finalProductPrice.innerText = productPrice;
 
     totalPrices += finalProductPrice;
+    console.log(totalPrices);
+    document.getElementById('totalValue').innerHTML = totalPrices.value;
   }
-  console.log(totalPrices);
-  document.getElementById('cart-total span').innerHTML;
 }
 
 
