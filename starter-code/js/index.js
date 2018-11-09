@@ -26,7 +26,7 @@ function getTotalPrice() {
    );
    totalPrices += productTotalPrice;
     });
-    document.querySelector("h1 span").innerHTML = totalPrices.toFixed(2);
+    document.querySelector("h2 span").innerHTML = totalPrices.toFixed(2);
 }
 
 
