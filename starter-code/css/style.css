@@ -18,8 +18,13 @@ input:read-only {
 }
 
 input[name="price"] { border: 0px;}
-#logo { display: flex; justify-content: center;}
-#h-logo {  height: 80px; float: left;  }
+
+.h1{
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  line-height: 0%;
+}
 
 .btn {
   display: inline-block;
@@ -47,8 +52,11 @@ input[name="price"] { border: 0px;}
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
-    display: flex;
-    justify-content: center;
+}
+
+.boton{
+  display: flex;
+  justify-content: center;
 }
 
 .btn-delete {

@@ -1,8 +1,6 @@
-/* *************************** CALCULATE PRICES *************************************** */
 function calculatePrices() {
 	var totalSum = 0;
 	var table = document.getElementById("product-table");
-	//console.log(table.rows)
 	for (var i = 0, row; row = table.rows[i]; i++) {
 		if (!row.classList.contains("addproduct")) {
 			var price = row.cells[1].getElementsByTagName("input")[0].value;
@@ -16,7 +14,6 @@ function calculatePrices() {
 }
 calculatePrices();
 
-/* ************************ EMPTY CART CHECK *********************************** */
 
 function cartEmpty() {
 	var newArray = [];
@@ -35,7 +32,6 @@ function cartEmpty() {
 cartEmpty();
 
 
-/* ************************ DELETE ITEM *********************************** */
 var deleteRow = function (event) {
 	var parent = event.currentTarget.parentElement.parentElement.parentElement;
 	var child = event.currentTarget.parentElement.parentElement;
@@ -47,12 +43,10 @@ var deleteRow = function (event) {
 function addDeleteListener() {
 	var deleteButtons = document.getElementsByClassName("btn-delete");
 	for (var i = 0; i < deleteButtons.length; i++) {
-		//console.log(deleteButtons[i]);
 		deleteButtons[i].addEventListener('click', deleteRow);
 	}
 }
 addDeleteListener();
-/* ************************ CREATE ITEM *********************************** */
 
 var addRow = function () {
 	var table = document.getElementById("product-table");
@@ -74,8 +68,8 @@ var addRow = function () {
 	var deleteBtnCell = row.insertCell(4);
 	deleteBtnCell.innerHTML = "<button type=\"button\" class=\"btn btn-delete\">Delete</button>";
 
-	/* CLEAR FIELDS AFTER CLICK */
-	/* .reset() only works on form tag, not on individual input fields. */
+
+  
 	event.currentTarget.parentElement.parentElement.getElementsByTagName("input")[0].value = "";
 	event.currentTarget.parentElement.parentElement.getElementsByTagName("input")[1].value = "";
 
