@@ -1,28 +1,32 @@
+function getPriceByProduct(product) {
+  return parseFloat(
+   product.querySelector('.product-price span').innerHTML
+ );
+}
+
+function updatePriceByProduct(productPrice, product) {
+  var quantityProduct = parseInt(product.querySelector('.qty').value);
+
+  var productTotalPrice = productPrice * quantityProduct;
+
+   product.querySelector('.product-total-price span').innerHTML = productTotalPrice.toFixed(2);
+   
+   return productTotalPrice;
+}
+
 var totalPrices = 0;
 
 function getTotalPrice() {
-  var myNodelist = document.querySelectorAll(".product");
+  var products = Array.from(document.querySelectorAll('.product'));
 
-  for (var i = 0; i < myNodelist.length; i++) {
-    var eachProduct = myNodelist.item(i);
-    
-    var priceProduct = eachProduct.querySelector('.product-price span');
-    var priceProductNum = priceProduct.textContent;
-
-    var quantityProduct = eachProduct.querySelector('.product-quantity .qty');
-    var quantityProductNum = quantityProduct.value;
-
-    var productPrice = priceProductNum * quantityProductNum;
-    var finalProductPrice = eachProduct.querySelector('.product-total-price span');
-    var totalPrice = finalProductPrice
-    totalPrice.innerHTML;
-
-    finalProductPrice.innerText = productPrice;
-
-    totalPrices += finalProductPrice;
-    console.log(totalPrices);
-    document.getElementById('totalValue').innerHTML = totalPrices.value;
-  }
+  products.forEach(function(product) {
+   productTotalPrice = updatePriceByProduct(
+     getPriceByProduct(product),
+     product
+   );
+   totalPrices += productTotalPrice;
+    });
+    document.querySelector("h1 span").innerHTML = totalPrices.toFixed(2);
 }
 
 
@@ -31,13 +35,6 @@ function deleteItem(event){
 
 }
 
-function getPriceByProduct(itemNode){
-
-}
-
-function updatePriceByProduct(productPrice, index){
-
-}
 
 function createQuantityInput(){
 
