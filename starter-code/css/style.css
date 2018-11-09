@@ -8,6 +8,15 @@ h1,h2 {
   margin-top: 40px;
   padding: 0 40px;
 }
+.product .product-name,.product-quantity {
+  min-width: 150px;
+}
+.product .product-price {
+  min-width: 50px;
+}
+.new-product .inputs-new-product .qty-product {
+  margin-left: 30px;
+}
 .calculate {
   display: flex;
   justify-content: center;
@@ -16,8 +25,9 @@ h1,h2 {
 input {
   border: solid 1px black;
   text-align: right;
+  padding: 5px;
 }
-.name::placeholder {
+.product-name::placeholder {
   text-align: left;
 }
 .product-price:before{

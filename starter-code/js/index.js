@@ -44,10 +44,6 @@ function createQuantityInput(){
 
 }
 
-function createDeleteButton(){
-
-}
-
 function createQuantityNode(){
 
 }
