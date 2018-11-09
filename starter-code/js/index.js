@@ -29,10 +29,14 @@ function getTotalPrice() {
     document.querySelector("h2 span").innerHTML = totalPrices.toFixed(2);
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+  var deleteBtn = document.getElementById('delete-product');
+  deleteBtn.onclick = deleteItem;
+});
 
-function deleteItem(event){
-  var deleteBtn = event.target;
-
+function deleteItem(element) {
+  var deleteProducts = document.querySelector('.product');
+  deleteProducts.remove(element.target.parentNode);
 }
 
 
