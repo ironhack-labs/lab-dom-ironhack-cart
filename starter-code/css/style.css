@@ -28,14 +28,36 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    border-radius: 4px;
+    height: 40px;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    border-radius: 4px;
+    height: 40px;
 }
 
 .quantity {
   margin: 0 5px;
 }
+
+#main-div{
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;  
+}
+
+#iteration1{
+  height: 180px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#calculate-prices{
+  text-align: center;
+}
+
