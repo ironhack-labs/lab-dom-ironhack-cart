@@ -2,6 +2,26 @@ input {
   border: solid 1px black;
 }
 
+
+
+.h1{
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  line-height: 0%;
+}
+
+.box{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 7%;
+}
+
+#input{
+ 
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -34,6 +54,12 @@ input {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+}
+
+.boton{
+  display: flex;
+  justify-content: center;
+  padding-top: 2%;
 }
 
 .quantity {

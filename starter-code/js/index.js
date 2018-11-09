@@ -1,5 +1,5 @@
 function deleteItem(e){
-
+ document.getElementsByClassName("")
 }
 
 function getPriceByProduct(itemNode){
