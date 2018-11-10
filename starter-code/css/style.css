@@ -39,3 +39,33 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.producto, .producto-nuevo{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.calcular{
+  width: 130px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+h1 {
+  text-align: center;
+}
+.nombre, .precio, .cantidad, .total{
+  min-width: 200px;
+} 
+.productoNuevo{
+  background-color: green;
+  width: 100%;
+  height: 50px;
+}
+#total-price{
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; 
+}
