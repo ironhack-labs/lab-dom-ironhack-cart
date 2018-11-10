@@ -13,6 +13,20 @@ input {
   border: solid 1px black;
 }
 
+
+.bottom-total{
+  text-align: center;
+}
+
+.input-add{
+  margin-right: 150px;
+}
+
+#new-item-create{
+
+  margin-left: 76%;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -39,6 +53,7 @@ input {
   width: 18%;
   margin-left: 10px;
   display: inline-block;
+  margin-top: 20px;
 }
 
 
@@ -46,7 +61,7 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
-    margin-left: 42%;
+    margin-left: 47%;
     margin-top: 3%;
 }
 

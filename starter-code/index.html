@@ -1,83 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="text/javascript" src="./js/index.js"></script>
+    <title>Ironhack cart</title>
 </head>
+
 <body>
 
 
-  <div class="title">
-    <h1>Ironhack Merchandising Shop</h1>
-  </div>
+    <div class="title">
+        <h1>Ironhack Merchandising Shop</h1>
+    </div>
 
 
-  <div class="wrapper">
+    <div id="father" class="wrapper">
 
+        <div class="product-div">
 
-        <div class="product">
-          <div  id = "item" class="colum">
-            <span>IronBubble-head</span>
-          </div>
+            <div id="item" class="colum">
+                <span>IronBubble-head</span>
+            </div>
 
-          <div id = "price" class="singlePrice colum">              
-              <span class="product-price">$25.00</span>
-          </div>
+            <div id="price" class="singlePrice colum">
+                <span class="product-price">$25.00</span>
+            </div>
 
-          <div class="colum">
-              <label>QTY</label>
-              <span><input type="number" id="text-quantity" class="class-quantity" placeholder="0" value="0"  ></span>
-          </div>
+            <div class="colum">
+                <label>QTY</label>
+                <span><input type="number" id="text-quantity" class="class-quantity" placeholder="0" value="0"></span>
+            </div>
 
-          <div id="total" class="totalPrice colum">
-              <span id="lblTotal" class="total-price">$0.00</span>
-          </div>
+            <div id="total" class="totalPrice colum">
+                <span id="lblTotal" class="total-price">$0.00</span>
+            </div>
 
-          <div id="deleteButtons" class="colum">
-              <button class="btn btn-delete">Delete</button>
-          </div>
+            <div id="deleteButtons" class="colum">
+                <button id="btn-delete" class="btn btn-delete">Delete</button>
+            </div>
         </div>
 
-  
-      <div class="product">
-      <div  id = "item2" class="colum">
-        <span>Xbox</span>
-      </div>
 
-      <div id = "price2" class="singlePrice colum">              
-          <span class="product-price">$100.00</span>
-      </div>
+        <div class="product-div">
+            <div id="item2" class="colum">
+                <span>Xbox</span>
+            </div>
 
-      <div class="colum">
-          <label>QTY</label>
-         <input type="number" id="text-quantity2" class="class-quantity" placeholder="0" value="0"  >
-      </div>
+            <div id="price2" class="singlePrice colum">
+                <span class="product-price">$100.00</span>
+            </div>
 
-      <div id="total2" class="totalPrice colum">
-          <span id="lblTotal" class="total-price">$0.00</span>
-      </div>
+            <div class="colum">
+                <label>QTY</label>
+                <input type="number" id="text-quantity2" class="class-quantity" placeholder="0" value="0">
+            </div>
 
-      <div id="deleteButtons2" class="colum">
-          <button class="btn btn-delete">Delete</button>
-      </div>
-      </div>
-</div>
+            <div id="total2" class="totalPrice colum">
+                <span id="lblTotal" class="total-price">$0.00</span>
+            </div>
 
+            <div id="deleteButtons2" class="colum">
+                <button id="btn-delete" class="btn btn-delete">Delete</button>
+            </div>
+        </div>
 
 
+      
+
+    </div>
+
+    <div id="add-nodes">
+
+            <input type="text" id="input-text" class="input-add">
+
+            <input type="number" id="input-price" class="input-add">
+
+            <button id="new-item-create" class="btn">Create</button>
+        </div>
+        <div>
+            <button id="calc-prices-button" class="btn btn-success">Calculate prices</button>
+        </div>
 
 
 
-
-
-
-<button id="calc-prices-button" class="btn btn-success">Calculate prices</button>
+    <div class="bottom-total">
+        <h2>Total Price: <span id="total-final" class="total-final">$0</span></h2>
+    </div>
 
 
 </body>
+
 </html>
