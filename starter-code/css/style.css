@@ -39,3 +39,35 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.wrapper { 
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.title { 
+  display: flex;
+  flex-wrap: wrap;
+  width: 25%;
+  padding-left: 46%;
+}
+
+.namecontainer { 
+  width: 20%;
+}
+
+.totalcontainer { 
+width: 10%;
+}
+
+.calculatecontainer { 
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+
+.totalprice { 
+  padding-left: 46%;
+}
