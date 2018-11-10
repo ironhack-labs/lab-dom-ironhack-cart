@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 input {
   border: solid 1px black;
 }
@@ -30,6 +35,7 @@ input {
     border-color: #4cae4c;
     border-radius: 4px;
     height: 40px;
+    width: 150px;
 }
 
 .btn-delete {
@@ -37,7 +43,8 @@ input {
     background-color: #CF000F;
     border-color: #CF000F;
     border-radius: 4px;
-    height: 40px;
+    width: 70px;
+    height: 50px;
 }
 
 .quantity {
@@ -46,8 +53,11 @@ input {
 
 #main-div{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   margin-top: 50px;  
+  justify-content: space-around;
+  height: 120px;
+  align-items: center;
 }
 
 #iteration1{
