@@ -10,5 +10,30 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <h1>Ironhack Merchandising Shop</h1>
+  <div class="wrapper">
+    <div class="productname"><span>Plumas coleccionables</span></div>
+    <div class="productcost">$<span>3.00</span></div>
+    <div class="inputbox">QTY<input type="text" value="1"></div>
+    <div class="totalcost">Total: $<span>3.00</span></div>
+    <div class="deletebox"><button class="btn btn-delete">Delete</button></div>
+  </div>
+  <div class="wrapper">
+    <div class="productname"><span>Ponchos</span></div>
+    <div class="productcost">$<span>8.00</span></div>
+    <div class="inputbox">QTY<input type="text" value="1"></div>
+    <div class="totalcost">Total: $<span>8.00</span></div>
+    <div class="deletebox"><button class="btn btn-delete">Delete</button></div>
+  </div>
+  <div id ="wrapper--new">
+    <div class="productname"><input id="product--new" type="text" placeholder="New product"></div>
+    <div class="productcost--new"><input id="cost--new" type="text" placeholder="Unit cost"></div>
+    <div class="filler--new"></div>
+    <div class="addbox"><button class="btn" id="new-item-create">Create</button></div>
+  </div>
+  <div id="calc-prices-button" class="calculatebox"><button class="btn btn-success">Calculate Prices</button></div>
+  <div class="totalprices">
+    <h2 id="total-node">Total Price: </h2>
+  </div>
 </body>
 </html>
