@@ -36,6 +36,81 @@ input {
     border-color: #CF000F;
 }
 
-.quantity {
+#quantity {
   margin: 0 5px;
+  text-align: center;
+}
+#quantity1 {
+  margin: 0 5px;
+  text-align: center;
+}
+#quantitynew {
+  margin: 0 5px;
+  text-align: center;
+}
+
+.class-header{
+  display: flex;
+  justify-content: center;
+}
+
+#items{
+  display: flex;
+  flex-wrap: wrap-reverse;
+  flex-direction: row;
+  justify-content: space-around; 
+  margin: 2% 20px;
+}
+
+#items-new{
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: space-around; 
+  flex-direction: row;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+#Create-button{
+margin-left: 50%;
+}
+
+.calculate{
+  display: flex;
+  justify-content: center;
+  margin: 2%;
+}
+
+.product{
+  display: block;
+  width: 150px;
+}
+
+
+
+#items1{
+  display: flex;
+  flex-wrap: wrap-reverse;
+  flex-direction: row;
+  justify-content: space-around; 
+  margin: 2% 20px;
+}
+
+.calculate{
+  display: flex;
+  justify-content: center;
+  margin: 2%;
+}
+
+.product1{
+  display: block;
+  width: 150px;
+}
+
+#GrandToltal{
+  margin-left: 3%;
+}
+
+#productnew{
+  display: block;
+  width: 150px;
 }
