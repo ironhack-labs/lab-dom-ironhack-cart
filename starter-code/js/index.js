@@ -1,6 +1,6 @@
 function deleteItem(e){
   var parent = e.path[2];
-  parent.innerHTML="";
+  parent.outerHTML="";
   //¿Cómo quito el div sin que sea una flojera?
 
   // var items = e.path[2].getElementsByTagName("div");
@@ -144,6 +144,11 @@ function createNewItem(){
   //Make row
   if (newItem.length > 0 && newUnitPrice.length > 0) {
     createNewItemRow(newItem, newUnitPrice);
+    var deleteButtons = document.getElementsByClassName('btn-delete');
+    
+    for(var i = 0; i<deleteButtons.length ; i++){
+      deleteButtons[i].onclick = deleteItem;
+    }
   }
 }
 
