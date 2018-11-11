@@ -2,7 +2,7 @@ body{
   margin: 15px;
   padding: 20px;
  }
- 
+
  h1{
   text-align: center;
  }
@@ -62,5 +62,9 @@ body{
  
  .quantity {
   margin: 0 5px;
+ }
+
+ .product {
+   margin-bottom: 3%;
  }
  
