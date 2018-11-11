@@ -1,8 +1,8 @@
 input {
   border: solid 1px black;
-}
-
-.btn {
+ }
+ 
+ .btn {
   display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
@@ -22,20 +22,28 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
-}
-
-.btn-success {
+ }
+ 
+ .btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
-}
-
-.btn-delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ 
+ .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
-}
-
-.quantity {
+ }
+ 
+ .quantity {
   margin: 0 5px;
-}
+ }
+ 
+ .product-bar {
+  display: flex;
+  justify-content: space-around;
+ }
