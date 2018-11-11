@@ -2,6 +2,10 @@
   margin: 20px;
 }
 
+body {
+  margin: 0 5%;
+}
+
 input {
   border: solid 1px black;
 }
@@ -46,9 +50,43 @@ input {
 
 h1 {
   text-align: center;
+  margin-bottom: 6%;
 }
 
-#parent {
+.product {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  padding: 2% 0;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
 }
+
+.new-product {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  padding: 2% 0;
+}
+
+.new-inputs {
+  display: flex;
+  margin: auto 5%;
+}
+
+.btn-create {
+  color: #FFF;
+  background-color: #4170A4;
+  border-color: #4170A4;
+}
+
+.total {
+  display: flex;
+  justify-content: space-around;
+  margin: 3% 15%;
+  padding-top: 2%;
+  border-top: 2px solid grey;
+}
+
+

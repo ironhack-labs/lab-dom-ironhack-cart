@@ -3,24 +3,46 @@ function deleteItem(e){
 }
 
 function getPriceByProduct(itemNode){
-
+  var price = itemNode.getElementsByClassName('price-value')[0];
+  return parseFloat(price.innerText.replace('$','')) || 0;
 }
 
-function updatePriceByProduct(productPrice, index){
+function getQuantityByProduct(itemNode){
+  var quantity = itemNode.getElementsByClassName('quantity')[0];
+  return parseInt(quantity.value) || 0;
+}
 
+function updatePriceByProduct(product, price) {
+  var result = document.getElementById('result');
+  var price = document.createTextNode('$' + price.toFixed(2));
+  result.innerText = '';
+  result.appendChild(price);
+  
 }
 
 function getTotalPrice() {
-  var products = document.querySelectorAll(".chart > .product");
-  for (var i=0; i<products.length; i++) {
-    calculateProductPrice(products[i]);
+  var total = 0;
+  var products = document.getElementsByClassName('product');
+  for (var i=0; i< products.length; i++) {
+    var product = products[i];
+    var price = getPriceByProduct(product);
+    var quantity = getQuantityByProduct(product);
+    var totalPrice = price * quantity;
+    updatePriceByProduct(product, totalPrice);
+    total += totalPrice;
   }
+  updateTotalPrice(total);
+}
+
+function updateTotalPrice(price) {
+  var totalPrice = document.getElementById('total-price');
+  var price = document.createTextNode('$'+ price.toFixed(2));
+  totalPrice.innerText = '';
+  totalPrice.appendChild(price);
 }
 
 function calculateProductPrice(product) {
-  var quantity;
-  var price; 
-  return quantity * price;
+
 }
 
 function createQuantityInput(){

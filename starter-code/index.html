@@ -22,22 +22,39 @@
       <div class="price-value">
         <span>25$</span>
       </div>
-      <div class="quantity">
+      <div>
         <label for="">QTY</label>
-        <input type="text" placeholder="0">
+        <input type="text" placeholder="0" class="quantity">
       </div>
-      <div class="result">
-          <span>0$</span>
+      <div>
+          <span id="result">0.00$</span>
       </div>
-      <div class="btn-delete">
-        <button>Delete</button>
+      <div>
+        <button class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+    <div class="new-product">
+      <div class="new-inputs">
+        <div class="new-name">
+          <input type="text" placeholder="Name">
+        </div>
+        <div class="new-price">
+          <input type="text" placeholder="Price">
+        </div>
+      </div>
+      <div>
+      <button id="new-item-create" class="btn btn-create">Create</button>
       </div>
     </div>
   </div>
   
+  <div class="total">
+    <div>
+      <button id="calc-prices-button" class="btn btn-success">Calculate Prices</button>
+    </div>
+    <h2>Total Price:<span id="total-price"></span></h2>
 
-  <button id="calc-prices-button">Calculate Prices</button>
-  <h2>Total Price:</h2>
+  </div>  
 
 </body>
 
