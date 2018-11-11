@@ -1,5 +1,23 @@
-input {
-  border: solid 1px black;
+
+
+.title {
+ 
+  display: flex;
+  justify-content: center;
+
+
+}
+
+.item {
+  display: flex;
+  justify-content: space-around;
+  padding: 1em;
+}
+
+.calculate {
+  display: flex;
+  justify-content: center;
+  padding: 2em;
 }
 
 .btn {
