@@ -14,7 +14,7 @@
 
   <h1>Ironhack Merchandising Shop</h1>
 
-  <div class="chart">
+  <div id="chart">
     <div class="product">
       <div class="name">
         <span>IronBubble-head</span>
@@ -24,27 +24,27 @@
       </div>
       <div>
         <label for="">QTY</label>
-        <input type="text" placeholder="0" class="quantity">
+        <input type="number" placeholder="0" class="quantity">
       </div>
       <div>
-          <span id="result">0.00$</span>
+          <span class="result">0.00$</span>
       </div>
       <div>
         <button class="btn btn-delete">Delete</button>
       </div>
     </div>
-    <div class="new-product">
-      <div class="new-inputs">
-        <div class="new-name">
-          <input type="text" placeholder="Name">
-        </div>
-        <div class="new-price">
-          <input type="text" placeholder="Price">
-        </div>
+  </div>
+  <div class="new-product">
+    <div class="new-inputs">
+      <div>
+        <input type="text" placeholder="Name" class="new-name">
       </div>
       <div>
-      <button id="new-item-create" class="btn btn-create">Create</button>
+        <input type="text" placeholder="Price" class="new-price">
       </div>
+    </div>
+    <div>
+    <button id="new-item-create" class="btn btn-create">Create</button>
     </div>
   </div>
   

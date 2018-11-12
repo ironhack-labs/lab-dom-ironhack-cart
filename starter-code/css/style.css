@@ -55,7 +55,7 @@ h1 {
 
 .product {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   margin: auto;
   padding: 2% 0;
@@ -63,9 +63,15 @@ h1 {
   border-bottom: 1px solid grey;
 }
 
+.product:last-child {
+  border-top: hidden;
+  border-bottom: hidden;
+}
+
 .new-product {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
   margin: auto;
   padding: 2% 0;
 }
