@@ -10,5 +10,66 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <h1>Ironhack Merchandising Shop</h1>
+  <div id="container-products" class="flexbox">
+
+    <div class="product-wrapper flexbox-container">
+      <div class="product-name">
+        <span>IronBubble-head</span>
+      </div>
+      <div>
+        <span class="price-unit">25</span>
+      </div>
+      <div class="quantity">
+        <label for="product-quantity">QTY: </label>
+        <input class="product-quantity" type="number" name="product-quantity" value="0" min="0">
+      </div>
+      <div class="total-product-price">
+        <span>0</span>
+      </div>
+      <div class="btn-delete-container">
+        <button type="button" class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+
+    <div class="product-wrapper flexbox-container">
+      <div class="product-name">
+        <span>IronShirt</span>
+      </div>
+      <div>
+        <span class="price-unit">15</span>
+      </div>
+      <div class="quantity">
+        <label for="product-quantity">QTY: </label>
+        <input class="product-quantity" type="number" name="product-quantity" value="0" min="0">
+      </div>
+      <div class="total-product-price">
+        <span>0</span>
+      </div>
+      <div class="btn-delete-container">
+        <button type="button" class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="calculate-prices-container flexbox-container">
+    <button id="calc-prices-button" type="button" class="btn btn-success">Calculate prices</button>
+  </div>
+
+  <h2>Total Price: <span id="total-price-span">0</span></h2>
+
+  <div class="flexbox-container-create">
+
+      <label for="product-price-create">Nombre: </label>
+      <input type="text" name="product-price-creat" value="Product Name" id="product-name-creater">
+
+      <label for="product-quantity-create">Precio: </label>
+      <input type="number" name="product-quantity-create" value="0" min="0" id="product-price-creater">
+
+    <div class="btn-create-container">
+      <button type="button" id="new-item-create" class="btn btn-create">create</button>
+    </div>
+  </div>
 </body>
 </html>
