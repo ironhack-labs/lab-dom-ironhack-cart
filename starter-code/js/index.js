@@ -4,6 +4,8 @@ var parentElement = document.getElementsByTagName('body')[0];
 var parentDiv = document.getElementById("main-div")
 //console.log(parentDiv);
 
+// I think I didnt needed to creat each single element this way, but just I did it just for practice
+// Create the first div with the name of the product
 var nameOfProductDiv = document.getElementById("nameOfProduct");
 var spanNameOfProduct = document.createElement("span");
 var nameOfProduct = document.createTextNode("IronBubble-head");
@@ -11,23 +13,22 @@ var nameOfProduct = document.createTextNode("IronBubble-head");
 spanNameOfProduct.appendChild(nameOfProduct);
 nameOfProductDiv.appendChild(spanNameOfProduct);
 
+
+//Create the cost of just 1 item - single cost
 var singlePriceDiv = document.getElementById("singlePrice");
 //console.log(singlePriceDiv);
 var spanSingleCost = document.createElement("span");
-var singleCost = document.createTextNode("$25.00")
+spanSingleCost.setAttribute("id", "individual-cost")
+var singleCost = document.createTextNode("$25" )
 spanSingleCost.appendChild(singleCost);
 singlePriceDiv.appendChild(spanSingleCost);
 
-var qtyInputDiv = document.getElementById("qty");
-var labelQTY = document.createElement("label");
-var qtyText = document.createTextNode("QTY");
-labelQTY.appendChild(qtyText);
-var inputQTY = document.createElement("input");
-inputQTY.setAttribute("type", "text");
-qtyInputDiv.appendChild(labelQTY);
-qtyInputDiv.appendChild(inputQTY);
-
-
+var updatePriceDiv = document.getElementById("total-price");
+var spanUpdatePrice = document.createElement("span");
+spanUpdatePrice.setAttribute("id", "update-price");
+var updatedPrice = document.createTextNode(0.00)
+spanUpdatePrice.appendChild(updatedPrice);
+updatePriceDiv.appendChild(spanUpdatePrice);
 
 
 function deleteItem(e){
@@ -35,37 +36,48 @@ function deleteItem(e){
 }
 
 function getPriceByProduct(itemNode){
-  var gettingSinglePrice = document.getElementById("single-price").textContent.split("$");
-  var singlePrice = parseInt(gettingSinglePrice[1])
-  //console.log(singlePrice);
-  return singlePrice;
-}
-//getPriceByProduct('<span id="single-price">$27.00</span>');
-
-
-
-function updatePriceByProduct(productPrice, index){
-  
-
+  var singlePriceElement = document.getElementById("individual-cost");
+  singlePrice = singlePriceElement.innerText.split("$")
+  //console.log((parseInt(singlePrice[1])));
+  return parseInt(singlePrice[1])
 }
 
-function getTotalPrice() {
- var totalPrice = createQuantityInput * getPriceByProduct;
- console.log(totalPrice);
-}
-//getTotalPrice()
+var getPriceByProd = getPriceByProduct(singleCost);
+//console.log(getPriceByProd);
 
- function createQuantityInput(){
-   var calcPricesBtn = document.getElementById("calculate-prices-button");
-
-  calcPricesBtn.onclick = function(){
-    var input = document.getElementsByTagName("input")[0];
-    console.log(input.value);
-    return input.value
+function updatePriceByProduct(productPrice, input){
+  var valueToUpdate = document.getElementById("update-price");
+  var getQtyInput = document.getElementById("calculate-prices-button");  
+  getQtyInput.onclick = function(){
+  var input = document.getElementsByTagName("input")[0];
+    //console.log(parseInt(input.value));
+    
+  var total = valueToUpdate.innerText = productPrice * parseFloat(input.value);
+  console.log("$"  + total);
+  return  total
   }
 }
 
-//createQuantityInput();
+updatePriceByProduct(getPriceByProd, inputFromUser)
+
+function getTotalPrice(inputFromUser, getPriceByProd) {
+  var totPrice = inputFromUser * getPriceByProd;
+    return " $" + totPrice;
+}
+var getTotalPrice = getTotalPrice(inputFromUser, getPriceByProd);
+
+
+// function createQuantityInput(){
+//   var getQtyInput = document.getElementById("calculate-prices-button");  
+//   getQtyInput.onclick = function(){
+//     var input = document.getElementsByTagName("input")[0];
+//     //console.log(parseInt(input.value));
+//     return parseInt(input.value)
+//   }
+// }
+
+var inputFromUser = createQuantityInput();
+
 
 function createDeleteButton(){
 
