@@ -51,7 +51,7 @@ input {
   margin: 0 5px;
 }
 
-#main-div{
+#product{
   display: flex;
   flex-direction: row;
   margin-top: 50px;  
@@ -70,4 +70,6 @@ input {
 #calculate-prices{
   text-align: center;
 }
+
+
 

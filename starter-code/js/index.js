@@ -30,6 +30,28 @@ var updatedPrice = document.createTextNode(0.00)
 spanUpdatePrice.appendChild(updatedPrice);
 updatePriceDiv.appendChild(spanUpdatePrice);
 
+var nameOfProductDiv = document.getElementById("nameOfProduct2");
+var spanNameOfProduct = document.createElement("span");
+var nameOfProduct = document.createTextNode("IronShirt");
+//console.log(spanNameOfProduct);
+spanNameOfProduct.appendChild(nameOfProduct);
+nameOfProductDiv.appendChild(spanNameOfProduct);
+
+var singlePriceDiv = document.getElementById("singlePrice2");
+//console.log(singlePriceDiv);
+var spanSingleCost = document.createElement("span");
+spanSingleCost.setAttribute("id", "individual-cost")
+var singleCost = document.createTextNode("$15" )
+spanSingleCost.appendChild(singleCost);
+singlePriceDiv.appendChild(spanSingleCost);
+
+var updatePriceDiv = document.getElementById("total-price2");
+var spanUpdatePrice = document.createElement("span");
+spanUpdatePrice.setAttribute("id", "update-price");
+var updatedPrice = document.createTextNode(0.00)
+spanUpdatePrice.appendChild(updatedPrice);
+updatePriceDiv.appendChild(spanUpdatePrice);
+
 
 function deleteItem(e){
 
@@ -50,13 +72,14 @@ function updatePriceByProduct(productPrice, input){
   var getQtyInput = document.getElementById("calculate-prices-button");  
   getQtyInput.onclick = function(){
   var input = document.getElementsByTagName("input")[0];
-    //console.log(parseInt(input.value));
-    
+    //console.log(parseInt(input.value));   
   var total = valueToUpdate.innerText = productPrice * parseFloat(input.value);
   console.log("$"  + total);
   return  total
   }
 }
+
+
 
 updatePriceByProduct(getPriceByProd, inputFromUser)
 
