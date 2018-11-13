@@ -1,66 +1,73 @@
-function findParentWithClass(node, className) {
+function findParentWithClass() {
   do {
     node = node.parentElement;
-  } while (node && !node.classList.contains(className));
+  }
+  while (node && !node.classList.contains(className));
   console.log(node);
   return node;
 }
 
-function deleteItem(e){
+function deleteItem(){
 
 }
 
+
+
 function getPriceByProduct(product){
-var priceProduct = product.getElementsByClassName(".product-price span");
-return parseFloat(priceProduct.innerText.replace ('$', '')) || 0; //parseFloat cambia la cadena a un numero flotante y innerTex.replace devuelve el contenido del texto especificado quitando los espacios y el simbolo $
-// con esta función ya podemos llamar a cada precio de cada producto, la usaremos en getTotalPrice, 
+  price = product.getElementsByClassName("product-price") [0];
+
+  return parseFloat(price.innerText.replace ("$", "")) || 0;
+}
+
+
+
+function getQuantityByProduct (product) {
+  quantity = product.getElementsByClassName("quantity") [0];
+
+  return parseInt(quantity.value) || 0;
+}
+
+//hacemos una funcion para actualizar los precios
+function updatePriceByNode(price, node) {
+  price = document.createTextNode ("$" + price.toFixed(2));
+  node.innerHTML = "";
+  node.appendChild(price);
 }
 
 function updatePriceByProduct(product, price){
-  node = product.getElementsById ("product-total-price") [0];
-  updatePriceByNode(price, node); //como vamos a necesitar acctualizar dos precios, que son el total y del de cada producto haremos una función más para encpsular este calculo
-}
-
-function updateTotalPrice (price) {
-  node = document.getElementById ("total-value");
+  node = product.getElementsByClassName("product-total-price") [0];
   updatePriceByNode(price, node);
 }
 
-function updatePriceByNode (price, node) {
-  var price = document.createTextNode ('$' + price.toFixed (2)); //price.toFixed formatea el numero dejandole solo dos decimales en este caso
-  node.innerHTML = '';
-  node.appendChild (price); //appendChild = Agrega un nuevo nodo al final de la lista de un elemento hijo de un elemento padre especificado.
+function updateTotalPrice (price) {
+  node = document.getElementById("total-value");
+  updatePriceByNode (price, node);
 }
+
 
 
 function getTotalPrice() {
-var total = 0.00;
-var products = document.getElementsByClassName("product-bar");
-
-for (var i = 0; i<products.length; i++) { //bucle for para recorrer todos los productos y cara el precio y la cantidad de cada
-  var product = products[i];
-  var price = getPriceByProduct (product);
-  var quantity = getQuantityByProduct (product);
-  var totalProductPrice = price * quantity;
-  // ya tenemos el precio de cada producto, ahora tenemos que actualizarlo para poder sacarl el total de la cesta
-  updatePriceByProduct (product, totalProductPrice);
-  total += totalProductPrice;
-  console.log(total);
-}
-updateTotalPrice (total); //actualizamos el total de la cesta
+  total = 0.00; // le damos dos decimales
+  products = document.getElementsByClassName("product");
+  for (i = 0; i < products.length; i++) {
+    product = products[i];
+    price = getPriceByProduct(product);
+    quantity = getQuantityByProduct(product);
+    totalProductPrice = price * quantity;
+    updatePriceByProduct(product, totalProductPrice);
+    total += totalProductPrice;
+    console.log(total);
+  }
+  updateTotalPrice(total);
 }
 
-
-function createQuantityInput(){
-
-}
 
 function createDeleteButton(){
 
 }
 
 function createQuantityNode(){
-
+  
 }
 
 function createItemNode(dataType, itemData){
@@ -76,7 +83,7 @@ function createNewItem(){
 }
 
 window.onload = function(){
- var calculatePriceButton = document.getElementById('.calc-prices-button');
+ var calculatePriceButton = document.getElementById('calc-prices-button');
  var createItemButton = document.getElementById('new-item-create');
  var deleteButtons = document.getElementsByClassName('btn-delete');
 

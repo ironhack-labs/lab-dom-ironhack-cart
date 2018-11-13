@@ -43,7 +43,7 @@ input {
   margin: 0 5px;
  }
  
- .product-bar {
+ .product {
   display: flex;
   justify-content: space-around;
  }
