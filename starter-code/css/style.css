@@ -31,6 +31,7 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
  }
  
  .btn-delete {
@@ -47,3 +48,11 @@ input {
   display: flex;
   justify-content: space-around;
  }
+
+ .btn-create {
+   color: #fff;
+   background-color: rgb(57, 133, 180);
+   border-color:blue;
+   display: flex;
+   margin: 50px auto;
+  }
