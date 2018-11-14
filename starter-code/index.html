@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
+ <!--- <script type="text/javascript" src="./js/index.js"></script> -->
   <title>Ironhack cart</title>
 </head>
 <body>
@@ -14,7 +14,7 @@
     <h1 >Ironhack<br>Merchandising Shop</h1>
   </div>
 
-  <div class="cart">
+  <div id ="cart">
 
     <div class="item">
 
@@ -28,7 +28,32 @@
 
       <div>
         <label for="item-units" >QTY</label>
-        <input class="units" type="text" name= "item-units" value="0">
+        <input class="units" type="text" name= "item-units" value="2"/>
+      </div>
+
+      <div>
+        <span class="priceItem">0</span>
+      </div>
+
+      <div>
+        <button class="btn btn-delete">Delete</button>
+      </div>
+
+    </div>
+
+    <div class="item">
+
+      <div class="product">
+        <span class="name">IronShirt</span>
+      </div>
+      
+      <div>
+        <span class = "price">15.00</span>
+      </div>
+
+      <div>
+        <label for="item-units" >QTY</label>
+        <input class="units" type="text" name= "item-units" value="3"/>
       </div>
 
       <div>
@@ -42,10 +67,13 @@
     </div>
 
     <div class="calculate">
-      <button class="btn btn-success">Calculate Prices</button>
+      <button class ="btn btn-success">Calculate Prices</button>
     </div>  
 
+  <h2>Total Price: <span>$0</span></h2>
+
   </div>
+   <script type="text/javascript" src="./js/mio.js"></script>
 
 </body>
 </html>

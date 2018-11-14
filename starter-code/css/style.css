@@ -5,13 +5,19 @@
   display: flex;
   justify-content: center;
 
+}
 
+h2 {
+   display: flex;
+  justify-content: center;
 }
 
 .item {
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
   padding: 1em;
+
 }
 
 .calculate {
