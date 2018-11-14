@@ -25,8 +25,14 @@ function getTotalPrice() {
    document.querySelector('h2 span').innerHTML = priceTotal;
 }
 
-function createQuantityInput(){
-  
+function createQuantityInput(qty){
+  var divTag = document.createElement("div");
+  divTag.classList.add("price-und");
+  var spanTag = document.createElement("span");
+  spanTag.appendChild(document.createTextNode(qty))
+  divTag.appendChild(spanTag)
+
+  return divTag;
 }
 
 function createDeleteButton(){
@@ -34,12 +40,22 @@ function createDeleteButton(){
 }
 
 function createQuantityNode(){
-  
+  //crear un imput para luego rellenarlo
 }
 
-function createItemNode(dataType, itemData){
-  
+function createNewItemName(name){
+  var divTag = document.createElement("div");
+  divTag.classList.add("name");
+  var spanTag = document.createElement("span");
+  spanTag.appendChild(document.createTextNode(name))
+  divTag.appendChild(spanTag)
+
+  return divTag;
 }
+
+// function createItemNode(dataType, itemData){
+  
+// }
 
 function createNewItemRow(itemName, itemUnitPrice){
  
@@ -47,7 +63,11 @@ function createNewItemRow(itemName, itemUnitPrice){
 }
 
 function createNewItem(){
-
+  var name = document.getElementById("input-name").value;
+  var qty = document.getElementById("input-price").value
+  var container = document.querySelector(".container") 
+  container.appendChild(createNewItemName(name));
+  container.appendChild(createQuantityInput(qty));
 }
 
 window.onload = function(){
@@ -59,7 +79,7 @@ window.onload = function(){
   var priceProduct = document.getElementsByClassName(".price-und");
  
   calculatePriceButton.onclick = getTotalPrice;
-  //createItemButton.onclick = createNewItem;
+  createItemButton.onclick = createNewItem;
 
  for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
