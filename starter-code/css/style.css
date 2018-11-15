@@ -1,6 +1,6 @@
 .container div {
   float: left;
-  padding: 40px;
+  padding: 10px;
   margin-right: 80px;
 }
 .container{
@@ -34,13 +34,15 @@ input {
   border-radius: 4px;
 }
 .btn-success {
-    margin: 0 auto;
+    margin: 10px auto;
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+   
 }
 .calculate-btn{
-  
+  margin: auto;
+  width: 350px;
   text-align: center;
 }
 .btn-delete {
@@ -50,4 +52,7 @@ input {
 }
 .quantity {
   margin: 0 5px;
+}
+.first{
+  display: none;
 }

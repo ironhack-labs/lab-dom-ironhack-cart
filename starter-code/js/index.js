@@ -1,8 +1,10 @@
 function deleteItem(e){
-  var product = document.getElementById('line'); 
-   product.remove(e.target.parentNode.parentNode); 
+  var product = document.querySelector(".container"); 
+  product.removeChild(e.currentTarget.parentNode.parentNode.parentNode); 
    getTotalPrice();
 }
+
+// eliminamos el hijo de product, seleccionando el boton con e.currentTarget + su padre(span) + su padre(div) + su padre(div product line)
 
 function getPriceByProduct(product){
   var priceProduct = product.querySelector('.price-und span').innerHTML;
@@ -10,9 +12,13 @@ function getPriceByProduct(product){
   return priceProduct * qtyProduct;
 }
 
+// seleccionamos el precio y las unidades del producto y las multiplicamos
+
 function updatePriceByProduct(product, productPrice){
   product.querySelector('.total-price span').innerHTML = productPrice;
 }
+
+//actualizamos el total de ese producto, pero cuando pulsemos para calcular el total de toda lista
 
 function getTotalPrice() {
   var products = document.querySelectorAll('.product');
@@ -25,15 +31,52 @@ function getTotalPrice() {
    document.querySelector('h2 span').innerHTML = priceTotal;
 }
 
-function createQuantityInput(qty){
+// Aqui itineramos por los totales de los productos, que se van actualizando según itinera, actualizamos el importe del carrito
+
+function createNewItemName(name){
   var divTag = document.createElement("div");
-  divTag.classList.add("price-und");
+  divTag.classList.add("name");
   var spanTag = document.createElement("span");
-  spanTag.appendChild(document.createTextNode(qty))
+  spanTag.appendChild(document.createTextNode(name))
   divTag.appendChild(spanTag)
 
   return divTag;
 }
+
+// Creamos la casilla dond nombraremos el producto
+
+function createPriceInput(price){
+  var divTag = document.createElement("div");
+  divTag.classList.add("price-und");
+  var spanTag = document.createElement("span");
+  spanTag.appendChild(document.createTextNode(price))
+  divTag.appendChild(spanTag)
+
+  return divTag;
+}
+
+// Creamos la casilla donde añadiremos el precio de nuestro producto 
+
+function createQuantityInput(){
+  var divTag = document.createElement("div");
+  divTag.classList.add("number-und");
+
+  var labelTag = document.createElement("label");
+  labelTag.appendChild(document.createTextNode("QTY"));
+  divTag.appendChild(labelTag);
+
+  var inputTag = document.createElement("input");
+  inputTag.classList.add("qty");
+  inputTag.setAttribute("name","qty");
+  inputTag.setAttribute("type","number");
+  inputTag.setAttribute("value","0");
+  inputTag.setAttribute("placeholder","0");
+  divTag.appendChild(inputTag);
+
+  return divTag;
+}
+
+// Creamos la casilla de las unidades del producto creado
 
 function createDeleteButton(){
   var divTag = document.createElement("div");
@@ -48,37 +91,46 @@ function createDeleteButton(){
   return divTag;
 }
 
-function createQuantityNode(){
-  //crear un imput para luego rellenarlo
-}
+// Creamos el boton delete
 
-function createNewItemName(name){
+function createTotalProduct(){
   var divTag = document.createElement("div");
-  divTag.classList.add("name");
+  divTag.classList.add("total-price");
   var spanTag = document.createElement("span");
-  spanTag.appendChild(document.createTextNode(name))
+  spanTag.appendChild(document.createTextNode("0"))
   divTag.appendChild(spanTag)
 
   return divTag;
 }
 
-// function createItemNode(dataType, itemData){
-  
-// }
-
-function createNewItemRow(itemName, itemUnitPrice){
- 
- 
-}
+// Creamos la casilla donde actualizaremos el precio talta de ese producto
 
 function createNewItem(){
   var name = document.getElementById("input-name").value;
-  var qty = document.getElementById("input-price").value;
-  var container = document.querySelector(".container") 
-  container.appendChild(createNewItemName(name));
-  container.appendChild(createQuantityInput(qty));
-  container.appendChild(createDeleteButton());
+  var price = document.getElementById("input-price").value;
+  var container = document.querySelector(".container");
+  if (name !== "" && price > 0){
+    container.appendChild(createNewItemRow(name, price))
+  } 
 }
+
+// Aqui mandamos a la función createNewItemRow si se cumple ambas condiciones
+
+function createNewItemRow(name, price){
+  var newProductRow = document.createElement("div");
+  newProductRow.classList.add("product");
+  newProductRow.setAttribute("id", "line");
+  newProductRow.appendChild(createNewItemName(name));
+  newProductRow.appendChild(createPriceInput(price));
+  newProductRow.appendChild(createQuantityInput(qty));
+  newProductRow.appendChild(createTotalProduct());
+  newProductRow.appendChild(createDeleteButton());
+  
+  return newProductRow;
+}
+
+// Creamos la línea completa del producto despés de pulsar create
+
 
 window.onload = function(){
   var calculatePriceButton = document.getElementById('calc-prices-button');
