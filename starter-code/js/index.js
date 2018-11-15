@@ -1,7 +1,7 @@
 function deleteItem(e){
-//   var lineDelete = document.getElementById('line'); 
-//   lineDelete.removeChild(e.currentTarget.parentNode.parentNode); 
-//    getTotalPrice();
+  var product = document.getElementById('line'); 
+   product.remove(e.target.parentNode.parentNode); 
+   getTotalPrice();
 }
 
 function getPriceByProduct(product){
@@ -36,7 +36,16 @@ function createQuantityInput(qty){
 }
 
 function createDeleteButton(){
-  
+  var divTag = document.createElement("div");
+  var spanTag = document.createElement("span");
+  divTag.appendChild(spanTag);
+  var btnTag = document.createElement("button");
+  btnTag.classList.add("btn-delete");
+  btnTag.appendChild(document.createTextNode("Delete"));
+  spanTag.appendChild(btnTag)
+  btnTag.addEventListener("click", deleteItem)
+
+  return divTag;
 }
 
 function createQuantityNode(){
@@ -64,10 +73,11 @@ function createNewItemRow(itemName, itemUnitPrice){
 
 function createNewItem(){
   var name = document.getElementById("input-name").value;
-  var qty = document.getElementById("input-price").value
+  var qty = document.getElementById("input-price").value;
   var container = document.querySelector(".container") 
   container.appendChild(createNewItemName(name));
   container.appendChild(createQuantityInput(qty));
+  container.appendChild(createDeleteButton());
 }
 
 window.onload = function(){
