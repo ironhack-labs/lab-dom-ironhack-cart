@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="text/javascript" src="./js/index.js"></script>
+    <title>Ironhack cart</title>
+  </head>
+  <body>
+    <header><h1>Iron-Hack Merch Shop</h1></header>
+    <main>
+      <div class="product-control">
+        <!-- prettier-ignore -->
+        <select 
+          id="selProductName" 
+          name="selProductName" 
+          onChange="selectBoxChange()"> 
+       </select>
+        <span>$</span><label placeholder="Product Price in $" id="txtProductPrice">0</label>
+        <!-- prettier-ignore -->
+        <input 
+         id="txtproductQty"
+         type="text" 
+         name="txtproductQty" 
+         onChange="txtProductQtyCalc()" 
+         placeholder="Quantity#" />
+        <span>$</span><label id="lblTotal">Total</label>
+        <!-- prettier-ignore -->
+        <button id="btnAddCart" class="btn-success">Add to Cart</button>
+      </div>
+      <div class="cart-container"></div>
+    </main>
+    <script src="./js/index.js"></script>
+  </body>
+</html>

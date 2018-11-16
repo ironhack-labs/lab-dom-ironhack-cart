@@ -1,3 +1,34 @@
+header {
+  text-align: center;
+  border: 1px solid cornflowerblue;
+}
+
+.product-control {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid cornflowerblue;
+  text-align: center;
+}
+
+.product-control select {
+  margin-right: 15px;
+}
+
+.product-control input{
+  margin: 0 10px 0 10px;
+  width: 70px;
+}
+
+.product-control label {
+  margin-left: 1px;
+  margin-right: 15px;
+}
+
+.product-control span {
+  margin-right: 1px;
+  margin-left: 1px;
+}
+
 input {
   border: solid 1px black;
 }
@@ -39,3 +70,4 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
