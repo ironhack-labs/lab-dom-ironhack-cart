@@ -1,15 +1,5 @@
 const priceButton = document.getElementById("calculateTotal");
 
-/*
-First Variables iterate through their corresponding class and get the quantity value and 
-item price. After that I loop through each class to obtain item price & quantity.
-
-Once I have the price and qty I add that value using innerHTML into the total class for each product
-
-At the end I loop through each total for each product add those into a variable that has 0 as its value
-and then push that final value using innerHTML into the final-total class.
-*/
-
 function getTotalPrice() {
   let pricePerUnit = document.querySelectorAll(".unit-price");
   let qtyOrdered =  document.querySelectorAll(".itemQuantity");
@@ -24,18 +14,24 @@ function getTotalPrice() {
 
 priceButton.onclick = getTotalPrice;
 
+const deleteButton = document.querySelectorAll(".btn-delete");
+const deleteWrap = document.getElementsByClassName("products");
 
+function deleteDiv(elem){
+  const container = document.getElementById('all-products');
+  container.removeChild(elem.path[2]);
+}
 
+for(var i=0; i < deleteWrap.length ; i++){
+deleteButton[i].onclick = deleteDiv;
+}
 
-// window.onload = function(){
-//   var calculatePriceButton = document.getElementById('calc-prices-button');
-//   var createItemButton = document.getElementById('new-item-create');
-//   var deleteButtons = document.getElementsByClassName('btn-delete');
+/*
+First Variables iterate through their corresponding class and get the quantity value and 
+item price. After that I loop through each class to obtain item price & quantity.
 
-//   calculatePriceButton.onclick = getTotalPrice;
-//   createItemButton.onclick = createNewItem;
+Once I have the price and qty I add that value using innerHTML into the total class for each product
 
-//   for(var i = 0; i<deleteButtons.length ; i++){
-//     deleteButtons[i].onclick = deleteItem;
-//   }
-// };
+At the end I loop through each total for each product add those into a variable that has 0 as its value
+and then push that final value using innerHTML into the final-total class.
+*/
