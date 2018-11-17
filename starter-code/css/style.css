@@ -1,5 +1,13 @@
+h1 {
+  text-align: center;
+}
+
 input {
   border: solid 1px black;
+}
+
+body {
+  text-align: center;
 }
 
 .btn {
@@ -38,4 +46,25 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.product {
+  display:flex;
+  flex-flow: row nowrap;
+  padding: 30px 50px;
+  width: 100%;
+  justify-content: space-between;
+  box-sizing: border-box
+
+}
+.product div {
+  width:20%;
+  text-align: left;
+}
+
+#products {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-between;
 }
