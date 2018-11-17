@@ -12,7 +12,7 @@
   <body>
     <header><h1>Iron-Hack Merch Shop</h1></header>
     <main>
-      <div class="product-control">
+      <div class="product-control" id="product-control">
         <!-- prettier-ignore -->
         <select 
           id="selProductName" 
@@ -21,17 +21,19 @@
        </select>
         <span>$</span><label placeholder="Product Price in $" id="txtProductPrice">0</label>
         <!-- prettier-ignore -->
-        <input 
+        <input
          id="txtproductQty"
          type="text" 
          name="txtproductQty" 
-         onChange="txtProductQtyCalc()" 
-         placeholder="Quantity#" />
+         onChange="txtProductQtyCalc(event)" 
+         placeholder="Quantity#"></input>
         <span>$</span><label id="lblTotal">Total</label>
         <!-- prettier-ignore -->
-        <button id="btnAddCart" class="btn-success">Add to Cart</button>
+        <button id="btnAddCart" onclick="onClickEvent(event.target)" class="btn-success">Add to Cart</button>
       </div>
-      <div class="cart-container"></div>
+      <div class="cart-container" id="cart-container">
+
+      </div>
     </main>
     <script src="./js/index.js"></script>
   </body>
