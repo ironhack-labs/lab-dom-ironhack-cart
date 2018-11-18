@@ -54,6 +54,15 @@ input {
   align-items: center;
 }
 
+.create-product{
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;  
+  justify-content: space-around;
+  height: 80px;
+  align-items: center;
+}
+
 .final-total {
   padding-left: 49%;
   margin-top: 30px;

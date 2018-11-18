@@ -15,26 +15,41 @@
 <div id="all-products">
 
 <div class="products">
-  <div> <span>IronBubble-head</span></div>
-  <div> <span>$</span> <span class="unit-price">25.00</span></div>
+  <span>IronBubble-head</span>
+  <div><span>$</span> <span class="unit-price">25.00</span></div>
   <div> 
     <label class="quantity" for="">QTY</label>
     <input class="itemQuantity" type="number" value="0">
   </div>
-  <div><span class="total"></span> </div>
-  <div><button class="btn-delete">Delete</button></div>
+  <span class="total">$0</span>
+  <button class="btn-delete">Delete</button>
 </div>
 
 <div class="products">
-  <div> <span>IronShirt</span></div>
+  <span>IronShirt</span>
   <div> <span>$</span> <span class="unit-price">15.00</span></div>
   <div> 
     <label class="quantity" for="">QTY</label>
     <input class="itemQuantity" type="number" value="0">
   </div>
-  <div><span class="total"></span> </div>
-  <div><button class="btn-delete">Delete</button></div>
+  <span class="total">$0</span> 
+  <button class="btn-delete">Delete</button>
  </div>
+
+ <div class="create-product">
+    <div> 
+      <label for="">Product</label>
+      <input id="define-product" type="text" value="">
+    </div>
+    <div> 
+        <label for="">Price</label>
+        <input id="define-price" type="number" value="">
+      </div>
+   
+    <button id="btn-create">Create</button>
+   </div>
+
+
 
 </div>
 <div><button class="btn-success btn" id="calculateTotal">Calculate Prices</button></div>

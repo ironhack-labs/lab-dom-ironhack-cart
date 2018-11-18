@@ -19,19 +19,82 @@ const deleteWrap = document.getElementsByClassName("products");
 
 function deleteDiv(elem){
   const container = document.getElementById('all-products');
-  container.removeChild(elem.path[2]);
+  container.removeChild(elem.path[1]);
 }
 
 for(var i=0; i < deleteWrap.length ; i++){
-deleteButton[i].onclick = deleteDiv;
+deleteButton[i].onclick = deleteDiv;}
+
+function createProdName(){
+  const newName = document.getElementById("define-product");
+  const prodName = document.createElement("span");
+  prodName.innerHTML = newName.value;
+  return prodName;
 }
 
-/*
-First Variables iterate through their corresponding class and get the quantity value and 
-item price. After that I loop through each class to obtain item price & quantity.
 
-Once I have the price and qty I add that value using innerHTML into the total class for each product
+function createProdPrice(){
+  const thePrice = document.getElementById("define-price");
+  const prodPrice = document.createElement("span");
+  prodPrice.setAttribute("class", "unit-price");
+  prodPrice.innerHTML = "$" + thePrice.value;
+  return prodPrice;
+}
 
-At the end I loop through each total for each product add those into a variable that has 0 as its value
-and then push that final value using innerHTML into the final-total class.
-*/
+function createQtyInput(){
+  const qtyInput = document.createElement("input");
+  qtyInput.setAttribute("class", "itemQuantity")
+  qtyInput.setAttribute("value", "0");
+  qtyInput.setAttribute("type", "number");
+  return qtyInput;
+}
+
+function createProdQtyWrap(){    
+  const prodQtyWrap = document.createElement("div");
+
+  const qtyLabel = document.createElement("label");
+  qtyLabel.setAttribute("class", "quantity");
+  qtyLabel.innerHTML = "QTY";
+  const inputField = createQtyInput();
+  prodQtyWrap.appendChild(qtyLabel);
+  prodQtyWrap.appendChild(inputField);
+  return prodQtyWrap;
+}
+
+function getSingleProdTotalPrice(){
+  const singleProdTotal = document.createElement("span");
+  singleProdTotal.setAttribute("class", "total");
+  singleProdTotal.innerHTML = "$0";
+  return singleProdTotal;
+}
+
+function createDeleteButton(){
+  const deleteBtn = document.createElement("button");  
+  deleteBtn.setAttribute("class", "btn-delete");
+  deleteBtn.innerHTML = "Delete";
+  return deleteBtn;
+}
+
+function createProdWrapDiv(){
+  const createProdDiv = document.getElementsByClassName("create-product")[0];
+  const container = document.getElementById('all-products');
+  const prodWrapper = document.createElement("div");
+  prodWrapper.setAttribute("class", "products");
+  const theName = createProdName();
+  const thePrice = createProdPrice();
+  const theQty = createProdQtyWrap();
+  const singleTotalPrice = getSingleProdTotalPrice();
+  const theDeleteBtn = createDeleteButton();
+  prodWrapper.append(theName, thePrice, theQty, singleTotalPrice, theDeleteBtn);
+  container.appendChild(prodWrapper)
+  container.insertBefore(prodWrapper, createProdDiv);
+  return prodWrapper;
+}
+// const prodWrap= createProdWrapDiv();
+// const container = document.getElementById('all-products');
+
+// container.insertBefore(prodWrap. theBtn);
+
+const createButton = document.getElementById("btn-create");
+createButton.onclick = createProdWrapDiv;
+
