@@ -21,11 +21,10 @@
 </head>
 <body>
   
-  <div class="container">
-    <!-- title  row-->
-    <div class="row title"></div>
+  <div class="container" id="all-products">
+    <h1 class="text-center">IronHack Merchandising Cart</h1>
     <!-- the first product row -->
-    <div class="row">
+    <div class="row products">
       <span class="col-sm-10 col-md-2">Iron Iron</span>
       <span class="col-sm-10 col-md-2 single-prod-price">$10</span>
       <span class="col-sm-10 col-md-4">
@@ -37,7 +36,7 @@
     </div>
 
     <!-- the second product row -->
-    <div class="row">
+    <div class="row products">
         <span class="col-sm-10 col-md-2">Iron Shirt</span>
         <span class="col-sm-10 col-md-2 single-prod-price">$17</span>
         <span class="col-sm-10 col-md-4">
@@ -47,6 +46,21 @@
         <span class="col-sm-10 col-md-2 single-prod-total">$0</span>
         <button class="btn btn-danger delete">Delete</button>
     </div>
+
+    <!-- the form -->
+    <div class="row theForm">
+        <div class="col-md-3">
+          <label>Name</label>
+          <input type="text" name="" id="new-prod-name">
+        </div>
+        <div class="col-md-3">
+          <label>Price</label>
+            <input type="number" name="" id="new-prod-price">
+        </div>
+        <div class="col-md-1 offset-md-2">
+          <button class="btn btn-primary" id="create-btn">Create</button>
+        </div>
+      </div>
     
     <!-- the calc button row -->
     <div class="row calc">
@@ -55,7 +69,7 @@
       </div>
     </div>
 
-    
+    <!----Hidden Total Prices placeholder, will activate once calculate prices button is selected-->
     <br><br><br>
     <div class="row">
       <div class="col-sm-12 col-md-12 text-center">
