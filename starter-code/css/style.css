@@ -34,8 +34,41 @@ input {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    padding: 5px;
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+.left{
+  float: left;
+  
+}
+
+.resetf{
+clear: both;
+}
+
+
+#product1 {
+width: 100%;
+height: 50%;
+
+
+}
+span{
+  width: 100px;
+height: 50px;
+padding: 5px;
+margin: 50px;
+
+}
+h1 {
+align-content: center;
+
+}
+
+.product{
+  
 }
