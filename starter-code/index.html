@@ -28,7 +28,7 @@
 
       <div>
         <label for="item-units" >QTY</label>
-        <input class="units" type="text" name= "item-units" value="2"/>
+        <input class="units" type="number" name= "item-units" value="2"/>
       </div>
 
       <div>
@@ -53,7 +53,7 @@
 
       <div>
         <label for="item-units" >QTY</label>
-        <input class="units" type="text" name= "item-units" value="3"/>
+        <input class="units" type="number" name= "item-units" value="3"/>
       </div>
 
       <div>
@@ -66,13 +66,50 @@
 
     </div>
 
+    <div id ="new-item-template" style="display: none;">
+
+      <div class="product">
+        <span class="name"></span>
+      </div>
+      
+      <div>
+        <span class = "price"></span>
+      </div>
+
+      <div>
+        <label for="item-units" >QTY</label>
+        <input class="units" type="number" name= "item-units" value=""/>
+      </div>
+
+      <div>
+        <span class="priceItem">0</span>
+      </div>
+
+      <div>
+        <button class="btn btn-delete">Delete</button>
+      </div>
+
+    </div>
+
+
+  </div>
+  <div class="create-item">
+    <div class="data-new-item">
+      <input class="new-name" type="text" name="new-item-name" />
+      <input class="new-price" type="number" name="new-item-price"/>
+    </div>
+    <div>
+      <button id="btn btn-create">Create</button>
+    </div>
+  </div>
+
     <div class="calculate">
       <button class ="btn btn-success">Calculate Prices</button>
     </div>  
 
   <h2>Total Price: <span>$0</span></h2>
 
-  </div>
+ 
    <script type="text/javascript" src="./js/mio.js"></script>
 
 </body>

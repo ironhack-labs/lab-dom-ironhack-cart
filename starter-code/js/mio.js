@@ -26,12 +26,12 @@ function calculatePriceItem() {
 
   		priceItems[i].innerHTML = productPrice[i].innerHTML * itemUnits[i].value; 	 	
   	 }
-	
+	getTotalPrice();
+  	 
 
 	return priceItems;
 
-	getTotalPrice();
-  	 
+	
 }
 
 function getTotalPrice() {
@@ -42,10 +42,45 @@ function getTotalPrice() {
 		return totalPrice;
 	};
 	console.log(totalPrice);
-	document.getElemensByTagName("h2 span").innerHTML = '$' + totalPrice;
+	document.getElemensByTagName("h2 span").innerText = '$' + totalPrice;
 }
 
-function deleteItem() {
+document.addEventListener('#btn btn-create',function(){
+	var newItem = builNewItem (nameProduct, priceProduct);
+	addNewItem(newItem);
+});
+
+
+
+function addNewItem(newItem) {
+	var cart = document.querySelector('#cart');
+	cart.appendChild(newItem);
+}
+  
+function builNewItem(nameProduct, priceProduct) {
+	var newItem = document.querySelector('#new-item-template').cloneNode(true);
+	var nameProduct = document.querySelector('.new-name').value;
+	var priceProduct = document.querySelector('.new-price').value;
+	
+	newItem.querySelector('#new-item-template > .name').innerText = nameProduct;
+	newItem.querySelector('#new-item-template > .price').innerText = priceProduct;
+	
+	
+	newItem.querySelector('#new-item-template > .btn').addEventListener('click', onClickDeleteItem);
+  
+	return newItem;
+}
+
+function onClickDeleteItem(event) {
+	var deleteButton = event.target;
+	var item = deleteButton.parentNode.parentNode;
+
+	var cart = document.querySelector('#cart');
+	cart.removeChild(item);
+}
+
+
+/*function deleteItem() {
 
 	for( i = 0; i < itemsList.length ; i++){
 
@@ -76,4 +111,4 @@ function createItem() {
 
 
 	
-}
+}*/

@@ -20,6 +20,25 @@ h2 {
 
 }
 
+.create-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 10em;
+  padding-top: 3em;
+}
+
+.data-new-item {
+  display: flex;
+  flex-direction: row;
+  padding-left: 6em;
+ 
+}
+.data-new-item input {
+  margin-left: 3em;
+}
+
+
 .calculate {
   display: flex;
   justify-content: center;
