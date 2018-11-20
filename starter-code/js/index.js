@@ -1,3 +1,22 @@
+var totalPrice = document.getElementsByClassName("total");
+totalPrice.addEventListener('keydown', calculatePrices())
+
+function calculatePrices (unitPrice, unitQty) {
+  var unitPrice = document.getElementsByClassName('price');
+  var unitQty = document.getElementById('input').innerText;
+  var unitTotal = document.getElementsByClassName("total");
+  
+  return unitTotal + (unitPrice * unitQty)
+
+}
+
+
+
+
+
+
+
+
 function deleteItem(e){
 
 }
