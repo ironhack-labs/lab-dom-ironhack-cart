@@ -25,15 +25,19 @@
          id="txtproductQty"
          type="text" 
          name="txtproductQty" 
-         onChange="txtProductQtyCalc(event)" 
          placeholder="Quantity#"></input>
         <span>$</span><label id="lblTotal">Total</label>
         <!-- prettier-ignore -->
-        <button id="btnAddCart" onclick="onClickEvent(event.target)" class="btn-success">Add to Cart</button>
+        <button id="btnAddCart" onclick="addToCart(event.target)" class="btn-success">Add to Cart</button>
       </div>
       <div class="cart-container" id="cart-container">
-
+        
       </div>
+      <div class="total">
+        <button id="total" class="btn">Total</button>
+        <label id="lblTotal" class="lbl-total"></label>
+      </div>
+    
     </main>
     <script src="./js/index.js"></script>
   </body>

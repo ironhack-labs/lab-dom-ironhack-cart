@@ -9,13 +9,13 @@ var productList = [
 
 // shopping cart
 var shoppingCart = [
-  { name: 'shoes', price: 25, quantity: 0, total: 25 },
-  { name: 'shirt', price: 21, quantity: 0, total: 25 }
+  { name: 'shoes', price: 25, quantity: 1, total: 25 },
+  { name: 'shirt', price: 21, quantity: 1, total: 25 }
 ];
 
 // cart constructor function
-var Cart = function(item, price, quantity, total) {
-  this.item = item;
+var Cart = function(name, price, quantity, total) {
+  this.name = name;
   this.price = price;
   this.quantity = quantity;
   this.total = total;
@@ -25,13 +25,7 @@ var Cart = function(item, price, quantity, total) {
 var formItem = {};
 var formQty = 0;
 
-// product control elements
-var txtProductPrice = document.getElementById('txtProductPrice');
-var txtproductQty = document.getElementById('txtproductQty');
-var lblTotal = document.getElementById('lblTotal');
-var btnAddCart = document.getElementById('btnAddCart');
-
-// populate select box
+// populate select box - uses array of cart items.. will be used on add new item form
 function loadSelectBox() {
   let selElement = document.getElementById('selProductName');
   for (let item of productList) {
@@ -53,16 +47,20 @@ function selectBoxChange() {
   priceLabel.innerHTML = thePrice;
 }
 
-txtproductQty.addEventListener('input', function(e){
-  formQty = txtproductQty.value;
-  console.log(formQty)
-});
+// updates total on new item form
+var onQuantityChange = document.getElementById('txtproductQty');
+if (onQuantityChange) {
+  onQuantityChange.addEventListener('input', function(e) {
+    formQty = onQuantityChange.value;
+    txtProductQtyCalc(formQty);
+  });
+}
 
 // calculate form
-var txtProductQtyCalc = function(event) {
-  let selectElement = document.getElementById('selProductName').value;
-  let productQuantity = +document.getElementById('txtproductQty').value;
-  let priceAmount = +document.getElementById('txtProductPrice').innerHTML;
+var txtProductQtyCalc = function(qty) {
+  let name = document.getElementById('selProductName').value;
+  let productQuantity = parseInt(qty);
+  let priceAmount = parseInt(document.getElementById('txtProductPrice').innerHTML);
   let priceTotal = document.getElementById('lblTotal');
   let total = 0;
 
@@ -70,25 +68,22 @@ var txtProductQtyCalc = function(event) {
     total = priceAmount * productQuantity;
     priceTotal.innerHTML = +total;
   } else {
-    console.log('invalid data selected');
-  }
-
-  if (total) {
-    formItem = new Cart(selectElement, productQuantity, priceAmount, total);
-  } else {
     console.log('nothing to add');
+  }
+  if (total) {
+    formItem = new Cart(name, priceAmount, productQuantity, total);
   }
 };
 
 // load to cart
-var onClickEvent = function(event) {
+var addToCart = function(event) {
   if (Object.keys(formItem).length) {
     shoppingCart.push(formItem);
   } else {
     console.log('Error insuficcient data...');
   }
-  clearForm();
   loadCartData();
+  clearForm();
 };
 
 //clear Form
@@ -98,34 +93,61 @@ function clearForm() {
   let priceAmount = document.getElementById('txtProductPrice');
   let priceTotal = document.getElementById('lblTotal');
   selectElement.selectedIndex = 0;
+  formItem = {};
   productQuantity.value = '';
   priceAmount.innerHTML = '';
   priceTotal.innerHTML = 'Total';
 }
 
-var deleteItemFromCart = function(event) {
-  console.log(event.parentNode.id);
+// manage delete click event
+var deleteItemFromCart = function(e) {
+  let rootParent = e.parentNode.parentNode;
+  let buttonParent = e.parentNode;
+  rootParent.removeChild(buttonParent);
+  shoppingCart.splice(buttonParent.id, 1);
+  loadCartData();
 };
 
 // load cart
 function loadCartData() {
+  // load container, wipe all children in div container..
+  let rootContainer = document.getElementById('cart-container');
+  while (rootContainer.firstChild) {
+    rootContainer.removeChild(rootContainer.firstChild);
+  }
   let parentContainer = document.getElementById('cart-container');
   shoppingCart.map((object, index) => {
     // create element
     let divContainer = document.createElement('div');
-    console.log(divContainer.childNodes);
     divContainer.innerHTML = `
        <div id=${index}>
-         <label class="cart-label">${object.name}</label>
-         <label class="cart-label">$${object.price}</label>
-         <label class="cart-label">Quantity</label>
-         <input class="cart-input" value="${object.quantity}"></input>
-         <label class="cart-label">${object.total}</label>
+         <label class="cart-label">${object.name}:</label>
+         <span>$</span><label class="cart-label">${object.price}</label>
+         <label class="cart-label">Qty:</label>
+         <input class="cart-input" id="cartItemQty" value="${object.quantity || 1}"></input>
+         <span>$</span><label class="cart-label" id="cartItemTotal">${object.total}</label>
          <button onclick="deleteItemFromCart(event.target)" class="button">Delete</button>
        </div>
      `;
     parentContainer.append(divContainer);
   });
+}
+
+// dynamic event listerns...
+document.addEventListener('input', function(e) {
+  if (e.target.id === 'cartItemQty') {
+    var cartElements = e.target.parentElement.children;
+    var cartElementTotal = +e.target.value * +cartElements[2].innerHTML;
+    cartElements[6].innerHTML = cartElementTotal;
+    // upate shoppingCard array
+    shoppingCart[e.target.parentElement.id].quantity = +e.target.value 
+    shoppingCart[e.target.parentElement.id].total = cartElementTotal
+  }
+});
+
+var lblTotalEvent = document.getElementById('lblTotal');
+lblTotalEvent.onclick(e){
+  console.log(e)
 }
 
 // onload
