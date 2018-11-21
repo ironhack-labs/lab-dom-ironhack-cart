@@ -140,15 +140,20 @@ document.addEventListener('input', function(e) {
     var cartElementTotal = +e.target.value * +cartElements[2].innerHTML;
     cartElements[6].innerHTML = cartElementTotal;
     // upate shoppingCard array
-    shoppingCart[e.target.parentElement.id].quantity = +e.target.value 
-    shoppingCart[e.target.parentElement.id].total = cartElementTotal
+    shoppingCart[e.target.parentElement.id].quantity = +e.target.value;
+    shoppingCart[e.target.parentElement.id].total = cartElementTotal;
   }
 });
-
-var lblTotalEvent = document.getElementById('lblTotal');
-lblTotalEvent.onclick(e){
-  console.log(e)
-}
+// calculate total
+var calcTotal = function(e) {
+  var totalLabel = document.getElementById('cartTotal');
+  var total = 0;
+  for (var item of shoppingCart) {
+    total += item.total;
+  }
+  console.log(total);
+  totalLabel.innerHTML = total;
+};
 
 // onload
 window.onload = function() {
