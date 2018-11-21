@@ -13,6 +13,26 @@ h1 {
   padding-top: 50px;
 }
 
+.new-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 50px;
+  padding-left: 70px;
+  padding-right: 90px;
+}
+
+.btn-create {
+  display: flex;
+  justify-content: right;
+  
+}
+
+.btn-create {
+  background-color: white;
+  border: 2px solid black;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
