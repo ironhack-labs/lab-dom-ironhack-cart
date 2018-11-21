@@ -41,13 +41,10 @@ window.onload = function(){
     
     totalOrder.innerHTML = 'Total Price: $'+allTotals;
     
-  
   }
 
   const deleteButton = document.querySelectorAll(".btn-danger");
   const deleteWrap = document.getElementsByClassName("products");
-
-
 
   deleteButton.onclick = function(elem){
     const container = document.getElementById('all-products');
@@ -141,8 +138,12 @@ window.onload = function(){
 
     const prodName = document.getElementById("new-prod-name").value;
     const prodPrice = document.getElementById("new-prod-price").value;
-    
+    const theForm = document.getElementById("form");
+    const allProds = document.getElementById("all-products");
 
+    
+    
+    
       const prodWrapper = document.createElement("div");
       prodWrapper.setAttribute("class", "row products");
       const theName = createProdName(prodName);
@@ -153,9 +154,9 @@ window.onload = function(){
 
       prodWrapper.append(theName, thePrice, theQty, singleTotalPrice, theDeleteBtn);
 
-      document.body.appendChild(prodWrapper);
-      document.body.insertBefore(prodWrapper, calcButton);
-
+     
+      // document.body.appendChild(prodWrapper);
+      allProds.insertBefore(prodWrapper, theForm);
     
   }
 
