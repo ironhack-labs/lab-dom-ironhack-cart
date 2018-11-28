@@ -12,29 +12,51 @@
 
 <body>
   <h1 class="title">Ironhack Merchandising Shop</h1>
-  <div class="product-order">
+  <div class="product-wrapper">
     <div class="product-description">
       <div>
         <span id="product-name">PlayStation 5</span>
       </div>
     </div>
-    <div class="product-price-single">
-      <span>R$ 5.000,00</span>
+    <div class="">
+      $<span class="price">500</span>
     </div>
-    <div class="product-qty">
+    <div class="col">
       <label>QTY</label>
-      <input type="text">
+      <input type="text" class="quantity">
     </div>
-    <div class="product-price-total">
-      <span>$0,00</span>
+    <div class="price-qty">
+      $<span>0,00</span>
     </div>
     <div class="product-delete">
-      <button>Delete</button>
+      <button class="btn btn-delete">Delete</button>
+    </div>
+  </div>
+
+  <div class="product-wrapper">
+    <div class="product-description">
+      <div>
+        <span id="product-name">Xbox Two</span>
+      </div>
+    </div>
+    <div class="">
+      $<span class="price">1000</span>
+    </div>
+    <div class="col">
+      <label>QTY</label>
+      <input type="text" class="quantity">
+    </div>
+    <div class="price-qty">
+      $<span>0,00</span>
+    </div>
+    <div class="product-delete">
+      <button class="btn btn-delete">Delete</button>
     </div>
   </div>
   <div class="product-calculate">
-    <button>Calculate Prices</button>
+    <button id="calc-prices-button" class="btn btn-success" >Calculate Prices</button>
   </div>
+  <h1 class="title">Total price: $<span id="total">00</span></h1>
 
   <script type="text/javascript" src="./js/index.js"></script>
 </body>
