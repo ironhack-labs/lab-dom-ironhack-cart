@@ -1,5 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 98%;
+}
+
+.row {
+    clear: both;
+    overflow: hidden;
+    padding: 10px 0;
+    position: relative;
+}
+
+.col {
+    float: left;
+    padding: 0 5px;
+    width: 20%;
+}
+
+.col-3 {
+    width: 60%;
+}
+
+.col-offset-2 {
+    margin-left: 40%;
+}
+
+header,
+footer {
+    padding: 15px 0;
+}
+
 input {
     border: solid 1px black;
+    padding: 2px 5px;
+    width: 100%;
+}
+
+.quantity {
+    margin: 0 5px;
+    text-align: center;
+    width: 80px;
 }
 
 .btn {
@@ -24,10 +68,20 @@ input {
     border-radius: 4px;
 }
 
+.btn:hover {
+    background-color: #CCC;
+    border-color: #CCC;
+}
+
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+}
+
+.btn-success:hover {
+    background-color: #5ce95c;
+    border-color: #5ce95c;
 }
 
 .btn-delete {
@@ -36,30 +90,7 @@ input {
     border-color: #CF000F;
 }
 
-.quantity {
-    margin: 0 5px;
-}
-
-.title {
-    display: flex;
-    justify-content: center;
-    padding: 50px;
-}
-
-.product-wrapper {
-    display: flex;
-    justify-content: space-around;
-    align-content: center;
-    margin-bottom: 10px;
-}
-
-.product-wrapper div {
-    flex-basis: 0;
-    flex-grow: 1;
-}
-
-.product-calculate {
-    display: flex;
-    justify-content: center;
-    padding-top: 50px;
+.btn-delete:hover {
+    background-color: #FF000F;
+    border-color: #FF000F;
 }
