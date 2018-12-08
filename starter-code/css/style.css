@@ -1,3 +1,40 @@
+header, footer{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+.productContainer{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.input, .productCost, .quantity, .producTotal, .productDelete{
+  flex-basis: auto;
+}
+
+.newProductContainer{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.productCreate{
+  align-self: flex-end;
+}
+
+.calculate{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin: 20px 0;
+}
+
 input {
   border: solid 1px black;
 }
@@ -34,6 +71,12 @@ input {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+}
+
+.btn-create {
+  color: #fff;
+  background-color: rgb(61,196,252);
+  border-color: rgb(61,196,252);
 }
 
 .quantity {
