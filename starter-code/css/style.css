@@ -1,5 +1,27 @@
+.container {
+  padding: 10px;
+  margin: 0 80px;
+}
+
+h1 {
+  text-align: center;
+}
+
 input {
   border: solid 1px black;
+}
+
+.product {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.flexbox-center {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
 }
 
 .btn {
