@@ -1,5 +1,8 @@
+
+
 input {
   border: solid 1px black;
+  background-color: transparent;
 }
 
 .btn {
@@ -20,66 +23,81 @@ input {
   -ms-user-select: none;
   user-select: none;
   background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
+
 }
 
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
-    margin-top: 2em;
-
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
-    border-color: #CF000F;
-    padding: 4px 6px;
 }
 
 .quantity {
   margin: 0 5px;
 }
 
-* {
+input:focus {
+  background-color: #fff;
+}
+
+h1, h2, h3 {
   text-align: center;
 }
 
-h1 {
-  margin: 2em;
+.flexbox-container {
+  display: flex;
 }
 
-h2{
-  margin:1.5em;
+h3 {
+  margin-top: 40px;
 }
 
-.wrapper {
+.create-product input {
+  flex-basis: 40%;
+  margin-right: 5px;
+}
+
+.product-wrapper {
   width: 90%;
   margin: 0 auto 20px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-basis: 100%;
   padding: 20px 0;
 }
 
-.product {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 1em auto;
-  align-items: center;
+.flexbox-container-create{
+  flex-direction: row;
   flex-basis: 100%;
-  flex-flow: row wrap;
-  align-content: flex-end;
+  display: flex;
+  align-content: space-between;
+  align-items: center;
+  justify-content: center;
 }
 
-.product > div {
-  flex-wrap: wrap;
+.flexbox-container-create label {
+  padding: 10px;
 }
 
-
-.btn-create {
-  color: black;
-  background-color: lightgrey;
-  border-color: darkgrey;
-  padding: 4px 6px;
+.flexbox-container-create div {
+  padding: 10px;
 }
 
+.calculate-prices-container {
+  justify-content: center;
+}
+
+.product-name {
+  flex-basis: 25%;
+  font-weight: bold;
+}
+
+.product-price::before, .total-product-price::before, #total-price-span::before {
+  content: "$";
+}
