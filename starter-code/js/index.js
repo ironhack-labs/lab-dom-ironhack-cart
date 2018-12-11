@@ -3,12 +3,6 @@ function deleteItem(element){
   product.removeChild(element.target.parentNode.parentNode); 
 }
 
-// 1 -  Después de declarar la función creamos una variable que seleccione el elemento de product 
-// (que es el parámetro que define la función) que defina su precio.
-// 2 - Creamos otra variable que selecciona el value del input de la cantidad de productos.
-// 3 - Devuelvemos ambos números multiplicados para obtener el precio final de dicho producto.
-
-
 function getPriceByProduct(product) {
   var productPrice = product.querySelector('.product-price'); // 1
   var productQuantity = product.querySelector('.product-quantity').value; // 2
@@ -16,27 +10,11 @@ function getPriceByProduct(product) {
   return parseInt(productPrice.innerText) * productQuantity; // 3
 }
 
-// 1 - Después de crear la función con dos parámetros (product y price) decimos que el totalprice lo primero sea indentificado por
-// un elemento del html con la clase .total-product-price
-// 2 - El texto del interior será igual a la variable del precio.
-
 function updatePriceByProduct(product, price){ 
   var productTotalPrice = product.querySelector('.total-product-price'); // 1
   productTotalPrice.innerText = price; // 2
 }
 
-// 1 - Declaramos que la variable products sea igual a todos los elementos (divs), que tengan la clase (.product-wrapper).
-// 2 - Declaramos una variable total, que es igual a 0, que será la que vaya recibiendo los resultados de la ecuacion e ira modificandose
-// para sumar las cantidades finales de los productos.
-// 3 - Hacemos un bucle FOR que empiece la cuenta en 0 y se repita incrementando en uno hasta el length de products, que indica cuantos
-// productos hay creados en el DOM.
-// 4 - Creamos una variable productPrice que es igual a la función declarada anteriormente y con su parámetro (products[i]), para que
-// realice las operaciones de esta función en todos los elementos iésimos de la variable products.
-// 5 - Después pasamos el resultado de la la función 'updatePriceByProduct' que necesitaba dos parámetros pasandole como primer parametro
-// un producto iésimo, y el productPrice que esta variable ira cambiando en el bucle, en función del producto que este iterando.
-// 6 - La variable total se le suman todos los resultados de productPrice en sus iteraciones, así conseguimos el resultado de todos los 
-// precios de productos totales sumados en un mismo elemento.
-// 7 - Después buscamos un elemento que tenga el ID 'total-price-span' que será igual al resultado de la variable total.
 
 function getfinalProductPrice() {
   var products = document.querySelectorAll('.product-wrapper');
@@ -49,8 +27,6 @@ function getfinalProductPrice() {
   var totalSpanPrice = document.getElementById('total-price-span');
   totalSpanPrice.innerText = total; 
 }
-
-
 
 
 function createQuantityInput(){
@@ -66,7 +42,7 @@ function createQuantityInput(){
   newQtyInput.classList.add('product-quantity');
   newQtyInput.setAttribute('type', 'number');
   newQtyInput.setAttribute('name', 'product-quantity');
-  newQtyInput.setAttribute('value', '0');
+  newQtyInput.setAttribute('placeholder', 'How many?');
   newQtyInput.setAttribute('min', '0');
   newQtyDiv.appendChild(newQtyInput);
 
