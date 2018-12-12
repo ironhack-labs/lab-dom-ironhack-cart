@@ -1,52 +1,22 @@
-function deleteItem(e){
 
-}
 
-function getPriceByProduct(itemNode){
+let productPriceString = document.getElementsByClassName('product')[0].innerText;
+let productPriceNumber = parseFloat(productPriceString.substring(1));
+let calcButton = document.getElementById('calc-prices-button');
 
-}
-
-function updatePriceByProduct(productPrice, index){
-
-}
-
-function getTotalPrice() {
-
-}
-
-function createQuantityInput(){
-
-}
-
-function createDeleteButton(){
-
-}
-
-function createQuantityNode(){
-
-}
-
-function createItemNode(dataType, itemData){
-
-}
-
-function createNewItemRow(itemName, itemUnitPrice){
-
-}
-
-function createNewItem(){
-
-}
-
-window.onload = function(){
-  var calculatePriceButton = document.getElementById('calc-prices-button');
-  var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');
-
-  calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
-
-  for(var i = 0; i<deleteButtons.length ; i++){
-    deleteButtons[i].onclick = deleteItem;
-  }
+calcButton.onclick = function(){
+	let input = document.getElementsByTagName('input')[0].value;
+  let total = productPriceNumber * input;
+  let totalPricePerProduct = document.getElementsByClassName('total-per-product')[0];
+  totalPricePerProduct.innerText = `$ ${total}.00`;
+  return totalPricePerProduct;
 };
+
+function calcPrices (product, index){
+
+}
+
+
+
+
+  

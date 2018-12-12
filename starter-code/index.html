@@ -6,9 +6,28 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+  <h1>Ironhack Merchandising Shop</h1>
+  <div class="shopping-elements">
+    <div><span>Iron Bubble-head</span></div>
+    <div class="product"><span id="bubble">$25.00</span></div>
+    <div><label for="product"><input class="quantity" type="number"></label></div>
+    <div><span class="total-per-product">$0.00</span></div>
+    <div><button>delete</button></div>
+  </div>
+  <div class="calculate"><button id="calc-prices-button">Calculate prices</button></div>
+  <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>
+
+<!-- 
+A wrapper div that contains all the HTML for that product.
+A div with a span, showing the product name.
+A div with a span, showing the cost of one unit.
+A div with one label and one input, where the user will indicate how many units they will buy.
+A div with a span, showing the total price for this product. This number should be the result of 
+multiplying the amount of units multiplied by the price of one unit of that product. 
+The default total price should be 0.
+A div with a delete button, to remove the product from the list. -->

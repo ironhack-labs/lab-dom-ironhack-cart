@@ -39,3 +39,18 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+h1 {
+  text-align: center;
+  line-height: 40%;
+}
+
+.shopping-elements {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.calculate {
+  text-align: center;
+}
