@@ -1,5 +1,6 @@
-function deleteItem(e){
-  
+function deleteItem(element){ 
+  let product = document.getElementById("container-products");
+  product.removeChild(element.target.parentNode.parentNode); // also could be used currentTarget instead of target
 }
 
 function getPriceByProduct(product){
@@ -23,7 +24,6 @@ function getTotalPrice() {
     totalPrice += totalProductPrice; // Total price from all products to be shown in the product cart.
   });
   document.querySelector('.total-price').innerText = totalPrice;
-  console.log(totalPrice); // DELETE LATER !!!!!!!!!!!!!
 }
 
 function createQuantityInput(){
@@ -56,7 +56,7 @@ window.onload = function(){
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
   calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
+  //createItemButton.onclick = createNewItem;
 
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
