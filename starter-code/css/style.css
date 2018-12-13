@@ -47,6 +47,11 @@ h1 {
 
 .shopping-elements {
   display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
