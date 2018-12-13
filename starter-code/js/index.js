@@ -1,44 +1,44 @@
 function deleteItem(element){ 
-  var product = document.getElementById('container-products'); 
+  let product = document.getElementById('container-products'); 
   product.removeChild(element.target.parentNode.parentNode); 
 }
 
 function getPriceByProduct(product) {
-  var productPrice = product.querySelector('.product-price'); // 1
-  var productQuantity = product.querySelector('.product-quantity').value; // 2
+  let productPrice = product.querySelector('.product-price'); // 1
+  let productQuantity = product.querySelector('.product-quantity').value; // 2
 
   return parseInt(productPrice.innerText) * productQuantity; // 3
 }
 
 function updatePriceByProduct(product, price){ 
-  var productTotalPrice = product.querySelector('.total-product-price'); // 1
+  let productTotalPrice = product.querySelector('.total-product-price'); // 1
   productTotalPrice.innerText = price; // 2
 }
 
 
 function getfinalProductPrice() {
-  var products = document.querySelectorAll('.product-wrapper');
-  var total = 0; 
-  for (var i = 0; i < products.length; i++) { 
-      var productPrice = getPriceByProduct(products[i]); 
+  let products = document.querySelectorAll('.product-wrapper');
+  let total = 0; 
+  for (let i = 0; i < products.length; i++) { 
+      let productPrice = getPriceByProduct(products[i]); 
       updatePriceByProduct(products[i], productPrice);
       total += productPrice;
   }
-  var totalSpanPrice = document.getElementById('total-price-span');
+  let totalSpanPrice = document.getElementById('total-price-span');
   totalSpanPrice.innerText = total; 
 }
 
 
 function createQuantityInput(){
-  var newQtyDiv = document.createElement('div');
+  let newQtyDiv = document.createElement('div');
   newQtyDiv.classList.add('quantity');
 
-  var newQtyLabel = document.createElement('label');
+  let newQtyLabel = document.createElement('label');
   newQtyLabel.setAttribute('for', 'product-quantity');
   newQtyLabel.appendChild(document.createTextNode('QTY '))
   newQtyDiv.appendChild(newQtyLabel);
 
-  var newQtyInput = document.createElement('input');
+  let newQtyInput = document.createElement('input');
   newQtyInput.classList.add('product-quantity');
   newQtyInput.setAttribute('type', 'number');
   newQtyInput.setAttribute('name', 'product-quantity');
@@ -50,9 +50,9 @@ function createQuantityInput(){
 }
 
 function createDeleteButton(){
-  var unitButtonDiv = document.createElement('div');
+  let unitButtonDiv = document.createElement('div');
   unitButtonDiv.classList.add('btn-delete-container');
-  var unitButton = unitButtonDiv.appendChild(document.createElement('button'));
+  let unitButton = unitButtonDiv.appendChild(document.createElement('button'));
   unitButton.appendChild(document.createTextNode('Delete'))
   unitButton.setAttribute('type', 'button');
   unitButton.classList.add("btn", "btn-delete");
@@ -64,9 +64,9 @@ function createDeleteButton(){
 
 function createUnitName(name) {
 
-  var unitNameDiv = document.createElement('div');
+  let unitNameDiv = document.createElement('div');
   unitNameDiv.classList.add('product-name');
-  var unitNameSpan = unitNameDiv.appendChild(document.createElement('span'));
+  let unitNameSpan = unitNameDiv.appendChild(document.createElement('span'));
   unitNameSpan.appendChild(document.createTextNode(name));
 
   return unitNameDiv;
@@ -74,18 +74,18 @@ function createUnitName(name) {
 
 function createUnitPrice(price) {
 
-  var unitPriceDiv = document.createElement('div');
+  let unitPriceDiv = document.createElement('div');
   unitPriceDiv.classList.add('product-price');
-  var unitPriceSpan = unitPriceDiv.appendChild(document.createElement('span'));
+  let unitPriceSpan = unitPriceDiv.appendChild(document.createElement('span'));
   unitPriceSpan.appendChild(document.createTextNode(price));
 
   return unitPriceDiv;
 }
 
 function createTotalProductPriceDiv() {
-  var unitTotalPriceDiv = document.createElement('div');
+  let unitTotalPriceDiv = document.createElement('div');
   unitTotalPriceDiv.classList.add('total-product-price');
-  var unitTotalPriceSpan = unitTotalPriceDiv.appendChild(document.createElement('span'));
+  let unitTotalPriceSpan = unitTotalPriceDiv.appendChild(document.createElement('span'));
   unitTotalPriceSpan.appendChild(document.createTextNode('0'));
   
   return unitTotalPriceDiv;
@@ -93,7 +93,7 @@ function createTotalProductPriceDiv() {
 
 function createNewItemRow(name, price){
 
-  var rowNewItem = document.createElement('div');
+  let rowNewItem = document.createElement('div');
   rowNewItem.classList.add('product-wrapper', 'flexbox-container');
   rowNewItem.appendChild(createUnitName(name));
   rowNewItem.appendChild(createUnitPrice(price));
@@ -104,9 +104,9 @@ function createNewItemRow(name, price){
 }
 
 function createNewItem(){
-  var name = document.getElementById('product-name-creater').value;
-  var price = document.getElementById('product-price-creater').value;
-  var containerProducts = document.getElementById('container-products');
+  let name = document.getElementById('product-name-creater').value;
+  let price = document.getElementById('product-price-creater').value;
+  let containerProducts = document.getElementById('container-products');
 
   if ( name !== '' || price >= 0){
     containerProducts.appendChild(createNewItemRow(name, price))
@@ -114,14 +114,14 @@ function createNewItem(){
 }
 
 window.onload = function(){
-  var calculatePriceButton = document.getElementById('calc-prices-button');
-  var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');
+  let calculatePriceButton = document.getElementById('calc-prices-button');
+  let createItemButton = document.getElementById('new-item-create');
+  let deleteButtons = document.getElementsByClassName('btn-delete');
 
   calculatePriceButton.onclick = getfinalProductPrice;
   createItemButton.onclick = createNewItem;
 
-  for(var i = 0; i < deleteButtons.length ; i++){
+  for(let i = 0; i < deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
   }
 };
