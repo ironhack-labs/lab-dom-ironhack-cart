@@ -28,8 +28,27 @@ function getfinalProductPrice() {
   for (let i = 0; i < products.length; i++) { 
     total += parseFloat(updateTotalByProduct(products[i]).innerText); 
     }
-    console.log(total);
-    return total;
+  console.log(total);
+  return total;
 }
 
 
+function deleteItem(element){ 
+  let product = document.querySelector('.shopping-elements');
+  product.removeChild(element.target.parentNode.parentNode); // also could be used currentTarget instead of target
+}
+
+
+
+// =========  CREATING NEW ELEMENTS
+
+
+
+// ============= WINDOW ONLOAD: CHARGE ENTIRE PAGE =============
+
+window.onload = function(){
+  let deleteButtons = document.querySelectorAll('.delete');
+  for(let i = 0; i < deleteButtons.length ; i++){
+    deleteButtons[i].onclick = deleteItem;
+  }
+}

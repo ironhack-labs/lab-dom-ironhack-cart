@@ -28,6 +28,9 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    width: 20%;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
 
 .btn-delete {
@@ -43,19 +46,35 @@ input {
 h1 {
   text-align: center;
   line-height: 40%;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 
 .shopping-elements {
   display: flex;
   flex-direction: column;
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
 .item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+
+.user-input {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 
 .calculate {
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
+
+

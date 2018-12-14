@@ -12,23 +12,28 @@
   <h1>Ironhack Merchandising Shop</h1>
   <div class="shopping-elements">
     <div class="item">
-      <div><span>Iron Bubble-head</span></div>
+      <div class="name"><span>Iron Bubble-head</span></div>
       <div class="product"><span id="bubble">$25.00</span></div>
       <div><label for="product"><input class="quantity" type="number"></label></div>
       <div><span class="total-per-product">$0.00</span></div>
-      <div><button>delete</button></div>
+      <div class="delete"><button class="btn-delete">delete</button></div>
     </div>
     
     <div class="item">
-      <div><span>IronShirt</span></div>
+      <div class="name"><span>IronShirt</span></div>
       <div class="product"><span id="shirt">$15.00</span></div>
       <div><label for="product"><input class="quantity" type="number"></label></div>
       <div><span class="total-per-product">$0.00</span></div>
-      <div><button>delete</button></div>
+      <div class="delete"><button class="btn-delete">delete</button></div>
     </div>
   </div>
-  <div class="calculate"><button id="calc-prices-button">Calculate prices</button></div>
-  <div id="total-price"><h2>Total Price: <span>$0</span></h2></div>
+  <div class="user-input">
+    <div><input type="text"></div>
+    <div><input type="number"></div>
+    <div><button id="create">create</button></div>
+  </div>
+  <div class="calculate"><button class="btn-success" id="calc-prices-button">Calculate prices</button></div>
+  <div class="calculate" id="total-price"><h2>Total Price: <span>$0</span></h2></div>
   <script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>
