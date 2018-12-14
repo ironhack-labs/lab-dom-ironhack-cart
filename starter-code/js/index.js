@@ -2,10 +2,10 @@
 let calcButton = document.getElementById('calc-prices-button');
 
 calcButton.onclick = function(){
-	getfinalProductPrice();
+  let totalPrice = document.querySelector('#total-price>h2>span');
+  totalPrice.innerText = `$ ${getfinalProductPrice()}.00`;
+  return totalPrice;
 };
-
-
 
 
 function getPrice (product){
@@ -21,6 +21,7 @@ function updateTotalByProduct (product){
   return totalPricePerProduct;     
 }
 
+
 function getfinalProductPrice() {
   let products = document.querySelector('.shopping-elements').children;
   let total = 0; 
@@ -28,6 +29,7 @@ function getfinalProductPrice() {
     total += parseFloat(updateTotalByProduct(products[i]).innerText); 
     }
     console.log(total);
+    return total;
 }
 
 
