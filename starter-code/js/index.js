@@ -10,7 +10,12 @@ function updatePriceByProduct(productPrice, index){
 
 }
 
-function getTotalPrice() {
+function getTotalPrice(qtyArticulos,priceUnit) {
+ var qty=document.querySelector("#qty").value
+ var x=document.querySelector("#precioUni").innerHTML
+ var valor=x.split("$")[1]
+ //console.log(qty+ "----->"+valor+"------->"+valor*qty)
+ document.querySelector("#final").innerHTML = valor*qty
 
 }
 
