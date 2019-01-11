@@ -25,17 +25,30 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #cf000f;
+  border-color: #cf000f;
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+.prueba {
+  width: 200px;
+  height: 200px;
+  background: red;
+}
+.inLine {
+  display: flex;
+  padding: 30px;
+}
+div div {
+  margin: 10px;
 }
