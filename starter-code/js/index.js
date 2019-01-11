@@ -3,25 +3,45 @@ function deleteItem(e) {}
 function getPriceByProduct(itemNode) {
   // div.innerHtml --> coger valor (su texto) del div seleccionado
   // div.innerHtml='nuevoTexto' --> cambiar el texto de dentro de ese div
-  var priceUnit = document.querySelector('.prices span').innerHTML;
-  var priceNumber = priceUnit.split('$');
-  var price = priceNumber[1];
+  var products = document.querySelectorAll('.inline-elements');
+  console.log(products);
 
-  var quantityProduct = document.querySelector('.quantity input').value;
-  console.log(quantityProduct);
+  products.forEach(function(val) {
+    console.log(val);
+    var priceUnit = val.querySelector('.prices span').innerHTML;
+    var priceNumber = priceUnit.split('$');
+    var price = priceNumber[1];
+    
 
-  var pricemultiply = price * quantityProduct;
+    var quantityProduct = val.querySelector('.quantity input').value;
+    
+    var pricemultiply = price * quantityProduct;
 
-  var totalPrice = document.querySelector(".sum-prices span").innerHTML = pricemultiply;
+    var totalPrice = (val.querySelector('.sum-prices span').innerHTML = pricemultiply + '$');
+    
+    console.log(totalPrice);
+    });
 
-  console.log(totalPrice);
+  getTotalPrice()
+
 
   //parseFloat(cadena);
 }
 
 function updatePriceByProduct(productPrice, index) {}
 
-function getTotalPrice() {}
+function getTotalPrice() {
+
+  var priceTotal = document.querySelectorAll(".sum-prices span");
+  var priceUnit = 0;
+  priceTotal.forEach(function(val){
+      priceUnit = priceUnit + parseFloat(val.innerHTML);
+  });
+
+  document.querySelector("#prTotal").innerHTML = priceUnit + "$";
+
+
+}
 
 function createQuantityInput() {}
 

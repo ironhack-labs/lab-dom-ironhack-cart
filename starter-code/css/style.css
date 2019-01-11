@@ -47,6 +47,7 @@ input {
 .inline-elements {
   display: flex;
   justify-content: space-around;
+  padding-bottom: 20px;
 }
 
 h1 {
@@ -59,3 +60,8 @@ h1 {
 
 
 }
+.heigth-product{
+  width: 200px;
+}
+h2 {
+  text-align: center;
