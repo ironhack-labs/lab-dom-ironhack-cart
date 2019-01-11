@@ -1,3 +1,7 @@
+
+body {
+  
+}
 input {
   border: solid 1px black;
 }
@@ -38,4 +42,20 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.inline-elements {
+  display: flex;
+  justify-content: space-around;
+}
+
+h1 {
+  text-align: center;
+}
+
+#btn-green {
+  display: flex;
+  justify-content: center;
+
+
 }
