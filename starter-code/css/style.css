@@ -60,12 +60,20 @@ main {
   align-items: center;
 }
 
+.prod > div {
+  text-align: left;
+}
+
 .new-prod {
   margin: 5px;
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+}
+
+.new-input {
+  margin: 20px;
 }
 
 .new-input > input {

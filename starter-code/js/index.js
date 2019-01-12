@@ -3,8 +3,6 @@ function deleteItem(e) {
   var prod = e.currentTarget.parentElement;
   prod.parentElement.removeChild(prod);
 }
-var buttonDelete = document.querySelectorAll(".btn-delete");
-buttonDelete.forEach(btn => (btn.onclick = e => deleteItem(e)));
 
 // calculate sub sum and total sum
 function getPriceByProduct(itemNode) {
@@ -27,34 +25,91 @@ function getTotalPrice() {
   }
   document.querySelector("h2 > span").innerHTML = sum.toFixed(2) + " &euro;";
 }
-var buttonCalc = document.getElementById("calc-prices-button");
-buttonCalc.onclick = getTotalPrice;
+function createNewNode(
+  dataType,
+  attName1 = "",
+  attValue1 = "",
+  attName2 = "",
+  attValue2 = ""
+) {
+  var node = document.createElement(dataType);
+  if (attName1 !== "") node.setAttribute(attName1, attValue1);
+  if (attName2 !== "") node.setAttribute(attName2, attValue2);
+  return node;
+}
 
-function createQuantityInput() {}
+// create new product
+function createItemNode(parent, itemName, itemUnitPrice) {
+  var div = createNewNode("div", "class", "fixed-width");
+  div.append(document.createTextNode(itemName));
+  var span = createNewNode("span", "class", "prod-price fixed-width");
+  span.innerHTML = parseFloat(itemUnitPrice).toFixed(2) + " &euro;";
+  parent.appendChild(div);
+  parent.appendChild(span);
+}
 
-function createDeleteButton() {}
+function createQuantityInput(parent) {
+  var div = createNewNode("div", "class", "quantity");
+  var label = createNewNode("label");
+  label.append(document.createTextNode("QTY"));
+  var input = createNewNode("input", "type", "0", "value", "0");
+  parent.appendChild(div);
 
-function createQuantityNode() {}
+  var parentNew = document.querySelectorAll(".quantity")[
+    document.querySelectorAll(".quantity").length - 1
+  ];
+  parentNew.appendChild(label);
+  parentNew.appendChild(input);
+}
 
-function createItemNode(dataType, itemData) {}
+function createQuantityNode(parent) {
+  var div = createNewNode("div", "class", "sub-sum fixed-width");
+  div.innerHTML = "0.00 &euro;";
+  parent.appendChild(div);
+}
 
-function createNewItemRow(itemName, itemUnitPrice) {}
+function createDeleteButton(parent) {
+  var button = createNewNode("button", "class", "btn btn-delete");
+  button.innerHTML = "Delete";
+  parent.appendChild(button);
+}
+
+function createNewItemRow(itemName, itemUnitPrice) {
+  // element.setAttribute(name, value)
+  // document.createElement(tagName)
+  // var parent = document.querySelector("main")
+  // parent.appendChild(element)
+  // var text = document.createTextNode(str)
+  // parent.appendChild(text)
+  // parent.insertBefore(newNode, beforeNode)
+
+  var divProd = createNewNode("div", "class", "prod");
+  var parent = document.querySelector("main");
+  var beforeNode = document.querySelector(".new-prod");
+  parent.insertBefore(divProd, beforeNode);
+  var parentNew = document.querySelectorAll(".prod")[
+    document.querySelectorAll(".prod").length - 1
+  ];
+
+  createItemNode(parentNew, itemName, itemUnitPrice);
+  createQuantityInput(parentNew);
+  createQuantityNode(parentNew);
+  createDeleteButton(parentNew);
+}
 
 function createNewItem() {
-  var input = document.querySelectorAll(".new-input")
+  var input = document.querySelectorAll(".new-input");
+  createNewItemRow(input[0].value, input[1].value);
+  var buttonDelete = document.querySelectorAll(".btn-delete");
+  buttonDelete.forEach(btn => (btn.onclick = e => deleteItem(e)));
 }
-var buttonCreate = document.getElementById("create-button");
-buttonCreate.onclick = createNewItem;
 
 window.onload = function() {
-  var calculatePriceButton = document.getElementById("calc-prices-button");
-  var createItemButton = document.getElementById("create-button");
-  var deleteButtons = document.getElementsByClassName("btn-delete");
+  var buttonCalc = document.getElementById("calc-prices-button");
+  var buttonCreate = document.getElementById("create-button");
+  var buttonDelete = document.querySelectorAll(".btn-delete");
 
-  calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
-
-  for (var i = 0; i < deleteButtons.length; i++) {
-    deleteButtons[i].onclick = deleteItem;
-  }
+  buttonCalc.onclick = getTotalPrice;
+  buttonCreate.onclick = createNewItem;
+  buttonDelete.forEach(btn => (btn.onclick = e => deleteItem(e)));
 };
