@@ -1,22 +1,5 @@
+
 ![Ironhack Logo](https://i.imgur.com/1QgrNNw.png)
-
-# DOM | The Ironhack Cart
-
-## Learning Goals
-
-After this learning unit, you will be able to:
-
-- Understand what the DOM is
-- Manipulate the DOM to edit elements
-
-
-## Introduction
-
-One of the most common businesses on the Internet today are online shops. Websites like Amazon earn millions of dollars each year by selling all kinds of products. All these websites have something in common: they have a shopping cart.
-
-Let's create the Ironhack Cart, where users will be able to add and remove products in their frontend shopping cart. Additionally, it will calculate the total price of each product based on how many of those the user has added and the total price of the everything in the cart.
-
-In the started code you will find some CSS to start with that includes classes for the different types of buttons. Add the classes to the button tags you write in your HTML and they will be perfectly styled. 😉
 
 ## Requirements
 - Fork this repo
@@ -28,17 +11,6 @@ In the started code you will find some CSS to start with that includes classes f
 - Use at least one `getElementsByTagName`
 - Use at least one `getElementsByClassName`
 
-## Submission
-
-Upon completion, run the following commands
-```
-$ git add .
-$ git commit -m "done"
-$ git push origin master
-```
-Navigate to your repo on GitHub and create a Pull Request -from your master branch to the original repository master branch.
-
-In the Pull request title field, add your name and last names separated by a dash "-".
 
 ## Deliverables
 
