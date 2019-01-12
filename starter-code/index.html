@@ -1,14 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Ironhack cart</title>
+  </head>
+  <body>
+    <main>
+      <h1>Ironhack Merchandising Shop</h1>
+
+      <div class="prod">
+        <span>Prod1</span>
+        <span class="prod-price fixed-width">10.50 &euro;</span>
+        <div class="quantity">
+          <label for="qty1">QTY</label> <input type="0" value="0" id="qty1" />
+        </div>
+        <div class="sub-sum fixed-width">0.00 &euro;</div>
+        <button class="btn btn-delete">Delete</button>
+      </div>
+
+      <div class="prod">
+        <span>Prod2</span>
+        <span class="prod-price fixed-width">10.00 &euro;</span>
+        <div class="quantity">
+          <label for="qty2">QTY</label> <input type="0" value="0" id="qty2" />
+        </div>
+        <div class="sub-sum fixed-width">0.00 &euro;</div>
+        <button class="btn btn-delete">Delete</button>
+      </div>
+
+      <div class="prod">
+        <span>Prod3</span>
+        <span class="prod-price fixed-width">15.60 &euro;</span>
+        <div class="quantity">
+          <label for="qty3">QTY</label> <input type="0" value="0" id="qty3" />
+        </div>
+        <div class="sub-sum fixed-width">0.00 &euro;</div>
+        <button class="btn btn-delete">Delete</button>
+      </div>
+
+      <div class="new-prod">
+        <!-- <div class="new-input">
+          <input type="text" value="" />
+          <input type="text" value="" />
+        </div> -->
+        <input class="new-input" type="text" value="" />
+        <input class="new-input" type="text" value="" />
+        <button id="create-button" class="btn">Create</button>
+      </div>
+
+      <button id="calc-prices-button" class="btn btn-success btn-calc">
+        Calculate Price
+      </button>
+
+      <h2>Total Price: <span>0.00 &euro;</span></h2>
+    </main>
+    <script type="text/javascript" src="./js/index.js"></script>
+  </body>
 </html>
