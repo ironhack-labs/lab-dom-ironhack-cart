@@ -51,7 +51,7 @@ function createItemNode(parent, itemName, itemUnitPrice) {
 function createQuantityInput(parent) {
   var div = createNewNode("div", "class", "quantity");
   var label = createNewNode("label");
-  label.append(document.createTextNode("QTY"));
+  label.append(document.createTextNode("QTY "));
   var input = createNewNode("input", "type", "0", "value", "0");
   parent.appendChild(div);
 
@@ -75,14 +75,6 @@ function createDeleteButton(parent) {
 }
 
 function createNewItemRow(itemName, itemUnitPrice) {
-  // element.setAttribute(name, value)
-  // document.createElement(tagName)
-  // var parent = document.querySelector("main")
-  // parent.appendChild(element)
-  // var text = document.createTextNode(str)
-  // parent.appendChild(text)
-  // parent.insertBefore(newNode, beforeNode)
-
   var divProd = createNewNode("div", "class", "prod");
   var parent = document.querySelector("main");
   var beforeNode = document.querySelector(".new-prod");
