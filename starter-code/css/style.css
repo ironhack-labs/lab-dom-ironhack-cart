@@ -36,6 +36,44 @@ input {
     border-color: #CF000F;
 }
 
-.quantity {
-  margin: 0 5px;
+.flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  align-content: center;
+}
+
+.flex div {
+  width: 100%;
+  padding: 10px;
+}
+
+.new-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-content: center;
+}
+
+.new-item div {
+  width: 100%;
+  padding:10pc;
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center
+}
+
+td  {
+  padding: 10px 5px;
+}
+
+a {
+  text-decoration: none;
 }
