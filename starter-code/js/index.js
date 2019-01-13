@@ -68,43 +68,24 @@ function createNewItem(){
   var container = document.getElementById("container")
   container.appendChild(divProduct);
   divProduct.setAttribute('class', 'products')
-  var divProdName = document.createElement("div")
-  divProduct.appendChild(divProdName)
-  divProdName.setAttribute('class', 'product-name')
-  var spanName = document.createElement("span")
-  divProdName.appendChild(spanName)
+
+  divProduct.innerHTML = '<div class="product-name"> <span></span> </div><div class="cost"> <span></span> </div><div class="div-quantity"> <label  for="quantity" > QTY</label><input class="quantity" type="text" name="quantity" value="0">  </div><div class="total-price-item"> <span> $0.00</span> </div><div> <button class="btn btn-delete">Delete</button> </div>'
+  
+  
+  
+  var productsName = document.getElementsByClassName('product-name')
+  var productName = productsName[productsName.length-1]
+  var spanName = productName.firstElementChild
   spanName.innerHTML = document.getElementById("create-item-input-name").value
-  var divProdCost = document.createElement("div")
-  divProduct.appendChild(divProdCost)
-  divProdCost.setAttribute('class', 'cost')
-  var spanCost = document.createElement("span")
-  divProdCost.appendChild(spanCost)
+ 
+  var productsCost = document.getElementsByClassName('cost')
+  var productCost = productsCost[productsCost.length-1]
+  var spanCost = productCost.firstElementChild
   spanCost.innerHTML = document.getElementById("create-item-input-price").value
-  var divQuantity = document.createElement("div")
-  divQuantity.setAttribute("class", "div-quantity")
-  divProduct.appendChild(divQuantity)
-  var label = document.createElement('label')
-  divQuantity.appendChild(label)
-  label.setAttribute('for', 'quantity')
-  label.innerHTML = "QTY"
-  var input = document.createElement('input')
-  divQuantity.appendChild(input)
-  input.setAttribute('class', 'quantity')
-  input.setAttribute('name', 'quantity')
-  input.setAttribute('type', 'text')
-  input.setAttribute('value', '0')
-  var divTotPriceItem = document.createElement("div")
-  divProduct.appendChild(divTotPriceItem)
-  divTotPriceItem.setAttribute('class', 'total-price-item')
-  var spanPriceTot = document.createElement('span')
-  divTotPriceItem.appendChild(spanPriceTot)
-  spanPriceTot.innerHTML = "$0.00"
-  var divDelete = document.createElement("div")
-  divProduct.appendChild(divDelete)
-  var button = document.createElement("button")
-  divDelete.appendChild(button)
-  button.setAttribute("class", "btn btn-delete")
-  button.innerHTML = "Delete"
+  
+  var buttonsDelete = document.getElementsByClassName('btn-delete')
+  var button = buttonsDelete[buttonsDelete.length-1]
+  
   button.onclick = deleteItem
 
 
@@ -113,6 +94,7 @@ function createNewItem(){
 
 
 
+}
 
 
 
@@ -123,7 +105,6 @@ function createNewItem(){
 
 
 
-}
 
 window.onload = function(){
   var calculatePriceButton = document.getElementById('calc-prices-button');
