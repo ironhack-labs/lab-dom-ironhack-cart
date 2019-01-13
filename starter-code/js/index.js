@@ -1,5 +1,15 @@
-function deleteItem(e){
+// TESTES
 
+let x = document.getElementsByClassName("btn").textContent;
+let price = document.getElementsByClassName("btn")[1].textContent;
+let qty = document.getElementsByClassName("btn")[2].lastChild.textContent;
+
+console.log(x, price, qty);
+
+// EXERCÍCIO
+
+function deleteItem(e){
+  document.getElementsbyClassName(e).textContent = '';
 }
 
 function getPriceByProduct(itemNode){
@@ -7,11 +17,14 @@ function getPriceByProduct(itemNode){
 }
 
 function updatePriceByProduct(productPrice, index){
-
+  
 }
 
 function getTotalPrice() {
-
+  let price = parseFloat(document.getElementsByClassName("btn")[1].textContent);
+  let qty = parseFloat(document.getElementsByClassName("btn")[2].lastChild.textContent);
+  let totalPrice = price * qty;
+  document.getElementsByTagName('span')[2].textContent = totalPrice;
 }
 
 function createQuantityInput(){
