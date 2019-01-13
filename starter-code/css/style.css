@@ -1,10 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #494949;
+}
+
+/* Utility Class*/
+.span-block {
+  display: block
+}
+
+.m-b-25 {
+  margin-bottom: 25px;
+}
+.m-b-70 {
+  margin-bottom: 70px;
+}
+.m-l-10 {
+  margin-left: 10px
+}
+.p-b-25 {
+  padding-bottom: 25px;
+}
+.p-l-15 {
+  padding-left: 15px;
+}
+.center {
+  text-align: center;
+}
+
 input {
-  border: solid 1px black;
+  border: solid 1px rgba(105, 105, 105, 0.6);
+  padding: 5px;
+  border-radius: 5px;
+  width: 250px;
 }
 
 .btn {
   display: inline-block;
-  padding: 6px 12px;
+  padding: 6px 15px;
   margin-bottom: 0;
   font-size: 14px;
   font-weight: 400;
@@ -28,14 +66,73 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
-    border-color: #CF000F;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+
 }
 
 .quantity {
   margin: 0 5px;
 }
+
+
+/* Heading */
+#header {
+  background-color: #00b4fe;
+}
+
+.heading-container {
+  display: flex;
+  justify-content: center;
+}
+
+.header__heading {
+  font-size: 30px;
+  text-align: left;
+  letter-spacing: 2px;
+  color: #fff;  
+}
+
+
+/* Section Input */
+#section-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid rgba(177, 177, 177, 0.3);
+}
+
+#section-input div {
+  margin: 0 50px;
+}
+
+
+/* Section Product */
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.wrapper .product {
+  width: 150px;
+}
+.wrapper .unit-price, .wrapper .total-price {
+  width: 50px;
+}
+
+.input-quantity {
+  width: 100px;
+}
+
