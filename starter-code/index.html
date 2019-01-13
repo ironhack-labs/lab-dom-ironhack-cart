@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Ironhack cart</title>
+    <script type="text/javascript" src="./js/index.js"></script>
+  </head>
+  <body class="parent-column">
+    <header><h1>Ironhack Merchandise<br>Shop</h1></header>
+    <main class="parent-column" id="main"></main>
+    <footer class="parent-column">
+      <div class="parent-row" id="create-field">
+        <input type="text" class="create-input"> 
+        <input type="number" min="1" value="10" class="create-input"/> <span></span> <span></span>
+        <button class="btn" id="create-button">Create</button>
+      </div>
+      <hr>
+      <div class="parent-column">
+        <button class="btn" id="calculate-button">Calculate Prices</button>
+        <span>Total: <span>0</span></span>
+      </div>
+    </footer>
+  </body>
 </html>
