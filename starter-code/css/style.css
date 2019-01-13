@@ -39,3 +39,17 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.txt-center {
+  text-align: center;
+} 
+
+#car {
+  margin-top: 5%;
+}
