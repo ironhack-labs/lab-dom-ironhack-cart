@@ -40,22 +40,65 @@ input {
   margin: 0 5px;
 }
 
-.products{
+ .products{
    display: flex;
-  
+  flex-direction: row;
   justify-content: space-between;
-  flex-flow: row wrap;
+  margin-top: 2%;
+ 
+ 
   
 
-}
-.div-quantity{
-  align-self: center
-}
-/* .product-name{
-  margin-left: 5%;
+ }  
+
+
+ .product-name{
+   width: 20%
+ }
+ .cost{
+   width: 10%
+ }
+
+ .div-quantity{
+   width: 20%
+ }
+
+ .total-price-item{
+   width: 10%
+ }
+
+.create-item{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 2%;
 }
 
-.cost{
-  margin-left: 5%;
-} */
+#new-item-create{
+  align-self: flex-end
+}
+#calc-prices-button{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+}
+#grandTotal{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+}
 
+#create-item-input-price{
+  position: relative;
+  right: 20%;
+}
+
+.calc-price-div{
+  margin-top: 2%
+}
+
+body{
+  padding: 2%;
+}

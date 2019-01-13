@@ -16,6 +16,7 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
+  
   var products = document.getElementsByClassName('products')
   var inputs = document.getElementsByClassName('quantity')
   var grandTotal = 0
@@ -62,6 +63,7 @@ function createNewItemRow(itemName, itemUnitPrice){
         <div> <button class="btn btn-delete">Delete</button> </div>
     </div> */}
 function createNewItem(){
+  
   var divProduct = document.createElement("div")
   var container = document.getElementById("container")
   container.appendChild(divProduct);
@@ -101,8 +103,9 @@ function createNewItem(){
   divProduct.appendChild(divDelete)
   var button = document.createElement("button")
   divDelete.appendChild(button)
-  button.setAttribute("class", "btn btn btn-delete")
+  button.setAttribute("class", "btn btn-delete")
   button.innerHTML = "Delete"
+  button.onclick = deleteItem
 
 
 
