@@ -1,52 +1,35 @@
-function deleteItem(e){
+var button = document.querySelector(".btn-success");
+button.onclick = function() {
+  // var qtyField = document.querySelector(".qty");
+  var containerArray = document.querySelectorAll(".container");
 
-}
-
-function getPriceByProduct(itemNode){
-
-}
-
-function updatePriceByProduct(productPrice, index){
-
-}
-
-function getTotalPrice() {
-
-}
-
-function createQuantityInput(){
-
-}
-
-function createDeleteButton(){
-
-}
-
-function createQuantityNode(){
-
-}
-
-function createItemNode(dataType, itemData){
-
-}
-
-function createNewItemRow(itemName, itemUnitPrice){
-
-}
-
-function createNewItem(){
-
-}
-
-window.onload = function(){
-  var calculatePriceButton = document.getElementById('calc-prices-button');
-  var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');
-
-  calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
-
-  for(var i = 0; i<deleteButtons.length ; i++){
-    deleteButtons[i].onclick = deleteItem;
-  }
+  containerArray.forEach(function(oneContainer) {
+    getPriceByProduct(oneContainer);
+  });
 };
+
+function getPriceByProduct(oneContainer) {
+  console.log(oneContainer);
+  var itemQty = oneContainer.querySelector(".qty");
+  var unitCost = oneContainer.querySelector(".unit-cost");
+  var totalPrice = oneContainer.querySelector(".total-price");
+  totalPrice.innerHTML = "$" + Number(unitCost.innerHTML) * itemQty.value;
+}
+
+function createNewItem() {}
+
+function updatePriceByProduct(productPrice, index) {}
+
+function getTotalPrice() {}
+
+function createQuantityInput() {}
+
+function createDeleteButton() {}
+
+function createQuantityNode() {}
+
+function createItemNode(dataType, itemData) {}
+
+function createNewItemRow(itemName, itemUnitPrice) {}
+
+function createNewItem() {}
