@@ -36,10 +36,24 @@ calculateButton.onclick = function() {
   totalCartNode.innerHTML = "$" + totalCart.toFixed(2);
 };
 
-function updateTotalPrice(productArray) {
-  var products = document.querySelectorAll(".itemNode");
-  p;
-}
+// function updateTotalPrice(productArray) {
+//   var products = document.querySelectorAll(".itemNode");
+//   p;
+// }
+
+var deleteBtnArray = document.querySelectorAll(".btn-delete");
+
+// for each delete button
+deleteBtnArray.forEach(function(oneButton) {
+  // add click functionality to the button
+  oneButton.onclick = function() {
+    console.log("coucou DELETE button");
+    // get the PARENT of the <button> (the <li> tag)
+    var parentProd = oneButton.parentNode.parentNode;
+    // remove the <li> from the DOM
+    parentProd.remove();
+  };
+});
 
 function updatePriceByProduct(productPrice, index) {}
 
