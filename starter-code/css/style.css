@@ -10,6 +10,11 @@
   margin: 10px 0;
 }
 
+#total-cart-div {
+  display: flex;
+  justify-content: center;
+}
+
 input {
   border: solid 1px black;
 }

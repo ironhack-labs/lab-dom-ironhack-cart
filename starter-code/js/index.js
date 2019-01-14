@@ -26,13 +26,20 @@ function getTotalPrice(itemNode) {
 var calculateButton = document.querySelector("#calculate-button");
 calculateButton.onclick = function() {
   var products = document.querySelectorAll(".itemNode");
-  products.forEach(function(oneProduct, index) {
+  var totalCart = 0;
+  var totalCartNode = document.querySelector("#total-cart");
+  products.forEach(function(oneProduct) {
     var totalPrice = oneProduct.querySelector(".total-price");
-    console.log(oneProduct);
-    console.log(getTotalPrice(oneProduct));
-    totalPrice.innerHTML = "$" + getTotalPrice(oneProduct); //.toFixed(2);
+    totalPrice.innerHTML = "$" + getTotalPrice(oneProduct).toFixed(2);
+    totalCart += getTotalPrice(oneProduct);
   });
+  totalCartNode.innerHTML = "$" + totalCart.toFixed(2);
 };
+
+function updateTotalPrice(productArray) {
+  var products = document.querySelectorAll(".itemNode");
+  p;
+}
 
 function updatePriceByProduct(productPrice, index) {}
 
