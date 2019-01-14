@@ -15,40 +15,46 @@
   <body>
     <h1>Ironhack <br />Merchandising Shop</h1>
 
-    <div class="flex">
-      <div class="product"><span>IronBubble-head</span></div>
-      <div>$<span class="price">25.00</span></div>
-      <div>
-        <label
-          >QTY <input type="number" placeholder="0" class="quantity"
-        /></label>
+    <div class="list">
+      <div class="flex">
+        <div class="product"><span>IronBubble-head</span></div>
+        <div>$<span class="price">25.00</span></div>
+        <div>
+          <label
+            >QTY <input type="number" placeholder="0" class="quantity"
+          /></label>
+        </div>
+        <div>$<span class="total">0.00</span></div>
+        <div><button class="btn btn-delete">Delete</button></div>
       </div>
-      <div>$<span class="total">0.00</span></div>
-      <div><button class="btn btn-delete">Delete</button></div>
-    </div>
 
-    <div class="flex">
-      <div class="product"><span>IronShirt</span></div>
-      <div>$<span class="price">15.00</span></div>
-      <div>
-        <label
-          >QTY <input type="number" placeholder="0" class="quantity"
-        /></label>
+      <div class="flex">
+        <div class="product"><span>IronShirt</span></div>
+        <div>$<span class="price">15.00</span></div>
+        <div>
+          <label
+            >QTY <input type="number" placeholder="0" class="quantity"
+          /></label>
+        </div>
+        <div>$<span class="total">0.00</span></div>
+        <div><button class="btn btn-delete">Delete</button></div>
       </div>
-      <div>$<span class="total">0.00</span></div>
-      <div><button class="btn btn-delete">Delete</button></div>
     </div>
 
     <div class="flex">
       <div>
         <input
           type="text"
-          placeholder="Enter a product"
+          placeholder="Enter a product name"
           class="createProduct"
         />
       </div>
       <div>
-        <input type="text" placeholder="Enter a price" class="createPrice" />
+        <input
+          type="text"
+          placeholder="Enter a price $0.00"
+          class="createPrice"
+        />
       </div>
       <div><button class="createBtn">Create</button></div>
     </div>
