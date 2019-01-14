@@ -20,7 +20,7 @@ function getTotalPrice(itemNode) {
   return price * qty;
 }
 
-// Launching calculation on all products when clicking on "Calculate Prices" button
+// Calculates value of Total Cart
 var calculateButton = document.querySelector("#calculate-button");
 calculateButton.onclick = function() {
   var products = document.querySelectorAll(".itemNode");
@@ -107,6 +107,10 @@ createButton.onclick = function() {
   // 6.Insert new line in container
   var container = document.querySelector("#products-container");
   container.appendChild(newItemNode);
+
+  //7.Reset inputs
+  newProductName.value = "";
+  newProductPrice.value = 0;
 };
 
 function updatePriceByProduct(productPrice, index) {}
