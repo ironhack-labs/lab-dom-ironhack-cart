@@ -26,7 +26,7 @@ function getTotalPrice(itemNode) {
 var calculateButton = document.querySelector("#calculate-button");
 calculateButton.onclick = function() {
   var products = document.querySelectorAll(".itemNode");
-  products.forEach(function(oneProduct) {
+  products.forEach(function(oneProduct, index) {
     var totalPrice = oneProduct.querySelector(".total-price");
     console.log(oneProduct);
     console.log(getTotalPrice(oneProduct));
