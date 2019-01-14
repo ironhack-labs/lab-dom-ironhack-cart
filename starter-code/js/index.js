@@ -1,5 +1,3 @@
-function deleteItem(e) {}
-
 // Returns price for a product item
 function getPriceByProduct(itemNode) {
   var priceNode = itemNode.querySelector(".price");
@@ -41,19 +39,77 @@ calculateButton.onclick = function() {
 //   p;
 // }
 
+// Delete a product
 var deleteBtnArray = document.querySelectorAll(".btn-delete");
-
-// for each delete button
 deleteBtnArray.forEach(function(oneButton) {
-  // add click functionality to the button
   oneButton.onclick = function() {
-    console.log("coucou DELETE button");
-    // get the PARENT of the <button> (the <li> tag)
-    var parentProd = oneButton.parentNode.parentNode;
-    // remove the <li> from the DOM
-    parentProd.remove();
+    var productNode = oneButton.parentNode.parentNode;
+    productNode.remove();
   };
 });
+
+// Create a product
+var createButton = document.querySelector(".btn-create");
+
+createButton.onclick = function() {
+  var newProductName = document.querySelector(".name-input");
+  console.log(newProductName);
+  var newProductPrice = document.querySelector(".price-input");
+  console.log(newProductPrice);
+
+  var newItemNode = document.createElement("div");
+  newItemNode.classList.add(".itemNode");
+
+  // 1.Name
+  var newNameNode = document.createElement("div");
+  var newSpan = document.createElement("span");
+  newSpan.innerHTML = newProductName;
+  newNameNode.appendChild(newSpan);
+  newItemNode.appendChild(newNameNode);
+
+  // 2.Price
+  var newPriceNode = document.createElement("div");
+  var newSpan = document.createElement("span");
+  newSpan.classList.add(".price");
+  newSpan.innerHTML = "$" + newProductPrice;
+  newPriceNode.appendChild(newSpan);
+  newItemNode.appendChild(newPriceNode);
+
+  // 3.Quantity
+  var newQuantityNode = document.createElement("div");
+  newQuantityNode.classList.add(".quantity");
+  //..
+  var newLabelNode = document.createElement("label");
+  newLabelNode.innerHTML = "QTY";
+  newQuantityNode.appendChild(newLabelNode);
+  //..
+  var newInputNode = document.createElement("input");
+  newInputNode.classList.add("quantity-input");
+  newInputNode.type = "number";
+  newQuantityNode.appendChild(newInputNode);
+  //..
+  newItemNode.appendChild(newQuantityNode);
+
+  // 4.Total Price
+  var newTotalPriceNode = document.createElement("div");
+  newTotalPriceNode.classList.add(".total-price");
+  var newSpan = document.createElement("span");
+  newSpan.innerHTML = "$0.00";
+  newTotalPriceNode.appendChild(newSpan);
+  newItemNode.appendChild(newTotalPriceNode);
+
+  // 5.Delete
+  var newDeleteButtonNode = document.createElement("div");
+  var newDeleteButton = document.createElement("button");
+  newDeleteButton.classList.add(".btn-delete");
+  newDeleteButton.innerHTML = "Delete";
+  newDeleteButtonNode.appendChild(newDeleteButton);
+  newItemNode.appendChild(newDeleteButtonNode);
+
+  // 6.Insert new line in container
+  var container = document.querySelector("#products-container");
+  container.appendChild(newItemNode);
+};
 
 function updatePriceByProduct(productPrice, index) {}
 
