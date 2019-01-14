@@ -45,3 +45,8 @@ input {
   justify-content: space-around;
   padding-top: 3%;
 }
+
+.flexish {
+  display: flex;
+  padding-top: 3%;
+}
