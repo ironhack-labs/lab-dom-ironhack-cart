@@ -1,6 +1,13 @@
+#products-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .itemNode {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  margin: 10px 0;
 }
 
 input {

@@ -15,21 +15,38 @@
   <body>
     <header><h1>Ironhack Merchandising Shop</h1></header>
 
-    <div id="product#1" class="itemNode">
-      <div><span>Product 1</span></div>
-      <div id="price#1"><span class="price">$25.00</span></div>
-      <div class="quantity">
-        <label for="input-1">QTY</label>
-        <input id="input-1" class="quantity-input" type="number" />
+    <div id="products-container">
+      <!-- Product #1 -->
+      <div id="product#1" class="itemNode">
+        <div><span>Product 1</span></div>
+        <div id="price#1"><span class="price">$25.00</span></div>
+        <div class="quantity">
+          <label for="input-1">QTY</label>
+          <input id="input-1" class="quantity-input" type="number" />
+        </div>
+        <div class="total-price"><span>$0.00</span></div>
+        <div><button class="btn-delete">Delete</button></div>
       </div>
-      <div class="total-price"><span>$0.00</span></div>
-      <div><button class="btn-delete">Delete</button></div>
+
+      <!-- Product #2 -->
+      <div id="product#2" class="itemNode">
+        <div><span>Product 2</span></div>
+        <div id="price#2"><span class="price">$10.00</span></div>
+        <div class="quantity">
+          <label for="input-2">QTY</label>
+          <input id="input-2" class="quantity-input" type="number" />
+        </div>
+        <div class="total-price"><span>$0.00</span></div>
+        <div><button class="btn-delete">Delete</button></div>
+      </div>
     </div>
 
+    <!-- Calculate Prices button -->
     <div id="calculate-div">
       <button id="calculate-button" class="btn-success">Calculate price</button>
     </div>
 
+    <!-- JS file -->
     <script type="text/javascript" src="./js/index.js"></script>
   </body>
 </html>
