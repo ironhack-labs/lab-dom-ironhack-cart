@@ -10,5 +10,81 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <header>
+    <h1>Ironhack Merchandising Shop</h1>
+  </header>
+
+  <div class="product">
+    <div class="product-component">
+      <span>IronBobblehead</span>
+    </div>
+
+    <div class="product-component">
+      <span>$</span><span class="unitPrice">25.00</span>
+    </div>
+
+    <div class="product-component">
+      <label>QTY</label>
+      <input type="number">
+    </div>
+
+    <div class="product-component">
+      <span>$</span><span class="productPrice">0.00</span>
+    </div>
+
+    <div class="product-component">
+      <button class="btn btn-delete">Delete</button>
+    </div>
+
+  </div>
+
+  <div class="product">
+      <div class="product-component">
+        <span>IronShirt</span>
+      </div>
+  
+      <div class="product-component">
+        <span>$</span><span class="unitPrice">15.00</span>
+      </div>
+  
+      <div class="product-component">
+        <label>QTY</label>
+        <input type="number">
+      </div>
+  
+      <div class="product-component">
+        <span>$</span><span class="productPrice">0.00</span>
+      </div>
+  
+      <div class="product-component">
+        <button class="btn btn-delete">Delete</button>
+      </div>
+  
+    </div>
+
+  <div id="creatorRow">
+    <div class="product-component">
+      <input type="text" placeholder="Product name" id="createName">
+    </div>
+    
+    <div class="product-component">
+        <input type="number" placeholder="0.00" id="createPrice">
+    </div>
+
+    <div class="product-component"></div>
+    <div class="product-component"></div>
+    
+    <div class="product-component">
+      <button class="btn" id="new-item-create">Create</button>
+    </div>
+  </div>
+  
+    <div class="calculate-button">
+    <button class="btn btn-success" onclick="calculatePrice()">Calculate Prices</button>
+  </div>
+
+  <div>
+    <h2>Total Price: <span>$</span><span id="totalPrice">0.00</span></h2>
+  </div>
 </body>
 </html>

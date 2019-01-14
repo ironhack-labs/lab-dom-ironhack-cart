@@ -1,3 +1,9 @@
+*
+{
+  margin: 0;
+  padding: 0;
+}
+
 input {
   border: solid 1px black;
 }
@@ -30,6 +36,11 @@ input {
     border-color: #4cae4c;
 }
 
+.calculate-button{
+    text-align: center;
+    margin: 2% 0;
+}
+
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
@@ -38,4 +49,14 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+h1, h2{
+  text-align: center;
+}
+
+.product-component{
+  display: inline-block;
+  width: 19%;
+  margin-bottom: 1%
 }
