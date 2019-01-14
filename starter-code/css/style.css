@@ -30,6 +30,12 @@ input {
     border-color: #4cae4c;
 }
 
+.btn-add {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
