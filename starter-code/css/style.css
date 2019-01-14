@@ -1,7 +1,26 @@
+.main-title {
+  text-align: center;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 50px auto 0 auto;
+  width: 80%;
+}
+.item-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+  text-align: left;
+}
+.add-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 40px auto 0 auto;;
+}
 input {
   border: solid 1px black;
 }
-
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -38,4 +57,14 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+h2 {
+  margin-bottom: 0;
+  text-align: center;
+}
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+  width: 100%;
 }
