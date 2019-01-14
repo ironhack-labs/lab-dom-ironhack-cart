@@ -39,3 +39,31 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+h1{
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 10px
+}
+
+.footer-btn{
+  display: flex;
+  justify-content: center;
+}
+
+.total-price{
+  display: flex;
+  justify-content: center;
+}
+
+.form-container{
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}

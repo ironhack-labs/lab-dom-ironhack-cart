@@ -1,14 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    /> -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="text/javascript" src="./js/index.js"></script>
+    <title>Ironhack cart</title>
+  </head>
+  <body>
+    <h1>Ironhack marchandizing shop</h1>
+    <!-- EXAMPLE ROWS -->
+    <div class="global-container">
+      <div class="container">
+        <div class="product-name"><span>Product Name</span></div>
+        <div class="product-price">
+          $<span class="product-price-span">25</span>
+        </div>
+        <div class="quantity">
+          quantity
+          <input
+            type="text"
+            class="quantity-input"
+            placeholder="enter your quantity"
+          />
+        </div>
+        <div class="product-total-price"></div>
+        <div><button class="btn btn-delete">DELETE</button></div>
+      </div>
+      <div class="container">
+        <div class="product-name"><span>Product Name</span></div>
+        <div class="product-price">
+          $<span class="product-price-span">15</span>
+        </div>
+        <div class="quantity">
+          quantity
+          <input
+            type="text"
+            class="quantity-input"
+            placeholder="enter your quantity"
+          />
+        </div>
+        <div class="product-total-price"></div>
+        <div><button class="btn btn-delete">DELETE</button></div>
+      </div>
+    </div>
+    <!-- INPUT FORM -->
+    <hr />
+    <div class="form-container">
+      <div class="product-form">
+        Product Name <input type="text" class="input-product-name" /> Price
+        <input type="text" class="input-product-price" />
+      </div>
+      <div class="form-btn">
+        <button class="btn-success add-product" id="new-item-create">
+          Add Product
+        </button>
+      </div>
+    </div>
+    <hr />
+    <!-- FOOTER BUTTONS -->
+    <div class="footer-btn">
+      <button class="btn btn-success" id="calc-prices-button">
+        Calculate Price
+      </button>
+    </div>
+    <div class="total-price">
+      <h2>Total Price : $<span class="total-price-span"></span></h2>
+    </div>
+  </body>
 </html>
