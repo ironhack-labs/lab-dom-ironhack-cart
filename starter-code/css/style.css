@@ -37,8 +37,9 @@ input {
   -ms-user-select: none;
   user-select: none;
   background-image: none;
-  border: 1px solid transparent;
+  border: 1px solid grey;
   border-radius: 4px;
+  background-color: rgba(200, 200, 200, 0.3);
 }
 
 .btn-success {
@@ -61,4 +62,18 @@ input {
   display: flex;
   justify-content: center;
   margin: 20px auto;
+}
+
+#new-product {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 6%;
+}
+
+#new-product-inputs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-basis: 35%;
 }

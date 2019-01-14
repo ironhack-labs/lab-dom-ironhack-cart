@@ -45,10 +45,33 @@
     <div id="calculate-div">
       <button id="calculate-button" class="btn-success">Calculate price</button>
     </div>
-    <!-- where the total price is displayed -->
+
+    <!-- Where the total price is displayed -->
     <div id="total-cart-div">
       <h2>Total Price: <span id="total-cart">$0.00</span></h2>
     </div>
+
+    <!-- Create a new product -->
+    <div id="new-product">
+      <div id="new-product-inputs">
+        <div>
+          <input
+            type="text"
+            class="name-input"
+            placeholder="New product name..."
+          />
+        </div>
+        <div>
+          <input
+            type="number"
+            class="price-input"
+            placeholder="New product price..."
+          />
+        </div>
+      </div>
+      <div><button class="btn">Create</button></div>
+    </div>
+
     <!-- JS file -->
     <script type="text/javascript" src="./js/index.js"></script>
   </body>
