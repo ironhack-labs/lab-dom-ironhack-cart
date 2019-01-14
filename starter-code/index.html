@@ -1,14 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <title>Ironhack cart</title>
+  </head>
+  <body>
+    <h1>IRONHACK MERCHANDISING SHOP</h1>
+    <div class="btn">
+      <div class="btn"><span>Iron Soap</span></div>
+      <div class="btn">$<span class="price">25.00</span></div>
+      <div class="btn">
+        <label
+          >QTY <input class="quantity" type="number" placeholder="0" value="" />
+        </label>
+      </div>
+      <div class="btn">TOTAL : $ <span class="updatedPrice">0</span></div>
+      <div class="btn"><button class="btn-delete">Delete</button></div>
+    </div>
+    <br />
+
+    <div class="btn">
+      <div class="btn"><span>Iron Hat</span></div>
+      <div class="btn">$<span class="price2">15.00</span></div>
+      <div class="btn">
+        <label
+          >QTY
+          <input class="quantity2" type="number" placeholder="0" value="" />
+        </label>
+      </div>
+      <div class="btn">TOTAL : $ <span class="updatedPrice2">0</span></div>
+      <div class="btn"><button class="btn-delete">Delete</button></div>
+    </div>
+
+    <div>
+      <div><button class="btn-success">Calculate Prices</button></div>
+    </div>
+
+    <div>
+      <h2>Total Price: $ <span class="finalTotalPrice">0</span></h2>
+    </div>
+
+    <script type="text/javascript" src="./js/index.js"></script>
+  </body>
 </html>
