@@ -1,14 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+  <header class="flex">
+    <h1>IronHack Merchandising Shop</h1>
+  </header>
+
+  <article class="checkout">
+
+    <section class="flex">
+      <div><span>IronbBubble-head</span></div>
+      <div>$ <span class="unit-price">25.00</span></div>
+      <div><label>QTY : </label> <input class="quantity" type="number" placeholder="0" /></div>
+      <div>$ <span class="total">0.00</span></div>
+      <div><button class="btn btn-delete">Delete</button></div>
+    </section>
+
+    <section class="flex">
+      <div><span>IronbSirt</span></div>
+      <div>$ <span class="unit-price">15.00</span></div>
+      <div><label>QTY : </label> <input class="quantity" type="number" placeholder="0" /></div>
+      <div>$ <span class="total">0.00</span></div>
+      <div><button class="btn btn-delete">Delete</button></div>
+    </section>
+
+  </article>
+
+  <section class="flex">
+    <div><button class="btn btn-success">Calculate Price</button></div>
+  </section>
+
+  <section class="flex">
+    <h2>Total Price : $ <span class="checkout-price">0</span></h2>
+  </section>
+
+
+  <script type="text/javascript" src="./js/index.js"></script>
 </body>
+
 </html>
