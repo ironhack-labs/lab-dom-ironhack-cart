@@ -34,8 +34,53 @@ input {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    margin-right: 20px;
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.All-product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.checkout {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 100px;
+  padding-top: 25px;
+}
+
+
+.product{
+ margin-left: 20px;
+ width: 200px;
+}
+.btn-success {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+margin-top: 20px;
+}
+
+.create-btn  {
+  display: flex;
+  background-color: #CF000F;
+  justify-content: flex-end;
+
+}
+
+div  {
+   display: flex;
 }
