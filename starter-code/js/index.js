@@ -1,4 +1,5 @@
 function deleteItem(e){
+  
 
 }
 
@@ -10,13 +11,23 @@ function updatePriceByProduct(productPrice, index){
 
 }
 
-function getTotalPrice(qtyArticulos,priceUnit) {
- var qty=document.querySelector("#qty").value
- var x=document.querySelector("#precioUni").innerHTML
- var valor=x.split("$")[1]
- //console.log(qty+ "----->"+valor+"------->"+valor*qty)
- document.querySelector("#final").innerHTML = valor*qty
+function getTotalPrice() {
+  var products = document.querySelectorAll(".flex-container")
+  var pricefinal = 0
 
+  for(var i = 0; i < products.length; i++){
+    qty = products[i].querySelector(".qty").value
+
+    unid = products[i].querySelector(".precioUni").innerHTML
+   
+    valor = unid.split("$")
+   
+    products[i].querySelector(".final").innerHTML = valor[1] * qty + " $"
+   
+    pricefinal += valor[1] * qty
+
+  }
+  document.querySelector("#totalPrice").innerHTML = pricefinal + " $"
 }
 
 function createQuantityInput(){
@@ -37,6 +48,7 @@ function createItemNode(dataType, itemData){
 
 function createNewItemRow(itemName, itemUnitPrice){
 
+  
 }
 
 function createNewItem(){
@@ -55,3 +67,8 @@ window.onload = function(){
     deleteButtons[i].onclick = deleteItem;
   }
 };
+
+
+
+Contraer 
+Entrada de mensaje
