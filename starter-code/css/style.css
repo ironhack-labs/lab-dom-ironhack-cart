@@ -39,3 +39,43 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.wrapper {
+  display : flex;
+  justify-content: space-around;
+  margin: 15px 0;
+
+}
+
+h1 {
+  text-align: center;
+}
+
+.bottom {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+h2 { 
+  text-align: center;
+  margin-top: 40px;
+}
+
+.create {
+  text-align: center;
+}
+
+.create>button {
+  color: #f4f4f4;
+  background-color: blue;
+  
+}
+
+.create>input {
+  margin: 0 40px;
+}
+
+.product-name {
+  width: 20%;
+}
