@@ -1,14 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <title>Ironhack cart</title>
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="product-name"><span>IronBubble-Head</span></div>
+        <div>$<span class="unit-cost">25</span></div>
+        <div class="input">
+          <label for="qty">QTY</label> <input class="qty" type="number" />
+        </div>
+        <div class="total-price"></div>
+        <div class="btn btn-delete"><p>Delete</p></div>
+      </div>
+      <div class="container">
+        <div class="product-name"><span>IronShirt</span></div>
+        <div>$<span class="unit-cost">15</span></div>
+        <div class="input">
+          <label for="qty">QTY</label> <input class="qty" type="number" />
+        </div>
+        <div class="total-price"></div>
+        <div class="btn btn-delete"><p>Delete</p></div>
+      </div>
+
+      <div class="btn btn-success">Calculate Prices</div>
+    </section>
+    <script type="text/javascript" src="./js/index.js"></script>
+  </body>
 </html>
