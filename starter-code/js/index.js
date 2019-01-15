@@ -57,8 +57,6 @@ function deleteButton() {
   });
 }
 
-deleteButton();
-
 //--------------------------------------------
 //--------------------------------------------
 
@@ -100,6 +98,8 @@ function createNewProduct() {
     // Add the new product
     var list = document.querySelector(".list");
     list.appendChild(newProduct);
+
+    deleteButton();
 
     // Reset the input when a new product is added
     productInfo.value = "";
