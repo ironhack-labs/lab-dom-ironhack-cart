@@ -10,5 +10,18 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <header><h1>IronHack Merchandising Shop</h1></header>
+  <section class="product">
+    <div><span>Product Name</span></div>
+    <div><span class="price">$25.00</span></div>
+    <div>
+      <label for="quantity">QTY</label>
+    <input type="number" name="quantity" class="quantity" onchange="updatePriceByProduct()">
+    </div>    
+    <div><span class="total">$0.00</span></div>
+    <div><button class="btn-delete">DELETE</button></div>
+  </section>
+  <button id="btn-success">Calculate Prices</button>
+  <header><h2 id="total-price">Total Price: $0.00</h2></header>
 </body>
 </html>
