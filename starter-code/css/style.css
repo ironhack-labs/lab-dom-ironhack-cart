@@ -3,7 +3,8 @@ input {
 }
 
 .btn {
-  display: inline-block;
+  display: flex;
+  justify-content: space-between;
   padding: 6px 12px;
   margin-bottom: 0;
   font-size: 14px;
@@ -28,6 +29,9 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    position: absolute;
+    display: flex;
+    align-items: center;
 }
 
 .btn-delete {

@@ -12,8 +12,18 @@ function updatePriceByProduct(productPrice, index){
 
 function getTotalPrice() {
 
-}
+let quantityItems = document.getElementById('quantity');
+let priceItem = document.getElementsByClassName('priceOfItem');
 
+let getPrice = priceItem[0].innerHTML * quantityItems[0].value;
+
+return getPrice
+}
+thePrice.value = "getPrice"
+// $('#thePrice').on('DOMSubtreeModified',function(e){
+//   if($(this).text() == quantity
+//     alert(getPrice);
+// });
 function createQuantityInput(){
 
 }
