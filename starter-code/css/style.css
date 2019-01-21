@@ -1,5 +1,29 @@
+html {
+  font-family: Avenir;
+  font-weight: 500;
+}
+
+.product {
+  display: flex;
+  flex-direction: row;
+  align-content: space-around;
+  width: 100vw;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+h1 {
+  margin: 10% 40% 1% 40%;
+}
+
 input {
-  border: solid 1px black;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  font-family: Avenir;
+}
+
+br {
+  margin: 10px;
 }
 
 .btn {
@@ -24,18 +48,36 @@ input {
   border-radius: 4px;
 }
 
-.btn-success {
+#footer {
+  display: flex;
+  align-content: center;
+  align-items: flex-end;
+}
+
+.btn-calculate {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    font-family: Avenir;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 10px;
+    letter-spacing: 1px;
+    font-size: 0.7em;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    font-family: Avenir;
+    font-weight: 500;
+    padding: 10px;
+    border-radius: 10px;
+    letter-spacing: 1px;
+    font-size: 0.7em;
 }
 
 .quantity {
-  margin: 0 5px;
+  padding: 5px;
 }

@@ -1,16 +1,30 @@
-function deleteItem(e){
+// Trying to calculate the total price of all the stuff I'm buying
 
-}
-
-function getPriceByProduct(itemNode){
-
-}
-
-function updatePriceByProduct(productPrice, index){
-
-}
+let btnCalculate = document.getElementsByClassName("btn-calculate")
 
 function getTotalPrice() {
+
+}
+
+let shoppingList = document.getElementsByClassName("shopping-list")
+
+function deleteItem(element){
+  shoppingList.addEventListener("click", element => shoppingList.removeChild(element.target))
+}
+
+
+function getPriceByProduct(productPrice, productQuantity){
+  let productPrice = document.getElementsByClassName("price")
+  let productQuantity = document.getElementsByClassName("quantity")
+  let productSubtotal = document.getElementById("subtotal")
+
+  productSubtotal = productPrice * productQuantity
+  return productSubtotal
+}
+
+btnCalculate.onclick = getPriceByProduct
+
+function updatePriceByProduct(productPrice, index){
 
 }
 
@@ -39,14 +53,14 @@ function createNewItem(){
 }
 
 window.onload = function(){
-  var calculatePriceButton = document.getElementById('calc-prices-button');
-  var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');
+  let calculatePriceButton = document.getElementById('calc-prices-button');
+  let createItemButton = document.getElementById('new-item-create');
+  let deleteButtons = document.getElementsByClassName('btn-delete');
 
   calculatePriceButton.onclick = getTotalPrice;
   createItemButton.onclick = createNewItem;
 
-  for(var i = 0; i<deleteButtons.length ; i++){
+  for(let i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
   }
 };
