@@ -2,6 +2,25 @@ input {
   border: solid 1px black;
 }
 
+
+section{
+  display:flex;
+  justify-content:space-around;
+  flex-direction: row;
+  width: 100vw;
+  margin: 5vw 0;
+}
+
+.product-name{
+  display:flex;
+  width:20%;
+}
+
+h1{
+  color:red;
+}
+
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
