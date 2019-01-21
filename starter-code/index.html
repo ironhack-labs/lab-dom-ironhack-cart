@@ -8,7 +8,74 @@
   <link rel="stylesheet" href="./css/style.css">
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
+
 </head>
+
+
+
 <body>
+  
+  <header id="header">
+    <div class="headingH">
+      <h1 class="headerH"><span class="span-block">Iron</span><span>Shop</span></h1>
+    </div>
+  </header>
+
+
+
+  
+  <div id="section-input" >
+    <div>
+      <label for="input-product">Nombre:</label>
+      <input id="input-product" type="text" onfocus="this.value=''">
+    </div>
+    <div>
+      <label for="input-price">Precio:</label>
+      <input id="input-price" type="text" onfocus="this.value=''">
+    </div>
+    <div><button id="new-item-create" type="button" class="btn">Crear</button></div>
+  </div>
+
+
+
+
+  
+  <div id="section-product" ></div>  
+    <div class="wrapper">
+      <div class="product"><span>Playera de Mono</span></div>
+      <div class="unit-price"><span>$250.00</span></div>
+      <div>
+        <label for="quantity">PZA.</label>
+        <input type="text" value="0" class="input-quantity">
+      </div>
+      <div class="total-price"><span>$0.00</span></div>
+      <div><button type="button" class="btn-delete">Borrar</button></div>
+    </div>
+    <div class="wrapper">
+      <div class="product"><span>Jeans IR</span></div>
+      <div class="unit-price"><span>$500.00</span></div>
+      <div>
+        <label for="quantity" >PZA.</label>
+        <input type="text" value="0" class="input-quantity">
+      </div>
+      <div class="total-price"><span>$0.00</span></div>
+      <div><button type="button" class="btn-delete">Borrar</button></div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <div id="calc-prices-container" class="center">
+    <button id="calc-prices-button" class="btn btn-success">Calcular precios</button>
+  </div>
+
+  <div id="show-price-container" class="center">
+    <h2 class="total-price-all">Precio Total: <span>$0</span></h2>
+  </div>
+
+<script src="js/index.js"></script>
 </body>
 </html>

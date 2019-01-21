@@ -1,6 +1,28 @@
-input {
-  border: solid 1px black;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
+body {
+  font-family: Arial,
+}
+
+
+.center {
+  text-align: center;
+}
+
+
+
+input {
+  border: solid 1px rgb(48, 41, 41);
+  padding: 5px;
+  border-radius: 5px;
+  width: 250px;
+
+}
+
 
 .btn {
   display: inline-block;
@@ -39,3 +61,56 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+
+
+#header {
+  background-color: peru
+}
+
+
+.headingH {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.headerH {
+  font-size: 30px;
+  text-align: left;
+  letter-spacing: 2px;
+  color:black;  
+}
+
+
+
+#section-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: solid rgb(192, 145, 145)
+}
+
+
+
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.wrapper .product {
+  width: 100px;
+}
+.wrapper .unit-price, .wrapper .total-price {
+  width: 100px;
+}
+
+.input-quantity {
+  width: 100px;
+}
+
+
+
