@@ -1,6 +1,9 @@
 input {
   border: solid 1px black;
 }
+input[type="button"] {
+  border-radius: 10px;
+}
 
 .btn {
   display: inline-block;
@@ -30,6 +33,12 @@ input {
     border-color: #4cae4c;
 }
 
+.btn-new {
+  color: #fff;
+  background-color: burlywood;
+  border-color:burlywood;
+}
+
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
@@ -38,4 +47,29 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+section {
+width: 80%;
+margin: 0 auto;
+}
+.product,.product-title {
+  display: flex;
+  width: 90%;
+  height: 4 0px;
+  align-content: space-between;
+  align-items: center;
+  padding: 5px 0;
+}
+.product > *, .product-title > * {
+  width: 20%;
+  padding: 0 20px;
+}
+.product-title {
+  background-color: #cccccc;
+  font-weight: 600;
+}
+
+.addproduct {
+  padding: 20px 0;
 }

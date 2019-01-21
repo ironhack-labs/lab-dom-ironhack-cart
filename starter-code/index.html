@@ -10,5 +10,29 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <section>
+  <h2>Ironhack shop</h2>
+  <article id="product-list">
+  <div class="product-title">
+      <span>Product name</span>
+      <span>Unit price</span>
+      <span>Units</span>
+      <span>Total price</span>
+      <span>Delete product</span>
+    </div>
+</article>
+  <div class="addproduct">
+    <input type="text" name="newproduct" id="newproduct" placeholder="Product name" value="Product name test">
+    <input type="number" name="newproductprice" id="newproductprice" placeholder="$10" value="10">
+    <input type="button" value="Add product" class="btn-new" id="new-item-create">
+  </div>
+  <div>
+    <input type="button" id="calc-prices-button" value="Calculate prices">
+  </div>
+  <div id="totalprice">
+      <h2>Total Price: $<span>0</span></h2>
+  </div>
+</section>
+
 </body>
 </html>
