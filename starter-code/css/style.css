@@ -1,6 +1,50 @@
+.quantity {
+  margin: 0 5px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin: 15px 0;
+}
+
+h1 {
+  text-align: center;
+}
+
+.bottom {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.create {
+  text-align: center;
+}
+
+.create button {
+  color: black;
+  border: solid 1px black;
+}
+
+.create input {
+  margin: 0 40px;
+}
+
+.product-name {
+  width: 20%;
+
+}
+
 input {
   border: solid 1px black;
 }
+
 
 .btn {
   display: inline-block;
@@ -25,9 +69,12 @@ input {
 }
 
 .btn-success {
+    margin: 10px 50px 50px 20px;
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    align-content: center;
+    position: relative;
 }
 
 .btn-delete {
@@ -36,6 +83,14 @@ input {
     border-color: #CF000F;
 }
 
-.quantity {
-  margin: 0 5px;
+
+
+.container div {
+  padding: 10px;
+  margin-right: 80px;
+  display: inline-block;
+  text-align: left;
 }
+
+
+
