@@ -1,6 +1,19 @@
 input {
   border: solid 1px black;
 }
+.product-name {
+  width: 15%;
+} 
+
+.price {
+  width: 20%;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
 .btn {
   display: inline-block;
@@ -28,12 +41,18 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    /* width: 140px;
+    height: 30px;
+    margin-left: 300px;
+    margin-top: 20px; */
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    /* width: 70px;
+    height: 30px; */
 }
 
 .quantity {
