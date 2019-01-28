@@ -14,25 +14,26 @@
 <body>
   <div class="wrapper">
     <div class="product-name" id="product-bubble-gum" data-price="14.99">Bubble Gum<span> 14.99</span>
-      <button type="button" id="remove-btn" name="button">Remove</button>
-      <input type="number"  id="quantity-input" name="" value="1">
-      <label for="quantity-btn">Quantity!</label>
+      <div class="remove-item">
+        <button class="btn btn-delete"type="button"id="remove-btn" name="Delete Item">Remove Item</button>
+      </div>
+      <input type="number"  id="bubble-quantity-input" name="" value="1">
+      <label for="quantity-btn"></label>
      </div>
     <div class="product-name" id="product-double-gum" data-price="17.99">Double Bubble Gum<span> 17.99</span>
-    <button type="button" id="remove-btn" name="button">Remove</button>
-    <input type="number"  id="quantity-input" name="" value="1">
+      <div class="remove-item">
+        <button class="btn btn-delete"type="button"id="remove-btn" name="Delete Item">Remove Item</button>
+      </div>
+    <input type="number"  id="dub-bubble-quantity-input" name="" value="1">
     <label for="quantity-btn">Quantity!</label>
     </div>
     <div class="price-info" id="price-info">
-      <button type="button" id='calc-prices-button' name="button">Calculate Price</button>
+      <button class="btn " type="button" id='calc-prices-button' name="button">Calculate Price</button>
     </div>
     <div class="purchase-information">
       <h3>
-              <span id="purchase-details">0.00</span>
+        <span id="purchase-details">0.00</span>
       </h3>
-    </div>
-    <div class="remove-item">
-      <button type="button"id="remove-btn" name="Delete Item">Remove Item</button>
     </div>
   </div>
 </body>
