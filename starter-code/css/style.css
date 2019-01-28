@@ -2,6 +2,18 @@ input {
   border: solid 1px black;
 }
 
+h1 {
+  text-align: center;
+}
+
+.product {
+  display: inline-flex;
+  /*justify-content: space-between;*/
+  margin: 20px 0;
+  padding: 0 15%;
+  width: 70%;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -38,4 +50,22 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+#calculate {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.qty-div {
+  width: 40%;
+}
+
+.title, .price-div {
+  width: 20%;
+}
+
+.tprice-div, .delete-div {
+  width: 10%;
 }
