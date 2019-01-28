@@ -19,8 +19,8 @@ function getTotalPrice() {
   grandTotal = 0;
 }
 
-function deleteItem(e){
-
+function deleteItem(){
+  return this.parentNode.parentNode.remove();
 }
 
 function getPriceByProduct(itemNode){
