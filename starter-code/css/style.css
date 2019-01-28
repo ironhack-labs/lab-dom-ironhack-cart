@@ -8,7 +8,6 @@ h1 {
 
 .product {
   display: inline-flex;
-  /*justify-content: space-between;*/
   margin: 20px 0;
   padding: 0 15%;
   width: 70%;
@@ -68,4 +67,25 @@ h1 {
 
 .tprice-div, .delete-div {
   width: 10%;
+}
+
+.newProduct {
+  display: inline-flex;
+  padding: 0 15%;
+  width: 70%;
+}
+
+.npInputs {
+  width: 90%;
+}
+
+.npInputs input {
+  margin-right: 25px;
+}
+
+.createProduct {
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
 }
