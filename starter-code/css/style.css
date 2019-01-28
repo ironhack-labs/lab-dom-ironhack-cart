@@ -1,3 +1,8 @@
+.product-name{
+  background: lightblue;
+  margin: 10px 0;
+}
+////////
 input {
   border: solid 1px black;
 }
