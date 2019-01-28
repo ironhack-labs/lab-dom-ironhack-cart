@@ -16,14 +16,14 @@
       <span>IronBubble-head</span>
     </div>
     <div class="price-div">
-      <span id="price">25</span>
+      <span class="price">25</span>
     </div>
     <div class="qty-div">
       <label>QTY</label>
-      <input type="text" id="qty" placeholder="0">
+      <input type="text" class="qty" placeholder="0">
     </div>
     <div class="tprice-div">
-      <span id="totalPrice">0</span>
+      <span class="totalPrice">0</span>
     </div>
     <div class="delete-div">
       <button class="btn btn-delete">Delete</button>
@@ -34,21 +34,24 @@
         <span>IronShirt</span>
       </div>
       <div class="price-div">
-        <span id="price">15</span>
+        <span class="price">15</span>
       </div>
       <div class="qty-div">
         <label>QTY</label>
-        <input type="text" id="qty" placeholder="0">
+        <input type="text" class="qty" placeholder="0">
       </div>
       <div class="tprice-div">
-        <span id="totalPrice">0</span>
+        <span class="totalPrice">0</span>
       </div>
       <div class="delete-div">
         <button class="btn btn-delete">Delete</button>
       </div>
-    </div>
+  </div>
   <div id="calculate">
     <button class="btn btn-success" onclick="getTotalPrice()">Calculate Prices</button>
+  </div>
+  <div>
+    <h1 id="grandTotal">Total Price: $0</h1>
   </div>
   
 </body>
