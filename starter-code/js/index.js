@@ -13,7 +13,11 @@ function updatePriceByProduct(productPrice, index){
 function getTotalPrice() {
 var quantity = document.getElementById('quantity-input').value
 var gumPrice = document.querySelector('#product-bubble-gum').getAttribute('data-price')
-console.log( quantity * parseFloat(gumPrice));
+var price = ( quantity * parseFloat(gumPrice));
+
+var priceDiv = document.getElementById('purchase-details')
+priceDiv.innerHTML = price
+
 }
 
 function createQuantityInput(){
