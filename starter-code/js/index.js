@@ -34,16 +34,23 @@ function createQuantityNode(){
 
 }
 
-function createItemNode(dataType, itemData){
-  // unit-price
+function createItemNode(item, price){
+  // var itemDiv = document.createElement('div');
+  // var itemDiv.setAttribute('class', 'product-name')
+  // var itemDiv.setAttribute('id', newClassName)
+  // item.innerHTML = 'sad'
 
 }
 
 function createNewItemRow(itemName, itemUnitPrice){
 
+
 }
 
 function createNewItem(){
+  var newItemName = document.getElementById('new-item-name').value;
+  var newItemPrice = document.getElementById('new-item-price').value
+  createNewItemRow(newItemName, newItemPrice)
 
 }
 
@@ -54,10 +61,11 @@ window.onload = function(){
 
 
   calculatePriceButton.onclick = getTotalPrice;
-  // createItemButton.onclick = createNewItem;
+  createItemButton.onclick = createNewItem;
 
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
   }
+
 
 };
