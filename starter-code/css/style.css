@@ -1,5 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+#cart {
+  max-width: 64rem;
+  margin-left: auto;
+  margin-right: auto;       
+}
+
+.item {
+  padding-bottom: 1rem;
+  width: 100%;
+}
+
+.item > * {
+  margin-right: 2rem;
+}
+
+.item > *:last-child {
+  margin-right: 0;
+}
+
+.money:before { 
+  content: '$';
+  padding-right: .2rem;
+}
+
 input {
+  padding: .3rem;
+  margin-left: .2rem;
   border: solid 1px black;
+  border-radius: 4px;
 }
 
 .btn {
@@ -28,6 +67,9 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    padding: 1rem 2rem;
+    margin: 1rem;
+    border-radius: 4px;
 }
 
 .btn-delete {
@@ -38,4 +80,8 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.new-item {
+  margin-top: 3rem;
 }
