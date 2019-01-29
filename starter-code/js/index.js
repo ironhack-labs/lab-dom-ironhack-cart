@@ -7,21 +7,22 @@ function getPriceByProduct(itemNode){
 }
 
 function updatePriceByProduct(productPrice, index){
-
-
-}
-
-function getTotalPrice() {
   let productWrapper = document.getElementsByClassName('wrapper')[0];
 
 
   for(var i =0; i<2; i++){
-      let items = productWrapper.getElementsByClassName('item-wrapper')[i];
+    let items = productWrapper.getElementsByClassName('item-wrapper')[i];
     let item = items[0]
     let price = parseFloat(items.getElementsByClassName('text-center')[1].innerHTML);
     let qnty = items.getElementsByClassName('qnty-info')[0].getElementsByClassName('qnty-input')[0].value;
-    console.log(price * parseInt(qnty))
+    let total = (price * parseInt(qnty))
+    let priceDive = items.getElementsByClassName('item-price')[0].innerHTML = total
   }
+
+}
+
+function getTotalPrice() {
+  updatePriceByProduct()
 
 }
 
