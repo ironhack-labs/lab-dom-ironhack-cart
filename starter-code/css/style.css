@@ -34,6 +34,9 @@
   display: flex;
   flex-direction: column;
   padding-top: 10vh;
+  height: 30vh;
+  overflow-y: auto;
+  padding: 1.5em;
 }
 ////////
 

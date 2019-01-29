@@ -6,7 +6,7 @@ function getPriceByProduct(itemNode){
 
 }
 
-function updatePriceByProduct(productPrice, index){
+function updatePriceByProduct(cartTotal){
   let productWrapper = document.getElementsByClassName('wrapper')[0];
 
 
@@ -16,14 +16,19 @@ function updatePriceByProduct(productPrice, index){
     let price = parseFloat(items.getElementsByClassName('text-center')[1].innerHTML);
     let qnty = items.getElementsByClassName('qnty-info')[0].getElementsByClassName('qnty-input')[0].value;
     let total = (price * parseInt(qnty))
-    let priceDive = items.getElementsByClassName('item-price')[0].innerHTML = total
-  }
+    let priceDiv = items.getElementsByClassName('item-price')[0].innerHTML = total
 
+    cartTotal+=total
+
+  }
+  return cartTotal
 }
 
 function getTotalPrice() {
-  updatePriceByProduct()
-
+  let cartTotal = 0;
+  cartTotal = updatePriceByProduct(cartTotal)
+  console.log(cartTotal)
+  document.getElementsByClassName('form')[0].getElementById('cart-total-h').innerHTML = cartTotal
 }
 
 function createQuantityInput(){
