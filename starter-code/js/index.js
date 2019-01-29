@@ -13,16 +13,16 @@ function updatePriceByProduct(productPrice, index){
 
 function getTotalPrice() {
   let productWrapper = document.getElementsByClassName('wrapper')[0];
-  let items = productWrapper.getElementsByClassName('item-wrapper')[0];
 
-  for(var i  =0; i<items.length; i++){
-    let item = items[i]
-    let price = items.getElementsByClassName('text-center')[1].innerHTML;
+
+  for(var i =0; i<2; i++){
+      let items = productWrapper.getElementsByClassName('item-wrapper')[i];
+    let item = items[0]
+    let price = parseFloat(items.getElementsByClassName('text-center')[1].innerHTML);
     let qnty = items.getElementsByClassName('qnty-info')[0].getElementsByClassName('qnty-input')[0].value;
-
-    console.log(items.getElementsByClassName('text-center')[1].innerHTML)
-
+    console.log(price * parseInt(qnty))
   }
+
 }
 
 function createQuantityInput(){
