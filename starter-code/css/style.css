@@ -39,3 +39,28 @@ input {
 .quantity {
   margin: 0 5px;
 }
+.product{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+.prod-info{
+  width: 20%;
+}
+
+.calculate{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.total-div h2{
+  padding-left: auto;
+  padding-right: auto;
+}
+
+body{
+  padding: 20px;
+}
