@@ -11,9 +11,21 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
+  // let cost = document.getElementById('product-cost').innerHTML;
+  // let qty = document.getElementById('quantity').value;
+  // let productTotal = cost * qty;
+  // document.getElementById('product-total').innerHTML = productTotal;
+  costArray = document.getElementsByClassName('product-cost');
+  quantityArray = document.getElementsByClassName('quantity');
+  totalArray = document.getElementsByClassName('product-total');
+  for (var i = 0; i < costArray.length; i++) {
+    let cost = costArray[i].innerHTML;
+    let qty = quantityArray[i].valueAsNumber;
+    let productTotal = cost * qty;
+    totalArray[i].innerHTML = productTotal;   
+  }
 
 }
-
 function createQuantityInput(){
 
 }
