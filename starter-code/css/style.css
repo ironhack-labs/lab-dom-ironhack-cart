@@ -4,6 +4,8 @@
 .form{
   margin: 1em;
   border: 1px solid black;
+  width: 40vw;
+
 }
 .control-btns-container{
   display: flex;
@@ -16,7 +18,7 @@
 }
 .item-wrapper{
   display: flex;
-  width: 60vw;
+  width: 80vw;
   justify-content: space-between;
   background: lightblue;
   padding: 1em;
@@ -34,10 +36,6 @@
   padding-top: 10vh;
 }
 ////////
-input{
-  border: solid 1px black;
-
-}
 
 .btn {
   display: inline-block;

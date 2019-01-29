@@ -7,6 +7,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
@@ -18,7 +22,7 @@
       <div class="text-center">15.99</div>
       <div class="qnty-info">
         <label>Quantity</label>
-        <input class="qnty-input" id='qnty' type="number" value="0">
+        <input class="qnty-input" id='qnty' type="number" value="">
       </div>
       <div class="item-price">0.00</div>
       <div>
@@ -30,7 +34,7 @@
       <div class="text-center">12.99</div>
       <div class="qnty-info">
         <label>Quantity</label>
-        <input class="qnty-input" id='qnty' type="number" value="0">
+        <input class="qnty-input" id='qnty' type="number" value="">
       </div>
       <div class="item-price">0.00</div>
       <div>
@@ -43,11 +47,11 @@
         <button class="btn btn-success price-btn"type="button" id="calc-prices-button"name="button">Calculate Price</button>
       </div>
     <form class="form" action="none">
-      <span>New Item</span>
+      <span><h3>New Item</h3></span>
       <h5>Product Name</h5>
-      <input type="text" id="new-item-name" value="">
+      <input type="text" id="new-item-name" value="TEST">
       <h5>Price</h5>
-      <input type="number" id="new-item-price" value="">
+      <input type="number" id="new-item-price" value="5.00">
         <button class="btn btn-success price-btn add-item" id="new-item-create"type="button" id="calc-prices-button"name="button">Add Item</button>
     </form>
   </div>

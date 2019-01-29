@@ -100,13 +100,19 @@ function createNewItem(e){
   itemDiv = createDeleteButton(itemDiv)
   let newItemContainer = document.getElementsByClassName('wrapper')[0]
   newItemContainer.appendChild(itemDiv)
-
+  deleteButtons  = document.getElementsByClassName('btn-delete');
+  updateDeltes()
 }
-
+function updateDeltes(){
+  for(var i = 0; i<deleteButtons.length ; i++){
+    deleteButtons[i].onclick = deleteItem;
+  }
+}
+var deleteButtons = document.getElementsByClassName('btn-delete');
 window.onload = function(){
   var calculatePriceButton = document.getElementById('calc-prices-button');
   var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');
+
 
   calculatePriceButton.onclick = getTotalPrice;
   createItemButton.onclick = createNewItem;
