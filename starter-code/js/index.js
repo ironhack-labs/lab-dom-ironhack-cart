@@ -1,5 +1,5 @@
 function deleteItem(e){
-  e.currentTarget.parentNode.parentNode.innerHTML = ''
+  e.currentTarget.parentNode.innerHTML = ''
 }
 
 function getPriceByProduct(itemNode){
@@ -7,18 +7,25 @@ function getPriceByProduct(itemNode){
 }
 
 function updatePriceByProduct(productPrice, index){
+  var products = document.getElementsByClassName('product-name')
+  var quantity = document.getElementsByClassName('item-qnty')
+  var price = document.getElementsByClassName('price')
 
+
+  for(var i =0; i<items.length; i++){
+    window.items = items[i];
+    let quantity = quantity[i].value
+    let price = price[i].innerText
+    let total = quantity * prices
+    console.log(total)
+
+  }
+  quantity[0].value()
 }
 
 function getTotalPrice() {
-var bubbleQuantity = document.getElementById('bubble-quantity-input').value
-var gumPrice = document.querySelector('#product-bubble-gum').getAttribute('data-price')
-var dubBubbleQuantity = document.getElementById('dub-bubble-quantity-input').value
-var dubleGumPrice = document.querySelector('#product-double-gum').getAttribute('data-price')
-var price = ( bubbleQuantity * parseFloat(gumPrice) + (dubBubbleQuantity * parseFloat(dubleGumPrice)))
 
-var priceDiv = document.getElementById('purchase-details')
-priceDiv.innerHTML = price
+
 
 }
 
@@ -34,25 +41,27 @@ function createQuantityNode(){
 
 }
 
-function createItemNode(item, price){
-  // var itemDiv = document.createElement('div');
-  // var itemDiv.setAttribute('class', 'product-name')
-  // var itemDiv.setAttribute('id', newClassName)
-  // item.innerHTML = 'sad'
+// function createItemNode(item, price){
+//   var itemDiv = document.createElement('div');
+//   var itemDiv.setAttribute('class', 'product-name');
+//   var itemDiv.setAttribute('id', 'product');
+//
+//
+// }
+//
+// function createNewItemRow(itemName, itemUnitPrice){
+//
+//
+// }
+//
+// function createNewItem(){
+//   var newItemName = document.getElementById('new-item-name').value;
+//   var newItemPrice = document.getElementById('new-item-price').value
+//   createNewItemRow(newItemName, newItemPrice)
+//
+// }
 
-}
 
-function createNewItemRow(itemName, itemUnitPrice){
-
-
-}
-
-function createNewItem(){
-  var newItemName = document.getElementById('new-item-name').value;
-  var newItemPrice = document.getElementById('new-item-price').value
-  createNewItemRow(newItemName, newItemPrice)
-
-}
 
 window.onload = function(){
   var calculatePriceButton = document.getElementById('calc-prices-button');
@@ -61,7 +70,7 @@ window.onload = function(){
 
 
   calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
+  // createItemButton.onclick = createNewItem;
 
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
