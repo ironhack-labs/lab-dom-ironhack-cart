@@ -48,14 +48,44 @@ input {
   text-align: center;
 }
 
-.quantity {
-  margin: 0 5px;
-}
-
-.product-wrapper{
+.create-wrapper{
   display: flex;
-  justify-content: space-around;
   align-items: center;
   margin: 3rem 10%;
 }
 
+.create-wrapper > div:first-of-type{
+  flex: 1;
+}
+.create-wrapper > div:nth-of-type(2){
+  flex: 1;
+}
+.create-wrapper > div:last-of-type{
+  flex: 3;
+}
+
+#new-item-create{
+  float: right;
+}
+
+.product-wrapper{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3rem 10%;
+}
+.product-wrapper > div{
+  width: 15%;
+}
+
+.product-wrapper label{
+  width: 20%;
+}
+
+.product-wrapper input{
+  width: 60%;
+}
+
+.quantity {
+  margin: 0 5px;
+}

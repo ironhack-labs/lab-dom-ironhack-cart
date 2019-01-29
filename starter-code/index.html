@@ -12,18 +12,23 @@
 <body>
   <h1>Ironhack Merchandising Shop</h1>
   <div class="product-wrapper">
-    <div><span>Product Name</span></div>
-    <div>$<span class="price">1.00</span></div>
+    <div><span>Ironhack Hoodie</span></div>
+    <div>$<span class="price">10.00</span></div>
     <div>
       <label>
-        QTY
-        <input class="quantity" type="text" name="qty" value="0">
+        QTY: <input class="quantity" type="text" name="qty" value="0">
       </label>
     </div>
     <div>$<span class="total">0.00</span></div>
     <div><button class="btn btn-delete">Delete</button></div>
   </div>
   
+  <div class="create-wrapper">
+    <div><input type="text" class="item"></div>
+    <div><input type="text" class="item-price"></div>
+    <div><button id="new-item-create" class="btn">Create</button></div>
+  </div>
+
   <div class="calc">
     <button class="btn btn-success" id="calc-prices-button">Calculate Prices</button>
   </div>
