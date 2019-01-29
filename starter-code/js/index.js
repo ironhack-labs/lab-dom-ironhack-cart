@@ -6,12 +6,12 @@ function deleteItem(e){
 function getPriceByProduct(itemNode){
   //Given a product-wrapper div, get product price and quantity, then multiply it, assign it to total, and return it
   let price = itemNode.getElementsByClassName('price');
+  console.log(price);
   let quantity = itemNode.getElementsByClassName('quantity');
-  let total = parseFloat(price[0].outerText) * parseInt(quantity[0].value);
-  itemNode.getElementsByClassName('total')[0].outerText = total; 
+  console.log(quantity);
+  let total = parseFloat(price[0].innerText) * parseInt(quantity[0].value);
+  itemNode.getElementsByClassName('total')[0].innerText = total; 
   return total;
-
-
 }
 
 // function updatePriceByProduct(productPrice, index){
@@ -28,11 +28,15 @@ function getTotalPrice() {
 
   //Iterate through the collection and use our getPriceByProduct method to add (price for each product * quantity of each product) to the totalPrice
   for(var i = 0; i < productCollection.length; i++){
+    console.log(productCollection[i]);
+    console.log(i);
     totalPrice += getPriceByProduct(productCollection[i]);
+
   }
   
   //Update the h2 span total price with the value of totalPrice
   document.querySelector('#final').textContent = totalPrice;
+  
 }
 
 // function createQuantityInput(){
@@ -80,7 +84,7 @@ function createNewItem(){
 
   //Get new delete button and add the deleteItem event on click
   var deleteButtons = document.getElementsByClassName('btn-delete');
-    deleteButtons[deleteButtons.length - 1].onclick = deleteItem;
+  deleteButtons[deleteButtons.length - 1].onclick = deleteItem;
 }
 
 window.onload = function(){
