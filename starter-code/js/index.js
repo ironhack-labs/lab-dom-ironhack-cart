@@ -18,13 +18,17 @@ function getTotalPrice() {
   costArray = document.getElementsByClassName('product-cost');
   quantityArray = document.getElementsByClassName('quantity');
   totalArray = document.getElementsByClassName('product-total');
+  let superTotal = 0;
   for (var i = 0; i < costArray.length; i++) {
     let cost = costArray[i].innerHTML;
     let qty = quantityArray[i].valueAsNumber;
     let productTotal = cost * qty;
-    totalArray[i].innerHTML = productTotal;   
+    totalArray[i].innerHTML = `$ ${productTotal}`;
+    superTotal += productTotal;
+    
   }
-
+  document.getElementById('total').innerHTML = superTotal;
+  alert(superTotal);
 }
 function createQuantityInput(){
 
