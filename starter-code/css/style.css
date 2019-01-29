@@ -1,3 +1,11 @@
+h1{
+  text-align: center;
+}
+
+h2{
+  text-align: center;
+}
+
 input {
   border: solid 1px black;
 }
@@ -36,6 +44,18 @@ input {
     border-color: #CF000F;
 }
 
+.calc{
+  text-align: center;
+}
+
 .quantity {
   margin: 0 5px;
 }
+
+.product-wrapper{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 3rem 10%;
+}
+
