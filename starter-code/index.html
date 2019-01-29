@@ -38,8 +38,18 @@
       </div>
     </div>
   </div>
-  <div class="calc-price-div">
-    <button class="btn btn-success price-btn"type="button" id="calc-prices-button"name="button">Calculate Price</button>
+  <div class="control-btns-container">
+      <div class="calc-price-div">
+        <button class="btn btn-success price-btn"type="button" id="calc-prices-button"name="button">Calculate Price</button>
+      </div>
+    <form class="form" action="none">
+      <span>New Item</span>
+      <h5>Product Name</h5>
+      <input type="text" id="new-item-name" value="">
+      <h5>Price</h5>
+      <input type="number" id="new-item-price" value="">
+        <button class="btn btn-success price-btn add-item" id="new-item-create"type="button" id="calc-prices-button"name="button">Add Item</button>
+    </form>
   </div>
 </body>
 </html>

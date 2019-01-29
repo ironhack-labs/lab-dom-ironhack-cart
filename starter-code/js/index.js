@@ -29,23 +29,77 @@ function createQuantityInput(){
 
 }
 
-function createDeleteButton(){
+function createDeleteButton(itemContainer){
+  let div = document.createElement('div');
+  let btn = document.createElement('button')
+  btn.innerHTML = 'Delete'
+  btn.setAttribute('class', 'btn btn-delete')
+  div.appendChild(btn)
+  itemContainer.appendChild(div)
+  return itemContainer
+}
+
+function createQuantityNode(itemContainer){
+  let newInput = document.createElement('input');
+  let div = document.createElement('div');
+  let label = document.createElement('label')
+  newInput.setAttribute('class', 'qnty-input');
+  newInput.setAttribute('id', 'qnty');
+  newInput.setAttribute('type', 'number');
+
+  label.innerHTML = 'Quantity'
+
+  div.appendChild(label);
+  div.appendChild(newInput);
+  itemContainer.appendChild(div)
+  return itemContainer
 
 }
 
-function createQuantityNode(){
+function createItemNode(div){
+  let priceDiv = document.createElement('div');
+  priceDiv.setAttribute('class', 'text-center');
+  let itemPrice =  document.getElementById('new-item-price').value;
+
+  priceDiv.innerHTML = '$'+itemPrice
+  div.appendChild(priceDiv)
+  return div
+}
+function createQuantityPrice(itemContainer){
+  let div = document.createElement('div');
+  div.setAttribute('class', 'item-price')
+  div.innerHTML = '0.00'
+  itemContainer.appendChild(div)
+  return itemContainer
+}
+
+function createNewItemRow(itemDiv){
+  let productNameDiv = document.createElement('div');
+  let span = document.createElement('span');
+  let itemName = document.getElementById('new-item-name').value;
+
+  span.textContent = itemName
+
+  productNameDiv.setAttribute('class', 'product-name text-center')
+  productNameDiv.appendChild(span)
+  itemDiv.appendChild(productNameDiv)
+
+  return itemDiv
 
 }
 
-function createItemNode(dataType, itemData){
+function createNewItem(e){
+  e.preventDefault()
+  let itemDiv = document.createElement('div')
+  itemDiv.setAttribute('class', 'item-wrapper')
 
-}
-
-function createNewItemRow(itemName, itemUnitPrice){
-
-}
-
-function createNewItem(){
+  itemDiv = createNewItemRow(itemDiv)
+  itemDiv = createItemNode(itemDiv)
+  itemDiv = createQuantityNode(itemDiv)
+  itemDiv = createQuantityPrice(itemDiv)
+  itemDiv = createDeleteButton(itemDiv)
+  let newItemContainer = document.getElementsByClassName('wrapper')[0]
+  newItemContainer.appendChild(itemDiv)
 
 }
 
@@ -55,7 +109,7 @@ window.onload = function(){
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
   calculatePriceButton.onclick = getTotalPrice;
-  // createItemButton.onclick = createNewItem;
+  createItemButton.onclick = createNewItem;
 
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;

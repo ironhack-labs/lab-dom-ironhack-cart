@@ -1,3 +1,16 @@
+.add-item{
+
+}
+.form{
+  margin: 1em;
+  border: 1px solid black;
+}
+.control-btns-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1em;
+}
 .text-center{
   align-self: center;
 }
