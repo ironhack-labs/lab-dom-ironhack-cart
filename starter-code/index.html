@@ -13,28 +13,33 @@
 <body>
 <body>
   <div class="wrapper">
-    <div class="product-name price" id="product-bubble-gum" value="10">Bubble Gum<span> 14.99</span>
-        <input type="number" class="item-qnty" id="bubble-quantity-input" value="1">
-        <button class="btn btn-delete"type="button"id="remove-btn" name="Delete Item">Remove Item</button>
+    <div class="item-wrapper">
+      <div class="product-name text-center"><span>Product Name</span></div>
+      <div class="text-center">15.99</div>
+      <div class="qnty-info">
+        <label>Quantity</label>
+        <input class="qnty-input" id='qnty' type="number" value="0">
+      </div>
+      <div class="item-price">0.00</div>
+      <div>
+        <button class="btn btn-delete" type="button" name="button">Delete</button>
+      </div>
     </div>
-    <div class="product-name price" id="product-double-gum" value="15">Double Bubble Gum<span> 17.99</span>
-      <input type="number" class="item-qnty"  id="dub-bubble-quantity-input" value="1">
-      <button class="btn btn-delete"type="button"id="remove-btn" name="Delete Item">Remove Item</button>
+    <div class="item-wrapper">
+      <div class="product-name text-center"><span>Product Two</span></div>
+      <div class="text-center">12.99</div>
+      <div class="qnty-info">
+        <label>Quantity</label>
+        <input class="qnty-input" id='qnty' type="number" value="0">
+      </div>
+      <div class="item-price">0.00</div>
+      <div>
+        <button class="btn btn-delete" type="button" name="button">Delete</button>
+      </div>
     </div>
-
-    <div class="price-info" id="price-info">
-      <button class="btn " type="button" id='calc-prices-button' name="button">Calculate Price</button>
-    </div>
-    <div class="purchase-information">
-      <h3>
-        <span id="purchase-details">0.00</span>
-      </h3>
-    </div>
-    <div class="create-item-field">
-      <input type="text" name="" value="" id="new-item-name"placeholder="Item name">
-      <input type="number" name="" value="" id="new-item-price"placeholder="Price">
-      <button id="new-item-create" type="button" name="button">Add Item</button>
-    </div>
+  </div>
+  <div class="calc-price-div">
+    <button class="btn btn-success price-btn"type="button" id="calc-prices-button"name="button">Calculate Price</button>
   </div>
 </body>
 </html>

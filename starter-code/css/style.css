@@ -1,10 +1,29 @@
-.product-name{
+.text-center{
+  align-self: center;
+}
+.item-wrapper{
+  display: flex;
+  width: 60vw;
+  justify-content: space-between;
   background: lightblue;
-  margin: 10px 0;
+  padding: 1em;
+  align-self: center;
+
+}
+.price-btn{
+  margin-top: 3vh;
+  margin-left: 25vw;
+
+}
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  padding-top: 10vh;
 }
 ////////
-input {
+input{
   border: solid 1px black;
+
 }
 
 .btn {
