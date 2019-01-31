@@ -1,5 +1,32 @@
+*{
+  transition: all 1.5s;
+}
+
+.active{
+  font-size: 50px;
+  color: darkblue;
+}
+
+.cool{
+  transform: rotate(180deg);
+}
+
+.big {
+  transform: scale(3);
+}
+
 input {
   border: solid 1px black;
+}
+
+.product{
+  display: flex;
+  justify-content: space-around;
+  margin: 1px 0;
+}
+
+h1 {
+  text-align: center;
 }
 
 .btn {
@@ -36,6 +63,31 @@ input {
     border-color: #CF000F;
 }
 
+.success-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
 .quantity {
   margin: 0 5px;
+}
+
+.create {
+  display: flex;
+}
+
+.create-inputs {
+
+}
+
+.create-button{
+  margin-left: auto;
+}
+
+.total-item-price {
+  width: 60px;
+}
+
+#total-price {
+  text-align: center;
 }
