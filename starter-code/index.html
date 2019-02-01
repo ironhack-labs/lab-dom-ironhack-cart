@@ -10,5 +10,56 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <h1 class="center">Ironhack Merchandising Shop</h1>
+
+  <div id="product1" class="product-info">
+    <span class="product-name">IronSlippers</span>
+    <span class="product-cost">$25.00</span>
+    <div class="quantity">
+      <label for="quantity">QTY</label>
+      <input type="number" min="0" value="0" class="qtyInput" onclick="createQuantityInput()"> 
+    </div>
+    <div>
+      <span class="total-price">$0.00</span>
+    </div>
+    <div>
+      <button class="btn btn-delete">Delete</button>
+    </div>
+  </div>
+
+  <div id="product2" class="product-info">
+      <span class="product-name">IronSocks</span>
+      <span class="product-cost">$15.00</span>
+      <div class="quantity">
+        <label for="quantity">QTY</label>
+        <input type="number" min="0" value="0" class="qtyInput" onclick="createQuantityInput()"> 
+      </div>
+      <div>
+        <span class="total-price">$0.00</span>
+      </div>
+      <div>
+        <button class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+
+    <div id="product3" class="product-info">
+        <span class="product-name">IronBeer</span>
+        <span class="product-cost">$5.00</span>
+        <div class="quantity">
+          <label for="quantity">QTY</label>
+          <input type="number" min="0" value="0" class="qtyInput" onclick="createQuantityInput();"> 
+        </div>
+        <div>
+          <span class="total-price">$0.00</span>
+        </div>
+        <div>
+          <button class="btn btn-delete">Delete</button>
+        </div>
+      </div>
+
+  <div id="btn-price" class="center">
+    <button id="calc-prices-button" class="btn btn-success" onclick="updatePriceByProduct(productPrice, index)"> Calculate Prices</button>
+    <p id="totalPrice"></p>   <!--Default empty line that should be updated with total price when Calculate Price button is pressed-->
+  </div>
 </body>
 </html>
