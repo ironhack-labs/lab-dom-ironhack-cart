@@ -1,3 +1,7 @@
+*{
+  margin: 0;
+  padding: 0;
+}
 input {
   border: solid 1px black;
 }
@@ -28,14 +32,33 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    border-radius: 5px;
+    padding: 5px;
+   
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    border-radius: 5px;
+    padding: 2px;
 }
 
 .quantity {
   margin: 0 5px;
+}
+.alignContent{
+  display:flex;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+h1{
+  text-align: center;
+  padding: 10px 0;
+}
+.alignBtn{
+  padding-top: 5%;
+  text-align: center;
+
 }
