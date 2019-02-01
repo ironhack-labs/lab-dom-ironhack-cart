@@ -39,3 +39,22 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+/* selector for h1 */
+body > h1{
+  text-align: center;
+}
+
+/* selector to center calculate prices button */
+.btn-center{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* selector for div wrapper */
+.wrapper-prod{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
