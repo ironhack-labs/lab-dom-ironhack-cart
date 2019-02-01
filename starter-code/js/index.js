@@ -1,52 +1,47 @@
-function deleteItem(e){
-
+function deleteItem(event) {
+  window.nunnapat = event;
+  var li = event.target.parentNode;
+  var ul = li.parentNode;
+  ul.removeChild(li);
 }
 
-function getPriceByProduct(itemNode){
-
+function getPriceByProduct(itemNode) {
+  var itemNode = document.getElementsByClassName("cost")[0].innerText;
 }
 
-function updatePriceByProduct(productPrice, index){
+function updatePriceByProduct(productPrice, indexs) {
+  var productPrice = document.getElementsByClassName("cost")[0].innerText;
+var indexs = parseInt(document.getElementsByClassName("input").value);
 
 }
 
 function getTotalPrice() {
-
+  
 }
 
-function createQuantityInput(){
+function createQuantityInput() {}
 
-}
+function createDeleteButton() {}
 
-function createDeleteButton(){
+function createQuantityNode() {}
 
-}
+function createItemNode(dataType, itemData) {}
 
-function createQuantityNode(){
+function createNewItemRow(itemName, itemUnitPrice) {}
 
-}
+function createNewItem() {}
 
-function createItemNode(dataType, itemData){
+window.onload = function() {
+  var calculatePriceButton = document.getElementById("calc-prices-button");
+  var createItemButton = document.getElementById("new-item-create");
+  var deleteButtons = document.getElementsByClassName("btn-delete");
 
-}
+  //calculatePriceButton.onclick = getTotalPrice;
+  //createItemButton.onclick = createNewItem;
 
-function createNewItemRow(itemName, itemUnitPrice){
-
-}
-
-function createNewItem(){
-
-}
-
-window.onload = function(){
-  var calculatePriceButton = document.getElementById('calc-prices-button');
-  var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');
-
-  calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
-
-  for(var i = 0; i<deleteButtons.length ; i++){
+  for (var i = 0; i < deleteButtons.length; i++) {
     deleteButtons[i].onclick = deleteItem;
   }
+  getPriceByProduct();
+  updatePriceByProduct();
 };
