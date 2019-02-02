@@ -1,5 +1,11 @@
+*{
+  margin: 10px;
+}
+
 input {
   border: solid 1px black;
+  padding: 1px;
+  width: 150px;
 }
 
 .btn {
@@ -25,6 +31,7 @@ input {
 }
 
 .btn-success {
+    margin-left: 30px;
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
@@ -36,6 +43,40 @@ input {
     border-color: #CF000F;
 }
 
-.quantity {
-  margin: 0 5px;
+#shop {
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.nombre, .costo, .cantidad, .total-producto, .borrar-producto{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.producto-fila{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+}
+
+.calculate-prices{
+  padding-top: 100px;
+  margin-left: 500px; 
+  width: 30vw;
+  height: 4vh;
+}
+
+.crear-producto {
+  padding: 10px;
+  width: 90.5%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+
 }
