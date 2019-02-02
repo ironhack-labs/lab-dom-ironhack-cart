@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Ironhack cart</title>
+</head>
+<body>
+  <h1 class="main-title">Ironhack Merchandising Shop</h1>
+  <div id="products">
+  </div>
+  <!-- Create new Product -->
+  <div id="create-product" class="flex-container">
+    <div>
+        <input id="product-name" type="text" placeholder="Product Name" value="Item"/>
+      </div>
+    <div>
+      $ <input id="product-price" type="text" placeholder="Price" value="47"/>
+    </div>
+    <div>
+    </div>
+    <div>
+    </div>
+    <div>
+      <button id="create" class="btn btn-success">Create new Product</button>
+    </div>
+  </div>
+  <div class="center">
+      <h2>Total Price: $<span id ="total">0</span></h2>
+  </div>
+  
+  <div class="center">
+    <button id="calculate" class="btn btn-success">Calculate it all!</button>
+  </div>
+  <script type="text/javascript" src="./js/index.js"></script>
+</body>
+</html>

@@ -39,3 +39,19 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.flex-container{
+  display: flex;
+  margin: 20px 10%;
+}
+.flex-container div{
+  flex:1;
+  text-align: center;
+}
+
+.main-title{
+  text-align: center;
+}
+.center{
+  text-align: center;
+}
