@@ -1,5 +1,9 @@
-input {
-  border: solid 1px black;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 100px 200px;
 }
 
 .btn {
@@ -36,6 +40,36 @@ input {
     border-color: #CF000F;
 }
 
-.quantity {
-  margin: 0 5px;
+.header-div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 80px;
+}
+
+.header-div .btn {
+  height: 50px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+input {
+  border: solid 1px black;
+}
+
+.btn-div {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.btn-div h2 {
+  text-align: center;
+  font-size: 3em;
+  margin: 70px 0;
 }
