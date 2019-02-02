@@ -2,12 +2,6 @@ input {
   border: solid 1px black;
 }
 
-/* tag selector to make all divs of same width and give them some margin*/
-div {
-  width: 100%;
-  margin: 1vh 0;
-}
-
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -52,17 +46,24 @@ body > h1{
 }
 
 /* selector to center calculate prices button and total cart*/
-.btn-center, .grand-total{
+div.btn-center, div.grand-total{
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
 /* selector for div wrapper */
-.wrapper-prod{
+div.wrapper-prod, div.new-item{
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
   margin-left: 5vh;
+}
+
+div.wrapper-prod > div, div.new-item > div{
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  margin-right: 5vh;
+  width: 20%;
 }
