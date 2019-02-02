@@ -190,9 +190,9 @@ function createQuantityInput(){
   // set corresponding class
   divInput.setAttribute("class","input");
 
-  // create span Node
-  let span = document.createElement("span");
-  span.innerText = "QTY";
+  // create label Node
+  let label = document.createElement("label");
+  label.innerText = "QTY";
 
   // create input Node
   let input = document.createElement("input");
@@ -201,7 +201,7 @@ function createQuantityInput(){
   input.setAttribute("placeholder","0");
 
   // create final node
-  divInput.appendChild(span);
+  divInput.appendChild(label);
   divInput.appendChild(input);
 
   return divInput;
