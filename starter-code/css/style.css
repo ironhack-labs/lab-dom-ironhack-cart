@@ -1,5 +1,44 @@
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+
+h1 {
+  margin-left: 65%;
+}
+
 input {
   border: solid 1px black;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  width: 100%;
+  flex-wrap: wrap;
+  align-content: center;
+  background-color: white;
+}
+
+.contPrice {
+
+  justify-content: center;
+  height: 100px;
+  width: 100%;
+  align-content: center;
+  font-size: 200%;
+  margin-left: -5%;
+  margin-top: 5%;
+}
+
+.buttonCont {
+ display: flex;
+ flex-wrap: wrap;
+ margin-left: 50%;
+
 }
 
 .btn {
@@ -38,4 +77,14 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.wrapper {
+  margin-right: auto; /* 1 */
+  margin-left:  auto; /* 1 */
+  justify-content: space-between;
+  max-width: 960px; /* 2 */
+
+  padding-right: 10px; /* 3 */
+  padding-left:  10px; /* 3 */
 }

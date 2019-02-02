@@ -1,6 +1,14 @@
-function deleteItem(e){
 
-}
+
+
+
+
+let btn-delete = document.querySelector("button");
+
+function deleteItem(e){
+  let btn-delete = document.querySelector("button");
+  }
+
 
 function getPriceByProduct(itemNode){
 
