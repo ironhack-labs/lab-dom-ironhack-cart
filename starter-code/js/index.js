@@ -93,7 +93,13 @@ function getQtyArray(DOMCollection){
 
 
 function deleteItem(e){
-
+  /* current DOM structure
+  div class="wrapper-prod" > div class="btn" 
+  we select the node two levels up to have the wrapper*/
+  let divWrapperNode = e.target.parentNode.parentNode;
+  let bodyNode = divWrapperNode.parentNode;
+  // remove whole wrapper
+  bodyNode.removeChild(divWrapperNode);
 }
 
 function updatePriceByProduct(productPrice, index){
@@ -157,7 +163,7 @@ window.onload = function(){
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
   calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
+  // createItemButton.onclick = createNewItem;
 
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
