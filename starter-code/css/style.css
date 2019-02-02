@@ -1,5 +1,21 @@
+.wrapper{
+  width: 100%;
+  height: auto;
+  padding: 15px;
+  margin: 20px;
+  border: 1px solid black;
+  
+  /* Flex */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+
+}
+
 input {
   border: solid 1px black;
+
 }
 
 .btn {

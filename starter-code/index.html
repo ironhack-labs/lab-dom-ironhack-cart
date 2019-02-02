@@ -10,5 +10,33 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+
+  <div class="wrapper">
+
+    <div><span>IronBubble-Head</span></div>
+    <div><span class="price">$ 25.30</span></div>
+    <div><label> QTY <input type="number" min="0" value="0" > </label>  </div>
+    <div><span class="total"> </span></div>
+    <div><button class="btn-delete"> Delete </button></div>
+    
+  </div>
+
+  <div class="wrapper">
+
+    <div><span>IronShirt</span></div>
+    <div><span class="price">$ 22.45</span></div>
+    <div><label> QTY <input type="number" min="0" value="0"> </label>  </div>
+    <div><span class="total"> </span></div>
+    <div><button class="btn-delete"> Delete </button></div>
+    
+  </div>
+
+  <div id="create-wrapper">
+    <span><input type="text"  id="newItem"> </span>  
+    <span><input type="number" min="0" value="0" id="newItemUnitPrice"></span>
+    <div><button id="new-item-create"> Create </button></div>
+  </div>
+
+  <div><button class="btn-success" id="calc-prices-button"> Calculate Prices </button></div>
 </body>
 </html>
