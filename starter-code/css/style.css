@@ -1,5 +1,24 @@
+body {
+  padding: 5% 10%;
+}
+
+header, .total-price-container {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.product {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1%;
+}
+
+
 input {
   border: solid 1px black;
+  width: 50%;
 }
 
 .btn {
@@ -38,4 +57,12 @@ input {
 
 .quantity {
   margin: 0 5px;
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.calculate-prices-container {
+  width: 20%;
+  margin: 0 auto;
 }
