@@ -16,7 +16,7 @@
     <h1>Ironhack Merchandising Shop</h1>
   </header>
   <div id="product-container">
-    <div id="prod1" class="product">
+    <div class="product">
       <div class="name"><span>Trui</span></div>
       <div class="product-unit-cost-container"><span>$</span><span class="product-unit-cost">50.00</span></div>
       <div class="quantity">
@@ -42,14 +42,31 @@
     </div>
   </div>
 
+  <div class="new-item-create-container">
+  <div class="product-input-container">
+    <div class="productname-input-container">
+      <label for="productname-input">Productname</label>
+      <input id="productname-input" type="text">
+    </div>
+    <div class="productprice-input-container">
+      <label for="productprice-input">Productprice</label>
+      <input id="productprice-input" type="number">
+    </div>
+    </div>
+    
+      <button id="new-item-create" class="btn" type="button">Create new item</button>
+    </div>
+
   <div class="calculate-prices-container">
     <button id="calc-prices-button" class="btn" type="button">Calculate prices</button>
   </div>
+
   <div class="total-price-container">
     <h2>
       <h2>Total Price:<span>$</span><span id="total-price">0</span></h2>
     </h2>
   </div>
+
 </body>
 
 </html>

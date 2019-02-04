@@ -18,7 +18,7 @@ header, .total-price-container {
 
 input {
   border: solid 1px black;
-  width: 50%;
+  width: 30%;
 }
 
 .btn {
@@ -65,4 +65,16 @@ input {
 .calculate-prices-container {
   width: 20%;
   margin: 0 auto;
+}
+
+.new-item-create-container {
+  width: 80%;
+  display: flex;
+ justify-content: space-between;
+}
+
+.product-input-container {
+  width: 40%;
+  display: flex;
+  justify-content: flex-start;
 }
