@@ -1,55 +1,55 @@
-function deleteItem(e){
+// function deleteItem(e){
 
-}
+// }
 
-function getPriceByProduct(itemNode){
+// function getPriceByProduct(itemNode){
 
-}
+// }
 
-function updatePriceByProduct(productPrice, index){
+// function updatePriceByProduct(productPrice, index){
 
-}
+// }
 
-function getTotalPrice() {
+// function getTotalPrice() {
 
-}
+// }
 
-function createQuantityInput(){
+// function createQuantityInput(){
 
-}
+// }
 
-function createDeleteButton(){
+// function createDeleteButton(){
 
-}
+// }
 
-function createQuantityNode(){
+// function createQuantityNode(){
 
-}
+// }
 
-function createItemNode(dataType, itemData){
+// function createItemNode(dataType, itemData){
 
-}
+// }
 
-function createNewItemRow(itemName, itemUnitPrice){
+// function createNewItemRow(itemName, itemUnitPrice){
 
-}
+// }
 
-function createNewItem(){
+// function createNewItem(){
 
-}
+// }
 
-window.onload = function(){
-  var calculatePriceButton = document.getElementById("calc-prices-button");
-  var createItemButton = document.getElementById("new-item-create");
-  var deleteButtons = document.getElementsByClassName("btn-delete");
+// window.onload = function(){
+//   var calculatePriceButton = document.getElementById("calc-prices-button");
+//   var createItemButton = document.getElementById("new-item-create");
+//   var deleteButtons = document.getElementsByClassName("btn-delete");
 
-  calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
+//   calculatePriceButton.onclick = getTotalPrice;
+//   createItemButton.onclick = createNewItem;
 
-  for(var i = 0; i < deleteButtons.length ; i++){
-    deleteButtons[i].onclick = deleteItem;
-  }
-};
+//   for(var i = 0; i < deleteButtons.length ; i++){
+//     deleteButtons[i].onclick = deleteItem;
+//   }
+// };
 
 
 document.body.onload = createCart;
@@ -68,21 +68,20 @@ function createCart() {
     var product = document.createElement("div");
     product.className = "product";
     allProducts.appendChild(product);
-    product.style.display = "flex";
-    product.style.flexDirection = "row";
-    product.style.justifyContent = "space-around";
     //main title
     var mainTitle = document.createElement("h1");
     mainTitle.innerHTML = "Ironhack Merchandising Shop";
     product.before(mainTitle);
     //name div
     var productName = document.createElement("div");
+    productName.className = "first-flex";
     product.appendChild(productName);
     var productNameSpan = document.createElement("span");
     productNameSpan.innerHTML = "IronBubble-head";
     productName.appendChild(productNameSpan);
     //cost div
     var productCost = document.createElement("div");
+    productCost.className = "second-flex";
     product.appendChild(productCost);
     var productCostSpan = document.createElement("span");
     productCostSpan.className = "productCostSpan";
@@ -90,6 +89,7 @@ function createCart() {
     productCost.appendChild(productCostSpan);
     //units div
     var productUnits = document.createElement("div");
+    productUnits.className = "third-flex";
     product.appendChild(productUnits);
     var productUnitsLabel = document.createElement("label");
     productUnitsLabel.innerHTML = "QTY ";
@@ -100,6 +100,7 @@ function createCart() {
     productUnits.appendChild(productUnitsInput);
     //total product price
     var productTotalPrice = document.createElement("div");
+    productTotalPrice.className = "fourth-flex";
     product.appendChild(productTotalPrice);
     var productTotalPriceSpan = document.createElement("span");
     productTotalPriceSpan.innerHTML = "0.00$";
@@ -108,7 +109,7 @@ function createCart() {
     //delete button
     var deleteButton = document.createElement("button");
     deleteButton.innerHTML = "Delete";
-    deleteButton.className = "deleteButton";
+    deleteButton.className = "btn-delete btn";
     product.appendChild(deleteButton);
     deleteButton.addEventListener("click", deleteProduct);
     //SECOND PRODUCT
@@ -116,17 +117,16 @@ function createCart() {
         var product = document.createElement("div");
         product.className = "product";
         allProducts.appendChild(product);
-        product.style.display = "flex";
-        product.style.flexDirection = "row";
-        product.style.justifyContent = "space-around";
         //name div
         var productName = document.createElement("div");
+        productName.className = "first-flex";
         product.appendChild(productName);
         var productNameSpan = document.createElement("span");
         productNameSpan.innerHTML = "IronShirt";
         productName.appendChild(productNameSpan);
         //cost div
         var productCost = document.createElement("div");
+        productCost.className = "second-flex";
         product.appendChild(productCost);
         var productCostSpan = document.createElement("span");
         productCostSpan.className = "productCostSpan";
@@ -134,6 +134,7 @@ function createCart() {
         productCost.appendChild(productCostSpan);
         //units div
         var productUnits = document.createElement("div");
+        productUnits.className = "third-flex";
         product.appendChild(productUnits);
         var productUnitsLabel = document.createElement("label");
         productUnitsLabel.innerHTML = "QTY ";
@@ -144,6 +145,7 @@ function createCart() {
         productUnits.appendChild(productUnitsInput);
         //total product price
         var productTotalPrice = document.createElement("div");
+        productTotalPrice.className = "fourth-flex";
         product.appendChild(productTotalPrice);
         var productTotalPriceSpan = document.createElement("span");
         productTotalPriceSpan.innerHTML = "0.00$";
@@ -152,7 +154,7 @@ function createCart() {
         //delete button
         var deleteButton = document.createElement("button");
         deleteButton.innerHTML = "Delete";
-        deleteButton.className = "deleteButton";
+        deleteButton.className = "btn-delete btn";
         product.appendChild(deleteButton);
         deleteButton.addEventListener("click", deleteProduct);
     //total price of the cart
@@ -163,6 +165,7 @@ function createCart() {
     cartTotalPrice.appendChild(cartTotalPriceTitle);
     //calculate prices button
     var calculatePricesButton = document.createElement("button");
+    calculatePricesButton.className = "btn btn-success";
     calculatePricesButton.innerHTML = "Calculate Prices";
     cart.appendChild(calculatePricesButton);
     calculatePricesButton.addEventListener("click", function () {
@@ -172,22 +175,22 @@ function createCart() {
             document.getElementsByClassName("productTotalPriceSpan")[i].innerHTML = totalPrice + "$";
             finalPrice += totalPrice;
         };
-        console.log(finalPrice);
         cartTotalPriceTitle.innerHTML = "Total Price: <span>" + finalPrice + "$<span>";
     });
     //new product
     var newProductDiv = document.createElement("div");
+    newProductDiv.className = "new-product";
     allProducts.appendChild(newProductDiv);
-    newProductDiv.style.display = "flex";
-    newProductDiv.style.flexDirection = "row";
-    newProductDiv.style.justifyContent = "space-around";
     var nameInput = document.createElement("input");
+    nameInput.className = "new-product-name";
     nameInput.placeholder = "New item";
     newProductDiv.appendChild(nameInput);
     var priceInput = document.createElement("input");
+    priceInput.className = "new-product-price";
     priceInput.placeholder = "Price";
     newProductDiv.appendChild(priceInput);
     var newProductButton = document.createElement("button");
+    newProductButton.className = "btn";
     newProductButton.innerHTML = "create";
     newProductDiv.appendChild(newProductButton);
     newProductButton.addEventListener("click", function() {
@@ -195,17 +198,16 @@ function createCart() {
         var lastAddedProductDiv = document.createElement("div");
         lastAddedProductDiv.className = "product";
         newProductDiv.before(lastAddedProductDiv);
-        lastAddedProductDiv.style.display = "flex";
-        lastAddedProductDiv.style.flexDirection = "row";
-        lastAddedProductDiv.style.justifyContent = "space-around";
         //name div
         var productName = document.createElement("div");
+        productName.className = "first-flex";
         lastAddedProductDiv.appendChild(productName);
         var productNameSpan = document.createElement("span");
         productNameSpan.innerHTML = nameInput.value;
         productName.appendChild(productNameSpan);
         //cost div
         var productCost = document.createElement("div");
+        productCost.className = "second-flex";
         lastAddedProductDiv.appendChild(productCost);
         var productCostSpan = document.createElement("span");
         productCostSpan.className = "productCostSpan";
@@ -213,6 +215,7 @@ function createCart() {
         productCost.appendChild(productCostSpan);
         //units div
         var productUnits = document.createElement("div");
+        productUnits.className = "third-flex";
         lastAddedProductDiv.appendChild(productUnits);
         var productUnitsLabel = document.createElement("label");
         productUnitsLabel.innerHTML = "QTY ";
@@ -223,6 +226,7 @@ function createCart() {
         productUnits.appendChild(productUnitsInput);
         //total product price
         var productTotalPrice = document.createElement("div");
+        productTotalPrice.className = "fourth-flex";
         lastAddedProductDiv.appendChild(productTotalPrice);
         var productTotalPriceSpan = document.createElement("span");
         productTotalPriceSpan.innerHTML = "0.00$";
@@ -231,7 +235,7 @@ function createCart() {
         //delete button
         var deleteButton = document.createElement("button");
         deleteButton.innerHTML = "Delete";
-        deleteButton.className = "deleteButton";
+        deleteButton.className = "btn-delete btn";
         lastAddedProductDiv.appendChild(deleteButton);
         deleteButton.addEventListener("click", deleteProduct);
     })
