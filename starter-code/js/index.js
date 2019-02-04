@@ -62,9 +62,9 @@ function createNewItem() {
   var newProductRow = `
     <div class="item-name"><span class="item-name-span">${name}</span></div>
     <div class="item-cost">&#36;<span class="item-cost-span">${price}</span></div>
-    <div class="qty">
+    <div class="qty1">
       <label for="qty">QTY</label>
-      <input type="number" id="qty" name="qty">
+      <input type="number" class="qty" name="qty">
     </div>
     <div class="product-total">&#36;<span class="product-total-span"></span></div>
     <div class="delete-button-div"><button class="btn-delete" id="btn-delete">Delete</button></div>
@@ -85,10 +85,11 @@ function createNewItem() {
   });
 
   $('.calc-prices-button').click(function () {
-    let itemCost = parseInt($('.item-cost-span').text());
-    let qty = $('#qty').val();
+    let itemCost = parseInt($(this).closest(".main").find(".item-cost-span").text());
+    let qty = $(this).closest(".main").find(".qty").val();
+    debugger
     let result = itemCost * qty;
-    $('.product-total-span').html(result);
+    $(this).closest('.main').find('.product-total-span').html(result);
   })
 
   //newDeleteButton();
@@ -124,9 +125,15 @@ $(document).ready(()=> {
   });
 
   $('.calc-prices-button').click(function () {
-    let itemCost = parseFloat($('.item-cost-span').text());
-    let qty = $('#qty').val();
+  
+    let itemCost = parseInt($(this).closest(".main").find(".item-cost-span").text());
+    let qty = $(this).closest(".main").find(".qty").val();
     let result = itemCost * qty;
-    $('.product-total-span').html(result);
+    debugger
+    $(this).closest('.main').find('.product-total-span').html(result);
+    // let itemCost = parseFloat($('.item-cost-span').text());
+    // let qty = $('#qty').val();
+    // let result = itemCost * qty;
+    // $('.product-total-span').html(result);
   })
 })
