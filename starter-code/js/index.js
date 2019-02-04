@@ -175,101 +175,69 @@ function createCart() {
         console.log(finalPrice);
         cartTotalPriceTitle.innerHTML = "Total Price: <span>" + finalPrice + "$<span>";
     });
+    //new product
+    var newProductDiv = document.createElement("div");
+    allProducts.appendChild(newProductDiv);
+    newProductDiv.style.display = "flex";
+    newProductDiv.style.flexDirection = "row";
+    newProductDiv.style.justifyContent = "space-around";
+    var nameInput = document.createElement("input");
+    nameInput.placeholder = "New item";
+    newProductDiv.appendChild(nameInput);
+    var priceInput = document.createElement("input");
+    priceInput.placeholder = "Price";
+    newProductDiv.appendChild(priceInput);
+    var newProductButton = document.createElement("button");
+    newProductButton.innerHTML = "create";
+    newProductDiv.appendChild(newProductButton);
+    newProductButton.addEventListener("click", function() {
+        //product div
+        var lastAddedProductDiv = document.createElement("div");
+        lastAddedProductDiv.className = "product";
+        newProductDiv.before(lastAddedProductDiv);
+        lastAddedProductDiv.style.display = "flex";
+        lastAddedProductDiv.style.flexDirection = "row";
+        lastAddedProductDiv.style.justifyContent = "space-around";
+        //name div
+        var productName = document.createElement("div");
+        lastAddedProductDiv.appendChild(productName);
+        var productNameSpan = document.createElement("span");
+        productNameSpan.innerHTML = nameInput.value;
+        productName.appendChild(productNameSpan);
+        //cost div
+        var productCost = document.createElement("div");
+        lastAddedProductDiv.appendChild(productCost);
+        var productCostSpan = document.createElement("span");
+        productCostSpan.className = "productCostSpan";
+        productCostSpan.innerHTML = priceInput.value + "$";
+        productCost.appendChild(productCostSpan);
+        //units div
+        var productUnits = document.createElement("div");
+        lastAddedProductDiv.appendChild(productUnits);
+        var productUnitsLabel = document.createElement("label");
+        productUnitsLabel.innerHTML = "QTY ";
+        var productUnitsInput = document.createElement("input");
+        productUnitsInput.placeholder = "0";
+        productUnitsInput.className = "productUnitsInput";
+        productUnits.appendChild(productUnitsLabel);
+        productUnits.appendChild(productUnitsInput);
+        //total product price
+        var productTotalPrice = document.createElement("div");
+        lastAddedProductDiv.appendChild(productTotalPrice);
+        var productTotalPriceSpan = document.createElement("span");
+        productTotalPriceSpan.innerHTML = "0.00$";
+        productTotalPriceSpan.className = "productTotalPriceSpan";
+        productTotalPrice.appendChild(productTotalPriceSpan);
+        //delete button
+        var deleteButton = document.createElement("button");
+        deleteButton.innerHTML = "Delete";
+        deleteButton.className = "deleteButton";
+        lastAddedProductDiv.appendChild(deleteButton);
+        deleteButton.addEventListener("click", deleteProduct);
+    })
 };
 
 
 function deleteProduct () {
-    // document.getElementById("all-products").removeChild(document.getElementsByClassName("product")[0]);
-    // console.log(event.currentTarget.parentNode);
     document.getElementById("all-products").removeChild(event.currentTarget.parentNode);
 }
-
-// var calculatePrices = function () {
-//     var totalPrice = parseInt(productCostSpan, 10) * productUnitsInput;
-//     productTotalPricesSpan = "$ " + totalPrice;
-// }
-
-
-// var text = '42px';
-// var integer = parseInt(text, 10);
-// // returns 42
-
-// function startGame() {
-//     var body = document.getElementsByTagName("body")[0];
-//     var startButton = document.createElement("button");
-//     startButton.innerHTML = "Start the game!";
-//     startButton.id = "start button";
-//     body.appendChild(startButton);
-//     startButton.addEventListener("click", function() {
-//         createImagesFlexbox();
-//         createWeaponsFlexbox();
-//         createRoomsFlexbox();
-//     });
-// };
-
-
-
-//BACKUP
-
-// function createCart() {
-//     var body = document.getElementsByTagName("body")[0];
-//     //cart div
-//     var cart = document.createElement("div");
-//     cart.id = "cart";
-//     body.appendChild(cart);
-//     //allProducts div
-//     var allProducts = document.createElement("div");
-//     allProducts.id = "all-products";
-//     cart.appendChild(allProducts);
-//     //product div
-//     var product = document.createElement("div");
-//     product.id = "product";
-//     allProducts.appendChild(product);
-//     product.style.display = "flex";
-//     product.style.flexDirection = "row";
-//     product.style.justifyContent = "space-around";
-//     //name div
-//     var productName = document.createElement("div");
-//     product.appendChild(productName);
-//     var productNameSpan = document.createElement("span");
-//     productNameSpan.innerHTML = "IronBubble-head"
-//     productName.appendChild(productNameSpan);
-//     //cost div
-//     var productCost = document.createElement("div");
-//     product.appendChild(productCost);
-//     var productCostSpan = document.createElement("span");
-//     productCostSpan.innerHTML = "25.00$";
-//     productCost.appendChild(productCostSpan);
-//     //units div
-//     var productUnits = document.createElement("div");
-//     product.appendChild(productUnits);
-//     var productUnitsLabel = document.createElement("label");
-//     productUnitsLabel.innerHTML = "QTY";
-//     var productUnitsInput = document.createElement("input");
-//     productUnitsInput.placeholder = "0";
-//     productUnits.appendChild(productUnitsLabel);
-//     productUnits.appendChild(productUnitsInput);
-//     //total product price
-//     var productTotalPrice = document.createElement("div");
-//     product.appendChild(productTotalPrice);
-//     var productTotalPriceSpan = document.createElement("span");
-//     productTotalPriceSpan.innerHTML = "0.00$";
-//     productTotalPrice.appendChild(productTotalPriceSpan);
-//     //delete button
-//     var deleteButton = document.createElement("button");
-//     deleteButton.innerHTML = "Delete";
-//     product.appendChild(deleteButton);
-//     //main title
-//     var mainTitle = document.createElement("h1");
-//     mainTitle.innerHTML = "Ironhack Merchandising Shop";
-//     product.before(mainTitle);
-//     //calculate prices button
-//     var calculatePricesButton = document.createElement("button");
-//     calculatePricesButton.innerHTML = "Calculate Prices";
-//     cart.appendChild(calculatePricesButton);
-//     calculatePricesButton.addEventListener("click", function () {
-//         var totalPrice = parseInt(productCostSpan.textContent, 10) * productUnitsInput.value;
-//         productTotalPriceSpan.innerHTML = totalPrice + "$";
-//         console.log(totalPrice);
-//     });
-// }
