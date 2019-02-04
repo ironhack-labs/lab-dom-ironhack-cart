@@ -1,9 +1,9 @@
-/* var allDeleteButtons = document.getElementsByClassName("delete")
-        var clickDeleteHandler = function(event){
-            var clickedElement = event.target
-            var clickedShoppingItem = event.target.parentElement
-            //var container = event.target.parentElement.parentElement
-            var container = document.getElementById("cart-container")
+/* let allDeleteButtons = document.getElementsByClassName("delete")
+        let clickDeleteHandler = function(event){
+            let clickedElement = event.target
+            let clickedShoppingItem = event.target.parentElement
+            //let container = event.target.parentElement.parentElement
+            let container = document.getElementById("cart-container")
             debugger
             container.removeChild(clickedShoppingItem)
         }
@@ -15,9 +15,9 @@
 
 function deleteItem(e) {
   e.target.parentElement.parentElement.remove();
-    // node.removeChild(event.target.parentElement.parentElement);
-  }
-  // document.getElementById('btn-delete').addEventListener('click', () => document.getElementById('btn-delete').parentElement.parentElement.removeChild
+  // node.removeChild(event.target.parentElement.parentElement);
+}
+// document.getElementById('btn-delete').addEventListener('click', () => document.getElementById('btn-delete').parentElement.parentElement.removeChild
 
 
 function getPriceByProduct(e) {
@@ -56,10 +56,9 @@ function createNewItemRow(itemName, itemUnitPrice) {
 }
 
 function createNewItem() {
-  // const createNewItem = e => {
-  var price = document.getElementById('new-item-price').value;
-  var name = document.getElementById('new-item').value;
-  var newProductRow = `
+  let price = document.getElementById('new-item-price').value;
+  let name = document.getElementById('new-item').value;
+  let newProductRow = `
     <div class="item-name"><span class="item-name-span">${name}</span></div>
     <div class="item-cost">&#36;<span class="item-cost-span">${price}</span></div>
     <div class="qty1">
@@ -70,70 +69,53 @@ function createNewItem() {
     <div class="delete-button-div"><button class="btn-delete" id="btn-delete">Delete</button></div>
     <div class="success-button-div"><button class="btn-success calc-prices-button">Calculate</button></div>
     `;
-  var node = document.createElement("div");
+  let node = document.createElement("div");
   node.className = 'main';
   node.innerHTML = newProductRow;
-  var body = document.getElementsByTagName('body')[0];
-  var buttonsDiv = document.getElementById('buttons-div');
+  let body = document.getElementsByTagName('body')[0];
+  let buttonsDiv = document.getElementById('buttons-div');
   body.insertBefore(node, buttonsDiv);
-  //window.onload();
 
-
-  node.getElementsByClassName('btn-delete')[0].addEventListener('click', function () {
-    node.remove();
-    // node.removeChild(event.target.parentElement.parentElement);
-  });
-
+  $('.btn-delete').click(function () {
+    $(this).closest('.main').remove();
+  })
   $('.calc-prices-button').click(function () {
     let itemCost = parseInt($(this).closest(".main").find(".item-cost-span").text());
     let qty = $(this).closest(".main").find(".qty").val();
-    debugger
     let result = itemCost * qty;
     $(this).closest('.main').find('.product-total-span').html(result);
   })
-
-  //newDeleteButton();
 }
 
 
 
-
-
-window.onload = function () {
-  var calculatePriceButton = document.getElementsByClassName('calc-prices-button')[0];
-  var createItemButton = document.getElementById('new-row-button');
-  var deleteButton = document.getElementsByClassName('btn-delete')[0];  // var deleteButtons = document.getElementsByClassName('btn-delete');
-
-  var clickDeleteHandler = function (event) {
-    var clickedShoppingItem = event.target.parentElement;
-    var container = event.target.parentElement.parentElement.parentElement;    //var container = document.getElementById("basket")
-
-    container.removeChild(clickedShoppingItem.parentElement)
-  }
-  //calculatePriceButton.onclick = getPriceByProduct;
-  deleteButton.onclick = deleteItem;
-  createItemButton.onclick = createNewItem;
- 
-  // for(var i = 0; i<deleteButtons.length ; i++){
-  //   deleteButtons[i].onclick = deleteItem;
-  // }
-};
-
-$(document).ready(()=> {
-  $('#btn-delete').click(()=> {
+$(document).ready(() => {
+  $('#btn-delete').click(() => {
     $('.main').remove();
   });
 
+  $('.btn-delete').click(function () {
+    $(this).closest('.main').remove();
+  })
+
+  $('#new-row-button').click(()=> createNewItem());
+
   $('.calc-prices-button').click(function () {
-  
+
     let itemCost = parseInt($(this).closest(".main").find(".item-cost-span").text());
     let qty = $(this).closest(".main").find(".qty").val();
     let result = itemCost * qty;
-    debugger
     $(this).closest('.main').find('.product-total-span').html(result);
-    // let itemCost = parseFloat($('.item-cost-span').text());
-    // let qty = $('#qty').val();
-    // let result = itemCost * qty;
-    // $('.product-total-span').html(result);
+  })
+  $('#total').click(function () {
+    let total = 0;
+    let rows = document.getElementsByClassName("main");
+    for (let i = 0; i < rows.length; i++) {
+      let itemCost = parseInt($(rows[i]).find(".item-cost-span").text());
+      let qty = $(rows[i]).find(".qty").val();
+      let result = itemCost * qty;
+      total += result;
+    }
+    $('#totalPrice').text(total)
   })
 })
