@@ -151,17 +151,27 @@ function createCart() {
         var deleteButton = document.createElement("button");
         deleteButton.innerHTML = "Delete";
         product.appendChild(deleteButton);
+    //total price of the cart
+    var cartTotalPrice = document.createElement("div");
+    cart.appendChild(cartTotalPrice);
+    var cartTotalPriceTitle = document.createElement("h2");
+    cartTotalPriceTitle.innerHTML = "Total Price: <span>0$</span>";
+    cartTotalPrice.appendChild(cartTotalPriceTitle);
     //calculate prices button
     var calculatePricesButton = document.createElement("button");
     calculatePricesButton.innerHTML = "Calculate Prices";
     cart.appendChild(calculatePricesButton);
     calculatePricesButton.addEventListener("click", function () {
+        var finalPrice = 0;
         for (i = 0; i < document.getElementsByClassName("productCostSpan").length; i++) {
             var totalPrice = parseInt(document.getElementsByClassName("productCostSpan")[i].textContent, 10) * document.getElementsByClassName("productUnitsInput")[i].value;
             document.getElementsByClassName("productTotalPriceSpan")[i].innerHTML = totalPrice + "$";
-        }
+            finalPrice += totalPrice;
+        };
+        console.log(finalPrice);
+        cartTotalPriceTitle.innerHTML = "Total Price: <span>" + finalPrice + "$<span>";
     });
-}
+};
 
 // var calculatePrices = function () {
 //     var totalPrice = parseInt(productCostSpan, 10) * productUnitsInput;
