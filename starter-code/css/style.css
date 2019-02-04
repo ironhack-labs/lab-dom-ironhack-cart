@@ -22,20 +22,78 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+  border-color: lightgray;
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+  padding: 6px 12px;
+  border-radius: 4px;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #CF000F;
+  border-color: #CF000F;
+  padding: 6px 12px;
+  border-radius: 4px;
 }
 
-.quantity {
+#btn-delete {
+  color: #fff;
+  background-color: #CF000F;
+  border-color: #CF000F;
+  padding: 6px 12px;
+  border-radius: 4px;
+}
+
+.qty {
   margin: 0 5px;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  margin: 5%;
+}
+
+.shop-name {
+  display: flex;
+  justify-content: center;
+  margin: 5%;
+}
+
+.shop-name-span {
+  font-size: 2em;
+  font-weight: bolder;
+}
+
+.new-row-button {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+#total { 
+  background-color: #5cb85c;
+  color: white;
+}
+
+.total-price {
+  width: 30%;
+  font-weight: bolder;
+}
+
+#new-items {
+  margin-left: 5%;
+  display: flex;
+  flex-direction: column;
 }
