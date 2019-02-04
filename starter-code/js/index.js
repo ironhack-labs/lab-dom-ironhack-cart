@@ -1,60 +1,3 @@
-/* let allDeleteButtons = document.getElementsByClassName("delete")
-        let clickDeleteHandler = function(event){
-            let clickedElement = event.target
-            let clickedShoppingItem = event.target.parentElement
-            //let container = event.target.parentElement.parentElement
-            let container = document.getElementById("cart-container")
-            debugger
-            container.removeChild(clickedShoppingItem)
-        }
-
-        for(let i =0; i < allDeleteButtons.length; i++) {
-            allDeleteButtons[i].addEventListener("click", clickDeleteHandler)
-        }
-*/
-
-function deleteItem(e) {
-  e.target.parentElement.parentElement.remove();
-  // node.removeChild(event.target.parentElement.parentElement);
-}
-// document.getElementById('btn-delete').addEventListener('click', () => document.getElementById('btn-delete').parentElement.parentElement.removeChild
-
-
-function getPriceByProduct(e) {
-  //removed itemNode argument
-  return parseFloat(e.target.parentElement.getElementsByClassName('item-cost-span')) * getElementById('qty');
-  //return parseFloat(document.getElementsByClassName('item-cost-span')[0].innerHTML);
-  console.log(itemNode);
-}
-
-function updatePriceByProduct(productPrice, index) {
-
-}
-
-function getTotalPrice() {
-  document.getElementsByClassName('product-total-span')[0].innerHTML = (parseFloat(document.getElementById('qty').value * getPriceByProduct()));
-}
-
-function createQuantityInput() {
-
-}
-
-function createDeleteButton() {
-
-}
-
-function createQuantityNode() {
-
-}
-
-function createItemNode(dataType, itemData) {
-
-}
-
-function createNewItemRow(itemName, itemUnitPrice) {
-
-}
-
 function createNewItem() {
   let price = document.getElementById('new-item-price').value;
   let name = document.getElementById('new-item').value;
@@ -92,6 +35,7 @@ function createNewItem() {
 $(document).ready(() => {
   $('#btn-delete').click(() => {
     $('.main').remove();
+    $('#totalPrice').text('');
   });
 
   $('.btn-delete').click(function () {
