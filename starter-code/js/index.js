@@ -66,7 +66,7 @@ function createCart() {
     cart.appendChild(allProducts);
     //product div
     var product = document.createElement("div");
-    product.id = "product";
+    product.className = "product";
     allProducts.appendChild(product);
     product.style.display = "flex";
     product.style.flexDirection = "row";
@@ -108,11 +108,13 @@ function createCart() {
     //delete button
     var deleteButton = document.createElement("button");
     deleteButton.innerHTML = "Delete";
+    deleteButton.className = "deleteButton";
     product.appendChild(deleteButton);
+    deleteButton.addEventListener("click", deleteProduct);
     //SECOND PRODUCT
         //product div
         var product = document.createElement("div");
-        product.id = "product2";
+        product.className = "product";
         allProducts.appendChild(product);
         product.style.display = "flex";
         product.style.flexDirection = "row";
@@ -150,7 +152,9 @@ function createCart() {
         //delete button
         var deleteButton = document.createElement("button");
         deleteButton.innerHTML = "Delete";
+        deleteButton.className = "deleteButton";
         product.appendChild(deleteButton);
+        deleteButton.addEventListener("click", deleteProduct);
     //total price of the cart
     var cartTotalPrice = document.createElement("div");
     cart.appendChild(cartTotalPrice);
@@ -172,6 +176,13 @@ function createCart() {
         cartTotalPriceTitle.innerHTML = "Total Price: <span>" + finalPrice + "$<span>";
     });
 };
+
+
+function deleteProduct () {
+    // document.getElementById("all-products").removeChild(document.getElementsByClassName("product")[0]);
+    // console.log(event.currentTarget.parentNode);
+    document.getElementById("all-products").removeChild(event.currentTarget.parentNode);
+}
 
 // var calculatePrices = function () {
 //     var totalPrice = parseInt(productCostSpan, 10) * productUnitsInput;
