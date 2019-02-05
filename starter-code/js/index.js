@@ -1,57 +1,3 @@
-// function deleteItem(e){
-
-// }
-
-// function getPriceByProduct(itemNode){
-
-// }
-
-// function updatePriceByProduct(productPrice, index){
-
-// }
-
-// function getTotalPrice() {
-
-// }
-
-// function createQuantityInput(){
-
-// }
-
-// function createDeleteButton(){
-
-// }
-
-// function createQuantityNode(){
-
-// }
-
-// function createItemNode(dataType, itemData){
-
-// }
-
-// function createNewItemRow(itemName, itemUnitPrice){
-
-// }
-
-// function createNewItem(){
-
-// }
-
-// window.onload = function(){
-//   var calculatePriceButton = document.getElementById("calc-prices-button");
-//   var createItemButton = document.getElementById("new-item-create");
-//   var deleteButtons = document.getElementsByClassName("btn-delete");
-
-//   calculatePriceButton.onclick = getTotalPrice;
-//   createItemButton.onclick = createNewItem;
-
-//   for(var i = 0; i < deleteButtons.length ; i++){
-//     deleteButtons[i].onclick = deleteItem;
-//   }
-// };
-
-
 document.body.onload = createCart;
 
 function createCart() {
@@ -84,7 +30,7 @@ function createCart() {
     productCost.className = "second-flex";
     product.appendChild(productCost);
     var productCostSpan = document.createElement("span");
-    productCostSpan.className = "productCostSpan";
+    productCostSpan.className = "product-cost-span";
     productCostSpan.innerHTML = "25.00$";
     productCost.appendChild(productCostSpan);
     //units div
@@ -95,7 +41,7 @@ function createCart() {
     productUnitsLabel.innerHTML = "QTY ";
     var productUnitsInput = document.createElement("input");
     productUnitsInput.placeholder = "0";
-    productUnitsInput.className = "productUnitsInput";
+    productUnitsInput.className = "product-units-input";
     productUnits.appendChild(productUnitsLabel);
     productUnits.appendChild(productUnitsInput);
     //total product price
@@ -104,7 +50,7 @@ function createCart() {
     product.appendChild(productTotalPrice);
     var productTotalPriceSpan = document.createElement("span");
     productTotalPriceSpan.innerHTML = "0.00$";
-    productTotalPriceSpan.className = "productTotalPriceSpan";
+    productTotalPriceSpan.className = "product-total-price-span";
     productTotalPrice.appendChild(productTotalPriceSpan);
     //delete button
     var deleteButton = document.createElement("button");
@@ -129,7 +75,7 @@ function createCart() {
         productCost.className = "second-flex";
         product.appendChild(productCost);
         var productCostSpan = document.createElement("span");
-        productCostSpan.className = "productCostSpan";
+        productCostSpan.className = "product-cost-span";
         productCostSpan.innerHTML = "15.00$";
         productCost.appendChild(productCostSpan);
         //units div
@@ -140,7 +86,7 @@ function createCart() {
         productUnitsLabel.innerHTML = "QTY ";
         var productUnitsInput = document.createElement("input");
         productUnitsInput.placeholder = "0";
-        productUnitsInput.className = "productUnitsInput";
+        productUnitsInput.className = "product-units-input";
         productUnits.appendChild(productUnitsLabel);
         productUnits.appendChild(productUnitsInput);
         //total product price
@@ -149,7 +95,7 @@ function createCart() {
         product.appendChild(productTotalPrice);
         var productTotalPriceSpan = document.createElement("span");
         productTotalPriceSpan.innerHTML = "0.00$";
-        productTotalPriceSpan.className = "productTotalPriceSpan";
+        productTotalPriceSpan.className = "product-total-price-span";
         productTotalPrice.appendChild(productTotalPriceSpan);
         //delete button
         var deleteButton = document.createElement("button");
@@ -170,9 +116,9 @@ function createCart() {
     cart.appendChild(calculatePricesButton);
     calculatePricesButton.addEventListener("click", function () {
         var finalPrice = 0;
-        for (i = 0; i < document.getElementsByClassName("productCostSpan").length; i++) {
-            var totalPrice = parseInt(document.getElementsByClassName("productCostSpan")[i].textContent, 10) * document.getElementsByClassName("productUnitsInput")[i].value;
-            document.getElementsByClassName("productTotalPriceSpan")[i].innerHTML = totalPrice + "$";
+        for (i = 0; i < document.getElementsByClassName("product-cost-span").length; i++) {
+            var totalPrice = parseInt(document.getElementsByClassName("product-cost-span")[i].textContent, 10) * document.getElementsByClassName("product-units-input")[i].value;
+            document.getElementsByClassName("product-total-price-span")[i].innerHTML = totalPrice + "$";
             finalPrice += totalPrice;
         };
         cartTotalPriceTitle.innerHTML = "Total Price: <span>" + finalPrice + "$<span>";
@@ -210,7 +156,7 @@ function createCart() {
         productCost.className = "second-flex";
         lastAddedProductDiv.appendChild(productCost);
         var productCostSpan = document.createElement("span");
-        productCostSpan.className = "productCostSpan";
+        productCostSpan.className = "product-cost-span";
         productCostSpan.innerHTML = priceInput.value + "$";
         productCost.appendChild(productCostSpan);
         //units div
@@ -221,7 +167,7 @@ function createCart() {
         productUnitsLabel.innerHTML = "QTY ";
         var productUnitsInput = document.createElement("input");
         productUnitsInput.placeholder = "0";
-        productUnitsInput.className = "productUnitsInput";
+        productUnitsInput.className = "product-units-input";
         productUnits.appendChild(productUnitsLabel);
         productUnits.appendChild(productUnitsInput);
         //total product price
@@ -230,7 +176,7 @@ function createCart() {
         lastAddedProductDiv.appendChild(productTotalPrice);
         var productTotalPriceSpan = document.createElement("span");
         productTotalPriceSpan.innerHTML = "0.00$";
-        productTotalPriceSpan.className = "productTotalPriceSpan";
+        productTotalPriceSpan.className = "product-total-price-span";
         productTotalPrice.appendChild(productTotalPriceSpan);
         //delete button
         var deleteButton = document.createElement("button");
