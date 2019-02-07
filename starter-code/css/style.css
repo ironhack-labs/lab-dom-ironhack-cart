@@ -39,3 +39,20 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.header h1{
+  text-align: center;
+  padding: 30px;
+}
+
+.product-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.calculate {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
