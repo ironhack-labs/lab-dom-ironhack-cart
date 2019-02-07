@@ -1,5 +1,18 @@
+
 input {
   border: solid 1px black;
+  padding: 0 5px;
+}
+
+.title {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.title h1{
+  position: relative;
+  left: 50%;
+  margin: 0px;
 }
 
 .btn {
@@ -28,6 +41,9 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    position: relative;
+    left: 50%;
+    margin: 30px 0;
 }
 
 .btn-delete {
@@ -38,4 +54,11 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.product {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
