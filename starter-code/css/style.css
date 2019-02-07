@@ -4,7 +4,7 @@ input {
 
 .btn {
   display: inline-block;
-  padding: 6px 12px;
+  padding: 6px 30px;
   margin-bottom: 0;
   font-size: 14px;
   font-weight: 400;
@@ -39,3 +39,26 @@ input {
 .quantity {
   margin: 0 5px;
 }
+/* ------------------------- */
+#container-products{
+ border: 3px solid  #0d490d;
+}
+
+.product-name{
+ border: 3px solid  #0d1149;
+}
+
+.price-unit{
+ border: 3px solid  #bb540f;
+}
+
+
+.quantity{
+ border: 3px solid  #6b6c80;
+}
+.total-product-price{
+ border: 3px solid  #6b6c80;
+}
+
+
+

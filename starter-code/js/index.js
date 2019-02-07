@@ -11,6 +11,10 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
+  var precioUnidad = document.getElementsByClassName("btn");
+  var cantidad = document.getElementById("cantidad");
+  var total=(precioUnidad * cantidad);
+  //console.log(total);
 
 }
 
