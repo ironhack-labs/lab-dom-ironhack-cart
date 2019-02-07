@@ -1,3 +1,11 @@
+h
+
+.chart{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center
+}
 input {
   border: solid 1px black;
 }
@@ -39,3 +47,4 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
