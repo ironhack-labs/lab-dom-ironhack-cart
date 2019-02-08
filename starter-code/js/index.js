@@ -11,7 +11,7 @@ function deleteItem(e) {
   parent.removeChild(deleteTarget);
   // recalculate order price after deleting an item
   getTotalPrice();
-}
+};
 
  //------------------------------------------------//
 // -- Get total price button
@@ -49,14 +49,14 @@ function createNewItem() {
 
   // create product row div with class product-wrapper
   var divEle = document.createElement("div");
-  divEle.setAttribute("class", "product-wrapper")
+  divEle.setAttribute("class", "product-wrapper");
 
   // creating input for div with the provided input (the innerHTML)
   var input = "<div><span class='product-name'>" + prodName + "</span></div>";
   input += "<div>€ <span class='product-cost'>" + prodCost + "</span></div>";
-  input += '<div><label class="quantity" for="quantity">QTY</label><input class="product-quantity" type="number" value="1" /></div>'
-  input += '<div>€ <span class="product-total">0</span></div>'
-  input += '<div><button class="btn btn-delete">Delete</button></div>'
+  input += '<div><label class="quantity" for="quantity">QTY</label><input class="product-quantity" type="number" value="1" /></div>';
+  input += '<div>€ <span class="product-total">0</span></div>';
+  input += '<div><button class="btn btn-delete">Delete</button></div>';
 
   // push new row of the product behind previous one, but above create button.
   divEle.innerHTML = input;
@@ -71,16 +71,16 @@ function createNewItem() {
   document.getElementById("input-product-cost").value = null;
 };
 
-
 //------------------------------------------------//
 // -- Event listeners
 //------------------------------------------------//
+
 function deleteListener() {
   var deleteButtons = document.getElementsByClassName('btn-delete');
   for (var i = 0; i < deleteButtons.length; i++) {
     // deleteButtons[i].onclick = deleteItem; // option 1, but unclear it is a callback function
-    deleteButtons[i].addEventListener("click", deleteItem) // (different, more clear, way of writing the same)
-  }
+    deleteButtons[i].addEventListener("click", deleteItem); // (different, more clear, way of writing the same)
+  };
 };
 
 window.onload = function () {
