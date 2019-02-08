@@ -12,19 +12,19 @@
 <body>
   <div class="title">
     <h1>Ironhack</h1>
-    <h1> Merchandising Shop</h1>
+    <h1>Merchandising Shop</h1>
   </div>
   <div class="product">
-    <div><span>IronBubble-head</span></div>
-    <div><span>$25.00</span></div>
+    <div><span class="product-name">IronBubble-head</span></div>
+    <div>$<span class="product-price">25.00</span></div>
     <div>
       <label for="quantity" class="quantity">QTY</label>
-      <input type="text" name="units" id="units" value="0">
+      <input type="number" min="0" name="number-units" class="units" value="0">
     </div>
-    <div><span>$0.00</span></div>
+    <div>$<span class="total-product-price"></span></div>
     <div><button class="btn btn-delete">Delete</button></div>
   </div>
 
-  <button class="btn btn-success">Calculate rices</button>
+  <button class="btn btn-success" id="calc-prices-button">Calculate rices</button>
 </body>
 </html>
