@@ -1,27 +1,38 @@
 .product-wrapper {
   display: flex;
   justify-content: space-around;
+  margin: 20px 10px;
 }
-#calc-price{
+
+#calc-price {
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
-#calculate-price-btn{
+
+#calculate-price-btn {
   margin: 40px auto;
 }
 
-#main-section{
+#main-section {
   margin: 0 auto;
 }
-  
-h1{
+
+h1 {
   margin: 150px 0px 100px 700px;
+}
+
+h2 {
+  display: inline-flex;
+  margin: 10px 0px 10px 750px;
 
 }
-#IronBubble span{
+
+#IronBubble span {
   font-weight: bold;
 }
 
+#cart-section {}
 
 input {
   border: solid 1px black;
@@ -50,15 +61,15 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #CF000F;
+  border-color: #CF000F;
 }
 
 .quantity {
