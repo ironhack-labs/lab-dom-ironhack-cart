@@ -1,6 +1,7 @@
 input {
   border: solid 1px black;
   display: inline-block;
+  max-width: 150px;
 }
 
 .btn {
@@ -52,17 +53,17 @@ h1 {
 }
 
 .wrapper {
-  padding: 0 10%;
+  padding: 0 5%;
   text-align: center;
 }
 
-.product-wrapper {
+.product-wrapper, .create-product-wrapper  {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
 }
 
-.product-wrapper div {
+.product-wrapper div, .create-product-wrapper div {
   width: 20%;
 }

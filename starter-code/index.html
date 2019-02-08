@@ -20,32 +20,35 @@
       <h1>Ironhack Merchandising Shop</h1>
     </header>
     <!-- Header end -->
+    <div id="product-overview">
 
-    <!-- Products start -->
-    <div class="product-wrapper">
-      <div><span class="product-name">Ipad</span></div>
-      <div>€ <span class="product-cost">25</span></div>
-      <div><label class="quantity" for="quantity">QTY</label><input class="product-quantity" type="text" value="10" /></div>
-      <div>€ <span class="product-total">0</span></div>
-      <div><button class="btn btn-delete">Delete</button></div>
-    </div>
-    <div class="product-wrapper">
-      <div><span class="product-name">Snowboard</span></div>
-      <div>€ <span class="product-cost">33</span></div>
-      <div><label class="quantity" for="quantity">QTY</label><input class="product-quantity" type="text" value="20" /></div>
-      <div>€ <span class="product-total">0</span></div>
-      <div><button class="btn btn-delete">Delete</button></div>
-    </div>
-    <!-- Products end -->
-
-    <!-- Create new product start -->
-    <div class="product-wrapper">
-        <div><input class="product-name" /></div>
-        <div>€ <span class="product-cost">33</span></div>
-        <div></div>
-        <div></div>
-        <div><button class="btn btn-create">Create</button></div>
+      <!-- Products start -->
+      <div class="product-wrapper">
+        <div><span class="product-name">Ipad</span></div>
+        <div>€ <span class="product-cost">25</span></div>
+        <div><label class="quantity" for="quantity">QTY</label><input class="product-quantity" type="number" value="1" /></div>
+        <div>€ <span class="product-total">0</span></div>
+        <div><button class="btn btn-delete">Delete</button></div>
       </div>
+      <div class="product-wrapper">
+        <div><span class="product-name">Snowboard</span></div>
+        <div>€ <span class="product-cost">33</span></div>
+        <div><label class="quantity" for="quantity">QTY</label><input class="product-quantity" type="number" value="1" /></div>
+        <div>€ <span class="product-total">0</span></div>
+        <div><button class="btn btn-delete">Delete</button></div>
+      </div>
+      <!-- Products end -->
+    </div>
+
+      <!-- Create new product start -->
+      <div class="create-product-wrapper">
+        <div><input id="input-product-name" placeholder="Product name" /></div>
+        <div><input id="input-product-cost" placeholder="Product cost in euro" type="number" /></div>
+        <div></div>
+        <div></div>
+        <div><button id="new-item-create" class="btn btn-create">Create</button></div>
+      </div>
+      <!-- Create new product end -->
 
 
 
