@@ -85,6 +85,7 @@ function getTotalPrice() {
 }
 
 function createQuantityInput(){
+  //create wrapping div
   var createDiv = document.createElement("div");
   createDiv.setAttribute("class", "inputdiv");
   
@@ -111,6 +112,7 @@ function createQuantityInput(){
 }
 
 function createDeleteButton(){
+  //create wrapping div
   var createDiv = document.createElement("div");
     //create delete button
   var createButton = document.createElement("button");
@@ -126,6 +128,7 @@ function createDeleteButton(){
 }
 
 function createProductPrice(){
+  //create wrapping div
   var createDiv = document.createElement("div");
   var text = document.createTextNode("$");
   createDiv.appendChild(text);
@@ -144,6 +147,7 @@ function createProductPrice(){
 }
 
 function createTotalPriceNode(){
+  //create wrapping div
   var createDiv = document.createElement("div");
   var text = document.createTextNode("$");
   createDiv.appendChild(text);
@@ -159,6 +163,7 @@ function createTotalPriceNode(){
 
 
 function createItemNode(){
+  //create wrapping div
   var createDiv = document.createElement("div");
 
   var createSpan = document.createElement("span");
@@ -175,6 +180,7 @@ function createItemNode(){
 
 //function createNewItemRow(itemName, itemUnitPrice){
 function createNewItemRow(){
+  //create wrapping product div
   var createDiv = document.createElement("div");
   createDiv.setAttribute("class", "product");
   //append the div to document
@@ -188,7 +194,7 @@ function createNewItem(){
   createQuantityInput();
   createTotalPriceNode();
   createDeleteButton();
-
+  //make sure every new button created has functionality onclick and a correct id
   var reassignId = document.getElementsByClassName('btn-delete');
 
   var deleteButtons = document.getElementsByClassName('btn-delete');
