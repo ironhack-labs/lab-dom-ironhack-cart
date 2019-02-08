@@ -64,6 +64,12 @@ h1 {
   position: relative;
 }
 
+.main-container {
+  display: flex;
+  flex-flow: column nowrap;
+ /* justify-content: space-around;
+  align-items: baseline; */
+}
 
 /*--------------Normalizer---------------*/
 
