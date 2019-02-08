@@ -1,3 +1,28 @@
+.product-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+#calc-price{
+  display: flex;
+  justify-content: center;
+}
+#calculate-price-btn{
+  margin: 40px auto;
+}
+
+#main-section{
+  margin: 0 auto;
+}
+  
+h1{
+  margin: 150px 0px 100px 700px;
+
+}
+#IronBubble span{
+  font-weight: bold;
+}
+
+
 input {
   border: solid 1px black;
 }
