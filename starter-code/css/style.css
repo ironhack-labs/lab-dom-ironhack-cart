@@ -1,5 +1,6 @@
 input {
   border: solid 1px black;
+  style : float-left;
 }
 
 .btn {
