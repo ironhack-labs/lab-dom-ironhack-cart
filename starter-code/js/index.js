@@ -1,6 +1,4 @@
 function deleteItem(e) {
-  console.log(e);
-  console.log(e.currentTarget);
   // deleteTarget (2 higher: product-wrapper) + parent of deleteTarget (3 higher: wrapper)
   // e.currentTarget takes the current element of the click event listener (e)
   var deleteTarget = e.currentTarget.parentNode.parentNode;
@@ -61,8 +59,8 @@ function createNewItem() {
   var prodName = document.getElementById("input-product-name").value;
   var prodCost = document.getElementById("input-product-cost").value;
 
-  if(prodName.length == 0) {return alert("No productname provided"); };
-  if(prodCost.length == 0) {return alert("No price provided"); }; 
+  if (prodName.length == 0) { return alert("No productname provided"); };
+  if (prodCost.length == 0) { return alert("No price provided"); };
 
   // create product row div with class product-wrapper
   var divEle = document.createElement("div");
@@ -79,8 +77,20 @@ function createNewItem() {
   divEle.innerHTML = input;
   var wrapperParent = document.getElementById('product-overview');
   wrapperParent.appendChild(divEle);
+  // adding delete event listener
+  deleteListener();
+
+  // resetting values
+  document.getElementById("input-product-name").value = '';
+  document.getElementById("input-product-cost").value = null;
+}
+
+function deleteListener() {
   var deleteButtons = document.getElementsByClassName('btn-delete');
-  console.log(deleteButtons);
+  for (var i = 0; i < deleteButtons.length; i++) {
+    // deleteButtons[i].onclick = deleteItem; // option 1, but unclear it is a callback function
+    deleteButtons[i].addEventListener("click", deleteItem) // (different, more clear, way of writing the same)
+  }
 }
 
 //------------------------------------------------//
@@ -90,16 +100,11 @@ function createNewItem() {
 window.onload = function () {
   var calculatePriceButton = document.getElementById('calc-prices-button');
   var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete'); 
+  var deleteButtons = document.getElementsByClassName('btn-delete');
 
   calculatePriceButton.onclick = getTotalPrice;
   createItemButton.onclick = createNewItem;
 
-  // console.log(deleteButtons);
-  for (var i = 0; i < deleteButtons.length; i++) {
-    // deleteButtons[i].onclick = deleteItem; // option 1, but unclear it is a callback function
-    deleteButtons[i].addEventListener("click", deleteItem) // (different, more clear, way of writing the same)
-  }
+  deleteListener();
 };
 
- 
