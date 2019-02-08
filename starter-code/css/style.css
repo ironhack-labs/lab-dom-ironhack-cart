@@ -78,10 +78,22 @@ input {
   padding: 15px 0px;
 }
 
+.product-create div {
+  width: 10%;
+}
+
+.product-create .inputdiv {
+  width: 25%;
+}
+
+.product-create input {
+  width: 100%;
+}
+
 .product div {
   width: 10%;
 }
 
 .product .inputdiv {
-  width: 25%
+  width: 25%;
 }
