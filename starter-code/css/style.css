@@ -1,5 +1,6 @@
 input {
   border: solid 1px black;
+  display: inline-block;
 }
 
 .btn {
@@ -28,6 +29,8 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    /* margin-top: 50px; */
+    margin: 50px auto 0;
 }
 
 .btn-delete {
@@ -36,6 +39,30 @@ input {
     border-color: #CF000F;
 }
 
+header {
+  margin-bottom: 50px;
+}
+
 .quantity {
   margin: 0 5px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.wrapper {
+  padding: 0 10%;
+  text-align: center;
+}
+
+.product-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.product-wrapper div {
+  width: 20%;
 }
