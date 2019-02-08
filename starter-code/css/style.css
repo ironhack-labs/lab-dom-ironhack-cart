@@ -61,4 +61,13 @@ input {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  padding: 15px 0px;
+}
+
+.product div {
+  width: 10%;
+}
+
+.product .inputdiv {
+  width: 25%
 }
