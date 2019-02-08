@@ -2,13 +2,13 @@ window.onload = function(){
 //////IronBubbleProduct
 
 var price = document.getElementById("price").innerHTML;
-var totalPriceButton = document.getElementsByClassName("total")[0].innerHTML;
+var totalPrice = document.getElementsByClassName("total")[0].innerHTML;
 
-totalPriceButton.addEventListener("click", function(){
+CalcPriceButton.addEventListener("click", function(){
   var quantity = document.getElementsByTagName("input")[0].value;    
   
-  var total = parseInt(price)* quantity;
- total= document.getElementsByClassName("total")[0].innerHTML;  
+  totalPrice = parseInt(price)* quantity;
+  document.getElementsByClassName("total")[0].innerHTML = totalPrice;      //setting a new value
 });
 }
 
