@@ -39,3 +39,33 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+
+.product, .create-product {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+h1 {
+  text-align: center;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  height: 300px;
+/* : center; */
+  /* align-items: space-between; */
+}
+
+#calc-price {
+  text-align: center;
+}
+
+.center-text{
+  text-align:center;
+  margin:20px 0 0 0;
+}
