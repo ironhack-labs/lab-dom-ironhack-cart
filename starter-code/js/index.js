@@ -2,13 +2,13 @@ function deleteItem(){
   //identifico que posicion tiene el botón de borrado
   var indexButton = parseInt(this.id, 10);
   //identifico al padre del elemento a borrar
-  var bodyId = document.getElementById("body");
+  var divId = document.getElementById("div-products");
   //creo un array de productos y borro el de la posicion de borrado
   var classCol = document.getElementsByClassName("product");
   var arr = [].slice.call(classCol);
   var itemToDelete = arr[indexButton];
   console.log(itemToDelete);
-  bodyId.removeChild(itemToDelete);
+  divId.removeChild(itemToDelete);
   //vuelvo a asignar un id a cada boton
   var reassignId = document.getElementsByClassName('btn-delete');
   for(var i = 0; i<reassignId.length ; i++){
@@ -35,10 +35,6 @@ function getPriceByProduct(itemNode){
   }
 }
 
-function updatePriceByProduct(productPrice, index){
-
-}
-
 function getTotalPrice() {
   getPriceByProduct("total-product-price")
   if (!document.getElementById("total")){
@@ -53,7 +49,9 @@ function getTotalPrice() {
   var orderPrice = arr.reduce(function(a, b){
     return a + b;
   }, 0);
+  console.log(orderPrice)
   orderPrice = orderPrice.toFixed(2)
+  console.log(orderPrice)
   //Create output of total price
     //create div and add class
   var createDiv = document.createElement("div");
@@ -63,6 +61,7 @@ function getTotalPrice() {
   var createh1 = document.createElement("h1");
   createh1.setAttribute("id","total");
   var text = document.createTextNode("Total price: $" + orderPrice);
+  console.log(orderPrice);
   createh1.appendChild(text);
   createDiv.appendChild(createh1);
     //append the div to document
@@ -86,27 +85,117 @@ function getTotalPrice() {
 }
 
 function createQuantityInput(){
-
+  var createDiv = document.createElement("div");
+  createDiv.setAttribute("class", "inputdiv");
+  
+    //create label
+  var createLabel = document.createElement("label");
+  createLabel.setAttribute("for", "quantity");
+  createLabel.setAttribute("class", "quantity");
+  var labelText = document.createTextNode("QTY");
+  createLabel.appendChild(labelText);
+    //create input
+  var createInput = document.createElement("input");
+  createInput.setAttribute("type", "number");
+  createInput.setAttribute("min", "0");
+  createInput.setAttribute("name", "number-units");
+  createInput.setAttribute("class", "units");
+  createInput.setAttribute("value", "0");
+    //append them to div
+  createDiv.appendChild(createLabel);
+  createDiv.appendChild(createInput);
+    //append the div to document
+    var col = document.getElementsByClassName("product");
+    var arr = [].slice.call(col);
+    arr[col.length-1].appendChild(createDiv);
 }
 
 function createDeleteButton(){
-
+  var createDiv = document.createElement("div");
+    //create delete button
+  var createButton = document.createElement("button");
+  createButton.setAttribute("class", "btn btn-delete");
+  var buttonText = document.createTextNode("Delete");
+  createButton.appendChild(buttonText);
+    //append them to div
+  createDiv.appendChild(createButton);
+    //append the div to document
+  var col = document.getElementsByClassName("product");
+  var arr = [].slice.call(col);
+  arr[col.length-1].appendChild(createDiv);
 }
 
-function createQuantityNode(){
+function createProductPrice(){
+  var createDiv = document.createElement("div");
+  var text = document.createTextNode("$");
+  createDiv.appendChild(text);
 
+  var createSpan = document.createElement("span");
+  createSpan.setAttribute("class", "product-price");
+  var item = document.getElementById("input-product-price")
+  var value = parseInt(item.value, 10)
+  var decValue = value.toFixed(2);
+  createSpan.innerHTML = decValue
+  createDiv.appendChild(createSpan);
+  //append the div to document
+  var col = document.getElementsByClassName("product");
+  var arr = [].slice.call(col);
+  arr[col.length-1].appendChild(createDiv);
 }
 
-function createItemNode(dataType, itemData){
-
+function createTotalPriceNode(){
+  var createDiv = document.createElement("div");
+  var text = document.createTextNode("$");
+  createDiv.appendChild(text);
+    //create span tag
+  var createSpan = document.createElement("span");
+  createSpan.setAttribute("class", "total-product-price");
+  createDiv.appendChild(createSpan);
+    //append the div to document
+  var col = document.getElementsByClassName("product");
+  var arr = [].slice.call(col);
+  arr[col.length-1].appendChild(createDiv);
 }
 
-function createNewItemRow(itemName, itemUnitPrice){
 
+function createItemNode(){
+  var createDiv = document.createElement("div");
+
+  var createSpan = document.createElement("span");
+  createSpan.setAttribute("class", "product-name");
+  var item = document.getElementById("input-product-name")
+  var value = item.value
+  createSpan.innerHTML = value
+  createDiv.appendChild(createSpan);
+  //append the div to document
+  var col = document.getElementsByClassName("product");
+  var arr = [].slice.call(col);
+  arr[col.length-1].appendChild(createDiv);
+}
+
+//function createNewItemRow(itemName, itemUnitPrice){
+function createNewItemRow(){
+  var createDiv = document.createElement("div");
+  createDiv.setAttribute("class", "product");
+  //append the div to document
+  document.getElementById("div-products").appendChild(createDiv);
 }
 
 function createNewItem(){
+  createNewItemRow();
+  createItemNode();
+  createProductPrice();
+  createQuantityInput();
+  createTotalPriceNode();
+  createDeleteButton();
 
+  var reassignId = document.getElementsByClassName('btn-delete');
+
+  var deleteButtons = document.getElementsByClassName('btn-delete');
+  for(var i = 0; i<reassignId.length ; i++){
+    reassignId[i].setAttribute("id", i);
+    deleteButtons[i].onclick = deleteItem;
+  }
 }
 window.onload = function(){
   var calculatePriceButton = document.getElementById('calc-prices-button');
@@ -114,7 +203,7 @@ window.onload = function(){
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
   calculatePriceButton.onclick = getTotalPrice;
-  //createItemButton.onclick = createNewItem;
+  createItemButton.onclick = createNewItem;
   
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].setAttribute("id", i);

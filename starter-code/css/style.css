@@ -52,11 +52,25 @@ input {
     border-color: #CF000F;
 }
 
+.btn-create {
+  color: #000;
+  background-color: #fff;
+  border-color: #000;
+}
+
 .quantity {
   margin: 0 5px;
 }
 
 .product {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 15px 0px;
+}
+
+.product-create {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
