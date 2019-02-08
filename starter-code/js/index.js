@@ -1,3 +1,7 @@
+//------------------------------------------------//
+// -- Remove buttons
+//------------------------------------------------//
+
 function deleteItem(e) {
   // deleteTarget (2 higher: product-wrapper) + parent of deleteTarget (3 higher: wrapper)
   // e.currentTarget takes the current element of the click event listener (e)
@@ -9,13 +13,9 @@ function deleteItem(e) {
   getTotalPrice();
 }
 
-function getPriceByProduct(itemNode) {
-
-}
-
-function updatePriceByProduct(productPrice, index) {
-
-}
+ //------------------------------------------------//
+// -- Get total price button
+//------------------------------------------------//
 
 function getTotalPrice() {
   var orderTotal = 0;
@@ -34,31 +34,16 @@ function getTotalPrice() {
   document.getElementById("order-total").innerHTML = orderTotal;
 };
 
-function createQuantityInput() {
-
-}
-
-function createDeleteButton() {
-
-}
-
-function createQuantityNode() {
-
-}
-
-function createItemNode(dataType, itemData) {
-
-}
-
-function createNewItemRow(itemName, itemUnitPrice) {
-
-}
-
+//------------------------------------------------//
+// -- Create new item
+//------------------------------------------------//
+ 
 function createNewItem() {
   // retrieve values from input fields
   var prodName = document.getElementById("input-product-name").value;
   var prodCost = document.getElementById("input-product-cost").value;
 
+  // error handling
   if (prodName.length == 0) { return alert("No productname provided"); };
   if (prodCost.length == 0) { return alert("No price provided"); };
 
@@ -77,25 +62,26 @@ function createNewItem() {
   divEle.innerHTML = input;
   var wrapperParent = document.getElementById('product-overview');
   wrapperParent.appendChild(divEle);
-  // adding delete event listener
+
+  // adding delete event listener to all delete buttons
   deleteListener();
 
   // resetting values
   document.getElementById("input-product-name").value = '';
   document.getElementById("input-product-cost").value = null;
-}
+};
 
+
+//------------------------------------------------//
+// -- Event listeners
+//------------------------------------------------//
 function deleteListener() {
   var deleteButtons = document.getElementsByClassName('btn-delete');
   for (var i = 0; i < deleteButtons.length; i++) {
     // deleteButtons[i].onclick = deleteItem; // option 1, but unclear it is a callback function
     deleteButtons[i].addEventListener("click", deleteItem) // (different, more clear, way of writing the same)
   }
-}
-
-//------------------------------------------------//
-// -- Event listeners
-//------------------------------------------------//
+};
 
 window.onload = function () {
   var calculatePriceButton = document.getElementById('calc-prices-button');
