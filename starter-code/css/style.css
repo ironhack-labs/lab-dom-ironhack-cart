@@ -40,7 +40,7 @@ input {
   margin: 0 5px;
 }
 
-.header h1{
+.header h1, .total-cart {
   text-align: center;
   padding: 30px;
 }
@@ -57,11 +57,6 @@ input {
   display: flex;
   justify-content: center;
   padding: 50px;
-}
-
-.col-5 {
-  float: left;
-  width: 20%;
 }
 
 .col-15 {
