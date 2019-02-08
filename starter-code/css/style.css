@@ -47,12 +47,33 @@ input {
 
 .product-wrapper {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+  padding: 15px;
+  margin-left: 40px;
 }
 
 .calculate {
   display: flex;
   justify-content: center;
   padding: 50px;
+}
+
+.col-5 {
+  float: left;
+  width: 20%;
+}
+
+.col-15 {
+  float: left;
+  width: 15%;
+}
+
+.col-20 {
+  float: left;
+  width: 20%;
+}
+
+.total-price {
+  padding-left: 5%;
 }
