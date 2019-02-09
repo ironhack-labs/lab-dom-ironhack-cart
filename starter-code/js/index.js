@@ -1,6 +1,10 @@
 function deleteItem(e){
-  var productDelete = document.currentTarget.parentNode.parentNode;
+  console.log("entra");
+  var productDelete = e.currentTarget.parentNode.parentNode;
+  var parent = productDelete.parentNode;
+  parent.removeChild(productDelete);
   
+  getTotalPrice();
 }
 
 function getPriceByProduct(itemNode){
@@ -53,7 +57,8 @@ window.onload = function(){
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
   calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
+  // createItemButton.onclick = createNewItem;
+  
 
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
