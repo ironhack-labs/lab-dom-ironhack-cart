@@ -36,6 +36,12 @@ input {
     border-color: #CF000F;
 }
 
+.btn-create {
+  border-color: #CCCCCC;
+  padding: 2px 5px;
+  margin-left: 20px;
+}
+
 .quantity {
   margin: 0 5px;
 }
@@ -72,3 +78,10 @@ input {
 .total-price {
   padding-left: 5%;
 }
+ .new-product-wrapper {
+  display: flex;
+  padding: 15px;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 40px;
+ }
