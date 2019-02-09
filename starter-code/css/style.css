@@ -39,3 +39,22 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+h1 {
+  margin-left: 47%;
+  padding-right: 35%;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 3%;
+}
+
+.product2 {
+  padding-right: 3%;
+}
+.calculate {
+margin-left: 49%;
+padding-top: 50px;
+}

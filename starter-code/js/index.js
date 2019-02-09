@@ -11,7 +11,17 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-
+  
+  var wrapper = document.getElementsByClassName("wrapper");
+  var total = 0; 
+  for (i = 0; i < wrapper.length; i++) {
+      var productCost = document.getElementsByClassName("cost");
+      var productQuantity = document.getElementsByClassName("units");
+      var totalPrice = parseFloat(productCost) * productQuantity;
+      var price = document.getElementsByClassName("total")[i];
+      price.innerHTML = "$" + totalPrice;
+    };
+    
 }
 
 function createQuantityInput(){
