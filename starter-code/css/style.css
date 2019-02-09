@@ -64,12 +64,24 @@ h1 {
   position: relative;
 }
 
+.container {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: baseline;
+  margin-bottom: 20px;
+  align-content: flex-start;
+
+}
+
+
+
 .main-container {
   display: flex;
   flex-flow: column nowrap;
- /* justify-content: space-around;
-  align-items: baseline; */
+ justify-content: space-around;
 }
+
 
 /*--------------Normalizer---------------*/
 

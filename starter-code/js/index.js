@@ -18,6 +18,9 @@ function getPriceByProduct(itemNode){
   var sum2 = totalSum[1];
   sum1.innerHTML = '$' + totalPrice1;
   sum2.innerHTML = '$' + totalPrice2;
+  var sumPrices = totalPrice1 + totalPrice2;
+  return sumPrices;
+
 }
 
 function updatePriceByProduct(productPrice, index){
@@ -25,27 +28,6 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-
-/*  
-  //var productPrice = getElementByValue
- // var idPrice = document.getElementById('price');
- // console.log(idPrice);
- // var prices = price.getAttribute('id');
- // console.log(prices);
-
- 
-  var prices = document.getElementById('price').innerHTML;
-// console.log(prices);
-  var priceNumber = prices.substring(1);
- // console.log(priceNumber);
-  var input = document.getElementsByTagName('input')[0];
- // console.log(input.value);
-  var totalPrice = parseInt(priceNumber) * input.value;
- // console.log(totalPrice);
-  var totalSum = document.getElementById('totalSumId');
-  totalSum.innerHTML = '$' + totalPrice;
-  
-*/
 
 }
 
