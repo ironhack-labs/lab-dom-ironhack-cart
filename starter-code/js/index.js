@@ -2,8 +2,16 @@ function deleteItem(e){
 
 }
 
-function getPriceByProduct(itemNode){
 
+function getPriceByProduct(itemNode){
+  var product = itemNode.parentElement.parentElement;
+  var qty = itemNode.value;
+  var unitPrice = [].slice.call(product.getElementsByClassName('unitCost'));  
+  unitPrice = parseFloat((unitPrice[0].innerHTML).slice(1,6));
+  if (qty === 0) {
+  } else if (qty >= 0) {
+    [].slice.call(product.getElementsByClassName('totalCost'))[0].innerHTML = "$"+ (qty * unitPrice).toFixed(2);
+  }
 }
 
 function updatePriceByProduct(productPrice, index){

@@ -39,3 +39,29 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+/* ----- MY CSS ----- */
+
+h1 {
+  padding: 20px 0;
+  margin-bottom: 40px;
+  text-align: center;
+  border-bottom: 2px ridge gray;
+}
+
+.wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: baseline;
+  margin-bottom: 10px;
+}
+
+.qty {
+  text-align: right;
+}
+
+.calculatePrice {
+  text-align: center;
+  margin: 20px 0;
+}
