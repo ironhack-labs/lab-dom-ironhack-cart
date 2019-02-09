@@ -1,5 +1,6 @@
 function deleteItem(e){
-
+  var productDelete = document.currentTarget.parentNode.parentNode;
+  
 }
 
 function getPriceByProduct(itemNode){
@@ -11,7 +12,15 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-
+  var totalPrice = 0;
+  for(var i= 0; i<document.getElementsByClassName("product-line").length;i++) {
+    var productPrice = document.getElementsByClassName("product-price")[i].innerHTML;
+    var productQuantity = document.getElementsByClassName("quantity")[i].value;
+    var totalLinePrice=parseFloat(productPrice)*productQuantity;
+    document.getElementsByClassName("product-line-price")[i].innerHTML = totalLinePrice.toFixed(2);
+    totalPrice += totalLinePrice;
+  }
+  document.querySelector(".total-price").innerHTML = totalPrice.toFixed(2);
 }
 
 function createQuantityInput(){
