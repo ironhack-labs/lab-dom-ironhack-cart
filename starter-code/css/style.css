@@ -1,41 +1,64 @@
 input {
   border: solid 1px black;
+  padding: 5px;
 }
-
-.btn {
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.42857143;
+h1{
   text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
+  text-transform: capitalize;
+  margin-top: 40px;
+  margin-bottom: 60px;
 }
-
+.item{
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+  display: flex;
+  width: 130px;
+  margin: 70px auto;
+  text-align: center;
 }
-
+.btn-success p{
+  width: 130px;
+}
+.qty{
+  display: flex;
+}
+.qty p{
+  margin-right: 10px;
+}
+.product p{
+  width: 120px;
+}
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #CF000F;
+  border-color: #CF000F;
+  display: inline-block;
+  border-radius: 8px;
 }
-
+.btn-delete p{
+  width: 90px;
+  text-align: center;
+  padding: 1px;
+}
+.btn-create {
+  border: 1px solid #000;
+  display: inline-block;
+  border-radius: 8px;
+  padding: 14px;
+  margin-top: 0;
+}
+.btn-create p{
+  margin: 0;
+}
 .quantity {
   margin: 0 5px;
+}
+.calcu-suma{
+  text-align: center;
 }
