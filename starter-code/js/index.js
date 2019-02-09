@@ -20,6 +20,12 @@ function updatePriceByProduct(productPrice, index){
 
 function getTotalPrice() {
 
+  var totalPrice = [].slice.call(document.getElementsByClassName('totalCost'))
+  console.log(totalPrice.reduce(function(acc, priceProducts){
+    return acc += priceProducts[0].innerHTML;
+  }))
+  
+
 }
 
 function createQuantityInput(){

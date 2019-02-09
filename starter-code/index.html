@@ -14,11 +14,30 @@
   <h1>Ironhack<br>Merchandising Shop</h1>
 
   <div class="wrapper">
+      <div class="itemName">
+        <span>IronBuble-head</span>
+      </div>
+      <div >
+        <span class="unitCost">$25.00</span>
+      </div>
+      <div>
+          <label class="quantity" for="qty">QTY</label>
+          <input type="number" class="quantity qty" name="qty" min="0" value="0"onchange="getPriceByProduct(this)" >
+      </div>
+      <div>
+        <span class="totalCost">$0.00</span>
+      </div>
+      <div>
+        <button class="btn btn-delete">Delete</button>
+      </div>
+  </div>
+
+  <div class="wrapper">
     <div class="itemName">
-      <span>IronBuble-head</span>
+      <span>IronShirt</span>
     </div>
     <div >
-      <span class="unitCost">$25.00</span>
+      <span class="unitCost">$15.00</span>
     </div>
     <div>
         <label class="quantity" for="qty">QTY</label>
@@ -31,10 +50,12 @@
       <button class="btn btn-delete">Delete</button>
     </div>
   </div>
-  
+
   <div class="calculatePrice" id="calc-prices-button">
     <button class="btn btn-success">Calculate Prices</button>
   </div>
+
+  <h2>Total Price: <span id="totalPrice">0$</span></h2>
 
 </body>
 </html>
