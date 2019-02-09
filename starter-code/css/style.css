@@ -33,7 +33,11 @@ input {
     background-color: #5cb85c;
     border-color: #4cae4c;
 }
-
+.btn-add {
+  color: #fff;
+  background-color: #409dff;
+  border-color: #6cb0f1;
+}
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
@@ -46,5 +50,8 @@ input {
 .wrapper-product {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  margin: 2em;
+}
+.wrapper-product [class^='product'] {
+  width: 100%;
 }

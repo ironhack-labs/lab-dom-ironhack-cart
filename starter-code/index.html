@@ -12,27 +12,64 @@
 <body>
   <div class="header">
     <h2 class="text-center">Ironhack Merchandising Shop</h2>
+  </div>  
+  <div id="products" class="product-list">
+      <div class="wrapper-product">
+          <div class="product-name">
+            <span>IronBubble-head</span>
+          </div>
+          <div class="product-price ">
+            <span>$25.00</span>
+          </div>
+          <div class="product-quantity">
+            <label>QTY</label>
+            <input placeholder="1" value="1">
+          </div>
+          <div class="product-final-price">
+            <span>$0.00</span>
+          </div>
+          <div class="product-action">
+            <button class="btn-delete btn">Delete</button>
+          </div>
+        </div>
+        <div class="wrapper-product ">
+            <div class="product-name">
+              <span>IronShirt</span>
+            </div>
+            <div class="product-price">
+              <span>$15.00</span>
+            </div>
+            <div class="product-quantity">
+              <label>QTY</label>
+              <input placeholder="1" value="1">
+            </div>
+            <div class="product-final-price">
+              <span>$0.00</span>
+            </div>
+            <div class="product-action">
+              <button class="btn-delete btn">Delete</button>
+            </div>
+        </div>
   </div>
-  <div class="wrapper-product">
-    <div class="product-name">
-      <span>IronBubble-head</span>
-    </div>
-    <div class="product-price">
-      <span>$25.00</span>
-    </div>
-    <div class="product-quantity">
-      <label>QTY</label>
-      <input placeholder="0">
-    </div>
-    <div class="product-final-price">
-      <span>$0.00</span>
-    </div>
-    <div class="product-action">
-      <button class="btn-delete btn">Delete</button>
-    </div>
+  
+  <div id="new" class="wrapper-product">
+      <div class="product-name">
+          <input />
+        </div>
+      <div class="product-price">
+        <input />
+      </div>
+      <div class="product-empty"></div>
+      <div class="product-empty"></div>
+      <div class="product-action">
+        <button id="new-item-create" class="btn-add btn">Add</button>
+      </div>
   </div>
   <div class="text-center">
-    <button class="btn btn-success">Calculate Prices</button>
+    <button id="calc-prices-button" class="btn btn-success">Calculate Prices</button>
   </div>
+  <div class="">
+      <h2 id="total" class="text-center">Total Price: <span>$0</span></h2>
+    </div>  
 </body>
 </html>
