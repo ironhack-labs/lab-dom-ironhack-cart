@@ -20,41 +20,18 @@
       <div class="product-wrapper">
         <div><span id="IronBubble">IronBubble-head</span></div>
         <div>$<span class="price">25</span></div>
-        <div><label>QTY</label><input type="text" placeholder="Quantity"></div>
+        <div><label>QTY</label><input value="0"></div>
         <div><span class="total">0</span></div>
         <div><button class="btn-delete btn">Delete</button></div>
-      </div>
-      <!--Second Cart-->
-      <div class="product-wrapper">
-        <div><span id="IronShirt">IronShirt</span></div>
-        <div>$<span id="price">15</span></div>
-        <div><label>QTY</label><input type="text" placeholder="Quantity"></div>
-        <div><span class="total">0</span></div>
-        <div><button class="btn-delete btn">Delete</button></div>
-      </div>
-      <div class="product-wrapper">
-        <div><span id="IronCup">IronCup</span></div>
-        <div>$<span class="price">10</span></div>
-        <div><label>QTY</label><input type="text" placeholder="Quantity"></div>
-        <div><span class="total">0</span></div>
-        <div><button class="btn-delete btn">Delete</button></div>
-      </div>
-      <div class="product-wrapper">
-        <div><span id="IronSticker">IronSticker</span></div>
-        <div>$<span class="price">10</span></div>
-        <div><label>QTY</label><input type="text" placeholder="Quantity"></div>
-        <div><span class="total">0</span></div>
-        <div><button class="btn-delete btn">Delete</button></div>
-      </div>
-      <!-- create new -->
-      <div class="create-new product-wrapper">
-        <div><input id="new-productname" type="text" placeholder="New Product" /></div>
-        <div><input id="new-productprice" type="number" placeholder="price" /></div>
-        <div><button id="create">Create</button></div>
       </div>
     </section>
     <div id="calc-price">
       <button id="calculate-price-btn" class="btn-success btn">Calculate price</button>
+      <div  class="new-product product-wrapper">
+          <div>Add new product <input id="new-productname" value= "" placeholder="Product"></div>
+          <div><input id="new-productprice" value="" placeholder="Price"></div>
+          <div><button id= "create" class="btn-delete btn">Create</button></div>
+        </div>
       <div>
         <h2>Total Price: $<span id="total-sum">0</span></h2>
       </div>

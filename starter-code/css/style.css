@@ -3,6 +3,10 @@
   justify-content: space-around;
   margin: 20px 10px;
 }
+.new-product{
+  display: flex;
+  justify-content: flex-end;
+}
 
 #calc-price {
   display: flex;
