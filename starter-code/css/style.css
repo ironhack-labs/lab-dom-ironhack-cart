@@ -41,23 +41,8 @@ input {
 }
 
 
-.products {
+.item {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-content: flex-end;
+  justify-content: space-between;
 }
-
-.ironbubble-head {
-  display: flex;
-  justify-content: space-around;
-}
-
-/* .center {
-  margin-left: 50%;
-  text-align: center;
-  padding-left: 50%;
-  text-align: center;
-} */
-
 
