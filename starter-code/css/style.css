@@ -2,6 +2,23 @@ input {
   border: solid 1px black;
 }
 
+header{
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.products{
+  background-color: beige;
+}
+
+.item{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 20px 100px;
+}
+
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -38,4 +55,15 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.creation{
+  display: flex;
+  justify-content: space-around;
+  margin: 30px 100px;
+}
+
+.calccontainer{
+  margin: 100px;
+  text-align: center;
 }
