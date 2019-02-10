@@ -1,3 +1,9 @@
+
+body {
+  margin:0;
+  padding:0;
+}
+
 input {
   border: solid 1px black;
 }
@@ -10,15 +16,15 @@ input {
 .product-line {
   display:flex;
   flex-flow: row nowrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   margin-top:50px;
   margin-bottom: 50px;
-
 }
 
 .product-line div {
-  width:12.5%;
+  width:20%;
+  text-align: center;
 }
 
 .btn {
@@ -46,8 +52,7 @@ input {
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
-    border-color: #4cae4c;
-   
+    border-color: #4cae4c;  
 }
 
 .btn-delete {
@@ -57,8 +62,7 @@ input {
 }
 
 .btn-position {
-  text-align: center;
-  
+  text-align: center; 
 }
 
 .quantity {
@@ -70,3 +74,24 @@ h2 {
   margin-top:50px;
 }
  
+.product-line-input {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin-top:50px;
+  margin-bottom: 50px;
+  align-items: center;
+}
+
+.btn-create {
+  background-color: rgb(189, 189, 189);
+  border-color: black;
+}
+
+
+.product-line-input div {
+  width: 20%;
+  text-align: center;
+}
+
+
