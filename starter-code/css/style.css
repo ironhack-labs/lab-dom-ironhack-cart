@@ -37,5 +37,57 @@ input {
 }
 
 .quantity {
-  margin: 0 5px;
+  padding: 2px 5px;
+  border: 1px solid lightgray;
+}
+
+.product {
+  margin: 10px 50px; 
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product div:first-child {
+  width: 15%
+}
+
+header {
+  margin: 50px;
+  display:flex;
+  justify-content: center;
+}
+  
+h1 {
+  margin: 0 auto;
+  padding-left: 200px;
+}
+
+.calculate {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.new-product {
+  margin: 20px 50px;
+}
+
+.new-product input {
+  margin-right: 60px;
+}
+
+.new-product button{
+  float:right;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.clearfix {
+  clear:both;
 }
