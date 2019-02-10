@@ -1,5 +1,6 @@
 input {
-  border: solid 1px black;
+  border: solid 1px grey;
+  width: 65%;
 }
 
 header{
@@ -16,8 +17,12 @@ header{
   align-items: center;
   justify-content: space-around;
   margin: 20px 100px;
+  text-align: center;
 }
 
+.item>div{
+  width: 20%
+}
 
 .btn {
   display: inline-block;
