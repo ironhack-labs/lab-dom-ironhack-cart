@@ -2,12 +2,16 @@ function deleteItem(e){
 
 }
 
+function convertToNumber (text) {
+  return parseFloat(text.slice(1,6))
+}
+
 
 function getPriceByProduct(itemNode){
   var product = itemNode.parentElement.parentElement;
   var qty = itemNode.value;
   var unitPrice = [].slice.call(product.getElementsByClassName('unitCost'));  
-  unitPrice = parseFloat((unitPrice[0].innerHTML).slice(1,6));
+  unitPrice = convertToNumber(unitPrice[0].innerHTML);
   if (qty === 0) {
   } else if (qty >= 0) {
     [].slice.call(product.getElementsByClassName('totalCost'))[0].innerHTML = "$"+ (qty * unitPrice).toFixed(2);
@@ -20,10 +24,14 @@ function updatePriceByProduct(productPrice, index){
 
 function getTotalPrice() {
 
-  var totalPrice = [].slice.call(document.getElementsByClassName('totalCost'))
-  console.log(totalPrice.reduce(function(acc, priceProducts){
-    return acc += priceProducts[0].innerHTML;
-  }))
+  var arrayPrice = [].slice.call(document.getElementsByClassName('totalCost'))
+  var subTotalArray = arrayPrice.map(function (subTotals) {
+    return convertToNumber(subTotals.innerHTML)
+  });
+  var total = subTotalArray.reduce(function(acc, subTotal){
+    return acc + subTotal;
+  })
+  document.getElementById('totalPrice').innerHTML = total.toFixed(2) + "$";
   
 
 }
