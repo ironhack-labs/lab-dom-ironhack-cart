@@ -1,14 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
+
   <title>Ironhack cart</title>
 </head>
+
 <body>
+
+<!-- Header -->
+
+<h1 class="container">Ironhack Merchandising Shop</h1>
+  <div id="shoppingItems">
+
+    <!-- Products -->
+    
+        <div class="row">
+            <ul class=item> 
+                <li class="name">IronBubble-head</li>
+                <li>$<span class="product-price">25</span></li>
+                <li>
+                    <form>
+                    <label>QTY</label>
+                    <input class="product-quantity" type="text" name="qnt" placeholder="1">
+                  </form>
+                </li>
+                <li>$<span class="subtotal">0</span></li>
+                <li><button class="btn btn-delete" id="btn-delete">Delete</button></li>
+              </ul>
+        </div>
+        <div class="row">
+            <ul class=item> 
+                <li class="name">Ironshirt</li>
+                <li>$<span class="product-price">15</span></li>
+                <li>
+                    <form>
+                    <label>QTY</label>
+                    <input class="product-quantity" type="text" name="qnt" placeholder="1">
+                  </form>
+                </li>
+                <li>$<span class="subtotal">0</span></li>
+                <li><button class="btn btn-delete" id="btn-delete">Delete</button></li>
+            </ul>
+        </div>
+  </div>
+
+<!-- Add item -->
+
+<div class="add-container">
+  <h1>Add Items</h1>
+  <div class="add-row">
+    <input id="add-item" type="text" name="Name" placeholder="Product name">
+    <input id="add-price" type="number" name="Price" placeholder="Product price">
+    <button class="btn btn-add" id="addItem">Add item</button>
+  </div>
+</div>
+
+<!-- Calculate Row -->
+  <button class="btn btn-success" id="calculate-total">Calculate Prices</button>
+
+<!-- Total  -->
+
+  <div class="total-container">
+      <div class="total">
+        <h1>Total Price</h1>
+        <h2>$<span id="baskettotal">0.00</span></h2>
+      </div>
+  </div> 
+
+<script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>

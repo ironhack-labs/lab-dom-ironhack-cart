@@ -1,6 +1,12 @@
-input {
-  border: solid 1px black;
+/* General */
+
+
+h1 {
+  font-size: 1.8rem;
+  text-align: center;
 }
+
+/* Buttons  */
 
 .btn {
   display: inline-block;
@@ -36,6 +42,68 @@ input {
     border-color: #CF000F;
 }
 
-.quantity {
-  margin: 0 5px;
+.btn-add {
+  border-color: black;
 }
+ 
+
+
+ /* -- Products -- */
+
+ .row {
+  width: 100%;
+  margin-top: 5%;
+}
+
+.row ul {
+  text-align: left;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.row li {
+  display: inline;
+  width: 250px;
+  margin-left: 5%;
+}
+
+.row input {
+  border: solid 1px black;
+}
+
+
+/* Add Items  */
+
+.add-container {
+  padding-top: 5%;
+}
+
+.add-row {
+  text-align: left;
+  display: flex;
+  justify-content: center;
+}
+
+.add-row input {
+  margin: 20px;
+}
+
+/* Calculate Prices */
+
+#calculate-total {
+
+  margin-top: 2%;
+  width: 20%;
+  margin-left: 40%;
+  margin-right: 40%
+}
+
+/* Total */
+
+.total-container {
+  margin-top: 5%;
+  text-align: center;
+
+}
+
