@@ -31,9 +31,16 @@ input {
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #CF000F;
+  border-color: #CF000F;
+}
+
+.btn-create {
+  color: rgb(255, 255, 255);
+  background-color: rgb(46, 74, 233);
+  border-color:  rgb(46, 74, 233);
+  margin-left: 676px;
 }
 
 .quantity {
@@ -72,6 +79,21 @@ h2 {
   margin: 20px 0;
 }
 
+
 .itemName {
-  width: 25%;
+  width: 10%;
+}
+
+.wrapper:nth-child(odd) {
+  background-color: rgb(244,244,244);
+}
+
+.wrapper div:nth-child(2) {
+  width: 10%;
+  text-align: left;
+}
+
+#unitCost {
+  text-align: left;
+  text-indent: 10px;
 }
