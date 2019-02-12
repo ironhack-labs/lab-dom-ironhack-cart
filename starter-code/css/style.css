@@ -4,7 +4,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  align-items: center
+  align-items: center;
+  margin-bottom: 20px;
 }
 input {
   border: solid 1px black;
