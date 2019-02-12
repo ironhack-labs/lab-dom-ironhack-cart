@@ -1,10 +1,37 @@
+
+body {
+  margin:0;
+  padding:0;
+}
+
 input {
   border: solid 1px black;
 }
 
+.title {
+  text-align:center;
+  margin-top: 50px;
+}
+
+.product-line {
+  border: solid 3px rgb(136, 48, 48);
+  display:flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top:50px;
+  margin-bottom: 50px;
+}
+
+.product-line div {
+   border: solid 1px rgb(42, 124, 145);
+  width:20%;
+  text-align: center;
+}
+
 .btn {
   display: inline-block;
-  padding: 6px 30px;
+  padding: 6px 12px;
   margin-bottom: 0;
   font-size: 14px;
   font-weight: 400;
@@ -27,7 +54,7 @@ input {
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
-    border-color: #4cae4c;
+    border-color: #4cae4c;  
 }
 
 .btn-delete {
@@ -36,29 +63,35 @@ input {
     border-color: #CF000F;
 }
 
+.btn-position {
+  text-align: center; 
+}
+
 .quantity {
   margin: 0 5px;
 }
-/* ------------------------- */
-#container-products{
- border: 3px solid  #0d490d;
+
+h2 {
+  text-align: center;
+  margin-top:50px;
+}
+ 
+.product-line-input {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  margin-top:50px;
+  margin-bottom: 50px;
+  align-items: center;
 }
 
-.product-name{
- border: 3px solid  #0d1149;
-}
-
-.price-unit{
- border: 3px solid  #bb540f;
+.btn-create {
+  background-color: rgb(189, 189, 189);
+  border-color: black;
 }
 
 
-.quantity{
- border: 3px solid  #6b6c80;
+.product-line-input div {
+  width: 20%;
+  text-align: center;
 }
-.total-product-price{
- border: 3px solid  #6b6c80;
-}
-
-
-
