@@ -1,4 +1,4 @@
-h
+
 
 .chart{
   display: flex;
@@ -33,9 +33,13 @@ input {
 }
 
 .btn-success {
+    display: block;
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 30px;
 }
 
 .btn-delete {
@@ -48,3 +52,8 @@ input {
   margin: 0 5px;
 }
 
+.title {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 6px 80px;
+}
