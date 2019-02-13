@@ -15,8 +15,8 @@ function getTotalPrice() {
   var total = 0;
   for (i = 0; i < c.length; i++) {
     var price = parseFloat(document.querySelectorAll('.price')[i].textContent);
-    var q = document.getElementById("units").value;
-    var quantity = q[i];
+    var q = document.getElementsByClassName("units");
+    var quantity = q[i].value;
     total= document.querySelectorAll('.total-price')[i].textContent = price * quantity;
 }
 
