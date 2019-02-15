@@ -22,6 +22,7 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+  
 }
 
 .btn-success {
@@ -36,6 +37,43 @@ input {
     border-color: #CF000F;
 }
 
-.quantity {
+.product-quantity {
   margin: 0 5px;
+}
+
+.product {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 15px 0px;
+}
+
+.product div {
+  width: 10%;
+}
+
+
+.title h1{
+  position: relative;
+  left: 50%;
+  margin: 0px;
+}  
+
+.hero_card {
+  
+
+
+}
+
+.title {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.product-quantity {
+  margin: 0 5px;
+}
+
+
 }
