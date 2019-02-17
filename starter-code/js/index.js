@@ -2,9 +2,21 @@ function deleteItem(e){
 
 }
 
+
+var button = document.getElementById("calculate-button");
+button.onclick = function(){
+  var precio= document.getElementById("product-price").innerHTML;
+  var cantidad= document.getElementById("qty").value;
+  var total=parseFloat(precio.replace('$', ''))*cantidad;
+  var finalPrice = document.getElementById('final-price');
+  contentDiv.setAttribute('final-price', total);
+
+}
+
 function getPriceByProduct(itemNode){
 
 }
+
 
 function updatePriceByProduct(productPrice, index){
 

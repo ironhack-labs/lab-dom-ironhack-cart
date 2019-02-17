@@ -22,20 +22,18 @@
     </div>
     <div class="cost-unit">
       <span>
-        <p>$25.00</p>
+        <p id="product-price">$25.00</p>
       </span>
     </div>
     <div class="number-units">
-      <p>
-        QTY
-        <form>
-          <input type="text" name="QTY" placeholder="0">
-        </form>
-      </p>
+      <form>
+        <label for="qty">QTY</label>
+        <input type="number" name="QTY" id="qty" value=1>
+      </form>
     </div>
     <div class="total-price">
       <span>
-        <p>$0.00</p>
+        <p id="final-price">$0.00</p>
       </span>
     </div>
     <div class="delete-button">
@@ -45,11 +43,12 @@
 
   <!-- Third row with the button to calculate pricest-->
   <div class="calculate-button">
-      <button class="btn-success" type="button">Calculate Prices</button>
+      <button id="calculate-button"  class="btn-success">Calculate Prices</button>
+
   </div>
 
 
   
-
+<script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>
