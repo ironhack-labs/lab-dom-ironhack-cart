@@ -1,4 +1,9 @@
-.product-row{
+.product-row-a{
+  display: flex;
+  justify-content: space-around;
+}
+
+.product-row-b{
   display: flex;
   justify-content: space-around;
 }

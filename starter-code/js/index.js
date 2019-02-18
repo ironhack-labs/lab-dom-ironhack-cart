@@ -4,9 +4,10 @@ function deleteItem(e){
 
 //Event listener over the button
 var button = document.getElementsByClassName("btn-success")[0];
-var finalPrice=0;
+
 
 button.onclick =function(){ 
+  var finalPrice=0;
   for (var i=0;i<2;i++){
   //pick up the price, the amount of objets and the total amount of cost
   var precio= document.getElementsByClassName("product-price")[i].innerHTML;
@@ -22,27 +23,18 @@ button.onclick =function(){
 document.getElementsByClassName('final-price')[0].innerHTML="$"+finalPrice;
 }
 
-  
-
-function createDeleteButton(){
-
+var btn = document.getElementsByClassName('btn-delete')
+for (var i = 0; i < btn.length; i++) {
+  btn[i].addEventListener('click', function(e) {
+    e.currentTarget.parentNode.parentNode.remove();
+  }, false);
 }
 
-function createQuantityNode(){
 
-}
 
-function createItemNode(dataType, itemData){
 
-}
 
-function createNewItemRow(itemName, itemUnitPrice){
 
-}
-
-function createNewItem(){
-
-}
 
 window.onload = function(){
   var calculatePriceButton = document.getElementById('calc-prices-button');
