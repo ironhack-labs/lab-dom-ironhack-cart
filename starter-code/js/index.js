@@ -1,38 +1,17 @@
 function deleteItem(e){
 
 }
+
 //Event listener over the button
-var button = document.getElementById("calculate-button");
+var button = document.getElementsByClassName("btn-success")[0];
 button.onclick = function(){
   //pick up the price, the amount of objets and the total amount of cost
-  var precio= document.getElementById("product-price").innerHTML;
-  var cantidad= document.getElementById("qty").value;
+  var precio= document.getElementsByClassName("product-price")[0].innerHTML;
+  var cantidad= document.getElementsByClassName("quantity")[0].value;
   var total=parseFloat(precio.replace('$', ''))*cantidad;
-  //Empty the sum price div so we can add later the final price
-  var contentDiv = document.getElementById('final-price');
-  contentDiv.innerHTML = ""
-//add the sum of the price
-  var text =document.createTextNode(total) 
-  var finalPrice=document.getElementById("final-price")
-  finalPrice.appendChild(text)
-}
-
-function getPriceByProduct(itemNode){
- 
+ //Equal the final price to the pricexunits price
+  document.getElementsByClassName('total-price')[0].innerHTML=total;
   
-}
-
-
-function updatePriceByProduct(productPrice, index){
-
-}
-
-function getTotalPrice() {
-
-}
-
-function createQuantityInput(){
-
 }
 
 function createDeleteButton(){
