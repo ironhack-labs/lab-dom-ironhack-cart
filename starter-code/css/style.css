@@ -1,12 +1,8 @@
-.product-row-a{
+.product-row{
   display: flex;
   justify-content: space-around;
 }
 
-.product-row-b{
-  display: flex;
-  justify-content: space-around;
-}
 
 input {
   border: solid 1px black;
