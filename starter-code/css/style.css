@@ -1,6 +1,13 @@
 .product-row{
   display: flex;
   justify-content: space-around;
+ 
+}
+
+.product-create{
+  display: flex;
+  justify-content: space-around;
+ 
 }
 
 
