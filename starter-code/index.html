@@ -14,58 +14,69 @@
 <body onload="verificaCarrinho()">
 
   <div class="container-master">
-  <div class="container">
-  <h1>Ironhack Merchandising Shop</h1> <img class="carrinho" src="../starter-code/img/carrinho.png"/>
-  <div id="length"><span id="texto-carrinho">1</span></div>
-  </div>
-
-  
-  <div class="container">
-  <div class="create-product">
-
-    <table>
-      <tr>
-        <th>Produto</th>
-        <th>Valor uni.</th>
-        <th>Quantidade.</th>
-        <th>Valor Total</th>
-       
-      </tr>
-      <tr>
-        <td><input type="text" id="produto" /></td>
-        <td><input type="text" id="valoruni" /></td>
-        <td><input type="text" id="qtd" onchange="getTotal()"/></td>
-        <td><input type="text" id="valortotal" /></td>
-        <td><button Onclick="bancoDeDados()" class="btn"> Adicionar ao Carrinho</button></td>
-      </tr>
-    </table>
- 
+    <div class="container">
+      <h1>Ironhack Merchandising Shop</h1> <img class="carrinho" src="../starter-code/img/carrinho.png" />
+      <div id="length"><span id="texto-carrinho">1</span></div>
+    </div>
 
 
-  </div>
-  </div>
+    <div class="container">
+      <div class="create-product">
 
-</div>
-<hr>
-  <div class="create-lista">
-      <br><br>
-      <table id="tableProduct" border="1">
+        <table>
           <tr>
             <th>Produto</th>
-            <th>Valor Uni</th>
-            <th>Quantidade</th>
+            <th>Valor uni.</th>
+            <th>Quantidade.</th>
             <th>Valor Total</th>
-            <th>Excluir</th>
+
+          </tr>
+          <tr>
+            <td><input type="text" id="produto" /></td>
+            <td><input type="text" id="valoruni" /></td>
+            <td><input type="text" id="qtd" onchange="getTotal()" /></td>
+            <td><input type="text" id="valortotal" /></td>
+            <td><button Onclick="bancoDeDados()" class="btn"> Adicionar ao Carrinho</button></td>
           </tr>
         </table>
 
+
+
       </div>
-
-    <div class="price">
-       <h2>Total da vendas: R$&nbsp<span id="valor-total-produto">0</span></h2><button id="btn-total" class="btn-success" onclick="getTotalPrice()">Calcular Total</button>
-
     </div>
-       
+
+  </div>
+  <hr>
+  <div class="create-lista">
+    <br><br>
+    <table id="tableProduct" border="1">
+      <tr>
+        <th>Produto</th>
+        <th>Valor Uni</th>
+        <th>Quantidade</th>
+        <th>Valor Total</th>
+        <th>Excluir</th>
+      </tr>
+    </table>
+
+  </div>
+
+  <div class="price">
+    <table width="100%">
+      <tr>
+        <td>
+          <h3>Total da vendas: R$&nbsp<span id="valor-total-produto">0</span></h3>
+        </td>
+        <td style="text-align:right;">
+          <button id="btn-total" class="btn-success" onclick="getTotalPrice()">Calcular Total</button>
+        </td>
+
+      </tr>
+    </table>
+
+
+  </div>
+
   </div>
 </body>
 
