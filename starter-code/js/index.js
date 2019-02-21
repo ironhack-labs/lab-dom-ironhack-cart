@@ -14,18 +14,29 @@ function getPrice() {
         for (k=0; k < arr3.length; k++) {
           if (j==k){
           document.getElementsByClassName("cc")[k].innerHTML = '$'+totalPrice;
-          console.log(totalPrice); 
           }
         }
       }
     }
   }
 }
+
+function getTotal(){
+  var finalPrice = document.getElementsByClassName("cc");
+  var arrayFinalPrice = [];
+    for (i=0; i<finalPrice.length;i++){
+      var contentTotal = finalPrice[i].innerHTML;
+      var noDollar = contentTotal.replace('$', "");
+      arrayFinalPrice.push(noDollar);
+    }
+    var reduceTotal = arrayFinalPrice.reduce((a,b) => {return Number(a)+Number(b);})
+    document.getElementById('finalTotal').innerHTML = '$'+reduceTotal;
+
+}
   
 window.onload = function(){	
 var x = document.getElementById("calc-prices-button");
     x.addEventListener("click", getPrice,false);
-//var y = document.getElementById("calc-prices-button");
-//    y.addEventListener("click", getPrice,false);
-
+var y = document.getElementById("calc-prices-button");
+    y.addEventListener("click",getTotal,false);
 }
