@@ -143,3 +143,26 @@ input {
   font-size: 11px;
 
 }
+
+#tableProduct {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+#tableProduct td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#tableProduct tr:nth-child(even){background-color: #f2f2f2;}
+
+#tableProduct tr:hover {background-color: #ddd;}
+
+#tableProduct th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #4CAF50;
+  color: white;
+}
