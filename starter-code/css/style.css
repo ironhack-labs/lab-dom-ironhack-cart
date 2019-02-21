@@ -1,5 +1,6 @@
 input {
   border: solid 1px black;
+  width: 123px;
 }
 
 .btn {
@@ -98,12 +99,14 @@ input {
 }
 
 .price{
-
+ 
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   margin-top: 100px;
- justify-content: space-around;
- width:100%
+  width:51%;
+  padding: 20px;
+  margin-left:310px;
+  
 }
 
  #valor-total-produto{
@@ -130,7 +133,7 @@ input {
 
   
   margin-top:14px;
-  margin-left: -18px;
+  margin-left:-18px;
 
 }
 
@@ -138,8 +141,8 @@ input {
  
   color:white;
   font-weight: bold;
-  margin-top: 7px;
-  margin-left: 8px;
+  margin-top: 11px;
+  margin-left: 9px;
   font-size: 11px;
 
 }
@@ -165,4 +168,20 @@ input {
   text-align: center;
   background-color: #4CAF50;
   color: white;
+}
+.container-master{
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column
+}
+hr {
+  border:none;
+  height: 20px;
+ 	width: 100%;
+	height: 50px;
+	margin-top: 0;
+	border-bottom: 1px solid #1f1209;
+	box-shadow: 0 20px 20px -20px #333;
+  margin: -50px auto 10px; 
 }

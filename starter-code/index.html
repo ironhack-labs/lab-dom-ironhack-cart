@@ -13,7 +13,7 @@
 
 <body onload="verificaCarrinho()">
 
-
+  <div class="container-master">
   <div class="container">
   <h1>Ironhack Merchandising Shop</h1> <img class="carrinho" src="../starter-code/img/carrinho.png"/>
   <div id="length"><span id="texto-carrinho">1</span></div>
@@ -39,11 +39,14 @@
         <td><button Onclick="bancoDeDados()" class="btn"> Adicionar ao Carrinho</button></td>
       </tr>
     </table>
+ 
 
 
   </div>
   </div>
+
 </div>
+<hr>
   <div class="create-lista">
       <br><br>
       <table id="tableProduct" border="1">
@@ -59,11 +62,11 @@
       </div>
 
     <div class="price">
-       <h2>Total de vendas: R$<span id="valor-total-produto">0</span></h2><button id="btn-total" class="btn" onclick="getTotalPrice()">Calcular</button>
+       <h2>Total de vendas: R$<span id="valor-total-produto">0</span></h2><button id="btn-total" class="btn" onclick="getTotalPrice()">Calcular Total</button>
 
     </div>
        
-
+  </div>
 </body>
 
 </html>

@@ -27,13 +27,6 @@ function deleteItem(e) {
   verificaCarrinho()
 }
 
-function getPriceByProduct(itemNode) {
-
-}
-
-function updatePriceByProduct(productPrice, index) {
-
-}
 
 
 function getTotal() {
@@ -80,25 +73,6 @@ function getTotalPrice() {
   verificaCarrinho()
 }
 
-function createQuantityInput() {
-
-}
-
-function createDeleteButton() {
-
-}
-
-function createQuantityNode() {
-
-}
-
-function createItemNode(dataType, itemData) {
-
-}
-
-function createNewItemRow(itemName, itemUnitPrice) {
-
-}
 
 function bancoDeDados() {
 
@@ -115,6 +89,24 @@ function bancoDeDados() {
     return false;
     
   }
+
+  // if(isNaN(valoruni) ==true){
+
+  // alert("Digite apenas numeros")
+  // document.getElementById("valoruni").value = "";
+  // document.getElementById("qtd").value = "";
+  // document.getElementById("valortotal").value = "";
+  // return false;
+  
+
+  // }else if(isNaN(qtd)==true){
+
+  //   alert("Digite apenas numeros")
+  //   document.getElementById("valoruni").value = "";
+  //   document.getElementById("qtd").value = "";
+  //   document.getElementById("valortotal").value = "";
+  //   return false;
+  // }
 
   banco.push({ produto: produto, valoruni: valoruni, quantidade: qtd, total: total })
 
@@ -142,7 +134,6 @@ function createNewItem(banco) {
 
   });
 
-
   document.getElementById("produto").value = "";
   document.getElementById("valoruni").value = "";
   document.getElementById("qtd").value = "";
@@ -150,18 +141,3 @@ function createNewItem(banco) {
   verificaCarrinho()
 
 }
-
-
-window.onload = function () {
-
-  // var calculatePriceButton = document.getElementById('calc-prices-button');
-  // var createItemButton = document.getElementById('new-item-create');
-  // var deleteButtons = document.getElementsByClassName('btn-delete');
-
-  // calculatePriceButton.onclick = getTotalPrice;
-  // createItemButton.onclick = createNewItem;
-
-  // for(var i = 0; i<deleteButtons.length ; i++){
-  //   deleteButtons[i].onclick = deleteItem;
-  // }
-};
