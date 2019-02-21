@@ -31,13 +31,31 @@ function deleteItem(e) {
 
 function getTotal() {
 
-  var valoruni = parseFloat(document.getElementById("valoruni").value);
-  var qtd = parseFloat(document.getElementById("qtd").value);
+  var valoruni =parseInt(document.getElementById("valoruni").value.replace(/[^\d]+/g, ''));
+  var qtd = parseInt(document.getElementById("qtd").value.replace(/[^\d]+/g, ''));
 
-  document.getElementById("valortotal").value = qtd * valoruni;
+  var vTotal = qtd * valoruni;
+  document.getElementById("valortotal").value = formatReal(vTotal)
 
 
 }
+
+function getMoney( str )
+{
+        return parseInt(str.replace(/[\D]+/g,''));
+}
+function formatReal( int )
+{
+        var tmp = int+'';
+        tmp = tmp.replace(/([0-9]{2})$/g, ",$1");
+
+        if( tmp.length > 6 )
+                tmp = tmp.replace(/([0-9]{3}),([0-9]{2}$)/g, ".$1,$2");
+
+        return tmp;
+}
+
+
 function getTotalPrice() {
 
 
@@ -47,7 +65,7 @@ function getTotalPrice() {
   if (tamanho == 2) {
 
     var coluna = document.getElementById("tableProduct").rows[1].cells
-    document.getElementById("valor-total-produto").innerHTML = parseFloat(coluna.item(3).textContent);
+    document.getElementById("valor-total-produto").innerHTML = formatReal(getMoney(coluna.item(3).textContent));
     return false;
   } else {
 
@@ -61,12 +79,14 @@ function getTotalPrice() {
       } else {
         var coluna = document.getElementById("tableProduct").rows[index].cells
 
-        total += parseFloat(coluna.item(3).textContent);
+        total += getMoney(coluna.item(3).textContent)
+       
       }
 
 
     }
 
+    total = formatReal(total);
   }
 
   document.getElementById("valor-total-produto").innerHTML = total;
