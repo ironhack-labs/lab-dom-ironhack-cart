@@ -5,10 +5,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/style.css">
+  
 </head>
 <body>
-</body>
-</html>
+  
+  <div class="container col-10">
+    
+    <div class="container col-4 mb-3">
+      <h1>Lista de Compras</h1>
+    </div>
+    
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Produto</th>
+            <th scope="col">Valor</th>
+            <th scope="col">Quantidade</th>
+            <th scope="col">Total R$</th>
+            <th scope="col">Deletar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="tr-produto">
+            <td class="td-nome">Camiseta</td>
+            <td class="td-valor">25.00</td>
+            <td><input type="number" id="td-input"></td>
+            <td class="td-total">0</td>
+            <td><button class="btn btn-danger" id="delete">DELETE</button></td>
+          </tr>
+          <tr class="tr-produto">
+            <td class="td-nome">Camiseta</td>
+            <td class="td-valor">25.00</td>
+            <td><input type="number" id="td-input" ></td>
+            <td class="td-total">0</td>
+            <td><button class="btn btn-danger" id="delete" >DELETE</button></td>
+          </tr>
+          <tr class="tr-produto">
+            <td class="td-nome">Camiseta</td>
+            <td class="td-valor">25.00</td>
+            <td><input type="number" id="td-input" ></td>
+            <td class="td-total">0</td>
+            <td><button class="btn btn-danger" id="delete" >DELETE</button></td>
+          </tr>
+            
+        </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                  <span>Total Geral: </span>
+                  <span class="total-geral"></span>
+                </td>
+                <td></td>
+              </tr>
+        </tfoot>
+      </table>
+      
+      <button class="offset-md-4 btn btn-success" id="calculate">Calcular Preço</button>
+      
+    </div>
+    
+    <script type="text/javascript" src="./js/index.js"></script>
+  </body>
+  </html>
