@@ -7,6 +7,7 @@ var tdTotalGeral = document.querySelector('.total-geral');
 
 // Função para Calcular o Preço
 function calcularPreco(){
+  var arrNew = [];
   for(i = 0; i < trProdutos.length; i++){
     
     // Pegar o Produto no momento [i]
@@ -25,7 +26,6 @@ function calcularPreco(){
     // Colocar o preço total
     tdTotal.innerHTML = valorTotal;
     
-    var arrNew = [];
     
     var totaisProdutos = trProduto.querySelector('.td-total');
     var valorTotais = parseInt(totaisProdutos.textContent);
@@ -33,12 +33,13 @@ function calcularPreco(){
 
     arrNew.push(valorTotais);
 
-    var totalGeral = arrNew.reduce(function(acc,item){
-      acc + item;
-    });
-
-    console.log(totalGeral);
   }
+
+  var valorTotalGeral = arrNew.reduce(function(acc,item){
+    return acc + item;
+  })
+
+  tdTotalGeral.textContent = valorTotalGeral;
 }
 
 
