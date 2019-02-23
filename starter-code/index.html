@@ -1,5 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<style>
+
+input {
+  border: solid 1px black;
+}
+
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.flex-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+.flex-product {
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn-delete {
+    color: #fff;
+    background-color: #CF000F;
+    border-color: #CF000F;
+}
+
+.quantity {
+  margin: 0 5px;
+}
+
+h1 {
+  text-align: center;
+  padding: 20px;
+}
+
+</style>
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +72,119 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+
+<h1>Ironhack Merchandising Shop</h1>
+
+<div class = "flex-product">
+
+  <div>
+    <span>IronBubble-head</span>
+  </div>
+
+  <div>
+    <span>$</span>
+    <span class = "price-unit">25</span>
+  </div>
+
+  <div>
+    <label>QTY</label>
+    <input class = "quantity" type = "text" value = "0">
+  </div>
+
+  <div>
+    <span>$</span>
+    <span class = "total-product">0</span>
+  </div>
+
+  <div>
+    <button class = "btn btn-delete" name = "delete">Delete</button>
+  </div>
+</div>
+
+<div class = "flex-button">
+<button class = "btn btn-success" name = "calculate">Calculate Prices</button>
+</div>
+
+<h1>
+  <span>$</span>
+  <span class = "total-price">0</span>
+</h1>
+                                                                                          
 </body>
+
+<script>
+  
+function deleteItem(e){                                                                                         
+  var btnDelete = document.getElementsByName("delete")
+  btnDelete.onclick = function(){
+    // delete parent flex-product
+  }
+}
+
+function getPriceByProduct(){
+  var allProducts = document.getElementsByClassName("flex-product");
+  for (i=0, i < allProducts.length, i++) {
+    allProducts[i].querySelector(".total-product").innerText = parseInt(parseInt(allProducts[i].querySelector(".price-unit").innerText) * parseInt(allProducts[i].querySelector(".quantity").value)));
+  }
+}
+
+function updatePriceByProduct(){
+  var qtyInput = document.querySelector(".quantity");
+  qtyInput.onchange = getPriceByProduct();
+}
+
+function getTotalPrice() {
+  var allProducts = document.getElementsByClassName("total-product");
+  var totalPrice = allProducts.reduce(function add(accumulator, a) {
+    return accumulator + a;
+  })
+  document.querySelector(".total-price").innerText = totalPrice;
+}
+
+function updateTotalPrice(){
+  var btnCalculate = document.getElementsByName("calculate");
+  btnCalculate.onclick = getTotalPrice();
+}
+
+function createQuantityInput(){
+
+}
+
+function createDeleteButton(){
+
+}
+
+function createQuantityNode(){
+
+}
+
+function createItemNode(dataType, itemData){
+
+}
+
+function createNewItemRow(itemName, itemUnitPrice){
+
+}
+
+function createNewItem(){
+
+}
+
+window.onload = function(){
+  var calculatePriceButton = document.getElementById('calc-prices-button');
+  var createItemButton = document.getElementById('new-item-create');
+  var deleteButtons = document.getElementsByClassName('btn-delete');
+
+  calculatePriceButton.onclick = getTotalPrice;
+  createItemButton.onclick = createNewItem;
+
+  for(var i = 0; i<deleteButtons.length ; i++){
+    deleteButtons[i].onclick = deleteItem;
+  }
+};
+
+</script>
+
 </html>
