@@ -1,5 +1,6 @@
-input {
-  border: solid 1px black;
+
+header {
+  height: 120px;
 }
 
 .btn {
@@ -24,17 +25,107 @@ input {
   border-radius: 4px;
 }
 
-.btn-success {
+#calc-prices-button{
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
 }
 
 .btn-delete {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
 }
+
+.btn-add {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+    color: #000000;
+    background-color: grey;
+    border-color: #CF000F;
+}
+.contInp{
+  display:flex;
+}
+
+.inText{
+  justify-content: space-around;
+  margin-left: 20px;
+}
+
+
+.divH{
+  display: flex;
+  flex-wrap: wrap;
+}
+.divH button{
+  justify-content: right;
+}
+#h1R{
+  display: flex;
+  justify-content: flex-end;
+  width: 33%;
+ 
+}
+
+h1{
+  width: 50%;
+  flex-direction: row;
+}
+div.formu{
+  display: flex;
+  margin: 4%;
+  justify-content: space-between;
+  align-items: center;  
+}
+div#itemQ{
+  margin-left:10%;
+}
+div.formu2{
+  display: flex;
+  margin-left: 4%;
+  margin-right: 4%;
+  justify-content: space-between;
+  align-items: center;  
+}
+
+
 
 .quantity {
   margin: 0 5px;
