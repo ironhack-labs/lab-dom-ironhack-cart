@@ -1,5 +1,20 @@
-input {
-  border: solid 1px black;
+
+ input {
+  border: solid 1px #455;
+}
+
+.cart-content{
+  text-align: center;
+}
+.cart-content div{
+  display:inline-block;
+  margin: 40px;
+}
+
+.product-name{
+  border-bottom: solid 1px grey;
+  border-bottom-style: dashed;
+  margin: 10px 50px 10px 50px;
 }
 
 .btn {
@@ -36,6 +51,27 @@ input {
     border-color: #CF000F;
 }
 
-.quantity {
+.quantity-input {
   margin: 0 5px;
+  box-sizing: content-box;
+}
+
+.button-final{
+  text-align:center;
+}
+
+#título{
+  font-size: 30px;
+  text-align: center;
+  margin-top:25px;
+  margin-bottom:5px;
+}
+
+.final-buttons div{
+  display: inline-block;
+}
+
+div #add-product-button{
+  margin: 10px 40px 10px 100px;
+  border: solid 1px #444;
 }
