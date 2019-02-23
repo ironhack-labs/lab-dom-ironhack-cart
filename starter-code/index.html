@@ -39,6 +39,14 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    display: inline-flex;
+}
+
+.btn-add {
+    color: #fff;
+    background-color: blue;
+    border-color: blue;
+    display: inline-flex;
 }
 
 .flex-product {
@@ -77,34 +85,41 @@ h1 {
 
 <h1>Ironhack Merchandising Shop</h1>
 
-<div class = "flex-product">
+<div class = "row">
+  <div class = "flex-product">
 
-  <div>
-    <span>IronBubble-head</span>
-  </div>
+    <div>
+      <span>IronBubble-head</span>
+    </div>
 
-  <div>
-    <span>$</span>
-    <span class = "price-unit">25</span>
-  </div>
+    <div>
+      <span>$</span>
+      <span class = "price-unit">25</span>
+    </div>
 
-  <div>
-    <label>QTY</label>
-    <input class = "quantity" type = "text" value = "0">
-  </div>
+    <div>
+      <label>QTY</label>
+      <input class = "quantity" type = "text" value = "0">
+    </div>
 
-  <div>
-    <span>$</span>
-    <span class = "total-product">0</span>
-  </div>
+    <div>
+      <span>$</span>
+      <span class = "total-product">0</span>
+    </div>
 
-  <div>
-    <button class = "btn btn-delete" name = "delete">Delete</button>
-  </div>
+    <div>
+      <button class = "btn btn-delete" name = "delete">Delete</button>
+    </div>
+</div>
+
 </div>
 
 <div class = "flex-button">
-<button class = "btn btn-success" name = "calculate">Calculate Prices</button>
+<button class = "btn btn-success" id = "calc-prices-button">Calculate Prices</button>
+</div>
+
+<div class = "flex-button">
+  <button class = "btn btn-add" id = "new-item-create">Add Product</button>
 </div>
 
 <h1>
@@ -115,32 +130,66 @@ h1 {
 </body>
 
 <script>
+
+// Functions
   
 function deleteItem(e){                                                                                         
-  var btnDelete = document.getElementsByName("delete")
-  btnDelete.onclick = function(){
-    // delete parent flex-product
+  console.log(e);
+  var deleteButtons = document.getElementsByClassName("btn-delete");
+  var items = document.getElementsByClassName("flex-product")
+  
+  for(var i = 0; i<deleteButtons.length ; i++){
+    deleteButtons[i].onclick = items[i].remove();
   }
-}
+  }
 
 function getPriceByProduct(){
   var allProducts = document.getElementsByClassName("flex-product");
-  for (i=0, i < allProducts.length, i++) {
-    allProducts[i].querySelector(".total-product").innerText = parseInt(parseInt(allProducts[i].querySelector(".price-unit").innerText) * parseInt(allProducts[i].querySelector(".quantity").value)));
+  for (i=0; i < allProducts.length; i++) {
+    var totalProduct = allProducts[i].querySelector("total-product");
+    var priceUnit = allProducts[i].querySelector("price-unit");
+    var quantity = allProducts[i].querySelector("quantity");
+    totalProduct.innerText = parseInt(parseInt(priceUnit.innerText) * parseInt(quantity.value));
   }
 }
 
-function updatePriceByProduct(){
-  var qtyInput = document.querySelector(".quantity");
-  qtyInput.onchange = getPriceByProduct();
-}
-
-function getTotalPrice() {
-  var allProducts = document.getElementsByClassName("total-product");
-  var totalPrice = allProducts.reduce(function add(accumulator, a) {
+function getTotalPrice(e) {
+  var allProductsPrices = document.getElementsByClassName("total-product");
+  var totalPrice = allProductsPrices.reduce(function add(accumulator, a) {
     return accumulator + a;
   })
-  document.querySelector(".total-price").innerText = totalPrice;
+  document.querySelector("total-price").innerText = totalPrice;
+}
+
+function createNewItemRow(itemName, itemUnitPrice){
+}
+
+function createPriceInput(){
+}
+
+function createQuantityInput(){
+}
+
+function createDeleteButton(){
+}
+
+function createQuantityNode(){
+}
+
+
+// Buttons
+
+function createNewItem(){
+  var btnAdd = document.getElementsByName("add");
+  btnAdd.onclick = createNewItemRow();
+  btnAdd.onclick = createPriceInput();
+  btnAdd.onclick = createQuantityInput();
+  btnAdd.onclick = createDeleteButton();
+}
+
+function updatePriceByProduct(){
+  var qtyInput = document.querySelector("quantity");
+  qtyInput.onchange = getPriceByProduct();
 }
 
 function updateTotalPrice(){
@@ -148,41 +197,15 @@ function updateTotalPrice(){
   btnCalculate.onclick = getTotalPrice();
 }
 
-function createQuantityInput(){
 
-}
-
-function createDeleteButton(){
-
-}
-
-function createQuantityNode(){
-
-}
-
-function createItemNode(dataType, itemData){
-
-}
-
-function createNewItemRow(itemName, itemUnitPrice){
-
-}
-
-function createNewItem(){
-
-}
 
 window.onload = function(){
   var calculatePriceButton = document.getElementById('calc-prices-button');
   var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');
 
   calculatePriceButton.onclick = getTotalPrice;
   createItemButton.onclick = createNewItem;
 
-  for(var i = 0; i<deleteButtons.length ; i++){
-    deleteButtons[i].onclick = deleteItem;
-  }
 };
 
 </script>
