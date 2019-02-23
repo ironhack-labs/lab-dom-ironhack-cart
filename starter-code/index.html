@@ -18,6 +18,7 @@
     <div class="container col-4 mb-3">
       <h1>Lista de Compras</h1>
     </div>
+
     
     <table class="table table-striped">
         <thead>
@@ -29,7 +30,7 @@
             <th scope="col">Deletar</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="t-body">
           <tr class="tr-produto">
             <td class="td-nome">Camiseta</td>
             <td class="td-valor">25.00</td>
@@ -51,24 +52,31 @@
             <td class="td-total">0</td>
             <td><button class="btn btn-danger" id="delete" >DELETE</button></td>
           </tr>
-            
+          
         </tbody>
         <tfoot>
-            <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
                 <td>
                   <span>Total Geral: </span>
                   <span class="total-geral"></span>
                 </td>
                 <td></td>
               </tr>
-        </tfoot>
-      </table>
-      
-      <button class="offset-md-4 btn btn-success" id="calculate">Calcular Preço</button>
-      
+            </tfoot>
+          </table>
+          
+          <button class="offset-md-4 btn btn-success" id="calculate">Calcular Preço</button>
+          
+          <div class="create-product mt-5">
+              <div class="row d-flex justify-content-center">
+                <div class="product-name col-4"><input type="text" id="produto-novo-nome"></div>
+                <div class="product-value col-4" ><input type="number" id="produto-novo-valor"></div>
+                <div class="col-4"><button class="btn btn-success" id="new-item-create">CREATE</button></div>
+              </div>
+          </div>
     </div>
     
     <script type="text/javascript" src="./js/index.js"></script>
