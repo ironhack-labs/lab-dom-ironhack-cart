@@ -1,0 +1,101 @@
+input {
+  border: solid 1px black;
+}
+
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    border-radius: 4px;
+    padding: 3px 8px;
+    font: size 8px;
+    border:1px solid transparent;
+    margin:10px 40%;
+    text-align: center;
+  
+}
+
+.btn-delete {
+    color: #fff;
+    background-color: #CF000F;
+    border-color: #CF000F;
+    border-radius: 4px;
+    padding: 3px 8px;
+    font: size 12px;
+    border:1px solid transparent;
+}
+
+.quantity {
+  margin: 0 5px;
+}
+
+.create-item-box{
+  margin:2px 25%;  
+}
+.create-item-box li{
+  display: inline-block;   
+}
+
+.create-item-box h5,input{
+  font-size:12px;
+}
+
+table{
+  width:100%;
+}
+
+tbody {
+  font-size:0.8em;
+  text-align: center;
+}
+
+thead {
+  font-size: 0.8em;
+  text-align: center;
+  padding:8px;
+  font-style: oblique;
+}
+
+h1 {
+  text-align: center;
+}
+
+.calculate-price-box h5{
+  display:inline-block;
+  margin: 5px;
+  font-size: 14px;
+
+}
+
+#new-item-create{
+  border-radius: 4px;
+  border: solid 1px transparent;
+  font-size:13px;
+  padding: 2px 4px;
+}
+
+.price-exposal{
+  margin: 15px 35%;
+}

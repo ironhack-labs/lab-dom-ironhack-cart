@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <script type="text/javascript" src="./js/index.js"></script>
+  <title>Ironhack cart</title>
+</head>
+<body>
+  <h1>Mercadão do Brunão</h1>
+
+  <div class = "shopping-tables">
+    <table>      
+      <thead class = "table-titles">
+        <td>Produto</td>
+        <td>Preço do Produto</td>
+        <td>Quantidade</td>
+        <td>Preço total</td>
+        <td>Opção de remoção</td>
+      </thead>
+
+      <tbody class= "table-body">
+        <tr class="product-row">
+          <td class = "product-name">Maçã</td>
+          <td class = "product-price" type="number">10</td>
+          <td class = "quantity">
+            <input type="number" class="quantity-input" value="1">
+          </td>
+          <td class = "total-price" type ="number">10</td>
+          <td class = "product-removal">
+            <button type="button" class="btn-delete">Remover produto</button>
+          </td>  
+        </tr>
+        <tr class="product-row">
+            <td class = "product-name">Laranja</td>
+            <td class = "product-price" type="number">10</td>
+            <td class = "quantity">
+              <input type="number" class="quantity-input" value="1">
+            </td>
+            <td class = "total-price" type ="number">10</td>
+            <td class = "product-removal">
+              <button type="button" class="btn-delete">Remover produto</button>
+            </td> 
+          </tr>              
+      </tbody>
+    </table>
+  </div>
+
+  <div class = "create-item-box">
+    <ul>
+      <li><h5>Produto Novo</h5><input type="text" id="new-product-name"></li>
+      <li><h5>Preço do Novo Produto</h5><input type="number" id="new-product-price"></li>
+      <li><button type="button" id="new-item-create">Criar novo produto</button></li>
+    </ul>
+  </div>
+
+  <div class = "calculate-price-box">
+    <button type="button" class="btn-success" id="calc-prices-button">Calcular Preço</button>
+    <div class="price-exposal">
+      <h5 id="total-price-text">Preço total da compra:</h5>
+      <h5 id="total-price-value">10</h5>
+    </div>
+  </div>
+
+</body>
+
+</html>
