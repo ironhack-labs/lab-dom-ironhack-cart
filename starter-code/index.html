@@ -58,6 +58,7 @@ input {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    margin: 3px;
 }
 
 .quantity {
@@ -85,16 +86,69 @@ h1 {
 
 <h1>Ironhack Merchandising Shop</h1>
 
-<div class = "row">
+<div id = "product-table">
+    <div class = "flex-product">
+
+      <div>
+        <span>IronBubble</span>
+      </div>
+
+      <div>
+        <span>$</span>
+        <span class = "price-unit">25</span>
+      </div>
+
+      <div>
+        <label>QTY</label>
+        <input class = "quantity" type = "text" value = "0">
+      </div>
+
+      <div>
+        <span>$</span>
+        <span class = "total-product">0</span>
+      </div>
+
+      <div>
+        <button class = "btn btn-delete" name = "delete">Delete</button>
+      </div>
+
+</div>
+
   <div class = "flex-product">
 
     <div>
-      <span>IronBubble-head</span>
+      <span>IronHat</span>
     </div>
 
     <div>
       <span>$</span>
-      <span class = "price-unit">25</span>
+      <span class = "price-unit">15</span>
+    </div>
+
+    <div>
+      <label>QTY</label>
+      <input class = "quantity" type = "text" value = "0">
+    </div>
+
+    <div>
+      <span>$</span>
+      <span class = "total-product">0</span>
+    </div>
+
+    <div>
+      <button class = "btn btn-delete" name = "delete">Delete</button>
+    </div>
+</div>
+
+  <div class = "flex-product">
+
+    <div>
+      <span>IronHeart</span>
+    </div>
+
+    <div>
+      <span>$</span>
+      <span class = "price-unit">40</span>
     </div>
 
     <div>
@@ -126,88 +180,9 @@ h1 {
   <span>$</span>
   <span class = "total-price">0</span>
 </h1>
-                                                                                          
+
+<script src = "js/index.js"></script>
+
 </body>
-
-<script>
-
-// Functions
-  
-function deleteItem(e){                                                                                         
-  console.log(e);
-  var deleteButtons = document.getElementsByClassName("btn-delete");
-  var items = document.getElementsByClassName("flex-product")
-  
-  for(var i = 0; i<deleteButtons.length ; i++){
-    deleteButtons[i].onclick = items[i].remove();
-  }
-  }
-
-function getPriceByProduct(){
-  var allProducts = document.getElementsByClassName("flex-product");
-  for (i=0; i < allProducts.length; i++) {
-    var totalProduct = allProducts[i].querySelector("total-product");
-    var priceUnit = allProducts[i].querySelector("price-unit");
-    var quantity = allProducts[i].querySelector("quantity");
-    totalProduct.innerText = parseInt(parseInt(priceUnit.innerText) * parseInt(quantity.value));
-  }
-}
-
-function getTotalPrice(e) {
-  var allProductsPrices = document.getElementsByClassName("total-product");
-  var totalPrice = allProductsPrices.reduce(function add(accumulator, a) {
-    return accumulator + a;
-  })
-  document.querySelector("total-price").innerText = totalPrice;
-}
-
-function createNewItemRow(itemName, itemUnitPrice){
-}
-
-function createPriceInput(){
-}
-
-function createQuantityInput(){
-}
-
-function createDeleteButton(){
-}
-
-function createQuantityNode(){
-}
-
-
-// Buttons
-
-function createNewItem(){
-  var btnAdd = document.getElementsByName("add");
-  btnAdd.onclick = createNewItemRow();
-  btnAdd.onclick = createPriceInput();
-  btnAdd.onclick = createQuantityInput();
-  btnAdd.onclick = createDeleteButton();
-}
-
-function updatePriceByProduct(){
-  var qtyInput = document.querySelector("quantity");
-  qtyInput.onchange = getPriceByProduct();
-}
-
-function updateTotalPrice(){
-  var btnCalculate = document.getElementsByName("calculate");
-  btnCalculate.onclick = getTotalPrice();
-}
-
-
-
-window.onload = function(){
-  var calculatePriceButton = document.getElementById('calc-prices-button');
-  var createItemButton = document.getElementById('new-item-create');
-
-  calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
-
-};
-
-</script>
 
 </html>
