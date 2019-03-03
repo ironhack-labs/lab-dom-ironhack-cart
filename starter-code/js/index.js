@@ -1,47 +1,50 @@
-function getTotalPrice() {
-  var priceArr = document.getElementsByClassName('productPrice');
-  var productPrice = [];
-  //calculate price per product
-  for (var i = 0; i < priceArr.length; i++) {
-    productPrice.push(Number(document.getElementsByClassName('productPrice')[i].textContent) * Number(document.getElementsByTagName('input')[i].value));
-    document.getElementsByClassName('priceByProduct')[i].innerHTML = Number(productPrice[i])
-  }
-  var totalPrice = 0;
-  for (var i = 0; i < productPrice.length; i++) {
-    totalPrice = totalPrice + productPrice[i];
-    document.getElementById('totalPrice').innerHTML = Number(totalPrice);
-  }
+
+function getTotalPrice(){
+	var priceArr = [];
+	var numbProducts = document.getElementsByClassName('productName')
+	for (var i = 0; i < numbProducts.length; i++) {
+		var productPrice = document.getElementsByClassName('productPrice')[i].textContent;
+		var productQuantity = document.getElementsByClassName("quantity")[i].value
+		var calculatedPrice = Math.ceil(productPrice*productQuantity *100)/100;
+		document.getElementsByClassName('priceByProduct')[i].innerHTML = Number(calculatedPrice) + "€"
+		console.log(priceArr)
+		priceArr.push(calculatedPrice)
+	}
+	const totalPrice = priceArr.reduce((accumulator, currentValue) => {
+		return accumulator + currentValue;
+	}, 0);
+	console.log(totalPrice)
+	document.getElementById("totalPrice").innerHTML = totalPrice + "€"
+
 }
 
 function createNewItem() {
-  var parent = document.getElementById('parent');
-  var firstChild = document.getElementById('newItems');
-  var productName = document.createTextNode(document.getElementById('productNameInput').value);
-  var productPriceInput = document.createTextNode(document.getElementById('productPriceInput').value);
-  // var createSection = document.createElement('section');
-  var createSection = document.getElementById('parent');
-  var priceArr = document.getElementsByClassName('productPrice');
 
-  createSection.insertAdjacentHTML("beforeend",
-    '<section><div><span class=productName></span></div><div><span class=productPrice></span></div><div><span class=quantity></span><input type="text" name="QTY">Quantity:</div><div><span class=priceByProduct></span><span>€</span></div><button class="btn btn-delete" type="button">Delete</button></section>')
+	var productName = document.getElementById('productNameInput').value;
+	var productPrice = document.getElementById('productPriceInput').value;
+
+	var createElement = document.getElementById('createElement');
+
+	createElement.insertAdjacentHTML('beforebegin',
+																	 '<div class="productName">'+ productName + '</div><div class="productPrice">' + productPrice + '</div><div ><input class="quantity" type=text name="QTY" placeholder = "Type in Quantity"></div><div class="priceByProduct">00,00</div><div><button class="btn btn-delete" type="button">Delete</button></div>')
 }
 
 window.onload = function () {
-  //everything should be written here, function declaration above
-  var calculatePriceButton = document.getElementById('calc-prices-button');
-  var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');
+	//everything should be written here, function declaration above
+	var calculatePriceButton = document.getElementById('calc-prices-button');
+	var createItemButton = document.getElementById('new-item-create');
+	var deleteButtons = document.getElementsByClassName('btn-delete');
 
 
 
-  calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
+	calculatePriceButton.onclick = getTotalPrice;
+	createItemButton.onclick = createNewItem;
 
-  for (var i = 0; i < deleteButtons.length; i++) {
-    deleteButtons[i].onclick = function deleteItem(e) {
-      e.currentTarget.parentNode.remove();
-      console.log(e.currentTarget.parentNode.nodeName)
-    }
-  }
+	for (var i = 0; i < deleteButtons.length; i++) {
+		deleteButtons[i].onclick = function deleteItem(e) {
+			e.currentTarget.parentElement.parentElement.remove();
+			console.log(e.currentTarget.parentNode.nodeName)
+		}
+	}
 
 };

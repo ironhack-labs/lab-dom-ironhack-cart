@@ -12,50 +12,51 @@
 </head>
 
 <body>
-  <h1>Ironhack Merchandising Shop</h1>
-  <div id=parent>
-    <section>
-      <div><span class=productName>Iron Bubble-head</span></div>
-      <div><span class=productPrice>25.65</span></div>
-      <div><span class=quantity>Quantity:</span><input type="text" name="QTY"></div>
-      <div><span class=priceByProduct>00,00</span><span>€</span></div>
-      <button class="btn btn-delete" type="button">Delete</button>
-    </section>
-    <section>
-      <div><span class=productName>Iron Shirt</span></div>
-      <div><span class=productPrice>67.87</span></div>
-      <div><span class=quantity>Quantity:</span><input type="text" name="QTY"></div>
-      <div><span class=priceByProduct>00,00</span><span>€</span></div>
-      <button class="btn btn-delete" type="button">Delete</button>
-    </section>
-    <!-- <section>
-      <div><span class=productName></span></div>
-      <div><span class=productPrice></span></div>
-      <div><span class=quantity></span><input type="text" name="QTY"></div>
-      <div><span class=priceByProduct></span><span>€</span></div>
-      <button class="btn btn-delete" type="button">Delete</button>
-    </section>
-    <section>
-      <div><span class=productName></span></div>
-      <div><span class=productPrice></span></div>
-      <div><span class=quantity></span><input type="text" name="QTY"></div>
-      <div><span class=priceByProduct></span><span>€</span></div>
-      <button class="btn btn-delete" type="button">Delete</button>
-    </section> -->
-  <div id='newItems'></div>
-  </div>
-  <section >
-      <div><input type="text" id="productNameInput"></div>
-      <div><input type="text" id="productPriceInput"></div>
-      <button id='new-item-create' class="btn btn-create" type="button">Create</button>
-    </section>
-  <section id='calc-prices-button'>
-    <button class="btn btn-success" type="button">Calculate Prices</button>
-  </section>
-  <section>
-    <span>Total Price</span><span id=totalPrice></span><span>€</span>
-  </section>
+	<div><h1>
+		Ironhack Merchandising Shop</h1>
+	</div>
+	<div class="shopping-container">
+		<div >Product Name</div>
+		<div >Product Price</div>
+		<div >Quantity</div>
+		<div >Calculated Price</div>
+		<div> </div>
+	</div>
+	<div class="shopping-container">
+		<div class="productName">Iron Bubble-Head</div>
+		<div class="productPrice">25.65 </div>
+		<div><input class="quantity"type="text" name="QTY" placeholder = "Type in Quantity"></div>
+		<div class="priceByProduct">00,00</div>
+		<div><button class="btn btn-delete" type="button">Delete</button></div>
+	</div>
 
+	<div class="shopping-container">
+		<div class="productName">Iron Shirt</div>
+		<div class="productPrice">67.87</div>
+		<div ><input class="quantity" type="text" name="QTY" placeholder = "Type in Quantity"></div>
+		<div class="priceByProduct">00,00</div>
+		<div><button class="btn btn-delete" type="button">Delete</button></div>
+	</div>
+
+	<div class="shopping-container">
+		<div id=createElement><input type="text" id="productNameInput" placeholder = "Type in Product Name"></div>
+
+		<div><input type="text" id="productPriceInput" placeholder = "Type in Product Price"></div>
+		<div></div>
+		<div></div>
+		<div><button id='new-item-create' class="btn btn-create" type="button">Create</button></div>
+	</div>
+	<div class="shopping-container">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div>TotalPrice: <span id=totalPrice></span></div>
+		<div id='calc-prices-button'>
+			<button id= 'calc-prices-button' class="btn btn-success" type="button">Calculate Price</button>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
 </body>
 
 </html>

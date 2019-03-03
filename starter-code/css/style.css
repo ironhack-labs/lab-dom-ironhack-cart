@@ -1,5 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+body{
+	font-family: 'Open Sans Condensed', sans-serif;
+}
 input {
-  border: solid 1px black;
+	font-family: 'Open Sans Condensed', sans-serif;
+  border: solid 1px grey;
+}
+.header{
+  grid-area: header;
+}
+.shopping-container {
+  display:grid;
+  grid-template-columns: 150px 150px 250px 150px 150px;
+	grid-template-rows:auto;
+	grid-column-gap: 40px;
+	margin-bottom: 30px;
 }
 section > div{
   float:left;
@@ -50,4 +65,3 @@ section{
 #quantity {
   margin: 0 5px;
 }
-
