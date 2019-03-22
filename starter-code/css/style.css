@@ -9,7 +9,21 @@ input {
 
 .container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  flex-basis: 20%;
+  padding: 20px;
+}
+
+.product-box {
+  display: flex;
+}
+
+.product-box input::placeholder{
+  text-align: center;
+}
+
+.product-box input:last-child {
+  margin-left: 10px;
 }
 
 .btn {

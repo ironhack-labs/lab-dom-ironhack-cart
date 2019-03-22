@@ -62,6 +62,37 @@ function createNewItemRow(itemName, itemUnitPrice){
 
 function createNewItem(){
 
+  var newProductName = document.querySelector("#product-name").value
+
+  var newProductPrice = document.querySelector("#product-price").value
+
+  var productList = document.querySelector("#product-list")
+
+  var div = document.createElement("div")
+
+  var newProductList = `
+<div>
+  <span>${newProductName}</span>
+</div>
+<div class="unit-price">
+  <span>$${newProductPrice}</span>
+</div>
+<div class="quantity">
+  <label for="quantity">QTY</label>
+  <input type="text" value="0" name="quantity">
+</div>
+<div class="total-price">
+  <span>$0.00</span>
+</div>
+<div>
+  <button class="btn btn-delete">Delete</button>
+</div>`
+
+div.setAttribute('class', 'container')
+div.innerHTML = newProductList
+
+productList.append(div)
+
 }
 
 window.onload = function(){
