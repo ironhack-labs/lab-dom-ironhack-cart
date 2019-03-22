@@ -3,8 +3,14 @@ input {
 }
 
 .title {
+  margin: 0 auto;
   width: 25%;
-  margin-left: 50%;
+}
+
+#global-price {
+  margin: 0 auto;
+  width: 25%;
+  font-size: 24px;
 }
 
 .container {
