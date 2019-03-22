@@ -11,11 +11,15 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-  var unitPrice = document.querySelectorAll(".unit-price")
+  var unitPrice = document.querySelectorAll(".unit-price span")
 
   var quantity = document.querySelectorAll(".quantity input")
 
   var totalPriceDomElem = document.querySelectorAll(".total-price span")
+
+  var totalGlobalPriceDomElem = document.querySelector("#global-price span")
+
+  var globalPrice = []
 
   for (var i=0; i<unitPrice.length; i++) {
     var unitValueString = unitPrice[i].textContent
@@ -27,7 +31,13 @@ function getTotalPrice() {
     var totalPrice = unitValue*unitQuantity
     
     totalPriceDomElem[i].textContent = "$" + totalPrice.toFixed(2)
+
+    globalPrice.push(totalPrice)
   }
+
+  var totalGlobalPrice = globalPrice.reduce((a, cv) => a + cv, 0)
+
+  totalGlobalPriceDomElem.textContent = "$" + totalGlobalPrice.toFixed(2)
 }
 
 function createQuantityInput(){
