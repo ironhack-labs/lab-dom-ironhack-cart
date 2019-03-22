@@ -95,7 +95,7 @@ function createNewItemRow(itemName, itemUnitPrice){
 
   var productPrice =  document.createElement('div');
   productPrice.setAttribute('class', 'product-price');
-  productPrice.innerHTML = "<span> $"+ parseFloat(itemUnitPrice).toFixed(2) + "</span>";
+  productPrice.innerHTML = "<span>$"+ parseFloat(itemUnitPrice).toFixed(2) + "</span>";
   
   var productTotal = document.createElement('div');
   productTotal.setAttribute('class', 'product-total');
