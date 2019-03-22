@@ -1,6 +1,17 @@
 input {
   border: solid 1px black;
 }
+html {
+  text-align: center;
+  padding: 10px;
+}
+.row {
+  display: flex;
+  justify-content: space-around; 
+  flex-basis: 100px;
+  align-items: center;
+  margin: 20px 0
+}
 
 .btn {
   display: inline-block;
