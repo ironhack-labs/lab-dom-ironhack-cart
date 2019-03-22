@@ -1,75 +1,61 @@
-function deleteItem(e){
-  console.log(e)
-e.path[3].remove()
+function deleteItem(e) {
+  e.path[2].remove();
 }
 
-function getPriceByProduct(itemNode){
+function getPriceByProduct(itemNode) {}
 
-}
-
-function updatePriceByProduct(productPrice, index){
-
-}
+function updatePriceByProduct(productPrice, index) {}
 
 function getTotalPrice() {
-  var unitPrice = document.querySelectorAll(".unit-price span")
+  var unitPrice = document.querySelectorAll(".unit-price span");
 
-  var quantity = document.querySelectorAll(".quantity input")
+  var quantity = document.querySelectorAll(".quantity input");
 
-  var totalPriceDomElem = document.querySelectorAll(".total-price span")
+  var totalPriceDomElem = document.querySelectorAll(".total-price span");
 
-  var totalGlobalPriceDomElem = document.querySelector("#global-price span")
+  var totalGlobalPriceDomElem = document.querySelector("#global-price span");
 
-  var globalPrice = []
+  var globalPrice = [];
 
-  for (var i=0; i<unitPrice.length; i++) {
-    var unitValueString = unitPrice[i].textContent
+  for (var i = 0; i < unitPrice.length; i++) {
+    var unitValueString = unitPrice[i].textContent;
 
-    var unitValue = parseFloat(unitValueString.substring(1, unitValueString.length-1))
-    
-    var unitQuantity = parseInt(quantity[i].value)
-    
-    var totalPrice = unitValue*unitQuantity
-    
-    totalPriceDomElem[i].textContent = "$" + totalPrice.toFixed(2)
+    var unitValue = parseFloat(
+      unitValueString.substring(1, unitValueString.length - 1)
+    );
 
-    globalPrice.push(totalPrice)
+    var unitQuantity = parseInt(quantity[i].value);
+
+    var totalPrice = unitValue * unitQuantity;
+
+    totalPriceDomElem[i].textContent = "$" + totalPrice.toFixed(2);
+
+    globalPrice.push(totalPrice);
   }
 
-  var totalGlobalPrice = globalPrice.reduce((a, cv) => a + cv, 0)
+  var totalGlobalPrice = globalPrice.reduce((a, cv) => a + cv, 0);
 
-  totalGlobalPriceDomElem.textContent = "$" + totalGlobalPrice.toFixed(2)
+  totalGlobalPriceDomElem.textContent = "$" + totalGlobalPrice.toFixed(2);
 }
 
-function createQuantityInput(){
+function createQuantityInput() {}
 
-}
+function createDeleteButton() {}
 
-function createDeleteButton(){
+function createQuantityNode() {}
 
-}
+function createItemNode(dataType, itemData) {}
 
-function createQuantityNode(){
+function createNewItemRow(itemName, itemUnitPrice) {}
 
-}
+function createNewItem() {
+  var newProductName = document.querySelector("#product-name").value;
 
-function createItemNode(dataType, itemData){
+  var newProductPrice = document.querySelector("#product-price").value;
 
-}
+  var productList = document.querySelector("#product-list");
 
-function createNewItemRow(itemName, itemUnitPrice){
-
-}
-
-function createNewItem(){
-
-  var newProductName = document.querySelector("#product-name").value
-
-  var newProductPrice = document.querySelector("#product-price").value
-
-  var productList = document.querySelector("#product-list")
-
-  var div = document.createElement("div")
+  var div = document.createElement("div");
 
   var newProductList = `
 <div>
@@ -87,24 +73,28 @@ function createNewItem(){
 </div>
 <div>
   <button class="btn btn-delete">Delete</button>
-</div>`
+</div>`;
 
-div.setAttribute('class', 'container')
-div.innerHTML = newProductList
+  div.setAttribute("class", "container");
+  div.innerHTML = newProductList;
 
-productList.append(div)
-
+  productList.append(div);
+  loadDOMElements();
 }
 
-window.onload = function(){
-  var calculatePriceButton = document.getElementById('calc-prices-button');
-  var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');
+function loadDOMElements() {
+  var deleteButtons = document.getElementsByClassName("btn-delete");
+  var calculatePriceButton = document.getElementById("calc-prices-button");
+  var createItemButton = document.getElementById("new-item-create");
 
   calculatePriceButton.onclick = getTotalPrice;
   createItemButton.onclick = createNewItem;
 
-  for(var i = 0; i<deleteButtons.length ; i++){
+  for (var i = 0; i < deleteButtons.length; i++) {
     deleteButtons[i].onclick = deleteItem;
   }
+}
+
+window.onload = function() {
+  loadDOMElements();
 };
