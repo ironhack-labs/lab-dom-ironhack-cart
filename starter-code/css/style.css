@@ -1,3 +1,35 @@
+div{
+  border: 1px solid silver;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+.center-div{
+     margin: 0 auto;
+     width: 25%; 
+}
+
+.success-div{
+  margin-top: 20px;
+}
+
+.flex{
+  display: flex;
+  align-items: center;
+}
+
+.flex > *{
+  margin-right: 10%;
+  padding: 6px 12px;  
+  font-size: 1.5rem;
+}
+
 input {
   border: solid 1px black;
 }
