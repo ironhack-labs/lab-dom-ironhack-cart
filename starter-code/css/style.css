@@ -39,3 +39,10 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.product-wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin: 1rem;
+  --border: 1px solid black;
+}
