@@ -32,6 +32,7 @@ function createQuantityInput(){
   var qtyInput = document.createElement('input');
   qtyInput.setAttribute('name', 'qty-input');
   qtyInput.setAttribute('type', 'number');
+  qtyInput.setAttribute('value', 0);
   qtyInput.value = 0;
 
   return qtyInput;
@@ -44,6 +45,7 @@ function createDeleteButton(){
   var deleteButton = document.createElement('button');
   deleteButton.setAttribute('class', 'btn btn-delete');
   deleteButton.innerHTML = "Delete";
+  deleteButton.onclick = deleteItem;
 
   deleteDiv.append(deleteButton);
 
