@@ -8,9 +8,18 @@ html {
 .row {
   display: flex;
   justify-content: space-around; 
-  flex-basis: 100px;
   align-items: center;
   margin: 20px 0
+}
+
+.row div{
+  margin: 20px 0;
+
+  flex-basis: 20%;
+}
+
+.masterPrice {
+  color: red;
 }
 
 .btn {
@@ -49,4 +58,9 @@ html {
 
 .quantity {
   margin: 0 5px;
+}
+
+.pCreator {
+  border-top: 1px solid #4cae4c;
+  padding-top: 30px;
 }
