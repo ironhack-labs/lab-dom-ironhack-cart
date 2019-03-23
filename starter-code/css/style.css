@@ -1,3 +1,21 @@
+*{
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 62.5%;
+}
+
+body{
+  font-size: 1.6rem;
+}
+
+.main{
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+
 input {
   border: solid 1px black;
 }
@@ -9,8 +27,9 @@ input {
 
 #global-price {
   margin: 0 auto;
-  width: 25%;
+  width: 50%;
   font-size: 24px;
+  text-align: center;
 }
 
 .container {
@@ -55,7 +74,7 @@ input {
 }
 
 .calculate-btn {
-  width: 10%;
+  width: 25%;
   margin: 0 auto;
 }
 

@@ -2,9 +2,13 @@ function deleteItem(e) {
   e.path[2].remove();
 }
 
-function getPriceByProduct(itemNode) {}
+function getPriceByProduct(itemNode) {
+  
+}
 
-function updatePriceByProduct(productPrice, index) {}
+function updatePriceByProduct(productPrice, index) {
+  
+}
 
 function getTotalPrice() {
   var unitPrice = document.querySelectorAll(".unit-price span");
@@ -38,15 +42,25 @@ function getTotalPrice() {
   totalGlobalPriceDomElem.textContent = "$" + totalGlobalPrice.toFixed(2);
 }
 
-function createQuantityInput() {}
+function createQuantityInput() {
+  
+}
 
-function createDeleteButton() {}
+function createDeleteButton() {
+  
+}
 
-function createQuantityNode() {}
+function createQuantityNode() {
+  
+}
 
-function createItemNode(dataType, itemData) {}
+function createItemNode(dataType, itemData) {
+  
+}
 
-function createNewItemRow(itemName, itemUnitPrice) {}
+function createNewItemRow(itemName, itemUnitPrice) {
+  
+}
 
 function createNewItem() {
   var newProductName = document.querySelector("#product-name").value;
