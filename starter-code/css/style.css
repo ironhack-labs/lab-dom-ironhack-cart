@@ -43,6 +43,10 @@ input {
   display: flex;
 }
 
+.product-box input{
+  text-align: center;
+}
+
 .product-box input::placeholder{
   text-align: center;
 }
