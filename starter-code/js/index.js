@@ -1,132 +1,95 @@
 function deleteItem(e) {
-  console.log(e.path[2]);
   e.path[2].remove();
 }
 
-function getPriceByProduct(itemNode) {
-
-}
-
-function updatePriceByProduct(productPrice, index) {
-
-}
-
 function getTotalPrice() {
-  // Saca todos los precios unitarios que hay
+  // Provide cache to the necessary DOM elements
   var unitPrice = document.querySelectorAll(".unit-price span");
-
-  // Saca todas las cantidades que hay
   var quantity = document.querySelectorAll(".quantity input");
-
-  // Consigue todos los elementos del precio total del producto
   var totalPriceDomElem = document.querySelectorAll(".total-price span");
 
-  // Selecciona el precio global
-  var totalGlobalPriceDomElem = document.querySelector("#global-price span");
+  var pricesList = [];
 
-  // Recibe todos los precios unitarios
-  var globalPrice = [];
-
-  // Recorre todos los precios
-  for (var i = 0; i < unitPrice.length; i++) {
-    //Consigue el string del precio unitario y lo transforma en número
-    var unitValueString = unitPrice[i].textContent;
-    var unitValue = parseFloat(
-      unitValueString.substring(1, unitValueString.length - 1)
-    );
-
-    // Consigue el número de la cantidad
-    var unitQuantity = parseInt(quantity[i].value);
-
-    // Consigue el precio total del producto
+  quantity.forEach((_, index) => {
+    var unitValueString = unitPrice[index].textContent;
+    var unitValue = parseFloat(unitValueString.substring(1, unitValueString.length));
+  
+    var unitQuantity = parseInt(quantity[index].value);
     var totalPrice = unitValue * unitQuantity;
+  
+    totalPriceDomElem[index].textContent = "$" + totalPrice.toFixed(2);
+  
+    pricesList.push(totalPrice);
+  });
 
-    // Transforma el dom para cambiar el precio total del producto
-    totalPriceDomElem[i].textContent = "$" + totalPrice.toFixed(2);
-
-    globalPrice.push(totalPrice);
-  }
-
-  // Consigue el precio de todos los productos
-  var totalGlobalPrice = globalPrice.reduce((a, cv) => a + cv, 0);
-  // Transforma en el DOM el precio de todos los productos
-  totalGlobalPriceDomElem.textContent = "$" + totalGlobalPrice.toFixed(2);
+  var totalPrice = calculateTotalPrice(pricesList);
+  updateGlobalPrice(totalPrice);
 }
 
-function createQuantityInput() {
-
+// This methods returns the sum of the whole array of product prices
+function calculateTotalPrice(arr){
+  return arr.reduce((a, cv) => a + cv, 0);
 }
 
-function createDeleteButton() {
-
-}
-
-function createQuantityNode() {
-
-}
-
-function createItemNode(dataType, itemData) {
-
-}
-
-function createNewItemRow(itemName, itemUnitPrice) {
-
+// This method access to the DOM and change the total price value
+function updateGlobalPrice(num){
+  document.querySelector("#global-price span").textContent = "$" + num.toFixed(2);
 }
 
 function createNewItem() {
-  //Consigue el elemento del DOM del nuevo nombre del producto y recupera su valor
-  var newProductName = document.querySelector("#product-name").value;
-
-  // Consigue el elemento del DOM del precio unitario del producto y recupera su valor
-  var newProductPrice = document.querySelector("#product-price").value;
-
-  newProductPrice = newProductPrice ? newProductPrice : '0.00'
-
-  // Consigue toda la lista de productos que hay
+  // We get the input values for the name and the unit price. If there are no values, 'Unnamed' and '0.00' are the default ones
+  var newProductName = document.querySelector("#product-name").value || 'Unnamed';
+  var newProductPrice = parseFloat(document.querySelector("#product-price").value).toFixed(2) || '0.00';
+  
+  // If the price is not a number, cancel the addition of the product
+  if(isNaN(newProductPrice)){ return ;}
+  
+  // Get the product list
   var productList = document.querySelector("#product-list");
 
-  // Creamos un nuevo div para insertarlo en la lista de productos después
-  var div = document.createElement("div");
-  var newProductList = `
-<div>
-  <span>${newProductName}</span>
-</div>
-<div class="unit-price">
-  <span>$${newProductPrice}</span>
-</div>
-<div class="quantity">
-  <label for="quantity">QTY</label>
-  <input type="text" value="0" name="quantity">
-</div>
-<div class="total-price">
-  <span>$0.00</span>
-</div>
-<div>
-  <button class="btn btn-delete">Delete</button>
-</div>`;
-  
-  div.innerHTML = newProductList;
-  div.setAttribute("class", "container");
-  div.querySelector('button').onclick = deleteItem
+  // We create the element to add some properties later
+  var newProduct = document.createElement("div");
+  // The structure of the product
+  newProduct.innerHTML = `
+    <div>
+      <span>${newProductName}</span>
+    </div>
+    <div class="unit-price">
+      <span>$${newProductPrice}</span>
+    </div>
+    <div class="quantity">
+      <label for="quantity">QTY</label>
+      <input type="text" value="0" name="quantity">
+    </div>
+    <div class="total-price">
+      <span>$0.00</span>
+    </div>
+    <div>
+      <button class="btn btn-delete">Delete</button>
+    </div>
+  `;
 
-  // Se añade el div a la lista de productos
-  productList.append(div);
-}
+  // We add the style to the product
+  newProduct.setAttribute("class", "container");
+  // We attach the deleteItem function to the onclick event for the delete button
+  newProduct.querySelector('button').onclick = deleteItem
 
-function loadDOMElements() {
+  // We add the whole product to the product list
+  productList.append(newProduct);
+
+  // We reset the divs value
+  document.querySelector("#product-name").value = '';
+  document.querySelector("#product-price").value = '';
 }
 
 window.onload = function() {
-  // Al no actualizar la lista de productos no es necesario cambiar el evento onclick cada vez que se añade un producto nuevo
   var calculatePriceButton = document.getElementById("calc-prices-button");
   calculatePriceButton.onclick = getTotalPrice;
   
-  // Lo mismo para este botón, ya que es el mismo siempre
   var createItemButton = document.getElementById("new-item-create");
   createItemButton.onclick = createNewItem;
   
   var deleteButtons = document.getElementsByClassName("btn-delete");
-  
   
   for (var i = 0; i < deleteButtons.length; i++) {
     deleteButtons[i].onclick = deleteItem;
