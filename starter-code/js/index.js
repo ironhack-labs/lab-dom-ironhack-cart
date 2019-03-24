@@ -1,5 +1,7 @@
 function deleteItem(e){
-
+  var bodyElem = e.target.parentNode.parentNode.parentNode;
+  var divRow = e.target.parentNode.parentNode;
+  bodyElem.removeChild(divRow);
 }
 
 function getPriceByProduct(itemNode){
@@ -29,11 +31,9 @@ function getTotalPrice() {
       updatePriceByProduct( productTotal, totalElemId );
 
       
-      console.log(`Precio producto ${priceElemId}  cantidad ${qtyElemId}  total ${productTotal}`);
       sumtotal += productTotal;
     });
     
-    console.log(`Total  total ${sumtotal}`);
     var productsTotalElem = document.querySelector('#products-total');
     document.getElementById(productsTotalElem.id).innerHTML='$'+sumtotal;
 
@@ -67,13 +67,17 @@ function createNewItem(){
 
 window.onload = function(){
   var calculatePriceButton = document.getElementById('calc-prices-button');
-/*   var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete'); */
-
   calculatePriceButton.onclick = getTotalPrice;
-//  createItemButton.onclick = createNewItem;
 
-/*   for(var i = 0; i<deleteButtons.length ; i++){
+  var deleteButtons = document.querySelectorAll('.btn-delete'); 
+  for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
-  } */
+  }
+
+/*   
+var createItemButton = document.getElementById('new-item-create');
+createItemButton.onclick = createNewItem;
+*/
+
+
 };
