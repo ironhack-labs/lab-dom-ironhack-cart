@@ -2,6 +2,7 @@ function deleteItem(e){
   var bodyElem = e.target.parentNode.parentNode.parentNode;
   var divRow = e.target.parentNode.parentNode;
   bodyElem.removeChild(divRow);
+  getTotalPrice();
 }
 
 function getPriceByProduct(itemNode){
@@ -28,9 +29,7 @@ function getTotalPrice() {
       var productPrice = getPriceByProduct(priceElemId);
       var productUnits = getUnitsByProduct(qtyElemId);
       var productTotal = productPrice * productUnits;
-      updatePriceByProduct( productTotal, totalElemId );
-
-      
+      updatePriceByProduct( productTotal, totalElemId );      
       sumtotal += productTotal;
     });
     
@@ -41,27 +40,56 @@ function getTotalPrice() {
 
 }
 
-function createQuantityInput(){
-
+function createItemNode(rowNumber, dataType, itemData){   
+  return `<div class="product-name">\n\t\t<span>${dataType}</span>\n\t</div>\n\t<div>\n\t\t<span class="product-price" id="product-price-${rowNumber}">\$${itemData}</span>\n\t</div>`;
 }
 
-function createDeleteButton(){
-
+function createQuantityInput(rowNumber){
+  return `<div>\n\t\t<label for="">QTY</label><input class="product-qty" id="product-qty-${rowNumber}" type="text" value="1">\n\t</div>`;
 }
 
-function createQuantityNode(){
-
+function createQuantityNode(rowNumber){
+  return `<div>\n\t\t<span class="product-total" id="product-total-${rowNumber}">$00</span>\n\t</div>`;
 }
 
-function createItemNode(dataType, itemData){
-
+function createDeleteButton(rowNumber){
+  return `<div>\n\t\t<button id="btn-delete-${rowNumber}" class="btn btn-delete">Delete</button>\n\t</div>`;
 }
 
-function createNewItemRow(itemName, itemUnitPrice){
+
+
+
+function createNewItemRow(lastRow, itemName, itemUnitPrice){
+  var newRow = lastRow + 1;
+
+  var htmlNewRow = `<div id="product-row-${newRow}" class="flex">\n`;
+  htmlNewRow += `\t${createItemNode(newRow, itemName, itemUnitPrice)}\n`;
+  htmlNewRow += `\t${createQuantityInput(newRow)}\n`; 
+  htmlNewRow += `\t${createQuantityNode(newRow)}\n`;
+  htmlNewRow += `\t${createDeleteButton(newRow)}\n`;
+  htmlNewRow += `</div>`;
+
+  var productsGrid = document.querySelectorAll(".products-grid");
+  lastGridRow = productsGrid[0].lastElementChild;
+  if (lastGridRow === null) productsGrid[0].insertAdjacentHTML('afterbegin', htmlNewRow );
+  else lastGridRow.insertAdjacentHTML('afterend', htmlNewRow );
+  return htmlNewRow;
 
 }
 
 function createNewItem(){
+  var numProductos = document.querySelectorAll(".products-grid");
+  numProductos = numProductos[0].childElementCount;
+  var newElemName = document.querySelector('#new-product-name').value;
+  var newElemPrice = document.querySelector('#new-product-price').value;
+  console.log(createNewItemRow(numProductos, newElemName, +newElemPrice));
+  document.querySelector('#new-product-name').value = "New product name";
+  document.querySelector('#new-product-price').value = "$0";
+
+  var deleteButtons = document.querySelectorAll('.btn-delete'); 
+  for(var i = 0; i<deleteButtons.length ; i++){
+    deleteButtons[i].onclick = deleteItem;
+  }
 
 }
 
@@ -74,10 +102,9 @@ window.onload = function(){
     deleteButtons[i].onclick = deleteItem;
   }
 
-/*   
-var createItemButton = document.getElementById('new-item-create');
-createItemButton.onclick = createNewItem;
-*/
+  var createItemButton = document.getElementById('new-item-create');
+  createItemButton.onclick = createNewItem;
+
 
 
 };

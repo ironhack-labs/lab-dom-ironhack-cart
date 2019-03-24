@@ -1,5 +1,5 @@
 div{
-  border: 1px solid silver;
+  border: 1px solid transparent;
 }
 
 * {
@@ -11,8 +11,10 @@ html {
 }
 
 .center-div{
-     margin: 0 auto;
-     width: 25%; 
+  font-size:2 rem;
+  margin: 0 auto;
+  width: 25%; 
+  font-weight: bold;
 }
 
 .success-div{
@@ -88,4 +90,39 @@ input {
 
 .total-num{
   margin-left: 15px;
+}
+
+.new-product{
+  /*display: flex;*/
+  align-items: center;  
+  margin-top: 50px;
+}
+
+.new-product > *{
+  width: 15%;
+  margin-right: 25px;
+  font-size: 1.5rem;
+}
+
+.new-product-properties{
+  width: auto;
+}
+
+.new-product-name{
+  width:65%;
+  margin-right: 1px;
+}
+
+.new-product-price{
+  margin-left: 5%;
+  width: 20%;
+}
+
+.new-product-actions{
+  float: right;
+  margin-left: 40%;
+}
+
+.create-product-btn{  
+  width: auto;
 }
