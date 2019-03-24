@@ -12,7 +12,7 @@ function getUnitsByProduct(itemNode){
 }
 
 function updatePriceByProduct(productPrice, index){
-  document.getElementById(index).innerHTML=productPrice;
+  document.getElementById(index).innerHTML='$'+productPrice;
 }
 
 function getTotalPrice() {

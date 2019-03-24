@@ -30,6 +30,11 @@ html {
   font-size: 1.5rem;
 }
 
+.product-name{
+  width: 15%;
+  margin-right: 25px;
+}
+
 input {
   border: solid 1px black;
 }
