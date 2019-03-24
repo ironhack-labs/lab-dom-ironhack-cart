@@ -76,3 +76,16 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.total-info{
+  font-size:4.5rem;
+  margin-top: 15px;
+}
+
+.total-label{
+  font-weight: bold; 
+}
+
+.total-num{
+  margin-left: 15px;
+}

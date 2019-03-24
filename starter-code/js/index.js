@@ -17,6 +17,7 @@ function updatePriceByProduct(productPrice, index){
 
 function getTotalPrice() {
     var productos = document.querySelectorAll(".product-qty");
+    var sumtotal = 0;
     productos.forEach( function(product, idx) {
       var priceElemId = document.querySelectorAll(".product-price")[idx].id;
       var qtyElemId = document.querySelectorAll(".product-qty")[idx].id;
@@ -25,11 +26,16 @@ function getTotalPrice() {
       var productPrice = getPriceByProduct(priceElemId);
       var productUnits = getUnitsByProduct(qtyElemId);
       var productTotal = productPrice * productUnits;
-      //console.log(`Precio producto ${priceElemId}  cantidad ${qtyElemId}  total ${productTotal}`);
       updatePriceByProduct( productTotal, totalElemId );
 
+      
+      console.log(`Precio producto ${priceElemId}  cantidad ${qtyElemId}  total ${productTotal}`);
+      sumtotal += productTotal;
     });
-
+    
+    console.log(`Total  total ${sumtotal}`);
+    var productsTotalElem = document.querySelector('#products-total');
+    document.getElementById(productsTotalElem.id).innerHTML='$'+sumtotal;
 
     
 

@@ -25,7 +25,7 @@
     </div>
     <div>
       <label for="">QTY</label>
-      <input class="product-qty" id="product-qty-1" type="text" placeholder="1">
+      <input class="product-qty" id="product-qty-1" type="text" value="1">
     </div>
     <div>
       <span class="product-total" id="product-total-1">$00</span>
@@ -45,7 +45,7 @@
     </div>
     <div>
       <label for="">QTY</label>
-      <input class="product-qty" id="product-qty-2" type="text" placeholder="1">
+      <input class="product-qty" id="product-qty-2" type="text" value="1">
     </div>
     <div>
       <span class="product-total" id="product-total-2">$00</span>
@@ -55,7 +55,10 @@
     </div>
   </div>  
   <div class="center-div success-div">
-      <button id="calc-prices-button" class="btn btn-success">Calculate Prices</button>
-    </div>
+    <button id="calc-prices-button" class="btn btn-success">Calculate Prices</button>
+  </div>
+  <div class="total-info center-div ">
+    <span class="total-label">Total Price:</span><span id="products-total" class="total-num">0$</span>
+  </div>
 </body>
 </html>
