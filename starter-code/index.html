@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,22 +10,23 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
   <h1>Ironhack Merchandising shop</h1>
   <div id="creator">
-  <div class="row">
-    <div><span>Ironhack bubble heads</span></div>
-    <div>€ <span class="price">25</span></div>
-    <div><label>Qty </label><input class="qty" id="qty" type="number" placeholder="0"></div>
-    <div>€ <span class="total-price">0</span> </div>
-    <div><button class="btn btn-delete">
-        Delete
-      </button></div>
-  </div>
-  <div class="row">
+    <div class="row">
+      <div><span>Ironhack bubble heads</span></div>
+      <div>€ <span class="price">25</span></div>
+      <div><label>Qty </label><input class="qty" id="qty" type="number" placeholder="0"></div>
+      <div>€ <span class="total-price">0</span> </div>
+      <div><button class="btn btn-delete">
+          Delete
+        </button></div>
+    </div>
+    <div class="row">
       <div><span>Ironhack j head</span></div>
       <div>€ <span class="price">15</span></div>
-      <div><label>Qty  </label><input class="qty" id="qty" type="number" placeholder="0"></div>
+      <div><label>Qty </label><input class="qty" id="qty" type="number" placeholder="0"></div>
       <div>€ <span class="total-price">0</span> </div>
       <div><button class="btn btn-delete">
           Delete
@@ -34,15 +36,18 @@
   <button id="calc-prices-button" class="btn btn-success">
     Calculate price
   </button>
-  <div><h2>Total Price: €<span class="masterPrice">0</span></h2></div>
+  <div>
+    <h2>Total Price: €<span class="masterPrice">0</span></h2>
+  </div>
 
   <h2 class="pCreator">Ironhack product creator for shop</h2>
   <div class="add-product-row row">
-    <input id="add-product-name" class="new" type="text" placeholder="Product Name" >
-    <input id="add-product-price" class="new" type="number" placeholder="Product Price" >
+    <input id="add-product-name" class="new" type="text" placeholder="Product Name">
+    <input id="add-product-price" class="new" type="number" placeholder="Product Price">
     <button id="add-product-btn" class="btn btn-success new-item-create">
-        Add product
-      </button>
+      Add product
+    </button>
   </div>
 </body>
+
 </html>
