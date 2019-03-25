@@ -45,17 +45,18 @@ function createNewItemRow(itemName, itemUnitPrice) {}
 
 function createNewItem() {
   var text = document.getElementById("add-product-name").value;
-  var qtyCreate = +document.getElementById("add-product-price").value;
-  var para = document.createElement("div");
-  para.setAttribute("class", "row")
-  para.innerHTML = `<div><span>${text}</span></div>
-  <div>€ <span class="price">${qtyCreate}</span></div>
+  var priceCreate = +document.getElementById("add-product-price").value;
+  var newChild = document.createElement("div");
+  newChild.setAttribute("class", "row");
+  newChild.innerHTML = `<div><span>${text}</span></div>
+  <div>€ <span class="price">${priceCreate}</span></div>
   <div><label>Qty  </label><input class="qty" id="qty" type="number" placeholder="0"></div>
   <div>€ <span class="total-price">0</span> </div>
   <div><button class="btn btn-delete">
       Delete
     </button></div>`;
-  document.getElementById("creator").appendChild(para);
+    newChild.querySelector(".btn-delete").onclick = deleteItem; 
+  document.getElementById("creator").appendChild(newChild);
 
 }
 
@@ -74,11 +75,11 @@ window.onload = function() {
   }
 };
 
-window.onchange = function (params) {
-  var deleteButtons = document.getElementsByClassName("btn-delete");
+// window.onchange = function (params) {
+//   var deleteButtons = document.getElementsByClassName("btn-delete");
 
-  for (var i = 0; i < deleteButtons.length; i++) {
-    deleteButtons[i].onclick = deleteItem;
-  }
+//   for (var i = 0; i < deleteButtons.length; i++) {
+//     deleteButtons[i].onclick = deleteItem;
+//   }
   
-}
+// }
