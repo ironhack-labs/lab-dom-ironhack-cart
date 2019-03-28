@@ -45,6 +45,7 @@ input {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-items: center;
 }
 
 #finish-order,
