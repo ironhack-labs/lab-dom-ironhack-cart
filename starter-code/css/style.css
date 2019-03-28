@@ -1,3 +1,7 @@
+*{
+  margin:0;
+  padding:0;
+}
 input {
   border: solid 1px black;
 }
@@ -28,6 +32,8 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin: 0 50%;
+    width: auto;
 }
 
 .btn-delete {
@@ -36,6 +42,37 @@ input {
     border-color: #CF000F;
 }
 
-.quantity {
-  margin: 0 5px;
+
+.product{
+  width: 80%;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  padding: 10px 30px 10px 30px;
+}
+
+#template{
+  width: 80%;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  padding: 10px 30px 50px 30px;
+}
+
+.stylePrice{
+  margin: auto;
+  font-weight: bold;
+  font-size: 30px; 
+  width: 80%;
+}
+
+h1{
+  margin: auto;
+  font-weight: bold;
+  font-size: 30px; 
+  width: 80%;
+  text-align: center;
+  padding: 20px 20px 50px;
 }

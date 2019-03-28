@@ -6,9 +6,75 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
+  <script src="./js/index.js" type="module"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+  <h1>Ironhack merchandising shop</h1>
+  <div id ="p1" class="product">
+        <div ><span>IronBubble-head</span></div>
+        <div class="priceUnit">$25.00</div>
+        <div>
+          <label >QTY</label>
+          <input class="Quantity" type="number" name="quantity">
+        </div>
+        <div>
+          <span class="totalPrice">$0.00</span>
+        </div>
+        <div>
+          <button  class="btn btn-delete">Delete</button>
+        </div>
+  </div>
+  <div id="p2" class="product">
+      <div><span>IronShirt</span></div>
+      <div  class="priceUnit">$15.00</div>
+      <div>
+        <label >QTY</label>
+        <input class="Quantity" type="number" name="quantity">
+      </div>
+      <div>
+        <span class="totalPrice">$0.00</span>
+      </div>
+      <div>
+        <button class="btn btn-delete">Delete</button>
+      </div>
+</div>
+<div id ="p3" class="product">
+    <div><span>Iron</span></div>
+    <div id="p2" class="priceUnit">$15.00</div>
+    <div>
+      <label >QTY</label>
+      <input class="Quantity" type="number" name="quantity">
+    </div>
+    <div>
+      <span class="totalPrice">$0.00</span>
+    </div>
+    <div>
+      <button class="btn btn-delete">Delete</button>
+    </div>
+</div>
+<div id ="p4" class="product">
+    <div><span>IronBandana</span></div>
+    <div  class="priceUnit">$15.00</div>
+    <div>
+      <label >QTY</label>
+      <input class="Quantity" type="number" name="quantity">
+    </div>
+    <div>
+      <span class="totalPrice">$0.00</span>
+    </div>
+    <div>
+      <button class="btn btn-delete">Delete</button>
+    </div>
+</div>
+
+<div id ='template'>
+  <input id ='inputText' type="text">
+  <input id = 'inputPrice' type="number">
+  <button id ='createButton'>Create</button>
+</div>
+
+  <button id= "btn-calc" class="btn btn-success">Calculate Prices</button>
+  <div class="stylePrice"><span>Total Price :</span><span id="finalPrice">$00</span></div>
 </body>
 </html>
