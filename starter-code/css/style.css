@@ -1,7 +1,29 @@
-input {
-  border: solid 1px black;
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+* {
+  box-sizing: border-box;
 }
-
+body {
+  margin: 0 4rem;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #333;
+  color: #f4f4f4;
+  font-family: 'Raleway', sans-serif;
+}
+.header {
+  text-align: center;
+  color: #ccc;
+}
+input {
+  padding: 0.2rem 0.5rem;
+  border: solid 1px #333;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  background: #f4f4f4;
+  color: #333;
+}
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -23,34 +45,41 @@ input {
   border: 1px solid transparent;
   border-radius: 4px;
 }
-
 .btn-success {
   color: #fff;
   background-color: #5cb85c;
   border-color: #4cae4c;
 }
-
 .btn-delete {
   color: #fff;
-  background-color: #CF000F;
-  border-color: #CF000F;
+  background-color: #cf000f;
+  border-color: #cf000f;
 }
-
 .quantity {
-  margin: 0 5px;
-}
-
-#products {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
   align-items: center;
 }
-
-#finish-order,
-h1 {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0 30px;
+.grid {
+  display: grid;
+  grid-column-gap: 0.5rem;
+  margin: 1rem 0;
+}
+.products {
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  grid-column-gap: 0.5rem;
+}
+.new-products {
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas: 'name name price price  new';
+}
+.new-name {
+  grid-area: name;
+}
+.new-price {
+  grid-area: price;
+}
+.new {
+  margin: 0 auto;
+  grid-area: new;
 }
