@@ -1,4 +1,5 @@
-class Merch {
+// Create Shop
+class Item {
   constructor(name, price, amount) {
     this.name = name;
     this.price = price;
@@ -81,7 +82,7 @@ document.getElementById('item-form').addEventListener('submit', e => {
   const qty = document.getElementById('qty').value;
 
   // create new item
-  const item = new Merch(name, price, qty, price * qty);
+  const item = new Item(name, price, qty, price * qty);
   // Add item
   UI.addItemToList(item);
   // clear fields
