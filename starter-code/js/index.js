@@ -55,7 +55,13 @@ class UI {
     all.forEach(a => (result += +a.innerHTML));
     e.total = (e.price * e.amount).toFixed(2);
 
-    document.getElementById('total-price').innerHTML = '$' + result.toFixed(2);
+    const totalPrice = document.getElementById('total-price');
+    totalPrice.classList.toggle('updated');
+    totalPrice.innerHTML = '$' + result.toFixed(2);
+
+    window.setTimeout(function() {
+      totalPrice.classList.add('updated');
+    }, 250);
   }
   // clear the input
   static clearFields() {

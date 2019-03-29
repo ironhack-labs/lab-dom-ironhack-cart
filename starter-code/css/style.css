@@ -104,17 +104,10 @@ input[type='number']::-webkit-outer-spin-button {
   background: #0d98ba;
 }
 
-@keyframes fade {
-  0% {
-    opacity: 0;
-    transform: translateY(-40rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .total-price {
-  animation: fade 500ms forwards;
+  opacity: 0;
+  transition: opacity 250ms linear;
+}
+.total-price.updated {
+  opacity: 1;
 }
