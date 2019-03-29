@@ -93,5 +93,3 @@ document
 document
   .getElementById('calc')
   .addEventListener('click', e => UI.calculatePrices(e.target));
-
-console.log(document.getElementById('calc'));

@@ -14,6 +14,21 @@ body {
   max-width: 600px;
 }
 
+input {
+  background: #ccc;
+  border: 0;
+  border: 1px solid #000;
+  border-radius: 5px;
+  text-align: center;
+  padding: 0.5rem 0.5rem;
+  font-size: 0.7rem;
+}
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .btn {
   padding: 6px 12px;
   margin-bottom: 0;
@@ -37,6 +52,7 @@ body {
 }
 .header {
   text-align: center;
+  color: #ccc;
 }
 .products {
   display: grid;
@@ -47,25 +63,40 @@ body {
   border-radius: 5px;
   padding: 1rem;
 }
-.calc {
-  margin: 3rem 0;
-  display: flex;
-  justify-content: center;
-}
-.calc-btn {
-  background: #5f8a35;
-  font-size: 1.2rem;
-  text-transform: capitalize;
-}
+
 .products > * {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+.calc {
+  margin: 3rem 0;
+  display: flex;
+  justify-content: center;
+}
+
 .form-group {
   display: flex;
   flex-direction: column;
 }
+
+/* delete btn */
+
+.delete {
+  background: #b80000;
+}
+
+/* calc btn */
+
+.calc-btn {
+  background: #5f8a35;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}
+
+/* add btn */
+
 .addbtn {
   grid-column: 5 / 5;
   align-self: flex-end;
@@ -73,20 +104,17 @@ body {
   background: #0d98ba;
 }
 
-.delete {
-  background: #b80000;
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: translateY(-40rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-input {
-  background: #ccc;
-  border: 0;
-  border: 1px solid #000;
-  border-radius: 5px;
-  text-align: center;
-  padding: 0.5rem 0.5rem;
-  font-size: 0.7rem;
-}
-input[type='number']::-webkit-inner-spin-button,
-input[type='number']::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+
+.total-price {
+  animation: fade 500ms forwards;
 }
