@@ -36,18 +36,21 @@ function newProduct() {
 `;
 
 	parent.appendChild(addingArticle);
-}
 
-var deleteButtons = document.getElementsByClassName('btn btn-delete');
-for (var i = 0; i < deleteButtons.length; i++) {
-	deleteButtons[i].addEventListener(
-		'click',
-		function(e) {
-			e.target.parentNode.parentNode.remove();
-		},
-		false
-	);
+	var deleteButtons = document.getElementsByClassName('btn-delete');
+	for (var i = 0; i < deleteButtons.length; i++) {
+		deleteButtons[i].addEventListener(
+			'click',
+			function(e) {
+				e.currentTarget.parentNode.parentNode.remove();
+			},
+			false
+		);
+	}
 }
+document.getElementById('del').parentElement.parentElement.addEventListener('click', (e) => {
+	e.target.parentElement.parentElement.remove();
+});
 
 function getTotalPrice() {
 	var prices = document.querySelectorAll('.total-price');
