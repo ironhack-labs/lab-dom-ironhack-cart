@@ -54,6 +54,10 @@ input[type='number']::-webkit-outer-spin-button {
   text-align: center;
   color: #ccc;
 }
+.table {
+  min-width: 700px;
+}
+
 .products {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
