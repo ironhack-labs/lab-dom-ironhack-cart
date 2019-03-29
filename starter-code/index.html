@@ -6,35 +6,49 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
-A wrapper div that contains all the HTML for that product.
-A div with a span, showing the product name.
-A div with a span, showing the cost of one unit.
-A div with one label and one input, where the user will indicate how many units they will buy.
-A div with a span, showing the total price for this product. This number should be the result of multiplying the amount of units multiplied by the price of one unit of that product. The default total price should be 0.
-A div with a delete button, to remove the product from the list.
-
-  <div class="product">
-    <div>
-      <span class="productName"></span>
+  <h1 class="heading">Ironhack Merchandising Shop</h1>
+  <div id="product-list">
+    <div class="product" id="bobble-head">
+      <span class="productName">IronBobble-Head</span>
+      <div>$<span class="unitPrice">25.00</span></div>
+      <div class="units">
+        <label for="qty">QTY</label>
+        <input name="qty" type="number" class="quantity">
+      </div>
+      <div>$<span class="unitTotal">00.00</span></div>
+      <button class="btn btn-delete">Delete</button>
     </div>
-    <div>
-      <span class="unitPrice"></span>
+    <div class="product" id="iron-shirt">
+      <span class="productName">IronShirt</span>
+      <div>$<span class="unitPrice">20.00</span></div>
+      <div class="units">
+        <label for="qty">QTY</label>
+        <input name="qty" type="number" class="quantity">
+      </div>
+      <div>$<span class="unitTotal">00.00</span></div>
+      <button class="btn btn-delete">Delete</button>
     </div>
-    <div class="units">
-      <label for="qty" class="quantity">QTY</label>
-      <input type="number" class="quantity">
+  </div>
+  <div class="calculate">
+    <button class="btn btn-success" id="calc-price">Calculate Price</button>
+  </div>
+  <h1 class="heading">Total Price: $<span id="cartTotal">00.00</span></h1>
+  <div id="add-item">
+    <h2 id="add-items">Add More Items</h2>
+    <div class="newProductName">
+      <label for="name">Product Name</label>
+      <input name="name" type="text" id="newProduct">
     </div>
-    <div>
-      <span class="totalPrice"></span>
+    <div class="newProductPrice">
+      <label for="price">Product Price</label>
+      <input name="price" type="text" id="newPrice">
     </div>
-    <div>
-      <button class="delete"></button>
-    </div>
+    <button class="btn" id="createItem">Create</button>
   </div>
 
 </body>
 </html>
+<script type="module" src="./js/index.js"></script>

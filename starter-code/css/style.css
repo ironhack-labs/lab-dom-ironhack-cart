@@ -1,4 +1,25 @@
+.heading {
+  width: 300px;
+  margin: 0 auto;
+  padding: 40px;
+}
 
+.product-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.product {
+  display: flex;
+  justify-content: space-around;
+  align-content: space-around;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.productName {
+  width: 150px;
+}
 
 input {
   border: solid 1px black;
@@ -30,6 +51,12 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+}
+
+.calculate {
+  width: 300px;
+  margin: 0 auto;
+  padding: 40px;
 }
 
 .btn-delete {
