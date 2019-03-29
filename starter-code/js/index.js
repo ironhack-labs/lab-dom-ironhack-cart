@@ -23,12 +23,11 @@ class UI {
 
     const merch = MerchInStore;
 
-    // add a book to the list
+    // add a new item to the list
     merch.forEach(item => UI.addItemToList(item));
   }
   static addItemToList(item) {
     const list = document.getElementById('item-list');
-
     const row = document.createElement('tr');
     row.classList.add('products');
     row.innerHTML = `
@@ -50,9 +49,9 @@ class UI {
   }
   // Calculate total
   static calculatePrices(e) {
-    const all = document.querySelectorAll('.item-total');
+    const allP = document.querySelectorAll('.item-total');
     let result = 0;
-    all.forEach(a => (result += +a.innerHTML));
+    allP.forEach(a => (result += +a.innerHTML));
     e.total = (e.price * e.amount).toFixed(2);
 
     const totalPrice = document.getElementById('total-price');
