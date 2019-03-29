@@ -1,9 +1,20 @@
-input {
-  border: solid 1px black;
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0 auto;
+  height: 100vh;
+  background: #333;
+  color: #fff;
+  font-family: 'Raleway', sans-serif;
+  max-width: 600px;
 }
 
 .btn {
-  display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
   font-size: 14px;
@@ -22,20 +33,60 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+  color: #fff;
+}
+.header {
+  text-align: center;
+}
+.products {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 0.5rem;
+  border: 2px solid #ccc;
+  min-width: 600px;
+  border-radius: 5px;
+  padding: 1rem;
+}
+.calc {
+  margin: 3rem 0;
+  display: flex;
+  justify-content: center;
+}
+.calc-btn {
+  background: #5f8a35;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}
+.products > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+.addbtn {
+  grid-column: 5 / 5;
+  align-self: flex-end;
+  width: max-content;
+  background: #0d98ba;
 }
 
-.btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+.delete {
+  background: #b80000;
 }
-
-.btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+input {
+  background: #ccc;
+  border: 0;
+  border: 1px solid #000;
+  border-radius: 5px;
+  text-align: center;
+  padding: 0.5rem 0.5rem;
+  font-size: 0.7rem;
 }
-
-.quantity {
-  margin: 0 5px;
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

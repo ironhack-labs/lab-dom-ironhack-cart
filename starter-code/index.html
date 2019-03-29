@@ -1,14 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/index.js" type="module"></script>
+
+    <title>Ironhack Merch</title>
+  </head>
+  <h1 class="header">Ironhack Merchandising Cart</h1>
+  <body>
+    <table class="table">
+      <thead class="table-head">
+        <tr class="products">
+          <th>Name</th>
+          <th>Price</th>
+          <th>Amount</th>
+          <th>Total</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody class="table-content " id="item-list"></tbody>
+    </table>
+    <div class="calc">
+      <button id="calc" class="btn calc-btn">calculate total price</button>
+    </div>
+    <form class="products" id="item-form">
+      <div class="form-group">
+        <label for="name">Item Name</label>
+        <input
+          type="text"
+          id="name"
+          class="form-control"
+          placeholder="enter the name..."
+          autocomplete="off"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="price">Item Price</label>
+        <input
+          type="number"
+          id="price"
+          class="form-control"
+          placeholder="enter the price..."
+          autocomplete="off"
+          min="1"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="qty">QTY</label>
+        <input
+          type="number"
+          id="qty"
+          class="form-control"
+          placeholder="enter the amount..."
+          autocomplete="off"
+          min="1"
+          required
+        />
+      </div>
+      <input type="submit" class="btn addbtn" value="Add Item" />
+    </form>
+    <div class="total-items">
+      <h1>Total Price : <span id="total-price"></span></h1>
+    </div>
+  </body>
 </html>
