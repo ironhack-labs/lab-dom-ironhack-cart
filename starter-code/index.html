@@ -1,14 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="module" src="./js/index.js"></script>
+    <title>Ironhack cart</title>
+  </head>
+  <body>
+    <h1>Ironhack Merchandising Shop</h1>
+
+    <div id="product_1" class="product">
+      <div class="product_name"><span>IronBubble-head</span></div>
+      <div class="unit_cost"><span>$25.00</span></div>
+      <div class="quantity">
+        <label for="quantity">QTY</label>
+        <!-- <textarea
+          name="default_qty"
+          id="default_qty"
+          cols="15"
+          rows="1"
+        ></textarea> -->
+        <input class="input_quantity" type="number" min="0" />
+      </div>
+      <div class="total_price">$<span>0.00</span></div>
+      <div class="delete_button, btn">
+        <button class="btn-delete" type="button">Delete</button>
+      </div>
+    </div>
+
+    <div id="product_2" class="product">
+      <div class="product_name"><span>IronShirt</span></div>
+      <div class="unit_cost"><span>$15.00</span></div>
+
+      <div class="quantity">
+        <label for="quantity">QTY</label>
+        <!-- <textarea
+            name="default_qty"
+            id="default_qty"
+            cols="15"
+            rows="1"
+          ></textarea> -->
+        <input class="input_quantity" type="number" min="0" />
+      </div>
+      <div class="total_price">$<span>0.00</span></div>
+      <div class="delete_button, btn">
+        <button class="btn-delete" type="button">Delete</button>
+      </div>
+    </div>
+
+    <div id="product_3" class="product">
+      <div class="product_name"><span>Chips</span></div>
+      <div class="unit_cost"><span>$2.00</span></div>
+      <div class="quantity">
+        <label for="quantity">QTY</label>
+        <!-- <textarea
+              name="default_qty"
+              id="default_qty"
+              cols="15"
+              rows="1"
+            ></textarea> -->
+        <input class="input_quantity" type="number" min="0" />
+      </div>
+      <div class="total_price">$<span>0.00</span></div>
+      <div class="delete_button, btn">
+        <button class="btn-delete" type="button">Delete</button>
+      </div>
+    </div>
+    <div>
+      <button id="total_button" class="btn-success" type="button">
+        Calculate Prices
+      </button>
+      <div id="">
+        <h2>Total price : $<span id="newtotal">0</span></h2>
+      </div>
+    </div>
+  </body>
 </html>
