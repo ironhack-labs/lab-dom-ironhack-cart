@@ -59,6 +59,7 @@ h1{
 .producto{
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 #calculate{
