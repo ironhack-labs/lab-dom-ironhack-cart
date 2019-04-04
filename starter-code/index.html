@@ -1,14 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+  />
+  <link rel="stylesheet" href="./css/style.css" />
+  
   <title>Ironhack cart</title>
 </head>
 <body>
+  <div class="row">
+    <h1>Ironhack Merchandising Shop</h1>
+  </div>
+  <div id="cart-items">
+  </div>
+  <div class="row">
+    <div>
+      <label>Product name:</label>
+      <input id="new-item-name"></input>
+    </div>
+    <div>
+        <label>Product price:</label>
+      <input id="new-item-price" type="number"></input>
+    </div>
+    <div><button class="btn" id="new-item-create">Create</button></div>
+  </div>
+  <div class="row">
+    <button class="btn btn-success" id="calc-prices-button">Calculate Prices</button>
+  </div>
+  <div class="row">
+    <h2>Total Price: $<span id="total-price">0</span></h2>
+  </div>
+  <script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>
