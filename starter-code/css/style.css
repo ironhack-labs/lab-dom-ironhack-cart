@@ -39,3 +39,32 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+/* --------------------------------- */
+
+body{
+  margin-left: 100px;
+  margin-right: 100px; 
+}
+
+header{
+  margin: 50px auto 150px;
+}
+
+h1{
+  display: flex;
+  justify-content: center;
+}
+
+.producto{
+  display: flex;
+  justify-content: space-between;
+}
+
+#calculate{
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 20px 0;
+}
+
+
