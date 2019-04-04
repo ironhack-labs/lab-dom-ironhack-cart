@@ -39,3 +39,20 @@ input {
 .quantity {
   margin: 0 5px;
 }
+.container{
+  display: flex;
+  margin: 0 0 10px;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.container h1 {
+  display: flex;
+  justify-content: center;
+}
+
+.container__button{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: flex-end;
+}

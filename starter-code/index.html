@@ -10,5 +10,67 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <main>
+    <header>
+      <h1>Iron Merchandising Shop</h1>
+    </header>
+    <div class="container">
+      <div class="container__item">
+        <span class="item__name">
+          IronBubble-head
+        </span>
+      </div>
+      <div class="container__item">
+        <span class="item__cost-unit">
+          $25.00
+        </span>
+      </div>
+      <div class="container__item">
+        <label for="input-qty'">QTY</label>
+        <input onclick="selectText()" class="quantity" type="number" name="qty-number" value="0">
+      </div>
+      <div class="container__item">
+        <span class="item__subtotal">
+          $0.00
+        </span>
+      </div>
+      <div class="container__item">
+        <span class="item__name">
+          
+          <input type="button" value="Delete" class="btn btn-delete">
+        </span>
+      </div>
+    </div>
+    <div class="container">
+      <div class="container__item">
+        <span class="item__name">
+          Beer Pong Ball
+        </span>
+      </div>
+      <div class="container__item">
+        <span class="item__cost-unit">
+          $ 2.00
+        </span>
+      </div>
+      <div class="container__item">
+        <label for="input-qty'">QTY</label>
+        <input class="quantity" type="number" name="qty-number" value="0">
+      </div>
+      <div class="container__item">
+        <span class="item__subtotal">
+          $0.00
+        </span>
+      </div>
+      <div class="container__item">
+        <span class="item__name">
+          <input type="button" value="Delete" class="btn btn-delete">
+        </span>
+      </div>
+    </div>
+    <br>
+        <div class="container__button">
+          <input type="button" value="Calculate Price" id="calc-prices-button" class="btn btn-success">
+        </div>
+  </main>
 </body>
 </html>
