@@ -39,3 +39,10 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+#wrap {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
