@@ -1,8 +1,30 @@
-input {
-  border: solid 1px black;
-}
+body{
+  margin: 15px;
+  padding: 20px;
+ }
 
-.btn {
+ h1{
+  text-align: center;
+ }
+ 
+ .button-form{
+ color:white;
+ background-color: tomato;
+ height: 35px;
+ width: 100px;
+ }
+ 
+ section{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ }
+
+ input {
+  border: solid 1px black;
+ }
+ 
+ .btn {
   display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
@@ -22,20 +44,26 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
-}
-
-.btn-success {
+ }
+ 
+ #btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
-}
-
-.btn-delete {
+    margin-left: 50%;
+    margin-top: 10%;
+ }
+ 
+ .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
-}
-
-.quantity {
+ }
+ 
+ .quantity {
   margin: 0 5px;
-}
+ }
+
+ .product {
+   margin-bottom: 3%;
+ }
