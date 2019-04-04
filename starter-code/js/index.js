@@ -11,7 +11,13 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-
+  let price = document.getElementsByClassName('unit-cost')[0].childNodes[1].innerHTML
+  let priceToNumber = Number(price.slice(1))
+  let quantity = document.getElementsByClassName('input-quantity')[0].value
+  let quantityToNumber = Number(quantity)
+  let totalPrice = priceToNumber * quantityToNumber
+  let totalNode = document.getElementsByClassName('total-price')[0].childNodes[1]
+  totalNode.innerHTML = `$${totalPrice}.00`
 }
 
 function createQuantityInput(){
@@ -46,7 +52,7 @@ window.onload = function(){
   calculatePriceButton.onclick = getTotalPrice;
   createItemButton.onclick = createNewItem;
 
-  for(var i = 0; i<deleteButtons.length ; i++){
+  for(var i = 0; i < deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
   }
 };
