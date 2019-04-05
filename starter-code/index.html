@@ -1,14 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Ironhack cart</title>
+  </head>
+  <body>
+    <!-- Title -->
+    <div id="store-name" class="text-center py-5"><h1>Ironhack Store</h1></div>
+    <!-- End Title -->
+
+    <!-- Product One  -->
+    <div
+      id="container"
+      class="row justify-content-center align-items-center text-center py-1"
+    >
+      <div class="col-md-2"><span class="unit-name">IronBubbleHead</span></div>
+      <div class="col-md-1">
+        <div><span class="unit-price">10.49</span></div>
+      </div>
+      <div class="col-md-3">
+        <label class="mr-2">QTY</label>
+        <input
+          type="number"
+          min="0"
+          class="unit-quantity pl-2"
+          placeholder="Quantity"
+        />
+      </div>
+      <div class="col-md-1"><span class="unit-total">0.00</span></div>
+      <div class="col-md-2">
+        <button class="btn btn-danger">Delete</button>
+      </div>
+    </div>
+    <!-- End One  -->
+
+    <!-- Add Product  -->
+    <div
+      id="inputs"
+      class="row justify-content-center align-items-center text-center py-1"
+    >
+      <div class="col-md-2">
+        <input
+          type="text"
+          placeholder="Product Name"
+          class="px-2 ml-4 input-name"
+        />
+      </div>
+      <div class="col-md-1">
+        <input
+          type="number"
+          placeholder="Price"
+          min="0"
+          class="px-2 input-price ml-2"
+        />
+      </div>
+      <div class="col-md-3"></div>
+      <div class="col-md-1"></div>
+      <div class="col-md-2">
+        <button class="btn btn-dark" id="create-container">Create</button>
+      </div>
+    </div>
+    <!-- End Add Product  -->
+
+    <!-- Calculate Total -->
+    <div id="total" class="text-center">
+      <button class="btn btn-success px-5 mt-5" id="calc-prices-button">
+        Calculate Prices
+      </button>
+    </div>
+    <!-- End Total -->
+
+    <div id="total-message" class="text-center mt-3">
+      <h2 class="hidden">
+        Total Price: <span id="total-price-message">0</span>
+      </h2>
+    </div>
+    <script type="text/javascript" src="./js/index.js"></script>
+  </body>
 </html>
