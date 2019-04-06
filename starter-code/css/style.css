@@ -1,6 +1,17 @@
 input {
   border: solid 1px black;
 }
+.productPrice::before{
+  content: '$'
+}
+
+.totalPrice::before{
+  content: '$'
+}
+
+.total-price::before{
+  content: '$'
+}
 
 .btn {
   display: inline-block;
@@ -34,8 +45,16 @@ input {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    display: flex;
+    /* justify-content: right; */
+    
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+.productInfo {
+  display: flex;
+  justify-content: space-between
 }
