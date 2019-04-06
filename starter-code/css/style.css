@@ -2,6 +2,10 @@ input {
   border: solid 1px black;
 }
 
+.row{
+  padding: 20px;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -28,6 +32,7 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+
 }
 
 .btn-delete {

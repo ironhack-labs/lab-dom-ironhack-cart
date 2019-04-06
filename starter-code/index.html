@@ -1,14 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
+
   <title>Ironhack cart</title>
 </head>
+
 <body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h1>
+          IronHack Merchandising Shop
+        </h1>
+      </div>
+    </div>
+    <div class="row productRow">
+      <div class="col-md-2 text-center">
+        <span class="productHead">IronBubble-head</span>
+      </div>
+      <div class="col-md-2 text-center">
+        $<span class="productBub">25.00</span>
+      </div>
+      <div class="col-md-4 text-center">
+        <label class="quantity" for="quantity">QTY</label>
+        <input type="number" class="qty" onclick="updatePriceByProduct()" min="0" max="100" value="0">
+      </div>
+      <div class="col-md-2 text-center">
+        $<span class="qtyTotal">0.00</span>
+      </div>
+      <div class="col-md-2 text-center">
+        <button type="button" class="btn btn-delete deleteBtn">Delete</button>
+      </div>
+    </div>
+
+
+
+    <div class="row productRow">
+      <div class="col-md-2 text-center">
+        <span class="productHead">IronShirt</span>
+      </div>
+      <div class="col-md-2 text-center">
+        $<span class="productBub">10.00</span>
+      </div>
+      <div class="col-md-4 text-center">
+        <label class="quantity" for="quantity">QTY</label>
+        <input type="number" class="qty" onclick="updatePriceByProduct()" min="0" max="100" value="0">
+      </div>
+      <div class="col-md-2 text-center">
+        $<span class="qtyTotal">0.00</span>
+      </div>
+      <div class="col-md-2 text-center">
+        <button type="button" class="btn btn-delete deleteBtn">Delete</button>
+      </div>
+    </div>
+
+
+
+
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <button id="calculateBtn" type="button" class="btn btn-success" onclick="updatePriceByProduct()">Calculate
+          Prices</button>
+        <h2>Total Price: </h2>
+        <h2 class="totalPrice">0</h2>
+      </div>
+    </div>
+
+
+
+
+
+  </div>
+  <script type="text/javascript" src="./js/index.js"></script>
 </body>
+
 </html>
