@@ -1,10 +1,10 @@
 // let productBub = document.getElementsByClassName("productBub");
-let totalPrice = document.getElementsByClassName("totalPrice");
+// let totalPrice = document.getElementsByClassName("totalPrice");
 
-let qtyTotal = document.getElementsByClassName("qtyTotal");
-// let deleteBtn = document.getElementById("deleteBtn");
-// let calculateBtn = document.getElementById("calculateBtn");
-let row = document.getElementsByClassName("productRow");
+// let qtyTotal = document.getElementsByClassName("qtyTotal");
+// // let deleteBtn = document.getElementById("deleteBtn");
+// // let calculateBtn = document.getElementById("calculateBtn");
+// let row = document.getElementsByClassName("productRow");
 
 
 
@@ -49,27 +49,48 @@ function getPriceByProduct(itemNode) {
 
 function updatePriceByProduct() {
 
-  // let qtyTotal = document.getElementsByClassName("qtyTotal");
-  let productBub = document.getElementsByClassName("productBub");
-  let qty = document.getElementsByTagName("input")[0].value;
-  let total = productBub[0].innerHTML * qty
+  let cartRows = document.getElementsByClassName("productRow");
+  for (let i = 0; i < cartRows.length; i++) {
+    let rows = cartRows[i]
+    let productPrice = rows.getElementsByClassName("productPrice")[0];
+    // console.log("1", productPrice)
+    let quantityElement = rows.getElementsByClassName("qty")[0];
+    // console.log("2", quantityElement)
+    let qtyTotal = rows.getElementsByClassName('qtyTotal')[0];
+    // console.log("total", qtyTotal)
+
+    let price = productPrice.innerHTML
+    console.log("price: ", Math.floor(price))
+    let quantity = quantityElement.value
+    console.log('Quantity: ', quantity)
+    let totalPrice = qtyTotal.innerHTML
+
+    let final = price * quantity
+    console.log('This Should be in the: qtyTotal: ', final)
+
+    rows.getElementsByClassName('qtyTotal')[0].innerHTML = final
+  }
+}
+updatePriceByProduct();
 
 
+//
+function getTotalPrice() {
+  let allQtyPrices = document.getElementsByClassName('qtyTotal');
 
-  // return document.getElementsByClassName("qtyTotal")[0].innerHTML = total
-  return qtyTotal[0].innerHTML = total;
-  // console.log(qtyTotal) -->
+  for (let i = 0; i < allQtyPrices.length; i++) {
+    let qtyTotal = allQtyPrices[i].innerHTML
+
+    calculateBtn.addEventListener('click', function () {
+      let buttonClicked = event.target
+      //FIX THIS ISSUE. 
+      document.getElementsByClassName('totalPrice')[0].innerHTML = math.sum(updatePriceByProduct())
+    })
+  }
 }
 
 
-// //
-// function getTotalPrice() {
-//   let total = 0;
-//   for (let i = 0; i < row.length ) {
-//     console.log(row[i])
-//   }
-
-// }
+getTotalPrice()
 
 // function createQuantityInput() {
 //   qty = 2

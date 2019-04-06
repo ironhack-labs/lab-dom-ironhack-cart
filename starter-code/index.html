@@ -21,19 +21,21 @@
         </h1>
       </div>
     </div>
+
+
     <div class="row productRow">
       <div class="col-md-2 text-center">
         <span class="productHead">IronBubble-head</span>
       </div>
       <div class="col-md-2 text-center">
-        $<span class="productBub">25.00</span>
+        $<span class="productPrice">25.00</span>
       </div>
       <div class="col-md-4 text-center">
         <label class="quantity" for="quantity">QTY</label>
         <input type="number" class="qty" onclick="updatePriceByProduct()" min="0" max="100" value="0">
       </div>
       <div class="col-md-2 text-center">
-        $<span class="qtyTotal">0.00</span>
+        $<span class="qtyTotal">0</span>
       </div>
       <div class="col-md-2 text-center">
         <button type="button" class="btn btn-delete deleteBtn">Delete</button>
@@ -47,14 +49,14 @@
         <span class="productHead">IronShirt</span>
       </div>
       <div class="col-md-2 text-center">
-        $<span class="productBub">10.00</span>
+        $<span class="productPrice">10.00</span>
       </div>
       <div class="col-md-4 text-center">
         <label class="quantity" for="quantity">QTY</label>
         <input type="number" class="qty" onclick="updatePriceByProduct()" min="0" max="100" value="0">
       </div>
       <div class="col-md-2 text-center">
-        $<span class="qtyTotal">0.00</span>
+        $<span class="qtyTotal">0</span>
       </div>
       <div class="col-md-2 text-center">
         <button type="button" class="btn btn-delete deleteBtn">Delete</button>
@@ -79,6 +81,7 @@
 
   </div>
   <script type="text/javascript" src="./js/index.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.8.0/math.js"></script>
 </body>
 
 </html>
