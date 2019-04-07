@@ -6,7 +6,12 @@ function getPriceByProduct(itemNode){
 
 }
 
-function updatePriceByProduct(productPrice, index){
+function updatePriceByProduct(index){
+let priceArray = document.getElementsByClassName('item-price');
+let quantityArray = document.getElementsByClassName('quantity');
+let totalArray = document.getElementsByClassName('item-total');
+  totalArray[index].innerHTML = '$' + (Number(priceArray[index].innerHTML) * quantityArray[index].value).toFixed('2');
+
 
 }
 
@@ -40,6 +45,11 @@ function createNewItem(){
 
 window.onload = function(){
   var calculatePriceButton = document.getElementById('calc-prices-button');
+  let quantityArray = document.getElementsByClassName('quantity');
+
+  for(let i = 0; i < quantityArray.length; i++){
+    quantityArray[i].addEventListener('input', () => updatePriceByProduct(i));
+  }
   var createItemButton = document.getElementById('new-item-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
@@ -49,4 +59,8 @@ window.onload = function(){
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
   }
+
+
 };
+
+

@@ -24,10 +24,13 @@ input {
   border-radius: 4px;
 }
 
-.btn-success {
+.calc-prices-button {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
 }
 
 .btn-delete {
@@ -38,4 +41,11 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+.item-container > span{
+  display: inline;
+  padding: 2vh 5vw;
+}
+h2 {
+  text-align: center;
 }
