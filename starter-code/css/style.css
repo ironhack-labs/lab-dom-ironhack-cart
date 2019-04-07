@@ -34,8 +34,26 @@ input {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+h1{
+  text-align: center;
+  font-style: oblique;
+}
+
+.cost{
+  padding-left: 150px;
+}
+
+.total-cost{
+  padding-left: 300px;
+}
+
+.calculate-price{
+  float: center;
 }
