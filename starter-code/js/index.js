@@ -10,9 +10,6 @@
 
 // console.log(calculateBtn.innerHTML)
 
-// function test() {
-//   calculateBtn.innerHTML = "I CHANGED IT BITCH!";
-// }
 
 
 /*
@@ -37,60 +34,59 @@ function deleteItem(e) {
 
     })
   }
-}
-
-
-
-
-
-function getPriceByProduct(itemNode) {
 
 }
 
-function updatePriceByProduct() {
 
-  let cartRows = document.getElementsByClassName("productRow");
-  for (let i = 0; i < cartRows.length; i++) {
-    let rows = cartRows[i]
-    let productPrice = rows.getElementsByClassName("productPrice")[0];
-    // console.log("1", productPrice)
-    let quantityElement = rows.getElementsByClassName("qty")[0];
-    // console.log("2", quantityElement)
-    let qtyTotal = rows.getElementsByClassName('qtyTotal')[0];
-    // console.log("total", qtyTotal)
 
-    let price = productPrice.innerHTML
-    console.log("price: ", Math.floor(price))
-    let quantity = quantityElement.value
-    console.log('Quantity: ', quantity)
-    let totalPrice = qtyTotal.innerHTML
 
-    let final = price * quantity
-    console.log('This Should be in the: qtyTotal: ', final)
 
-    rows.getElementsByClassName('qtyTotal')[0].innerHTML = final
-  }
-}
-updatePriceByProduct();
+// function getPriceByProduct(itemNode) {
 
+// }
+
+// function updatePriceByProduct(index) {
+//   let cartRows = document.getElementsByClassName("productRow");
+//   // console.log(cartRows)
+//   for (let i = 0; i < cartRows.length; i++) {
+//     let rows = cartRows[i]
+//     let productPrice = rows.getElementsByClassName("productPrice")[0];
+//     // console.log(productPrice)
+//     let quantityElement = rows.getElementsByClassName("qty")[0];
+
+//     let qtyTotal = rows.getElementsByClassName('qtyTotal')[0];
+//     console.log(qtyTotal)
+
+//     let price = productPrice.innerHTML
+//     let quantity = quantityElement.value
+//     let totalPrice = qtyTotal.innerHTML
+
+//     let final = price * quantity
+
+//     rows.getElementsByClassName('qtyTotal')[0].innerHTML = final
+//     //If I keep this.. -> total price updates.
+//     // when I dont... Both rows are able to update their totals
+//   }
+
+// }
+// updatePriceByProduct();
 
 //
 function getTotalPrice() {
-  let allQtyPrices = document.getElementsByClassName('qtyTotal');
+  let productRow = document.getElementsByClassName("productRow");
+  let totalPrice = document.getElementsByClassName('totalPrice')[0];
+  totalPrice.innerHTML = 0;
 
-  for (let i = 0; i < allQtyPrices.length; i++) {
-    let qtyTotal = allQtyPrices[i].innerHTML
+  for (let i = 0; i < productRow.length; i++) {
+    let rows = productRow[i]
+    let qtyTotal = rows.getElementsByClassName('qtyTotal')[0];
+    let productPrice = rows.getElementsByClassName("productPrice")[0];
+    let quantity = rows.getElementsByClassName("qty")[0];
 
-    calculateBtn.addEventListener('click', function () {
-      let buttonClicked = event.target
-      //FIX THIS ISSUE. 
-      document.getElementsByClassName('totalPrice')[0].innerHTML = math.sum(updatePriceByProduct())
-    })
+    qtyTotal.innerHTML = Number(Number(productPrice.innerHTML) * Number(quantity.value));
+    totalPrice.innerHTML = Number(totalPrice.innerHTML) + Number(qtyTotal.innerHTML)
   }
 }
-
-
-getTotalPrice()
 
 // function createQuantityInput() {
 //   qty = 2
@@ -120,12 +116,12 @@ function createNewItem() {
 window.onload = function () {
   var calculatePriceButton = document.getElementById('calc-prices-button');
   var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');
+  // var deleteButtons = document.getElementsByClassName('btn-delete');
 
-  // calculatePriceButton.onclick = getTotalPrice;
+  calculatePriceButton.onclick = getTotalPrice;
   // createItemButton.onclick = createNewItem;
 
-  for (var i = 0; i < deleteButtons.length; i++) {
-    deleteButtons[i].onclick = deleteItem;
-  }
+  // for (var i = 0; i < deleteButtons.length; i++) {
+  //   deleteButtons[i].onclick = deleteItem;
+  // }
 };

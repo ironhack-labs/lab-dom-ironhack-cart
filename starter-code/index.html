@@ -32,7 +32,7 @@
       </div>
       <div class="col-md-4 text-center">
         <label class="quantity" for="quantity">QTY</label>
-        <input type="number" class="qty" onclick="updatePriceByProduct()" min="0" max="100" value="0">
+        <input type="number" class="qty" onclick="getTotalPrice()" min="0" max="100" value="0">
       </div>
       <div class="col-md-2 text-center">
         $<span class="qtyTotal">0</span>
@@ -53,7 +53,7 @@
       </div>
       <div class="col-md-4 text-center">
         <label class="quantity" for="quantity">QTY</label>
-        <input type="number" class="qty" onclick="updatePriceByProduct()" min="0" max="100" value="0">
+        <input type="number" class="qty" onclick="getTotalPrice()" min="0" max="100" value="0">
       </div>
       <div class="col-md-2 text-center">
         $<span class="qtyTotal">0</span>
@@ -68,7 +68,7 @@
 
     <div class="row">
       <div class="col-md-12 text-center">
-        <button id="calculateBtn" type="button" class="btn btn-success" onclick="updatePriceByProduct()">Calculate
+        <button id="calculateBtn" type="button" class="btn btn-success" onclick="getTotalPrice()">Calculate
           Prices</button>
         <h2>Total Price: </h2>
         <h2 class="totalPrice">0</h2>
