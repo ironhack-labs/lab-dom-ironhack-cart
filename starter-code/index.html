@@ -19,7 +19,7 @@
           </div>
         </div>
         <!-- ---------------First Row -->
-        <div class="row">
+        <div class="container-fluid row">
           <div class="col-md-2">
             <span>IronBubble-head</span>
           </div>
@@ -36,7 +36,7 @@
               type="number"
               min="0"
               class="qty pl-2"
-              placeholder="Quantity"
+              placeholder="Enter Quantity"
             />
           </form>
           </div>
@@ -53,55 +53,53 @@
         </div>
       
       <!-- ------------Second Row -->
-      <div class="container-fluid productRow2">
-          <div class="row">
-            <div class="col-md-2">
-              <div><span>IronShirt</span></div>
-            </div>
-            <div class="col-md-2">
-              $<span id="prodTwoPrice" class="productPrice">15.00</span>
-            </div>
-            <div class="col-md-4">
-              <form>
-              <label class="quantity" for="quantity">Quantity</label>
-              <input
-              onclick="updateProductPrice()"
-              id="prodTwoInput"
-              type="number"
-              min="0"
-              class="qty pl-2"
-              placeholder="Quantity"
-            />
-            </form>
-            </div>
-            <div class="col-md-2">
-              $<span id="totalPrice2" class="qtyTotal">0.00</span>
-            </div>
-            <div class="col-md-2">
-              <button onclick="this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);" 
-                id="deleteBtn2" 
-                class="btn btn-delete"
-                >Delete
-              </button>
-            </div>
-          </div>
+      <div class="container-fluid row productRow2">
+        <div class="col-md-2">
+          <div><span>IronShirt</span></div>
+        </div>
+        <div class="col-md-2">
+          $<span id="prodTwoPrice" class="productPrice">15.00</span>
+        </div>
+        <div class="col-md-4">
+          <form>
+          <label class="quantity" for="quantity">Quantity</label>
+          <input
+          onclick="updateProductPrice()"
+          id="prodTwoInput"
+          type="number"
+          min="0"
+          class="qty pl-2"
+          placeholder="Enter Quantity"
+        />
+        </form>
+        </div>
+        <div class="col-md-2">
+          $<span id="totalPrice2" class="qtyTotal">0.00</span>
+        </div>
+        <div class="col-md-2">
+          <button onclick="this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);" 
+            id="deleteBtn2" 
+            class="btn btn-delete"
+            >Delete
+          </button>
+        </div>
       </div>
       </div>
           <!-- -------------------New Row -->
-          <div id="newItem" class="container-fluid">
-            <div id="newItemRow" class="row">
-              <div class="col-sm-3">
-                <div class="inputs"><input id="newProductName" 
-                  type="text" 
-                  placeholder="New Product Name"
-                ></div>
-              </div>
-              <div class="col-sm-3">
-                <div class="inputs"><input id="newPrice" type="number" placeholder="Enter Price"></div>
-              </div>
-              <div class="col-sm-6 btn-create">
-                <button onclick="addRow()" id="createButton" class="btn">Add Product</button>
-              </div>
+          <div id="newItemRow" class="container-fluid row">
+            <div class="col-sm-2">
+              <div class="inputs"><input id="newProductName" 
+                type="text" 
+                placeholder="New Product Name"
+              ></div>
+            </div>
+            <div class="col-sm-2">
+              <div class="inputs"><input id="newPrice" type="number" placeholder="Enter Price"></div>
+            </div>
+            <div class="col-sm-4"></div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-2 btn-create">
+              <button onclick="addRow()" id="createButton" class="btn">Add Product</button>
             </div>
           </div>
           <!-- ----------------Calculate Button -->
