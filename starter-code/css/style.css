@@ -1,12 +1,26 @@
+body{
+  margin-left: 100px;
+  margin-right: 100px; 
+}
+
+header{
+  margin: 50px auto 150px;
+}
+
+h1{
+  display: flex;
+  justify-content: center;
+}
+
 input {
   border: solid 1px black;
 }
 
 .btn {
   display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
+  padding: 10px 50px;
+  margin-bottom: 50px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.42857143;
   text-align: center;
@@ -30,12 +44,47 @@ input {
     border-color: #4cae4c;
 }
 
-.btn-delete {
+.btn-delete{
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+.productos{
+  margin-bottom: 40px;
+}
+
+.product{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.calculate{
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+}
+
+#calc-prices-button button{
+  margin: 50px;
+  background: #4cae4c;
+  border-radius: 5px;
+  padding: 5px 10px 5px 10px;
+  color: white;
+}
+
+.addProducts{
+  display: flex;
+  justify-content: space-between;
+}
+
+div h2{
+  margin-top: 40px;
 }
