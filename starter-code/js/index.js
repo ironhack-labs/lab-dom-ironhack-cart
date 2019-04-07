@@ -1,27 +1,5 @@
-// let productBub = document.getElementsByClassName("productBub");
-// let totalPrice = document.getElementsByClassName("totalPrice");
 
-// let qtyTotal = document.getElementsByClassName("qtyTotal");
-// // let deleteBtn = document.getElementById("deleteBtn");
-// // let calculateBtn = document.getElementById("calculateBtn");
-// let row = document.getElementsByClassName("productRow");
-
-
-
-// console.log(calculateBtn.innerHTML)
-
-
-
-/*
-I declared variable - allDeleteButtons and returned array of 
-deleted buttons ('deleteBtn).
-- Then I looped through the array of buttons with that class name and
-  set a variable - deleteBtns and set it to all of the buttons.
-- Then I created a function when the button gets clicked. 
-- In the function I set a variable for the target that was clicked with
-  event.target.
-- Then I removed the element's parent.. parent to delete the whole row.
-*/
+//function to delete the product rows
 function deleteItem(e) {
 
   e.currentTarget.parentNode.parentNode.remove(e.currentTarget.parentNode.parentNode)
@@ -29,40 +7,7 @@ function deleteItem(e) {
 }
 
 
-
-
-
-// function getPriceByProduct(itemNode) {
-
-// }
-
-// function updatePriceByProduct(index) {
-//   let cartRows = document.getElementsByClassName("productRow");
-//   // console.log(cartRows)
-//   for (let i = 0; i < cartRows.length; i++) {
-//     let rows = cartRows[i]
-//     let productPrice = rows.getElementsByClassName("productPrice")[0];
-//     // console.log(productPrice)
-//     let quantityElement = rows.getElementsByClassName("qty")[0];
-
-//     let qtyTotal = rows.getElementsByClassName('qtyTotal')[0];
-//     console.log(qtyTotal)
-
-//     let price = productPrice.innerHTML
-//     let quantity = quantityElement.value
-//     let totalPrice = qtyTotal.innerHTML
-
-//     let final = price * quantity
-
-//     rows.getElementsByClassName('qtyTotal')[0].innerHTML = final
-//     //If I keep this.. -> total price updates.
-//     // when I dont... Both rows are able to update their totals
-//   }
-
-// }
-// updatePriceByProduct();
-
-//
+// loop through the rows and multiplying price * quantity
 function getTotalPrice() {
   let productRow = document.getElementsByClassName("productRow");
   let totalPrice = document.getElementsByClassName('totalPrice')[0];
@@ -79,39 +24,29 @@ function getTotalPrice() {
   }
 }
 
-// function createQuantityInput() {
-//   qty = 2
-//   return total
-// }
 
-function createDeleteButton() {
+/* Still need to create a function to add new items to include to the cart.
+On the HTML, I will create two inputs for a product name and product price..
 
-}
-
-function createQuantityNode() {
-
-}
-
-function createItemNode(dataType, itemData) {
-
-}
-
-function createNewItemRow(itemName, itemUnitPrice) {
-
-}
+*/
 
 function createNewItem() {
 
+
 }
 
+
+
+//Activate the delete button
 function updateDeleteButtons() {
   let deleteButtons = document.getElementsByClassName('btn-delete');
-  console.log(deleteButtons)
   for (let i = 0; i < deleteButtons.length; i++) {
     deleteButtons[i].onclick = deleteItem;
   }
 }
 
+
+//Activate functions
 window.onload = function () {
   var calculatePriceButton = document.getElementById('calc-prices-button');
   var createItemButton = document.getElementById('new-item-create');
