@@ -23,18 +23,9 @@ deleted buttons ('deleteBtn).
 - Then I removed the element's parent.. parent to delete the whole row.
 */
 function deleteItem(e) {
-  let allDeleteButtons = document.getElementsByClassName('deleteBtn');
 
-  for (let i = 0; i < allDeleteButtons.length; i++) {
-    let deleteBtns = allDeleteButtons[i]
-
-    deleteBtns.addEventListener('click', function () {
-      let buttonClicked = event.target
-      buttonClicked.parentElement.parentElement.remove()
-
-    })
-  }
-
+  e.currentTarget.parentNode.parentNode.remove(e.currentTarget.parentNode.parentNode)
+  getTotalPrice();
 }
 
 
@@ -84,7 +75,7 @@ function getTotalPrice() {
     let quantity = rows.getElementsByClassName("qty")[0];
 
     qtyTotal.innerHTML = Number(Number(productPrice.innerHTML) * Number(quantity.value));
-    totalPrice.innerHTML = Number(totalPrice.innerHTML) + Number(qtyTotal.innerHTML)
+    totalPrice.innerHTML = Number(totalPrice.innerHTML) + Number(qtyTotal.innerHTML);
   }
 }
 
@@ -113,15 +104,24 @@ function createNewItem() {
 
 }
 
+function updateDeleteButtons() {
+  let deleteButtons = document.getElementsByClassName('btn-delete');
+  console.log(deleteButtons)
+  for (let i = 0; i < deleteButtons.length; i++) {
+    deleteButtons[i].onclick = deleteItem;
+  }
+}
+
 window.onload = function () {
   var calculatePriceButton = document.getElementById('calc-prices-button');
   var createItemButton = document.getElementById('new-item-create');
   // var deleteButtons = document.getElementsByClassName('btn-delete');
 
-  calculatePriceButton.onclick = getTotalPrice;
+  // calculatePriceButton.onclick = getTotalPrice;
   // createItemButton.onclick = createNewItem;
-
+  updateDeleteButtons()
   // for (var i = 0; i < deleteButtons.length; i++) {
   //   deleteButtons[i].onclick = deleteItem;
   // }
-};
+  // };
+}
