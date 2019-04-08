@@ -19,23 +19,38 @@ input {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  background-image: none;
+  background: green;
   border: 1px solid transparent;
   border-radius: 4px;
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #cf000f;
+  border-color: #cf000f;
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+.cartItem {
+  margin-top: 20%;
+  display: flex;
+  justify-content: space-around;
+}
+#newProduct {
+  display: flex;
+  justify-content: space-evenly;
+}
+.calculate {
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-around;
 }
