@@ -39,18 +39,22 @@ input {
 .quantity {
   margin: 0 5px;
 }
+.cart {
+  margin-top: 0px;
+}
 
 .cartItem {
-  margin-top: 20%;
+  margin-top: 10%;
   display: flex;
   justify-content: space-around;
 }
 #newProduct {
   display: flex;
   justify-content: space-evenly;
+  margin-top: 50px;
 }
 .calculate {
-  margin-top: 5%;
+  margin-top: 50px;
   display: flex;
   justify-content: space-around;
 }
