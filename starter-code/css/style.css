@@ -2,6 +2,19 @@ input {
   border: solid 1px black;
 }
 
+.h1Padding {
+  padding-top: 50px;
+  padding-bottom: 75px;
+}
+
+.productRow2 {
+  padding-top: 15px;
+}
+
+.calcPadding {
+  padding: 35px;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -34,6 +47,33 @@ input {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+}
+
+#createButton {
+  color: white;
+  background-color: gray;
+  justify-content: center;
+  float: right;
+  flex-flow: row;
+}
+
+.btn-create {
+  float: right;
+  padding-right: 55px;
+}
+
+#newItemRow {
+  justify-content: center;
+  justify-content: space-around;
+  padding-top: 30px;
+}
+
+.inputs {
+  padding: 5px;
+}
+
+.inputs1 {
+  padding-left: 15px;
 }
 
 .quantity {
