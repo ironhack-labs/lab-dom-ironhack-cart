@@ -6,6 +6,18 @@ input {
   padding: 20px;
 }
 
+.ironhack-logo{
+  width: 100px;
+}
+
+.h2 {
+  display: inline-block;
+}
+
+input{
+  text-align:center;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;

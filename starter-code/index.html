@@ -16,6 +16,8 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12 text-center">
+        <img class="ironhack-logo"
+          src="https://course_report_production.s3.amazonaws.com/rich/rich_files/rich_files/4017/s300/logo-ironhack-blue.png">
         <h1>
           IronHack Merchandising Shop
         </h1>
@@ -23,69 +25,110 @@
     </div>
 
     <!-- First product row-->
-    <div class="row productRow">
+    <form method="post">
+      <div id="productRows">
+        <div class="row productRow">
+          <div class="col-md-2 text-center">
+            <span class="productHead">IronBubble-head</span>
+          </div>
+          <div class="col-md-2 text-center">
+            $<span class="productPrice">25.00</span>
+          </div>
+          <div class="col-md-4 text-center">
+            <label class="quantity" for="quantity">QTY</label>
+            <input type="number" class="qty" onclick="getTotalPrice()" min="0" max="1000" value="0">
+          </div>
+          <div class="col-md-2 text-center">
+            $<span class="qtyTotal">0.00</span>
+          </div>
+          <div class="col-md-2 text-center">
+            <button type="button" class="btn btn-delete deleteBtn">Delete</button>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- Second product row-->
+      <div id="productRows2">
+        <div class="row productRow">
+          <div class="col-md-2 text-center">
+            <span class="productHead">IronShirt</span>
+          </div>
+          <div class="col-md-2 text-center">
+            $<span class="productPrice">10.00</span>
+          </div>
+          <div class="col-md-4 text-center">
+            <label class="quantity" for="quantity">QTY</label>
+            <input type="number" class="qty" onclick="getTotalPrice()" min="0" max="1000" value="0">
+          </div>
+          <div class="col-md-2 text-center">
+            $<span class="qtyTotal">0.00</span>
+          </div>
+          <div class="col-md-2 text-center">
+            <button type="button" class="btn btn-delete deleteBtn">Delete</button>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <!-- Here needs an input for product name and also product price-->
+      <div id="productRows3">
+        <div class="row productRow">
+          <div class="col-md-2 text-center">
+            <input type="text" placeholder="Product Name" name="name" id="name-input" class="qty-input" value="">
+          </div>
+          <div class="col-md-2 text-center">
+            $<input type="number" name="price" class="price-input" id="price-input" min="0" max="1000" value="0.00">
+          </div>
+          <div class="col-md-4 text-center">
+            <button type="button" onclick="AddProductRow()">Add</button>
+          </div>
+          <div class="col-md-2 text-center">
+
+          </div>
+          <div class="col-md-2 text-center">
+
+          </div>
+        </div>
+      </div>
+    </form>
+
+
+
+    <div id="divRowTemplate" style="display:none">
       <div class="col-md-2 text-center">
-        <span class="productHead">IronBubble-head</span>
+        <span class="productHead">PRODUCTHEAD</span>
       </div>
       <div class="col-md-2 text-center">
-        $<span class="productPrice">25.00</span>
+        $<span class="productPrice">PRODUCTPRICE</span>
       </div>
       <div class="col-md-4 text-center">
         <label class="quantity" for="quantity">QTY</label>
-        <input type="number" class="qty" onclick="getTotalPrice()" min="0" max="100" value="0">
+        <input type="number" class="qty" onclick="getTotalPrice()" min="0" max="1000" value="0" id="qtyID" name="qty[]">
       </div>
       <div class="col-md-2 text-center">
-        $<span class="qtyTotal">0</span>
+        $<span class="qtyTotal">0.00</span>
       </div>
       <div class="col-md-2 text-center">
         <button type="button" class="btn btn-delete deleteBtn">Delete</button>
       </div>
     </div>
-
-
-    <!-- Second product row-->
-    <div class="row productRow">
-      <div class="col-md-2 text-center">
-        <span class="productHead">IronShirt</span>
-      </div>
-      <div class="col-md-2 text-center">
-        $<span class="productPrice">10.00</span>
-      </div>
-      <div class="col-md-4 text-center">
-        <label class="quantity" for="quantity">QTY</label>
-        <input type="number" class="qty" onclick="getTotalPrice()" min="0" max="100" value="0">
-      </div>
-      <div class="col-md-2 text-center">
-        $<span class="qtyTotal">0</span>
-      </div>
-      <div class="col-md-2 text-center">
-        <button type="button" class="btn btn-delete deleteBtn">Delete</button>
-      </div>
-    </div>
-
-
-
-
-    <!-- Here needs an input for product name and also product price-->
-    <!--                                                           -->
-    <!-- Here needs an input for product name and also product price-->
 
 
 
     <!-- Calculate prices button and total price-->
-    <div class="row">
-      <div class="col-md-12 text-center">
-        <button id="calculateBtn" type="button" class="btn btn-success" onclick="getTotalPrice()">Calculate
-          Prices</button>
-        <h2>Total Price:</h2>
-        <h2 class="totalPrice">0</h2>
+    <div id="lastRow">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <button id="calculateBtn" type="button" class="btn btn-success" onclick="getTotalPrice()">Calculate
+            Prices</button>
+          <h2>Total Price: $</h2>
+          <h2 class="totalPrice">0.00</h2>
+        </div>
       </div>
     </div>
-
-
-
-
-
   </div>
   <script type="text/javascript" src="./js/index.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.8.0/math.js"></script>

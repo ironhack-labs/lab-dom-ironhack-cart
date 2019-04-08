@@ -1,7 +1,6 @@
 
 //function to delete the product rows
 function deleteItem(e) {
-
   e.currentTarget.parentNode.parentNode.remove(e.currentTarget.parentNode.parentNode)
   getTotalPrice();
 }
@@ -11,28 +10,41 @@ function deleteItem(e) {
 function getTotalPrice() {
   let productRow = document.getElementsByClassName("productRow");
   let totalPrice = document.getElementsByClassName('totalPrice')[0];
-  totalPrice.innerHTML = 0;
+  totalPrice.innerHTML = 0.00;
 
   for (let i = 0; i < productRow.length; i++) {
     let rows = productRow[i]
     let qtyTotal = rows.getElementsByClassName('qtyTotal')[0];
-    let productPrice = rows.getElementsByClassName("productPrice")[0];
-    let quantity = rows.getElementsByClassName("qty")[0];
+    let productPrice = rows.getElementsByClassName("productPrice")[0].innerHTML;
+    let quantity = rows.getElementsByClassName("qty")[0].value;
+    let subTotal = Number(productPrice) * Number(quantity);
+    let total = subTotal + Number(totalPrice.innerHTML)
 
-    qtyTotal.innerHTML = Number(Number(productPrice.innerHTML) * Number(quantity.value));
-    totalPrice.innerHTML = Number(totalPrice.innerHTML) + Number(qtyTotal.innerHTML);
+    qtyTotal.innerHTML = subTotal.toFixed(2)
+    totalPrice.innerHTML = total.toFixed(2)
   }
 }
 
 
-/* Still need to create a function to add new items to include to the cart.
-On the HTML, I will create two inputs for a product name and product price..
-
-*/
-
-function createNewItem() {
 
 
+function AddProductRow() {
+  let nextId = 1;
+  nextId = nextId + 1;
+
+  let div1 = document.createElement('div');
+  let itemName = document.getElementById('name-input').value
+  let itemPrice = document.getElementById('price-input').value
+
+  div1.innerHTML = document.getElementById('divRowTemplate').innerHTML;
+
+  div1.setAttribute("id", "divRow" + nextId + "");
+  div1.setAttribute("class", "row productRow");
+  div1.querySelector(".productHead").innerText = itemName;
+  div1.querySelector(".productPrice").innerText = itemPrice;
+
+  document.getElementById('productRows2').appendChild(div1);
+  updateDeleteButtons();
 }
 
 
@@ -50,13 +62,7 @@ function updateDeleteButtons() {
 window.onload = function () {
   var calculatePriceButton = document.getElementById('calc-prices-button');
   var createItemButton = document.getElementById('new-item-create');
-  // var deleteButtons = document.getElementsByClassName('btn-delete');
 
-  // calculatePriceButton.onclick = getTotalPrice;
-  // createItemButton.onclick = createNewItem;
   updateDeleteButtons()
-  // for (var i = 0; i < deleteButtons.length; i++) {
-  //   deleteButtons[i].onclick = deleteItem;
-  // }
-  // };
+
 }
