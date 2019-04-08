@@ -10,5 +10,79 @@
   <title>Ironhack cart</title>
 </head>
 <body>
-</body>
-</html>
+    <div class="container">
+        <h1>Ironhack Merchandise Shop</h1>
+        <!---->
+        <div class="products">
+    
+          <div class="product">
+            <div>
+                <span>Product name 1</span>
+            </div>
+            <div>
+              <span class="cost">$10.00</span>
+            </div>
+            <div>
+              <label for="">QTY</label>
+              <input type="number" class="label" value="1">
+            </div>
+            <div>
+              <span class="quantity">$10.00</span>
+            </div>
+            <div>
+              <button class="btn btn-delete">Delete</button>
+            </div>
+          </div>
+          <!---->
+          <div class="product">
+            <div>
+                <span>Product name 2</span>
+            </div>
+            <div>
+              <span class="cost">$20.00</span>
+            </div>
+            <div>
+              <label for="">QTY</label>
+              <input type="number" class="label" value="1">
+            </div>
+            <div>
+              <span class="quantity">$20.00</span>
+            </div>
+            <div>
+              <button class="btn btn-delete">Delete</button>
+            </div>
+          </div>
+          <!---->
+          <div class="product">
+            <div>
+              <span>Product name 3</span>
+            </div>
+            <div>
+              <span class="cost">$30.00</span>
+            </div>
+            <div>
+              <label for="">QTY</label>
+              <input type="number" class="label" value="1">
+            </div>
+            <div>
+              <span class="quantity">$30.00</span>
+            </div>
+            <div>
+              <button class="btn btn-delete">Delete</button>
+            </div>
+          </div>
+          <!---->
+        </div>
+        <div class="add-product">
+          <input type="text" id="name-product" placeholder="Product name">
+          <input type="number" id="cost-product" placeholder="Price product">
+          <button class="btn new-item-create">Create</button>
+        </div>
+        <div>
+          <button class="btn btn-success" id="calc-prices-button">Calculate price</button>
+          <h2>Total price: <span id="total-price-span">$0</span></h2>
+        </div>
+      </div>
+   </body>
+   
+ </html>

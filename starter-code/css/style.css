@@ -1,41 +1,52 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1000px;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.products {
+  margin: 50px 0;
+}
+
+.product {
+  display: flex;
+  justify-content: space-between;
+  margin: 25px 0;
+}
+
+.add-product {
+  display: flex;
+}
+
+.add-product input {
+  margin: 0 30px 30px 0;
+}
+
+.new-item-create {
+  width: 100px;
+  height: 35px;
+  margin-left: auto;  
+}
+
 input {
   border: solid 1px black;
+  width: 150px;
+  padding: 2px 10px;
+  box-sizing: border-box;
+  border: 1px solid grey;
+  border-radius: 5px;
 }
 
 .btn {
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
-}
-
-.btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
-}
-
-.btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
-}
-
-.quantity {
   margin: 0 5px;
 }
+
+.product div {
+  height: 30px;
+} 
