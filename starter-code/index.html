@@ -7,8 +7,41 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
   <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
+  <title>Ironhack Cart</title>
 </head>
 <body>
+  <div class="main-title-container">
+    <h2 class="main-title">Ironhack Merchandising Shop</h2>
+  </div>
+  <div class="items-container" id="hidden">
+      <p id="item-name">IronBubble-head</p> 
+      <p id="item-price">25.00</p> 
+      <p id="quantity">QTY <input class="quantity" id="input" type="input" name="quantity"></p> 
+      <p id="item-total"> 0.00 </p>
+      <button class="btn btn-delete" type="button">DELETE</button>
+    </div>
+
+  <div class="div1-container">
+    <div class="items-container">
+      <p id="item-name">IronBubble-head</p> 
+      <p id="item-price">25.00</p> 
+      <p id="quantity">QTY <input class="quantity" id="input" type="input" name="quantity"></p> 
+      <p id="item-total"> 0.00 </p>
+      <button class="btn btn-delete" type="button">DELETE</button>
+    </div>
+    
+  </div>
+  
+  <div class= "new-items-container">
+    <p><input class="new-item" id="new-item" type="input" name="new-item"></p> 
+    <p><input class="new-item-price" id="new-item-price" type="input" name="new-item-price"></p>
+    <button id="new-item-create" class="btn btn-success" type="button">Create Item</button>
+  </div>
+  <div id="calc-btn"><button id="calc-prices-button" class="btn-success" type="button">Calculate Prices</button></div>
+  <div class="total-price-div">
+    <h2>TOTAL PRICE: <span id="total-price"></span></h2>
+  </div>
+
+  
 </body>
 </html>

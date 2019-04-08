@@ -1,7 +1,25 @@
-input {
-  border: solid 1px black;
+body {
+  padding: 10px;
+
 }
 
+input {
+  border: solid 1px gray;
+}
+.main-title-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 95vw;
+ 
+}
+
+.main-title {
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px;
+  width: 180px;
+
+}
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -38,4 +56,41 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.items-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: solid red 3px;
+
+}
+
+#calc-btn  {
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh;
+
+}
+
+.total-price {
+  display: flex;
+  justify-content: center;
+
+}
+
+.new-items-container {
+  display: flex;
+  flex-direction: row;
+  
+ 
+}
+
+.new-items-container > p {
+  display: inline-block;
+  padding-right: 6vw;
+  padding-left: 3vw;
+
+}#hidden {
+  display: none;
 }
