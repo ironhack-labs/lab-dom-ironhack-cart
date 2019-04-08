@@ -50,7 +50,7 @@ body{
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
-    margin-left: 50%;
+    
     margin-top: 10%;
  }
  
@@ -66,4 +66,14 @@ body{
 
  .product {
    margin-bottom: 3%;
+ }
+ h2{
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: center;
+ }
+ #create-product{
+    background: black;
+    color:white;
  }
