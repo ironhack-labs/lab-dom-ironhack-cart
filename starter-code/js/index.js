@@ -16,6 +16,7 @@ function getTotalPrice() {
     let rows = productRow[i]
     let qtyTotal = rows.getElementsByClassName('qtyTotal')[0];
     let productPrice = rows.getElementsByClassName("productPrice")[0].innerHTML;
+    console.log(rows, productPrice)
     let quantity = rows.getElementsByClassName("qty")[0].value;
     let subTotal = Number(productPrice) * Number(quantity);
     let total = subTotal + Number(totalPrice.innerHTML)
