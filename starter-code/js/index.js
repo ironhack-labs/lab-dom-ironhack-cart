@@ -1,4 +1,5 @@
 function deleteItem(e){
+document.body.removeChild(e.currentTag);
 
 }
 
@@ -59,8 +60,13 @@ function createDeleteButton(){
 }
 
 function createQuantityNode(){
+let totalUnitPrice = document.getElementsByClassName('unit total');
+let total = 0;
+for(i=0;i<totalUnitPrice.length;i++)
+total+=Number(totalUnitPrice[i].innerHTML);
+}document.getElementById('total price message').innerHTML=`${total.toFixed(2)}`;
+document.querySelector('#total price message>h2').classList.remove('hidden');
 
-}
 
 function createItemNode(dataType, itemData){
 
