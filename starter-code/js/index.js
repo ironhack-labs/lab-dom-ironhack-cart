@@ -62,7 +62,7 @@ function createQuantityInput(){
 }
 
 function createDeleteButton(){
-
+  return createItemNode("button","btn btn-delete", "Delete");
 }
 
 function createQuantityNode(){
@@ -79,7 +79,16 @@ function createItemNode(dataType, itemData){
 }
 
 function createNewItemRow(itemName, itemUnitPrice){
+  var productParent= createNewItem(newID)
 
+  var productName= createItemNode("span","productName",itemName);
+
+  var unitPrice= createUnitPrice(itemUnitPrice);
+
+  var quantityNode= createQuantityNode();
+
+  var unitTotal= createUnitTotal();
+  var deleteButton= createDeleteButton();
 }
 
 function createNewItem(){
