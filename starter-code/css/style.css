@@ -28,6 +28,8 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    display:flex;
+    justify-content: center;
 }
 
 .btn-delete {
@@ -38,4 +40,38 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+#title {
+  display: flex;
+  justify-content: center;
+}
+
+.sections {
+  margin: 40px 0;
+  display: flex;
+  align-items: row;
+  justify-content: space-around;
+}
+
+
+.green {
+ display: flex;
+ justify-content: center;
+}
+
+.gray {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 60px 0 0;
+}
+
+#total {
+  display: flex;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+#total > h2 {
+  font-weight: bold;
 }
