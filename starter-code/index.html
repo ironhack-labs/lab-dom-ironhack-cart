@@ -10,5 +10,62 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <div class="container">
+    <h1>Ironhack Merchandising Shop</h1>
+    <div class="product-row">
+      <div>
+        <p><span class="product-name">Shoes</span></p>
+      </div>
+      <div>
+          <p>$<span class="price">25</span></p>
+      </div>
+      <div class="quantity-container">
+        <label for="quantity">QTY</label>
+        <input type="text" name="quantity" class="qty" placeholder="Add quantity">
+      </div>
+      <div>
+        <p class="sub-total">$<span class="tot-prod">0.00</span></p>
+      </div>
+      <div>
+        <button class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+    <div class="product-row">
+      <div>
+        <p class="product-name"><span>Shoes</span></p>
+      </div>
+      <div>
+          <p>$<span class="price">12</span></p>
+      </div>
+      <div class="quantity-container">
+        <label for="quantity">QTY</label>
+        <input type="text" name="quantity" class="qty" placeholder="Add quantity">
+      </div>
+      <div>
+        <p class="sub-total">$<span class="tot-prod">0.00</span></p>
+      </div>
+      <div>
+        <button class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+    <div id="create" class="create-data">
+      <div class="item-name-cont">
+        <input id="item-name" type="text" placeholder="Item name...">
+      </div>
+      <div class="item-price-cont">
+        <input id="item-price" type="text" placeholder="Item $ price...">
+      </div>
+      <div class="btn-create-cont">
+        <button id="new-item-create" class="btn-create">Create</button>
+      </div>
+    </div>
+    <div class="btn-sxs-container">
+      <button id="calc-prices-button" class="btn btn-success">Calculate Prices</button>
+    </div>
+    <div class="tot-sum">
+      <h2>Total Price: $<span id="total">0</span></h2>
+    </div>
+  </div>
+  
 </body>
 </html>
