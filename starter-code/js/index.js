@@ -8,7 +8,7 @@ function deleteItem(e){
   let element = e.currentTarget.parentNode.parentNode;
   let parent = element.parentNode;
   parent.removeChild(element);
-  
+  getTotalPrice();
 }
 
 function getPriceByProduct(itemNode){
