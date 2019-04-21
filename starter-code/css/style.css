@@ -31,9 +31,9 @@ input {
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #CF000F;
+  border-color: #CF000F;
 
 }
 
@@ -42,8 +42,8 @@ input {
 }
 
 h1{
-  text-align: center;
-  font-style: oblique;
+  display:flex;
+  justify-content:center;
 }
 
 .cost{
@@ -55,5 +55,9 @@ h1{
 }
 
 .calculate-price{
-  float: center;
+  color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    display:flex;
+    justify-content:center;
 }
