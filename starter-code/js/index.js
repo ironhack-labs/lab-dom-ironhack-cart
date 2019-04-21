@@ -4,13 +4,15 @@ document.body.removeChild(e.currentTag);
 }
 
 function getPriceByProduct(itemNode){
-  let cost= document.getElementById('cost').innerHTML
-  let quantity= document.getElementById('quantity').innerHTML
-  let totalCost= document.getElementById('total cost').innerHTML
-  return (totalCost[i].innerHTML = `${(
-    Number(cost[i].innerHTML) * quantity[i].value
-  ).toFixed("2")}`);
-  }
+  let calcPrice = document.querySelector("#calc-price");
+  calcPrice.onclick = function () {
+    let priceByProduct= (createQuantityInput()* getUnitCost());
+    console.log(priceByProduct);
+ };
+ return priceByProduct;
+}
+ getPriceByProduct()
+
   
   /*var total = 0;
   var totalItems = 0;
@@ -33,14 +35,16 @@ function getPriceByProduct(itemNode){
 
 
 
+
 function updatePriceByProduct(productPrice, index){
-  let cost= document.getElementById('cost').innerHTML
+ let cost= document.getElementById('cost').innerHTML
   let quantity= document.getElementById('quantity').innerHTML
   let totalCost= document.getElementById('total cost').innerHTML
   return (totalCost[i].innerHTML = `${(
     Number(cost[i].innerHTML) * quantity[i].value
   ).toFixed("2")}`);
 }
+
 
 function getTotalPrice() {
   let cost= document.getElementById('cost').innerHTML
@@ -51,13 +55,20 @@ function getTotalPrice() {
   ).toFixed("2")}`);
 }
 
-}
+
 //console.log(document.querySelector)
 
 
 //var calculatePriceButton = document.getElementById('btn-success');
 
 function createQuantityInput(){
+  let quantityInput= 
+  document.getElementById('quantity').value; 
+  return quantityInput
+}
+function getUnitCost(){
+  let unitCost =  parseInt(document.querySelector(".unit-cost").innerHTML);
+  return unitCost
 
 }
 
@@ -113,5 +124,11 @@ window.onload = function(){
 
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
+  let quantities = document.querySelectorAll(".itemsPrice");
+  let cartPrice = document.querySelector(".totalPrice");
+  let cartTotal = 0;
+  for (let i = 0; i < quantities.length; i++) {
+    cartTotal += parseInt(quantities[i].innerHTML);
   }
 };
+}
