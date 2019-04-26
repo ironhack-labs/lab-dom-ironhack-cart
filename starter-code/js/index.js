@@ -21,7 +21,7 @@ function getTotalPrice() {
 
   /* 3. Calcular el precio total */
 
-  const result = qty * price;
+  const result = (qty * price).toFixed(2);
   console.log(result)
   /* 4. Mostar por pantalla el precio total */
   //document.getElementById('total-price').innerText = result
