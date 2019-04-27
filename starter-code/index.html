@@ -37,7 +37,7 @@
                 <div class="col-md-2">
                   <form>
                     <label for="name">QTY</label>
-                    <input type="number" class="input" value="0">
+                    <input type="number" class="QTYinput" value="0">
                   </form>
                 </div>
                 <div class="col-md-2">
@@ -52,7 +52,7 @@
         <li>
             <div class="row">
                 <div class="col-md-2">
-                  <span class="product-name">IronBubble-Tshirt</span>
+                  <span class="product-name">IronHack-Tshirt</span>
                 </div>
                 <div class="col-md-2">
                   <span class="cost">
@@ -62,13 +62,13 @@
                 <div class="col-md-2">
                   <form>
                     <label for="name">QTY</label>
-                    <input type="number" class="input" value="0">
+                    <input type="number" class="QTYinput" value="0">
                   </form>
                 </div>
                 <div class="col-md-2">
                   <span class="total-price">0.00</span>
                 </div>
-                <div class="col-md-2">
+                <div class="col-md-2 delete">
                   <button class="btn-delete">Delete</button>
                 </div>
             </div>
@@ -81,8 +81,23 @@
       <!-- Total price display --> 
         <div class="d-flex justify-content-center">
             <h2>Total Price <span class="result-price">0</span></h2> 
-          </div>
-  </div>
+        </div>
+      <!-- New Product Creator --> 
+          <form action="">
+              <div class="d-flex justify-content-between">
+
+                  <div class="inputs">
+                      <input type="text" id="newProductName" placeholder="Product Name">
+                      <input type="text" id="newProductPrice" placeholder="Product Price">
+                  </div>
+
+                  <div>
+                      <button id="createBtn" type="button">Create</button>
+                  </div>
+
+              </div>
+          </form>
+        </div>
   </main>
   </div>
   <script type="text/javascript" src="./js/index.js"></script>
