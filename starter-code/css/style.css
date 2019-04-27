@@ -39,3 +39,18 @@ input {
 .quantity {
   margin: 0 5px;
 }
+form input{
+  width: 50%;
+}
+.wrapper{
+  margin-top:50px;
+}
+main{
+  margin-top: 30px;
+}
+.d-flex{
+  display:flex
+}
+.btn-success{
+  margin-top: 30px;
+}

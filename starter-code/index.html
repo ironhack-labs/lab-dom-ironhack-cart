@@ -6,9 +6,51 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap-grid.min.css">
   <title>Ironhack cart</title>
 </head>
 <body>
+ 
+  <div class="wrapper">
+    <header class="hero">
+      <div class="container">
+        <div class="d-flex justify-content-center">
+          <h1>Ironhack Merchandising shop</h1>
+        </div>
+      </div>
+    </header>
+    <main>
+    <div class="container">
+      <div class="row">
+          <div class="col-md-2">
+            <span id="product-name">IronBubble-head</span>
+          </div>
+        
+          <div class="col-md-2">
+            <span id="cost">
+            12.00
+            </span>
+          </div>
+          <div class="col-md-2">
+            <form>
+              <label for="name">QTY</label>
+              <input type="number" class="input" id="user-input" placeholder="1">
+            </form>
+          </div>
+          <div class="col-md-2">
+            <span id="total-price">0.00</span>
+          </div>
+          <div class="col-md-2">
+            <button class="btn-delete" id="btn-delete">Delete</button>
+          </div>
+      </div>
+        <div class="d-flex justify-content-center">
+          <button class="btn-success" id="calc-prices-button" onclick="">Calculate Price</button> 
+        </div>
+  </div>
+  </main>
+  </div>
+  <script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>
