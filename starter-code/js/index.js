@@ -1,12 +1,32 @@
 //Variables
-let unitPrice = document.getElementById("cost")
-let userInput = document.getElementById("user-input")
-userInput.value = 1;
-let calculatePriceButton = document.querySelector(".btn-success")
-let totalPrice = document.querySelector("#total-price") 
-// Button working
-//calculatePriceButton.onclick = () => {console.log("oeoe")}
-calculatePriceButton.onclick = () => {getTotalPrice()}
+let productName = document.getElementsByClassName("product-name")
+let unitPrice = document.getElementsByClassName("cost")//[0]
+let userInput = document.getElementsByClassName("input")//[0]
+let calculatePriceButton = document.getElementsByClassName("btn-success")[0]
+let totalPrice = document.getElementsByClassName("total-price")//[0]
+let products = document.getElementsByTagName("li")
+// for(i=0; i<userInput.length; i++){
+//   userInput.value = 1;
+// }
+calculatePriceButton.onclick = () => {
+  updatePriceToAllProducts()
+}
+function getTotalPrice() {
+  let result = unitPrice.innerText * parseInt(userInput.value)
+  //console.log(result)
+  //return result
+  totalPrice.innerHTML = result;
+}
+
+function updatePriceToAllProducts(){
+  for(i=0; i<products.length; i++){
+    let result = unitPrice[i].innerText * parseInt(userInput[i].value)
+    totalPrice[i].innerHTML = result;
+  }
+} 
+
+
+
 
 
 
@@ -17,19 +37,11 @@ function deleteItem(e){
 }
 
 function getPriceByProduct(itemNode){
-
+ 
 }
 
 function updatePriceByProduct(productPrice, index){
-
-}
-
-
-function getTotalPrice() {
-    let result = unitPrice.innerText * parseInt(userInput.value)
-    //console.log(result)
-    //return result
-    totalPrice.innerHTML = result;
+  
 }
 
 function createQuantityInput(){
