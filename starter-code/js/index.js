@@ -5,6 +5,7 @@ let userInput = document.getElementsByClassName("input")//[0]
 let calculatePriceButton = document.getElementsByClassName("btn-success")[0]
 let totalPrice = document.getElementsByClassName("total-price")//[0]
 let products = document.getElementsByTagName("li")
+let resultPrice = document.getElementsByClassName("result-price")[0]
 // for(i=0; i<userInput.length; i++){
 //   userInput.value = 1;
 // }
@@ -25,7 +26,14 @@ function updatePriceToAllProducts(){
   }
 } 
 
-
+function updateResultPrice(){
+  let result = 0
+  for(i=0; i<products.length; i++){
+    result += parseInt(totalPrice[i].innerHTML) 
+  }
+  console.log(result)
+  resultPrice.innerHTML = result
+}
 
 
 
