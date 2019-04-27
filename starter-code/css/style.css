@@ -54,3 +54,21 @@ main{
 .btn-success{
   margin-top: 30px;
 }
+
+.inputs {
+  display: inline;
+}
+#newProductName {
+  display: inline-block;
+  width: 180px;
+}
+#newProductPrice {
+  display: inline-block;
+  width: 180px;
+}
+.delete {
+  
+}
+li {
+  list-style-type: none;
+}
