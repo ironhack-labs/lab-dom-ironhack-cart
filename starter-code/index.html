@@ -25,19 +25,19 @@
 
   <main>
     <div class="container">
-      <div class="row">
-
-        <div class="col-3">
+      <div class="row justify-content-start">
+        <div class="col-2"></div>
+        <div class="col-2">
           <span> IronBubble-Head</span>
         </div>
-        <div class="col-3"><span class="price">25.33</span>$</div>
-        <div class="col-3">
+        <div class="col-2"><span class="price">25.33</span>$</div>
+        <div class="col-2">
           <label for="quantity"> Qty</label>
           <input id="quantity" class="quantity" type="number">
 
 
         </div>
-        <div class="col-1">
+        <div class="col-2">
           <p><span class="total-price">0</span>€</p>
         </div>
         <div class="col-2">
@@ -47,21 +47,42 @@
 
       </div>
       <div class="row">
-
-        <div class="col-3">
+        <div class="col-2"></div>
+        <div class="col-2">
           <span> IronShirt</span>
         </div>
-        <div class="col-3"><span class="price">15.00</span>$</div>
-        <div class="col-3">
+        <div class="col-2"><span class="price">15.00</span>$</div>
+        <div class="col-2">
           <label for="quantity2"> Qty</label>
           <input id="quantity2" class="quantity" type="number">
 
         </div>
-        <div class="col-1">
+        <div class="col-2">
           <p><span class="total-price">0</span>€</p>
         </div>
         <div class="col-2">
           <a href="#" class="btn btn-delete">Delete</a>
+        </div>
+
+
+      </div>
+      <div class="row justify-content-end" id="add-item">
+
+        <div class="col-2">
+          <input type="text" name="product-name" id="product-name">
+        </div>
+        <div class="col-2">
+          <input class="price" type="number" name="product-price" id="product-price">
+        </div>
+        <div class="col-2">
+          <p>QTY<span id="cantidad"></span></p>
+
+        </div>
+        <div class="col-2">
+          <span id="btn-delete"></span>
+        </div>
+        <div class="col-2">
+          <input id="new-item-create" type="submit" class=" btn btn-success" value="Create">
         </div>
 
 
