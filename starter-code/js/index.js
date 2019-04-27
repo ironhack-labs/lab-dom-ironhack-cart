@@ -9,14 +9,8 @@
 ] */
 
 function deleteItem(e) {
-	const container = document.getElementsByClassName('container')[0];
-	const row = document.getElementsByClassName('row')[0];
-
-	container.removeChild(row);
-
-	console.log(e);
-	/* 
-    document.getElementsByClassName('container')[0].removeChild(rows[0]) */
+	const parent = e.currentTarget.parentNode.parentNode;
+	parent.remove();
 }
 
 function getPriceByProduct(itemNode) {}
