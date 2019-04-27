@@ -33,13 +33,21 @@ function getTotalPrice() {
   const totalPrices = document.getElementsByClassName('total-price')
 
   /* 1. Accedemos a los valores unitarios de cada producto */
-
+  let generalPrice = 0;
   for (let i = 0; i < productsQtys.length; i++) {
     /* 1.1 Calculamos el totalPrice para cada producto */
     const totalPrice = (productsPrices[i].innerText * productsQtys[i].value).toFixed(2);
     /* 1.2 Actualizamos el totalPrice en el elemento html para que se muestre */
-    totalPrices[i].innerText = totalPrice;
+    totalPrices[i].innerText = totalPrice
+    /*  console.log(`Total price iteration ${i}: ${totalPrice}`) */
+    generalPrice += Number(totalPrice)
   }
+  /*   console.log(`General price: ${generalPrice}`) */
+
+  /* iteration 3. Actualizar Precio Total */
+  document.getElementById('gen-price').innerText = generalPrice
+
+
 
 }
 
