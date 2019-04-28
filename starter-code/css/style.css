@@ -1,3 +1,7 @@
+h1, h2 {
+  text-align: center;
+}
+
 input {
   border: solid 1px black;
 }
@@ -25,17 +29,23 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+  display: block;
+  margin: 0 auto;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #CF000F;
+  border-color: #CF000F;
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+.row {
+  margin: 30px 0;
 }
