@@ -21,32 +21,16 @@ function getTotalPrice() {
   let unitPrices = document.getElementsByClassName('unitPrice')
   let totalPrices = document.getElementsByClassName('total')
   let totalTotal = document.getElementsByClassName('totalTotal')
-
-  // totalPrices[0].innerHTML = inputsArray[0].value * unitPrices[0].innerText
-  // totalPrices[1].innerHTML = inputsArray[1].value * unitPrices[1].innerText 
-  // totalTotal[0].innerHTML = parseInt(totalPrices[0].innerHTML,10) + parseInt(totalPrices[1].innerHTML,10)
-  
-  // for (let i = 2; i < unitPrices.length; i++) {    
-  //   totalPrices[i].innerHTML = inputsArray[i].value * unitPrices[i].innerText 
-  //   totalTotal[0].innerHTML = parseInt(totalTotal[0].innerHTML,10) + parseInt(totalPrices[i].innerHTML,10)  
-  // }
-
-  // totalPrices[0].innerHTML = inputsArray[0].value * unitPrices[0].innerText
-  // totalPrices[1].innerHTML = inputsArray[1].value * unitPrices[1].innerText 
-  // totalTotal[0].innerHTML = parseInt(totalPrices[0].innerHTML,10) + parseInt(totalPrices[1].innerHTML,10)
   
   for (let i = 0; i < unitPrices.length; i++) {    
     totalPrices[i].innerHTML = inputsArray[i].value * unitPrices[i].innerText 
-    // totalTotal[i].innerHTML = parseInt(totalTotal[i].innerHTML,10) + parseInt(totalPrices[i].innerHTML,10)  
   }
 
   totalTotal[0].innerHTML = 0
   for (let i = 0; i < unitPrices.length; i++) {    
-    // totalPrices[i].innerHTML = inputsArray[i].value * unitPrices[i].innerText 
     totalTotal[0].innerHTML = parseInt(totalTotal[0].innerHTML,10) + parseInt(totalPrices[i].innerHTML,10)  
   }
 
-    
 }
 
 
