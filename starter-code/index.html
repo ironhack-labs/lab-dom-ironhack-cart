@@ -5,10 +5,96 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
+  
+
   <title>Ironhack cart</title>
 </head>
 <body>
+  <h1>IronHack Merchandising Shop</h1>
+
+  <div class="container">
+
+    <!-- PRIMER PRODUCTO -->
+    <div class="row productRow">
+      <div class="col">
+        <span class="nombre">Libro</span>
+      </div>
+      <div class="col">
+        <span>$</span>
+        <span class="coste">20</span>
+      </div>
+      <div class="col">
+        <div class="quantityInput">
+          <label for="quantity">QTY</label>
+          <input type="number" name="quantity" class="quantity">
+        </div>
+      </div>
+      <div class="col">
+        <span>$</span>
+        <span  class="totalProduct">0.00</span>
+      </div>
+      <div class="col">
+        <div class="deleteDiv">
+          <button class="btn btn-delete delBtn" >Delete</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SEGUNDO PRODUCTO -->
+    <div class="row productRow">
+      <div class="col">
+        <span class="nombre">Casa</span>
+      </div>
+      <div class="col">
+        <span>$</span>
+        <span class="coste">130000</span>
+      </div>
+      <div class="col">
+        <div class="quantityInput">
+          <label for="quantity">QTY</label>
+          <input type="number" name="quantity" class="quantity">
+        </div>
+      </div>
+      <div class="col">
+        <span>$</span>
+        <span  class="totalProduct">0.00</span>
+      </div>
+      <div class="col">
+        <div class="deleteDiv">
+          <button class="btn btn-delete delBtn">Delete</button>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <div class="container">
+
+    <!-- INPUT OF THE NEW PRODUCTS -->
+    <div class="row">
+      <div class="col">
+            <label for="newProductName">Product Name</label>
+            <input type="text" name="newProductName" class="newProductName">
+      </div>
+      <div class="col">
+            <label for="newProductPrice">Product Price</label>
+            <input type="number" name="newProductPrice" class="newProductPrice">
+      </div>
+      <div class="col">
+        <button class="btn btn-create">Create</button>
+      </div>
+    </div>
+
+
+
+    <button class="btn btn-success" id="calculatePriceBtn">Calculate Price</button>
+    
+    <h2>Total Price : <span> 0</span></h2>
+  </div>
+
+
+  <script type="text/javascript" src="./js/index.js"></script>
+
 </body>
 </html>

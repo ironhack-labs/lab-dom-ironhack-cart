@@ -1,3 +1,17 @@
+.productRow {
+  width: 100%;
+  padding: 2em 0em;
+}
+
+.btn-create{
+  height: 100%;
+}
+
+.quantityInput {
+  display: flex;
+  justify-content: space-around;
+}
+
 input {
   border: solid 1px black;
 }
@@ -28,6 +42,8 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    display: flex;
+    margin: 4em auto;
 }
 
 .btn-delete {
@@ -38,4 +54,10 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+h1{
+  text-align: center;
+  font-family: sans-serif;
+
 }
