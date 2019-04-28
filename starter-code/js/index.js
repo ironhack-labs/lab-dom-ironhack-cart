@@ -1,6 +1,6 @@
 function deleteItem(e){
-
-}
+  const dele = event.currentTarget.parentNode.parentNode.remove()
+ }
 
 function getPriceByProduct(itemNode){
 
