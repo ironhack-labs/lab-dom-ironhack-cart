@@ -28,7 +28,7 @@ function getTotalPrice() {
 
   totalTotal[0].innerHTML = 0
   for (let i = 0; i < unitPrices.length; i++) {    
-    totalTotal[0].innerHTML = parseInt(totalTotal[0].innerHTML,10) + parseInt(totalPrices[i].innerHTML,10)  
+    totalTotal[0].innerHTML = parseFloat(totalTotal[0].innerHTML,10) + parseFloat(totalPrices[i].innerHTML,10)  
   }
 
 }
@@ -168,7 +168,6 @@ function createNewItem(){
   divCol5.appendChild(input2)
   
 }
-
 
 
 window.onload = function(){
