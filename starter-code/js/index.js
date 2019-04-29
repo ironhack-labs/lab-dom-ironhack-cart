@@ -88,11 +88,6 @@ function createNewItemRow(itemName, itemUnitPrice){
 
 function createNewItem(productName, productPrice){
 
-  let productName = document.getElementById("product-name")
-  let productPrice = document.getElementById("product-price")
-  createNewItemRow(productName, productPrice)
-
-
   // let lastIndex = productsInCart.length //Iba a empezar a guardar los items en el objeto productsInCart
   // productsInCart[lastIndex] = [ 
   //   { 
