@@ -66,6 +66,7 @@ function deleteBtnSetup(){
       let parent3 = parent2.parentElement
       let parent4 = parent3.parentElement
       parent4.removeChild(parent3)
+      updateResultPrice()
       //console.log(parent2)
     })
     //console.log("click")
