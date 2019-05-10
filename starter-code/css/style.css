@@ -13,7 +13,7 @@
 
 .txtQ{width: 50px ; margin-right: 5px; margin-left:5px;display: inline-block}
 
-
+input.form-control.error{ border-color: red; border-width: 2px}
 
 
 

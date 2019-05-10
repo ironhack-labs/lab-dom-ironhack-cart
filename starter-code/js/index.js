@@ -143,12 +143,11 @@ window.onload = function () {
                 })[0]
             ;
 
-            elemItemCarrito.className=elemItemCarrito.className + " eliminando";
+            elemItemCarrito.className = elemItemCarrito.className + " eliminando";
 
-
-            setTimeout( ()=>{
+            setTimeout(() => {
                 contenedor.removeChild(elemItemCarrito);
-            },600);
+            }, 600);
 
 
             /* segundo - quitamos el elemento del array */
@@ -189,4 +188,27 @@ window.onload = function () {
     carrito.factoryItem(elemCarritoBlockItems, 25, 1, 'Iron Buble-head');
     carrito.factoryItem(elemCarritoBlockItems, 15, 2, 'Iron T-Shirt');
     actualizarTotalCarrito();
+
+
+    let elemAddProductoNombre = document.getElementById("txtAddProductoNombre");
+    let elemAddProductoDesc = document.getElementById("txtAddProductoDesc");
+    let elemAddProductoQ = document.getElementById("txtAddProductoQ");
+    let elemAddProductoPU = document.getElementById("txtAddProductoPU");
+
+    formAddProducto.inicializar(elemAddProductoNombre, elemAddProductoDesc, elemAddProductoQ, elemAddProductoPU);
+
+    let elemCmdAdd = document.getElementById("cmdAdd");
+
+    elemCmdAdd.onclick = (event) => {
+        if (formAddProducto.isValid) {
+
+            let fn = (model) => {
+                carrito.factoryItem(elemCarritoBlockItems, model.pu, model.q, model.nombre, model.desc);
+            };
+
+            formAddProducto.addProducto(fn);
+        }else{
+            alert("Falta corregir la informacion del producto");
+        }
+    };
 };
