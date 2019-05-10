@@ -1,3 +1,23 @@
+.panPrice{
+    display: flex;
+    align-items: center;
+
+}
+
+.panPrice * { padding-left: 10px; padding-right: 10px}
+.labPU{width: 80px}
+.pu{width: 80px}
+
+.txtQ{width: 50px}
+
+
+.panDelete{width: 40px}
+
+
+/*
+
+
+
 input {
   border: solid 1px black;
 }
@@ -39,3 +59,4 @@ input {
 .quantity {
   margin: 0 5px;
 }
+*/
