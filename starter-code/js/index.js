@@ -204,6 +204,7 @@ window.onload = function () {
 
             let fn = (model) => {
                 carrito.factoryItem(elemCarritoBlockItems, model.pu, model.q, model.nombre, model.desc);
+                actualizarTotalCarrito();
             };
 
             formAddProducto.addProducto(fn);

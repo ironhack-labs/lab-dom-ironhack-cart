@@ -92,7 +92,7 @@ var formAddProducto = {
             nombre: f.elem.nombre.value,
             desc: f.elem.desc.value,
             q: parseInt(f.elem.q.value),
-            pu: parseFloat(f.elem.nombre.value)
+            pu: parseFloat(f.elem.pu.value)
         };
 
         callbackAddModel(model);
