@@ -1,42 +1,3 @@
-function deleteItem(e) {
-
-}
-
-function getPriceByProduct(itemNode) {
-
-}
-
-function updatePriceByProduct(productPrice, index) {
-
-}
-
-function getTotalPrice() {
-
-}
-
-function createQuantityInput() {
-
-}
-
-function createDeleteButton() {
-
-}
-
-function createQuantityNode() {
-
-}
-
-function createItemNode(dataType, itemData) {
-
-}
-
-function createNewItemRow(itemName, itemUnitPrice) {
-
-}
-
-function createNewItem() {
-
-}
 
 var elemCarritoNumQ;
 var elemCarritoMonto;
@@ -70,6 +31,9 @@ window.onload = function () {
 
                         qTotal += q;
                         montoTotal += monto;
+
+                        item.setSubTotal(monto.toString());
+
                     })
                 );
 
@@ -79,6 +43,7 @@ window.onload = function () {
 
             elemCarritoNumQ.innerHTML = qTotal.toString();
             elemCarritoMonto.innerHTML = montoTotal.toString();
+
 
         }
     };
@@ -97,13 +62,15 @@ window.onload = function () {
 
         txt.onchange = onChangeTxt;
 
-        //Buscar el data
+        //Buscar el label para subtotal
+        let elemSubtotal=txt.parentNode.querySelector(".subtotal");
 
 
         carrito.listaItems.push(
             {
                 element: txt,
-                pu:  parseFloat(txt.dataset.pu)
+                pu:  parseFloat(txt.dataset.pu),
+                setSubTotal:(texto=>elemSubtotal.innerHTML=texto)
             }
         );
     }
