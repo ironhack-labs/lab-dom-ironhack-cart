@@ -6,24 +6,24 @@ var carrito;
 window.onload = function () {
 
     carrito = {
-        listaItems: [],
+        listaProductos: [],
         numItems: null,
         granTotal: null,
         calcularTotal: () => {
             let qTotal = 0;
             let montoTotal = 0;
 
-            carrito.listaItems
+            carrito.listaProductos
                 .forEach((item => {
 
-                        let q = parseInt(item.elementTxtQ.value);
-                        let pu = item.pu;
+                        let q = item.getQ();
+                        let pu = item.getPU();
                         let subtotal = q * pu;
 
                         qTotal += q;
                         montoTotal += subtotal;
 
-                        item.setSubTotal(subtotal);
+                        item.setTextoSubTotal(subtotal);
 
                     })
                 );
@@ -36,7 +36,7 @@ window.onload = function () {
             /*necesitamos un Id para poder eliminar el item del carrito - deberia ser un pk del producto */
             let maxIdItem = 0;
 
-            carrito.listaItems
+            carrito.listaProductos
                 .forEach(o => {
 
                     if (o.id > maxIdItem) {
@@ -52,7 +52,7 @@ window.onload = function () {
             urlImg = urlImg || 'http://placehold.it/120x80';
             desc = desc || `Superawesome ${nombre}`;
 
-            let puTxt = pu;
+            let puTxt = pu; /*TODO poner el precio con formato currency*/
 
             let newIdItem = carrito.getMaxId() + 1;
 
@@ -105,15 +105,23 @@ window.onload = function () {
 
             elemTxtQ.onchange = onChangeTxt;
 
-            carrito.listaItems.push(
+            carrito.listaProductos.push(
                 {
                     id: newIdItem,
                     elementItemCarrito: newItemCarrito,
-                    elementTxtQ: elemTxtQ,
-                    pu: pu,
-                    setSubTotal: (subtotal => elemSubtotal.innerHTML = "$ " + subtotal.toString())
+                    getPU: () => {
+                        return pu;
+                    },
+                    getQ: () => {
+                        return parseInt(elemTxtQ.value);
+                    },
+                    setTextoSubTotal: (subtotal) => {
+                        elemSubtotal.innerHTML = "$ " + subtotal.toString();
+                    }
+
                 }
-            );
+            )
+            ;
 
 
             let elemCmdDelete = newItemCarrito.querySelector(".cmdDelete");
@@ -128,7 +136,7 @@ window.onload = function () {
 
             /* primero quitamos el elemnto del dom*/
 
-            let elemItemCarrito = carrito.listaItems
+            let elemItemCarrito = carrito.listaProductos
                 .filter(o => {
                     return o.id === idItem
                 }).map(o => {
@@ -139,11 +147,11 @@ window.onload = function () {
             contenedor.removeChild(elemItemCarrito);
 
             /* segundo - quitamos el elemento del array */
-            let index = carrito.listaItems.findIndex(o => {
+            let index = carrito.listaProductos.findIndex(o => {
                 return o.id === idItem
             });
 
-            carrito.listaItems.splice(index, 1);
+            carrito.listaProductos.splice(index, 1);
 
             /*mandamos a recalcular el carrito*/
             actualizarTotalCarrito();
