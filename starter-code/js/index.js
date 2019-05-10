@@ -91,7 +91,6 @@ window.onload = function () {
             `;
 
 
-            contenedor.appendChild(document.createElement("hr"));
 
             let newItemCarrito = document.createElement("div");
             newItemCarrito.innerHTML = htmlNewItem;
