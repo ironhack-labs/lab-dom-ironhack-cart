@@ -1,10 +1,11 @@
 var elemCarritoNumQ;
 var elemCarritoMonto;
 var elemCarritoBlockItems;
+var carrito;
 
 window.onload = function () {
 
-    var carrito = {
+    carrito = {
         listaItems: [],
         numItems: null,
         granTotal: null,
@@ -15,7 +16,7 @@ window.onload = function () {
             carrito.listaItems
                 .forEach((item => {
 
-                        let q = parseInt(item.element.value);
+                        let q = parseInt(item.elementTxtQ.value);
                         let pu = item.pu;
                         let subtotal = q * pu;
 
@@ -46,7 +47,7 @@ window.onload = function () {
 
             return maxIdItem;
         },
-        factoryItem: (contenedor,pu, nombre, desc, urlImg) => {
+        factoryItem: (contenedor, pu, q, nombre, desc, urlImg) => {
 
             urlImg = urlImg || 'http://placehold.it/120x80';
             desc = desc || `Superawesome ${nombre}`;
@@ -75,9 +76,9 @@ window.onload = function () {
                     </div>
                     <div class="col-9 col-sm-10 col-md-9">
                         <span>X</span>
-                        <input type="text" value="0" class="form-control txtQ" data-pu="${pu}" title="Quantity"/>
+                        <input type="text" value="${q}" class="form-control txtQ" data-pu="${pu}" title="Quantity"/>
                         <span >  Subtotal :   </span>
-                         <span class="subtotal">$0</span>
+                         <span class="subtotal">${q*pu}</span>
                         <button type="button" class="btn btn-outline-danger btn-xs cmdDelete"
                                 style="float: right; margin-left: 10px"
                                 data-iditem="${newIdItem}"
@@ -89,7 +90,6 @@ window.onload = function () {
                 </div>            
 
             `;
-
 
 
             let newItemCarrito = document.createElement("div");
@@ -108,7 +108,8 @@ window.onload = function () {
             carrito.listaItems.push(
                 {
                     id: newIdItem,
-                    element: elemTxtQ,
+                    elementItemCarrito: newItemCarrito,
+                    elementTxtQ: elemTxtQ,
                     pu: pu,
                     setSubTotal: (subtotal => elemSubtotal.innerHTML = "$ " + subtotal.toString())
                 }
@@ -123,46 +124,58 @@ window.onload = function () {
 
 
         },
-        removeItem: (idItem) => {
+        removeItem: (contenedor, idItem) => {
+
+            /* primero quitamos el elemnto del dom*/
+
+            let elementoItemCarrito = carrito.listaItems
+                .filter(o => {
+                    return o.id=idItem
+                }).map(o=>{
+                    return o.elementItemCarrito;
+                })[0]
+            ;
+
+            contenedor.removeChild(elementoItemCarrito);
+
+
+            /* seungo - quitamos el elemento del array */
             let index = carrito.listaItems.indexOf(o => {
                 return o.id === idIem
             });
 
-            console.log(index);
 
             carrito.listaItems.splice(index, 1);
+
+            /*mandamos a recalcular el carrito*/
+            onChangeTxt(null);
+
+
         }
     };
 
 
-    function onChangeTxt(event) {
+
+    function actualizarTotalCarrito() {
         carrito.calcularTotal();
         elemCarritoNumQ.innerHTML = carrito.numItems.toString();
         elemCarritoMonto.innerHTML = carrito.granTotal.toString();
-    };
-
-    function onDeleteItem(event) {
-
-        /*esta a 3 niveles; si se cambia el html del carrito se debe actualizar esto*/
-        let rowItem = this.parentElement.parentElement.parentElement;
-        elemCarritoBlockItems.removeChild(rowItem);
-
-        /* quitar el elemtno del array*/
-        let idItem = this.dataset.iditem;
-        carrito.removeItem(idItem);
-
     }
 
+    function onChangeTxt(event) {
+        actualizarTotalCarrito();
+    }
+
+    function onDeleteItem(event) {
+        let idItem = this.dataset.iditem;
+        carrito.removeItem(elemCarritoBlockItems, idItem);
+    }
 
     elemCarritoNumQ = document.getElementById("labCarritoNumQ");
     elemCarritoMonto = document.getElementById("labCarritoMonto");
     elemCarritoBlockItems = document.getElementById("panItems");
 
-
-    carrito.factoryItem(elemCarritoBlockItems,25, 'Iron Buble-head');
-    carrito.factoryItem(elemCarritoBlockItems,15, 'Iron T-Shirt');
-
-
+    carrito.factoryItem(elemCarritoBlockItems, 25, 1,'Iron Buble-head');
+    carrito.factoryItem(elemCarritoBlockItems, 15, 2,'Iron T-Shirt');
+    actualizarTotalCarrito();
 };
-
-
