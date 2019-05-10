@@ -78,10 +78,11 @@
 .labPU{width: 80px}
 .pu{width: 80px}
 
-.txtQ{width: 50px ; margin-right: 15px;display: inline-block}
+.txtQ{width: 50px ; margin-right: 5px; margin-left:5px;display: inline-block}
 
 
 .panDelete{width: 40px}
+
 
 
 /*
