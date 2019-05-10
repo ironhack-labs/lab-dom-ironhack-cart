@@ -2,6 +2,7 @@
 
 .itemCarrito{
     border-bottom: 1px solid #d3d3d3; padding-bottom: 20px; margin-bottom: 20px; margin-top: 20px;
+
 }
 
 #panItems .itemCarrito:last-child{ border-bottom: none; margin-bottom: 0; padding-bottom: 0}
@@ -14,3 +15,43 @@
 
 
 
+
+
+@keyframes bounceIn {
+
+    0% {
+        transform: scale(1);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(0);
+        opacity: 1;
+    }
+
+
+}
+
+
+
+@keyframes bounceOut {
+
+
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+
+}
+
+
+.itemCarrito.eliminando{
+
+    animation: bounceOut 2s ;
+}

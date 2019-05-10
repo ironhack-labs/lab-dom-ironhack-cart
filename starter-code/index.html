@@ -32,6 +32,42 @@
 
 <div class="container">
 
+    <div class="card" style="margin-bottom: 30px; margin-top: 20px">
+        <div class="card-header bg-success text-light">
+            <i class="fa fa-box"></i> Agregar Producto
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-xs-12 col-md-4">
+                    <label>Nombre</label>
+                    <input class="form-control" id="txtAddProductoNombre"/>
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    <label>Descripción</label>
+                    <input class="form-control" id="txtAddProductoDesc"/>
+                </div>
+                <div class="col-xs-12 col-md-4" style="display: flex">
+                    <div style="margin-right: 5px">
+                        <label>Cantidad</label>
+                        <input type="text" id="txtAddProductoQ" class="form-control"/>
+                    </div>
+                    <div>
+                        <label>Precio Unitario</label>
+                        <input type="text" id="txtAddProductoPU" class="form-control"/>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="card-footer " style="text-align: right">
+            <button href="" class="btn btn-primary">
+                <i class="fa fa-plus"></i> Agregar Producto
+            </button>
+        </div>
+
+    </div>
+
     <div class="card shopping-cart">
 
         <div class="card-header bg-dark text-light">
@@ -53,7 +89,7 @@
         <div class="card-footer">
 
             <div style="display: flex">
-                <div  style="flex-grow: 1">
+                <div style="flex-grow: 1">
                     Total price: $ <b id="labCarritoMonto">0</b>
                 </div>
                 <div style=" flex-grow: 1 ;padding-right: 10px">
@@ -67,7 +103,6 @@
 
 
         </div>
-
 
 
     </div>

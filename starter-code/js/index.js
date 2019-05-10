@@ -120,8 +120,7 @@ window.onload = function () {
                     }
 
                 }
-            )
-            ;
+            );
 
 
             let elemCmdDelete = newItemCarrito.querySelector(".cmdDelete");
@@ -144,7 +143,13 @@ window.onload = function () {
                 })[0]
             ;
 
-            contenedor.removeChild(elemItemCarrito);
+            elemItemCarrito.className=elemItemCarrito.className + " eliminando";
+
+
+            setTimeout( ()=>{
+                contenedor.removeChild(elemItemCarrito);
+            },600);
+
 
             /* segundo - quitamos el elemento del array */
             let index = carrito.listaProductos.findIndex(o => {
