@@ -18,28 +18,25 @@ window.onload = function () {
         listaItems: [],
         numItems: null,
         granTotal: null,
-        calcularTotal: () => {
+        calcularTotal: ( ) => {
             let qTotal = 0;
             let montoTotal = 0;
+
 
             carrito.listaItems
                 .forEach((item => {
 
                         let q = parseInt(item.element.value);
                         let pu = item.pu;
-                        let monto = q * pu;
+                        let subtotal = q * pu;
 
                         qTotal += q;
-                        montoTotal += monto;
+                        montoTotal += subtotal;
 
-                        item.setSubTotal(monto.toString());
+                        item.setSubTotal(subtotal);
 
                     })
                 );
-
-
-            console.log(`num items ${qTotal}`);
-            console.log(`monto total  ${montoTotal}`);
 
             elemCarritoNumQ.innerHTML = qTotal.toString();
             elemCarritoMonto.innerHTML = montoTotal.toString();
@@ -50,9 +47,7 @@ window.onload = function () {
 
 
     function onChangeTxt(event) {
-        // let valor=this.value;
-        // console.log(event);
-        carrito.calcularTotal();
+        carrito.calcularTotal( );
     };
 
     /* pra guardar la lisa de inputs txt*/
@@ -70,7 +65,7 @@ window.onload = function () {
             {
                 element: txt,
                 pu:  parseFloat(txt.dataset.pu),
-                setSubTotal:(texto=>elemSubtotal.innerHTML=texto)
+                setSubTotal:(subtotal=>elemSubtotal.innerHTML= "$ " + subtotal.toString())
             }
         );
     }

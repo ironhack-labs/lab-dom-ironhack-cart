@@ -6,10 +6,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+          integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+    <!--    Elementos propios de desarrollo - el carrito no usa jquery -->
     <link rel="stylesheet" href="./css/style.css">
-
-
     <script type="text/javascript" src="./js/index.js"></script>
+
+
     <title>Ironhack cart</title>
 
 </head>
@@ -17,56 +32,150 @@
 
 <div class="container">
 
-    <h1>Ironhack</h1>
-    <h2>Merchandising Shop</h2>
+    <div class="card shopping-cart">
 
-    <div class="row itemCarrito" id="item1">
-        <div class="col  nombre">Iron Bubble-head</div>
-        <div class="col  panPrice">
-            <span class="labPU">Unit Price:</span>
-            <span class="pu">$25</span>
-            <span style="width: 30px">QTY</span>
-            <input type="text" value="2" class="txtQ" data-pu="25"/>
-            <span class="subtotal">$50</span>
-            <button class="cmdDelete" onclick="onClickDelete()">
-                Eliminar
-            </button>
+        <div class="card-header bg-dark text-light">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            Ironhack Merchandising Shop
+            <a href="#" class="btn btn-outline-info btn-sm " style="float: right">Continiu shopping</a>
+
         </div>
 
-    </div>
+        <div class="card-body">
+
+            <!-- PRODUCT -->
+            <div class="row itemCarrito" >
+                <div class="col-12 col-sm-12 col-md-2 text-center" style="padding-bottom: 10px">
+                    <img class="img-responsive" src="http://placehold.it/120x80" alt="prewiew" width="120" height="80">
+                </div>
+
+                <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
+                    <h4 class="product-name nombre"><strong>Iron Bubble-head</strong></h4>
+                    <h4>
+                        <small class="descripcion">Superawesome Iron Bubble head</small>
+                    </h4>
+                </div>
+                <div class="col-12 col-sm-12 text-sm-center  text-md-right row">
+                    <div class="col-3 col-sm-4 col-md-6 text-md-right" title="Unit Price" style="padding-top: 5px">
+                        <strong class="pu">$ 25.00 X</strong>
+                    </div>
+                    <div class="col-7 col-sm-6 col-md-4">
+
+                        <input type="text" value="0" class="form-control txtQ" data-pu="25" title="Quantity"/>
+                        <span >  Subtotal :   </span>
+                         <span class="subtotal">$0</span>
+                    </div>
 
 
-    <hr>
+                    <div class="col-2 col-sm-2 col-md-2 text-right">
+                        <button type="button" class="btn btn-outline-danger btn-xs cmdDelete"
+                                onclick="onClickDelete()"
+                        >
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-    <div class="row itemCarrito" id="item2">
-        <div class="col  nombre">Iron Shirt</div>
-        <div class="col  panPrice">
-            <span class="labPU">Unit Price:</span>
-            <span class="pu">$15</span>
-            <span style="width: 30px">QTY</span>
-            <input type="text" value="2" class="txtQ" data-pu="15"/>
-            <span class="subtotal">0</span>
-            <button class="cmdDelete" onclick="onClickDelete()">
-                Eliminar
-            </button>
+            <hr>
+
+            <!-- PRODUCT -->
+            <div class="row itemCarrito" >
+                <div class="col-12 col-sm-12 col-md-2 text-center" style="padding-bottom: 10px">
+                    <img class="img-responsive" src="http://placehold.it/120x80" alt="prewiew" width="120" height="80">
+                </div>
+
+                <div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
+                    <h4 class="product-name nombre"><strong>Iron T-Shirt</strong></h4>
+                    <h4>
+                        <small class="descripcion">Superawesome Iron T-shirt</small>
+                    </h4>
+                </div>
+                <div class="col-12 col-sm-12 text-sm-center  text-md-right row">
+                    <div class="col-3 col-sm-4 col-md-6 text-md-right" title="Unit Price" style="padding-top: 5px">
+                        <strong class="pu">$ 15.00 X</strong>
+                    </div>
+                    <div class="col-7 col-sm-6 col-md-4">
+
+                        <input type="text" value="0" class="form-control txtQ" data-pu="15" title="Quantity"/>
+                        <span >  Subtotal :   </span>
+                        <span class="subtotal">$0</span>
+                    </div>
+
+
+                    <div class="col-2 col-sm-2 col-md-2 text-right">
+                        <button type="button" class="btn btn-outline-danger btn-xs cmdDelete"
+                                onclick="onClickDelete()"
+                        >
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
+
+        <div class="card-footer">
+
+            <div style="display: flex">
+                <div  style="flex-grow: 1">
+                    Total price: $ <b id="labCarritoMonto"></b>
+                </div>
+                <div style=" flex-grow: 1 ;padding-right: 10px">
+                    Total items: <span id="labCarritoNumQ"></span>
+                </div>
+                <a href="" class="btn btn-success">Checkout</a>
+            </div>
+
+
+        </div>
+
+
+<!--        <div class="row itemCarrito">-->
+<!--            <div class="col  nombre">Iron Bubble-head</div>-->
+<!--            <div class="col  panPrice">-->
+<!--                <span class="labPU">Unit Price:</span>-->
+<!--                <span class="pu">$25</span>-->
+<!--                <span style="width: 30px">QTY</span>-->
+<!--                <input type="text" value="2" class="txtQ" data-pu="25"/>-->
+<!--                <span class="subtotal">$50</span>-->
+<!--                <button class="cmdDelete" onclick="onClickDelete()">-->
+<!--                    Eliminar-->
+<!--                </button>-->
+<!--            </div>-->
+
+<!--        </div>-->
+
+<!--        <hr>-->
+
+<!--        <div class="row itemCarrito" id="item2">-->
+<!--            <div class="col  nombre">Iron Shirt</div>-->
+<!--            <div class="col  panPrice">-->
+<!--                <span class="labPU">Unit Price:</span>-->
+<!--                <span class="pu">$15</span>-->
+<!--                <span style="width: 30px">QTY</span>-->
+<!--                <input type="text" value="2" class="txtQ" data-pu="15"/>-->
+<!--                <span class="subtotal">0</span>-->
+<!--                <button class="cmdDelete" onclick="onClickDelete()">-->
+<!--                    Eliminar-->
+<!--                </button>-->
+<!--            </div>-->
+
+<!--        </div>-->
+
+<!--        <hr>-->
+
+
+
     </div>
-
-    <hr>
-
-    <div style="text-align: right">
-        <p>
-            Numero de Item: <span id="labCarritoNumQ"></span>
-        </p>
-
-        <p>
-            Monto Total <span id="labCarritoMonto"></span>
-        </p>
-    </div>
-
 
 </div>
 
+<!--
+Diseño del carrito
+https://bootsnipp.com/snippets/35e4p
+
+-->
 </body>
 </html>
