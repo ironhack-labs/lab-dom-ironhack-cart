@@ -78,7 +78,7 @@ window.onload = function () {
                         <span>X</span>
                         <input type="text" value="${q}" class="form-control txtQ" data-pu="${pu}" title="Quantity"/>
                         <span >  Subtotal :   </span>
-                         <span class="subtotal">${q*pu}</span>
+                         <span class="subtotal">${q * pu}</span>
                         <button type="button" class="btn btn-outline-danger btn-xs cmdDelete"
                                 style="float: right; margin-left: 10px"
                                 data-iditem="${newIdItem}"
@@ -96,7 +96,7 @@ window.onload = function () {
             newItemCarrito.innerHTML = htmlNewItem;
             newItemCarrito.className = "row itemCarrito";
 
-            /*asociar eventos al item*/
+            /*asociar elmentos del itemCarrito a nuestro modelo "carrito" */
 
 
             //Buscar el label para subtotal
@@ -128,32 +128,28 @@ window.onload = function () {
 
             /* primero quitamos el elemnto del dom*/
 
-            let elementoItemCarrito = carrito.listaItems
+            let elemItemCarrito = carrito.listaItems
                 .filter(o => {
-                    return o.id=idItem
-                }).map(o=>{
+                    return o.id === idItem
+                }).map(o => {
                     return o.elementItemCarrito;
                 })[0]
             ;
 
-            contenedor.removeChild(elementoItemCarrito);
+            contenedor.removeChild(elemItemCarrito);
 
-
-            /* seungo - quitamos el elemento del array */
-            let index = carrito.listaItems.indexOf(o => {
-                return o.id === idIem
+            /* segundo - quitamos el elemento del array */
+            let index = carrito.listaItems.findIndex(o => {
+                return o.id === idItem
             });
-
 
             carrito.listaItems.splice(index, 1);
 
             /*mandamos a recalcular el carrito*/
-            onChangeTxt(null);
-
+            actualizarTotalCarrito();
 
         }
     };
-
 
 
     function actualizarTotalCarrito() {
@@ -168,6 +164,8 @@ window.onload = function () {
 
     function onDeleteItem(event) {
         let idItem = this.dataset.iditem;
+        /*el dataset tiene todos los datos como stirng y guardamos el id como int - si pasamos string no lo encontrará*/
+        idItem = parseInt(idItem);
         carrito.removeItem(elemCarritoBlockItems, idItem);
     }
 
@@ -175,7 +173,7 @@ window.onload = function () {
     elemCarritoMonto = document.getElementById("labCarritoMonto");
     elemCarritoBlockItems = document.getElementById("panItems");
 
-    carrito.factoryItem(elemCarritoBlockItems, 25, 1,'Iron Buble-head');
-    carrito.factoryItem(elemCarritoBlockItems, 15, 2,'Iron T-Shirt');
+    carrito.factoryItem(elemCarritoBlockItems, 25, 1, 'Iron Buble-head');
+    carrito.factoryItem(elemCarritoBlockItems, 15, 2, 'Iron T-Shirt');
     actualizarTotalCarrito();
 };
