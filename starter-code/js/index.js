@@ -38,6 +38,9 @@ function createNewItem() {
 
 }
 
+var elemCarritoNumQ;
+var elemCarritoMonto;
+
 window.onload = function () {
     // var calculatePriceButton = document.getElementById('calc-prices-button');
     // var createItemButton = document.getElementById('new-item-create');
@@ -51,28 +54,32 @@ window.onload = function () {
     // }
 
     var carrito = {
-        listaTxt: [],
+        listaItems: [],
         numItems: null,
         granTotal: null,
         calcularTotal: () => {
             let qTotal = 0;
             let montoTotal = 0;
 
-            carrito.listaTxt
+            carrito.listaItems
                 .forEach((item => {
 
-                    let q= parseInt(item.value);
-                    let pu=10; /* TODO sacar el valor*/
-                    let monto= q*pu;
+                        let q = parseInt(item.element.value);
+                        let pu = item.pu;
+                        let monto = q * pu;
 
-                    qTotal+=q;
-                    montoTotal+=monto;
-                })
-            );
+                        qTotal += q;
+                        montoTotal += monto;
+                    })
+                );
 
 
             console.log(`num items ${qTotal}`);
             console.log(`monto total  ${montoTotal}`);
+
+            elemCarritoNumQ.innerHTML = qTotal.toString();
+            elemCarritoMonto.innerHTML = montoTotal.toString();
+
         }
     };
 
@@ -87,11 +94,23 @@ window.onload = function () {
 
 
     for (let txt of document.getElementsByClassName('txtQ')) {
+
         txt.onchange = onChangeTxt;
-        carrito.listaTxt.push(txt);
+
+        //Buscar el data
+
+
+        carrito.listaItems.push(
+            {
+                element: txt,
+                pu:  parseFloat(txt.dataset.pu)
+            }
+        );
     }
 
+    elemCarritoNumQ = document.getElementById("labCarritoNumQ");
+    elemCarritoMonto = document.getElementById("labCarritoMonto");
 
 };
-;
+
 console.log('LOADED');
