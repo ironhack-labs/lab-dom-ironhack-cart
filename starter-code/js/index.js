@@ -4,26 +4,6 @@ function getPriceByProduct(itemNode) {}
 
 function updatePriceByProduct(productPrice, index) {}
 
-// function getTotalPrice() {
-
-//   let unitCost = createQuantityInput();
-//   let unitQty = document.getElementById('product__qty-input').value;
-//   let totalPrice = (unitCost * unitQty).toFixed(2);
-
-//   document.getElementById('product__price').innerText = `$${totalPrice}`;
-
-//   return totalPrice;
-// }
-//
-// function createQuantityInput(){
-//   let unitPriceLabel = document.getElementById('product__cost').innerText;
-//   let unitPriceStringArr = unitPriceLabel.split('');
-//   let unitPriceNumArr = unitPriceStringArr.filter(e => e != '$');
-//   let unitPrice = parseFloat(unitPriceNumArr.join(''));
-
-//   return unitPrice;
-// }
-
 function getTotalPrice() {
   let unitCost = createQuantityInput();
   let unitQty = [...document.querySelectorAll(".product__qty-input")].map(
@@ -37,7 +17,6 @@ function getTotalPrice() {
   }
   let setTotalPrice = totalPriceNum.reduce((total, num) => total + num);
   document.getElementById('total-price').innerHTML = setTotalPrice.toFixed(2);
-
 
   return setTotalPrice;
 }
