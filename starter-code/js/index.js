@@ -27,17 +27,19 @@ function updatePriceByProduct(productPrice, index) {}
 function getTotalPrice() {
   let unitCost = createQuantityInput();
   let unitQty = [...document.querySelectorAll(".product__qty-input")].map(
-    element => element.value
+    e => e.value
   );
-  let totalPrice = [...unitCost.map((e, index) => e * unitQty[index])].map(e => e.toFixed(2));
-  
+  let totalPriceNum = [...unitCost.map((e, index) => e * unitQty[index])];
+  let totalPrice = totalPriceNum.map(e => e.toFixed(2));
   let priceLabel =  document.getElementsByClassName('product__price');
   for (let i = 0; i < priceLabel.length; ++i){
-    console.log(priceLabel[i].value, totalPrice[i])
-    priceLabel[i].innerText = `$${totalPrice[i]}`;
+    priceLabel[i].innerText = `$ ${totalPrice[i]}`;
   }
+  let setTotalPrice = totalPriceNum.reduce((total, num) => total + num);
+  document.getElementById('total-price').innerHTML = setTotalPrice.toFixed(2);
 
-  return totalPrice;
+
+  return setTotalPrice;
 }
 
 function createQuantityInput() {
