@@ -1,0 +1,19 @@
+{
+  "name": "carrito-ironhack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "default": "node server",
+    "test": "npx codeceptjs run --steps"
+  },
+  "author": "davidh <david@productividadti.com.mx> (productividadti.com.mx)",
+  "devDependencies": {
+    "gulp": "^4.0.1",
+    "gulp-livereload": "^4.0.1",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-w3c-html-validator": "^1.4.3"
+  },
+  "dependencies": {
+    "st": "^1.2.2"
+  }
+}

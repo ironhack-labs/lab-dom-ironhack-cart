@@ -60,11 +60,9 @@ var formAddProducto = {
                     isValid = false;
                     f.elem.q.className = "form-control error";
                 }
-
             }
 
             return isValid;
-
         };
 
 
@@ -77,7 +75,6 @@ var formAddProducto = {
 
             console.log(formAddProducto.isValid?1:0);
         });
-
 
     },
     addProducto: (callbackAddModel) => {
@@ -99,6 +96,4 @@ var formAddProducto = {
 
         f.resetForm();
     }
-
-
 };

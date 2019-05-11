@@ -1,0 +1,6 @@
+version: 0.1
+phases:
+  install:
+    commands:
+
+      - aws s3 sync public s3://iqdavidhironhack2 --delete
