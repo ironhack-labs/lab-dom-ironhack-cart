@@ -1,3 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: sans-serif;
+}
+
 input {
   border: solid 1px black;
 }
@@ -25,17 +32,99 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+
+.btn-add {
+  color: #fff;
+  background-color: #266beb;
+  border-color: #c4cce7;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #cf000f;
+  border-color: #cf000f;
 }
 
 .quantity {
   margin: 0 5px;
+  display: inline;
+  border: 1px #d3d4d3 solid;
+  border-radius: 2px;
+}
+
+.item-container {
+  width: 90%;
+  margin: 1em auto;
+  border: 2px #4cae4c solid;
+  border-radius: 18px;
+  padding: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.item-container > div {
+  display: inline-block;
+  width: 19%;
+  padding: 5px 0;
+}
+
+.item-container > div > span {
+  text-align: center;
+  margin: 0 auto;
+  display: inline;
+}
+
+.add {
+  width: 90%;
+  margin: 1em auto;
+  border: 3px #266beb solid;
+  border-radius: 18px;
+  padding: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.add > div {
+  display: inline-block;
+  width: 20%;
+  padding: 5px 0;
+}
+
+.add > div > span {
+  text-align: center;
+  margin: 0 auto;
+  display: inline;
+}
+
+.header {
+  width: 500px;
+  float: right;
+  right: 30%;
+  text-align: left;
+}
+
+.clear-fix {
+  clear: both;
+}
+
+.container {
+  width: 100%;
+}
+
+.calculate {
+  width: 30%;
+  text-align: center;
+  margin: 1em auto;
+}
+
+.total {
+  width: 30%;
+  text-align: center;
+  margin: 1em auto;
+}
+
+.qty {
+  display: inline;
 }
