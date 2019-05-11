@@ -8,10 +8,12 @@
   },
   "author": "davidh <david@productividadti.com.mx> (productividadti.com.mx)",
   "devDependencies": {
+    "codeceptjs": "^2.1.1",
     "gulp": "^4.0.1",
     "gulp-livereload": "^4.0.1",
     "gulp-load-plugins": "^1.5.0",
-    "gulp-w3c-html-validator": "^1.4.3"
+    "gulp-w3c-html-validator": "^1.4.3",
+    "puppeteer": "^1.15.0"
   },
   "dependencies": {
     "st": "^1.2.2"
