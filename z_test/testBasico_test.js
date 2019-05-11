@@ -2,7 +2,6 @@ let config = require("../codecept.conf");
 
 let urlSite = config.config.helpers.Puppeteer.url;
 
-console.log(urlSite);
 
 Feature('Que el sitio tenga los elementos esperados');
 
