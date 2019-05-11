@@ -1,10 +1,21 @@
+body{
+  margin: 0;
+  font-size: 16px;
+}
+
 input {
+  margin: 0 1rem;
   border: solid 1px black;
+  border-radius: 4px;
+}
+
+input,
+.btn{
+  padding: 6px 12px;
 }
 
 .btn {
   display: inline-block;
-  padding: 6px 12px;
   margin-bottom: 0;
   font-size: 14px;
   font-weight: 400;
@@ -34,8 +45,41 @@ input {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+.h1{
+  width: 100%;
+  text-align: center;
+  margin: 2rem;
+}
+
+.product__wrapper,
+.confirmation__wrapper{
+  align-items: center;
+}
+
+.product__wrapper{
+  display: flex;
+  justify-content: space-between;
+  padding: 0 4rem;
+  margin: 2rem 0;
+}
+
+.product__name{
+  width: 20%;
+}
+
+.confirmation__wrapper{
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.product__price-wrapper{
+  width: 20%;
 }
