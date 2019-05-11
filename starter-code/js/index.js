@@ -11,7 +11,9 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-
+  let cost = parseInt((document.getElementsByClassName("product__cost")[0].innerHTML).replace("$",""));
+  let productQty= document.getElementById("qty").value;
+  document.getElementById("product-total").innerHTML ="$"+productQty * cost;
 }
 
 function createQuantityInput(){
