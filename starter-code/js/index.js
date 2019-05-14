@@ -1,8 +1,17 @@
+
+function elementCart (price, qty){
+  this.price= price;
+  this.qty= qty;
+  this.total= price*qty;
+}
+
+
 function deleteItem(e){
 
 }
 
 function getPriceByProduct(itemNode){
+  let priceElement = document.getElementById("priceElement");
 
 }
 

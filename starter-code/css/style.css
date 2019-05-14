@@ -39,3 +39,44 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+body h1{
+  text-align: center;
+}
+div.productos {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 15vh;
+}
+div.productos  div {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  margin-right: 10vh;
+  width: 50%;
+}
+
+div.nuevosproductos {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 15vh;
+}
+div.nuevosproductos  div {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  margin-right: 10vh;
+  width: 50%;
+}
+
+div.btn-cal-prices{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+div.total-price{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
