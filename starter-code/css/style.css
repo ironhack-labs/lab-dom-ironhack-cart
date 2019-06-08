@@ -1,11 +1,29 @@
+
+/* *{ 
+  border:0.3px solid #CF000F
+} */
+
+/*Added to center the heading*/
+h1 {
+  width:250px;
+  font-size: 24px;
+}
+
+/*Added to center the heading*/
+header {
+  display: flex;
+  justify-content: center;
+}
+
 input {
   border: solid 1px black;
 }
 
 .btn {
-  display: inline-block;
+  display: flex;/*changed the original to make it look like the example*/
+  justify-content: space-around; /*changed the original to make it look like the example*/
   padding: 6px 12px;
-  margin-bottom: 0;
+  margin-bottom: 20px; /*ORIGINAL: 0 -> Changed it to separete the "calculate prices button*/
   font-size: 14px;
   font-weight: 400;
   line-height: 1.42857143;
@@ -26,14 +44,20 @@ input {
 
 .btn-success {
     color: #fff;
+    display: block;
+    margin: auto;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    border-radius: 3px;
+    height: 30px;
+    font-size: 14px;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    border-radius: 3px;
 }
 
 .quantity {
