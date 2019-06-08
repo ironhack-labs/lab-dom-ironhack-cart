@@ -2,6 +2,54 @@ input {
   border: solid 1px black;
 }
 
+@import url('https://fonts.googleapis.com/css?family=Roboto:500,700&display=swap');
+
+* {
+font-family: 'Roboto', sans-serif;
+font-weight: 500;
+}
+
+
+#iron-header {
+  margin: 0 0 50px 0;
+  width: 100vw;
+  height: 30px;
+  padding: 30px 50px;
+  background-color: #04B3FE;
+}
+
+#iron-header h1 {
+  display: inline;
+  color: white;
+  font-size: 1.8em;
+  font-weight: 700;
+}
+
+.container {
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-col {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.product-row {
+  margin: 0 auto;
+  padding: 30px; 
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  
+}
+
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -39,3 +87,35 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+
+#add-product-input {
+  margin-top: 150px;
+  border: 3px solid #04B3FE;
+  border-radius: 10px;
+}
+
+
+
+
+footer {
+margin-top: 60px;
+display: flex;
+width: 100%;
+justify-content: center;
+align-content: center;
+margin-bottom: 50px;
+}
+
+#signature {
+color: #26619c;
+}
+
+#calculate-total h1 {
+  text-align: center;
+}
+
+
+.name-width{
+  min-width: 300px;
+} 

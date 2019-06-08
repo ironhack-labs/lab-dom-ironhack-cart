@@ -1,14 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+  <header id="iron-header">
+    <h1>IRONHACK Merchandising Shop</h1>
+  </header>
+  <section id="products">
+    <div class="container">
+      <div id="product-list" class="product-col">
+        <div id="product-1" class="product-row product ">
+          <div class="name-width"><span class="product-name">IRON Cat-Shit-Coffee</span></div>
+          <div><span class="unit-cost">$25.00</span></div>
+          <div>QTY <input class="pieces"></div>
+          <div><span class="total-ammount"></span></div>
+          <div><button class="btn-delete">Delete product</button></div>
+        </div>
+        <div id="product-2" class="product-row product">
+            <div class="name-width"><span class="product-name">IRON Elephant Milk Butter</span></div>
+            <div><span class="unit-cost">$30.00</span></div>
+            <div>QTY <input class="pieces"></div>
+            <div><span class="total-ammount"></span></div>
+            <div><button class="btn-delete">Delete product</button></div>
+          </div>
+      </div>
+    </div>
+  </section>
+  <section id='calculate-total'>
+      <div class="container">
+      <button id="btn-calculate-total" class=" btn btn-success">Calculate Total</button>
+      <div><h1>Total ammount: <span id="show-total"></span></h1>
+      </div>
+  </section> 
+  <section id='add-product'>
+      <div class="container">
+          <div id="add-product-input" class="product-row">
+      product name<input type="text" id="input-product-name">
+       product price<input type="text" id="unit-price-ammount">
+      <button id="btn-add-product" class=" btn btn-success">Add Product</button>
+      </div>
+    </div>
+  </section> 
+  <footer>
+    <div id="signature" >coded with ☕️in Lisbon by anwittw</div>
+  </footer>
+  <script type="text/javascript" src="./js/index.js"></script>
 </body>
+
 </html>
