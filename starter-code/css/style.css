@@ -1,3 +1,10 @@
+
+body {
+  margin: 0;
+ 
+  font-size: 16px;
+}
+
 input {
   border: solid 1px black;
 }
@@ -28,6 +35,9 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    
+    font-size: 1rem;
+   
 }
 
 .btn-delete {
@@ -39,3 +49,52 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+h1 {
+  
+  margin: 1.3rem auto; 
+  text-align: center;
+  
+}
+
+
+#total-price {
+  display: none; 
+  text-align: center;
+}
+
+.flex-items {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  width: 100%;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.item div {
+  flex-basis: 20%;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+}
+
+
+.calculate-price {
+  width: 100%;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.item div:nth-child(2):before, .item div:nth-child(4):before {
+  content: "$";
+}
+
+label {
+  padding-right: 5px;
+}
+
