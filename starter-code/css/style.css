@@ -1,3 +1,14 @@
+body{
+  font-size: 10px;
+}
+
+
+#deleteProduct1 #deleteProduct2 {
+    color: lightblue;
+    background-color: green;
+    border-color: lightgreen;
+}
+
 input {
   border: solid 1px black;
 }
@@ -24,18 +35,94 @@ input {
   border-radius: 4px;
 }
 
-.btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+
+
+#noUnit #noUnit2 {
+  margin: 0 1rem;
 }
 
-.btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+h2 {
+  
+  margin: 1rem auto; 
+  text-align: center;
+  
 }
 
-.quantity {
-  margin: 0 5px;
+
+
+
+.allItems {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+
+.product {
+  display: flex;
+  width: 100%;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.product div {
+  flex-basis: 20%;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+}
+
+
+.calculatePrice {
+  width: 100%;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.product div:nth-child(2):before, .product div:nth-child(4):before {
+  content: "$";
+}
+
+/* label {
+  padding-right: 5px;
+} */
+
+#createButton {
+  color: white;
+  background-color: green;
+  border-color: white;
+  margin-right: 4rem;
+}
+
+
+.addItem {
+ display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+
+.addItem div {
+  flex-basis: 20%;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+}
+
+.addedItem {
+  display: flex;
+  width: 100%;
+  margin: 1rem auto;
+  text-align: center;
+}
+
+#totalPrice {
+  display: none; 
+  text-align: center;
+}
+
+.btnSuccess {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
