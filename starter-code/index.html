@@ -10,5 +10,44 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <section class="container">
+    <div class="producto-columna">
+      <div id="product-1" class="producto-fila">
+        <div >
+            <span>Product</span><input type="text" id="productName" placeholder="Product Name">
+          </div> <!-- o class ="input" para todos-->
+          <div><span>Item</span><input type="text" id="price" placeholder="Price">
+          </div>
+          <div><span>QY</span><input type="text" id="units" placeholder="Units">
+          </div>
+          <div><span>Total</span><input type="text" id="total-price" placeholder="Total Price">
+          </div>
+          
+          <div><button class="btn-delete">Delete product</button></div>
+          
+      </div>  
+      <div id="product-2" class="producto-fila">
+          <div>
+              <span>Product</span><input type="text" id="productName" placeholder="Product Name">
+            </div> <!-- o class ="input" para todos-->
+            <div><span>Item</span><input type="text" id="price" placeholder="Price">
+            </div>
+            <div><span>QY</span><input type="text" id="units" placeholder="Units">
+            </div>
+            <div><span>Total</span><input type="text" id="total-price" placeholder="Total Price">
+            </div>
+            
+            <div><button class="btn-delete">Delete product</button></div>
+            
+        </div>  
+    </div>
+  </section>
+  <section id="calculate-total">
+      <div class="container">
+      <button id="btn-calculate-total" class=" btn btn-success">Calculate Total</button>
+      <div><h1>Total Price: <span id=""></span></h1>
+      </div>
+  </section> 
+  
 </body>
 </html>
