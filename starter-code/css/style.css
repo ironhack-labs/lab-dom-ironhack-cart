@@ -35,6 +35,7 @@ input {
   opacity: 0.8;
   background: lightslategrey;
   color: aliceblue;
+  text-align: center;
 }
 
 input::placeholder {
@@ -43,6 +44,11 @@ input::placeholder {
 
 input:hover {
   opacity: 1;
+}
+
+.product input::placeholder {
+  font-size: 0.8rem;
+  text-align: center;
 }
 
 .products {
@@ -142,6 +148,8 @@ input {
 
 .sale {
   width: 100vw;
+  height: 2rem;
+  border: 1px solid darkred;
   margin: 1.5rem 0 0 0;
   padding-left: 10%;
   background-color:darkred;
@@ -151,6 +159,10 @@ input {
   font-size: 2rem;
   animation: move 10s;
   animation-iteration-count: infinite;
+}
+
+.troll:hover {
+  opacity: 0;
 }
 
 
