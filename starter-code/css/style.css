@@ -1,27 +1,66 @@
+html {
+    font-size: 10px;
+}
+
+header {
+    text-align: center;
+    margin: 3rem;
+    font-size: 2.5rem;
+}
+
+.list-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: space-around;
+    margin: 2rem;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    margin: 2 rem;
+}
+
+.product-name {
+    width: 20rem;
+    max-width: 21 rem;
+    margin: 2rem;
+}
+
+span,
+label {
+    font-size: 1.4rem;
+}
+
 input {
-  border: solid 1px black;
+    border: solid 1px black;
+    font-size: 1.4rem;
 }
 
 .btn {
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    margin-bottom: 0;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 0.1rem solid transparent;
+    border-radius: 0.4rem;
 }
 
 .btn-success {
@@ -32,10 +71,24 @@ input {
 
 .btn-delete {
     color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+    background-color: #cf000f;
+    border-color: #cf000f;
 }
 
 .quantity {
-  margin: 0 5px;
+    margin: 0 0.5rem;
+}
+
+.total-price-btn,
+.total-price-lbl,
+.total-price {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem;
+    font-size: 2.5rem;
+}
+
+.total-price {
+    margin-left: 1rem;
 }
