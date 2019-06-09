@@ -98,3 +98,31 @@ label {
   padding-right: 5px;
 }
 
+#create-button {
+  color: white;
+  background-color: darkorange;
+  border-color: darkorange;
+  margin-right: 48px;
+}
+
+
+.add-item {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+
+.add-item div {
+  flex-basis: 20%;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+}
+
+.item-2 {
+  display: flex;
+  width: 100%;
+  margin: 1rem auto;
+  text-align: center;
+}
