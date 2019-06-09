@@ -1,18 +1,19 @@
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: darkslategray;
   font-size: 18px;
-  background: radial-gradient(white,  gray)
+  background: radial-gradient(white, gray);
+  overflow-x: hidden;
 }
 
 #head {
   opacity: 0.8;
   background: royalblue;
   border: 2px solid royalblue;
-  font-size: 5rem;
+  font-size: 2rem;
   font-weight: bolder;
+  margin-bottom: 3rem;
 }
-
 
 #head:hover {
   opacity: 1;
@@ -40,7 +41,7 @@ input {
   border-radius: 5px;
 }
 
-input::placeholder{
+input::placeholder {
   color: aliceblue;
 }
 
@@ -69,7 +70,7 @@ input:hover {
   padding: 1.5rem;
   margin: 1.5rem 1.5rem;
   background: transparent;
-  transition: background 0.5s,
+  transition: background 0.5s;
 }
 
 .product:hover {
@@ -100,7 +101,6 @@ input:hover {
 .createApp input {
   margin-left: 1.5rem;
 }
-
 
 .btn {
   display: inline-block;
@@ -155,7 +155,7 @@ input:hover {
   border: 1px solid darkred;
   margin: 1.5rem 0 0 0;
   padding-left: 10%;
-  background-color:darkred;
+  background-color: darkred;
   opacity: 0.6;
   color: ghostwhite;
   font-weight: 900;
@@ -179,15 +179,10 @@ input:hover {
 
 @keyframes move {
   50% {
-
     padding-left: 80%;
   }
 
   100% {
     padding-left: 10%;
-    
   }
-  
-
-  
 }
