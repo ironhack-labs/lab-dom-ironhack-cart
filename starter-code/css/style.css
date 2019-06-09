@@ -9,7 +9,10 @@ body {
   opacity: 0.8;
   background: royalblue;
   border: 2px solid royalblue;
+  font-size: 5rem;
+  font-weight: bolder;
 }
+
 
 #head:hover {
   opacity: 1;
@@ -30,7 +33,7 @@ button:hover {
 
 input {
   opacity: 0.8;
-  background: lightseagreen;
+  background: lightslategrey;
   color: aliceblue;
 }
 
@@ -77,6 +80,7 @@ input:hover {
   border-color: blue;
   margin-left: 1.5rem;
   padding: 2rem 2rem;
+  font-size: 1.5rem;
 }
 
 .createApp input {
@@ -118,6 +122,7 @@ input {
   padding: 1.5rem 2rem;
   margin: 1.5rem;
   font-weight: 600;
+  font-size: 1.6rem;
 }
 
 .btn-delete {
@@ -133,4 +138,33 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.sale {
+  width: 100vw;
+  margin: 1.5rem 0 0 0;
+  padding-left: 10%;
+  background-color:darkred;
+  opacity: 0.6;
+  color: ghostwhite;
+  font-weight: 900;
+  font-size: 2rem;
+  animation: move 10s;
+  animation-iteration-count: infinite;
+}
+
+
+@keyframes move {
+  50% {
+
+    padding-left: 80%;
+  }
+
+  100% {
+    padding-left: 10%;
+    
+  }
+  
+
+  
 }
