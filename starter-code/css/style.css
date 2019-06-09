@@ -1,10 +1,14 @@
 body {
+  font-family: 'Montserrat', sans-serif;
   color: darkslategray;
-  font-size: 20px
+  font-size: 18px;
+  background: radial-gradient(white,  gray)
 }
 
 #head {
   opacity: 0.8;
+  background: royalblue;
+  border: 2px solid royalblue;
 }
 
 #head:hover {
@@ -26,6 +30,12 @@ button:hover {
 
 input {
   opacity: 0.8;
+  background: lightseagreen;
+  color: aliceblue;
+}
+
+input::placeholder {
+  color: aliceblue;
 }
 
 input:hover {
@@ -66,6 +76,7 @@ input:hover {
   background-color: blue;
   border-color: blue;
   margin-left: 1.5rem;
+  padding: 2rem 2rem;
 }
 
 .createApp input {

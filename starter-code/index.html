@@ -9,6 +9,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"
     />
     <link rel="stylesheet" href="./css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
     <script type="text/javascript" src="./js/index.js"></script>
     <title>Ironhack cart</title>
   </head>
@@ -25,7 +27,6 @@
           <input
             class="col qty-in"
             type="number"
-            
             min="0"
             placeholder="Quantity"
             onblur="updateUnitPrice()"
@@ -43,11 +44,10 @@
           <span class="cost">67.5</span><span class="coin"> €</span>
         </div>
         <div class="quantity-container col">
-          <label class="col quantity "for="qty-in">QTY</label>
+          <label class="col quantity " for="qty-in">QTY</label>
           <input
             class="col qty-in"
             type="number"
-            
             min="0"
             placeholder="Quantity"
             onblur="updateUnitPrice()"
@@ -64,13 +64,7 @@
 
     <div class="createApp">
       <input type="text" class="newName" placeholder="Item's name" />
-      <input
-        type="number"
-        class="newPrice"
-        min="0"
-        
-        placeholder="Price"
-      />
+      <input type="number" class="newPrice" min="0" placeholder="Price" />
 
       <button class="create btn" onclick="createNewItem()">Create</button>
     </div>
@@ -83,7 +77,5 @@
     <h2>
       Total Price <span class="finalPrice">0</span><span class="coin"> €</span>
     </h2>
-
-   
   </body>
 </html>
