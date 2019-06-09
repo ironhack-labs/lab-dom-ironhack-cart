@@ -6,9 +6,174 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
+  <script type="text/javascript" src="/lab-dom-ironhack-cart/starter-code/js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+  <header>
+    <h1>Ironhack Merchandise Shop</h1>
+  </header>
+  <div class="allProducts">
+    <div class="product p1">
+    <div><span class="name column1">Gorra</span></div>
+    <div><span class="product-price column2 ">20eur</span></div>
+    <div>QTY <input class="product-qty" type="number" name="quantity"></div>
+    <div><span class="total-price-product tpp">0 eur.</span></div>
+    <div><button class="btn-delete" type="button">Delete</button></div>
+  </div>
+    <div class="product p2">
+    <div><span class="name column1" >Guantes</span></div>
+    <div><span class="product-price column2">15eur</span></div>
+    <div>QTY <input class="product-qty" type="number" name="quantity"></div>
+    <div><span class="total-price-product tpp">0 eur.</span></div>
+    <div><button class="btn-delete delete2" type="button">Delete</button></div>
+  </div>
+  
+  </div>
+  <div class="product form">
+    <div><input id="nameProductInput" type ="text" placeholder="name product"></div>
+    <div><input id="priceProductInput" type ="text" placeholder="price product">eur</div>
+    <div><button id="create-btn" type="button">create</button> </div>
+
+  </div>
+  <div class="bottom"> 
+  <div><button class="btn-success" type="button">Calculate Price</button></div>
+  </div>
+  <div class="totalPriceAll">
+      <h2>Total Price: <span class="totalPrice">$0</span></h2>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- //////////////// No se porque no me linkeaba con el archivo .js asi que lo he puesto aqui sorry :(//////////////////////-->
+ <script>
+
+let totalPriceNumber = 0 ;
+   document.querySelector("button.btn-success").onclick = function() {
+ 
+    let productPrice = document.querySelectorAll("span.product-price");
+    let qtyNumber = document.querySelectorAll("input.product-qty");
+    let productPriceArray = Array.from(productPrice);
+    let priceColumn1 = 0
+    let qtyColumn2 = 0 
+    let totalPricePerRow = document.querySelectorAll("span.total-price-product");
+    for (var i = 0 ; i < productPriceArray.length ; i++) { 
+      totalPricePerRow[i].innerText = parseInt(productPriceArray[i].innerText)*parseInt(qtyNumber[i].value);
+
+    }
+
+
+    let priceNode = document.querySelectorAll("span.tpp");
+    let priceArray = Array.from(priceNode);
+    
+    for (var i = 0 ; i < priceArray.length; i++) {
+
+      totalPriceNumber +=  parseInt(priceArray[i].innerText);
+      document.querySelector("span.totalPrice").innerHTML = (`${totalPriceNumber} eur`) ;
+    } 
+} 
+
+      
+    let allbuttons = document.querySelectorAll("button.btn-delete");
+    let allbuttonsArray = Array.from(allbuttons);
+
+    
+    for (var i = 0 ; i < allbuttonsArray.length ; i++) {
+      allbuttonsArray[i].addEventListener("click", deleteItem)
+    };
+      
+ 
+
+
+
+    function deleteItem(e) {
+      let deletePrice = e.currentTarget.parentNode.parentNode;
+      let updatePrice = deletePrice.lastElementChild.previousElementSibling;
+       totalPriceNumber -= parseInt(updatePrice.innerText);
+       document.querySelector("span.totalPrice").innerHTML = totalPriceNumber;
+      e.currentTarget.parentNode.parentNode.innerHTML= "";
+  
+      
+      
+
+    }
+
+    // let parentProduct = document.querySelector(".product");
+    // let productNameInput = document.querySelector("#nameProductInput");
+    // let productPriceInput = document.querySelector("#priceProductInput");
+
+    
+      
+    document.querySelector("button#create-btn").onclick = function() {
+      let parentProduct = document.querySelector(".allProducts");
+      
+      let productNameInput = document.querySelector("#nameProductInput");
+      let productPriceInput = document.querySelector("#priceProductInput");
+
+        let createNameProductText = document.createTextNode(productNameInput.value);
+        let createPriceProduct = document.createTextNode(productPriceInput.value);
+        // let createDiv = document.createElement("div");
+        // let parentDiv = parentProduct.appendChild(createDiv);
+        // let childDiv = parentDiv.appendChild(createDiv);
+        // childDiv.appendChild(createNameProduct);
+        // childDiv.appendChild(createPriceProduct);
+        let createDiv = document.createElement("div");
+        let createSpan = document.createElement("SPAN");
+        createSpan.className = "name";
+        let createDiv2 = document.createElement("div");
+        let createSpan2 = document.createElement("SPAN");
+        createSpan2.className = "product-price";
+        let createDiv3 = document.createElement("div");
+        let createInputQty3 = document.createElement("input");
+        createInputQty3.type = "number"
+        createInputQty3.className = "product-qty";
+        let createNewLine = parentProduct.appendChild(createDiv)
+        let createNameProduct = createNewLine.appendChild(createSpan);
+        let createNewLine2 = parentProduct.appendChild(createDiv2);
+        let createPriceNumber = createNewLine2.appendChild(createSpan2);
+        let createNewLine3 = parentProduct.appendChild(createDiv3);
+        let createNewInputQty = createNewLine3.appendChild(createInputQty3);
+        let createDiv4 = document.createElement("div");
+        let createSpan4 = document.createElement("span");
+        createSpan4.className = "total-price-product";
+        createSpan4.className = "tpp";
+        createSpan4.innerText = "0 eur";
+
+        let createNewLine4 = parentProduct.appendChild(createDiv4);
+        let createNewSpan4 = createNewLine4.appendChild(createSpan4);
+        let createDiv5 = document.createElement("div");
+        let createButton5 = document.createElement("button");
+        createButton5.type = "button";
+        createButton5.className = "btn-delete";
+        let createNewLine5 = parentProduct.appendChild(createDiv5);
+        let createNewButton5 = createNewLine5.appendChild(createButton5);
+
+
+        createNameProduct.append(createNameProductText);
+        createPriceNumber.append(createPriceProduct);
+        
+        
+        
+        
+      }
+    
+    
+
+
+  
+
+  
+
+ </script>
 </body>
 </html>
