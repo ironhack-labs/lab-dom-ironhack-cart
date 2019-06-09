@@ -75,6 +75,7 @@ window.onload = function() {
         document.querySelector(".total-price-lbl").innerText =
             "$" + totalItemsPrice;
     };
+
     let removeCartItemButtons = document.querySelectorAll(".btn-delete");
     for (let i = 0; i < removeCartItemButtons.length; i++) {
         console.log(removeCartItemButtons[i]);
@@ -110,5 +111,53 @@ window.onload = function() {
         }
         total = Math.round(total * 100) / 100;
         document.querySelector(".total-price-lbl").innerText = "$" + total;
+    }
+
+    let addToCartButtons = document.getElementsByClassName("btn-create");
+    for (let i = 0; i < addToCartButtons.length; i++) {
+        let button = addToCartButtons[i];
+        button.addEventListener("click", addToCartClicked);
+    }
+
+    function addToCartClicked(event) {
+        let button = event.target;
+        let shopItem = button.parentElement.parentElement;
+        // let title = shopItem.getElementsById("new-id-item").innerText;
+        // let price = shopItem.getElementsById("new-id-cost").innerText;
+        let title = document.querySelector("#new-id-item").value;
+        let price = parseFloat(document.querySelector("#new-id-cost").value);
+        addItemToCart(title, price, 1);
+        updateCartTotal();
+    }
+
+    function addItemToCart(title, price) {
+        console.log(`product-name = ${title}, cost-unit=${price}`);
+        let cartRow = document.createElement("div");
+        cartRow.classList.add("wrapper");
+        let cartItems = document.getElementsByClassName("list-items")[0];
+
+        let cartRowContents = `
+        <div class="product-name">
+            <span class="product">${title}</span>
+        </div>
+        <div>
+            <span class="cost-unit">$${price}</span>
+        </div>
+        <div class="quantity">
+            <label for="units">QTY</label>
+            <input class="units" type="text" placeholder="0">
+        </div>
+        <div>
+            <span class="total-price-product">$0</span>
+        </div>
+        <div>
+            <button class="btn btn-delete">Delete</button>
+        </div>`;
+
+        cartRow.innerHTML = cartRowContents;
+        cartItems.append(cartRow);
+        cartRow
+            .getElementsByClassName("btn-delete")[0]
+            .addEventListener("click", removeCartItem);
     }
 };

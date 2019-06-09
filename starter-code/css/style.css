@@ -8,7 +8,7 @@ header {
     font-size: 2.5rem;
 }
 
-.list-item {
+.list-items {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,7 +16,8 @@ header {
     margin: 2rem;
 }
 
-.wrapper {
+.wrapper,
+.creation-of-items {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -73,6 +74,11 @@ input {
     color: #fff;
     background-color: #cf000f;
     border-color: #cf000f;
+}
+
+.btn-create {
+    background-color: white;
+    border-color: black;
 }
 
 .quantity {
