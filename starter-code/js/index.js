@@ -2,23 +2,40 @@ function deleteItem(e){
 
 }
 
-function getPriceByProduct(itemNode){
 
-}
+
+function getPriceByProduct(itemNode){
+   let productname = document.getElementsByClassName("product-name")[0];
+   
+   let name1 = productname.innerHTML;
+    itemNode = name1;
+   
+   let productPrice = document.getElementsByClassName("cost-unit")[0].innerHTML
+   if(itemNode)
+    return productPrice
+  }
+
+
 
 function updatePriceByProduct(productPrice, index){
+
+
 
 }
 
 function getTotalPrice() {
 
 }
+let createQuantityInput = document.getElementsByTagName("input");
 
-function createQuantityInput(){
-
+createQuantityInput.onclick = function() {
+   return createQuantityInput[1].innerHTML;
 }
 
 function createDeleteButton(){
+    
+
+
 
 }
 
