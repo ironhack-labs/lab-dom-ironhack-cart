@@ -32,25 +32,14 @@
 // };
 
 window.onload = function() {
-    document.querySelector("#calc-prices-button").onclick = function(e) {
+    document.getElementById("calc-prices-button").onclick = function(e) {
         e.preventDefault();
-        // see how you access the form value via .value
-        // remember how you change the employeeNameP innerHTML
-
-        // <<<< FUNCIONA PARA UN ELEMENTO!!!
-        // let costUnitElement = parseFloat(
-        //     document.querySelector(".cost-unit").innerHTML.replace("$", "")
-        // );
-        // let qtyElement = document.querySelector(".units").value;
-
-        // let totalPrice = costUnitElement * qtyElement;
-        // document.querySelector(".total-price-product").innerText = "$" + totalPrice;
 
         let itemsProducts = document.querySelectorAll(".wrapper");
         let totalItemsPrice = 0;
         let costUnitElement;
         let qtyElement;
-        // console.log(`Hay ${itemsProducts.length} productos`);
+
         for (let cont = 0; cont <= itemsProducts.length - 1; cont++) {
             costUnitElement = 0;
             qtyElement = 0;
@@ -65,12 +54,8 @@ window.onload = function() {
             }
             itemProd.querySelector(".total-price-product").innerText =
                 "$" + costUnitElement * qtyElement;
-            // console.log(
-            //     `Precio del item ${cont} es ${costUnitElement} y la cantidad es ${qtyElement}`
-            // );
 
             totalItemsPrice = totalItemsPrice + costUnitElement * qtyElement;
-            // console.log(`El precio total es ${totalItemsPrice}`);
         }
         document.querySelector(".total-price-lbl").innerText =
             "$" + totalItemsPrice;
@@ -122,8 +107,6 @@ window.onload = function() {
     function addToCartClicked(event) {
         let button = event.target;
         let shopItem = button.parentElement.parentElement;
-        // let title = shopItem.getElementsById("new-id-item").innerText;
-        // let price = shopItem.getElementsById("new-id-cost").innerText;
         let title = document.querySelector("#new-id-item").value;
         let price = parseFloat(document.querySelector("#new-id-cost").value);
         addItemToCart(title, price, 1);
