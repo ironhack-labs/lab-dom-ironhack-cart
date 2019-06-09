@@ -131,7 +131,7 @@ input:hover {
   padding: 1.5rem 2rem;
   margin: 1.5rem;
   font-weight: 600;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
 }
 
 .btn-delete {
@@ -160,6 +160,9 @@ input:hover {
   color: ghostwhite;
   font-weight: 900;
   font-size: 2rem;
+}
+
+.troll {
   animation: move 10s;
   animation-iteration-count: infinite;
 }
@@ -179,10 +182,10 @@ input:hover {
 
 @keyframes move {
   50% {
-    padding-left: 80%;
+    padding-left: 70%;
   }
 
   100% {
-    padding-left: 10%;
+    padding-left: 0%;
   }
 }
