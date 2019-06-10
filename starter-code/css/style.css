@@ -1,6 +1,46 @@
+html{
+  box-sizing: border-box;
+}
+
+
+#main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: auto;
+}
+
+.product {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  margin-right: 100px;
+  width: 100vw;
+  height: auto;
+}
+
+#product-description {
+  padding: 10px;
+}
+h1 {
+  max-width: 5vw;
+  align-self: center;
+}
+
+#formCreate {
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+}
+
 input {
   border: solid 1px black;
 }
+
+/* ===========BTNS============ */
 
 .btn {
   display: inline-block;
@@ -23,19 +63,18 @@ input {
   border: 1px solid transparent;
   border-radius: 4px;
 }
-
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #cf000f;
+  border-color: #cf000f;
 }
 
-.quantity {
+/* .quantity {
   margin: 0 5px;
-}
+} */
