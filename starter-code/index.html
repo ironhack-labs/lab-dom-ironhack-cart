@@ -10,5 +10,63 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <div class="container">
+    <h1>Ironhack Merchandising Shop</h1>
+    <ul id="product-list">
+      <li>
+        <div class="product-wrapper">
+          <div class="name"><span>Cat Toy</span></div>
+          <div class="cost"><span>$5.99</span></div>
+          <div class="quantity">
+            <label>QTY</label>
+            <input type="number" value="0">
+          </div>
+          <div class="price"><span>$0.00</span></div>
+          <div class="delete">
+            <button class="btn btn-delete">Delete</button>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="product-wrapper">
+          <div class="name"><span>Bubble Tea</span></div>
+          <div class="cost"><span>$2.50</span></div>
+          <div class="quantity">
+            <label>QTY</label>
+            <input type="number" value="0">
+          </div>
+          <div class="price"><span>$0.00</span></div>
+          <div class="delete">
+            <button class="btn btn-delete">Delete</button>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="product-wrapper">
+          <div class="name"><span>Rainbow Bucky Balls</span></div>
+          <div class="cost"><span>$100.00</span></div>
+          <div class="quantity">
+            <label>QTY</label>
+            <input type="number" value="0">
+          </div>
+          <div class="price"><span>$0.00</span></div>
+          <div class="delete">
+            <button class="btn btn-delete">Delete</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <div class="product-wrapper create-new-product">
+      <div class="name"><input id="new-product-name"></div>
+      <div class="cost"><input id="new-product-unit-price"></div>
+      <div class="quantity"></div>
+      <div class="price"></div>
+      <div class="create">
+        <button class="btn btn-create" id="new-item-create">Create</button>
+      </div>
+    </div>
+    <button class="btn btn-success" id="calc-prices-button">Calculate Prices</button>
+    <h1 id="total-price"></h1>
+  </div>
 </body>
 </html>

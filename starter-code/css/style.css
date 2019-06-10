@@ -1,5 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 input {
   border: solid 1px black;
+}
+
+.container {
+  text-align: center;
+}
+
+#product-list li {
+  list-style-type: none;
+}
+
+.col-5 {
+  width: 20%;
+}
+
+.product-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.product-wrapper > div {
+  width: 20%;
+  margin: 10px;
+  text-align: left;
+}
+
+.product-wrapper input {
+  width: 70%;
+}
+
+.new-product-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.new-product-wrapper :last-child {
+  margin-left: 50px;
 }
 
 .btn {
@@ -22,6 +69,12 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+}
+
+.btn-create {
+  color: black;
+  background-color: lightgray;
+  border-color: gray;
 }
 
 .btn-success {
