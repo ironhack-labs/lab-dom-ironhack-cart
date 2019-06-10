@@ -10,5 +10,135 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <h1>Ironhack Merchandising Shop</h1>
+  
+  <div class="flex-items">
+
+    <div class="row">
+      <div>
+        <span class="product">IronBubble-head</span>
+      </div>
+      <div>
+        <span>$</span><span class="price" id="price">25.00</span>
+      </div>
+      <div>
+        <span>
+          <label for="quantity">QTY</label>
+          <input type="number" class="quantity" id="quantity" placeholder="0">
+        </span>
+      </div>
+      <div>
+        <span>$</span><span id="totalRow" class="totalRow">0.00</span>
+      </div>
+      <div>
+        <span><button id="btn-delete" class="btn-delete" onclick="deleteItem()">Delete</button></span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <span class="product">IronShirt</span>
+      </div>
+      <div>
+        <span>$</span><span class="price" id="price">15.00</span>
+      </div>
+      <div>
+        <span>
+          <label for="quantity">QTY</label>
+          <input type="number" class="quantity" id="quantity" placeholder="0">
+        </span>
+      </div>
+      <div>
+        <span>$</span><span id="totalRow" class="totalRow">0.00</span>
+      </div>
+      <div>
+        <span><button id="btn-delete" class="btn-delete" onclick="deleteItem()">Delete</button></span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <span class="product">IronCup</span>
+      </div>
+      <div>
+        <span>$</span><span class="price" id="price">10.00</span>
+      </div>
+      <div>
+        <span>
+          <label for="quantity">QTY</label>
+          <input type="number" class="quantity" id="quantity" placeholder="0">
+        </span>
+      </div>
+      <div>
+        <span>$</span><span id="totalRow" class="totalRow">0.00</span>
+      </div>
+      <div>
+        <span><button id="btn-delete" class="btn-delete" onclick="deleteItem()">Delete</button></span>
+      </div>
+    </div>
+
+    <div class="row">
+      <div>
+        <span class="product">IronSticker</span>
+      </div>
+      <div>
+        <span>$</span><span class="price" id="price">1.00</span>
+      </div>
+      <div>
+        <span>
+          <label for="quantity">QTY</label>
+          <input type="number" class="quantity" id="quantity" placeholder="0">
+        </span>
+      </div>
+      <div>
+        <span>$</span><span id="totalRow" class="totalRow">0.00</span>
+      </div>
+      <div>
+        <span><button id="btn-delete" class="btn-delete" onclick="deleteItem()">Delete</button></span>
+      </div>
+    </div>
+  
+    <div class="row">
+      <div>
+        <span class="product">IronAxe</span>
+      </div>
+      <div>
+        <span>$</span><span class="price" id="price">100.00</span>
+      </div>
+      <div>
+        <span>
+          <label for="quantity">QTY</label>
+          <input type="number" class="quantity" id="quantity" placeholder="0">
+        </span>
+      </div>
+      <div>
+        <span>$</span><span id="totalRow" class="totalRow">0.00</span>
+      </div>
+      <div>
+        <span><button id="btn-delete" class="btn-delete" onclick="deleteItem()">Delete</button></span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="add-item">
+    <div class="row-2">
+    <div><input id="product-name" type="text" placeholder="Product Name"></div>
+    <div><input id="price-unit" type="number" placeholder="Price"></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div><button id="create-button" class="btn btn-warning" onclick="createNewItem()">Create</button></div>
+    </div>
+  </div>
+
+  <div class="btn-confirmation">
+    <button class="btn-success" onclick="getTotalPrice()">Calculate Prices</button>
+  </div>
+
+  <div class="total">
+    <h2>Total Price: <span>$</span><span id="totalPrice" class="totalPrice">0</span></h2>
+  </div>
+
 </body>
 </html>
