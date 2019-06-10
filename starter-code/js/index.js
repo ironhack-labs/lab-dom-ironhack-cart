@@ -2,29 +2,44 @@ function deleteItem(e){
 
 }
 
-let $amountOfUnits= document.querySelector("input").value;
-let $unitPrice= document.querySelector('.unit-price').innerHTML;
-let $inputButton = document.querySelector("input")
-let $productTotal = document.querySelector(".product-price").innerHTML
-$inputButton.onclick = function () {
-  // console.log("The quantity of items has changed")
-  getPriceByProduct()
+let $amountOfUnits= document.querySelector("input");
+let $unitPrice= document.querySelector('.unit-price'); //I am not using this 🧐
+let $inputs = document.querySelectorAll("input")
+let $productTotal = document.querySelector(".product-price")
+let $allProductTotals =document.querySelectorAll(".product-price")
+let $totalPrice = document.querySelector(".total")
+let $calcTotalBtn = document.querySelector (".btn-success")
+
+for (let i = 0; i < $inputs.length; i++) {
+  $inputs[i].onchange = function () {
+    // console.log("The quantity of items has changed")
+    getPriceByProduct($inputs[i])
+  }
 }
 
-//CHECK COMMENTS!
-function getPriceByProduct(/*itemNode*/){
-  let value= (document.querySelector("input").value)/*Using the variable $amountOfUnits doesnt work*/*$unitPrice;
+$calcTotalBtn.onclick = function () {
+  // console.log("The quantity of items has changed")
+  getTotalPrice();
+}
+
+// Here I selected Items by row to change the correct value in every new row (had some help 😏 )
+function getPriceByProduct($input){
+  let $row = $input.parentElement.parentElement
+  let value= $input.value * $row.querySelector('.unit-price').innerText;
   // console.log("The button was clicked and the value is", value)
-  document.querySelector(".product-price").innerHTML = value
+  $row.querySelector('.product-price').innerText = value
 }
 
 function updatePriceByProduct(productPrice, index){
 
 }
 
-/*Can't declare variables 🤯  and cant make the math*/
 function getTotalPrice() { 
-  Number(document.querySelector(".total").innerHTML)+=Number(document.querySelector(".product-price").innerHTML);
+  let sum = 0
+  for (let i = 0; i < $allProductTotals.length; i++) {
+     sum +=Number($allProductTotals[i].innerText);
+  }
+  $totalPrice.innerText = sum
 }
 
 function createQuantityInput(){
@@ -63,3 +78,4 @@ window.onload = function(){
   //   deleteButtons[i].onclick = deleteItem;
   // }
 };
+
