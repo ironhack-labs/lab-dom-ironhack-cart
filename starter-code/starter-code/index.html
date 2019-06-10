@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Ironhack cart</title>
+</head>
+<body>
+  <h1>Ironhack Merchandising Shop</h1>
+
+<div class="input-field" id="inputField">
+  <div class="item-name">Iron Bubble</div>
+  <div id="unitPrice">$2.50</div>
+  <div><label>QTY<input id = "quantityInput" class="input" type="number"></label></div>
+  <div id="rowPrice">$0.00</div>
+  <div><button id="deleteItemButton" class="btn btn-delete">Delete</button></div>
+</div>
+
+
+<div class="total">
+  <div>
+      <button id="calculateTotalPriceButton" class="btn btn-success">Calculate Price</button>
+      <h1><div id="totalPrice" class="total_sum_of_items">Total Price</div></h1>
+  </div>
+</div>
+
+<script type="text/javascript" src="./js/index.js"></script>
+
+</body>
+</html>
