@@ -30,7 +30,7 @@ window.onload = function() {
     let price = document.querySelectorAll("#price-unit")[0].value; // obtener el número del precio unitario y la guardamos en una variable
     
     item.querySelector(".name").innerHTML = name; //nombre
-    item.querySelector(".price").innerHTML = price.toFixed(2); // precio unitario
+    item.querySelector(".price").innerHTML = price; // precio unitario
     item.querySelector(".btn-delete").onclick = function() {
       this.parentNode.parentNode.remove(); // borrar los archivos creados con el botón create
     }
