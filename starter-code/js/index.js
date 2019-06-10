@@ -4,8 +4,7 @@
 window.onload = function() {
   function deleteItem(element) {
     element.currentTarget.parentNode.parentNode.remove();
-    getTotalPrice()
-    
+    getTotalPrice() // actualizar el precio si borramos filas
     
   }
 
@@ -25,16 +24,15 @@ window.onload = function() {
 
   function createNewItem() {
     //https://developer.mozilla.org/es/docs/Web/API/Node/cloneNode
-    let item = document.querySelectorAll(".item")[0].cloneNode(true); 
-    // clonamos el nodo enero, copiando todos sus atributos y valores
+    let item = document.querySelectorAll(".item")[0].cloneNode(true); // clonamos el nodo enero, copiando todos sus atributos y valores
     document.querySelectorAll(".flex-items")[0].appendChild(item); // agregar una fila nueva con el boton create
-    let name = document.querySelectorAll("#product-name")[0].value; //obtener la string del producto
-    let price = document.querySelectorAll("#price-unit")[0].value; // obtener el número del precio unitario
+    let name = document.querySelectorAll("#product-name")[0].value; //obtener la string del producto y la guardamos en una variable
+    let price = document.querySelectorAll("#price-unit")[0].value; // obtener el número del precio unitario y la guardamos en una variable
     
     item.querySelector(".name").innerHTML = name; //nombre
-    item.querySelector(".price").innerHTML = price; // precio unitario
+    item.querySelector(".price").innerHTML = price.toFixed(2); // precio unitario
     item.querySelector(".btn-delete").onclick = function() {
-      this.parentNode.parentNode.remove();
+      this.parentNode.parentNode.remove(); // borrar los archivos creados con el botón create
     }
   }
 
