@@ -74,12 +74,6 @@ window.onload = function() {
         updateCartTotal();
     }
 
-    function removeCartItem(event) {
-        let buttonCliked = event.target;
-        buttonCliked.parentElement.parentElement.remove();
-        updateCartTotal();
-    }
-
     function updateCartTotal() {
         let cartItemContainer = document.querySelector(".list-items");
         let cartRows = cartItemContainer.querySelectorAll(".wrapper");
@@ -109,7 +103,7 @@ window.onload = function() {
         let shopItem = button.parentElement.parentElement;
         let title = document.querySelector("#new-id-item").value;
         let price = parseFloat(document.querySelector("#new-id-cost").value);
-        addItemToCart(title, price, 1);
+        addItemToCart(title, price);
         updateCartTotal();
     }
 
