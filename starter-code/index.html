@@ -10,5 +10,96 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  
+  <div class="every-items">
+  <h1>IronHack <br> Merchandising Shop</h1>
+  
+
+
+  
+<form action="">
+  <div><span id="productNname">IronBubble-head</span></div>
+  <div><label>$<label><span id="prices">25</span></div>
+  <div> <label for="Quantity">Qty</label>
+    <input type="number" name="Quantity" id="quantity-box">
+  </div>
+  <div><span id="totalPrice">Total Price $00</span></div>
+  <div><input id="deleteButton" type="button" value="Delete"></div>
+  <div><input id="calculatePrice" type="button" value="Calculate Prices"></div>
+
+  
+
+
+
+  
+</form>
+<script>
+
+
+document.querySelector("#calculate-price").onclick = function (e) {
+  e.preventDefault()
+
+   var arr = document.getElementsByName('qty');
+    var tot=0;
+    for(var i=0;i<arr.length;i++){
+        if(parseInt(arr[i].value))
+            tot += parseInt(arr[i].value);
+    }
+    document.getElementById('total').value = tot;
+    
+
+}
+
+
+
+    
+
+
+function createProduct () {
+             document.body.innerHTML = ""
+           
+              var divCreateNameProduct = document.createElement(`div>span#prices{$}`)
+
+             var divProducContainer = document.createElement(`div>input#quantity-box.quantity-box$[type="number"][name="Quantity"]+label[for="Quantity"]{Qty}`)
+
+              document.body.appendChild(divProducContainer)
+
+              var divPriceContainer = document.createElement(`div>spantotalPrice$#totalPrice{totalPrice $00}`)
+                 document.body.appendChild(divPriceContainer)
+
+                var divDeleteButton = document.createElement(`div>input:button#deleteButton.deleteButton$[value=Delete]`)
+                document.body.appendChild(divDeleteButton)
+
+                var divCalculatePrice = document.createElemnt(`div>input:button#calculatePrice.calculatePrice$[value="Calculate Prices"]`)
+                docuemt.body.appendChild(divCalculatePrice)
+             
+                document.querySelector("#calculate-price").onclick = function (e) {
+                e.preventDefault()
+  
+               document.querySelector("#totalPrice").innerHTML =
+              `Products Total Quantity: ${parseInt(document.querySelector("#prices").innerHTML) * parseInt(document.querySelector("#quantity-box").value) } eur`
+                    }             
+             
+             
+              }
+
+var priceByProduct = document.querySelector("#calculate-price").onclick;
+var totalPrice = document.querySelector("#totalPrice").innerHTML;
+var divCreateNameProduct;
+var divProducContainer;
+var divPriceContainer;
+var divDeleteButton;
+var divCalculatePrice;
+
+
+
+
+
+
+
+  </script>
+
+
+  </div>
 </body>
 </html>
