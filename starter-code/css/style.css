@@ -16,10 +16,6 @@ input {
   list-style-type: none;
 }
 
-.col-5 {
-  width: 20%;
-}
-
 .product-wrapper {
   display: flex;
   flex-flow: row nowrap;
@@ -36,17 +32,6 @@ input {
 
 .product-wrapper input {
   width: 70%;
-}
-
-.new-product-wrapper {
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.new-product-wrapper :last-child {
-  margin-left: 50px;
 }
 
 .btn {

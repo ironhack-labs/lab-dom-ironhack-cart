@@ -25,7 +25,6 @@ function getTotalPrice() {
     totalPrice += price;
   }
   const totalHeading = document.getElementById("total-price");
-  //const total = products.reduce((accumulator, productNode) => accumulator + getPriceByProduct(productNode), 0);
   totalHeading.innerText = `$${totalPrice.toFixed(2)}`;
 }
 
