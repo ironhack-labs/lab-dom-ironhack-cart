@@ -1,52 +1,97 @@
-function deleteItem(e){
+// // // function deleteItem(e){
 
-}
+// // // }
 
-function getPriceByProduct(itemNode){
+// // // function getPriceByProduct(itemNode){
 
-}
+// // // }
 
-function updatePriceByProduct(productPrice, index){
+// // // function updatePriceByProduct(productPrice, index){
 
-}
+// // // }
 
-function getTotalPrice() {
+// // // function getTotalPrice() {
+ 
+// // // }
 
-}
+// // // function createQuantityInput(){
 
-function createQuantityInput(){
+// // // }
 
-}
+// // // function createDeleteButton(){
 
-function createDeleteButton(){
+// // // }
 
-}
+// // // function createQuantityNode(){
 
-function createQuantityNode(){
+// // // }
 
-}
+// // // function createItemNode(dataType, itemData){
 
-function createItemNode(dataType, itemData){
+// // // }
 
-}
+// // // function createNewItemRow(itemName, itemUnitPrice){
 
-function createNewItemRow(itemName, itemUnitPrice){
+// // // }
 
-}
+// // // function createNewItem(){
 
-function createNewItem(){
+// // // }
 
-}
+// // function getTotalPrice (){
+// //   //  let price = document.querySelectorAll(".price");
+// //   //  let quantity = document.querySelectorAll(".quantity");
+  
+// //   let price = document.querySelector(".price");
+// //   let quantity = document.querySelector(".quantity");
+// //   let total = price*quantity;
+// //   let resultado = document.querySelector(".total-price");
+// //   return resultado.innerHTML = total;
+// // } 
 
-window.onload = function(){
-  var calculatePriceButton = document.getElementById('calc-prices-button');
-  var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');
+// window.onload = function(){
 
-  calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
+//   let price = document.querySelector(".price");
+//   let quantity = document.querySelector(".quantity");
+//   let total = price*quantity;
+//   let resultado = document.querySelector(".total-price");
+//   return resultado.innerHTML = total;
 
-  for(var i = 0; i<deleteButtons.length ; i++){
-    deleteButtons[i].onclick = deleteItem;
-  }
-};
+//   //     var calculatePriceButton = document.querySelector('calc-prices-button');
+//   // var createItemButton = document.getElementById('new-item-create');
+//   // var deleteButtons = document.getElementsByClassName('btn-delete');
+
+//   // calculatePriceButton.onclick = getTotalPrice();
+//   // createItemButton.onclick = createNewItem;
+
+//   // for(var i = 0; i<deleteButtons.length ; i++){
+//   //   deleteButtons[i].onclick = deleteItem;
+//   // }
+// };
+
+// document.querySelector(".total").onClick = suma();
+// function suma()
+// {
+
+//   var precio = document.querySelector(".price");
+//   var final = parseInt(precio).innerText;
+//   var total = document.querySelector(".total-price").innerText;
+//   total = final*2;
+
+// }
+//   e.preventDefault()
+
+//   var precio = parseInt(document.querySelector(".price").textContent);
+//   var total = docucment.querySelector(".total-price");
+//   // total.innerText = precio*2;
+//   return total.innerText = precio*2;
+// }
+// calcularBtn.onClick() function() {
+
+//   var precio = parseInt(document.querySelector(".precio").textContent);
+//   var total = docucment.querySelector(".total-price");
+//   total.innerText = precio*2;
+//   console.log(total.innerText = precio*2);
+// }
+
+

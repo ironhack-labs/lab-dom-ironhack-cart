@@ -9,6 +9,126 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+<header>
+    <h1>Ironhack Merchandising Shop</h1>
+</header>
 <body>
+  <section class="items">
+  <!-- <form action=""> -->
+  <div class="container">
+    <div>
+      <span class="article">IronBubble-Head</span>
+    </div>
+    <div>
+      <span class="price">25</span>
+    </div>
+    <div>
+      <label for="QTY" class="quantity-label">QTY</label>
+      <input type="text" class="quantity">
+    </div>
+    <div>
+      <span class="total-price">lolo</span>
+    </div>
+    <div>
+      <button class="btn-delete"></button>
+    </div>
+
+  </div>
+
+  <div class="container">
+      <div>
+        <span class="article">IronBubble-Head</span>
+      </div>
+      <div>
+        <span class="price">25</span>
+      </div>
+      <div>
+        <label for="QTY" class="quantity-label">QTY</label>
+        <input type="text" class="quantity">
+      </div>
+      <div>
+        <span class="total-price">lolo</span>
+      </div>
+      <div>
+        <button class="btn-delete"></button>
+      </div>
+  
+    </div>  
+  </section>
+
+  <button class="total">Calculate Price</button>
+  <button class="create">Create product</button>
+<!-- </form> -->
+  
+
+    
+    
+    <script>
+      // document.querySelector(".calc-price-button").onclick = function (e) {
+//             e.preventDefault()
+//             // see how you access the form value via .value
+//             // remember how you change the employeeNameP innerHTML
+//             document.querySelector(".total-price").innerHTML = "gato"//`Employee: ${document.querySelector("#employeeName").value}`
+//             // document.querySelector("#ageP").innerHTML = `Age: ${document.querySelector("#age").value}`
+//             // document.querySelector("#salaryWithTaxes").innerHTML = `Salary with
+// }
+
+    // document.querySelector(".calc-price-button").onClick = function (e){
+    //   e.preventDefault()
+
+    //   var precio = parseInt(document.querySelector(".price").textContent);
+    //   var total = docucment.querySelector(".total-price");
+    //   // total.innerText = precio*2;
+    //   return total.innerText = precio*2;
+    
+      document.querySelector(".total").onclick = suma;
+      // let deleteButton = document.querySelectorAll(".btn-delete").onclick = deletElement(".btn-delete");
+      let deleteButton = document.querySelectorAll(".btn-delete");
+      deleteButton.forEach(function(deleteButton){
+        deleteButton.addEventListener('click', function(e){
+          const container = e.target.parentElement
+          container.parentNode.parentNode.removeChild(container.parentNode)
+
+        })
+      })
+      const container = document.createElement("div")
+      const descriptionDiv = document.createElement("div")
+      const priceDiv = document.createElement("div")
+      const quantity = document.createElement("div")
+      const totalPrice = document.createElement("div")
+      const deleteDiv = document.createElement("div")
+      const descriptionSpan = document.createElement("span")
+      const priceSpan = document.createElement("span")
+      const totalPriceSpan = document.createElement("span")
+      const priceInput = document.createElement("input")
+      const deleteBtn = document.createElement("button")
+
+      
+      document.querySelector(".create").onclick = createProduct;
+      function suma(){
+              // see how you access the form value via .value
+              // remember how you change the employeeNameP innerHTML
+              var precio = parseInt(document.querySelectorAll(".price").innerHTML);
+              var cantidad = parseInt(document.querySelectorAll(".quantity").value);
+              document.querySelectorAll(".total-price").innerHTML = precio*cantidad//`Employee: ${document.querySelector("#employeeName").value}`
+              // document.querySelector("#ageP").innerHTML = `Age: ${document.querySelector("#age").value}`
+              // document.querySelector("#salaryWithTaxes").innerHTML = `Salary with
+      }
+  
+      // function deletElement(deleteButton){
+
+      //   var elem = document.querySelector(".container");
+      //   elem.parentNode.removeChild(elem);
+      // }    
+
+      // function createProduct(){
+      //   let container = document.querySelector(".container")
+      //   const clonnedDiv = container.cloneNode(true);
+      //   const items = document.querySelector(".items")
+      //   items.appendChild(clonnedDiv)
+        
+      // }
+</script>
+
 </body>
 </html>

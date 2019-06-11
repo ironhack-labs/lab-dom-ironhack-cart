@@ -1,3 +1,11 @@
+html{
+  font-size: 10px;
+}
+
+h1{
+  font-size: 3rem;
+  text-align: center;
+}
 input {
   border: solid 1px black;
 }
@@ -23,6 +31,17 @@ input {
   border: 1px solid transparent;
   border-radius: 4px;
 }
+.container{
+  display: flex;  
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
+  
+}
+/* div{
+  width: 80px;
+  height: auto;
+} */
 
 .btn-success {
     color: #fff;
@@ -34,8 +53,22 @@ input {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    width: 5rem;
+    height: 2rem;
 }
 
 .quantity {
   margin: 0 5px;
+}
+.article{
+  font-size: 1.5rem;
+}
+.price{
+
+}
+.quantity-label{
+  
+}
+.total-price{
+
 }
