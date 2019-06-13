@@ -6,9 +6,76 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+  <h1 class="center">IronHack </br> Merchadising Shop </h1>
+  <div class="btn around">
+      <div class="btn" id="name">
+        <span>Iron Bubble Head</span>
+      </div>
+      <div class="btn precio">
+        <span>$25.00</span>
+      </div>
+      <div class="btn quantity">
+        <label>QTY</label> <input class="input" value="0">
+      </div>
+      <div class="btn total">
+        <span>$0.00</span>
+      </div>
+      <div class="btn delete">
+        <button class="btn-delete" onclick="delete_row(this)">Delete</button> 
+      </div>
+  </div>
+  <div class="btn around">
+      <div class="btn" id="name">
+        <span>Iron Bubble Head</span>
+      </div>
+      <div class="btn precio">
+        <span>$25.00</span>
+      </div>
+      <div class="btn quantity">
+        <label>QTY</label> <input class="input" value="0">
+      </div>
+      <div class="btn total">
+        <span>$0.00</span>
+      </div>
+      <div class="btn delete">
+        <button class="btn-delete" onclick="delete_row(this)">Delete</button> 
+      </div>
+  </div>
+  <div class="btn around">
+      <div class="btn" id="name">
+        <span>Iron Shirt</span>
+      </div>
+      <div class="btn precio">
+        <span>$15.00</span>
+      </div>
+      <div class="btn quantity">
+        <label>QTY</label> <input class="input" value="0">
+      </div>
+      <div class="btn total">
+        <span>$0.00</span>
+      </div>
+      <div class="btn delete">
+        <button class="btn-delete" onclick="delete_row(this)">Delete</button> 
+      </div>
+  </div>
+  <div class="btn around">
+      <div class="btn nuevo_n">
+        <label></label> <input class="input" value="Name">
+      </div>
+      <div class="btn nuevo_p">
+          <label></label> <input class="input" value="price">
+        </div>
+      <div class="btn nuevo">
+        <button  onclick="">Nuevo</button> 
+      </div>
+  </div>
+  <div class="center">
+      <button onclick="ultimo()">Submit</button> 
+  </div>
+  <h1 id="final">""</h1>
 </body>
+<script type="text/javascript" src="./js/index.js"></script>
 </html>
