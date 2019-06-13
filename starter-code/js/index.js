@@ -91,7 +91,8 @@ function createTotalPrice() {
   return newPrice;
 
 }
-function createNewItem1() {
+
+function createNew() {
   let newProductInput = document.querySelector(".new-product").value;
   let newProductPriceInput = document.querySelector(".new-product-price").value;
 
@@ -99,6 +100,7 @@ function createNewItem1() {
   document.querySelector(".main-div").appendChild(newItem);
 
 }
+
 function deleteItem(e) {
   let deleteBtn = e.currentTarget;
   let mainDiv = document.querySelector(".main-div");
@@ -112,7 +114,7 @@ window.onload = function () {
   var createItemButton = document.getElementById('new-item-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
   calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem1;
+  createItemButton.onclick = createNew;
   for (let i = 0; i < deleteButtons.length; i++) {
     deleteButtons[i].onclick = deleteItem;
   }
