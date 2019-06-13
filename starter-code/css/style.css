@@ -2,6 +2,11 @@ input {
   border: solid 1px black;
 }
 
+h1 {
+  text-align: center;
+  margin: 3em 0;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -38,4 +43,21 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.calculate-btn {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0;
+}
+
+.validation {
+  text-align: center;
 }
