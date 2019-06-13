@@ -1,14 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
   <title>Ironhack cart</title>
 </head>
+
 <body>
+  <h1>Ironhack Merchandising<br> Shop</h1>
+
+  <div class = "product">
+
+    <div><span id = "name">IronBubble-head</span></div>
+    <div><span id = "cost">$25.00</span></div>
+    <div id = "quantity"><label for = "qty">QTY</label><input type = "number" id = "qty" name = "qty"/></div>
+    <div><span id = "totalPrice">$0.00</span></div>
+    <div id = "delete"><button  class = "btn-delete">DELETE</button></div>
+
+  </div>
+
+  <div>
+    <button id = "calc-prices-button">CALCULATE PRICES</button>
+  </div>
+
 </body>
+
+<script type="text/javascript" src="./js/index.js"></script>
+
 </html>
