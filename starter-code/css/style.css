@@ -1,6 +1,49 @@
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin: 15px 0;
+} 
+
+h1 {
+  text-align: center;
+}
+
+.btn-bottom {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.create {
+  text-align: center;
+}
+
+.create button {
+  color: black;
+  height: 30px;
+  width: 150px;
+  border: solid 1px black;
+  margin-left: 200px;
+}
+
+.create input {
+  margin: 0 40px;
+}
+
+.product-name {
+  width: 25%;
+
+}
+
 input {
   border: solid 1px black;
 }
+
 
 .btn {
   display: inline-block;
@@ -25,9 +68,12 @@ input {
 }
 
 .btn-success {
+    margin: 10px 50px 50px 20px;
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    align-content: center;
+    position: relative;
 }
 
 .btn-delete {
