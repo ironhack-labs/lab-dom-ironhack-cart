@@ -1,4 +1,6 @@
-function deleteItem(e) {}
+function deleteItem(e) {
+  e.path[2].remove();
+}
 
 function getPriceByProduct(itemNode) {
   let qty = document.querySelectorAll("input[class=input]");
@@ -22,6 +24,13 @@ function getTotalPrice() {
 
   getPriceByProduct(price);
 
+  let total_price = document.querySelectorAll(".total");
+  let updatePrice = document.querySelector("#total_price");
+  let total = 0;
+  for (i = 0; i < total_price.length; i++) {
+    total += parseInt(total_price[i].innerText.replace(/\$/g, ""));
+  }
+  updatePrice.innerText = `$${total}`;
   //total.innerText = `$${price * qty}.00`;
 }
 
@@ -40,14 +49,14 @@ function createNewItem() {}
 window.onload = function() {
   var calculatePriceButton = document.getElementById("calc-prices-button");
   //var createItemButton = document.getElementById("new-item-create");
-  //var deleteButtons = document.getElementsByClassName("btn-delete");
+  var deleteButtons = document.getElementsByClassName("btn-delete");
 
   calculatePriceButton.onclick = getTotalPrice;
   //createItemButton.onclick = createNewItem;
 
-  // for (var i = 0; i < deleteButtons.length; i++) {
-  //   deleteButtons[i].onclick = deleteItem;
-  // }
+  for (i = 0; i < deleteButtons.length; i++) {
+    deleteButtons[i].onclick = deleteItem;
+  }
 };
 
 //thingsi will use for later

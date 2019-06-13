@@ -46,9 +46,13 @@ h1 {
 .info {
   width: 100vw;
   margin: 40px 0px;
+  text-align: center;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+.info div {
+  width: 20vw;
 }
 .calculate {
   text-align: center;
