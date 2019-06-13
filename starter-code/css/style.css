@@ -1,7 +1,17 @@
+.container div {
+  float: left;
+  padding: 10px;
+  margin-right: 80px;
+}
+.container{
+  text-align: center;
+}
+h1 {
+  text-align: center;
+}
 input {
   border: solid 1px black;
 }
-
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -23,19 +33,26 @@ input {
   border: 1px solid transparent;
   border-radius: 4px;
 }
-
 .btn-success {
+    margin: 10px auto;
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+   
 }
-
+.calculate-btn{
+  margin: auto;
+  width: 350px;
+  text-align: center;
+}
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
 }
-
 .quantity {
   margin: 0 5px;
+}
+.first{
+  display: none;
 }
