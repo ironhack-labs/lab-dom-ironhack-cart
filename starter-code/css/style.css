@@ -25,17 +25,31 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #cf000f;
+  border-color: #cf000f;
 }
 
 .quantity {
   margin: 0 5px;
+}
+h1 {
+  display: flex;
+  justify-content: center;
+}
+.info {
+  width: 100vw;
+  margin: 40px 0px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.calculate {
+  text-align: center;
 }
