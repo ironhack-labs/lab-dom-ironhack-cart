@@ -57,3 +57,15 @@ h1 {
 .calculate {
   text-align: center;
 }
+.add_section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.add_buttons input {
+  margin: 10px 20px;
+}
+.createButton {
+  margin: 20px 40px;
+}
