@@ -25,6 +25,8 @@ input {
 }
 
 .btn-success {
+    margin-left: calc(50% - 75px);
+    margin-top: 100px;
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
@@ -38,4 +40,13 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+.product{
+  display: flex;
+  margin: 0 100px;
+  justify-content: space-between;
+}
+h1{
+  text-align: center;
+  margin-bottom: 100px;
 }
