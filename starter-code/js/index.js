@@ -4,25 +4,28 @@ function deleteItem(e) {
 
 function getPriceByProduct(itemNode) {}
 
-function updatePriceByProduct(productPrice, index) {}
+function updatePriceByProduct(productPrice, index) {
+	var quantityPrice = document.getElementsByClassName('quantity-price');
+	quantityPrice[index].innerHTML = `$${productPrice}`;
+}
 
 function getTotalPrice() {
-	var items = document.getElementById('items');
 	var itemPrice = document.getElementsByClassName('item-price');
 	var itemQuantity = document.getElementsByClassName('item-quantity');
+	var total = 0;
+	for (var i = 0; i < itemPrice.length; i++) {
+		total += itemPrice[i].innerHTML.split('$')[1] * itemQuantity[i].value;
+		updatePriceByProduct(
+			itemPrice[i].innerHTML.split('$')[1] * itemQuantity[i].value,
+			i,
+		);
+	}
 
-	console.log(items.children);
-
-	// for (var i = 0; i < itemPrice.length; i++) {
-	// 	console.log(itemPrice[i].innerHTML.split('$')[1]);
-	// 	console.log(itemQuantity[i].value);
-	// }
-
-	// itemPrice.forEach((item, index) => {
-	// 	console.log(itemPrice[index].innerHTML);
-	// 	console.log(itemQuantity[index].value);
-	// });
-	// var itemsPrice = itemPrice.value
+	let totalPrice = document.createElement('h2');
+	totalPrice.classList.add('center__price');
+	totalPrice.innerHTML = `Total Price: <span> $${total}</span>`;
+	let parent = document.getElementsByTagName('body')[0];
+	parent.appendChild(totalPrice);
 }
 
 function createQuantityInput() {}
