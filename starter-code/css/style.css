@@ -1,5 +1,21 @@
 input {
   border: solid 1px black;
+  border-radius: 3px;
+
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+h1, .success-btn-container {
+  margin: 1vh 0 1vh 10vw;
+}
+h1 {
+  padding-left: 170px;
 }
 
 .btn {
@@ -35,7 +51,54 @@ input {
     background-color: #CF000F;
     border-color: #CF000F;
 }
+.create-btn {
+  display: inline-block;
+  padding: 5px 8px;
+  margin-bottom: 0;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid grey;
+  border-radius: 4px;
+}
+
+#create {
+  display: flex;
+  justify-content: space-between;
+  width: 85%;
+}
+#create > div {
+  display: inline;
+}
+.inputs-wrapper :nth-child(2){
+  margin: 0 70px;
+}
 
 .quantity {
   margin: 0 5px;
+}
+
+.product-wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 95%;
+  margin: 2vw 0;
+}
+.product-name {
+  width: 150px;
+}
+
+.total-price {
+  width: 70px;
+}
+.cost-per-unit {
+  width: 70px;
 }

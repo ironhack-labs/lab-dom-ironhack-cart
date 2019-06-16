@@ -6,9 +6,64 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+  
+  <div class="container">
+    <h1 class="main-header">IronHack <br> Merchandizing Shop</h1>
+    <div class="product-wrapper">
+      <div class="product-name">
+        <span>IronBubble-head</span>
+      </div>
+      <div class="cost-per-unit">
+        <span>$35.00</span>
+      </div>
+      <div class="units-to-buy quantity">
+        <label for="units">QTY:</label>
+        <input type="number" name="units"  placeholder=" How many?">
+      </div>
+      <div class="total-price">
+        <span>$0</span>
+      </div>
+      <div class="delete-btn-container">
+        <button class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+    <div class="product-wrapper">
+      <div class="product-name">
+        <span>Iron T-shirt</span>
+      </div>
+      <div class="cost-per-unit">
+        <span>$25.00</span>
+      </div>
+      <div class="units-to-buy quantity">
+        <label for="units">QTY:</label>
+        <input type="number" name="units"  placeholder=" How many?">
+      </div>
+      <div class="total-price">
+        <span>$0</span>
+      </div>
+      <div class="delete-btn-container">
+        <button class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+    <div class="product-wrapper" id="create">
+      <div class="inputs-wrapper">
+        <input type="text" placeholder=" name: iron-sticker" id="add-product-input">
+        <input type="number" placeholder=" price: 8" id="add-price-input">
+      </div>
+      <button class="create-btn">Create</button>
+    </div>
+    <div class="success-btn-container">
+      <button class="btn btn-success" id="calc-prices-button">Calculate Prices</button>
+    </div>
+    <h1 >Total price: $<span class="grand-total">0</span> </h1>
+  <!-- end of container -->
+  </div> 
+  <!-- end of container -->
+  
+  
 </body>
+<script type="text/javascript" src="./js/index.js"></script>
 </html>
