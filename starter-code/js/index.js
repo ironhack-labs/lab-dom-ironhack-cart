@@ -15,10 +15,11 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-  let shopList = document.getElementById("shop-list");
-  console.log(shopList);
+  let shopListDivs = document.querySelectorAll('#shop-list > div');
+  console.log(shopListDivs);
+  console.log(shopListDivs.length);
   let listTotal = 0.00;
-  for(let i = 0; i < 2; i++){
+  for(let i = 0; i < shopListDivs.length; i++){
     let product = document.getElementsByClassName('product')[i].innerHTML;
     let price = document.getElementsByClassName('price')[i].innerHTML.replace(`$`,``);
     let quantity = document.querySelectorAll('.quantity > input')[i].value;
