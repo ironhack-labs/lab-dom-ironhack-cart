@@ -1,7 +1,9 @@
 input {
   border: solid 1px black;
 }
-
+h1, h2{
+  text-align: center;
+}
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -38,4 +40,18 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.item, .new-item{
+   display: flex;
+  align-items: baseline; 
+  margin-bottom: 30px; 
+}
+.item > div, .new-item > div{
+  width: 20%;
+  text-align: center;
+}
+#calc-prices-button{
+  margin: 50px auto;
+  display: block;
 }
