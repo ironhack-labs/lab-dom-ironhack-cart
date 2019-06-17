@@ -1,5 +1,5 @@
 input {
-  border: solid 1px black;
+  border: solid 1px black; 
 }
 
 .btn {
@@ -38,4 +38,33 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.wrapper {
+  display: flex;
+  margin:10px 60px;
+  
+  justify-content:space-between;
+}
+.centerText {
+  text-align: center;
+  margin: 25px 15px;
+}
+
+.wrapper > div {
+  width: 300px;
+}
+
+.totalProductPrice {
+  text-align: center;
+  padding: 50px;
+}
+.creator {
+  margin:10px 60px;
+}
+.creator input {
+  margin-right: 60px;
+}
+.creator button {
+  margin-left: 460px;
 }
