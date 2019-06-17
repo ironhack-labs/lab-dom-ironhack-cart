@@ -39,3 +39,32 @@ input {
 .quantity {
   margin: 0 5px;
 }
+.title{
+  text-align: center;
+}
+.whole-product{
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+}
+.whole-product *{
+  text-align: center;
+  width: 24%;
+}
+.calc{
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+.cart-total{
+  display: flex;
+  justify-content: center;
+}
+.create{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 60px;
+}
+.create-inputs *{
+  margin-right: 30px;
+}
