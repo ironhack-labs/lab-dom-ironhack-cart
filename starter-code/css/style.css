@@ -1,3 +1,12 @@
+h1 {
+  text-align: center;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
 input {
   border: solid 1px black;
 }
@@ -24,6 +33,11 @@ input {
   border-radius: 4px;
 }
 
+.calc-div {
+  display: flex;
+  justify-content: center;
+}
+
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
@@ -38,4 +52,8 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.prod2 {
+  margin-top: 2%;
 }
