@@ -1,3 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.items-container {
+  width: 100%;
+}
+
+.product-container {
+  display: flex;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.product-container > div {
+  width: 25%;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+}
+
 input {
   border: solid 1px black;
 }
@@ -38,4 +63,19 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+div.create-row {
+  width: 100%;
+}
+
+div.create-product {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.create-product > div {
+  margin-right: 20px;
 }
