@@ -14,13 +14,26 @@
 
   <div id="shop-list">
     <div id="first-li" class="shop-product">
-        <div><span class="li-span">IronBubble-head</span></div>
-        <div><span class="li-span">$25.00</span></div>
-        <div><span class="li-span"> <label>QTY</label><input type="text"></span></div>
-        <div><span class="li-span">$0.00</span></div>
+        <div><span class="product">IronBubble-head</span></div>
+        <div><span class="price">$25.00</span></div>
+        <div><span class="quantity"> <label>QTY</label><input type="text"></span></div>
+        <div><span class="total-product-cost">$0.00</span></div>
+        <div><button class="btn btn-delete">Delete</button></div>
+    </div>
+    <div class="shop-product">
+        <div><span class="product">IronShirt</span></div>
+        <div><span class="price">$15.00</span></div>
+        <div><span class="quantity"> <label>QTY</label><input type="text"></span></div>
+        <div><span class="total-product-cost">$0.00</span></div>
         <div><button class="btn btn-delete">Delete</button></div>
     </div>
   </div>
+  <div>
+    <h2>Total Price: $<span id="list-total">0.00</span></h2>
+  </div>
+
+
+  <div id="calc-prices-button" class="shop-product"><button class = "btn btn-success">Calculate Prices</button>  </div>
   
 
 </body>
