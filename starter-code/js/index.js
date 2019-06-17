@@ -5,7 +5,6 @@ window.onload = function(){
   }
 
   function getPriceByProduct(itemNode){
-      return itemNode.getElementsByClassName('item-price')[0].innerHTML.replace( /^\D+/g, ''); //get item price;
   }
 
   function updatePriceByProduct(productPrice, index){
@@ -16,7 +15,7 @@ window.onload = function(){
     let allItems = document.getElementsByClassName('item');  
     let currentTotal = 0; 
     for(let i = 0; i<allItems.length ; i++){
-      let itemPrice = getPriceByProduct(allItems[i]);
+      let itemPrice = allItems[i].getElementsByClassName('item-price')[0].innerHTML.replace( /^\D+/g, ''); //get item price;
       let itemQTY = allItems[i].getElementsByClassName('item-qty')[0].value; //get item qty
       let itemTotal = itemPrice * itemQTY;
       allItems[i].getElementsByClassName('item-total-price')[0].innerHTML = itemTotal; //update total for the item
