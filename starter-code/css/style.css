@@ -51,3 +51,19 @@ input {
 	display: flex;
 	justify-content: center;
 }
+
+.itemCreate {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 5%;
+}
+.item > div {
+	width: 20%;
+}
+div#items {
+	padding: 0 5%;
+}
+
+h1 {
+	margin-bottom: 0px !important;
+}
