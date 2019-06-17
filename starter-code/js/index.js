@@ -1,8 +1,10 @@
 let prices = document.getElementsByClassName('price')
 let qtys = document.getElementsByTagName('input')
 let totalPrices = document.getElementsByClassName('price-by-prod')
+
 let numPrices = []
 let finalPrices = []
+let sumPrices = 0
 
 function getPriceByProduct(itemNode){ 
   for(let i = 0; i < prices.length; i++){
@@ -24,9 +26,13 @@ function updatePriceByProduct(productPrice, index){
 function getTotalPrice() {
   getPriceByProduct()
   updatePriceByProduct()
-  for (i=0; i<totalPrices.length; i++) {
-    totalPrices[i].innerText = `$${finalPrices[i]}.00`
+  sumPrices = 0
+  let global = document.getElementById('globalPrice')
+  for (let k = 0; k < totalPrices.length; k++) {
+    sumPrices += finalPrices[k]
+    totalPrices[k].innerText = `$${finalPrices[k]}.00`
   }
+  global.innerText =`$${sumPrices}.00` 
 }
 
 // function deleteItem(e){
