@@ -10,5 +10,41 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+
+<div class="container">
+  <h1>Ironhack Merchandising Shop</h1>
+  <div class="merch-list">
+    <div class="merch-container">
+      <span>IronBubble-head</span>
+      <span class="price" value="25">$25.00</span>
+      <span >QTY
+        <input type="number" class="quantity">
+      </span>
+      <span class="total-per-unit">$0.00</span>
+      <span>
+        <button class="btn-delete">Delete</button>
+      </span>
+    </div>
+  </div>
+  <div class="create-item">
+    <div class="inputs">
+        <span>
+          <input type="text" name="merch-name" id="item-name">
+        </span>
+        <span>
+            <input type="number" name="merch-qty" id="item-price">
+        </span>
+    </div>
+    <span>
+      <button id="new-item-create">Create</button>
+    </span>
+  </div>
+  <div class="btn-calc-container">
+    <button id="calc-prices-button" class="btn-success">Calculate</button>
+  </div>
+  <div id="grand-total">
+    <span>Total: </span><span>$0.00</span>
+</div>
+
 </body>
 </html>

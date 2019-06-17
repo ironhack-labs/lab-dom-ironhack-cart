@@ -1,5 +1,39 @@
+.container{
+  width: 800px;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.container > h1{
+  text-align: center;
+}
+
+.merch-list{
+  width: 100%;
+}
+
+.merch-container{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0px 20px 0px;
+}
+
+.btn-calc-container{
+  width: 100%;
+  margin: 30px 0px 0px 0px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
 input {
   border: solid 1px black;
+  margin: 0px 0px 0px 10px;
 }
 
 .btn {
@@ -39,3 +73,43 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.create-item{
+  width: 100%;
+  margin: 30px 0px 0px 0px;
+}
+
+.inputs{
+  float: left;
+  width: 290px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputs input{
+ width: 120px;
+}
+
+.inputs span:nth-of-type(1) input{
+  margin: 0px 0px 0px 0px;
+}
+
+.inputs span:nth-of-type(2) input{
+  margin: 0px 0px 0px 68px;
+}
+
+.create-item button{
+  background-color: rgb(113, 163, 255);
+  border-color: rgb(113, 163, 255);
+  float: right;
+  color: #fff;
+}
+
+#grand-total{
+  width: 100%;
+  float: left;
+  margin: 50px 0px 0px 0px;
+  text-align: center;
+  font-size: 42px;
+}
+
