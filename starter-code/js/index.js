@@ -1,21 +1,32 @@
 let prices = document.getElementsByClassName('price')
-let numPrices = []
 let qtys = document.getElementsByTagName('input')
+let totalPrices = document.getElementsByClassName('price-by-prod')
+let numPrices = []
+let finalPrices = []
 
-function getPriceByProduct(itemNode){
+function getPriceByProduct(itemNode){ 
   for(let i = 0; i < prices.length; i++){
     let theprice = prices[i].innerText.split("")
     theprice.shift()
     numPrices.push(theprice.join(""))	
   }
+  return numPrices
 }
 
 function updatePriceByProduct(productPrice, index){
-  
+  finalPrices = []
+  for(let j = 0; j < qtys.length; j++) {
+    finalPrices.push(numPrices[j] * qtys[j].value)
+  }
+  return finalPrices  
 }
 
 function getTotalPrice() {
-  
+  getPriceByProduct()
+  updatePriceByProduct()
+  for (i=0; i<totalPrices.length; i++) {
+    totalPrices[i].innerText = `$${finalPrices[i]}.00`
+  }
 }
 
 // function deleteItem(e){
