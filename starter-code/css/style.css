@@ -28,14 +28,63 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin-left: 48%;
+    margin-right: auto;
+    padding: 6px 12px;
+    border-radius: 4px;
+    margin-top:50px;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    padding: 6px 12px;
+    border-radius: 4px;
+    margin-top:0px;
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+h1,h2{
+  width:25%;
+  margin-left: 50%;
+  margin-right: auto;
+}
+
+.div1{
+  display:flex;
+  flex-direction:row;
+  justify-content: flex-start;
+  justify-content: space-between;
+  margin:30px;
+  width:90%;
+}
+
+#container{
+  display:flex;
+  flex-direction:column;
+}
+
+.name{
+  width:170px;
+}
+.price{
+  width:170px;
+}
+#add-name{
+  margin-left:30px;
+  margin-right:100px;
+}
+#add-price{
+  margin-left:50px;
+}
+
+#create-item{
+  float:right;
+  margin-right:116px;
+  background-color:white;
+  border-radius: 4px;
 }
