@@ -39,3 +39,24 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+nav h1 {
+  display: flex;
+  justify-content: center;
+  margin-left: 240px;
+  margin-bottom: 30px;
+}
+
+.product {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-content: space-between;
+}
+
+.calculate {
+  display: flex;
+  justify-content: center;
+  margin-left:  90px;
+  margin-top: 40px;
+}
