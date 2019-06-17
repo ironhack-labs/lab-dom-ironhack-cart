@@ -1,3 +1,7 @@
+body {
+  text-align: center;
+}
+
 input {
   border: solid 1px black;
 }
@@ -39,3 +43,36 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+#cart {
+  padding: 25px 0;
+}
+
+.product {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.product > div {
+  width: 20%;
+  margin: 5px 0;
+}
+
+.add-new-product {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.add-new-product .input-div {
+  display: flex;
+  justify-content: space-around;
+}
+
+/* .add-new-product > .button-div {
+  padding-right: 20%;
+} */
+
+/* .clear-float {
+  clear: both;
+} */
