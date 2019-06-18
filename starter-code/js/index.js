@@ -3,32 +3,34 @@ function deleteItem(e){
 }
 
 function getPriceByProduct(itemNode){
+  console.log(itemNode);
+  let price = itemNode[1].children[0].innerHTML;
+  price = price.substring(1);
+  return price;
   
-    
+  
 }
 
 function updatePriceByProduct(productPrice, index){
- 
+  let quantity =  document.getElementsByClassName("whole-product")[index].children[2].children[1].value;
+  console.log(quantity);
+  let priceProduct = quantity * productPrice;
+  document.getElementsByClassName("whole-product")[index].children[3].children[0].innerHTML  = "$" + priceProduct;
+  return priceProduct;
 }
 
-function getTotalPrice(e) {
-  let total = document.getElementsByClassName("totalPrice")
-  let qty =document.getElementsByClassName("quantity");
-  let productPrice = document.getElementsByClassName("productCost");
-  let x = productPrice[0].innerHTML.split('$');
-  let price = parseFloat(x[i]);
-  totalPrice = price * parseFloat(qty[i].value);
-  console.log(totalPrice);
- total[0].innerHTML= totalPrice.toFixed(2);
-var i;
- for (i = 0 ; i <= productPrice.length; i++);
- for (i = 0 ; i <= price.length; i++);
- for (i = 0 ; i <=qty.length; i++);
-
-
-
-
+function getTotalPrice() {
+  let totalCartValue = 0;
+  for(index = 0 ; index <= document.getElementsByClassName("whole-product").length; index++){
+   let sum = updatePriceByProduct(getPriceByProduct(document.getElementsByClassName("whole-product")[index].children), index);
+    totalCartValue += sum;
+  }
+  let totalCart = document.createElement("H1");
+  let cartContent = document.createTextNode("Total Price: $" + totalCartValue);
+  totalCart.appendChild(cartContent);
+  document.getElementById("totalDiv").appendChild(totalCart);
 }
+
 function createQuantityInput(){
 
 }
@@ -58,9 +60,14 @@ window.onload = function(){
   var createItemButton = document.getElementById('new-item-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
  
-  calculatePriceButton.onclick = getTotalPrice;
+  //getPriceByProduct(document.getElementsByClassName("whole-product")[0].children);
+  //console.log(document.getElementsByClassName("whole-product"));
+  
+   calculatePriceButton.onclick = getTotalPrice;
   //createItemButton.onclick = createNewItem;
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
   }
 };
+
+

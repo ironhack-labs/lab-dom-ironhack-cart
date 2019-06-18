@@ -47,7 +47,7 @@ nav h1 {
   margin-bottom: 30px;
 }
 
-.product {
+.whole-product {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
