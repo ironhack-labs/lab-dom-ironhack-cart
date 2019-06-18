@@ -1,42 +1,20 @@
-function deleteItem(e){
+// at least 3 onclick events
+// at least one getElementById
+// at least one getElementsByTagName
+// at least one getElementsByClassName
 
-}
 
-function getPriceByProduct(itemNode){
+// declare variable by selecting by class name
+// use map to sum
+// 
+// function changeColor() {
+//   var discoBoxes = document.getElementsByClassName("disco-box");
+//   for (i=0; i<discoBoxes.length; i++) {
+//     discoBoxes[i].style.backgroundColor = generateRandomColor();
+//   }
+// }
 
-}
 
-function updatePriceByProduct(productPrice, index){
-
-}
-
-function getTotalPrice() {
-
-}
-
-function createQuantityInput(){
-
-}
-
-function createDeleteButton(){
-
-}
-
-function createQuantityNode(){
-
-}
-
-function createItemNode(dataType, itemData){
-
-}
-
-function createNewItemRow(itemName, itemUnitPrice){
-
-}
-
-function createNewItem(){
-
-}
 
 window.onload = function(){
   var calculatePriceButton = document.getElementById('calc-prices-button');
@@ -49,4 +27,46 @@ window.onload = function(){
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
   }
+
+  
+  function deleteItem(e){
+    
+  }
+  
+  function getPriceByProduct(itemNode){
+    
+  }
+  
+  function updatePriceByProduct(productPrice, index){
+    
+  }
+  
+  function getTotalPrice() {
+    let priceItem = document.getElementsByTagName('span');
+  }
+  
+  function createQuantityInput(){
+    
+  }
+  
+  function createDeleteButton(){
+    
+  }
+  
+  function createQuantityNode(){
+    
+  }
+  
+  function createItemNode(dataType, itemData){
+    
+  }
+  
+  function createNewItemRow(itemName, itemUnitPrice){
+    
+  }
+  
+  function createNewItem(){
+    
+  }
+  
 };
