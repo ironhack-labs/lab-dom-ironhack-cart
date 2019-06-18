@@ -2,7 +2,8 @@ window.onload = function(){
   var calculatePriceButton = document.getElementById('calc-prices-button');
   var createItemButton = document.getElementById('new-item-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
-
+  let copy = document.querySelector('.copy-me').cloneNode(true);
+  copy.className = "whole-product";
   calculatePriceButton.onclick = getTotalPrice;
   createItemButton.onclick = createNewItem;
   
@@ -64,12 +65,11 @@ window.onload = function(){
   
   function createNewItem(){
     let parent = document.getElementById("all-items");
-    let copy = document.querySelector('.copy-me').cloneNode(true);
-    copy.className = "whole-product";
-    copy.querySelector(".name span").innerHTML = document.querySelector("#btn-name").value;
-    copy.querySelector(".price span").innerHTML = document.querySelector("#btn-price").value;
-    copy.querySelector(".user-in .qty").value = 0;
-    parent.appendChild(copy);
-    copy.querySelector(".btn-delete").onclick = deleteItem;
+    let newCopy = copy.cloneNode(true);
+    newCopy.querySelector(".name span").innerHTML = document.querySelector("#btn-name").value;
+    newCopy.querySelector(".price span").innerHTML = document.querySelector("#btn-price").value;
+    newCopy.querySelector(".user-in .qty").value = 0;
+    parent.appendChild(newCopy);
+    newCopy.querySelector(".btn-delete").onclick = deleteItem;
   }
 };
