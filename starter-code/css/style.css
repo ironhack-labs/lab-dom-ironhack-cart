@@ -1,4 +1,34 @@
-input {
+
+body{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding: 0 100px;
+}
+
+body h1{
+  margin: 0 auto;
+  width: 350px;
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
+
+.main-div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 1400px;
+  padding: 50px 20px 20px 20px;
+}
+
+.calculate{
+  margin: 0 auto;
+  padding-top: 100px;
+}
+
+
+
+.qty input {
   border: solid 1px black;
 }
 
@@ -38,4 +68,13 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+
+.grand-total{
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  padding-top: 20px;
 }
