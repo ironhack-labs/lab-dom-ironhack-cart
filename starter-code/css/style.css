@@ -1,3 +1,7 @@
+h1 {
+  text-align: center;
+}
+
 input {
   border: solid 1px black;
 }
@@ -38,4 +42,26 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+button {
+  padding: 1%;
+  border: none;
+  border-radius: .25vw;
+}
+
+.product-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1% 0;
+}
+
+.calculate-row {
+  display: flex;
+  justify-content: center;
+}
+
+.calculate-row button {
+  margin-top: 1%;
 }
