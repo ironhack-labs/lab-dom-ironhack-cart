@@ -2,6 +2,15 @@ input {
   border: solid 1px black;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -38,4 +47,13 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.product {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px;
 }
