@@ -28,14 +28,35 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    position: relative;
+    width: 159px;
+    padding: 1px;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    margin: 4px 67px 0px 75px;
 }
 
 .quantity {
   margin: 0 5px;
 }
+
+.product1{
+  text-align: center;
+  display: inline-flex;
+  margin: 0 103px;
+}
+.ironBubble{
+  margin: 14px 53px 0px 17px;
+}
+.amount{
+  margin: 0px 79px 4px 39px;
+}
+
+.quantity{
+  margin: 0px 71px 3px 5px;
+}
+
