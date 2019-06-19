@@ -2,6 +2,10 @@ body{
   text-align: center
 }
 
+form{
+  text-align: start;
+}
+
 input {
   border: solid 1px black;
 }
@@ -59,3 +63,16 @@ padding: 5px 0;
 display: flex;
 justify-content: center;
 } 
+
+.form-container {
+  display: flex;
+  
+}
+
+.form-container > div {
+  width: 20%;
+}
+
+.form-container > .justify-end {
+  padding-left: 40%;
+}
