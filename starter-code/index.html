@@ -1,14 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="text/javascript" src="./js/index.js"></script>
+    <title>Ironhack cart</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>IronHack Merchandise Shop</h1>
+      <div class="product-content">
+        <div class="product-container row">
+          <div class="product-name">
+            <span>Mouse</span>
+          </div>
+          <div class="cost-tab">
+            <span class="cost-per-unit">$25.00</span>
+          </div>
+          <div class="quanitity">
+            <label for="">QTY</label>
+            <input class="userInput" type="Number" />
+          </div>
+          <div class="total-price">
+            <span class="total">$0.0</span>
+          </div>
+          <div class="delete-button">
+            <button class=" btn btn-delete">Delete</button>
+          </div>
+        </div>
+
+        <div id="test" class="product-container row">
+          <div class="product-name">
+            <span class="name-changed">Computer</span>
+          </div>
+          <div class="cost-tab">
+            <span class="cost-per-unit">$500.99</span>
+          </div>
+          <div class="quanitity">
+            <label for="">QTY</label>
+            <input class="userInput" type="Number" />
+          </div>
+          <div class="total-price">
+            <span class="total">$0.0</span>
+          </div>
+          <div class="delete-button">
+            <button class=" btn btn-delete">Delete</button>
+          </div>
+        </div>
+      </div>
+      <div class="create">
+        <div class="create-inputs">
+          <input id="name" type="text" />
+          <input id="price" type="Number" />
+        </div>
+        <button id="create" class="btn-success">Create</button>
+      </div>
+      <div class="button-padding">
+        <button id="calc-prices-button" class="btn btn-success">
+          Calculate Prices
+        </button>
+      </div>
+      <div class="totalForAll">
+        <h2>Total Price: <span id="finalTotal">$0</span></h2>
+      </div>
+    </div>
+  </body>
 </html>

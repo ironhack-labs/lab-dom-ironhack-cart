@@ -1,7 +1,15 @@
 input {
   border: solid 1px black;
 }
-
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+.container {
+  width: 80%;
+}
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -25,17 +33,47 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+  outline: none;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #cf000f;
+  border-color: #cf000f;
+  outline: none;
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+body {
+  text-align: left;
+}
+
+.product-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+
+h1 {
+  margin-bottom: 100px;
+}
+.create {
+  display: flex;
+  border-radius: 20px;
+  justify-content: space-between;
+}
+.button-padding {
+  padding-top: 30px;
+}
+
+.product-name,
+.cost-tab {
+  width: 200px;
 }
