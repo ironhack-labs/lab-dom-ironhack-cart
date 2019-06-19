@@ -17,7 +17,7 @@
 
     <div id="cart">
       <div class="product">
-        <div class="product-name"><span>Ironbubble-Head</span></div>
+        <div class="product-name"><span>Iron-Bobble-Head</span></div>
         <div class="product-cost">$<span>25</span></div>
         <div class="product-quantity">
           <label for="quantity-label">Qty</label
@@ -25,7 +25,7 @@
         </div>
         <div class="product-total">$<span>0</span></div>
         <div class="product-delete">
-          <button onclick="deleteItem" class="btn btn-delete">Delete</button>
+          <button class="btn btn-delete">Delete</button>
         </div>
       </div>
 
@@ -38,29 +38,24 @@
         </div>
         <div class="product-total">$<span>0</span></div>
         <div class="product-delete">
-          <button onclick="deleteItem" class="btn btn-delete">Delete</button>
-        </div>
-      </div>
-
-      <div class="add-new-product">
-        <div class="input-div">
-          <input class="added-product add-input" type="text" />
-          <input class="added-price add-input" type="text" />
-        </div>
-        <div class="button-div" id="create-new-item-div">
-          <button onclick="createNewItem()" class="new-item-create">
-            Create
-          </button>
+          <button class="btn btn-delete">Delete</button>
         </div>
       </div>
 
       <!-- <div class="clear-float"></div> -->
     </div>
-
-    <button
-      onclick="getTotalPrice()"
-      class="btn btn-success calc-prices-button"
-    >
+    <div class="add-new-product">
+      <div class="input-div">
+        <input id="added-product" class="add-input" type="text" />
+        <input id="added-price" class="add-input" type="number" />
+      </div>
+      <div></div>
+      <div></div>
+      <div class="button-div" id="create-new-item-div">
+        <button id="new-item-create">Create</button>
+      </div>
+    </div>
+    <button class="btn btn-success" id="calc-prices-button">
       Calculate Prices
     </button>
     <h2>Total Price: $<span id="total">0</span></h2>

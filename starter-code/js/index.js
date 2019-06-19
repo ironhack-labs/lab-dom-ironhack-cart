@@ -55,18 +55,27 @@ function createNewItemRow(itemName, itemUnitPrice) {
   itemNameHTML = `<div class="product-name"><span>${itemName}</span></div>`;
   itemUnitPriceHTML = `<div class="product-cost">$<span>${itemUnitPrice}</span></div>`;
   itemRowHTML =
-    `<div class='product>
+    `
       ${itemNameHTML}
       ${itemUnitPriceHTML}
       ${createQuantityInput()}
       ${createProductTotalNode()}
       ${createDeleteButton()}
-    </div>`;
+    `;
   return itemRowHTML;
 }
 
 function createNewItem() {
-  console.log('test');
+  let newRow = document.createElement('div');
+  newRow.classList = "product";
+  newName = document.getElementById("added-product").value;
+  newPrice = document.getElementById("added-price").value;
+
+  newRow.innerHTML = createNewItemRow(newName, newPrice);
+
+  let theContainer = document.getElementById('cart');
+  theContainer.appendChild(newRow);
+  document.querySelector('.product:last-child .btn-delete').onclick = deleteItem;
 }
 
 
@@ -84,8 +93,8 @@ let createItemButton = document.getElementById('new-item-create');
 let createItemButtonDiv = document.getElementById("create-new-item-div");
 let deleteButtons = document.getElementsByClassName('btn-delete');
 
-// calculatePriceButton.onclick = getTotalPrice();
-// createItemButton.onclick = createNewItem;
+calculatePriceButton.onclick = getTotalPrice;
+createItemButton.onclick = createNewItem;
 
 for (let i = 0; i < deleteButtons.length; i++) {
   deleteButtons[i].onclick = deleteItem;
