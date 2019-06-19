@@ -1,3 +1,11 @@
+header{
+  /* float: right; */
+  font-size: 40px;
+  width:40%;
+  /* margin-bottom: 0px; */
+  /* padding-bottom:  0px; */
+}
+
 input {
   border: solid 1px black;
 }
@@ -28,6 +36,8 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin-top: 70px;
+    margin-left: 40%;
 }
 
 .btn-delete {
@@ -38,4 +48,26 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+.main{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 50px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.main div {
+  margin: 35px;
+}
+.totalPriceClass{
+  font-size: 35px;
+  font-weight: bold;
+  margin-left: 50%;
+  margin-top: 50px;
+}
+span.product-name {
+  width: 300px;
+}
+span.cost-unit {
+  width: 100px;
 }
