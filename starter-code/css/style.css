@@ -4,6 +4,7 @@ h1 {
 
 input {
   border: solid 1px black;
+  height: 1.5vw;
 }
 
 .btn {
@@ -52,9 +53,17 @@ button {
 
 .product-info {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   padding: 1% 0;
+}
+
+.product-info > *:not(.btn-delete) {
+  width: 15%;
+}
+
+.price {
+  text-align: center;
 }
 
 .calculate-row {
@@ -64,4 +73,21 @@ button {
 
 .calculate-row button {
   margin-top: 1%;
+}
+
+.total-row {
+  text-align: center;
+}
+
+.create-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 1% 7.5%;
+  align-items: center;
+}
+
+.input-double {
+  width: 35%;
+  display: flex;
+  justify-content: space-between;
 }
