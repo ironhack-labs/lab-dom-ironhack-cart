@@ -1,5 +1,59 @@
+.body{
+  height: 700px;
+  width: 100vw;
+}
+
+.title{
+  font-size: 30px;
+  height: 100px;
+  margin: 0 460px 130px 460px;
+  text-align: left;
+  display: flex;
+  justify-content: center;
+}
+
 input {
   border: solid 1px black;
+}
+
+.product{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 35px 0px;
+  
+}
+
+.pname{
+  width: 200px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.sPrice{
+  width: 100px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sQty{
+ 
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+
+}
+
+.total-unitPrice{
+
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn {
@@ -37,5 +91,40 @@ input {
 }
 
 .quantity {
+  border: 1px solid gray;
+  display: flex;
+  justify-content: center;
   margin: 0 5px;
+}
+
+.green-btn{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.finalPrice{
+  margin-top: 30px;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.inputs{
+ justify-content: space-between;
+ margin: 50px;
+}
+
+#new-itemName{
+  margin: 0px 130px 0px 80px;
+
+}
+
+#addNewButton{
+ margin-left: 690px;
+ background-color: white;
+ border: 1px solid gray; 
+  border-radius: 4px;
+  box-shadow: 0px 2px gray;
 }
