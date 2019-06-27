@@ -1,5 +1,17 @@
+.main-title {
+  margin: 50px;  
+}
+
+.product {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 50px;
+}
+
 input {
   border: solid 1px black;
+  text-indent: 5px;
 }
 
 .btn {
@@ -22,6 +34,12 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+}
+
+.btn-success-container {
+  display: flex;
+  justify-content: center;
+  margin: 50px;
 }
 
 .btn-success {
