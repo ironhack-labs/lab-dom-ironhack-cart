@@ -57,3 +57,13 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.total-price-container {
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+}
+
+.currency:before {
+  content: '$';
+}
