@@ -1,18 +1,36 @@
+// -----------------------------------------------------------------------------------------
+// Deleting items
+// -----------------------------------------------------------------------------------------
+
 function deleteItem(e){
+  
+}
+
+// -----------------------------------------------------------------------------------------
+// Calculating Product total price
+// -----------------------------------------------------------------------------------------
+
+
+
+  // Get 
+function getProductInfo() {
+}
+
+function getProductUnitPrice(itemNode){
 
 }
 
-function getPriceByProduct(itemNode){
+function calcProductTotalPrice(productPrice, index){
 
 }
 
-function updatePriceByProduct(productPrice, index){
+function updatePrices() {
 
 }
 
-function getTotalPrice() {
-
-}
+// -----------------------------------------------------------------------------------------
+// Creating new items
+// -----------------------------------------------------------------------------------------
 
 function createQuantityInput(){
 
@@ -38,15 +56,22 @@ function createNewItem(){
 
 }
 
+// -----------------------------------------------------------------------------------------
+// Creating the event listeners
+// -----------------------------------------------------------------------------------------
+
 window.onload = function(){
+
   var calculatePriceButton = document.getElementById('calc-prices-button');
   var createItemButton = document.getElementById('new-item-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
-  calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
+  calculatePriceButton.addEventListener("click", updatePrices);
+  createItemButton.addEventListener("click", createNewItem);
 
   for(var i = 0; i<deleteButtons.length ; i++){
-    deleteButtons[i].onclick = deleteItem;
+    deleteButtons[i].addEventListener("click", deleteItem);
   }
+
+
 };
