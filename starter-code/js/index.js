@@ -22,7 +22,7 @@ function ShopItem(name, price) {
       <span>$${this.price.toFixed(2)}</span>
     </div>
     <div class="quantity">
-      <label for="item">QTY</label>
+      <label for="quantity">QTY</label>
       <input type="text" placeholder="0" id="quantity"${ this.lastInput ? ' value="' + this.lastInput + '"' : ""}>
     </div>
     <div class="totalPrice">
