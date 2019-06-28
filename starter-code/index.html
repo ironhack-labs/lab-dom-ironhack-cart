@@ -16,32 +16,40 @@
     <h1>Ironhack Merchandise Shop</h1>
   </div>
  
-  <div class="product">
-    <div>
+  <section>
+    <div class="product">
       <span class="product-name">IronBook</span>
-    </div>
-
-    <div>
       <span class="product-unit-price currency">10.00</span>
-    </div>
-
-    <div>
-      <label class="label-qty">QTY</label>
-      <input class="product-qty" type="text" value="0">
-    </div>
-
-    <div>
+      <div>
+        <label class="label-qty">QTY</label>
+        <input class="product-qty" type="text" value="0">
+      </div>
       <span class="product-total-price currency">0.00</span>
+      <button class="btn btn-delete">Delete</button>
     </div>
 
-    <div>
-      <button class="btn btn-delete">
-        Delete
-      </button>
+    <div class="product">
+      <span class="product-name">IronShirt</span>
+      <span class="product-unit-price currency">30.00</span>
+      <div>
+        <label class="label-qty">QTY</label>
+        <input class="product-qty" type="text" value="0">
+      </div>
+      <span class="product-total-price currency">0.00</span>
+      <button class="btn btn-delete">Delete</button>
     </div>
 
-  </div>
-
+    <div class="product">
+      <span class="product-name">IronPen</span>
+      <span class="product-unit-price currency">5.50</span>
+      <div>
+        <label class="label-qty">QTY</label>
+        <input class="product-qty" type="text" value="0">
+      </div>
+      <span class="product-total-price currency">0.00</span>
+      <button class="btn btn-delete">Delete</button>
+    </div>
+  </section>
 
   <div class="btn-success-container">
     <button id="calc-prices-button" class="btn btn-success">
@@ -63,3 +71,5 @@
 </html>
 
 
+
+<!-- event.currentTarget.parentElement  --- for delete buttons, to know which one triggered the event -->
