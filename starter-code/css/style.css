@@ -24,18 +24,79 @@ input {
   border-radius: 4px;
 }
 
-.btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
-}
-
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
 }
 
-.quantity {
-  margin: 0 5px;
+.btn-success {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+.cart {
+  flex-basis: 100%;
+}
+
+.title {
+  text-align: center;
+}
+
+.shop {
+  padding: 0 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.cart .item ,
+.new-item-mask {
+  padding: 10px 0;
+  flex-basis: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item .totalPrice,
+.item .delete {
+  flex-basis: 20%;
+}
+
+.item .name {
+  flex-basis: 25%;
+}
+
+.item .price {
+  flex-basis: 15%;
+}
+
+.item .quantity {
+  flex-basis: 20%;
+  margin: 0 15px;
+}
+
+.mark-wrong {
+  color: red;
+  background-color: #CF000F;
+}
+
+.calc-button {
+  padding-top: 20px;
+  margin: 0 auto;
+}
+
+.new-item-mask div {
+  flex-basis: 20%;
+}
+
+.new-item-mask .placeholder {
+  flex-basis: 40%;
+}
+
+div.total {
+  text-align: center;
 }

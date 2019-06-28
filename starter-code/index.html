@@ -1,14 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="text/javascript" src="./js/index.js"></script>
+    <title>Ironhack cart</title>
+  </head>
+  <body>
+    <div class="shop">
+      <div class="title">
+        <h1>Ironhack Merchandising shop</h1>
+      </div>
+      <div class="cart"></div>
+      <div class="new-item-mask">
+        <div class="name">
+          <input type="text" placeholder="new item" id="name" />
+        </div>
+        <div class="price">
+          <label for="price">$</label>
+          <input type="text" placeholder="x.xx" id="price" />
+        </div>
+        <div class="placeholder"></div>
+        <div>
+          <button class="btn btn-success" id="new-item-create">Add item</button>
+        </div>
+      </div>
+      <div class="calc-button">
+        <button class="btn btn-success" id="calc-prices-button">
+          Calculate Prizes
+        </button>
+      </div>
+      <div class="total">
+        <h2>Total Price: <span>$0.00</span></h2>
+      </div>
+    </div>
+  </body>
 </html>
