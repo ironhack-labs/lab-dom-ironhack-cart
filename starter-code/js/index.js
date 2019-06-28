@@ -38,6 +38,7 @@ function ShopItem(name, price) {
 function addItem(item) {
   cart.appendChild(item.getHtml());
   items.push(item);
+  // reload buttons and make sure the click events get passed on
   deleteButtons = document.getElementsByClassName('btn-delete');
   for (var i = 0; i < deleteButtons.length; i++) {
     deleteButtons[i].onclick = deleteItem;
@@ -45,7 +46,7 @@ function addItem(item) {
 }
 
 function deleteItem(e) {
-  let item = e.target.parentNode.parentNode;
+  let item = e.currentTarget.parentNode.parentNode;
   let index = parseInt(item.dataset["itemNum"]);
   if ((index != 0 && !index) || index > items.length) {
     throw new Error("Invalid item number: " + index);
@@ -67,9 +68,8 @@ function updatePriceByProduct(item, element) {
   let input = element.querySelector(".quantity input");
   item.lastInput = input.value;
   let parsed = parseInt(item.lastInput);
-  if (parsed) {
-    // ignore minus...
-    item.count = Math.abs(parsed);
+  if (!isNaN(parsed) && parsed >= 0) {
+    item.count = parsed;
     input.classList.remove("mark-wrong");
   } else {
     item.count = 0;
@@ -101,9 +101,8 @@ function newItemFromInput(e) {
   let name = newItemMask.querySelector(".name input").value;
   let priceInput = newItemMask.querySelector(".price input");
   let price = parseFloat(priceInput.value);
-  if (price) {
-    // ignore minus...
-    addItem(new ShopItem(name, Math.abs(price)));
+  if ( !isNaN(price) && price >= 0 ) {
+    addItem(new ShopItem(name, price));
     priceInput.classList.remove("mark-wrong");
   } else {
     if (priceInput.value) priceInput.classList.add("mark-wrong");
