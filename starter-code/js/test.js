@@ -9,10 +9,8 @@ function Product(productName, productUnitPrice, productQTY) {
   this.productUnitPrice = parseFloat(productUnitPrice);
   this.productQTY = parseFloat(productQTY);
 
-  this.productTotalPrice = 0; // Initial value
-
-  this.calcProductTotalPrice = function(productQTY, productUnitPrice) {
-    return productQTY * productUnitPrice;
+  this.calcProductTotalPrice = function() {
+    return this.productQTY * this.productUnitPrice;
   };
 
 }
@@ -21,66 +19,76 @@ function Product(productName, productUnitPrice, productQTY) {
 
 function Shop(){
 
+  var self = this;  // Needed as when calling functions, the context of "this" changes
+
   // Initial values
-  this.totalPrice = 0;
-  this.cartInfo = [];
+  this.cartInfo = [];  // Create directory of what's in the cart (not really needed)
 
-  // Function that creates the product directory
-  this.getCartInfo = function() {
+  // updatePrices - Function that updates all prices and creates the "cartInfo"
+  this.updatePrices = function() {
 
-    let productCollection = document.querySelectorAll(".product");
-  
+    let productCollection = document.querySelectorAll(".product");  // Get all Product html
+    let totalPrice = 0;
+
     for(let i = 0; i < productCollection.length; i++) {
       let productName =  productCollection[i].getElementsByClassName("product-name")[0].innerHTML
       let productUnitPrice =  productCollection[i].getElementsByClassName("product-unit-price")[0].innerHTML
       let productQty =  productCollection[i].getElementsByClassName("product-qty")[0].value
   
       let prodObj = new Product(productName, productUnitPrice, productQty);
-  
-      cartInfo.push(prodObj);
+
+      // Add to the Cart directory
+      self.cartInfo.push(prodObj);  
+
+      // Add to the Overall Total Price
+      totalPrice += prodObj.calcProductTotalPrice();
+
+      // Update the Product Total Price
+      productCollection[i].getElementsByClassName("product-total-price")[0].innerHTML = 
+              parseFloat(Math.round(prodObj.calcProductTotalPrice() * 100) / 100).toFixed(2);   // Round to 2 d.p.
     }
-    return cartInfo;
+
+    document.getElementsByClassName("total-price")[0].innerHTML = 
+              parseFloat(Math.round(totalPrice * 100) / 100).toFixed(2);
   };
-};
 
-// Card - has current state?
+  // deleteItem - Function that deletes items
+  this.deleteItem = function() {
+    productToDelete = event.currentTarget.parentElement;
 
+    while (productToDelete.firstChild) {
+      productToDelete.removeChild(productToDelete.firstChild);
+        }
 
+    // productToDelete.setAttribute("id", "marked-for-deletion");
 
-// // Shop
-
-// function Shop(productDirectory){
-
-//   this.productDirectory = productDirectory;
-
-
-//   // Function to calculate total price and update all prices
-//   this.totalPrice = function(productDirectory) {
-//     let totalPrice = 0;
-
-//     for(let i=0; i < productDirectory.length; i++) {
-//       totalPrice += productDirectory[i].productTotalPrice;            
-//     }
-
-//     return totalPrice;
-//   }
-
-
+    productToDelete.parentElement.removeChild(productToDelete);
+  }
 
 };
- var shop = new ShopManager()
-
-
 
 
 // -----------------------------------------------------------------------------------------
 // Run things (on events via listeners)
 // -----------------------------------------------------------------------------------------
 
-productDirectory = ShopManager.makeProductDirectory();
-totalPrice = ShoppingCart.calcTotalPrice(productDirectory);
-ShopManager.updatePrices(productDirectory, totalPrice);
+window.onload = function(){
 
-console.log(productDirectory);
+  // Create new shop
+  var shop = new Shop();
 
+  // Define buttons that have events
+  var calculatePriceButton = document.getElementById('calc-prices-button');
+  var deleteButtons = document.getElementsByClassName('btn-delete');
 
+  // Add event listeners for button clicks
+  calculatePriceButton.addEventListener("click", shop.updatePrices);
+  calculatePriceButton.addEventListener("click", console.log(shop.cartInfo)); // Just for fun
+
+  for(var i = 0; i<deleteButtons.length ; i++){
+    deleteButtons[i].addEventListener("click", shop.deleteItem);
+    deleteButtons[i].addEventListener("click", shop.updatePrices);
+  }  
+
+  
+};
