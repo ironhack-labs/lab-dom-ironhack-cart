@@ -98,11 +98,19 @@ function updateTotal() {
 
 function newItemFromInput(e) {
   let newItemMask = document.getElementsByClassName("new-item-mask")[0];
-  let name = newItemMask.querySelector(".name input").value;
+  let nameInput = newItemMask.querySelector(".name input");
+  let name = nameInput.value;
+  if (!name) {
+    nameInput.classList.add("mark-wrong");
+  } else {
+    nameInput.classList.remove("mark-wrong");
+  }
   let priceInput = newItemMask.querySelector(".price input");
   let price = parseFloat(priceInput.value);
   if ( !isNaN(price) && price >= 0 ) {
-    addItem(new ShopItem(name, price));
+    if ( name ) {
+      addItem(new ShopItem(name, price));
+    }
     priceInput.classList.remove("mark-wrong");
   } else {
     if (priceInput.value) priceInput.classList.add("mark-wrong");
