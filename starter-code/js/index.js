@@ -47,13 +47,13 @@ function addItem(item) {
 function deleteItem(e) {
   let item = e.target.parentNode.parentNode;
   let index = parseInt(item.dataset["itemNum"]);
-  if ((index !=0 && !index) || index > items.length) {
+  if ((index != 0 && !index) || index > items.length) {
     throw new Error("Invalid item number: " + index);
   }
   items.forEach((elem, i) => {
-    if ( i < index ) return;
+    if (i < index) return;
     let element = cart.querySelector(`[data-item-num="${i}"]`);
-    if ( i === index ) {
+    if (i === index) {
       cart.removeChild(element);
       return;
     }
