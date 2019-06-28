@@ -113,7 +113,7 @@ function newItemFromInput(e) {
     }
     priceInput.classList.remove("mark-wrong");
   } else {
-    if (priceInput.value) priceInput.classList.add("mark-wrong");
+    priceInput.classList.add("mark-wrong");
   }
 }
 
