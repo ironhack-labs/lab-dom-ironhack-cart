@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,84 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+
+  <div class="row">
+    <h1>Ironhack Merchandising Shop</h1>
+  </div>
+
+  <!-- PRODUCT ROWS CONTAINER -->
+  <div id="product-rows-container">
+
+    <!-- PRODUCT ROW -->
+    <div class="product">
+      <div class="product-name">
+        <span>Iron-Bobblehead </span>
+      </div>
+      <div class="unit-cost">
+        $<span>25.00</span>
+      </div>
+      <div class="qty">
+        <label for="qty">QTY</label>
+        <input type="number">
+      </div>
+      <div class="total">
+        $<span>0</span>
+      </div>
+      <div>
+        <button class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+
+    <!-- PRODUCT ROW -->
+    <div class="product">
+      <div class="product-name">
+        <span>Ironhack Tshirt</span>
+      </div>
+      <div class="unit-cost">
+        $<span>40.00</span>
+      </div>
+      <div class="qty">
+        <label for="qty">QTY</label>
+        <input type="number">
+      </div>
+      <div class="total">
+        $<span>0</span>
+      </div>
+      <div>
+        <button class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+
+  </div> <!-- END PRODUCT ROWS CONTAINER -->
+
+  <!-- ADD NEW PRODUCT -->
+  <div class="create-new-product-row">
+    <h3>Add new product: </h3>
+    <div class="new-product-name">
+      <input type="text" placeholder="Product Name">
+    </div>
+    <div class="new-product-cost">
+      <input type="number" placeholder="Unit Cost">
+    </div>
+
+    <div>
+      <button class="btn btn-create" id="create-new-product-button">Create</button>
+    </div>
+  </div>
+
+  <!-- CALCULATE PRICES -->
+  <div class="row">
+    <button class="btn btn-success" id="calc-prices-button">
+      Calculate Prices
+    </button>
+  </div>
+
+  <div class="row">
+    <h2 id="grand-total">Total Price: $<span>0</span></h2>
+  </div>
+
 </body>
+
 </html>
