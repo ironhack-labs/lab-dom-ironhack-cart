@@ -1,6 +1,15 @@
 input {
   border: solid 1px black;
 }
+h1 {
+  text-align: center;
+  margin:   35px;
+}
+.shopping-cart {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
 
 .btn {
   display: inline-block;
@@ -28,14 +37,23 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    border-radius: 4px;
+    padding: 16px;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    width: 6rem;
+    border-radius: 4px;
+    height: 3rem;
 }
 
 .quantity {
   margin: 0 5px;
+}
+footer {
+  text-align: center;
+  padding: 16px;
 }
