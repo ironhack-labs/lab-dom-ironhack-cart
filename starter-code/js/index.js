@@ -83,6 +83,7 @@ window.onload = function(){
     // alert the user to change the quantity of the newly created item
     alert("Don't forget to choose a quantity!");
 
+    // be able to delete newly created items
     for(var i = 0; i<deleteButtons.length ; i++){
       deleteButtons[i].onclick = deleteItem;
     }
