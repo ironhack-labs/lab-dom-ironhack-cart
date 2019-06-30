@@ -1,14 +1,20 @@
 input {
   border: solid 1px black;
+  margin-left: 8px;
 }
 h1 {
   text-align: center;
-  margin:   35px;
+  margin: 35px;
 }
-.shopping-cart {
+.item {
   display: flex;
   justify-content: space-around;
-  padding: 10px;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.item > * {
+  width: 20%;
 }
 
 .btn {
@@ -34,25 +40,36 @@ h1 {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
-    border-radius: 4px;
-    padding: 16px;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+  border-radius: 4px;
+  padding: 16px;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
-    width: 6rem;
-    border-radius: 4px;
-    height: 3rem;
+  color: #fff;
+  background-color: #cf000f;
+  border-color: #cf000f;
+  width: 6rem;
+  border-radius: 4px;
+  height: 3rem;
 }
 
-.quantity {
+.item-quantity {
   margin: 0 5px;
 }
+
+.padded-container {
+  padding: 0 64px;
+}
+
+.create-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 footer {
   text-align: center;
   padding: 16px;

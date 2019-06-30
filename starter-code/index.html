@@ -10,45 +10,61 @@
   <title>Ironhack cart</title>
 </head>
 <body>
-  <h1>Ironhack Merchandising Shop</h1>
-  <div class="shopping-cart">
-      <p>IronBubble-head</p>
-      <p>$25.00</p>
-      <div><span>QTY</span> <input type="number" placeholder="0" class=".quantity"></div>
-      <p>$0.00</p>
-      <button class="btn-delete" type="text">Delete</button>
-  </div class="shopping-cart">
-  <div class="shopping-cart">
-      <p>IronBubble-head</p>
-      <p>$25.00</p>
-      <div><span>QTY</span> <input type="number" placeholder="0" class=".quantity"></div>
-      <p>$0.00</p>
-      <button class="btn-delete" type="text">Delete</button> 
-  </div>
-  <div class="shopping-cart">
-      <p>IronBubble-head</p>
-      <p>$25.00</p>
-      <div><span>QTY</span> <input type="number" placeholder="0" class=".quantity"></div>
-      <p>$0.00</p>
-      <button class="btn-delete" type="text">Delete</button>
-  </div>
-  <div class="shopping-cart">
-      <p>IronBubble-head</p>
-      <p>$25.00</p>
-      <div><span>QTY</span> <input type="number" placeholder="0" class=".quantity"></div>
-      <p>$0.00</p>
-      <button class="btn-delete" type="text">Delete</button>
-  </div>
-  <div class="shopping-cart">
-      <p>IronBubble-head</p>
-      <p>$25.00</p>
-      <div><span>QTY</span> <input type="number" placeholder="0" class=".quantity"></div>
-      <p>$0.00</p>
-      <button class="btn-delete" type="text">Delete</button>
-  </div>
-  <footer>
-    <button class="btn-success" type="number" >Calculate Price</button>
-  </footer>
+    <body>
+        <h1>Ironhack Merchandising Shop</h1>
+        <div class="padded-container" id="shopping-cart">
+          <div class="item">
+            <span>IronBubble-head</span>
+            <div>
+              <span>$</span>
+              <span class="item-price">25</span>
+            </div>
+            <div>
+              <span>QTY</span>
+              <input type="number" placeholder="0" class="item-quantity" min="0" />
+            </div>
+            <div>
+              <span>$</span>
+              <span class="item-total-price">0.00</span>
+            </div>
+            <button class="btn-delete" onclick="deleteItem(event)">
+              Delete
+            </button>
+          </div>
+          <div class="item">
+            <span>IronBubble-head</span>
+            <div>
+              <span>$</span>
+              <span class="item-price">30</span>
+            </div>
+            <div>
+              <span>QTY</span>
+              <input type="number" placeholder="0" min="0" class="item-quantity" />
+            </div>
+            <div>
+              <span>$</span>
+              <span class="item-total-price">0.00</span>
+            </div>
+            <button class="btn-delete" onclick="deleteItem(event)">
+              Delete
+            </button>
+          </div>
+        </div>
+        <div class="create-item padded-container">
+          <span>
+            <input type="text" id="new-item-name" />
+            <input type="number" id="new-item-price" min="0" />
+          </span>
+          <button onclick="createNewItem()">Create</button>
+        </div>
+        <footer>
+          <button class="btn-success" type="number" onclick="getTotalPrice()">
+            Calculate Price
+          </button>
+          <h2><span>Total Price:$</span><span id="cart-total">0.00</span></h2>
+        </footer>
+      </body>
+    
 
 </body>
 </html>
