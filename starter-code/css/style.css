@@ -2,7 +2,46 @@ input {
   border: solid 1px black;
 }
 
-.btn {
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  padding: 1em;
+}
+
+.userdata{
+  display: flex;
+  justify-content: left;
+}
+
+.userdata input{
+  margin: 1em;
+}
+
+#add{
+  display: flex;
+  justify-content: space-around;
+  padding: 1em;
+}
+
+#heading{
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+
+#footer{
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+
+#calculate{
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+
+button{
   display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
