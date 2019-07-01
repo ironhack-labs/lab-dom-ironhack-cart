@@ -1,16 +1,42 @@
+h1 {
+  display : flex;
+  justify-content : center;
+  margin : 5%;
+}
+
+.product-list {
+  display : flex;
+  flex-direction : column;
+}
+
+.product {
+  display : flex;
+  flex-direction : row;
+  justify-content : space-around;
+  margin : 2vmin;
+}
+
+.product-name {
+  width : 20%;
+}
+
+.product-price {
+  width : 10%;;
+}
+
 input {
   border: solid 1px black;
 }
 
 .btn {
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
+  display : inline-block;
+  padding : 6px 12px;s
+  margin-bottom : 0;
+  font-size : 14px;
+  font-weight : 400;
+  line-height : 1.42857143;
+  text-align : center;
+  white-space : nowrap;
   vertical-align: middle;
   -ms-touch-action: manipulation;
   touch-action: manipulation;
@@ -22,6 +48,12 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+}
+
+.calculate-price {
+  margin : 3%;
+  display : flex;
+  justify-content: center;
 }
 
 .btn-success {
@@ -38,4 +70,18 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.calculate-total {
+text-align : center;
+font-size : 2em;
+}
+
+.input-boxes {
+  width : 15%;
+  margin : 2vmin;
+}
+
+#new-product {
+  margin-left : 3vmin;
 }
