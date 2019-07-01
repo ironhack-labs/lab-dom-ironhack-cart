@@ -1,10 +1,44 @@
+
+@import url('https://fonts.googleapis.com/css?family=Bahianita&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Barriecito&display=swap');
+
+
+body {
+  background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1979f7cc-7804-4b22-9753-66c3216ab716/dayrcv2-3a42b7b0-3a05-448b-bf1e-9fd855c73f92.png/v1/fill/w_1024,h_652,strp/green_blur_background_by_dhirajsardarcreation_dayrcv2-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjUyIiwicGF0aCI6IlwvZlwvMTk3OWY3Y2MtNzgwNC00YjIyLTk3NTMtNjZjMzIxNmFiNzE2XC9kYXlyY3YyLTNhNDJiN2IwLTNhMDUtNDQ4Yi1iZjFlLTlmZDg1NWM3M2Y5Mi5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.R83K8T5iF9R6Wmgo0H54hmiqacLW1vID8123Ku6D5KU");
+  background-size: cover;
+}
+
+div {
+  border: 1px solid black;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+h1 {
+  text-align: center;
+  padding: 20px;
+  font-family: Barriecito;
+  font-size: 4rem;
+  border: 1px solid black;
+  width: auto;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+p {
+
+  font-size: 1.4rem;
+  color: darkslategrey;
+
+}
+
+
 input {
   border: solid 1px black;
+  width: 100%
 }
 
 .btn {
   display: inline-block;
-  padding: 6px 12px;
+  padding: 0px 12px;
   margin-bottom: 0;
   font-size: 14px;
   font-weight: 400;
@@ -22,20 +56,70 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+  width: 200px;
+  height: 40px;
+  font-size: 1.6rem;
+  font-family: Bahianita;
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+  display: block;
+  margin: auto;
+  margin-top: 10px;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #CF000F;
+  border-color: #CF000F;
+  width: 100%;
 }
 
 .quantity {
-  margin: 0 5px;
+  padding-right: 20px;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px dashed green;
+  margin: 5px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.flex-item {
+  border: 1px dotted black;
+  width:100%;
+}
+
+.addContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.addContainer .input{
+  margin: 0 200px;
+  padding: 3px 25px;
+}
+.addContainer .btn {
+  margin: 0 50px;
+}
+
+#totalResult {
+  font-size: 2rem;
+  width: 300px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.6);
 }
