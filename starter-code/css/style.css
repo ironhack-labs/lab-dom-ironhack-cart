@@ -1,41 +1,235 @@
-input {
-  border: solid 1px black;
+html,
+body {
+  background-color: #eee;
+  font-family: calibri, sans-serif;
 }
 
-.btn {
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.42857143;
+#app {
+  width: 900px;
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content:flex-start;
+}
+
+.box  {
+  width: 200px;
+  height: 300px;
+  background-color: #fff;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+ 
+  margin: 15px 15px;
+  position : relative;
+  float: left;
+}
+
+.box img {
+  width: 100%;
+  height: 55%;
+  margin-bottom:  10px;
+}
+
+i {
+  width: 60px;
+  height: 60px;
+  /* background: black; */
+  color: #3AABE3;
+  border-radius: 30px;
   text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
+  font-size: 2rem;
+  position: absolute;
+  right: 5px;
+  top: 250px;
+
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
+  transition: all 0.3s;
 }
 
-.btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+
+
+h2 {
+  margin: 15px;
+  display: inline;
 }
 
-.btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+
+
+#cart {
+  margin-top: 50px;
+  overflow: hidden;
 }
 
-.quantity {
-  margin: 0 5px;
+#head {
+  width: 100%;
+  border-bottom: 1px solid #bfbfbf;
+  height: 40px;
+  display: block;
 }
+
+h3 {
+  display: inline-block;
+  line-height: 40px;
+  margin: 0;
+}
+
+#price {
+  display: inline-block;
+  color: #777777;
+  margin-left: 200px;
+  line-height: 40px;
+}
+#quantity {
+  display: inline-block;
+  color: #777777;
+  margin-left: 100px;
+  line-height: 40px;
+}
+#total {
+  display: inline-block;
+  color: #777777;
+  line-height: 40px;
+  float: right;
+}
+
+.row {
+  width: 100%;
+  border-bottom: 1px solid #bfbfbf;
+  overflow: hidden;
+  padding: 10px 0;
+  display: block;
+  float: left;
+}
+img {
+  height: 100px;
+  float: left;
+}
+
+h4 {
+  float: left;
+  margin: 0;
+  line-height: 100px;
+  margin-left: 20px;
+  width: 100px;
+}
+
+p {
+  float: left;
+  margin: 0;
+  width: 80px;
+  line-height: 100px;
+  margin-left: 35px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.qty-minus {
+  float: left;
+  width: 20px;
+  line-height: 100px;
+  margin-left: 60px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.qty {
+  float: left;
+  width: 20px;
+  line-height: 100px;
+  margin-left: 20px;
+  text-align: center;
+}
+
+.qty-plus {
+  float: left;
+  width: 20px;
+  line-height: 100px;
+  margin-left: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.del {
+  float: left;
+  width: 80px;
+  line-height: 100px;
+  margin-left: 60px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #3AABE3;
+}
+
+.totalprice {
+  float: left;
+  width: 80px;
+  line-height: 100px;
+  margin-left: 10px;
+  text-align: right;
+}
+
+.row p::before,
+.box p::before,
+.totalprice::before {
+  content: "$";
+}
+
+h5 {
+  font-size: 1.2rem;
+  text-align: right;
+}
+
+/* h2{
+  text-align: center;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-between;
+}
+
+.flex-container div {
+  padding: 10px;
+  width: 200px;
+}
+
+span {
+  padding: 40px;
+  margin: auto;
+}
+
+.btn-delete{
+  background-color:#F21111;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  color: white;
+  display: inline-block;
+  height: 40px;
+  margin: auto;
+}
+
+.red-btn{
+  background-color:#7ADF68;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  color: white;
+ 
+}
+
+.btn-add{
+  background-color: cornflowerblue;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  color: white;
+  display: inline-block;
+  height: 20px;
+  margin: auto;
+}
+
+
+
+ */

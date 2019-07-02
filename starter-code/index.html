@@ -1,14 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+
+  <h2>Ironhack Merchandising Shop</h2>
+
+
+<div id="app">
+  <div id="product">
+    <item v-for="item in items" v-bind:item_data="item"></item>
+  </div>
+  <div id="cart">
+    <div id="head">
+      <h3>Shopping Cart</h3>
+      <div id="price">Price</div>
+      <div id="quantity">Quantity</div>
+      <div id="total">Total</div>
+    </div>
+    <buyitem v-for="buyitem in buyitems" v-bind:buy_data="buyitem"></buyitem>
+    <h5 v-if="total()">Sum: $ {{total()}}</h5>
+  </div>
+</div>
+
+
+<template id="product-box">
+  <div class="box">
+    <img :src="item_data.img" />
+    <i class="fa fa-plus" v-on:click="addItem(item_data)"></i>
+    <h2>{{item_data.title}}</h2>
+    <p>{{item_data.price}}</p>
+  </div>
+</template>
+
+<template id="buy-box">
+  <div class="row">
+    <img :src="buy_data.img" />
+    <h4>{{buy_data.title}}</h4>
+    <p>{{buy_data.price}}</p>
+    <div class="qty-minus" v-on:click="minusQty(buy_data)">-</div>
+    <div class="qty">{{buy_data.qty}}</div>
+    <div class="qty-plus" v-on:click="plusQty(buy_data)">+</div>
+    <div class="del" v-on:click="removeItem(buy_data)">Remove</div>
+    <div class="totalprice">{{buy_data.total}}</div>
+  </div>
+</template>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script type="text/javascript" src="/starter-code/js/index.js"></script>
 </body>
+
 </html>
