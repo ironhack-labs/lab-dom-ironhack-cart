@@ -1,3 +1,7 @@
+/* body{
+  background-color: #CF000F;
+} */
+
 input {
   border: solid 1px black;
 }
@@ -28,6 +32,10 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    text-align: center;
+    margin: 30px 0;
+    align-self: center;
+
 }
 
 .btn-delete {
@@ -38,4 +46,45 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+span{
+  display: xwinline;
+}
+h1{
+  text-align: center;
+  margin: 30px 0;
+}
+.product {
+  display:flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.totalBlock{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+ }
+.totalBlock div{
+  align-self: center;
+}
+
+.create{
+  display:flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.btn-create {
+  color: #fff;
+  background-color: purple;
+  border-color: purple;
+  align-self: center;
+  margin: 20px 150px;
+}
+
+.new-stuff-row{
+  display: inline-flex;
+  align-content: center;
+  justify-content: space-evenly;
 }
