@@ -1,5 +1,6 @@
 input {
   border: solid 1px black;
+  margin: 0 5px;
 }
 
 .btn {
@@ -28,6 +29,14 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    
+    
+}
+
+.calButtonDiv {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0; 
 }
 
 .btn-delete {
@@ -36,6 +45,13 @@ input {
     border-color: #CF000F;
 }
 
-.quantity {
-  margin: 0 5px;
+
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+h1 {
+  text-align: center;
 }
