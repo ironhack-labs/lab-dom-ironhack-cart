@@ -1,5 +1,34 @@
+* {
+  box-sizing: border-box;
+}
+
+h1, h2 {
+  margin: 4%;
+  text-align: center;
+}
+
 input {
   border: solid 1px black;
+}
+
+.row{
+  display: flex;
+  justify-content: space-around;
+  margin: 4% 0px;
+}
+
+.newRow {
+  display: flex;
+  justify-content: space-around;
+  margin: 75px 0px;
+}
+
+.product-name {
+  width: 250px;
+}
+
+.quantity {
+  margin: 0 5px;
 }
 
 .btn {
@@ -24,18 +53,15 @@ input {
   border-radius: 4px;
 }
 
-.btn-success {
+#btn-calculate {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin-left: 45%;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
-}
-
-.quantity {
-  margin: 0 5px;
 }
