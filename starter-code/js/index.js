@@ -130,11 +130,12 @@ function createNewItem(){
       document.querySelector('.new-item-div .product-cost-div > input').value = ""
 
       deleteButtons = document.getElementsByClassName('btn-delete');
-      deleteButtons[deleteButtons.length - 1].onclick = deleteItem;
-  }
+      //deleteButtons[deleteButtons.length - 1].onclick = deleteItem;
+      for(let i = 0; i<deleteButtons.length ; i++){
+      deleteButtons[i].onclick = deleteItem;
+      }
 
-}; // end window onload
+}; //end create new item function
 
 
-
-
+}// end window onload
