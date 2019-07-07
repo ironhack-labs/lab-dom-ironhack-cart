@@ -1,41 +1,82 @@
+h1{
+display: flex;
+justify-content: center;
+padding: 20px;
+}
+
+.firstB{
+  background-color: #d2302c;
+  color: white;
+  width: 75px;
+  height: 40px;
+  border-radius: 10px;
+  align-content: center;
+}
+
+
+#articles {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  align-items: center;
+}
+
+.row{
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  align-items: center;
+
+}
+
+.shirt{
+  padding-right: 57.84px;
+}
+
+.lastb{
+  background-color: #58b45c;
+  color: white;
+  width: 150px;
+  height: 60px;
+  border-radius: 10px;
+  align-content: center;
+}
+
+.prices{
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+
+.newItem{
+  display: flex;
+  justify-content: space-around;
+  padding: 50px;  
+  align-items: center;
+}
+
+
+.totalprice h2{
+  display: flex;
+  justify-content: center;
+}
+
+
 input {
   border: solid 1px black;
 }
 
-.btn {
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
-}
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
-}
-
-.btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  background-color: #58b45c;
+  color: white;
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  align-content: center;
 }
 
 .quantity {
   margin: 0 5px;
 }
+
