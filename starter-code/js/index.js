@@ -6,23 +6,65 @@
 
 // function getPriceByProduct(itemNode){
 
-  let inputCost = document.getElementsByTagName("input")[0]
-  console.log(inputCost)
-
-  let calButton = document.getElementById("calBut")
+// ------------------------PRODUCT ONE-------------------------
 
 
-  let cost = document.getElementsByClassName("prodCost")[0]
-  console.log(cost);
 
-  let totalProductCost = document.getElementsByClassName("totalProduct")[0]
-  console.log(totalProductCost);
+  let user_input_product1= document.getElementsByClassName("userInput product1")[0]
+  let product_cost_product1 = document.getElementsByClassName("productCost product1")[0]
+  let multi_product_cost_product1 = document.getElementsByClassName("multiProductCost product1")[0]
+  
+// -------------------------PRODUCT TWO ---------------------------------
 
 
-  calButton.onclick = () => {
-    totalProductCost = inputCost.value * cost.innerHTML
-    totalProduct.innerHTML = totalProductCost
-  } 
+  let user_input_product2= document.getElementsByClassName("userInput product2")[0]
+  let product_cost_product2 = document.getElementsByClassName("productCost product2")[0]
+  let multi_product_cost_product2 = document.getElementsByClassName("multiProductCost product2")[0]
+ // let multi_product_cost = document.getElementsByClassName(".multiProductCost")
+  
+
+    //-------------------- INDIVIDUAL COST CALCULATOR -------------------------------
+    
+  let calculate_button = document.getElementById("calculateButton")  
+  let total_price = document.getElementsByClassName(".totalPrice")[0]
+    
+  calculate_button.onclick = () => {
+    let total_product_cost_product1 = user_input_product1.value * product_cost_product1.innerHTML
+    multi_product_cost_product1.innerHTML = total_product_cost_product1
+    let total_product_cost_product2 = user_input_product2.value * product_cost_product2.innerHTML
+    multi_product_cost_product2.innerHTML = total_product_cost_product2
+
+    // let cost_of_all_individual_products = document.getElementsByClassName(".multiProductCost")
+
+    // cost_of_all_individual_products.forEach(element => {
+    //   let price_of_all_items = 0
+    //   price_of_all_items += cost_of_all_individual_products[element]
+    //   total_price.innerHTML = price_of_all_items
+    // });
+
+
+function calculatePrices (quantity, price) {
+  
+}
+
+    
+  }
+
+
+ 
+ //-------------------- TOTAL PRICE CALCULATOR -----------------------------------------
+//  let cost_of_all_individual_products = document.getElementsByClassName(".multiProductCost")
+ 
+//  calculate_button.onclick = () => {
+//   cost_of_all_individual_products.forEach(element => {
+//     multi_product_cost.push(cost_of_all_individual_products[element]) 
+//     multi_product_cost_product1.innerHTML
+//   }
+
+//  }
+
+// console.log(cost_of_all_individual_products)
+
 // }
 // getPriceByProduct(totalProductCost)
 

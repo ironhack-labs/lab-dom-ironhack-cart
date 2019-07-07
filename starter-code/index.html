@@ -20,59 +20,70 @@
 <!--    ------PRODUCT 1-------  <-->
 
 
-  <div id="prod1" class="container">
-    <div>
-      <span class="prodName">Ironhack recovery pills</span>
-    </div>
-
-    <div>
-        <span class="prodCost">100</span>
-    </div>   
-
-    <div>
-      <label>Qty</label>
-        <input type="text">
-    </div>
-
-    <div>
-      <span class="totalProduct">0</span>
-    </div>
-
-    <div>
-      <button class="btn btn-delete">Delete</button>
-    </div>
-
+<div class="productContainer">
+  <div>
+    <span class="productName">Ironhack recovery pills</span>
   </div>
 
-  <!--    ------PRODUCT 2-------  <-->
+  <div>
+    <span class="productCost product1">100</span>
+  </div>
 
-  <div id="prod2" class="container">
+  <div>
+    <label>Qty</label>
+    <input class="userInput product1" type="text">
+  </div>
+
+  <div>
+    <span class="multiProductCost product1">0</span>
+  </div>
+
+  <div>
+    <button class="button buttonDelete">Delete</button>
+  </div>
+
+</div>
+
+
+
+  <!--   ---------------PRODUCT 2-------  -->
+
+    
+    <div class="productContainer">
       <div>
-        <span class="prodName">Ironhack Smart Coffee</span>
+        <span class="productName product2">Ironhack Smart Coffee</span>
       </div>
-  
+      
       <div>
-          <span class="prodCost">20</span>
-      </div>   
-  
+        <span class="productCost product2">20</span>
+      </div>
+      
       <div>
         <label>Qty</label>
-          <input type="text">
+        <input class="userInput product2" type="text">
       </div>
-  
+      
       <div>
-        <span class="">0</span>
+        <span class="multiProductCost product2">0</span>
       </div>
-  
+      
       <div>
-        <button class="btn btn-delete">Delete</button>
-      </div>
-  
+      <button class="button buttonDelete">Delete</button>
     </div>
-
-  <div class="calButtonDiv">
-    <button id="calBut" class="btn btn-success">Calculate Prices</button>
+    
   </div>
+
+<!--------------------CALCULATE PRICE BUTTON----------------------->
+
+<div class="calculateButtonStyle">
+  <button id="calculateButton" class="button buttonSuccess">Calculate Prices</button>
+</div>
+
+<!--------------------TOTAL PRICE OUTOUT-------------------------->
+
+<div>
+  <h2>Total Price: <span class="totalPrice">$0</span></h2>
+</div>
 
   <script type="text/javascript" src="./js/index.js"></script>
 </body>
