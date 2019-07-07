@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,59 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+
+  <h1>Ironhack<br>
+    Merchandising Shop</h1>
+
+  <div id="delete-div" class="container">
+    <div>
+      <p>IronBuble-head</p>
+    </div>
+    <div>
+
+      <p id="precio-producto">$25.00</p>
+    </div>
+    <div>
+      <label for="quantity">QTY</label>
+      <input id="cantidad" placeholder="0" type="number" name="quantity" id="quantity">
+    </div>
+    <div>
+      <p id="precio-acumulado">$0.00</p>
+    </div>
+    <div>
+      <button id="remove" class="btn-delete">Delete</button>
+    </div>
+  </div>
+
+  <div id="delete-div2" class="container2">
+    <div>
+      <p>IronShirt</p>
+    </div>
+    <div>
+
+      <p id="precio-producto2">$45.00</p>
+    </div>
+    <div>
+      <label for="quantity">QTY</label>
+      <input id="cantidad2" placeholder="0" type="number" name="quantity" id="quantity2">
+    </div>
+    <div>
+      <p id="precio-acumulado2">$0.00</p>
+    </div>
+    <div>
+      <button id="remove2" class="btn-delete btn-delete2">Delete</button>
+    </div>
+  </div>
+
+  <button id="buttonPrices" class="btn-success">Calculate prices</button>
+
+  <div class="total-container">
+    <h2>Total Price: </h2>
+    <h2 id="precio-total">$0.00</h2>
+  </div>
+
 </body>
+
 </html>
