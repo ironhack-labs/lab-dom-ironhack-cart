@@ -25,17 +25,42 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #cf000f;
+  border-color: #cf000f;
 }
 
-.quantity {
-  margin: 0 5px;
+h1, h2 {
+  text-align: center;
+}
+
+
+.product {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.product > div:nth-child(1){
+  width: 120px;
+}
+.product > div:nth-child(2){
+  width: 40px;
+}
+.product > div:nth-child(3){
+  width: 260px;
+}
+.product > div:nth-child(4){
+  width: 0px;
+}
+
+.qty {
+  padding-left: 10px;
 }
