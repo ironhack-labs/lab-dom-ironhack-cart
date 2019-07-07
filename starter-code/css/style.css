@@ -39,3 +39,11 @@ input {
 .quantity {
   margin: 0 5px;
 }
+body {
+  text-align: center;
+}
+.sale {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px auto;
+}

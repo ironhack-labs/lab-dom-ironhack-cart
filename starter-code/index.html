@@ -6,9 +6,51 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
+  
+  <title>Ironhack cart</title>
+</head>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="./css/style.css">
   <title>Ironhack cart</title>
 </head>
 <body>
+  <h1>Ironhack<br>Merchandising Shop</h1>
+
+  <div class="sale">
+    <div><span>IronBublle-head</span></div>
+    <div><span class="unitPrice">25.00</span></div>
+    <div>
+      <label class="quantity">QTY</label>
+      <input type="number" name="button" class="quantity">
+    </div>
+    <div><span class="result">$ 0.00</span></div>
+    <div>
+      <a href="#" class="btn btn-delete" id="delete-uno">Delete</a>
+    </div>
+  </div>
+
+  <div class="sale">
+    <div><span>IronShirt</span></div>
+    <div><span class="unitPrice">15.00</span></div>
+    <div>
+      <label class="quantity">QTY</label>
+      <input type="number" name="button" class="quantity">
+    </div>
+    <div><span class="result2">$ 0.00</span></div>
+    <div>
+      <a href="#" class="btn btn-delete" id="delete-dos">Delete</a>
+    </div>
+  </div>
+
+  <a href="#" class="btn btn-success" id="btnCalcule">Calcule Price</a>
+  <div>
+    <h2>Total Price: $ <span id="totalCart">0.00</span></h2>
+  </div>
+
+  <script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>
