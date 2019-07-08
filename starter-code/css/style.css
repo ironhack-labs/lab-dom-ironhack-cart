@@ -60,6 +60,10 @@ h1 {
 
 .calculate {
   margin-left: 550px;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+  border-radius: 5%;
 }
 
 .main {
