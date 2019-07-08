@@ -6,9 +6,83 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
+  <!--Tipografia-->
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono&display=swap" rel="stylesheet">
+  <!--hoja de estilos-->
+  
+  <!--Boostrap-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap-reboot.css" integrity="sha256-Za8TaoAYg1BzmU9Re7Fiy6Hh3ac4jswPE1MKeTs95bw=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap-grid.min.css" integrity="sha256-D9AvR0EzkNZoWZVSvI3ch+uf/Z5izrIpcbsykVphwPU=" crossorigin="anonymous" />
+  
   <title>Ironhack cart</title>
 </head>
 <body>
+  <div class="container box">
+    <div class="row">
+      <div class="col-12">
+        <h1>Ironhack Merchandising Shop</h1>
+      </div>
+    </div>
+    <div class="row producto" id="product1">
+      <div class="col-3">
+        <span>IronBubble head</span>
+      </div>
+      <div class="col-2">
+        <span> Precio unidad</span><br>
+        <span id="precioUnidad"> 25</span>
+      </div>
+      <div class="col-2">
+        <label for="quantity" class="quantity">Cantidad</label>
+        <input type="text" value="" id="quantity">
+      </div>
+      <div class="col-2">
+        <span> Total</span><br>
+        <span id="numTotal"> </span>
+      </div>
+      <div class="col-2">
+        <button class="btn btn-delete" onclick = "deleteItem()"> Delete</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 ">
+        <button class="btn btn-success" id="calc-prices-button" onclick="getPriceByProduct()"> Calculate prices</button>
+      </div>
+    </div>
+    <br><br>
+    <div class="row producto" id="product2">
+        <div class="col-3">
+          <span>Iron Shirt</span>
+        </div>
+        <div class="col-2">
+          <span> Precio unidad</span><br>
+          <span id="precioUniCamiseta"> 25</span>
+        </div>
+        <div class="col-2">
+          <label for="quantity" class="quantity">Cantidad</label>
+          <input type="text" value="" id="quantityCamiseta">
+        </div>
+        <div class="col-2">
+          <span> Total</span><br>
+          <span id="numTotalCamiseta"> </span>
+        </div>
+        <div class="col-2">
+          <button class="btn btn-delete" onclick = "deleteItem()"> Delete</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 ">
+          <button class="btn btn-success" id="calc-prices-button-2" onclick="getPriceByProduct2()"> Calculate prices</button>
+        </div>
+      </div>
+  </div>
+  <div class="container"> 
+    <div class="row">
+      <div class="col-12">
+          <button class="btn btn-success" id="calc-prices-button3" onclick="getTotalPrice()"> Precio total</button>
+          <h2>Total price: <span id="totalCompraPrecio">€</span></h2>
+      </div>
+    </div>
+  </div>
 </body>
+<script type="text/javascript" src="./js/index.js"></script>
 </html>
