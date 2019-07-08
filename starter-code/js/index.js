@@ -1,97 +1,61 @@
-function deleteItem(e){
+let succesButton = document.getElementsByClassName('btn-success')[0]
 
+succesButton.onclick = () => {
+    let products = document.getElementsByClassName('product')
+    let bigTotalPrice = 0
+    for (let i = 0; i < products.length; i++) {
+        let price = document.getElementsByClassName('price')[i].innerHTML
+        let qty = document.getElementsByClassName('quantity')[i].value
+        let totalPrice = price * qty
+        let child = document.getElementsByClassName('total-price')[i]
+        bigTotalPrice += totalPrice
+        child.innerHTML = totalPrice
+        child.parentNode.appendChild(child)
+    }
+    let child = document.getElementById('big-total-price')
+    child.innerHTML = bigTotalPrice
+    child.parentNode.appendChild(child)
 }
 
-function getPriceByProduct(itemNode){
+let createButton = document.getElementsByClassName('btn-create')[0]
+let deleteButtons = document.getElementsByClassName('btn-delete')
 
+const deleteProduct = e => {
+    let child = e.currentTarget.parentNode
+    child.parentNode.removeChild(child)
 }
 
-function updatePriceByProduct(productPrice, index){
-
+createButton.onclick = () => {
+    let inputs = document.getElementsByClassName('create-input')
+    let newProduct = document.createElement('div')
+    let newName = document.createElement('span')
+    let newPrice = document.createElement('span')
+    let newLabel = document.createElement('label')
+    let newQuantity = document.createElement('input')
+    let newTotalPrice = document.createElement('span')
+    let newDiv = document.createElement('div')
+    let newButton = document.createElement('button')
+    newProduct.className = 'flexbox product'
+    newPrice.className = 'price'
+    newQuantity.className = 'quantity'
+    newTotalPrice.className = 'total-price'
+    newButton.className = 'btn btn-delete'
+    newName.innerHTML = inputs[0].value
+    newPrice.innerHTML = inputs[1].value
+    newLabel.innerHTML = 'QTY'
+    newTotalPrice.innerHTML = '0.00'
+    newButton.innerHTML = 'Delete'
+    document.getElementById('all-products').appendChild(newProduct)
+    newProduct.appendChild(newName)
+    newProduct.appendChild(newPrice)
+    newProduct.appendChild(newLabel)
+    newProduct.appendChild(newQuantity)
+    newProduct.appendChild(newDiv)
+    newDiv.appendChild(newTotalPrice)
+    newProduct.appendChild(newButton)
+    for (let i = 0; i < deleteButtons.length; i++) {
+        deleteButtons[i].onclick = e => {
+            deleteProduct(e)
+        }
+    }
 }
-
-// let divTotal = document.getElementById('total-div')
-// const totalPrice = document.getElementById("total-price")
-// let divTotal2 = document.getElementById('total-div2')
-// const totalPrice2 = document.getElementById("total-price2")
- let calcPrice = document.getElementById('calcprice');
-// let bigTotal = document.getElementById('big-total')
-// let bigTotalLine = document.getElementById('big-total-line')
-
-
-
-
-calcPrice.onclick = () => {
-  let total = 0
-  let bigTotal = 0
-  let prices = document.getElementsByClassName('price')
-  let quantitys = document.getElementsByClassName('quantity')
-  let totals = document.getElementsByClassName('total-price')
-  for(let i = 0; i<prices.length; i++){
-    total = prices[i]*quantitys[i]
-    bigTotal += total
-    totals[i].innerHTML = total
-    totals[i].parentNode.appendChild(totals[i])
-  }
-
-
-console.log(total)
-  // const price1 = document.getElementById("price").innerHTML
-  // const quantity = document.getElementById("qty").value
-  // const price2 = document.getElementById("price2").innerHTML
-  // const quantity2 = document.getElementById("qty2").value
-  // let totalObjects1 = price * quantity
-  // let totalObjects2 = price2 * quantity2
-  // totalPrice.innerHTML = totalObjects1
-  // totalPrice2.innerHTML = totalObjects2
-  // bigTotal.innerHTML = totalObjects1 + totalObjects2
-  // divTotal.appendChild('totalPrice')
-  // divTotal2.appendChild('totalPrice2')
-  // bigTotalLine.appendChild('bigTotal')
-}
-
-let delButtons = document.getElementsByClassName('btn-delete')
-
-for (let i=0; i<delButtons.length; i++) {
-  delButtons[i].onclick = function(e) {
-    let parent = e.currentTarget.parentNode.parentNode;
-   parent.removeChild(e.currentTarget.parentNode)
-  }
-}
-
-function createQuantityInput(){
-
-}
-
-function createDeleteButton(){
-
-}
-
-function createQuantityNode(){
-
-}
-
-function createItemNode(dataType, itemData){
-
-}
-
-function createNewItemRow(itemName, itemUnitPrice){
-
-}
-
-function createNewItem(){
-
-}
-
-window.onload = function(){
-  var calculatePriceButton = document.getElementById('calc-prices-button');
-  var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');
-
-  calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
-
-  for(var i = 0; i<deleteButtons.length ; i++){
-    deleteButtons[i].onclick = deleteItem;
-  }
-};
