@@ -1,54 +1,54 @@
-//NO CHANGES DONE STILL, THIS IS JUST FOR HAVING THE FILE UPLOADED BEFORE TODAY'S MIDNIGHT
+window.onload = function() {
+  function deleteItem(e) {}
 
-function deleteItem(e){
+  function getPriceByProduct(itemNode) {}
 
-}
+  function updatePriceByProduct(productPrice, index) {}
 
-function getPriceByProduct(itemNode){
+  function getTotalPrice() {}
 
-}
+  function createQuantityInput() {}
 
-function updatePriceByProduct(productPrice, index){
+  function createDeleteButton() {}
 
-}
+  function createQuantityNode() {}
 
-function getTotalPrice() {
+  function createItemNode(dataType, itemData) {}
 
-}
+  function createNewItemRow(itemName, itemUnitPrice) {}
 
-function createQuantityInput(){
+  function createNewItem() {}
 
-}
+  let calculate = document.getElementById('calculate')
 
-function createDeleteButton(){
+  calculate.onclick = () => {
+    let price = document.getElementsByName('itemPrice')
+    let quantity = document.getElementsByName('qty')
+    let subtotal = document.getElementsByName('subtotal')
+    let totalPrice = 0
 
-}
+    for (let i = 0; i < price.length; i++) {
+      let mathProduct = parseFloat(price[i].innerHTML) * parseInt(quantity[i].value)
+      subtotal[i].innerHTML = mathProduct
 
-function createQuantityNode(){
+      totalPrice += mathProduct
+    }
 
-}
+    document.getElementById('totalPrice').innerHTML = totalPrice
 
-function createItemNode(dataType, itemData){
+    // Delete Buttons
+    deleteButton = document.getElementById('btn-delete')
+    deleteButton2 = document.getElementById('btn-delete2')
 
-}
+    let remove1 = document.getElementById('contenedor1')
+    let remove2 = document.getElementById('contenedor2')
 
-function createNewItemRow(itemName, itemUnitPrice){
+    deleteButton.onclick = () => {
+      remove1.remove()
+    }
 
-}
-
-function createNewItem(){
-
-}
-
-window.onload = function(){
-  var calculatePriceButton = document.getElementById('calc-prices-button');
-  var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');
-
-  calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
-
-  for(var i = 0; i<deleteButtons.length ; i++){
-    deleteButtons[i].onclick = deleteItem;
+    deleteButton2.onclick = () => {
+      remove2.remove()
+    }
   }
-};
+}
