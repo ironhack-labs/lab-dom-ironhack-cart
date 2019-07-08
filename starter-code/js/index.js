@@ -27,7 +27,7 @@ function getTotalPrice() {
       console.log(cost)
       finalPrice = parseFloat(cost) * parseInt(quantity[i].value)
       console.log(finalPrice)
-      result[i].innerHTML = finalPrice
+      result[i].innerHTML = `$${finalPrice}`
       totalPrice += finalPrice
     }
   total[0].innerHTML = (`$${totalPrice}`)
@@ -92,8 +92,9 @@ function createNewItem(){
   console.log(document.getElementsByClassName("product_name")[0].value)
   create_text1.innerHTML = (`$${document.getElementsByClassName("quant")[0].value}`)
   create_text2.innerHTML = "QTY"
-  create_text3.innerHTML = 0
+  create_text3.innerHTML = `$0`
   create_delete.innerHTML = "Delete"
+  window.onload()
 }
 
 function createNewItemRow(itemName, itemUnitPrice){
@@ -107,7 +108,8 @@ window.onload = function(){
   console.log(calculatePriceButton)
   calculatePriceButton.onclick = getTotalPrice;
   createItemButton.onclick = createNewItem;
-  console.log(deleteButtons.length)
+  console.log(deleteButtons.length) //problema aqui, calcula la longitud de l
+  //botones antes de crear productos
   for(var i = 0; i<deleteButtons.length ; i++){
      deleteButtons[i].onclick = deleteItem;
 }
