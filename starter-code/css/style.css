@@ -39,3 +39,29 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.row {
+  margin: 100px
+  width: 100%
+}
+
+
+.flexbox {
+  display: flex
+}
+
+h1 {
+  margin-left: 530px
+}
+
+.totalPrice{
+  margin-left: 530px
+}
+
+.calculate {
+  margin-left: 550px;
+}
+
+.main {
+  padding: 30px
+}
