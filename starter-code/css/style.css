@@ -1,4 +1,4 @@
-input {
+/* input {
   border: solid 1px black;
 }
 
@@ -37,5 +37,63 @@ input {
 }
 
 .quantity {
-  margin: 0 5px;
+  margin: 0 5px; */
+/* } */
+
+.title {
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+}
+
+label {
+  margin-right: 20px;
+}
+
+.product {
+  padding-top: 20px;
+  display: flex;
+  align-items: space-between;
+  width: 900px;
+  flex-wrap: wrap;
+}
+
+.total-price {
+  margin-left: 30px;
+}
+
+#btn-delete {
+  background-color: red;
+  color: white;
+  align-content: center;
+}
+
+#new-item-create {
+  background-color: blue;
+  color: white;
+  align-content: center;
+}
+
+.calculate-button-container {
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+#calculate-button {
+  background-color: green;
+  color: white;
+  align-content: center;
+}
+
+.product > div {
+  flex-basis: 20%;
 }
