@@ -30,6 +30,12 @@ input {
     border-color: #4cae4c;
 }
 
+
+.btn-single {
+  color: #fff;
+  background-color: blueviolet;
+  border-color: violet;
+}
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
@@ -38,4 +44,29 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+main {
+  display: flex;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.item1 {
+  display: flex;
+ 
+  justify-content: space-between;
+}
+.item2 {
+  display: flex;
+ 
+  justify-content: space-between;
 }

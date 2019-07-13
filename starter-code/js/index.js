@@ -1,9 +1,25 @@
 function deleteItem(e){
 
 }
+function getPriceByProduct(){
+let totalAll = 0;
+  
+  let itPri = document.getElementsByClassName('price');
+  let itCou = document.getElementsByTagName('input')
+ for (let i= 0; i < itPri.length ; i++){
+   
+  let totPri = parseFloat(itPri[i].innerText) * parseFloat(itCou[i].value)
+  let itPrice = parseFloat(totPri);
 
-function getPriceByProduct(itemNode){
+ let totalPrice = document.getElementsByClassName('total-price')[i];
+ console.log("itPrice",itPrice)
+ totalAll+=itPrice;
+ totalPrice.innerHTML = `${itPrice}`;
+document.getElementsByClassName('total-price-all')[0].innerHTML =totalAll ;
 
+
+
+ }
 }
 
 function updatePriceByProduct(productPrice, index){
@@ -12,6 +28,30 @@ function updatePriceByProduct(productPrice, index){
 
 function getTotalPrice() {
 
+  let itPri = document.getElementsByClassName('price');
+  let itCou = document.getElementsByTagName('input')
+  for (let i= 0; i < itPri.length ; i++){
+    
+
+   let totPri = parseFloat(itPri[i].innerText) * parseFloat(itCou[i].value)
+   let itPrice = parseFloat(totPri);
+ 
+  let totalPrice = document.getElementsByClassName('total-price')[i];
+
+  totalPrice.innerHTML = `${itPrice}`;
+  
+  for(let i=0; i < totalPrice.length ; i++) {
+   
+    totalPrice += totalPrice[i];
+    let totalPriceAll = document.getElementsByClassName('total-price-all');
+    totalPriceAll.innerHTML = `${totalPrice}`
+  }
+ 
+  // select stuff
+  // convert to number
+  // alert it
+  
+}
 }
 
 function createQuantityInput(){
@@ -35,6 +75,7 @@ function createNewItemRow(itemName, itemUnitPrice){
 }
 
 function createNewItem(){
+  
 
 }
 
@@ -42,7 +83,10 @@ window.onload = function(){
   var calculatePriceButton = document.getElementById('calc-prices-button');
   var createItemButton = document.getElementById('new-item-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
+  var calculateSinglePricesButton = document.getElementById('calc-singleprices-button');
 
+  calculateSinglePricesButton.onclick=getPriceByProduct
+  
   calculatePriceButton.onclick = getTotalPrice;
   createItemButton.onclick = createNewItem;
 
