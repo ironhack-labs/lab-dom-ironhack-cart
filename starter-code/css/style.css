@@ -2,6 +2,24 @@ input {
   border: solid 1px black;
 }
 
+
+
+
+.product-1  {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.product-2  {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+h1{
+  text-align: center;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -38,4 +56,20 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.create-new {
+  display: flex;
+  justify-content: flex-start;
+}
+
+
+.calculate-prices{
+  display: flex;
+  justify-content: center;
+}
+
+.total {
+  display: flex;
+  justify-content: center;
 }

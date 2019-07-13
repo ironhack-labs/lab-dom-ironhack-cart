@@ -1,14 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+  <h1>Ironhack Merchandising Shop</h1>
+  <div class="container">
+    
+    <div class="product product-1">
+      <div>
+        <span>IronBubble-head</span>
+      </div>
+      <div>
+        <span class="price">$25.00</span>
+      </div>
+      <div>
+        <label for="quantity">QTY</label>
+        <input name="quantity" type="text">
+      </div>
+      <div>
+        <span class = "totalProductPrice">$0</span>
+      </div>
+      <div>
+        <button class="btn-delete">Delete</button>
+      </div>
+    </div>
+
+    <div class="product product-2">
+      <div>
+        <span>IronShirt</span>
+      </div>
+      <div>
+        <span class="price">$15.00</span>
+      </div>
+      <div>
+        <label for="quantity">QTY</label>
+        <input name="quantity" type="text">
+      </div>
+      <div>
+        <span class = "totalProductPrice">$0</span>
+      </div>
+      <div>
+          <button class="btn-delete">Delete</button>
+        </div>
+    </div>
+
+    <div class = "create-new">
+        <input class = "newItem" name="quantity" type="text">
+        <input class = "newPrice" name="quantity" type="text">
+        <button id="createButton">Create</button>
+    </div>
+  
+    <div class="calculate-prices">
+      <button id = "calc-prices-button" class = "btn-success">Calculate Prices</button>
+    </div>
+
+    <div>
+      <h2>Total Price: <span id= "total">$0</span></h2>
+    </div>
+
+  </div>
+  <script type="text/javascript" src="./js/index.js"></script>
 </body>
+
 </html>
