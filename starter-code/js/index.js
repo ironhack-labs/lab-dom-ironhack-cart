@@ -11,11 +11,18 @@ function updatePriceByProduct(productPrice, index) {
 }
 //iterate and for each of them calculate the price
 function getTotalPrice() {
-  let stringValue = document.querySelector(".cost-per-unit > span").innerText.substring(1, 3)
-  let cost = parseInt(stringValue)
-  let quantity = document.querySelector("#quantity").value
-  document.querySelector(".total-price").innerText = (`$` + `${cost * quantity}.00`)
+  let products = document.querySelectorAll(".product")
+  let productsArray = [...products]
+
+  productsArray.map(node => {
+    let stringValue = node.querySelector(".cost-per-unit > span").innerText.substring(1, 3)
+    let cost = parseInt(stringValue)
+    let quantity = node.querySelector("#quantity").value
+    node.querySelector(".total-price").innerText = (`$` + `${cost * quantity}.00`)
+  })
+
 }
+
 
 function createQuantityInput() {
 
