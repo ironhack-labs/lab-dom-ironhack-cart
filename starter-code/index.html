@@ -10,5 +10,18 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <header>
+    <h1>Ironhack Merchandising Shop</h1>
+  </header>
+  <section id="add-product">
+    <label>Product <input id="add-name" type="text"></label>
+    <label>Price <input id="add-price" type="number"></label>
+    <button class="btn btn-success" id="new-item-create" onclick="createNewItem()">Create Product</button>
+  </section>
+  <section id="products">
+  </section>
+  <section id="calculate">
+    <h2>Total Price: $<span id="total-price">0.00</span></h2></<h2>
+  </section>
 </body>
 </html>

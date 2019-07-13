@@ -1,5 +1,7 @@
 input {
   border: solid 1px black;
+  border-radius: 4px;
+  padding: 6px 12px;
 }
 
 .btn {
@@ -25,17 +27,53 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #CF000F;
+  border-color: #CF000F;
+}
+
+.btn-create {
+  color: #000;
+  background-color: #f1f1f1;
+  border-color: #000;
+}
+
+header, #calculate, #add-product {
+  text-align: center;
+  margin: 50px 0;
+}
+
+section {
+  margin: 50px 0;
+}
+
+.product, #add-product {
+  width: 800px;
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#add-name {
+  width: 300px;
+}
+
+#add-price  {
+  width: 80px;
+}
+
+.space {
+  width: 250px;
+  word-wrap: break-word;
 }
 
 .quantity {
-  margin: 0 5px;
+  width: 50px;
 }
