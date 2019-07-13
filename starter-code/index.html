@@ -1,14 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <title>Ironhack cart</title>
+  </head>
+
+  <body>
+    <h1>
+      Ironhack Merchandising Shop
+    </h1>
+
+    <div class="items">
+      <div class="singleItem" id="1">
+        <div class="product-name">
+          <span>
+            Ironbubble-head
+          </span>
+        </div>
+
+        <div class="product-cost">
+          <span>
+            $25.00
+          </span>
+        </div>
+
+        <div>QTY<input class="quantity" /></div>
+
+        <div class="total">
+          <span>
+            $0.00
+          </span>
+        </div>
+
+        <div>
+          <button class="btn btn-delete">Remove</button>
+        </div>
+      </div>
+      <div class="singleItem" id="2">
+          <div class="product-name">
+            <span>
+              IronShirt
+            </span>
+          </div>
+  
+          <div class="product-cost">
+            <span>
+              $15.00
+            </span>
+          </div>
+  
+          <div>QTY<input class="quantity" /></div>
+  
+          <div class="total">
+            <span>
+              $0.00
+            </span>
+          </div>
+  
+          <div>
+            <button class="btn btn-delete">Remove</button>
+          </div>
+        </div>
+    </div>
+    <div class="calc">
+      <button class="btn btn-success" id="calc-prices-button">
+        Calculate Prices
+      </button>
+    </div>
+    <div class="newInput">
+      New Item Name
+      <input class="newItemName">
+      New Item Price
+      <input class="newItemPrice">
+      <button id="addNewItem">Add New Item</button>
+    </div>
+    <script type="text/javascript" src="./js/index.js"></script>
+  </body>
 </html>
