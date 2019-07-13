@@ -28,7 +28,7 @@
               </div>
               <div class="col-5 row form-group">
                   <label for="quantity" class="col-3">QTY  </label>
-                  <input class="quantity form-control col-7" placeholder="0" value="2" type="number" name="quantity" >
+                  <input class="quantity form-control col-7" placeholder="0" value="2" type="number" name="quantity" onchange="changeTotalUnitPrice()">
               </div>
               <div class="col-2">
                 $<span class="total-unit-price">0.00</span>
@@ -51,7 +51,7 @@
               </div>
               <div class="col-5 row form-group">
                   <label for="quantity" class="col-3">QTY  </label>
-                  <input class="quantity form-control col-7" placeholder="0" value="1" type="number" name="quantity" >
+                  <input class="quantity form-control col-7" placeholder="0" value="1" type="number" name="quantity" onchange="changeTotalUnitPrice()">
               </div>
               <div class="col-2">
                 $<span class="total-unit-price">0.00</span>
@@ -94,13 +94,13 @@
             <div class="card-body">
               <div class="row">
                   <div class="col-6">
-                    <input class="product-name form-control d-inline-block" placeholder="New product name"  type="text" name="quantity">
+                    <input id="new-product-name" class="product-name form-control d-inline-block" placeholder="New product name"  type="text" name="quantity">
                   </div>
                   <div class="col-4">
-                      $ <input class="product-price form-control col-4 d-inline-block"  type="number" name="quantity">
+                      $ <input id="new-product-price" class="product-price form-control col-4 d-inline-block"  type="number" name="quantity">
                   </div>
                   <div class="col-2">
-                    <button class="btn btn-success d-inline-block">Add</button>
+                    <button class="btn btn-success d-inline-block" onclick="addNewItens()">Add</button>
                   </div>
               </div>
             </div>
