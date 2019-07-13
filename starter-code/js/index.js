@@ -32,8 +32,8 @@ function priceUpdate() {
 
   for (let i = 0; i < qtts.length; i++) {
     let currPrice = parseFloat(prices[i].innerText);
-    let currQtt = qtts[i].value;
-    let currTotal = currPrice * currQtt;
+    let currQty = qtts[i].value;
+    let currTotal = currPrice * currQty;
     totals[i].innerText = Number(currTotal).toFixed(2);
     totalPrice += currTotal;
   }
