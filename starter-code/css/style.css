@@ -1,3 +1,21 @@
+.items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+
+.singleItem {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 20px;
+}
+
+.product-name {
+  width: 200px;
+}
+
 input {
   border: solid 1px black;
 }
@@ -25,17 +43,22 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #CF000F;
+  border-color: #CF000F;
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+.calc {
+  display: flex;
+  justify-content: center;
 }
