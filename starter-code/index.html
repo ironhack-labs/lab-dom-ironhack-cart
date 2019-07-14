@@ -1,14 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="text/javascript" src="./js/index.js"></script>
+    <title>Ironhack cart</title>
+  </head>
+  <body>
+    <h1>Ironhack Merchandising Shop</h1>
+    <div class="item">
+      <div>
+        <span>IronBubble-head</span>
+      </div>
+      <div>$<span class="unit-price">25.00</span></div>
+      <div>
+        <label for="quantity">QTY</label>
+        <input name="quantity" id="quantity" value="" />
+      </div>
+      <div>$<span class="totalPrice">0.00</span></div>
+      <div>
+        <input class="btn btn-delete" type="button" onclick="" value="Delete" />
+      </div>
+    </div>
+
+    <div class="item">
+      <div>
+        <span>Ironshirt</span>
+      </div>
+      <div>$<span class="unit-price">15.00</span></div>
+      <div>
+        <label for="quantity">QTY</label>
+        <input name="quantity" id="quantity" value=" " />
+      </div>
+      <div>$<span class="totalPrice">0.00</span></div>
+      <div>
+        <input class="btn btn-delete" type="button" onclick="" value="Delete" />
+      </div>
+    </div>
+
+    <div class="btn-calculate">
+      <input
+        class="btn btn-sucess"
+        type="button"
+        onclick=""
+        value="Calculate Prices"
+      />
+    </div>
+  </body>
 </html>

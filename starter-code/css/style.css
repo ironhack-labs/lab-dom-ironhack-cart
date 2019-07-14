@@ -2,6 +2,10 @@ input {
   border: solid 1px black;
 }
 
+h1 {
+  text-align: center;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -24,18 +28,33 @@ input {
   border-radius: 4px;
 }
 
-.btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+.btn-sucess {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+  border-radius: 5px;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #cf000f;
+  border-color: #cf000f;
+  border-radius: 5px;
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.btn-calculate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 30px;
 }
