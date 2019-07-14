@@ -12,10 +12,8 @@ let newPriceInput = document.getElementsByClassName('newPrice')[0];
 
 
 function deleteItem(e){
-      i=0;
-      parentOfProducts.removeChild(products[i]);
-      getTotalPrice()
-      i++
+  parentOfProducts.removeChild(e.currentTarget.parentNode)
+  getTotalPrice()
   }
 
 
@@ -32,11 +30,15 @@ function getTotalPrice() {
     let total = 0;
     for(let i=0; i < priceOfProduct.length; i++){
 
-      if(quantityOfProductInput[i].value
-      .length === 0){
-        quantityOfProductInput[i].value = 0
-      }
-      
+      if(priceOfProduct[0] = undefined){
+        totalPrice.innerHTML = 0;
+        }
+
+       if(quantityOfProductInput[i].value
+       .length === 0){
+         quantityOfProductInput[i].value = 0
+       }
+
       let totalPerProduct =  parseFloat(priceOfProduct[i].innerHTML.slice(1)) * parseInt(quantityOfProductInput[i].value);
       totalPriceOfProduct[i].innerHTML = `$${totalPerProduct}`;
       total += totalPerProduct;
@@ -83,8 +85,8 @@ window.onload = function(){
   calculatePriceButton.onclick = getTotalPrice;
   //createItemButton.onclick = createNewItem;
 
-  for(var i = 0; i<deleteButtons.length ; i++){
-    deleteButtons[i].onclick = deleteItem;
-  }
+   for(var i = 0; i<deleteButtons.length ; i++){
+     deleteButtons[i].onclick = deleteItem;
+   }
 };
 
