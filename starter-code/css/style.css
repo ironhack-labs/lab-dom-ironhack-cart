@@ -1,20 +1,22 @@
+body {
+  margin: 30px;
+}
+
 input {
   border: solid 1px black;
 }
 
 
-
-
 .product-1  {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  
 }
 
 .product-2  {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
-
 
 h1{
   text-align: center;
@@ -58,9 +60,19 @@ h1{
   margin: 0 5px;
 }
 
+.input-and-create-new{
+  display:flex;
+  justify-content: space-between;
+}
+
+.input-new{
+  display: flex;
+  justify-content: flex-start
+}
+
 .create-new {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
 }
 
 

@@ -13,12 +13,12 @@
 <body>
   <h1>Ironhack Merchandising Shop</h1>
   <div class="container">
-    
+
     <div class="product product-1">
       <div>
         <span>IronBubble-head</span>
       </div>
-      <div>
+      <div class="prices">
         <span class="price">$25.00</span>
       </div>
       <div>
@@ -26,7 +26,7 @@
         <input name="quantity" type="text">
       </div>
       <div>
-        <span class = "totalProductPrice">$0</span>
+        <span class="totalProductPrice">$0</span>
       </div>
       <div>
         <button class="btn-delete">Delete</button>
@@ -45,25 +45,27 @@
         <input name="quantity" type="text">
       </div>
       <div>
-        <span class = "totalProductPrice">$0</span>
+        <span class="totalProductPrice">$0</span>
       </div>
       <div>
-          <button class="btn-delete">Delete</button>
-        </div>
+        <button class="btn-delete">Delete</button>
+      </div>
     </div>
-
+    <div class = "input-and-create-new">
+    <div class="input-new">
+      <input class="newItem" name="quantity" type="text">
+      <input class="newPrice" name="quantity" type="text">
+    </div>
     <div class = "create-new">
-        <input class = "newItem" name="quantity" type="text">
-        <input class = "newPrice" name="quantity" type="text">
-        <button id="createButton">Create</button>
+      <button id="createButton">Create</button>
     </div>
-  
+  </div>
     <div class="calculate-prices">
-      <button id = "calc-prices-button" class = "btn-success">Calculate Prices</button>
+      <button id="calc-prices-button" class="btn-success">Calculate Prices</button>
     </div>
 
     <div>
-      <h2>Total Price: <span id= "total">$0</span></h2>
+      <h2>Total Price: <span id="total">$0</span></h2>
     </div>
 
   </div>
