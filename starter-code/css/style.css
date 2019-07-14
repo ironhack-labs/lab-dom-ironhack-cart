@@ -1,3 +1,21 @@
+.form {
+  width: 80%;
+  display:flex;
+  justify-content: flex-start;
+  align-content: center;
+  margin: 0 auto 50px auto;
+}
+
+#input-name{
+  margin-right: 50px;
+  vertical-align: middle;
+}
+
+#input-price{
+  margin-right: 50px;
+  vertical-align: middle;
+}
+
 input {
   border: solid 1px black;
 }
@@ -38,4 +56,31 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.product {
+  display: flex;
+  justify-content: space-evenly;
+  width: 90%;
+  margin: 0px auto 10px auto;
+  vertical-align: middle;
+}
+
+h1 {
+  text-align: center;
+  margin: 50px auto 50px auto;
+}
+
+.calc-total{
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+
+}
+
+#total{
+  margin-top:50px;
+  display:flex;
+  justify-content: center;
+  font-size: 16pt;
 }
