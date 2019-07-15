@@ -3,12 +3,11 @@ let priceOfProduct = document.getElementsByClassName('price')
 let calculatePriceButton = document.getElementById('calc-prices-button');
 let totalPriceOfProduct = document.getElementsByClassName('totalProductPrice');
 let totalPrice = document.getElementById('total');
-let deleteButtons = document.getElementsByClassName('btn-delete');
 let products = document.getElementsByClassName('product');
-const parentOfProducts = document.getElementsByClassName('container')[0];
-let createButton = document.getElementById('createButton');
+let parentOfProducts = document.getElementsByClassName('container')[0];
 let newItemInput = document.getElementsByClassName('newItem')[0];
 let newPriceInput = document.getElementsByClassName('newPrice')[0];
+
 
 
 function deleteItem(e){
@@ -70,9 +69,8 @@ function createNewItemRow(itemName, itemUnitPrice){
 }
 
 function createNewItem(){
-  createButton.onclick = function(){
-   
-  }
+    lastProduct = products[products.length-1]
+    lastProduct.insertAdjacentHTML('afterend',`<div class="product"><div><span>${newItemInput.value}</span></div><div class="prices"><span class="price">$${newPriceInput.value}</span></div><div><label for="quantity">QTY</label><input name="quantity" type="text"></div><div><span class="totalProductPrice">$0</span></div><button class="btn-delete">Delete</button></div>`)
 }
 
 
@@ -83,7 +81,7 @@ window.onload = function(){
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
   calculatePriceButton.onclick = getTotalPrice;
-  //createItemButton.onclick = createNewItem;
+  createItemButton.onclick = createNewItem;
 
    for(var i = 0; i<deleteButtons.length ; i++){
      deleteButtons[i].onclick = deleteItem;

@@ -7,16 +7,13 @@ input {
 }
 
 
-.product-1  {
+.product  {
   display: flex;
   justify-content: space-between;
   
 }
 
-.product-2  {
-  display: flex;
-  justify-content: space-between;
-}
+
 
 h1{
   text-align: center;
