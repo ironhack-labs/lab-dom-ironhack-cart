@@ -70,8 +70,14 @@ function createNewItemRow(itemName, itemUnitPrice){
 
 function createNewItem(){
     lastProduct = products[products.length-1]
+    if(products.length > 0){
     lastProduct.insertAdjacentHTML('afterend',`<div class="product"><div><span>${newItemInput.value}</span></div><div class="prices"><span class="price">$${newPriceInput.value}</span></div><div><label for="quantity">QTY</label><input name="quantity" type="text"></div><div><span class="totalProductPrice">$0</span></div><button class="btn-delete">Delete</button></div>`)
-}
+    }
+    else {
+      parentOfProducts.insertAdjacentHTML('afterbegin',`<div class="product"><div><span>${newItemInput.value}</span></div><div class="prices"><span class="price">$${newPriceInput.value}</span></div><div><label for="quantity">QTY</label><input name="quantity" type="text"></div><div><span class="totalProductPrice">$0</span></div><button class="btn-delete">Delete</button></div>`)
+    }
+  }
+
 
 
 
@@ -84,6 +90,7 @@ window.onload = function(){
   createItemButton.onclick = createNewItem;
 
    for(var i = 0; i<deleteButtons.length ; i++){
+    var deleteButtons = document.getElementsByClassName('btn-delete');
      deleteButtons[i].onclick = deleteItem;
    }
 };
