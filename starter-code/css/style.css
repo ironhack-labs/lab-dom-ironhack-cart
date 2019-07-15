@@ -97,3 +97,8 @@ label {
 .product > div {
   flex-basis: 20%;
 }
+
+.total-price-calc {
+  display: flex;
+  justify-content: center;
+}

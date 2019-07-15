@@ -2,15 +2,23 @@ function deleteItem(e) {
 
 }
 
-function getPriceByProduct(itemNode) {
+function getTotalPrice() {
+  getPriceByProduct() // Is this ok to call the function within, though it will be triggered on the onclick?
+  let productsTotalPrices = [...(document.querySelectorAll(".total-price"))]
+  let numbersPrices = productsTotalPrices.map(n => {
+    return parseFloat(n.innerText.replace(/[^\d.]/g, ''))
+  })
 
+  let sum = numbersPrices.reduce((n, acc) => n + acc, 0)
+
+  document.querySelector(".total-price-calc h2").innerText = `Total Price: ` + `$` + `${sum}.00`
 }
 
 function updatePriceByProduct(productPrice, index) {
 
 }
 //iterate and for each of them calculate the price
-function getTotalPrice() {
+function getPriceByProduct() {
   let products = document.querySelectorAll(".product")
   let productsArray = [...products]
 
@@ -61,7 +69,8 @@ window.onload = function () {
   var createItemButton = document.getElementById('new-item-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
-  calculatePriceButton.onclick = getTotalPrice;
+  calculatePriceButton.onclick = getTotalPrice
+  // calculatePriceButton.onclick = ;
   //createItemButton.onclick = createNewItem;
 
   for (var i = 0; i < deleteButtons.length; i++) {
