@@ -2,22 +2,16 @@ body {
   margin: 30px;
 }
 
-input {
-  border: solid 1px black;
-}
-
-
-.product  {
-  display: flex;
-  justify-content: space-between;
-  
-}
 
 
 
 h1{
   text-align: center;
 }
+
+
+
+
 
 .btn {
   display: inline-block;
@@ -53,32 +47,5 @@ h1{
     border-color: #CF000F;
 }
 
-.quantity {
-  margin: 0 5px;
-}
-
-.input-and-create-new{
-  display:flex;
-  justify-content: space-between;
-}
-
-.input-new{
-  display: flex;
-  justify-content: flex-start
-}
-
-.create-new {
-  display: flex;
-  justify-content: flex-end;
-}
 
 
-.calculate-prices{
-  display: flex;
-  justify-content: center;
-}
-
-.total {
-  display: flex;
-  justify-content: center;
-}

@@ -53,7 +53,7 @@ function createQuantityInput(){
 }
 
 function createDeleteButton(){
-
+  
 }
 
 function createQuantityNode(){
@@ -71,11 +71,17 @@ function createNewItemRow(itemName, itemUnitPrice){
 function createNewItem(){
     lastProduct = products[products.length-1]
     if(products.length > 0){
-    lastProduct.insertAdjacentHTML('afterend',`<div class="product"><div><span>${newItemInput.value}</span></div><div class="prices"><span class="price">$${newPriceInput.value}</span></div><div><label for="quantity">QTY</label><input name="quantity" type="text"></div><div><span class="totalProductPrice">$0</span></div><button class="btn-delete">Delete</button></div>`)
+    lastProduct.insertAdjacentHTML('afterend',`<div class="row justify-content-between product"><div class="col-4"><span>${newItemInput.value}</span></div><div class="col-2 prices"><span class="price">$${newPriceInput.value}</span></div><div class ="col-4"><label for="quantity">QTY</label><input name="quantity" type="text"></div><div><span class="col-2 totalProductPrice">$0</span></div><button class="col-1 btn-delete">Delete</button></div>`)
+    newItemInput.value = ""
+    newPriceInput.value = ""
     }
     else {
-      parentOfProducts.insertAdjacentHTML('afterbegin',`<div class="product"><div><span>${newItemInput.value}</span></div><div class="prices"><span class="price">$${newPriceInput.value}</span></div><div><label for="quantity">QTY</label><input name="quantity" type="text"></div><div><span class="totalProductPrice">$0</span></div><button class="btn-delete">Delete</button></div>`)
+      parentOfProducts.insertAdjacentHTML('afterbegin',`<div class="row justify-content-between product"><div class="col-4"><span>${newItemInput.value}</span></div><div class="col-2 prices"><span class="price">$${newPriceInput.value}</span></div><div class ="col-4"><label for="quantity">QTY</label><input name="quantity" type="text"></div><div><span class="col-2 totalProductPrice">$0</span></div><button class="col-1 btn-delete">Delete</button></div>`)
+      newItemInput.value = ""
+      newPriceInput.value = ""
     }
+
+    var deleteButtons = [...document.getElementsByClassName('btn-delete')];
   }
 
 
@@ -84,13 +90,14 @@ function createNewItem(){
 window.onload = function(){
   var calculatePriceButton = document.getElementById('calc-prices-button');
   var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');
+
 
   calculatePriceButton.onclick = getTotalPrice;
   createItemButton.onclick = createNewItem;
 
+  var deleteButtons = [...document.getElementsByClassName('btn-delete')];
+
    for(var i = 0; i<deleteButtons.length ; i++){
-    var deleteButtons = document.getElementsByClassName('btn-delete');
      deleteButtons[i].onclick = deleteItem;
    }
 };
