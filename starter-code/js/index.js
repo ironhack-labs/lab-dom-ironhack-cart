@@ -5,20 +5,21 @@ function deleteItem(e) {
 
 
 function getPriceByProduct(i) {
-  let itemNode = document.getElementsByClassName('costUnit');
-  return parseInt(itemNode[i].innerHTML)
+  return parseInt(document.getElementsByClassName('costUnit')[i].innerHTML)
 }
 
 
 function updatePriceByProduct(index) {
-  let howMuch = document.getElementsByClassName('quantity')[index].value
-  return howMuch * getPriceByProduct(index)
+  return document.getElementsByClassName('quantity')[index].value * getPriceByProduct(index)
 }
 
 function getTotalPrice() {
+  let totalPrice = 0
   for (i = 0; (i < document.querySelectorAll('.wrapper').length); i++) {
-    document.querySelectorAll('.wrapper')[i].querySelector('.priceTimesQuantity').innerHTML = updatePriceByProduct(i)
+    document.querySelectorAll('.wrapper')[i].querySelector('.priceTimesQuantity').innerHTML = updatePriceByProduct(i) + "$"
+    totalPrice = totalPrice + updatePriceByProduct(i)
   }
+  document.getElementById('totalPriceDiv').getElementsByTagName('h2')[0].getElementsByTagName('span')[0].innerHTML = totalPrice + "$"
 }
 
 function createQuantityInput() {
