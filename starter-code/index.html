@@ -14,22 +14,30 @@
   </head>
   <body>
     <div>Ironhack Merchandising Shop</div>
-    <div class="wrapper">
-      <div>product name</div>
-      <div class="costUnit">25$</div>
-      <div><label>How many?</label> <input class="quantity" /></div>
-      <div class="priceTimesQuantity"></div>
-      <div><button class="btn-delete">delete</button></div>
-    </div>
-    <div class="wrapper">
-      <div>product name 2</div>
-      <div class="costUnit">7500$</div>
-      <div><label>How many?</label> <input class="quantity" /></div>
-      <div class="priceTimesQuantity"></div>
-      <div><button class="btn-delete">delete</button></div>
+    <div class="containerOfWrappers">
+      <div class="wrapper">
+        <div>product name</div>
+        <div class="costUnit">25$</div>
+        <div><label>How many?</label> <input class="quantity" /></div>
+        <div class="priceTimesQuantity"></div>
+        <div><button class="btn-delete">delete</button></div>
+      </div>
+      <div class="wrapper">
+        <div>product name 2</div>
+        <div class="costUnit">7500$</div>
+        <div><label>How many?</label> <input class="quantity" /></div>
+        <div class="priceTimesQuantity"></div>
+        <div><button class="btn-delete">delete</button></div>
+      </div>
     </div>
     <div>
       <div><button id="calc-prices-button">calculate prizes</button></div>
+    </div>
+    <div>
+      <input type="text" id="productName" /><input
+        type="number"
+        id="productPrice"
+      /><button id="new-item-create">create</button>
     </div>
     <div id="totalPriceDiv">
       <h2>Total Price: <span>$0</span></h2>

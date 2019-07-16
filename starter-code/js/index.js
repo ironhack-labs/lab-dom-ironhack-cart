@@ -30,7 +30,6 @@ function createQuantityInput() {
 }
 
 function createDeleteButton() {
-
 }
 
 function createQuantityNode() {
@@ -42,11 +41,28 @@ function createItemNode(dataType, itemData) {
 }
 
 function createNewItemRow(itemName, itemUnitPrice) {
-
+  let wrapperDiv = document.createElement('div')
+  wrapperDiv.classList.add('wrapper')
+  wrapperDiv.appendChild('div')
+  wrapperDiv.querySelector('div').innerHTML(document.querySelector('#productName').value)
+  wrapperDiv.appendChild('div')
+  wrapperDiv.querySelector('div')[1].innerHTML(document.querySelector('#productPrice').value)
+  wrapperDiv.appendChild('div')
+  wrapperDiv.querySelector('div')[2].appendChild('button')
+  wrapperDiv.querySelector('div')[2].querySelector('button').appendChild('label')
+  wrapperDiv.querySelector('div')[2].querySelector('button').querySelector('label').innerHTML('How Many?')
+  wrapperDiv.querySelector('div')[2].querySelector('button').appendChild('input')
+  wrapperDiv.querySelector('div')[2].querySelector('button').querySelector('input').classList.add('quantity')
+  wrapperDiv.appendChild('div')
+  wrapperDiv.querySelector('div')[3].classList.add('priceTimesQuantity')
+  wrapperDiv.appendChild('div')
+  wrapperDiv.querySelector('div')[4].appendChild('button')
+  wrapperDiv.querySelector('div')[4].querySelector('button').classList.add('btn-delete')
+  document.querySelector('.containerOfWrappers').appendChild(wrapperDiv)
 }
 
 function createNewItem() {
-
+  createNewItemRow(document.querySelector('#productName').value, document.querySelector('#productPrize').value)
 }
 
 window.onload = function () {
