@@ -70,7 +70,7 @@ label {
   margin-left: 30px;
 }
 
-#btn-delete {
+.btn-delete {
   background-color: red;
   color: white;
   align-content: center;

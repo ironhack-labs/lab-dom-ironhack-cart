@@ -1,5 +1,9 @@
 function deleteItem(e) {
+  let productsContainer = document.querySelector('.title')
+  let product = e.currentTarget.parentElement.parentElement
 
+  productsContainer.removeChild(product)
+  getTotalPrice()
 }
 
 function getTotalPrice() {
@@ -67,7 +71,7 @@ function copyAddProduct(name, unitPrice) {
 window.onload = function () {
   var calculatePriceButton = document.getElementById('calculate-button');
   var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');
+  var deleteButtons = [...document.getElementsByClassName('btn-delete')]
 
   calculatePriceButton.onclick = getTotalPrice
   // calculatePriceButton.onclick = ;
