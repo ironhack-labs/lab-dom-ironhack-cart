@@ -1,4 +1,20 @@
+let input = document.getElementsByClassName('quantity')
+let itemUnitPrice = document.getElementsByClassName("unit-price")
+let totalPerProduct = document.getElementsByClassName('totalPrice')
+let grandTotal = document.getElementById("grand-total")
+let itemDiv = document.getElementsByClassName('item')
+
+let titleInput = document.getElementsByClassName('new-item-name')[0];
+let priceInput = document.getElementsByClassName('unit-price')[0];
+
 function deleteItem(e) {
+
+  let buttonClicked = event.target
+  buttonClicked.parentElement.parentElement.remove()
+
+  //  itemsContainer.removeChild(e.currentTarget.parentNode)
+
+  getTotalPrice()
 
 }
 
@@ -6,23 +22,25 @@ function getPriceByProduct(itemNode) {
 
 }
 
-function updatePriceByProduct(productPrice, index) {
-
-
-
-}
+function updatePriceByProduct(productPrice, index) { };
 
 function getTotalPrice() {
 
-  let input = parseInt(document.getElementsByTagName("input")[0].value);
+  let total = 0;
+  for (let i = 0; i < input.length; i++) {
+    let result = parseFloat(input[i].value) * parseInt(itemUnitPrice[i].innerHTML)
+    total = + result;
+    totalPerProduct[i].innerText = total
+  }
 
-  let itemUnitPrice = parseFloat(document.getElementsByClassName("unit-price")[0].innerText);
+};
 
-
-  let total = document.getElementsByClassName("totalPrice")[0];
-
-  total.innerHTML = input * itemUnitPrice
-
+function getGrandTotal() {
+  let totalSum = 0;
+  for (let j = 0; j <= totalPerProduct.length; j++) {
+    totalSum = totalSum + parseInt(totalPerProduct[j].innerHTML)
+    grandTotal.innerHTML = totalSum
+  }
 }
 
 
@@ -40,23 +58,55 @@ function createQuantityNode() {
 
 function createItemNode(dataType, itemData) {
 
+
 }
 
 function createNewItemRow(itemName, itemUnitPrice) {
 
+  let newRow = document.createElement('div')
+  let itemsContainer = document.getElementById("items-container")
+  //itemsContainer.appendChild(newRow);
+  newRow.classList.add('itemDiv')
 
+  let newRowContents = `<div class="item">
+<div>
+  <span>${itemName}</span>
+</div>
+<div>$<span class="unit-price">${itemUnitPrice}</span></div>
+<div>
+  <label for="quantity">QTY</label>
+  <input name="quantity" class="quantity" value="" />
+</div>
+<div>$<span class="totalPrice">0.00</span></div>
+<div>
+  <input
+    class="btn btn-delete"
+    type="button"
+    onclick=""
+    value="Delete"
+  />
+</div>
+</div>`
+  newRow.innerHTML = newRowContents
+  itemsContainer.append(newRow)
+  newRow.getElementsByClassName('btn-delete')[0].addEventListener('click', deleteItem)
 
 }
+
 
 function createNewItem() {
 
+  createNewItemRow(titleInput, priceInput)
 
 }
 
+//when create new item, need to create an on-click handle. 
+
 window.onload = function () {
+
   /* var calculatePriceButton = document.getElementById('calc-prices-button');
   var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');
+  var deleteButtons = document.getElementsByClassName('btn-delete')
 
   calculatePriceButton.onclick = getTotalPrice;
   createItemButton.onclick = createNewItem;
@@ -64,8 +114,16 @@ window.onload = function () {
   for (var i = 0; i < deleteButtons.length; i++) {
     deleteButtons[i].onclick = deleteItem;
   } */
-  let calculatePriceButton = document.getElementsByClassName("btn-sucess")[0];
 
-  calculatePriceButton.onclick = getTotalPrice
+  let createItemButton = document.getElementById('btn-create');
+  createItemButton.onclick = createNewItem;
+
+  let deleteButtons = document.getElementsByClassName('btn-delete')
+  for (var i = 0; i < deleteButtons.length; i++) {
+    deleteButtons[i].onclick = deleteItem;
+  }
+
+  let calculatePriceButton = document.getElementsByClassName("btn-sucess")[0];
+  calculatePriceButton.onclick = getTotalPrice;
 };
 

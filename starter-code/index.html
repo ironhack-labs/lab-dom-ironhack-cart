@@ -14,33 +14,46 @@
   </head>
   <body>
     <h1>Ironhack Merchandising Shop</h1>
-    <div class="item">
-      <div>
-        <span>IronBubble-head</span>
-      </div>
-      <div>$<span class="unit-price">25.00</span></div>
-      <div>
-        <label for="quantity">QTY</label>
-        <input name="quantity" id="quantity" value="" />
-      </div>
-      <div>$<span class="totalPrice">0.00</span></div>
-      <div>
-        <input class="btn btn-delete" type="button" onclick="" value="Delete" />
-      </div>
-    </div>
 
-    <div class="item">
-      <div>
-        <span>Ironshirt</span>
+    <div id="items-container">
+      <div class="item">
+        <div>
+          <span>IronBubble-head</span>
+        </div>
+        <div>$<span class="unit-price">25.00</span></div>
+        <div>
+          <label for="quantity">QTY</label>
+          <input name="quantity" class="quantity" value="" />
+        </div>
+        <div>$<span class="totalPrice">0.00</span></div>
+        <div>
+          <input
+            class="btn btn-delete"
+            type="button"
+            onclick=""
+            value="Delete"
+          />
+        </div>
       </div>
-      <div>$<span class="unit-price">15.00</span></div>
-      <div>
-        <label for="quantity">QTY</label>
-        <input name="quantity" id="quantity" value=" " />
-      </div>
-      <div>$<span class="totalPrice">0.00</span></div>
-      <div>
-        <input class="btn btn-delete" type="button" onclick="" value="Delete" />
+
+      <div class="item">
+        <div>
+          <span>Ironshirt</span>
+        </div>
+        <div>$<span class="unit-price">15.00</span></div>
+        <div>
+          <label for="quantity">QTY</label>
+          <input class="quantity" value=" " />
+        </div>
+        <div>$<span class="totalPrice">0.00</span></div>
+        <div>
+          <input
+            class="btn btn-delete"
+            type="button"
+            onclick=""
+            value="Delete"
+          />
+        </div>
       </div>
     </div>
 
@@ -51,6 +64,29 @@
         onclick=""
         value="Calculate Prices"
       />
+    </div>
+
+    <div class="total-box">
+      <h2>Total Price: <span id="grand-total">0</span></h2>
+    </div>
+    <div id="create-new-product">
+      <div class="input-container">
+        <label>Item:</label>
+        <input class="new-item-name" value=" " />
+      </div>
+      <div class="input-container">
+        <label>Unit price:</label>
+        <input class="unit-price" value=" " />
+      </div>
+      <div class="input-container">
+        <input
+          id="btn-create"
+          class="btn"
+          type="button"
+          onclick=""
+          value="Create"
+        />
+      </div>
     </div>
   </body>
 </html>
