@@ -11,8 +11,6 @@ h1{
 
 
 
-
-
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -47,5 +45,8 @@ h1{
     border-color: #CF000F;
 }
 
+.new {
+  justify-self: flex-start
+}
 
 

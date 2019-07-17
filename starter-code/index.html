@@ -7,69 +7,73 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <title>Ironhack cart</title>
 </head>
 
 <body>
-  
+
   <h1>Ironhack Merchandising Shop</h1>
   <div container>
-  <div class="container">
+    <div class="container">
+      <div class="row justify-content-between product">
+        <div class="col-4">
+          <span>IronBubble-head</span>
+        </div>
+        <div class="col-2 prices">
+          <span class="price">$25.00</span>
+        </div>
+        <div class="col-3">
+          <label for="quantity">QTY</label>
+          <input name="quantity" type="number">
+        </div>
+        <div>
+          <span class="col-2 totalProductPrice">$0</span>
+        </div>
 
-    <div class="row justify-content-between product">
-      <div class="col-4">
-        <span>IronBubble-head</span>
+        <button class="col-1 btn-delete">Delete</button>
       </div>
-      <div class="col-2 prices">
-        <span class="price">$25.00</span>
+
+      <div class="row justify-content-between product">
+        <div class="col-4">
+          <span>IronShirt</span>
+        </div>
+        <div>
+          <span class="col-2 price">$15.00</span>
+        </div>
+        <div class="col-3">
+          <label for="quantity">QTY</label>
+          <input name="quantity" type="number">
+        </div>
+        <div>
+          <span class="col-2 totalProductPrice">$0</span>
+        </div>
+        <button class="col-1 btn-delete">Delete</button>
       </div>
-      <div class ="col-3">
-        <label for="quantity">QTY</label>
-        <input name="quantity" type="text">
+
+      <div class="row justify-content-between input-and-create-new">
+        <div class="input-new">
+          <label for="new">New item</label>
+          <input class="col-4  newItem" name="quantity" type="text">
+        </div>
+        <div>
+          <label for= "new">New price</label>
+          <input class="col-4  newPrice" name="quantity" type="number">
+        </div>
+        <div class="col-1 btn create-new">
+          <button id="new-item-create">Create</button>
+        </div>
       </div>
+    </div>
+      <div class="row justify-content-center calculate-prices">
+        <button id="calc-prices-button" class="btn-success col-3">Calculate Prices</button>
+      </div>
+
       <div>
-        <span class="col-2 totalProductPrice">$0</span>
-      </div>
-
-      <button class="col-1 btn-delete">Delete</button>
-    </div>
-
-    <div class="row justify-content-between product">
-      <div class= "col-4">
-        <span>IronShirt</span>
-      </div>
-      <div>
-        <span class="col-2 price">$15.00</span>
-      </div>
-      <div class = "col-3">
-        <label for="quantity">QTY</label>
-        <input name="quantity" type="text">
-      </div>
-      <div>
-        <span class="col-2 totalProductPrice">$0</span>
-      </div>
-      <button class="col-1 btn-delete">Delete</button>
-    </div>
-
-    <div class="row justify-content-between input-and-create-new">
-      <div class="input-new">
-        <input class="col-4  newItem" name="quantity" type="text">
-        <input class="col-4  newPrice" name="quantity" type="number">
-      </div>
-      <div class="col-1 btn create-new">
-        <button id="new-item-create">Create</button>
+        <h2>Total Price: <span id="total">$0</span></h2>
       </div>
     </div>
-    <div class="row justify-content-center calculate-prices">
-      <button id="calc-prices-button" class="btn-success col-3">Calculate Prices</button>
-    </div>
-
-    <div>
-      <h2>Total Price: <span id="total">$0</span></h2>
-    </div>
-  </div>
-  </div>
   <script type="text/javascript" src="./js/index.js"></script>
 </body>
 
