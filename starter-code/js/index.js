@@ -25,14 +25,32 @@ function getTotalPrice() {
   document.getElementById('totalPriceDiv').getElementsByTagName('h2')[0].getElementsByTagName('span')[0].innerHTML = totalPrice + "$"
 }
 
-function createQuantityInput() {
-
+function createProductName(itemName) {
+  let productDiv = document.createElement('div')
+  productDiv.innerText = itemName
+  document.querySelector('.containerOfWrappers').querySelectorAll('.wrapper')[(document.querySelector('.containerOfWrappers').querySelectorAll('.wrapper').length - 1)].appendChild(productDiv)
 }
 
 function createDeleteButton() {
 }
 
-function createQuantityNode() {
+function createProductQuantity(itemUnitPrice) {
+  let productQuant = document.createElement('div')
+  productQuant.classList.add('costUnit')
+  productQuant.innerText = itemUnitPrice + '$'
+  document.querySelector('.containerOfWrappers').querySelectorAll('.wrapper')[(document.querySelector('.containerOfWrappers').querySelectorAll('.wrapper').length - 1)].appendChild(productQuant)
+}
+
+function createHowMany() {
+  let howMany = document.createElement('div')
+  document.querySelector('.containerOfWrappers').querySelectorAll('.wrapper')[(document.querySelector('.containerOfWrappers').querySelectorAll('.wrapper').length - 1)].appendChild(howMany)
+  document.querySelector('.containerOfWrappers').querySelectorAll('.wrapper')[(document.querySelector('.containerOfWrappers').querySelectorAll('.wrapper').length - 1)].querySelector('div').appendChild(document.createElement('label'))
+  document.querySelector('.containerOfWrappers').querySelectorAll('.wrapper')[(document.querySelector('.containerOfWrappers').querySelectorAll('.wrapper').length - 1)].querySelector('div').querySelector('label').innerText = "How Many?"
+  let newInput = document.createElement('input')
+  newInput.classList.add('quantity')
+  document.querySelector('.containerOfWrappers').querySelectorAll('.wrapper')[(document.querySelector('.containerOfWrappers').querySelectorAll('.wrapper').length - 1)].querySelector('div').appendChild(newInput)
+
+
 
 }
 
@@ -41,37 +59,44 @@ function createItemNode(dataType, itemData) {
 }
 
 function createNewItemRow(itemName, itemUnitPrice) {
-  let wrapperDiv = document.createElement('div')
-  wrapperDiv.classList.add('wrapper')
-  wrapperDiv.appendChild('div')
-  wrapperDiv.querySelector('div').innerHTML(document.querySelector('#productName').value)
-  wrapperDiv.appendChild('div')
-  wrapperDiv.querySelector('div')[1].innerHTML(document.querySelector('#productPrice').value)
-  wrapperDiv.appendChild('div')
-  wrapperDiv.querySelector('div')[2].appendChild('button')
-  wrapperDiv.querySelector('div')[2].querySelector('button').appendChild('label')
-  wrapperDiv.querySelector('div')[2].querySelector('button').querySelector('label').innerHTML('How Many?')
-  wrapperDiv.querySelector('div')[2].querySelector('button').appendChild('input')
-  wrapperDiv.querySelector('div')[2].querySelector('button').querySelector('input').classList.add('quantity')
-  wrapperDiv.appendChild('div')
-  wrapperDiv.querySelector('div')[3].classList.add('priceTimesQuantity')
-  wrapperDiv.appendChild('div')
-  wrapperDiv.querySelector('div')[4].appendChild('button')
-  wrapperDiv.querySelector('div')[4].querySelector('button').classList.add('btn-delete')
-  document.querySelector('.containerOfWrappers').appendChild(wrapperDiv)
+  console.log(itemName + itemUnitPrice)
+  let newRow = document.createElement('div')
+  newRow.classList.add('wrapper')
+  document.querySelector('.containerOfWrappers').appendChild(newRow)
+  createProductName(itemName)
+  createProductQuantity(itemUnitPrice)
+  createHowMany()
+
+  //document.querySelectors.('containerOfWrappers').querySelectors(div)[document.querySelector('containerOfWrappers').querySelector].classList.add('wrapper')
+  // document.wrapperDiv.appendChild('div')
+  // document.wrapperDiv.querySelector('div').innerHTML(document.querySelector('#productName').value)
+  // document.wrapperDiv.appendChild('div')
+  // document.wrapperDiv.querySelector('div')[1].innerHTML(document.querySelector('#productPrice').value)
+  // document.wrapperDiv.appendChild('div')
+  // document.wrapperDiv.querySelector('div')[2].appendChild('button')
+  // document.wrapperDiv.querySelector('div')[2].querySelector('button').appendChild('label')
+  // document.wrapperDiv.querySelector('div')[2].querySelector('button').querySelector('label').innerHTML('How Many?')
+  // document.wrapperDiv.querySelector('div')[2].querySelector('button').appendChild('input')
+  // document.wrapperDiv.querySelector('div')[2].querySelector('button').querySelector('input').classList.add('quantity')
+  // document.wrapperDiv.appendChild('div')
+  // document.wrapperDiv.querySelector('div')[3].classList.add('priceTimesQuantity')
+  // document.wrapperDiv.appendChild('div')
+  // document.wrapperDiv.querySelector('div')[4].appendChild('button')
+  // document.wrapperDiv.querySelector('div')[4].querySelector('button').classList.add('btn-delete')
+
 }
 
 function createNewItem() {
-  createNewItemRow(document.querySelector('#productName').value, document.querySelector('#productPrize').value)
+  createNewItemRow(document.querySelector('#productName').value, document.querySelector('#productPrice').value)
 }
 
 window.onload = function () {
   var calculatePriceButton = document.getElementById('calc-prices-button');
-  //   var createItemButton = document.getElementById('new-item-create');
+  var createItemButton = document.getElementById('new-item-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
   calculatePriceButton.onclick = getTotalPrice;
-  //   createItemButton.onclick = createNewItem;
+  createItemButton.onclick = createNewItem;
 
   for (var i = 0; i < deleteButtons.length; i++) {
     deleteButtons[i].onclick = deleteItem;
