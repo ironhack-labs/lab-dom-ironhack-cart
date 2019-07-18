@@ -66,6 +66,9 @@ function copyAddProduct(name, unitPrice) {
   document.getElementsByClassName('title')[0].appendChild(newProduct);
   newProduct.querySelector(".product-name > span").innerText = name
   newProduct.querySelector(".cost-per-unit > span").innerText = `$` + unitPrice + `.00`
+  let deleteButton = newProduct.querySelector(".btn-delete")
+  deleteButton.onclick = deleteItem
+
 }
 
 window.onload = function () {
