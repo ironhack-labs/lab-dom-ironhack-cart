@@ -7,7 +7,7 @@ function deleteItem(e) {
 }
 
 function getTotalPrice() {
-  getPriceByProduct() // Is this ok to call the function within, though it will be triggered on the onclick?
+  getPriceByProduct()
   let productsTotalPrices = [...(document.querySelectorAll(".total-price"))]
   let numbersPrices = productsTotalPrices.map(n => {
     return parseFloat(n.innerText.replace(/[^\d.]/g, ''))
@@ -27,8 +27,8 @@ function getPriceByProduct() {
   let productsArray = [...products]
 
   productsArray.map(node => {
-    let stringValue = node.querySelector(".cost-per-unit > span").innerText.substring(1, 3)
-    let cost = parseInt(stringValue)
+    let stringValue = node.querySelector(".cost-per-unit > span").innerText.substring(1) // arr[i].price.toFixed(2));
+    let cost = parseInt(stringValue).toFixed(2)
     let quantity = node.querySelector("#quantity").value
     node.querySelector(".total-price").innerText = (`$` + `${cost * quantity}.00`)
   })
@@ -85,11 +85,12 @@ window.onload = function () {
   }
 
   copyAddProduct("IronShirt", "15")
-  // copyAddProduct()
-  // copyAddProduct()
-  // copyAddProduct()
-  // copyAddProduct()
-  // copyAddProduct()
+
+  copyAddProduct("IronCup", "10")
+
+  copyAddProduct("IronSticker", "1")
+
+  copyAddProduct("IronAxe", "100")
 
 };
 
