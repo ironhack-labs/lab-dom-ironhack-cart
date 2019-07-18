@@ -13,67 +13,75 @@
 </head>
 
 <body>
-
   <h1>Ironhack Merchandising Shop</h1>
-  <div container>
-    <div class="container">
-      <div class="row justify-content-between product">
-        <div class="col-4">
-          <span>IronBubble-head</span>
-        </div>
-        <div class="col-2 prices">
-          <span class="price">$25.00</span>
-        </div>
-        <div class="col-3">
-          <label for="quantity">QTY</label>
-          <input name="quantity" type="number">
-        </div>
-        <div>
-          <span class="col-2 totalProductPrice">$0</span>
-        </div>
+  <div class="container">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Product</th>
+          <th scope="col">Price</th>
+          <th scope="col">Quatity</th>
+          <th scope="col">Total</th>
+          <th scope="col">Edit</th>
+        </tr>
+      </thead>
+      <tbody class="products-parent">
+        <tr class="product">
+          <th scope="row"></th>
+          <td>IronBubble-head</td>
+          <td class="price">$25.00</td>
+          <td>
+            <label for="quantity">QTY</label>
+            <input name="quantity" type="number">
+          </td>
+          <td class="totalProductPrice">$0</td>
+          <td><button class="btn-delete">Delete</button></td>
+        </tr>
+        <tr class="product">
+          <th scope="row product"></th>
+          <td>Ironshirt</td>
+          <td class="price">$15.00</td>
+          <td>
+            <label for="quantity">QTY</label>
+            <input name="quantity" type="number">
+          </td>
+          <td class="totalProductPrice">$0</td>
+          <td><button class="btn-delete">Delete</button></td>
+        </tr>
+        <tr>
+          <th scope="row"></th>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td><span id="total">$0</span></td>
 
-        <button class="col-1 btn-delete">Delete</button>
-      </div>
+        </tr>
+      </tbody>
+    </table>
 
-      <div class="row justify-content-between product">
-        <div class="col-4">
-          <span>IronShirt</span>
-        </div>
-        <div>
-          <span class="col-2 price">$15.00</span>
-        </div>
-        <div class="col-3">
-          <label for="quantity">QTY</label>
-          <input name="quantity" type="number">
-        </div>
-        <div>
-          <span class="col-2 totalProductPrice">$0</span>
-        </div>
-        <button class="col-1 btn-delete">Delete</button>
-      </div>
-
-      <div class="row justify-content-between input-and-create-new">
-        <div class="input-new">
-          <label for="new">New item</label>
-          <input class="col-4  newItem" name="quantity" type="text">
-        </div>
-        <div>
-          <label for= "new">New price</label>
-          <input class="col-4  newPrice" name="quantity" type="number">
-        </div>
-        <div class="col-1 btn create-new">
-          <button id="new-item-create">Create</button>
-        </div>
-      </div>
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">
+            <label for="new">New item</label>
+            <input class="newItem" name="quantity" type="text">
+          </th>
+          <th scope="col">
+            <label for="new">New price</label>
+            <input class="newPrice" name="quantity" type="number">
+          </th>
+          <th scope="col"></th>
+          <th scope="col">
+            <button id="new-item-create">Create</button>
+          </th>
+        </tr>
+      </thead>
+    </table>
+    <div class="calulateButton">
+      <button id="calc-prices-button" class="btn-success">Calculate Prices</button>
     </div>
-      <div class="row justify-content-center calculate-prices">
-        <button id="calc-prices-button" class="btn-success col-3">Calculate Prices</button>
-      </div>
-
-      <div>
-        <h2>Total Price: <span id="total">$0</span></h2>
-      </div>
-    </div>
+  </div>
   <script type="text/javascript" src="./js/index.js"></script>
 </body>
 

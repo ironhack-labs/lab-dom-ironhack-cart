@@ -49,4 +49,8 @@ h1{
   justify-self: flex-start
 }
 
+.calulateButton {
+  display:flex;
+  justify-content: center;
+}
 

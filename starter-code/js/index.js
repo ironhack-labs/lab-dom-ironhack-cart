@@ -4,7 +4,7 @@ let calculatePriceButton = document.getElementById('calc-prices-button');
 let totalPriceOfProduct = document.getElementsByClassName('totalProductPrice');
 let totalPrice = document.getElementById('total');
 let products = document.getElementsByClassName('product');
-let parentOfProducts = document.getElementsByClassName('container')[0];
+let parentOfProducts = document.getElementsByClassName('products-parent')[0];
 let newItemInput = document.getElementsByClassName('newItem')[0];
 let newPriceInput = document.getElementsByClassName('newPrice')[0];
 let deleteButtons = document.getElementsByClassName('btn-delete');
@@ -12,18 +12,18 @@ let deleteButtons = document.getElementsByClassName('btn-delete');
 
 
 function deleteItem(e){
-  parentOfProducts.removeChild(e.currentTarget.parentNode);
+  parentOfProducts.removeChild(e.currentTarget.parentNode.parentNode);
   getTotalPrice();
   }
 
 
 
 function getPriceByProduct(itemNode){
-
+  
 }
 
 function updatePriceByProduct(productPrice, index){
-
+  
 }
 
 //to do: try with reduce method
@@ -79,12 +79,12 @@ function createNewItem(){
     lastProduct = products[products.length-1]
 
     if(products.length > 0){
-    lastProduct.insertAdjacentHTML('afterend',`<div class="row justify-content-between product"><div class="col-4"><span>${newItemInput.value}</span></div><div class="col-2 prices"><span class="price">$${newPriceInput.value}</span></div><div class ="col-4"><label for="quantity">QTY</label><input name="quantity" type="number"></div><div><span class="col-2 totalProductPrice">$0</span></div><button class="col-1 btn-delete">Delete</button></div>`)
+    lastProduct.insertAdjacentHTML('afterend',`<tr class = "product"><th scope="row"></th><td>${newItemInput.value}</td><td class = "price">$${newPriceInput.value}</td><td><label for="quantity">QTY</label><input name="quantity" type="number"></td><td class = "totalProductPrice">$0</td><td><button class="btn-delete">Delete</button></td></tr>`)
     newItemInput.value = ""
     newPriceInput.value = ""
     }
     else {
-      parentOfProducts.insertAdjacentHTML('afterbegin',`<div class="row justify-content-between product"><div class="col-4"><span>${newItemInput.value}</span></div><div class="col-2 prices"><span class="price">$${newPriceInput.value}</span></div><div class ="col-4"><label for="quantity">QTY</label><input name="quantity" type="number"></div><div><span class="col-2 totalProductPrice">$0</span></div><button class="col-1 btn-delete">Delete</button></div>`)
+      parentOfProducts.insertAdjacentHTML('afterbegin',`<tr class = "product"><th scope="row"></th><td>${newItemInput.value}</td><td class = "price">$${newPriceInput.value}</td><td><label for="quantity">QTY</label><input name="quantity" type="number"></td><td class = "totalProductPrice">$0</td><td><button class="btn-delete">Delete</button></td></tr>`)
       newItemInput.value = ""
       newPriceInput.value = ""
     }
@@ -103,7 +103,7 @@ window.onload = function(){
    createItemButton.onclick = 
   function() {
     if(newPriceInput.value.length === 0 || newItemInput.value.length === 0){
-    alert("please enter a new item and a price")
+    alert("Please enter a new item and a new price.")
   }
     else{
       createNewItem()
