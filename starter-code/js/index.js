@@ -18,10 +18,7 @@ function getTotalPrice() {
   document.querySelector(".total-price-calc h2").innerText = `Total Price: ` + `$` + `${sum}.00`
 }
 
-function updatePriceByProduct(productPrice, index) {
 
-}
-//iterate and for each of them calculate the price
 function getPriceByProduct() {
   let products = document.querySelectorAll(".product")
   let productsArray = [...products]
@@ -36,30 +33,6 @@ function getPriceByProduct() {
 }
 
 
-function createQuantityInput() {
-
-}
-
-function createDeleteButton() {
-
-}
-
-function createQuantityNode() {
-
-}
-
-function createItemNode(dataType, itemData) {
-
-}
-
-function createNewItemRow(itemName, itemUnitPrice) {
-
-}
-
-function createNewItem() {
-
-}
-
 function copyAddProduct(name, unitPrice) {
   let firstProduct = document.getElementsByClassName('product')[0];
   let newProduct = firstProduct.cloneNode(true);
@@ -73,12 +46,13 @@ function copyAddProduct(name, unitPrice) {
 
 window.onload = function () {
   var calculatePriceButton = document.getElementById('calculate-button');
-  var createItemButton = document.getElementById('new-item-create');
+  var createItemButton = document.getElementById('create');
   var deleteButtons = [...document.getElementsByClassName('btn-delete')]
 
   calculatePriceButton.onclick = getTotalPrice
-  // calculatePriceButton.onclick = ;
-  //createItemButton.onclick = createNewItem;
+  createItemButton.onclick = () => {
+    copyAddProduct(document.getElementById("name").value, document.getElementById("cost").value)
+  }
 
   for (var i = 0; i < deleteButtons.length; i++) {
     deleteButtons[i].onclick = deleteItem;
@@ -94,4 +68,3 @@ window.onload = function () {
 
 };
 
-//

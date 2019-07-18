@@ -102,3 +102,16 @@ label {
   display: flex;
   justify-content: center;
 }
+
+.user-input {
+  display: inline-flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.user-input > input {
+}
+
+.btn-create {
+}
