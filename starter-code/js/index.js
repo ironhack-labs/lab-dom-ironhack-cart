@@ -32,6 +32,14 @@ function createProductName(itemName) {
 }
 
 function createDeleteButton() {
+  let deleteButtonDiv = document.createElement('div')
+  deleteButtonDiv.id = 'deleteButtonDiv'
+  document.querySelector('.containerOfWrappers').querySelectorAll('.wrapper')[(document.querySelector('.containerOfWrappers').querySelectorAll('.wrapper').length - 1)].appendChild(deleteButtonDiv)
+  let deleteButton = document.createElement('button')
+  deleteButton.classList.add('btn-delete')
+  deleteButton.innerText = 'Delete'
+  deleteButton.onclick = deleteItem
+  document.querySelector('.containerOfWrappers').querySelectorAll('.wrapper')[(document.querySelector('.containerOfWrappers').querySelectorAll('.wrapper').length - 1)].querySelector('#deleteButtonDiv').appendChild(deleteButton)
 }
 
 function createProductQuantity(itemUnitPrice) {
@@ -43,14 +51,16 @@ function createProductQuantity(itemUnitPrice) {
 
 function createHowMany() {
   let howMany = document.createElement('div')
+  howMany.id = 'howMany'
   document.querySelector('.containerOfWrappers').querySelectorAll('.wrapper')[(document.querySelector('.containerOfWrappers').querySelectorAll('.wrapper').length - 1)].appendChild(howMany)
-  document.querySelector('.containerOfWrappers').querySelectorAll('.wrapper')[(document.querySelector('.containerOfWrappers').querySelectorAll('.wrapper').length - 1)].querySelector('div').appendChild(document.createElement('label'))
-  document.querySelector('.containerOfWrappers').querySelectorAll('.wrapper')[(document.querySelector('.containerOfWrappers').querySelectorAll('.wrapper').length - 1)].querySelector('div').querySelector('label').innerText = "How Many?"
+  document.querySelector('.containerOfWrappers').querySelectorAll('.wrapper')[(document.querySelector('.containerOfWrappers').querySelectorAll('.wrapper').length - 1)].querySelector('#howMany').appendChild(document.createElement('label'))
+  document.querySelector('.containerOfWrappers').querySelectorAll('.wrapper')[(document.querySelector('.containerOfWrappers').querySelectorAll('.wrapper').length - 1)].querySelector('label').innerText = "How Many?"
   let newInput = document.createElement('input')
   newInput.classList.add('quantity')
-  document.querySelector('.containerOfWrappers').querySelectorAll('.wrapper')[(document.querySelector('.containerOfWrappers').querySelectorAll('.wrapper').length - 1)].querySelector('div').appendChild(newInput)
-
-
+  document.querySelector('.containerOfWrappers').querySelectorAll('.wrapper')[(document.querySelector('.containerOfWrappers').querySelectorAll('.wrapper').length - 1)].querySelector('#howMany').appendChild(newInput)
+  let priceTimesQuantityDiv = document.createElement('div')
+  priceTimesQuantityDiv.classList.add('priceTimesQuantity')
+  document.querySelector('.containerOfWrappers').querySelectorAll('.wrapper')[(document.querySelector('.containerOfWrappers').querySelectorAll('.wrapper').length - 1)].appendChild(priceTimesQuantityDiv)
 
 }
 
@@ -66,6 +76,7 @@ function createNewItemRow(itemName, itemUnitPrice) {
   createProductName(itemName)
   createProductQuantity(itemUnitPrice)
   createHowMany()
+  createDeleteButton()
 
   //document.querySelectors.('containerOfWrappers').querySelectors(div)[document.querySelector('containerOfWrappers').querySelector].classList.add('wrapper')
   // document.wrapperDiv.appendChild('div')
