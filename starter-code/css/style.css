@@ -25,11 +25,10 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
-
 
 .btn-single {
   color: #fff;
@@ -37,9 +36,9 @@ input {
   border-color: violet;
 }
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #cf000f;
+  border-color: #cf000f;
 }
 
 .quantity {
@@ -47,7 +46,7 @@ input {
 }
 
 main {
-  display: flex;
+  /* display: flex; */
 }
 .container {
   display: flex;
@@ -60,13 +59,8 @@ main {
   justify-content: space-between;
 }
 
-.item1 {
+.item {
   display: flex;
- 
-  justify-content: space-between;
-}
-.item2 {
-  display: flex;
- 
+
   justify-content: space-between;
 }
