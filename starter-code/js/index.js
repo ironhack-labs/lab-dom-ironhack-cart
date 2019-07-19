@@ -1,11 +1,10 @@
 let input = document.getElementsByClassName('quantity')
 let itemUnitPrice = document.getElementsByClassName("unit-price")
 let totalPerProduct = document.getElementsByClassName('totalPrice')
-let grandTotal = document.getElementById("grand-total")
+//let grandTotal = document.getElementById("grand-total")
 let itemDiv = document.getElementsByClassName('item')
 
-let titleInput = document.getElementsByClassName('new-item-name')[0];
-let priceInput = document.getElementsByClassName('unit-price')[0];
+
 
 function deleteItem(e) {
 
@@ -27,22 +26,20 @@ function updatePriceByProduct(productPrice, index) { };
 function getTotalPrice() {
 
   let total = 0;
-  for (let i = 0; i < input.length; i++) {
-    let result = parseFloat(input[i].value) * parseInt(itemUnitPrice[i].innerHTML)
-    total = + result;
-    totalPerProduct[i].innerText = total
-  }
-
-};
-
-function getGrandTotal() {
   let totalSum = 0;
-  for (let j = 0; j <= totalPerProduct.length; j++) {
-    totalSum = totalSum + parseInt(totalPerProduct[j].innerHTML)
-    grandTotal.innerHTML = totalSum
+  for (let i = 0; i < input.length; i++) {
+    let result = parseFloat(input[i].value) * parseInt(itemUnitPrice[i].innerHTML);
+    totalPerProduct[i].innerHTML = result;
+    totalSum = totalSum + result;
+
   }
+  document.getElementById("grand-total").innerHTML = totalSum
 }
 
+function getGrandTotal() {
+
+
+}
 
 function createQuantityInput() {
 
@@ -62,7 +59,6 @@ function createItemNode(dataType, itemData) {
 }
 
 function createNewItemRow(itemName, itemUnitPrice) {
-
   let newRow = document.createElement('div')
   let itemsContainer = document.getElementById("items-container")
   //itemsContainer.appendChild(newRow);
@@ -95,7 +91,8 @@ function createNewItemRow(itemName, itemUnitPrice) {
 
 
 function createNewItem() {
-
+  let titleInput = document.getElementsByClassName('new-item-name')[0].value;
+  let priceInput = document.getElementsByClassName('unit-price')[0].value;
   createNewItemRow(titleInput, priceInput)
 
 }
@@ -125,5 +122,6 @@ window.onload = function () {
 
   let calculatePriceButton = document.getElementsByClassName("btn-sucess")[0];
   calculatePriceButton.onclick = getTotalPrice;
+
 };
 
