@@ -1,23 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!DOCTYPE html>
-    <html lang="en">
-      <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
-        />
-        <link rel="stylesheet" href="./css/style.css" />
-        <script type="text/javascript" src="./js/index.js"></script>
-        <title>Ironhack cart</title>
-      </head>
-
-      <body></body>
-    </html>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -29,60 +12,59 @@
     <script type="text/javascript" src="./js/index.js"></script>
     <title>Ironhack cart</title>
   </head>
-
   <body>
-    <!DOCTYPE html>
-    <html>
-      <body>
-        <!–– Iteration 1: Creating one product ––>
-        <!–– CHECK A wrapper div that contains all the HTML for that product. A div with a span, showing the product name.
-        A div with a span, showing the cost of one unit. A div with one label and one input, where the user will
-        indicate how many units they will buy. A div with a span, showing the total price for this product. This number
-        should be the result of multiplying the amount of units multiplied by the price of one unit of that product. The
-        default total price should be 0. A div with a delete button, to remove the product from the list.-->
+    <h2 class="h2">Ironhack <br />Merchandising Shop</h2>
 
-        <head>
-          <h2 class="h2">Ironhack <br />Merchandising Shop</h2>
-        </head>
-        <!--product-items are all items listed -->
-        <div class="product-items">
-          <div class="product-row">
-            <ul class="flex-container nowrap">
-              <li class="flex-item productName">IronBubble-head</li>
-              <li class="flex-item setPrice">$25.00</li>
-              <li class="flex-item">
-                QTY <input class="quanitityInput" type="number" />
-              </li>
-              <li class="flex-item totalPrice">$0.00</li>
-              <li class="flex-item">
-                <button class="btn-delete btn">Delete</button>
-              </li>
-            </ul>
-          </div>
-          <div class="product-row">
-            <ul class="flex-container nowrap">
-              <li class="flex-item productName">IronShirt</li>
-              <li class="flex-item setPrice">$15.00</li>
-              <li class="flex-item">
-                QTY <input class="quanitityInput" type="number" />
-              </li>
-              <li class="flex-item totalPrice">$0.00</li>
-              <li class="flex-item">
-                <button class="btn-delete btn">Delete</button>
-              </li>
-            </ul>
+    <!--product-items are all items listed -->
+    <div class="product-items">
+      <div class="product-row">
+        <ul class="flex-container nowrap">
+          <li class="flex-item productName">IronBubble-head</li>
+          <li class="flex-item">
+            <span>$</span>
+            <div class="setPrice">25.00</div>
+          </li>
+          <li class="flex-item">
+            QTY <input class="quanitityInput" type="number" />
+          </li>
+          <li class="flex-item">
+            <span>$</span>
+            <div class="totalPrice">0</div>
+          </li>
+          <li class="flex-item">
+            <button class="btn-delete btn">Delete</button>
+          </li>
+        </ul>
+        <div class="product-row">
+        <ul class="flex-container nowrap">
+          <li class="flex-item productName">IronShirt</li>
+          <li class="flex-item">
+            <span>$</span>
+            <div class="setPrice">15</div>
+          </li>
+          <li class="flex-item">
+            QTY <input class="quanitityInput" type="number" />
+          </li>
+          <li class="flex-item">
+            <span>$</span>
+            <div class="totalPrice">0</div>
+          </li>
+          <li class="flex-item">
+            <button class="btn-delete btn">Delete</button>
+          </li>
+        </ul>
 
-            <button id="calc-prices-button" class="btn-success btn">
-              Calculate Prize
-            </button>
-          </div>
-        </div>
-        <div class="TotalPriceOfTheCart">
-          <h2 class="h2">
-            Total Price: <span class="cart-total-price">$0</span>
-          </h2>
-        </div>
-      </body>
-    </html>
+        <button
+          id="calc-prices-button"
+          class="btn-success btn"
+          onclick="getTotalPrice"
+        >
+          Calculate Prize
+        </button>
+      </div>
+    </div>
+    <div class="TotalPriceOfTheCart">
+      <h2 class="h2">Total Price: $ <span class="cart-total-price">0</span></h2>
+    </div>
   </body>
 </html>
