@@ -10,5 +10,53 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <h1>Ironhack Merchandising Shop</h1>
+  <div id="pproduct" class="product">
+    <div class="productinfo">
+      <span class="prodName">IronBubble-head</span>
+      <span class="unit">$</span>
+      <span class="price">25.00</span>
+      <label for="">QTY</label>
+      <input class="input" type="text" value="0"  placeholder="0">
+      <span class="unit">$</span>
+      <span class="totalPrice">0</span>  
+      <button class="delbtn" onclick="createDeleteButton(this)">Delete</button> 
+    </div>
+
+    <div class="productinfo">
+        <div>
+          <span class="prodName">IronShirt</span>
+        </div>
+        <div>
+          <span class="unit">$</span>
+          <span class="price">15.00</span>
+        </div>
+        <div>
+          <label for="">QTY</label>
+          <input class="input" type="text" value="0"  placeholder="0">
+        </div>
+        <div>
+          <span class="unit">$</span>
+          <span class="totalPrice">0</span>
+        </div>
+      
+        <button class="delbtn" onclick="createDeleteButton(this)">Delete</button>
+      
+      </div>
+    </div>
+  <div class="userinput">
+    <label for="">Product Name</label>
+    <input type="text" id="prdInput">
+    <label for="">Price</label>
+    <input type="text" id="priceInput">
+    <button onclick="createNewItemRow();">Create</button>
+  </div>
+  <div class="calcHolder">
+      <button class="calcbtn" onclick="createQuantityInput();">Calculate Prices</button>
+  </div>
+  <div id="parent">
+
+  </div>
+  <script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>

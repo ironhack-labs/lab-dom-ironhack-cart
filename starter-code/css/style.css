@@ -1,5 +1,51 @@
+h1{
+  text-align: center;
+}
+.productinfo{
+  display:flex;
+  justify-content: space-between;
+  margin:20px;
+}
+.calcHolder{
+  display: flex; 
+  justify-content: center; 
+  margin:20px;
+}
+.total{
+  font-weight: bold;
+  display: flex; 
+  justify-content: center; 
+}
+
 input {
   border: solid 1px black;
+}
+.delbtn{
+  position: relative;
+  display: inline-block;
+  background-color: "red";
+  padding: 0.2em 0.7em;
+  text-decoration: none;
+  background: #f73838;/*背景色*/
+  border-bottom: solid 2px #f20c0c;/*少し濃い目の色に*/
+  color: #FFF;
+  border-radius: 4px;
+}
+.calcbtn{
+  position: relative;
+  display: inline-block;
+  background-color: "red";
+  padding: 0.2em 0.7em;
+  text-decoration: none;
+  background: #36bc10;/*背景色*/
+  border-bottom: solid 2px #259606;/*少し濃い目の色に*/
+  color: #FFF;
+  border-radius: 4px;
+}
+
+.userinput{
+  display: flex;
+  justify-content: space-around;
 }
 
 .btn {
