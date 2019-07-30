@@ -2,10 +2,14 @@ input {
   border: solid 1px black;
 }
 
+body{
+  text-align: center;
+}
 .container{
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   /* display: grid;
   width: 1200px; */
  /*  height: 1200px; */
