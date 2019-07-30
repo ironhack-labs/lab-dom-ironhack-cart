@@ -20,7 +20,7 @@
       <input class="input" type="text" value="0"  placeholder="0">
       <span class="unit">$</span>
       <span class="totalPrice">0</span>  
-      <button class="delbtn" onclick="createDeleteButton(this)">Delete</button> 
+      <button class="delbtn" onclick="deleteRow(this)">Delete</button> 
     </div>
 
     <div class="productinfo">
@@ -40,7 +40,7 @@
           <span class="totalPrice">0</span>
         </div>
       
-        <button class="delbtn" onclick="createDeleteButton(this)">Delete</button>
+        <button class="delbtn" onclick="deleteRow(this);">Delete</button>
       
       </div>
     </div>
@@ -49,7 +49,7 @@
     <input type="text" id="prdInput">
     <label for="">Price</label>
     <input type="text" id="priceInput">
-    <button onclick="createNewItemRow();">Create</button>
+    <button onclick="createNewItemRow(this);">Create</button>
   </div>
   <div class="calcHolder">
       <button class="calcbtn" onclick="createQuantityInput();">Calculate Prices</button>

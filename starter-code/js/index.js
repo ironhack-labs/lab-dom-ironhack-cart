@@ -47,13 +47,23 @@ function createQuantityInput(){
   }
 }
 
-function createDeleteButton(button){
+function deleteRow(button){
   console.log(button);
   const parentNode = button.parentNode;
-  //parentNode.remove();
+  parentNode.remove();
 }
 
-function createNewItemRow(){
+function deleteNewRow(e){
+  let button = e.currentTarget;
+  //let button2 = this;
+  //debugger
+  console.log(button);
+  const parentNode = button.parentNode;
+  parentNode.remove();
+}
+
+function createNewItemRow(button1){
+  console.log(button1);
   let itemName = document.getElementById("prdInput").value;
   console.log("New Item Name", itemName );
   let itemPrice = document.getElementById("priceInput").value;
@@ -84,8 +94,7 @@ function createNewItemRow(){
   const buttonDel= document.createElement("button");
   buttonDel.className = "delbtn";
   buttonDel.innerHTML = "Delete";
-  // buttonDel.onclick = "createDeleteButton(this)";
-  buttonDel.onclick = createDeleteButton(this);
+  buttonDel.onclick = deleteNewRow;
 
   const div = document.createElement("div");
   div.className = "productinfo";
