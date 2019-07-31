@@ -22,7 +22,6 @@ function getTotal() {
 
     }
     updateTotalPrice(total);
-
 }
 
 function updateTotalPrice(value) {
@@ -37,7 +36,7 @@ let deleteRow = (event) => {
     let cellulla = event.target;
     father.removeChild(event.target.parentElement);
     getTotal();
-    console.log(`delete - rows.length :${father.children.length}`);
+    if (father.children.length === 0) setup();
 }
 
 let createNewRow = (event) => {
@@ -46,18 +45,15 @@ let createNewRow = (event) => {
     let secondInput = document.getElementsByClassName("unit")[0];
     let secondDescription = secondInput.value;
     let rows = document.getElementsByClassName("rows")[0];
-    if (!firstDescription || !secondInput ){
-      return false;
-    }else{
-      rows.appendChild(createNewItem(firstDescription, secondDescription));
-      cleanInput(firstInput);
-      cleanInput(secondInput);
+    if (!firstDescription || !secondInput) {
+        return false;
+    } else {
+        rows.appendChild(createNewItem(firstDescription, secondDescription));
+        cleanInput(firstInput);
+        cleanInput(secondInput);
     }
-    
+    if (rows.children.length === 1) setup();
 
-
-    // if (rows.length === 1) setup();
-    console.log(`create - rows.length :${rows.children.length}`);
 }
 
 
@@ -66,13 +62,14 @@ let cleanInput = (input) => {
 }
 
 let setup = () => {
+    let rows = document.getElementsByClassName("rows");
+    let size = rows[0].children.length;
     let calculatePrice = document.getElementById("calc-prices-button");
-    let qtyProduct = document.getElementsByClassName('quantity');
     let divResult = document.getElementsByClassName("result")[0];
-    if (qtyProduct === 1) {
+    if (size === 1) {
         calculatePrice.style.visibility = "visible";
         divResult.hidden = false;
-    } else if (qtyProduct === 0) {
+    } else if (size === 0) {
 
         calculatePrice.style.visibility = "hidden";
         divResult.hidden = true;
@@ -131,14 +128,9 @@ function createNewItem(description, receivedValue) {
 
 
 window.onload = function() {
-    let rows = document.getElementsByClassName("rows");
-    console.log(`length :${rows[0].children.length}`);
-    console.log(`onload - rows.length :${rows[0].children.length}`);
     setup();
     let createButton = document.getElementsByClassName("btn-create")[0];
     createButton.onclick = createNewRow;
-    const calculatePriceButton = document.getElementById("calc-prices-button");
+    let calculatePriceButton = document.getElementById("calc-prices-button");
     calculatePriceButton.onclick = getTotal;
-    var deleteButtons = document.getElementsByClassName('btn-delete');
-
 };
