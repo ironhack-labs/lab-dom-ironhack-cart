@@ -1,91 +1,73 @@
-function deleteItem(e){
-
-}
-// itemNode
-function getPriceByProduct(){
-  let valueItem = document.getElementsByClassName('value');
-   
-  return Number(valueItem[0].innerText);
-}
-function getQtyByProduct(){
-	let qtyProduct = document.getElementsByClassName('quantity')[0].value;
-	return Number(qtyProduct);
+function getPriceByProduct() {
+    let valueItem = document.getElementsByClassName('valueitem');
+    return Number(valueItem[0].innerText);
 }
 
+function getQtyByProduct() {
+    let qtyProduct = document.getElementsByClassName('quantity')[0].value;
+    return Number(qtyProduct);
+}
 
-function updatePriceByProduct(productPrice, index){
+function getTotal() {
+    let total = 0;
+    let valueItem = document.getElementsByClassName('value');
+    let qtyProduct = document.getElementsByClassName('quantity');
+    let subtotal = document.getElementsByClassName('totalperproduct');
+    for (let i = 0; i < qtyProduct.length; i++) {
+        let firstValue = Number(valueItem[i].innerText);
+        let secondValue = Number(qtyProduct[i].value);
+        let product = firstValue * secondValue;
+        subtotal[i].innerHTML = product;
+        total += product;
+
+    }
+    updateTotalPrice(total);
 
 }
 
-function getTotalPrice() {
-	let sumPerProcuct = 0;
-    let elemh2= document.getElementsByTagName("h2");
+function updateTotalPrice(value) {
+    let finalSoma = document.getElementById("totalValue");
+    finalSoma.innerHTML = value;
+}
+
+
+let deleteRom = (event) => {
+    let father = document.getElementsByClassName('rows')[0];
+    let children = father.childNodes;
+    let cellulla = event.target;
+    father.removeChild(event.target.parentElement);
+    getTotal();
+}
+
+let createNewRow = (event) => {
+    let firstInput = document.getElementsByClassName("firstInput")[0];
+    let firstDescription = firstInput.value;
+    let secondInput = document.getElementsByClassName("unit")[0];
+    let secondDescription = secondInput.value;
+    let rows = document.getElementsByClassName("rows")[0];
+    rows.appendChild(createNewItem(firstDescription, secondDescription));
+
+    cleanInput(firstInput);
+    cleanInput(secondInput);
     debugger
-    let whoknows = elemh2[0].children;
-    debugger
-    let textspan = whoknows[0].innerHTML;
-
-    let elemSumPerProduct =  document.getElementsByClassName('sumperproduct')[0];
-
-    let val = getPriceByProduct();
-    let qt= getQtyByProduct();
-    sumPerProcuct = val * qt;
-    elemSumPerProduct.innerHTML = sumPerProcuct;
-    elemTotalPrice.innerHTML = sumPerProcuct;
 }
 
-function createQuantityInput(){
 
+let cleanInput = (input) => {
+    input.value = "";
 }
 
-function createDeleteButton(){
-
+let setup = () => {
+    
 }
-
-function createQuantityNode(){
-
-}
-
-function createItemNode(dataType, itemData){
-
-}
-
-// function createNewItemRow(row){
-
-//   const clone = row.cloneNode(true);
-
-//   const container = document.getElementsByClassName("container")[0];
-
-//   container.appendChild(clone);
-//   debugger
-// }
- // <div class="row">
- //            <div class="product">
- //                <span>Text</span>
- //            </div>
-
- //            <div class="valueitem">$
- //                <span class="value">0.00</span>
- //            </div>
- //            <div class="amount">
- //                <label for='quantity'>QTY</label>
- //                <input class="quantity" type='text' name='quantity' value="0">
- //            </div>
- //            <div class="totalperproduct">$
- //                <span class="sumperproduct">
- //                    0.0
- //                </span>
- //            </div>
- //            <button class="btn btn-delete">delete</button>
- //        </div>
-function createNewItem(){
+function createNewItem(description,receivedValue ){
   let row = document.createElement('row');
   row.setAttribute("class", "row");
 
   let product = document.createElement('row');
   product.setAttribute("class", "product");
   let spanDescrition = document.createElement('span');
-  spanDescrition.innerHTML = "Description";
+  spanDescrition.innerHTML = description ;
   product.appendChild(spanDescrition);
   row.appendChild(product);
 
@@ -93,7 +75,7 @@ function createNewItem(){
   valueitem.innerHTML = "$";
   valueitem.setAttribute("class", "valueitem");
   let value = document.createElement('span');
-  value.innerHTML = "0";
+  value.innerHTML = receivedValue ;
   valueitem.appendChild(value);
   row.appendChild(valueitem);
 
@@ -107,14 +89,13 @@ function createNewItem(){
   input.setAttribute("class", "quantity");
   input.setAttribute("type", "text");
   input.setAttribute("name", "quantity");
-  input.setAttribute("value", "0");
   amount.appendChild(input);
   row.appendChild(amount);
 
   let totalperproduct = document.createElement('row');
-  totalperproduct.setAttribute("class", "totalperproduct");
   totalperproduct.innerHTML = "$";
   let spanDetails = document.createElement('span');
+  spanDetails.setAttribute("class", "totalperproduct");
   spanDetails.innerHTML = "0.0";
   totalperproduct.appendChild(spanDetails);
   row.appendChild(totalperproduct);
@@ -128,34 +109,18 @@ function createNewItem(){
 }
 
 
-function createRow(){
+window.onload = function() {
+    
+    let calculatePrice = document.getElementById("calc-prices-button");
+    calculatePrice.style.visibility ="hidden";
+    let divResult = document.getElementsByClassName("result")[0];
+    divResult.hidden = true;
 
-}
 
-window.onload = function(){
-   let rows = document.getElementsByClassName("rows")[0];
-   rows.appendChild(createNewItem());
+    let createButton = document.getElementsByClassName("btn-create")[0];
+    createButton.onclick = createNewRow;
+    const calculatePriceButton = document.getElementById("calc-prices-button");
+    calculatePriceButton.onclick = getTotal;
+    var deleteButtons = document.getElementsByClassName('btn-delete');
 
-  // let row = document.getElementsByClassName("row")[0];
-  
-  // var calculatePriceButton = document.getElementById('calc-prices-button');
-  // // var createItemButton = document.getElementById('new-item-create');
-  // var deleteButtons = document.getElementsByClassName('btn-delete');
-  // ;
-  // calculatePriceButton.onclick = getTotalPrice;
-  // // let span = valueitem.children[0].innerHTML // $25.00
-  
-  // const addRowBtn = document.getElementById("addRow")
-  //   addRowBtn.addEventListener("click",  function(){
-  //     createNewItemRow(row);
-  // })
-  
-  // calculatePriceButton.onclick = print;
-  // console.log(valueitem);
-  // //getTotalPrice;
-  // createItemButton.onclick = createNewItem;
-
-  // for(var i = 0; i<deleteButtons.length ; i++){
-  //   deleteButtons[i].onclick = deleteItem;
-  // }
 };

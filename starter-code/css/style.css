@@ -2,32 +2,40 @@ input {
   border: solid 1px black;
 }
 
-body{
-  text-align: center;
+.inputs{
+  display: flex;
+  justify-content: left; 
 }
 .container{
   display: flex;
   flex-direction: column;
   justify-content: center;
 
-  /* display: grid;
-  width: 1200px; */
- /*  height: 1200px; */
- /*  grid-template: 60px 100px 50px 50px/ 300px 100px 300px 100px 200px;
-  text-align: center;
-  align-items: center; */
+}
 
+.createitens{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 50px;
+
+}
+.createitens input{
+  margin-right: 30px;
+  margin-left: 30px;
+}
+.createitens button{
+    margin-right: 80px;
 }
 .title span, .result span {
   font-weight: bold;
   font-size: 30px;
 }
-/* .row{
-  grid-area: 2/1/2/6;
-  display: grid;
-  grid-template-columns: 300px 100px 300px 100px 200px;
 
-} */
+.othercontent{
+  text-align: center;
+}
 
 .row {
   display: flex;
@@ -61,19 +69,28 @@ body{
   background-image: none;
   border: 1px solid transparent;
   border-radius: 6px;
+  cursor: pointer;
 }
 
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    display: pointer;
+}
+.success{
+  margin-top: 100px;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    cursor: pointer;
 
+}
+.btn-create{
+  cursor: pointer;
 }
 
 .quantity {

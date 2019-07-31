@@ -13,18 +13,27 @@
 
 <body>
     <div class="container">
-        <div class="title">
+        <div class="othercontent title">
             <span>Ironrack Merchandising Shop</span>
         </div>
         <div class="rows">
         </div>
+        <form>
+            <div class="createitens">
+                <div class="inputs">
+                    <input class="firstInput" type="text" name="" required>
+                    <input class="unit" type="number" name="" required>
+                </div>
+                <button class="btn-create">Create</button>
+            </div>
+        </form>
     </div>
-    <div class="success">
+    <div class="othercontent success">
         <button id="calc-prices-button" class="btn btn-success">Calculate Prices</button>
-        <button id="addRow">Add Row</button>
     </div>
-    <div class="result">
-        <h2>Total Price: $<span>0</span></h2>
+    <div class="othercontent result">
+        <h2>Total Price: $<span id="totalValue">0</span></h2>
     </div>
 </body>
+
 </html>
