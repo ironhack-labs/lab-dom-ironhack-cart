@@ -13,10 +13,7 @@ function getTotal() {
     let valueItem = document.getElementsByClassName('valueitem');
     let qtyProduct = document.getElementsByClassName('quantity');
     let subtotal = document.getElementsByClassName('totalperproduct');
-    debugger
-
     for (let i = 0; i < qtyProduct.length; i++) {
-      debugger
         let firstValue = Number(valueItem[i].innerText);
         let secondValue = Number(qtyProduct[i].value);
         let product = firstValue * secondValue;
@@ -40,6 +37,7 @@ let deleteRow = (event) => {
     let cellulla = event.target;
     father.removeChild(event.target.parentElement);
     getTotal();
+    console.log(`delete - rows.length :${father.children.length}`);
 }
 
 let createNewRow = (event) => {
@@ -48,11 +46,18 @@ let createNewRow = (event) => {
     let secondInput = document.getElementsByClassName("unit")[0];
     let secondDescription = secondInput.value;
     let rows = document.getElementsByClassName("rows")[0];
-    rows.appendChild(createNewItem(firstDescription, secondDescription));
+    if (!firstDescription || !secondInput ){
+      return false;
+    }else{
+      rows.appendChild(createNewItem(firstDescription, secondDescription));
+      cleanInput(firstInput);
+      cleanInput(secondInput);
+    }
+    
 
-    cleanInput(firstInput);
-    cleanInput(secondInput);
-    if (rows.length === 1) setup();
+
+    // if (rows.length === 1) setup();
+    console.log(`create - rows.length :${rows.children.length}`);
 }
 
 
@@ -75,6 +80,7 @@ let setup = () => {
 }
 
 function createNewItem(description, receivedValue) {
+
     let row = document.createElement('row');
     row.setAttribute("class", "row");
 
@@ -125,6 +131,9 @@ function createNewItem(description, receivedValue) {
 
 
 window.onload = function() {
+    let rows = document.getElementsByClassName("rows");
+    console.log(`length :${rows[0].children.length}`);
+    console.log(`onload - rows.length :${rows[0].children.length}`);
     setup();
     let createButton = document.getElementsByClassName("btn-create")[0];
     createButton.onclick = createNewRow;
