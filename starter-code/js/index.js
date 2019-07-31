@@ -56,7 +56,6 @@ let createNewRow = (event) => {
 
 }
 
-
 let cleanInput = (input) => {
     input.value = "";
 }
@@ -104,7 +103,7 @@ function createNewItem(description, receivedValue) {
     amount.appendChild(label);
     let input = document.createElement('input');
     input.setAttribute("class", "quantity");
-    input.setAttribute("type", "text");
+    input.setAttribute("type", "number");
     input.setAttribute("name", "quantity");
     amount.appendChild(input);
     row.appendChild(amount);
