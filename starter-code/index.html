@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="text/javascript" src="./js/index.js"></script>
+    <title>Ironhack cart</title>
+  </head>
+  <body>
+    <nav>
+      <h1>Ironhack Merch Store</h1>
+    </nav>
+    <section id="Cart-container">
+      <ul id="cart-contents"></ul>
+      <div id="cart-add">
+        <text>Nombre Objeto:</text>
+        <input type="text" class="add-input" />
+        <text>Precio Objeto:</text>
+        <input type="text" class="add-input" /><button class="add-button">
+          Agregar al carro
+        </button>
+      </div>
+    </section>
+    <footer id="total-price">
+      <p id="total-price-container">
+        <button id="calc-prices-button">Calcula Precio</button>
+        <span id="tot-pric-fixed-content">Total Price: </span>
+        <span id="tot-pric-value">0.00</span>
+      </p>
+    </footer>
+  </body>
 </html>
