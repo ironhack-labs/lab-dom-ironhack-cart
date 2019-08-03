@@ -11,7 +11,16 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-
+  let elements = 2;
+  let final = 0;
+  for(let i = 1; i <= elements; i++) {
+    let quantity = document.getElementById('quantity' + i).value;
+    let cost = document.getElementById('productCost' + i).innerHTML;  
+    let result = quantity * cost.slice(1);
+    document.getElementById('finalPrice' + i).innerHTML = `$${result}`;
+    final += result;
+  }  
+  document.getElementById('finalPrice').innerHTML = `$${final}`
 }
 
 function createQuantityInput(){
