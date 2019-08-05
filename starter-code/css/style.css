@@ -1,3 +1,14 @@
+.product{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 5%;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+#calculate-prices{
+  margin-top: 5%;
+}
+
 input {
   border: solid 1px black;
 }
@@ -38,4 +49,12 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.create-function{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 5%;
+  padding-left: 15%;
+  padding-right: 15%;
 }
