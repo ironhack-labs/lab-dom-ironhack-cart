@@ -1,14 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="text/javascript" src="./js/index.js"></script>
+    <title>Ironhack cart</title>
+  </head>
+  <body>
+    <h1>Ironhack Merchandising Shop</h1>
+    <div id="wrapper__container" class="wrapper__container">
+      <div class="wrapper">
+        <div class="div__product__name">
+          <span class="product__name">IronBubble-Head</span>
+        </div>
+        <div class="div__unit__cost">
+          <span class="unit__cost" data-price="25">$25.00</span>
+        </div>
+        <div class="div__quantity">
+          <label class="label__quantity" for="quantity">Qty:</label>
+          <input
+            class="input__quantity"
+            type="number"
+            min="0"
+            placeholder="0"
+            value="0"
+          />
+        </div>
+        <div class="div__subtotal__price">
+          <span class="subtotal__price">$0.00</span>
+        </div>
+        <div class="div__btn-delete">
+          <button class="btn btn-delete">Delete</button>
+        </div>
+      </div>
+      <!-- secondwrapper -->
+      <div class="wrapper">
+        <div class="div__product__name">
+          <span class="product__name">Iron Shirt</span>
+        </div>
+        <div class="div__unit__cost">
+          <span class="unit__cost" data-price="45">$45.00</span>
+        </div>
+        <div class="div__quantity">
+          <label class="label__quantity" for="quantity">Qty:</label>
+          <input
+            class="input__quantity"
+            type="number"
+            min="0"
+            placeholder="0"
+            value="0"
+          />
+        </div>
+        <div class="div__subtotal__price">
+          <span class="subtotal__price">$0.00</span>
+        </div>
+        <div class="div__btn-delete">
+          <button class="btn btn-delete">Delete</button>
+        </div>
+      </div>
+
+      <!-- thirdwrapper -->
+      <div class="wrapper">
+        <div class="div__product__name">
+          <span class="product__name">Iron-Thermo</span>
+        </div>
+        <div class="div__unit__cost">
+          <span class="unit__cost" data-price="20">$20.00</span>
+        </div>
+        <div class="div__quantity">
+          <label class="label__quantity" for="quantity">Qty:</label>
+          <input
+            class="input__quantity"
+            type="number"
+            min="0"
+            placeholder="0"
+            value="0"
+          />
+        </div>
+        <div class="div__subtotal__price">
+          <span class="subtotal__price">$0.00</span>
+        </div>
+        <div class="div__btn-delete">
+          <button class="btn btn-delete">Delete</button>
+        </div>
+      </div>
+    </div>
+    <div class="input__product__fields">
+      <input
+        class="input__field"
+        id="product__input"
+        type="text"
+        placeholder="Product"
+      />
+      <input
+        class="input__field"
+        id="price__input"
+        type="number"
+        placeholder="Number Price"
+      />
+      <div class="new__item__btn__div">
+        <button id="new-item-create">Create</button>
+      </div>
+    </div>
+    <div class="div__btn__calculate">
+      <button class="btn btn-success" id="calc-prices-button">Calculate</button>
+    </div>
+    <div class="div__total__price">
+      <h2>Total Price: <span id="total__price">$0</span></h2>
+    </div>
+  </body>
 </html>

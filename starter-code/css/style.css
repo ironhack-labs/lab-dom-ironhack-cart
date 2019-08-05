@@ -1,7 +1,37 @@
-input {
-  border: solid 1px black;
+* {
+  margin: 0;
+  padding: 0;
 }
 
+h1 {
+  text-align: center;
+  margin: auto;
+  padding-top: 3%;
+}
+
+input,
+.input_field {
+  border: solid 1px black;
+  width: 40%;
+}
+
+.input__product__fields {
+  display: flex;
+  width: 35%;
+  justify-content: space-between;
+  padding: 3%;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5%;
+}
+
+.div__product__name {
+  width: 15%;
+}
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -24,18 +54,29 @@ input {
   border-radius: 4px;
 }
 
+.div__btn__calculate {
+  margin: auto;
+  text-align: center;
+}
+
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #cf000f;
+  border-color: #cf000f;
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+.div__total__price {
+  display: flex;
+  justify-content: center;
+  padding-top: 5%;
 }
