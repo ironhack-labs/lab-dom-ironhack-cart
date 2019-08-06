@@ -1,54 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
-</head>
-<body>
-  <nav class="navbar">
-    <h1>Ironhack Merchandising Shop</h1>
-  </nav>
-  <main>
-    <div class="product-wrapper">
-      <div class="product-name"> <span class="name">IronBobblehead</span></div>
-      <div class="product-cost"> <span class="cost" data-cost="25">$25.00</span></div>
-      <div class="product-quantity">    
-        <label for="quantity">QTY</label>
-        <input type="text" class="quantity" value="0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="text/javascript" src="./js/index.js"></script>
+    <title>Ironhack cart</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <h1>Ironhack Merchandising Shop</h1>
+    </nav>
+    <main>
+      <div class="product-wrapper">
+        <div class="product-name"><span class="name">IronBobblehead</span></div>
+        <div class="product-cost">
+          <span class="cost" data-cost="25">$25.00</span>
+        </div>
+        <div class="product-quantity">
+          <label for="quantity">QTY</label>
+          <input type="text" class="quantity" value="0" />
+        </div>
+        <div class="product-subtotal"><span class="subtotal">$0.00</span></div>
+        <div class="product-delete">
+          <button class="btn btn-delete">Delete</button>
+        </div>
       </div>
-      <div class="product-subtotal"> <span class="subtotal">$0.00</span>   </div>
-      <div class="product-delete"> <button class="btn btn-delete">Delete</button>   </div>
-    </div>
-    <div class="product-wrapper">
-      <div class="product-name"> <span class="name">IronShirt</span></div>
-      <div class="product-cost"> <span class="cost" data-cost="15">$15.00</span></div>
-      <div class="product-quantity">    
-        <label for="quantity">QTY</label>
-        <input type="text" class="quantity" value="0">
+      <div class="product-wrapper">
+        <div class="product-name"><span class="name">IronShirt</span></div>
+        <div class="product-cost">
+          <span class="cost" data-cost="15">$15.00</span>
+        </div>
+        <div class="product-quantity">
+          <label for="quantity">QTY</label>
+          <input type="text" class="quantity" value="0" />
+        </div>
+        <div class="product-subtotal"><span class="subtotal">$0.00</span></div>
+        <div class="product-delete">
+          <button class="btn btn-delete">Delete</button>
+        </div>
       </div>
-      <div class="product-subtotal"> <span class="subtotal">$0.00</span>   </div>
-      <div class="product-delete"> <button class="btn btn-delete">Delete</button>   </div>
-    </div>
-    <div class="product-wrapper">
-      <div class="product-name">
-        <input type="text" class="product-name" value="">
+      <div class="product-wrapper" id="product-creator">
+        <div class="product-name">
+          <input type="text" class="product-name" id="new-item-name" value="" />
+        </div>
+        <div class="product-cost">
+          <input type="text" class="product-cost" id="new-item-cost" ivalue="" />
+        </div>
+        <div class="product-delete">
+          <button class="btn btn-create" id="new-item-create"">Create</button>
+        </div>
       </div>
-      <div class="product-cost">
-        <input type="text" class="product-cost" ivalue="">
+      <div class="product-wrapper">
+        <button class="btn btn-success" id="calc-prices-button">
+          Calculate Prices
+        </button>
       </div>
-      <div class="product-quantity"></div>
-      <div class="product-subtotal"></div>
-      <div class="product-delete"></div>
-    </div>
-    <div class="product-wrapper">
-      <button class="btn btn-success" id="calc-prices-button">Calculate Prices</button>
-    </div>
-    <div class="product-wrapper"><h2>Total Price: <span id="total-price">$0</span></h2></div>
-  </main>
-</body>
+      <div class="product-wrapper">
+        <h2>Total Price: <span id="total-price">$0</span></h2>
+      </div>
+    </main>
+  </body>
 </html>

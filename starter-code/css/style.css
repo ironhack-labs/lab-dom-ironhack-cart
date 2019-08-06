@@ -1,4 +1,5 @@
 * {
+  margin: 0;
   font-size: 16px;
 }
 
@@ -23,11 +24,9 @@ main .product-wrapper {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  height: 5vh;
+  height: 10vh;
   justify-content: center;
   align-content: center;
-  box-sizing: border-box;
-  border: navy solid 2px;
 }
 
 .product-wrapper .product-name {
@@ -41,7 +40,7 @@ main .product-wrapper {
 .product-wrapper .product-cost {
   display: flex;
   flex-wrap: wrap;
-  width: 20%;
+  width: 10%;
   justify-content: center;
   align-content: center;
 }
@@ -49,7 +48,7 @@ main .product-wrapper {
 .product-wrapper .product-quantity {
   display: flex;
   flex-wrap: wrap;
-  width: 20%;
+  width: 30%;
   justify-content: center;
   align-content: center;
 }
@@ -68,6 +67,27 @@ main .product-wrapper {
   width: 20%;
   justify-content: center;
   align-content: center;
+}
+
+#product-creator {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+}
+
+#product-creator .product-name {
+  width: 30%;
+  justify-content: flex-start;
+  padding-left: 5%;
+}
+
+#product-creator .product-name input {
+  width: 20%;
+}
+
+#product-creator .product-cost {
+  width: 30%;
 }
 
 input {
@@ -97,15 +117,21 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #cf000f;
+  border-color: #cf000f;
+}
+
+.btn-create {
+  color: #fff;
+  background-color: #2064b3;
+  border-color: #2064b3;
 }
 
 .quantity {
