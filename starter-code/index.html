@@ -11,7 +11,7 @@
 </head>
 <body>
   <h2>IronHack Merchandising Shop</h2>
-  <!-- Product 1 -->  
+  <!-- Product 1 -->
   <div id="products">
     <div id="product1" class="product">
       <div id="productName1">
@@ -27,13 +27,13 @@
         <span id="finalPrice1">$0.00</span>
       </div>
       <div id="delete1">
-        <button class="btn btn-delete">Delete</button>
+        <button class="btn btn-delete" onclick="deleteRow">Delete</button>
       </div>
     </div>
 
-    <!-- Product 2 -->  
-    <div id="product2">
-        <div id="productName2" class="product">
+    <!-- Product 2 -->
+    <div id="product2" class="product">
+        <div id="productName2">
           <span>product 2</span>
         </div>
         <div>
@@ -48,6 +48,12 @@
         <div id="delete2">
           <button class="btn btn-delete">Delete</button>
         </div>
+      </div>
+
+      <div class="">
+        <input type="text" id="newProductName">
+        <input type="text" id="newProductCost">
+        <button type="button" id="new-item-create" name="button">Create</button>
       </div>
   </div>
   <button id="calc-prices-button" class=" btn btn-success">Calculate Price</button>
