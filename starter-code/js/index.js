@@ -1,5 +1,7 @@
-function deleteItem(e){
-  console.log(e)
+function deleteItem(val){
+  var elem = document.querySelector(`#product${val}`);
+  elem.parentNode.removeChild(elem);
+  getTotalPrice();
 }
 
 function getPriceByProduct(itemNode){
@@ -68,7 +70,7 @@ function createNewItem(){
             <span id="finalPrice${count + 1}">$0.00</span>
           </div>
           <div id="delete${count + 1}">
-            <button class="btn btn-delete" onclick="deleteItem(event)">Delete</button>
+            <button class="btn btn-delete" onclick="deleteItem(${count + 1})">Delete</button>
           </div>
         </div>`;
         container.appendChild(div);
