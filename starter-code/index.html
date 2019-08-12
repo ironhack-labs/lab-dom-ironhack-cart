@@ -1,14 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Ironhack cart</title>
+  </head>
+  <body>
+    <h1>Ironhack Merchandising Shop</h1>
+    <div id="products">
+      <div class="product">
+        <div class="product-name"><span>Ironbubble-head</span></div>
+        <div class="product-cost"><span>$25.50</span></div>
+        <div class="product-quantity">
+          <label for="">QTY</label>
+          <input type="number" placeholder="0" />
+        </div>
+        <div class="product-calculated-cost">
+          <span>$0.00</span>
+        </div>
+        <div class="product-delete">
+          <button class="btn btn-delete">Delete</button>
+        </div>
+      </div>
+      <div class="product">
+        <div class="product-name"><span>IronShirt</span></div>
+        <div class="product-cost"><span class="unit-price">$15.00</span></div>
+        <div class="product-quantity">
+          <label for="" class="qty">QTY</label>
+          <input type="number" placeholder="0" />
+        </div>
+        <div class="product-calculated-cost">
+          <span>$0.00</span>
+        </div>
+        <div class="product-delete">
+          <button class="btn btn-delete">Delete</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="creator">
+      <input type="text" name="" id="new-item-name" value="drugs" />
+      <input type="number" name="" id="new-item-price" value="10" />
+      <div id="new-item-qty-placeholder"></div>
+      <div id="new-item-price-placeholder"></div>
+      <div id="creating">
+        <button class="btn btn-create" id="new-item-create">Create</button>
+      </div>
+    </div>
+    <div id="calculator">
+      <button class="btn btn-success" id="calc-prices-button">
+        Calculate Prices
+      </button>
+    </div>
+    <div id="final-price-calculation">
+      <h2><span>Total Price: $0</span></h2>
+    </div>
+  </body>
   <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
-</head>
-<body>
-</body>
 </html>
