@@ -39,3 +39,27 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+h1, h2 {
+  text-align: center;
+  margin: 50px;
+}
+
+.cart{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.calculate {
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+
+#cart2{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
