@@ -10,5 +10,57 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <!-- main container -->
+<div>
+  <header>
+      <img src="./images/IronHack.png" alt="">
+      <h1>IRONHACK MERCHANDISING SHOP</h1>
+  </header>
+
+  <div class="heading">
+    <div class="title"><p>PRODUCT NAME</p></div>
+    <div class="title"><p>UNIT PRICE </p></div>
+    <div class="title"><p>QUANTITY</p></div>
+    <div class="title"><p>TOTAL</p></div>
+    <div class="title"><p>DELETE</p></div>
+  </div>
+
+  <div class="main"> <!-- the main div where we will append -->
+
+      <div class="product">
+          <div class="contents" id="product-name">IronBubble-Head</div>
+          <div class="contents unit-price" >0</div>
+          <div class="contents">Qty:<input type="text" class="quantity"></div>
+          <div class="contents" id="total-price"></div>
+          <div class="contents"><button class="btn btn-delete ">Delete</button></div>
+        </div>
+        
+    
+  </div>
+  
+
+    <div class="calculateDiv">
+      <button class="btn btn-success" id="calc-prices-button">CALCULATE</button>
+    </div>
+    
+    <div class="createDiv">
+      <input id="newproduct" type="text"> 
+      <input id="untPrice" type="text">
+      <button class="btn" id="new-item-create">Create</button>
+
+    </div>
+
+    <div>
+      <h1 id="final-price">Total Price:</h1>
+    </div>
+  
+
+
+  <div>
+
+  </div>
+
+</div>
+<!-- end of main container -->
 </body>
 </html>

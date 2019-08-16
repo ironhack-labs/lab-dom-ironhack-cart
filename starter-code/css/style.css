@@ -39,3 +39,54 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+
+h1{
+  text-align: center;
+  color:#0079BF;  
+
+}
+img{
+  height:120px;
+  width:120px;
+  margin-right:20px;
+}
+.heading{
+  display:flex;
+  /* background:grey; */
+  /* height:50px; */
+  flex:1;
+  width:100%;
+  margin-top:50px;
+  color:white;
+  text-align:center
+}
+.product{
+  display:flex;
+  /* background:grey; */
+  //height:300px;
+  flex:1; 
+  width:100%;
+  margin-top:20px;
+  text-align:center;
+}
+
+.contents{
+  width:20%;
+  /* background:red; */
+  margin-right:10px;
+}
+
+.title{
+  width:20%;
+  background: #2A6394;
+  margin-right:10px;;;
+}
+
+.calculateDiv{
+  display: flex;
+justify-content: center;
+margin-top:50px;
+
+}
+
