@@ -1,6 +1,47 @@
+h1{
+  padding-left: 800px;
+  font-size: 50px;
+}
+
+h2{
+  padding-left: 800px;
+  font-size: 40px;
+}
+.product{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 50px 0 30px;
+}
+
+.createNewproduct{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 50px;
+  margin-bottom: 30px;
+}
+
+.createNewproduct div{
+  margin-right: 80px;
+}
+
+.createbtn{
+  margin-left: 530px;
+}
+
+.product div{
+  width: 15%;
+  text-align: center;
+}
+
 input {
   border: solid 1px black;
 }
+
 
 .btn {
   display: inline-block;
@@ -38,4 +79,11 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+#calc-prices-button{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
 }
