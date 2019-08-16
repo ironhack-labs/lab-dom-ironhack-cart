@@ -1,5 +1,55 @@
+body{
+  width:100%;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+h1{
+  text-align:center;
+}
+main{
+  width:70%;
+  border:black solid 1px;
+  margin:0 auto;
+}
+
+section{
+  width:70%;
+  margin:0 auto;
+}
+main > *{
+  margin:5%;
+}
+
+.container{
+  width:90%;
+  height:80%;
+  display:grid;
+  grid-template-columns:repeat(6,16%);
+  grid-template-rows: auto;
+  text-align:center;
+  justify-content: space-around;
+}
+
+.fauxContainer{
+  height:80%;
+  display:grid;
+  grid-template-columns:16% 16% 32% 16% 16%;
+  justify-content: space-around;
+  grid-template-rows: auto;
+  text-align:center;
+  margin-bottom:30%;
+  margin-top:5%;
+}
+
+
 input {
   border: solid 1px black;
+  text-align:center;
 }
 
 .btn {
@@ -38,4 +88,30 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.enleve{
+  border:black 2px solid;
+  opacity:0;
+  text-align:right;
+}
+
+.anim{
+  animation-name: clignote;
+  animation-duration:2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes clignote{
+
+  0%{
+    color :white;
+  }
+  50%{
+    color:black;
+  }
+  100%{
+    color :white;
+  }
+
 }

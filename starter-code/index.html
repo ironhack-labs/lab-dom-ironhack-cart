@@ -10,5 +10,44 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <h1>Gramsco's own little shop</h1>
+  <main>
+  
+  <div class="container">
+    <div><span>IronMachin</span></div>
+    <div>$<span class="price">25.00</span></div>
+    <div>QTY</div>
+    <input type = "number" min="0">
+    <div>$<span class="total"></span></div>
+    <button class="btn-delete">Delete</button>
+  </div>
+
+  <div class="container">
+    <div><span>MachinHack</span></div>
+    <div>$<span class="price">8.00</span></div>
+    <div>QTY</div>
+    <input type = "number" min="0">
+    <div>$<span class="total"></span></div>
+    <button class="btn-delete">Delete</button>
+  </div>
+
+</main>
+<section>
+  <h3>Add a new product!</h3>
+  <div class="fauxContainer">
+    <input id="newName" type="text">
+    <input id="newPrice" type="number">
+    <div></div>
+    <div></div>
+    <button id ="new-item-create">Create</button>
+
+  </div>
+  <h2 id ="enleve"></h2>
+  <button id = "calc-prices-button" class="btn-success">Calculate prices</button>
+
+  <h2>Total Price: $<span id="totalTotal"></span></h2>
+
+</section>
+
 </body>
 </html>
