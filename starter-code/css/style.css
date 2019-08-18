@@ -1,3 +1,6 @@
+* {
+  margin: 0;
+}
 input {
   border: solid 1px black;
 }
@@ -36,6 +39,33 @@ input {
     border-color: #CF000F;
 }
 
+#new-item-create {
+  color: #fff;
+  background-color: purple;
+  border-color: purple;
+}
+
 .quantity {
   margin: 0 5px;
+}
+
+#title {
+  display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+div.general {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+div#calculate-total-price, div#display-total-price {
+  margin-left: 530px;
+}
+
+div#space-between {
+ margin-left: 300px;
 }
