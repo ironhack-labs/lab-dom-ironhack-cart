@@ -1,3 +1,23 @@
+
+
+#header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 50px;
+  margin: 5px;
+}
+
+#calc-btn {
+  display: flex;
+  justify-content: center;
+}
+
 input {
   border: solid 1px black;
 }
