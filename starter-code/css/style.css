@@ -5,21 +5,26 @@
   justify-content: space-evenly;
   align-items: center;
 }
-#container {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 50px;
-  margin: 5px;
-}
 
 #calc-btn {
   display: flex;
   justify-content: center;
 }
 
+#quantity {
+  margin: 0 5px;
+}
+
 input {
   border: solid 1px black;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 50px;
+  margin: 5px;
 }
 
 .btn {
@@ -56,6 +61,10 @@ input {
     border-color: #CF000F;
 }
 
-.quantity {
-  margin: 0 5px;
+.btn-inserItem {
+    color: #fff;
+    background-color: rgb(37, 49, 158);
+    border-color: rgb(37, 49, 158);
 }
+
+
