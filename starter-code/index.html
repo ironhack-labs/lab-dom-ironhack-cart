@@ -13,44 +13,62 @@
 
 <body>
   <h1>Ironhack Merchandizing Shop</h1>
-  <div id="item1" class="wrapper product">
-    <div class="name-container">
-      <span class="product-name">
-        Iron Bubble Head
-      </span>
+  <div id="products">
+    <div id="item1" class="wrapper product">
+      <div class="name-container">
+        <span class="product-name">
+          Iron Bubble Head
+        </span>
+      </div>
+      <div class="cost-container">
+        <span class="product-cost">$25.00</span>
+      </div>
+      <div class="quantity-container">
+        <label>QTY</label>
+        <input type="number" class="quantity" placeholder="0">
+      </div>
+      <div class="total-container">
+        <span class="total">$0.00</span>
+      </div>
+      <div class="delete-container">
+        <button class="btn btn-delete">Delete</button>
+      </div>
     </div>
-    <div class="cost-container">
-      <span class="product-cost">$25.00</span>
-    </div>
-    <div class="quantity-container">
-      <label for="quantity1">QTY</label>
-      <input type="text" class="quantity" id="quantity1" placeholder="0">
-    </div>
-    <div class="total-container">
-      <span class="total">$0.00</span>
-    </div>
-    <div class="delete-container">
-      <button class="btn btn-delete">Delete</button>
+
+
+    <div id="item2" class="wrapper product">
+      <div class="name-container">
+        <span class="product-name">
+          Iron Bubble Head
+        </span>
+      </div>
+      <div class="cost-container">
+        <span class="product-cost">$25.00</span>
+      </div>
+      <div class="quantity-container">
+        <label">QTY</label>
+          <input type="number" class="quantity" placeholder="0">
+      </div>
+      <div class="total-container">
+        <span class="total">$0.00</span>
+      </div>
+      <div class="delete-container">
+        <button class="btn btn-delete">Delete</button>
+      </div>
     </div>
   </div>
-  <div id="item2" class="wrapper product">
-    <div class="name-container">
-      <span class="product-name">
-        Iron Bubble Head
-      </span>
+
+  <div class="wrapper">
+    <div>
+      <label for="item-name">Name</label>
+      <input id="item-name" type="text" placeholder="My super item">
     </div>
-    <div class="cost-container">
-      <span class="product-cost">$25.00</span>
+    <div>
+      <label for="unit-price">Unit Price</label>
+      <input id="unit-price" type="number" placeholder="25.25">
     </div>
-    <div class="quantity-container">
-      <label for="quantity1">QTY</label>
-      <input type="text" class="quantity" id="quantity1" placeholder="0">
-    </div>
-    <div class="total-container">
-      <span class="total">$0.00</span>
-    </div>
-    <div class="delete-container">
-      <button class="btn btn-delete">Delete</button>
+    <div>
+      <button id="new-item-create" class="btn btn-success">Create</button>
     </div>
   </div>
   <div class="wrapper">
