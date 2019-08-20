@@ -25,34 +25,34 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #cf000f;
+  border-color: #cf000f;
 }
 
 .quantity {
   margin: 0 5px;
 }
 
-.product{
+.product {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin: 10px;
 }
 
-.all-product{
+.all-product {
   display: flex;
   flex-direction: column;
-
 }
 
-#calc-prices-button{
+#calc-prices-button {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -65,4 +65,22 @@ h2 {
 
 h1 {
   text-align: center;
+}
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+.input-wrapper {
+  display: flex;
+}
+.input-product {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px;
+}
+.input-product input {
+  margin-right: 20px;
 }

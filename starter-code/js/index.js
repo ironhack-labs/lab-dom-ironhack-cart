@@ -2,10 +2,11 @@ function deleteItem(e){
 const deleteTarget=e.currentTarget;
 
 const deleteParent=deleteTarget.parentNode;
+const deleteParent2=deleteParent.parentNode;
 
 const allProduct=document.querySelector(".all-product");
 
-allProduct.removeChild(deleteParent);
+allProduct.removeChild(deleteParent2);
 
 updatePriceByProduct()
 
@@ -43,7 +44,6 @@ function updatePriceByProduct(productPrice, index){
 function getTotalPrice() {
   
  let totalPrice= getPriceByProduct();
- console.log(totalPrice);
 
  document.querySelector(".total-price span").innerText=`$${totalPrice}`;
 
@@ -55,24 +55,62 @@ function createQuantityInput(){
 
 }
 
-function createDeleteButton(){
+function createPrice(){
 
+const price=document.createElement("div");
+price.className="product-price ";
+return price;
+}
+
+
+function createDeleteButton(){
+  const div=document.createElement("div");
+  div.className="col";
 const newButton=document.createElement("button");
 newButton.innerText="Delete";
 newButton.className="btn btn-delete";
-return newButton;
+div.appendChild(newButton);
+return div;
 }
 
 function createQuantityNode(){
+const div=document.createElement("div");
+div.className="col";
+  const quantLabel=document.createElement("label");
+  quantLabel.innerText="QTY";
+  const quantity=document.createElement("input");
+  quantity.className="input";
+  div.appendChild(quantLabel);
+  div.appendChild(quantity);
+  return div;
 
 }
 
 function createItemNode(dataType, itemData){
+  const div=document.createElement("div");
+  div.className="col";
+  const prodName=document.createElement("span");
+div.appendChild(prodName);
+return div;
+
 
 }
 
+function createPriceNode(dataType, itemData){
+  const div=document.createElement("div");
+div.className="col";
+  const unitPrice=document.createElement("span");
+  unitPrice.className="unit-price";
+  div.appendChild(unitPrice);
+  return div;
+  
+  }
+
 function createNewItemRow(itemName, itemUnitPrice){
-  createDeleteButton()
+  const row=document.createElement("div");
+  row.className="product";
+
+  return row;
 
 }
 
@@ -80,15 +118,28 @@ function createNewItem(){
 
 const newName =document.querySelector(".input-name").value;
 const newPrice=document.querySelector(".input-price").value;
-console.log(newName,newPrice);
-createNewItemRow()
-const deleteButton=createDeleteButton()
+
+const row=createNewItemRow();
+const name=createItemNode();
+const price=createPriceNode();
+const quantity= createQuantityNode();
+const prodPrice=createPrice();
+const deleteButton=createDeleteButton();
 
 const allProduct=document.querySelector(".all-product");
 
-allProduct.appendChild(deleteButton);
+allProduct.appendChild(row);
+row.appendChild(name);
+row.appendChild(price);
+row.appendChild(quantity);
+row.appendChild(prodPrice);
+row.appendChild(deleteButton);
 
+name.innerText=newName;
+price.innerText=`$${newPrice}`;
 
+// updatePriceByProduct();
+deleteItem(e);
 
 // // var node = document.createElement("LI"); 
 // // var textnode = document.createTextNode("Water");

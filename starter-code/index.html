@@ -16,25 +16,52 @@
     <h1>Ironhack Merchandising Shop</h1>
     <div class="all-product">
       <div class="product">
-        <span>IronBubble head</span>
-        <span class="unit-price">$25.00</span>
-        <div><label>QTY </label><input class="input" type="number" /></div>
-        <div class="product-price">$0.00</div>
-        <button class="btn btn-delete">Delete</button>
+        <div class="col">
+          <span>IronBubble head</span>
+        </div>
+        <div class="col">
+          <span class="unit-price">$25.00</span>
+        </div>
+        <div class="col">
+          <div><label>QTY </label><input class="input" type="number" /></div>
+        </div>
+        <div class="product-price col">$0.00</div>
+        <div class="col">
+          <button class="btn btn-delete">Delete</button>
+        </div>
       </div>
+      <!--  -->
       <div class="product">
-        <span>IronShirt</span>
-        <span class="unit-price">$15.00</span>
-        <div><label>QTY </label><input class="input" type="number" /></div>
-        <div class="product-price">$0.00</div>
-        <button class="btn btn-delete">Delete</button>
+        <div class="col">
+          <span>IronShirt</span>
+        </div>
+        <div class="col">
+          <span class="unit-price">$15.00</span>
+        </div>
+        <div class="col">
+          <div><label>QTY </label><input class="input" type="number" /></div>
+        </div>
+        <div class="product-price col">$0.00</div>
+        <div class="col">
+          <button class="btn btn-delete">Delete</button>
+        </div>
       </div>
     </div>
+    <!-- start input -->
     <div class="input-product">
-      <input class="input-name" type="text" />
-      <input class="input-price" type="text" />
-      <button id="new-item-create">Create</button>
+      <div class="col">
+        <div><input class="input-name" type="text" /></div>
+      </div>
+      <div class="col">
+        <div><input class="input-price" type="number" /></div>
+      </div>
+      <div class="product-price col"></div>
+      <div class="product-price col"></div>
+      <div class="col">
+        <button id="new-item-create">Create</button>
+      </div>
     </div>
+    <!-- end input -->
     <div id="calc-prices-button">
       <button class="btn btn-success">Calculate Price</button>
     </div>
