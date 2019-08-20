@@ -1,14 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="text/javascript" src="./js/index.js"></script>
+    <title>Ironhack cart</title>
+  </head>
+  <body>
+    <h1>Ironhack Merchandising Shop</h1>
+    <div class="all-product">
+      <div class="product">
+        <span>IronBubble head</span>
+        <span class="unit-price">$25.00</span>
+        <div><label>QTY </label><input class="input" type="number" /></div>
+        <div class="product-price">$0.00</div>
+        <button class="btn btn-delete">Delete</button>
+      </div>
+      <div class="product">
+        <span>IronShirt</span>
+        <span class="unit-price">$15.00</span>
+        <div><label>QTY </label><input class="input" type="number" /></div>
+        <div class="product-price">$0.00</div>
+        <button class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+    <div class="input-product">
+      <input class="input-name" type="text" />
+      <input class="input-price" type="text" />
+      <button id="new-item-create">Create</button>
+    </div>
+    <div id="calc-prices-button">
+      <button class="btn btn-success">Calculate Price</button>
+    </div>
+    <h2 class="total-price">Total Price: <span>$0</span></h2>
+    <script src="./js/index.js"></script>
+  </body>
 </html>
