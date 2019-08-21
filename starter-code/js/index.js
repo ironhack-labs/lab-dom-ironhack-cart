@@ -11,6 +11,16 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
+  const totalcal = document.getElementById("button-cal")
+  let productPrice = document.getElementById("unitprice")
+  let quantity = document.getElementById("qty")
+  let totalPrice = document.getElementById("total")
+
+  
+
+
+  
+  console.log(totalPrice)
 
 }
 

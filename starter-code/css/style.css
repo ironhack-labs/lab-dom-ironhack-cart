@@ -24,18 +24,37 @@ input {
   border-radius: 4px;
 }
 
-.btn-success {
+.button-calculate {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    text-align: center;
+    font-size: 1.3em;
+    
 }
 
-.btn-delete {
+.button-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    font-size: 1.3em;
 }
 
 .quantity {
   margin: 0 5px;
 }
+
+.number1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+
+
+
+.title {
+  text-align: center;
+}
+
+
