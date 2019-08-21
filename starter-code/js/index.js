@@ -1,3 +1,10 @@
+
+//Create a click event for the Calculate Prices button
+
+
+
+
+
 function deleteItem(e){
 
 }
@@ -11,6 +18,15 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
+  const qty = document.getElementById('firstinput').value
+  const price = document.getElementById('price').textContent
+  console.log(qty)
+  console.log(price)
+
+  const quantity = qty * price
+  console.log('quantity price: ',quantity)
+  
+
 
 }
 
