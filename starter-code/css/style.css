@@ -39,3 +39,27 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+body{
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  text-align:center;
+}
+
+.wrapper > div{
+  width: 17%;
+  margin: 1% 1%;
+}
+
+.button-calculate {
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+}
