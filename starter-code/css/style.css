@@ -39,3 +39,31 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.space {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+
+}
+button {
+  height: 40px;
+  padding: 0 16px;
+}
+.cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 32%;
+}
+.row {
+  margin: 2% 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 96%;
+}
