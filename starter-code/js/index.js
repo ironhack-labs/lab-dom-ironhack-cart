@@ -11,7 +11,15 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
+  const totalcalc = document.getElementById('calculate');
+  let productprice = document.getElementById('price').innerHTML;
+  let quantity = document.getElementById('qty').innerHTML;
+  let totalPrice = document.getElementById('total').innerHTML;
 
+  totalcalc.addEventListener('click', function(event){
+    totalPrice = productprice * quantity
+    return totalPrice
+  })
 }
 
 function createQuantityInput(){
@@ -50,3 +58,4 @@ window.onload = function(){
     deleteButtons[i].onclick = deleteItem;
   }
 };
+

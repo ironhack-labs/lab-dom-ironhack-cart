@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,32 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+  <h1 id="shoptitle">IronHack<br> Merchandising Shop</h1>
+
+  <div class="product1">
+    <div class="product-name">
+      <span>IronBubble-Head</span>
+    </div>
+    <div class="unit-cost">
+      $<span id="price">25.00</span>
+    </div>
+    <div class="quantity">
+      <label for="quantity">QTY</label>
+      <input type="number" name="quantity" placeholder="quantity" id="qty" value="value">
+    </div>
+    <div class="total">
+      $<span id="total">0.00</span>
+    </div>
+    <div>
+      <button class="delete">Delete</button>
+    </div>
+  </div>
+
+  <div class="calcudiv">
+    <button class="calculate">Calculate Prices</button>
+  </div>
 </body>
+
 </html>
