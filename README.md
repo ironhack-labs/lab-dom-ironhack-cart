@@ -1,32 +1,26 @@
 ![Ironhack Logo](https://i.imgur.com/1QgrNNw.png)
 
-# DOM | The Ironhack Cart
+# Attention:
+This lab has been edited. Check the image in template and build that.
 
-## Learning Goals
+[Significa Website](https://significa.co/)
 
-After this learning unit, you will be able to:
+![Significa Base](https://raw.githubusercontent.com/josecarneiro/lab-bootstrap-cloning-template/master/starter-code/template.png)
 
-- Understand what the DOM is
-- Manipulate the DOM to edit elements
+# Cloning with Bootstrap
 
+Internet provides lots of templates and themes. But some of them cost money. However, we don't need to pay for something we already know how to do, so... We are cloning a theme!
 
-## Introduction
+[Revera Theme](https://web.archive.org/web/20180109051150/http://demo.fabthemes.com/revera/)
 
-One of the most common businesses on the Internet today are online shops. Websites like Amazon earn millions of dollars each year by selling all kinds of products. All these websites have something in common: they have a shopping cart.
+![Revera Picture](https://i.imgur.com/3y7yay8.png)
 
-Let's create the Ironhack Cart, where users will be able to add and remove products in their frontend shopping cart. Additionally, it will calculate the total price of each product based on how many of those the user has added and the total price of the everything in the cart.
-
-In the started code you will find some CSS to start with that includes classes for the different types of buttons. Add the classes to the button tags you write in your HTML and they will be perfectly styled. 😉
+As we can see, this template is a very good example of the type of webpages we can see on the Internet. With Bootstrap, we are able, in barely a few hours, to copy the appearance of this template.
 
 ## Requirements
-- Fork this repo
 
-- Use a normalizer to not have to worry about the differences between browser styles. Here's normalize.css from a CDN:
-	https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css
-- Use at least 3 `onclick` events
-- Use at least one `getElementById`
-- Use at least one `getElementsByTagName`
-- Use at least one `getElementsByClassName`
+- [Fork this repo](https://guides.github.com/activities/forking/)
+- Clone this repo into your `~/code/labs`
 
 ## Submission
 
@@ -36,90 +30,36 @@ $ git add .
 $ git commit -m "done"
 $ git push origin master
 ```
-Navigate to your repo on GitHub and create a Pull Request -from your master branch to the original repository master branch.
+Navigate to your repo and create a Pull Request -from your master branch to the original repository master branch.
 
-In the Pull request title field, add your name and last names separated by a dash "-".
+In the Pull request name, add your name and last names separated by a dash "-"
 
 ## Deliverables
 
-Write your JavaScript organized in the provided filesystem. Submit everything.
+Your page should look like the original one as much as possible. You should push every resource needed to make it work properly. Please, organize your code and your files carefully.
 
-### Iteration 1: Creating one product
+## Iteration 1: General layout
 
-We will start by creating the HTML for one of your products. It should look like this:
+Focus on the general layout. What do we mean by general? Most of you are thinking about the header, how to create the menu, whether you should use 2 columns for a link or maybe 3... Don't worry, this is a common mistake at the beginning. However, as we will see, the best way to approach it is to look at the big “boxes” first and don't lose ourselves on the details.
 
-![](https://i.imgur.com/gDZ1Lj0.png)
+So we have to see the page as a big container and identify the most important sections. Here you have an example:
 
-Every product will have:
+![general layout](https://i.imgur.com/IIAG0g0.jpg)
 
-- A wrapper div that contains all the HTML for that product.
-- A div with a span, showing the product name.
-- A div with a span, showing the cost of one unit.
-- A div with one label and one input, where the user will indicate how many units they will buy.
-- A div with a span, showing the total price for this product. This number should be the result of multiplying the amount of units multiplied by the price of one unit of that product. The default total price should be 0.
-- A div with a delete button, to remove the product from the list.
+Remember to use the inspector to determine the width and the height of the Revera page. Also, we could find out which Bootstrap classes have been used and anything else that is necessary to make our page looks like the original.
 
-#### Calculating the total price for the product
+One cool Boostrap feature is that you have three elements that make our lives easier: `container`,  `row` and `columns`. Don't hesitate to use them!
 
-Once you have the HTML and CSS ready, use JavaScript and functions of the `document` object to retrieve the data you need to calculate the total price for that product. Change the value of the element in the DOM that displays the total price:
+## Iteration 2: Internal structure
 
-- Create a click event for the `Calculate Prices` button
-- This event will execute a function that:
-	* Retrieves the unit price of the product
-	* Retrieves the quantity of items desired
-	* Calculates the total price based on this data
-	* Updates the total price in the DOM
+Now that we have a global vision of the page, we can go to the second level, dividing our box into their own internal structure. This means that if you previously created a single container and various rows, now we are going to define the columns. You will have to estimate the number of cells you will need in each row.
 
-### Iteration 2: Add another product
+The [grid system](http://getbootstrap.com/css/#grid) of Bootstrap gives you all the `.col` classes. Remember that each row has a size of 12 columns.
 
-Add a second product.
+## Iteration 3: Include the content
 
-![](https://i.imgur.com/Fe48iGO.png)
+Really cool! Now, you need to insert the content in its respective places (text, images, ...) and change some CSS options like margins, paddings, etc. to finish the template. It´s just a matter of Bootstrap!
 
-When you click on the `Calculate Prices` button, the total prices for both products should update their values based on each quantity specified.
+Well... Maybe it's not that easy. But try different things and make it happen!
 
-### Iteration 3: Calculating the total price of all products
-
-Now that you have each product's total price, you need to calculate the total price of the entire shopping cart. Once you have that number, you need to display the result in the DOM.
-
-![](https://i.imgur.com/u607NQ0.png)
-
-Create a new `div` below the `Calculate Prices` button. This `div` should have an `h2` element like this one:
-
-`<h2>Total Price: <span>$0</span></h2>`
-
-Now, as part of your "Calculate Prices" function:
-
-- Select the elements that contain the each product's total price.
-- Loop through the elements selected in the previous step, retrieve each of their total prices and add them together to get the total price of the entire shopping cart.
-- Show the total price in the DOM.
-
-### Iteration 4: Deleting a product
-
-Associate the "Delete" buttons to click events so that when you click one, it deletes that product from the list. Steps to follow:
-
-- Select all the "Delete" buttons
-- For each button, assign a click event that will:
-	- Select the wrapper div that contains all the HTML for the product that should be deleted
-	- Select the parent that contains all of the product wrapper divs
-	- Use the function `removeChild` we saw in [DOM Manipulators](https://hackmd.io/MwBgRgHAjATArMAtANjsgxogLAU3QQ0QmQHZlEdgox8BOE9EsAMzCA==)
-
-:bulb: Use `e.currentTarget` to access the "Delete" button that was just clicked and select the parent node of an HTML element with `parentNode`.
-
-### Iteration 5: Creating new products
-
-For the last iteration, allow the user to create new products for the shop. You'll add inputs that look like this:
-
-![](https://i.imgur.com/FGVUuHt.png)
-
-Those two inputs represent the name and the unit price of the new product. Then there's the "Create" button that the user needs to click to actually add the new product to the list.
-
-- Add two inputs to let the user enter the new product data.
-- Add a "Create" button. Assign it a click event that will:
-	- Get the data from the inputs.
-	- Create a new product row with the data from the inputs. The structure of the new product should be the same as in Iteration #1.
-
-:warning: Make sure that the new product you added has the same behavior than the other products:
-- You should be able to calculate the product's total price
-- That product's price should be included in the total price of the entire Shopping Cart
-- You should be able to delete the product
+Happy Coding!
