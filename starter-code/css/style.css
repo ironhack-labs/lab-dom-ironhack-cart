@@ -1,3 +1,21 @@
+.container {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 2em;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+#calc-prices-button {
+  flex: 100%;
+  text-align: center;
+  margin-top: 2em;
+}
+
+.total-all-items h2{
+  text-align: center;
+}
+
 input {
   border: solid 1px black;
 }
