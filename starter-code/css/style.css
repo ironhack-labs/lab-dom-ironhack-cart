@@ -1,9 +1,46 @@
+html {
+  display: flex;
+  justify-content: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+h1 {
+  text-align: center;
+}
+
+.product {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+ margin: 20px;
+}
+
+.product-name {
+  margin: 20px;
+}
+
+.unit-price {
+  margin: 20px;
+}
+
+.quantity {
+  margin: 20px;
+}
+
 input {
   border: solid 1px black;
+  margin: 20px;
+}
+
+.total-price {
+  margin: 20px;
 }
 
 .btn {
   display: inline-block;
+  height: 35px;
   padding: 6px 12px;
   margin-bottom: 0;
   font-size: 14px;
@@ -34,8 +71,40 @@ input {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    margin-left: 50px;
+}
+
+.btn-add {
+  color: #fff;
+    background-color: darkgray;
+    border-color: darkgray;
 }
 
 .quantity {
-  margin: 0 5px;
+  margin: 20px;
+}
+
+.calc {
+  display: flex;
+  justify-content: center;
+}
+
+.calculate-price {
+  margin: 20px;
+}
+
+#total-sum {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+#add-product {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 90px 0;
+  font-style: italic;
+  align-items: center;
 }
