@@ -1,14 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+  <h1>Ironhack Merchandising Shop</h1>
+  <div class="product" id="product-1">
+    <div>
+      <span class="name" id="name1">Name</span>
+    </div>
+    <div>
+      <span class="cost" id="costUnit1">2</span>
+    </div>
+    <div>
+      <label for="qty">QTY</label>
+      <input class="qty" type="text" id="qty1" value="0" name="qty" size="10" />
+    </div>
+    <div>
+      <span class="total" id="total1">0</span>
+    </div>
+    <div>
+      <button class="button" id="btn-delete1" type="button">Delete</button>
+    </div>
+  </div>
+  <br>
+  <div class="product" id="product-2">
+    <div>
+      <span class="name" id="name2">Name</span>
+    </div>
+    <div>
+      <span class="cost" id="costUnit2">2</span>
+    </div>
+    <div>
+      <label for="qty">QTY</label>
+      <input class="qty"  type="text" id="qty2" value="0" name="qty" size="10" />
+    </div>
+    <div>
+      <span class="total" id="total2">0</span>
+    </div>
+    <div>
+      <button class="button" id="btn-delete2" type="button">Delete</button>
+    </div>
+    </div>
+    <div class="calc">
+      <button class="buttonCalc" id="calc-prices-button" type="button">Calculate Prices</button>
+    </div>
+  <script type="text/javascript" src="./js/index.js"></script>
 </body>
+
 </html>
