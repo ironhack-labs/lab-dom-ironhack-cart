@@ -1,111 +1,96 @@
-function deleteItem(e) {
+// CALCULATE TOTAL PRICE FOR INDIVIDUAL ITEMS
 
-  // let button = e.currentTarget;
-  let buttonContainer = e.currentTarget.parentElement.parentNode;
-  let body = document.body;
+function updatePriceByProduct() {
 
-  body.removeChild(buttonContainer);
+  let priceAllProducts = 0;
+
+  //Select row for each  product
+  let productArray = document.querySelectorAll(".container")
+
+  //Loop through the array of products
+  productArray.forEach(function (product) {
+    //Select Quantity
+    let input = product.querySelector(".quantity").value;
+
+    //Select Price of Product
+    let unit = product.querySelector(".unit-cost").innerHTML;
+    let unitNew = unit.slice(1, 6);
+    let unitNumber = Number(unitNew);
+
+    //Calculate total price for the individual product
+    let price = unitNumber * input;
+
+    //Select and update the total price for the product
+    let totalPrice = product.querySelector(".total-price");
+    totalPrice.innerHTML = `$ ${price}`;
+
+    //Calculate total price for all products
+    priceAllProducts += price;
+  });
+  return priceAllProducts;
 }
 
 
-
-function getPriceByProduct(itemNode) {
-
-}
-
-
-// function addEventListener( type, callback ){
-//     //listen for the event
-//     // event triggered
-//     let event = getEventFromType(type); // event object
-//     callback( event );
-// }
-
-// calculatePriceButton.addEventListener('click', getTotalPrice);
-
-
-
-
-function updatePriceByProduct(productPrice, index) {
-
-  let input = document.querySelector('.quantity').value
-
-  let unit = document.querySelector('.unit-cost').innerHTML
-  let unitNew = unit.slice(1, 6);
-  let unitNumber = Number(unitNew);
-
-  let price = unitNumber * input;
-
-  let totalPrice = document.querySelector('.total-price');
-  totalPrice.innerHTML = `$ ${price}`;
-
-
-
-  //SECOND ITEM
-
-  let inputTwo = document.querySelector('.quantity-two').value
-
-  let unitTwo = document.querySelector('.unit-cost-two').innerHTML
-  let unitNewTwo = unitTwo.slice(1, 6);
-  let unitNumberTwo = Number(unitNewTwo);
-
-  let priceTwo = unitNumberTwo * inputTwo;
-
-  let totalPriceTwo = document.querySelector('.total-price-two');
-  totalPriceTwo.innerHTML = `$ ${priceTwo}`;
-
-
-
-  // CALCULATE  TOTAL PRICE OF ALL ITEMS
-
-  let totalItemSum = price + priceTwo;
-  return totalItemSum;
-
-}
-
-
+// CALCULATE  TOTAL PRICE OF ALL ITEMS
 
 function getTotalPrice() {
-  totalSum = updatePriceByProduct();
 
-  let totalPriceSum = document.querySelector('.price-total-sum');
-  totalPriceSum.innerHTML = `$ ${totalSum}`
+  let totalSum = updatePriceByProduct();
+  let totalPriceSum = document.querySelector(".price-total-sum");
+
+  totalPriceSum.innerHTML = `$${totalSum}`;
 }
 
 
+//DELETE PRODUCT BY USING DELETE BUTTON
 
-function createQuantityInput() {
+function deleteItem(e) {
 
+  let buttonContainer = e.currentTarget.parentElement.parentNode;
+  let wrapper = document.querySelector(".product-wrapper");
+
+  wrapper.removeChild(buttonContainer);
 }
 
-function createDeleteButton() {
 
-}
-
-function createQuantityNode() {
-
-}
-
-function createItemNode(dataType, itemData) {
-
-}
-
-function createNewItemRow(itemName, itemUnitPrice) {
-
-}
+//INPUT FIELD FOR USER + ADD PRODUCT WITH CREATE BUTTON
 
 function createNewItem() {
 
+  //Clone row for a product 
+  let newItem = document.querySelector(".container").cloneNode(true);
+  //Append new row to wrapper
+  document.querySelector(".product-wrapper").appendChild(newItem);
+
+  //Assign new delete button the event "delete product"
+  var newDeleteButton = newItem.querySelector(".btn-delete");
+  newDeleteButton.onclick = deleteItem;
+
+  //Replace product name with input
+  //Select input "new product name"
+  let newProduct = document.querySelector(".new-product").value;
+  //Replace product name from clone with  input "new product name"  
+  newItem.querySelector(".product-name").innerHTML = newProduct;
+
+
+  //Replace product price with input
+  //Select input "new product price"
+  let newProductPrice = document.querySelector(".new-product-price").value;
+  //Replace product price from clone with  input "new product price"  
+  newItem.querySelector(".unit-cost").innerHTML = newProductPrice;
 }
 
+
+
+
 window.onload = function () {
-  var calculatePriceButton = document.getElementById('calc-prices-button');
-  // var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');
+  var calculatePriceButton = document.getElementById("calc-prices-button");
+  var createItemButton = document.getElementById('new-item-create');
+  var deleteButtons = document.getElementsByClassName("btn-delete");
 
   calculatePriceButton.onclick = getTotalPrice;
 
-  /* createItemButton.onclick = createNewItem; */
+  createItemButton.onclick = createNewItem;
 
   for (var i = 0; i < deleteButtons.length; i++) {
     deleteButtons[i].onclick = deleteItem;

@@ -2,6 +2,17 @@ input {
   border: solid 1px black;
 }
 
+.product-width {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+.product-name {
+  text-align: left;
+  width: 100%;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -36,20 +47,38 @@ input {
   border-color: #CF000F;
 }
 
+.btn-create {
+  border: 1px solid black;
+}
+
 .quantity {
   margin: 0 5px;
 }
 
 .container {
   display: flex;
-  justify-content: space-around
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 2vh 30vh 2vh 30vh;
 }
 
 h1 {
   text-align: center;
 }
 
-.center-button{
+.center-button {
   display: flex;
   justify-content: center;
+}
+
+.input {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 2vh 30vh 2vh 30vh;
+  align-items: center;
+}
+
+.item-name {
+  display: flex;
+  justify-content: flex-start;
 }
