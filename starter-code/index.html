@@ -10,5 +10,52 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <h1 style="text-align: center;">Ironhack Merchandising Shop</h1>
+  <div id="all-items">
+    <div class="product-wrapper">
+      <div class="product-name"><span class="product-name-span">Ironhack Stein</span></div>
+      <div class="cost-per-unit"><span class="cost-per-unit-span">10.00€</span></div>
+      <div class="input-number">
+        <label for="qty0">QTY: </label>
+        <input type="number" name="quantity" id="qty0" value="0" min="0" style="width: 50%" />
+      </div>
+      <div class="total-cost"><span class="total-cost-span">0.00€</span></div>
+      <div class="delete"><button class="btn-delete">Delete</button></div>
+    </div>
+    
+    <div class="product-wrapper">
+      <div class="product-name"><span class="product-name-span">Ironhack Gold Bar</span></div>
+      <div class="cost-per-unit"><span class="cost-per-unit-span">314.16€</span></div>
+      <div class="input-number">
+        <label for="qty1">QTY: </label>
+        <input type="number" name="quantity" id="qty1" value="0" min="0" style="width: 50%" />
+      </div>
+      <div class="total-cost"><span class="total-cost-span">0.00€</span></div>
+      <div class="delete"><button class="btn-delete">Delete</button></div>
+    </div>
+  </div>
+
+  <div class="new-item">
+    <div>
+      <input type="text" id="new-item" placeholder="New item" style="width: 90%" />
+    </div>
+    <div>
+      <input type="number" id="new-unit-cost" placeholder="Unit cost" value="0.00" min="0.00" step="0.01" style="width: 90%" />
+    </div>
+    <div></div>
+    <div></div>
+    <div>
+      <button id="new-item-create">Create</button>
+    </div>
+  </div>
+
+  <div class="calculate">
+    <button class="btn-success" id="calc-prices-button">Calculate Prices</button>
+  </div>
+
+  <div class="total-cart-value">
+    <h2 style="text-align: center">Total Price: <span class="total-cart-value-span"></span></h2>
+  </div>
+
 </body>
 </html>

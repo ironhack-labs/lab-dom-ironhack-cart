@@ -39,3 +39,22 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+body {
+  box-sizing: border-box;
+}
+
+.product-wrapper, .new-item {
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+}
+.product-wrapper > div, .new-item > div {
+  width: 17%;
+  margin: 0 1%;
+}
+
+.calculate {
+  display: flex;
+  justify-content: center;
+}
