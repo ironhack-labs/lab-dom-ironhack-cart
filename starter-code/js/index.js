@@ -50,3 +50,9 @@ window.onload = function(){
     deleteButtons[i].onclick = deleteItem;
   }
 };
+
+//started here...
+/*calculatePriceButton.addEventListener('click', function (event) {
+
+});
+*/

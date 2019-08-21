@@ -1,0 +1,22 @@
+{
+  "name": "lab-javascript-koans",
+  "version": "1.0.0",
+  "description": "![Ironhack Logo](https://i.imgur.com/1QgrNNw.png)",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TigerSilver/lab-javascript-koans.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TigerSilver/lab-javascript-koans/issues"
+  },
+  "homepage": "https://github.com/TigerSilver/lab-javascript-koans#readme"
+}
