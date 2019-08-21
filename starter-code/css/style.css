@@ -25,17 +25,31 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #CF000F;
+  border-color: #CF000F;
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around
+}
+
+h1 {
+  text-align: center;
+}
+
+.center-button{
+  display: flex;
+  justify-content: center;
 }
