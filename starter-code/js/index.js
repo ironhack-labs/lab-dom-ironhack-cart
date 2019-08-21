@@ -91,7 +91,7 @@ function createNewItem(){
   prodQty.classList.add("input-number");
   // The ID that we give the label and input needs to be unused
   let formID = allItems.children.length;
-  prodQty.innerHTML = `<label for="qty${formID}">QTY </label><input type="number" name="quantity" id="qty${formID}" value="0" min="0" style="width: 50%" />`;
+  prodQty.innerHTML = `<label for="qty${formID}">QTY: </label><input type="number" name="quantity" id="qty${formID}" value="0" min="0" style="width: 50%" />`;
   newProduct.appendChild(prodQty);
   // Child Div 4: net cost
   let prodTotal = document.createElement("div");
