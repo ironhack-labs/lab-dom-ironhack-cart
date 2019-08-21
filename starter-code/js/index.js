@@ -1,3 +1,5 @@
+
+
 function deleteItem(e){
 
 }
@@ -10,7 +12,14 @@ function updatePriceByProduct(productPrice, index){
 
 }
 
+
 function getTotalPrice() {
+let unitPrice = document.getElementById('unitPrice').textContent;
+let input = document.getElementById('input').value;
+let totalPrice = unitPrice * input;
+let resultTotalPrice = document.getElementById('total-price');
+console.log(totalPrice);
+return resultTotalPrice.innerText = totalPrice + "$";
 
 }
 
