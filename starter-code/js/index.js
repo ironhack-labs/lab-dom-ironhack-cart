@@ -51,8 +51,6 @@ function deleteItem(e) {
 }
 
 function updateTotalPrice() {
-  console.log(Object.values(window.storeItems))
-  console.log(Object.values(window.storeItems).reduce((tot, e) => tot + e.totalPrice, 0))
   document.getElementById("total").innerHTML = formatPrice(Object.keys(window.storeItems).length ? Object.values(window.storeItems).reduce((tot, e) => tot + e.totalPrice, 0) : 0)
 }
 
@@ -69,7 +67,7 @@ function createNewItem() {
     document.getElementById("new-item-name").value = ""
     document.getElementById("new-item-price").value = ""
   }
-  
+
   else alert('Must enter values in the create fields.')
   updateTotalPrice()
 }
