@@ -2,6 +2,13 @@ input {
   border: solid 1px black;
 }
 
+#main h1 {
+  width:350px;
+  display:flex;
+  justify-content: center;
+  margin-left: 700px
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -38,4 +45,42 @@ input {
 
 .quantity {
   margin: 0 5px;
+  padding-bottom: 5px;
 }
+
+.totqty{
+  padding: 3px ;
+}
+
+.inventario {
+  display: flex;
+  justify-content: space-evenly;
+  box-sizing: content-box;
+  padding-bottom: 5px;
+}
+
+.calculate-price{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+body:last-child {
+ display: flex;
+ flex-direction: column;
+  text-align: center;
+
+}
+
+.grandprice {
+  font-size: 1.5rem;
+  font-weight: bold
+}
+/*
+#productos > div{
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-around;
+  box-sizing: content-box;
+}
+*/

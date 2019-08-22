@@ -6,9 +6,102 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
+  
   <title>Ironhack cart</title>
 </head>
 <body>
+<div id="main">
+  <section>
+    <h1>Ironhack Merchandising Shop</h1>
+  </section>
+  <section id="productos">
+    <div class="inventario">
+
+      <span class="product"> Ironbubble-head</span>
+
+      <span class="price">$25.00</span>
+      <div>
+      <label class="quantity">QTY</label>
+      <input type="number" name="" min="0" max="100" class="qty" value="0">
+    </div>
+
+      <span class="totalprice">$0.00</span>
+
+      <button type="submit" name="delete" class="btn btn-delete">Delete</button> 
+    </div>
+
+    <div class="inventario">
+
+        <span class="product">Ironshirt</span>
+  
+        <span class="price">$15.00</span>
+        <div>
+        <label class="quantity">QTY</label>
+        <input type="number" name="" min="0" max="100" class="qty" value="0">
+      </div>
+  
+        <span class="totalprice">$0.00</span>
+  
+        <button type="submit" name="delete" class="btn btn-delete">Delete</button> 
+      </div>
+
+     <div class="inventario">
+
+      <span class="product"> Ironcup</span>
+
+      <span class="price">$10.00</span>
+      <div>
+      <label class="quantity">QTY</label>
+      <input type="number" name="" min="0" max="100" class="qty" value="0">
+    </div>
+
+      <span class="totalprice">$0.00</span>
+
+      <button type="submit" name="delete" class="btn btn-delete">Delete</button> 
+    </div>
+
+    <div class="inventario">
+
+      <span class="product"> Ironsticker</span>
+
+      <span class="price">$1.00</span>
+      <div>
+      <label class="quantity">QTY</label>
+      <input type="number" name="" min="0" max="100" class="qty" value="0">
+    </div>
+
+      <span class="totalprice">$0.00</span>
+
+      <button type="submit" name="delete" class="btn btn-delete">Delete</button> 
+    </div>
+
+    <div class="inventario">
+
+      <span class="product"> Ironaxe</span>
+
+      <span class="price">$100.00</span>
+      <div>
+      <label class="quantity">QTY</label>
+      <input type="number" name="" min="0" max="100" class="qty" value="0">
+    </div>
+
+      <span class="totalprice">$0.00</span>
+
+      <button type="submit" name="delete" class="btn btn-delete">Delete</button> 
+    </div>
+  </section>
+  <div>
+    <input type="text" class="addproduct">
+    <input type="number" class="addprice">
+    <button type="submit" id="new-item-create">Create</button>
+  </div>
+  <div class="calculate-price">
+    <button id="calc-prices-button" type="submit" name="calculateprice" class="btn btn-success">Calculate Prices</button>
+  </div>
+</div>
+<div>
+  <h2>Total Price:</h2><span class="grandprice">$0.00</span>
+</div>
+    <script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>
