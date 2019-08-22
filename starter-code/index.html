@@ -1,14 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+  <div id=body>
+    <h1>Ironhack<br>Merchandising Shop</h1>
+    <div id="store">
+      <div id="dItemsList">
+      </div>
+      <div class="createRow">
+        <input id="new-item-name" type="text">
+        <input id="new-item-price" type="number">
+        <button id="new-item-create">Create New Item</button>
+      </div>
+    </div>
+    <h1>Total Price: <span id="total"></span></h1>
+  </div>
 </body>
+
 </html>
