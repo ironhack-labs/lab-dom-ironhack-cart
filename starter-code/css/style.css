@@ -1,9 +1,26 @@
+*, html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 20px 80px;
+}
+
 input {
+  padding: 3px 5px;
   border: solid 1px black;
+}
+
+header {
+  margin-bottom: 55px;
+  text-align: center;
 }
 
 .btn {
   display: inline-block;
+  min-width: 125px;
   padding: 6px 12px;
   margin-bottom: 0;
   font-size: 14px;
@@ -25,17 +42,48 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  display: block;
+  margin: 0 auto;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #CF000F;
+  border-color: #CF000F;
 }
 
 .quantity {
+  width: 70px;
   margin: 0 5px;
+}
+
+.container {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  margin-bottom: 25px;
+}
+
+.container > * {
+  width: 20%;
+  margin-right: 5px;
+}
+
+.delete {
+  align-self: flex-end;
+}
+
+.calculate {
+  margin-top: 25px;
+  text-align: center;
+}
+
+#total {
+  margin-top: 15px;
+  text-transform: uppercase;
+  color: green;
+  font-size: 18px;
 }

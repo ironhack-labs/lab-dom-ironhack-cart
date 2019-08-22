@@ -6,9 +6,83 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+
+  <header>
+      <h1>Ironhack Merchandising Shop</h1>
+  </header>
+
+  <section id="cart">
+    <!--
+      <div class="product">
+        <div class="name">
+          <span></span>
+        </div>
+        <div class="price">
+          <span></span>
+        </div>
+        <div class="qty">
+          <label for="quantitiy"></label>
+          <input type="text" name="quantity" id="quantitiy">
+        </div>
+        <div class="subtotal">
+          <span>$0.00</span>
+        </div>
+        <div class="delete">
+          <button class="btn btn-delete">Delete</button>
+        </div>
+      </div>
+    -->
+    <div class="container product product0">
+      <div class="name">
+        <span>IronBubble-head</span>
+      </div>
+      <div class="price">
+        $<span>25.00</span>
+      </div>
+      <div class="qty">
+        <label for="quantity">QTY</label>
+        <input type="number" name="quantity" id="quantity" class="quantity" placeholder="0">
+      </div>
+      <div class="subtotal">$<span>0.00</span></div>
+      <div class="delete">
+        <button class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+
+    <div class="container product product1">
+      <div class="name">
+        <span>Iron Crowbar</span>
+      </div>
+      <div class="price">
+        $<span>15.00</span>
+      </div>
+      <div class="qty">
+        <label for="quantity">QTY</label>
+        <input type="number" name="quantity" id="quantity" class="quantity" placeholder="0">
+      </div>
+      <div class="subtotal">$<span>0.00</span></div>
+      <div class="delete">
+        <button class="btn btn-delete">Delete</button>
+      </div>
+    </div>
+
+  </section>
+
+  <div id="newproduct" class="container">
+    <input type="text" placeholder="name" />
+    <input type="text" placeholder="product price" />
+    <div></div><div></div>
+    <div><button id="new-item-create" class="btn">Add Product</button></div>
+  </div>
+
+  <div class="calculate">
+    <button id="calc-prices-button" class="btn btn-success">Calculate Prices</button>
+    <h2 id="total">Total: $<span>0</span></h2>
+  </div>
+
+  <script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>
