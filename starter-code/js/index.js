@@ -8,6 +8,9 @@ document.querySelector(".btn-create").onclick = () => {
   addProduct()
 }
 
+document.querySelector(".btn-delete").onclick = () => {
+  removeProduct()
+}
 
 function calcPrice (){
   let prices = document.querySelectorAll('.price')
@@ -25,28 +28,41 @@ function calcPrice (){
   bigTot.innerText = totalPrice
 }
 
-
 function addProduct (){
-  let pr = document.querySelector('.newproduct')
   let parent = document.querySelector('.cart')
   let newPrd = document.querySelector('#newproduct')
-  let bubbb =  document.querySelector('.buble')
+  let newPrc = document.querySelector('#newprice')
   
- let newww = newPrd.val
+  let newproduct = newPrd.value
+  let newprice = newPrc.value
 
- let closest = pr.closest('li > .price')
-
-  console.log(closest)
 
 let newItem = `
 <li class="row prdct">
-<span class="buble"></span>
-<span class="price"></span>
+<span class="buble">${newproduct}</span>
+<span class="price">${newprice}</span>
 <input type="number" class="qty" value="0">
 <span class="subtotal"></span>
-<button class="btn-delete">Delete</button>
+<button class="btn-delete" onclick="removeProduct()">Delete</button>
 </li>
 `
 parent.insertAdjacentHTML("afterend", newItem)
-
+parent.lastChild.onclick = removeProduct
 }
+
+function removeProduct (e){
+let lli = e.target.parentNode
+let deleteButtons = lli.parentNode //ref a UL
+  deleteButtons.removeChild(lli)
+  console.log('remove', e)  
+}
+
+window.onload = function(){
+  var calculatePriceButton = document.getElementById('calc');
+  var createItemButton = document.querySelector('.btn-create');
+  var deleteButtons = document.getElementsByClassName('btn-delete');
+  for(var i = 0; i<deleteButtons.length ; i++){
+    deleteButtons[i].onclick = removeProduct;
+  }
+}
+
