@@ -1,14 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+
+  <div class="title">
+    <h2> Ironhack <br> Merchandising Shop </h2>
+  </div>
+
+  <div class="row product">
+    <div class="col">
+      <span>IronBubble-head</span>
+    </div>
+    <div class="col">
+      $<span class="productPrice">25</span>
+    </div>
+    <div class="col">
+      <label class="quantity">QTY</label>
+      <input type="text" class="productQuantity"> </input>
+    </div>
+    <div class="col">
+      $<span>0.00</span>
+    </div>
+    <div class="col">
+      <button class="btn btn-delete">Delete</button>
+    </div>
+  </div>
+
+  <div class="calculate-button">
+    <button class="btn btn-success"> Calculate Prices </button>
+  </div>
+
+  <div class="total">
+    <h2>Total Price: <span>$0</span></h2>
+  </div>
+
+  <script type="text/javascript" src="./js/index.js"></script>
+
 </body>
+
 </html>

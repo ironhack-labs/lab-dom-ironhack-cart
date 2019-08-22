@@ -3,8 +3,18 @@ function deleteItem(e){
 }
 
 function getPriceByProduct(itemNode){
+  productPrices * productQuantities;
 
 }
+
+let productPrices = document.getElementsByClassName("productPrice");
+console.log(productPrices[0].innerHTML);
+
+let productQuantities = document.getElementsByClassName("productQuantity");
+console.log(productQuantities[0].value);
+
+console.log(productPrices * productQuantities);
+
 
 function updatePriceByProduct(productPrice, index){
 
@@ -50,3 +60,6 @@ window.onload = function(){
     deleteButtons[i].onclick = deleteItem;
   }
 };
+
+
+
