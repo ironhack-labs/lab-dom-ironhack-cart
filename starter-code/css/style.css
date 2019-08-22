@@ -39,3 +39,30 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+#new-item-create {
+
+}
+
+#calc-prices-button {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+}
+
+.product,
+.create {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px 10px;
+}
+
+.wrapper,
+.wrapper2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
