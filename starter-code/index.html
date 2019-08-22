@@ -14,15 +14,27 @@
 </head>
 
 <body>
-  <div id=body>
+  <div id=body class="container-fluid">
     <h1>Ironhack<br>Merchandising Shop</h1>
     <div id="store">
-      <div id="dItemsList">
-      </div>
-      <div class="createRow">
-        <input id="new-item-name" placeholder="name" type="text">
-        <input id="new-item-price" placeholder="price" type="number">
-        <button id="new-item-create" class="btn">Create New Item</button>
+      <div class="container">
+        <div id="dItemsList">
+        </div>
+        <div class="row">
+          <div class="col-lg-3">
+            <input id="new-item-name" placeholder="name" type="text">
+          </div>
+          <div class="col-lg-3">
+            <input id="new-item-price" placeholder="price" type="number">
+          </div>
+          <div class="col-lg-2">
+          </div>
+          <div class="col-lg-2">
+          </div>
+          <div class="col-lg-2">
+            <button id="new-item-create" class="btn">Create New Item</button>
+          </div>
+        </div>
       </div>
     </div>
     <h1>Total Price: <span id="total"></span></h1>

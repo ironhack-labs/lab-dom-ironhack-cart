@@ -22,10 +22,16 @@ class ItemRow {
 
     this.quantityDiv.appendChild(this.quantityLabel)
     this.quantityDiv.appendChild(this.quantity)
-    this.quantity.style.width = '80%'
-    this.quantityLabel.style.width = '20%'
+    this.quantity.style.width = '60%'
+    this.quantityLabel.style.width = '40%'
     var children = [this.label, this.priceLabel, this.quantityDiv, this.totalPriceLabel, this.deleteBtn]
-    children.map(element => this.div.appendChild(element))
+
+    children.map((element, i) => {
+      let div = document.createElement('DIV')
+      div.className = (i<2) ? "col-lg-3" : "col-lg-2"
+      div.appendChild(element)
+      this.div.appendChild(div)
+    })
 
     this.quantity.setAttribute("type", "number");
     this.quantity.id = `input${name}`
@@ -34,7 +40,7 @@ class ItemRow {
     this.deleteBtn.className = "btn-delete btn"
     this.deleteBtn.innerHTML = "delete"
     this.deleteBtn.onclick = deleteItem
-    this.div.className = "flex justify-b itemRow"
+    this.div.className = "row"
 
     document.getElementById('dItemsList').appendChild(this.div)
 
@@ -52,8 +58,8 @@ class ItemRow {
 }
 
 function deleteItem(e) {
-  delete window.storeItems[e.srcElement.parentNode.getAttribute('key')]
-  e.srcElement.parentNode.remove()
+  delete window.storeItems[e.srcElement.parentNode.parentNode.getAttribute('key')]
+  e.srcElement.parentNode.parentNode.remove()
   updateTotalPrice()
 }
 
