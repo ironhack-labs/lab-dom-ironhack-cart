@@ -1,6 +1,10 @@
 input {
   border: solid 1px black;
 }
+
+h1{
+  text-align: center;
+}
  
 .btn {
   display: inline-block;

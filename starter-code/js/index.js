@@ -9,13 +9,14 @@ function getTotalPrice() {
   let rows = document.getElementsByClassName('row');
   for(let r = 0; r < rows.length; r++){
     let row = rows[r];
-    let price = document.querySelector(`#shopping > div:nth-child(${r+1}) .initialPrice`);
+    let price = document.querySelector(` #shopping > div:nth-child(${r+1}) .initialPrice`);
     // console.log(price);
-    let quantity = row.children[2].children[1].innerText;
+    let quantity = document.querySelector(` #shopping > div:nth-child(2) .initialQuantity`);
     // console.log(quantity.value);
     let subTotal = Number(price.innerText)*Number(quantity.value);
     // console.log(subTotal);
-    document.querySelector(`#shopping > div:nth-child(${r+1}) .individualTotal`).innerHtml = subTotal;
+    document.querySelector(`#shopping > div:nth-child(${r+1}) .initialTotal`).innerHTML = subTotal;
+    console.log(subTotal);
   }
 }
 
