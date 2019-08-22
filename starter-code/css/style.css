@@ -2,6 +2,23 @@ input {
   border: solid 1px black;
 }
 
+.contener {
+  display: flex;
+  width: 100vw;
+  height: 5vh;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+
+}
+
+
+
+.product-new {
+  height: 40px;
+  margin: 20px;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -22,18 +39,37 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+  background-color: red;
 }
 
-.btn-success {
+#calculate-price {
+  display: flex;
+  width: 100vw;
+  height: 5vh;
+  flex-direction: row;
+  justify-content: center;
+  vertical-align: center;
+  margin-top: 25px;
+}
+
+/* .btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    border-radius:10px;
+} */
+
+.calc-prices-button {
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+  border-radius: 10px;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #CF000F;
+  border-color: #CF000F;
 }
 
 .quantity {
