@@ -26,7 +26,7 @@ class ItemRow {
     this.quantity.id = 'input-${name}'
     this.quantityLabel.htmlFor = this.quantity.id
     this.quantityLabel.innerHTML = 'QTY'
-    this.deleteBtn.className = "btn-delete"
+    this.deleteBtn.className = "btn-delete btn"
     this.deleteBtn.innerHTML = "delete"
     this.deleteBtn.onclick = deleteItem
     this.div.className = "flex justify-b itemRow"
@@ -64,7 +64,12 @@ function createNewItemRow(itemName, itemUnitPrice) {
 function createNewItem() {
   let name = document.getElementById("new-item-name").value
   let price = document.getElementById("new-item-price").value
-  if (name.length && price.length) createNewItemRow(name, Number(price))
+  if (name.length && price.length) {
+    createNewItemRow(name, Number(price))
+    document.getElementById("new-item-name").value = ""
+    document.getElementById("new-item-price").value = ""
+  }
+  
   else alert('Must enter values in the create fields.')
   updateTotalPrice()
 }
