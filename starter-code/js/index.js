@@ -2,6 +2,10 @@ function deleteItem(e) {
 
   //TEST
 
+  document.getElementById('collections').onclick = function(e){
+    console.log(e)
+    e.target.parentNode.remove()
+  }
 
 
 }
@@ -96,10 +100,25 @@ console.log("I'm running")
 
 function createNewItem() {
 
-  createNewItemRow();
+  let name = window.prompt("Name of product?")
+  let price = window.prompt("How much is it?")
+  let rowHTML =
+  `<div class="row item-row">
+  <p class="col">${name}</p>
+  <p class="col initialPrice">${price}</p>
+  <form class="col">
+    <label class="inline-block" for="price">QTY: </label>
+    <input class="inline-block" type="text" name="price" placeholder="0" />
+  </form>
+
+  <p class="col">0.00</p>
+
+  <button type="button" class=" col btn-delete">Delete</button>
+</div>`
+
+document.querySelector("body > section").innerHTML += rowHTML;
 
 
-  console.log("clicked createNewItem() function")
 }
 
 
