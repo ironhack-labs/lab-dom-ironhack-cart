@@ -57,6 +57,10 @@ products.forEach((product, i) => {
   }
 })
 
+const reloadPageLOL = () => {
+  location.reload()
+}
+
 // const deleteProduct = e => {
 //   productsContainer.removeChild(e.currentTarget)
 // }
@@ -76,6 +80,7 @@ products.forEach((product, i) => {
 /*****************************************/
 /************** ITERATION 5 **************/
 /*****************************************/
+
 const newProductName = document.querySelector('#new-product-name')
 const newProductPrice = document.querySelector('#new-product-price')
 const newProductButton = document.querySelector('#new-product-button')
@@ -103,7 +108,7 @@ newProductButton.onclick = () => {
     </div>
     <!-- Delete Button -->
     <div>
-      <button class="btn btn-delete">Delete</button>
+      <button class="btn btn-delete" onclick="reloadPageLOL()">Delete</button>
     </div>
   `
 
