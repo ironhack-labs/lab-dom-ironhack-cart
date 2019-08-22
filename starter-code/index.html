@@ -9,6 +9,43 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
-<body>
+<body id="body">
+  <div class="title">
+    <h1>Ironhack</h1>
+    <h1>Merchandising Shop</h1>
+  </div>
+  <div id="div-products">
+    <div class= "product" id= "producto">
+      <div><span class="product-name">IronBubble-head</span></div>
+      <div>$<span class="product-price" id="precio">25.00</span></div>
+      <div class="inputdiv">
+        <label for="quantity" class="quantity">QTY</label>
+        <input type="number" id="cantidad" min="0" name="number-units" class="units" value="0">
+      </div>
+      <div>$<span class="total-product-price" id="subtotal">0.00</span></div>
+      <button class="btn btn-delete" id="delete">Delete</button>
+    </div>
+
+    <div class="product" id="producto">
+      <div><span class="product-name">IronShirt</span></div>
+      <div>$<span class="product-price" id="precio">15.00</span></div>
+      <div class="inputdiv">
+        <label for="quantity" class="quantity">QTY</label>
+        <input type="number" id="cantidad" min="0" name="number-units" class="units" value="0">
+      </div>
+      <div>$<span class="total-product-price" id="subtotal">0.00</span></div>
+      <button class="btn btn-delete" id="delete">Delete</button>
+    </div>
+</div>
+<div class="product-create">
+    <div><input type="text" name="product" value="" id="input-product-name"></div>
+    <div><input type="number" min="0" name="prod-price" value="0" id="input-product-price"></div>
+    <div class="inputdiv">
+    </div>
+    <div><span></span></div>
+    <div><button id="new-item-create" class="btn btn-create">Create</button></div>
+  </div>
+<button class="btn btn-success" id="calc-prices-button">Calculate Prices</button>
+<div><h2>Total price: <span>$</span><span id="totalprice"> </span></h2></div>
 </body>
 </html>
