@@ -1,14 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <title>Ironhack cart</title>
+  </head>
+  <body>
+    <h1>Ironhack Merchandising Shop</h1>
+
+    
+    <section id="collections">
+    <!-- First row -->
+    <div class="row item-row">
+      <p class="col">IronBubble</p>
+      <p class="col initialPrice">25.00</p>
+      <form class="col">
+        <label class="inline-block" for="price">QTY: </label>
+        <input class="inline-block" type="text" name="price" placeholder="0" />
+      </form>
+
+      <p class="col">0.00</p>
+
+      <button type="button" class=" col btn-delete">Delete</button>
+    </div>
+
+
+
+
+    <!-- Second row -->
+    <div  class="row item-row">
+        <p class="col">Iron Shirt</p>
+        <p class="col initialPrice">15.00</p>
+        <form class="col">
+          <label class="inline-block" for="price">QTY: </label>
+          <input class="inline-block" type="text" name="price" placeholder="0" />
+        </form>
+  
+        <p class="col">0.00</p>
+  
+        <button type="button" id="btn-delete" class=" col btn-delete">Delete</button>
+      </div>
+
+
+</section>
+
+<!-- Calculate Price Button -->
+    <div class="row">
+      <button id="calc-prices-button" id="calc-prices-button" type="button" class=" col-2 btn-success mx-auto">
+        Calculate Price
+      </button>
+    </div>
+
+    <div class="row mx-auto">
+      <div class="col">
+        <button type="button" id="new-item-create" class="col-1 btn-success ml-auto">Create</button>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="./js/index.js"></script>
+  </body>
 </html>
