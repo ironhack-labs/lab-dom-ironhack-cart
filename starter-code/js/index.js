@@ -22,13 +22,11 @@ class ItemRow {
 
     this.quantityDiv.appendChild(this.quantityLabel)
     this.quantityDiv.appendChild(this.quantity)
-    this.quantity.style.width = '60%'
-    this.quantityLabel.style.width = '40%'
     var children = [this.label, this.priceLabel, this.quantityDiv, this.totalPriceLabel, this.deleteBtn]
 
     children.map((element, i) => {
       let div = document.createElement('DIV')
-      div.className = (i<2) ? "col-lg-3" : "col-lg-2"
+      div.className = (i < 2) ? "col-lg-3" : "col-lg-2"
       div.appendChild(element)
       this.div.appendChild(div)
     })
@@ -39,12 +37,14 @@ class ItemRow {
     this.quantityLabel.innerHTML = 'QTY:'
     this.deleteBtn.className = "btn-delete btn"
     this.deleteBtn.innerHTML = "delete"
-    this.deleteBtn.onclick = deleteItem
     this.div.className = "row"
+    this.quantity.style.width = '60%'
+    this.quantityLabel.style.width = '40%'
 
     document.getElementById('dItemsList').appendChild(this.div)
 
     this.quantity.onchange = this.update.bind(this)
+    this.deleteBtn.onclick = this.delete.bind(this)
     this.update()
   }
 
@@ -55,12 +55,12 @@ class ItemRow {
     this.totalPriceLabel.innerHTML = formatPrice(this.totalPrice)
     updateTotalPrice()
   }
-}
 
-function deleteItem(e) {
-  delete window.storeItems[e.srcElement.parentNode.parentNode.getAttribute('key')]
-  e.srcElement.parentNode.parentNode.remove()
-  updateTotalPrice()
+  delete() {
+    this.div.remove()
+    delete window.storeItems[this.name]
+    updateTotalPrice()
+  }
 }
 
 function updateTotalPrice() {
