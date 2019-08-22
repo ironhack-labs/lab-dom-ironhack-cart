@@ -1,52 +1,34 @@
-function deleteItem(e){
 
-}
 
-function getPriceByProduct(itemNode){
 
-}
+const buttonCalculatePrices = document.querySelector('#calc-prices-button')
 
-function updatePriceByProduct(productPrice, index){
 
-}
+let arrPrices = document.querySelectorAll('.unit span')
 
-function getTotalPrice() {
+let arrQuantities = document.querySelectorAll('.quantity')
 
-}
+let arrTotalPrice = document.querySelectorAll('.unit-total')
 
-function createQuantityInput(){
+let superTotal = document.querySelector('h2 span')
 
-}
 
-function createDeleteButton(){
 
-}
+buttonCalculatePrices.onclick = () => {
 
-function createQuantityNode(){
 
-}
+  let superDuperTotal = 0
+  for (let i = 0; i < arrPrices.length; i++) {
+    let totalItem = arrPrices[i].dataset.precio*arrQuantities[i].value
+    const unitTotal = arrTotalPrice[i]
+    arrTotalPrice[i].dataset.superTotal = totalItem
 
-function createItemNode(dataType, itemData){
+    unitTotal.innerHTML =  `$ ${totalItem}`
 
-}
-
-function createNewItemRow(itemName, itemUnitPrice){
-
-}
-
-function createNewItem(){
-
-}
-
-window.onload = function(){
-  var calculatePriceButton = document.getElementById('calc-prices-button');
-  var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');
-
-  calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
-
-  for(var i = 0; i<deleteButtons.length ; i++){
-    deleteButtons[i].onclick = deleteItem;
+    superDuperTotal += parseInt(arrTotalPrice[i].dataset.superTotal)
   }
-};
+ 
+  superTotal.innerHTML = `$ ${superDuperTotal}`
+}
+
+

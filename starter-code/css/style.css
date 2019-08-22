@@ -1,4 +1,32 @@
-input {
+#main{
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+h2{
+  text-align: center
+}
+
+
+#main div{
+  width: 20%;
+}
+
+
+.calculate {
+  display: flex;
+  justify-content: center
+}
+
+h1{
+  display: flex;
+  justify-content: center
+}
+
+
+#qty {
   border: solid 1px black;
 }
 
