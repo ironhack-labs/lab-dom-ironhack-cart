@@ -11,7 +11,7 @@ function getTotalPrice() {
     let row = rows[r];
     let price = document.querySelector(` #shopping > div:nth-child(${r+1}) .initialPrice`);
     // console.log(price);
-    let quantity = document.querySelector(` #shopping > div:nth-child(2) .initialQuantity`);
+    let quantity = document.querySelector(` #shopping > div:nth-child(${r+1}) .initialQuantity`);
     // console.log(quantity.value);
     let subTotal = Number(price.innerText)*Number(quantity.value);
     // console.log(subTotal);
