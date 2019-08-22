@@ -66,3 +66,13 @@ input {
   justify-content: center;
   align-items: center;
 }
+
+#logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logo img {
+  height: 70px;
+}
