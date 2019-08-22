@@ -1,7 +1,7 @@
 input {
   border: solid 1px black;
 }
-
+ 
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -38,4 +38,11 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.row{
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 10px;
+  align-items: center;
 }
