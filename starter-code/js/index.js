@@ -9,27 +9,34 @@ class ItemRow {
     this.name = name
     this.price = price
     this.totalPrice = 0
-    this.div = document.createElement('DIV');
+    this.div = document.createElement('DIV')
     this.div.setAttribute("key", this.name)
 
-    this.label = document.createElement('P');
-    this.priceLabel = document.createElement('P');
+    this.label = document.createElement('P')
+    this.priceLabel = document.createElement('P')
+    this.quantityDiv = document.createElement('DIV')
     this.quantityLabel = document.createElement('LABEL')
-    this.quantity = document.createElement('INPUT');
-    this.totalPriceLabel = document.createElement('P');
-    this.deleteBtn = document.createElement('BUTTON');
+    this.quantity = document.createElement('INPUT')
+    this.totalPriceLabel = document.createElement('P')
+    this.deleteBtn = document.createElement('BUTTON')
 
-    [this.label, this.priceLabel, this.quantity, this.totalPriceLabel, this.deleteBtn].map(element => this.div.appendChild(element))
-    document.getElementById('dItemsList').appendChild(this.div)
+    this.quantityDiv.appendChild(this.quantityLabel)
+    this.quantityDiv.appendChild(this.quantity)
+    this.quantity.style.width = '80%'
+    this.quantityLabel.style.width = '20%'
+    var children = [this.label, this.priceLabel, this.quantityDiv, this.totalPriceLabel, this.deleteBtn]
+    children.map(element => this.div.appendChild(element))
 
     this.quantity.setAttribute("type", "number");
-    this.quantity.id = 'input-${name}'
-    this.quantityLabel.htmlFor = this.quantity.id
-    this.quantityLabel.innerHTML = 'QTY'
+    this.quantity.id = `input${name}`
+    this.quantityLabel.htmlFor = `input${name}`
+    this.quantityLabel.innerHTML = 'QTY:'
     this.deleteBtn.className = "btn-delete btn"
     this.deleteBtn.innerHTML = "delete"
     this.deleteBtn.onclick = deleteItem
     this.div.className = "flex justify-b itemRow"
+
+    document.getElementById('dItemsList').appendChild(this.div)
 
     this.quantity.onchange = this.update.bind(this)
     this.update()

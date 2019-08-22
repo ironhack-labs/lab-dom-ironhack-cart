@@ -12,15 +12,14 @@ input {
 #dItemList, #store {
   width: 100%;
 }
-.itemRow{
-  display: flex;
-  width: 100%;
+
+.itemRow {
   justify-content: space-between;
 }
 
-.createRow{
-  width: 100%;
+.itemRow, .createRow {
   display: flex;
+  width: 100%;
 }
 
 #new-item-create {
@@ -28,9 +27,18 @@ input {
   background-color: lightcyan;
 }
 
-.itemRow > *, .createRow > * {
+.itemRow>*, .createRow>* {
   margin: 1rem 1rem;
-  width: 15rem;
+  width: 150px;
+}
+
+.itemRow div {
+  display: flex;
+  align-items: center;
+}
+
+.itemRow label {
+  margin-right: 1rem;
 }
 
 .btn-success {
