@@ -46,7 +46,7 @@ let newItem = `
 <button class="btn-delete" onclick="removeProduct()">Delete</button>
 </li>
 `
-parent.insertAdjacentHTML("afterend", newItem)
+parent.insertAdjacentHTML("beforeend", newItem)
 parent.lastChild.onclick = removeProduct
 }
 
