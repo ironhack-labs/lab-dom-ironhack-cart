@@ -8,6 +8,8 @@ var prodObj = [{
     }
 ]
 
+
+
 for (i = 0; i < Object.keys(prodObj).length; i++) {
     let getValue = "";
     var string = "<div class='row'>";
@@ -21,29 +23,42 @@ for (i = 0; i < Object.keys(prodObj).length; i++) {
 
 }
 
+document.querySelector("#create").onclick = function(e) {
+    let p = document.querySelector("#price")
+    let pname = document.querySelector("#pname")
+    prodObj.push({
+        "name": pname.value,
+        "price": parseInt(p.value)
+    })
+    var strCreate = "<div class='row'>";
+    strCreate += "<div class='col-sm-3'><span>" + pname.value + "</span></div>";
+    strCreate += "<div class='col-sm-2'><span>" + "$" + p.value + "</span></div>";
+    strCreate += "<div class='col-sm-3'><label>QTY</label><input type='text'></div>";
+    strCreate += "<div class='col-sm-2'><span>" + '$0.00' + "</span></div>";
+    strCreate += "<div class='col-sm-2'><button class='btn btn-delete'>delete</button></div>";
+    strCreate += "</div>";
+    document.querySelector(".products").innerHTML += strCreate;
+}
+
+
 
 document.querySelector(".btn-success").onclick = function(e) {
     let quant = [];
+    let totalsum = 0;
 
     for (i = 0; i < Object.keys(prodObj).length; i++) {
 
         let query = "#input" + [i]
-        console.log(query)
-        quant.push(document.querySelector(query).value);
-
-    }
-
-    for (i = 0; i < Object.keys(prodObj).length; i++) {
-
         let total = "#total" + [i]
-        console.log(total);
+        quant.push(document.querySelector(query).value);
         document.querySelector("#total" + [i]).innerHTML = "$" + prodObj[i].price * quant[i]
-        console.log(prodObj[i].price * quant[i])
+        totalsum += prodObj[i].price * quant[i]
+        document.querySelector("#amnt").innerHTML = '$' + totalsum;
     }
-
-
-
 }
+
+
+
 
 
 
