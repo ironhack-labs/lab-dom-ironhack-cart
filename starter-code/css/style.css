@@ -39,3 +39,17 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+#wrapper1, #wrapper2{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+h1 strong, #calculate{
+  display: flex;
+  justify-content: center;
+}
+
+  

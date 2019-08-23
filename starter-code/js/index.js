@@ -1,4 +1,4 @@
-function deleteItem(e){
+/* function deleteItem(e){
 
 }
 
@@ -49,4 +49,16 @@ window.onload = function(){
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
   }
-};
+}; */
+
+let price1 = document.getElementById("price1").innerHTML.slice(2);
+
+
+
+var calculatePrice = document.getElementById("calculate");
+calculatePrice.onclick= function(){
+  let quantity = document.querySelector("#qty1").value;
+  //let totprice1 = = totprice ;
+   let totprice=price1 * quantity;
+document.getElementById("totPrice1").innerHTML = "$" + totprice
+}
