@@ -9,44 +9,50 @@ var prodObj = [{
 ]
 
 
+window.onload = function() {
+    for (i = 0; i < Object.keys(prodObj).length; i++) {
+        let getValue = "";
+        var string = "<div class='row'>";
+        string += "<div class='col-sm-3'><span>" + prodObj[i].name + "</span></div>";
+        string += "<div class='col-sm-2'><span>" + "$" + prodObj[i].price + "</span></div>";
+        string += "<div class='col-sm-3'><label>QTY</label><input id='input" + [i] + "'type='text'></div>";
+        string += "<div class='col-sm-2'><span id='total" + [i] + "'>" + '$0.00' + "</span></div>";
+        string += "<div class='col-sm-2'><button class='btn btn-delete'>delete</button></div>";
+        string += "</div>";
+        document.querySelector(".products").innerHTML += string;
 
-for (i = 0; i < Object.keys(prodObj).length; i++) {
-    let getValue = "";
-    var string = "<div class='row'>";
-    string += "<div class='col-sm-3'><span>" + prodObj[i].name + "</span></div>";
-    string += "<div class='col-sm-2'><span>" + "$" + prodObj[i].price + "</span></div>";
-    string += "<div class='col-sm-3'><label>QTY</label><input id='input" + [i] + "'type='text'></div>";
-    string += "<div class='col-sm-2'><span id='total" + [i] + "'>" + '$0.00' + "</span></div>";
-    string += "<div class='col-sm-2'><button class='btn btn-delete'>delete</button></div>";
-    string += "</div>";
-    document.querySelector(".products").innerHTML += string;
-
+    }
 }
-
 document.querySelector("#create").onclick = function(e) {
     let p = document.querySelector("#price")
     let pname = document.querySelector("#pname")
+    let objL = Object.keys(prodObj).length
     prodObj.push({
         "name": pname.value,
         "price": parseInt(p.value)
     })
+
     var strCreate = "<div class='row'>";
     strCreate += "<div class='col-sm-3'><span>" + pname.value + "</span></div>";
     strCreate += "<div class='col-sm-2'><span>" + "$" + p.value + "</span></div>";
-    strCreate += "<div class='col-sm-3'><label>QTY</label><input type='text'></div>";
-    strCreate += "<div class='col-sm-2'><span>" + '$0.00' + "</span></div>";
+    strCreate += "<div class='col-sm-3'><label>QTY</label><input id='input" + objL + "'type='text'></div>";
+    strCreate += "<div class='col-sm-2'><span id='total" + objL + "'>" + '$0.00' + "</span></div>";
     strCreate += "<div class='col-sm-2'><button class='btn btn-delete'>delete</button></div>";
     strCreate += "</div>";
     document.querySelector(".products").innerHTML += strCreate;
+    objL += 1
 }
 
 
 
+
+
+var tarr = document.querySelector(".products");
 document.querySelector(".btn-success").onclick = function(e) {
     let quant = [];
     let totalsum = 0;
 
-    for (i = 0; i < Object.keys(prodObj).length; i++) {
+    for (i = 0; i < tarr.children.length; i++) {
 
         let query = "#input" + [i]
         let total = "#total" + [i]
