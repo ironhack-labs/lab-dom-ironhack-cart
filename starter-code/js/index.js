@@ -29,7 +29,7 @@ function getTotalPrice() {
     console.log(productSubTotal)
 
     // Total price of all products below
-    total = total + Number($(`.product${i} .subtotal span`).innerText)
+    total = total + Number($(`#cart > div.product:nth-child(${i+1}) .subtotal span`).innerText)
   }
 
   $("#total > span").innerText = total.toFixed(2)
