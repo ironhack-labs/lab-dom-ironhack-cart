@@ -39,3 +39,38 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.flex {
+  display:flex;
+}
+
+.cart-info {
+  justify-content: space-between;
+}
+
+.cart-header {
+  margin: 0 20% 0 70%;
+  display:flex;
+  justify-content:flex-end;
+}
+
+.container {
+  margin:3%;
+
+}
+
+.btn-cal-price {
+  margin: 0 auto;
+}
+
+.btn-cal-price button {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+    background-color: green;
+    border-color: green;
+}
+
+.total-price {
+  margin: 0 auto;
+}
