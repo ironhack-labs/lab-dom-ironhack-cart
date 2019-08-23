@@ -2,6 +2,25 @@ input {
   border: solid 1px black;
 }
 
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.padding {
+  padding-bottom: 20px;
+}
+
+label {
+  margin-right: 5px;
+}
+
+.inline {
+  display: inline;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -38,4 +57,8 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+label {
+  padding-right: 5px;
 }
