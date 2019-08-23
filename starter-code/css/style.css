@@ -25,17 +25,52 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #cf000f;
+  border-color: #cf000f;
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+/* section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} */
+
+td {
+  width: 20%;
+  padding: 2em;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+}
+
+.delete-btn {
+  background-color: #cf000f;
+}
+.enter-price {
+  display: flex;
+  align-items: center;
+}
+
+h2 {
+  padding-bottom: 2rem;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
