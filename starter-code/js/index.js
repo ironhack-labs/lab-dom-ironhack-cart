@@ -1,13 +1,14 @@
 
 
 function createNewItem() {
-  
-  
+
+  let name = window.prompt('What is the name for the Ironhack product?')
+  let price = window.prompt('What is the price for the item?')
   let rowHTML = `  <div class="row flex">
-  <p class="col">IronCap</p>
+  <p class="col">Iron${name}</p>
   <div class="col">
     <span>$</span>
-    <p class="inline-block initialPrice  price">10.00</p>
+    <p class="inline-block initialPrice  price">${price}.00</p>
   </div>
   <form class="col">
     <label class="inline-block" for="price">Quantity:</label>
@@ -21,6 +22,8 @@ function createNewItem() {
   </div>
   `
   
+  document.getElementById('shopping').innerHTML += rowHTML
+
 }
 
 
@@ -51,7 +54,8 @@ function inputUpdate(e) {
 
 }
 
-window.onclick = function () {
+window.onload = 
+function init() {
 
   var deleteButtons = document.getElementsByClassName('btn-delete');
   let input = document.getElementsByClassName('input')
