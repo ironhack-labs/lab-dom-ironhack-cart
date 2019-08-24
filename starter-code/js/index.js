@@ -54,8 +54,7 @@ function inputUpdate(e) {
 
 }
 
-window.onload = 
-function init() {
+window.onload = function () {
 
   var deleteButtons = document.getElementsByClassName('btn-delete');
   let input = document.getElementsByClassName('input')
