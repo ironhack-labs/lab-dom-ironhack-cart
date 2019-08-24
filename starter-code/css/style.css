@@ -2,6 +2,15 @@ input {
   border: solid 1px black;
 }
 
+h1 {
+  text-align: center;
+}
+
+h2 {
+  font-size: 100px;
+  text-align: center;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -28,6 +37,11 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    
+}
+#success {
+  display: flex;
+  justify-content: center;
 }
 
 .btn-delete {
@@ -39,3 +53,10 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.wrap1{
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+}
+
