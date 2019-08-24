@@ -1,7 +1,7 @@
 
 
 function createNewItem() {
-
+  
   let name = window.prompt('What is the name for the Ironhack product?')
   let price = window.prompt('What is the price for the item?')
   let rowHTML = `  <div class="row flex">
@@ -54,7 +54,7 @@ function inputUpdate(e) {
 
 }
 
-window.onload = function () {
+window.onclick = function () {
 
   var deleteButtons = document.getElementsByClassName('btn-delete');
   let input = document.getElementsByClassName('input')
