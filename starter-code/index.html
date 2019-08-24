@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,87 +10,76 @@
   <link rel="stylesheet" href="./css/style.css">
   <title>Ironhack cart</title>
 </head>
+
 <body>
 
-   <h1>Ironhack Merchandising Shop</h1>
-      <div id="shopping">
-        <div class="row">
-          <p class="col">IronBubble</p>
-          <div class="col">
-            <span>$</span>
-            <p class="inline-block initialPrice price ">25.00</p>
-          </div>
-          <form class="col">
-            <label class="inline-block" for="price">Quantity:</label>
-            <input
-              class="inline-block initialQuantity input"
-              type="text"
-              name="price"
-              placeholder="0"
-            />
-          </form>
-          <div class="col">
-            <span>$</span>
-            <p class="inline-block individualTotal updated">0.00</p>
-          </div>
-          <button class="btn btn-danger btn-delete" >Delete</button>
+  <h1 class="flex">Ironhack Merchandising Shop</h1>
+  <div id="shopping">
 
-        </div>
-      <div class="row">
-          <p class="col">Iron</p>
-          <div class="col">
-            <span>$</span>
-            <p class="inline-block initialPrice  price">15.00</p>
-          </div>
-          <form class="col">
-            <label class="inline-block" for="price">Quantity:</label>
-            <input
-              class="inline-block initialQuantity input"
-              type="text"
-              name="price"
-              placeholder="0"
-            />
-          </form>
-          <div class="col">
-            <span>$</span>
-            <p class="inline-block individualTotal updated">0.00</p>
-          </div>
-          <button class="btn btn-danger btn-delete" >Delete</button>
+    
+  <div class="row flex">
+    <p class="col">IronCap</p>
+    <div class="col">
+      <span>$</span>
+      <p class="inline-block initialPrice  price">10.00</p>
+    </div>
+    <form class="col">
+      <label class="inline-block" for="price">Quantity:</label>
+      <input class="inline-block initialQuantity input" type="text" name="price" placeholder="0" />
+    </form>
+    <div class="col">
+      <span>$</span>
+      <p class="inline-block individualTotal values updated">0.00</p>
+    </div>
+    <button class="btn btn-danger btn-delete">Delete</button>
+  </div>
 
-        </div>
-        
-        
-      <div class="row">
-          <p class="col">Bubble</p>
-          <div class="col">
-            <span>$</span>
-            <p class="inline-block initialPrice  price">5.00</p>
-          </div>
-          <form class="col">
-            <label class="inline-block" for="price">Quantity:</label>
-            <input
-              class="inline-block initialQuantity input"
-              type="text"
-              name="price"
-              placeholder="0"
-            />
-          </form>
-          <div class="col">
-            <span>$</span>
-            <p class="inline-block individualTotal updated">0.00</p>
-          </div>
-          <button class="btn btn-danger btn-delete" >Delete</button>
+  <div class="row flex">
+    <p class="col">IronCar</p>
+    <div class="col">
+      <span>$</span>
+      <p class="inline-block initialPrice  price">5.00</p>
+    </div>
+    <form class="col">
+      <label class="inline-block" for="price">Quantity:</label>
+      <input class="inline-block initialQuantity input" type="text" name="price" placeholder="0" />
+    </form>
+    <div class="col">
+      <span>$</span>
+      <p class="inline-block individualTotal values updated">0.00</p>
+    </div>
+    <button class="btn btn-danger btn-delete">Delete</button>
+  </div>
+  
 
-        </div>
-      </div>
-      <div class="d-flex flex-row-reverse">
-        <button class="btn btn-light" id="new-item-create" >
-          Create New Line
-        </button>
-        <button class="btn btn-success" id="calc-prices-button">
-          Calculate Price
-        </button>
-      </div>
+
+  <div class="row flex">
+    <p class="col">IronBubble</p>
+    <div class="col">
+      <span>$</span>
+      <p class="inline-block initialPrice  price">1.00</p>
+    </div>
+    <form class="col">
+      <label class="inline-block" for="price">Quantity:</label>
+      <input class="inline-block initialQuantity input" type="text" name="price" placeholder="0" />
+    </form>
+    <div class="col">
+      <span>$</span>
+      <p class="inline-block individualTotal values updated">0.00</p>
+    </div>
+    <button class="btn btn-danger btn-delete">Delete</button>
+
+  </div>
+
+  </div>
+  <div class="d-flex flex-row-reverse">
+    <button class="btn btn-light" id="new-item-create">
+      Create New Line
+    </button>
+  </div>
+
+  <h1 class="flex">Total Price = $</h1>
+  <h1 class="total flex ">0.00</h1>
 </body>
 <script type="text/javascript" src="./js/index.js"></script>
 

@@ -62,3 +62,7 @@ label {
 label {
   padding-right: 5px;
 }
+
+.float {
+  float: inline-end;
+}
