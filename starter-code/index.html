@@ -7,15 +7,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
   <title>Ironhack cart</title>
-  <style>
-    
-    .product {
-      padding: 2rem;
-      margin-bottom: 2rem;
-      border-bottom: 1px solid #aaa;
-    }
-    
-  </style>
+  <script src="https://kit.fontawesome.com/51f6db6ed6.js"></script>
 </head>
 <body>
   
@@ -25,14 +17,16 @@
     
     <main>
       
-      <section>
+      <section class="cart-section">
         
-        <h2>Chart</h2>
+        <h2>Cart</h2>
+
+        <button class="button button--empty-cart">Empty cart</button>
         
-        <form id="chart" class="chart" method="POST" action="#">
+        <form id="chart" class="cart" method="POST" action="#">
           
           <div class="products">
-
+            
             <div class="product">
               <div>
                 <span class="product__name">IronBubble head</span>
@@ -42,13 +36,13 @@
               </div>
               <div class="product__quantity">
                 <label for="product-1">Quantity</label>
-                <input type="number" id="product-1" placeholder="Quantity">
+                <input type="number" min="0" id="product-1" placeholder="0">
               </div>
               <div>
                 <span class="product__total-price">0$</span>
               </div>
               <div>
-                <button class="product__delete-button">Delete</button>
+                <button class="button button--delete-product product__delete-button"><i class="fas fa-trash-alt"></i>Delete</button>
               </div>
             </div>
             
@@ -60,44 +54,33 @@
                 <span class="product__individual-price">25.00$</span>
               </div>
               <div class="product__quantity">
-                <label for="product-1">Quantity</label>
-                <input type="number" id="product-1" placeholder="Quantity">
+                <label for="product-2">Quantity</label>
+                <input type="number" min="0" id="product-2" placeholder="0">
               </div>
               <div>
                 <span class="product__total-price">0$</span>
               </div>
               <div>
-                <button class="product__delete-button">Delete</button>
-              </div>
-            </div>
-            
-            <div class="product">
-              <div>
-                <span class="product__name">IronBubble head</span>
-              </div>
-              <div>
-                <span class="product__individual-price">25.00$</span>
-              </div>
-              <div class="product__quantity">
-                <label for="product-1">Quantity</label>
-                <input type="number" id="product-1" placeholder="Quantity">
-              </div>
-              <div>
-                <span class="product__total-price">0$</span>
-              </div>
-              <div>
-                <button class="product__delete-button">Delete</button>
+                <button class="button button--delete-product product__delete-button"><i class="fas fa-trash-alt"></i>Delete</button>
               </div>
             </div>
             
           </div>
           
-          <div>
-            <input id="calculate-prices" type="submit" value="Calculate prices">
+          <div class="add-product">
+            <div class="product">
+              <div>
+                <input type="text" id="new-product-name" placeholder="Product name">
+                <input type="number" id="new-product-price" placeholder="Product price">
+              </div>
+              <div>
+                <button class="button button--new-product"><i class="fas fa-cart-plus"></i>Add product</button>
+              </div>
+            </div>
           </div>
           
           <div>
-            <span class="total-price"></span>
+            <span>Total price<span class="total-price">0$</span></span>
           </div>
           
         </form>
