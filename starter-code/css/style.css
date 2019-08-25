@@ -1,6 +1,20 @@
 input {
   border: solid 1px black;
 }
+h1 {
+  display:flex;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+.wrapper {
+  justify-content: space-between;
+  margin: 20px 10%;
+}
 
 .btn {
   display: inline-block;
