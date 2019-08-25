@@ -1,52 +1,51 @@
-function deleteItem(e){
 
-}
+function updatePriceByProduct() {
 
-function getPriceByProduct(itemNode){
+  let sumAllProducts = 0;
 
-}
+  let productInfo = document.querySelectorAll(".product-content")
 
-function updatePriceByProduct(productPrice, index){
+  productInfo.forEach(function (product) {
+    
+    let unit = product.querySelector(".unit-price").innerHTML;
+    let unitPrice= Number(unit.slice(1, 10));
+    
+    let itemQuantity = product.querySelector(".quantity").value;
 
+    let totalCost = unitPrice * itemQuantity;
+
+    let totalProductPrice = product.querySelector(".total-price");
+    totalProductPrice.innerHTML = `$ ${totalCost}`;
+
+    sumAllProducts += totalCost;
+  });
+
+  return sumAllProducts;
 }
 
 function getTotalPrice() {
 
+  let totalSum = updatePriceByProduct();
+  let totalPriceSum = document.querySelector(".price-total-sum");
+
+  totalPriceSum.innerHTML = `$${totalSum}`;
 }
 
-function createQuantityInput(){
+function deleteItem(e) {
 
+  let contentButton = e.currentTarget.parentElement.parentNode;
+  let content = document.querySelector(".product-list");
+
+  content.removeChild(contentButton);
 }
 
-function createDeleteButton(){
-
-}
-
-function createQuantityNode(){
-
-}
-
-function createItemNode(dataType, itemData){
-
-}
-
-function createNewItemRow(itemName, itemUnitPrice){
-
-}
-
-function createNewItem(){
-
-}
-
-window.onload = function(){
-  var calculatePriceButton = document.getElementById('calc-prices-button');
-  var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');
+window.onload = function () {
+  var calculatePriceButton = document.getElementById("calc-prices-button");
+  var deleteButtons = document.getElementsByClassName("btn-delete");
 
   calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
 
-  for(var i = 0; i<deleteButtons.length ; i++){
+  for (var i = 0; i < deleteButtons.length; i++) {
     deleteButtons[i].onclick = deleteItem;
   }
 };
