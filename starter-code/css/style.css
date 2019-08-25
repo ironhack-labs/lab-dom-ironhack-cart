@@ -1,7 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
 input {
   border: solid 1px black;
 }
-
+h1 {
+  text-align: center;
+}
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -36,6 +42,51 @@ input {
     border-color: #CF000F;
 }
 
+.btn-calculate {
+  display: block;
+  margin: auto;
+}
+
 .quantity {
   margin: 0 5px;
+  border-radius: 3px;
+  background-color: white;
 }
+
+.product-container, .new-product-form {
+  margin: 5% 10%;
+}
+
+.product-wrapper{
+  margin-left: 120px; 
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.new-product-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+.field {
+  width: 20%;
+}
+
+.toAdd{
+  height: 20px;
+  border-radius: 4px;
+  background-color: white;
+}
+.create{
+  color: #fff;
+  background-color: #848bd2;
+  border-color: #848bd2;
+  margin-left: 10px;
+}
+
