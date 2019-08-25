@@ -40,10 +40,10 @@ input {
   margin: 0 5px;
 }
 
-#wrapper1, #wrapper2{
+.wrapper{
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -52,4 +52,7 @@ h1 strong, #calculate{
   justify-content: center;
 }
 
-  
+#new-item-create{
+  position: fixed;
+  right: 0;
+}
