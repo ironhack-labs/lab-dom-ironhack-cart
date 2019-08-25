@@ -1,3 +1,44 @@
+* {
+  border-block: border-box;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+}
+
+h1 {
+  align-self: flex-end;
+  width: 57vw;
+}
+
+.products {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;  
+  width: 100vw;
+}
+
+.products > div {
+  width: 20%;
+}
+
+.products:first-of-type {
+  margin-left: 10px;
+}
+
+.unit-cost:before {
+  content: "$";
+}
+
+.total-price:before {
+  content: "$";
+}
+
 input {
   border: solid 1px black;
 }
