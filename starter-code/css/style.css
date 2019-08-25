@@ -9,7 +9,7 @@ main {
   align-items: center;
 }
 
-.products {
+.product {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -17,9 +17,9 @@ main {
   width: 100vw;
 }
 
-.products > div {
+.product > div {
   margin-left: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
   width: 18%;
 }
 
@@ -69,4 +69,10 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.create {
+  align-self: flex-start;
+  margin-left: 10px;
+  margin-bottom: 20px;
 }
