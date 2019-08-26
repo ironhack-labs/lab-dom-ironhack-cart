@@ -31,11 +31,15 @@ input {
 }
 
 .btn-delete {
-    color: #fff;
+    color: rgb(221, 206, 206);
     background-color: #CF000F;
     border-color: #CF000F;
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+.products {
+  color: black;
 }
