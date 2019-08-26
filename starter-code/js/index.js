@@ -2,8 +2,10 @@ function deleteItem(e){
 
 }
 
-function getPriceByProduct(itemNode){
-
+function getPriceByProduct(itemNode) {
+  let unitCost = itemNode.querySelector(".unit-cost").innerHTML;
+  let quantity = itemNode.querySelector(".quantity").value;
+  return unitCost * quantity;
 }
 
 function updatePriceByProduct(productPrice, index){
@@ -11,8 +13,15 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-
+  let orderTotal = 0;
+  document.querySelectorAll(".product").forEach(product => {
+    let productTotal = getPriceByProduct(product);
+    product.querySelector(".total-price").innerHTML = productTotal;
+    orderTotal += productTotal;
+  });
+  document.querySelector(".order-total").innerHTML = orderTotal;
 }
+
 
 function createQuantityInput(){
 

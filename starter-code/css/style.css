@@ -39,3 +39,19 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.product {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+
+}
+
+.cart {
+  padding: 50px;
+}
+
+h1{
+  text-align: center;
+}
+
