@@ -51,6 +51,8 @@ h1, h2 {
 .calculate {
   display: flex;
   justify-content: center;
-  margin: 30px;
-}
+  margin: 30px;}
 
+  .value::before{
+    content:"$";
+  }

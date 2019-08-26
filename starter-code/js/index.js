@@ -15,13 +15,13 @@ function getTotalPrice() {
   
   products.forEach(element => {
     let productPrice = parseInt(element.querySelector(".value").innerHTML);
-    console.log("el valor de este producto es :" + productPrice);
+    console.log( productPrice);
 
     let productQuantity = parseInt(element.querySelector(".input").value);
-    console.log("la cantidad de este producto es :" + productQuantity);
+    console.log(  productQuantity);
 
     let finalPrice = productPrice*productQuantity;
-    document.querySelector(".price_final").innerHTML= finalPrice;
+    document.querySelector(".price_final").innerHTML= parseInt(finalPrice);
     
     //con  productPrice un split para quitarle el dollar y asi poder sumar solo el numero
     //coger el inner html de price_final 
