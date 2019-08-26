@@ -54,8 +54,3 @@ h1, h2 {
   margin: 30px;
 }
 
-#cart2{
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-} 

@@ -3,26 +3,28 @@ function deleteItem(e){
 }
 
 function getPriceByProduct(itemNode){
-
-  const price = itemNode.querySelector(".first_price").innerHTML;
-  const input = itemNode.querySelector("input").value;
-  let price_final = itemNode.querySelector(".price_final");
-  let price2 = Number(price.slice(1));
-  let price_final2 = price2*input;
-  price_final.innerHTML = `$${price_final2}`
-  return price_final2
+//let price1 = getElementsByClassName("first_price").inn;
 }
 
 function updatePriceByProduct(productPrice, index){
 
 }
 function getTotalPrice() {
-  var arr = [];
-  const totalPrice = document.querySelectorAll(".cart");
-  totalPrice.forEach((e) => arr.push(getPriceByProduct(e)));
-  const big_total_price = document.querySelector(".big_total_price");
-  big_total_price.innerHTML = arr.reduce((acc, curr) => acc + curr);
-  }
+  let products = document.querySelectorAll(".product");
+  console.log("en el carro hay: " + products.length + " productos");
+  
+  products.forEach(element => {
+    let productPrice = element.querySelector(".value").innerHTML;
+    console.log("el valor de este producto es :" + productPrice);
+
+    let productQuantity = element.querySelector(".input").value;
+    console.log("la cantidad de este producto es :" + productQuantity);
+    
+    //con  productPrice un split para quitarle el dollar y asi poder sumar solo el numero
+    //coger el inner html de price_final 
+
+  });
+}
 
 function createQuantityInput(){
 
@@ -50,11 +52,11 @@ function createNewItem(){
 
 window.onload = function(){
   var calculatePriceButton = document.getElementById('calc-prices-button');
-  var createItemButton = document.getElementById('new-item-create');
+ // var createItemButton = document.getElementById('new-item-create');
   var deleteButtons = document.getElementsByClassName('btn-delete');
 
   calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
+  //createItemButton.onclick = createNewItem;
 
   for(var i = 0; i<deleteButtons.length ; i++){
     deleteButtons[i].onclick = deleteItem;
