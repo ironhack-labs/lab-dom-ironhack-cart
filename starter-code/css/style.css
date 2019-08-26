@@ -28,14 +28,57 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    border-radius: 2px;
+    margin: 5em;
+    padding: .6em .8em;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    border-radius: 2px;
+    padding: .2em .6em;
 }
 
 .quantity {
-  margin: 0 5px;
+  border-radius: 2px;
+  padding: .2em .6em;
 }
+
+body h1 {
+  text-align: center;
+  margin: 1.5em;
+}
+
+#cart {
+  margin: 3em;
+}
+
+.calculate-price {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.create-item {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: .2em .6em;
+}
+
+.create-item input {
+  border-radius: 2px;
+  padding: .2em .6em;
+
+}
+
+.create-item button {
+  border-radius: 2px;
+  background-color: lightskyblue;
+  border-color: lightskyblue;
+  padding: .2em .6em;
+  color: white;
+}
+
