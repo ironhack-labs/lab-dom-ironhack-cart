@@ -5,9 +5,9 @@
 
  function updatePriceByProduct() {
   var priceUnit = parseInt(document.querySelector("#priceValue").innerHTML);
-  priceUnit = priceUnit * parseInt(document.querySelector("#quatity").value);
+  priceUnit = priceUnit * parseInt(document.querySelector("#quatity").innerHTML);
   document.querySelector("#totalPriceProduct").innerHTML = priceUnit;
-  console.log(document.querySelector("#totalPriceProduct").innerHTML);  
+  //console.log(document.querySelector("#totalPriceProduct").innerHTML);  
 }
 window.onload = function() {
   var priceUnittot = document.querySelector("#calcPrices");
