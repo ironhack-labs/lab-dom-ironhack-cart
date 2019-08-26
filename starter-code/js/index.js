@@ -1,7 +1,8 @@
-function deleteItem(btn){ 
-    var product = document.getElementById('btn-delete');
-    product.parentNode.removeChild(product);
-    return false;
+function deleteItem(e){ 
+  button.onclick = function(){
+  let product = document.getElementById("btn-delete");
+  parent.removeChild(product);
+  }
 }
 
 function getPriceByProduct(itemNode){
