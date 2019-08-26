@@ -1,85 +1,89 @@
 var totalPrice = getTotalPrice();
-var product = document.querySelector("body > div > div.flex.cart-info > div:nth-child(1) > h3");
-var row = document.getElementsByClassName('row');
-function deleteItem(e){
+var row = document.getElementsByClassName("row");
 
-}
+var product = document.querySelector(
+  "body > div > div.flex.cart-info > div:nth-child(1) > h3"
+);
+var delBtn = document.getElementsByClassName("btn-delete").length;
+var body = document.getElementsByTagName("body");
 
-function getPriceByProduct(itemNode){
-
-}
-
-function updatePriceByProduct(productPrice, index){
-
-}
+function deleteItem(e) {
+  console.log(e,this)
+  window.t =this;
+  //this.parentNode.remove()
+  e.target.parentNode.parentNode.remove()
+      
+    }
+  //console.log(document.getElementsByClassName("btn-delete"))
+  // console.log(row);
+  // console.log(e);
+  // console.log(item);
+  // console.log(document.getElementsByClassName('cart-info'))
+  //console.log(row);
+function getPriceByProduct(itemNode) {}
+function updatePriceByProduct(productPrice, index) {}
 
 function getTotalPrice(productPrice) {
-  document.getElementById('btn-cal-price').onclick = function calculatePrice(e) {
-    for(r=0;r<row.length;r++){
-    let productPrice = document.getElementsByClassName('product-price')[r].children[0].children[0].innerText.replace('$',"");
-    let qty = document.getElementsByClassName('quantity')[r].children[1].value
-    console.log(qty);
-    console.log(productPrice);
-    totalPrice = productPrice * qty;
-    document.getElementsByClassName('total')[r].children[0].children[0].innerText = `$${totalPrice}`
-  }
-  calculateTotalPrice();
-}
+  document.getElementById("btn-cal-price").onclick = function calculatePrice(e) {
+    for (r = 0; r < row.length; r++) {
+      let productPrice = document
+        .getElementsByClassName("product-price")
+        [r].children[0].children[0].innerText.replace("$", "");
+      let qty = document.getElementsByClassName("quantity")[r].children[1]
+        .value;
+      console.log(qty);
+      console.log(productPrice);
+      totalPrice = productPrice * qty;
+      document.getElementsByClassName("total")[
+        r
+      ].children[0].children[0].innerText = `$${totalPrice}`;
+      console.log(e);
+    }
+    calculateTotalPrice();
+  };
 }
 //.innerText.replace('$','');
 //.children[0].children[0].innerText
-function createQuantityInput(){
+function createQuantityInput() {}
 
-}
+function createDeleteButton() {}
 
-function createDeleteButton(){
+function createQuantityNode() {}
 
-}
+function createItemNode(dataType, itemData) {}
 
-function createQuantityNode(){
+function createNewItemRow(itemName, itemUnitPrice) {}
 
-}
+function createNewItem() {}
 
-function createItemNode(dataType, itemData){
+window.onload = function(){
+  var calculatePriceButton = document.getElementById('calc-prices-button');
+  var createItemButton = document.getElementById('new-item-create');
+  var deleteButtons = document.getElementsByClassName('btn-delete');
 
-}
+  //calculatePriceButton.onclick = getTotalPrice;
+  //createItemButton.onclick = createNewItem;
 
-function createNewItemRow(itemName, itemUnitPrice){
+  for(i = 0; i<deleteButtons.length ; i++){
+    deleteButtons[i].onclick = deleteItem;
+  }
+};
 
-}
-
-function createNewItem(){
-
-}
-
-// window.onload = function(){
-//   var calculatePriceButton = document.getElementById('calc-prices-button');
-//   var createItemButton = document.getElementById('new-item-create');
-//   var deleteButtons = document.getElementsByClassName('btn-delete');
-
-//   calculatePriceButton.onclick = getTotalPrice;
-//   createItemButton.onclick = createNewItem;
-
-//   for(var i = 0; i<deleteButtons.length ; i++){
-//     deleteButtons[i].onclick = deleteItem;
-//   }
-// };
-
-//document.querySelector("#btn-cal-price > button") = calculatePrice() ;
-
+// /document.querySelector("#btn-cal-price > button") = calculatePrice() ;
 
 function calculateTotalPrice() {
-
-  let total = 0
-
-  for(r=0; r<row.length; r++){
-    let singleItemPrice = parseFloat(document.getElementsByClassName('total')[r].innerText.slice(1))
-    console.log(singleItemPrice)
-    total += singleItemPrice
-  
+  let total = 0;
+  for (r = 0; r < row.length; r++) {
+    let singleItemPrice = parseFloat(
+      document.getElementsByClassName("total")[r].innerText.slice(1)
+    );
+    console.log(singleItemPrice);
+    total += singleItemPrice;
+    console.log(total);
   }
-
-  console.log(total)
-  
-
+  document.getElementById(
+    "total-order-price"
+  ).children[0].children[0].innerText = `$${total}`;
 }
+
+console.lo 
