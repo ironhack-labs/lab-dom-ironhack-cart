@@ -5,10 +5,112 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap-grid.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+  <h1>IRONHACK MERCHANDISING SHOP</h1>
+  
+  <div class="container itemContainer">
+    <div class="row align-items-center justify-content-between">
+      <div class="col-lg">
+        <span class="productName">
+          IronBeer
+        </span>
+      </div>
+    
+      <div class="col-lg">
+        <span class="unitCost">
+          0.50
+        </span>
+      </div>
+    
+      <div class="col-lg-auto">
+        <form>
+          <label for="unitNumber">
+            QTY
+            <input type="number" class="unitNumber" name="unitNumber" min="0" value="0">
+          </label>
+        </form>
+      </div>
+      
+    
+      <div class="col-lg">
+        <span class="totalPrice">
+          0
+        </span>
+      </div>
+
+      <div class="col-lg">
+        <button class="btn-delete">
+          Delete
+        </button>
+      </div>
+    </div>
+
+    <div class="row align-items-center justify-content-between">
+        <div class="col-lg">
+          <span class="productName">
+            IronUnicorn
+          </span>
+        </div>
+      
+        <div class="col-lg">
+          <span class="unitCost">
+            12
+          </span>
+        </div>
+      
+        <div class="col-lg-auto">
+          <form>
+            <label for="unitNumber">
+              QTY
+              <input type="number" class="unitNumber" name="unitNumber" min="0" value="0">
+            </label>
+          </form>
+        </div>
+        
+      
+        <div class="col-lg">
+          <span class="totalPrice">
+            0
+          </span>
+        </div>
+  
+        <div class="col-lg">
+          <button class="btn-delete">
+            Delete
+          </button>
+        </div>
+      </div>
+
+
+
+
+  </div>
+
+  <div class="newItem">
+      <input class="newItemName" placeholder="Name of the item"/>
+      <input class="newItemPrice" placeholder="Price of the item"/>
+      <button id="addButton">
+        Add
+      </button>
+  </div>
+
+
+
+  <div class="buttonSuccess">
+      <button id="calc-prices-button" class="btn-success">
+        Calculate Prices
+      </button>
+    </div>
+
+  <div class="finalPrice">
+      <h1>Total Price: <span id="finalPrice">0</span></h1>
+  </div>
+  
+<script src="./js/index.js"></script>
+
 </body>
 </html>

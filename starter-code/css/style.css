@@ -2,7 +2,18 @@ input {
   border: solid 1px black;
 }
 
-.btn {
+h1 {
+  text-align: center;
+}
+
+
+
+.buttonSuccess {
+  display: flex;
+  justify-content: center;
+}
+
+button {
   display: inline-block;
   padding: 6px 12px;
   margin-bottom: 0;
@@ -36,6 +47,30 @@ input {
     border-color: #CF000F;
 }
 
+.unitCost:after,
+.totalPrice:after,
+#finalPrice:after {
+  content: "€";
+}
+
 .quantity {
   margin: 0 5px;
+}
+
+.row {
+  margin: 20px;
+}
+
+.newItem {
+  display: flex;
+  justify-content: center;
+  margin: 40px;
+}
+
+.newItem input {
+  padding: 0 10px;
+}
+
+.newItemPrice {
+  margin: 0 40px;
 }
