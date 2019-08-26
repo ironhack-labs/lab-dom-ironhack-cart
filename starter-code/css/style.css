@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 input {
   border: solid 1px black;
 }
@@ -25,17 +28,42 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #cf000f;
+  border-color: #cf000f;
 }
 
 .quantity {
   margin: 0 5px;
+}
+header {
+  display: flex;
+  justify-content: flex-start;
+}
+h1 {
+  text-align: left;
+  margin-bottom: 2px;
+  padding-left: 490px;
+}
+article, h2 {
+  font-size: 14px;
+  font-weight: 400;
+}
+article div.productInfo {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+article div.productInfo div {
+  padding: 40px;
+}
+div.finishPurchase {
+  display: flex;
+  justify-content: center;
 }
