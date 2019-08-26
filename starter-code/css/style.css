@@ -2,6 +2,13 @@ input {
   border: solid 1px black;
 }
 
+body{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -28,6 +35,7 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    
 }
 
 .btn-delete {
@@ -39,3 +47,41 @@ input {
 .quantity {
   margin: 0 5px;
 }
+.container{
+  width:100%;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.grande{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.anadir{
+  width: 50%;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+input{
+  padding: 10px 15px;
+  border-radius: 4px;
+}
+h1,h2{
+  text-align: center;
+}
+
+.btn-anadir{
+    color: #fff;
+    background-color: rgb(32, 99, 155);
+    border-color: rgb(32, 99, 155);
+}
+
