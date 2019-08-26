@@ -1,5 +1,27 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container h1 {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
 input {
-  border: solid 1px black;
+  height: calc(1.5em + .75rem + 2px);
+  padding: .375rem .75rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
 }
 
 .btn {
@@ -36,6 +58,62 @@ input {
     border-color: #CF000F;
 }
 
+.btn-create {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
 .quantity {
   margin: 0 5px;
+}
+
+/* Products */
+.products {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 960px;
+  padding: 6px 12px;
+  margin-bottom: 32px;
+}
+
+.product {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 6px 12px;
+}
+
+span.product__name {
+  min-width: 320px;
+  display: inline-block;
+}
+
+/* Product create */
+.product-create {
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 24px;
+}
+
+.product-create form {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 12px 24px;
+  margin-bottom: 24px;
+  border-top: 1px solid #ced4da;
+}
+
+#totalPriceCalc::before,
+.product__price::before,
+.product__totalPrice::before {
+  content: "$";
 }
