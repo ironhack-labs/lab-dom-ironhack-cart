@@ -1,14 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="text/javascript" src="./js/index.js"></script>
+    <title>Ironhack cart</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Ironhack Merchandising Shop</h1>
+      <div><span id="tittleProduct">IronBubble-head</span></div>
+      <div id="priceProduct">$<span id="priceValue">25.00</span></div>
+      <div id="quantityProduct-cont"><label for="quantity">QTY<input id="quantity" class="quantity" type="text"></label></div>
+      <div id="totalPrice-cont">$<span id="totalPriceProduct">0.0</span></div>
+      <div><button class="btn btn-delete">Delete</button></div>
+      <div class="calc-prices-button"><button id="calcPrices" class="btn btn-success">Calculate Prices</button></div>
+    </div>
+    <script src="./js/index.js"></script>
+  </body>
 </html>

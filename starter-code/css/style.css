@@ -1,3 +1,19 @@
+*{
+  box-sizing: border-box;
+}
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+h1{
+  width: 100vw;
+  text-align: left;
+  margin-left: 45%;
+  padding-right:30%;
+}
 input {
   border: solid 1px black;
 }
@@ -38,4 +54,12 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+.calc-prices-button{
+width:100vw;
+display:flex;
+justify-content: center;
+align-items: center;
+padding-top: 20px;
+padding-left:50px;
 }
