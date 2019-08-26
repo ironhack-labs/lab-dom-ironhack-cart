@@ -6,9 +6,72 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
+  
   <title>Ironhack cart</title>
 </head>
 <body>
+<header>
+  <h1 class="one">Ironhack</h1>
+  <h1 class="two">Merchandising Shop</h1>
+</header>
+<div id="product">
+  <ul class="product-list">
+  <li id="lineOne"class="product-group" >
+  <div>
+    <span>IronBobble-head</span> 
+  </div>
+  <div>
+      <span>$25.00</span> 
+  </div>
+  <div>
+    <label class="quantity">QTY</label>
+    <input name="quantity" type="text">
+  </div>
+  <div>
+    <span>
+      $0.00
+    </span>
+  </div>
+  <div>
+    <button id="product-one" class="btn-delete">Delete</button>
+  </div>
+  </li>
+  <li id="lineTwo" class="product-group">
+  <div>
+      <span>IronShirt</span> 
+    </div>
+    <div>
+        <span>$15.00</span> 
+    </div>
+    <div>
+      <label class="quantity">QTY</label>
+      <input name="quantity" type="text">
+    </div>
+    <div>
+      <span>
+        $0.00
+      </span>
+    </div>
+    
+    <div>
+      <button id="del" class="btn-delete" class="product-two">Delete</button>
+    </div>
+  </li>
+  <li id="linethree" class="product-group">
+
+  </li>
+</ul>
+</div>
+<div id="calc-prices-button" class="calculatePrices">
+  <button>Calculate Prices</button>
+</div>
+<div id="new-item-create" >
+    <button class="add-row">New Item</button>
+</div>
+<div class="total">
+  <h1>Total Price: $<span>0</span></h1>
+</div>
+
+<script type="text/javascript" src="./js/index.js"></script>
 </body>
 </html>

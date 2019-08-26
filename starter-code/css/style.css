@@ -22,6 +22,29 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+  background: RGB(110,175,100);
+}
+.calculatePrices button{
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: RGB(110,175,100);
 }
 
 .btn-success {
@@ -38,4 +61,54 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+#product{
+
+  margin: 50px;
+}
+
+header .one{
+  display: flex;
+  justify-content: center;
+}
+
+header .two{
+  display: flex;
+  justify-content: center;
+}
+
+.calculatePrices{
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+ul{
+  list-style-type: none;
+  
+  
+}
+.product-group{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  
+}
+#product > ul > li:nth-child(1) > div:nth-child(1) > span{
+  width:100px;
+}
+#product > ul > li:nth-child(2) > div:nth-child(1) > span{
+  width: 100px;
+}
+
+.product-group div {
+  width: 18%
+}
+.total{
+display: flex;
+justify-content: center;
+}
+#new-item-create{
+  display: flex;
+  justify-content: center;
 }
