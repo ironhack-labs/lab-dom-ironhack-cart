@@ -1,3 +1,27 @@
+#header {
+  display: flex;
+  justify-content: center;
+}
+
+#products {
+  display: flex;
+  flex-direction: row;
+  float: left;
+  justify-content: space-between;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.product-name {
+  display: flex;
+  flex-direction: column;
+}
+
+.quantity {
+  display: flex;
+  flex-direction: column;
+}
+
 input {
   border: solid 1px black;
 }
@@ -24,10 +48,11 @@ input {
   border-radius: 4px;
 }
 
-.btn-success {
+.calc-prices-button {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    display: flex;
 }
 
 .btn-delete {
@@ -38,4 +63,13 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+body {
+  margin: 20px;
+}
+
+body h1 {
+  display: flex;
+  justify-content: center;
 }
