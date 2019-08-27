@@ -10,5 +10,41 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <h1 id="title">IronHack Merchandising Shop</h1>
+  <div id="all-products">
+    <div class ="product">
+      <span class="product-name">IronBubble-head</span>
+      <span class = "product-price">$25.00</span>
+      <div class="qte">
+          <label>QTY</label>
+          <input class="quantity" type="number" name="QTY">
+      </div>
+      <span class = "product-sum-price">$0.00</span>
+      <button class ="btn btn-delete">Delete</button>
+    </div>
+    <div class ="product">
+        <span class="product-name">IronShirt</span>
+        <span class = "product-price">$15.00</span>
+        <div class="qte">
+            <label>QTY</label>
+            <input class="quantity" type="number" name="QTY">
+        </div>
+        <span class = "product-sum-price">$0.00</span>
+        <button class ="btn btn-delete">Delete</button>
+      </div>
+  </div> 
+    <div class="add-product">
+      <div id="input">
+        <label for="">Name</label>
+          <input id= "new-name" type="text" class="new new-product-name">
+         <label for="">Price</label>
+          <input id= "new-price" type="text" class="new new-product-price">
+      </div>
+      <button id = "new-item-create" class="btn btn-add">Create Product</button>
+    </div>
+  <button id = "calc-prices-button" class ="btn-success">Calculate Prices</button>
+  <h2 id ="total-price">Total Price: </h2>
+
 </body>
+
 </html>
