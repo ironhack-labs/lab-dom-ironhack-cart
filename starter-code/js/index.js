@@ -8,23 +8,24 @@ var delBtn = document.getElementsByClassName("btn-delete").length;
 var body = document.getElementsByTagName("body");
 
 function deleteItem(e) {
-  console.log(e,this)
-  window.t =this;
+  console.log(e, this);
+  window.t = this;
   //this.parentNode.remove()
-  e.target.parentNode.parentNode.remove()
-      
-    }
-  //console.log(document.getElementsByClassName("btn-delete"))
-  // console.log(row);
-  // console.log(e);
-  // console.log(item);
-  // console.log(document.getElementsByClassName('cart-info'))
-  //console.log(row);
+  e.target.parentNode.parentNode.remove();
+}
+//console.log(document.getElementsByClassName("btn-delete"))
+// console.log(row);
+// console.log(e);
+// console.log(item);
+// console.log(document.getElementsByClassName('cart-info'))
+//console.log(row);
 function getPriceByProduct(itemNode) {}
 function updatePriceByProduct(productPrice, index) {}
 
 function getTotalPrice(productPrice) {
-  document.getElementById("btn-cal-price").onclick = function calculatePrice(e) {
+  document.getElementById("btn-cal-price").onclick = function calculatePrice(
+    e
+  ) {
     for (r = 0; r < row.length; r++) {
       let productPrice = document
         .getElementsByClassName("product-price")
@@ -54,17 +55,53 @@ function createItemNode(dataType, itemData) {}
 
 function createNewItemRow(itemName, itemUnitPrice) {}
 
-function createNewItem() {}
 
-window.onload = function(){
-  var calculatePriceButton = document.getElementById('calc-prices-button');
-  var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');
+
+function createNewItem() {
+  document.getElementById("create-button").onclick = e => {
+    
+    console.log(e, this);
+    let productName = document.getElementById("productName").value;
+    let productQuantity = document.getElementById("quantity").value;
+    let newItem = `<div class="row">
+<div class="flex cart-info">
+  <div id="Product-name">
+    <h3>${productName}</h3>
+  </div>
+  <div class="product-price">
+    <span><h3>$25.00</h3></span>
+  </div>
+  <div>
+    <form action="" class="quantity">
+      <label for= "QTY">QTY</label>
+      <input type="text" />${productQuantity}
+    </form>
+  </div>
+  <div class="total">
+    <span><h3>$0.00</h3></span>
+  </div>
+  <div>
+    <button class="btn-delete" id="sample1" type="button">Delete</button>
+  </div>
+</div>
+</div>
+</div>`;
+    document.getElementById("cart").innerHTML += newItem;
+    console.log(document.getElementById("cart"))
+  };
+}
+createNewItem();
+
+
+window.onload = function() {
+  var calculatePriceButton = document.getElementById("calc-prices-button");
+  var createItemButton = document.getElementById("new-item-create");
+  var deleteButtons = document.getElementsByClassName("btn-delete");
 
   //calculatePriceButton.onclick = getTotalPrice;
   //createItemButton.onclick = createNewItem;
 
-  for(i = 0; i<deleteButtons.length ; i++){
+  for (i = 0; i < deleteButtons.length; i++) {
     deleteButtons[i].onclick = deleteItem;
   }
 };
@@ -86,4 +123,4 @@ function calculateTotalPrice() {
   ).children[0].children[0].innerText = `$${total}`;
 }
 
-console.lo 
+console.lo;

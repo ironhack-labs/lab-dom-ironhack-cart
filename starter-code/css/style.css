@@ -74,3 +74,9 @@ input {
 .total-price {
   margin: 0 auto;
 }
+
+.newProduct{
+  display:flex;
+  justify-content:space-around;
+  margin: 2em 0;
+}
