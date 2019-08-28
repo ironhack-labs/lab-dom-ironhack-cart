@@ -2,6 +2,13 @@ input {
   border: solid 1px black;
 }
 
+/* .logo{
+  display: flex;
+  position: relative;
+  width: 10px;
+  height: 10px;
+} */
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -28,6 +35,7 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+
 }
 
 .btn-delete {
@@ -39,3 +47,31 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.container{
+  display :flex;
+  justify-content: space-around;
+  margin-bottom: 20px; 
+  text-align: center;
+  align-items: center;
+}
+
+#calc-prices-button{
+  display: flex;
+  justify-content: center;
+}
+
+h1{
+  padding-left: 600px; 
+  margin-bottom: 20px; 
+}
+
+h2{
+  display: flex;
+  justify-content: center;
+}
+
+.container div{
+  width: 15%; 
+}
+
