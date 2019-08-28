@@ -1,5 +1,12 @@
+body {
+  font-size: 14px;
+}
 input {
   border: solid 1px black;
+}
+
+h1 {
+  text-align: center;
 }
 
 .btn {
@@ -25,9 +32,10 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  margin: 2rem 0;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
@@ -39,3 +47,73 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+input {
+  max-width: 100%;
+}
+.container {
+  display:flex;
+  flex:1;
+  align-items: baseline;
+  justify-content: space-evenly;
+  margin: auto;
+}
+
+.product {
+  max-width: 16%;
+  margin-right: 1%;
+  display:flex;
+}
+
+.product:last-child {
+  margin-right: 0;
+}
+
+.big-container {
+  width: 100%;
+  display:flex;
+  justify-content: center;
+}
+
+#insert-coins-here {
+  flex-direction: column;
+}
+
+
+/* bottom */
+.input-container {
+  display: flex;
+  flex: flex-start;
+  width: 10px;
+}
+/*
+.container {
+ display: flex; 
+ width: 90%;
+ flex-direction: column;
+}
+
+.little-container {
+  display: flex;
+  width: 90%;
+  justify-content: center;
+} 
+
+header {
+  text-align: center;
+}
+
+.item {
+  display:flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.flexone {
+  flex:3;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.flextwo {
+  flex:4;
+} */
