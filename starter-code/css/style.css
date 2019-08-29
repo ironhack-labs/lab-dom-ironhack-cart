@@ -1,5 +1,6 @@
 input {
   border: solid 1px black;
+  
 }
 
 .btn {
@@ -28,14 +29,21 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    padding: 15px;
+  border-radius: 11px;
+  margin-top: 15px;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
+    padding: 15px;
+    border-radius: 11px;
+    margin-top: 15px;
 }
 
 .quantity {
   margin: 0 5px;
+  
 }
