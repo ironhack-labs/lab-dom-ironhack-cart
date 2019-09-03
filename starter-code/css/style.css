@@ -1,5 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
 input {
   border: solid 1px black;
+}
+
+body {
+  padding: 0;
+  margin: 0;
 }
 
 .btn {
@@ -25,109 +34,68 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
-    margin-right:3rem;
-}
-.btn-create {
-    color: #fff;
-    background-color: #3a1ca8;
-    border-color: #3a1ca8;
-}
-
-.container{
-  width:90%;
-  border-bottom:1px solid black;
-  display : grid;
-  grid-template-columns: repeat(6,16%);
-  height:80%;
-  align-items:center;
-  justify-items: center;
-  margin-top : 2rem;
-  
-}
-
-#add{
-  display : flex;
-  justify-content : space-around;
-  align-items : center;
-  margin : 0 8%;
-}
-#total_price{
-  display : flex;
-  height:50px;
-  justify-content : space-around;
-  align-items : center;
-  margin : 1rem 8%;
-}
-
-/* .content{
-
-} */
-.titre-total-yo{
-  height:50px;
-  width : 50px;
-
-}
-
-.first{
-  display:grid;
-  grid-column:1 / span 1;
-  place-self:center;
-}
-.second{
-  display:grid;
-  grid-column-start:2 ;
-  place-self:center;
-}
-.third{
-  display:grid;
-  grid-column-start:3 ;
-  place-self:center;
-}
-.fourth{
-  display:grid;
-  grid-column-start:4 ;
-  place-self:center;
-}
-.fifth{
-  display:grid;
-  grid-column-start:5 ;
-  place-self:center;
-}
-.sixth{
-  display:grid;
-  grid-column-start:6 ;
-  place-self:center;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
-}
-#titre{
-  width : 15%;
-  height : auto;
-  display : flex;
-  flex-flow : row wrap;
-  align-items:flex-end;
+  color: #fff;
+  background-color: #cf000f;
+  border-color: #cf000f;
 }
 
 .quantity {
   margin: 0 5px;
 }
 
-#main{
-  padding : 2rem;
-  display:flex;
+main {
+  display: flex;
   justify-content: center;
-  flex-flow: row wrap;
-  width:80%;
-  margin : 0 8%;
+  align-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  width: 100vw;
 }
 
-body{
-  width : 100%;
+main > div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+main div div {
+  display: flex;
+  justify-content: space-evenly;
+  align-self: stretch;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+main div div span {
+  width: 20%;
+}
+
+#create {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  align-items: center;
+  padding: 0 35px;
+}
+
+#create div {
+  display: inline;
+}
+
+#create input:first-child {
+  margin-right: 70px;
+}
+
+.btn-create {
+  background-color: gainsboro;
+  border-color: gainsboro;
 }

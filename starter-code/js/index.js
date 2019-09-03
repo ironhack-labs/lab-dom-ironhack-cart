@@ -1,95 +1,62 @@
-function deleteItem(d){
-  console.log(d.target)
+const btnCalculate = document.querySelector('#calculate')
+const btnCreate = document.querySelector('.btn-create')
+const main = document.querySelector('main div')
+const yaEsLoMenos = document.querySelector('#totalPrice')
+const yaNoTeQuiero = document.querySelectorAll('.btn-delete')
 
-  var yoyo = d.target.parentElement;
- console.log(yoyo)
- var tata = yoyo.parentElement;
- var chapo = tata.parentElement;
-  chapo.removeChild(tata);
-  console.log(tata);
+const calculatePrice = () => {
+  const prices = document.querySelectorAll('.price')
+  const qty = document.querySelectorAll('.qty input')
+  const tot = document.querySelectorAll('.total')
+  let totalPrice = 0
+  let total = 0
 
-}
-
-function getPriceByProduct(itemNode){
- let productPrice = itemNode.querySelector('.price').innerHTML;
- let quant = itemNode.querySelector('input').value;
- let priceItem = productPrice * quant;
- itemNode.querySelector('.total').innerHTML = `$${priceItem.toFixed(2)}`;
-  console.log(priceItem);
-return priceItem;
-}
-
-// function updatePriceByProduct(productPrice, index){
-
-// }
-
-function getTotalPrice() {
-  cal = [];
-  fullTotal=document.getElementById('final_price');
-  document.querySelectorAll('.container').forEach((cont)=>{
-    cal.push(getPriceByProduct(cont));
-  });
-  console.log(cal);
-  fullTotal.innerHTML = `$${(cal.reduce((a,b)=>a+b)).toFixed(2)}`;
-
-} 
-
-function createQuantityInput(){
-
-}
-
-function createDeleteButton(){
-
-}
-
-function createQuantityNode(){
-
-}
-
-function createItemNode(dataType, itemData){
-
-}
-
-function createNewItemRow(itemName, itemUnitPrice){
-
-}
-
-function createNewItem(){
-  var name = document.getElementById("new_1").value;
-  var price = document.getElementById("new_2").value;
-  // var section = document.getElementById("main");
-  newProduct = document.createElement('div');
-  newProduct.classList.add('container');
-  newProduct.innerHTML = `<div class="first-item"><span class="name">${name}</span></div>
-  <div class="second-item"><span class="price">${price}</span></div>
-  <div class="third-item"><span class="qty">QTY</span></div>
-  <div  class="fourth-item"><input type="number" id="amount2" min="1" class="amount" max="100"></div>
-  <div  class="fifth-item"><span class="total">$</span></div>
-  <div  class="sixth-item"><button class="btn-delete btn">Delete</button></div>`;
-  var finalNewProduct = main.appendChild(newProduct);
-  console.log(finalNewProduct);
-  console.log(newProduct);
-  
-  var deleteButtons = document.getElementsByClassName('btn-delete');
-  for(var i = 0; i<deleteButtons.length ; i++){
-    deleteButtons[i].onclick = deleteItem;
+  for (i = 0; i < prices.length; i++) {
+    total = parseFloat(prices[i].innerHTML.match(/[0-9]/g).join('')) / 100
+    total *= parseFloat(qty[i].value)
+    tot[i].innerText = `$ ${total.toFixed(2)}`
+    totalPrice += total
   }
-  
-  return finalNewProduct;
+  yaEsLoMenos.innerText = totalPrice
+}
+const deleteProduct = e => {
+  const seVa = e.target.parentElement
+  console.log(seVa)
+  main.removeChild(seVa)
 
-
+  calculatePrice()
 }
 
-window.onload = function(){
-  var calculatePriceButton = document.getElementById('precio');
-  var createItemButton = document.getElementById('new-item-create');
-  var deleteButtons = document.getElementsByClassName('btn-delete');
+const addProduct = () => {
+  const inputName = document.querySelector('#create input')
+  const inputPrice = document.querySelectorAll('#create input')[1]
 
-  calculatePriceButton.onclick = getTotalPrice;
-  createItemButton.onclick = createNewItem;
+  if (inputName.value.trim() === '' || inputPrice.value.trim() === '') return
 
-  for(var i = 0; i<deleteButtons.length ; i++){
-    deleteButtons[i].onclick = deleteItem;
-  }
-  
-};
+  const div = document.createElement('div')
+  const spanName = document.createElement('span')
+  spanName.innerText = inputName.value
+  const spanPrice = document.createElement('span')
+  spanPrice.innerText = `$ ${parseFloat(inputPrice.value).toFixed(2)}`
+  spanPrice.className = 'price'
+
+  div.appendChild(spanName)
+  div.appendChild(spanPrice)
+
+  div.innerHTML +=
+    '<span class="qty"><label for="QTY">QTY</label> <input type="number" value=0></span><span class="total" > $0 .00 </span>'
+
+  const btnBorrar = document.createElement('button')
+  btnBorrar.innerText = 'Delete'
+  btnBorrar.className = 'btn-delete btn delete'
+  btnBorrar.onclick = deleteProduct
+  div.appendChild(btnBorrar)
+
+  main.appendChild(div)
+  inputName.value = ''
+  inputPrice.value = ''
+}
+
+btnCalculate.onclick = calculatePrice
+btnCreate.onclick = addProduct
+yaNoTeQuiero[0].onclick = deleteProduct
