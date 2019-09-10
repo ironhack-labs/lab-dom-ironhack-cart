@@ -1,3 +1,47 @@
+body {
+  width: 100vw;
+  margin: 20px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header, footer {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+}
+
+.empty-box {
+  width: 50%;
+}
+
+.text-box {
+  width: 50%;
+}
+
+.title h1{
+  margin: 0px
+}
+
+.products {
+  margin: 40px 0 0 0;
+  width: 90%;
+}
+
+.row {
+  margin: 0 0 40px 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.unit-name {
+  width: 15%;
+}
+
 input {
   border: solid 1px black;
 }
@@ -25,6 +69,7 @@ input {
 }
 
 .btn-success {
+    margin: 50px 0 30px 140px;
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
@@ -39,3 +84,37 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.create-input-container {
+  margin: 0;
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+}
+
+.input-fields {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+}
+
+.input-box {
+  width: 50%
+}
+
+.create-input {
+  margin: 0;
+  width: 150px;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.input-button {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+
