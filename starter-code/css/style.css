@@ -28,6 +28,8 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    display: block;
+    margin: 50px auto;
 }
 
 .btn-delete {
@@ -36,6 +38,41 @@ input {
     border-color: #CF000F;
 }
 
+.row{
+  display:flex;
+  padding-top: 70px;
+  justify-content: space-around;
+}
+
 .quantity {
   margin: 0 5px;
+}
+
+.row > div {
+  width: 250px;
+  display: flex;
+  justify-content: center;
+}
+
+#final-price{
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+}
+
+#create-new{
+  padding-top: 20px;
+}
+
+#create-new form{
+  display: flex;
+  padding: 0 90px;
+  justify-content: space-between;
+}
+#create-new form input {
+  margin-left: 10px;
+}
+
+#create-new form button {
+  margin-left: auto;
 }

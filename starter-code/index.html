@@ -9,6 +9,70 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
-<body>
+  <body>
+  <div id="products">
+  <div class="row">
+    <div>
+      <span>
+        IronBubble-head
+      </span>
+    </div>
+    <div>
+        <span>
+          $ <span class="price">25.00</span>
+        </span>
+    </div>
+    <div>
+      <form>
+        <label for="qty">QTY</label>
+        <input type="number" name="qty" id="qty" value="0">
+      </form>
+    </div>
+    <div>
+        <span>
+          $ <span class="product-price">0.00</span>
+        </span>
+    </div>
+    <div>
+      <button class="btn btn-delete" type="button" value="Delete">Delete</button>
+    </div>
+  </div>
+  <div class="row">
+      <div>
+        <span>
+          IronShirt
+        </span>
+      </div>
+      <div>
+          <span>
+            $ <span class="price">15.00</span>
+          </span>
+      </div>
+      <div>
+        <form>
+          <label for="qty">QTY</label>
+          <input type="number" name="qty" id="qty" value="0">
+        </form>
+      </div>
+      <div>
+          <span>
+            $ <span class="product-price">0.00</span>
+          </span>
+      </div>
+      <div>
+        <button class="btn btn-delete" type="button" value="Delete">Delete</button>
+      </div>
+    </div>
+  </div>
+    <div id="create-new">
+      <form>
+        <input type="text" name="new-prod-name" id="new-prod-name">
+        <input type="number" name="new-prod-price" id="new-prod-price">
+        <button type="button" class="btn" id="new-item-create">Create</button>
+      </form>
+  <div>
+    <button class="btn btn-success" type="button" value="calculate-price" id="calc-prices-button">Calculate Prices</button>
+  </div>
+  <div id="final-price"></div>
 </body>
 </html>
