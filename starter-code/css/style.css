@@ -28,14 +28,62 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin-top:50px;
+    padding:20px;
 }
 
 .btn-delete {
     color: #fff;
     background-color: #CF000F;
     border-color: #CF000F;
-}
+    padding:15px 20px 15px 20px
+  }
 
 .quantity {
   margin: 0 5px;
+}
+
+.wrapper-calculateButton{
+  display:flex;
+  justify-content: center;
+}
+header{
+  display:flex;
+  justify-content:center;
+  padding-bottom:50px;
+}
+.row{
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between
+}
+body{
+  display:flex;
+  justify-content:center;
+  flex-direction:column;
+}
+.productName{
+  width:250px;
+}
+.costPerUnit{
+  width:100px;
+}
+.row{
+  margin-bottom:50px;
+}
+#create{
+  width:200px;
+  height:75px;
+  background-color:green;
+}
+.buttonWrapper{
+  display:flex;
+  justify-content:center;
+}
+.totalAllWrapper{
+  display:flex;
+  justify-content:flex-end;
+  padding-right:50px;
+  font-weight:700;
+  font-size:2em;
 }
