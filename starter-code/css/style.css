@@ -28,6 +28,11 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+
 }
 
 .btn-delete {
@@ -36,6 +41,27 @@ input {
     border-color: #CF000F;
 }
 
-.quantity {
+#quantity {
   margin: 0 5px;
+}
+
+h1{
+  text-align: center;
+  margin: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.basket{
+  padding:30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.product{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
