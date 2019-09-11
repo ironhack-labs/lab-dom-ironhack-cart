@@ -65,3 +65,9 @@ h1{
   justify-content: space-between;
   align-items: center;
 }
+
+#newItem{
+  padding-top: 30px;  
+  display: flex;
+  
+}
