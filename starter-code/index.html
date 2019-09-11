@@ -6,9 +6,127 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
 <body>
+  <h1> Ironhack Merchandising Shop </h1>
+  <div id="cart-items">
+    <div class="wrapper-div">
+      <div>
+        <span class="cart-item"> IronBubble </span>
+      </div>
+      <div class="item-cost">
+        <span>$</span><span class="item-cost-span">25.00</span>
+      </div>
+      <div>
+        <label> QTY </label>
+        <input class="cart-quantity" type="number" placeholder=" 0">
+      </div>
+      <div>
+        <span>$</span><span class="item-total">0 </span>
+      </div>
+      <div>
+        <button class="btn btn-delete"> Delete </button>
+      </div>
+    </div>
+
+    <div class="wrapper-div">
+      <div>
+        <span class="cart-item"> IronShirt </span>
+      </div>
+      <div class="item-cost">
+        <span>$</span><span class="item-cost-span">15.00</span>
+      </div>
+      <div>
+        <label> QTY </label>
+        <input class="cart-quantity" type="number" placeholder=" 0">
+      </div>
+      <div>
+        <span>$</span><span class="item-total">0 </span>
+      </div>
+      <div>
+        <button class="btn btn-delete"> Delete </button>
+      </div>
+    </div>
+
+    <div class="wrapper-div">
+      <div>
+        <span class="cart-item"> IronMan </span>
+      </div>
+        <div class="item-cost">
+        <span>$</span><span class="item-cost-span">150.00</span>
+      </div>
+      <div>
+        <label> QTY </label>
+        <input class="cart-quantity" type="number" placeholder=" 0">
+      </div>
+      <div>
+        <span>$</span><span class="item-total">0 </span>
+      </div>
+      <div>
+        <button class="btn btn-delete"> Delete </button>
+      </div>
+    </div>
+
+    <div class="wrapper-div" id="copy-div">
+      <div>
+        <span class="cart-item"> IronFist </span>
+      </div>
+        <div class="item-cost">
+        <span>$</span><span class="item-cost-span">1.00</span>
+      </div>
+      <div>
+        <label> QTY </label>
+          <input class="cart-quantity" type="number" placeholder=" 0">
+      </div>
+      <div>
+        <span>$</span><span class="item-total">0 </span>
+      </div>
+      <div>
+        <button class="btn btn-delete"> Delete </button>
+      </div>
+    </div>
+
+    <div class="wrapper-div" id="copy-div">
+      <div>
+        <span class="cart-item"> IronBoot </span>
+      </div>
+          <div class="item-cost">
+        <span>$</span><span class="item-cost-span">42.00</span>
+      </div>
+      <div>
+        <label> QTY </label>
+        <input class="cart-quantity" type="number" placeholder=" 0">
+      </div>
+      <div>
+        <span>$</span><span class="item-total">0 </span>
+      </div>
+      <div>
+        <button class="btn btn-delete"> Delete </button>
+      </div>
+    </div>
+  
+  </div>
+
+  <div id="create-div">
+    <div id="input1-div">
+      <input type="text" id="input1">
+    </div>
+    <div id="input2-div">
+      <input type="number" id="input2">
+    </div>
+    <div id="create-btn-div btn">
+      <button id="create-btn">Create</button>
+    </div>
+  </div>
+
+  <div id="calc-btn-div">
+    <button id="calc-btn" class="btn btn-success"> Calculate Prices </button>
+  </div>
+
+  <h1 id="total-price"> Total price: </h1>  
+  
+  <script type="text/javascript" src="./js/index.js"></script>
+
 </body>
 </html>

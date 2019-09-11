@@ -36,6 +36,45 @@ input {
     border-color: #CF000F;
 }
 
+#calc-btn-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+}
+
 .quantity {
   margin: 0 5px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.wrapper-div {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+}
+
+.cart-item {
+  text-align: left
+}
+
+#create-div {
+  padding-top: 20px;
+  display: flex;
+}
+
+#input1 {
+  margin-left: 65px;
+}
+
+#input2 {
+  margin-left: 150px;
+  width: 150px;
+}
+
+#create-btn {
+  margin-left: 1075px;
 }
