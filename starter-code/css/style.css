@@ -28,6 +28,7 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin : 40px; 
 }
 
 .btn-delete {
@@ -38,4 +39,29 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.title {
+  text-align: center; 
+}
+
+.item-information {
+  list-style: none; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  padding: 0; 
+  margin-left: 40px; 
+  margin-right: 40px; 
+  margin : 40px; 
+}
+
+#create-new-item {
+  padding: 0; 
+  margin-left: 40px; 
+  margin-right: 40px; 
+}
+
+li {
+  width: 20%; 
 }

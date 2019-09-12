@@ -6,9 +6,92 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+
+  <div class="title">
+    <h1>Ironhack</h1>
+    <h1>Merchandising Shop</h1>
+  </div>
+
+
+
+  <div id="merchandise">
+    <div class="row">
+        <ul class="item-information">
+            <li>IronBubble-head</li>
+            <li>$<span class="item-price">25.00</span></li>
+            <li><p class="QTY">QTY</p></li>
+            <li><input class="input" type="number" placeholder="0"></li>
+            <li>$<span class="item-new-price">0.00</span></li>
+            <li><button class="btn btn-delete" type="reset">Delete</li>
+        </ul>
+    </div>
+
+      <div class="row">
+          <ul class="item-information">
+              <li>IronShirt</li>
+              <li>$<span class="item-price">15.00</span></li>
+              <li><p class="quantity">QTY</p></li>
+              <li><input class="input" type="number" placeholder="0"></li>
+              <li>$<span class="item-new-price">0.00</span></li>
+              <li><button class="btn btn-delete" type="reset">Delete</li>
+          </ul>
+      </div>                                                                                                                                                                                                                                  
+
+      <div class="row">
+        <ul class="item-information">
+            <li>IronCup</li>
+            <li>$<span class="item-price">10.00</span></li>
+            <li><p class="quantity">QTY</p></li>
+            <li><input class="input" type="number" placeholder="0"></li>
+            <li>$<span class="item-new-price">0.00</span></li>
+            <li><button class="btn btn-delete" type="reset">Delete</li>
+        </ul>
+      </div>
+
+      <div class="row">
+        <ul class="item-information">
+            <li>IronSticker</li>
+            <li>$<span class="item-price">1.00</span></li>
+            <li><p class="quantity">QTY</p></li>
+            <li><input class="input" type="number" placeholder="0" onchange="getUpdatePrice();"></li>
+            <li>$<span class="item-new-price">0.00</span></li>
+            <li><button class="btn btn-delete" type="reset">Delete</li>
+        </ul>
+      </div>
+
+      <div class="row">
+        <ul class="item-information">
+            <li>IronAxe</li>
+            <li>$<span class="item-price">100.00</span></li>
+            <li><p class="quantity">QTY</p></li>
+            <li><input class="input" type="number" placeholder="0"></li>
+            <li>$<span class="item-new-price">0.00</span></li>
+            <li><button class="btn btn-delete" type="reset">Delete</li>
+        </ul>
+      </div>
+
+  </div>
+  <div id="create-new-item">
+    <input type="text" name="item" id="item-name">
+    <input type="number" name="price" id="item-price">
+    <button id="create" class="btn">Create</button>
+  </div>
+
+    <div class="calc-prices-button">
+      <button type="reset" class="btn btn-success" onclick="getUpdatePrice();">
+        Calculate Prices </button>
+    </div>
+
+    <div class="title">
+      <h2>Total Price : $<span id="cart-total-price">0</span></h2>
+    </div>
+
+    <script type="text/javascript" src="./js/index.js"></script>
+
 </body>
+
 </html>
