@@ -1,5 +1,6 @@
 input {
   border: solid 1px black;
+  margin:10px;
 }
 
 .btn {
@@ -46,6 +47,7 @@ input {
 }
 
 h1{
+  font-size: 2em;
   text-align: center;
   margin: 100px;
   margin-left: auto;
@@ -53,6 +55,7 @@ h1{
 }
 
 .basket{
+  min-width: 1100px;
   padding:30px;
   display: flex;
   flex-direction: column;
@@ -69,5 +72,23 @@ h1{
 #newItem{
   padding-top: 30px;  
   display: flex;
-  
+  justify-content: space-between;
+  padding:10px;
+}
+#new-item-create{
+  width:75px;
+  margin-right: 80px;
+}
+
+.product > div{
+width:150px;
+padding:10px;
+display: flex;
+justify-content: stretch;
+}
+
+h2{
+  text-align: center;
+  margin-top: 40px;
+  font-size: 1.8em;
 }
