@@ -1,41 +1,194 @@
 input {
-  border: solid 1px black;
-}
-
-.btn {
-  display: inline-block;
-  padding: 6px 12px;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 1.42857143;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: middle;
-  -ms-touch-action: manipulation;
-  touch-action: manipulation;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-image: none;
-  border: 1px solid transparent;
-  border-radius: 4px;
+  border: solid 2px gray;
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #c23d54;
+  border-color: #c23d54;
+  border-radius: 10px;
+  width: 80px;
+  height: 25px;
+}
+.btn-delete:active {
+  color: #fff;
+  background-color: #cb5b6e;
+  border-color: #cb5b6e;
 }
 
+.btn-delete:focus {
+  outline: 0;
+}
+.btn-success:focus {
+  outline: 0;
+}
+.submitButton:focus {
+  outline: 0;
+}
+
+body {
+  padding: auto;
+  font-family: sans-serif;
+}
 .quantity {
   margin: 0 5px;
+  width: 18%;
 }
+
+.quantity form .valueUnit {
+  width: 90px;
+  height: 30px;
+  border-radius: 10px;
+  border-color: #e4f1fe;
+}
+
+.quantity form .submitButton {
+  width: 70px;
+  height: 30px;
+  border-radius: 10px;
+  border-color: #3dc269;
+  color: white;
+  background-color: #3dc269;
+}
+
+.quantity form .submitButton:active {
+  background-color: #6ad08c;
+  color: white;
+  border-color: #6ad08c;
+}
+
+button,
+hr,
+input {
+  overflow: visible;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+}
+progress,
+sub,
+sup {
+  vertical-align: baseline;
+}
+html {
+  font-family: sans-serif;
+  line-height: 1.15;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  margin: 0;
+
+  align-content: center;
+}
+
+.product {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: #404040;
+  padding-bottom: 25px;
+}
+
+.productName {
+  width: 10%;
+}
+
+.product h1 {
+  color: #404040;
+  font-family: sans-serif;
+}
+
+#productsTitle {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.btn-calculate {
+  background: #3dc269;
+  color: white;
+  width: 150px;
+  max-width: 150px;
+  height: 50px;
+  border: #3dc269;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.btn-calculate:active {
+  background-color: #6ad08c;
+  border-color: #6ad08c;
+}
+
+.btn {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+button:focus {
+  outline: 0;
+}
+.btn:focus {
+  outline: 0;
+}
+
+#totalPriceCalculator {
+    text-align: center;
+}
+
+.newInput {
+    padding-right: 100px;
+    padding-left: 100px;
+    display: flex;
+    justify-content: space-between
+}
+
+.newInput form .productNameInput{
+    width: 150px;
+    max-width: 150px;
+    height: 30px;
+    border-radius: 10px;
+    border-color: #e4f1fe;
+    outline: 0;
+}
+
+.newInput form .pricePerItem {
+    width: 150px;
+    max-width: 150px;
+    height: 30px;
+    border-radius: 10px;
+    border-color: #e4f1fe;
+    outline: 0;
+}
+
+
+
+.addNew {
+    color: #fff;
+    background-color: #3dc269;
+    border-color: #3dc269;
+    border-radius: 10px;
+    width: 80px;
+    max-width: 80px;
+    height: 25px;
+  }
+  .addNew:active {
+    color: #fff;
+    background-color: #6ad08c;
+    border-color: #6ad08c;
+  }
+  
+  .addNew:focus {
+    outline: 0;
+  }

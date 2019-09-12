@@ -1,14 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Ironhack cart</title>
+  </head>
+  <body>
+    <div id="productsTitle">
+      <h1>
+        Ironhack <br />
+        Merchandising Shop
+      </h1>
+    </div>
+    <div id="shopping-cart">
+      <div class="product">
+        <div class="productName">
+          <span class="nameOfProduct"> Shirt </span>
+        </div>
+        <div class="unitCost">€<span class="costOfUnit"> 5.00 </span></div>
+        <div class="quantity">
+          <form>
+            QTY
+            <input class="valueUnit" type="number" name="qty" />
+            <input class="submitButton" type="submit" value="Submit" onclick="submitPrice(event)"/>
+          </form>
+        </div>
+        <div class="totalcost">
+          €<span class="totalcostOfUnits"> 0.00 </span>
+        </div>
+        <div class="btn-delete" onclick="deleteItem(event)">
+          <button class="btn-delete">
+            Delete
+          </button>
+        </div>
+      </div>
+      <div class="product">
+        <div class="productName">
+          <span class="nameOfProduct"> Ball </span>
+        </div>
+        <div class="unitCost">€<span class="costOfUnit"> 10.90 </span></div>
+        <div class="quantity">
+          <form>
+            QTY
+            <input class="valueUnit" type="number" name="qty" />
+            <input class="submitButton" type="submit" value="Submit" onclick="submitPrice(event)"/>
+          </form>
+        </div>
+        <div class="totalcost">
+          €<span class="totalcostOfUnits"> 0.00 </span>
+        </div>
+        <div class="btn-delete" onclick="deleteItem(event)">
+          <button class="btn-delete">
+            Delete
+          </button>
+        </div>
+      </div>
+      <!--  ******************************* -->
+       
+        </div>
+        <div class="newInput">
+            <form>
+              <input class="productNameInput" type="text" name="qty" placeholder="Product Name" />
+              <input class="pricePerItem" type="number" name="qty" placeholder="Price per Item" />
+            </form>
+          
+    
+          <button class="addNew" onclick="createNewItem(event)">
+            add
+          </button>
+
+        </div>
+    </div>
+
+    
+
+    <div class="btn" onclick="getTotalPrice(event)">
+      <button class="btn-calculate" onclick="getTotalPrice(event)">
+        Calculate Prices
+      </button>
+    </div>
+    <div id="totalPriceCalculator">
+      <h1>Total Price <span class="totalPrice">0.00</span>€</h1>
+    </div>
+    <script type="text/javascript" src="./js/index.js"></script>
+  </body>
 </html>
