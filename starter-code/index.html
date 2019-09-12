@@ -10,5 +10,81 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <header>
+    <h1>
+      Ironhack <br>
+      Merchandising Shop
+    </h1>
+  </header>
+<div id = "cart">
+  <div class = "product">
+    <div class = "product-name">
+      <span>
+        IronBubble-head
+      </span>
+    </div>
+    <div>
+      $
+      <span class="unit-cost">
+        25
+      </span>
+    </div>
+    <div>
+      <form action="input" method="GET">
+        <label for="quantity">QTY</label>
+        <input type="number" value ="0" class="quantity-amount" min="0" max="100">
+      </form>
+    </div>
+    <div>
+      $ 
+      <span class = "product-line-price">
+        0
+      </span>
+    </div>
+    <div>
+      <button class = "btn btn-delete">Delete</button>
+    </div>
+  </div>
+  <div class = "product">
+    <div class = "product-name">
+      <span>
+        IronShirt
+      </span>
+    </div>
+    <div>
+      $
+      <span class="unit-cost">
+        15
+      </span>
+    </div>
+    <div>
+      <form action="input" method="GET">
+        <label for="quantity">QTY</label>
+        <input type="number" value ="0"name="quatity-amount" class= "quantity-amount"min="0" max="100">
+      </form>
+    </div>
+    <div>
+      $ 
+      <span class = "product-line-price">
+        0
+      </span>
+    </div>
+    <div>
+      <button class = "btn btn-delete">Delete</button>
+    </div>
+  </div>
+</div>
+<div class="add-new-item">
+      <input type="text" name="new-item-name" id = "new-item-name">
+      <input type="number" name="new-item-price" id="new-item-price">
+      <button class="btn" id="new-item-create">Add Item</button>
+  </div>
+  <div class= "calculate-Price-Button" >
+    <button id= "calc-prices-button"class = "btn btn-success">Calculate Prices</button>
+  </div>
+  <div class = "total">
+    The Total price: $
+    <span id="total-price" >0.00</span>
+  </div>
 </body>
 </html>

@@ -22,12 +22,14 @@ input {
   background-image: none;
   border: 1px solid transparent;
   border-radius: 4px;
+  text-decoration: none;
 }
 
 .btn-success {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    
 }
 
 .btn-delete {
@@ -35,7 +37,34 @@ input {
     background-color: #CF000F;
     border-color: #CF000F;
 }
+html{
+  margin:0 10px;
+
+}
 
 .quantity {
   margin: 0 5px;
 }
+h1, .calculate-Price-Button{
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+.product{
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+
+}
+.product > div{
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
+}
+
+.total{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
