@@ -3,19 +3,31 @@ function deleteItem(e){
 }
 
 function getPriceByProduct(itemNode){
-
+  priceProduct = parseFloat();
 }
 
 function updatePriceByProduct(productPrice, index){
-
+  totalCost.innerText = '${finalValue}';
 }
 
 function getTotalPrice() {
-
+  let quantity = document.querySelector(".quantity input").value;
+  let priceElement = document.querySelector(".unityprice");
+  let priceValue = priceElement.innerText;
+  
+  let finalValue = priceValue * quantity;
+  console.log('finalValue', finalValue);
+  let totalCost = document.querySelector(".totalcost");
+  totalCost.innerText = finalValue;
+  
+  //updatePriceByProduct(finalValue, totalCost);
+  // let quantity = document.querySelector("totalcost");
+  // let total = getPriceByProduct() + createQuantityInput();
+  // updatePriceByProduct(total);
 }
 
 function createQuantityInput(){
-
+  let quantity = document.querySelector("value");
 }
 
 function createDeleteButton(){
