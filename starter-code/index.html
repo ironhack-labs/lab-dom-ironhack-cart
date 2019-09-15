@@ -10,5 +10,83 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+    <h1>Ironhack Merchandising Shop</h1>
+
+    <div id="wrapper">
+      <div class = "product">
+        <div class = "productName">
+          <span>IronBubble-head</span>
+        </div>
+
+        <div class = "costValue">
+          $<span class="cost">25.00</span>
+        </div>
+          
+        <div class = "qtyValue">
+            <label>QTY</label>
+            <input type="number" name = "qty" class = "quantity" >
+        </div>
+
+        <div class = "totalValue">
+          $<span class= "total">0.00</span>
+        </div>
+
+        <div class = "btnDelete">
+          <button class = 'btn btn-delete'>delete</button>
+        </div>
+      </div>  
+
+      <div class = "product">
+          <div class = "productName">
+            <span>IronShirt</span>
+          </div>
+  
+          <div class = "costValue">
+            $<span class="cost">15.00</span>
+          </div>
+            
+          <div class = "qtyValue">
+              <label>QTY</label>
+              <input type="number" name = "qty" class = "quantity" >
+          </div>
+  
+          <div class = "totalValue">
+            $<span class = "total">0.00</span>
+          </div>
+  
+          <div class = "btnDelete">
+            <button class = 'btn btn-delete'>delete</button>
+          </div>
+        </div>
+
+      
+    </div> 
+    
+    <div class = "product">
+      <div class = "productName">
+        <input name = "newProduct" id = "newPdt">
+      </div>
+
+      <div class = "costValue">
+        <input type="number" name = "newPrice" id = "newPrc">
+      </div>
+        
+      <div class = "qtyValue">
+          
+      </div>
+
+      <div class = "totalValue">
+        
+      </div>
+
+      <div class = "btnDelete">
+        <button class = 'btn' id = "new-item-create">create</button>
+      </div>
+    </div>
+
+    <div>
+      <button id = "calc-prices-button" class = "btn btn-success">Calculate Prices</button>
+    </div>
+
 </body>
 </html>
