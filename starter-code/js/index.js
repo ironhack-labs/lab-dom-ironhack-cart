@@ -3,16 +3,7 @@ function deleteItem(e){
   let wrapper = document.getElementById('wrapper');
 
   wrapper.removeChild(product);
-  console.log(e)
   getTotalPrice();
-}
-
-function getPriceByProduct(itemNode){
-
-}
-
-function updatePriceByProduct(productPrice, index){
-
 }
 
 function getTotalPrice() {
@@ -34,8 +25,7 @@ function getTotalPrice() {
       totalAccount =  parseFloat(costNumber * qtyNumber).toFixed(2);
       total[i].innerText = totalAccount;
       totalPriceSum += costNumber * qtyNumber;
-    }
-    
+    }   
     
     let h2 = document.getElementsByTagName('h2');
 
@@ -47,31 +37,10 @@ function getTotalPrice() {
       totalPrice.innerHTML = `Total Price: <span>$${parseFloat(totalPriceSum).toFixed(2)}</span>`;
 
       body[0].appendChild(totalPrice);
-    }
-    
-    //alert(total);
-}
-/*
-function createQuantityInput(){
+    }   
 
 }
 
-function createDeleteButton(){
-
-}
-
-function createQuantityNode(){
-
-}
-
-function createItemNode(dataType, itemData){
-
-}
-
-function createNewItemRow(itemName, itemUnitPrice){
-
-}
-*/
 function createNewItem(){
   let newProduct = document.getElementById('newPdt').value;
   let newPrice = document.getElementById('newPrc').value;
@@ -90,15 +59,17 @@ function createNewItem(){
 
   let costValue = document.createElement('div');
   costValue.setAttribute("class", "costValue");
+  costValue.innerText = "$";
   let costValueSpan = document.createElement('span');
   costValueSpan.setAttribute("class","cost");
-  costValueSpan.innerText = newPrice;
+  costValueSpan.innerText = `${parseFloat(newPrice).toFixed(2)}`;
   costValue.appendChild(costValueSpan);
   
   let qtyValue = document.createElement('div');
   qtyValue.setAttribute("class", "qtyValue");
   qtyValue.innerHTML = `<label>QTY</label>
-                        <input type="number" name = "qty" class = "quantity" >`;
+                        <input type="number" name = "qty" class = "quantity" value = '1' >`;
+  
 
   let totalValue = document.createElement('div');
   totalValue.setAttribute("class", "totalValue");
@@ -106,23 +77,19 @@ function createNewItem(){
 
   let btnDelete = document.createElement('div');
   btnDelete.setAttribute("class", "btnDelete");
+  
   btnDeleteBtn = document.createElement('button');
   btnDeleteBtn.setAttribute("class",'btn btn-delete');
   btnDeleteBtn.innerHTML = "delete";
   btnDelete.appendChild(btnDeleteBtn);
-  // btnDelete.innerHTML = `<button class = 'btn btn-delete'>delete</button>`;
-
-  product.appendChild(productName);
+  
   product.appendChild(costValue);
   product.appendChild(qtyValue);
   product.appendChild(totalValue);
   product.appendChild(btnDelete);
+  wrapper.appendChild(product);  
 
-  wrapper.appendChild(product);
-  
-  console.log(newProduct);
-  console.log(newPrice);
-  console.log(product);
+  btnDeleteBtn.onclick = deleteItem;
 }
 
 window.onload = function(){
