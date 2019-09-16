@@ -10,5 +10,17 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <h1>Ironhack Merchandising Shop</h1>
+  <div class="product">
+    <span class="itemName">IronBubble</span>
+    <span class="unit-price">25.00</span>
+    <form action="">
+      <label for="">QNT</label>
+      <input type="text" class="qnt">
+    </form>
+    <div><span class="item-total-price">0.00</span></div>
+    <div><button class="btn btn-delete" onclick="deleteItem(this.parentNode.parentNode)" >delete</button></div>
+  </div>
+  <button class = 'btn' id = "new-item-create">create</button>
 </body>
 </html>
