@@ -54,6 +54,7 @@ function createNewItemRow(itemName, itemUnitPrice) {
   formLabel.innerHTML = "QNT";
   itemPrice.innerHTML = "$0.00";
   delBtn.innerHTML = "delete";
+  delBtn.onclick = deleteItem;
 
   spanDiv.appendChild(itemPrice);
   btnDiv.appendChild(delBtn);
