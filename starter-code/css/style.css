@@ -1,3 +1,47 @@
+body
+{
+  border: 1px solid #000;
+}
+.ProductsSection{  
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1%;
+ 
+}
+
+.newProductsSection{  
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1%;
+ 
+}
+
+.nameProduct{
+  width: 15%;
+  
+}
+.price{
+  width: 15%;
+
+}
+.qtdProduct{
+  width: 25%;
+
+}
+.totalproductPrice{
+  width: 15%;
+
+}
+
+
+
+.calculatePrices{
+  display: flex;
+  justify-content: center;
+}
+
+
+
 input {
   border: solid 1px black;
 }
@@ -36,6 +80,19 @@ input {
     border-color: #CF000F;
 }
 
+.btn-create {
+  color: black;
+  background-color:white;
+  border-color: black
+}
+
 .quantity {
   margin: 0 5px;
 }
+
+#divtotal{
+  display: flex;
+  justify-content: center;
+}
+
+

@@ -10,5 +10,64 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+  <section id="wrapper">
+  <div class="ProductsSection">
+    <div class="nameProduct">    
+      <span>IronBubble-head</span>  
+    </div> 
+    <div class="price">  
+      <span class="priceunit">25.00</span>  
+    </div>
+    <div class="qtdProduct"> 
+      <label>QTY</label>
+      <input type="number" class="qtdProdutc quantity">    
+    </div>
+    <div class="totalproductPrice">
+      <span class="totalpriceProduct">0.00</span>
+    </div>
+
+    <div>
+        <button class="btn btn-delete">Delete</button>
+    </div>
+</div>  
+<div class="ProductsSection">
+    <div class="nameProduct">
+      <span>IronShirt</span>
+    </div>
+    <div class="price">
+      <span class="priceunit">15.00</span>
+    </div>
+    <div class="qtdProduct">
+      <label>QTY</label>
+      <input type="number" class="qtdProdutc quantity">
+    </div>
+    <div class="totalproductPrice">
+      <span class="totalpriceProduct">0.00</span>
+    </div>
+    <div>
+       <button class="btn btn-delete">Delete</button>       
+    </div>
+  </div>   
+</section>
+
+<div class="newProductsSection">
+    <div class="nameProduct">
+        <input type="text" class="newNameProducto" id="newProductName">
+    </div>
+    <div class="price">
+        <input type="number" class="newPriceProducto" id="newProductPrice">
+    </div>
+    <div class="qtdProduct">    
+    </div>
+    <div class="totalproductPrice">
+      <span></span>
+    </div>
+    <div>
+       <button class="btn btn-create" id="create-button">Create</button>
+    </div>
+  </div> 
+  <div class="calculatePrices">
+      <button class="btn btn-success" id="calc-prices-button">Calculate Prices</button>
+  </div>
 </body>
 </html>
