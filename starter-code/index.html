@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,27 +10,35 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
-  <h1>Ironhack Merchandising Shop</h1>
-  <div id="product-list">
-    <div class="product">
-      <span class="item-name">IronBubble</span>
-      <span class="unit-price">25.00</span>
-      <form action="">
-        <label for="">QNT</label>
-        <input type="text" class="qnt">
-      </form>
-      <div><span class="item-total-price">0.00</span></div>
-      <div><button class="btn btn-delete">delete</button></div>
-    </div>
-  </div>
-
-  <input type="text" id="new-name">
-  <input type="text" id="new-price">
-
-  <button id="new-item-create" class="btn ">Create</button>
   
-  <div><button id="calc-prices-button" class="btn btn-success">Calculate Prices</button></div>
-  <h2>Total Price: <span id="cart-total-price">$0</span></h2>
+  <h1>Ironhack Merchandising Shop</h1>
+    <div class="wrapper">
+    <div id="product-list">
+      <div class="product">
+        <span class="item-name">IronBubble</span>
+        <span class="unit-price">25.00</span>
+        <form action="" class="form-container">
+          <label for="">QNT</label>
+          <input type="text" class="qnt">
+        </form>
+        <div><span class="item-total-price">0.00</span></div>
+        <div><button class="btn btn-delete">delete</button></div>
+      </div>
+    </div>
+    
+    <input type="text" id="new-name">
+    <input type="text" id="new-price">
+    
+    <button id="new-item-create" class="btn ">Create</button>
+    
+    <div><button id="calc-prices-button" class="btn btn-success">Calculate Prices</button></div>
+    <h2>Total Price: <span id="cart-total-price">$0</span></h2>
+  </div>
 </body>
+
 </html>
+
+
+

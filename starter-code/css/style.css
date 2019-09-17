@@ -1,6 +1,31 @@
+body {
+  margin: 0;
+}
+
 .product {
   display: flex;
   justify-content: space-evenly;
+  margin: 18px 0;
+}
+
+.wrapper {
+  padding: 0 20px;
+}
+
+.item-name {
+  width: 60px;
+}
+
+.unit-price {
+  width: 24px
+}
+
+.form-container {
+  width: 60px
+}
+
+.qnt {
+  width: 40px;
 }
 
 input {
