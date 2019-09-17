@@ -39,3 +39,22 @@ input {
 .quantity {
   margin: 0 5px;
 }
+* {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  justify-content: center;
+  text-align: left;
+  display: flex;
+}
+.product {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-around;
+  
+
+}

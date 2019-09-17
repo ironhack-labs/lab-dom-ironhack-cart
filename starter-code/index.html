@@ -6,9 +6,30 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
+ 
   <title>Ironhack cart</title>
 </head>
 <body>
-</body>
+  
+  <h1>Ironhack <br> Merchandising Shop</h1>
+
+  <div class="product">
+    <div>Product 1<span class="name-of-product"></span></div> <!--product name-->
+    <div>$<span class="unit-cost">12.50</span></div> <!--cost of one unit-->
+    <div>QTY<label for=""></label><input type="number" class="quantity"></div>
+    <div><span class="tot-price-prod"></span></div><!--total price-->
+    <div class="btn btn-delete">Delete</div>
+  </div>
+
+  <div class="product">
+    <div>Product 2<span class="name-of-product"></span></div> <!--product name-->
+    <div>$<span class="unit-cost">17.50</span></div> <!--cost of one unit-->
+    <div>QTY<label for=""></label><input type="number" class="quantity"></div>
+    <div><span class="tot-price-prod"></span></div><!--total price-->
+    <div class="btn btn-delete">Delete</div>
+  </div>
+
+    <div class="btn btn-success" id="calc-prices-button">Calculate Prices</div>
+    <script type="text/javascript" src="./js/index.js"></script>
+  </body>
 </html>

@@ -11,7 +11,14 @@ function updatePriceByProduct(productPrice, index){
 }
 
 function getTotalPrice() {
-
+ let product = document.getElementsByClassName("product");
+ let price = product.getElementsByClassName("#unit-cost").innerText;
+ let quantity= product.getElementsByClassName(".quantity").value;
+ let totalPrice = product.getElementsByClassName("tot-price-prod");
+ totalPrice.innerText = quantity * price;
+ return totalPrice;
+                                                                                                                                                                                                                                                                                                                                           
+  
 }
 
 function createQuantityInput(){
