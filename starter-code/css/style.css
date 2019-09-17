@@ -39,3 +39,15 @@ input {
 .quantity {
   margin: 0 5px;
 }
+
+.product-line {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#create-product{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
