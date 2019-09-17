@@ -28,6 +28,7 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    
 }
 
 .btn-delete {
@@ -38,4 +39,50 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.wrapper{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 15px;
+
+}
+.productName{
+  align-items: left;
+  width: 450px;
+}
+
+.price{
+  align-items: left;
+  width: 300px;
+
+}
+.label{
+  align-items: left;
+  width: 300px;
+
+}
+
+.totaly{
+  align-items: left;
+  width: 150px; 
+}
+
+body h1{
+    text-align: center;
+}
+#sumAll {
+    margin-left: 46.5%;
+}
+
+.insertNewProducts{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#products{
+  margin: 10px 15px;
+  border: 1px solid gray;
 }

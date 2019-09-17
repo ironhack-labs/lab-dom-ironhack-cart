@@ -10,5 +10,60 @@
   <title>Ironhack cart</title>
 </head>
 <body>
+
+    <h1>  Iron Merchandising Shop </h1>
+
+<div id = "products" > 
+
+  <div class = 'wrapper'> 
+
+    <span class = 'productName'> IronBubble-Head </span>   
+    <div class = 'price'> Unit Value $:
+    <span class = 'costUnit'> 25.00 </span> 
+    </div>
+    <label class = 'label'> QTY <input class = 'quantity' type="number" name="quantidade" value= 0 />  </label> 
+
+    <div class = 'totaly'>Total $:
+    <span class = 'total'> 0.00 </span> 
+    </div>
+
+    <button class = 'btn btn-delete' name = 'btn-delete'> Delete </button> 
+
+  </div>
+
+  <div class = 'wrapper'> 
+
+    <span class = 'productName'> IronShirt </span>  
+
+    <div class = 'price'> Unit Value $:
+    <span class = 'costUnit'> 15.00 </span> 
+    </div>
+
+    <label class = 'label'> QTY <input class = 'quantity' type="number" name="quantidade" value= 0 />  </label> 
+
+    <div class = 'totaly'>Total $:
+    <span class = 'total'> 0.00 </span> 
+    </div>
+
+    <button class = 'btn btn-delete' name = 'btn-delete'> Delete </button> 
+
+  </div>
+
+</div>
+
+<div class = "insertNewProducts"> 
+
+  <label class = "product"> Product: <input id = "newProduct" type="text" name = "Product" /> </label>
+  <label class = "priceUnit"> Unit Value $: <input id = "newPrice" type = "number" name = "Value Unit" /> </label>
+
+  <button id = "new-item-create" class = "btn btn-success" name = 'Button Create'> Create </button>
+
+</div>
+  <div id="sumAll"> 
+
+    <button id = 'calc-prices-button' class = 'btn btn-success' name = 'btn-success'>Calculate Prices</button>
+    
+  </div>
+
 </body>
 </html>
