@@ -1,7 +1,9 @@
 function deleteItem(e){
-  e.parentNode.removeChild(e)
+  console.log(e);
+  var productList = document.querySelector('#product-list')
+  productList.removeChild(e.target.parentElement.parentElement)
 }
-
+// onclick="deleteItem(this.parentNode.parentNode)
 function getPriceByProduct(itemNode){
 
 }
@@ -38,16 +40,33 @@ function createQuantityNode(){
 
 }
 
-function createItemNode(dataType, itemData){
-
+function createItemNode(tagType, dataType, name){
+  var newNode = document.createElement(tagType)
+  newNode.setAttribute(dataType, name)
+  return newNode
 }
 
 function createNewItemRow(itemName, itemUnitPrice){
+var list = document.getElementById("product-list")
+var newRow = createItemNode('div', 'class', 'product')
+var newName = createItemNode('span', 'class', 'item-name')
+var newPrice = createItemNode('span', 'class', 'unit-price')
 
+newName.innerHTML = itemName.value
+newPrice.innerHTML = itemUnitPrice.value
+
+newRow.appendChild(newName)
+newRow.appendChild(newPrice)
+
+list.appendChild(newRow)
 }
 
 function createNewItem(){
-  console.log("hellow ");
+  var price = document.getElementById("new-price")
+  var name = document.getElementById("new-name")
+
+  
+  createNewItemRow(name, price)
   
 }
 
