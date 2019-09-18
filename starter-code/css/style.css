@@ -28,6 +28,7 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    margin: 0 auto;
 }
 
 .btn-delete {
@@ -38,4 +39,48 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+
+.container{
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.product{
+  display: flex;
+  justify-content: space-around;
+  margin: 10px 0;
+}
+
+.name{
+  width: 20%;
+}
+
+h1{
+  text-align: center;
+  padding: 2.5% 0%;
+}
+
+h2{
+  text-align: center;
+}
+
+.calculate{
+  text-align: center;
+  padding: 2.5% 0%;
+}
+
+.calculate h2{
+  padding: 2.5% 0%;
+}
+
+.addProduct{
+  text-align: center;
+  padding: 2.5% 0%;
+}
+
+.addProduct h3{
+  padding: 1% 0%;
 }

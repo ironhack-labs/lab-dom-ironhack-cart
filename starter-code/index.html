@@ -9,6 +9,91 @@
   <script type="text/javascript" src="./js/index.js"></script>
   <title>Ironhack cart</title>
 </head>
+
 <body>
+  <h1>IronHack</h1>
+
+      <!-------------------------- CONTAINER --------------------------------->  
+ 
+  <div class="container">
+
+      <!-------------------------- Product 01 --------------------------------->  
+    
+    <div class="product">
+
+      <div class="name">Producto 1</div>
+      
+      <div class="price">$<span>25</span></div>
+      
+      <div class="quantity">
+        <label>QTY</label>
+        <input type="number" value="0" min="0">
+      </div>
+      
+      <div class="total-price">0</div>
+
+      <div class="delete">
+        <button class="btn-delete btn">Delete</button>
+      </div>
+      
+    </div><!-- Fin del primer Producto-->
+
+          <!-------------------------- Product 02 --------------------------------->  
+    
+          <div class="product">
+
+              <div class="name">Producto 2</div>
+              
+              <div class="price">$<span>15</span></div>
+              
+              <div class="quantity">
+                <label>QTY</label>
+                <input type="number" value="0" min="0">
+              </div>
+              
+              <div class="total-price">0</div>
+        
+              <div class="delete">
+                <button class="btn-delete btn">Delete</button>
+              </div>
+              
+     </div><!-- Fin del segundo Producto-->
+           
+    
+    </div><!-- Fin de CONTAINER-->
+
+
+
+    <!-------------------------- Calculate --------------------------------->  
+
+
+
+    <div class="calculate">
+
+      <button class="btn-success btn" id="calc-prices-button">Calculate</button>
+    
+    
+    
+    <h2>Total price: $ <span>0</span></h2> <!-- Fin de Calculate -->
+
+  </div>
+  
+    <!-------------------------- Add Product --------------------------------->  
+
+
+  <div class="addProduct">
+    
+    <div>
+      <h3>Add new Product</h3>
+    </div>
+    
+    <input id="nameInput" type="text" placeholder="Name" >
+    <input id="priceInput" type="number" min="0" placeholder="Price">
+    <button id="new-item-create">Create new product</button>
+
+  </div> <!-- Fin de addProduct -->
+
+
+
 </body>
 </html>
