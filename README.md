@@ -23,13 +23,6 @@ In the started code you will find some CSS to start with that includes classes f
 ## Requirements
 - Fork this repo
 
-- Use a normalizer to not have to worry about the differences between browser styles. Here's normalize.css from a CDN:
-	https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css
-- Use at least 3 `onclick` events
-- Use at least one `getElementById`
-- Use at least one `getElementsByTagName`
-- Use at least one `getElementsByClassName`
-
 ## Submission
 
 Upon completion, run the following commands
@@ -88,7 +81,7 @@ Now that you have each product's total price, you need to calculate the total pr
 
 Create a new `div` below the `Calculate Prices` button. This `div` should have an `h2` element like this one:
 
-`<h2>Total Price: <span>$0</span></h2>`
+`<h2>Total Price: $<span>0</span></h2>`
 
 Now, as part of your "Calculate Prices" function:
 
