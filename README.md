@@ -2,6 +2,8 @@
 
 # DOM | The Ironhack Cart
 
+![shopping cart](https://i.imgur.com/9h7pFVP.jpg)
+
 ## Learning Goals
 
 After this learning unit, you will be able to:
