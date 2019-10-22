@@ -77,6 +77,5 @@ body {
 }
 
 #new-item-create {
-  position: relative;
-  left: 50vw;
+  margin-left: 100px;
 }
