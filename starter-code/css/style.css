@@ -1,3 +1,8 @@
+h1 {
+  text-align: center;
+  font-weight: 900;
+}
+
 input {
   border: solid 1px black;
 }
@@ -28,6 +33,9 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    width: 15vw;
+    align-self: center;
+    margin-top: 5vh;
 }
 
 .btn-delete {
@@ -38,4 +46,37 @@ input {
 
 .quantity {
   margin: 0 5px;
+}
+
+.product-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.div-total-price {
+  align-self: center;
+}
+
+.div-add-item {
+  display: flex;
+  
+}
+
+.div-add-item input {
+  position: relative;
+  left: 0vw;
+  margin-left: 5vw;
+}
+
+#new-item-create {
+  position: relative;
+  left: 50vw;
 }
