@@ -1,5 +1,23 @@
+body {
+  text-align: center;
+}
+
 input {
-  border: solid 1px black;
+  border: solid 1px #3d3d3d;
+}
+
+.product-wrapper,
+.product-tab {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+.product-tab input {
+  flex: 1;
+  margin-right: 2rem;
 }
 
 .btn {
@@ -25,15 +43,21 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #cf000f;
+  border-color: #cf000f;
+}
+
+.btn-create {
+  color: #fff;
+  background-color: #aeaeae;
+  border-color: #aeaeae;
 }
 
 .quantity {
