@@ -2,6 +2,23 @@ input {
   border: solid 1px black;
 }
 
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+  align-items: center;
+}
+
+.product-container,
+.container {
+  margin: 30px 0;
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -25,17 +42,31 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #cf000f;
+  border-color: #cf000f;
+}
+
+.btn-new-item {
+  color: black;
+  background-color: white;
+  border-color: black;
+  justify-items: right;
+  align-self: right;
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+.new-item-container {
+  display: flex;
+  justify-content: flex-start;
+  width: 100vw;
 }
