@@ -2,6 +2,8 @@
 
 # DOM | The Ironhack Cart
 
+![shopping cart](https://i.imgur.com/9h7pFVP.jpg)
+
 ## Learning Goals
 
 After this learning unit, you will be able to:
@@ -21,13 +23,6 @@ In the started code you will find some CSS to start with that includes classes f
 ## Requirements
 - Fork this repo
 
-- Use a normalizer to not have to worry about the differences between browser styles. Here's normalize.css from a CDN:
-	https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css
-- Use at least 3 `onclick` events
-- Use at least one `getElementById`
-- Use at least one `getElementsByTagName`
-- Use at least one `getElementsByClassName`
-
 ## Submission
 
 Upon completion, run the following commands
@@ -44,55 +39,105 @@ In the Pull request title field, add your name and last names separated by a das
 
 Write your JavaScript organized in the provided filesystem. Submit everything.
 
-### Iteration 1: Creating one product
+### Iteration 1: Calculating for one product
 
-We will start by creating the HTML for one of your products. It should look like this:
+We will start by looking at the HTML of our `#cart`:
 
-![](https://i.imgur.com/gDZ1Lj0.png)
+```html
+<table id="cart">
+	<thead>
+		<tr>
+			<th>Product name</th>
+			<th>Price unit</th>
+			<th>Quantity</th>
+			<th>Sub-total</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="product">
+			<!-- ... -->
+		</tr>
+	</tbody>
+</table>
+```
 
-Every product will have:
+![](https://i.imgur.com/ZXjbkVG.png)
 
-- A wrapper div that contains all the HTML for that product.
-- A div with a span, showing the product name.
-- A div with a span, showing the cost of one unit.
-- A div with one label and one input, where the user will indicate how many units they will buy.
-- A div with a span, showing the total price for this product. This number should be the result of multiplying the amount of units multiplied by the price of one unit of that product. The default total price should be 0.
-- A div with a delete button, to remove the product from the list.
+Every product will have the following markup, ie: a `tr` inside the `tbody`:
 
-#### Calculating the total price for the product
+```html
+		<tr class="product">
+			<td class="name">
+				<span>IronBubble-head</span>
+			</td>
+	
+			<td class="pu">
+				$<span>25.00</span>
+			</td>
+	
+			<td class="qty">
+				<label>
+					<input type="number" value="0" min="0">
+				</label>
+			</td>
+	
+			<td class="subtot">
+				$<span>0</span>
+			</td>
+	
+			<td class="rm">
+				<button class="btn btn-delete">delete</button>
+			</td>
+		</tr>
+```
 
-Once you have the HTML and CSS ready, use JavaScript and functions of the `document` object to retrieve the data you need to calculate the total price for that product. Change the value of the element in the DOM that displays the total price:
+#### Iteration 1.1: `updateSubtot`
 
-- Create a click event for the `Calculate Prices` button
-- This event will execute a function that:
-	* Retrieves the unit price of the product
-	* Retrieves the quantity of items desired
-	* Calculates the total price based on this data
-	* Updates the total price in the DOM
+The `updateSubtot` function will calculate the subtotal for a given product.
+
+Complete the `updateSubtot` function that :
+  - have 1 parameter: the `tr` element of the product (we can call it `$product`)
+	- calculates the subtotal price, from :
+		- the unit price HTML element of the product
+		- the quantity HTML element of the product
+	- updates the HTML with the new product's subtotal
+	- returns the subtotal value
+
+```js
+function updateSubtot($product) {
+  // Iteration 1.1
+}
+```
+
+#### Iteration 1.2: Call `updateSubtot`
+
+Now that `updateSubtot` is in place, call it from `calcAll` on your product:
+
+```js
+function calcAll() {
+  // Iteration 1.2
+}
+$calc.onclick = calcAll;
+```
 
 ### Iteration 2: Add another product
 
-Add a second product.
+Add a second product (a second `<tr class="product">`).
 
-![](https://i.imgur.com/Fe48iGO.png)
+![](https://i.imgur.com/cbkHzZC.png)
 
-When you click on the `Calculate Prices` button, the total prices for both products should update their values based on each quantity specified.
+Inside `calcAll`, modify your code so when `Calculate Prices` button is clicked, it now updates subtotal for every products.
 
-### Iteration 3: Calculating the total price of all products
+### Iteration 3: Total
 
-Now that you have each product's total price, you need to calculate the total price of the entire shopping cart. Once you have that number, you need to display the result in the DOM.
+Now that you have each product's subtotals, you need to calculate the total price of the entire shopping cart. Once you have that number, you need to display the result in the HTML:
 
-![](https://i.imgur.com/u607NQ0.png)
+![](https://i.imgur.com/dJGyeK1.png)
 
-Create a new `div` below the `Calculate Prices` button. This `div` should have an `h2` element like this one:
-
-`<h2>Total Price: <span>$0</span></h2>`
-
-Now, as part of your "Calculate Prices" function:
-
-- Select the elements that contain the each product's total price.
-- Loop through the elements selected in the previous step, retrieve each of their total prices and add them together to get the total price of the entire shopping cart.
-- Show the total price in the DOM.
+Inside `calcAll` function:
+ - sum each product's subtotal to compute the total.
+ - Update the HTML with that total value
 
 ### Iteration 4: Deleting a product
 
@@ -100,23 +145,45 @@ Associate the "Delete" buttons to click events so that when you click one, it de
 
 - Select all the "Delete" buttons
 - For each button, assign a click event that will:
-	- Select the wrapper div that contains all the HTML for the product that should be deleted
-	- Select the parent that contains all of the product wrapper divs
+	- Select the wrapper `tr` that contains all the HTML for the product that should be deleted
+	- Select the `tbody` parent that contains all of the product wrapper `tr`s
 	- Use the function `removeChild` we saw in [DOM Manipulators](https://hackmd.io/MwBgRgHAjATArMAtANjsgxogLAU3QQ0QmQHZlEdgox8BOE9EsAMzCA==)
 
 :bulb: Use `e.currentTarget` to access the "Delete" button that was just clicked and select the parent node of an HTML element with `parentNode`.
 
 ### Iteration 5: Creating new products
 
-For the last iteration, allow the user to create new products for the shop. You'll add inputs that look like this:
+For the last iteration, allow the user to create new products for the shop.
 
-![](https://i.imgur.com/FGVUuHt.png)
+Uncomment the `tfoot` in the markup:
+```html
+   …
+    </tbody>
+    <!-- <tfoot>
+      <tr class="new">
+        <td>
+          <input type="text"/>
+        </td>
+        <td>
+          <input type="number" min="0"/>
+        </td>
+        <td></td>
+        <td></td>
+        <td>
+          <button id="create" class="btn">Create</button>
+        </td>
+      </tr>
+    </tfoot> -->
+
+  </table>
+```
+
+![](https://i.imgur.com/hFKb7Fa.png)
 
 Those two inputs represent the name and the unit price of the new product. Then there's the "Create" button that the user needs to click to actually add the new product to the list.
 
-- Add two inputs to let the user enter the new product data.
-- Add a "Create" button. Assign it a click event that will:
-	- Get the data from the inputs.
+Assign a click event to the create button that will:
+	- Get the data from the `input`s
 	- Create a new product row with the data from the inputs. The structure of the new product should be the same as in Iteration #1.
 
 :warning: Make sure that the new product you added has the same behavior than the other products:
