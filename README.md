@@ -1,15 +1,8 @@
-![Ironhack Logo](https://i.imgur.com/1QgrNNw.png)
+![logo_ironhack_blue 7](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
 
 # DOM | The Ironhack Cart
 
 ![shopping cart](https://i.imgur.com/9h7pFVP.jpg)
-
-## Learning Goals
-
-After this learning unit, you will be able to:
-
-- Understand what the DOM is
-- Manipulate the DOM to edit elements
 
 
 ## Introduction
@@ -21,25 +14,27 @@ Let's create the Ironhack Cart, where users will be able to add and remove produ
 In the started code you will find some CSS to start with that includes classes for the different types of buttons. Add the classes to the button tags you write in your HTML and they will be perfectly styled. 😉
 
 ## Requirements
+
 - Fork this repo
+- Clone this repo
 
 ## Submission
 
-Upon completion, run the following commands
-```
-$ git add .
-$ git commit -m "done"
-$ git push origin master
-```
-Navigate to your repo on GitHub and create a Pull Request -from your master branch to the original repository master branch.
+- Upon completion, run the following commands
 
-In the Pull request title field, add your name and last names separated by a dash "-".
+  ```
+  git add .
+  git commit -m "done"
+  git push origin master
+  ```
+
+- Create Pull Request so your TAs can check up your work.
 
 ## Deliverables
 
-Write your JavaScript organized in the provided filesystem. Submit everything.
+Write your JavaScript code in `js/index.js`. When submitting, submit the whole lab repo.
 
-### Iteration 1: Calculating for one product
+### Iteration 1: Calculating a total price for one product
 
 We will start by looking at the HTML of our `#cart`:
 
@@ -87,7 +82,7 @@ Every product will have the following markup, ie: a `tr` inside the `tbody`:
 			</td>
 	
 			<td class="rm">
-				<button class="btn btn-delete">delete</button>
+				<button class="btn btn-delete">Delete</button>
 			</td>
 		</tr>
 ```
@@ -112,7 +107,7 @@ function updateSubtot($product) {
 
 #### Iteration 1.2: Call `updateSubtot`
 
-Now that `updateSubtot` is in place, call it from `calcAll` on your product:
+Now that `updateSubtot` is in place, use it in the `calcAll` on your product:
 
 ```js
 function calcAll() {
@@ -127,17 +122,17 @@ Add a second product (a second `<tr class="product">`).
 
 ![](https://i.imgur.com/cbkHzZC.png)
 
-Inside `calcAll`, modify your code so when `Calculate Prices` button is clicked, it now updates subtotal for every products.
+Inside `calcAll`, modify your code so when `Calculate prices` button is clicked, it now updates subtotal for all products.
 
 ### Iteration 3: Total
 
-Now that you have each product's subtotals, you need to calculate the total price of the entire shopping cart. Once you have that number, you need to display the result in the HTML:
+Now that you have each product's subtotal, you need to calculate the total price of all the products in the shopping cart. Once you have that number, you need to display the result in the HTML:
 
 ![](https://i.imgur.com/dJGyeK1.png)
 
 Inside `calcAll` function:
- - sum each product's subtotal to compute the total.
- - Update the HTML with that total value
+ - sum each product's subtotal to compute the total,
+ - update the HTML with that total value.
 
 ### Iteration 4: Deleting a product
 
@@ -145,11 +140,11 @@ Associate the "Delete" buttons to click events so that when you click one, it de
 
 - Select all the "Delete" buttons
 - For each button, assign a click event that will:
-	- Select the wrapper `tr` that contains all the HTML for the product that should be deleted
-	- Select the `tbody` parent that contains all of the product wrapper `tr`s
-	- Use the function `removeChild` we saw in [DOM Manipulators](https://hackmd.io/MwBgRgHAjATArMAtANjsgxogLAU3QQ0QmQHZlEdgox8BOE9EsAMzCA==)
+	- select the wrapper `tr` that contains all the HTML for the product that should be deleted,
+	- select the `tbody` parent that contains all of the product wrapper `tr`s,
+	- use the method [`removeChild`](https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild) we already saw in the lesson
 
-:bulb: Use `e.currentTarget` to access the "Delete" button that was just clicked and select the parent node of an HTML element with `parentNode`.
+:bulb: You can use `e.currentTarget` to access the "Delete" button that was just clicked and select the parent node of an HTML element with `parentNode`.
 
 ### Iteration 5: Creating new products
 
@@ -183,10 +178,13 @@ Uncomment the `tfoot` in the markup:
 Those two inputs represent the name and the unit price of the new product. Then there's the "Create" button that the user needs to click to actually add the new product to the list.
 
 Assign a click event to the create button that will:
-	- Get the data from the `input`s
-	- Create a new product row with the data from the inputs. The structure of the new product should be the same as in Iteration #1.
+	- get the data from the `input`s,
+	- create a new product row with the data from the inputs. The structure of the new product should be the same as in Iteration #1.
 
 :warning: Make sure that the new product you added has the same behavior than the other products:
-- You should be able to calculate the product's total price
-- That product's price should be included in the total price of the entire Shopping Cart
-- You should be able to delete the product
+- You should be able to calculate the product's total price.
+- That product's price should be included in the total price of the entire Shopping Cart.
+- You should be able to delete the product.
+
+
+__Happy coding! :heart:__
