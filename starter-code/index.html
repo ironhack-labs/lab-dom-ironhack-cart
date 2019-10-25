@@ -1,14 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <script type="text/javascript" src="./js/index.js"></script>
-  <title>Ironhack cart</title>
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Ironhack cart</title>
+  </head>
+
+  <body>
+    <h1>
+      Ironhack<br />
+      Merchandising shop
+    </h1>
+    <div class="list_product">
+      <div class="product">
+        <div><span>Product Name</span></div>
+        <div><span class="price">$25.00</span></div>
+        <div>
+          <label for="units">QTY</label
+          ><input
+            type="number"
+            class="input"
+            value="2"
+            oninput="getTotalPriceByProduct()"
+          />
+        </div>
+        <div><span class="total">$0.00</span></div>
+        <div><button class="btn-delete btn" type="button">Delete</button></div>
+      </div>
+      <div class="product">
+        <div><span>Product Name</span></div>
+        <div><span class="price">$245.00</span></div>
+        <div>
+          <label for="units">QTY</label
+          ><input
+            type="number"
+            class="input"
+            value="1"
+            oninput="getTotalPriceByProduct()"
+          />
+        </div>
+        <div><span class="total">$0.00</span></div>
+        <div><button class="btn-delete btn" type="button">Delete</button></div>
+      </div>
+    </div>
+    <div class="createProductLine">
+      <div>
+        <input class="inputName" type="text" value="Product Name" />
+        <input class="inputNumber" type="Number" value="250" />
+      </div>
+      <button class="createProduct">Create</button>
+    </div>
+    <div id="calc-prices-button">
+      <button class="btn-success btn">
+        Calculate Prices
+      </button>
+    </div>
+
+    <div><span class="totalPrice">Total Price: 0.00$</span></div>
+    <script type="text/javascript" src="./js/index.js"></script>
+  </body>
 </html>

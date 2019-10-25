@@ -1,5 +1,15 @@
-input {
+.input {
   border: solid 1px black;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+}
+
+label {
+  margin-right: 20px;
 }
 
 .btn {
@@ -25,17 +35,51 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
+  margin: 30px auto;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #CF000F;
+  border-color: #CF000F;
 }
 
 .quantity {
   margin: 0 5px;
+}
+.list_product {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.product {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin:25px;
+}
+.totalPrice{
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+  font-size: 30px;
+  font-weight: 600;
+}
+.createProductLine{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+#calc-prices-button{
+  display:flex;
+  justify-content: center;
+}
+.inputNumber{
+  margin-right: 30em;
 }
