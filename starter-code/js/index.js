@@ -41,11 +41,11 @@ createBtn.addEventListener('click', function () {
   create()
 })
 
-function create(){
-  if (subInputs[0].value && subInputs[1].value){
-  a = subInputs[0].value
-  b = subInputs[1].value
-  body.innerHTML += `        <tr class="product">
+function create() {
+  if (subInputs[0].value && subInputs[1].value) {
+    a = subInputs[0].value
+    b = subInputs[1].value
+    body.innerHTML += `        <tr class="product">
   <td class="name">
     <span>${a}</span>
   </td>
@@ -67,7 +67,7 @@ function create(){
   <td class="rm">
     <button class="btn btn-delete">Delete</button>
   </td>
-  </tr>`} else {alert("You have to fill title and price")}
+  </tr>`} else { alert("You have to fill title and price") }
   subInputs[0].value = "New product"
   subInputs[1].value = 0
   $subTot = document.querySelectorAll(".product span.subTot");
@@ -80,12 +80,12 @@ function create(){
     btn.onclick =
       function (e) {
         $subQua[i].value = 0
-  
+
         updateSubtot()
         deleteBtn[i].parentElement.parentElement.remove()
       }
   })
-  
+
 }
 
 // addEventListener('click', function () {
