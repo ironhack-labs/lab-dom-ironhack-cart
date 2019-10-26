@@ -1,40 +1,19 @@
-table#cart {
-  width:100%;
-  border-collapse:collapse;
+html, body{
+  margin:0;
+  padding:0;
+  width: 100vw;
+  height: 100vh;
 }
 
-table#cart th,
-table#cart td {
-  padding:.5em;
+section{
+  border-radius: 8px;;
 }
 
-table#cart td {border:1px solid;}
-
-table#cart tfoot {
-  background:#eee;
-}
-
-input {font:inherit;}
-
-.btn {
-  display:inline-block;
-  padding: 6px 12px;
-  font-size:inherit;
-  white-space: nowrap;
-  cursor: pointer;
+.btn.uk-button {
   border-radius:4px;
 }
-.btn-success {
-  color: #fff;
-  background-color: #5cb85c;
-  border-color: #4cae4c;
-}
-.btn-delete {
-  color: #fff;
-  background-color: #CF000F;
-  border-color: #CF000F;
-}
 
-h1,
-.cta,
-h2 {text-align:center;}
+h2{
+  text-align:right;
+  padding-right: 16px;
+}

@@ -27,7 +27,7 @@ function calcAll() {
   document.querySelector('h2 span').innerHTML = total
 }
 
-$calc.onclick = calcAll;  //¿Por qué la función va sin paréntesis aquí?
+// $calc.onclick = calcAll;  //¿Por qué la función va sin paréntesis aquí?
 
 //4.  Detect which delete button was clicked and remove its product row
 function deleteRow(e) {
@@ -81,13 +81,8 @@ $cart.addEventListener("change", function (e) {
       }else{
         calcAll();
       }
-
   }
 });
-
-//Mejoras
-//3. Mejorar el estilo con un framework de css y hacerlo responsive
-
 
 
 
