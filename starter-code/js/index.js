@@ -5,22 +5,38 @@ var productPrice = Number(
 );
 var quantity = document.querySelectorAll(".quantity");
 var totalPrice = document.querySelectorAll(".total-price");
+
 // console.log(containers);
-function deleteItem() {}
 
-function getPriceByProduct() {}
+function deleteItem() {
+  containers.forEach(function(container) {
+    var deleteButton = container.querySelector(".btn-delete");
+    deleteButton.addEventListener("click", function() {
+      container.innerHTML = "";
+    });
+  });
+}
+deleteItem();
 
-function updatePriceByProduct() {}
-
-function getTotalPrice() {
+function getPriceByProduct() {
   containers.forEach(function(container) {
     var productPrice = container.querySelector(".product-price").textContent;
-    console.log(productPrice);
     var quantity = container.querySelector(".quantity").value;
-    console.log(typeof Number(quantity));
     var total = Number(productPrice) * Number(quantity);
-    console.log(typeof total);
-    container.querySelector(".total-price").innerHTML = `${total}`;
+    container.querySelector(".total-price").innerHTML = `$${total}`;
+  });
+}
+getPriceByProduct();
+
+function getTotalPrice() {
+  getPriceByProduct();
+  var totalByProduct = 0;
+  containers.forEach(function(container) {
+    var productPrice = container.querySelector(".product-price").textContent;
+    var quantity = container.querySelector(".quantity").value;
+    var total = Number(productPrice) * Number(quantity);
+    totalByProduct += total;
+    document.querySelector(".total").innerHTML = `$ ${Number(totalByProduct)}`;
   });
 }
 
@@ -44,10 +60,10 @@ window.onload = function() {
   var deleteButtons = document.getElementsByClassName("btn-delete");
 
   calculatePriceButton.onclick = getTotalPrice;
-  // createItemButton.onclick = createNewItem;
+  //createItemButton.onclick = createNewItem;
 
-  for (var i = 0; i < deleteButtons.length; i++) {
-    deleteButtons[i].onclick = deleteItem;
-  }
+  // for (var i = 0; i < deleteButtons.length; i++) {
+  //   deleteButtons[i].onclick = deleteItem;
+  // }
 };
 window.onload();
