@@ -71,11 +71,16 @@ newProductBtn.onclick = function () {
   newProductPrice.value = "";
 }
 
+// Call to calcAll function when quantities of products change
+$cart.addEventListener("change", function (e) {
+  if (e.target && e.target.matches(".qty input")) {
+    calcAll();
+  }
+});
+
 //Mejoras
-//1. Borrar el valor de los inputs del footer al crear un nuevo producto
-//2. Actualizar subtotal y total al modificar la cantidad de cualquier producto
+
 //3. Mejorar el estilo con un framework de css y hacerlo responsive
-//4. No permitir que un producto se cree sin haber especificado nombre y precio 
-//5. Cuando se borran todos los rows, no se pueden crear más porque no tiene original del que clonar 
-//6. No permitir cantidades negativas de
+//6. No permitir cantidades negativas de productos
+
 
