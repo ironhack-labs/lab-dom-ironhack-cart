@@ -42,6 +42,30 @@
           <button class="btn btn-delete">Delete</button>
         </td>
       </tr>
+
+      <tr class="product">
+        <td class="name">
+          <span>IronBall</span>
+        </td>
+    
+        <td class="pu">
+          $<span>15.00</span>
+        </td>
+    
+        <td class="qty">
+          <label>
+            <input type="number" value="0" min="0">
+          </label>
+        </td>
+    
+        <td class="subtot">
+          $<span>0</span>
+        </td>
+    
+        <td class="rm">
+          <button class="btn btn-delete">Delete</button>
+        </td>
+      </tr>
     </tbody>
     <!-- <tfoot>
       <tr class="new">
@@ -67,6 +91,15 @@
 
   <h2>Total: $<span>0</span></h2>
 
-  <script type="text/javascript" src="./js/index.js"></script>
+  <script type="text/javascript" src="./js/index.js">
+
+  
+  /document.getElementById("get-value").onclick = funcition(e){
+    e.preventDefault();
+    document.querySelector("h1").interHTML = document.getElementById("name").value;
+  };
+
+
+  </script>
 </body>
 </html>
