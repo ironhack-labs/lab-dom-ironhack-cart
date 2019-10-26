@@ -1,6 +1,6 @@
 var $cart = document.querySelector('#cart tbody');
 var $calc = document.getElementById('calc');
-
+var $erase = document.getElementById('erase');
 
 function updateSubtot($product) {
   // Iteration 1.1
@@ -50,22 +50,24 @@ function calcAll() {
   listaProductos.forEach(updateSubtot);
 
   let total = document.querySelector('h2>span');
-  
-    let acum = 0;
-    for (var i= 0; i<listaProductos.length; i++){
-
+  let acum = 0;
+  for (var i = 0; i < listaProductos.length; i++) {
     acum += parseFloat(listaProductos[i].querySelector(".subtot>span").innerText);
   }
-
   total.innerText = acum;
-
-
 }
 
 
+function deleteEl() {
+  var elem = document.querySelector('product');
+  elem.parentNode.removeChild(elem);
+  
+  
+}
+
 
 $calc.onclick = calcAll;
-
+$erase.onClick = deleteEl;
 /*
 function updateCartTotal() {
   var cartItemContainer = document.getElementsByClassName('cart-items')[0]
