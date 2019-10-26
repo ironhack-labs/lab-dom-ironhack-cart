@@ -3,8 +3,6 @@ function updateSubtot(product) {
   let quantity = product.getElementsByClassName('qty')[0].childNodes[1].childNodes[1].value
   let priceSubTot = priceUnit * quantity;
   product.getElementsByClassName('subtot')[0].childNodes[1].innerHTML = priceSubTot
-  console.log(priceSubTot)
-  return priceSubTot;
 }
 
 
