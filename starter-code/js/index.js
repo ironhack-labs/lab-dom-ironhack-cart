@@ -1,6 +1,3 @@
-var $cart = document.querySelector('#cart tbody');
-var $calc = document.getElementById('calc');
-
 let ironBubbleHead = document.getElementById("ironBubble-head").innerHTML;
 
 let ironBubbleHead2 = document.getElementById("ironBubble-head2").innerHTML;
@@ -24,7 +21,7 @@ function updateSubtot() {
   document.getElementById("ironSubtotal2").innerHTML = total2;
 
   absTotal = total + total2;
-  
+
   document.getElementById("absoluteTotal").innerHTML = absTotal;
 }
 
