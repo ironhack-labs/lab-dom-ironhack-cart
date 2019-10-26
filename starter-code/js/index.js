@@ -57,11 +57,18 @@ newProductBtn.onclick = function () {
   cloneProductRow.querySelector('.qty input').value = 0;
   cloneProductRow.querySelector('.subtot span').innerText = 0;
 
-  $cart.appendChild(cloneProductRow);
+  //Check product
+  if (newProductName.value == ""){
+    alert('Por favor, indica el nombre del producto');
+  } else if (newProductPrice.value == ""){
+    alert('Por favor, indica el precio del producto');
+  }else {
+    $cart.appendChild(cloneProductRow);
+  }
 
-  //1. Borrar el valor de los inputs del footer al crear un nuevo producto
+  //Clean inputs
   newProductName.value = "";
-  newProductPrice.value = " ";
+  newProductPrice.value = "";
 }
 
 //Mejoras
