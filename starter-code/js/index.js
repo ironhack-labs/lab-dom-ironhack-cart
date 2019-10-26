@@ -74,13 +74,20 @@ newProductBtn.onclick = function () {
 // Call to calcAll function when quantities of products change
 $cart.addEventListener("change", function (e) {
   if (e.target && e.target.matches(".qty input")) {
-    calcAll();
+
+      // Throw error at negative quantities
+      if (e.target.value < 0){
+        throw new RangeError('Quantity has to be a positive number');
+      }else{
+        calcAll();
+      }
+
   }
 });
 
 //Mejoras
-
 //3. Mejorar el estilo con un framework de css y hacerlo responsive
-//6. No permitir cantidades negativas de productos
+
+
 
 
