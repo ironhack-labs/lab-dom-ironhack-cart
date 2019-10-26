@@ -1,6 +1,3 @@
-var $cart = document.querySelector('#cart tbody');
-var $calc = document.getElementById('calc');
-
 function updateSubtot(product) {
   let priceUnit = product.getElementsByClassName('pu')[0].childNodes[1].innerHTML
   let quantity = product.getElementsByClassName('qty')[0].childNodes[1].childNodes[1].value
@@ -9,6 +6,7 @@ function updateSubtot(product) {
   console.log(priceSubTot)
   return priceSubTot;
 }
+
 
 function calculateTotalPrice() {
   let total = 0;
@@ -20,29 +18,37 @@ function calculateTotalPrice() {
   totalPrice.innerHTML = total
 }
 
+
 function deleteProduct(e) {
   let product = e.currentTarget.parentNode.parentNode
   let tBody = e.currentTarget.parentNode.parentNode.parentNode
   tBody.removeChild(product);
+  calculateTotalPrice()
 }
 
-function createObjects(product) {
+
+function createObjects(productHtml) {
   let productName = document.getElementsByClassName('new')[0].childNodes[1].childNodes[1].value
   let priceUnit = document.getElementsByClassName('new')[0].childNodes[3].childNodes[1].value
 
-  product.getElementsByClassName('name')[0].childNodes[1].innerHTML = productName
-  product.getElementsByClassName('pu')[0].childNodes[1].innerHTML = priceUnit ? parseFloat(priceUnit, 2) : null
-  product.getElementsByClassName('qty')[0].childNodes[1].childNodes[1].value = null
-  product.getElementsByClassName('subtot')[0].childNodes[1].innerHTML = 0
+  let newProduct = document.createElement('tr');
+  newProduct.className = 'product'
+  newProduct.innerHTML = productHtml
+
+  newProduct.getElementsByClassName('name')[0].childNodes[1].innerHTML = productName
+  newProduct.getElementsByClassName('pu')[0].childNodes[1].innerHTML = priceUnit ? parseFloat(priceUnit, 2) : null
+  newProduct.getElementsByClassName('qty')[0].childNodes[1].childNodes[1].value = 0
+  newProduct.getElementsByClassName('subtot')[0].childNodes[1].innerHTML = 0
 
   let tBody = document.getElementsByTagName('tbody')[0]
-  tBody.appendChild(product)
+  tBody.appendChild(newProduct)
+
   document.getElementsByClassName('new')[0].childNodes[1].childNodes[1].value = ""
   document.getElementsByClassName('new')[0].childNodes[3].childNodes[1].value = null
-  product.getElementsByClassName('btn btn-delete')[0].onclick = function (e) {
+  newProduct.getElementsByClassName('btn btn-delete')[0].onclick = function (e) {
     deleteProduct(e)
   }
-  product.getElementsByTagName('input')[0].onchange = function (e) {
+  newProduct.getElementsByTagName('input')[0].onchange = function (e) {
     let bigParent = e.currentTarget.parentNode.parentNode.parentNode
     updateSubtot(bigParent);
   }
@@ -50,7 +56,7 @@ function createObjects(product) {
 
 window.onload = function () {
   document.getElementById('calc').onclick = calculateTotalPrice
-  let productBackup = document.getElementsByClassName('product')[0].cloneNode(true)
+  let productHtml = document.getElementsByClassName('product')[0].innerHTML
 
   let inputs = document.getElementsByTagName('input')
   for (let i = 0; i < inputs.length; i++) {
@@ -68,6 +74,6 @@ window.onload = function () {
   }
 
   document.getElementById('create').onclick = function () {
-    createObjects(productBackup)
+    createObjects(productHtml)
   }
 }
