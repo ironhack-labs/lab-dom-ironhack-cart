@@ -21,21 +21,44 @@
     <tbody>
       <tr class="product">
         <td class="name">
-          <span>IronBubble-head</span>
+          <span id="ironBubble-head">IronBubble-head</span>
         </td>
     
         <td class="pu">
-          $<span>25.00</span>
+          $<span id="ironPrice">25.00</span>
         </td>
     
         <td class="qty">
           <label>
-            <input type="number" value="0" min="0">
+            <input type="number" value="0" min="0" id="ironQuantity">
           </label>
         </td>
     
         <td class="subtot">
-          $<span>0</span>
+          $<span id="ironSubtotal">0</span>
+        </td>
+    
+        <td class="rm">
+          <button class="btn btn-delete">Delete</button>
+        </td>
+      </tr>
+      <tr class="product">
+        <td class="name">
+          <span id="ironBubble-head2">IronBubble-head</span>
+        </td>
+    
+        <td class="pu">
+          $<span id="ironPrice2">50.00</span>
+        </td>
+    
+        <td class="qty">
+          <label>
+            <input type="number" value="0" min="0" id="ironQuantity2">
+          </label>
+        </td>
+    
+        <td class="subtot">
+          $<span id="ironSubtotal2">0</span>
         </td>
     
         <td class="rm">
@@ -65,7 +88,7 @@
     <button id="calc" class="btn btn-success">Calculate prices</button>
   </p>
 
-  <h2>Total: $<span>0</span></h2>
+  <h2>Total: $<span id="absoluteTotal">0</span></h2>
 
   <script type="text/javascript" src="./js/index.js"></script>
 </body>
