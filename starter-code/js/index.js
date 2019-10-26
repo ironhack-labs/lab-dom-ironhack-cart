@@ -13,6 +13,7 @@ function updateSubtot($product) {
   return subtotalVal;
 }
 
+
 //2-3. Present subtotal of each row and total price at the bottom
 function calcAll() {
   let total = 0;
@@ -47,15 +48,27 @@ let productRow = document.querySelector('.product:last-child');
 
 newProductBtn.onclick = function () {
   let cloneProductRow = productRow.cloneNode(true);
-  let newProductName = document.querySelector('.new input[type="text"]').value;
-  let newProductPrice = document.querySelector('.new input[type="number"]').value;
+  let newProductName = document.querySelector('.new input[type="text"]');
+  let newProductPrice = document.querySelector('.new input[type="number"]');
 
   // Content of the new product
-  cloneProductRow.querySelector('.name span').innerText = newProductName;
-  cloneProductRow.querySelector('.pu span').innerText = newProductPrice;
+  cloneProductRow.querySelector('.name span').innerText = newProductName.value;
+  cloneProductRow.querySelector('.pu span').innerText = newProductPrice.value;
   cloneProductRow.querySelector('.qty input').value = 0;
   cloneProductRow.querySelector('.subtot span').innerText = 0;
 
   $cart.appendChild(cloneProductRow);
+
+  //1. Borrar el valor de los inputs del footer al crear un nuevo producto
+  newProductName.value = "";
+  newProductPrice.value = " ";
 }
+
+//Mejoras
+//1. Borrar el valor de los inputs del footer al crear un nuevo producto
+//2. Actualizar subtotal y total al modificar la cantidad de cualquier producto
+//3. Mejorar el estilo con un framework de css y hacerlo responsive
+//4. No permitir que un producto se cree sin haber especificado nombre y precio 
+//5. Cuando se borran todos los rows, no se pueden crear más porque no tiene original del que clonar 
+//6. No permitir cantidades negativas de
 
