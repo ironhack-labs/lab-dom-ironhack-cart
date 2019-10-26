@@ -1,11 +1,14 @@
-var $cart = document.querySelector('#cart tbody');
-var $calc = document.getElementById('calc');
+const $cart = document.querySelector('#cart tbody');
+const $calc = document.getElementById('calc');
 
-function updateSubtot($product) {
-  // Iteration 1.1
+// Iteration 1.1
+function updateSubtotal($product) {
+  //...
 }
 
-function calcAll() {
-  // Iteration 1.2
+// Iteration 1.2
+function calculateAll() {
+  //...
 }
-$calc.onclick = calcAll;
+
+$calc.addEventListener('click', calculateAll);

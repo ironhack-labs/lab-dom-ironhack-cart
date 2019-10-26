@@ -6,11 +6,11 @@
 
 ## Introduction
 
-One of the most common businesses on the Internet today are online shops. Websites like Amazon earn millions of dollars each year by selling all kinds of products. All these websites have something in common: they have a shopping cart.
+One of the most common businesses on the Internet today are online shops. Websites like Amazon earn millions of dollars each year by selling all kinds of products. All of these websites have something in common: they have a shopping cart.
 
 Let's create the Ironhack Cart, where users will be able to add and remove products in their frontend shopping cart. Additionally, it will calculate the total price of each product based on how many of those the user has added and the total price of the everything in the cart.
 
-In the started code you will find some CSS to start with that includes classes for the different types of buttons. Add the classes to the button tags you write in your HTML and they will be perfectly styled. 😉
+In the starter-code you will find some CSS to start with that includes classes for the different types of buttons. Add the classes to the button tags you write in your HTML and they will be perfectly styled. 😉
 
 ## Requirements
 
@@ -19,7 +19,7 @@ In the started code you will find some CSS to start with that includes classes f
 
 ## Submission
 
-- Upon completion, run the following commands
+- Upon completion, run the following commands:
 
 ```bash
 $ git add .
@@ -71,39 +71,42 @@ Every product will have the following markup, ie: a `tr` inside the `tbody`:
       <input type="number" value="0" min="0" />
     </label>
   </td>
-  <td class="subtot">$<span>0</span></td>
+  <td class="subtotal">$<span>0</span></td>
   <td class="rm">
     <button class="btn btn-delete">Delete</button>
   </td>
 </tr>
 ```
 
-#### Iteration 1.1: `updateSubtot`
+#### Iteration 1.1: `updateSubtotal`
 
-The `updateSubtot` function will calculate the subtotal for a given product.
+The `updateSubtotal` function will calculate the subtotal for a given product.
 
-Complete the `updateSubtot` function that :
+Complete the `updateSubtotal` function that:
 
-- have 1 parameter: the `tr` element of the product (we can call it `$product`)
-  - calculates the subtotal price, from : - the unit price HTML element of the product - the quantity HTML element of the product
-  - updates the HTML with the new product's subtotal
-  - returns the subtotal value
+- Takes a single argument: a reference to the `tr` DOM node of the product (we can call it `$product`).
+- Calculates the subtotal price, by multiplying the value of the unit price HTML element of the product, and the value of the quantity HTML element of the product.
+- Updates the HTML with the new product's subtotal.
+- Returns the subtotal value.
 
 ```js
-function updateSubtot($product) {
-  // Iteration 1.1
+// Iteration 1.1
+function updateSubtotal($product) {
+  // ...
 }
 ```
 
-#### Iteration 1.2: Call `updateSubtot`
+#### Iteration 1.2: Call `updateSubtotal`
 
-Now that `updateSubtot` is in place, use it in the `calcAll` on your product:
+Now that `updateSubtotal` is in place, use it in the `calculateAll` on your product:
 
 ```js
-function calcAll() {
-  // Iteration 1.2
+// Iteration 1.2
+function calculateAll() {
+  // ...
 }
-$calc.onclick = calcAll;
+
+$calc.addEventListener('click', calculateAll);
 ```
 
 ### Iteration 2: Add another product
@@ -112,7 +115,7 @@ Add a second product (a second `<tr class="product">`).
 
 ![](https://i.imgur.com/cbkHzZC.png)
 
-Inside `calcAll`, modify your code so when `Calculate prices` button is clicked, it now updates subtotal for all products.
+Inside `calculateAll`, modify your code so when `Calculate prices` button is clicked, it now updates subtotal for all products.
 
 ### Iteration 3: Total
 
@@ -120,17 +123,17 @@ Now that you have each product's subtotal, you need to calculate the total price
 
 ![](https://i.imgur.com/dJGyeK1.png)
 
-Inside `calcAll` function:
+Inside `calculateAll` function:
 
-- sum each product's subtotal to compute the total,
-- update the HTML with that total value.
+- Sum each product's subtotal to compute the total.
+- Update the HTML with that total value.
 
 ### Iteration 4: Deleting a product
 
 Associate the "Delete" buttons to click events so that when you click one, it deletes that product from the list. Steps to follow:
 
-- Select all the "Delete" buttons
-- For each button, assign a click event that will: - select the wrapper `tr` that contains all the HTML for the product that should be deleted, - select the `tbody` parent that contains all of the product wrapper `tr`s, - use the method [`removeChild`](https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild) we already saw in the lesson
+- Select all the "Delete" buttons.
+- For each button, assign a click event that will: - select the wrapper `tr` that contains all the HTML for the product that should be deleted, - select the `tbody` parent that contains all of the product wrapper `tr`s, - use the method [`removeChild`](https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild) we already saw in the lesson.
 
 :bulb: You can use `e.currentTarget` to access the "Delete" button that was just clicked and select the parent node of an HTML element with `parentNode`.
 
@@ -175,4 +178,4 @@ Assign a click event to the create button that will: - get the data from the `in
 - That product's price should be included in the total price of the entire Shopping Cart.
 - You should be able to delete the product.
 
-**Happy coding! :heart:**
+**Happy coding! 💙**
