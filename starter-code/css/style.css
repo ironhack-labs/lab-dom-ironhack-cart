@@ -1,7 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 input {
   border: solid 1px black;
 }
-
+.heading {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+#div-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 40px 100px;
+}
 .btn {
   display: inline-block;
   padding: 6px 12px;
@@ -25,17 +41,35 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #cf000f;
+  border-color: #cf000f;
 }
-
+.btn-create-item {
+  border: 1px solid black;
+  color: white;
+  background-color: black;
+}
+#calc-prices-button {
+  display: flex;
+  justify-content: space-around;
+}
+#new-item-create {
+  display: flex;
+  justify-content: end;
+}
 .quantity {
   margin: 0 5px;
+}
+.total {
+  padding-top: 30px;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 600;
 }
