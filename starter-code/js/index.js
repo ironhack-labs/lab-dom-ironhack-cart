@@ -1,11 +1,11 @@
 var $cart = document.querySelector('#cart tbody');
 var $calc = document.getElementById('calc');
-var $product = document.querySelectorAll(".product")
+let $product = document.querySelector(".product")
 
-function updateSubtot() {
+function updateSubtot($product) {
   // Iteration 1.1
-  let priceUnit = document.querySelector(".pu span").innerText;
-  let quantity = document.querySelector(".qty input").value;
+  let priceUnit = $product.querySelector(".pu span").innerText;
+  let quantity = $product.querySelector(".qty input").value;
   
   let subTotal = priceUnit * quantity;
   
@@ -14,7 +14,7 @@ function updateSubtot() {
 
 function calcAll() {
   // Iteration 1.2
-  let subTotal = updateSubtot();
+  let subTotal = updateSubtot($product);
   let changeSubtot = document.querySelector(".subtot span");
   changeSubtot.innerText = subTotal;
 }
