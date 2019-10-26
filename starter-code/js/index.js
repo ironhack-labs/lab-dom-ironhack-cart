@@ -1,37 +1,44 @@
 var $cart = document.querySelector('#cart tbody');
 var $calc = document.getElementById('calc');
-var $product = $cart.querySelector(".product"); // need "." before product because it's a class. If no dot, then use className and not querySelector
-var pu = $product.querySelector(".puI").textContent;
-var qty = $product.querySelector(".qtyProduct").value; // already is a number ' type="number" '
-var allProducts = $cart.querySelectorAll(".product");
+var $products = document.querySelectorAll(".product");
+var $deleteButton = document.querySelector(".btn.btn-delete");
 
 
 // Iteration 1.1
 
-function updateSubtot() { // = price unit * quantity
-  // access to price unit:
-  // //1)need access to the product: "var $product"
-  // //2)now access to pu: "var pu"
-  // //3)access to quantity: "var qty"
-  // //4)calculate the subtotal:
-  var subtotal = pu * qty;
-  return subtotal;
-  // console.log(qty);
-  // console.log(subtotal);
+function updateSubtot($product) { // $product = tr (row) element of product
+  //unit price * quantity price
+  var priceUnit = $product.querySelector(".pu span").textContent;
+  var quantity = $product.querySelector(".qty input").value;
+  var subtotal = priceUnit * quantity;
+
+  $product.querySelector(".subtot span").textContent = subtotal;
+
+  return subtotal; // subtotal is a number
 }
-updateSubtot($product);
-//console.log(updateSubtot($product)); // 50 YESSSS
 
+//**********************************************************************
 
-// Iteration 1.2
+// Iteration 1.2 + 2 + 3
 
-function calcAll(allProducts) {
-  // for each row of products, calculate updateSubtotal
+function calcAll() {
   var total = 0;
-  allProducts.forEach(product => { // just 'product' and not "$product" ? in this case why we defined product before ?
-    total += updateSubtot(product); // stock the result and added to the precedent one
+  $products.forEach($product => {
+    updateSubtot($product);
+    total += Number($product.querySelector(".subtot span").textContent);
   });
-  return total;
+  document.querySelector(".total span").textContent = total;
 }
-//console.log(calcAll(allProducts)); // 100 YESSSSSS
 $calc.onclick = calcAll; // calcAll is called ONLY when .calc (=Calculate prices button) is clicked
+
+//**********************************************************************
+
+// Iteration 4
+
+// function deleteProduct() {
+//   $products.forEach($product => {
+
+//   });
+// }
+
+// $deleteButton.onclick = deleteProduct;
