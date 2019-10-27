@@ -1,18 +1,8 @@
 var $cart = document.querySelector('#cart tbody');
 var $calc = document.getElementById('calc');
-let $product = document.querySelectorAll(".product")
-let $total = document.querySelector("#total").innerText;
-
-let $prueba = document.querySelectorAll(".product .pu > span");
-
-// Esta es la idea de donde tengo la Iteration 1 y 2 aprox
-// for (let i = 0; i < $product.length; i++) {
-//   let uP = $product[i].querySelector(".pu span").innerText;
-//   let q = $product[i].querySelector(".qty input").value;
-//   let suma = uP * q;
-//   let changeSubtot = $product[i].querySelector(".subtot span");
-//   changeSubtot.innerText = suma;
-// }
+let $product = document.querySelectorAll(".product");
+let $delete = document.querySelector("body");
+let $newProduct = document.querySelector("#cart");
 
 function updateSubtot ($product) {
   // Iteration 1.1
@@ -41,18 +31,45 @@ function calcAll() {
   for (let i = 0; i < totalNum.length; i++) {
   total += parseInt(totalNum[i].textContent);
 }
-
-document.querySelector("#total").innerText = total;
 } 
 $calc.onclick = calcAll;
+$delete.addEventListener("click", removeProduct);
+$newProduct.addEventListener("click",createProduct);
 
-//calcular el total
-// let total = 0;
-// let allNum = document.querySelectorAll(".product .subtot > span");
-// for (let i = 0; i < allNum.length; i++) {
-//   total += parseInt(allNum[i].textContent);
-// }
+function removeProduct(e) {
+  let product = e.target.parentNode.parentNode;
+  if (e.target.matches(".btn-delete")) {
+    console.log("test")
+    product.parentNode.removeChild(product);    
+  }
+}
 
-// document.querySelector("#total").innerText = total;
-// console.log(allNum);
-// console.log(total);
+function createProduct(e){
+  // let tr = document.createElement("tr");
+   let tbody = document.querySelector("tbody");
+  // tr.setAttribute("class", "product");
+  // tbody.insertBefore(tr,tbody.lastChild);
+  // let td = document.createElement("td");
+  // td.setAttribute("class", "name")
+  // tr.insertBefore(td, tr.firstChild);
+  //let content = document.querySelector("#mytemplate").content;
+  // let targetContent = document.querySelector("tbody");
+  //targetContent.appendChild(document.importNode(content, true));
+  // console.log(content);
+  // console.log(targetContent);
+  //$('.tbody').append($('#mytemplate').html());
+  
+  
+
+  if (e.target.matches("#create")){
+    console.log("prueba")
+    const template = document.querySelector("template");
+  let useTemplate = document.importNode(template.content, true);
+  tbody.insertBefore(useTemplate,tbody.lastChild)
+    let dataName = document.querySelector("#inputName").value;
+    let dataNum = document.querySelector("#inputNum").value;
+    console.log(dataName);
+    console.log(dataNum);
+
+  }
+}

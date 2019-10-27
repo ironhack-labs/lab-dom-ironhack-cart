@@ -44,53 +44,7 @@
       </tr>
       <tr class="product">
         <td class="name">
-          <span>IronBubble-head</span>
-        </td>
-    
-        <td class="pu">
-          $<span>25.00</span>
-        </td>
-    
-        <td class="qty">
-          <label>
-            <input type="number" value="0" min="0">
-          </label>
-        </td>
-    
-        <td class="subtot">
-          $<span>0</span>
-        </td>
-    
-        <td class="rm">
-          <button class="btn btn-delete">Delete</button>
-        </td>
-      </tr>
-      <tr class="product">
-        <td class="name">
-          <span>IronBubble-head</span>
-        </td>
-    
-        <td class="pu">
-          $<span>25.00</span>
-        </td>
-    
-        <td class="qty">
-          <label>
-            <input type="number" value="0" min="0">
-          </label>
-        </td>
-    
-        <td class="subtot">
-          $<span>0</span>
-        </td>
-    
-        <td class="rm">
-          <button class="btn btn-delete">Delete</button>
-        </td>
-      </tr>
-      <tr class="product">
-        <td class="name">
-          <span>IronBubble-head</span>
+          <span>IronBubble-head2</span>
         </td>
     
         <td class="pu">
@@ -112,13 +66,13 @@
         </td>
       </tr>
     </tbody>
-    <!-- <tfoot>
+    <tfoot>
       <tr class="new">
         <td>
-          <input type="text"/>
+          <input id = "inputName" type="text"/>
         </td>
         <td>
-          <input type="number" min="0"/>
+          <input id = "inputNum" type="number" min="0"/>
         </td>
         <td></td>
         <td></td>
@@ -126,7 +80,7 @@
           <button id="create" class="btn">Create</button>
         </td>
       </tr>
-    </tfoot> -->
+    </tfoot>
 
   </table>
 
@@ -137,5 +91,30 @@
   <h2>Total: $<span id = "total">0</span></h2>
 
   <script type="text/javascript" src="./js/index.js"></script>
+  <template>
+    <tr class="product">
+			<td class="name">
+				<span>IronBubble-head</span>
+			</td>
+	
+			<td class="pu">
+				$<span>25.00</span>
+			</td>
+	
+			<td class="qty">
+				<label>
+					<input type="number" value="0" min="0">
+				</label>
+			</td>
+	
+			<td class="subtot">
+				$<span>0</span>
+			</td>
+	
+			<td class="rm">
+				<button class="btn btn-delete">Delete</button>
+			</td>
+		</tr>
+  </template>
 </body>
 </html>
