@@ -1,4 +1,5 @@
-let element = document.querySelectorAll("tbody > tr")
+let tbody = document.querySelector("tbody")
+let elements = document.querySelectorAll("tbody > tr")
 let pu = document.querySelectorAll(".pu > span");
 let qty = document.querySelectorAll(".qty > label > input");
 let subtot = document.querySelectorAll(".subtot > span");
@@ -28,14 +29,14 @@ function delete_element() {
     for(let i=0; i<del_button.length; i++){
         del_button[i].onclick = function(btn){
             btn.preventDefault();
-            alert("Hola mundo");
+            tbody.removeChild(elements[i]);
         }
     }
 }
 
 calc.onclick = function(btn){
     btn.preventDefault();
-    updateSubtot(element);
+    updateSubtot(elements);
     calcAll();
 }
 
