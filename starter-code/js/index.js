@@ -31,7 +31,15 @@ function deleteProduct() {
 btnCrt.onclick = function () {
   let newPrt = document.createElement("tr");
   let newPrtName = document.querySelector(".product-name").value;
+  if (newPrtName == "") {
+    alert("Please, introduce a product name before proceeding");
+    throw Error ("Empty field: Product Name ");
+  }  
   let newPrtPrc = document.querySelector(".product-price").value;
+  if (newPrtPrc <= 0 || newPrtPrc == "") {
+    alert("Please, introduce a valid price for the product");
+    throw Error ("Invalid Product Price ");
+  }   
   newPrt.setAttribute("class", "product");
   newPrt.innerHTML = `
       <td class="name">
@@ -66,5 +74,6 @@ btnCrt.onclick = function () {
 
 $calc.onclick = calcAll;
 btnDlt.onclick = deleteProduct();
+
 
 
