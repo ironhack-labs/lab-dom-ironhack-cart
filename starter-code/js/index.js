@@ -10,8 +10,7 @@ function updateSubtot($product) {
   let quantity = $product.querySelector("input[type=number]").value;
   let subtotal = $product.querySelector(".subtot span");
   subtotal.innerText = parseInt(price.innerText) * quantity;
-  let number = $product.querySelector(".subtot span").innerText;
-  individualPrices.push(parseInt(number));
+  individualPrices.push(parseInt(subtotal.innerText));
   return subtotal;
 }
 
@@ -26,3 +25,16 @@ function calcAll() {
 }
 
 $calc.onclick = calcAll;
+
+//Iteration 4
+
+let deleteButton = document.getElementsByClassName('btn-delete');
+let product = document.querySelector(".product");
+
+function deleteProduct (e){
+  e.currentTarget = product.parentNode.removeChild(product);
+}
+
+for(let i=0; i < deleteButton.length; i++){
+deleteButton[i].onclick = deleteProduct;
+}
