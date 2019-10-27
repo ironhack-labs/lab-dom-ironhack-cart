@@ -24,8 +24,9 @@ function deleteProduct() {
   for (let i = 0; i < btnDlt.length; i++) {
     btnDlt[i].onclick = function (e) {
       e.currentTarget.parentNode.parentNode.remove()
+      calcAll();
     }
-  }
+  } 
 }
 
 btnCrt.onclick = function () {
@@ -40,14 +41,14 @@ btnCrt.onclick = function () {
     alert("Please, introduce a valid price for the product");
     throw Error ("Invalid Product Price ");
   }   
-  newPrt.setAttribute("class", "product");
+  newPrt.setAttribute("class", "product animated");
   newPrt.innerHTML = `
       <td class="name">
             <span>${newPrtName}</span>
           </td>
       
           <td class="pu">
-            $<span>${newPrtPrc}</span>
+            $<span>${parseFloat(newPrtPrc).toFixed(2)}</span>
           </td>
       
           <td class="qty">

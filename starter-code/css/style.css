@@ -16,6 +16,20 @@ table#cart tfoot {
 
 input {font:inherit;}
 
+tr.animated {
+  animation-name: translate;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+}
+@keyframes translate {
+  0% {
+    transform: translate(-100vw);
+  }
+  100% {
+    transform: translate(0vw);
+  }
+}
+
 .btn {
   display:inline-block;
   padding: 6px 12px;
