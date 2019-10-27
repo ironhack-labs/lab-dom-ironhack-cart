@@ -1,40 +1,59 @@
 var $cart = document.querySelector('#cart tbody');
 var $calc = document.getElementById('calc');
-let products = document.querySelectorAll(".product");
-let totalPrice = document.querySelector("h2 span");
-let individualPrices = [];
+
+
+
 
 function updateSubtot($product) {
   // Iteration 1.1
-  let price = $product.querySelector(".pu span");
+  let price = $product.querySelector(".pu span").innerText;
   let quantity = $product.querySelector("input[type=number]").value;
-  let subtotal = $product.querySelector(".subtot span");
-  subtotal.innerText = parseInt(price.innerText) * quantity;
-  individualPrices.push(parseInt(subtotal.innerText));
+  let subtotal = parseFloat(price) * quantity;
+  $product.querySelector(".subtot span").innerText = subtotal;
   return subtotal;
 }
 
 function calcAll() {
   // Iteration 1.2
   // Iteration 3
-  products.forEach(updateSubtot);
-  let totalCart = individualPrices.reduce(function (a, b) {
-    return a + b;
+  let totalCart = 0;
+  let products = document.querySelectorAll(".product");
+  products.forEach($prod => {
+    updateSubtot($prod);
+    totalCart += parseFloat($prod.querySelector(".subtot span").innerText);
   });
-  totalPrice.innerText = totalCart;
+  document.querySelector("h2 span").innerHTML = totalCart;
 }
 
 $calc.onclick = calcAll;
 
 //Iteration 4
 
-let deleteButton = document.getElementsByClassName('btn-delete');
-let product = document.querySelector(".product");
 
-function deleteProduct (e){
-  e.currentTarget = product.parentNode.removeChild(product);
+function deleteProduct(e) {
+  let row = e.target.parentNode.parentNode;
+  if (e.target.matches(".btn-delete")) {
+    row.parentNode.removeChild(row);
+  }
 }
 
-for(let i=0; i < deleteButton.length; i++){
-deleteButton[i].onclick = deleteProduct;
+$cart.addEventListener("click", deleteProduct);
+
+let createButton = document.querySelector("#create");
+createButton.onclick = createProductRow;
+
+let originalRow = document.querySelector(".product");
+
+
+function createProductRow() {
+  let newRow = originalRow.cloneNode(true);
+  let newValue = document.querySelector(".new input[type=text]").value;
+  let newPrice = document.querySelector(".new input[type=number]").value;
+
+  $cart.appendChild(newRow);
+  newRow.querySelector(".name span").innerText = newValue;
+  newRow.querySelector(".pu span").innerText = newPrice;
+  newRow.querySelector(".subtot span").innerText = 0;
+  newRow.querySelector(".qty input[type=number]").value = 0;
+
 }
