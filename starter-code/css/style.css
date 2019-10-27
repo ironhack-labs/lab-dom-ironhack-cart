@@ -1,40 +1,148 @@
-table#cart {
-  width:100%;
-  border-collapse:collapse;
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500,600&display=swap');
+
+html {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+
+
 }
 
-table#cart th,
-table#cart td {
-  padding:.5em;
+body {
+  background-color: #f2f6f9;
+  padding: 0;
+  margin: 0;
 }
 
-table#cart td {border:1px solid;}
-
-table#cart tfoot {
-  background:#eee;
+.pop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4ca6be;
+  height: 8rem;
 }
 
-input {font:inherit;}
-
-.btn {
-  display:inline-block;
-  padding: 6px 12px;
-  font-size:inherit;
-  white-space: nowrap;
-  cursor: pointer;
-  border-radius:4px;
-}
-.btn-success {
+h1 {
   color: #fff;
-  background-color: #5cb85c;
-  border-color: #4cae4c;
+  font-size: 2.8rem;
+  font-weight: 600;
+  padding: 3rem;
+  text-transform: uppercase;
 }
-.btn-delete {
-  color: #fff;
-  background-color: #CF000F;
-  border-color: #CF000F;
+
+h2 {
+  color: #67676f;
+  font-size: 2rem;
 }
 
 h1,
 .cta,
-h2 {text-align:center;}
+h2 {
+  text-align: center;
+}
+
+main {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+table {
+  color: #67676f;
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.4rem;
+}
+
+table th {
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  padding: 2rem 0;
+}
+
+tbody td {
+  background-color: #fff;
+  padding: 1rem 0;
+}
+
+table tr {
+  margin-bottom: 2rem;
+}
+
+.new {
+  background: #eee;
+  padding: 1rem 0;
+}
+
+tfoot td:last-child {
+  background-color: #f2f6f9;
+  display: flex;
+  justify-content: center;
+}
+
+.name {
+  color: #4ca6be;
+  text-align: center;
+  font-weight: 600;
+}
+
+.pu,
+.subtot {
+  padding-right: 4rem;
+  text-align: right;
+}
+
+input {
+  display: block;
+  text-align: right;
+  border: none;
+  background-color: #e6edf3;
+  font-family: inherit;
+  font-size: inherit;
+  padding: .3rem;
+  margin: 0 auto;
+}
+
+td>input {
+  background-color: #fff;
+}
+
+.btn {
+  border: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 1.5rem 2.5rem;
+  text-transform: uppercase;
+  white-space: nowrap;
+  cursor: pointer;
+
+}
+
+.btn-success {
+  color: #fff;
+  background-color: #ef8472;
+}
+
+.btn-delete {
+  color: #fff;
+  background-color: #4ca6be;
+
+}
+
+#create {
+  color: #7c8389;
+  background-color: #e6edf3;
+}
+
+.subtot {
+  color: #ef8472;
+  font-size: 1.7rem;
+}
+
+td.rm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f6f9;
+}
