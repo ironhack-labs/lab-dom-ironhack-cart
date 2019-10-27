@@ -1,5 +1,51 @@
+body {
+  margin:0;
+  padding:0;
+}
+
 input {
   border: solid 1px black;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  padding: 0 30%;
+}
+
+#calcPrices {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.wrapper{
+  display:flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin : 2em;
+}
+
+.creationWrapper{
+  display:flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin : 1em;
+}
+
+.creationWrapper div {
+  display: flex;
+}
+
+.creationWrapper div input {
+  width: 100px;
+}
+
+.creationWrapper div:first-child input {
+  display:flex;
+  justify-content: center;
+  margin: 0;
 }
 
 .btn {
@@ -28,6 +74,7 @@ input {
     color: #fff;
     background-color: #5cb85c;
     border-color: #4cae4c;
+    width: 20%;
 }
 
 .btn-delete {
