@@ -1,56 +1,58 @@
-var $cart = document.querySelector("#cart tbody");
+/* var $cart = document.querySelector("#cart tbody");*/
+
 var $calc = document.getElementById("calc");
+let $product = document.getElementsByTagName("tr");
 
-let product = document.getElementsByTagName("tr");
-// console.log(product);
-let product1 = product[1].getElementsByClassName("pu");
+////Function Update
+function updateSubtot($product) {
+  /////Quantity
+  let value = $product[1].getElementsByTagName("input")[0].value;
 
-let span = product1[0].getElementsByTagName("span");
+  var valueInNumber = parseInt(value, 10);
+  console.log(valueInNumber);
 
-const pricesUnit = span[0].innerHTML;
+  /////////// Price
+  let priceUnit = $product[1].getElementsByClassName("pu");
+  console.log({ priceUnit });
 
-let quantity = document.getElementsByTagName("input")[0].value;
+  let price = priceUnit[0].getElementsByTagName("span")[0].innerHTML;
 
-let button = document.getElementsByTagName("input")[0];
+  var priceInNumber = parseInt(price, 10);
 
-let asd = 0;
-button.onclick = function() {
-  let input = document.getElementsByTagName("input")[0].value;
-  console.log(input);
-  console.log(input * pricesUnit);
-  asd = input;
-  console.log(typeof input)
-};
+  ////SubTotal
 
-console.log(typeof asd);
+  let realSubTotal = priceInNumber * valueInNumber;
 
-let subtotal = document.getElementsByClassName("subtot");
+  let subTotal = $product[1].getElementsByClassName("subtot");
+  console.log(subTotal);
 
-//console.log($product[0].children);
-//console.log($cart);
-//console.log($calc);
-//console.log(product1);
-//console.log( {span} )
-console.log(pricesUnit);
-// console.log(quantity);
+  let subTotal2 = subTotal[0].getElementsByTagName("span")[0].innerHTML;
+  console.log(typeof subTotal2);
 
-/*function updateSubtot($product) {
-  let quantity = document.getElementsByTagName("input")[0].value
-  let  pricesUnit = span[0].innerHTML;
-  console.log (quantity * pricesUnit)
-}*/
+  let subTotalNumber = parseInt(subTotal2, 10);
+  console.log(subTotalNumber);
+
+  subTotal[0].getElementsByTagName("span")[0].innerHTML = realSubTotal;
+
+  return subTotalNumber;
+}
+
+
+
 
 function calcAll() {
-  // Iteration 1.2
+let prodotti = document.getElementsByClassName("product");
+console.log(prodotti.length);
+const allProducts = [...prodotti];
+console.log(allProducts);
+  /* allProducts.forEach(function (ele, index) {
+   updateSubtot(ele)
+}); */
+
+/*   for (i = 0; i < prodotti.length; i++) {
+    updateSubtot($product[i]);
+  } */
+  updateSubtot($product);
+
 }
 $calc.onclick = calcAll;
-
-function updateSubtot() {
-  let pricesUnit = span[0].innerHTML;
-  let total = pricesUnit * asd;
-
-  console.log((subtotal[0].innerHTML = `$${total}`));
-  console.log(total);
-}
-
-updateSubtot();
