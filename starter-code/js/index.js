@@ -17,10 +17,11 @@ function updateSubtot($product) {
 
 function calcAll() {
   // Iteration 1.2
+  // Iteration 3
   products.forEach(updateSubtot);
   let totalCart = individualPrices.reduce(function (a, b) {
     return a + b;
-  })
+  });
   totalPrice.innerText = totalCart;
 }
 
