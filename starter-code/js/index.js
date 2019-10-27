@@ -1,13 +1,20 @@
+//Variables inciales
 var $cart = document.querySelector('#cart tbody');
 var $calc = document.getElementById('calc');
 let $product = document.querySelectorAll(".product");
 let $delete = document.querySelector("body");
 let $newProduct = document.querySelector("#cart");
 
-function updateSubtot ($product) {
+//Eventos
+$calc.onclick = calcAll;
+$delete.addEventListener("click", removeProduct);
+$newProduct.addEventListener("click", createProduct);
+
+//Funciones
+function updateSubtot($product) {
   // Iteration 1.1
   let total = [];
-  for (let i = 0; i < $product.length; i++){
+  for (let i = 0; i < $product.length; i++) {
     let priceUnit = $product[i].querySelector(".pu span").innerText;
     let quantity = $product[i].querySelector(".qty input").value;
     let subTotal = priceUnit * quantity;
@@ -19,57 +26,48 @@ function updateSubtot ($product) {
 
 function calcAll() {
   // Iteration 1.2
+
   //Actualiza SubTotal de cada Producto.
   let subTotal = updateSubtot($product);
-  for (let i = 0; i < subTotal.length; i++){    
-  let changeSubtot = $product[i].querySelector(".subtot span");
-  changeSubtot.innerText = subTotal[i];
+  for (let i = 0; i < subTotal.length; i++) {
+    let changeSubtot = $product[i].querySelector(".subtot span");
+    changeSubtot.innerText = subTotal[i];
   }
+  //Iteration 3
   //Suma y Actualiza el Total.
   let total = 0;
   let totalNum = document.querySelectorAll(".product .subtot > span");
   for (let i = 0; i < totalNum.length; i++) {
-  total += parseInt(totalNum[i].textContent);
+    total += parseFloat(totalNum[i].textContent);
+  }
+  document.querySelector("#total").innerText = total;
 }
-} 
-$calc.onclick = calcAll;
-$delete.addEventListener("click", removeProduct);
-$newProduct.addEventListener("click",createProduct);
 
+//Remove Iteration 4
 function removeProduct(e) {
   let product = e.target.parentNode.parentNode;
   if (e.target.matches(".btn-delete")) {
-    console.log("test")
-    product.parentNode.removeChild(product);    
+    console.log("funciona!")
+    product.parentNode.removeChild(product);
   }
 }
+//Create Iteration 5
+function createProduct(e) {
 
-function createProduct(e){
-  // let tr = document.createElement("tr");
-   let tbody = document.querySelector("tbody");
-  // tr.setAttribute("class", "product");
-  // tbody.insertBefore(tr,tbody.lastChild);
-  // let td = document.createElement("td");
-  // td.setAttribute("class", "name")
-  // tr.insertBefore(td, tr.firstChild);
-  //let content = document.querySelector("#mytemplate").content;
-  // let targetContent = document.querySelector("tbody");
-  //targetContent.appendChild(document.importNode(content, true));
-  // console.log(content);
-  // console.log(targetContent);
-  //$('.tbody').append($('#mytemplate').html());
-  
-  
+  let tbody = document.querySelector("tbody");
 
-  if (e.target.matches("#create")){
-    console.log("prueba")
-    const template = document.querySelector("template");
-  let useTemplate = document.importNode(template.content, true);
-  tbody.insertBefore(useTemplate,tbody.lastChild)
+  if (e.target.matches("#create")) {
+    console.log("Vamos que si Funciona!")
     let dataName = document.querySelector("#inputName").value;
-    let dataNum = document.querySelector("#inputNum").value;
-    console.log(dataName);
-    console.log(dataNum);
+    let dataNum = parseInt(document.querySelector("#inputNum").value).toFixed(2);
+    let template = document.querySelector("template");
+    let useTemplate = document.importNode(template.content, true);
 
+    useTemplate.querySelector(".name span").innerText = dataName;
+    useTemplate.querySelector(".pu span").innerText = dataNum;
+
+    tbody.insertBefore(useTemplate, tbody.lastChild)
+
+    $product = document.querySelectorAll(".product");
   }
 }

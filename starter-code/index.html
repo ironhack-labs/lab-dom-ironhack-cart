@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="./css/style.css">
   <title>Ironhack cart</title>
 </head>
+
 <body>
   <h1>Ironhack Cart</h1>
 
@@ -23,44 +25,44 @@
         <td class="name">
           <span>IronBubble-head</span>
         </td>
-    
+
         <td class="pu">
           $<span>25.00</span>
         </td>
-    
+
         <td class="qty">
           <label>
             <input type="number" value="0" min="0">
           </label>
         </td>
-    
+
         <td class="subtot">
           $<span>0</span>
         </td>
-    
+
         <td class="rm">
           <button class="btn btn-delete">Delete</button>
         </td>
       </tr>
       <tr class="product">
         <td class="name">
-          <span>IronBubble-head2</span>
+          <span>Pizza</span>
         </td>
-    
+
         <td class="pu">
-          $<span>25.00</span>
+          $<span>15.75</span>
         </td>
-    
+
         <td class="qty">
           <label>
             <input type="number" value="0" min="0">
           </label>
         </td>
-    
+
         <td class="subtot">
           $<span>0</span>
         </td>
-    
+
         <td class="rm">
           <button class="btn btn-delete">Delete</button>
         </td>
@@ -69,10 +71,10 @@
     <tfoot>
       <tr class="new">
         <td>
-          <input id = "inputName" type="text"/>
+          <input id="inputName" type="text" />
         </td>
         <td>
-          <input id = "inputNum" type="number" min="0"/>
+          <input id="inputNum" type="number" min="0" />
         </td>
         <td></td>
         <td></td>
@@ -88,33 +90,34 @@
     <button id="calc" class="btn btn-success" onclick="calcAll()">Calculate prices</button>
   </p>
 
-  <h2>Total: $<span id = "total">0</span></h2>
-
-  <script type="text/javascript" src="./js/index.js"></script>
+  <h2>Total: $<span id="total">0</span></h2>
   <template>
     <tr class="product">
-			<td class="name">
-				<span>IronBubble-head</span>
-			</td>
-	
-			<td class="pu">
-				$<span>25.00</span>
-			</td>
-	
-			<td class="qty">
-				<label>
-					<input type="number" value="0" min="0">
-				</label>
-			</td>
-	
-			<td class="subtot">
-				$<span>0</span>
-			</td>
-	
-			<td class="rm">
-				<button class="btn btn-delete">Delete</button>
-			</td>
-		</tr>
+      <td class="name">
+        <span>IronBubble-head</span>
+      </td>
+
+      <td class="pu">
+        $<span>25.00</span>
+      </td>
+
+      <td class="qty">
+        <label>
+          <input type="number" value="0" min="0">
+        </label>
+      </td>
+
+      <td class="subtot">
+        $<span>0</span>
+      </td>
+
+      <td class="rm">
+        <button class="btn btn-delete">Delete</button>
+      </td>
+    </tr>
   </template>
+  <script type="text/javascript" src="./js/index.js"></script>
+
 </body>
+
 </html>
