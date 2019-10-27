@@ -7,14 +7,13 @@
   </head>
   <body>
     <h1>Ironhack Cart</h1>
-
     <table id="cart">
       <thead>
         <tr>
-          <th>Product name</th>
-          <th>Price unit</th>
+          <th>Product Name</th>
+          <th>Unit Price</th>
           <th>Quantity</th>
-          <th>Sub-total</th>
+          <th>Subtotal</th>
           <th>Action</th>
         </tr>
       </thead>
@@ -23,45 +22,36 @@
           <td class="name">
             <span>IronBubble-head</span>
           </td>
-
-          <td class="pu">$<span>25.00</span></td>
-
-          <td class="qty">
-            <label>
-              <input type="number" value="0" min="0" />
-            </label>
+          <td class="price">$<span>25.00</span></td>
+          <td class="quantity">
+            <input type="number" value="0" min="0" placeholder="Quantity" />
           </td>
-
           <td class="subtotal">$<span>0</span></td>
-
-          <td class="rm">
-            <button class="btn btn-delete">Delete</button>
+          <td class="action">
+            <button class="btn btn-remove">Delete</button>
           </td>
         </tr>
       </tbody>
-      <!-- <tfoot>
-      <tr class="new">
-        <td>
-          <input type="text"/>
-        </td>
-        <td>
-          <input type="number" min="0"/>
-        </td>
-        <td></td>
-        <td></td>
-        <td>
-          <button id="create" class="btn">Create</button>
-        </td>
-      </tr>
-    </tfoot> -->
+      <tfoot>
+        <tr class="new">
+          <td>
+            <input placeholder="Product Name" />
+          </td>
+          <td>
+            <input type="number" min="0" value="0" placeholder="Product Price" />
+          </td>
+          <td></td>
+          <td></td>
+          <td>
+            <button id="create" class="btn">Create</button>
+          </td>
+        </tr>
+      </tfoot>
     </table>
-
     <p class="cta">
-      <button id="calc" class="btn btn-success">Calculate prices</button>
+      <button id="calculate" class="btn btn-success">Calculate prices</button>
     </p>
-
-    <h2>Total: $<span>0</span></h2>
-
+    <h2 id="total-value">Total: $<span>0</span></h2>
     <script type="text/javascript" src="./js/index.js"></script>
   </body>
 </html>

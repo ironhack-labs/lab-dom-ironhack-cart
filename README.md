@@ -31,7 +31,7 @@ $ git push origin master
 
 ## Deliverables
 
-Write your JavaScript code in `js/index.js`. When submitting, submit the whole lab repo.
+Solve the Lab by writing all of your JavaScript in `starter-code/js/index.js`.
 
 ### Iteration 1: Calculating a total price for one product
 
@@ -42,9 +42,9 @@ We will start by looking at the HTML of our `#cart`:
   <thead>
     <tr>
       <th>Product name</th>
-      <th>Price unit</th>
+      <th>Unit Price</th>
       <th>Quantity</th>
-      <th>Sub-total</th>
+      <th>Subtotal</th>
       <th>Action</th>
     </tr>
   </thead>
@@ -58,7 +58,7 @@ We will start by looking at the HTML of our `#cart`:
 
 ![](https://i.imgur.com/ZXjbkVG.png)
 
-Every product will have the following markup, ie: a `tr` inside the `tbody`:
+Every product will have the following markup, that is, a `tr` with the class `product` inside of `tbody`:
 
 ```html
 <tr class="product">
@@ -67,27 +67,24 @@ Every product will have the following markup, ie: a `tr` inside the `tbody`:
   </td>
   <td class="pu">$<span>25.00</span></td>
   <td class="qty">
-    <label>
-      <input type="number" value="0" min="0" />
-    </label>
+    <input type="number" value="0" min="0" />
   </td>
   <td class="subtotal">$<span>0</span></td>
   <td class="rm">
-    <button class="btn btn-delete">Delete</button>
+    <button class="btn btn-remove">Delete</button>
   </td>
 </tr>
 ```
 
-#### Iteration 1.1: `updateSubtotal`
+#### Iteration 1: `updateSubtotal`
 
-The `updateSubtotal` function will calculate the subtotal for a given product.
+Each of our products will have a price and cart quantity. They should, therefore, also have a subtotal price that corresponds to the product of those values.
 
-Complete the `updateSubtotal` function that:
+Complete the function named `updateSubtotal` that will calculate the subtotal for any given product and update the value for the corresponding product.
 
-- Takes a single argument: a reference to the `tr` DOM node of the product (we can call it `$product`).
-- Calculates the subtotal price, by multiplying the value of the unit price HTML element of the product, and the value of the quantity HTML element of the product.
-- Updates the HTML with the new product's subtotal.
-- Returns the subtotal value.
+As a single argument, it takes a DOM node that corresponds to a single `tr` element with a `product` class. In the boilerplate code we included in the script, we called it `$product`.
+
+When invoked, the function gets the value of the unit price for the product it was called with, it's quantity, multiplies both and updates the span in the table cell `td.subtotal` with said value. It then returns the subtotal value.
 
 ```js
 // Iteration 1.1
@@ -96,9 +93,11 @@ function updateSubtotal($product) {
 }
 ```
 
-#### Iteration 1.2: Call `updateSubtotal`
+#### Iteration 2: `calculateAll`
 
-Now that `updateSubtotal` is in place, use it in the `calculateAll` on your product:
+We expect to have more than one product on our cart. As such, we'll use `calculateAll` to trigger the update of subtotals for every product.
+
+Complete the function named `calculateAll`. Its purpose, for now, is to call the function `updateSubtotal` with every `tr.product` DOM node in the `table#card`.
 
 ```js
 // Iteration 1.2
@@ -109,39 +108,39 @@ function calculateAll() {
 $calc.addEventListener('click', calculateAll);
 ```
 
-### Iteration 2: Add another product
-
-Add a second product (a second `<tr class="product">`).
+To test wether `calculateAll` is working as expected, let's add a new product to our `index.html` file, by duplicating the `tr` with the class `product`, renaming the product inside and changing the product price.
 
 ![](https://i.imgur.com/cbkHzZC.png)
 
-Inside `calculateAll`, modify your code so when `Calculate prices` button is clicked, it now updates subtotal for all products.
-
 ### Iteration 3: Total
 
-Now that you have each product's subtotal, you need to calculate the total price of all the products in the shopping cart. Once you have that number, you need to display the result in the HTML:
+Our calculation functionality is still incomplete. The subtotal for each product is being updated but the total remains untouched.
+
+At the end of the `calculateAll` function, compute the total price for the products in your cart by summing all of the subtotals returned by `updateSubtotal` when it was called with each product.
+
+Lastly, display that value on your DOM.
 
 ![](https://i.imgur.com/dJGyeK1.png)
 
-Inside `calculateAll` function:
-
-- Sum each product's subtotal to compute the total.
-- Update the HTML with that total value.
+## BONUS ITERATIONS
 
 ### Iteration 4: Deleting a product
 
-Associate the "Delete" buttons to click events so that when you click one, it deletes that product from the list. Steps to follow:
+Users should be able to remove products from their carts. For that purpose, every product row in our table has a "remove" button at the end.
 
-- Select all the "Delete" buttons.
-- For each button, assign a click event that will: - select the wrapper `tr` that contains all the HTML for the product that should be deleted, - select the `tbody` parent that contains all of the product wrapper `tr`s, - use the method [`removeChild`](https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild) we already saw in the lesson.
+For that purpose, lets declare a function named `addProductRemoveListener` that takes as a single argument a DOM node referencing a product "remove" button, selects its parent `tr` and removes it from the DOM.
 
-:bulb: You can use `e.currentTarget` to access the "Delete" button that was just clicked and select the parent node of an HTML element with `parentNode`.
+On page load, that is, inside a callback given to the `load` event listener on the document, ensure that whenever a "remove" button is clicked the corresponding product is removed from the table.
+
+We would recommend that you query the document for all of the "remove" buttons, and call `addProductRemoveListener` on each node.
+
+💡 Tips: To access the element an event was fired on, you can reference `e.currentTarget`. To remove a node from the DOM, you need to access its parent node and call [`removeChild`](https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild) on it. You can access the parent of a DOM node from its property `parentNode`.
 
 ### Iteration 5: Creating new products
 
-For the last iteration, allow the user to create new products for the shop.
+To finish it off, we'll allow the user to add a custom product to their cart.
 
-Uncomment the `tfoot` in the markup:
+Uncomment the `tfoot` on the `index.html` file:
 
 ```html
 <table>
@@ -149,19 +148,19 @@ Uncomment the `tfoot` in the markup:
     <!-- ... -->
   </tbody>
   <!-- <tfoot>
-  <tr class="new">
-  <td>
-  <input type="text"/>
-  </td>
-  <td>
-  <input type="number" min="0"/>
-  </td>
-  <td></td>
-  <td></td>
-  <td>
-  <button id="create" class="btn">Create</button>
-  </td>
-  </tr>
+    <tr class="new">
+      <td>
+        <input placeholder="Product Name" />
+      </td>
+      <td>
+        <input type="number" min="0" placeholder="Product Price" />
+      </td>
+      <td></td>
+      <td></td>
+      <td>
+        <button id="create" class="btn">Create</button>
+      </td>
+    </tr>
   </tfoot> -->
 </table>
 ```
@@ -176,6 +175,8 @@ Assign a click event to the create button that will: - get the data from the `in
 
 - You should be able to calculate the product's total price.
 - That product's price should be included in the total price of the entire Shopping Cart.
-- You should be able to delete the product.
+- You should be able to remove the product.
+
+When the product creation is finalized, please, clear the input fields in the creation form.
 
 **Happy coding! 💙**
