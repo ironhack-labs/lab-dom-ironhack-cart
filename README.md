@@ -56,7 +56,9 @@ We will start by looking at the HTML of our `#cart`:
 </table>
 ```
 
-![](https://i.imgur.com/ZXjbkVG.png)
+<!-- ![](https://i.imgur.com/ZXjbkVG.png) -->
+
+![](https://i.imgur.com/zCWQYg2.png)
 
 Every product will have the following markup, that is, a `tr` with the class `product` inside of `tbody`:
 
@@ -71,7 +73,7 @@ Every product will have the following markup, that is, a `tr` with the class `pr
   </td>
   <td class="subtotal">$<span>0</span></td>
   <td class="rm">
-    <button class="btn btn-remove">Delete</button>
+    <button class="btn btn-remove">Remove</button>
   </td>
 </tr>
 ```
@@ -110,7 +112,9 @@ $calc.addEventListener('click', calculateAll);
 
 To test wether `calculateAll` is working as expected, let's add a new product to our `index.html` file, by duplicating the `tr` with the class `product`, renaming the product inside and changing the product price.
 
-![](https://i.imgur.com/cbkHzZC.png)
+<!-- ![](https://i.imgur.com/cbkHzZC.png) -->
+
+![](https://i.imgur.com/Pv4NmR8.png)
 
 ### Iteration 3: Total
 
@@ -120,7 +124,9 @@ At the end of the `calculateAll` function, compute the total price for the produ
 
 Lastly, display that value on your DOM.
 
-![](https://i.imgur.com/dJGyeK1.png)
+<!-- ![](https://i.imgur.com/dJGyeK1.png) -->
+
+![](https://i.imgur.com/SCtdzMd.png)
 
 ## BONUS ITERATIONS
 
@@ -165,7 +171,9 @@ Uncomment the `tfoot` on the `index.html` file:
 </table>
 ```
 
-![](https://i.imgur.com/hFKb7Fa.png)
+<!-- ![](https://i.imgur.com/hFKb7Fa.png) -->
+
+![](https://i.imgur.com/J8aserm.png)
 
 Those two inputs represent the name and the unit price of the new product. Then there's the "Create" button that the user needs to click to actually add the new product to the list.
 

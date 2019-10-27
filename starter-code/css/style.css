@@ -27,12 +27,17 @@ table#cart {
   border-collapse: collapse;
 }
 
-table#cart td {
-  border: 1px solid #ccc;
-}
-
 table#cart tfoot {
   background: #eee;
+}
+
+table#cart td,
+table input {
+  border: 1px solid #dadada;
+}
+
+table input[type='number'] {
+  max-width: 4em;
 }
 
 .btn {
