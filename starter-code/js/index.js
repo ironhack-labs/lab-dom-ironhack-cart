@@ -1,21 +1,19 @@
 function updateSubtot(product) {
-  let priceUnit = product.getElementsByClassName('pu')[0].childNodes[1].innerHTML
-  let quantity = product.getElementsByClassName('qty')[0].childNodes[1].childNodes[1].value
+  let priceUnit = product.querySelector('.pu span').innerHTML
+  let quantity = product.querySelector('.qty label input').value
   let priceSubTot = priceUnit * quantity;
-  product.getElementsByClassName('subtot')[0].childNodes[1].innerHTML = priceSubTot
+  product.querySelector('.subtot span').innerHTML = priceSubTot
 }
-
 
 function calculateTotalPrice() {
   let total = 0;
-  let subtots = document.getElementsByClassName('subtot');
+  let subtots = document.querySelectorAll('.subtot');
   for (let i = 0; i < subtots.length; i++) {
-    total += parseFloat(subtots[i].getElementsByTagName('span')[0].innerHTML);
+    total += parseFloat(subtots[i].querySelector('span').innerHTML);
   }
-  let totalPrice = document.getElementsByTagName('h2')[0].getElementsByTagName('span')[0]
+  let totalPrice = document.querySelector('h2 span')
   totalPrice.innerHTML = total
 }
-
 
 function deleteProduct(e) {
   let product = e.currentTarget.parentNode.parentNode
@@ -24,39 +22,40 @@ function deleteProduct(e) {
   calculateTotalPrice()
 }
 
-
 function createObjects(productHtml) {
-  let productName = document.getElementsByClassName('new')[0].childNodes[1].childNodes[1].value
-  let priceUnit = document.getElementsByClassName('new')[0].childNodes[3].childNodes[1].value
+  let productName = document.querySelector('.new td input[type=text]').value
+  let priceUnit = document.querySelector('.new td input[type=number]').value
 
   let newProduct = document.createElement('tr');
   newProduct.className = 'product'
   newProduct.innerHTML = productHtml
 
-  newProduct.getElementsByClassName('name')[0].childNodes[1].innerHTML = productName
-  newProduct.getElementsByClassName('pu')[0].childNodes[1].innerHTML = priceUnit ? parseFloat(priceUnit, 2) : null
-  newProduct.getElementsByClassName('qty')[0].childNodes[1].childNodes[1].value = 0
-  newProduct.getElementsByClassName('subtot')[0].childNodes[1].innerHTML = 0
+  newProduct.querySelector('.name span').innerHTML = productName
+  newProduct.querySelector('.pu span').innerHTML = priceUnit ? parseFloat(priceUnit, 2) : null
+  newProduct.querySelector('.qty label input').value = 0
+  newProduct.querySelector('.subtot span').innerHTML = 0
 
-  let tBody = document.getElementsByTagName('tbody')[0]
+  let tBody = document.querySelector('tbody')
   tBody.appendChild(newProduct)
 
-  document.getElementsByClassName('new')[0].childNodes[1].childNodes[1].value = ""
-  document.getElementsByClassName('new')[0].childNodes[3].childNodes[1].value = null
-  newProduct.getElementsByClassName('btn btn-delete')[0].onclick = function (e) {
+  document.querySelector('.new td input[type=text]').value = ""
+  document.querySelector('.new td input[type=number]').value = null
+
+  newProduct.querySelector('.btn.btn-delete').onclick = function (e) {
     deleteProduct(e)
   }
-  newProduct.getElementsByTagName('input')[0].onchange = function (e) {
+
+  newProduct.querySelector('input').onchange = function (e) {
     let bigParent = e.currentTarget.parentNode.parentNode.parentNode
     updateSubtot(bigParent);
   }
 }
 
 window.onload = function () {
-  document.getElementById('calc').onclick = calculateTotalPrice
-  let productHtml = document.getElementsByClassName('product')[0].innerHTML
+  document.querySelector('#calc').onclick = calculateTotalPrice
+  let productHtml = document.querySelector('.product').innerHTML
 
-  let inputs = document.getElementsByTagName('input')
+  let inputs = document.querySelectorAll('.product input')
   for (let i = 0; i < inputs.length; i++) {
     inputs[i].onchange = function (e) {
       let product = e.currentTarget.parentNode.parentNode.parentNode
@@ -64,14 +63,14 @@ window.onload = function () {
     }
   }
 
-  let buttons = document.getElementsByClassName('btn btn-delete')
+  let buttons = document.querySelectorAll('.btn.btn-delete')
   for (let i = 0; i < buttons.length; i++) {
     buttons[i].onclick = function (e) {
       deleteProduct(e)
     }
   }
 
-  document.getElementById('create').onclick = function () {
+  document.querySelector('#create').onclick = function () {
     createObjects(productHtml)
   }
 }
