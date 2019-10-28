@@ -79,18 +79,25 @@ For every product in our `#cart`, you should have a `tr` with the class `product
 </tr>
 ```
 
-Each of our products will have a price and cart quantity. They should, therefore, also have a subtotal price that corresponds to the multiplication of those values.
+Each of our products will have a **price** and **cart quantity**. They should, therefore, also have a **subtotal price** that corresponds to the _multiplication_ of those values.
 
-Complete the function named `updateSubtotal` that will calculate the subtotal for any given product and update the value for the corresponding product.
+Complete the function named `updateSubtotal` that will **calculate the subtotal** for any given product, **update the subtotal value** for that same product in the DOM and return the **subtotal value**.
 
-As a single argument, the function should take a DOM node that corresponds to a single `tr` element with a `product` class. In the boilerplate code included, we called it `$product`.
-
-When invoked, the function gets the value of the unit price for the product it was called with, as well as its quantity, multiplies both and updates the span in the table cell `td.subtotal` with said value. It then returns the subtotal value.
+As a single argument, the function should take a **DOM node** that corresponds to a single `tr` element with a `product` class. In the boilerplate code included, we called it `$product`.
 
 ```js
 function updateSubtotal($product) {
   // ...
 }
+```
+
+💡 Tip: You might have a hard time testing your solution to this iteration, since there's nothing triggering the execution of `updateSubtotal` for now. To address that, temporarily, paste and uncomment the following code into `calculateAll`. Now, whenever you click on the "Calculate Prices" button, the subtotal for your product should be updated.
+
+```js
+// For development testing purposes, paste the following code inside of `calculateAll`:
+// const $singleProduct = document.querySelector('.product');
+// updateSubtotal($singleProduct);
+// End of test
 ```
 
 ### Iteration 2: `calculateAll`
@@ -123,15 +130,15 @@ Lastly, display that value on your DOM.
 
 ## Bonus Iterations
 
-### Iteration 4: Deleting a product
+### Iteration 4: Removing a product
 
 Users should be able to remove products from their carts. For that purpose, every product row in our table has a "Remove" button at the end.
 
-To achieve this, lets declare a function named `addProductRemoveListener` that takes as a single argument a DOM node referencing a product "Remove" button, selects its parent `tr` and removes it from the DOM.
+To achieve this, lets query the document for all "Remove" buttons, and add a `click` event listener to each, passing a named function `productRemoveListener` as the callback argument for `addEventListener`.
 
-Now, ensure that, whenever a "Remove" button is clicked, the corresponding product is removed from the table. We would recommend that you query the document for all of the "Remove" buttons, and call `addProductRemoveListener` on each node.
+Now, lets declare the aforementioned function named `productRemoveListener` that expects the event as a single argument, and that is going to trigger the removal of the corresponding product from the cart.
 
-💡 Tips: To access the element an event was fired on, you can reference `e.currentTarget`. To remove a node from the DOM, you need to access its parent node and call [`removeChild`](https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild) on it. You can access the parent of a DOM node from its property `parentNode`.
+💡 Tip: To access the element an event was fired on, you can reference `event.currentTarget`. To remove a node from the DOM, you need to access its parent node and call [`removeChild`](https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild) on it. You can access the parent of a DOM node from its property `parentNode`.
 
 ### Iteration 5: Creating new products
 

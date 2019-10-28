@@ -11,13 +11,15 @@ function calculateAll() {
   //...
 }
 
-const $calculateTrigger = document.getElementById('calculate');
+window.addEventListener('load', () => {
+  const $calculateTrigger = document.getElementById('calculate');
 
-$calculateTrigger.addEventListener('click', calculateAll);
+  $calculateTrigger.addEventListener('click', calculateAll);
+});
 
 // ITERATION 4
 
-function addProductRemoveListener($removeButton) {
+function productRemoveListener(event) {
   // ...
 }
 
