@@ -16,53 +16,70 @@
     <div class="heading">
       <h1>Ironhack <br />Merchandising Shop</h1>
     </div>
-    <div id="div-container">
-      <div>
-        <span class="product-name">IronBubble-head</span>
+    <div id="master-container-div">
+      <div class="div-container">
+        <div>
+          <span class="product-name">IronBubble-head</span>
+        </div>
+        <div>$<span class="product-price">25</span></div>
+        <div>
+          <label for="quantity" class="qty">QTY</label>
+          <input
+            type="number"
+            name="quantity"
+            min="0"
+            value="0"
+            class="quantity"
+          />
+        </div>
+        <div><span class="total-price">$0</span></div>
+        <div><button class="btn btn-delete">Delete</button></div>
       </div>
-      <div>$<span class="product-price">25</span></div>
-      <div>
-        <label for="quantity" class="qty">QTY</label>
-        <input
-          type="number"
-          name="quantity"
-          min="0"
-          value="0"
-          class="quantity"
-        />
+      <div class="div-container">
+        <div>
+          <span class="product-name">IronHack-Shirt</span>
+        </div>
+        <div>$<span class="product-price">15</span></div>
+        <div>
+          <label for="quantity" class="qty">QTY</label>
+          <input
+            type="number"
+            name="quantity"
+            min="0"
+            value="0"
+            class="quantity"
+          />
+        </div>
+        <div><span class="total-price">$0</span></div>
+        <div><button class="btn btn-delete">Delete</button></div>
       </div>
-      <div><span class="total-price">$0</span></div>
-      <div><button class="btn btn-delete">Delete</button></div>
-      <!-- <div id="new-item-create">
-        <button class="btn btn-create-item">Create Items</button>
-      </div> -->
     </div>
-    <div id="div-container">
+    <div id="create-item">
       <div>
-        <span class="product-name">IronHack-Shirt</span>
+        <label for="new-product"></label>
+        <input type="string" name="new-product" class="new-product" />
       </div>
-      <div>$<span class="product-price">15</span></div>
       <div>
-        <label for="quantity" class="qty">QTY</label>
+        $<label for="product-price"></label>
         <input
           type="number"
-          name="quantity"
-          min="0"
+          name="new-product-price"
+          class="new-product-price"
           value="0"
-          class="quantity"
         />
+        <div></div>
+        <div></div>
       </div>
-      <div><span class="total-price">$0</span></div>
-      <div><button class="btn btn-delete">Delete</button></div>
-      <!-- <div id="new-item-create">
-        <button class="btn btn-create-item">Create Items</button>
-      </div> -->
+    </div>
+    <div class="new-item-create">
+      <button id="new-item-create">Create</button>
     </div>
     <div id="calc-prices-button">
       <button class="btn btn-success">Calculate Prices</button>
     </div>
-    <div class="total">
-      <h2>Total Price: <span>$0</span></h2>
+
+    <div class="heading-2">
+      <h2>Total Price: <span class="total">$0</span></h2>
     </div>
   </body>
 </html>

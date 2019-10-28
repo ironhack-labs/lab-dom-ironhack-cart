@@ -12,11 +12,20 @@ input {
   align-items: center;
   justify-content: center;
 }
-#div-container {
+.div-container {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   padding: 40px 100px;
+}
+#create-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  padding: 40px 100px;
+}
+#create-item > div {
+  padding-left: 50px;
 }
 .btn {
   display: inline-block;
@@ -51,23 +60,22 @@ input {
   background-color: #cf000f;
   border-color: #cf000f;
 }
-.btn-create-item {
-  border: 1px solid black;
-  color: white;
-  background-color: black;
-}
 #calc-prices-button {
   display: flex;
   justify-content: space-around;
 }
-#new-item-create {
+.new-item-create {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
+  padding-right: 190px;
+  /* border: 1px solid black;
+  color: white;
+  background-color: silver; */
 }
 .quantity {
   margin: 0 5px;
 }
-.total {
+.heading-2 {
   padding-top: 30px;
   text-align: center;
 }
