@@ -1,11 +1,14 @@
-var $cart = document.querySelector('#cart tbody');
-var $calc = document.getElementById('calc');
+var cart = document.querySelector("#cart tbody");
+var calc = document.querySelector("#calc");
 
-function updateSubtot($product) {
-  // Iteration 1.1
+function updateSubtot() {
+  let p = document.querySelector("#unitP").innerText;
+  let q = document.querySelector("#unitQ").value;
+  document.querySelector("#Subt").innerText = p * q;
+  return p * q;
 }
 
 function calcAll() {
-  // Iteration 1.2
+  updateSubtot();
 }
-$calc.onclick = calcAll;
+calc.onclick = calcAll;
