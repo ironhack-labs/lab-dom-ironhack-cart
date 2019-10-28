@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="./css/style.css">
   <title>Ironhack cart</title>
 </head>
+
 <body>
   <h1>Ironhack Cart</h1>
 
@@ -18,38 +20,38 @@
         <th>Action</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody id="tableToModify">
       <tr class="product">
         <td class="name">
           <span>IronBubble-head</span>
         </td>
-    
+
         <td class="pu">
           $<span>25.00</span>
         </td>
-    
+
         <td class="qty">
           <label>
-            <input type="number" value="0" min="0">
+            <input type="number" value="5" min="0">
           </label>
         </td>
-    
+
         <td class="subtot">
           $<span>0</span>
         </td>
-    
+
         <td class="rm">
           <button class="btn btn-delete">Delete</button>
         </td>
       </tr>
     </tbody>
-    <!-- <tfoot>
+    <tfoot>
       <tr class="new">
         <td>
-          <input type="text"/>
+          <input type="text" />
         </td>
         <td>
-          <input type="number" min="0"/>
+          <input type="number" min="0" />
         </td>
         <td></td>
         <td></td>
@@ -57,7 +59,7 @@
           <button id="create" class="btn">Create</button>
         </td>
       </tr>
-    </tfoot> -->
+    </tfoot>
 
   </table>
 
@@ -69,4 +71,5 @@
 
   <script type="text/javascript" src="./js/index.js"></script>
 </body>
+
 </html>
