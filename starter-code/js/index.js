@@ -35,6 +35,7 @@ var calcButton = document.getElementById('calc');
 //   }
 // }
 
+
 // Iteration 3: Total
 // Now that you have each product 's subtotal, you need to calculate the total price of all the products in the shopping cart. Once you have that number, you need to display the result in the HTML:
 
@@ -62,21 +63,35 @@ calcButton.onclick = function () {
   }
 }
 
+
 // iteration 4
+// Select all the "Delete" buttons
 let deleteBtns = document.getElementsByClassName('btn-delete')
 
+// For each button, assign a click event that will:
+// select the wrapper tr that contains all the HTML
+// for the product that should be deleted,
+// select the tbody parent that contains all of the product wrapper trs,
+//   use the method removeChild we already saw in the lesson
 for (let i = 0; i < deleteBtns.length; i++) {
-  const element = deleteBtns[i];
-  
+  deleteBtns[i].onclick = deleteTheRow;
 }
+function deleteTheRow(event){
+  // delete parent of parent element
+  event.currentTarget.parentNode.parentNode.remove()
+  // event.currentTarget.parentElement.parentElement.remove()
+}
+// ^this version is with a named function
 
-document.querySelector('.btn-delete').onclick = function (e) {
-  console.log(e.currentTarget.parentElement.parentElement);
-}
+// for(let i=0; i< deleteBtns.length; i++){
+//   deleteBtns[i].onclick = function(){
+//     event.currentTarget.parentElement.parentElement.remove();
+//   }
+// }
+// ^ this version is with an anonymous function, its a tiny bit shorter
 
 
 // Iteration 5: Creating new products
-
 document.getElementById('create').onclick = function(){
   console.log('yes')
 
