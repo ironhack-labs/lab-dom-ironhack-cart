@@ -52,13 +52,88 @@ calcButton.onclick = function () {
     let sutToteSpan = rows[i].querySelector('.subtot > span');
     
     sutToteSpan.innerText = quantity * unitPrice;
+
     totalArray.push(quantity * unitPrice)
+
     let totalPrice = totalArray.reduce((a,b) => a += b)
+
     document.querySelector("body > h2 > span").innerText = totalPrice;
   }
 }
 
+// iteration 4
+let deleteBtns = document.getElementsByClassName('btn-delete')
+
+for (let i = 0; i < deleteBtns.length; i++) {
+  const element = deleteBtns[i];
+  
+}
 
 document.querySelector('.btn-delete').onclick = function (e) {
   console.log(e.currentTarget.parentElement.parentElement);
 }
+
+
+// Iteration 5: Creating new products
+
+document.getElementById('create').onclick = function(){
+  console.log('yes')
+
+  // grab text value from input
+  let newName = document.querySelector('.new > td > input[type="text"].value')
+  
+  // grab number value from input
+  let newPrice = document.querySelector('.new > td > input[type="number"].value')
+  console.log(newName, newPrice)
+
+
+  let newRow = document.createElement('tr');
+  newRow.classList.add('product')
+
+  newRow.innerHTML = newRowInnerHtml
+
+  document.querySelector()
+
+
+}
+
+
+
+
+let newRow = `
+      < tr class = "product" >
+        <
+        td class = "name" >
+        <
+        span > IronHack Artisinal Tie Dye Shirt < /span> <
+        /td>
+
+        <
+        td class = "pu" >
+        $ < span > 80.00 < /span> <
+        /td>
+
+        <
+        td class = "qty" >
+        <
+        label >
+        <
+        input type = "number"
+      value = "0"
+      min = "0" >
+        <
+        /label> <
+        /td>
+
+        <
+        td class = "subtot" >
+        $ < span > 0 < /span> <
+        /td>
+
+        <
+        td class = "rm" >
+        <
+        button class = "btn btn-delete" > Delete < /button> <
+        /td> <
+        /tr>
+`
