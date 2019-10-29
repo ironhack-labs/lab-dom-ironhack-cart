@@ -1,11 +1,35 @@
-var $cart = document.querySelector('#cart tbody');
-var $calc = document.getElementById('calc');
+// iteration 1
+var calcButton = document.getElementById('calc')
 
-function updateSubtot($product) {
-  // Iteration 1.1
+calcButton.onclick = function(){
+  
+  let unitPrice = Number(document.querySelector(".pu > span").innerText);
+  
+  let quantity = Number(document.querySelector(".qty > label > input").value);
+  
+  
+  let subtoteSpan = document.querySelector(".subtot > span").innerText
+  
+  subtoteSpan.innerText = quantity * unitPrice
 }
 
-function calcAll() {
-  // Iteration 1.2
+// iteration 2 
+calcButton.onclick = function(){
+  let rows = document.getElementsByClassName('product')
+  console.log(rows)
+
+  for(let i = 0; rows.length; i++){
+    console.log(rows[i]);
+
+    let unitPrice = Number(rows[i].querySelector(".pu > span").innerText);
+
+    let quantity = Number(rows[i].querySelector(".qty > label > input").value);
+
+
+    let subtoteSpan = rows[i].querySelector(".subtot > span").innerText
+
+    subtoteSpan.innerText = quantity * unitPrice
+  }
 }
-$calc.onclick = calcAll;
+
+document.querySelector('.btn-delete')
