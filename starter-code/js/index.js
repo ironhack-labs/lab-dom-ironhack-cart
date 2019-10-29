@@ -1,3 +1,4 @@
+let cart = document.getElementsByClassName('product');
 let calc = document.getElementById('calc');
 
 function updateSubtot(product) {
