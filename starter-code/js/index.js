@@ -1,5 +1,15 @@
 let calcButton = document.getElementById('calc');
+let deleteButtons = document.getElementsByClassName('btn-delete');
 let cart = document.getElementsByClassName('product');
+
+// class deleteButton {
+//     constructor{
+//         this.type = 'delete'
+//         this.onclick = () =>{
+
+//         }
+//     }
+// }
 
 // Iteration 1
 // calcButton.onclick = () => {
@@ -49,3 +59,16 @@ calcButton.onclick = () => {
 
     totalSpan.innerText = total;
 };
+
+// Delete Product
+function empowerDelete() {
+    let rows = document.getElementsByClassName('product');
+    for (let i = 0; i < rows.length; i++) {
+        let button = rows[i].querySelector('.btn-delete');
+        button = button.onclick = () => {
+            rows[i].remove();
+        };
+    }
+}
+
+empowerDelete();
