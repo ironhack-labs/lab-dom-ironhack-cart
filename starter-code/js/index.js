@@ -40,6 +40,7 @@ var calcButton = document.getElementById('calc');
 
 calcButton.onclick = function () {
   let rows = document.getElementsByClassName('product');
+  console.log(rows)
   let totalArray = []
 
   for (let i = 0; i < rows.length; i++) {
@@ -51,12 +52,12 @@ calcButton.onclick = function () {
     
     let sutToteSpan = rows[i].querySelector('.subtot > span');
     
+    // update subtotal
     sutToteSpan.innerText = quantity * unitPrice;
 
+    // update total
     totalArray.push(quantity * unitPrice)
-
     let totalPrice = totalArray.reduce((a,b) => a += b)
-
     document.querySelector("body > h2 > span").innerText = totalPrice;
   }
 }
