@@ -64,7 +64,7 @@ calcButton.onclick = function () {
 }
 
 
-// iteration 4
+// Iteration 4: Deleting a product
 // Select all the "Delete" buttons
 let deleteBtns = document.getElementsByClassName('btn-delete')
 
@@ -93,63 +93,51 @@ function deleteTheRow(event){
 
 // Iteration 5: Creating new products
 document.getElementById('create').onclick = function(){
-  console.log('yes')
 
-  // grab text value from input
-  let newName = document.querySelector('.new > td > input[type="text"].value')
+  // get text value from input
+  let newName = document.querySelector('.new > td > input[type="text"]').value
   
-  // grab number value from input
-  let newPrice = document.querySelector('.new > td > input[type="number"].value')
-  console.log(newName, newPrice)
+  // get number value from input
+  let newPrice = document.querySelector('.new > td > input[type="number"]').value
 
+  // get html structure you want to add to a new row
+  let newRowInnerHtml = 
+    `
+    <tr class="product">
+      <td class="name">
+        <span>${newName}</span>
+      </td>
 
-  let newRow = document.createElement('tr');
+      <td class="pu">
+        $<span>${newPrice}</span>
+      </td>
+
+      <td class="qty">
+        <label>
+          <input type="number" value="0" min="0">
+        </label>
+      </td>
+
+      <td class="subtot">
+        $<span>0</span>
+      </td>
+
+      <td class="rm">
+        <button class="btn btn-delete">Delete</button>
+      </td>
+    </tr>
+    `
+
+  // create a new row
+  let newRow = document.createElement('tr')
+
+  // why do you need to add class only to <tr>?
   newRow.classList.add('product')
-
   newRow.innerHTML = newRowInnerHtml
+  newRow.querySelector('.btn-delete').onclick = deleteTheRow
+  document.querySelector('tbody').appendChild(newRow)
 
-  document.querySelector()
-
-
+  // set the input value empty afterwards
+  document.querySelector('.new > td > input[type="text"]').value = ""
+  document.querySelector('.new > td > input[type="number"]').value = ""
 }
-
-
-
-
-let newRow = `
-      < tr class = "product" >
-        <
-        td class = "name" >
-        <
-        span > IronHack Artisinal Tie Dye Shirt < /span> <
-        /td>
-
-        <
-        td class = "pu" >
-        $ < span > 80.00 < /span> <
-        /td>
-
-        <
-        td class = "qty" >
-        <
-        label >
-        <
-        input type = "number"
-      value = "0"
-      min = "0" >
-        <
-        /label> <
-        /td>
-
-        <
-        td class = "subtot" >
-        $ < span > 0 < /span> <
-        /td>
-
-        <
-        td class = "rm" >
-        <
-        button class = "btn btn-delete" > Delete < /button> <
-        /td> <
-        /tr>
-`
