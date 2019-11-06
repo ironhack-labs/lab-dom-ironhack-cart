@@ -19,7 +19,13 @@ function updateSubtot($product) {
 
 function calcAll() {
   // Iteration 1.2
-  $product = $cart.getElementsByClassName("product")[0]
-  updateSubtot($product);
+
+  let productsCollection = $cart.getElementsByClassName("product");
+  let $product;
+
+  for (let i = 0; i < productsCollection.length; i++) {
+    $product = productsCollection[i];
+    updateSubtot($product);
+  }
 }
 $calc.onclick = calcAll;
