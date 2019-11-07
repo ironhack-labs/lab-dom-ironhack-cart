@@ -103,3 +103,8 @@ function addTr(){
   document.getElementById('precioNuevo').value = ''
 }
 
+function deleteElement($row) {
+  let toBeDeleted = $row.parentElement.parentElement
+  toBeDeleted.parentElement.removeChild(toBeDeleted)
+}
+
