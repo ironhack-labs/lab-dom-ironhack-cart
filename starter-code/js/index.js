@@ -17,7 +17,11 @@ function updateSubtot($product) {
           let subTotal = document.getElementsByClassName('subtot');
            console.log(subTotal[0].innerHTML)
             for (i=0; i < subTotal.length; i++){
-              subTotal[i].innerHTML = "$" + $product.value * Number(OnlyPrice[y].innerHTML);
+              let span = document.createElement('span')
+              span.innerHTML = $product.value * Number(OnlyPrice[y].innerHTML)
+              // subTotal[i].appendChild(document.createElement('span'))
+              subTotal[i].innerHTML = ''
+              subTotal[i].append('$',span)
               //console.log(subTotal[i])
             }
         }
@@ -26,7 +30,14 @@ function updateSubtot($product) {
 }
 
 function calcAll() {
-  // Iteration 1.2
+  let products = document.querySelectorAll('.product')
+  // console.log(products[0].querySelector('td.subtot > span').innerHTML)
+  let total = 0
+  products.forEach((ele) => {
+    total += +ele.querySelector('td.subtot > span').innerHTML
+  })
+
+  document.querySelector('#total').innerHTML = total
 }
 $calc.onclick = calcAll;
 
