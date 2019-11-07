@@ -1,6 +1,7 @@
 var $cart = document.querySelector('#cart tbody');
 var $calc = document.getElementById('calc');
-
+let $create = document.getElementById('create')
+$create.onclick = addTr
 //let button =  document.getElementById('calc')
 //  button.addEventListener('click', event => {
 //    updateSubtot()
@@ -41,38 +42,64 @@ function calcAll() {
 }
 $calc.onclick = calcAll;
 
-let button =  document.getElementById('create')
-  button.addEventListener('click', event => {  
-    const defaultProd = ["", "", 0, "$0", "Delete"];
-    let tr = document.createElement('tr')
-    //let tablas = document.getElementById('');
-    let table = document.getElementById('cart');
 
-    for (i=0; i < defaultProd.length; i++) {
-      let td = document.createElement('td');
-      switch (i){
-      case 0:
-        td.innerHTML= document.getElementById('pname').value;
-        tr.appendChild(td);
-        break;
-      case 1:
-        td.innerHTML= document.getElementById('punit').value;
-        tr.appendChild(td);
-        break;
-      case 2:
-          td.innerHTML= 1
-          tr.appendChild(td);
-          break;
-      case 3:
-          td.innerHTML= "$0"
-          tr.appendChild(td);
-          break;
-      case 4:
-          td.innerHTML= "Delete"
-          tr.appendChild(td);
-          break;
-      }
-    }
-    table.appendChild(tr);
-    //tablas.appendChild(table)
-});
+function addTr(){
+  if(document.getElementById('nombreNuevo').value == '' || document.getElementById('precioNuevo').value == ''){
+    alert('Campos incompletos')
+    return
+  }
+  let product = {
+    name: document.getElementById('nombreNuevo').value,
+    price: document.getElementById('precioNuevo').value
+  }
+  const tr = document.createElement('tr')
+  tr.setAttribute('class', 'product')
+
+  const name = document.createElement('td')
+  name.setAttribute('class', 'name')
+  const span = document.createElement('span')
+  span.innerHTML = product.name
+  name.append(span)
+  tr.append(name)
+
+  const price = document.createElement('td')
+  price.setAttribute('class', 'pu')
+  const span2 = document.createElement('span')
+  span2.innerHTML = product.price
+  price.append('$',span2)
+  tr.append(price)
+
+  const qty = document.createElement('td')
+  qty.setAttribute('class', 'qty')
+  const input = document.createElement('input')
+  input.setAttribute('type', 'number')
+  input.setAttribute('value', 0)
+  input.setAttribute('min', 0)
+  input.setAttribute('onchange', 'updateSubtot(this)')
+  const label = document.createElement('label')
+  label.append(input)
+  qty.append(label)
+  tr.append(qty)
+
+
+  const subTotal = document.createElement('td')
+  subTotal.setAttribute('class', 'subtot')
+  const span3 = document.createElement('span')
+  span3.innerHTML = 0
+  subTotal.append('$',span3)
+  tr.append(subTotal)
+
+
+  const rm = document.createElement('td')
+  const button = document.createElement('button')
+  button.setAttribute('class', 'btn btn-delete')
+  button.setAttribute('onclick', 'deleteElement(this)')
+  button.innerHTML = 'Delete'
+  rm.append(button)
+  tr.append(rm)
+  $cart.append(tr)
+
+  document.getElementById('nombreNuevo').value = ''
+  document.getElementById('precioNuevo').value = ''
+}
+
