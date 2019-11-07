@@ -22,10 +22,14 @@ function calcAll() {
 
   let productsCollection = $cart.getElementsByClassName("product");
   let $product;
+  let sumSubtotal = 0;
 
   for (let i = 0; i < productsCollection.length; i++) {
     $product = productsCollection[i];
-    updateSubtot($product);
+    sumSubtotal += updateSubtot($product);
   }
+
+  let totalEle = document.querySelector("h2 span");
+  totalEle.innerHTML = sumSubtotal;
 }
 $calc.onclick = calcAll;
