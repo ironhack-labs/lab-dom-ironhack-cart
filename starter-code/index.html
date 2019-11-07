@@ -1,72 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="./css/style.css">
-  <title>Ironhack cart</title>
-</head>
-<body>
-  <h1>Ironhack Cart</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script type="text/javascript" src="./js/index.js"></script>
+    <title>Ironhack cart</title>
+  </head>
+  <body>
+    <h2>Ironhack Merc</h2>
+    <table>
+      <tbody>
+        <tr class="product">
+          <td>IronBubble-head</td>
+          <td class="item-cost">$25.00</td>
 
-  <table id="cart">
-    <thead>
-      <tr>
-        <th>Product name</th>
-        <th>Price unit</th>
-        <th>Quantity</th>
-        <th>Sub-total</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="product">
-        <td class="name">
-          <span>IronBubble-head</span>
-        </td>
-    
-        <td class="pu">
-          $<span>25.00</span>
-        </td>
-    
-        <td class="qty">
-          <label>
-            <input type="number" value="0" min="0">
-          </label>
-        </td>
-    
-        <td class="subtot">
-          $<span>0</span>
-        </td>
-    
-        <td class="rm">
-          <button class="btn btn-delete">Delete</button>
-        </td>
-      </tr>
-    </tbody>
-    <!-- <tfoot>
-      <tr class="new">
-        <td>
-          <input type="text"/>
-        </td>
-        <td>
-          <input type="number" min="0"/>
+          <td class="search-box">
+            QTY <input type="number" class="input-qty" />
+          </td>
+
+          <td class="sum-cost">$0.00</td>
+          <td><Button class="btn-delete">Delete</Button></td>
+        </tr>
+        <tr class="product">
+          <td>IronShirt</td>
+          <td class="item-cost">$15.00</td>
+
+          <td class="search-box">
+            QTY <input type="number" class="input-qty" />
+          </td>
+
+          <td class="sum-cost">$0.00</td>
+          <td><Button class="btn-delete">Delete</Button></td>
+        </tr>
+      </tbody>
+
+      <tr class="create-product">
+        <td><input type="text" class="enter-product-name" /></td>
+        <td class="enter-price">
+          $<input type="number" class="enter-product-price" />
         </td>
         <td></td>
         <td></td>
-        <td>
-          <button id="create" class="btn">Create</button>
-        </td>
+        <td><Button id="new-item-create">Create</Button></td>
       </tr>
-    </tfoot> -->
+    </table>
 
-  </table>
-
-  <p class="cta">
-    <button id="calc" class="btn btn-success">Calculate prices</button>
-  </p>
-
-  <h2>Total: $<span>0</span></h2>
-
-  <script type="text/javascript" src="./js/index.js"></script>
-</body>
+    <button id="calc-prices-button" class="btn-success">
+      Calculate Prices
+    </button>
+    <h2 class="total-price">Total Price:$0.00</h2>
+  </body>
 </html>
