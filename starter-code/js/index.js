@@ -9,25 +9,27 @@ $create.onclick = addTr
 
 function updateSubtot($product) {
   // Iteration 1.1
-  let price = document.getElementsByClassName('pu')
-      for (x=0; x < price.length ; x++){
-        //console.log(price[x])
-        let OnlyPrice = price[x].getElementsByTagName('span');
-        for (y=0; y < OnlyPrice.length; y++){
-          //console.log(OnlyPrice[y])
-          let subTotal = document.getElementsByClassName('subtot');
-           console.log(subTotal[0].innerHTML)
-            for (i=0; i < subTotal.length; i++){
-              let span = document.createElement('span')
-              span.innerHTML = $product.value * Number(OnlyPrice[y].innerHTML)
-              // subTotal[i].appendChild(document.createElement('span'))
-              subTotal[i].innerHTML = ''
-              subTotal[i].append('$',span)
-              //console.log(subTotal[i])
-            }
-        }
-      }
+  // let price = document.getElementsByClassName('pu')
+  //     for (x=0; x < price.length ; x++){
+  //       //console.log(price[x])
+  //       let OnlyPrice = price[x].getElementsByTagName('span');
+  //       for (y=0; y < OnlyPrice.length; y++){
+  //         //console.log(OnlyPrice[y])
+  //         let subTotal = document.getElementsByClassName('subtot');
+  //          console.log(subTotal[0].innerHTML)
+  //           for (i=0; i < subTotal.length; i++){
+  //             let span = document.createElement('span')
+  //             span.innerHTML = $product.value * Number(OnlyPrice[y].innerHTML)
+  //             // subTotal[i].appendChild(document.createElement('span'))
+  //             subTotal[i].innerHTML = ''
+  //             subTotal[i].append('$',span)
+  //             //console.log(subTotal[i])
+  //           }
+  //       }
+  //     }
       //let qty = document.getElementsByClassName('qty');
+      let fila = $product.parentElement.parentElement.parentElement
+  fila.querySelector('td.subtot > span').innerHTML = +fila.querySelector('td.pu > span').innerHTML * +fila.querySelector('td.qty input').value
 }
 
 function calcAll() {
