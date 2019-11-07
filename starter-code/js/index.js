@@ -32,4 +32,15 @@ function calcAll() {
   let totalEle = document.querySelector("h2 span");
   totalEle.innerHTML = sumSubtotal;
 }
+
 $calc.onclick = calcAll;
+
+let btnCollection = $cart.getElementsByClassName("btn-delete");
+let row;
+
+for (let i = 0; i < btnCollection.length; i++){
+  btnCollection[i].onclick = function(e){
+    row = e.currentTarget.parentElement.parentElement;
+    $cart.removeChild(row);
+  }
+}
