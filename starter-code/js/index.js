@@ -1,8 +1,10 @@
 var cart = document.querySelector('#cart tbody');
 var calc = document.getElementById('calc');
 var rm = document.querySelectorAll('#cart tbody .rm');
+var create = document.querySelector('.new');
 
 calc.onclick = calcAll;
+create.lastElementChild.onclick = createItem;
 
 // assigning a onclik event to every delete btn
 [...rm].map( el => { el.onclick = removeItem })
@@ -38,7 +40,41 @@ function calcAll() {
 
 function removeItem( event ) {
   let product = event.path[2];
-  product.parentNode.removeChild(product);
+  product.parentNode.removeChild(product);  
+}
+
+function createItem() {
+  let prodName = create.querySelector('td:nth-child(1)>input').value;
+  let prodPrice = create.querySelector('td:nth-child(2)>input').value;
+
+  let newItem = `
+  <tr class="product">
+    <td class="name">
+      <span>${prodName}</span>
+    </td>
+
+    <td class="pu">
+      <span>${Number(prodPrice).toFixed(2)}</span>
+    </td>
+
+    <td class="qty">
+      <label>
+        <input type="number" value="0" min="0">
+      </label>
+    </td>
+
+    <td class="subtot">
+      <span>0</span>
+    </td>
+
+    <td class="rm">
+      <button class="btn btn-delete">Delete</button>
+    </td>
+  </tr>
+  `
+  prodName = '';
+  prodPrice = '';
+  cart.insertAdjacentHTML('beforeend', newItem)
   
 }
 
