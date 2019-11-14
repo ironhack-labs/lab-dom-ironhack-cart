@@ -13,12 +13,10 @@ var $calc = document.getElementById('calc');
 // returns the subtotal value
 let subtot = document.querySelector('.subtot span:first-child');
 let price = document.querySelector('.pu span:first-child');
-// let qty = document.querySelector('.qty input:first-child');
 let qty = document.getElementsByTagName('input')[0]; // or leave it as it is, outside
-// let totalItems = qty.value;
-// console.log(totalItems);
+let total = document.getElementsByTagName('span')[3];
 qty.onclick = updateSubtot;
-// qty.onclick = function() {
+// total.onclick = function() {
 //   console.log(qty.value);
 //   // input.value = '';
 // };
@@ -26,15 +24,15 @@ qty.onclick = updateSubtot;
 function updateSubtot($product) {
   // Iteration 1.1
   console.log($product);
-  // let productId = $product.target.id;
-
   if ($product.target === qty) {
     subtot.innerHTML = price.innerHTML * qty.value;
-    // console.log('hell');
+    return subtot;
   }
 }
 
-// function calcAll() {
-//   // Iteration 1.2
-// }
-// $calc.onclick = calcAll;
+function calcAll() {
+  // Iteration 1.2
+
+  total.innerHTML = subtot.innerHTML;
+}
+$calc.onclick = calcAll;
