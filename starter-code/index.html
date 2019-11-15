@@ -9,30 +9,41 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css"
     />
     <link rel="stylesheet" href="./css/style.css" />
-    <script type="text/javascript" src="./js/index.js"></script>
     <title>Ironhack cart</title>
   </head>
   <body>
+    <script type="text/javascript" src="js/index.js"></script>
     <nav>
       <h1>Ironhack Merch Store</h1>
     </nav>
-    <section id="Cart-container">
-      <ul id="cart-contents"></ul>
-      <div id="cart-add">
+    <section id="cart-container" class="flex-column"></section>
+    <footer id="total-price">
+      <div id="creation-form">
         <text>Nombre Objeto:</text>
-        <input type="text" class="add-input" />
-        <text>Precio Objeto:</text>
-        <input type="text" class="add-input" /><button class="add-button">
+        <input type="text" class="add-input" id="in-nombre" />
+        <text>Precio Objeto: </text>
+        <input type="text" class="add-input" id="in-precio" /><button
+          id="add-button"
+        >
           Agregar al carro
         </button>
       </div>
-    </section>
-    <footer id="total-price">
-      <p id="total-price-container">
-        <button id="calc-prices-button">Calcula Precio</button>
-        <span id="tot-pric-fixed-content">Total Price: </span>
-        <span id="tot-pric-value">0.00</span>
-      </p>
+      <div>
+        <button id="calc-button">Calcula Precio</button>
+        <p id="total-price-container">
+          <span id="tot-pric-fixed-content">Total Price: </span>
+          <span id="tot-pric-value">$ 0</span>
+        </p>
+      </div>
+
+      <!-- <div class="cart-item flex">
+        <span>{name} </span>
+        <span>{price} </span>
+        <div class="item-name"><span>QTY: </span><input type="text" /></div>
+        <span class="subtotal">0</span>
+        <button>Delete</button>
+      </div> -->
     </footer>
+    <script type="text/javascript" src="./js/index.js"></script>
   </body>
 </html>

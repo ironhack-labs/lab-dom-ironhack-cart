@@ -1,5 +1,24 @@
+body {
+  margin: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+body > * {
+  margin: 1%;
+}
 input {
   border: solid 1px black;
+}
+nav {
+  text-align: center;
 }
 
 .btn {
@@ -25,17 +44,41 @@ input {
 }
 
 .btn-success {
-    color: #fff;
-    background-color: #5cb85c;
-    border-color: #4cae4c;
+  color: #fff;
+  background-color: #5cb85c;
+  border-color: #4cae4c;
 }
 
 .btn-delete {
-    color: #fff;
-    background-color: #CF000F;
-    border-color: #CF000F;
+  color: #fff;
+  background-color: #cf000f;
+  border-color: #cf000f;
 }
 
 .quantity {
   margin: 0 5px;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#calc-prices-button {
+  width: 25%;
+  /* height: 100%; */
+  /* border-style: none; */
+  background-color: #4cae4c;
+  border-radius: 5px;
+  /* margin: 1em; */
+}
+#cart-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.cart-item {
+  display: flex;
+  justify-content: space-around;
 }
