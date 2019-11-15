@@ -1,13 +1,18 @@
 var cart = document.querySelector('#cart tbody');
 var calc = document.getElementById('calc');
-var rm = document.querySelectorAll('#cart tbody .rm');
+//var rm = document.querySelectorAll('#cart tbody .rm');
 var create = document.querySelector('.new');
 
 calc.onclick = calcAll;
+clickRemove();
 create.lastElementChild.onclick = createItem;
 
 // assigning a onclik event to every delete btn
-[...rm].map( el => { el.onclick = removeItem })
+function clickRemove() {
+  let rm = document.querySelectorAll('#cart tbody .rm');
+  [...rm].map( el => { el.onclick = removeItem })
+}
+
 
 function updateSubtot(product) {
   // Iteration 1.1
@@ -40,7 +45,8 @@ function calcAll() {
 
 function removeItem( event ) {
   let product = event.path[2];
-  product.parentNode.removeChild(product);  
+  product.parentNode.removeChild(product);
+  calcAll();  
 }
 
 function createItem() {
@@ -72,9 +78,9 @@ function createItem() {
     </td>
   </tr>
   `
-  prodName = '';
-  prodPrice = '';
-  cart.insertAdjacentHTML('beforeend', newItem)
-  
+  create.querySelector('td:nth-child(1)>input').value = '';
+  create.querySelector('td:nth-child(2)>input').value = '';
+  cart.insertAdjacentHTML('beforeend', newItem);
+  clickRemove();
 }
 
