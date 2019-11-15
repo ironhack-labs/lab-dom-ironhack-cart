@@ -38,7 +38,11 @@ let createNewRow = document.getElementById('create');
 createNewRow.onclick = function() {
   let newProduct = document.querySelector('#new-product').value;
   let newPrice = Number(document.querySelector('#new-price').value).toFixed(2);
-
+  if (
+    !document.querySelector('#new-product').value ||
+    !document.querySelector('#new-price').value
+  )
+    return;
   let tr = document.createElement('tr');
   tr.setAttribute('class', 'product');
   // tr.classList.add('product'); //another way of adding attribute.
