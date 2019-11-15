@@ -2,10 +2,16 @@ var $cart = document.querySelector('#cart tbody');
 var $calc = document.getElementById('calc');
 
 function updateSubtot($product) {
-  // Iteration 1.1
-}
+  let productQuantitity = Number(document.getElementsByTagName("span")[1].innerHTML);
+  let productPrice = Number(document.getElementsByTagName("input")[0].value);
+  let updatedSubtot = productQuantitity * productPrice;
+  let currentSubtot = document.getElementsByTagName("span")[2];
+  currentSubtot.innerHTML = updatedSubtot;
+  return updateSubtot;
+};
 
 function calcAll() {
-  // Iteration 1.2
-}
+  updateSubtot();
+};
+
 $calc.onclick = calcAll;
