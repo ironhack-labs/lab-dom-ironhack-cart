@@ -77,6 +77,9 @@ createNewRow.onclick = function() {
 
   tr.querySelector('.btn-delete').onclick = deleteProduct;
   tr.querySelector('.qty input').onclick = updateSubtot;
+
+  document.getElementById('new-product').value = '';
+  document.getElementById('new-price').value = '';
 };
 
 let buttonDelete = document.querySelector('.btn-delete');
