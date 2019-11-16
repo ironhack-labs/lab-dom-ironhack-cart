@@ -2,6 +2,11 @@ var $cart = document.querySelector('#cart tbody');
 var $calc = document.getElementById('calc');
 var subTot = 0;
 
+document.querySelectorAll('.btn-delete').forEach (function(delbut){
+  delbut.onclick = function() {
+    delbut.parentElement.parentElement.remove();
+  }
+})
 
 // add the thingy
 document.getElementById("create").onclick = function(){
