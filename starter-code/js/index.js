@@ -42,7 +42,8 @@ createNewRow.onclick = function() {
     !document.querySelector('#new-product').value ||
     !document.querySelector('#new-price').value
   )
-    return;
+    return alert('Please enter the product and price!');
+
   let tr = document.createElement('tr');
   tr.setAttribute('class', 'product');
   // tr.classList.add('product'); //another way of adding attribute.
