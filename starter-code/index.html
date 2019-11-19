@@ -39,18 +39,16 @@
         </td>
     
         <td class="rm">
-          <!-- assigns an attibute to delete the product using the JS function -->
-          <button onclick="deleteProduct(event.currentTarget)" class="btn btn-delete">Delete</button>
+          <button class="btn btn-delete">Delete</button>
         </td>
       </tr>
-      
       <tr class="product">
         <td class="name">
-          <span>IronBubble T-Shirt</span>
+          <span>Ironhack Artisinal Tie Dye</span>
         </td>
     
         <td class="pu">
-          $<span>40.00</span>
+          $<span>25.00</span>
         </td>
     
         <td class="qty">
@@ -64,23 +62,22 @@
         </td>
     
         <td class="rm">
-          <button onclick="deleteProduct(event.currentTarget)" class="btn btn-delete">Delete</button>
+          <button class="btn btn-delete">Delete</button>
         </td>
       </tr>
-
     </tbody>
     <tfoot>
       <tr class="new">
         <td>
-          <input type="text"/>
+          <input id="new-product" type="text"/>
         </td>
         <td>
-          <input type="number" min="0"/>
+          <input id="new-price" type="number" min="0"/>
         </td>
         <td></td>
         <td></td>
         <td>
-          <button onclick="addProduct()" id="create" class="btn">Create</button>
+          <button id="create" class="btn">Create</button>
         </td>
       </tr>
     </tfoot>

@@ -1,150 +1,89 @@
-var $cart = document.querySelector('#cart tbody');
-var $calc = document.getElementById('calc');
+let cart = document.querySelector('#cart tbody');
+let calc = document.getElementById('calc');
 
-// Iteration 1.1
-function updateSubtot($product) {
+calc.onclick = calcAll;
+
+function calcAll() {
+
+  let rows = document.getElementsByClassName('product');
+  let finalTotal = 0;
+
+  for(let i=0;i<rows.length;i++){
+    let current = rows[i];
+
+
+      // get the quantity
+  let quantityInput = current.querySelector('.qty input');
+  let qty = quantityInput.value;
+  console.log(qty)
+
+  // get the price
+  let price = current.querySelector('.pu span').innerText;
+  console.log(price)
+
+  // multiply them together
   
-  // stores the value accessed via the elements > innerHTML pulls the value from the span element
-  let productPrice = $product.querySelector(".pu span").innerHTML; 
-  
-  // stores the value of the qty entered. Uses .value bacause it's being typed in real time
-  let productQuantity = $product.querySelector(".qty input").value; 
-  
-  // stores the value of the calculated amount of productPrice * productQuantity
-  let subtotalUpdate = $product.querySelector(".subtot span");
-  subtotalUpdate.innerHTML = productPrice * productQuantity;
+  let result = price * qty;
+  // risky operation, multiplying strings, change to numbers if operater changes in the future
 
-  // returns the updated subtotal and convert concatenated string into number
-  return Number(subtotalUpdate.innerHTML); 
-}
+  let sub = current.querySelector('.subtot')
 
-// Iteration 1.2
-function calcAll() { 
-  let grandTotal = 0;
-
-  // accessing the stored values in $cart (line 1), and pulls products from the tr
-  let listOfProducts = $cart.querySelectorAll('.product'); 
-
-  // loop through the line of products and update the subtotal
-  for (let i = 0; i < listOfProducts.length; i++) { 
-  
-  // returns the amount of all subtotals and calculates the grandTotal
-    grandTotal += updateSubtot(listOfProducts[i]);
+  sub.innerText = '$'+result.toFixed(2);
+  finalTotal += result;
+ 
+  // put them in the subtotal spot
   }
-  // setting the calculated grandTotal into the Total innerHTML
-  document.querySelector('h2 span').innerHTML = grandTotal;
+
+  // after the loop add up the totals and put the real total at the bottom
+
+  document.querySelector('h2 > span').innerText = finalTotal.toFixed(2)
 }
 
-$calc.onclick = calcAll;
-
-// event is a global variable in JS
-// parentNode is the parent element of target
-function deleteProduct (target) {
-  // uses the native removeChild function to delete the entire line based on the parameter being passed in
-  $cart.removeChild(target.parentNode.parentNode);
+let deleteButtons = document.getElementsByClassName('btn-delete');
+for (let i =0; i<deleteButtons.length; i++){
+  deleteButtons[i].onclick = deleteTHIS;
 }
 
-function addProduct () {
-  // each variable is accessing the value typed in
-  // used [] to determine which value inside the td to access - number or text
-  let typedNameElement = document.querySelector('.new input[type=text]');
-  let typedName = typedNameElement.value; // stores the element in the variable
+function deleteTHIS(e){
+  e.target.parentElement.parentElement.remove();
+}
 
-  let typedPriceElement = document.querySelector('.new input[type=number]');
-  let typedPrice = typedPriceElement.value;
-  
-  // createElement is used to create a new HTML element via JS
-  // () determine which element to create
-  let newTr = document.createElement('tr');
+document.getElementById('create').onclick = function(){
+  let newProduct = document.getElementById('new-product').value;
+  let newPrice = Number(document.getElementById('new-price').value).toFixed(2);
 
-  // sets the class of the new Tr
-  newTr.classList.add('product');
+  let newRowFiller = `
+            <td class="name">
+              <span>${newProduct}</span>
+            </td>
+        
+            <td class="pu">
+              $<span>${newPrice}</span>
+            </td>
+        
+            <td class="qty">
+              <label>
+                <input type="number" value="0" min="0">
+              </label>
+            </td>
+        
+            <td class="subtot">
+              $<span>0</span>
+            </td>
+        
+            <td class="rm">
+              <button class="btn btn-delete">Delete</button>
+            </td>
+  `
+  let newRow = document.createElement('tr');
+  newRow.classList.add('product');
+  newRow.innerHTML = newRowFiller;
 
-  let newTdName = document.createElement('td');
-  newTdName.classList.add('name');
+  let tbody = document.querySelector('tbody');
+  tbody.append(newRow);
 
-  let newNameSpan = document.createElement('span');
-  newNameSpan.innerHTML = typedName;
+  newRow.querySelector('.btn-delete').onclick = deleteTHIS;
 
-  // adds the span inside the Td
-  newTdName.append(newNameSpan);
-
-  // adds the Td inside the Tr
-  newTr.append(newTdName);
-
-  let newTdPrice = document.createElement('td');
-  newTdPrice.classList.add('pu');
-
-  let newPriceSpan = document.createElement('span');
-  newPriceSpan.innerHTML = typedPrice;
-
-  // add $ inside the Td
-  newTdPrice.append('$');
-
-  // adds the span inside the Td
-  newTdPrice.append(newPriceSpan);
-
-  // adds the Td inside the Tr
-  newTr.append(newTdPrice);
-
-  let newTdQty = document.createElement('td');
-  newTdQty.classList.add('qty');
-
-  let newQtyLabel = document.createElement('label');
-  let newQtyInput = document.createElement('input');
-
-  // defines input type of newQtyInput to be 'number' from HTML
-  newQtyInput.type = 'number';
-
-  // sets initial values to zero so no negative qtys can be used
-  newQtyInput.value = 0;
-  newQtyInput.min = 0;
-
-  // adds the value entered in newQtyInput into the new newQtyLabel created above
-  newQtyLabel.append(newQtyInput);
-
-  // adds the label entered in Td
-  newTdQty.append(newQtyLabel);
-
-  // adds new newTdQty into the Tr
-  newTr.append(newTdQty);
-
-  let newTdSubtotal = document.createElement('td');
-  newTdSubtotal.classList.add('subtot');
-
-  let newSubtotalSpan = document.createElement('span');
-  newSubtotalSpan.innerHTML = 0;
-
-  // add $ inside the Td
-  newTdSubtotal.append('$');
-
-  // adds the span inside the Td
-  newTdSubtotal.append(newSubtotalSpan);
-
-  // adds the Td inside the Tr
-  newTr.append(newTdSubtotal);
-
-  let newTdDelete = document.createElement('td');
-  newTdDelete.classList.add('rm');
-
-  let newDeleteButton = document.createElement('button');
-
-  // function to delete itself on click
-  newDeleteButton.onclick = function () {
-    deleteProduct(this);
-  };
-
-  newDeleteButton.classList.add('btn');
-  newDeleteButton.classList.add('btn-delete');
-  newDeleteButton.innerHTML = 'Delete';
-
-  newTdDelete.append(newDeleteButton);
-  newTr.append(newTdDelete);
-
-  $cart.append(newTr);
-
-  // clears the values of both fields once an item has been added
-  typedNameElement.value = '';
-  typedPriceElement.value = '';
-  
-  }
+  document.getElementById('new-product').value = "";
+  document.getElementById('new-price').value = "";
+}
