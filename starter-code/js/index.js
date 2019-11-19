@@ -23,7 +23,10 @@ function updateSubtot(product) {
       '$' + (Number(quantity) * Number(currPrice)).toFixed(2);
     sum += Number(quantity) * Number(currPrice);
   }
-  total = '$' + sum.toFixed(2);
+  total = sum.toFixed(2);
+  // calcAll();
+  //we could use also this function while we add qty to calculate total right away.
+  //instead of extra click for total.
 }
 
 // Iteration 1.2
@@ -87,6 +90,8 @@ let buttonDelete = document.querySelector('.btn-delete');
 buttonDelete.onclick = deleteProduct;
 function deleteProduct(e) {
   e.target.parentElement.parentElement.remove();
+  updateSubtot(e);
+  calcAll();
 }
 
 // // This is just example if you want to generate some tags.
