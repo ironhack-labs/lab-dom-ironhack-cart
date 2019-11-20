@@ -35,6 +35,18 @@ input {font:inherit;}
   border-color: #CF000F;
 }
 
+/* .btn-add {
+  color: #fff;
+  background-color: orange;
+  border-color: orange;
+} */
+
 h1,
 .cta,
 h2 {text-align:center;}
+
+.add {
+
+  line-height: 50px;
+  background-color: white;
+}
