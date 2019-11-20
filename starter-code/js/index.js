@@ -1,4 +1,4 @@
-let cart = document.querySelector('#cart tbody');
+let cart = document.getElementById('inside');
 let calc = document.getElementById('calc');
 
 
@@ -11,15 +11,16 @@ let calc = document.getElementById('calc');
 
 
     // let tableProduct = document.getElementsByTagName("tbody");
-    let newproduct = document.createElement("tr")
-    newproduct.classList.add('product');
+   
 
-    let productName = document.getElementById("newproduct")
-    let productPrice = document.getElementById("newprice");
-
+    let productName = document.getElementById("newproduct").value
+    let productPrice = Number(document.getElementById("newprice").value).toFixed(2);
 
 
-    let productStar = `
+
+    let newRowhtml = `
+
+
 
         <td class="name">
           <span>${productName}</span>
@@ -42,21 +43,23 @@ let calc = document.getElementById('calc');
         <td class="rm">
           <button class="btn btn-delete">Delete</button>
         </td>
+
+     
     
     
     `
-    let newRow = newproduct.innerHTML = productStar;
-    
-    
-    // console.log(productName.value, productPrice.value, productStar)
+    let newproduct = document.createElement("tr")
+    newproduct.classList.add('product');
+    newproduct.innerHTML = newRowhtml;
+
+    let selectTbody =  document.querySelector('tbody');
+    selectTbody.insertBefore(newproduct, selectTbody.childNodes[0]);
 
 
-     cart.append(newRow);
+  document.getElementById("newproduct").value = ""
+  document.getElementById("newprice").value = ""
 
-
-
-
-  
+      
 
 
 
@@ -66,15 +69,55 @@ let calc = document.getElementById('calc');
 
 
 
-
-
 }
 
-function updateSubtot($product) {
-  // Iteration 1.1
+function deleteItem() {
+  
 }
+
+
+function updateSubtot(product) {
+
+  let products = document.getElementsByClassName("product")
+
+  let realTotal = 0;
+
+  for(let i=0;i<products.length;i++){
+    let current = products[i];
+
+
+  let quantityInput = current.querySelector('.qty input');
+  let qty = quantityInput.value;
+ 
+
+  let price = current.querySelector('.pu span').innerText;
+
+
+
+  let result = price * qty;
+ 
+
+
+  let sub = current.querySelector('.subtot')
+
+  sub.innerText = '$'+result.toFixed(2);
+  realTotal += result;
+ 
+  // put them in the subtotal spot
+
+  let actualTotal = document.querySelector("#eltotal > span");
+  actualTotal.innerText = realTotal.toFixed(2);
+  }
+
+
+
+
+  
+}
+
 
 function calcAll() {
   // Iteration 1.2
+  updateSubtot()
 }
 calc.onclick = calcAll;
