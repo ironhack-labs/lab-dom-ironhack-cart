@@ -1,5 +1,6 @@
 var $cart = document.querySelector('#cart tbody');
 var $calc = document.getElementById('calc');
+
 // Iteration 1.1
 
 
@@ -28,9 +29,26 @@ function updateFinalPrice() {
     }
 }
 
+
+
+// Delete
+
+
+
+var $deletebtn = document.getElementsByClassName('btn-delete')[0];
+
+function deleteItem() {
+    var child = $cart.getElementsByTagName("tr")[0];
+    $cart.removeChild(child);
+    console.log("Delete button clicked!");
+    updateFinalPrice();
+}
+
 function calcAll() {
     // Iteration 1.2
     updateAllSubtotals();
     updateFinalPrice();
+
 }
 $calc.addEventListener("click", calcAll);
+$deletebtn.addEventListener("click", deleteItem);
