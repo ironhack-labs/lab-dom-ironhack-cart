@@ -1,7 +1,6 @@
 var $cart = document.querySelector('#cart tbody');
 var $calc = document.getElementById('calc');
 
-// Iteration 1.1
 
 
 function updateSubtot($product) {
@@ -17,7 +16,7 @@ function updateAllSubtotals() {
         updateSubtot(products[i]);
     }
 }
-// Iteration 1.2
+
 
 function updateFinalPrice() {
     var totalPrice = document.getElementById("totalsum");
@@ -30,34 +29,18 @@ function updateFinalPrice() {
 }
 
 
-
-// Delete
-
-
-//Iteration 4
-var buttons = document.getElementsByClassName('btn-delete');
-buttons.onclick = function(e) {
-    console.log(`eCurrentTarget: ${e.currentTarget.innerHTML}`);
-    var child = $cart.getElementsByTagName("tr");
+function deleteRow(e) {
+    var child = e.currentTarget.parentNode.parentNode;
     $cart.removeChild(child);
     updateFinalPrice();
 }
 
-
-
-
-// var buttons = document.getElementsByClassName('btn-delete');
-// for (let i = 0; i < buttons.length; i++) {
-//     buttons[i].onclick = function(e) {
-//         console.log(`eCurrentTarget: ${e.currentTarget.innerHTML}`);
-//         var child = $cart.getElementsByTagName("tr")[i];
-//         $cart.removeChild(child);
-//         updateFinalPrice();
-//     }
-// }
+var buttons = document.getElementsByClassName('btn-delete');
+for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", deleteRow);
+}
 
 function calcAll() {
-    // Iteration 1.2
     updateAllSubtotals();
     updateFinalPrice();
 
