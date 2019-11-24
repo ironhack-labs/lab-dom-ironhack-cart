@@ -34,15 +34,27 @@ function updateFinalPrice() {
 // Delete
 
 
-
-var $deletebtn = document.getElementsByClassName('btn-delete')[0];
-
-function deleteItem() {
-    var child = $cart.getElementsByTagName("tr")[0];
+//Iteration 4
+var buttons = document.getElementsByClassName('btn-delete');
+buttons.onclick = function(e) {
+    console.log(`eCurrentTarget: ${e.currentTarget.innerHTML}`);
+    var child = $cart.getElementsByTagName("tr");
     $cart.removeChild(child);
-    console.log("Delete button clicked!");
     updateFinalPrice();
 }
+
+
+
+
+// var buttons = document.getElementsByClassName('btn-delete');
+// for (let i = 0; i < buttons.length; i++) {
+//     buttons[i].onclick = function(e) {
+//         console.log(`eCurrentTarget: ${e.currentTarget.innerHTML}`);
+//         var child = $cart.getElementsByTagName("tr")[i];
+//         $cart.removeChild(child);
+//         updateFinalPrice();
+//     }
+// }
 
 function calcAll() {
     // Iteration 1.2
@@ -51,4 +63,3 @@ function calcAll() {
 
 }
 $calc.addEventListener("click", calcAll);
-$deletebtn.addEventListener("click", deleteItem);
