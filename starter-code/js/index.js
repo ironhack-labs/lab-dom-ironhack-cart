@@ -1,8 +1,7 @@
 var $cart = document.querySelector('#cart tbody');
 var $calc = document.getElementById('calc');
-var $product = document.getElementsByClassName("product")[0];
-var $quantity = document.getElementsByClassName("quantity")[0];
-console.log($product);
+var $del = document.getElementsByClassName("btn btn-delete");
+var $create = document.getElementById("create");
 
 //iteration 1
 function updateTotal() {
@@ -33,10 +32,38 @@ function updateAllSubtots() {
 }
 
 function calcAll() {
-  // Iteration 1.2
+  // Iteration 1.2 // Iteration 3
     updateAllSubtots();
     updateTotal();
 }
 
 $calc.addEventListener("click", calcAll);  
 
+// Iteration 4
+
+function deleteItem(e){
+  var product = e.currentTarget.parentNode.parentNode;
+  var table = e.currentTarget.parentNode.parentNode.parentNode;
+  table.removeChild(product);
+}
+function loadDeleteButtons(){
+for (var i = 0; i < $del.length; i++){
+  $del[i].addEventListener("click", deleteItem)
+}
+}
+loadDeleteButtons();
+
+//iteration 5
+
+function create() {
+  //var userInput = document.getElementsByClassName("new")[0];
+  debugger
+  var product = document.getElementsByClassName("product")[0];
+  var newProduct = product.cloneNode(true);
+  newProduct.getElementsByClassName("name")[0].firstElementChild.innerHTML = document.getElementById("new-name").value;
+  newProduct.getElementsByClassName("price")[0].innerHTML = document.getElementById("new-quantity").value;
+  $cart.appendChild(newProduct); 
+  loadDeleteButtons()
+}
+
+$create.addEventListener("click", create);
