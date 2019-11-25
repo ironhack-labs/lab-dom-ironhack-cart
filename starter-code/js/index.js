@@ -15,7 +15,7 @@ return subTotal;
 
 function calcAll() {
   // Iteration 1.2
-  let x = 2;
+  
   var rows = document.getElementsByClassName("product");
   var total = 0;
   for (var i = 0; i < rows.length; i++){
