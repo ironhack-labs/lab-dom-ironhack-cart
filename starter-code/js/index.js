@@ -1,6 +1,6 @@
 var $cart = document.querySelector("#cart tbody");
 var $calc = document.getElementById("calc");
-
+var child = $cart.querySelector(".product");
 
 function updateSubtot($product) {
   // Iteration 1.1
@@ -32,5 +32,16 @@ function calcAll() {
   document.querySelector("h2 span").innerText = total;
 }
 }
+
+document.querySelector(".btn.btn-delete").onclick = function(){
+  console.log("blabla")
+  removeRow()
+}
+
+
+function removeRow(){
+  child.parentNode.removeChild(child);
+}
+
 
 $calc.onclick = calcAll;
