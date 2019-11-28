@@ -1,6 +1,7 @@
 var $cart = document.querySelector('#cart tbody');
 var $calc = document.getElementById('calc');
-let $delete = document.getElementsByClassName("btn-delete");
+let $delete = document.querySelector(".rm button"); //contains the first button only
+$delete.onclick = deleteRow; //register 1st botton onclick delete
 
 function updateSubtot($product) {
   // Iteration 1.1
@@ -76,6 +77,7 @@ function addRow () {
     newTableRow.querySelector(".pu span").innerText = "15.00";
     newTableRow.querySelector(".qty label input").value = "0";
     newTableRow.querySelector(".subtot span").innerText = "0";
+    newTableRow.querySelector(".rm button").onclick = deleteRow;
 
     //add new row
     tableRoot.appendChild(newTableRow);
@@ -83,7 +85,7 @@ function addRow () {
 }
 
 function deleteRow() { //howto derive the set button id ???
-  
+  console.log(this.parentNode.parentNode.remove());
 }
 
-$delete.onclick = deleteRow;
+console.log($delete);
