@@ -3,6 +3,7 @@ var calc = document.getElementById('calc');
 
 // Iteration 1.1
 // // 1. Create elements location that we need to target.
+//------------------------------------------------------
 let rows = document.getElementsByClassName('product');
 let totalPlace = document.querySelector('H2 span');
 let qty = document.querySelector('.qty input');
@@ -12,6 +13,7 @@ qty.onclick = updateSubtot;
 calc.onclick = calcAll;
 
 // // 3. Call functions onclick.
+//------------------------------
 function updateSubtot(product) {
   let sum = 0;
   for (let i = 0; i < rows.length; i++) {
@@ -25,17 +27,18 @@ function updateSubtot(product) {
   }
   total = sum.toFixed(2);
   // calcAll();
-  //we could use also this function while we add qty to calculate total right away.
+  //we could use calcAll(), so when we add qty it could calculate total at same time.
   //instead of extra click for total.
 }
 
 // Iteration 1.2
+//-----------------
 function calcAll() {
   totalPlace.innerText = total;
 }
 
-// Iteration 2: Add another product
-
+// Iteration 2: Add new product
+//--------------------------------------------------
 let createNewRow = document.getElementById('create');
 
 createNewRow.onclick = function() {
@@ -49,7 +52,7 @@ createNewRow.onclick = function() {
 
   let tr = document.createElement('tr');
   tr.setAttribute('class', 'product');
-  // tr.classList.add('product'); //another way of adding attribute.
+  // tr.classList.add('product'); //another way of adding class attribute.
 
   let newRowFiller = `
               <td class="name">
@@ -86,6 +89,7 @@ createNewRow.onclick = function() {
   document.getElementById('new-price').value = '';
 };
 
+//----------Delete Item or delete button---------------
 let buttonDelete = document.querySelector('.btn-delete');
 buttonDelete.onclick = deleteProduct;
 function deleteProduct(e) {
