@@ -1,72 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="./css/style.css">
-  <title>Ironhack cart</title>
-</head>
-<body>
-  <h1>Ironhack Cart</h1>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Ironhack cart</title>
+  </head>
+  <body>
+    <h1>Ironhack Cart</h1>
 
-  <table id="cart">
-    <thead>
-      <tr>
-        <th>Product name</th>
-        <th>Price unit</th>
-        <th>Quantity</th>
-        <th>Sub-total</th>
-        <th>Action</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr class="product">
-        <td class="name">
-          <span>IronBubble-head</span>
-        </td>
-    
-        <td class="pu">
-          $<span>25.00</span>
-        </td>
-    
-        <td class="qty">
-          <label>
-            <input type="number" value="0" min="0">
-          </label>
-        </td>
-    
-        <td class="subtot">
-          $<span>0</span>
-        </td>
-    
-        <td class="rm">
-          <button class="btn btn-delete">Delete</button>
-        </td>
-      </tr>
-    </tbody>
-    <!-- <tfoot>
-      <tr class="new">
-        <td>
-          <input type="text"/>
-        </td>
-        <td>
-          <input type="number" min="0"/>
-        </td>
-        <td></td>
-        <td></td>
-        <td>
-          <button id="create" class="btn">Create</button>
-        </td>
-      </tr>
-    </tfoot> -->
+    <table id="cart">
+      <!-- Column Titles -->
+      <thead>
+        <tr>
+          <th>Product name</th>
+          <th>Price unit</th>
+          <th>Quantity</th>
+          <th>Sub-total</th>
+          <th>Action</th>
+        </tr>
+      </thead>
 
-  </table>
+      <tbody id="product-list">
+        <!-- Product 1 (Row) -->
+        <tr class="product" id="duplicate">
+          <td class="name">
+            <span>IronBubble-head</span>
+          </td>
 
-  <p class="cta">
-    <button id="calc" class="btn btn-success">Calculate prices</button>
-  </p>
+          <td class="pu">$<span>25.00</span></td>
 
-  <h2>Total: $<span>0</span></h2>
+          <td class="qty">
+            <label>
+              <input type="number" value="0" min="0" />
+            </label>
+          </td>
 
-  <script type="text/javascript" src="./js/index.js"></script>
-</body>
+          <td class="subtot">$<span>0</span></td>
+
+          <td class="rm">
+            <button class="btn btn-delete">Delete</button>
+          </td>
+        </tr>
+
+        <tr class="product">
+          <td class="name">
+            <span>IronShirt</span>
+          </td>
+
+          <td class="pu">$<span>15.00</span></td>
+
+          <td class="qty">
+            <label>
+              <input type="number" value="0" min="0" />
+            </label>
+          </td>
+
+          <td class="subtot">$<span>0</span></td>
+
+          <td class="rm">
+            <button class="btn btn-delete">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+
+      <tfoot>
+        <tr class="new">
+          <td>
+            <input class="product-name" type="text" />
+          </td>
+          <td>
+            <input class="product-price" type="number" min="0" />
+          </td>
+          <td></td>
+          <td></td>
+          <td>
+            <button id="create" class="btn">Create</button>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <!-- Calculate Prices Button -->
+    <p class="cta">
+      <button id="calc" class="btn btn-success">Calculate prices</button>
+    </p>
+
+    <!-- Total Price -->
+    <h2>Total: $<span class="grand-total">0</span></h2>
+
+    <script type="text/javascript" src="./js/index.js"></script>
+  </body>
 </html>
