@@ -43,13 +43,13 @@
         </td>
       </tr>
     </tbody>
-    <!-- <tfoot>
+  <tfoot>
       <tr class="new">
         <td>
-          <input type="text"/>
+          <input id="productName"type="text"/>
         </td>
         <td>
-          <input type="number" min="0"/>
+          <input id="precio" type="number" min="0"/>
         </td>
         <td></td>
         <td></td>
@@ -57,7 +57,7 @@
           <button id="create" class="btn">Create</button>
         </td>
       </tr>
-    </tfoot> -->
+    </tfoot> 
 
   </table>
 
@@ -65,7 +65,7 @@
     <button id="calc" class="btn btn-success">Calculate prices</button>
   </p>
 
-  <h2>Total: $<span>0</span></h2>
+  <h2 id="total">Total: $<span>0</span></h2>
 
   <script type="text/javascript" src="./js/index.js"></script>
 </body>
