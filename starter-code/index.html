@@ -30,6 +30,29 @@
     
         <td class="qty">
           <label>
+            <input class="input-qty" type="number" value="0" min="0">
+          </label>
+        </td>
+    
+        <td class="subtot">
+          $<span>0</span>
+        </td>
+    
+        <td class="rm">
+          <button class="btn btn-delete">Delete</button>
+        </td>
+      </tr>
+      <tr class="product">
+        <td class="name">
+          <span>IronShirt</span>
+        </td>
+    
+        <td class="pu">
+          $<span>35.00</span>
+        </td>
+    
+        <td class="qty">
+          <label>
             <input type="number" value="0" min="0">
           </label>
         </td>
@@ -43,13 +66,13 @@
         </td>
       </tr>
     </tbody>
-    <!-- <tfoot>
+    <tfoot>
       <tr class="new">
         <td>
-          <input type="text"/>
+          <input id="new-text" type="text"/>
         </td>
         <td>
-          <input type="number" min="0"/>
+          <input type="number" id="new-number" min="0"/>
         </td>
         <td></td>
         <td></td>
@@ -57,7 +80,7 @@
           <button id="create" class="btn">Create</button>
         </td>
       </tr>
-    </tfoot> -->
+    </tfoot>
 
   </table>
 
