@@ -18,6 +18,7 @@
         <th>Action</th>
       </tr>
     </thead>
+
     <tbody>
       <tr class="product">
         <td class="name">
@@ -39,17 +40,43 @@
         </td>
     
         <td class="rm">
-          <button class="btn btn-delete">Delete</button>
+          <button id="del" class="btn btn-delete">Delete</button>
         </td>
       </tr>
+
+      <tr class="product">
+        <td class="name">
+          <span>IronShirt</span>
+        </td>
+    
+        <td class="pu">
+          $<span>15.00</span>
+        </td>
+    
+        <td class="qty">
+          <label>
+            <input type="number" value="0" min="0">
+          </label>
+        </td>
+    
+        <td class="subtot">
+          $<span>0</span>
+        </td>
+    
+        <td class="rm">
+          <button id="del" class="btn btn-delete">Delete</button>
+        </td>
+      </tr>
+
     </tbody>
-    <!-- <tfoot>
+    
+    <tfoot>
       <tr class="new">
         <td>
-          <input type="text"/>
+          <input id="textFooter" type="text"/>
         </td>
         <td>
-          <input type="number" min="0"/>
+          <input id="numFooter" type="number" min="0"/>
         </td>
         <td></td>
         <td></td>
@@ -57,7 +84,7 @@
           <button id="create" class="btn">Create</button>
         </td>
       </tr>
-    </tfoot> -->
+    </tfoot>
 
   </table>
 
