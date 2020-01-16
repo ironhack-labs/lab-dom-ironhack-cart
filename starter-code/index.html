@@ -30,7 +30,7 @@
     
         <td class="qty">
           <label>
-            <input type="number" value="0" min="0">
+            <input type="number" value="0" class="inpuQte">
           </label>
         </td>
     
@@ -43,13 +43,41 @@
         </td>
       </tr>
     </tbody>
-    <!-- <tfoot>
+    <tbody>
+      <tr class="product">
+        <td class="name">
+          <span>IronBubble-head 2</span>
+        </td>
+    
+        <td class="pu">
+          $<span>45.00</span>
+        </td>
+    
+        <td class="qty">
+          <label>
+            <input type="number" value="0" class="inpuQte">
+          </label>
+        </td>
+    
+        <td class="subtot">
+          $<span>0</span>
+        </td>
+    
+        <td class="rm">
+          <button class="btn btn-delete">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+ </table>
+  <h2>Ajouter un produit et son prix unique</h2> 
+ <table id="addCart">      
+    <tfoot>
       <tr class="new">
         <td>
-          <input type="text"/>
+          Nom du produit :<input type="text" id="createTextValue"/>
         </td>
         <td>
-          <input type="number" min="0"/>
+          Prix unitaire du produit :<input type="number" min="0"  id="createValueValue"/>
         </td>
         <td></td>
         <td></td>
@@ -57,16 +85,15 @@
           <button id="create" class="btn">Create</button>
         </td>
       </tr>
-    </tfoot> -->
-
+    </tfoot>
   </table>
 
   <p class="cta">
     <button id="calc" class="btn btn-success">Calculate prices</button>
   </p>
 
-  <h2>Total: $<span>0</span></h2>
+  <h2>Total: $<span id="totalval">0</span></h2>
 
-  <script type="text/javascript" src="./js/index.js"></script>
+  <script type="module" src="./js/index.js"></script>
 </body>
 </html>

@@ -1,18 +1,21 @@
-table#cart {
+table#cart,  table#addCart  {
   width:100%;
   border-collapse:collapse;
 }
 
-table#cart th,
+table#cart th,  table#addCart th
 table#cart td {
   padding:.5em;
 }
 
-table#cart td {border:1px solid;}
+table#cart td ,   table#addCart td {border:1px solid;}
 
-table#cart tfoot {
+table#cart tfoot,   table#addCart toot {
   background:#eee;
 }
+
+
+
 
 input {font:inherit;}
 
