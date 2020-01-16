@@ -1,8 +1,8 @@
 let $cart = document.querySelector('#cart tbody');
 let $calc = document.getElementById('calc');
 let $create=document.getElementById('create');
+let $delete=document.querySelectorAll('.btn-delete');
 let sumTotal;
-
 
 
 function updateSubtot($product) {
@@ -36,6 +36,8 @@ function  addProduct(){
   const productPrice=document.querySelector('#id2').value
   const $newTr=document.createElement('tr')
 
+   let index=0;
+
   const newProduct=`
         <td class="name">
           <span>${productName}</span>
@@ -56,17 +58,51 @@ function  addProduct(){
         </td>
     
         <td class="rm">
-          <button class="btn btn-delete">Delete</button>
+          <button class="btn btn-delete" >Delete</button>
         </td>
   `;
 $newTr.className='product'
 $newTr.innerHTML=newProduct
 $cart.appendChild($newTr)
-
+deleteElement();
 
 
 
 }
+const deleteElement = () => {
+
+  const $deleteButtons = document.querySelectorAll('.btn-delete')
+
+$deleteButtons.forEach(($button) => {
+  $button.addEventListener('click', (index) => {
+
+    $cart.removeChild($ref=index.target.parentNode.parentNode)
+    index.preventDefault()
+  })
+})
+
+}
+
+/*
+function deleteProduct(index){
+//$byeProduct=document.querySelector(`.p${tag}`) 
+//console.log($delete.length)
+
+//console.log(document.querySelectorAll('.btn-delete').classList)
+
+$cart.removeChild()
+const $item = items[index]
+  const father = $item.parentNode
+  father.removeChild($item)
+
+//.forEach($product => {
+//  $product.querySelector('.btn-delete').onclick = ()=> $product.remove('active')
+//})
+
+
+}
+
+*/
 
 function calcAll() {
   sumTotal=0;
@@ -96,6 +132,8 @@ $h2Total.innerHTML=`$<span>${updateSubtot()}</span>`
 
 $calc.onclick = calcAll;
 $create.onclick = addProduct;
+//$delete.onclick = deleteProduct;
+//console.log(document.querySelectorAll('.btn-delete').classList)
 
 
-
+deleteElement();
