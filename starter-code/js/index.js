@@ -14,6 +14,7 @@ function updateSubtot($product) {
   const subTotal = unitPrice * quantity;
   subTotalEl.textContent = subTotal;
   $product.querySelector(".rm").onclick = deleteProduct;
+  $product.querySelector(".qty input").onchange = calcAll;
   return subTotal;
 }
 
@@ -62,6 +63,7 @@ function createProduct(name, price) {
         `;
   product.className = "product";
   product.querySelector(".rm button").onclick = deleteProduct;
+  product.querySelector(".qty input").onchange = calcAll;
   return product;
 }
 
