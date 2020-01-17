@@ -1,6 +1,7 @@
 // var newProduct = new Product();
 var $cart = document.querySelector('#cart tbody');
 var calcBtn = document.getElementById('calc');
+var createBtn = document.getElementById('create')
 var delBtn = document.querySelectorAll('btn-delete')
 
 function updateSubtot(product) {
@@ -13,20 +14,48 @@ function updateSubtot(product) {
     return subTotal;
 }
 
-// function addProduct(product) {
-//   $cart.
-// }
+function addProd() {
+  var inputName = document.querySelector("#newProd").value;
+  var inputPrice = document.querySelector("#newPrice").value;
+  var newTr = document.createElement('tr');
+  newTr.className = "product";
+  newTr.innerHTML = `
+    <td class="name">
+      <span>${inputName}</span>
+    </td>
+
+    <td class="pu">
+      $<span>${inputPrice}</span>
+    </td>
+
+    <td class="qty">
+      <label>
+        <input type="number" value="0" min="0">
+      </label>
+    </td>
+
+    <td class="subtot">
+      $<span>0</span>
+    </td>
+
+    <td class="rm">
+      <button class="btn btn-delete">Delete</button>
+    </td>`
+  
+  $cart.appendChild(newTr);
+  newTr.querySelector(".btn-delete").onclick = deleteProd;
+}
 
 function deleteProd(e) {
   // console.log(e.currentTarget) // currentTarget / target should work, just check
-  let parent = e.target.parentElement.parentElement;
-  // console.log(parent);
-  parent.remove();
-  // calcAll();
+  let targetRow = e.target.parentElement.parentElement;
+  // console.log(targetRow);
+  targetRow.remove();
+  // calcAll(); // calculates without pressing the calculate price
 }
 
 function calcAll() {
-  var products = document.querySelectorAll("tr.product")
+  var products = document.querySelectorAll("tr.product");
 
   // Iteration 1.2
   let total = 0;
@@ -42,5 +71,7 @@ function calcAll() {
 calcBtn.onclick = calcAll;
 
 $cart.querySelectorAll(".btn-delete").forEach(eachDel => {
-  eachDel.onclick = deleteProd;
-})
+    eachDel.onclick = deleteProd;
+  })
+
+createBtn.onclick = addProd;
