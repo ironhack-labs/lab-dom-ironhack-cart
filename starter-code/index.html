@@ -18,7 +18,7 @@
         <th>Action</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody id='tbody'>
       <tr class="product">
         <td class="name">
           <span>IronBubble-head</span>
@@ -42,14 +42,86 @@
           <button class="btn btn-delete">Delete</button>
         </td>
       </tr>
+      <tr class="product">
+        <td class="name">
+          <span>Iron Magnet</span>
+        </td>
+    
+        <td class="pu">
+          $<span>100.00</span>
+        </td>
+    
+        <td class="qty">
+          <label>
+            <input type="number" value="0" min="0">
+          </label>
+        </td>
+    
+        <td class="subtot">
+          $<span>0</span>
+        </td>
+    
+        <td class="rm">
+          <button class="btn btn-delete">Delete</button>
+        </td>
+      </tr>
+
+      <tr class="product">
+        <td class="name">
+          <span>Iron Cake</span>
+        </td>
+    
+        <td class="pu">
+          $<span>10.00</span>
+        </td>
+    
+        <td class="qty">
+          <label>
+            <input type="number" value="0" min="0">
+          </label>
+        </td>
+    
+        <td class="subtot">
+          $<span>0</span>
+        </td>
+    
+        <td class="rm">
+          <button class="btn btn-delete">Delete</button>
+        </td>
+      </tr>
+
+      <tr class="product">
+        <td class="name">
+          <span>Iron T.A.</span>
+        </td>
+    
+        <td class="pu">
+          $<span>1500.00</span>
+        </td>
+    
+        <td class="qty">
+          <label>
+            <input type="number" value="0" min="0">
+          </label>
+        </td>
+    
+        <td class="subtot">
+          $<span>0</span>
+        </td>
+    
+        <td class="rm">
+          <button class="btn btn-delete">Delete</button>
+        </td>
+      </tr>
     </tbody>
-    <!-- <tfoot>
+
+    <tfoot>
       <tr class="new">
         <td>
-          <input type="text"/>
+          <input type="text" id="nproduct-name"/>
         </td>
         <td>
-          <input type="number" min="0"/>
+          <input type="number" min="0" id="nproduct-price"/>
         </td>
         <td></td>
         <td></td>
@@ -57,7 +129,7 @@
           <button id="create" class="btn">Create</button>
         </td>
       </tr>
-    </tfoot> -->
+    </tfoot>
 
   </table>
 
