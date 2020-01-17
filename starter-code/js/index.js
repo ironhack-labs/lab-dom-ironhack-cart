@@ -15,10 +15,14 @@ function updateSubtot(product) {
 }
 
 function addProd() {
-  var inputName = document.querySelector("#newProd").value;
-  var inputPrice = document.querySelector("#newPrice").value;
+  var inputName = document.getElementById("newProd").value; // either getElementById and
+  var inputPrice = document.querySelector("#newPrice").value; // querySelector works
+  
+  // To add a new row... A new <tr> has to be created to contain the <td>&nodes
+  // (innerHTML) below. This is to not affect the already existing events tied to the HTML.
   var newTr = document.createElement('tr');
-  newTr.className = "product";
+  
+  newTr.className = "product"; // adds a class name to new element to match the classes of already existing TRs
   newTr.innerHTML = `
     <td class="name">
       <span>${inputName}</span>
@@ -42,16 +46,15 @@ function addProd() {
       <button class="btn btn-delete">Delete</button>
     </td>`
   
-  $cart.appendChild(newTr);
-  newTr.querySelector(".btn-delete").onclick = deleteProd;
+  $cart.appendChild(newTr); // adds the new row at the end of $cart
+  newTr.querySelector(".btn-delete").onclick = deleteProd; // new event has to be called for the newly added products
 }
 
 function deleteProd(e) {
   // console.log(e.currentTarget) // currentTarget / target should work, just check
   let targetRow = e.target.parentElement.parentElement;
-  // console.log(targetRow);
   targetRow.remove();
-  // calcAll(); // calculates without pressing the calculate price
+  // calcAll(); // to calculate without pressing the calculate price
 }
 
 function calcAll() {
@@ -72,6 +75,6 @@ calcBtn.onclick = calcAll;
 
 $cart.querySelectorAll(".btn-delete").forEach(eachDel => {
     eachDel.onclick = deleteProd;
-  })
+  }) // this event only applies to already-existing products
 
 createBtn.onclick = addProd;
