@@ -1,11 +1,7 @@
 var $cart = document.querySelector('#cart tbody');
 var $calc = document.getElementById('calc');
 var $delete = document.querySelectorAll('.rm');
-console.log($delete)
 let deletes = Array.from($delete);
-console.log(deletes)
-let $products = document.querySelectorAll('.product');
-let products = Array.from($products);
 
 
 function updateSubtot(products) {
@@ -20,6 +16,9 @@ function updateSubtot(products) {
 }
 
 function calcAll() {
+  let $products = document.querySelectorAll('.product');
+  let products = Array.from($products);
+
   updateSubtot(products);
   let result = 0;
   $products.forEach(elem => result += elem.querySelector('.pu span').innerText * elem.querySelector('.qty input').value);
@@ -27,17 +26,26 @@ function calcAll() {
 }
 
 function deleteItem() {
-  
+  document.querySelector('.product').remove()
 
-  }
-}
+} 
 
+
+$delete.forEach(elem =>elem.onclick = deleteItem)
 $calc.onclick = calcAll;
-$delete.onclick = deleteButton
 
 
 
-
+// function test() {
+//   let button = document.querySelector(".product");
+//   button.className = "product deleted";
+//   let toDelete = document.querySelector(".deleted");​
+//   for (let i = 0; i < table.childNodes.length; i++) {
+//     if (table.childNodes[i] == toDelete) {
+//       table.removeChild(table.childNodes[i]);
+//     }
+//   }
+// }
 
 
 
