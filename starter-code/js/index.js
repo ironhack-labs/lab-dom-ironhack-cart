@@ -28,11 +28,49 @@ function calcAll() {
 function deleteItem() {
   document.querySelector('.product').remove()
 
-} 
+}
 
 
-$delete.forEach(elem =>elem.onclick = deleteItem)
+$delete.forEach(elem => elem.onclick = deleteItem)
 $calc.onclick = calcAll;
+let addItemButton = document.getElementById('create').onclick = createRow
+
+let head = document.querySelectorAll('thead tr th')
+let arrHead = Array.from(head)
+
+function createRow() {
+  let parent = document.getElementsByTagName('tbody')[0];
+
+  let rowCnt = parent.rows.length;
+
+  let tr = parent.insertRow(rowCnt);
+  tr.setAttribute('class', "product");
+  for (let i = 0; i < 1; i++) {
+    let td = document.createElement('td')
+    td = tr.insertCell(i).setAttribute('class', 'rm');
+    td = tr.insertCell(i).setAttribute('class', 'subtot');
+    td = tr.insertCell(i).setAttribute('class', 'qty');
+    td = tr.insertCell(i).setAttribute('class', 'pu');
+    td = tr.insertCell(i).setAttribute('class', 'name');
+  }
+}
+
+// function nameProduct() {
+//   let nmePro = document.querySelectorAll('.product .newname')
+//   nmePro.
+// }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
