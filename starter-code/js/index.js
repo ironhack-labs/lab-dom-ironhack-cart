@@ -18,17 +18,17 @@ function calcAll() {
     const p = products[i];
     total += updateSubtot(p);
   }
-  console.log(total)
   document.getElementById('total').innerText = total;
 }
 
 function deleteProduct(e){
   let tr  = e.currentTarget.parentElement.parentElement;
   $tbody.removeChild(tr)
+  calcAll()
+  createDeleteEvents()
 }
 
-
-function updateEvents(){
+function createDeleteEvents(){
   const deleteBtns = document.getElementsByClassName("btn-delete");
   for (let i = 0; i < deleteBtns.length; i++) {
     deleteBtns[i].addEventListener("click", deleteProduct)
@@ -41,7 +41,7 @@ function createProduct(){
   if(newProductPrice.value && newProductText.value){
     let productHtml = `<tr class="product"><td class="name"><span>${newProductText.value}</span></td><td class="pu">$<span>${newProductPrice.value}</span></td><td class="qty"><label><input type="number" value="0" min="0"></label></td><td class="subtot">$<span>0</span></td><td class="rm"><button class="btn btn-delete">Delete</button></td></tr>`
     $tbody.insertAdjacentHTML("beforeend", productHtml)
-    updateEvents();
+    createDeleteEvents();
     newProductPrice.value = "";
     newProductText.value = "";
   } else {
@@ -51,4 +51,4 @@ function createProduct(){
 
 $calc.onclick = calcAll;
 $create.onclick = createProduct;
-updateEvents()
+createDeleteEvents()
