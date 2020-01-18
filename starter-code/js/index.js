@@ -7,6 +7,7 @@ function updateSubtot($product) {
   const puAmount = parseInt($product.querySelector('.pu span').innerText);
   const qtyAmount = parseInt($product.querySelector('.qty input').value);
   $subtot.textContent = (puAmount*qtyAmount);
+  return puAmount*qtyAmount;
 }
 
 function calcAll() {
