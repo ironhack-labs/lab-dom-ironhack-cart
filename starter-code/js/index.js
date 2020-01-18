@@ -3,6 +3,10 @@ var $calc = document.getElementById('calc');
 
 function updateSubtot($product) {
   // Iteration 1.1
+  const $subtot = $product.querySelector('.subtot span'); 
+  const puAmount = parseInt($product.querySelector('.pu span').innerText);
+  const qtyAmount = parseInt($product.querySelector('.qty input').value);
+  $subtot.textContent = (puAmount*qtyAmount);
 }
 
 function calcAll() {
