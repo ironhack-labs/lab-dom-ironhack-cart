@@ -1,35 +1,36 @@
 var $cart = document.querySelector('#cart tbody');
 var $calc = document.getElementById('calc');
+var $delete =document.getElementsByClassName(`.rm .btn .btn-delete`);
 
 function updateSubtot($product) {
   // Iteration 1.1
-  let priceUnit = document.querySelector(`.pu span`).innerHTML;
-  let quantityProduct = document.querySelector(`.qty label input`).value;
+  let priceUnit = $product.querySelector(`.pu span`).innerHTML;
+  let quantityProduct = $product.querySelector(`.qty label input`).value;
+  let subTotalSpan =$product.querySelector(`.subtot span`);
   let subTotal =priceUnit*quantityProduct;
-  
-  return document.querySelector(`.subtot span`).innerHTML = subTotal;
-
-
-
+  subTotalSpan.innerHTML = subTotal;
+  return  subTotal;
 }
 
+ // Iteration 1.2
 function calcAll() {
   let totalSum=0;
   let allItems =document.querySelectorAll( `.product`);
+  
     allItems.forEach((product) => {
     totalSum +=updateSubtot(product);
-    
   })
   return document.querySelector(`h2 span`).innerHTML =totalSum; 
+}
+
+function deleteProduct() {
+  let rowToRemove = document.querySelector('product');
+  rowToRemove.parentNode.removeChild(rowToRemove);
+
 
 }
 
-
-
-  // Iteration 1.2
-
-
-
+$delete.onclick = deleteProduct; 
 $calc.onclick = calcAll;
 
 /*
