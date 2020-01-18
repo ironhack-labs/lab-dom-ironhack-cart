@@ -41,6 +41,8 @@ function addRow(){
     $cart.lastChild.classList.add("product");
     $cart.lastChild.innerHTML=htmlData;
     $cart.lastChild.querySelector('.btn-delete').addEventListener('click', deleteRow); 
+    document.querySelector('tfoot input[type=text]').value = "";
+    document.querySelector('tfoot input[type=number]').value = "";
   }
 }
 
