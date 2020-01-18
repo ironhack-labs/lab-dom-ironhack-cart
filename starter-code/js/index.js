@@ -10,9 +10,9 @@ let create = document.getElementById('create')
 function deleteRow() {
 
   $del.forEach(
-    (borrar, i) => {
+    (delet, i) => {
 
-      borrar.onclick = () => {
+      delet.onclick = () => {
         document.querySelector('tbody').removeChild(product[i])
 
 
@@ -28,12 +28,12 @@ function updateSubtot($product) {
 
   let price = $product.querySelector(".pu span").innerHTML
   let quantity = $product.querySelector(".qty input").value
-  multiplicacion = price * quantity
+  subtotal = price * quantity
   let subtotalSlice = $product.querySelector(".subtot span")
 
-  subtotalSlice.innerText = multiplicacion
+  subtotalSlice.innerText = subtotal
 
-  return multiplicacion
+  return subtotal
 
 
 }
