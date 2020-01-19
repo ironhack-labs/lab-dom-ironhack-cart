@@ -27,6 +27,7 @@ function deleteItem(event) {//la funcion se ejecuta cuando clicas (un evento cli
   let button = event.currentTarget; //de todos los valores del evento clic con que entras en la funcion, .currentTarget selecciona el elemento boton
   let row = button.parentNode.parentNode; //define la variable row como el padre del padre del boton (mirar html)
   row.parentNode.removeChild(row); // elimina la row subiendo al padre y eliminandole a un hijo (que es el mismo LOL)
+  calcAll()
 }
 
 let buttons = document.querySelectorAll(".btn-delete"); //genera una especie de array con todos los botones delete
