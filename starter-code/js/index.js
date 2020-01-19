@@ -54,7 +54,21 @@ function deleteProduct(e) {
   parentBody.removeChild(parentRow);
 }
 
+/* Esta función recibe 1 evento como parametro al darle al boton create*/
 function createProduct(e) {
+  //console.log("nuevo producto");
+
+  //Estas variables contienen los valores de los inputs del nuevo producto
+  let nameNewProduct = document.querySelectorAll(".new input")[0].value;
+  let priceNewProduct = document.querySelectorAll(".new input")[1].value;
+  //console.log(nameNewProduct, priceNewProduct);
+
+  //Hay que crear los elementos y sus propiedades e introducirlas en el DOM (no tengo idea por ahora)
+
+  //Crear los tr, los td y los inputs de cada celda
+
+  //Cuando se tenga los inputs, creo que hay que crea el nuevo botón de borrar con un newDelete.onclick = deleteProduct por ejemplo
+
 
 }
 
@@ -67,3 +81,6 @@ $delete.forEach(elm => {
   que se hacia el calculo del total*/
   elm.onclick = deleteProduct;
 });
+
+//esto dispara el evento del botón create
+$create.onclick = createProduct;
