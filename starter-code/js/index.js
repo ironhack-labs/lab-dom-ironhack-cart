@@ -1,6 +1,7 @@
-var $cart = document.querySelector('#cart tbody');
-var $calc = document.getElementById('calc');
-var $delete =document.getElementsByClassName(`.rm .btn .btn-delete`);
+let $cart = document.querySelector('#cart tbody');
+let $calc = document.getElementById('calc');
+let $deleteButtons =document.querySelectorAll(`.btn-delete`);
+let $erase =document.getElementById(`erase`);
 
 function updateSubtot($product) {
   // Iteration 1.1
@@ -22,17 +23,28 @@ function calcAll() {
   })
   return document.querySelector(`h2 span`).innerHTML =totalSum; 
 }
-
+function deleteRow(){
+  elem = document.querySelector(`.product`);
+  elem.parentNode.removeChild(elem);
+}
 function deleteProduct() {
-  let rowToRemove = document.querySelector('product');
-  rowToRemove.parentNode.removeChild(rowToRemove);
-
-
+  for (let i=0;i<$deleteButtons.length; i++){
+    if ($deleteButtons[i].onclick) {
+      //let rowToDelete =document.getElementsByClassName(`product`)[i];
+      deleteRow();
+    } 
+  }
+  // let rowToRemove = document.querySelector('product');
+  // rowToRemove.parentNode.removeChild(rowToRemove);
 }
 
-$delete.onclick = deleteProduct; 
+//$deleteButtons.on('click',deleteRow); 
 $calc.onclick = calcAll;
+//e.currentTarget?
+$erase.onclick = deleteRow;
+//$deleteButtons.on('click', deleteRow);
+// let table = document.querySelector('.table')
+// table.childNodes.forEach(row => updateSubtot(row))
 
-/*
-let table = document.querySelector('.table')
-table.childNodes.forEach(row => updateSubtot(row))*/
+// for (var b = 0; b < button2.length; b++) {
+//   button1[b].addEventListener('click',function(){
