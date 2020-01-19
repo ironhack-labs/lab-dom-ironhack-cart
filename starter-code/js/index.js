@@ -1,5 +1,6 @@
 var $cart = document.querySelector('#cart tbody');
 var $calc = document.getElementById('calc');
+var $create = document.getElementById('create');
 let $tbody = document.getElementById('parentProducts');
 
 
@@ -41,7 +42,20 @@ function createDeleteEvents(){
 
 //Iteration 5
 
-
+function createProduct(){
+  let newProductText = document.getElementById("newText")
+  let newProductPrice = document.getElementById("newNumber")
+  if (newProductPrice.value && newProductText.value) {
+    let productHtml = `<tr class="product"><td class="name"><span>${newProductText.value}</span></td><td class="pu">$<span>${newProductPrice.value}</span></td><td class="qty"><label><input type="number" value="0" min="0"></label></td><td class="subtot">$<span>0</span></td><td class="rm"><button class="btn btn-delete">Delete</button></td></tr>`;
+    $tbody.insertAdjacentHTML("beforeend", productHtml);
+    createDeleteEvents();
+    newProductPrice.value = "";
+    newProductText.value = "";
+  } else {
+    alert("Fill the product name and price unit");
+  }
+}
 
 $calc.onclick = calcAll;
+$create.onclick = createProduct;
 createDeleteEvents();
