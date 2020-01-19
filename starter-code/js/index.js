@@ -13,7 +13,7 @@ function updateSubtot($product) {
 }
 
 function calcAll() {
-  // Iteration 1.2
+  // Iteration 1.2 - Iteration 2 - Iteration 3
   let total = 0;
   const products = document.getElementsByClassName("product");
   for (let i = 0; i < products.length; i++) {
@@ -22,4 +22,5 @@ function calcAll() {
   }
   document.getElementById('total').innerText = total;
 }
+
 $calc.onclick = calcAll;
