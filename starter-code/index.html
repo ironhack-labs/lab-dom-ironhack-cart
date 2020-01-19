@@ -2,12 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
   <title>Ironhack cart</title>
 </head>
 <body>
-  <h1>Ironhack Cart</h1>
-
+  <div class="logo">
+    <img src="./img/ironhack_logo.png" alt="Ironhack logo">
+  </div>
+  
   <table id="cart">
     <thead>
       <tr>
@@ -18,6 +21,7 @@
         <th>Action</th>
       </tr>
     </thead>
+
     <tbody>
       <tr class="product">
         <td class="name">
@@ -42,8 +46,33 @@
           <button class="btn btn-delete">Delete</button>
         </td>
       </tr>
+
+      <tr class="product">
+        <td class="name">
+          <span>IronShirt</span>
+        </td>
+    
+        <td class="pu">
+          $<span>15.00</span>
+        </td>
+    
+        <td class="qty">
+          <label>
+            <input type="number" value="0" min="0">
+          </label>
+        </td>
+    
+        <td class="subtot">
+          $<span>0</span>
+        </td>
+    
+        <td class="rm">
+          <button class="btn btn-delete">Delete</button>
+        </td>
+      </tr>
     </tbody>
-    <!-- <tfoot>
+    
+    <tfoot>
       <tr class="new">
         <td>
           <input type="text"/>
@@ -57,7 +86,7 @@
           <button id="create" class="btn">Create</button>
         </td>
       </tr>
-    </tfoot> -->
+    </tfoot>
 
   </table>
 
