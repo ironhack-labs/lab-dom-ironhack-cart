@@ -1,39 +1,48 @@
-var $cart = document.querySelector('#cart tbody');
-var $calc = document.getElementById('calc');
+let $cart = document.querySelector('#cart tbody');
+let $calc = document.getElementById('calc');
+
+
+//Here I make a Product class to construct all the new products.
 
 class Product {
   constructor (nameParam, priceParam, amountParam) {
     this.name = nameParam;
-    this.price = priceParam;
-    this.amount = amountParam;
-    this.subtotal = this.price * this.amount;
+    this.price = parseFloat(priceParam).toFixed(2);
+    this.amount = parseFloat(amountParam);
+    this.subtotal = (this.price * this.amount).toFixed(2);
   }
-}; 
+};
 
-// function updateSubtot(product) {
-//   // Iteration 1.1
-//   let priceColumn
-//   let price = document.querySelector(`.pu > span`).innerText;
-//   let quantity = document.querySelector(`input`).value;
-//   return  product = parseFloat(price) * parseFloat(quantity);
-// }
-// function calcAll() {
-//   // Iteration 1.2
-// }
-// $calc.onclick = calcAll;
-// ​
-let cartProducts = [new Product (`IronBubble-head`,25,1), new Product(`carpet`,1,10), new Product (`notebook`,3,5)];
+//Here I define my initial array of products
+
+let cartProducts = [new Product (`IronBubble-head`,25,5)];
+
+// Here I define the function to paint the cart.
 
 function paintCart() {
-  $cart.innerHTML = ""
-  cartProducts.forEach(productInCart, idx => {
+  $cart.innerHTML = "";
+  for (let i = 0; i < cartProducts.length; i++) {
     let cartNewElement = document.createElement("tr")
     cartNewElement.className = "product";
-    cartNewElement.innerHTML = `<td class="name"><span>${productInCart.name}</span></td><td class="pu"><span>$</span>${productInCart.price}<span></span></td><td class="qty"><input value="${productInCart.amount}" id="input${idx}></td><td class="subtot"><span>$</span><span>${productInCart.subtotal}</span></td><td class="rm"><button class="btn btn-delete">Delete</button></td>`
+    cartNewElement.innerHTML = `<td class="name"><span>${cartProducts[i].name}</span></td>
+    <td class="pu"><span>$</span>${cartProducts[i].price}</span></td>
+    <td class="qty"><label><input type="number" value="${cartProducts[i].amount}" id="${i}" min="0"/></label></td>
+    <td class="subtot"><span>$</span><span class="subtotals">${cartProducts[i].subtotal}</span></td>
+    <td class="rm"><button class="btn btn-delete">Delete</button></td>`
     $cart.appendChild(cartNewElement);
-  })
+  }
+}
+function calcAll() {
+  paintCart();
+  var i = 1;
+  var sum = 0;
+  while (i < $cart.rows.length) {
+      sum += parseFloat(table.rows[i].cells[3].innerHTML)
+      i++;
+  }
+  document.querySelector('h2').innerHTML = `${sum}`;
 }
 
+$calc.onclick = calcAll;
 
-paintCart()
 
