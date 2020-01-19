@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="./css/style.css">
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./css/style.css" />
   <title>Ironhack cart</title>
 </head>
+
 <body>
   <h1>Ironhack Cart</h1>
-
+  ​
   <table id="cart">
     <thead>
       <tr>
@@ -23,33 +25,48 @@
         <td class="name">
           <span>IronBubble-head</span>
         </td>
-    
-        <td class="pu">
-          $<span>25.00</span>
-        </td>
-    
+        ​
+        <td class="pu">$<span>25.00</span></td>
+        ​
         <td class="qty">
           <label>
-            <input type="number" value="0" min="0">
+            <input type="number" value="0" min="0" />
           </label>
         </td>
-    
-        <td class="subtot">
-          $<span>0</span>
+        ​
+        <td class="subtot">$<span>0</span></td>
+        ​
+        <td class="rm">
+          <button class="btn btn-delete">Delete</button>
         </td>
-    
+      </tr>
+      <tr class="product">
+        <td class="name">
+          <span>IronShirt</span>
+        </td>
+        ​
+        <td class="pu">$<span>15.00</span></td>
+        ​
+        <td class="qty">
+          <label>
+            <input type="number" value="0" min="0" />
+          </label>
+        </td>
+        ​
+        <td class="subtot">$<span>0</span></td>
+        ​
         <td class="rm">
           <button class="btn btn-delete">Delete</button>
         </td>
       </tr>
     </tbody>
-    <!-- <tfoot>
+    <tfoot>
       <tr class="new">
         <td>
-          <input type="text"/>
+          <input class= "newName" type="text"/>
         </td>
         <td>
-          <input type="number" min="0"/>
+          <input class="newPr" type="number" min="0" />
         </td>
         <td></td>
         <td></td>
@@ -57,16 +74,16 @@
           <button id="create" class="btn">Create</button>
         </td>
       </tr>
-    </tfoot> -->
-
+    </tfoot>
   </table>
-
+  ​
   <p class="cta">
     <button id="calc" class="btn btn-success">Calculate prices</button>
   </p>
-
-  <h2>Total: $<span>0</span></h2>
-
+  ​
+  <h2 class="total">Total: $<span>0</span></h2>
+  ​
   <script type="text/javascript" src="./js/index.js"></script>
 </body>
+
 </html>
