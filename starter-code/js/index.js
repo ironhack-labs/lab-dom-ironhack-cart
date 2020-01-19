@@ -1,19 +1,17 @@
 var $cart = document.querySelector("#cart tbody");
 var $calc = document.getElementById("calc");
-var $dele = document.querySelectorAll(".btn-delete")
 var $create = document.getElementById("create")
+// let $dele = document.querySelectorAll(".btn-delete")
 var $product = document.querySelectorAll(".product");
 var $parent = document.querySelector("tbody")
 
 function updateSubtot($product) {
   // Iteration 1.1
   const price = $product.querySelector(".pu span").innerText;
-
   const qty = $product.querySelector(".qty input").value;
   let elm = price * qty;
   let subTotal = $product.querySelector(".subtot span")
   subTotal.innerText = elm
-
   return elm;
 }
 
@@ -22,8 +20,6 @@ function calcAll() {
   let sum = 0
   let $product = document.querySelectorAll(".product");
   $product.forEach(element => {
-    console.log(element)
-
     sum += updateSubtot(element)
 
   })
@@ -33,20 +29,24 @@ function calcAll() {
 }
 
 function removeProduct() {
+  $dele = document.querySelectorAll(".btn-delete")
 
   $dele.forEach((elm, idx) => {
     $product = document.querySelectorAll(".product");
     elm.onclick = () => {
       console.log(idx)
       $parent.removeChild($product[idx]);
-
+      calcAll()
     }
+
   })
 }
 
 function createProduct() {
+
   let text = document.getElementById("text").value
   let number = document.getElementById("number").value
+  $dele = document.querySelectorAll(".btn-delete")
 
   let newProduct =
     `<tr class="product">
@@ -78,7 +78,9 @@ function createProduct() {
   tbody.appendChild(newTr)
   $product = document.querySelectorAll(".product");
   $parent = document.querySelector("tbody")
-  
+  removeProduct()
+
+  console.log($dele)
 
 }
 
