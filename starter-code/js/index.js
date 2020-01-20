@@ -23,7 +23,7 @@ function calcAll() {
   })
   return document.querySelector(`h2 span`).innerHTML =totalSum; 
 }
-function deleteRow(){
+function deleteRow(elem){
   elem = document.querySelector(`.product`);
   elem.parentNode.removeChild(elem);
 }
