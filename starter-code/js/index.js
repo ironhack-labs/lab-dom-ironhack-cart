@@ -1,5 +1,6 @@
 var $cart = document.querySelector('#cart tbody');
 var $calc = document.getElementById('calc');
+var $total = document.querySelector("body > h2 > span");
 
 
 
@@ -16,17 +17,20 @@ function updateSubtot($product) {
 
 function calcAll() {
   // Iteration 1.2
-  console.log("test");
 
   let total = 0;
-
+  
   const productList = cart.querySelectorAll(".product");
 
   productList.forEach(product => {
     total += updateSubtot(product);
-    total.innerHTML = total;
-    
+    $total.innerHTML = total;   
   });
 
 }
 $calc.onclick = calcAll;
+
+// Iteration 4
+
+
+
