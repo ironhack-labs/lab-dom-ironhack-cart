@@ -63,12 +63,69 @@ function createProduct(e) {
   let priceNewProduct = document.querySelectorAll(".new input")[1].value;
   //console.log(nameNewProduct, priceNewProduct);
 
-  //Hay que crear los elementos y sus propiedades e introducirlas en el DOM (no tengo idea por ahora)
 
-  //Crear los tr, los td y los inputs de cada celda
+  let newRow = document.createElement("tr");
 
-  //Cuando se tenga los inputs, creo que hay que crea el nuevo botón de borrar con un newDelete.onclick = deleteProduct por ejemplo
+  //De esta forma le ponemos la clase product a la fila
+  newRow.setAttribute("class", "product");
 
+  //de esta forma se crea cada celda
+  let newCell1 = document.createElement("td");
+  newCell1.setAttribute("class", "name");
+
+  // Crea el span con el nombre del producto dentro de la celda
+  let newName = document.createElement("span");
+  newName.innerHTML = nameNewProduct;
+  newCell1.appendChild(newName);
+
+  let newCell2 = document.createElement("td");
+  newCell2.setAttribute("class", "pu");
+
+  //Crea el span con el nombre de precio dentro de la celda y antes de meterselo al hijo, metemos el $ como string
+  let newPrice = document.createElement("span");
+  newPrice.innerHTML = priceNewProduct;
+  newCell2.innerHTML = "$";
+  newCell2.appendChild(newPrice);
+
+  let newCell3 = document.createElement("td");
+  newCell3.setAttribute("class", "qty");
+  //Crea el label y el input para meterselo al padre que es la celda Quantity
+  let newLabel = document.createElement("label");
+  let newQty = document.createElement("input");
+  newQty.setAttribute("type", "number");
+  newQty.setAttribute("value", "0");
+  newQty.setAttribute("min", "0");
+  newLabel.appendChild(newQty);
+  newCell3.appendChild(newLabel);
+
+  let newCell4 = document.createElement("td");
+  newCell4.setAttribute("class", "subtot");
+  //Crea el span, que contienen el $ y la cantidad del subtotal de la nueva celda
+  let newSubtot = document.createElement("span");
+  newSubtot.innerHTML = "0";
+  newCell4.innerHTML = "$";
+  newCell4.appendChild(newSubtot);
+
+  let newCell5 = document.createElement("td");
+  newCell5.setAttribute("class", "rm");
+  //Crea el botón con sus atributos (class y btn ...) y el evento
+  let newDelete = document.createElement("button");
+  newDelete.setAttribute("class", "btn btn-delete");
+  newDelete.innerHTML = "Delete";
+  newDelete.onclick = deleteProduct;
+  newCell5.appendChild(newDelete);
+
+  //se añaden las celdas dentro de la fila
+  newRow.appendChild(newCell1);
+  newRow.appendChild(newCell2);
+  newRow.appendChild(newCell3);
+  newRow.appendChild(newCell4);
+  newRow.appendChild(newCell5);
+
+
+
+  //con esto se inserta un tr nuevo (osea una fila)
+  $cart.appendChild(newRow);
 
 }
 
