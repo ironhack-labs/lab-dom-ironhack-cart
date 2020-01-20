@@ -40,20 +40,26 @@ let arrHead = Array.from(head)
 
 function createRow() {
   let parent = document.getElementsByTagName('tbody')[0];
-
+  let newName = document.querySelector('input[type=text]').value;
   let rowCnt = parent.rows.length;
 
   let tr = parent.insertRow(rowCnt);
   tr.setAttribute('class', "product");
   for (let i = 0; i < 1; i++) {
+    let newName = document.querySelector('input[type=text]').value;
     let td = document.createElement('td')
-    td = tr.insertCell(i).setAttribute('class', 'rm');
-    td = tr.insertCell(i).setAttribute('class', 'subtot');
-    td = tr.insertCell(i).setAttribute('class', 'qty');
-    td = tr.insertCell(i).setAttribute('class', 'pu');
-    td = tr.insertCell(i).setAttribute('class', 'name');
+    let td0 = tr.insertCell(0)
+    let td1 = tr.insertCell(1)
+    let td2 = tr.insertCell(2)
+    let td3 = tr.insertCell(3)
+    let td4 = tr.insertCell(4)
+    td0.innerHTML = newName;
+    td0.className = 'name';
+    td1.innerHTML = '<td>$<span>' + 25.00 + ' </span></td>'
+    td1.className = 'pu'
   }
 }
+
 
 // function nameProduct() {
 //   let nmePro = document.querySelectorAll('.product .newname')
