@@ -34,9 +34,23 @@ $calc.onclick = calcAll;
 let $deleteBtns = document.querySelectorAll('.btn-delete');
 
 $deleteBtns.forEach(element => {
-  element.onclick = function (e) {
+  element.onclick = function() {
     let $productContainer = element.parentNode.parentNode.parentNode;
     $productContainer.removeChild(element.parentNode.parentNode);
   }
 });
+
+/* Iteration 5 */
+let createBtn = document.getElementById('create');
+console.log(createBtn);
+
+let nameProduct = document.querySelector('.new > td > input');
+let priceProduct = document.querySelector('.new > td + td > input');
+
+createBtn.onclick = function() {
+  console.log(nameProduct.value);
+  console.log(priceProduct.value);
+  
+}
+
 
