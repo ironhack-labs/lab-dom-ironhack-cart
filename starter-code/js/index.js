@@ -11,8 +11,9 @@ function updateSubtot($product) {
   const quantity = Number($product.querySelector(".qty input").value);
   const subTotal = $product.querySelector(".subtot span")
 
-  subTotal.innerHTML = quantity * price;
-  return subTotal.innerHTML;
+  result = quantity * price;
+  subTotal.innerHTML = result
+  return result;
 }
 
 function calcAll() {
@@ -20,7 +21,7 @@ function calcAll() {
 
   let total = 0;
   
-  const productList = cart.querySelectorAll(".product");
+  const productList = $cart.querySelectorAll(".product");
 
   productList.forEach(product => {
     total += updateSubtot(product);
