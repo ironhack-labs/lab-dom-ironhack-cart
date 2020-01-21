@@ -2,8 +2,11 @@ var $cart = document.querySelector('#cart tbody');
 var $calc = document.getElementById('calc');
 var allItemsList = document.getElementsByClassName("product");
 var allProducts = [...allItemsList];
+var deleteButtons = [...document.querySelectorAll(".btn-delete")];
 
-console.log($cart);
+
+var $deleteButtons = document.getElementsByClassName("btn-delete");
+
 function updateSubtot(e, $product) {
   e.preventDefault()
   console.log($product);
@@ -52,7 +55,17 @@ function calcAll() {
     //Modify the total in HTML
     totalPrice.innerHTML = totalSum;
     console.log("total count ", totalSum);
-  })
+  });
+}
+
+deleteButtons.forEach(e => {
+  e.addEventListener("click", deleteRow);
+});
+
+function deleteRow(productToDelete) {
+  const rowProduct = productToDelete.currentTarget.parentNode.parentNode;
+  const tBody = rowProduct.parentNode;
+  tBody.removeChild(rowProduct);
 }
 
 $calc.onclick = calcAll();
