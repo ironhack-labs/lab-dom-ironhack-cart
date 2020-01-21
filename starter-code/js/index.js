@@ -1,6 +1,8 @@
 var cart = document.querySelector('#cart tbody');
 var calc = document.getElementById('calc');
-const products = [...document.querySelectorAll('.product')]
+let products = [...document.querySelectorAll('.product')]
+let deleteButtons = [...document.querySelectorAll('.btn-delete')]
+
 
 function updateSubtot(products) {
   products.forEach(e => {
@@ -39,16 +41,18 @@ function centsToDollars(cents) {
   return (cents / 100).toFixed(2)
 }
 
-const deleteButtons = [...document.querySelectorAll('.btn-delete')]
 
-deleteButtons.forEach(e => {
-  e.addEventListener('click', deleteProduct)
+deleteButtons.forEach(deleteButtonEvent => {
+  deleteButtonEvent.addEventListener('click', deleteProduct)
 })
 
 function deleteProduct(productRow) {
   const row = productRow.currentTarget.parentNode.parentNode;
   const tableBody = row.parentNode;
   tableBody.removeChild(row)
+  refreshProductList();
+  refreshDeleteList();
+  calcAll();
 }
 
 const createButton = document.querySelector('#create');
@@ -90,5 +94,20 @@ function createRow() {
 
   newRow.querySelector('input[type=text]').value = ""
   newRow.querySelector('input[type=number]').value = ""
+  refreshDeleteList();
+  refreshProductList();
+}
 
+function refreshProductList(){
+  products = [...document.querySelectorAll('.product')]
+  return products
+}
+
+function refreshDeleteList(){
+  deleteButtons = [...document.querySelectorAll('.btn-delete')]
+  deleteButtons.forEach(deleteButtonEvent => {
+    deleteButtonEvent.addEventListener('click', deleteProduct)
+  })
+  console.log('deleteButtons :', deleteButtons);
+  return deleteButtons
 }
