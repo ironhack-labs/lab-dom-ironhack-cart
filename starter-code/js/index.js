@@ -14,7 +14,7 @@ function updateSubtot($product) {
 
 function calcAll() {
   // Iteration 1.2
-  let $product = document.querySelector('.product');
-  updateSubtot($product);
+  let $products = document.querySelectorAll('.product');
+  $products.forEach($product => updateSubtot($product));
 }
 $calc.onclick = calcAll;
