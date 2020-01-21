@@ -8,6 +8,7 @@ function updateSubtot(e, $product) {
   e.preventDefault()
   console.log($product);
 
+  var totalSum = 0;
   $product.forEach(function(product) {
     //Get price per unit value
     var priceCollection = product.getElementsByClassName("pu")[0];
@@ -21,7 +22,7 @@ function updateSubtot(e, $product) {
     quantity = quantity.value;
     console.log("qunt ", quantity);
 
-    //Calculate subtotal price //updateSubtot($cart);
+    //Calculate subtotal price
     var subtotal = (price * quantity).toFixed(2);
     console.log("sub ", subtotal);
 
@@ -30,13 +31,27 @@ function updateSubtot(e, $product) {
     subtotalPrice = subtotalPrice.getElementsByTagName("span")[0];
     subtotalPrice.innerHTML = subtotal;
     console.log("sbt ", subtotalPrice);
+
+    //Update totalSum
+    totalSum += Number(subtotal);
   })
+  console.log("TOTAL ", totalSum);
+  return totalSum;
 }
 
 function calcAll() {
   // Iteration 1.2
   $calc.addEventListener('click', function(e){
-    updateSubtot(e, allProducts)
+    var totalSum = updateSubtot(e, allProducts);
+
+    //Get the total price
+    var total = document.getElementsByClassName("total")[0];
+    var totalPrice = total.getElementsByTagName("span")[0];
+    console.log("total price ", totalPrice)
+
+    //Modify the total in HTML
+    totalPrice.innerHTML = totalSum;
+    console.log("total count ", totalSum);
   })
 }
 
