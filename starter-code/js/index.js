@@ -11,7 +11,12 @@ var someProducts = [
   { name: "Chopsticks", ppu: 4.00 }
 ];
 
+var cartTable = document.querySelector("#cart tbody");
+var addBtn = document.getElementById("addProd");
+var calcBtn = document.getElementById("calc");
+var delBtns = [...document.querySelectorAll(".btn-delete")];
 
+// updates SUBTOTAL
 function updateSubtot($product) {
   var prodPrice = $product.querySelector("td.pu span").innerHTML;
   console.log(prodPrice);
@@ -27,7 +32,7 @@ function updateSubtot($product) {
   
   return subtotalValue
 }
-
+// UPDATES OVERALL CART SUM
 function calcAll() {
   // Iteration 1.2
   var subtotalElements = document.querySelectorAll(".subtot span"); // delivers and array of stubtotals
@@ -41,24 +46,7 @@ function calcAll() {
   console.log(sum)
 }
 
-var addBtn = document.getElementById("addProd");
-var calcBtn = document.getElementById("calc");
-
-addBtn.addEventListener("click", function(){
-  event.preventDefault();
-  addProduct(someProducts[Math.floor(Math.random()*someProducts.length)]);
-  
-})
-
-calcBtn.addEventListener("click", function(){
-  event.preventDefault();
-  calcAll();
-})
-
-
-var cartTable = document.querySelector("#cart tbody");
-
-
+// ADD RANDOM PRODUCT
 function addProduct(prodObj) {
   // HTML Element
   var newProdRow = document.createElement("tr");
@@ -94,16 +82,53 @@ function addProduct(prodObj) {
   //Append new elements to the existing table
   cartTable.appendChild(newProdRow);
   newProdRow.setAttribute("class", "product")
+  //updating the selectors
   productElements = document.querySelectorAll(".product");
+  delBtns = [...document.querySelectorAll(".btn-delete")];
   for (let i = 0; i < productElements.length; i++) {
     updateSubtot(productElements[i]); 
   }
+  delBtns.forEach(element => {
+    deleteRow(element);
+  });
+  
+
 }
 
+function deleteRow (delBtn) {
+  delBtn.addEventListener("click", function(e){
+    var deleteNode = e.currentTarget.parentNode.parentNode;
+    console.log("to delete " + deleteNode);
+    $cart.removeChild(deleteNode);
+    calcAll();
+  })
+}
+
+// EVENTLISTENERS 
+
+addBtn.addEventListener("click", function(){
+  event.preventDefault();
+  addProduct(someProducts[Math.floor(Math.random()*someProducts.length)]);
+  
+})
+
+calcBtn.addEventListener("click", function(){
+  event.preventDefault();
+  calcAll();
+})
+
+// delBtn.addEventListener("click", function(){
+//   event.preventDefault();
+//   deleteRow(delBtns[i]);
+// })
+
+delBtns.forEach(element => {
+  deleteRow(element);
+});
+
+
 $calc.onclick = calcAll;
+updateSubtot(productElements[0]);
 
-
-//var qty = updateSubtot(productElements[0]);
-// console.log(qty)
 
 
