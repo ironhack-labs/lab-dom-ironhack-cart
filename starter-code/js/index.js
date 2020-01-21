@@ -14,17 +14,16 @@ function updateSubtot($product) {
 }
 
 function calcAll() {
-  let allProducts = document.querySelectorAll('.product');
+  let $allProducts = document.querySelectorAll('.product');
+  let $finalPrice = document.querySelector('h2 > span');
   let totalPrice = 0;
 
-  allProducts.forEach(element => {
+  $allProducts.forEach(element => {
     updateSubtot(element);
     totalPrice += updateSubtot(element);
   });
 
-  console.log(totalPrice);
-
-  
+  $finalPrice.textContent = totalPrice;
 }
 
 $calc.onclick = calcAll;
