@@ -3,6 +3,7 @@ var $calc = document.getElementById('calc');
 var allItemsList = document.getElementsByClassName("product");
 var allProducts = [...allItemsList];
 var deleteButtons = [...document.querySelectorAll(".btn-delete")];
+var create = document.getElementById("create");
 
 
 var $deleteButtons = document.getElementsByClassName("btn-delete");
@@ -67,5 +68,45 @@ function deleteRow(productToDelete) {
   const tBody = rowProduct.parentNode;
   tBody.removeChild(rowProduct);
 }
+
+function createRow() {
+  create.addEventListener("click", function(e) {
+    e.preventDefault();
+
+    var productName = document.getElementById("productName").value;
+    var price = document.getElementById("productPrice").value;
+
+    var newRow =
+    `<tr class="product">
+        <td class="name">
+          <span>${productName}</span>
+        </td>
+
+        <td class="pu">
+          $<span>${price}</span>
+        </td>
+
+        <td class="qty">
+          <label>
+            <input type="number" value="0" min="0">
+          </label>
+        </td>
+
+        <td class="subtot">
+          $<span>0</span>
+        </td>
+
+        <td class="rm">
+          <button class="btn btn-delete">Delete</button>
+        </td>
+      </tr>`;
+    var tBody = document.querySelector("tbody");
+    tBody.innerHTML += newRow;
+    console.log("name ", productName);
+    console.log("price ", price);
+  });
+}
+
+create.onclick = createRow();
 
 $calc.onclick = calcAll();
