@@ -77,7 +77,6 @@ function addProduct(prodObj) {
 `
   
   // Text nodes
-  
   console.log("this" + cartTable)
   //Append new elements to the existing table
   cartTable.appendChild(newProdRow);
@@ -91,8 +90,6 @@ function addProduct(prodObj) {
   delBtns.forEach(element => {
     deleteRow(element);
   });
-  
-
 }
 
 function deleteRow (delBtn) {
@@ -105,7 +102,6 @@ function deleteRow (delBtn) {
 }
 
 // EVENTLISTENERS 
-
 addBtn.addEventListener("click", function(){
   event.preventDefault();
   addProduct(someProducts[Math.floor(Math.random()*someProducts.length)]);
@@ -117,15 +113,9 @@ calcBtn.addEventListener("click", function(){
   calcAll();
 })
 
-// delBtn.addEventListener("click", function(){
-//   event.preventDefault();
-//   deleteRow(delBtns[i]);
-// })
-
 delBtns.forEach(element => {
   deleteRow(element);
 });
-
 
 $calc.onclick = calcAll;
 updateSubtot(productElements[0]);
