@@ -33,14 +33,25 @@ $calc.onclick = calcAll;
 /* Iteration 4 */
 let $deleteBtns = document.querySelectorAll('.btn-delete');
 console.log($deleteBtns);
-
-function deleteProd() {
-  
-
-  console.log("deleted");
-}
+    
 
 $deleteBtns.forEach(element => {
-  element.onclick = deleteProd;
+  element.onclick = function (e) {
+    console.log(e.currentTarget);
+
+    let $productContainer = element.parentNode.parentNode.parentNode;
+   
+    console.log($productContainer);
+
+    // $productContainer.removeChild();
+  }
 });
 
+
+// let liTags = document.getElementsByTagName('li');
+
+// for(let i=0; i < liTags.length; i++){
+//   liTags[i].onclick = function(e){
+//     console.log(e.currentTarget.innerHTML);
+//   }
+// }
