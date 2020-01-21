@@ -1,45 +1,32 @@
 var $cart = document.querySelector('#cart tbody');
 var $calc = document.getElementById('calc');
-var allItemsList = document.getElementsByClassName("product");
-var allProducts = [...allItemsList];
-var deleteButtons = [...document.querySelectorAll(".btn-delete")];
+var allProducts = document.querySelectorAll(".product");
+var deleteButtons = document.querySelectorAll(".btn-delete");
 var create = document.getElementById("create");
 
-
-var $deleteButtons = document.getElementsByClassName("btn-delete");
-
-function updateSubtot(e, $product) {
+function updateSubtot(e, productElement) {
   e.preventDefault()
-  console.log($product);
 
   var totalSum = 0;
-  $product.forEach(function(product) {
+  productElement.forEach(function(product) {
     //Get price per unit value
-    var priceCollection = product.getElementsByClassName("pu")[0];
-    var price = priceCollection.getElementsByTagName("span")[0];
-    price = price.innerHTML
-    console.log("price ", price)
+    var price = product.querySelector(".pu span");
+    price = price.innerHTML;
 
     //Get quantity value
-    var quantityCollection = product.getElementsByClassName("qty")[0];
-    var quantity = quantityCollection.getElementsByTagName("input")[0];
+    var quantity = product.querySelector(".qty input");
     quantity = quantity.value;
-    console.log("qunt ", quantity);
 
     //Calculate subtotal price
     var subtotal = (price * quantity).toFixed(2);
-    console.log("sub ", subtotal);
 
     //Modify the HTML subtotal
-    var subtotalPrice = product.getElementsByClassName("subtot")[0];
-    subtotalPrice = subtotalPrice.getElementsByTagName("span")[0];
+    var subtotalPrice = product.querySelector(".subtot span");
     subtotalPrice.innerHTML = subtotal;
-    console.log("sbt ", subtotalPrice);
 
     //Update totalSum
     totalSum += Number(subtotal);
   })
-  console.log("TOTAL ", totalSum);
   return totalSum;
 }
 
@@ -51,22 +38,23 @@ function calcAll() {
     //Get the total price
     var total = document.getElementsByClassName("total")[0];
     var totalPrice = total.getElementsByTagName("span")[0];
-    console.log("total price ", totalPrice)
 
     //Modify the total in HTML
     totalPrice.innerHTML = totalSum;
-    console.log("total count ", totalSum);
   });
 }
 
+
+//Add event listener on each delete button, which deletes the prod.
 deleteButtons.forEach(e => {
-  e.addEventListener("click", deleteRow);
+  e.addEventListener("click", deleteProduct);
 });
 
-function deleteRow(productToDelete) {
+function deleteProduct(productToDelete) {
   const rowProduct = productToDelete.currentTarget.parentNode.parentNode;
   const tBody = rowProduct.parentNode;
   tBody.removeChild(rowProduct);
+  calcAll();
 }
 
 function createRow() {
@@ -76,9 +64,10 @@ function createRow() {
     var productName = document.getElementById("productName").value;
     var price = document.getElementById("productPrice").value;
 
-    var newRow =
-    `<tr class="product">
-        <td class="name">
+    var newRow = document.createElement("tr");
+    newRow.className = "product";
+    newRow.innerHTML =
+      `<td class="name">
           <span>${productName}</span>
         </td>
 
@@ -98,12 +87,15 @@ function createRow() {
 
         <td class="rm">
           <button class="btn btn-delete">Delete</button>
-        </td>
-      </tr>`;
+        </td>`;
     var tBody = document.querySelector("tbody");
-    tBody.innerHTML += newRow;
-    console.log("name ", productName);
-    console.log("price ", price);
+    tBody.appendChild(newRow);
+
+    var deleteButton = newRow.querySelector(".btn-delete");
+    deleteProduct(deleteButton);
+
+    productName.value = "";
+    price.value = "";
   });
 }
 
