@@ -42,15 +42,13 @@ $deleteBtns.forEach(element => {
 
 /* Iteration 5 */
 let createBtn = document.getElementById('create');
-console.log(createBtn);
 
 let nameProduct = document.querySelector('.new > td > input');
 let priceProduct = document.querySelector('.new > td + td > input');
 
 createBtn.onclick = function() {
-  console.log(nameProduct.value);
-  console.log(priceProduct.value);
-  
+  let tBody = document.querySelector('tbody');
+  tBody.insertAdjacentHTML('beforeend', `<tr class="product"><td class="name"><span>${nameProduct.value}</span></td><td class="pu">$<span>${priceProduct.value}</span></td><td class="qty"><label><input type="number" value="0" min="0"></label></td><td class="subtot">$<span>0</span></td><td class="rm"><button class="btn btn-delete">Delete</button></td></tr>`);
 }
 
 
