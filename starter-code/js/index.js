@@ -1,5 +1,11 @@
+console.clear()
+
 var $cart = document.querySelector('#cart tbody');
 var $calc = document.getElementById('calc');
+var $del = document.getElementsByClassName("btn btn-delete"); //retorna un htmlcollection. Estos contienen los diferentes elementos en forma de lista y para poder acceder hacemos uso del for(foreach no funciona).
+//console.log($del)
+var $add = document.getElementById('create');
+//console.log($add)
 
 function updateSubtot(product) {
   // Iteration 1.1
@@ -33,12 +39,30 @@ function calcAll() {
     const totalPrice = document.getElementsByTagName("h2")[0].lastElementChild;
     //console.log(totalPrice)
     totalPrice.innerHTML =`${totalPriceOfProducts}`
-  /*
-    takeProducts.forEach(element => {
-      let selectProduct = document.getElementsByClassName("name").textcontent;
-      console.log(selectProduct)
-  });
-  */
-  //updateSubtot($cart)
 }
+
+function deleteProduct(){
+  console.log("Eliminado")
+  //como indico el producto que queremos eliminar?
+  
+  let parent = document.getElementsByTagName("tbody")
+  let selectProduct = document.getElementsByTagName("tr");
+  let deleteProduct = parent.removeChild(selectProduct);  
+}
+
+function addProduct(){
+  console.log("Añadido")
+  let trAdd = document.querySelector(".new").nextSibling;
+  console.log(trAdd)
+  //let nameOfNewProduct= 
+
+  //para añadir hacer un appendchild al tbody
+}
+
 $calc.onclick = calcAll;
+for (let i=0; i<$del.length; i++){ //la unica forma de poder controlar los botones.
+  $del[i].onclick = deleteProduct;
+}
+$add.onClick = addProduct;// no entiendo porque no funciona
+
+addProduct()//acordarse de luego quitarlo
