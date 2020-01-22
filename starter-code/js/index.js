@@ -29,6 +29,7 @@ function deleteProduct() {
     button.onclick = function(e) {
       let $product = e.currentTarget.parentNode.parentNode;
       $cart.removeChild($product);
+      calcAll();
     };
   });
 }
