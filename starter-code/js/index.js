@@ -5,6 +5,9 @@ var cartTable = document.querySelector("#cart tbody");
 var addBtn = document.getElementById("addProd");
 var calcBtn = document.getElementById("calc");
 var delBtns = [...document.querySelectorAll(".btn-delete")];
+let manualProdElement = document.querySelector(".new");
+let crtBtn = document.querySelector("#create");
+console.log(crtBtn);
 
 var someProducts = [
   { name: "Iron Bubble head", ppu: 15.00 },
@@ -95,6 +98,9 @@ function deleteRow (delBtn) {
   })
 }
 
+// MANUAL ADD PRODUCT
+
+
 // EVENTLISTENERS 
 addBtn.addEventListener("click", function(){
   event.preventDefault();
@@ -109,6 +115,54 @@ calcBtn.addEventListener("click", function(){
 delBtns.forEach(element => {
   deleteRow(element);
 });
+
+crtBtn.addEventListener("click", function(event) {
+  var nameElement = document.querySelector('.new input[type="text"]');
+  var priceElement = document.querySelector('.new input[type="number"]');
+  //push manual product to product collection
+  someProducts.push({name: nameElement.value, ppu: priceElement.value})
+  console.log(someProducts);
+  //create new line
+  var newTr = document.createElement("tr");
+  //put structure within created TR
+  newTr.innerHTML = `
+    <td class="name">
+      <span>${nameElement.value}</span>
+    </td>
+
+    <td class="pu">
+      $<span>${priceElement.value}</span>
+    </td>
+
+    <td class="qty">
+      <label>
+        <input type="number" value="0" min="0">
+      </label>
+    </td>
+
+    <td class="subtot">
+      $<span>0</span>
+    </td>
+
+    <td class="rm">
+      <button class="btn btn-delete">Delete</button>
+    </td>
+  `
+  //Append new TR to the existing table
+  cartTable.appendChild(newTr);
+  // Add "product class" to new created row
+  newTr.setAttribute("class", "product")
+  //updating the collections for 
+  productElements = document.querySelectorAll(".product");
+  delBtns = [...document.querySelectorAll(".btn-delete")];
+  //Placing the event listener on new created elements
+  for (let i = 0; i < productElements.length; i++) {
+    updateSubtot(productElements[i]); 
+  }
+  delBtns.forEach(element => {
+    deleteRow(element);
+  });
+})
 
 //$calc.onclick = calcAll;
 
