@@ -21,4 +21,17 @@ function calcAll() {
   });
   document.querySelector('h2 span').textContent = total;
 }
+
+function deleteProduct() {
+  // Iteration 4
+  let deleteButtons = document.querySelectorAll('.btn-delete');
+  deleteButtons.forEach(button => {
+    button.onclick = function(e) {
+      let $product = e.currentTarget.parentNode.parentNode;
+      $cart.removeChild($product);
+    };
+  });
+}
+
+deleteProduct();
 $calc.onclick = calcAll;
