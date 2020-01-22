@@ -22,7 +22,7 @@ function calcAll() {
   document.querySelector('h2 span').textContent = total;
 }
 
-function deleteProduct() {
+function setupDeleteListeners() {
   // Iteration 4
   let deleteButtons = document.querySelectorAll('.btn-delete');
   deleteButtons.forEach(button => {
@@ -34,5 +34,53 @@ function deleteProduct() {
   });
 }
 
-deleteProduct();
+function makeProduct(productName, productPrice) {
+  let newProduct = document.createElement('tr');
+  newProduct.className += "product";
+  newProduct.innerHTML = `         // is this lazy?
+    <td class="name">
+      <span>${productName}</span>
+    </td>
+
+    <td class="pu">
+      $<span>${productPrice}</span>
+    </td>
+
+    <td class="qty">
+      <label>
+        <input type="number" value="0" min="0">
+      </label>
+    </td>
+
+    <td class="subtot">
+      $<span>0</span>
+    </td>
+
+    <td class="rm">
+      <button class="btn btn-delete">Delete</button>
+    </td>`;
+  return newProduct;
+}
+
+function refreshForm() {
+  document.querySelectorAll('.new input').forEach(input => {
+    input.value = null;
+  });
+}
+
+function createProduct() {
+  // Iteration 5
+  let createButton = document.getElementById('create');
+  createButton.onclick = function(e) {
+    let newProductName = document.querySelector('.new input[type="text"]').value;
+    let newProductPrice = document.querySelector('.new input[type="number"]').value;
+    let newProduct = makeProduct(newProductName, newProductPrice);
+    $cart.appendChild(newProduct);
+    setupDeleteListeners();
+    refreshForm();
+  };
+}
+
+createProduct();
+setupDeleteListeners();
 $calc.onclick = calcAll;
