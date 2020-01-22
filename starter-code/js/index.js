@@ -1,37 +1,35 @@
 var $cart = document.querySelector('#cart tbody');
 var $calc = document.getElementById('calc');
-var productElements = document.querySelectorAll(".product"); // delivers and array
-
-var someProducts = [
-  { name: "Iron Bubble head", ppu: 15.00 },
-  { name: "Jackhammer 1", ppu: 55.00 },
-  { name: "Rocket", ppu: 19374.00 },
-  { name: "Spoon", ppu: 512.00 },
-  { name: "Jeans", ppu: 12.00 },
-  { name: "Chopsticks", ppu: 4.00 }
-];
-
+var productElements = document.querySelectorAll(".product"); // delivers and array-like structure
 var cartTable = document.querySelector("#cart tbody");
 var addBtn = document.getElementById("addProd");
 var calcBtn = document.getElementById("calc");
 var delBtns = [...document.querySelectorAll(".btn-delete")];
 
+var someProducts = [
+  { name: "Iron Bubble head", ppu: 15.00 },
+  { name: "Jackhammer 1", ppu: 55.00 },
+  { name: "Jeans", ppu: 12.00 },
+  { name: "Black Bean", ppu: 0.06 },
+  { name: "Fragile Glasses", ppu: 46.00 },
+  { name: "Rocket", ppu: 19374.00 },
+  { name: "Spoon", ppu: 512.00 },
+  { name: "Chopsticks", ppu: 4.00 }
+];
+
 // updates SUBTOTAL
-function updateSubtot($product) {
-  var prodPrice = $product.querySelector("td.pu span").innerHTML;
-  console.log(prodPrice);
-  console.log(parseFloat(prodPrice));
-  var prodQty = $product.querySelector("input");
+function updateSubtot(product) {
+  var prodPrice = product.querySelector("td.pu span").innerHTML;
+  var prodQty = product.querySelector("input");
 
   prodQty.addEventListener("change", function() {
-    //console.log(this.value);
-    var subtotal = $product.querySelector("td.subtot span");
+    var subtotal = product.querySelector("td.subtot span");
     subtotal.innerHTML = parseInt(prodPrice) * parseInt(prodQty.value);
   });
   var subtotalValue = parseInt(prodPrice) * parseInt(prodQty.value);
-  
   return subtotalValue
 }
+
 // UPDATES OVERALL CART SUM
 function calcAll() {
   // Iteration 1.2
@@ -41,49 +39,46 @@ function calcAll() {
         sum += parseInt(subtotalElements[i].innerHTML);
   }
   var ShowedPrice = document.querySelector("h2 span");
-  console.log("showedPrice" + ShowedPrice);
   ShowedPrice.innerHTML = parseInt(sum);
-  console.log(sum)
 }
 
 // ADD RANDOM PRODUCT
 function addProduct(prodObj) {
-  // HTML Element
+  // Create HTML Element
   var newProdRow = document.createElement("tr");
-  console.log(newProdRow);
-  
+  // Put needed html Structure in created table row  
   newProdRow.innerHTML = `
-  <td class="name">
-    <span>${prodObj.name}</span>
-  </td>
+    <td class="name">
+      <span>${prodObj.name}</span>
+    </td>
 
-  <td class="pu">
-    $<span>${prodObj.ppu}</span>
-  </td>
+    <td class="pu">
+      $<span>${prodObj.ppu}</span>
+    </td>
 
-  <td class="qty">
-    <label>
-      <input type="number" value="0" min="0">
-    </label>
-  </td>
+    <td class="qty">
+      <label>
+        <input type="number" value="0" min="0">
+      </label>
+    </td>
 
-  <td class="subtot">
-    $<span>0</span>
-  </td>
+    <td class="subtot">
+      $<span>0</span>
+    </td>
 
-  <td class="rm">
-    <button class="btn btn-delete">Delete</button>
-  </td>
-`
-  
-  // Text nodes
-  console.log("this" + cartTable)
-  //Append new elements to the existing table
+    <td class="rm">
+      <button class="btn btn-delete">Delete</button>
+    </td>
+  `
+   
+  //Append new TR to the existing table
   cartTable.appendChild(newProdRow);
+  // Add "product class" to new created row
   newProdRow.setAttribute("class", "product")
-  //updating the selectors
+  //updating the collections for 
   productElements = document.querySelectorAll(".product");
   delBtns = [...document.querySelectorAll(".btn-delete")];
+  //Placing the event listener on new created elements
   for (let i = 0; i < productElements.length; i++) {
     updateSubtot(productElements[i]); 
   }
@@ -95,7 +90,6 @@ function addProduct(prodObj) {
 function deleteRow (delBtn) {
   delBtn.addEventListener("click", function(e){
     var deleteNode = e.currentTarget.parentNode.parentNode;
-    console.log("to delete " + deleteNode);
     $cart.removeChild(deleteNode);
     calcAll();
   })
@@ -105,7 +99,6 @@ function deleteRow (delBtn) {
 addBtn.addEventListener("click", function(){
   event.preventDefault();
   addProduct(someProducts[Math.floor(Math.random()*someProducts.length)]);
-  
 })
 
 calcBtn.addEventListener("click", function(){
@@ -117,8 +110,7 @@ delBtns.forEach(element => {
   deleteRow(element);
 });
 
-$calc.onclick = calcAll;
+//$calc.onclick = calcAll;
+
+// make auto update supbtotal available for already existing row
 updateSubtot(productElements[0]);
-
-
-
