@@ -53,10 +53,18 @@ function deleteProduct(){
 function addProduct(){
   console.log("Añadido")
   let trAdd = document.querySelector(".new").nextSibling;
-  console.log(trAdd)
-  //let nameOfNewProduct= 
-
+  //console.log(trAdd)
+  //let nameOfNewProduct= trAdd.getElementByTagName("input").textContent;
+  //let priceOfNewProduct = trAdd.getElementByTagName("input").value;
+  
   //para añadir hacer un appendchild al tbody
+  /*
+  let trNode = $cart.createElement("TR");
+  let tdNanemNode = $cart.createElement("TD .name");
+  let productName = $cart.createTextNode(`${nameOfNewProduct}`);
+  $cart.appendChild(productName)
+  */
+  
 }
 
 $calc.onclick = calcAll;
