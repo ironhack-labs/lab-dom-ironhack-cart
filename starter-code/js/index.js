@@ -37,8 +37,7 @@ function setupDeleteListeners() {
 function makeProduct(productName, productPrice) {
   let newProduct = document.createElement('tr');
   newProduct.className += "product";
-  newProduct.innerHTML = `         // is this lazy?
-    <td class="name">
+  newProduct.innerHTML = `<td class="name">
       <span>${productName}</span>
     </td>
 
