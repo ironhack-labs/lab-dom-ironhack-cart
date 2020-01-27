@@ -1,60 +1,50 @@
 var $cart = document.querySelector('#cart tbody');
 var $calc = document.getElementById('calc');
 
-/*
-const $input = document.querySelectorAll('.prodQty');
-const price = Number(document.querySelector('.pu span').innerText);
-
-$input.addEventListener('change', updateSubtot);
-
-function updateSubtot(event) {
-  // Iteration 1.1
-  const inputValue = Number($input.value);
-
-  let total = price * inputValue;
-  let subTotal = event.querySelector('.subtot span');
-  subTotal.innerText = total;
-}
-
-//$calc.addEventListener('click', calcAll); => same has bellow line
-$calc.onclick = calcAll;
-const $shoppingList = document.querySelector('.product');
-
-function calcAll() {
-  // Iteration 1.2
-  const $shoppingListItem = document.createElement('tr');
-  let finalTotal = document.querySelector('h2 span');
-  return (finalTotal.innerText = document.querySelector('.subtot span').innerText);
-}*/
-
 function updateSubtot($product) {
-  const $priceSpan = $product.querySelector('.pu span');
-  const priceValue = $priceSpan.innerText;
+  let priceUnit = $product.querySelector('td.pu span').innerText,
+    numberUnit = $product.querySelector('td.qty input').value,
+    totalPrice = priceUnit * numberUnit;
 
-  const $quantityInput = $product.querySelector('input');
-  const quantityValue = $quantityInput.value;
+  $product.querySelector('td.subtot span').innerText = totalPrice;
 
-  const subtotal = parseFloat(priceValue) * parseInt(quantityValue);
-
-  const $subTotalSpan = $product.querySelector('.subtot span');
-  $subTotalSpan.innerText = subtotal.toFixed(2);
+  return totalPrice;
 }
 
 function calcAll() {
-  const $$allProducts = document.querySelector('tr.product');
+  let $$elementsClass = document.getElementsByClassName('product');
 
-  let total = 0;
-
-  for (let $product of $$allProducts) {
-    let subtotal = updateSubtot($product);
-    total += subtotal;
+  for (let i = 0; i < $$elementsClass.length; i++) {
+    let value = updateSubtot($$elementsClass[i]);
+    let totalValue = parseInt(document.getElementsByTagName('h2')[0].children[0].innerText);
+    let sum = totalValue + value;
+    document.getElementsByTagName('h2')[0].children[0].innerText = sum;
   }
-  const $totalSpan = document.querySelector('h2 span');
-  $totalSpan.innerText = total.toFixed(2);
 }
 
-//$calc.onclick = calcAll;=> same has bellow line
 $calc.addEventListener('click', calcAll);
 
+let $$removeButtons = document.getElementsByClassName('rm');
 
-//iteration 4
+for (let i = 0; i < $$removeButtons.length; i++) {
+  $$removeButtons[i].addEventListener('click', event => {
+    let $parentNode = $$removeButtons[i].parentNode.parentNode;
+    $parentNode.removeChild($$removeButtons[i].parentNode);
+  });
+}
+
+let $createButton = document.getElementById('create');
+
+$createButton.addEventListener('click', event => {
+  let $$parentNode = document.querySelectorAll('tr.new td input');
+  let name = $$parentNode[0].value,
+    price = $$parentNode[1].value;
+
+  let $newNode = $cart.children[0].cloneNode(true);
+  console.dir($newNode);
+
+  $newNode.querySelector('td.name span').innerText = name;
+  $newNode.querySelector('td.pu span').value = price;
+
+  $cart.appendChild($newNode);
+});
