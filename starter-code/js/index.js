@@ -3,19 +3,15 @@ var $calc = document.getElementById('calc');
 
 function updateSubtot($product) {
   // Iteration 1.1
-  //$subTot = document.querySelector(".subtot span").innerText
-   
-  const $priceUnit = parseFloat($product.querySelector(".pu span").innerText);
-  const $quantity = parseInt($product.querySelector(".qty input").value)
+ 
+let $unitPrice = $product.querySelector('.pu span').innerText;
+  let $quantity = $product.querySelector('.qty label input').value;
+  let $subtotalSpan = $product.querySelector('.subtot span');
+  let subtotal = parseFloat($unitPrice) * parseInt($quantity);
 
-  let $total = $priceUnit * $quantity;
+  $subtotalSpan.innerText = subtotal.toFixed(2);
 
-const $subTot =  $product.querySelector(".subtot span")
-
-$subTot.innerText = $total.toFixed(2)
-
-return $total.toFixed(2)
-
+  return subtotal;
   }
 
 
@@ -24,17 +20,27 @@ return $total.toFixed(2)
 function calcAll() {
   // Iteration 1.2
 const $$allProducts = document.querySelectorAll("tr.product");
-for(let $product of $$allProducts){
-  updateSubtot($product)
 
-  let total = 0
+
+  let tot = 0
   for(let $product of $$allProducts){
     let subTotal = updateSubtot($product);
-    total += subTotal;
+    tot += subTotal;
   }
   const $totalSpan = document.querySelector("h2 span");
-  total.toFixed(2) = $totalSpan.innerText
+  $totalSpan.innerText = tot.toFixed(2)
 }
 
+
+// Iteration 4
+
+function deleteProduct(del) {
+  $cart.removeChild(del.target.parentElement.parentElement);
 }
+
+// Iteration 5
+
+
+
 $calc.onclick = calcAll;
+$cart.querySelectorAll('.btn-delete').forEach(button => (button.onclick = deleteProduct));
