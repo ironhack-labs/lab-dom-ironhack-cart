@@ -61,10 +61,58 @@ const removeProduct = event => {
   const $tableBody = $productRow.parentNode;
 
   $tableBody.removeChild($productRow);
+
+  calcAll();
 };
 
 const $$removeButtons = document.getElementsByClassName('btn-delete');
 
-for (let $$removeButtons of $$removeButtons) {
-  $$removeButtons.addEventListener('click', removeProduct);
+for (let $removeButtons of $$removeButtons) {
+  $removeButtons.addEventListener('click', removeProduct);
 }
+
+//Iteration 5
+
+const $inputNewProductName = document.querySelector('.new input');
+const $inputNewProductPrice = document.querySelector('.new input[type = "number"]');
+
+const $newProductButton = document.querySelector('.new button');
+
+const createNewProductRow = event => {
+  const name = $inputNewProductName.value;
+  const price = $inputNewProductPrice.value;
+
+  $inputNewProductName.value = '';
+  $inputNewProductPrice.value = '';
+
+  const $tr = document.createElement('tr');
+  $tr.classList.add('product');
+
+  $cart.innerHTML += `
+  <tr class="product">
+          <td class="name">
+            <span>${name}</span>
+          </td>
+
+          <td class="pu">$<span>${price}</span></td>
+
+          <td class="qty">
+            <label>
+              <input type="number" value="0" min="0" />
+            </label>
+          </td>
+
+          <td class="subtot">$<span>0</span></td>
+
+          <td class="rm">
+            <button class="btn btn-delete">Delete</button>
+          </td>
+        </tr>
+  `;
+
+  const $removeButton = $tr.querySelector('button');
+
+  $cart.appendChild($tr);
+};
+
+$newProductButton.addEventListener('click', createNewProductRow);
