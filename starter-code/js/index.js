@@ -53,15 +53,18 @@ for (let $deleteButton of $$deleteButtons) {
 
 const $inputNewName = document.querySelector('.new input');
 const $inputNewPrice = document.querySelector('.new input[type="number"]');
-const $newButton = document.querySelector('.new btn');
+const $newButton = document.querySelector('.new button');
 
 const createProduct = event => {
-  const name = $inputNewName;
-  const price = $inputNewPrice;
+  const name = $inputNewName.value;
+  const price = $inputNewPrice.value;
+
+  $inputNewName.value = '';
+  $inputNewPrice.value = '';
 
   const $tr = document.createElement('tr');
   $tr.classList.add('product');
-  $tr.innerHTML += `<tr class="product">
+  $tr.innerHTML += `
   <td class="name">
     <span>${name}</span>
   </td>
@@ -79,9 +82,11 @@ const createProduct = event => {
   <td class="rm">
     <button class="btn btn-delete">Delete</button>
   </td>
-</tr>
   `;
   const $removeButton = $tr.querySelector('button');
+
+  $removeButton.addEventListener('click', deleteProduct);
+
   $cart.appendChild($tr);
 };
 
