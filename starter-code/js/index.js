@@ -1,6 +1,7 @@
 var $cart = document.querySelector('#cart tbody');
 var $calc = document.getElementById('calc');
 
+
 // my code
 // function updateSubtot(product) {
 //   price = document.querySelector("#cart > tbody > tr > td.pu > span").innerHTML;
@@ -61,4 +62,49 @@ function calcAll() {
   let count = 0;
   document.querySelector("body > h2 > span").innerText = totalPrice;
 }
-$calc.onclick = calcAll;
+  // iteration 4
+   let deleteButtons = document.querySelectorAll('.rm button');
+   deleteButtons.forEach(del => del.addEventListener('click', deleteRow));
+
+   function deleteRow(e) {
+     e.currentTarget.parentElement.parentElement.remove();
+   }
+   
+  // iteration 5
+  
+
+  const createButtons = document.querySelectorAll('#create');
+  createButtons.forEach(crea => crea.addEventListener('click', createRow))
+  function createRow(e) {
+    let newRow = document.querySelector('tbody');
+    let createName = document.querySelector('.new input').value;
+    let createPrice = document.querySelector('.new td:nth-child(2) input').valueAsNumber.toFixed(2);
+    newRow.innerHTML += `<tr class="product">
+    <td class="name">
+      <span>${createName}</span>
+    </td>
+
+    <td class="pu">$<span>${createPrice}</span></td>
+
+    <td class="qty">
+      <label>
+        <input type="number" value="0" min="0" />
+      </label>
+    </td>
+
+    <td class="subtot">$<span>0</span></td>
+
+    <td class="rm">
+      <button class="btn btn-delete">Delete</button>
+    </td>
+  </tr>`
+  let deleteButtons = document.querySelectorAll('.rm button');
+  deleteButtons.forEach(del => del.addEventListener('click', deleteRow));
+
+  function deleteRow(e) {
+    e.currentTarget.parentElement.parentElement.remove();
+  }
+
+  }
+
+  $calc.onclick = calcAll;
