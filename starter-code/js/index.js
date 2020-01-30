@@ -34,7 +34,7 @@ function calcAll() {
   });
         let total = 0;
         document.querySelectorAll(".subtot span").forEach(subtotal => {total += Number(subtotal.innerText);});
-        document.querySelector("body > h2 > span").innerHTML = total;
+        document.querySelector("body > h2 > span").innerHTML = total.toFixed(2);
 }
 $calc.onclick = calcAll;
 
@@ -54,14 +54,14 @@ function createNew() {
   
   let newItem = document.querySelector("tbody");
   let newName = document.querySelector(".new input").value;
-  let newPrice = Number(document.querySelector(".new td:nth-child(2) input").valueAsNumber.toFixed(2));
+  let newPrice = Number(document.querySelector(".new td:nth-child(2) input").valueAsNumber);
   newItem.innerHTML += `<tr class="product">
                               <td class="name">
                                 <span>${newName}</span>
                               </td>
 
                               <td class="pu">
-                                $<span>${newPrice}</span>
+                                $<span>${newPrice.toFixed(2)}</span>
                               </td>
 
                               <td class="qty">
@@ -80,6 +80,8 @@ function createNew() {
                             </tr>`;
   autoUpdateSubtotal();
   getDelButtons();
+  document.querySelector(".new input").value = '';
+  document.querySelector(".new td:nth-child(2) input").value = '';
 }
 
 $create.onclick = createNew;

@@ -1,3 +1,49 @@
+body{
+  background-image: url(https://img5.goodfon.com/wallpaper/nbig/3/fc/color-strips-linii-background-fon.jpg);
+  background-position: cover;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+header img {
+  height: 100px;
+  justify-content: center;
+  position: relative;
+  animation-name: example;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  @keyframes example {
+    0% {
+      background-color: red;
+      left: 0px;
+    }
+
+    25% {
+      background-color: red;
+      left: 200px;
+    }
+
+    50% {
+      background-color: yellow;
+      left: 0px;
+    }
+
+    100% {
+      background-color: green;
+      left: -200px;
+    }
+  }
+
+  
+
 table#cart {
   width:100%;
   border-collapse:collapse;
@@ -9,6 +55,10 @@ table#cart td {
 }
 
 table#cart td {border:1px solid;}
+
+table#cart tbody {
+  background: #FFF;
+}
 
 table#cart tfoot {
   background:#eee;
