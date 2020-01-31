@@ -36,7 +36,7 @@ function nowDeleteRow(event) {
   let $deleteBtnClicked = event.target;
   $deleteBtnClicked.parentElement.parentElement.remove();
 }
-/*I would appreciate some guidance on how to update my total price in the cart with the new total after deletion of any row...thanks*/
+/*I would appreciate some help...need to figure out how to update my total price in the cart with the new total after deletion of any row...thanks*/
 
 let $createNewProducts = document.getElementById('create.btn');
 $btn = document.createElement('button');
