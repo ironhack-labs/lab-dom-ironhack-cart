@@ -24,15 +24,36 @@
             <span>IronBubble-head</span>
           </td>
 
-          <td class="pu">$<span>25.00</span></td>
+          <td >$<span class="pu">25.00</span></td>
 
-          <td class="qty">
+          <td >
             <label>
-              <input type="number" value="0" min="0" />
+              <input class = "qty" type="number" value="1" min="1" />
             </label>
           </td>
 
-          <td class="subtot">$<span>0</span></td>
+          <td >$<span class="subtot">0</span></td>
+
+          <td class="rm">
+            <button class="btn btn-delete">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr class="product">
+          <td class="name">
+            <span>Iron Shirt</span>
+          </td>
+
+          <td >$<span class="pu">15.00</span></td>
+
+          <td >
+            <label>
+              <input class = "qty" type="number" value="1" min="1" />
+            </label>
+          </td>
+
+          <td >$<span class="subtot">0</span></td>
 
           <td class="rm">
             <button class="btn btn-delete">Delete</button>
@@ -60,7 +81,7 @@
       <button id="calc" class="btn btn-success">Calculate prices</button>
     </p>
 
-    <h2>Total: $<span>0</span></h2>
+    <h2>Total: $<span class="total">0</span></h2>
 
     <script type="text/javascript" src="./js/index.js"></script>
   </body>
