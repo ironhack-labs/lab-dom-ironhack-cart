@@ -19,9 +19,19 @@ function calcAll() {
 
 calc.onclick = calcAll;
 
-function addProduct(name, price) {
+function addProduct(name, price, position) {
+  //clone first product
   let newProd = document.querySelector(".product").cloneNode(true)
   document.querySelector("tbody").appendChild(newProd)
-  document.querySelectorAll(".product .name span")[1].innerText = name;
-  document.querySelectorAll(".product .pu span")[1].innerText = price;
+
+  //set name & price
+  document.querySelectorAll(".product .name span")[position].innerHTML = name;
+  document.querySelectorAll('.pu span')[position].innerHTML = price;
+
+  // reset quantity & subtotal
+  document.querySelectorAll(".product .qty input")[position].value = 0;
+  document.querySelectorAll(".product .subtot span")[position].innerText = 0;
+
+
 }
+
