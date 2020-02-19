@@ -1,11 +1,27 @@
-var $cart = document.querySelector('#cart tbody');
-var $calc = document.getElementById('calc');
+let cart = document.querySelector('#cart tbody');
+let calc = document.getElementById('calc');
 
-function updateSubtot($product) {
-  // Iteration 1.1
-}
+let priceUnit = document.querySelector('.pu span').innerHTML
+let chosenQuant = document.querySelector('.qty input').value
+let subTotal = document.querySelector('.subtot span')
+let inputEvent = document.querySelector('.qty input')
+
+inputEvent.onclick = updateSubtot
+
+function updateSubtot() {
+    subTotal.innerHTML = Number(priceUnit) * Number(document.querySelector('.qty input').value)
+    console.log(subTotal)
+  }
 
 function calcAll() {
-  // Iteration 1.2
+    document.querySelector("h2 span").innerHTML = document.querySelector('.subtot span').innerHTML
 }
-$calc.onclick = calcAll;
+
+calc.onclick = calcAll;
+
+function addProduct(name, price) {
+  let newProd = document.querySelector(".product").cloneNode(true)
+  document.querySelector("tbody").appendChild(newProd)
+  document.querySelectorAll(".product .name span")[1].innerText = name;
+  document.querySelectorAll(".product .pu span")[1].innerText = price;
+}
