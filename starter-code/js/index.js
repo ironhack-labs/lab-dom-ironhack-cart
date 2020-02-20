@@ -1,39 +1,51 @@
-let $cart = document.querySelector('#cart tbody');
-let $calc = document.getElementById('calc');
+let cartElement = document.querySelector('#cart tbody');
+let calcElement = document.getElementById('calc');
 
-function updateSubtot($product) {
-  // Iteration 1.1
-  // NOTE : $product is ONE element (in this case a "tr" element !! )
-  let price = Number($product.querySelector('.pu').querySelector('span').innerText)
-  //console.log(price) 
+function updateSubtot(productElement) {
+    // Iteration 1.1
+    // NOTE : productElement is ONE element (in this case a "tr" element !! )
+    let price = Number(productElement.querySelector('.pu').querySelector('span').innerText) 
 
-  //preparing for looping
-  // let price = Number($product.querySelectorAll('.pu')[i].querySelector('span').innerText)
+    let quantity = Number(productElement.querySelector('.qty').querySelector('input').value)
 
-  let quantity = Number($product.querySelector('.qty').querySelector('input').value)
-  //console.log(quantity)
+    let subTot = Number(productElement.querySelector('.subtot').querySelector('span').innerText = price * quantity)
 
-  //preparing for looping
-  // let quantity = Number($product.querySelectorAll('.qty')[i].querySelector('input').value)
-
-  let subTot = Number($product.querySelector('.subtot').querySelector('span').innerText = price * quantity)
-  //console.log(subTot) 
-
-  //subTot = price * quantity
-  //console.log(price * quantity)
-  return subTot
+    return subTot
 }
 
-function calcAll() {
-  // Iteration 1.2
-  let updateSingleSubTot = updateSubtot()
-  console.log(updateSingleSubTot)
 
-  // updateSingleSubTot.innerText
-  // document.createElement('h1')
-  // headingNew.innerText = "let some text flow"
-  // document.body.appendChild(headingNew)
-  // let testCreate = "Hi there!"
-  // document.body.createElement(testCreate)
+function calcAllHandler(event) {
+    event.currentTarget // <- this gives you the button that was clicked
+    // just for keyboard keys event.keyCode
+
+    let allProductElements = document.getElementsByClassName('product')
+
+    let totalPrice = 0
+
+    for (let i = 0; i < allProductElements.length; i++) {
+
+        updateSubtot(allProductElements[i])
+        totalPrice += updateSubtot(allProductElements[i])
+    }
+    document.querySelector('h2').querySelector('span').innerText = totalPrice
 }
-$calc.onclick = calcAll;
+
+//calcElement.oninput = updateSubtot; // works not with type=number
+let inputField = document.getElementsByTagName('input') 
+inputField.onchange = updateSubtot; // probably works not with type=number
+calcElement.onclick = calcAllHandler;
+
+let deleteButton = document.getElementsByClassName('btn btn-delete');
+// let deleteButton = document.querySelectorAll('btn btn-delete');
+
+// got to figure out, how to access a specific button
+// or maybe refactor html so that any button has its own id
+
+// Iteration 4: Deleting a product
+function deleteProductHandler(event) {
+    let findTableRow = event.currentTarget.parentElement.parentElement
+    findTableRow.remove()
+}
+
+deleteButton[0].onclick = deleteProductHandler;
+// deleteButton.onclick = deleteProductHandler;
