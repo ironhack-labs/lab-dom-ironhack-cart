@@ -21,4 +21,3 @@ function calcAll() {
 }
 
 $calc.onclick = calcAll;
-
