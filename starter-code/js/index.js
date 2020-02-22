@@ -48,12 +48,17 @@ deleteButton2.onclick = deleteRow;
 let createButton = document.querySelector('#create')
 
 let createProduct = function(event){
-let newName = document.querySelector('.new input').value
-let newQuantity = document.querySelector('.new').querySelectorAll('input')[1].value
-let existingRow = document.querySelector('.new')
+
+  let newPrice = document.querySelector('.new').querySelectorAll('input')[1].value
+
+//creating a new row from existing row
+let existingRow = document.querySelector('.product')
 let newRow = existingRow.cloneNode(true)
 table.appendChild(newRow)
-document.querySelectorAll('table td tr')[0].innerText = newName
+
+//adding new product name and price
+document.querySelector('.name').innerText = document.querySelector('.new input').value;
+document.querySelector('.pu').innerText = document.querySelectorAll('.new input')[1].value;
 }
 
 createButton.onclick = createProduct
