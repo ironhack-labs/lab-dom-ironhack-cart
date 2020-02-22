@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="./css/style.css" />
     <title>IronCart</title>
   </head>
+
   <body>
     <h1>IronCart</h1>
 
@@ -38,26 +39,45 @@
             <button class="btn btn-delete">Delete</button>
           </td>
         </tr>
+        <tr class="product">
+          <td class="name">
+            <span>IronPanda</span>
+          </td>
+
+          <td class="pu">$<span>25.00</span></td>
+
+          <td class="qty">
+            <label>
+              <input type="number" value="0" min="0" />
+            </label>
+          </td>
+
+          <td class="subtot">$<span>0</span></td>
+
+          <td class="rm">
+            <button class="btn btn-delete">Delete</button>
+          </td>
+        </tr>
       </tbody>
-      <!-- <tfoot>
-      <tr class="new">
-        <td>
-          <input type="text"/>
-        </td>
-        <td>
-          <input type="number" min="0"/>
-        </td>
-        <td></td>
-        <td></td>
-        <td>
-          <button id="create" class="btn">Create</button>
-        </td>
-      </tr>
-    </tfoot> -->
+      <tfoot>
+        <tr class="new">
+          <td><input type="text" /></td>
+          <td>
+            <input type="number" min="0" />
+          </td>
+          <td></td>
+          <td></td>
+          <td>
+            <button id="create" class="btn">Create</button>
+          </td>
+        </tr>
+      </tfoot>
     </table>
 
     <p class="cta">
-      <button id="calc" class="btn btn-success">Calculate prices</button>
+      <button id="calc" class="btn btn-success">
+        Calculate prices
+      </button>
     </p>
 
     <h2>Total: $<span>0</span></h2>
