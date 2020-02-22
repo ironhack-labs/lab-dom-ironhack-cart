@@ -63,7 +63,7 @@ function creatingNewPro() {
   listOfProducts.appendChild(newProduct);
 
   // clear input fields
-  document.querySelector('tfoot input[type= "number"]').value = 0;
+  document.querySelector('tfoot input[type= "number"]').value = "$ 0";
   document.querySelector('tfoot input[type= "text"]').value = "";
 }
 
