@@ -28,7 +28,7 @@
 
           <td class="qty">
             <label>
-              <input type="number" value="0" min="0" />
+              <input type="number" value="0" min="0" onblur="updateSubtot()" />
             </label>
           </td>
 
@@ -47,7 +47,8 @@
 
           <td class="qty">
             <label>
-              <input type="number" value="0" min="0" />
+              <input type="number" value="0" min="0" onblur="updateSubtot()" />
+              <!--set onChange="updateSubtot()" or onblur within input-tag-->
             </label>
           </td>
 
@@ -58,7 +59,7 @@
           </td>
         </tr>
       </tbody>
-      <!-- <tfoot>
+      <tfoot>
       <tr class="new">
         <td>
           <input type="text"/>
@@ -69,10 +70,10 @@
         <td></td>
         <td></td>
         <td>
-          <button id="create" class="btn">Create</button>
+          <button id="create" class="btn" >Create</button>
         </td>
       </tr>
-    </tfoot> -->
+    </tfoot>
     </table>
 
     <p class="cta">
