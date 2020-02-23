@@ -1,27 +1,62 @@
 let cart = document.querySelector('#cart tbody');
 let calc = document.getElementById('calc');
 
-let subtotal = document.querySelector(".subtot span")
-let total = document.querySelector("h2 span")
 
-function updateSubtot() {
-  subtotal.innerText = Number(document.querySelector(".product .qty input").value) * Number(document.querySelector(".product .pu span").innerText)
-  return subtotal.innerText
+function updateSubtot(product) {
+  let pu = product.querySelector(".pu span").innerText;
+  let input = product.querySelector(".inputPrice").value
+  let subtotal = pu * input
+  product.querySelector(".subtot span").innerText = subtotal
+  return subtotal
 }
 
-function calcAll() {  
-  total.innerText = subtotal.innerText
+function calcAll() {
+let total = 0
+  for (let i = 0; i < document.querySelectorAll(".product").length; i++) {
+    let subtot = updateSubtot(document.querySelectorAll(".product")[i])
+    total += subtot
+  }
+  document.querySelector("#total span").innerText = total
 }
-
-//add another product
-
-function addProduct(name, price) {
-  cart.appendChild(document.querySelectorAll("tr.product")[0].cloneNode(true));
-  document.querySelectorAll(".product .name")[0].innerText = name
-  document.querySelectorAll(".product .pu span")[0].innerText = price
-  document.querySelectorAll(".product .qty input")[0].value = 0
-  document.querySelectorAll(".subtot span")[0].innerText = 0
-}
-
 calc.onclick = calcAll;
 
+
+// delete row
+let allProducts = document.querySelector("tbody")
+let singleProduct = document.querySelector(".product")
+
+let deleteButton0 = document.getElementsByTagName("button")[0]
+let deleteButton1 = document.getElementsByTagName("button")[1]
+
+
+
+let onClickHandler = function(e) {
+  console.log("button works")
+  e.currentTarget = allProducts.deleteRow(e)
+}
+
+deleteButton0.onclick = onClickHandler
+deleteButton1.onclick = onClickHandler
+
+
+// new product
+let newProduct = document.querySelector(".new")
+let addSection = document.querySelector("tfoot")
+
+let createButton = document.querySelector("#create")
+
+let newProdHandler = function() {
+  console.log("create that stuff")
+
+  let inputText = newProduct.querySelectorAll("input")[0].value
+  let inputPriceUnit = newProduct.querySelectorAll("input")[1].value
+  let newPr = singleProduct.cloneNode(true)
+
+  newPr.querySelector(".name span").innerText = inputText
+  newPr.querySelector(".pu span").innerText = inputPriceUnit
+
+
+  allProducts.appendChild(newPr)
+}
+
+createButton.onclick = newProdHandler
