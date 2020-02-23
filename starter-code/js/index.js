@@ -25,3 +25,16 @@ function calcAll() {
 $calc.addEventListener('click', function(){
   calcAll()
 })
+
+//deleting
+
+var delete_btns = document.querySelectorAll('.btn-delete') //array of delete buttons
+
+for (let n = 0; n < delete_btns.length; n++){
+  delete_btns[n].addEventListener('click', function(){
+    console.log('button pressed!')
+    var delete_row = delete_btns[n].closest('.product')
+    document.querySelector('tbody').removeChild(delete_row)
+  })
+}
+
