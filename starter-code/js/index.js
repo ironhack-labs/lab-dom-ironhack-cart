@@ -1,5 +1,6 @@
-var $cart = document.querySelector('#cart tbody');
+var $cart = document.querySelectorAll('#cart tbody')[0];
 var $calc = document.getElementById('calc');
+var $createbtn = document.getElementById('create');
 var firstrow = document.querySelectorAll('.product')[0];
 
 
@@ -8,10 +9,8 @@ function updateSubtot($product) {
 
   let unitprice = $product.querySelector('.pu span').innerHTML;
   let quantity = $product.querySelector('.qty input').value;
-
   //calculate product
   let subtotal = unitprice*quantity;
-
   //update the subtotal
   $product.querySelectorAll('.subtot span')[0].innerHTML=subtotal;
 
@@ -29,9 +28,8 @@ function calcAll() {
                 var irow= document.querySelectorAll('.product')[i];
                 total += updateSubtot(irow);  
         }
-      //change total in html
-      document.querySelectorAll('h2 span')[0].innerHTML = total;
-  
+    //change total in html
+    document.querySelectorAll('h2 span')[0].innerHTML = total;
     return total;
 }
 
@@ -48,11 +46,22 @@ function deleteSetup(){
             $button.addEventListener("click", function(){
               var $row = event.currentTarget.closest('tr');
               var $body = $row.parentNode;
-              $body.removeChild($row);
+              $body.removeChild($row);                  
             });
   }
 }
 
 deleteSetup();
+
+//New Row creation
+// function addNewRow(){
+// appendChild
+//     var newRow='<tr><td>+ test +</td></tr>';
+//     console.log($cart);
+//     $cart.appendChild(newRow);
+
+//  }
+
+//  $createbtn.onclick = addNewRow;
 
 
