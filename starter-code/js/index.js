@@ -1,5 +1,6 @@
 var $cart = document.querySelector('#cart tbody');
 var $calc = document.getElementById('calc');
+var $deleteButtons = document.querySelectorAll(".btn.btn-delete");
 
 function updateSubtot($product) {
   // Iteration 1.1
@@ -21,3 +22,15 @@ function calcAll() {
 }
 
 $calc.onclick = calcAll;
+
+function deleteBtn() {
+  for(let i = 0 ; i < $deleteButtons.length; i++){
+    $deleteButtons[i].addEventListener("click", function(event){
+      let closestRow = $deleteButtons[i].closest("tr");
+      $cart.removeChild(closestRow);
+      calcAll();
+    })
+  }
+}
+
+$deleteButtons.onclick = deleteBtn();
