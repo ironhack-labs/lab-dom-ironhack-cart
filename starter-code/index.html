@@ -30,6 +30,7 @@
             </label>
           </td>          
           <td class="subtot">$<span>0</span></td>
+
             <td class="rm">
             <button class="btn btn-delete">Delete</button>
           </td>
@@ -45,19 +46,20 @@
               <input class="unit" type="number" value="0" min="0"/>
             </label>
           </td>          
-          <td class="subtot">$<span>0</span></td>          
+          <td class="subtot">$<span>0</span></td>
+                    
           <td class="rm">
             <button class="btn btn-delete">Delete</button>
           </td>
         </tr>
       </tbody>
-      <!-- <tfoot>
+      <tfoot>
       <tr class="new">
         <td>
-          <input type="text"/>
+          <input type="text" class="productName"/>
         </td>
         <td>
-          <input type="number" min="0"/>
+          <input class="unitPrice" type="number" min="0"/>
         </td>
         <td></td>
         <td></td>
@@ -65,7 +67,7 @@
           <button id="create" class="btn">Create</button>
         </td>
       </tr>
-    </tfoot> -->
+    </tfoot>
     </table>    
     <p class="cta">
       <button id="calc" class="btn btn-success">Calculate prices</button>
