@@ -3,7 +3,6 @@ var $calc = document.getElementById('calc');
 var $deleteButtons = document.querySelectorAll(".btn.btn-delete");
 
 function updateSubtot($product) {
-  // Iteration 1.1
   let value = $product.querySelectorAll(".qty input")[0].value;
   let price = $product.querySelectorAll(".pu span")[0].innerHTML;
   let subTot = value * price;
@@ -33,4 +32,22 @@ function deleteBtn() {
   }
 }
 
-$deleteButtons.onclick = deleteBtn();
+
+
+let $tfoot = document.querySelector("tfoot");
+let $createBtn = document.querySelectorAll("#create")[0];
+
+
+$createBtn.addEventListener("click", function(){
+  let $newRow = document.querySelectorAll(".product")[0].cloneNode(true);
+  let $body = document.querySelectorAll("tbody")[0];
+  $body.appendChild($newRow);
+  
+  let $newName = $tfoot.querySelectorAll(".new #newProductName")[0].value;
+  let $newPrice = $tfoot.querySelectorAll(".new #newProductPrice")[0].value;
+
+  $newRow.querySelector(".product .name span").innerHTML = $newName;
+  $newRow.querySelector(".product .pu span").innerHTML = $newPrice;
+  
+  $deleteButtons = document.querySelectorAll(".btn.btn-delete"); 
+})
