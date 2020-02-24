@@ -2,6 +2,14 @@ table#cart {
   width:100%;
   border-collapse:collapse;
 }
+body{
+  color: rebeccapurple;
+}
+/* 
+.colorised{
+  /* display: none; */
+  /* background-color: pink; */
+
 
 table#cart th,
 table#cart td {
