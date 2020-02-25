@@ -6,7 +6,9 @@
     <title>IronCart</title>
   </head>
   <body>
-    <h1>IronCart</h1>
+    <h2>IronCart</h2>
+
+
 
     <table id="cart">
       <thead>
@@ -20,8 +22,8 @@
       </thead>
       <tbody>
         <tr class="product">
-          <td class="name">
-            <span>IronBubble-head</span>
+          <td >
+            <span class="name">IronBubble-head</span>
           </td>
 
           <td >$<span class="pu">25.00</span></td>
@@ -41,8 +43,8 @@
       </tbody>
       <tbody>
         <tr class="product">
-          <td class="name">
-            <span>Iron Shirt</span>
+          <td >
+            <span class="name">Iron Shirt</span>
           </td>
 
           <td >$<span class="pu">15.00</span></td>
@@ -60,23 +62,22 @@
           </td>
         </tr>
       </tbody>
-      <!-- <tfoot>
+      <tfoot>
       <tr class="new">
         <td>
-          <input type="text"/>
+          <input type="text" id="newItem"/>
         </td>
         <td>
-          <input type="number" min="0"/>
+          <input type="number" min="1" id="newPrice"/>
         </td>
-        <td></td>
+        <td class="newPrice"></td>
         <td></td>
         <td>
           <button id="create" class="btn">Create</button>
         </td>
       </tr>
-    </tfoot> -->
+    </tfoot>
     </table>
-
     <p class="cta">
       <button id="calc" class="btn btn-success">Calculate prices</button>
     </p>
