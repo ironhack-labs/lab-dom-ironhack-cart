@@ -5,9 +5,9 @@ let create = document.getElementById("create")
 
 function updateSubtot(articuloActual) {
   let preciounitario = parseInt(document.querySelectorAll('.pu span')[articuloActual].innerHTML)
-  document.querySelectorAll('.pu span')[articuloActual].innerHTML= preciounitario
+  document.querySelectorAll('.pu span')[articuloActual].innerHTML = preciounitario
   let cantidad = parseInt(document.querySelectorAll('.qty input')[articuloActual].value)
-  document.querySelectorAll('.qty input')[articuloActual].value =cantidad
+  document.querySelectorAll('.qty input')[articuloActual].value = cantidad
   document.querySelectorAll('.subtot span')[articuloActual].innerHTML = preciounitario * cantidad
   // Iteration 1.1
 }
@@ -25,7 +25,7 @@ function calcAll() {
 
 }
 function newArticle() {
-  if(document.querySelector(".new input").value!=""&&document.querySelectorAll(".new input")[1].value!=""){
+  if (document.querySelector(".new input").value != "" && document.querySelectorAll(".new input")[1].value != "") {
     let productName = document.querySelector(".new input").value
     let productPrice = document.querySelectorAll(".new input")[1].value
     let table = document.querySelector("tbody")
@@ -34,17 +34,14 @@ function newArticle() {
     newRow.querySelector(".pu span").innerHTML = productPrice;
     table.appendChild(newRow)
     newButtonBorrarEvent()
-    document.querySelector(".new input").value= ""
-    document.querySelectorAll(".new input")[1].value =""
-
-
-  }else{
-
-   if( document.querySelector(".new input").value!=""==""){
-     alert("el campo Product name esta vacio")
+    document.querySelector(".new input").value = ""
+    document.querySelectorAll(".new input")[1].value = ""
+  } else {
+    if (document.querySelector(".new input").value != "" == "") {
+      alert("el campo Product name esta vacio")
     };
-   if( document.querySelectorAll(".new input")[1].value!=""==""){
-     alert("el campo Price unit esta vacio ")
+    if (document.querySelectorAll(".new input")[1].value != "" == "") {
+      alert("el campo Price unit esta vacio ")
     };
   }
 }
@@ -54,7 +51,7 @@ function borrarArticulo(e) {
 }
 
 function newButtonBorrarEvent() {
- let borrar = document.querySelectorAll(".btn-delete");
+  let borrar = document.querySelectorAll(".btn-delete");
   for (var i = 0; i < borrar.length; i++) {
     borrar[i].addEventListener('click', borrarArticulo, false);
   }
