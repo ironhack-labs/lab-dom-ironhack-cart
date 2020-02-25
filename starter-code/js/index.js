@@ -2,6 +2,7 @@ var $create = document.getElementById('create');
 var $calc = document.querySelector('.btn-success')
 var $delete = document.getElementsByClassName('btn-delete')
 
+
 function updateSubtot($product) {
   let $pu = document.querySelectorAll('.pu span')[$product].textContent;
   let $qty = document.querySelectorAll('.qty input')[$product].value;
@@ -10,6 +11,7 @@ function updateSubtot($product) {
   $subtotal.textContent = subtotal;
   return subtotal;
 }
+
 
 function calcAll() {
   let cadaPrecio = document.querySelectorAll('.subtot span')
@@ -20,6 +22,7 @@ function calcAll() {
   document.querySelectorAll('h2 span')[0].innerHTML = result
   return result
 }
+
 
 function addItem() {
   var newRow = document.createElement('tr')
@@ -39,3 +42,4 @@ function addItem() {
 
 $create.onclick = addItem;
 $calc.onclick = calcAll;
+
