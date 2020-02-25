@@ -66,7 +66,9 @@ Every product will have the following markup, ie: a `tr` inside the `tbody`:
     <span>IronBubble-head</span>
   </td>
 
-  <td class="pu">$<span>25.00</span></td>
+  <td class="pu">$
+    <span>25.00</span>
+  </td>
 
   <td class="qty">
     <label>
