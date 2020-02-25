@@ -10,10 +10,6 @@ let deleteButton = document.getElementsByClassName("btn-delete");
 let createButton = document.getElementById("create");
 let calculateButton = document.getElementsByClassName("btn-success");
 
-function updateSubtot($product) {
-  let result = price[$product].innerHTML * amount[$product].value;
-  return (subtotal[$product].innerHTML = result);
-}
 
 function calcAll() {
   let totalAmount = 0;
@@ -22,17 +18,23 @@ function calcAll() {
     totalAmount += parseInt(subtotal[i].innerHTML);
   }
   total.innerHTML = totalAmount;
-  refresh();
 }
 
-let newName = document.querySelectorAll(".new input")[0];
-let newPrice = document.querySelectorAll(".new input")[1];
+function updateSubtot(i) {
+  let result = price[i].innerHTML * amount[i].value;
+  return (subtotal[i].innerHTML = result);
+}
 
-function createNew() {
+
+function createNew(){
   let name = document.querySelectorAll(".new input")[0].value;
   let value = document.querySelectorAll(".new input")[1].value;
-  let template = `<tr class="product"><td class="name"><span>${name}</span></td><td class="pu">$<span>${value}</span></td><td class="qty"><label><input type="number" value="0" min="0" /></label></td><td class="subtot">$<span>0</span></td><td class="rm"><button class="btn btn-delete">Delete</button></td></tr>`;
-  table[0].innerHTML += template;
+  let table = document.querySelector("tbody")
+  let newRow = document.querySelector("tbody tr").cloneNode(true)
+  newRow.querySelector(".name span").innerHTML = name;
+  newRow.querySelector(".pu span").innerHTML = value;
+  newRow.querySelector(".qty input").value = 0;
+  table.appendChild(newRow)
   refresh();
   calcAll();
 }
@@ -42,6 +44,11 @@ function deleteRow(index) {
   refresh();
 }
 
+$calc.onclick = calcAll;
+
+createButton.onclick = () => createNew();
+
+calculateButton.onclick = () => calcAll();
 
 //Todas mis funciones dependen del array de valores, así que necesito que sus índices estén actualizados
 function refresh() {
@@ -58,10 +65,6 @@ function refresh() {
     updateSubtot(i);
     deleteButton[i].onclick = () => deleteRow(i);
   }
+  calcAll();
 }
 
-$calc.onclick = calcAll;
-
-createButton.onclick = () => createNew();
-
-calculateButton.onclick = () => calcAll();
