@@ -1,8 +1,9 @@
 ![logo_ironhack_blue 7](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
 
-# DOM | The Ironhack Cart
+# LAB | The IronCart
 
 ![shopping cart](https://i.imgur.com/s2Qxc9Z.jpg)
+
 
 ## Introduction
 
@@ -43,10 +44,12 @@ Let's start by looking at the HTML of our `#cart` table:
 <table id="cart">
   <thead>
     <tr>
+
       <th>Product Name</th>
       <th>Unit Price</th>
       <th>Quantity</th>
       <th>Subtotal</th>
+
       <th>Action</th>
     </tr>
   </thead>
@@ -84,6 +87,7 @@ Each of our products will have a **price** and **cart quantity**. They should, t
 Complete the function named `updateSubtotal` that will **calculate the subtotal** for any given product, **update the subtotal value** for that same product in the DOM and return the **subtotal value**.
 
 As a single argument, the function should take a **DOM node** that corresponds to a single `tr` element with a `product` class. In the boilerplate code included, we called it `$product`.
+
 
 ```js
 function updateSubtotal($product) {
@@ -132,6 +136,7 @@ Lastly, display that value on your DOM.
 
 ### Iteration 4: Removing a product
 
+
 Users should be able to remove products from their carts. For that purpose, every product row in our table has a "Remove" button at the end.
 
 To achieve this, lets query the document for all "Remove" buttons, and add a `click` event listener to each, passing a named function `productRemoveListener` as the callback argument for `addEventListener`.
@@ -174,6 +179,7 @@ Uncomment the `tfoot` element and its children from the `index.html` file:
 The two inputs inside of `tfoot` represent the name for the new product and the unit price, respectively. The "Create Product" button should add a new product to the cart when triggered.
 
 Add a `click` event handler to the "Create Product" that will take a function named `createProduct` as a callback.
+
 
 In `createProduct` you should target the name and unit price input DOM nodes, extract their values, add a new row to the table with the product name and unitary price, as well as the quantity input and "Remove" button, and ensure that all of the functionality works as expected.
 
