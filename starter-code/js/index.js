@@ -22,9 +22,18 @@ function createRow(){
 
 function calcAll() {
   updateSubtot()
-  // subTotals()
   // Iteration 1.2
+  let subTotales = document.querySelectorAll(".subtot span");
+  let res = 0;
+  for (let i = 0; i < subTotales.length; i++) {
+    res += updateSubtot(i);
+  }
+  let totale = document.querySelector("h2 span");
+  totale.innerHTML = res;
+
+  return totale;
 }
+
 
 function deleteProduct(){
   var deleteButton = document.querySelectorAll(".btn-delete")
