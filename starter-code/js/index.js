@@ -5,7 +5,9 @@ let create = document.getElementById("create")
 
 function updateSubtot(articuloActual) {
   let preciounitario = parseInt(document.querySelectorAll('.pu span')[articuloActual].innerHTML)
+  document.querySelectorAll('.pu span')[articuloActual].innerHTML= preciounitario
   let cantidad = parseInt(document.querySelectorAll('.qty input')[articuloActual].value)
+  document.querySelectorAll('.qty input')[articuloActual].value =cantidad
   document.querySelectorAll('.subtot span')[articuloActual].innerHTML = preciounitario * cantidad
   // Iteration 1.1
 }
@@ -19,18 +21,8 @@ function calcAll() {
     updateSubtot(index)
     resultado += parseInt(preciounitario[index].innerHTML);
   }
-  console.log(document.querySelectorAll("h2 span"))
   document.querySelectorAll("h2 span")[0].innerText = resultado
 
-}
-function createRow(){
-  const name = document.querySelector('.new .name').value
-  const price = document.querySelector('.new .price').value
-  let table = document.querySelector("tbody")
-  let newRow = document.querySelector("tbody tr").cloneNode(true)
-  newRow.querySelector(".name span").innerHTML = name;
-  newRow.querySelector(".pu span").innerHTML = price;
-  table.appendChild(newRow)
 }
 function newArticle() {
   if(document.querySelector(".new input").value!=""&&document.querySelectorAll(".new input")[1].value!=""){
@@ -46,25 +38,30 @@ function newArticle() {
     document.querySelectorAll(".new input")[1].value =""
 
 
+  }else{
+
+   if( document.querySelector(".new input").value!=""==""){
+     alert("el campo Product name esta vacio")
+    };
+   if( document.querySelectorAll(".new input")[1].value!=""==""){
+     alert("el campo Price unit esta vacio ")
+    };
   }
- console.log("algun campo esta vacio")
 }
 function borrarArticulo(e) {
-  console.log(e.currentTarget)
   e.currentTarget.parentElement.parentElement.remove()
+  calcAll()
 }
 
 function newButtonBorrarEvent() {
- let borrar = document.querySelectorAll(".btn-delete")
+ let borrar = document.querySelectorAll(".btn-delete");
   for (var i = 0; i < borrar.length; i++) {
-    // console: imprime el elemento pulsado <p> 
     borrar[i].addEventListener('click', borrarArticulo, false);
   }
-}
 
+}
 
 newButtonBorrarEvent()
 create.onclick = newArticle;
 calc.onclick = calcAll;
-console.log(cart)
-console.log(calc)
+
