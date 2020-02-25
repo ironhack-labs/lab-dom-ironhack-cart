@@ -1,11 +1,30 @@
-var $cart = document.querySelector('#cart tbody');
-var $calc = document.getElementById('calc');
+// ITERATION 1
 
-function updateSubtot($product) {
-  // Iteration 1.1
+function updateSubtotal($product) {
+  // ...
 }
 
-function calcAll() {
-  // Iteration 1.2
+function calculateAll() {
+  // ITERATION 2
+  //...
+  // ITERATION 3
+  //...
 }
-$calc.onclick = calcAll;
+
+window.addEventListener('load', () => {
+  const $calculateTrigger = document.getElementById('calculate');
+
+  $calculateTrigger.addEventListener('click', calculateAll);
+});
+
+// ITERATION 4
+
+function productRemoveListener(event) {
+  // ...
+}
+
+// ITERATION 5
+
+function createProduct(event) {
+  // ...
+}
