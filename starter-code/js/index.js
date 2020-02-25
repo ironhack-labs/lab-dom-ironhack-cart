@@ -1,7 +1,5 @@
 var cart = document.querySelector('#cart tbody');
 var calc = document.getElementById('calc');
-let cantidad = document.querySelectorAll('.qty input')
-//let borrar = document.querySelectorAll(".btn-delete")
 let create = document.getElementById("create")
 
 
@@ -25,16 +23,31 @@ function calcAll() {
   document.querySelectorAll("h2 span")[0].innerText = resultado
 
 }
+function createRow(){
+  const name = document.querySelector('.new .name').value
+  const price = document.querySelector('.new .price').value
+  let table = document.querySelector("tbody")
+  let newRow = document.querySelector("tbody tr").cloneNode(true)
+  newRow.querySelector(".name span").innerHTML = name;
+  newRow.querySelector(".pu span").innerHTML = price;
+  table.appendChild(newRow)
+}
 function newArticle() {
-  console.log(document.querySelector(".new input").value)
-  let productName = document.querySelector(".new input").value
-  document.querySelector(".new input").value= ""
-  let productPrice = document.querySelectorAll(".new input")[1].value
-  document.querySelectorAll(".new input")[1].value =""
-  cart.innerHTML += `<tr class="product"><td class="name"><span>${productName}</span></td><td class="pu">$<span>${productPrice}</span></td><td class="qty"><label><input type="number" value="0" min="0" /></label></td><td class="subtot">$<span>0</span></td><td class="rm"><button class="btn btn-delete">Delete</button></td></tr>`
-  document.querySelector('#cart tbody')
-  newButtonBorrarEvent()
-  calcAll()
+  if(document.querySelector(".new input").value!=""&&document.querySelectorAll(".new input")[1].value!=""){
+    let productName = document.querySelector(".new input").value
+    let productPrice = document.querySelectorAll(".new input")[1].value
+    let table = document.querySelector("tbody")
+    let newRow = document.querySelector("tbody tr").cloneNode(true)
+    newRow.querySelector(".name span").innerHTML = productName;
+    newRow.querySelector(".pu span").innerHTML = productPrice;
+    table.appendChild(newRow)
+    newButtonBorrarEvent()
+    document.querySelector(".new input").value= ""
+    document.querySelectorAll(".new input")[1].value =""
+
+
+  }
+ console.log("algun campo esta vacio")
 }
 function borrarArticulo(e) {
   console.log(e.currentTarget)
@@ -52,7 +65,6 @@ function newButtonBorrarEvent() {
 
 newButtonBorrarEvent()
 create.onclick = newArticle;
-cantidad.onclick = calcAll;
 calc.onclick = calcAll;
 console.log(cart)
 console.log(calc)
