@@ -26,6 +26,9 @@ calc.onclick = calcAll;
 let deleteButton0 = document.getElementsByTagName("button")[0]
 let deleteButton1 = document.getElementsByTagName("button")[1]
 
+let singleProduct = document.querySelector(".product")
+let allProducts = document.querySelector("tbody")
+
 let onClickHandler = function(e) {
   console.log("button works")
   let buttonRow = e.currentTarget.parentNode.parentNode
@@ -50,10 +53,8 @@ let newProdHandler = function() {
   newPr.querySelector(".name span").innerText = inputText.value
   newPr.querySelector(".pu span").innerText = inputPriceUnit.value  
   allProducts.appendChild(newPr)
+  let deleteButton2 = newPr.getElementsByTagName("button")[0]
+  deleteButton2.onclick = onClickHandler
 }
-
-// doesnt work 
-// let deleteButton2 = document.getElementsByTagName("button")[2]
-// deleteButton2.onclick = onClickHandler
 
 createButton.onclick = newProdHandler
