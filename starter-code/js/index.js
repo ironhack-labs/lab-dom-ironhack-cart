@@ -33,7 +33,7 @@ function newArticle() {
     newRow.querySelector(".name span").innerHTML = productName;
     newRow.querySelector(".pu span").innerHTML = productPrice;
     table.appendChild(newRow)
-    newButtonBorrarEvent()
+    RefreshButtons()
     document.querySelector(".new input").value = ""
     document.querySelectorAll(".new input")[1].value = ""
   } else {
@@ -50,15 +50,23 @@ function borrarArticulo(e) {
   calcAll()
 }
 
-function newButtonBorrarEvent() {
+function RefreshButtons() {
   let borrar = document.querySelectorAll(".btn-delete");
   for (var i = 0; i < borrar.length; i++) {
     borrar[i].addEventListener('click', borrarArticulo, false);
   }
+  let refresh = document.querySelectorAll('.qty input')
+  for (let j = 0; j < refresh.length; j++) {
+    refresh[j].addEventListener('change', calcAll);
+    
+  }
+
+  console.log(RefreshButtons())
+  console.log(RefreshButtons)
 
 }
 
-newButtonBorrarEvent()
+RefreshButtons()
 create.onclick = newArticle;
 calc.onclick = calcAll;
 
