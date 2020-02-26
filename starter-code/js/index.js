@@ -26,6 +26,7 @@ function listener() {
     document.querySelectorAll('.btn-delete').forEach((element, index) => {
         element.addEventListener("click", button => {
             button.target.parentNode.parentNode.remove();
+            calcAll();
         });
     });
     document.querySelectorAll('.qty input').forEach((element, index) => {
