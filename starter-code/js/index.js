@@ -1,7 +1,6 @@
 var $cart = document.querySelector('#cart tbody');
 var $calc = document.getElementById('calc');
-
-
+var $create = document.getElementById('create')
 
 function updateSubtot($product) {
   let priceUnit= $product.querySelector('.pu span').innerHTML;
@@ -10,48 +9,6 @@ function updateSubtot($product) {
    subTotal.innerHTML= Number(priceUnit *theQuantity);
    return subTotal
  }
-
- 
- function createRow(){
-  const name = document.querySelector('.new .name').value
-  const price = document.querySelector('.new .price').value
-  let table = document.querySelector("tbody")
-  let newRow = document.querySelector("tbody tr").cloneNode(true)
-  newRow.querySelector(".name span").innerHTML = name;
-  newRow.querySelector(".pu span").innerHTML = price;
-  table.appendChild(newRow)
-  setDeleteEventListener()
-}
-
-
-/*function newProduct(){
-  let filaNueva = document.createElement('tr');
-  filaNueva.innerHTML =  `<tr class="product">
-  <td class="name">
-    <span>Wetsuit</span>
-  </td>
-
-  <td class="pu">$<span>125.00</span></td>
-
-  <td class="qty">
-    <label>
-      <input type="number" value="0" min="0" />
-    </label>
-  </td>
-
-  <td class="subtot">$<span>0</span></td>
-
-  <td class="rm">
-    <button class="btn btn-delete">Delete</button>
-  </td>
-</tr>`
-
-$cart.appendChild(filaNueva)
-}
-newProduct();*/
-
-//let totalPrice = document.querySelector('h2 span').innerHTML
-//totalPrice += updateSubtot(filas[i].subTotal)
 
 function calcAll() {
   let filas = document.querySelectorAll('.product')
@@ -63,5 +20,31 @@ function calcAll() {
     totalPrice.innerHTML=count
   return totalPrice 
 }
-
 $calc.onclick = calcAll;
+//createButton.onclick = createRow;
+
+
+function deleteProduct(){
+  let deleteButtonArr = [...document.querySelector('.btn btn-delete')]
+deleteButtonArr.forEach(element => {
+  element.addEvenListener('click', (e) => {
+    e.target.parentNode.parentNode.remove()
+    calcAll()
+  })
+})
+}
+deleteProduct();
+
+function createRow(){
+  const productName = document.querySelector('.new .input [type="text"]')
+  const productPrice = document.querySelectorAll('.new .input [type = "number"]')
+  let table = document.querySelector("tbody")
+  let newProduct = document.querySelector("tbody tr").cloneNode(true)
+  newProduct.querySelector(".name span").innerHTML = productName;
+  newProduct.querySelector(".pu span").innerHTML = productPrice;
+  table.appendChild(newProduct)
+  productName.value = '';
+  productPrice.value = '';
+  deleteProduct()
+}
+
