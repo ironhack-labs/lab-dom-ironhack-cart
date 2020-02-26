@@ -38,11 +38,8 @@ function createNew() {
   newRow.querySelector(".pu span").innerHTML = value;
   newRow.querySelector(".qty input").value = 0;
   table.appendChild(newRow);
-  }
-  else 
-  {  let name = document.querySelectorAll(".new input")[0].value;
-  let value = document.querySelectorAll(".new input")[1].value;
-  let template = `<tr class="product"><td class="name"><span>${name}</span></td><td class="pu">$<span>${value}</span></td><td class="qty"><label><input type="number" value="0" min="0" /></label></td><td class="subtot">$<span>0</span></td><td class="rm"><button class="btn btn-delete">Delete</button></td></tr>`;
+  } else {
+  let template = `<tr class="product"><td class="name"><span>Iron Bubble-head</span></td><td class="pu">$<span>25.00</span></td><td class="qty"><label><input type="number" value="0" min="0" /></label></td><td class="subtot">$<span>0</span></td><td class="rm"><button class="btn btn-delete">Delete</button></td></tr>`;
   table.innerHTML += template;}
   refresh();
 }
