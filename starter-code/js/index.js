@@ -30,7 +30,7 @@ function updateSubtot(i) {
 }
 
 function createNew() {
-  if (table.length >0){
+  if (table.rows.length >0){
   let name = document.querySelectorAll(".new input")[0].value;
   let value = document.querySelectorAll(".new input")[1].value;
   let newRow = document.querySelector("tbody tr").cloneNode(true);
