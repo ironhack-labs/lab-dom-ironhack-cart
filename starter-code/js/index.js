@@ -29,16 +29,15 @@ function listener() {
         });
     });
     document.querySelectorAll('.qty input').forEach((element, index) => {
-        element.addEventListener("onkeypress", button => {
+        element.addEventListener("change", button => {
             calcAll();
         });
     });
 }
 
 function cloneNode(newProduct, newPrice) {
-    if (document.querySelector('.product') !== "") {
+    if (document.querySelector('.product') !== null) {
         newTr = document.querySelector('.product').cloneNode(true);
-
     }
     newTr.querySelector('.name span').innerHTML = newProduct;
     newTr.querySelector('.pu span').innerHTML = parseFloat(newPrice).toFixed(2);
