@@ -26,18 +26,22 @@ function calcAll() {
 
 function addItem() {
   var newRow = document.createElement('tr')
-  var name = document.querySelector('.new td input').value
-  var price = document.querySelector('.new td .price').value
+  var name = document.querySelector('.new input')
+  var price = document.querySelector('.price')
   let table = document.querySelector('tbody')
   newRow.innerHTML = `<td class="name">
-  <span> ${name} </span></td> <td class="pu">$<span> ${price} </span></td>
+  <span> ${name.value} </span></td> <td class="pu">$<span> ${price.value} </span></td>
   <td class="qty"> <label> <input type="number" value="0" min="0" /> </label>
   </td> <td class="subtot">$<span>0</span></td><td class="rm"><button class="btn btn-delete">Delete</button>
   </td>`
+  
   table.appendChild(newRow)
+  
   for (let i = 0; i < $delete.length; i++) {
     $delete[i].onclick = (e) => e.currentTarget.parentElement.parentElement.remove();
   }
+  name.value = ''
+  price.value = ''
 }
 
 $create.onclick = addItem;
