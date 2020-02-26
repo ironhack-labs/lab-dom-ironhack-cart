@@ -1,6 +1,7 @@
 var cart = document.querySelector('#cart tbody');
 var calc = document.getElementById('calc');
 let create = document.getElementById("create")
+let backuprow = document.querySelector("tbody tr").cloneNode(true)
 
 
 function updateSubtot(articuloActual) {
@@ -25,11 +26,21 @@ function calcAll() {
 
 }
 function newArticle() {
+  console.log(backuprow)
+console.log(document.querySelector("tbody tr"))
+  let productName = document.querySelector(".new input").value
+  let productPrice = document.querySelectorAll(".new input")[1].value
+  let table = document.querySelector("tbody")
+let newRow =""
+console.log(document.querySelector("tbody tr") )
+  if (document.querySelector("tbody tr") === "") {
+    newRow= backuprow
+  } else {
+    newRow = document.querySelector("tbody tr").cloneNode(true)
+
+  }
   if (document.querySelector(".new input").value != "" && document.querySelectorAll(".new input")[1].value != "") {
-    let productName = document.querySelector(".new input").value
-    let productPrice = document.querySelectorAll(".new input")[1].value
-    let table = document.querySelector("tbody")
-    let newRow = document.querySelector("tbody tr").cloneNode(true)
+
     newRow.querySelector(".name span").innerHTML = productName;
     newRow.querySelector(".pu span").innerHTML = productPrice;
     table.appendChild(newRow)
@@ -55,14 +66,15 @@ function RefreshButtons() {
   for (var i = 0; i < borrar.length; i++) {
     borrar[i].addEventListener('click', borrarArticulo, false);
   }
+  console.log(document.querySelectorAll('.qty input'))
   let refresh = document.querySelectorAll('.qty input')
+  
   for (let j = 0; j < refresh.length; j++) {
-    refresh[j].addEventListener('change', calcAll);
-    
+    refresh[j].addEventListener('change', calcAll,false);
+
   }
 
-  console.log(RefreshButtons())
-  console.log(RefreshButtons)
+ 
 
 }
 
