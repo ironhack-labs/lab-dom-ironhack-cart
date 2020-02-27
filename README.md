@@ -153,7 +153,7 @@ function updateSubtotal(product) {
 
 :bulb: _Hint_: Make sure your `calculateAll()` function has the testing code we previously mentioned. If the code is in its place after you successfully finished the `updateSubtotal()` function, you should be able to see the corresponding updates in the `Subtotal` field in the table.
 
-![](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_30b87c596b79954f63b3482d2f320fe4.gif)
+Check [here](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_30b87c596b79954f63b3482d2f320fe4.gif) the expected output.
 
 ### Iteration 2: `calculateAll()`
 
