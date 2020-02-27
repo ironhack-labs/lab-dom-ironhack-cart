@@ -203,7 +203,7 @@ As we can see, `removeProduct(event)` expects the event as a single argument, an
 
 Make sure the price gets updated accordingly when you remove products from the shopping cart.
 
-![](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_17b1e9e4d2606239163dddbc5b2a3d9f.gif)
+Click [here](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_17b1e9e4d2606239163dddbc5b2a3d9f.gif) to see the expected result.
 
 ### Iteration 5: Creating new products
 
@@ -246,6 +246,6 @@ Remember, the new product should look undistinguished and behave like any of the
 
 When the product creation is finalized, please, clear the input fields in the creation form.
 
-![](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_00abbd15326ec24d93147196024458f6.gif)
+Click [here](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_00abbd15326ec24d93147196024458f6.gif) to see the expected result.
 
 **Happy coding! 💙**
