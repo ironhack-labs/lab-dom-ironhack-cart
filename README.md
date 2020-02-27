@@ -12,7 +12,7 @@ E-commerce is, however, a highly competitive business, and building a positive u
 
 One of the largest components of this experience is **the shopping cart**.
 
-In this lab, we will be building the **Ironhack Cart**, a shopping cart for the unofficial Ironhack merchandising store. Visitors should be able to add and remove products from the shopping cart, as well as to modify the number (quantity) of items that they want to purchase. Additionally, users should be able to see the subtotal and total price for the items they have added.
+In this lab, we will be building the **IronCart**, a shopping cart for the unofficial Ironhack merchandising store. Visitors should be able to add and remove products from the shopping cart, as well as to modify the number (quantity) of items that they want to purchase. Additionally, users should be able to see the subtotal and total price for the items they have added.
 
 ## Requirements
 
@@ -240,7 +240,7 @@ The two inputs inside of `tfoot` represent the name for the new product and the 
 
 Add a `click` event handler to the "Create Product" that will take a function named `createProduct` as a callback.
 
-In `createProduct()` you should target the name and unit price input DOM nodes, extract their values, add a new row to the table with the product name and unitary price, as well as the quantity input and "Remove" button, and ensure that all of the functionality works as expected.
+In `createProduct` you should target the name and unit price input DOM nodes, extract their values, add a new row to the table with the product name and unitary price, as well as the quantity input and "Remove" button, and ensure that all of the functionality works as expected.
 
 Remember, the new product should look undistinguished and behave like any of the products previously included in the cart. As such, one should be able to calculate its subtotal when the "Calculate All" button is clicked, and remove the product.
 
