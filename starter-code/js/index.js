@@ -50,4 +50,5 @@ $createBtn.addEventListener("click", function(){
   $newRow.querySelector(".product .pu span").innerHTML = $newPrice;
   
   $deleteButtons = document.querySelectorAll(".btn.btn-delete"); 
+  deleteBtn();
 })
