@@ -1,7 +1,5 @@
 // ITERATION 1
-
-function updateSubtotal($product) {
-  // let price = document.querySelectorAll(".product")[0].querySelector(".price").firstElementChild.innerText
+function updateSubtotal($product) {  
   let price = parseFloat($product.querySelector(".price").firstElementChild.innerText);
   let quantity = parseFloat($product.querySelector(".quantity").firstElementChild.value);
   let subtotal = price * quantity;
@@ -9,9 +7,8 @@ function updateSubtotal($product) {
   return subtotal;
 }
 
-function calculateAll() {
-  
-  // For development testing purposes, paste the following code inside of `calculateAll`:
+function calculateAll() { 
+// For development testing purposes, paste the following code inside of `calculateAll`:
 // const $singleProduct = document.querySelector('.product');
 // updateSubtotal($singleProduct);
 // End of test
@@ -45,14 +42,12 @@ window.addEventListener('load', () => {
 });
 
 // ITERATION 4
-
 function productRemoveListener(event) {
   const row = event.currentTarget.parentNode.parentNode;
   const tbody = event.currentTarget.parentNode.parentNode.parentNode;
   tbody.removeChild(row);
 }
 
-let btn;
 // ITERATION 5
 function createProduct(event) {
   // Points to addRow and gets inputs values
@@ -96,7 +91,6 @@ function createProduct(event) {
   removeBtn.className = "btn btn-remove";
   removeBtn.innerText = "Remove";
   removeBtn.addEventListener('click', productRemoveListener);
-  btn = removeBtn;
   newRemoveCell.appendChild(removeBtn);
   // Clears Inputs
   nameInput.value = "";
