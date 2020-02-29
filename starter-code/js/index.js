@@ -29,9 +29,17 @@ window.addEventListener('load', () => {
 });
 
 // ITERATION 4
+const removeButtons = document.getElementsByClassName('action')
+
+for (let button of removeButtons) {
+  button.addEventListener('click', productRemoveListener)
+}
 
 function productRemoveListener(event) {
-  // ...
+  const productToRemove = event.currentTarget.parentNode
+  const parent = document.querySelector('tbody')
+
+  parent.removeChild(productToRemove)
 }
 
 // ITERATION 5
