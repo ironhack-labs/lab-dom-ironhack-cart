@@ -30,20 +30,40 @@ window.addEventListener('load', () => {
 
 // ITERATION 4
 const removeButtons = document.getElementsByClassName('action')
+const productList = document.querySelector('tbody')
+
+function productRemoveListener(event) {
+  const productToRemove = event.currentTarget.parentNode
+
+  productList.removeChild(productToRemove)
+  calculateAll()
+}
 
 for (let button of removeButtons) {
   button.addEventListener('click', productRemoveListener)
 }
 
-function productRemoveListener(event) {
-  const productToRemove = event.currentTarget.parentNode
-  const parent = document.querySelector('tbody')
-
-  parent.removeChild(productToRemove)
-}
-
 // ITERATION 5
+const $addTrigger = document.getElementById('create')
 
-function createProduct(event) {
-  // ...
+function createProduct() {
+  const $newProduct = document.querySelector('.product').cloneNode(true)
+  const $newProductName = document.getElementById('newProductName')
+  const $newProductPrice = document.getElementById('newProductPrice')
+  const $newRemoveButton = $newProduct.querySelector('.action')
+
+  // Add the remove event listener
+  $newRemoveButton.addEventListener('click', productRemoveListener)
+
+  // Add new values
+  $newProduct.querySelector('.name').querySelector('span').innerHTML = $newProductName.value
+  $newProduct.querySelector('.price').querySelector('span').innerHTML = Number($newProductPrice.value).toFixed(2)
+
+  productList.appendChild($newProduct)
+
+  // Clear the values
+  $newProductName.value = ""
+  $newProductPrice.value = 0
 }
+
+$addTrigger.addEventListener('click', createProduct)
