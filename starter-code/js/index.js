@@ -10,13 +10,12 @@ function updateSubtotal($product) {
 }
 
 function calculateAll() {
-  // For development testing purposes, paste the following code inside of `calculateAll`:
-  const $singleProduct = document.querySelector('.product');
-  updateSubtotal($singleProduct);
-  // End of test
-
   // ITERATION 2
-  //...
+  const productList = document.getElementsByClassName('product')
+
+  for (let product of productList) {
+    updateSubtotal(product)
+  }
   // ITERATION 3
   //...
 }
