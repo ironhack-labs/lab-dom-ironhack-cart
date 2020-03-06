@@ -41,14 +41,18 @@ window.addEventListener('load', () => {
 });
 
 // ITERATION 4
-const $removeBtn = document.querySelectorAll(".btn-remove");
-console.log($removeBtn);
+function removeButton(){
+  const $removeBtn = document.querySelectorAll(".btn-remove");
+  //console.log($removeBtn);
 
-for (const button of $removeBtn) {
-  button.onclick = function productRemoveListener(event) {
-    console.log("it's clicking");
-    }
-};
+  for (const button of $removeBtn) {
+    button.onclick = function productRemoveListener(event) {
+      event.currentTarget.parentNode.parentNode.remove();
+      //console.log("it's clicking");
+      }
+  };
+}
+
 
   
 // ITERATION 5
@@ -77,15 +81,13 @@ $createProduct.onclick = function createProduct(event) {
 
   //------- SETTING NEW PRODUCT NAME AND PRICE VALUES
   //--- name
-  const $newProductName = document.querySelector(".product .name span");
-  
-  $newProductName.innerText = $name;
-  //console.log($newProductName)
+  $newProduct.querySelector(".product .name span").innerText = $name;
+  //console.log($newProduct)
 
   //--- price
-  const $newProductPrice = document.querySelector(".product .price span");
+  $newProduct.querySelector(".product .price span").innerText = $price;
   
-  $newProductPrice.innerText = $price;
+  console.log($newProduct);
 
 
 
@@ -102,5 +104,8 @@ $createProduct.onclick = function createProduct(event) {
 
   let $clearPrice = document.querySelectorAll(".create-product input")[1];
   $clearPrice.value = 0;
+
+  // ------ REMOVE BTN
+  removeButton();
 
 }
