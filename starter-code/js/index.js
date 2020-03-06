@@ -41,16 +41,16 @@ window.addEventListener('load', () => {
 });
 
 // ITERATION 4
-const $removeBtn = document.getElementsByClassName("btn-remove");
+const $removeBtn = document.querySelectorAll(".btn-remove");
 console.log($removeBtn);
 
-for (let button of $removeBtn) {
-
+for (const button of $removeBtn) {
   button.onclick = function productRemoveListener(event) {
-  console.log("it's clicking")
-  }
+    console.log("it's clicking");
+    }
 };
 
+  
 // ITERATION 5
 
 const $createProduct = document.getElementById("create");
