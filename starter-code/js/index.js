@@ -15,8 +15,6 @@ function updateSubtotal($product) {
   return $subtotal.innerText = $price * $quantity;
   
 }
-//just console logging the result of the function -- NOT IN ORIGINAL CODE
-//updateSubtotal();
 
 function calculateAll() {
 
@@ -43,14 +41,66 @@ window.addEventListener('load', () => {
 });
 
 // ITERATION 4
+const $removeBtn = document.getElementsByClassName("btn-remove");
+console.log($removeBtn);
 
-function productRemoveListener(event) {
-  // ...
-}
+for (let button of $removeBtn) {
+
+  button.onclick = function productRemoveListener(event) {
+  console.log("it's clicking")
+  }
+};
 
 // ITERATION 5
 
-function createProduct(event) {
-  // ...
-  //grab the whole row and use innerHTML to change the values
+const $createProduct = document.getElementById("create");
+
+$createProduct.onclick = function createProduct(event) {
+  //console.log("You clicked the button.")
+
+  //------- TARGET NAME
+  const $name = document.querySelectorAll(".create-product input")[0].value;
+  //console.log($name)
+
+  //------- TARGET PRICE
+  const $price = document.querySelectorAll(".create-product input")[1].value;
+  //console.log($price);
+
+  
+  //------- CREATE NEW PRODUCT
+  const $newProduct = document.createElement("tr");
+  
+  $newProduct.innerHTML = document.querySelector(".product").innerHTML;
+
+  $newProduct.setAttribute("class", "product");
+  //console.log($newProduct)
+
+  //------- SETTING NEW PRODUCT NAME AND PRICE VALUES
+  //--- name
+  const $newProductName = document.querySelector(".product .name span");
+  
+  $newProductName.innerText = $name;
+  //console.log($newProductName)
+
+  //--- price
+  const $newProductPrice = document.querySelector(".product .price span");
+  
+  $newProductPrice.innerText = $price;
+
+
+
+  //------- ADD TO PARENT ELEMENT
+  const $parent = document.getElementsByTagName("tbody")[0];
+  //console.log($parent.childNodes);
+  $parent.appendChild($newProduct);
+  //console.log($parent);
+
+
+  //------- CLEAR INPUT FIELDS
+  let $clearName = document.querySelectorAll(".create-product input")[0];
+  $clearName.value = "";
+
+  let $clearPrice = document.querySelectorAll(".create-product input")[1];
+  $clearPrice.value = 0;
+
 }
