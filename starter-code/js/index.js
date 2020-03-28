@@ -37,10 +37,16 @@ window.addEventListener('load', () => {
 
 // ITERATION 4
 
+const removeButton = document.querySelectorAll(".btn-remove");
+
+
 function productRemoveListener(event) {
-  // ...
+  console.log("is this thing on");
 }
 
+for (let i = 0; i < removeButton.length;  i++) {
+  removeButton[i].onclick = productRemoveListener;
+}
 // ITERATION 5
 
 function createProduct(event) {
