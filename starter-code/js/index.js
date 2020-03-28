@@ -8,18 +8,21 @@ function updateSubtotal($product) {
 
   $product.querySelector('.subtotal > span').innerHTML =
     productPrice * productQuantity;
+
+  return productPrice * productQuantity;
 }
 
 function calculateAll() {
-
-  productArray = document.querySelectorAll(".product");
+  productArray = document.querySelectorAll('.product');
+  totalSum = 0;
 
   productArray.forEach(product => {
-    updateSubtotal(product);
+    totalSum += updateSubtotal(product);
   });
 
-  // ITERATION 3
-  //...
+  //and now we modify the total
+
+  
 }
 
 window.addEventListener('load', () => {
