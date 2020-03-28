@@ -31,18 +31,21 @@ function calculateAll() {
 window.addEventListener('load', () => {
   const $calculateTrigger = document.getElementById('calculate')
   $calculateTrigger.addEventListener('click', calculateAll);
-  let removeElemnts = document.querySelectorAll(".btn-remove");
-  console.log(removeElemnts)
+
+  const removeElemnts = document.querySelectorAll(".btn-remove");
   removeElemnts.forEach(elm => {
     elm.addEventListener('click', productRemoveListener);
   })
-});
 
+  const addNewProduct = document.getElementById('create')
+  addNewProduct.addEventListener('click', createProduct);
+});
 
 // ITERATION 4
 
 function productRemoveListener(event) {
   let node = event.currentTarget.parentNode.parentNode;
+  console.log(node)
   if (node.parentNode) {
     node.parentNode.removeChild(node);
   }
@@ -51,5 +54,18 @@ function productRemoveListener(event) {
 // ITERATION 5
 
 function createProduct(event) {
-  // ...
+  let newProduct = document.querySelector(".product")
+  let clone = newProduct.cloneNode(true);
+  document.querySelector("tbody").appendChild(clone);
+
+  let newProductName = document.querySelector('tfoot input').value
+  let addProductName = document.querySelector('.name span');
+  addProductName.innerHTML = newProductName;
+
+  let newProductPrice = document.querySelectorAll('tfoot input')[1].value
+  let addProductPrice = document.querySelector('.price span');
+  addProductPrice.innerHTML = newProductPrice;
+
+  let cleanNameContent = document.querySelectorAll('tfoot input')[0].value = "";
+  let cleanPriceContent = document.querySelectorAll('tfoot input')[1].value = "";
 }
