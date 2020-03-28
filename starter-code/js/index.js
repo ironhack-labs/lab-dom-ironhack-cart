@@ -36,12 +36,14 @@ window.addEventListener('load', () => {
 });
 
 // ITERATION 4
-
 const removeButton = document.querySelectorAll(".btn-remove");
+const tableBody = document.querySelector("tbody");
 
 
 function productRemoveListener(event) {
   console.log("is this thing on");
+  const productToBeRemoved = event.currentTarget.parentNode;
+  tableBody.removeChild(productToBeRemoved.parentNode);
 }
 
 for (let i = 0; i < removeButton.length;  i++) {
