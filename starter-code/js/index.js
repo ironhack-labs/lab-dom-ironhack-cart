@@ -20,9 +20,13 @@ function calculateAll() {
     totalSum += updateSubtotal(product);
   });
 
+  //totalSum gets rounded to 2 decimals (and converted into a string in the process but who's counting)
+
+  totalSum = totalSum.toFixed(2);
+
   //and now we modify the total
 
-  
+  document.querySelector('#total-value > span').innerHTML = totalSum;
 }
 
 window.addEventListener('load', () => {
