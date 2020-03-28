@@ -99,7 +99,7 @@ function productRemoveListener(event) {
 
 // Get the create product btn and add an event tha calls the function createProduct
 let getButtonNew = document.querySelector('.create-product .btn');
-getButtonNew.addEventListener('click', eraseValues)
+getButtonNew.addEventListener('click', createProduct)
 
 
 function createProduct(event) {
