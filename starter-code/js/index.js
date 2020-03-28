@@ -99,7 +99,7 @@ function productRemoveListener(event) {
 
 // Get the create product btn and add an event tha calls the function createProduct
 let getButtonNew = document.querySelector('.create-product .btn');
-getButtonNew.addEventListener('click', createProduct)
+getButtonNew.addEventListener('click', eraseValues)
 
 
 function createProduct(event) {
@@ -118,3 +118,11 @@ function createProduct(event) {
   parentProduct.appendChild(newProduct)
 
 }
+
+// function eraseValues(event) {
+//   let eraseProductName = document.querySelector('#new-name > input').value
+//   let erasePrice = document.getElementById('new-price')
+
+//   console.log(eraseProductName)
+//   eraseProductName.parentNode.removeChild(eraseProductName)
+// }
