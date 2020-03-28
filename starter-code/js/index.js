@@ -36,26 +36,39 @@ window.addEventListener('load', () => {
 });
 
 // ITERATION 4
-const removeButton = document.querySelectorAll(".btn-remove");
-const tableBody = document.querySelector("tbody");
-
+const removeButton = document.querySelectorAll('.btn-remove');
+const tableBody = document.querySelector('tbody');
 
 function productRemoveListener(event) {
   const productToBeRemoved = event.currentTarget.parentNode;
   tableBody.removeChild(productToBeRemoved.parentNode);
 }
 
-for (let i = 0; i < removeButton.length;  i++) {
+for (let i = 0; i < removeButton.length; i++) {
   removeButton[i].onclick = productRemoveListener;
 }
 // ITERATION 5
 
-const createButton = document.querySelector("#create");
+const createButton = document.querySelector('#create');
 
-createButton.onclick = createProduct
+createButton.onclick = createProduct;
 
 function createProduct(event) {
-
-  console.log("pogchamp");
+  const rowClone = document.querySelector('.product').cloneNode(true);
   
+  const inputName  = document.querySelector("#insert-name").value;
+  const inputPrice  = document.querySelector("#insert-price").value;
+  
+  const cloneName  = rowClone.querySelector(".name > span");
+  const clonePrice  = rowClone.querySelector(".price > span");
+  const cloneRemove =  rowClone.querySelector(".btn-remove");
+
+  cloneRemove.onclick = productRemoveListener;
+
+  cloneName.innerHTML = inputName;
+  clonePrice.innerHTML = inputPrice;
+
+  tableBody.appendChild(rowClone);
+  
+  console.log('pogchamp');
 }
