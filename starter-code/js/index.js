@@ -11,31 +11,22 @@ function updateSubtotal($product) {
   let subTotal = (price * quantity);
   let subTotalText = subTotal.toString();
   elementSubTotal.innerHTML = subTotalText;
+  return subTotal
 }
 
-let chooseProduct1 = document.querySelectorAll('.product')[1];
-console.log(chooseProduct1)
+let totalValue = document.querySelector('#total-value span').textContent;
+console.log(totalValue)
 
 function calculateAll() {
   const chooseProduct = document.querySelectorAll('.product');
-  //console.log(chooseProduct)
-  for (let i = 0; i < chooseProduct.length; i++) {
-    const $singleProduct = document.querySelectorAll('.product')[i];
-    updateSubtotal($singleProduct);
-    console.log($singleProduct)
-  }
-
-
-
-  // chooseProduct.forEach(elm => {
-  //   //console.log("Hola")
-  //   updateSubtotal(chooseProduct[elm]);
-  //   //console.log(chooseProduct[elm])
-  // })
-  // const $singleProduct = document.querySelectorAll('.product')[1];
-  // updateSubtotal($singleProduct);
-  // console.log($singleProduct)
-
+  let elementTotalValue = document.querySelector('#total-value span');
+  let totalValue = 0
+  chooseProduct.forEach(elm => {
+    totalValue += updateSubtotal(elm)
+    console.log(totalValue)
+  })
+  let totalText = totalValue.toString();
+  elementTotalValue.innerHTML = totalText;
 }
 
 window.addEventListener('load', () => {
