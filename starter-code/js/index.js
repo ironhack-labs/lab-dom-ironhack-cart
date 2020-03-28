@@ -1,32 +1,34 @@
 // ITERATION 1
-
 function updateSubtotal($product) {
-  let primera = document.querySelectorAll(".price > span");
-  let primeraTexto = [];
-  let unitPrice = [];
+  // Get every price and then, change them to numbers
+  let getPrice = document.querySelectorAll(".price > span");
+  let bePriceText = [];
+  let bePriceNum = [];
 
-  primera.forEach(elm => {
-    primeraTexto.push(elm.innerHTML);
+  getPrice.forEach(elm => {
+    bePriceText.push(elm.innerHTML);
   });
-  primeraTexto.forEach(elm => {
-    unitPrice.push(parseInt(elm, 10));
+  bePriceText.forEach(elm => {
+    bePriceNum.push(parseInt(elm, 10));
   });
-
+  // Get every quantity and set their value
   let numUnits = document.querySelectorAll(".quantity > input");
   let quantityProduct = [];
 
   numUnits.forEach(elm => {
-    quantityProduct.push(elm.getAttribute("value"));
+    quantityProduct.push(elm.value);
   });
 
+  // Get the product between price and quantity
   let multipliCate = [];
 
-  for (let i = 0; i < unitPrice.length; i++) {
+  for (let i = 0; i < bePriceNum.length; i++) {
     for (let k = 0; k < quantityProduct.length; k++) {
-      multipliCate.push(unitPrice[(i = k)] * quantityProduct[(k = i)]);
+      multipliCate.push(bePriceNum[(i = k)] * quantityProduct[(k = i)]);
     }
   }
 
+  // Change the subtotal value
   let substitute = document.querySelectorAll(".subtotal > span");
   let subTotal = [];
 
@@ -36,30 +38,42 @@ function updateSubtotal($product) {
     }
   }
 }
-updateSubtotal();
 
 function calculateAll() {
-  let getSubs = document.querySelectorAll(".subtotal span");
-  let subsToValue = [];
-  let valueToNums = [];
+  // ITERATION 2
+  // Get every subtotal in envey line of products
+  let getSubtotal = document.querySelectorAll('.product')
 
-  getSubs.forEach(elm => {
-    subsToValue.push(elm.innerHTML);
-  });
+  getSubtotal.forEach(elm => {
+    updateSubtotal(elm)
+  })
 
-  subsToValue.forEach(elm => valueToNums.push(parseInt(elm, 10)));
+  // ITERATION 3
+  // Get an array with all the subtotal prices and change them to numbers
+  let getTotal = document.querySelectorAll('.subtotal > span')
+  let totalToText = []
+  let goodTotal = []
 
-  let beSubTotal = document.querySelector("#total-value > span");
+  getTotal.forEach(elm => {
+    totalToText.push(elm.innerHTML)
+  })
+  totalToText.forEach(elm => {
+    goodTotal.push(parseInt(elm, 10))
+  })
+
+  // "sumar" every element in the previous array
   let sum = 0;
 
-  for (let i = 0; i < valueToNums.length; i++) {
-    sum += valueToNums[i];
-  }
+  goodTotal.forEach(elm => {
+    sum += elm
+  })
 
-  beSubTotal.innerHTML = sum;
+  let superTotal = document.querySelector('#total-value > span')
+
+  // Set the result in the Total when button is clicked
+  superTotal.innerHTML = sum
 }
 
-calculateAll();
 
 window.addEventListener("load", () => {
   const $calculateTrigger = document.getElementById("calculate");
@@ -69,6 +83,8 @@ window.addEventListener("load", () => {
 
 // ITERATION 4
 
+// Get every remove button and add an envent that calls the function productRemoveListener
+
 let getButtons = document.querySelectorAll(".btn.btn-remove");
 getButtons.forEach(elm => {
   elm.addEventListener("click", productRemoveListener);
@@ -76,18 +92,29 @@ getButtons.forEach(elm => {
 
 function productRemoveListener(event) {
   let chilDren = document.querySelector(".product");
-
+  // Get every product and then erase it 
   chilDren.parentNode.removeChild(chilDren);
-  calculateAll();
 }
-
 // ITERATION 5
 
-function createProduct(event) {
-  // ...
-}
+// Get the create product btn and add an event tha calls the function createProduct
+let getButtonNew = document.querySelector('.create-product .btn');
+getButtonNew.addEventListener('click', createProduct)
 
-// For development testing purposes, paste the following code inside of `calculateAll`:
-// const $singleProduct = document.querySelector('.product');
-// updateSubtotal($singleProduct);
-// End of test
+
+function createProduct(event) {
+  // Get values from the form
+  let getProductName = document.getElementById('new-name').value
+  let getPrice = document.getElementById('new-price').value
+
+  // Copy the product html and then assign the new values and the callback to the button
+  let newProduct = document.querySelector('#cart > tbody > tr').cloneNode(true)
+  newProduct.querySelector('.name span').innerHTML = getProductName
+  newProduct.querySelector('.price span').innerHTML = getPrice
+  newProduct.querySelector('.action .btn-remove').addEventListener('click', productRemoveListener)
+
+  // Set the new product inside de tdbody
+  let parentProduct = document.querySelector('#cart > tbody')
+  parentProduct.appendChild(newProduct)
+
+}
