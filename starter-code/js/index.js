@@ -11,8 +11,6 @@ function updateSubtotal($product) {
 }
 
 function calculateAll() {
-  // ITERATION 2
-  //...
   // ITERATION 3
   //...
 }
