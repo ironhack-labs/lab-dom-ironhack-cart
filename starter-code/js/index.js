@@ -11,6 +11,13 @@ function updateSubtotal($product) {
 }
 
 function calculateAll() {
+
+  productArray = document.querySelectorAll(".product");
+
+  productArray.forEach(product => {
+    updateSubtotal(product);
+  });
+
   // ITERATION 3
   //...
 }
