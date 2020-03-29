@@ -117,12 +117,7 @@ function createProduct(event) {
   let parentProduct = document.querySelector('#cart > tbody')
   parentProduct.appendChild(newProduct)
 
+
+  let clearProductName = document.querySelectorAll('tfoot input')[0].value = ""
+  let clearPrice = document.querySelectorAll('tfoot input')[1].value = ""
 }
-
-// function eraseValues(event) {
-//   let eraseProductName = document.querySelector('#new-name > input').value
-//   let erasePrice = document.getElementById('new-price')
-
-//   console.log(eraseProductName)
-//   eraseProductName.parentNode.removeChild(eraseProductName)
-// }
