@@ -67,8 +67,7 @@ function createProduct(event) {
 
   newProductLine.querySelector(".name span").innerHTML = newObjectName;
   newProductLine.querySelector(".price span").innerHTML = newObjectPrice;
-  newProductLine.querySelector(".btn-remove").onclick = () =>
-    newProductLine.querySelector(".btn-remove").parentNode.parentNode.remove();
+  newProductLine.querySelector(".btn-remove").onclick = () => newProductLine.querySelector(".btn-remove").parentNode.parentNode.remove();
 
   document.querySelector("tbody").appendChild(newProductLine); // Dudilla con esto
 
