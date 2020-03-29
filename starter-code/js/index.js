@@ -42,7 +42,7 @@ window.addEventListener('load', () => {
 
 // ITERATION 4
 
-let removeButtons = document.querySelectorAll(".btn-remove")
+let removeButtons = document.querySelectorAll(".btn-remove") // dentro de una función?
 
 function productRemoveListener(event) {
 
@@ -52,7 +52,6 @@ function productRemoveListener(event) {
   for (let i = 0; i < removeButtons.length; i++) {    // obtener objeto del nodo
     removeButtons[i].onclick = productRemoveListener
   }
-
 
 
 
