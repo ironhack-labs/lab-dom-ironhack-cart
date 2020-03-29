@@ -55,20 +55,22 @@ createButton.onclick = createProduct;
 
 function createProduct(event) {
   const rowClone = document.querySelector('.product').cloneNode(true);
-  
-  const inputName  = document.querySelector("#insert-name").value;
-  const inputPrice  = document.querySelector("#insert-price").value;
-  
-  const cloneName  = rowClone.querySelector(".name > span");
-  const clonePrice  = rowClone.querySelector(".price > span");
-  const cloneRemove =  rowClone.querySelector(".btn-remove");
+
+  let inputName = document.querySelector('#insert-name');
+  let inputPrice = document.querySelector('#insert-price');
+
+  const cloneName = rowClone.querySelector('.name > span');
+  const clonePrice = rowClone.querySelector('.price > span');
+  const cloneRemove = rowClone.querySelector('.btn-remove');
 
   cloneRemove.onclick = productRemoveListener;
 
-  cloneName.innerHTML = inputName;
-  clonePrice.innerHTML = inputPrice;
+  cloneName.innerHTML = inputName.value;
+  clonePrice.innerHTML = inputPrice.value;
 
   tableBody.appendChild(rowClone);
-  
-  console.log('pogchamp');
+
+  inputName.value = '';
+  inputPrice.value = 0;
+
 }
