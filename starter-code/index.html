@@ -18,41 +18,83 @@
           <th>Action</th>
         </tr>
       </thead>
+
       <tbody>
         <tr class="product">
           <td class="name">
-            <span>Ironhack Rubber Duck</span>
+            <span>Ironhack thermo</span>
           </td>
-          <td class="price">$<span>25.00</span></td>
+          <td class="price">€<span>25.00</span></td>
           <td class="quantity">
-            <input type="number" value="0" min="0" placeholder="Quantity" />
+            <input class="qty-arrow" type="number" value="0" min="0" placeholder="Quantity" />
           </td>
-          <td class="subtotal">$<span>0</span></td>
+          <td class="subtotal">€<span>0</span></td>
+          <td class="action">
+            <button class="btn btn-remove">Remove</button>
+          </td>
+        </tr>
+
+        <tr class="product">
+          <td class="name">
+            <span>Ironhack sticker</span>
+          </td>
+          <td class="price">€<span>5.00</span></td>
+          <td class="quantity">
+            <input class="qty-arrow" type="number" value="0" min="0" placeholder="Quantity" />
+          </td>
+          <td class="subtotal">€<span>0</span></td>
+          <td class="action">
+            <button class="btn btn-remove">Remove</button>
+          </td>
+        </tr>
+
+        <tr class="product">
+          <td class="name">
+            <span>Ironhack patch #TAIF</span>
+          </td>
+          <td class="price">€<span>10.00</span></td>
+          <td class="quantity">
+            <input class="qty-arrow" type="number" value="0" min="0" placeholder="Quantity" />
+          </td>
+          <td class="subtotal">€<span>0</span></td>
+          <td class="action">
+            <button class="btn btn-remove">Remove</button>
+          </td>
+        </tr>
+        <tr class="product">
+          <td class="name">
+            <span>Ironhack t-shirt</span>
+          </td>
+          <td class="price">€<span>30.00</span></td>
+          <td class="quantity">
+            <input class="qty-arrow" type="number" value="0" min="0" placeholder="Quantity" />
+          </td>
+          <td class="subtotal">€<span>0</span></td>
           <td class="action">
             <button class="btn btn-remove">Remove</button>
           </td>
         </tr>
       </tbody>
-      <!-- <tfoot>
+      <tfoot>
         <tr class="create-product">
           <td>
-            <input type="text" placeholder="Product Name" />
+            <input class="prod-name" type="text" placeholder="Product Name" />
           </td>
           <td>
-            <input type="number" min="0" value="0" placeholder="Product Price" />
+            <input class="prod-price" type="number" min="0" value="0" placeholder="Product Price" />
           </td>
           <td></td>
           <td></td>
           <td>
-            <button id="create" class="btn">Create Product</button>
+            <button id="create" class="btn btn-create">Create Product</button>
           </td>
         </tr>
-      </tfoot> -->
+      </tfoot>
     </table>
     <p class="calculate-total">
       <button id="calculate" class="btn btn-success">Calculate Prices</button>
     </p>
-    <h2 id="total-value">Total: $<span>0</span></h2>
+    <h2 id="total-value">Total: €<span>0</span></h2>
     <script type="text/javascript" src="./js/index.js"></script>
   </body>
 </html>
