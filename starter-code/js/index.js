@@ -45,7 +45,6 @@ window.addEventListener('load', () => {
 
 function productRemoveListener(event) {
   let node = event.currentTarget.parentNode.parentNode;
-  console.log(node)
   if (node.parentNode) {
     node.parentNode.removeChild(node);
   }
@@ -57,6 +56,8 @@ function createProduct(event) {
   let newProduct = document.querySelector(".product")
   let clone = newProduct.cloneNode(true);
   document.querySelector("tbody").appendChild(clone);
+  removeButton = clone.querySelector(".btn-remove");
+  removeButton.addEventListener('click', productRemoveListener);
 
   let newProductName = document.querySelector('tfoot input').value
   let addProductName = document.querySelector('.name span');
@@ -68,4 +69,6 @@ function createProduct(event) {
 
   let cleanNameContent = document.querySelectorAll('tfoot input')[0].value = "";
   let cleanPriceContent = document.querySelectorAll('tfoot input')[1].value = "";
+
+
 }
