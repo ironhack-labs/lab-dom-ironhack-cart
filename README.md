@@ -112,7 +112,7 @@ Complete the function named `calculateAll`. Its purpose, for now, is to call the
 
 ```js
 function calculateAll() {
-  // ...
+
 }
 
 $calculateTrigger.addEventListener('click', calculateAll);
