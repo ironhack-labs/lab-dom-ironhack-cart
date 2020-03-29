@@ -1,31 +1,6 @@
 // ITERATION 1
 
 function updateSubtotal($product) {
-  /*let everyProductArray = document.querySelectorAll(".product"); //Un Array con todos los productos
-
-  let productPrice;
-  let productQuantity;
-  let productSubtotal;
-
-  for (let i = 0; i < everyProductArray.length - 1; i++) {
-    
-    // tendría que conseguir el precio de cada producto del array, 
-    //es decir, para cada index encontrar la clase "price"
-    
-    productPrice = everyProductArray[i].querySelector(".price")
-    productQuantity = everyProductArray[i].querySelector(".quantity")
-    productSubtotal = productPrice * productQuantity
-
-  }
- 
-everyProductArray.forEach(elm => {
-    productPrice = elm.querySelector(".price")
-    productQuantity = elm.querySelector(".quantity")
-    productSubtotal = productPrice * productQuantity
-
-}) 
- 
-*/
   let productPriceNumber = parseInt(
     $product.querySelector(".price > span").innerHTML
   );
@@ -38,15 +13,24 @@ everyProductArray.forEach(elm => {
 }
 
 function calculateAll() {
-  // For development testing purposes, paste the following code inside of `calculateAll`:
-  const $singleProduct = document.querySelector(".product");
-  updateSubtotal($singleProduct);
-  // End of test
-
   // ITERATION 2
-  //...
+
+  let everyProductArray = document.querySelectorAll("#cart .product");
+
+  everyProductArray.forEach(elm => updateSubtotal(elm));
+
   // ITERATION 3
-  //...
+
+  let subtotalsArray = document.querySelectorAll(".subtotal span");
+  let subtotalSum = 0;
+
+  subtotalsArray.forEach(elm => {
+    let subtotalsNumber = parseInt(elm.innerHTML);
+
+    subtotalSum += subtotalsNumber;
+  });
+
+  document.querySelector("#total-value span").innerHTML = subtotalSum;
 }
 
 window.addEventListener("load", () => {
@@ -57,14 +41,36 @@ window.addEventListener("load", () => {
 
 // ITERATION 4
 
+let buttonArray = document.querySelectorAll(".btn-remove");
+
+buttonArray.forEach(elm =>
+  elm.addEventListener("click", productRemoveListener)
+);
+
 function productRemoveListener(event) {
-  // ...
+  event.currentTarget.parentNode.parentNode.remove();
 }
 
 // ITERATION 5
 
-function createProduct(event) {
-  // ...
-}
+let buttonCreate = document.querySelector(".create-product button");
 
-// ESTOY PROBANDO SSH
+buttonCreate.addEventListener("click", createProduct);
+
+function createProduct(event) {
+  textAndPriceArray = document.querySelectorAll("tfoot input");
+
+  let newObjectName = textAndPriceArray[0].value;
+  let newObjectPrice = textAndPriceArray[1].value;
+
+  let newProductLine = document.querySelector(".product").cloneNode(true); // Dudilla con esto
+
+  newProductLine.querySelector(".name span").innerHTML = newObjectName;
+  newProductLine.querySelector(".price span").innerHTML = newObjectPrice;
+  newProductLine.querySelector(".btn-remove").onclick = () =>
+    newProductLine.querySelector(".btn-remove").parentNode.parentNode.remove();
+
+  document.querySelector("tbody").appendChild(newProductLine); // Dudilla con esto
+
+  calculateAll();
+}
