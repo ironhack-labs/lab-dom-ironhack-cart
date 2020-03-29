@@ -71,74 +71,86 @@ function createProduct(event) {
 	let $productName = $createProductRow.querySelector("td input[placeholder='Product Name']")
 	let $productPrice = $createProductRow.querySelector("td input[placeholder='Product Price']")
 
+	
+	//En caso de que existan rows de product, podemos hacer un cloneNode.
+	//En caso contrario (por ejemplo, porque el usuario ha borrado TODOS los productos ANTES de crear un nuevo producto), habria que crear una row de cero
+	if (document.querySelector(".product") !== null) {
+		
+		let productRow = document.querySelector(".product")
+		let newProductRow = productRow.cloneNode(true)
+		
+		newProductRow.querySelector(".name span").innerHTML = $productName.value
+		newProductRow.querySelector(".price span").innerHTML = $productPrice.value
+		newProductRow.querySelector(".quantity input").setAttribute("value", "0")
+		newProductRow.querySelector(".subtotal span").innerHTML = 0
 
-	let $tbody = document.querySelector("tbody")
+		newProductRow.querySelector(".action button").addEventListener('click', productRemoveListener)
 
+		document.querySelector("tbody").appendChild(newProductRow)
 
-	// Creo que esto se podria Refactorizar Fuertemente, pero aún no sé cómo
+		
+	} else {
+			
+		let tr = document.createElement("tr")
+		tr.className = "product"
+	
+		let tdName = document.createElement("td")
+		tdName.className = "name"
+	
+		let spanName = document.createElement("span")
+		spanName.innerHTML = $productName.value
+	
+	
+	
+		let tdPrice = document.createElement("td")
+		tdPrice.className = "price"
+	
+		let spanPrice = document.createElement("span")
+		spanPrice.innerHTML = $productPrice.value
+	
+	
+	
+		let tdQty = document.createElement("td")
+		tdQty.className = "quantity"
+	
+		let inputQty = document.createElement("input")
+		inputQty.setAttribute("type", "number")
+		inputQty.setAttribute("value", "0")
+		inputQty.setAttribute("min", "0")
+		inputQty.setAttribute("placeholder", "Quantity")
+	
+	
+	
+		let tdSubtotal = document.createElement("td")
+		tdSubtotal.className = "subtotal"
+		tdSubtotal.innerHTML = "$"
+	
+		let spanSubtotal = document.createElement("span")
+		spanSubtotal.innerHTML = "0"
+	
+		let tdAction = document.createElement("td")
+		tdAction.className = "action"
+	
+		let buttonRemove = document.createElement("button")
+		buttonRemove.classList.add("btn", "btn-remove")
+		buttonRemove.innerHTML = "Remove"
+		buttonRemove.addEventListener('click', productRemoveListener)
+	
+		tr.appendChild(tdName).appendChild(spanName)
+		tr.appendChild(tdPrice).appendChild(spanPrice)
+		tr.appendChild(tdQty).appendChild(inputQty)
+		tr.appendChild(tdSubtotal).appendChild(spanSubtotal)
+		tr.appendChild(tdAction).appendChild(buttonRemove)
+		
+		document.querySelector("tbody").appendChild(tr)
 
-	let tr = document.createElement("tr")
-	tr.className = "product"
-
-	let tdName = document.createElement("td")
-	tdName.className = "name"
-
-	let spanName = document.createElement("span")
-	spanName.innerHTML = $productName.value
-
-
-
-	let tdPrice = document.createElement("td")
-	tdPrice.className = "price"
-
-	let spanPrice = document.createElement("span")
-	spanPrice.innerHTML = $productPrice.value
-
-
-
-	let tdQty = document.createElement("td")
-	tdQty.className = "quantity"
-
-	let inputQty = document.createElement("input")
-	inputQty.setAttribute("type", "number")
-	inputQty.setAttribute("value", "0")
-	inputQty.setAttribute("min", "0")
-	inputQty.setAttribute("placeholder", "Quantity")
-
-
-
-	let tdSubtotal = document.createElement("td")
-	tdSubtotal.className = "subtotal"
-	tdSubtotal.innerHTML = "$"
-
-	let spanSubtotal = document.createElement("span")
-	spanSubtotal.innerHTML = "0"
-
-	let tdAction = document.createElement("td")
-	tdAction.className = "action"
-
-	let buttonRemove = document.createElement("button")
-	buttonRemove.classList.add("btn", "btn-remove")
-	buttonRemove.innerHTML = "Remove"
-	buttonRemove.addEventListener('click', productRemoveListener)
-
-
-
-	tr.appendChild(tdName).appendChild(spanName)
-	tr.appendChild(tdPrice).appendChild(spanPrice)
-	tr.appendChild(tdQty).appendChild(inputQty)
-	tr.appendChild(tdSubtotal).appendChild(spanSubtotal)
-	tr.appendChild(tdAction).appendChild(buttonRemove)
-
-
-
-
-
-	document.querySelector("tbody").appendChild(tr)
-
-
-
-
+	}
+	
+	
+	let inputValues = $createProductRow.querySelectorAll("input")
+	inputValues.forEach(element => {
+		element.value = ""
+	});
 	
 	
 }
