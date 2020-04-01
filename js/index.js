@@ -38,6 +38,25 @@ function removeProduct(event) {
 // ITERATION 5
 
 function createProduct() {
+  const newProductName = document.querySelector(".new-product-name").value
+  const newProductPrice = document.querySelector(".new-product-price").value
+  const productTable = document.querySelector("tbody")
+  const newTable = document.createElement("tr")
+  newTable.innerHTML = `<tr class="product">
+  <td class="name">
+    <span>${newProductName}</span>
+  </td>
+  <td class="price">$<span>${newProductPrice}</span></td>
+  <td class="quantity">
+    <input type="number" value="0" min="0" placeholder="Quantity" />
+  </td>
+  <td class="subtotal">$<span>0</span></td>
+  <td class="action">
+    <button class="btn btn-remove">Remove</button>
+  </td>
+</tr>`
+productTable.appendChild(newTable)
+addEvents()
 }
 
 window.addEventListener('load', () => {
@@ -54,3 +73,18 @@ window.addEventListener('load', () => {
 
   //... your code goes here
 });
+
+function addEvents() {
+  const calculatePricesBtn = document.getElementById('calculate');
+  calculatePricesBtn.addEventListener('click', calculateAll);
+  
+  const removeButtons = document.querySelectorAll('.btn-remove');
+  removeButtons.forEach(button => button.addEventListener('click', removeProduct));
+
+  const createProductBtn = document.getElementById('create');
+  createProductBtn.addEventListener('click', createProduct);
+  
+
+
+  //... your code goes here
+}
