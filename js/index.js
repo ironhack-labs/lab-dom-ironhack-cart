@@ -21,22 +21,18 @@ function calculateAll() {
 }
 
 // ITERATION 4
-
 function removeProduct(event) {
-  const bisabuelo = event.currentTarget.parentNode.parentNode.parentNode;
-  const abuelo = event.currentTarget.parentNode.parentNode;
-  bisabuelo.removeChild(abuelo);
+  document.querySelector('tbody').removeChild(event.currentTarget.parentNode.parentNode);
 }
 
 // ITERATION 5
-
 function createProduct() {
   const newProductName = document.querySelector('.new-product-name');
   const newProductPrice = document.querySelector('.new-product-price');
   const productTable = document.querySelector('tbody');
   const newTable = document.createElement('tr');
   console.log(newProductPrice.value);
-
+  // Check if a new product has been added
   if (!newProductName.value) {
     window.alert('Please add product Name');
     return;
@@ -45,7 +41,6 @@ function createProduct() {
     window.alert('Please add product price');
     return;
   }
-
   newTable.innerHTML = `<tr class="product">
   <td class="name">
     <span>${newProductName.value}</span>
@@ -67,6 +62,7 @@ function createProduct() {
 }
 
 function addEventsToNewRmBnt() {
+  // add click listener to a button
   const removeButtons = document.querySelectorAll('.btn-remove');
   removeButtons.forEach(button => button.addEventListener('click', removeProduct));
 }
@@ -74,9 +70,7 @@ function addEventsToNewRmBnt() {
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
-
   const createProductBtn = document.getElementById('create');
   createProductBtn.addEventListener('click', createProduct);
-
   addEventsToNewRmBnt();
 });
