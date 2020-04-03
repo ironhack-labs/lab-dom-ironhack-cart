@@ -1,42 +1,79 @@
 // ITERATION 1
-
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
-
-  //... your code goes here
+  let priceElements = Number(product.querySelector(".price span").innerText);
+  let quantityElements = Number(product.querySelector(".quantity input").value); 
+  let total = priceElements * quantityElements; 
+  product.querySelector(".subtotal span").innerText = String(total);
+  return total
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
 
-  // ITERATION 2
-  //... your code goes here
+let myProducts = document.querySelectorAll(".product");
+let total = 0; // total de mes sb totaux
+myProducts.forEach((product)=>{
+  total += updateSubtotal(product);
+}); // 
 
-  // ITERATION 3
-  //... your code goes here
+let totalPrice = document.querySelector("#total-value span");
+totalPrice.innerText =String(total); 
 }
 
 // ITERATION 4
-
 function removeProduct(event) {
+
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+  // console.log('The target in remove is:', target);
+ const elementToRemove = target.parentNode.parentNode;
+ elementToRemove.remove();
+calculateAll();
 }
 
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+
+//DOM ELEMENTS
+let inputNewProductName = document.querySelector("#inputAddName");
+let inputNewProductPrice = document.querySelector("#inputAddPrice");
+
+// CLONE
+
+let row = document.querySelector(".product"); 
+let clone = row.cloneNode(true); 
+let table = document.querySelector("#cart");
+
+clone.innerHTML = ` <tr class="product">
+          <td class="name">
+            <span>${inputNewProductName.value}</span>
+          </td>
+          <td class="price">$<span>${inputNewProductPrice.value}</span></td>
+          <td class="quantity">
+            <input type="number" value="0" min="0" placeholder="Quantity">
+          </td>
+          <td class="subtotal">$<span>0</span></td>
+          <td class="action">
+            <button class="btn btn-remove">Remove</button>
+          </td>
+        </tr>`;
+
+ table.appendChild(clone); 
+
 }
 
-window.addEventListener('load', () => {
+
+window.addEventListener('click', () => {
+
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+const removeProductBtn = document.querySelectorAll('.btn.btn-remove');
+removeProductBtn.forEach((elm) =>{
+  elm.addEventListener("click", removeProduct)
 });
+
+const addProductBtn = document.querySelector('#create');
+addProductBtn.addEventListener('click', createProduct);
+
+});
+
