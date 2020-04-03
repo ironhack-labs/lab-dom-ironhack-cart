@@ -44,8 +44,8 @@ function removeProduct(event) {
 
 function createProduct() {
   const table = document.querySelector("tbody");
-  const nameInput = document.getElementById("first-input");
-  const priceInput = document.getElementById("second-input");
+  const nameInput = document.querySelector(".create-product input:first-child");
+  const priceInput = document.querySelector(".create-product input[type=number]");
   const products = document.querySelectorAll(".product");
   let givenName = nameInput.value;
   let givenPrice = priceInput.value;
