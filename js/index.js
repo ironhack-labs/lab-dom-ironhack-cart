@@ -63,8 +63,14 @@ calculateAll();
 
 function removeProduct(event) {
   const target = event.currentTarget;
+  // ^ when delete button is clicked, removeProduct() is called. the target element is the delete button itself.
   console.log('The target in remove is:', target);
-  //... your code goes here
+  console.log('The parent node of current target is: ' + target.parentNode.nodeName)
+  // ^since we don't just want to delete the remove button, we need to access the parentNode
+  let removedRow = target.parentNode.parentNode;
+  // ...and since the parentNode is TD (the cell housing the delete button), we must go up one to TD with another .parentNode
+  //console.log(removedRow.nodeName)
+  removedRow.remove();
 }
 
 // ITERATION 5
@@ -77,5 +83,13 @@ window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+  const removeBtns = document.getElementsByClassName("btn-remove");
+  // ^Identify remove btns in HTML --> [button.btn.btn-remove, button.btn.btn-remove, etc.]
+  
+  for(let i = 0; i < removeBtns.length; i++){
+    console.log("Remove button " + removeBtns[i])
+    document.getElementsByClassName("btn-remove")[i].addEventListener('click', removeProduct);
+  };
+  // ^loop through each remove button and add an event listener to call the removeProduct function on click.
+  
 });
