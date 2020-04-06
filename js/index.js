@@ -78,7 +78,31 @@ function removeProduct(event) {
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  const target = event.currentTarget;
+  console.log('The target in create is: ', target);
+  let createProduct = target.parentNode.parentNode;
+  console.log(createProduct.nodeName);
+  
+  let newItemName = document.querySelector("#cart > tfoot > tr > td:nth-child(1) > input[type=text]").value;
+  //console.log(newItemName);
+  let newItemPrice = document.querySelector("#cart > tfoot > tr > td:nth-child(2) > input[type=number]").value;
+  //console.log(newItemPrice);
+
+  document.querySelector('tbody').innerHTML +=
+    `<tr class="product">
+      <td class="name">
+        <span>${newItemName}</span>
+      </td>
+      <td class="price">$<span>${newItemPrice}</span></td>
+      <td class="quantity">
+        <input type="number" value="0" min="0" placeholder="Quantity" />
+      </td>
+      <td class="subtotal">$<span>0</span></td>
+      <td class="action">
+        <button class="btn btn-remove">Remove</button>
+      </td>
+    </tr>`
+
 }
 
 window.addEventListener('load', () => {
@@ -94,4 +118,8 @@ window.addEventListener('load', () => {
   };
   // ^loop through each remove button and add an event listener to call the removeProduct function on click.
   
+  const createNewItemBtn = document.getElementById('create');
+  createNewItemBtn.addEventListener('click', createProduct);
+
+
 });
