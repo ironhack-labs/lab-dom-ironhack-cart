@@ -67,10 +67,12 @@ function removeProduct(event) {
   console.log('The target in remove is:', target);
   console.log('The parent node of current target is: ' + target.parentNode.nodeName)
   // ^since we don't just want to delete the remove button, we need to access the parentNode
-  let removedRow = target.parentNode.parentNode;
-  // ...and since the parentNode is TD (the cell housing the delete button), we must go up one to TD with another .parentNode
+  let rowToRemove = target.parentNode.parentNode;
+  // ...and since the parentNode is TD (the cell housing the delete button), we must go up one to TR with another .parentNode
   //console.log(removedRow.nodeName)
-  removedRow.remove();
+  rowToRemove.remove();
+  calculateAll();
+  // ^recalculate total for remaining items
 }
 
 // ITERATION 5
