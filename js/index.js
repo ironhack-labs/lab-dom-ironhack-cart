@@ -3,19 +3,19 @@
 
 //const product = document.querySelector('.product');
 
-function updateSubtotal() {
+function updateSubtotal(product) {
   
   console.log('Calculating subtotal, yay!');
   
   //... your code goes here
-  let price = document.querySelector("#cart > tbody > tr > td.price > span").innerText;
-  let quantity = document.querySelector("#cart > tbody > tr > td.quantity > input[type=number]").value;
+  let price = product.querySelector(".price span").innerText;
+  let quantity = product.querySelector(".quantity input").value;
   
   // Calculate sub total
   let subTotal = price * quantity;
   
   // Target sub total
-  document.querySelector("#cart > tbody > tr > td.subtotal > span").innerText = subTotal;
+  product.querySelector(".subtotal span").innerHTML = subTotal;
   
   console.log(subTotal);
   // Return sub total
