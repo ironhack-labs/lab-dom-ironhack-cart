@@ -103,6 +103,10 @@ function createProduct() {
       </td>
     </tr>`
 
+  document.querySelector("#cart > tfoot > tr > td:nth-child(1) > input[type=text]").value = "";
+  document.querySelector("#cart > tfoot > tr > td:nth-child(2) > input[type=number]").value = "";
+  calculateAll();
+
 }
 
 window.addEventListener('load', () => {
