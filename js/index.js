@@ -9,15 +9,17 @@ function updateSubtotal(product) {
   
   //... your code goes here
   let price = product.querySelector(".price span").innerText;
+  console.log("Grabbing price from .price > span in HTML: " + price);
   let quantity = product.querySelector(".quantity input").value;
+  console.log("Grabbing quantity from .quantity > span in HTML: " + quantity);
   
   // Calculate sub total
   let subTotal = price * quantity;
   
   // Target sub total
   product.querySelector(".subtotal span").innerText = subTotal;
-  
-  console.log(subTotal);
+  console.log("Plugging new subtotals into HTML (price * quantity): " + subTotal);
+
   // Return sub total
   return subTotal;
   
@@ -36,20 +38,21 @@ function calculateAll() {
 
   // ITERATION 2
 let multipleItems = document.getElementsByClassName('product');
-console.log(multipleItems); 
 
 let total = 0;
 
-for(let i = 0; i < multipleItems.length; i++){
-  total += updateSubtotal(multipleItems[i]);
-  console.log("total: " + total);
+for(let i = 0; i < multipleItems.length; i++){ // For loop to iterate through each product in the HTML.
+  // Array multipleItems represents each product i.e., [tr.product1, tr.product2, tr.product3]. [i] therefore
+  // represents each individual product in the products array.
+  total += updateSubtotal(multipleItems[i]); // <-- For each product (multipleItems[i]), get the subtotal (using updateSubtotal fnctn.) and add it to counter (total).
+  console.log("Total: " + total);
 }
 // const newTotal = document.querySelector('#total-value span');
 // newTotal.innerHTML = total;
 
   // ITERATION 3
 
-document.querySelector("#total-value > span").innerHTML = total;
+document.querySelector("#total-value > span").innerHTML = total; //set the total of each item's subtotals to the overall total in HTML.
 
 }
 
