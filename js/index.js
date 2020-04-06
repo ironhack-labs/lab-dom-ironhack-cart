@@ -23,7 +23,7 @@ function calculateAll() {
   
   // Prend chaque sous-total pour les additionner :
   let total=0;
-  for (i=0; i<product.length; i++) {
+  for (let i=0; i<product.length; i++) {
     total += updateSubtotal(product[i]);
     // console.log(total) // Vérifier mon résultat
   }
@@ -46,24 +46,29 @@ function createProduct() {
   const priceInput = document.getElementById("new-product-price")
   let price = priceInput.value;
  
-  document.querySelector("tbody").innerHTML += `<tr class="product">
-    <td class="name">
-      <span>${name}</span>
-    </td>
-    <td class="price">$<span>${price}</span></td>
-    <td class="quantity">
-      <input type="number" value="0" min="0" placeholder="Quantity" />
-    </td>
-    <td class="subtotal">$<span>0</span></td>
-    <td class="action">
-      <button class="btn btn-remove">Remove</button>
-    </td>
-  </tr>`
+  let line = document.createElement("tr");
+  line.classList.add("product");
+  line.innerHTML = `
+  <td class="name">
+    <span>${name}</span>
+  </td>
+  <td class="price">$<span>${price}</span></td>
+  <td class="quantity">
+    <input type="number" value="0" min="0" placeholder="Quantity" />
+  </td>
+  <td class="subtotal">$<span>0</span></td>
+  <td class="action">
+    <button class="btn btn-remove">Remove</button>
+  </td>
+</tr>`;
+document.querySelector("tbody").appendChild(line);
+
 // Après avoir créé la nouvelle <tr> comprenant l'objet et le prix entrés, on reset ces valeurs dans la <tr> create product
   nameInput.value = "";
   priceInput.value = 0;
 
 // Je réactive les "Remove bnt" en recopiant la partie sur remove écrite dans window.addEventListener('load', () => {...}:
+// Car activés à la fin du chargement de la page, donc lorsque je clique après création d'un nouveau bloc, plus rien ne se passait
   const removeButton = document.querySelectorAll(".btn-remove");
 
   removeButton.forEach(function (element) {
@@ -75,8 +80,7 @@ function createProduct() {
 
 }
 // On réimplémente une fonction Remove ci-dessus, car en mettant cette ligne sous la fonction, le remove ne fonctionnait plus
-
-
+// document.getElementById("create").addEventListener("click", createProduct);
 
 window.addEventListener('load', () => {
   
