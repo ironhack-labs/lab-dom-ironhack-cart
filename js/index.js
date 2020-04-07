@@ -93,11 +93,9 @@ function createProduct() {
   const productParent = document.querySelector("tbody");
   productParent.appendChild(newTr);
 
-  bindRemoveButton(newTr.querySelector(".btn-remove")); //pasamos el botón
-}
+  const removeButton = newTr.querySelector(".btn-remove");
 
-function bindRemoveButton(btn) {
-  btn.addEventListener("click", removeProduct);
+  removeButton.addEventListener("click", removeProduct);
 }
 
 const allProducts = document.querySelectorAll(".product");
