@@ -39,7 +39,7 @@ console.log("create clicked");
 const target = event.currentTarget;
 tbody = document.querySelector('tbody');
 tfoot = document.querySelector('tfoot');
-let productName = "noName"; //just waiting to improve and check/tell for this error etc. so in the meaning products with no name will be noName
+let productName = "noName"; //just waiting to improve and check/tell for this error etc. so in the mean time products with no name will be noName
 if (tfoot.querySelector('input').value) productName = tfoot.querySelector('input').value;
 const productPrice = tfoot.querySelector('input[type=number]').value;
 tbody.innerHTML += ` <tr class="product">
@@ -55,6 +55,11 @@ tbody.innerHTML += ` <tr class="product">
   <button class="btn btn-remove">Remove</button>
 </td>
 </tr>`;
+const removeProductBtn = document.getElementsByClassName('btn-remove');
+const arrRemoveProductBtn = [...removeProductBtn];
+  arrRemoveProductBtn.forEach((product) => {
+    product.addEventListener('click', removeProduct);
+  });
 }
 
 window.addEventListener('load', () => {
