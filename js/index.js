@@ -1,42 +1,63 @@
-// ITERATION 1
-
+// Function to calculate the total price of each type of product
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
 
-  //... your code goes here
+  const price = parseFloat(product.querySelector('.price span').innerHTML);
+  const quantity = parseFloat(product.querySelector('.quantity input').value);
+  let subtotal = price * quantity;
+
+  return product.querySelector('.subtotal span').innerHTML = subtotal;
 }
 
+// Function to calculate the total of the products in the cart
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
+  const total = document.querySelectorAll('.product');
+  let totalGeneral = 0;
 
-  // ITERATION 2
-  //... your code goes here
+  for (let i = 0; i < total.length; i++) {
+    totalGeneral += updateSubtotal(total[i]);
+  }
 
-  // ITERATION 3
-  //... your code goes here
+  document.querySelector('#total-value span').innerHTML = totalGeneral;
 }
 
-// ITERATION 4
-
+// Remove the product from the cart
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
-  //... your code goes here
+
+  let firstParent = target.parentNode;
+  let grandParent = firstParent.parentNode;
+  let removeOneProduct = grandParent.parentNode.removeChild(grandParent);
+
+  calculateAll();
 }
 
-// ITERATION 5
-
+// Create a new product with a button
 function createProduct() {
-  //... your code goes here
+  let nameProduct = document.querySelector(".create-product input:first-child");
+  let namePrice = document.querySelector(".create-product td:nth-child(2) input");
+
+  let basicRow = document.querySelector("tbody tr");
+  let table = document.querySelector("tbody");
+
+  const newRow = basicRow.cloneNode(true);
+  table.appendChild(newRow);
+
+  newRow.querySelector(".name span").innerHTML = nameProduct.value;
+  newRow.querySelector(".price span").innerHTML = namePrice.value;
 }
 
+// Event listeners for calculate button and remove button
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+  const removeProductBtn = document.querySelectorAll('.btn-remove');
+  for (let i = 0; i < removeProductBtn.length; i++) {
+    removeProductBtn[i].addEventListener('click', removeProduct);
+  }
+
+  const addProductBtn = document.getElementById('create');
+  addProductBtn.addEventListener('click', createProduct);
 });
