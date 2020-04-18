@@ -59,5 +59,7 @@ window.addEventListener('load', () => {
   for (let i = 0; i < removeProductBtn.length; i++) {
     removeProductBtn[i].addEventListener('click', removeProduct);
   }
+  const addProductBtn = document.getElementById('create');
+  addProductBtn.addEventListener('click', createProduct);
 });
 //... your code goes here
