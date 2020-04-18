@@ -46,6 +46,7 @@ function createProduct() {
 
   newRow.querySelector(".name span").innerHTML = nameProduct.value;
   newRow.querySelector(".price span").innerHTML = namePrice.value;
+  newRow.querySelector('.btn-remove').addEventListener('click', removeProduct);
 }
 
 // Event listeners for calculate button and remove button
