@@ -1,3 +1,20 @@
+// Event for window load and new reload
+const newEvent = addEventListener('DOMContentLoaded', () => {
+  const calculatePricesBtn = document.getElementById('calculate');
+  calculatePricesBtn.addEventListener('click', calculateAll);
+
+  //Creating new products
+  const createProductBtn = document.querySelector('#create');
+  createProductBtn.addEventListener('click', createProduct);
+
+  //Remove Products
+  const removeProductsBtn = document.querySelectorAll('.btn-remove');
+  //adding the click event listener 
+  [...removeProductsBtn].forEach(btn =>
+    btn.addEventListener('click', removeProduct));
+
+});
+
 // ITERATION 1
 
 function updateSubtotal(product) {
@@ -26,14 +43,14 @@ function calculateAll() {
 
   // ITERATION 3  Total
 
-  const resultado = prices.reduce(function (acc, price) {
+  const result = prices.reduce(function (acc, price) {
     const total = acc + price;
     return total;
   }, 0)
 
-  document.querySelector("#total-value span").innerHTML = resultado;
+  document.querySelector("#total-value span").innerHTML = result;
 
-  return resultado;
+  return result;
 }
 
 //Bonus Iterations
@@ -52,23 +69,43 @@ function removeProduct(event) {
   calculateAll();
 }
 
-// ITERATION 5
+// ITERATION 5 Creating new products
 
 function createProduct() {
-  //... your code goes here
+
+  //Checking form values
+  const newProduct = document.querySelector('.create-product');
+  const newInput = newProduct.querySelectorAll('input');
+  const nameNewProduct = newInput[0].value;
+  const priceNewProduct = newInput[1].value;
+
+  //Clone Product Row
+  productRow = document.querySelector('.product');
+  productNewRow = productRow.cloneNode(true);
+
+  //Creating New Product Row
+  productNewRow.querySelector('.name span').innerHTML = nameNewProduct;
+
+  productNewRow.querySelector('.price span').innerHTML = priceNewProduct;
+
+  productNewRow.querySelector('.quantity input').value = 0;
+
+  productNewRow.querySelector('.subtotal').innerHTML = 0;
+
+  //Display New Product Row
+  productRow.parentElement.appendChild(productNewRow);
+
+  //Updating addEventListener
+  //productNewRow.newEvent;
+  //newEvent;
+  //newEvent();
+  //newEvent()();
+  //window.newEvent;
+
+  //Reset form
+  newInput[0].value = '';
+  newInput[1].value = 0;
+
 }
 
-window.addEventListener('load', () => {
-  const calculatePricesBtn = document.getElementById('calculate');
-  calculatePricesBtn.addEventListener('click', calculateAll);
-
-  //Remove Products
-
-  const removeProductsbtn = document.querySelectorAll('.btn-remove');
-  //adding the click event listener 
-  [...removeProductsbtn].forEach(btn =>
-    btn.addEventListener('click', removeProduct));
-
-
-  //... your code goes here
-});
+window.newEvent;
