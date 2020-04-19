@@ -12,7 +12,6 @@ const newEvent = addEventListener('DOMContentLoaded', () => {
   //adding the click event listener 
   [...removeProductsBtn].forEach(btn =>
     btn.addEventListener('click', removeProduct));
-
 });
 
 // ITERATION 1
@@ -92,20 +91,20 @@ function createProduct() {
 
   productNewRow.querySelector('.subtotal').innerHTML = 0;
 
-  //Display New Product Row
-  productRow.parentElement.appendChild(productNewRow);
-
   //Updating addEventListener
   //productNewRow.newEvent;
   //newEvent;
   //newEvent();
   //newEvent()();
   //window.newEvent;
+  productNewRow.querySelector('.btn-remove').addEventListener('click', removeProduct);
+
+  //Display New Product Row
+  productRow.parentElement.appendChild(productNewRow);
 
   //Reset form
   newInput[0].value = '';
   newInput[1].value = 0;
-
 }
 
 window.newEvent;
