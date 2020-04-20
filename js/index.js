@@ -35,37 +35,15 @@ function removeProduct(event) {
 // ITERATION 5
 
 function createProduct() {
-  
-  console.log('product to be created !')
   let table = document.querySelector("tbody")
-  let tr = document.createElement("TR");
-
   let newName = document.querySelector('#createName').value
   let newPrice = document.querySelector('#createPrice').value
-  let newItem = 
-  `
-  <tr class="product">
-    <td class="name">
-      <span>${newName}</span>
-    </td>
-    <td class="price">$<span>${newPrice}</span></td>
-    <td class="quantity">
-      <input type="number" value="0" min="0" placeholder="Quantity" />
-    </td>
-    <td class="subtotal">$<span>0</span></td>
-    <td class="action">
-      <button class="btn btn-remove">Remove</button>
-    </td>
-  </tr>
-  ` 
-
-  tr.setAttribute("class","product")
-  tr.innerHTML = newItem
-  table.appendChild(tr)
-
-  let lastButton = document.querySelectorAll(".btn-remove")
-  lastButton[lastButton.length-1].addEventListener('click', removeProduct)
-
+  let product = document.querySelector(".product")
+  let newItem = product.cloneNode(true)
+  newItem.querySelector(".name span").innerText = newName
+  newItem.querySelector(".price span").innerText = newPrice
+  newItem.querySelector(".btn-remove").addEventListener('click', removeProduct)
+  table.appendChild(newItem)
 }
 
 window.addEventListener('load', () => {
