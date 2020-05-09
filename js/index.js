@@ -1,7 +1,5 @@
-// ITERATION 1
+// ITERATION 1: This function calculates the subtotals of all the products in the cart.
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
-  //... your code goes here
   let $price = Number(product.querySelector('.price span').innerText);
   let $quantity = Number(product.querySelector('.quantity input').value);
   let $subTotal = $price * $quantity;
@@ -9,17 +7,8 @@ function updateSubtotal(product) {
   return $subTotal;
 }
 
-
-
+  // ITERATION 2: This function calculates the total price of all the products in the cart.
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-
-  // const singleProduct = document.querySelector('.product');
-  // updateSubtotal(singleProduct);
-  // end of test
-
-  // ITERATION 2
   const $allProducts = document.querySelectorAll('.product');
   let $totalPrice = 0;
   for (let i = 0; i < $allProducts.length ; i++){
@@ -27,24 +16,21 @@ function calculateAll() {
     $totalPrice += $subTotal;
   }
   
-  // ITERATION 3
+  // ITERATION 3: This line of code will update the total price upon changes in the products
   document.querySelector('#total-value span').innerText = $totalPrice;
 }
 
-// ITERATION 4
-
+// ITERATION 4: This function removes the products, event based
 function removeProduct(event) {
-  console.log('The target in remove is:', event);
+  // console.log('The target in remove is:', event);
 
-  //... your code goes here
   let $parentOfProducts = event.path[3];
   let $productToRemove = event.path[2]
   $parentOfProducts.removeChild($productToRemove);
   calculateAll();
 }
 
-// ITERATION 5
-
+// ITERATION 5: This function creates the product, event based and triggers the price update.
 function createProduct(){
   let $newProductElement = document.createElement('tr');
   let $newProductName = document.querySelectorAll('.create-product')[0].querySelectorAll('td')[0].querySelectorAll('input')[0].value;
@@ -69,12 +55,13 @@ function createProduct(){
   calculateAll();
 }
 
+// The event listener that is triggered on loading the page.
 window.addEventListener('load', () => {
+  let $arrayOfProductQuantities = document.querySelectorAll('.quantity');
   calculateAll();
   const $calculatePricesBtn = document.getElementById('calculate');
   $calculatePricesBtn.addEventListener('click', calculateAll);
   
-  //... your code goes here
   let $removeCartButtons = document.querySelectorAll('.btn-remove');
   for (let i = 0; i < $removeCartButtons.length; i++) {
     $removeCartButtons[i].addEventListener('click', removeProduct);
@@ -82,4 +69,13 @@ window.addEventListener('load', () => {
 
   let $addNewProduct = document.getElementById('create');
   $addNewProduct.addEventListener('click', createProduct);
+
+  // OWN ITERATION: This event listener is created to automatically update the subtotals upon changes in the products, works almost ;).
+  // let $arrayProductQuantityInputs = document.querySelectorAll('.quantity input');
+  // for (let i = 0; i < $arrayProductQuantityInputs.length; i++) {
+  //   ($arrayProductQuantityInputs[i].value).addEventListener('change', calculateAll);;
+  // }
+
 });
+
+// 
