@@ -71,11 +71,10 @@ window.addEventListener('load', () => {
   $addNewProduct.addEventListener('click', createProduct);
 
   // OWN ITERATION: This event listener is created to automatically update the subtotals upon changes in the products, works almost ;).
-  // let $arrayProductQuantityInputs = document.querySelectorAll('.quantity input');
-  // for (let i = 0; i < $arrayProductQuantityInputs.length; i++) {
-  //   ($arrayProductQuantityInputs[i].value).addEventListener('change', calculateAll);;
-  // }
-
+  let $arrayProductQuantityInputs = document.querySelectorAll('.quantity input');
+  for (let i = 0; i < $arrayProductQuantityInputs.length; i++) {
+    ($arrayProductQuantityInputs[i]).addEventListener('change', calculateAll);
+  }
 });
 
 // 
