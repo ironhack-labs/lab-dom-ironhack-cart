@@ -1,42 +1,81 @@
 // ITERATION 1
 
-function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
+let rowData;
 
-  //... your code goes here
+function updateSubtotal(product) {
+  console.log('Calculating subtotal, yay!');
+
+    let price = product.querySelector('.price span');
+    let quantity = product.querySelector('.quantity input');
+
+    price = price.innerHTML;
+    quantity = quantity.value;
+
+    let subtotal = product.querySelector('.subtotal span');
+    let total = price * quantity;
+    subtotal.innerHTML = total;
+  return total;
+
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
+  // // code in the following two lines is added just for testing purposes.
+  // // it runs when only iteration 1 is completed. at later point, it can be removed.
+  // const singleProduct = document.querySelector('.product');
+  // updateSubtotal(singleProduct); 
+  // // end of test
 
   // ITERATION 2
-  //... your code goes here
+  let cartRows = document.querySelectorAll('#cart .product');
+  console.log(cartRows);
+  let total = 0;
+  for (let row of cartRows) {
+    total += updateSubtotal(row);
+  }
 
   // ITERATION 3
-  //... your code goes here
+  let totalHTML = document.querySelector('#total-value span');
+  totalHTML.innerHTML = total;
 }
 
 // ITERATION 4
 
 function removeProduct(event) {
-  const target = event.currentTarget;
+  const target = event.currentTarget.parentNode.parentNode;
   console.log('The target in remove is:', target);
-  //... your code goes here
+  target.remove();
+  calculateAll();
 }
 
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  console.log('Tried to create project');
+  let pName = document.querySelector('.create-product input[type="text"]');
+  let pPrice = document.querySelector('.create-product input[type="number"]');
+
+  rowData.querySelector('.name span').innerHTML = pName.value;
+  rowData.querySelector('.price span').innerHTML = pPrice.value;
+
+  pName.value = '';
+  pPrice.value = 0;
+
+  let productList = document.querySelector('#cart tbody');
+  let newRow = productList.appendChild(rowData);
+  let newBtn = newRow.getElementsByClassName('btn-remove')[0];
+  newBtn.addEventListener('click', removeProduct);
 }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+  for (btn of document.getElementsByClassName('btn-remove')) {
+    btn.addEventListener('click', removeProduct);
+  }
+
+  document.getElementById('create').addEventListener('click', createProduct);
+
+  // cloned before the user can delete it
+  rowData = document.getElementsByClassName('product')[0].cloneNode(true);
 });
