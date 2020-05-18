@@ -11,10 +11,18 @@ function updateSubtotal(product) {
 function calculateAll() {
   // ITERATION 2
   const productList = [...document.getElementsByClassName('product')]
-  productList.forEach (product => updateSubtotal(product))
+  productList.forEach ((product) => {
+    updateSubtotal(product)
+  })
 
   // ITERATION 3
-  //... your code goes here
+  const total = document.querySelector('#total-value span') 
+  const everySubtotal = [...document.querySelectorAll('.subtotal span')]
+  
+  const addition = everySubtotal.reduce ((accum, subtotal ) => {
+    return accum += Number(subtotal.innerText)
+  }, 0)
+  total.innerText = addition
 }
 
 // ITERATION 4
