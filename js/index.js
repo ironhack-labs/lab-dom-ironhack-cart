@@ -28,10 +28,17 @@ function calculateAll() {
 // ITERATION 4
 
 function removeProduct (event) {
+  console.log("Hello")
   const target = event.currentTarget
   console.log('The target in remove is:', target)
+
+
   //... your code goes here
   const productTr = target.parentNode.parentNode
+  const total = document.querySelector('#total-value span') 
+  const subtotalTr = productTr.querySelector('.subtotal span')
+  total.innerText -= subtotalTr.innerText
+  console.log(productTr)
   productTr.remove()
 }
 
@@ -47,7 +54,7 @@ function createProduct () {
     <td class="name">
       <span>${inputs[0].value}</span>
     </td>
-    <td class="price">$<span>${inputs[1].value}</span></td>
+    <td class="price">$<span>${Number(inputs[1].value).toFixed(2)}</span></td>
     <td class="quantity">
       <input type="number" value="0" min="0" placeholder="Quantity" />
     </td>
@@ -56,6 +63,7 @@ function createProduct () {
       <button class="btn btn-remove">Remove</button>
     </td>
   </tr>`
+
 }
 
 window.addEventListener('load', () => {
