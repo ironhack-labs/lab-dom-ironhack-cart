@@ -48,6 +48,10 @@ function removeProduct(event) {
 
 function createProduct() {
   //... your code goes here
+  const getProduct = document.getElementById('product-name').value
+  const getPrice = document.getElementById('product-price').value
+  
+
 }
 
 window.addEventListener('load', () => {
@@ -60,4 +64,7 @@ window.addEventListener('load', () => {
   for (let i = 0; i < removeBtn.length; i ++){
     removeBtn[i].addEventListener('click', removeProduct, false)
   }
+
+  const createBtn = document.querySelector('.create-product')
+  createBtn.addEventListener('click', createProduct)
 });
