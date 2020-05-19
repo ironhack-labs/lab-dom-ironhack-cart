@@ -13,11 +13,14 @@ function calculateAll() {
 
   // ITERATION 2
   const products = document.getElementsByClassName("product");
-  [...products].forEach(element => updateSubtotal(element));
-  
+  const totalArray = [];
+  [...products].forEach(element => {
+    totalArray.push(updateSubtotal(element));
+  });  
 
   // ITERATION 3
-  
+  const totalValue = document.querySelector('#total-value > span');
+  totalValue.innerText = totalArray.reduce((acc,curr) => acc+curr,0);
 }
 
 // ITERATION 4
