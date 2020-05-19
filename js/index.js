@@ -19,21 +19,29 @@ function calculateAll() {
 
   // ITERATION 2
   //... your code goes here
-  const products = [...document.getElementsByClassName('product')];
-  products.forEach(el => updateSubtotal(el))
-  const totalPriceNode = document.querySelector('#total-value span').textContent
-  totalPriceNode.innerText = "hello"
-
   // ITERATION 3
   //... your code goes here
+  let acumTotal = 0
+  const products = [...document.getElementsByClassName('product')];
+  products.forEach(el => updateSubtotal(el))
+  const subTotals = [...document.querySelectorAll('.subtotal span')]
+  acumTotal = subTotals.reduce((acc, elem) => {
+    acc += Number(elem.innerText)
+    return acc
+  }, 0)
+  let totalNode = document.querySelector('#total-value span')
+  totalNode.innerHTML = acumTotal
+ 
 }
 
 // ITERATION 4
 
 function removeProduct(event) {
-  const target = event.currentTarget;
+  const target = event.currentTarget.parentNode.parentNode;
   console.log('The target in remove is:', target);
   //... your code goes here
+  target.remove()
+ 
 }
 
 // ITERATION 5
@@ -47,4 +55,9 @@ window.addEventListener('load', () => {
   calculatePricesBtn.addEventListener('click', calculateAll);
 
   //... your code goes here
+
+  const removeBtn = document.getElementsByClassName('btn btn-remove')
+  for (let i = 0; i < removeBtn.length; i ++){
+    removeBtn[i].addEventListener('click', removeProduct, false)
+  }
 });
