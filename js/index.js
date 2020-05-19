@@ -36,19 +36,54 @@ function initializeRemoveBtnEvents() {
   [...removeBtnsArray].forEach(element => element.addEventListener('click',removeProduct));
 }
 // ITERATION 5
-
+const productElementCopy = [];
 function createProduct() {
-  //... your code goes here
+
+  const newProduct = productElementCopy[0].cloneNode(true);
+
+  setNewProductValues(newProduct);
+
+  addProductToCartTable(newProduct);
+
 }
 
+function addProductToCartTable(newProduct) {
+  const cartProducts = document.querySelector('#cart tbody');
+  cartProducts.appendChild(newProduct);  
+}
+
+function setNewProductValues(newProduct) {
+
+  const productToCreate = document.querySelectorAll('.create-product > td > input');
+  const productToCreateArray = [...productToCreate].map(element => element.value);
+
+  //reset input values on create product bar
+  productToCreate[0].value = '';
+  productToCreate[1].value = '0';
+
+  //We know 1st element is the name and 2nd the price
+  newProduct.getElementsByClassName('name')[0].innerText = productToCreateArray[0];
+  newProduct.querySelector('.price > span').innerText = Number(productToCreateArray[1]).toFixed(2);
+  newProduct.querySelector('.subtotal span').innerText = '0';
+  newProduct.querySelector('.quantity input').value = '0';
+  newProduct.querySelector('.btn-remove').addEventListener('click',removeProduct);
+}
+
+function initializeCreateProductBtn() {
+  const createProductBtn = document.getElementById('create');
+  createProductBtn.addEventListener('click', createProduct);
+}
 
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
-
   //... your code goes here
   initializeRemoveBtnEvents();
+  initializeCreateProductBtn();
+  
+  //cache product element structure
+  productElementCopy.push(document.getElementsByClassName("product")[0]);  
 });
 
 
