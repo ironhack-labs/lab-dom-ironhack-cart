@@ -7,11 +7,16 @@ function updateSubtotal(product) {
   let sumSubTotal = 0
   product.forEach((el) => {
     const quantity = el.querySelector(".quantity > input").value
-    const price = el.querySelector(".price > span").innerText
-    const subTotal = quantity * price
+    let price = el.querySelector(".price > span").innerText
 
-    el.querySelector(".subtotal > span").innerText = subTotal
-    sumSubTotal += subTotal
+    if (price !== "Free item") {
+      let subTotal = quantity * price
+      el.querySelector(".subtotal > span").innerText = subTotal
+      sumSubTotal += subTotal
+    } else {
+      let subTotal = quantity * 0
+      sumSubTotal += subTotal
+    }
   })
 
   return sumSubTotal
@@ -77,9 +82,12 @@ function priceCell() {
   const priceCell = document.createElement("td")
   priceCell.classList = "price"
   if (itemPrice === "0") {
-    alert(`Please, insert an item price`)
+    //alert(`Please, insert an item price`)
+    spanTag.innerText = "Free item"
+    priceCell.appendChild(spanTag)
+    return priceCell
   } else {
-    spanTag.innerText = itemPrice
+    spanTag.innerText = Math.abs(itemPrice)
     priceCell.innerText = "$"
     priceCell.appendChild(spanTag)
     return priceCell
@@ -101,15 +109,22 @@ function quantityCell() {
 }
 
 function subtotalCell() {
+  const itemPrice = newItemValues()[1]
   const subtotalCell = document.createElement("td")
-  subtotalCell.className = "subtotal"
-  subtotalCell.innerText = "$"
-
   const spanTag = document.createElement("span")
-  spanTag.innerText = "0"
 
-  subtotalCell.appendChild(spanTag)
-  return subtotalCell
+  if (itemPrice !== "0") {
+    subtotalCell.className = "subtotal"
+    subtotalCell.innerText = "$"
+    spanTag.innerText = "0"
+    subtotalCell.appendChild(spanTag)
+    return subtotalCell
+  } else {
+    subtotalCell.innerText = ""
+    spanTag.innerText = "Free item"
+    subtotalCell.appendChild(spanTag)
+    return subtotalCell
+  }
 }
 
 function actionCell() {
@@ -119,6 +134,7 @@ function actionCell() {
   const removeBtn = document.createElement("button")
   removeBtn.className = "btn btn-remove"
   removeBtn.innerText = "Remove"
+  removeBtn.addEventListener("click", removeProduct)
 
   actionCell.appendChild(removeBtn)
   return actionCell
@@ -141,9 +157,9 @@ function newRow() {
 }
 
 function inputsReset() {
-  ;[...document.querySelectorAll(".create-product input")].map(
-    (el) => (el.value = "")
-  )
+  const inputs = [...document.querySelectorAll(".create-product input")]
+  inputs[0].value = ""
+  inputs[1].value = "0"
 }
 
 function createProduct() {
