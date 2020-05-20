@@ -70,10 +70,29 @@ h2,
   animation: delete 300ms forwards;
 }
 
+.fade-in {
+  animation: fade-in 300ms forwards;
+}
+
+.message {
+  padding: 0.75em 1em;
+  min-height: 2em;
+}
+
 @keyframes delete {
   100% {
     border-color: transparent;
     margin-right: 100px;
     opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
   }
 }

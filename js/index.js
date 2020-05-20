@@ -68,7 +68,8 @@ function nameCell() {
   nameCell.className = "name"
 
   if (!itemName) {
-    alert(`Please, insert an item name`)
+    const message = document.querySelector(".message")
+    message.innerText = "Please, insert an item name"
   } else {
     spanTag.innerText = itemName
     nameCell.appendChild(spanTag)
@@ -143,7 +144,7 @@ function actionCell() {
 function newRow() {
   const itemsTable = document.querySelector("#cart tbody")
   const newRow = document.createElement("tr")
-  newRow.className = "product"
+  newRow.setAttribute("class", "product fade-in")
 
   newRow.appendChild(nameCell())
   newRow.appendChild(priceCell())
@@ -160,6 +161,11 @@ function inputsReset() {
   const inputs = [...document.querySelectorAll(".create-product input")]
   inputs[0].value = ""
   inputs[1].value = "0"
+
+  const message = document.querySelector(".message")
+  if (message != "") {
+    message.innerText = ""
+  }
 }
 
 function createProduct() {

@@ -1,76 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width" name="viewport" />
-    <link href="./css/style.css" rel="stylesheet" />
-    <title>Ironhack Cart</title>
-  </head>
-  <body>
-    <h1>Ironhack Cart</h1>
-    <table id="cart">
-      <thead>
-        <tr>
-          <th>Product Name</th>
-          <th>Unit Price</th>
-          <th>Quantity</th>
-          <th>Subtotal</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr class="product">
-          <td class="name">
-            <span>Ironhack Rubber Duck</span>
-          </td>
-          <td class="price">$<span>25.00</span></td>
-          <td class="quantity">
-            <input min="0" placeholder="Quantity" type="number" value="0" />
-          </td>
-          <td class="subtotal">$<span>0</span></td>
-          <td class="action">
-            <button class="btn btn-remove">Remove</button>
-          </td>
-        </tr>
-        <tr class="product">
-          <td class="name">
-            <span>Ironhack Beach Towel</span>
-          </td>
-          <td class="price">$<span>29.99</span></td>
-          <td class="quantity">
-            <input min="0" placeholder="Quantity" type="number" value="0" />
-          </td>
-          <td class="subtotal">$<span>0</span></td>
-          <td class="action">
-            <button class="btn btn-remove">Remove</button>
-          </td>
-        </tr>
-      </tbody>
-      <tfoot>
-        <tr class="create-product">
-          <td>
-            <input placeholder="Product Name" type="text" />
-          </td>
-          <td>
-            <input
-              min="0"
-              placeholder="Product Price"
-              type="number"
-              value="0"
-            />
-          </td>
-          <td></td>
-          <td></td>
-          <td>
-            <button class="btn" id="create">Create Product</button>
-          </td>
-        </tr>
-      </tfoot>
-    </table>
-    <p class="calculate-total">
-      <button class="btn btn-success" id="calculate">Calculate Prices</button>
-    </p>
-    <h2 id="total-value">Total: $<span>0</span></h2>
-    <script src="./js/index.js" type="text/javascript"></script>
-  </body>
+    <head>
+        <meta charset="utf-8"/>
+        <meta content="width=device-width" name="viewport"/>
+        <link href="./css/style.css" rel="stylesheet"/>
+        <title>Ironhack Cart</title>
+    </head>
+    <body>
+        <h1>Ironhack Cart</h1>
+        <table id="cart">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Unit Price</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="product">
+                    <td class="name">
+                        <span>Ironhack Rubber Duck</span>
+                    </td>
+                    <td class="price">$<span>25.00</span>
+                    </td>
+                    <td class="quantity">
+                        <input min="0" placeholder="Quantity" type="number" value="0"/>
+                    </td>
+                    <td class="subtotal">$<span>0</span>
+                    </td>
+                    <td class="action">
+                        <button class="btn btn-remove">Remove</button>
+                    </td>
+                </tr>
+                <tr class="product">
+                    <td class="name">
+                        <span>Ironhack Beach Towel</span>
+                    </td>
+                    <td class="price">$<span>29.99</span>
+                    </td>
+                    <td class="quantity">
+                        <input min="0" placeholder="Quantity" type="number" value="0"/>
+                    </td>
+                    <td class="subtotal">$<span>0</span>
+                    </td>
+                    <td class="action">
+                        <button class="btn btn-remove">Remove</button>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr class="create-product">
+                    <td>
+                        <input placeholder="Product Name" type="text"/>
+                    </td>
+                    <td>
+                        <input min="0" placeholder="Product Price" type="number" value="0"/>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>
+                        <button class="btn" id="create">Create Product</button>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="message"></div>
+        <p class="calculate-total">
+            <button class="btn btn-success" id="calculate">Calculate Prices</button>
+        </p>
+        <h2 id="total-value">Total: $<span>0</span>
+        </h2>
+        <script src="./js/index.js" type="text/javascript"></script>
+    </body>
 </html>
