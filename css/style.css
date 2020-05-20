@@ -66,12 +66,13 @@ h2,
   text-align: center;
 }
 
-.deleted-item {
+.deleted-item > td {
   animation: delete 300ms forwards;
 }
 
 @keyframes delete {
   100% {
+    border-color: transparent;
     margin-right: 100px;
     opacity: 0;
   }
