@@ -122,6 +122,6 @@ window.addEventListener('load', () => {
     removeBtn[i].addEventListener('click', removeProduct, false)
   }
 
-  const createBtn = document.querySelector('.create-product')
+  const createBtn = document.querySelector('#create')
   createBtn.addEventListener('click', createProduct)
 });
