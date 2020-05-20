@@ -46,11 +46,68 @@ function removeProduct(event) {
 
 // ITERATION 5
 
+function _createAllNodes() {
+  const trProductNode = document.createElement('tr')
+  trProductNode.className = 'product'
+  const tdNameNode = document.createElement('td')
+  tdNameNode.className = 'name'
+  const spanNameNode = document.createElement('span')
+  tdNameNode.appendChild(spanNameNode)
+  trProductNode.appendChild(tdNameNode)
+  //
+  const tdPriceNode = document.createElement('td')
+  tdPriceNode.className = 'price'
+  tdPriceNode.innerHTML = '$'
+  const spanPriceNode = document.createElement('span')
+  tdPriceNode.appendChild(spanPriceNode)
+  trProductNode.appendChild(tdPriceNode)
+  //
+  const tdQuantityNode = document.createElement('td')
+  tdQuantityNode.className = 'quantity'
+  const inputQuantityNode = document.createElement('input')
+  inputQuantityNode.setAttribute('type', 'number')
+  inputQuantityNode.setAttribute('value', '0')
+  inputQuantityNode.setAttribute('min', '0')
+  tdQuantityNode.appendChild(inputQuantityNode)
+  trProductNode.appendChild(tdQuantityNode)
+
+  const tdSubtotalNode = document.createElement('td')
+  tdSubtotalNode.className = 'subtotal'
+  tdSubtotalNode.innerHTML = '$0'
+  const spanSubtotalNode = document.createElement('span')
+  tdSubtotalNode.appendChild(spanSubtotalNode)
+  trProductNode.appendChild(tdSubtotalNode)
+
+  const tdActionNode = document.createElement('td')
+  tdActionNode.className = 'action'
+  const btnActionNode = document.createElement('button')
+  btnActionNode.className = 'btn btn-remove'
+  btnActionNode.innerText = 'Remove'
+  btnActionNode.setAttribute('type', 'button')
+  btnActionNode.addEventListener('click', removeProduct)
+  tdActionNode.appendChild(btnActionNode)
+  trProductNode.appendChild(tdActionNode)
+
+  //debugger
+  return trProductNode
+  
+}
+
+
 function createProduct() {
   //... your code goes here
   const getProduct = document.getElementById('product-name').value
   const getPrice = document.getElementById('product-price').value
-  
+  const insertElemTbody = document.getElementsByTagName('tbody')[0]
+
+  const newProd = _createAllNodes()
+  insertElemTbody.appendChild(newProd)
+  const newProdName = newProd.querySelector('.name span')
+  newProdName.innerText = `${getProduct}`
+  const newProdPrice = newProd.querySelector('.price span')
+  newProdPrice.innerText = `${getPrice}`
+
+  insertElemTbody.appendChild(newProd)
 
 }
 
