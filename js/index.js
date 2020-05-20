@@ -19,7 +19,7 @@ function updateSubtotal(product) {
     }
   })
 
-  return sumSubTotal
+  return sumSubTotal.toFixed(2)
 }
 
 function calculateAll() {
