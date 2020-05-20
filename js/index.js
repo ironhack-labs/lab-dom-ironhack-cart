@@ -38,7 +38,7 @@ function calculateAll() {
   // ITERATION 3
   //... your code goes here
   const totalValue = document.querySelector("#total-value > span")
-  totalValue.innerText = total.toFixed(2)
+  totalValue.innerText = total
 }
 
 // ITERATION 4
