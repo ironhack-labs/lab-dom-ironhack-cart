@@ -62,6 +62,7 @@ function createProduct() {
   }
   inputs[0].value = ''
   inputs[1].value = 0
+  findRemoveButtons()
 }
 
 function findRemoveButtons (){
