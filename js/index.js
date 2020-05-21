@@ -29,8 +29,6 @@ function removeProduct(event) {
   const target = event.currentTarget;
   target.parentNode.parentNode.remove();
   calculateAll()
-  
-
 }
 
 // ITERATION 5
@@ -42,7 +40,9 @@ function createProduct() {
     alert ('You must enter a name and a price')
   } else {
     const table = document.getElementsByTagName('tbody')
-    table[0].innerHTML += `
+    
+    const newElement = document.createElement('tr')
+    newElement.innerHTML = `
     <tr class="product">
           <td class="name">
             <span>${name}</span>
@@ -57,7 +57,7 @@ function createProduct() {
           </td>
         </tr>
         `
-        findRemoveButtons()
+        table[0].appendChild(newElement)
 
   }
   inputs[0].value = ''
