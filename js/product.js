@@ -10,7 +10,6 @@ class Product {
     createProduct() {
       const newProduct = this._createNodoProduct()
       document.getElementsByTagName('tbody')[0].appendChild(newProduct)
-        
     }
 
     removeProduct(event) {
@@ -35,20 +34,6 @@ class Product {
         return this.product
 
     }
-
-    
-
-    // updateSubtotal(producto) {
-
-
-  
-    //   const quantity = product.querySelector('.subtotal span')
-    //   const price = parseFloat(product.querySelector('.price span').innerText);
-    //   const valueProduct = parseInt(product.querySelector('.quantity input').value);
-      
-    //   return quantity.innerText =  price * valueProduct
-    
-    // }
 
 }
  
