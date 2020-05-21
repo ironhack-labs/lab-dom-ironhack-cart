@@ -10,10 +10,20 @@ function updateSubtotal(product) {
   const subTotalValue = (price.innerText * quantity.value).toFixed(2)
 
   subTotal.innerText = subTotalValue  
+  return subTotalValue
 }
 
+// ITERATION 2
+
 function calculateAll() {
-products.forEach(updateSubtotal)
+  let sumTotal = 0 
+  const total = document.querySelector('#total-value span')
+
+  products.forEach((product) => {
+    sumTotal += parseFloat(updateSubtotal(product), 10)
+  })
+
+  total.innerText = sumTotal.toFixed(2)
 }
 
 // ITERATION 4
