@@ -47,10 +47,11 @@ function removeProduct(event) {
   const target = event.currentTarget
   console.log("The target in remove is:", target)
   //... your code goes here
-  const theSelectedRow = target.parentNode.parentNode.parentNode
-  target.parentNode.parentNode.setAttribute("class", "deleted-item")
+  const targetTrParent = target.closest("tbody")
+  const targetTr = target.closest("tr")
+  target.closest("tr").setAttribute("class", "deleted-item")
   setTimeout(() => {
-    theSelectedRow.removeChild(target.parentNode.parentNode)
+    targetTrParent.removeChild(targetTr)
     calculateAll()
   }, 300)
 }
