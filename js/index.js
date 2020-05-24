@@ -17,12 +17,10 @@ function calculateAll() {
   [...products].forEach(product => {
     subtotal += updateSubtotal(product);
   });
-  updateSubtotal(product);
-
   // ITERATION 3
+  document.querySelector('#total-value > span').innerText = subtotal;
   //... your code goes here
 }
-
 // ITERATION 4
 
 function removeProduct(event) {
