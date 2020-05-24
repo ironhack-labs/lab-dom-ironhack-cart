@@ -37,7 +37,7 @@ function createElement(tag, attributes, children, onClick) {
     children.forEach(child => element.appendChild(child));
   }
   if (onClick) {
-    element.addEventListener('click', onclick);
+    element.addEventListener('click', onClick);
   }
   return element
 }
@@ -78,8 +78,8 @@ row.appendChild(subtotalTd);
 
 // create column with action
 
-const actionSpan = createElement('button', {class: 'btn btn-remove'}, [document.createTextNode('Remove')], removeProduct);
-const actionTd = createElement('td', {class: 'action'}, [actionSpan]);
+const actionSpan = createElement('button', { class: 'btn btn-remove' }, [document.createTextNode('Remove')], removeProduct);
+const actionTd = createElement('td', { class: 'action' }, [actionSpan]);
 row.appendChild(actionTd);
 
 return row
