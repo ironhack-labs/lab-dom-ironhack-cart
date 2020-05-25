@@ -11,8 +11,7 @@ class Cart {
         if (!this.findProductByName(product.name)) {
             this.products.push([product, 0])
         } else {
-            this.updateProduct(product.name)
-            this.updateProduct(product.price)
+            this.updateProduct(product.name, product.price)
         }
         this.printProducts()
     }
@@ -28,68 +27,86 @@ class Cart {
         })
         return productFound
     }
-    updateProduct(value) {
+    updateProduct(name, price, quantity) {
         this.products.forEach(product => {
-            if (product[0].name === value) {
-                product[1]++
-            }
-            if (product[0].price !== value) {
-                product[0].price = value
+            if (product[0].name === name) {
+                if (price.length !== 0 && product[0].price !== price) {
+                    product[0].price = price
+                }
+                quantity ? product[1] = quantity : product[1]++
             }
         })
     }
-    removeProducts(product) {
-        // TODO: find on this.products and delete this position on array
-        this.printProducts()
+    removeProducts(name) {
+        this.products.forEach(product => {
+            if (product[0].name === name) {
+                // TODO: Delete this product
+                console.log('Remove')
+                this.printProducts()
+            }
+        })
     }
 
     changeQuantity(product, quantity) {
-        //  Find product modify quantity and modify subtotalr poduct on view
-        this.calcTotal()
+        //  Find product modify quantity and modify subtotal product on view
+        // this.updateProduct(product.name, product.price, quantity)
+        // this.printTotal()
+        // this.printProducts()
     }
     calcTotal() {
         // TODO: refresh total sum all (product quantity * product price)
-
     }
-    setAttrs(element, attrs) {
-        for (let key in attrs) {
-            element.setAttribute(key, attrs[key]);
+    createElements(tag, attrs, children, actions) {
+        const element = document.createElement(tag)
+        if (tag) {
+            if (attrs) {
+                Object.entries(attrs).forEach(values =>
+                    element.setAttribute(values[0], values[1])
+                )
+            }
         }
+        if (children) {
+            children.forEach(child => element.appendChild(child))
+        }
+
         return element
     }
     subTotalProduct(price, quantity) {
-        return price * quantity
+        return Number(price * quantity)
     }
     printProducts() {
         const tableBody = document.querySelector('#cart tbody')
         tableBody.innerHTML = ''
         this.products.forEach(product => {
-            const quantityAttrs = { 'type': 'number', 'value': 0, 'min': 0, 'placeholder': 'Quantity' }
-            const tr = document.createElement('tr')
-            tr.className = 'product'
-            tr.appendChild(document.createElement('td')).className = 'name'
-            tr.querySelector('.name').appendChild(document.createElement('span')).innerText = product[0].name
-            tr.appendChild(document.createElement('td')).className = 'price'
-            tr.querySelector('.price').innerText = '$'
-            tr.querySelector('.price').appendChild(document.createElement('span')).innerText = Number(product[0].price).toFixed(2)
-            tr.appendChild(document.createElement('td')).className = 'quantity'
-            tr.querySelector('.quantity').appendChild(this.setAttrs(document.createElement('input'), quantityAttrs))
-            tr.querySelector('.quantity input').setAttribute('value', product[1])
-            tr.appendChild(document.createElement('td')).className = 'subtotal'
-            tr.querySelector('.subtotal').innerText = '$'
-            tr.querySelector('.subtotal').appendChild(document.createElement('span')).innerText = this.subTotalProduct(Number(product[0].price).toFixed(2), product[1])
-            tr.appendChild(document.createElement('td')).className = 'action'
-            tr.querySelector('.action').appendChild(document.createElement('button')).className = 'btn btn-remove'
-            tr.querySelector('.action button').innerText = 'Remove'
+            const tr = this.createElements('tr', { class: 'product' })
+            const contentName = this.createElements('span', undefined, [document.createTextNode(product[0].name)])
+            const tdName = this.createElements('td', { class: 'name' }, [contentName])
+            tr.appendChild(tdName)
+            const contentPrice = this.createElements('span', undefined, [document.createTextNode(Number(product[0].price).toFixed(2))])
+            const tdPrice = this.createElements('td', { class: 'price' }, [document.createTextNode('$'), contentPrice])
+            tr.appendChild(tdPrice)
+            const contentQuantity = this.createElements('input', { type: 'number', value: Number(product[1]), min: 0 })
+            contentQuantity.addEventListener('click', () => {
+                this.removeProducts(product[0].name)
+            })
+            const tdQuantity = this.createElements('td', { class: 'quantity' }, [contentQuantity])
+            tr.appendChild(tdQuantity)
+            const contentSubtotal = this.createElements('span', undefined, [document.createTextNode(this.subTotalProduct(Number(product[0].price).toFixed(2), product[1]))])
+            const tdSubtotal = this.createElements('td', { class: 'subtotal' }, [document.createTextNode('$'), contentSubtotal])
+            tr.appendChild(tdSubtotal)
+            const contentAction = this.createElements('button', { class: 'btn btn-remove' }, [document.createTextNode('Remove')])
+            contentAction.addEventListener('click', () => {
+                this.removeProducts(product[0].name)
+            })
+            const tdAction = this.createElements('td', { class: 'action' }, [contentAction])
+            tr.appendChild(tdAction)
             tableBody.appendChild(tr)
         });
-
     }
     printTotal() {
         document.querySelector('#total-value span').innerText = this.total
     }
 }
-
 
 class Product {
     constructor(name, price) {
@@ -134,6 +151,7 @@ theCart.printTotal()
 
 window.addEventListener('load', () => {
     const newProductBtn = document.getElementById('create')
+    const calculateBtn = document.getElementById('calculate')
 
     newProductBtn.addEventListener('click', () => {
         const name = document.querySelector('.create-product input[type=text]').value
