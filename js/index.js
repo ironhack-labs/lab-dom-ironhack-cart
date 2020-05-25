@@ -7,54 +7,51 @@ class Cart {
         this.total = 0
     }
 
+    productExist(name) {
+        let productExist = ''
+        this.products.forEach(product => {
+            if (product[0].name === name) {
+                productExist = true
+            } else {
+                productExist = false
+            }
+        })
+        return productExist
+    }
     addProducts(product) {
-        if (!this.findProductByName(product.name)) {
+        if (!this.productExist(product.name)) {
             this.products.push([product, 0])
         } else {
             this.updateProduct(product.name, product.price)
         }
         this.printProducts()
     }
-    findProductByName(name) {
-        let productFound = ''
-        this.products.forEach(product => {
-            if (product[0].name === name) {
-                product[1]++
-                    productFound = true
-            } else {
-                productFound = false
-            }
-        })
-        return productFound
-    }
     updateProduct(name, price, quantity) {
         this.products.forEach(product => {
             if (product[0].name === name) {
                 if (price.length !== 0 && product[0].price !== price) {
                     product[0].price = price
+                } else {
+                    quantity ? product[1] = quantity : product[1]++
                 }
-                quantity ? product[1] = quantity : product[1]++
             }
         })
     }
     removeProducts(name) {
-        this.products.forEach(product => {
+        this.products.filter(product => {
             if (product[0].name === name) {
-                // TODO: Delete this product
-                console.log('Remove')
-                this.printProducts()
+                const index = this.products.indexOf(product)
+                this.products.splice(index, 1)
             }
         })
+        this.printProducts()
     }
 
-    changeQuantity(product, quantity) {
-        //  Find product modify quantity and modify subtotal product on view
-        // this.updateProduct(product.name, product.price, quantity)
-        // this.printTotal()
-        // this.printProducts()
-    }
     calcTotal() {
-        // TODO: refresh total sum all (product quantity * product price)
+        const subtotalsArr = document.querySelectorAll('.subtotal span')
+        this.total = 0
+        subtotalsArr.forEach(value => this.total += Number(value.innerText))
+        this.printTotal()
     }
     createElements(tag, attrs, children, actions) {
         const element = document.createElement(tag)
@@ -68,9 +65,9 @@ class Cart {
         if (children) {
             children.forEach(child => element.appendChild(child))
         }
-
         return element
     }
+
     subTotalProduct(price, quantity) {
         return Number(price * quantity)
     }
@@ -86,8 +83,10 @@ class Cart {
             const tdPrice = this.createElements('td', { class: 'price' }, [document.createTextNode('$'), contentPrice])
             tr.appendChild(tdPrice)
             const contentQuantity = this.createElements('input', { type: 'number', value: Number(product[1]), min: 0 })
-            contentQuantity.addEventListener('click', () => {
-                this.removeProducts(product[0].name)
+            contentQuantity.addEventListener('change', () => {
+                this.updateProduct(product[0].name, product[0].price, contentQuantity.value)
+                tr.querySelector('.subtotal span').innerText = this.subTotalProduct(Number(product[0].price).toFixed(2), product[1])
+                this.calcTotal()
             })
             const tdQuantity = this.createElements('td', { class: 'quantity' }, [contentQuantity])
             tr.appendChild(tdQuantity)
@@ -102,6 +101,7 @@ class Cart {
             tr.appendChild(tdAction)
             tableBody.appendChild(tr)
         });
+        this.calcTotal()
     }
     printTotal() {
         document.querySelector('#total-value span').innerText = this.total
@@ -116,7 +116,6 @@ class Product {
 }
 const theCart = new Cart
 theCart.printProducts()
-theCart.printTotal()
 
 // function updateSubtotal(product) {
 //     // console.log('Calculating subtotal, yey!')
@@ -151,7 +150,7 @@ theCart.printTotal()
 
 window.addEventListener('load', () => {
     const newProductBtn = document.getElementById('create')
-    const calculateBtn = document.getElementById('calculate')
+    document.getElementById('calculate').style.display = "none"
 
     newProductBtn.addEventListener('click', () => {
         const name = document.querySelector('.create-product input[type=text]').value
@@ -160,6 +159,5 @@ window.addEventListener('load', () => {
             throw new Error('¡Need name, please!')
         }
         theCart.addProducts(new Product(name, price))
-        theCart.printProducts()
     })
 })
