@@ -6,8 +6,8 @@ function updateSubtotal(product) {
   const price = Number(product.querySelector('.price span').innerText)
   const quantity = product.querySelector('.quantity input').value
   const subtotal = price * quantity
-  product.querySelector('.price span').innerText = subtotal
-  return subtotal
+  product.querySelector('.subtotal span').innerText = subtotal
+  return subtotal;
 }
 
 function calculateAll() {
@@ -37,8 +37,8 @@ function removeProduct(event) {
   productParent.removeChild(product)
 }
 
-const removeBtns = document.querySelectorAll('.btn-remove');
-  [...removeBtns].forEach(btn => btn.addEventListener('click', removeProduct))
+const removeButton = document.querySelectorAll('.btn-remove');
+  [...removeButton].forEach(btn => btn.addEventListener('click', removeProduct))
 
 // ITERATION 5
 
