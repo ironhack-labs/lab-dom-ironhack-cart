@@ -22,13 +22,17 @@ function calculateAll() {
   
   // ITERATION 2
   //... your code goes here
+  let subTotal = 0;
+
   let allProducts = document.getElementsByClassName('product');
   [...allProducts].forEach(product => {
-    updateSubtotal(product)  
+    subTotal += updateSubtotal(product)  
   });
-  
+  console.log([...allProducts])
   // ITERATION 3
   //... your code goes here
+  document.querySelector('#total-value > span').innerHTML = subTotal;
+  
 }
 
 // ITERATION 4
