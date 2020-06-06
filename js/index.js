@@ -81,12 +81,21 @@ function removeProduct(event) {
   const cell = target.parentNode.parentNode //¿EXISTE ALGUNA MANERA MÁS-MEJOR DE HACER ESTO?
   // console.log(cell.parentNode)
 
+
   // //CELL sería la TR, su parent node TBODY
   // cell.parentNode.removeChild(cell)
 
-  //ALTERNATIVA MÉTODO
-  cell.remove();
+  // //COMPROBAR QUE QUEDE AL MENOS UNA CELDA
+  // let rowNum = document.querySelectorAll('.table-body tr')
+  // rowNum = rowNum.lenght
+  // console.log("NUEMRO DE ROWS QUE QUEDAN" + rowNum)
+  // if (rowNum == 2) {
+  //   alert('wARNING: let at least one product on the table')
+  // } else {
+  //   cell.remove();
+  // }
 
+  cell.remove();
   calculateAll()
 }
 
