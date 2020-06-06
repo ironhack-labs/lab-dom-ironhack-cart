@@ -1,3 +1,9 @@
+// TODO final 3 iteración con return
+//let total = calculateAll()
+//function showTotal(total)...
+//pintar el total mediante return
+
+
 // ITERATION 1
 
 function updateSubtotal(product) {
@@ -70,15 +76,16 @@ function calculateAll() {
 // ITERATION 4
 
 function removeProduct(event) {
-  const target = event.currentTarget; //BUSCAR DOCU CURRENTTARGET
+  const target = event.currentTarget;
   console.log('The target in remove is:', target);
-  //... your code goes here
   const cell = target.parentNode.parentNode //¿EXISTE ALGUNA MANERA MÁS-MEJOR DE HACER ESTO?
+  // console.log(cell.parentNode)
 
-  console.log(cell.parentNode)
+  // //CELL sería la TR, su parent node TBODY
+  // cell.parentNode.removeChild(cell)
 
-  //CELL sería la TR, su parent node TBODY
-  cell.parentNode.removeChild(cell)
+  //ALTERNATIVA MÉTODO
+  cell.remove();
 
   calculateAll()
 }
@@ -90,37 +97,67 @@ function createProduct() {
   const name = document.querySelector('.new-element-name').value
   const price = document.querySelector('.new-element-price').value
 
-  //TODO VALIDAR ANTES DE MANDAR
-  // if (price != 0 && name != " ") {
-  //   //createRow(name, price)
-  // } else {
-  //   alert(`Please, insert a Product Name and a quantity`)
-  // }
-  // console.log(name)
-
   createRow(name, price)
 }
 
 function createRow(firstCell, secondCell) {
+  //VALIDACIÓN ----- (QUIZÁ DEBERÍA IR EN CREATEPRODUCT?)
+  if (firstCell == "") {
+    alert('Please, enter a Product Name')
+  } else {
+    //CREAR TR METODO CLONE
+    let originalTr = document.querySelector('.product')
+    let clonedTr = originalTr.cloneNode(true)
+    document.querySelector('.table-body').appendChild(clonedTr)
 
-  //TODO PINTAR LA ROW CREADA
-  //ASÍ NO ME LO PINTA EN EL HTML:
+    //CARGAR INPUT
+    document.querySelector('.name span').innerHTML = firstCell
+    document.querySelector('.price span').innerHTML = secondCell
+
+    //FORZAR EL REMOVEBTN AQUÍ PARA QUE IDENTIFIQUE LOS BTNS NUEVOS
+    const removeBtn = document.querySelectorAll('.remove')
+    for (let index = 0; index < removeBtn.length; index++) {
+      removeBtn[index].addEventListener('click', removeProduct)
+    }
+  }
+
+
+  //*--- INTENTOS QUE LUEGO ERAN INNECESARIOS!!! ---*/
+  //CREAR TD > CON FOR
+  //const tdClassNames = ['name', 'price', 'quantity', 'subtotal', 'action']
+  //GENERAR TANTAS TD COMO CLASES HAYA Y ASIGNARLAS
+  // for (let index = 0; index < tdClassNames.length; index++) {
+  //   //let className = "tdClassNames[0]"
+  //   let newTd = document.querySelector('.product').insertCell()
+  //   newTd.setAttribute('class', tdClassNames[index])
+  //   console.log(`Creada la celda de ${tdClassNames[index]}`)
+  // }
+  // CREAR TD > CON METODO CLONE
+  //let original = document.querySelectorAll('td')
+  //for (let index = 0; index < 5; index++) {
+  //   let cloned = original[index].cloneNode(true)
+  //   console.log(cloned)
+  //   document.querySelector('.product').appendChild(cloned)
+  // }
+  //CREAR TR
   // let newRow = document.createElement('tr')
   // newRow.setAttribute('class', 'product')
-
-  // console.log(document.querySelector('.table-body'))
   // document.querySelector('.table-body').appendChild(newRow)
+  //CREAR TR METODO INSERTROW
+  // let newTr = document.querySelector('.table-body').insertRow()
+  // newTr.setAttribute('class', 'product')
+  // newTr.setAttribute('class', 'newTr')
+  // document.querySelector('.table-body').appendChild(newTr)
 
-  //TAMPOCO ME PINTA
-  document.querySelector('.table-body').insertRow()
+
 }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
+  //PROBLEMA PARA PASALRE LOS BOTONES NUEVOS
   const removeBtn = document.querySelectorAll('.remove')
-
   for (let index = 0; index < removeBtn.length; index++) {
     removeBtn[index].addEventListener('click', removeProduct)
   }
