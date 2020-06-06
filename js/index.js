@@ -36,6 +36,8 @@ function calculateAll() {
    // ITERATION 3
   //... your code goes here
   document.querySelector('#total-value span').innerHTML = sumAll
+
+
 }
 
 
@@ -47,6 +49,7 @@ function removeProduct(event) {
   const target = event.currentTarget;
   target.parentNode.parentNode.remove()
 
+  calculateAll()
 
 }
 
