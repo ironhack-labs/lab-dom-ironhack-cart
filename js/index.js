@@ -46,6 +46,25 @@ function removeProduct(event) {
 
 function createProduct() {
   //... your code goes here
+  let originalNode = document.querySelector(".product")
+  let customNode = originalNode.cloneNode(true) // copy of product node
+  
+  let nameCustomItem = customNode.querySelector(".name span")
+  let priceCustomItem = customNode.querySelector(".price span")
+  
+  let customName = document.querySelector(".create-name")
+  let customPrice = document.querySelector("create-price")
+
+  nameCustomItem.innerHTML = customName.value
+  priceCustomItem.innerHTML = customPrice.value
+  document.querySelector("tbody").appendChild(customNode)
+  
+  customName.value = " "
+  customPrice.value = 0
+  
+  const removeButton = customNode.querySelector(".btn-remove") // cuando elegí la clase .btn la tabla desaparecía al pulsar 'calculate price', ¿por qué?
+  removeButton.addEventListener("click", removeProduct)
+  });
 }
 
 window.addEventListener("load", () => {
@@ -58,4 +77,6 @@ window.addEventListener("load", () => {
   });
 
   //... your code goes here
+   const newItem = document.getElementById("create")
+   newItem.addEventListener("click", createProduct)
 });
