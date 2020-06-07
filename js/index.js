@@ -73,7 +73,7 @@ function calculateAll() {
   subtotal.forEach((elm) => {
     realNumberPrueba = parseFloat(elm.innerHTML);
 
-    console.log(realNumberPrueba);
+    //console.log(realNumberPrueba);
 
     arrSubTotales.push(realNumberPrueba);
   });
@@ -85,7 +85,7 @@ function calculateAll() {
   arrSubTotales.forEach(function (elm) {
     sumary += elm;
   });
-  console.log(sumary);
+  //console.log(sumary);
 
   //sumatoria (precio total) al DOM
 
@@ -100,8 +100,21 @@ function calculateAll() {
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log("The target in remove is:", target);
+  console.log("The target in remove is:", target );
+
+  if (event.currentTarget.innerHTML == "Remove") {
+    
+    
+    const remover = document.querySelector('.product')
+    document.querySelector('tbody').removeChild(remover)
+    calculateAll ()
+
+  
 }
+
+}
+
+
 
 // ITERATION 5
 
@@ -113,6 +126,19 @@ window.addEventListener("load", () => {
   const calculatePricesBtn = document.getElementById("calculate");
 
   calculatePricesBtn.addEventListener("click", calculateAll);
+
+  const removeProductsBtn = document.querySelectorAll(".btn-remove")
+  
+  removeProductsBtn.forEach(elm => { 
+    console.log(elm.innerHTML)
+
+    elm.addEventListener("click", removeProduct)
+    
+
+  })
+  
+  
+  
 
   //... your code goes here
 });
