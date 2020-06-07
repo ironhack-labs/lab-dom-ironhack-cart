@@ -62,6 +62,9 @@ function createProduct() {
 
   document.querySelector('tbody').appendChild(newProduct)
 
+  createName.value = ''
+  createPrice.value = 0
+
   //Implementación de borrado en el producto creado
 
   const removeButtons = newProduct.querySelector('.btn-remove')
