@@ -1,4 +1,5 @@
 // ITERATION 1
+totalProductos = 2
 
 function updateSubtotal(product) {
   //... your code goes here
@@ -89,7 +90,7 @@ function calculateAll() {
 
   //sumatoria (precio total) al DOM
 
-  const totalPrice = document.querySelector("#total-value span");
+  const totalPrice = document.querySelector("#total-value span")
 
   //const price = product.querySelector(".price span").innerHTML;
 
@@ -100,18 +101,24 @@ function calculateAll() {
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log("The target in remove is:", target );
-
-  if (event.currentTarget.innerHTML == "Remove") {
-    
-    
-    const remover = document.querySelector('.product')
-    document.querySelector('tbody').removeChild(remover)
-    calculateAll ()
-
   
-}
-
+//condicional que evalua si la etiqueta de event es igual a remove, ejecuta el borrado
+//ademmas si el carrito solo tiene un elemento, no se puede borrar
+  
+  if (event.currentTarget.innerHTML == "Remove" && totalProductos > 1) {
+    
+    
+    const remove = document.querySelector('.product')
+    document.querySelector('tbody').removeChild(remove)
+    calculateAll()
+    
+    totalProductos--
+    
+    
+  } else { 
+    window.alert ("No puedes eliminar mas productos, BOCACHANCLA")
+  }
+  
 }
 
 
@@ -120,25 +127,112 @@ function removeProduct(event) {
 
 function createProduct() {
   //... your code goes here
+
+//clonamos el primer elemento del carrito y le asignamos todos los valores de los imputs
+  
+  var cloneProduct = document.querySelector('.product')
+  
+
+
+   var cloneProductPrime = cloneProduct.cloneNode(true)
+   
+   const newProductName = document.querySelector('.create-product input').value
+   const newProductPrice = document.querySelector('.unit-price input').valueAsNumber
+   
+   
+   
+  
+  var pricePrime = cloneProductPrime.querySelector(".price span")
+  var namePrime = cloneProductPrime.querySelector('.product .name span')
+  var resetQuantity = cloneProductPrime.querySelector('.quantity input')
+
+  resetQuantity.value = 0
+  
+ 
+  
+  namePrime.innerHTML = newProductName
+  pricePrime.innerHTML = newProductPrice;
+
+  
+  document.querySelector('tbody').appendChild(cloneProductPrime)
+
+
+  totalProductos++
+
+  
+  //reseteamos los imputs para que no se queden guardados tras cada creacion
+  
+ resetImputs ()
+
+  
+
+
+
+  
+ 
+  
+  
+
+}
+function resetImputs() {
+  var newProductName = document.querySelector(".create-product input")
+  var newProductPrice = document.querySelector(".unit-price input")
+
+  newProductPrice.valueAsNumber= 0
+  newProductName.value = ''
 }
 
-window.addEventListener("load", () => {
+
+window.addEventListener("click", () => {
   const calculatePricesBtn = document.getElementById("calculate");
 
   calculatePricesBtn.addEventListener("click", calculateAll);
 
+
+
+
+
+
   const removeProductsBtn = document.querySelectorAll(".btn-remove")
-  
+
   removeProductsBtn.forEach(elm => { 
-    console.log(elm.innerHTML)
+    
 
     elm.addEventListener("click", removeProduct)
     
+    
 
   })
+
+
+
+
+
+
+  const createNewProduct = document.querySelector ('#create')
+  createNewProduct.addEventListener("click", createProduct)
   
   
   
 
   //... your code goes here
 });
+
+window.addEventListener("load", () => {
+  const calculatePricesBtn = document.getElementById("calculate");
+
+  calculatePricesBtn.addEventListener("click", calculateAll);
+
+  const removeProductsBtn = document.querySelectorAll(".btn-remove");
+
+  removeProductsBtn.forEach((elm) => {
+    elm.addEventListener("click", removeProduct);
+    
+  });
+
+  const createNewProduct = document.querySelector("#create");
+  createNewProduct.addEventListener("click", createProduct);
+
+  //... your code goes here
+});
+
