@@ -39,17 +39,53 @@ function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
   //... your code goes here
+  target.parentNode.parentNode.remove()
+
 }
 
 // ITERATION 5
 
 function createProduct() {
   //... your code goes here
+  let elementsNode= document.querySelector('.product')
+
+  let newProduct = elementsNode.cloneNode(true)
+
+  let nameNewProduct = newProduct.querySelector('.name span')
+  let priceNewProduct = newProduct.querySelector('.price span')
+
+  let createName = document.querySelector('.createName')
+  let createPrice = document.querySelector('.createPrice')
+
+  nameNewProduct.innerHTML=createName.value
+  priceNewProduct.innerHTML=createPrice.value
+
+  document.querySelector('tbody').appendChild(newProduct)
+
+  //Implementación de borrado en el producto creado
+
+  const removeButtons = newProduct.querySelector('.btn-remove')
+  removeButtons.addEventListener('click', removeProduct)
+
+
 }
+
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
+  const removeButtons = document.querySelectorAll('.btn-remove')
+
+  removeButtons.forEach(function (elm) {
+    elm.addEventListener('click', removeProduct);
+  })
+
+  
+    //elm.addEventListener('click', removeProduct);
+  
+
   //... your code goes here
+  const createNewProduct = document.getElementById('create');
+  createNewProduct.addEventListener('click', createProduct);
 });
