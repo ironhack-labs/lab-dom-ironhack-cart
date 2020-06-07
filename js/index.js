@@ -59,11 +59,12 @@ function createProduct() {
   priceCustomItem.innerHTML = customPrice.value
   document.querySelector("tbody").appendChild(customNode)
   
-  customName.value = " "
+  customName.value = ""
   customPrice.value = 0
   
-  const removeButton = customNode.querySelector(".btn-remove") // cuando elegí la clase .btn la tabla desaparecía al pulsar 'calculate price', ¿por qué?
-  removeButton.addEventListener("click", removeProduct)
+  const removeButtons = document.querySelectorAll(".btn-remove"); // cuando elegí la clase .btn la tabla desaparecía al pulsar 'calculate price', ¿por qué?
+  removeButtons.forEach((elm) => {
+    elm.addEventListener("click", removeProduct);
   });
 }
 
