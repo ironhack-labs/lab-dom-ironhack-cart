@@ -2,28 +2,32 @@
 
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
+  const price = product.querySelector('.price span')
+  let actualPrice = price.innerHTML
+  let quantity = product.querySelector('.quantity input').value
+  let subTotal = product.querySelector('.subtotal span')
 
-  //... your code goes here
+  let updatedSubTotal = actualPrice * quantity
+  subTotal.innerHTML = updatedSubTotal
+  return updatedSubTotal
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
+  
+  let products = document.getElementsByClassName('product')
+  let total = document.querySelector('#total-value span')
+  for (let i = 0; i < products.length; i++){
+    let totalNum = parseInt(total.innerHTML)
+    total.innerHTML = totalNum + updateSubtotal(products[i])
+  }
 
-  // ITERATION 2
-  //... your code goes here
-
-  // ITERATION 3
-  //... your code goes here
 }
 
 // ITERATION 4
 
 function removeProduct(event) {
   const target = event.currentTarget;
+  target.parentNode.removeChild(target);
   console.log('The target in remove is:', target);
   //... your code goes here
 }
@@ -31,12 +35,20 @@ function removeProduct(event) {
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  const createParent = document.querySelector('.create-product')
+  
 }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
+  const removeBtnList = document.getElementsByClassName('btn-remove');
+  const createBtn = document.querySelector('#create');
+
   calculatePricesBtn.addEventListener('click', calculateAll);
+  for (let i = 0; i < removeBtnList.length; i++) {
+    removeBtnList[i].addEventListener('click', removeProduct);
+  }
+  createBtn.addEventListener('click', createProduct)
 
   //... your code goes here
 });
