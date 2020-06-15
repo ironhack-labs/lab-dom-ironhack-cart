@@ -10,11 +10,14 @@ function updateSubtotal(product) {
 
 function calculateAll() {
   // ITERATION 2
+  let sum = 0
   const arr = document.getElementsByClassName('product')
   for (var i = 0; i < arr.length; i++) {
-    updateSubtotal(arr[i])
+    sum += updateSubtotal(arr[i])
   }
   
+  document.querySelector('#total-value span').innerHTML = sum
+
   // ITERATION 3
   //... your code goes here
 }
