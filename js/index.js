@@ -15,11 +15,8 @@ function calculateAll() {
   for (var i = 0; i < arr.length; i++) {
     sum += updateSubtotal(arr[i])
   }
-  
-  document.querySelector('#total-value span').innerHTML = sum
-
   // ITERATION 3
-  //... your code goes here
+  document.querySelector('#total-value span').innerHTML = sum
 }
 
 // ITERATION 4
@@ -27,7 +24,9 @@ function calculateAll() {
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
-  //... your code goes here
+  //better way to do waht is below
+  target.parentNode.parentNode.parentNode.removeChild(target.parentNode.parentNode)
+  calculateAll()
 }
 
 // ITERATION 5
@@ -40,5 +39,8 @@ window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+  let arr = document.getElementsByClassName("btn btn-remove")
+  for (elem of arr) {
+    elem.addEventListener('click',removeProduct)
+  }
 });
