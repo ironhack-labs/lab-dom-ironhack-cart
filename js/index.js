@@ -16,6 +16,7 @@ function calculateAll() {
   
   let products = document.getElementsByClassName('product')
   let total = document.querySelector('#total-value span')
+  total.innerHTML = "0"
   for (let i = 0; i < products.length; i++){
     let totalNum = parseInt(total.innerHTML)
     total.innerHTML = totalNum + updateSubtotal(products[i])
@@ -27,15 +28,20 @@ function calculateAll() {
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  target.parentNode.removeChild(target);
-  console.log('The target in remove is:', target);
+  let main = target.parentNode.parentNode
+  main.remove()
+  calculateAll()
   //... your code goes here
 }
 
 // ITERATION 5
 
 function createProduct() {
-  const createParent = document.querySelector('.create-product')
+  let table = document.getElementById('cart')
+  const prodName = document.querySelector('#prodName').value
+  let prodPrice = document.querySelector('#prodPrice').value
+  
+  
   
 }
 
