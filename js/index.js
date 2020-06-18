@@ -29,33 +29,32 @@ function removeProduct(event) {
   targetGrandParent.parentNode.removeChild(targetGrandParent);
 }
 
-function createProduct(event) {
+function createProduct() {
+  // new table row element
+  var newProd = document.createElement("tr");
+  newProd.setAttribute("class", "product");
+
+  // new product content
   const newProdName = document.querySelector(".create-product input[type=text]")
     .value;
-
   const newProdQty = document.querySelector(
     ".create-product input[type=number]"
   ).value;
 
-  var productsBody = document.querySelector("tbody");
-  console.log(productsBody);
-  console.log(typeof productsBody);
-
-  // new product row
-  var newTableRow = document.createElement("tr");
-  newTableRow.setAttribute("class", "product");
-
-  // the new product prototype
-  newTableRow.innerHTML = `<td class="name"><span>${newProdName}</span></td>
+  newProd.innerHTML = `
+  <td class="name"><span>${newProdName}</span></td>
   <td class="price">$<span>${newProdQty}</span></td>
   <td class="quantity"><input type="number" value="0" min="0" placeholder="Quantity" /></td>
   <td class="subtotal">$<span>0</span></td>
   <td class="action"><button class="btn btn-remove">Remove</button></td>`;
-  console.log(newTableRow);
-  console.log(typeof newTableRow);
+  console.log(newProd);
+  console.log(typeof newProd);
 
-  // add the new product
-  productsBody.appendChild(newTableRow);
+  // add the new product to the parent node
+  var productsList = document.querySelector("tbody");
+  console.log(productsList);
+  console.log(typeof productsList);
+  productsList.appendChild(newProd);
 }
 
 window.addEventListener("load", () => {
