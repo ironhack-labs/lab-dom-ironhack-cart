@@ -41,7 +41,7 @@ function removeProduct(event) {
 // ITERATION 5
 function createProduct() {
   const name = document.querySelectorAll('.create-product input')[0].value;
-  const price = document.querySelectorAll('.create-product input')[1].value;
+  const price = Number.parseFloat(document.querySelectorAll('.create-product input')[1].value).toFixed(2);
 
   if (name && price) {
     const newRow = document.createElement('tr');
