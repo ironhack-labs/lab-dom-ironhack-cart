@@ -51,6 +51,7 @@ function removeProduct(event) {
    parentEl .style.display = 'none';
   //  parentEl.parentNode.removeChild(parentEl);
   //... your code goes here
+  calculateAll();
 }
 
 // ITERATION 5
@@ -107,6 +108,16 @@ function createProduct() {
     }) ;
   }
  
+  addRemoveBtnEventListeners();
+}
+
+function addRemoveBtnEventListeners(){
+  let liTags =  Array.from(document.getElementsByClassName('btn-remove') );
+   // let liTags = document.querySelectorAll('.btn-remove');
+   for(let i=0; i < liTags.length; i++){    
+     // console.log( liTags[i].event );
+     liTags[i].addEventListener("click", removeProduct);   
+   }
 }
 
 window.addEventListener('load', () => {
@@ -118,13 +129,7 @@ window.addEventListener('load', () => {
   createBtn.addEventListener('click',createProduct );
    //... your code goes here
 
-
-  let liTags =  Array.from(document.getElementsByClassName('btn-remove') );
-  // let liTags = document.querySelectorAll('.btn-remove');
-  for(let i=0; i < liTags.length; i++){    
-    // console.log( liTags[i].event );
-    liTags[i].addEventListener("click", removeProduct);   
-  }
-
+   addRemoveBtnEventListeners();
+ 
 
 });
