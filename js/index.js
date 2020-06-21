@@ -15,7 +15,7 @@ function updateSubtotal(product) {
 
   //Step 4 Get DOM element for class 'subtotal'
   let sub = product.querySelector('.subtotal span');
-  
+
   //Step 5 Set subtotal price to the corresponding DOM element.
   sub.innerHTML = subtotal;
 
@@ -37,13 +37,24 @@ function calculateAll() {
   let allProducts = document.getElementsByClassName("product");
   // console.log(allProducts)
 
+
+  //sum iterations of updateSubtotal
+  let subTotalsum = 0;
+
   for(i=0;i<allProducts.length;i++){
     updateSubtotal(allProducts[i])
+    subTotalsum += updateSubtotal(allProducts[i])
   }
 
   
   // ITERATION 3
-  //... your code goes here
+//display subTotalsum on the DOM.
+document.querySelector("h2 span").innerHTML = subTotalsum
+
+
+
+
+
 }
 
 // ITERATION 4
