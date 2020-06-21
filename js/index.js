@@ -51,10 +51,6 @@ function calculateAll() {
 //display subTotalsum on the DOM.
 document.querySelector("h2 span").innerHTML = subTotalsum
 
-
-
-
-
 }
 
 // ITERATION 4
@@ -62,18 +58,34 @@ document.querySelector("h2 span").innerHTML = subTotalsum
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
-  //... your code goes here
+
+ target.parentNode.parentNode.remove();
+  //still need to update price. 
+  calculateAll(); 
+  
 }
 
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  console.log('this button works!')
+
 }
+
+const createProductBtn = document.getElementById('create');
+createProductBtn.addEventListener('click', createProduct);
+
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+  let removeButton = document.getElementsByClassName('btn btn-remove'), i;
+  for (i = 0; i < removeButton.length; i++) {
+    removeButton[i].addEventListener('click',removeProduct);
+  }
+  console.log(removeButton)
+
+
+
 });
