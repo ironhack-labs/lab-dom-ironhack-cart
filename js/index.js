@@ -3,40 +3,64 @@
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
 
-  //... your code goes here
+  const price = product.querySelector('.price span').innerText
+  const quantity = product.querySelector('.quantity input').value
+  const subtotal = price * quantity
+  let sub = product.querySelector('.subtotal span')
+  sub.innerText = subtotal
+  return subtotal
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
+  
+ /* window.addEventListener('load', () => {
+    const calculatePricesBtn = document.getElementById('calculate');
+    calculatePricesBtn.addEventListener('click', calculateAll);
+  });
+  
+
   const singleProduct = document.querySelector('.product');
   updateSubtotal(singleProduct);
+  */
+
   // end of test
 
   // ITERATION 2
-  //... your code goes here
+  let total = 0
+
+    const products = document.querySelectorAll('.product')
+   products.forEach(function (elm) {
+     total += updateSubtotal(elm)
+   })
 
   // ITERATION 3
-  //... your code goes here
+  const totalContainer = document.getElementById('total-value');
+  totalContainer.querySelector('span').innerHTML = total;
 }
 
 // ITERATION 4
 
 function removeProduct(event) {
+  console.log('Item removed, yey!');
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+  target.parentNode.parentNode.parentNode.removeChild(target.parentNode.parentNode);
 }
 
 // ITERATION 5
 
-function createProduct() {
-  //... your code goes here
-}
+
+
+
+
+
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+  const removeBtns = document.querySelectorAll('.btn-remove');
+   for (let btn of removeBtns) {
+     btn.addEventListener('click', removeProduct);
+   }
+
 });
