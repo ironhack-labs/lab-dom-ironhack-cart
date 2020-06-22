@@ -53,7 +53,7 @@ function removeProduct(event) {
 function createProduct() {
   const newProductName = document.querySelectorAll('.create-product input')[0].value;
   const newProductPrice = document.querySelectorAll('.create-product input')[1].value;
-  console.log("shiiiit");
+  console.log("damn it finally");
 const newProductLine = document.createElement("tr");
 newProductLine.classList.add('product');
 newProductLine.innerHTML =`
