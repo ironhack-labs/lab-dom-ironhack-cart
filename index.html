@@ -1,9 +1,11 @@
+@@ -2,8 +2,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="./css/style.css" />
+    <script type="module" src="./js/index.js"></script>
     <title>Ironhack Cart</title>
   </head>
   <body>
@@ -27,26 +29,26 @@
           <td class="quantity">
             <input type="number" value="0" min="0" placeholder="Quantity" />
           </td>
+@@ -30,12 +32,23 @@
+            <button class="btn btn-remove">Remove</button>
+          </td>
+        </tr>
+        <!-- Iteration 2: Add more products here -->
+        <tr class="product">
+          <td class="name">
+            <span>Ironhac Mug</span>
+          </td>
+          <td class="price">$<span>35.00</span></td>
+          <td class="quantity">
+            <input type="number" value="0" min="0" placeholder="Quantity" />
+          </td>
           <td class="subtotal">$<span>0</span></td>
           <td class="action">
             <button class="btn btn-remove">Remove</button>
           </td>
         </tr>
-        <!-- Iteration 2: Add more products here -->
       </tbody>
       <tfoot>
-        <!-- <tr class="create-product">
-          <td>
-            <input type="text" placeholder="Product Name" />
-          </td>
-          <td>
-            <input type="number" min="0" value="0" placeholder="Product Price" />
-          </td>
-          <td></td>
-          <td></td>
-          <td>
-            <button id="create" class="btn">Create Product</button>
-          </td>
         </tr> -->
       </tfoot>
     </table>
