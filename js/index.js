@@ -21,7 +21,7 @@ function calculateAll() {
 
   // ITERATION 2
   const products = document.querySelectorAll('tr.product'); // store NodeList of products in new variable 
- 
+
   let sumProductsPrices = 0; // create variable to store sum of all product prices
 
   products.forEach(product => {
@@ -41,6 +41,8 @@ function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
   //... your code goes here
+  target.parentElement.parentElement.parentElement // td => tr => tbody (parent of every product element)
+        .removeChild(target.parentElement.parentElement); // td => tr (product element that has to be removed)  
 }
 
 // ITERATION 5
@@ -54,4 +56,8 @@ window.addEventListener('load', () => {
   calculatePricesBtn.addEventListener('click', calculateAll);
 
   //... your code goes here
+  const removeBtns = document.querySelectorAll('.btn-remove');
+  removeBtns.forEach(btn => {
+    btn.addEventListener('click', removeProduct);
+  })
 });
