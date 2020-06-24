@@ -37,7 +37,6 @@ function createProduct() {
   const table = document.getElementsByTagName(`tbody`)[0];
   const row = table.insertRow();
   const rowContent = `
-    <tr class="product">
       <td class="name">
         <span>${name}</span>
       </td>
@@ -48,9 +47,10 @@ function createProduct() {
       <td class="subtotal">$<span>0</span></td>
       <td class="action">
         <button class="btn btn-remove">Remove</button>
-      </td>
-    </tr>`;
+      </td>`;
   row.innerHTML = rowContent;
+  row.setAttribute("class", "product");
+  calculateAll()
 }
 
 window.addEventListener('load', () => {
