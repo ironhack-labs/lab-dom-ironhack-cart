@@ -1,14 +1,13 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
   const priceElem = product.querySelector('.price span').innerHTML;
   const quantElem = product.querySelector(".quantity input").value;
   const subElem = product.querySelector('.subtotal span');
  
   let subTotal = priceElem * quantElem;
 
-  return subElem.innerHTML = subTotal; 
+  return subElem.innerHTML = parseFloat(subTotal).toFixed(2); 
 }
 
 function calculateAll() {
@@ -22,7 +21,7 @@ function calculateAll() {
   
   // ITERATION 3
   const total = document.querySelector('#total-value span');
-  total.innerHTML = totalSum;
+  total.innerHTML = parseFloat(totalSum).toFixed(2);
 }
 
 // ITERATION 4
@@ -30,26 +29,24 @@ function calculateAll() {
 function removeProduct(event) {
   const btn = event.target.parentNode.parentNode;  
 
-  btn.innerHTML = '';
+  btn.remove();
   
-  
-  calculateAll()
+  calculateAll();
 }
 
 // ITERATION 5
 function createProduct() {
-  //... your code goes here
   const newProductElem = document.querySelector('#new-product');
   const newPriceElem = document.querySelector('#new-price');
 
   const tableBodyElem = document.querySelector('tbody');
   
   const newTr = document.createElement('tr');
-  newTr.classList = 'product';
+  newTr.classList = "product";
 
   const newProductLine = `
   <td class="name">
-    <span>${newProductElem.innerHTML}</span>
+    <span>${newProductElem.value}</span>
   </td>
   <td class="price">$<span>${newPriceElem.value}</span></td>
   <td class="quantity">
@@ -63,10 +60,11 @@ function createProduct() {
   newTr.innerHTML = newProductLine;
   tableBodyElem.appendChild(newTr);
   
-  addEventListener.removeProductBtn();
-
   newProductElem.value = "";
   newPriceElem.value = 0;
+  const removeProductBtn = document.querySelectorAll(".btn-remove");
+  [...removeProductBtn].map(node => node.addEventListener('click', (e) => {
+      removeProduct(e)}));
 }
 
 window.addEventListener('load', () => {
