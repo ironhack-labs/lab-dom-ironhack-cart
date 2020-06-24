@@ -29,26 +29,32 @@ function calculateAll() {
 
 function removeProduct(event) {
     const target = event.currentTarget.parentNode.parentNode;
-    console.log("The target in remove is:", target);
-    //... your code goes here
-    console.log(target.parentNode.parentNode.parentNode);
-
     target.parentNode.removeChild(target);
+    calculateAll();
 }
 
 // ITERATION 5
 
 function createProduct() {
-    //... your code goes here
+    console.log("create btn clicked");
+    const inputProductName = document.querySelectorAll(".create-product input");
+    console.log(inputProductName[0].value, inputProductName[1].value);
+
+    // let row = document.createElement("tr");
 }
 
 window.addEventListener("load", () => {
+    //  calculate total
     const calculatePricesBtn = document.getElementById("calculate");
     calculatePricesBtn.addEventListener("click", calculateAll);
 
+    // remove product
     const removeProductBtn = document.querySelectorAll(".btn-remove");
-    console.log({ removeProductBtn });
     removeProductBtn.forEach((elem) => {
         elem.addEventListener("click", removeProduct);
     });
+
+    // add new product
+    const createProductBtn = document.querySelector("#create");
+    createProductBtn.addEventListener("click", createProduct);
 });
