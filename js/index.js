@@ -1,25 +1,19 @@
 // ITERATION 1
 function updateSubtotal(product) {
-    const price = product.querySelector(".price span");
-    const quantity = product.querySelector(".quantity input");
+    const price = product.querySelector(".price span").innerHTML;
+    const quantity = product.querySelector(".quantity input").value;
     const subtotal = product.querySelector(".subtotal span");
-
-    let newSubtotal = +price.innerHTML * +quantity.value;
-
+    let newSubtotal = +price * +quantity;
     subtotal.innerHTML = newSubtotal;
     return newSubtotal;
 }
 
 function calculateAll() {
-    const singleProduct = document.querySelectorAll(".product");
+    const products = document.querySelectorAll(".product");
     const totalValue = document.querySelector("#total-value span");
     let total = 0;
-
     // ITERATION 2
-    singleProduct.forEach((elem) => {
-        total += updateSubtotal(elem);
-    });
-
+    products.forEach((product) => (total += updateSubtotal(product)));
     // ITERATION 3
     totalValue.innerHTML = total;
 }
@@ -33,7 +27,6 @@ function removeProduct(event) {
 
 // ITERATION 5
 function createProduct() {
-    console.log("create btn clicked");
     const inputProductName = document.querySelectorAll(".create-product input");
     const table = document.querySelector("tbody");
     let productName = inputProductName[0].value;
@@ -56,17 +49,15 @@ function createProduct() {
     </tr>`;
 
     row.setAttribute("class", "product");
-
     inputProductName[0].value = "";
     inputProductName[1].value = 0;
 
-    calculateAll();
-
     // new remove product
-    const rowRemoveProductBtn = document.querySelectorAll(".btn-remove");
-    rowRemoveProductBtn.forEach((elem) => {
-        elem.addEventListener("click", removeProduct);
-    });
+    // const rowRemoveProductBtn = document.querySelectorAll(".btn-remove");
+    // rowRemoveProductBtn.forEach((elem) => {
+    //     elem.addEventListener("click", removeProduct);
+    // });
+    row.querySelector(".btn-remove").addEventListener("click", removeProduct);
 }
 
 window.addEventListener("load", () => {
