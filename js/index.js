@@ -21,6 +21,7 @@ function updateSubtotal(product) {
 }
 
 
+
 //this function fires with calculateButton Click.
 function calculateAll() {
   // code in the following two lines is added just for testing purposes.
@@ -69,11 +70,11 @@ function removeProduct(event) {
 
 function createProduct() {
   console.log('this button works!')
-  
+
   //select newProduct
   let newProductName = document.querySelector(".create-product input[type='text']").value;
-  console.log(newProductName)
 
+  console.log(newProductName)
   //select newProductPrice
   let newProductPrice = document.querySelector(".create-product input[type='number']").value;
   console.log(newProductPrice)
@@ -84,59 +85,43 @@ let tableRef = document.querySelector('tbody');
 console.log(tableRef)
 
 
+  //insert row at the end of the table
+  var newRow = tableRef.insertRow(-1);
+  newRow.setAttribute("class","product");
 
 
+  let newProductCell = newRow.insertCell(0);
+  newProductCell.setAttribute("class", "name")
+  // let newProductSpan = document.createElement("span")
+  let newProductText = document.createTextNode(newProductName)
+  newProductCell.appendChild(newProductText);
 
 
-//********This was taken from someone else's work in a different class to see a more concise way of doing it.  
-tableRef.innerHTML += `<tr class="product">
-  <td class="name">
-    <span>${newProductName}</span>
-  </td>
-  <td class="price">$<span>${newProductPrice}</span></td>
-  <td class="quantity">
-    <input type="number" value="0" min="0" placeholder="Quantity" />
-  </td>
-  <td class="subtotal">$<span>0</span></td>
-  <td class="action">
-    <button class="btn btn-remove">Remove</button>
-  </td>
-</tr>`
-document.querySelector(".create-product td:first-child input").value = ""; // Clear input value
-document.querySelector(".create-product td:nth-child(2) input").value = 0; // Reset input value again.
-
-//remove button does not work after new product is created.
+  let newPriceCell = newRow.insertCell(1);
+  newPriceCell .setAttribute("class", "price")
+  let newPrice = document.createTextNode(newProductPrice)
+  newPriceCell.appendChild(newPrice);
 
 
-
-
-//******this is what I was working on.
-  // insert row at the end of the table
-  // var newRow = tableRef.insertRow(-1);
-  // let newProductCell = newRow.insertCell(0);
-  // let newProductText = document.createTextNode(newProduct)
-  // newProductCell.appendChild(newProductText);
-
-
-  // let newPriceCell = newRow.insertCell(1);
-  // let newPrice = document.createTextNode(newProductPrice)
-  // newPriceCell.appendChild(newPrice);
-
-
-  // let newQuantityCell = newRow.insertCell(2);
-  // let newQuantityInput = document.createElement("INPUT");
-  // newQuantityInput.setAttribute("type", "number");
-  // newQuantityInput.setAttribute("value", "0");
-  // newQuantityInput.setAttribute("min", "0");
-  // newQuantityInput.setAttribute("placeholder", "Quantity");
-
-  // newQuantityCell.appendChild(newQuantityInput);
+  let newQuantityCell = newRow.insertCell(2);
+  let newQuantityInput = document.createElement("INPUT");
+  newQuantityCell.setAttribute("class","quantity")
+  newQuantityInput.setAttribute("type", "number");
+  newQuantityInput.setAttribute("value", "0");
+  newQuantityInput.setAttribute("min", "0");
+  newQuantityInput.setAttribute("placeholder", "Quantity");
+  newQuantityCell.appendChild(newQuantityInput);
 
   
-  // let newSubtotalCell = newRow.insertCell(3);
-  // let newSubtotal = document.createElement("value");
-  // newSubtotal.setAttribute("class", "subtotal")
-  // newSubtotalCell.appendChild(newSubtotal);
+  let newSubtotalCell = newRow.insertCell(3);
+  newSubtotalCell.setAttribute("class","subtotal")
+  let newSubtotal = document.createElement("value");
+  newSubtotal.setAttribute("class", "subtotal")
+  newSubtotalCell.appendChild(newSubtotal);
+  
+
+  let removeButton = newRow.insertCell(4);
+  removeButton.setAttribute("class","action")
   
 }
 
