@@ -35,7 +35,6 @@ function removeProduct(event) {
   //... your code goes here
   target.parentNode.removeChild(target);
   calculateAll();
-
 }
 
 // ITERATION 5
@@ -46,13 +45,12 @@ function createProduct(event) {
   const newProductName = event.target.parentNode.parentNode.getElementsByTagName('input')[0].value;
   const newProductPrice = event.target.parentNode.parentNode.getElementsByTagName('input')[1].value;
   //console.log(newProductName, " ", newProductPrice);
-  const tableRow = document.getElementsByClassName('create-product');
-  const productTable = document.getElementById('cart');
+  const tableRow = document.getElementsByClassName('product')[document.getElementsByClassName('product').length-1];
+  const productTable = document.querySelector('#cart tbody');
   const newTr = document.createElement('tr');
-  console.log(productTable);
-  productTable.insertBefore(newTr, tableRow.lastElementChild);
+  productTable.appendChild(newTr);
   newTr.innerHTML = `
-  <tr class="product">
+  
   <td class="name">
     <span>${newProductName}</span>
   </td>
@@ -63,10 +61,10 @@ function createProduct(event) {
   <td class="subtotal">$<span>0</span></td>
   <td class="action">
     <button class="btn btn-remove">Remove</button>
-  </td>
-</tr>`;
-  //tableRow.querySelector('.name').innerText=newProductName ;
-  //tableRow
+  </td>`;
+  newTr.querySelector('.btn-remove').addEventListener('click', removeProduct);
+  console.log(newTr);
+  newTr.className = 'product'; 
 }
 
 window.addEventListener('load', () => {
