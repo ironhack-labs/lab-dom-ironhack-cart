@@ -66,7 +66,8 @@ function createProduct() {
   const table = document.querySelector('#cart tbody');
   table.appendChild(tr)
   tr.querySelector('.btn-remove').addEventListener('click', removeProduct)
-  // console.log(newTr)
+  nameNewProduct.value = '';
+  priceNewProduct.value = 0;
 };
 
 window.addEventListener('load', () => {
