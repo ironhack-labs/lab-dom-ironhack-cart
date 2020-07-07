@@ -28,6 +28,8 @@ function calculateAll() {
     accumulator + updateSubtotal(currentValue),0
   )
   const totalValue = (document.querySelector('#total-value span').innerHTML = totalPrice)
+  
+  
 }
 
 // ITERATION 4
@@ -43,7 +45,29 @@ function removeProduct(event) {
 
 function createProduct() {
   //... your code goes here
-}
+  
+  const nameNewProduct = document.querySelector('.create-product input[type="text"]');
+  const priceNewProduct = document.querySelector('.create-product input[type="number"]');
+  const tr = document.createElement('tr');
+  tr.className = 'product';
+  tr.innerHTML = `
+  <td class="name">
+    <span>${nameNewProduct.value}</span>
+  </td>
+  <td class="price">$<span>${priceNewProduct.value}</span></td>
+  <td class="quantity">
+    <input type="number" value="0" min="0" placeholder="Quantity" />
+  </td>
+  <td class="subtotal">$<span>0</span></td>
+  <td class="action">
+    <button class="btn btn-remove">Remove</button>
+  </td>
+  `
+  const table = document.querySelector('#cart tbody');
+  table.appendChild(tr)
+  tr.querySelector('.btn-remove').addEventListener('click', removeProduct)
+  // console.log(newTr)
+};
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
@@ -52,6 +76,7 @@ window.addEventListener('load', () => {
   const removeProductsButtons = document.getElementsByClassName('btn-remove');
   Array.from(removeProductsButtons).forEach(removeButton => removeButton.addEventListener('click',removeProduct))
 
-
+  const createBtn = document.getElementById('create');
+  createBtn.addEventListener('click', createProduct);
   //... your code goes here
 });
