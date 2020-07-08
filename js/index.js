@@ -19,35 +19,33 @@ function calculateAll() {
   
   let noQuantity = true;
   
-
   const products = document.querySelectorAll('.product');
-  //console.log(products);
-  let checkSubtotals = document.querySelectorAll('.product .quantity input');
-  //console.log(checkSubtotals);
 
+  let checkSubtotals = document.querySelectorAll('.product .quantity input');
+  
   for(let i = 0; i < checkSubtotals.length; i++){
-    //console.log(checkSubtotals[i].value);
     if(Number(checkSubtotals[i].value) > 0) noQuantity = false
   }
 
   if(!noQuantity){
-    for(let i = 0; i < products.length; i++){
-      updateSubtotal(products[i]);
-    }
-  } else {
-    alert('Debes seleccionar una cantidad para algun elemento')
-  }
+    products.forEach( product => {
+      updateSubtotal(product);
+    })
 
-  //Calculamos el total
-  if(!noQuantity){
+    //Calculamos el total
     let total = 0;
     let productsSubtotals = document.querySelectorAll('.product .subtotal span');
 
-    for(let i = 0; i < productsSubtotals.length; i++){
-      total += Number(productsSubtotals[i].innerHTML);
-    }
+    productsSubtotals.forEach(product => {
+      total += Number(product.innerHTML);
+    })
     
     totalDiv.innerHTML = total;
+
+  } else {
+
+    alert('Debes seleccionar una cantidad para algun elemento')
+
   }
   
 }
@@ -70,7 +68,6 @@ function removeProduct(event) {
 function createProduct() {
   let itemName = document.querySelector('.create-product td:first-child input');
   let itemPrice = document.querySelector('.create-product td:first-child + td input');
-  console.log(Number(itemPrice.value))
 
   if(itemName.value !== '' || Number(itemPrice.value) != 0){
     
@@ -106,6 +103,7 @@ function createDomProduct(name, price){
   let newProduct = document.createElement('tr');
 
   newProduct.setAttribute('class', 'product');
+  
   //td name
   let newProductTdName = document.createElement('td');
   newProductTdName.setAttribute('class', 'name');
@@ -179,7 +177,7 @@ function createDomProduct(name, price){
 
 
   //añadimos addEventListener
-  let removeButton = document.querySelector('.product:last-child .action .btn-remove');
+  let removeButton = newProduct.querySelector('.btn-remove');
   removeButton.addEventListener('click', removeProduct)
 }
 
