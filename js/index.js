@@ -17,37 +17,23 @@ function updateSubtotal(product) {
 
 function calculateAll() {
   
-  let noQuantity = true;
-  
   const products = document.querySelectorAll('.product');
 
-  let checkSubtotals = document.querySelectorAll('.product .quantity input');
+  products.forEach( product => {
+    updateSubtotal(product);
+  })
+
+  //Calculamos el total
+  let total = 0;
+  let productsSubtotals = document.querySelectorAll('.product .subtotal span');
+
+  productsSubtotals.forEach(product => {
+    total += Number(product.innerHTML);
+    console.log(total);
+  })
   
-  for(let i = 0; i < checkSubtotals.length; i++){
-    if(Number(checkSubtotals[i].value) > 0) noQuantity = false
-  }
+  totalDiv.innerHTML = total;
 
-  if(!noQuantity){
-    products.forEach( product => {
-      updateSubtotal(product);
-    })
-
-    //Calculamos el total
-    let total = 0;
-    let productsSubtotals = document.querySelectorAll('.product .subtotal span');
-
-    productsSubtotals.forEach(product => {
-      total += Number(product.innerHTML);
-    })
-    
-    totalDiv.innerHTML = total;
-
-  } else {
-
-    alert('Debes seleccionar una cantidad para algun elemento')
-
-  }
-  
 }
 
 function removeProduct(event) {
@@ -55,11 +41,8 @@ function removeProduct(event) {
   let parentProduct = document.querySelector('#cart tbody');
   let productRow = target.parentNode.parentNode;
 
-  //check price
-  let subtotalProduct = productRow.querySelector('.subtotal span');
-
-  totalDiv.innerHTML = Number(totalDiv.innerHTML) - Number(subtotalProduct.innerHTML);
   parentProduct.removeChild(productRow);
+  calculateAll()
 
 }
 
@@ -101,81 +84,24 @@ function createDomProduct(name, price){
 
   let parentProduct = document.querySelector('#cart tbody');
   let newProduct = document.createElement('tr');
-
   newProduct.setAttribute('class', 'product');
-  
-  //td name
-  let newProductTdName = document.createElement('td');
-  newProductTdName.setAttribute('class', 'name');
 
-      //td name span
-      let newProductTdNameSpan = document.createElement('span');
-      newProductTdNameSpan.innerHTML = name;
-      newProductTdName.appendChild(newProductTdNameSpan);
-
-  newProduct.appendChild(newProductTdName)
-
-  //td price
-  let newProductTdPrice = document.createElement('td');
-  newProductTdPrice.setAttribute('class', 'price');
-
-      //td price $
-      newProductTdPriceDollar = document.createTextNode('$');
-      newProductTdPrice.appendChild(newProductTdPriceDollar)
-
-      //td price span
-      let newProductTdPriceSpan = document.createElement('span');
-      newProductTdPriceSpan.innerHTML = priceToString;
-      newProductTdPrice.appendChild(newProductTdPriceSpan);
-
-  newProduct.appendChild(newProductTdPrice)
-
-  //td quantity
-  let newProductTdQuantity = document.createElement('td');
-  newProductTdQuantity.setAttribute('class', 'quantity');
-
-    //td quantity input
-    let newProductTdQuantityInput = document.createElement('input');
-    newProductTdQuantityInput.setAttribute('type', 'number');
-    newProductTdQuantityInput.setAttribute('value', '0');
-    newProductTdQuantityInput.setAttribute('min', '0');
-    newProductTdQuantityInput.setAttribute('placeholder', 'Quantity');
-    newProductTdQuantity.appendChild(newProductTdQuantityInput);
-
-  newProduct.appendChild(newProductTdQuantity)
-
-  //td subtotal
-  let newProductTdSubtotal = document.createElement('td');
-  newProductTdSubtotal.setAttribute('class', 'subtotal');
-
-    //td subtotal $
-    newProductTdSubtotalDollar = document.createTextNode('$');
-    newProductTdSubtotal.appendChild(newProductTdSubtotalDollar)
-
-    //td subtotal span
-    let newProductTdSubtotalSpan = document.createElement('span');
-    newProductTdSubtotalSpan.innerHTML = '0';
-    newProductTdSubtotal.appendChild(newProductTdSubtotalSpan);
-
-  newProduct.appendChild(newProductTdSubtotal);
-
-
-    //td action
-    let newProductTdAction = document.createElement('td');
-    newProductTdAction.setAttribute('class', 'action');
-
-      //td action button $
-      let newProductTdActionButton = document.createElement('button');
-      newProductTdActionButton.classList.add('btn');
-      newProductTdActionButton.classList.add('btn-remove');
-      newProductTdActionButton.textContent = 'Remove';
-      newProductTdAction.appendChild(newProductTdActionButton);
-
-    newProduct.appendChild(newProductTdAction)
+  newProduct.innerHTML = `
+      <td class="name">
+        <span>${name}</span>
+      </td>
+      <td class="price">$<span>${priceToString}</span></td>
+      <td class="quantity">
+        <input type="number" value="0" min="0" placeholder="Quantity">
+      </td>
+      <td class="subtotal">$<span>0</span></td>
+      <td class="action">
+        <button class="btn btn-remove">Remove</button>
+      </td>
+  `;
 
   parentProduct.appendChild(newProduct);
-
-
+  
   //añadimos addEventListener
   let removeButton = newProduct.querySelector('.btn-remove');
   removeButton.addEventListener('click', removeProduct)
