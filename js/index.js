@@ -59,8 +59,6 @@ function removeProduct(event) {
   target.remove()
 
   return calculateAll()
-
-
 }
 
 
@@ -68,11 +66,38 @@ function removeProduct(event) {
 
 function createProduct() {
   //... your code goes here
+  let newTr = document.createElement(`tr`);
+  newTr.className = 'product';
+
+  const newProdName = document.querySelector(`.create-product input[type="text"]`)
+  const newProdPrice = document.querySelector(`.create-product input[type="number"]`)
+  const tBody = document.querySelector(`#cart tbody`);
+  tBody.appendChild(newTr);
+  newTr.innerHTML = `
+      <td class="name">
+        <span>${newProdName.value}</span>
+      </td>
+      <td class="price">$<span>${newProdPrice.value}</span></td>
+      <td class="quantity">
+        <input type="number" value="0" min="0" placeholder="Quantity" />
+      </td>
+      <td class="subtotal">$<span>0</span></td>
+      <td class="action">
+        <button class="btn btn-remove">Remove</button>
+      </td>`
+
+  newTr.querySelector(`.btn-remove`).addEventListener(`click`, removeProduct)
+
+
 }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
+
+  const createProdBtn = document.getElementById(`create`);
+  createProdBtn.addEventListener('click', createProduct);
+
 
   const removeProdBtn = document.getElementsByClassName(`btn-remove`);
   arrRemoveProdBtn = [...removeProdBtn]
