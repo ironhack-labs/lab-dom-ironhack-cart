@@ -45,6 +45,7 @@ function removeProduct(event) {
   console.log('The target in remove is:', target);
   var granny = target.parentNode.parentNode;
   granny.parentNode.removeChild(granny)
+  calculateAll();
   //... your code goes here
 }
 
@@ -57,6 +58,10 @@ for(var i=0; i< singleProducts.length; i++){
   btDelete.addEventListener('click',removeProduct)
 }
 function createProduct() {
+  let title= document.querySelector('.create-product input[type='text']')
+  let price = document.querySelector('.create-product input[type='number']')
+
+
   //... your code goes here
 }
 
