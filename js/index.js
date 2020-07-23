@@ -1,6 +1,6 @@
 // ITERATION 1
 function updateSubtotal(product) {
-  alert('Calculating subtotal, yey!');
+  console.log('Calculating subtotal, yey!');
   //step 1
    const price = product.querySelector('.price span').innerHTML;
    const quantity = product.querySelector('.quantity input').value;
@@ -10,30 +10,23 @@ function updateSubtotal(product) {
   const subTotalHolder = product.getElementsByClassName('subtotal')[0];
   //step 5
   subTotalHolder.innerHTML = subTotalPrice;
-  return subTotalHolder.innerHTML;
+  //return "subTotalHolder.innerHTML" to use it later in the other functions
+  //to use it in another function - invoke it "updateSubtotal(arg)""
+  return Number(subTotalHolder.innerHTML);
 }
 
 function calculateAll() {
   // ITERATION 2
-  const subTotalHolderArray  = [...document.getElementsByClassName('product')];
-  //const subTotalHolderArray = [...subTotalHolderCollection];
+  const subTotalHolder  = document.getElementsByClassName('product');
+  const subTotalHolderArray = [...subTotalHolder];
+  //always update the total ()
+  let holdTotal = 0;
   const totalPerItem = subTotalHolderArray.forEach((element) => {
-    updateSubtotal(element);
+    holdTotal += updateSubtotal(element);
   });
   // ITERATION 3
-  const subTotal = document.querySelectorAll('.subtotal');
-  const subTotalPreArray = [...subTotal]
-  let subTotalArray = [];
-  for (let j = 0; j < subTotalPreArray.length; j++) {
-    subTotalArray.push(subTotal[j].innerHTML) 
-  }
-  const totalContent = subTotalArray.reduce((total, item) => {
-    total = Number(total)
-    item = Number(item)
-    return total += item;
-  }, 0)
   let totalHolder = document.querySelector('#total-value span');
-  totalHolder.innerHTML = totalContent;
+  totalHolder.innerHTML = holdTotal;  
 }
 
 // ITERATION 4
@@ -44,14 +37,8 @@ function removeProduct(event) {
   let td = event.currentTarget.parentNode;
   let tr = td.parentNode;
   tr.parentNode.removeChild(tr);
-
-  //below I tried to reach the subtotal content to remove it from total (during deleting) but 
-  //I couldn't get it in DOM (currentSubtotal)
-/*   let currentSubtotal = tr.querySelector('.subtotal span').innerHTML;
-  let totalHolder = document.querySelector('#total-value span');
-  let totalContent = totalHolder.innerHTML;
-  totalContent -= currentSubtotal;
-  totalHolder.innerHTML = totalContent; */
+  //to update total after removing a product
+  return calculateAll();
 }
 
 // ITERATION 5
@@ -83,16 +70,16 @@ function createProduct() {
 </tr>`
   //add "what to add" to "where to add"
   tbody.appendChild(tr)
+  //add a listener for the created button Remove 
+  tr.querySelector('.btn-remove').addEventListener('click', removeProduct);
 }
 //create a product
 const createProductBtn = document.getElementById('create');
 createProductBtn.addEventListener('click', createProduct); 
 
-
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
-
 
   const allRemoveButtonsArray = [...document.querySelectorAll('.btn-remove')];
   for (let i = 0; i < allRemoveButtonsArray.length; i++) {
