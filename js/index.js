@@ -40,11 +40,11 @@ function calculateAll() {
 // ITERATION 4
 
 function removeProduct(event) {
-  const target = event.currentTarget;
+  const target = event.currentTarget.parentNode.parentNode;
   console.log('The target in remove is:', target);
+  target.remove();
 }
-//const removeBtn = document.getElementsByClassName('btn btn-remove');
-//removeBtn.addEventListener('click', removeProduct);
+
 
 // ITERATION 5
 function createProduct() {
@@ -60,13 +60,21 @@ function createProduct() {
 
   const productsArr = document.querySelector('tbody');
   productsArr.appendChild(newProduct);
+  
+  newProduct.querySelector('.btn-remove').addEventListener('click', removeProduct);
 }
-
-const createProductBtn = document.getElementById('create');
-createProductBtn.addEventListener('click', createProduct);
-
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
+  const removeBtn = document.getElementsByClassName('btn-remove');
+
+  const removeBtnArr = [...removeBtn]
+  removeBtnArr.forEach((element) => {
+    element.addEventListener('click', removeProduct);
+  })
+  const createProductBtn = document.getElementById('create');
+  createProductBtn.addEventListener('click', createProduct);
 });
+
+console.log(removeBtnArr)
