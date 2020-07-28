@@ -48,6 +48,7 @@ function calculateAll() {
 
 function removeProduct(event) {
   const target = event.currentTarget;
+  console.log(target);
   console.log('The target in remove is:', target);
   //... your code goes here
   const parent = event.target.parentElement;
@@ -84,8 +85,17 @@ function createProduct() {
 
     tableProduct.innerHTML += newProduct;
 
-    //newProducName.innerHTML = '';
-    //newPrice.innerHTML  = 0;
+    //tableProduct.insertAdjacentHTML = ('afterend',newProduct);
+    
+    //console.log(document.querySelectorAll('.btn-remove'));
+    newProducName.value = '';
+    newPrice.value  = 0;
+
+    let btnRemove = document.getElementsByClassName('btn-remove');
+    for(i=0;i<btnRemove.length;i++){
+      btnRemove[i].addEventListener('click', removeProduct);
+    }
+
 }
 
 window.addEventListener('load', () => {
@@ -93,10 +103,14 @@ window.addEventListener('load', () => {
   calculatePricesBtn.addEventListener('click', calculateAll);
 
   //... your code goes here
-  const btnRemove = document.getElementsByClassName('btn-remove');
-  for(i=0;i<btnRemove.length;i++){
-    btnRemove[i].addEventListener('click', removeProduct);
-  }
+  // const btnRemove = document.getElementsByClassName('btn-remove');
+  // for(i=0;i<btnRemove.length;i++){
+  //   btnRemove[i].addEventListener('click', removeProduct);
+  // }
+  const removeButtons = document.querySelectorAll('.btn-remove');
+  removeButtons.forEach((button) => {
+    button.onclick = removeProduct;
+  });  
 
   //console.log(btnRemove);
   const createProductBtn = document.getElementById('create');
