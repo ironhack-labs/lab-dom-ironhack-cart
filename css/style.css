@@ -40,7 +40,8 @@ table input[type='number'] {
   max-width: 4em;
 }
 
-.btn {
+.btn,
+#create {
   display: inline-block;
   border: 0;
   border-radius: 0.25em;
@@ -58,6 +59,10 @@ table input[type='number'] {
 
 .btn-remove {
   background-color: #f27471;
+}
+
+#create {
+  background-color: lightgrey;
 }
 
 h1,
