@@ -51,29 +51,11 @@ function calculateAll() {
     updateSubtotal(listOfProductsElement[i]);
     totalPrice += updateSubtotal(listOfProductsElement[i]);
     pricePosition = document.querySelector('#total-value span');
-
-    // priceElement = document.querySelectorAll('.price span')[i];
-    // quantityElement = document.getElementsByTagName('input')[i];
-    // price = priceElement.innerHTML;
-    // quantity = quantityElement.value;
-  
-    // subtotalPrice = price * quantity;
-  
-    // // console.log(price);
-    // // console.log(quantity);
-    // // console.log(subtotalPrice);
-  
-    // subtotalElement = document.querySelectorAll('.subtotal span')[i];
-    // subtotalElement.innerHTML = subtotalPrice;
-
   }
 
 
   // ITERATION 3
-  //... your code goes here
   pricePosition.innerHTML = totalPrice;
-
-
 }
 
 // ITERATION 4
@@ -84,14 +66,12 @@ function removeProduct(event) {
   targetParent.parentNode.removeChild(targetParent);
   calculateAll();
   console.log('The target in remove is:', target);
-  //... your code goes here
 }
 
 // ITERATION 5
 
-function createProduct(event) {
-  //... your code goes here
-  const newProduct = document.querySelector('[placeholder="Product Name"');
+function createProduct() {
+  const newProduct = document.querySelector('[placeholder="Product Name"]');
   const newValue = document.querySelector('[placeholder="Product Price"]');
   const placeToCreateProduct = document.querySelector('tbody');
   const newListItem = `
@@ -110,12 +90,15 @@ function createProduct(event) {
 </tr>
   `;
 
-  calculateAll();
-
   placeToCreateProduct.innerHTML += newListItem;
 
-  const ButtonToRemove = placeToCreateProduct.querySelector('.btn-remove');
-  ButtonToRemove.addEventListener('click', removeProduct);
+  let buttonToRemove = placeToCreateProduct.querySelectorAll(".btn-remove");
+
+  buttonToRemove.forEach(button => {
+    button.onclick = removeProduct;
+  });
+
+  // calculateAll();
 
   newProduct.value = '';
   newValue.value = 0;
@@ -130,10 +113,10 @@ window.addEventListener('load', () => {
 
   //Remover produtos
 
-  // buttonsToBeRemoved = document.querySelectorAll('.btn-remove');
-  // buttonsToBeRemoved.forEach(button => {
-  //   button.addEventListener('click', removeProduct);
-  // });
+  buttonsToBeRemoved = document.querySelectorAll('.btn-remove');
+  buttonsToBeRemoved.forEach(button => {
+    button.addEventListener('click', removeProduct);
+  });
 
   //Adicionar produtos
 
