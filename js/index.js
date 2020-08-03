@@ -1,3 +1,5 @@
+// QUERY SELECTORS
+
 // ITERATION 1
 
 function updateSubtotal(product) {
@@ -62,6 +64,8 @@ function createProduct() {
       <button class="btn btn-remove">Remove</button>
     </td>`);
     tableBody.appendChild(newProduct);
+    const newRemoveBtn = newProduct.querySelector('.btn-remove');
+    newRemoveBtn.addEventListener('click', removeProduct);
 }
 
 window.addEventListener('load', () => {
