@@ -13,12 +13,16 @@ function updateSubtotal(product) {
 function calculateAll() {
   // const singleProduct = document.querySelector('.product');
   // updateSubtotal(singleProduct);
-  
-
-  // ITERATION 2
-  
-
-  // ITERATION 3
+    let everything = document.querySelectorAll(`.product`);
+    everything.forEach((product) => {
+      updateSubtotal(product);
+    });
+    let calculation = [...everything].reduce((accumulator,currentValue) => {
+      return accumulator + updateSubtotal(currentValue);
+    }, 0);
+    let finalPrice = document.querySelector(`#total-value span`);
+    finalPrice.innerHTML = calculation;
+    return calculation;
 }
 
 // ITERATION 4
