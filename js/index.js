@@ -1,42 +1,51 @@
 // ITERATION 1
+let $products = document.querySelectorAll('.product')
+$products.forEach(product => {
+    product.addEventListener("input", (e) => {
+        let $modifiedProduct = e.currentTarget
+        updateSubtotal($modifiedProduct)
+    })
+})
+
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
+    const quantity = product.querySelector(".quantity input").value
+    const price = product.querySelector(".price span").innerText
+    const subTotal = quantity * price
 
-  //... your code goes here
+    product.querySelector(".subtotal span").innerText = subTotal
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
+    let total = 0
+    $products.forEach(product => {
+        total += parseInt(product.querySelector(".subtotal span").innerText)
+    })
+    document.querySelector("#total-value span").innerText = total
 
-  // ITERATION 2
-  //... your code goes here
+    // ITERATION 2
+    //... your code goes here
 
-  // ITERATION 3
-  //... your code goes here
+    // ITERATION 3
+    //... your code goes here
 }
 
 // ITERATION 4
 
 function removeProduct(event) {
-  const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+    const target = event.currentTarget;
+    console.log('The target in remove is:', target);
+    //... your code goes here
 }
 
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+    //... your code goes here
 }
 
 window.addEventListener('load', () => {
-  const calculatePricesBtn = document.getElementById('calculate');
-  calculatePricesBtn.addEventListener('click', calculateAll);
+    const calculatePricesBtn = document.getElementById('calculate');
+    calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
 });
