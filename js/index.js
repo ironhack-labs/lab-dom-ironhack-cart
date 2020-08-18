@@ -37,16 +37,19 @@ document.querySelector('#total-value span').innerHTML = totalValue;
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
-  let parent = document.querySelector('.action');
-  let child = document.querySelector('.btn-remove');
-  let removed = parent.removeChild(child);
-  return removed;
+  let parent = target.parentNode.parentNode;
+  // let parent = document.querySelector('.action');
+  // let child = document.querySelector('.btn-remove');
+  // let removed = parent.removeChild(child);
+  parent.remove (); 
+  calculateAll();
  }
+
 
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+
 }
 
 window.addEventListener('load', () => {
@@ -56,5 +59,8 @@ window.addEventListener('load', () => {
   const removeButtons = document.querySelectorAll('.btn-remove');
   removeButtons.forEach( button => {
     button.addEventListener('click', removeProduct);
+
+  const newProduct = document.getElementById('create');
+  newProduct.addEventListener('click', createProduct);
   }); 
 });
