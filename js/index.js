@@ -4,27 +4,34 @@ function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
 
   //... your code goes here
+  let price = product.querySelector('.price span');
+  let quantity = product.querySelector('.quantity input');
+  const multi = price.innerHTML * quantity.value;
+  const subtotal = product.querySelector('.subtotal span');
+  const sub = subtotal.innerHTML = multi;
+  return sub;
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
-
   // ITERATION 2
-  //... your code goes here
-
+  const all = document.querySelectorAll('.product');
+  let total = 0
+  for (let i = 0; i < all.length; i++){
+   total += updateSubtotal(all[i])
+  }
   // ITERATION 3
-  //... your code goes here
-}
+  document.querySelector('#total-value span').innerHTML = total;
+  }
 
 // ITERATION 4
 
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
+  const parent = document.querySelector('tbody')
+  const child = target.parentNode.parentNode
+  console.log(child)
+    parent.removeChild(child);
   //... your code goes here
 }
 
@@ -39,4 +46,11 @@ window.addEventListener('load', () => {
   calculatePricesBtn.addEventListener('click', calculateAll);
 
   //... your code goes here
+ 
+  const removeBtn = document.querySelectorAll('.btn-remove');
+  //console.log(removeBtn)
+  removeBtn.forEach((btn)=> {
+    console.log(btn)
+    btn.addEventListener('click', removeProduct);
+  })
 });
