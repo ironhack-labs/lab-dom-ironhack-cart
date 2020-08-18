@@ -4,16 +4,16 @@ function updateSubtotal(product) {
   // Step 1 get the values of the product price and quantity
   // Step 2 make sure the values are numbers, because we want to calculate with them
   const price = Number(product.querySelector('.price span').innerHTML);
-  
+
   const quantity = product.querySelector('.quantity input').value;
-  
+
 
   // decline a variable with the calulation
   const subTotal = price * quantity;
 
 
   //change the dom bei putting out the calculated sum
-  document.querySelector('.subtotal span').innerHTML = subTotal;
+  product.querySelector('.subtotal span').innerHTML = subTotal;
 
   //return the calculation result of subTotal
   return subTotal;
@@ -29,17 +29,19 @@ function calculateAll() {
 
   // ITERATION 2
   const allProducts = document.querySelectorAll('.product');
-console.log(allProducts);
   let total = 0;
-  for (let i = 0; i < allProducts.length; i++) {
-    total += updateSubtotal(allProducts[i]);
-  }
-  console.log(total);
-return total;
+  allProducts.forEach(function (product) {
+    total += updateSubtotal(product);
+  });
+  document.querySelector('#total-value span').innerHTML = total;
 
   // ITERATION 3
-  //... your code goes here
+
+//... your code goes here */
 }
+
+
+
 
 // ITERATION 4
 
