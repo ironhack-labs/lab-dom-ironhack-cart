@@ -47,8 +47,8 @@ function createProduct() {
   const name = document.querySelector('.create-product input[type="text"]');
   const price = document.querySelector('.create-product input[type="number"]');
   const table = document.querySelector('#cart tbody');
-  const newProduct = document.createElement('tr').innerHTML = `
-  <tr class="product">
+  const newProduct = document.createElement('tr')
+  newProduct.innerHTML = `
     <td class="name">
       <span>Ironhack Beach Towel</span>
     </td>
@@ -60,9 +60,9 @@ function createProduct() {
     <td class="action">
       <button class="btn btn-remove">Remove</button>
     </td>
-  </tr>
   `;
 
+  newProduct.className='product';
   newProduct.querySelector('.name span').innerText = name.value;  
   newProduct.querySelector('.price span').innerText = price.value;  
   newProduct.querySelector('.btn-remove').addEventListener('click', removeProduct);
