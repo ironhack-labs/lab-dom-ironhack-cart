@@ -37,8 +37,10 @@ document.querySelector('#total-value span').innerHTML = totalValue;
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
-
-
+  let parent = document.querySelector('.action');
+  let child = document.querySelector('.btn-remove');
+  let removed = parent.removeChild(child);
+  return removed;
  }
 
 // ITERATION 5
