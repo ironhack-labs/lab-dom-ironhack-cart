@@ -53,7 +53,7 @@ function createProduct() {
   const parentNode = document.querySelector('#cart tbody')
   const newProduct = document.querySelector('.product').cloneNode(true);
   newProduct.querySelector('.name').innerHTML = name;
-  newProduct.querySelector('.price').innerHTML = `<span>${price}</span>`;
+  newProduct.querySelector('.price').innerHTML = `<span>$${price}</span>`;
   newProduct.querySelector('.quantity').innerHTML = `<input type="number" value="0" min="0" placeholder="Quantity" />`;
   newProduct.querySelector('.subtotal').innerHTML =`$<span>0</span>`; 
   newProduct.querySelector('.btn-remove').addEventListener('click', removeProduct)
