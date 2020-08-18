@@ -22,7 +22,6 @@ function calculateAll() {
   const allProducts = document.querySelectorAll('.product');
   allProducts.forEach( productRow => {
    totalValue += (updateSubtotal (productRow))
-   console.log(totalValue);
   });
 
   // ITERATION 3
@@ -38,8 +37,9 @@ document.querySelector('#total-value span').innerHTML = totalValue;
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
-  //... your code goes here
-}
+
+
+ }
 
 // ITERATION 5
 
@@ -51,5 +51,8 @@ window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+  const removeButtons = document.querySelectorAll('.btn-remove');
+  removeButtons.forEach( button => {
+    button.addEventListener('click', removeProduct);
+  }); 
 });
