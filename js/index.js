@@ -39,6 +39,18 @@ function removeProduct(event) {
 
 function createProduct() {
   //... your code goes here
+  const target = event.currentTarget;
+  const newName = document.querySelectorAll('.create-product input')[0].value;
+  const newPrice = document.querySelectorAll('.create-product input')[1].value;
+  const parent = document.querySelector('tbody')
+  const child = document.querySelector('.product').cloneNode(true);
+  child.querySelector('.name').innerHTML = `<span>${newName}</span>`;
+  child.querySelector('.price').innerHTML = `$<span>${newPrice}</span>`;
+  child.querySelector('.quantity').innerHTML = '<input type="number" value="0" min="0" placeholder="Quantity" />';
+  child.querySelector('.subtotal').innerHTML = '$<span>0</span>';
+  child.querySelector('.btn-remove').addEventListener('click', removeProduct);
+  parent.append(child);
+  newName = "";
 }
 
 window.addEventListener('load', () => {
@@ -53,4 +65,8 @@ window.addEventListener('load', () => {
     console.log(btn)
     btn.addEventListener('click', removeProduct);
   })
+
+  const createBtn = document.getElementById('create');
+  createBtn.addEventListener('click', createProduct);
+
 });
