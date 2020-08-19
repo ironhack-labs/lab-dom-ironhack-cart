@@ -58,8 +58,29 @@ function removeProduct(event) {
 // product name customizable and the unit price
 // create button will push its price to calculateAll
 function createProduct() {
-  const createInput = document.querySelector('.create-product input').value;
-  const createPrice = document.querySelector('.create-product input')[1].value;
+  // access to inputs for name and price
+  const createInput = document.querySelectorAll('.create-product input')[0].value;
+  const createPrice = document.querySelectorAll('.create-product input')[1].value;
+  console.log(createPrice)
+  // clone product row 
+  const parent = document.querySelector('tbody');
+  const product = document.querySelector('.product');
+  const newProduct = product.cloneNode(true);
+  newProduct.querySelector('.name span').innerHTML= createInput;
+  console.log(newProduct.querySelector('.price').innerHTML)
+  newProduct.querySelector('.price span').innerHTML = createPrice;
+  newProduct.querySelector('.quantity').innerHTML = `<input type="number" value="0" min="0" placeholder="Quantity" />` 
+  newProduct.querySelector('.subtotal').innerHTML = `$<span>0</span>`
+  newProduct.querySelector('.action').innerHTML = `<button class="btn btn-remove">Remove</button>`
+  console.log(newProduct);
+  parent.appendChild(newProduct)
+//  remove new row 
+  const removeBtn = document.querySelectorAll('.btn-remove');
+  for (let btn of removeBtn){
+   btn.addEventListener('click', removeProduct);
+  }
+
+  
   // copy the parents node
 }
 
@@ -74,5 +95,6 @@ window.addEventListener('load', () => {
   //... your code goes her
   const createBtn = document.querySelector('#create');
   createBtn.addEventListener('click', createProduct);
+  // console.log(createBtn);
   
 });
