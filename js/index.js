@@ -51,7 +51,7 @@ function removeProduct(event) {
 
 function createProduct() {
   const name = document.querySelectorAll('.create-product input')[0].value;
-  const price = document.querySelectorAll('.create-product input')[1].value;
+  const price = (+document.querySelectorAll('.create-product input')[1].value).toFixed(2);
   const parentNode = document.querySelector('tbody');
   const newProduct = document.querySelector('.product').cloneNode(true);
   console.log(name)
