@@ -45,14 +45,18 @@ function removeProduct(event) {
   grandParent.remove();
   console.log(grandParent);
   calculateAll();
-
 }
 
 // ITERATION 5
 
-function createProduct() {
-  //... your code goes here
+function createProduct(product) {
+  const productName = document.querySelector("input[type='text']").value;
+  console.log(productName);
+  const productPrice= document.querySelector("input[type='number']").value;
+  console.log(productPrice);
 }
+
+
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
@@ -61,6 +65,7 @@ window.addEventListener('load', () => {
   const removeButton = document.querySelectorAll('.btn-remove').forEach(function(button){
     button.addEventListener('click',removeProduct);
   });
-  
-  
+
+  const createProductBtn= document.getElementById('create');
+  createProductBtn.addEventListener('click',createProduct);
 });
