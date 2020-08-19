@@ -14,7 +14,7 @@ function calculateAll() {
   const products = document.querySelectorAll('.product');
   let total = 0;
   products.forEach(function (product) {
-    removeProduct(product)
+    // removeProduct(product)
     total += updateSubtotal(product);
     
   });
@@ -28,13 +28,12 @@ function calculateAll() {
 
 
 function removeProduct(event) {
-   const target = event.currentTarget;
-
-  console.log('The target in remove is:', target.parentNode.parentNode);
-  //const row = target.parentNode.parentNode
-
-  
-  //... your code goes here
+  const target = event.currentTarget;
+  console.log('The target in remove is:', target);
+  const parent = event.currentTarget.parentNode.parentNode;
+  console.log(parent);
+  parent.remove();
+  calculateAll();
 
 }
 
@@ -57,3 +56,5 @@ window.addEventListener('load', () => {
   })
   
 });
+
+
