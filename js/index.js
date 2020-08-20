@@ -1,42 +1,84 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
-
-  //... your code goes here
+  const price = product.querySelector(".price span");
+  const quantity = product.querySelector(".quantity input");
+  const subtotal = product.querySelector(".subtotal span");
+  return (subtotal.innerHTML = price.innerHTML * quantity.value);
 }
 
 function calculateAll() {
   // code in the following two lines is added just for testing purposes.
   // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
+  // const singleProduct = document.querySelector('.product');
+  // updateSubtotal(singleProduct);
   // end of test
 
   // ITERATION 2
-  //... your code goes here
+  let products = document.getElementsByClassName("product");
+  for (let product in products) {
+    // stop the loop if it encounters a number
+    if (isNaN(products[product]) == false) {
+      break;
+    }
+    updateSubtotal(products[product]);
+  }
 
-  // ITERATION 3
-  //... your code goes here
+  let subtotals = document.getElementsByClassName("subtotal");
+  let totalNumber = 0;
+  for (let subtotal in subtotals) {
+    // stop the loop if it encounters a number
+    if (isNaN(subtotals[subtotal]) == false) {
+      break;
+    }
+    totalNumber += Number(subtotals[subtotal].querySelector("span").innerHTML);
+  }
+  let total = document.querySelector("#total-value span");
+  total.innerHTML = totalNumber;
 }
+
+// ITERATION 3
 
 // ITERATION 4
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+  const productToRemove = target.parentNode.parentNode;
+  // console.log("The target in remove is:", target);
+  // console.log("The product to remove is:", productToRemove);
+  productToRemove.remove();
 }
 
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  var cart = document.querySelector("#cart");
+
+  var newProductInputs = document.querySelectorAll(".create-product td");
+  var newProductName = newProductInputs[0].querySelector("input").value;
+  var newProductPrice = newProductInputs[1].querySelector("input").value;
+
+  var template = document.querySelector("#productTemplate");
+  var clone = template.content.cloneNode(true);
+  var cloneProductItems = clone.querySelectorAll("td");
+  var cloneProductRemove = cloneProductItems[4].querySelector("button");
+  cloneProductItems[0].innerHTML = newProductName;
+  cloneProductItems[1].innerHTML = "$" + Number(newProductPrice).toFixed(2);
+  cloneProductRemove.addEventListener("click", removeProduct);
+
+  cart.appendChild(clone);
 }
 
-window.addEventListener('load', () => {
-  const calculatePricesBtn = document.getElementById('calculate');
-  calculatePricesBtn.addEventListener('click', calculateAll);
-
-  //... your code goes here
+window.addEventListener("load", () => {
+  const calculatePricesBtn = document.getElementById("calculate");
+  calculatePricesBtn.addEventListener("click", calculateAll);
+  const createProductBtn = document.getElementById("create");
+  createProductBtn.addEventListener("click", createProduct);
+  let removeButtons = document.getElementsByClassName("btn-remove");
+  for (let button in removeButtons) {
+    if (isNaN(removeButtons[button]) == false) {
+      break;
+    }
+    removeButtons[button].addEventListener("click", removeProduct);
+  }
 });
