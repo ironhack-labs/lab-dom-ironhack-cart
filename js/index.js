@@ -35,24 +35,29 @@ function calculateAll() {
 // ITERATION 4
 
 function removeProduct(event) {
-  const target = event.currentTarget.parentNode.parentNode;
   //... your code goes here
-  target.remove();
+  const productElement = event.currentTarget.parentNode.parentNode;
+  productElement.remove();
 }
 
 // ITERATION 5
 
 function createProduct() {
   //... your code goes here
-  const name = document.querySelector('.create-product input[type="text"]');
-  const price = document.querySelector('.create-product input[type="number"]');
+  const name = document.querySelector('.create-product input[type="text"]').value
+    .split(' ')
+    .map(word => (word[0].toUpperCase() + word.slice(1,).toLowerCase()))
+    .join(' ');
+  const price = (+document.querySelector('.create-product input[type="number"]').value).toFixed(2);
   const table = document.querySelector('#cart tbody');
+
   const newProduct = document.createElement('tr');
+  newProduct.className='product';
   newProduct.innerHTML = `
     <td class="name">
-      <span>Ironhack Beach Towel</span>
+      <span>${name}</span>
     </td>
-    <td class="price">$<span>12.50</span></td>
+    <td class="price">$<span>${price}</span></td>
     <td class="quantity">
       <input type="number" value="0" min="0" placeholder="Quantity" />
     </td>
@@ -61,14 +66,8 @@ function createProduct() {
       <button class="btn btn-remove">Remove</button>
     </td>
   `;
-
-  newProduct.className='product';
-  newProduct.querySelector('.name span').innerText = name.value
-    .split(' ')
-    .map(word => (word[0].toUpperCase() + word.slice(1,).toLowerCase()))
-    .join(' ');
-  newProduct.querySelector('.price span').innerText = (+price.value).toFixed(2);  
   newProduct.querySelector('.btn-remove').addEventListener('click', removeProduct);
+
   table.appendChild(newProduct);
   
   name.value = '';
