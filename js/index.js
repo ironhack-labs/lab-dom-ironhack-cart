@@ -1,9 +1,14 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
+  console.log(product)
   const price = product.querySelector(".price span");
+  console.log(price)
+  console.log(price.innerHTML)
   const quantity = product.querySelector(".quantity input");
+  console.log(quantity.value)
   const subtotal = product.querySelector(".subtotal span");
+  console.log(subtotal.innerHTML)
   return (subtotal.innerHTML = price.innerHTML * quantity.value);
 }
 
@@ -55,6 +60,7 @@ function createProduct() {
   var cart = document.querySelector("#cart");
 
   var newProductInputs = document.querySelectorAll(".create-product td");
+  console.log(newProductInputs[0])
   var newProductName = newProductInputs[0].querySelector("input").value;
   var newProductPrice = newProductInputs[1].querySelector("input").value;
 
@@ -62,8 +68,8 @@ function createProduct() {
   var clone = template.content.cloneNode(true);
   var cloneProductItems = clone.querySelectorAll("td");
   var cloneProductRemove = cloneProductItems[4].querySelector("button");
-  cloneProductItems[0].innerHTML = newProductName;
-  cloneProductItems[1].innerHTML = "$" + Number(newProductPrice).toFixed(2);
+  cloneProductItems[0].querySelector("span").innerHTML = newProductName;
+  cloneProductItems[1].querySelector("span").innerHTML = Number(newProductPrice).toFixed(2);
   cloneProductRemove.addEventListener("click", removeProduct);
 
   cart.appendChild(clone);
