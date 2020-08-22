@@ -38,12 +38,6 @@ function removeProduct() {
 
   const buttonTarget = event.currentTarget;
 
-/* Para borrar toda la linea no debemos borrar solo el botón actal (event.currentTarget). 
-  Por ello tenemos que buscar el padre y el hijo correcto para elimar toda la fila
-  El padre esta tres niveles más arriba (parentNode*3) del currentTarget que tenemos,
-  corresponde al bodey, el hijo sera el siguiente (parenNode*2) corresponde al tr class "product"
-  que queremos borrar */
-
   buttonTarget.parentNode.parentNode.parentNode.removeChild(buttonTarget.parentNode.parentNode)
 
 }
