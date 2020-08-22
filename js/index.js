@@ -80,8 +80,6 @@ function createProduct(event) {
 
 window.addEventListener('load', () => {
 
-  // Añadadido onclik en html para que funcione incluso con los nuevos productos creados.
-
   const buttonRemove = document.querySelectorAll('.btn-remove')
   
   buttonRemove.forEach(function (elm) {
