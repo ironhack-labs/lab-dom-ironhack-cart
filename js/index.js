@@ -70,7 +70,7 @@ function createProduct() {
 
   // //We check that new product info is complete  
   const newName = document.querySelector('.create-product .name input').value
-  const newPrice = document.querySelector('.create-product .price input').value
+  let newPrice = document.querySelector('.create-product .price input').value
 
   if (newName.length === 0 || newPrice == 0) {
 
@@ -107,6 +107,32 @@ function resetFields() {
 
 }
 
+function formatInputs(caller) {
+
+  if (caller.value < 0) {
+    caller.value = 0
+  } else {
+
+    switch (caller.parentNode.className) {
+      case 'quantity':
+
+        caller.value = Number(Math.floor(caller.value))
+
+        break;
+      case 'price':
+
+        caller.value = Number(caller.value).toFixed(2)
+
+        break;
+
+      default:
+        break;
+    }
+
+  }
+
+}
+
 //----- LISTENERS -----
 
 window.addEventListener('load', () => {
@@ -133,4 +159,21 @@ function triggerersCreator() {
 
     }
   })
+
+  const quantityInputs = document.querySelectorAll('.quantity input')
+
+  quantityInputs.forEach(elm => {
+
+    elm.onchange = () => {
+
+      formatInputs(elm)
+
+    }
+
+  })
+
+  const newPriceInput = document.querySelector('.create-product .price input')
+
+  newPriceInput.onchange = () => formatInputs(newPriceInput)
+
 }
