@@ -2,9 +2,6 @@
 
 function updateSubtotal(product) {
 
-  console.log(`Calculating subtotal, yey!`);
-
-
   //... your code goes here
 
   const price = product.querySelector('.price span').innerHTML
@@ -50,71 +47,90 @@ function calculateAll() {
 
 // ITERATION 4
 
-function removeProduct(event) {
-  const target = event.currentTarget;
-  console.log('The target in remove is:', target);
+function removeProduct(caller) {
 
   //... your code goes here
 
-  const lineToDelete = event.currentTarget.parentNode.parentNode
+  const lineToDelete = caller.parentNode.parentNode
 
   lineToDelete.parentNode.removeChild(lineToDelete)
 
   calculateAll()
 
-
-  //lineToDelete.parentNode.removeChild(lineToDelete)
-
 }
-
-const productModel = document.querySelector('.product')
 
 // ITERATION 5
 
+// We store de MODEL TO GENERATE in a variable
+const productModel = document.querySelector('.product').cloneNode(true)
+
 function createProduct() {
+
   //... your code goes here
 
-  const name = document.querySelector('.create-product .name input').value
-  const price = document.querySelector('.create-product .price input').value
+  // //We check that new product info is complete  
+  const newName = document.querySelector('.create-product .name input').value
+  const newPrice = document.querySelector('.create-product .price input').value
 
-  console.log(price === undefined)
-
-  //We check that info is complete
-  if (name.length === 0 || price == 0) {
+  if (newName.length === 0 || newPrice == 0) {
 
     window.alert('Please complete requested product information')
 
   } else {
 
-    const newProduct = productModel
-    newProduct.querySelector('.name span').value = name
-    newProduct.querySelector('.price span').value = price
-    newProduct.querySelector('.quantity input').value = 0
-    newProduct.querySelector('.subtotal span').value = 0
+    // If new product info is complete we write all de data of our new product
+    const newProduct = productModel.cloneNode(true)
+    newProduct.querySelector('.name span').innerHTML = newName
+    newProduct.querySelector('.price span').innerHTML = newPrice
+    newProduct.querySelector('.quantity input').innerHTML = 0
+    newProduct.querySelector('.subtotal span').innerHTML = 0
 
-    let newElement = document.createElement('tr')
+    // Here is where we add the new node to the html
+    document.querySelector('tbody').appendChild(newProduct)
 
-    newElement = newProduct
+    // We call triggerersCreator function again to add the listeners to the new rows buttons
+    triggerersCreator()
 
-    document.querySelector('tbody').appendChild(newElement)
+    // We call resetFields for reseting the fields of the create product row
+    resetFields()
 
   }
 
 }
 
+function resetFields() {
+
+  const targetRow = document.querySelector('.create-product')
+
+  targetRow.querySelector('.name input').value = ''
+  targetRow.querySelector('.price input').value = 0
+
+}
+
+//----- LISTENERS -----
+
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+  // We create the listener for the button that creates the products
+  const createProductBtn = document.querySelector('#create')
+  createProductBtn.addEventListener('click', createProduct)
+
+})
+
+// We create the listener for the buttons that deletes products
+triggerersCreator()
+
+function triggerersCreator() {
 
   const deleteProductBtn = document.querySelectorAll('.btn-remove')
   deleteProductBtn.forEach(elm => {
 
-    elm.addEventListener('click', removeProduct)
+    elm.onclick = () => {
+
+      removeProduct(elm)
+
+    }
   })
-
-  const createProductBtn = document.querySelector('#create')
-  createProductBtn.addEventListener('click', createProduct)
-
-});
+}
