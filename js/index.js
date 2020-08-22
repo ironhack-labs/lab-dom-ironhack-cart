@@ -1,42 +1,97 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
 
-  //... your code goes here
+  let subTotal = product.querySelector('.price span').innerHTML
+
+  const quantity = product.querySelector('input').value
+  
+  subTotal *= quantity;
+  product.querySelector('.subtotal').innerHTML = subTotal
+  return subTotal
+
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
 
   // ITERATION 2
-  //... your code goes here
 
+  let products = []
+  products = document.getElementsByClassName('product')
+
+  
   // ITERATION 3
-  //... your code goes here
+
+  let total = 0
+
+  for (let i = 0; i < products.length; i++){
+
+    total += updateSubtotal(products[i])
+  }
+
+  document.querySelector('h2 span').innerHTML = total
 }
 
 // ITERATION 4
 
-function removeProduct(event) {
-  const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+function removeProduct() {
+
+  const buttonTarget = event.currentTarget;
+
+/* Para borrar toda la linea no debemos borrar solo el botón actal (event.currentTarget). 
+  Por ello tenemos que buscar el padre y el hijo correcto para elimar toda la fila
+  El padre esta tres niveles más arriba (parentNode*3) del currentTarget que tenemos,
+  corresponde al bodey, el hijo sera el siguiente (parenNode*2) corresponde al tr class "product"
+  que queremos borrar */
+
+  buttonTarget.parentNode.parentNode.parentNode.removeChild(buttonTarget.parentNode.parentNode)
+
 }
 
 // ITERATION 5
 
-function createProduct() {
-  //... your code goes here
+function createProduct(event) {
+
+  let selector = document.getElementById('newName')
+  const newName = selector.querySelector('input').value
+
+  selector = document.getElementById('newPrice')
+  const newPrice = selector.querySelector('input').value
+
+  const newParagraph = document.createElement('tr')
+
+  selector.parentNode.parentNode.parentNode.appendChild(newParagraph)
+  newParagraph.innerHTML = 
+    `<td class="name">
+      <span>${newName}</span>
+      </td>
+      <td class="price">$<span>${newPrice}</span></td>
+      <td class="quantity">
+      <input type="number" value="0" min="0" placeholder="Quantity" />
+      </td>
+      <td class="subtotal">$<span>0</span></td>
+      <td>
+      <button class="btn btn-remove" onclick="removeProduct();">Remove</button>
+      </td>`
+
+  newParagraph.setAttribute('class', 'product')
+
 }
 
 window.addEventListener('load', () => {
-  const calculatePricesBtn = document.getElementById('calculate');
-  calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+  // Añadadido onclik en html para que funcione incluso con los nuevos productos creados.
+
+  const buttonRemove = document.querySelectorAll('.btn-remove')
+  
+  buttonRemove.forEach(function (elm) {
+    elm.addEventListener('click', removeProduct)
+  })
+  
+  const calculatePricesBtn = document.getElementById('calculate')
+  calculatePricesBtn.addEventListener('click', calculateAll)
+  
+  const buttonCreate = document.getElementById('create')
+  buttonCreate.addEventListener('click', createProduct)
+  
 });

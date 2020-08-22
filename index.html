@@ -24,22 +24,35 @@
             <span>Ironhack Rubber Duck</span>
           </td>
           <td class="price">$<span>25.00</span></td>
-          <td class="quantity">
+          <td>
             <input type="number" value="0" min="0" placeholder="Quantity" />
           </td>
           <td class="subtotal">$<span>0</span></td>
-          <td class="action">
+          <td>
             <button class="btn btn-remove">Remove</button>
           </td>
         </tr>
         <!-- Iteration 2: Add more products here -->
+        <tr class="product">
+          <td class="name">
+            <span>Ironhack T-shirt</span>
+          </td>
+          <td class="price">$<span>35.00</span></td>
+          <td>
+            <input type="number" value="0" min="0" placeholder="Quantity" />
+          </td>
+          <td class="subtotal">$<span>0</span></td>
+          <td>
+            <button class="btn btn-remove">Remove</button>
+          </td>
+        </tr>
       </tbody>
       <tfoot>
-        <!-- <tr class="create-product">
-          <td>
+        <tr class="create-product">
+          <td id="newName">
             <input type="text" placeholder="Product Name" />
           </td>
-          <td>
+          <td id="newPrice">
             <input type="number" min="0" value="0" placeholder="Product Price" />
           </td>
           <td></td>
@@ -47,7 +60,7 @@
           <td>
             <button id="create" class="btn">Create Product</button>
           </td>
-        </tr> -->
+        </tr>
       </tfoot>
     </table>
     <p class="calculate-total">
