@@ -4,12 +4,12 @@ function updateSubtotal(product) {
 
   //... your code goes here
 
-  const price = product.querySelector('.price span').innerHTML
+  const price = product.querySelector('.price span').innerText
   const quantity = product.querySelector('.quantity input').value
 
   const subTotalPrice = price * quantity
 
-  product.querySelector('.subtotal span').innerHTML = subTotalPrice
+  product.querySelector('.subtotal span').innerText = subTotalPrice
 
   return subTotalPrice
 
@@ -42,7 +42,7 @@ function calculateAll() {
   // ITERATION 3
   //... your code goes here
 
-  document.querySelector('#total-value span').innerHTML = totalPrice
+  document.querySelector('#total-value span').innerText = totalPrice
 }
 
 // ITERATION 4
@@ -74,16 +74,24 @@ function createProduct() {
 
   if (newName.length === 0 || newPrice == 0) {
 
-    window.alert('Please complete requested product information')
+    if (newName.length > 0) {
+
+      window.alert('Please insert a price greater than 0')
+
+    } else {
+
+      window.alert('Please complete requested product information')
+
+    }
 
   } else {
 
     // If new product info is complete we write all de data of our new product
     const newProduct = productModel.cloneNode(true)
-    newProduct.querySelector('.name span').innerHTML = newName
-    newProduct.querySelector('.price span').innerHTML = newPrice
-    newProduct.querySelector('.quantity input').innerHTML = 0
-    newProduct.querySelector('.subtotal span').innerHTML = 0
+    newProduct.querySelector('.name span').innerText = newName
+    newProduct.querySelector('.price span').innerText = newPrice
+    newProduct.querySelector('.quantity input').innerText = 0
+    newProduct.querySelector('.subtotal span').innerText = 0
 
     // Here is where we add the new node to the html
     document.querySelector('tbody').appendChild(newProduct)
@@ -111,6 +119,8 @@ function formatInputs(caller) {
 
   if (caller.value < 0) {
     caller.value = 0
+    window.alert("Please insert a positive number")
+
   } else {
 
     switch (caller.parentNode.className) {
