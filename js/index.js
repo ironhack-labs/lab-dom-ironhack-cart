@@ -13,16 +13,11 @@ function updateSubtotal(product) {
 
   product.querySelector('.subtotal span').innerHTML = multi
 
-
-  console.log(multi)
-
 }
 
 function calculateAll() {
 
   const productArr = document.querySelectorAll('.product')
-
-  console.log(productArr)
 
   // Actualiamos el DOM
   productArr.forEach(elm => updateSubtotal(elm))
@@ -32,8 +27,6 @@ function calculateAll() {
   let total = 0;
   // POR CADA uno de los subtatles, sumamos a total y luego devolvemos total
 
-  console.log(productArr);
-
   productArr.forEach(element => {
     const value = element.querySelector('.subtotal span').innerHTML;
 
@@ -42,37 +35,21 @@ function calculateAll() {
 
   document.querySelector('#total-value span').innerHTML = total
 
-
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // ITERATION 4
 
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
-  //... your code goes here
+
+
+  // Accedemos al padre del botón, pero como tiene otro padre pues accedemos al padre del padre
+  const productTable = document.querySelector('#cart tbody')
+  productTable.removeChild(target.parentNode.parentNode)
+
+  calculateAll()
+
 }
 
 // ITERATION 5
@@ -85,5 +62,15 @@ window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+
+
+
+  const removeButton = document.querySelectorAll('.btn-remove')
+
+  removeButton.forEach(elm => {
+    elm.addEventListener('click', removeProduct)
+  })
+
 });
+
+
