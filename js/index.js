@@ -1,42 +1,100 @@
 // ITERATION 1
 
-function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
+const rowToAppend= (document.querySelector('.product')).cloneNode(true)
 
+
+function updateSubtotal(product) {
+  console.log("Calculating subtotal, yey!");
   //... your code goes here
+
+  const price = product.querySelector(".price span");
+
+  const quantity = product.querySelector(".quantity input");
+
+  let subtotal = price.textContent * quantity.value;
+
+  const printSubtotal = product.querySelector(".subtotal span");
+  printSubtotal.innerText = subtotal;
+  return subtotal;
 }
+
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
-
   // ITERATION 2
-  //... your code goes here
+
+  const products = document.querySelectorAll(".product");
+
+  products.forEach((element) => {
+    updateSubtotal(element);
+  });
 
   // ITERATION 3
-  //... your code goes here
+  let total = 0;
+  products.forEach((element) => {
+    //quitamos el símbolo del dolar $
+    let onlyNumber = element.querySelector(".subtotal").textContent.slice(1);
+    total += parseInt(onlyNumber);
+  });
+  const totalValue = document.querySelector("#total-value span");
+  totalValue.innerText = total;
 }
+
+
 
 // ITERATION 4
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
+  console.log(target)
+  console.log("The target in remove is:", target);
   //... your code goes here
+target.parentNode.parentNode.parentNode.removeChild(target.parentNode.parentNode);
+calculateAll()
 }
 
 // ITERATION 5
 
 function createProduct() {
   //... your code goes here
+  console.log("Creando producto")
+
+  const createdProductName= document.querySelector('.create-product input[type=text]')
+  const createdProductPrice= document.querySelector('.create-product input[type=number]')
+    if(createdProductName.value!="") 
+    {
+  rowToAppend.querySelector('.name span').innerText= createdProductName.value;
+  rowToAppend.querySelector('.product .price span').innerText=parseInt(createdProductPrice.value).toFixed(2)
+  
+  createdProductName.value=""
+  createdProductPrice.value=0
+  const whereAppend= document.querySelector('tbody')
+  console.log(whereAppend)
+  whereAppend.appendChild(rowToAppend.cloneNode(true))
+  addNewBtnToRemove();
+  calculateAll()
+    }
+    else alert('Debes introducir un elemento')
 }
 
-window.addEventListener('load', () => {
-  const calculatePricesBtn = document.getElementById('calculate');
-  calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+//Función que incluye los botones de Remove de las nuevas líenas creadas
+
+function addNewBtnToRemove(){
+  const removeBtn= document.querySelectorAll('.btn-remove')
+    removeBtn.forEach(element => {
+      
+      element.addEventListener("click",removeProduct)
+    });
+  }
+
+
+window.addEventListener("load", () => {
+  const calculatePricesBtn = document.getElementById("calculate");
+  calculatePricesBtn.addEventListener("click", calculateAll);
+  const createProductbtn= document.querySelector('#create')
+  createProductbtn.addEventListener("click",createProduct)
+  addNewBtnToRemove();
+  
 });
+
+
