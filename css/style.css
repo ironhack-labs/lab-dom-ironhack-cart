@@ -46,7 +46,10 @@ table input[type='number'] {
   border-radius: 0.25em;
   cursor: pointer;
 }
-
+.btn-create{
+  background-color:rgb(93, 92, 92);
+  color:white
+}
 .btn-success,
 .btn-remove {
   color: #fff;
