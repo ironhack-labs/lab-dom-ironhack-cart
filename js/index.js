@@ -63,7 +63,7 @@ function createProduct() {
 
 
   // Validation
-  if (newProduct === '' && newProductPrice) {
+  if (newProduct === '' || newProductPrice === '0') {
     alert("Tienes que añadir un producto y precio.")
   } else {
 
