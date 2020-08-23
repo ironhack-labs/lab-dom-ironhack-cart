@@ -56,8 +56,8 @@ function removeProduct(event) {
 
 function createProduct(event) {
 
-  const target = event.currentTarget
-  console.log('The target clicked is:', target)
+  // const target = event.currentTarget
+  // console.log('The target clicked is:', target)
  
   let createProductName = document.querySelector('.create-product-name').value
   let createProductPrice = document.querySelector('.create-product-price').value
@@ -92,13 +92,19 @@ function createProduct(event) {
 
   let newProductAction = document.createElement('td')
   newProductAction.setAttribute('class', 'action')
-  let newProductButton = document.createElement('button')
-  newProductButton.setAttribute('class', 'btn btn-remove')
-  newProductButton.innerText = 'Remove'
-  newProductAction.appendChild(newProductButton)
+  let newProductButtonRemove = document.createElement('button')
+  newProductButtonRemove.setAttribute('class', 'btn btn-remove')
+  newProductButtonRemove.innerText = 'Remove'
+  newProductAction.appendChild(newProductButtonRemove)
   newProduct.appendChild(newProductAction)
 
   document.querySelector('tbody').appendChild(newProduct)
+
+  // UPDATE THE REMOVEPRODUCT FUNCTION 
+  newProductButtonRemove.addEventListener('click', removeProduct)
+
+  document.querySelector('.create-product-name').value = ''
+  document.querySelector('.create-product-price').value = 0
 
 }
 
@@ -106,8 +112,8 @@ function createProduct(event) {
 
 window.addEventListener('load', () => {
   // CALCULATE BUTTON
-  const calculatePricesBtn = document.getElementById('calculate');
-  calculatePricesBtn.addEventListener('click', calculateAll);
+  const calculatePricesBtn = document.getElementById('calculate')
+  calculatePricesBtn.addEventListener('click', calculateAll)
 
   // REMOVE BUTTON 
   const removeProductsBtn = document.querySelectorAll('.btn-remove')  
@@ -118,4 +124,12 @@ window.addEventListener('load', () => {
   // CREATE BUTTON
   const createBtn = document.getElementById('create')
   createBtn.addEventListener('click', createProduct)
-});
+
+})
+
+// function updateRemoveBtns(){
+//   const removeProductsBtn = document.querySelectorAll('.btn-remove')  
+//   removeProductsBtn.forEach(btn => {
+//     btn.addEventListener('click', removeProduct)
+//   })
+// }
