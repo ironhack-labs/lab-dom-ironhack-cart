@@ -15,6 +15,11 @@ input {
   color: inherit;
 }
 
+button {
+  border: none;
+  border-radius: 0.25em;
+}
+
 th,
 td,
 button,
