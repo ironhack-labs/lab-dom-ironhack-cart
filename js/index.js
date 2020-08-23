@@ -47,13 +47,25 @@ function removeProduct(event) {
 // ITERATION 5
 
 function createProduct() {
-  const name = document.querySelector("create-name").innerHTML
-  const price = document.querySelector("create-name").innerHTML
+  const name = document.querySelector(".create-name").value
+  const price = document.querySelector(".create-price").value
+ 
+  const cartList = document.querySelector(".cartList")
+  const baseProduct = document.querySelector(".product")
+  let newProduct = baseProduct.cloneNode(true)
 
-  
-}
+  cartList.appendChild(newProduct)
 
-window.addEventListener('load', () => {
+  newProduct.querySelector(".name span").innerHTML = name
+  newProduct.querySelector(".price span").innerHTML = price
+  newProduct.querySelector(".quantity input").value = 0
+  newProduct.querySelector(".subtotal span").innerHTML = 0
+
+  document.querySelector(".create-name").value = "";
+  document.querySelector(".create-price").value = 0;
+} 
+
+window.addEventListener('click', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
@@ -62,4 +74,5 @@ window.addEventListener('load', () => {
 
   const createBtn = document.querySelector("#create")
   createBtn.addEventListener('click', createProduct)
+
 });
