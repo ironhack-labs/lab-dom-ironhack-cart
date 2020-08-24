@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<table lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="./css/style.css" />
     <title>Ironhack Cart</title>
   </head>
+  
   <body>
     <h1>Ironhack Cart</h1>
     <table id="cart">
@@ -33,13 +34,28 @@
           </td>
         </tr>
         <!-- Iteration 2: Add more products here -->
+        <tr class="product">
+          <td class="name">
+            <span>Ironhack Sunglases</span>
+          </td>
+          <td class="price">$<span>12.00</span></td>
+          <td class="quantity">
+            <input type="number" value="0" min="0" placeholder="Quantity" />
+          </td>
+          <td class="subtotal">$<span>0</span></td>
+          <td class="action">
+            <button class="btn btn-remove">Remove</button>
+          </td>
+        </tr>
       </tbody>
       <tfoot>
-        <!-- <tr class="create-product">
+        
+        <!-- Creacíon del producto -->
+        <tr class="create-product">
           <td>
             <input type="text" placeholder="Product Name" />
           </td>
-          <td>
+          <td class="new-price">
             <input type="number" min="0" value="0" placeholder="Product Price" />
           </td>
           <td></td>
@@ -47,13 +63,16 @@
           <td>
             <button id="create" class="btn">Create Product</button>
           </td>
-        </tr> -->
+        </tr>
       </tfoot>
     </table>
+   
+    <!-- Creación de calculo total -->
     <p class="calculate-total">
       <button id="calculate" class="btn btn-success">Calculate Prices</button>
     </p>
     <h2 id="total-value">Total: $<span>0</span></h2>
     <script type="text/javascript" src="./js/index.js"></script>
   </body>
+  
 </html>
