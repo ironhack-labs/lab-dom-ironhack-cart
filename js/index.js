@@ -45,6 +45,7 @@ function removeProduct(event) {
 
 function createProduct() {
   //... your code goes here
+  console.log("add an object");
 }
 
 window.addEventListener('load', () => {
@@ -54,4 +55,9 @@ window.addEventListener('load', () => {
   //... your code goes here
   const removeBtn = document.querySelectorAll('.btn-remove');
   removeBtn.forEach((btn) => btn.onclick = removeProduct);
+
+  const createBtn = document.getElementById("create");
+  createBtn.addEventListener('click', createProduct);
+
+
 });
