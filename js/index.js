@@ -38,23 +38,49 @@ function removeProduct(event) {
   const target = event.currentTarget;
   console.log("The target in remove is:", target);
   target.parentNode.parentNode.remove();
+  calculateAll();
 }
 
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  console.log("create product");
+  const newProductName = document.getElementById("new-product-name");
+  const newProductPrice = document.getElementById("new-product-price");
+  const tableBody = document.getElementById("table-body");
+  const productTable = document.createElement("tr");
+  productTable.innerHTML += `<tr>
+                                <td class="name">
+                                  <span>Ironhack ${newProductName.value}</span>
+                                </td>
+                                <td class="price">$<span>${newProductPrice.value}</span></td>
+                                <td class="quantity">
+                                  <input type="number" value="0" min="0" placeholder="Quantity" />
+                                </td>
+                                <td class="subtotal">$<span>0</span></td>
+                                <td class="action">
+                                  <button class="btn btn-remove">Remove</button>
+                                </td>
+                              </tr>`;
+  tableBody.appendChild(productTable);
+  productTable.classList.add("product");
+  removeBtnListener();
 }
 
 window.addEventListener("load", () => {
   const calculatePricesBtn = document.getElementById("calculate");
   calculatePricesBtn.addEventListener("click", calculateAll);
 
+  removeBtnListener();
+
+  const addProductBtn = document.getElementById("create");
+  addProductBtn.onclick = createProduct;
+});
+
+function removeBtnListener() {
   const allProducts = document.querySelectorAll(".product");
   allProducts.forEach((product) => {
     const btnRemove = product.querySelector(".btn-remove");
     btnRemove.addEventListener("click", removeProduct);
   });
-
-  //... your code goes here
-});
+}
