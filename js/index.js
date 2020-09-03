@@ -18,8 +18,6 @@ function calculateSub(price, quantity) {
 function calculateAll() {
   // ITERATION 2
   const allProducts = document.querySelectorAll(".product");
-  // console.log(allProducts);
-
   allProducts.forEach((product) => {
     updateSubtotal(product);
   });
@@ -39,9 +37,6 @@ function calculateAll() {
 
 function removeProduct(event) {
   const target = event.currentTarget;
-
-  //... your code goes here
-
   const getProduct = target.parentNode.parentNode;
   getProduct.remove();
   calculateAll();
@@ -50,7 +45,32 @@ function removeProduct(event) {
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  const getProductName = document.getElementById("create-product-name");
+  const getProductPrice = document.getElementById("create-product-price");
+  const getProductList = document.querySelector("#products-list");
+
+  if (getProductName.value !== "" && getProductPrice.value > 0) {
+    const tr = document.createElement("tr");
+    tr.className = "product";
+    tr.innerHTML += `<td class="name">
+        <span>${getProductName.value}</span>
+      </td>
+      <td class="price">$<span>${getProductPrice.value}</span></td>
+      <td class="quantity">
+       <input type="number" value="0" min="0" placeholder="Quantity" />
+      </td>
+      <td class="subtotal">$<span>0</span></td>
+      <td class="action">
+      <button class="btn btn-remove">Remove</button>
+      </td>`;
+    getProductList.appendChild(tr);
+  }
+
+  getProductName.value = "";
+  getProductPrice.value = "";
+
+  const getRemove = document.querySelectorAll(".btn-remove");
+  getRemove.forEach((btn) => (btn.onclick = removeProduct));
 }
 
 const calculatePricesBtn = document.getElementById("calculate");
@@ -58,3 +78,6 @@ calculatePricesBtn.addEventListener("click", calculateAll);
 
 const getRemove = document.querySelectorAll(".btn-remove");
 getRemove.forEach((btn) => (btn.onclick = removeProduct));
+
+const createProductBtn = document.getElementById("create");
+createProductBtn.addEventListener("click", createProduct);
