@@ -38,11 +38,11 @@ function createProduct() {
 
   const productName = document.querySelector('.create-product input[type=text]');
   const productPrice = document.querySelector('.create-product input[type=number]');
-  const tbody  = document.querySelector('#cart>tbody');
+  const tbody = document.querySelector('#cart>tbody');
 
   const newProduct = document.createElement("tr");
   newProduct.classList.add('product');
-  
+
   newProduct.innerHTML += `<td class="name">
     <span>${productName.value}</span>
   </td>
@@ -53,7 +53,7 @@ function createProduct() {
   <td class="subtotal">$<span>0</span></td>
   <td class="action">
     <button class="btn btn-remove">Remove</button>
-  </td>`
+  </td>`;
 
 tbody.appendChild(newProduct);
 
