@@ -66,6 +66,9 @@ function createProduct() {
                     </td>`;
     document.querySelector("#cart tbody").appendChild(tr);
     tr.querySelector(".btn-remove").onclick = removeProduct;
+
+    document.querySelector(".create-product .name input").value = "";
+    document.querySelector(".create-product .price input").value = 0;
 }
 
 window.addEventListener('load', () => {
