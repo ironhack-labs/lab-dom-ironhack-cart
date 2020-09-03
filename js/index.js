@@ -25,12 +25,16 @@ function calculateAll() {
     let trList = document.querySelectorAll(".product");
     var totalPrice = 0;
 
-    trList.forEach((tr) => { totalPrice += updateSubtotal(tr); });
+    trList.forEach((tr) => {
+        console.log("tr : ", tr);
+        totalPrice += updateSubtotal(tr);
+    });
 
 
     // ITERATION 3
     //... your code goes here
     document.querySelector("#total-value span").innerHTML = totalPrice;
+    console.log("toto");
 }
 
 // ITERATION 4
@@ -39,6 +43,9 @@ function removeProduct(event) {
     const target = event.currentTarget;
     console.log('The target in remove is:', target);
     //... your code goes here
+    target.parentElement.parentElement.outerHTML = "";
+
+    calculateAll();
 }
 
 // ITERATION 5
@@ -52,4 +59,6 @@ window.addEventListener('load', () => {
     calculatePricesBtn.addEventListener('click', calculateAll);
 
     //... your code goes here
+    const removePriceBtn = document.querySelectorAll(".btn-remove");
+    removePriceBtn.forEach((btn) => btn.onclick = removeProduct);
 });
