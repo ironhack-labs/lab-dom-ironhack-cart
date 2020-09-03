@@ -5,11 +5,12 @@ function updateSubtotal(product) {
 
   const price = product.querySelector('.price span');
   const quantity = product.querySelector('.quantity input');
-  const subtotal = product.querySelector('.subtotal');
+  const subtotal = product.querySelector('.subtotal span');
 
   const subtotalPrice = price.textContent * quantity.value;
-
-  console.log('subtotalPrice', subtotalPrice)
+  subtotal.textContent = subtotalPrice;
+  
+  return subtotal;
 }
 
 function calculateAll() {
