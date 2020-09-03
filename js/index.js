@@ -52,6 +52,29 @@ function removeProduct(event) {
 
 function createProduct() {
     //... your code goes here
+    console.log("toto");
+    let pdtName = document.querySelector(".create-product .name input").value;
+    let pdtPrice = document.querySelector(".create-product .price input").value;
+
+    const tr = document.createElement("tr");
+    tr.classList.add("product")
+    tr.innerHTML += `<td class="name">
+                      <span>${pdtName}</span>
+                    </td>
+                    <td class="price">$<span>${pdtPrice}</span></td>
+                    <td class="quantity">
+                      <input type="number" value="0" min="0" placeholder="Quantity" />
+                    </td>
+                    <td class="subtotal">$<span>0</span></td>
+                    <td class="action">
+                      <button class="btn btn-remove">Remove</button>
+                    </td>`;
+    document.querySelector("#cart tbody").appendChild(tr);
+    //tr.querySelector(".btn remove").onclick = removeProduct;
+
+    const removePriceBtn = document.querySelectorAll(".btn-remove");
+    removePriceBtn.forEach((btn) => btn.onclick = removeProduct);
+
 }
 
 window.addEventListener('load', () => {
@@ -61,4 +84,7 @@ window.addEventListener('load', () => {
     //... your code goes here
     const removePriceBtn = document.querySelectorAll(".btn-remove");
     removePriceBtn.forEach((btn) => btn.onclick = removeProduct);
+
+    const createBtn = document.getElementById("create");
+    createBtn.onclick = createProduct;
 });
