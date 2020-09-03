@@ -1,26 +1,20 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
 
   // INIT VARIABLE
   let price = 0;
   let quantity = 0;
   let unitPrice;
-  //console.log(product);
 
   quantity = product.querySelector('.quantity input').value;
   unitPrice = product.querySelector('.price span').innerHTML;
   let subtotal =  product.querySelector('.subtotal span');
   
-  console.log(unitPrice, typeof unitPrice);
-  console.log(quantity, typeof quantity);
+  convertValue(unitPrice);
 
-  convertValue(unitPrice)
-  //unitPrice = Number(unitPrice);
-  
   price = (quantity * unitPrice);
-  //console.log('fixed', price);
+
   let transFormPrice = price.toFixed(2);
   subtotal.innerHTML = transFormPrice;
   
@@ -29,14 +23,11 @@ function updateSubtotal(product) {
 }
 
 const convertValue = (price) => {
-  console.log(price );
   let newPrice;
   let res;
   if(typeof price == 'string') {
     res = Number(price);
   }
-  console.log(res + ' ' + typeof res);
-
   return res;
 }
 
@@ -56,7 +47,6 @@ function calculateAll() {
   for(let i = 0; i < products.length; i++ ) {
     //execute
     let subtotalLine = updateSubtotal(products[i]);
-    console.log(subtotalLine);
     total += subtotalLine;
   }
   // console.log('total value after loop: ', total);
@@ -73,11 +63,11 @@ function calculateAll() {
 function removeProduct(event) {
   const target = event.currentTarget;
   let currentParentNode=target.parentNode.parentNode.parentNode;
-  console.log('The target in remove is:', target);
+
   let currentChildNode = target.parentNode.parentNode;
   
   currentParentNode.removeChild(currentChildNode);
-  calculateAll()
+  calculateAll();
   //... your code goes here
 }
 
@@ -85,27 +75,18 @@ function removeProduct(event) {
 
 function createProduct(evt) {
   //... your code goes here
-  //console.log(evt.currentTarget);
   const target = event.currentTarget;
   const inputNameProduct = document.querySelector('.create-product input[type=text]').value;
-  console.log('inputNameProduct',inputNameProduct);
-
   const inputUnitPriceProduct = document.querySelector('.create-product input[type=number]').value;
 
   let transFormPrice = Number(inputUnitPriceProduct).toFixed(2);
-  // console.log(transFormPrice + ' ' + typeof transFormPrice);
-
   let targetParentNode = document.querySelector('#cart tbody');
-  
-  
-
   let tplTr = document.createElement('tr');
   tplTr.classList.add('product');
   tplTr.innerHTML += `<td class="name"><span>${inputNameProduct}</span></td><td class="price">$<span>${transFormPrice}</span></td>
   <td class="quantity">
     <input type="number" value="0" min="0" placeholder="Quantity" />
-  </td>
-  <td class="subtotal">$<span>0</span></td>
+  </td><td class="subtotal">$<span>0</span></td>
   <td class="action">
     <button class="btn btn-remove">Remove</button>
   </td>`;
@@ -113,10 +94,10 @@ function createProduct(evt) {
   if(inputNameProduct.length < 1 || inputUnitPriceProduct == 0) {
     return alert("Can't create a new product wihout price and name !");
   }
-  console.log('tplTr', tplTr);
+
   targetParentNode.appendChild(tplTr);
-  console.log('targetPrabt lastchild',targetParentNode.lastChild.lastChild.childNodes[1].addEventListener("click", removeProduct));
-  console.log('targetPrabt lastchild',targetParentNode.lastChild.lastChild.ELEMENT_NODE);
+  targetParentNode.lastChild.lastChild.childNodes[1].addEventListener("click", removeProduct);
+  
   document.querySelector('.create-product input[type=text]').value = '';
   document.querySelector('.create-product input[type=number]').value = 0;
 };
