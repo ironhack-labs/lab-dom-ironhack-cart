@@ -67,19 +67,48 @@ function removeProduct(event) {
 
 // ITERATION 5
 
-function createProduct() {
+function createProduct(evt) {
   //... your code goes here
-}
+  console.log(evt.currentTarget);
+  const target = event.currentTarget;
+  const inputNameProduct = document.querySelector('.create-product input[type=text]').value;
+  console.log('inputNameProduct',inputNameProduct);
+
+  const inputUnitPriceProduct = document.querySelector('.create-product input[type=number]').value;
+  console.log('inputUnitPriceProduct',inputUnitPriceProduct);
+  let transFormPrice = Number(inputUnitPriceProduct).toFixed(2);
+  console.log(transFormPrice + ' ' + typeof transFormPrice);
+
+  let targetParentNode = document.querySelector('#cart tbody');
+  console.log('targetParentNode', targetParentNode);
+
+  let tplTr = document.createElement('tr');
+  tplTr.classList.add('product');
+  tplTr.innerHTML += `<td class="name"><span>${inputNameProduct}</span></td><td class="price">$<span>${transFormPrice}</span></td>
+  <td class="quantity">
+    <input type="number" value="0" min="0" placeholder="Quantity" />
+  </td>
+  <td class="subtotal">$<span>0</span></td>
+  <td class="action">
+    <button class="btn btn-remove">Remove</button>
+  </td>`;
+  console.log('inputUnitPriceProduct',inputUnitPriceProduct + ' ' + typeof inputUnitPriceProduct); 
+  if(inputNameProduct.length < 1 || inputUnitPriceProduct == 0) {
+    return alert("Can't create a new product wihout price and name !");
+  }
+  targetParentNode.appendChild(tplTr);
+};
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
+  const btnCreateProduct = document.getElementById('create')
   
   const removeItemsBtn = document.querySelectorAll('.product .action .btn-remove').forEach((btn) => {
     btn.addEventListener("click", removeProduct);
-    console.log(btn.parentNode) 
+    console.log(btn.parentNode);
   });
   
   calculatePricesBtn.addEventListener('click', calculateAll);
-
+  btnCreateProduct.addEventListener('click', createProduct);
   //... your code goes here
 });
