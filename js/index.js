@@ -27,14 +27,13 @@ function calculateAll() {
 function removeProduct(event) {
   const target = event.currentTarget;
   target.parentNode.parentNode.remove();
-  //target.parentNode.parentNode.removeChild(target.parentNode.parentNode);
-  //... your code goes here
 }
 
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  const newProduct = document.querySelector(".create-product input");
+console.log(newProduct)
 }
 
 window.addEventListener("load", () => {
@@ -44,11 +43,15 @@ window.addEventListener("load", () => {
   const removeBtns = document.querySelectorAll(".btn.btn-remove");
 
   removeBtns.forEach((btn) => {
-    //btn.addEventListener("click", removeProduct);
-
     btn.addEventListener("click", (evt) => {
       removeProduct(evt);
       calculateAll();
+
     });
+
   });
+
+const createBtn = document.getElementById("create");
+createBtn.addEventListener("click", createProduct);
 });
+
