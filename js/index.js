@@ -25,16 +25,12 @@ function calculateAll() {
     let trList = document.querySelectorAll(".product");
     var totalPrice = 0;
 
-    trList.forEach((tr) => {
-        console.log("tr : ", tr);
-        totalPrice += updateSubtotal(tr);
-    });
+    trList.forEach((tr) => { totalPrice += updateSubtotal(tr) });
 
 
     // ITERATION 3
     //... your code goes here
     document.querySelector("#total-value span").innerHTML = totalPrice;
-    console.log("toto");
 }
 
 // ITERATION 4
@@ -45,14 +41,13 @@ function removeProduct(event) {
     //... your code goes here
     target.parentElement.parentElement.outerHTML = "";
 
-    calculateAll();
+    calculateAll(); //refresh the price
 }
 
 // ITERATION 5
 
 function createProduct() {
     //... your code goes here
-    console.log("toto");
     let pdtName = document.querySelector(".create-product .name input").value;
     let pdtPrice = document.querySelector(".create-product .price input").value;
 
@@ -70,11 +65,7 @@ function createProduct() {
                       <button class="btn btn-remove">Remove</button>
                     </td>`;
     document.querySelector("#cart tbody").appendChild(tr);
-    //tr.querySelector(".btn remove").onclick = removeProduct;
-
-    const removePriceBtn = document.querySelectorAll(".btn-remove");
-    removePriceBtn.forEach((btn) => btn.onclick = removeProduct);
-
+    tr.querySelector(".btn-remove").onclick = removeProduct;
 }
 
 window.addEventListener('load', () => {
