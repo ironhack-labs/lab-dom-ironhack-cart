@@ -36,9 +36,13 @@ function calculateAll() {
 // ITERATION 4
 
 function removeProduct(event) {
-  const target = event.currentTarget;
-  const getProduct = target.parentNode.parentNode;
-  getProduct.remove();
+  let currentItem = event.currentTarget;
+
+  while (currentItem.className !== "product") {
+    currentItem = currentItem.parentNode;
+  }
+
+  currentItem.remove();
   calculateAll();
 }
 
