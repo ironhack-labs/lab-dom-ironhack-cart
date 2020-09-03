@@ -13,10 +13,17 @@ function updateSubtotal(product) {
 function calculateAll() {
   // code in the following two lines is added just for testing purposes.
   // it runs when only iteration 1 is completed. at later point, it can be removed.
-   const singleProduct = document.querySelector('.product');
-   updateSubtotal(singleProduct);
-   console.log(singleProduct)
-
+  // const singleProduct = document.querySelector('.product');
+  // updateSubtotal(singleProduct);
+  // console.log(singleProduct)
+  const products = document.getElementsByClassName("product");
+  let sum = 0;
+  for (let i = 0; i < products.length; i++) {
+    sum += updateSubtotal(products[i]);
+  }
+  // console.log(sum);
+  const totalHolder = document.querySelector("#total-value span");
+  totalHolder.innerHTML = sum;
 
 }
 
