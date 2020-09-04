@@ -60,17 +60,22 @@ function createProduct() {
   var cell4 = row.insertCell(3);
   var cell5 = row.insertCell(4);
 
-  // cell1.innerHTML = `<span>${newProduct}</span>`;
   cell1.outerHTML = `<td class="name"><span>${newProduct}</span></td>`;
-  // cell2.innerHTML = `<span>${newPrice}</span>`;
+
   cell2.outerHTML = `<td class="price">$<span>${newPrice}</span></td>`;
-  // cell3.innerHTML = `<input type="number" value="0" min="0" placeholder="Quantity" />`;
+
   cell3.outerHTML = `<td class="quantity"><input type="number" value="0" min="0" placeholder="Quantity" /></td>`;
-  // cell4.innerHTML = `<span>$0</span>`;
+
   cell4.outerHTML = `<td class="subtotal">$<span>0</span></td>`;
-  // cell5.innerHTML = `<button class="btn btn-remove">Remove</button>`;
+
   cell5.outerHTML = `<td class="action"><button class="btn btn-remove">Remove</button></td>`;
-  //inserting the HTML for a new product element with newProduct and newPrice
+
+  calculateAll();
+  const removeBtns = document.getElementsByClassName("btn-remove");
+  for (let index = 0; index < removeBtns.length; index++) {
+    const element = removeBtns[index];
+    element.addEventListener("click", removeProduct);
+  }
   calculateAll();
 }
 
