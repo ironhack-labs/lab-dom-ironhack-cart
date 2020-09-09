@@ -3,15 +3,17 @@
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
 
-  const price = product.querySelector('.price span').innerText;
+  const price = product.querySelector('.price span').innerText
 
-  const quantity = product.querySelector('.quantity input').value;
- 
-  const subtotal = Number(price)*Number(quantity);
+  const quantity = product.querySelector('.quantity input').value
 
-  product.querySelector('.subtotal span').innerHTML = subtotal;
-  return subtotal;
+  const calcSubTotal = price * quantity
 
+  const holdSubTotal = product.querySelector('.subtotal span')
+
+  holdSubTotal.innerHTML = calcSubTotal
+
+  return calcSubTotal
   //... your code goes here
 }
 
@@ -21,18 +23,20 @@ function calculateAll() {
   const singleProduct = document.querySelector('.product');
   updateSubtotal(singleProduct);
   // end of test
-  let total= 0;
-  const allProducts =document.querySelectorAll('.product').forEach(function(element){
-    updateSubtotal(element);
-    total += updateSubtotal(element)
-  }) 
-  console.log(total)
-  document.querySelector(`#total-value span`).innerHTML = total
 
+  
   // ITERATION 2
+
+  const allProducts = document.querySelectorAll('.product');
+  let calcTotal = 0
+
+  allProducts.forEach(item => calcTotal += updateSubtotal(item))
+
   //... your code goes here
 
   // ITERATION 3
+
+  document.querySelector('#total-value span').innerText = calcTotal  
   //... your code goes here
 }
 
@@ -41,13 +45,20 @@ function calculateAll() {
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
-  
+
+  target.parentNode.parentNode.remove()
+  calculateAll()
+
+
+
   //... your code goes here
 }
 
 // ITERATION 5
 
 function createProduct() {
+
+  
   //... your code goes here
 }
 
