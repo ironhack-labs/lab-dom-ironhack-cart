@@ -92,9 +92,9 @@ Your goal is to calculate the subtotal price, but let's approach it gradually. L
 ```javascript
 // js/index.js
 
-window.addEventListener('load', () => {
-  const calculatePricesBtn = document.getElementById('calculate');
-  calculatePricesBtn.addEventListener('click', calculateAll);
+window.addEventListener("load", () => {
+  const calculatePricesBtn = document.getElementById("calculate");
+  calculatePricesBtn.addEventListener("click", calculateAll);
 });
 ```
 
@@ -106,7 +106,7 @@ Ok, let's move to the `calculateAll()` function. In this function, we used `quer
 function calculateAll() {
   // code in the following two lines is added just for testing purposes.
   // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
+  const singleProduct = document.querySelector(".product");
   updateSubtotal(singleProduct);
   // end of test
 
@@ -128,7 +128,7 @@ Let's start:
 ```js
 // js/index.js
 function updateSubtotal(product) {
-  const price = product.querySelector('.price span');
+  const price = product.querySelector(".price span");
   // ... your code goes here
 }
 ```
