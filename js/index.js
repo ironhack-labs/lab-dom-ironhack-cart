@@ -9,7 +9,7 @@ function updateSubtotal(product) {
   console.log(price);
   console.log(quantity);
   let subtotaltext = product.querySelector('.subtotal span');
-  subtotaltext.innerHTML = "";
+  subtotaltext.innerHTML = ""; //eliminamos el span (0)
   const subtotal = product.querySelector('.subtotal span').append(subtotalprice); //sustituimos el span al producto
   return subtotalprice;
   //... your code goes here
@@ -44,6 +44,11 @@ function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
   //... your code goes here
+  const parentElement = document.getElementsByTagName("tbody")[0];
+  const elementToRremove = document.getElementsByClassName('product')[0];
+  parentElement.removeChild(elementToRremove);
+
+
 }
 
 // ITERATION 5
@@ -55,6 +60,14 @@ function createProduct() {
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
+  // ... your code goes here
+  const removeItemsBtn = document.getElementsByClassName('btn-remove');
+  for (let i = 0; i < removeItemsBtn.length; i++){
+    removeItemsBtn[i].addEventListener('click', removeProduct); //Hacemos un for porqué le estamos aplicando el método .addEventListener que solo puede aplicarse al elemento, no a la array que obtenemos con getElementsByClassName.
+  }
 
-  //... your code goes here
 });
+
+
+
+
