@@ -2,22 +2,34 @@
 
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
+const price=product.querySelector(".price span");
+const quantity=product.querySelector(".quantity input");
+let sub=price.innerHTML*quantity.value;
+document.querySelector(".subtotal span").innerHTML=sub;
 
-  //... your code goes here
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
+  var allProducts=document.getElementsByClassName("product")
+  console.log(allProducts)
+  for (let i=0;i<allProducts.length;i++){
+    updateSubtotal(allProducts[i]);
+    total+=updateSubtotal(productsArray[i]);
+  }
+ // const singleProduct = document.querySelector('.product');
+ // updateSubtotal(singleProduct);
   // end of test
 
   // ITERATION 2
   //... your code goes here
 
   // ITERATION 3
-  //... your code goes here
+ const allPrices=document.getElementsByClassName("subtotal").span
+ let sum=0;
+ for(let i=0;i<allPrices.length;i++){
+   sum+= allPrices[i].innerText;
+ }
+ console.log(sum)
 }
 
 // ITERATION 4
