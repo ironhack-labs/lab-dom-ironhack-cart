@@ -38,16 +38,37 @@ function removeProduct(event) {
   const body = target.parentNode.parentNode.parentNode
 
   body.removeChild(fila)
+
   calculateAll()
+  
 }
 
 // ITERATION 5
 
 function createProduct() {
-    // const create = document.querySelector('.create-product td input')
-    // const product = create.innerHTML
-    // console.log(product)
+  
+  let newName=document.querySelector('.create-product #name').value;
+  let newPrice=document.querySelector('.create-product #price').value;
+  var table = document.getElementById("body");
+  
+
+let newRow = document.createElement('tr');
+newRow.innerHTML = `<tr class="product">
+<td class="name">
+  <span>${newName}</span>
+</td>
+<td class="price">$<span>${newPrice}</span></td>
+<td class="quantity">
+  <input type="number" value="0" min="0" placeholder="Quantity" />
+</td>
+<td class="subtotal">$<span>0</span></td>
+<td class="action">
+  <button class="btn btn-remove">Remove</button>
+</td>
+</tr>`;
+table.append(newRow);
 }
+
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
@@ -57,8 +78,12 @@ window.addEventListener('load', () => {
   for(let i = 0; i < removeProducts.length; i++){
     removeProducts[i].addEventListener('click', removeProduct)
   }
-
   const createSomething = document.getElementById('create');
   createSomething.addEventListener('click', createProduct)
+  if(createProduct){
+    for(let i = 0; i < removeProducts.length; i++){
+      removeProducts[i].addEventListener('click', removeProduct)
+    }
+  }
 
 });
