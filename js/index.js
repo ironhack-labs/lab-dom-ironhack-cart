@@ -59,7 +59,6 @@ function removeProduct(event) {
 
 function createProduct() {
   //... your code goes here
-
 }
 
 window.addEventListener('load', () => {
@@ -71,4 +70,7 @@ window.addEventListener('load', () => {
   for (let i = 0; i < removeElementsBtn.length; i++) {
     removeElementsBtn[i].addEventListener('click', removeProduct);
   }
+
+  // const createProductBtn = document.getElementById('create');
+  // createProductBtn.addEventListener('click', createProduct);
 });
