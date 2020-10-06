@@ -38,12 +38,15 @@ function removeProduct(event) {
   const body = target.parentNode.parentNode.parentNode
 
   body.removeChild(fila)
+  calculateAll()
 }
 
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+    // const create = document.querySelector('.create-product td input')
+    // const product = create.innerHTML
+    // console.log(product)
 }
 
 window.addEventListener('load', () => {
@@ -54,5 +57,8 @@ window.addEventListener('load', () => {
   for(let i = 0; i < removeProducts.length; i++){
     removeProducts[i].addEventListener('click', removeProduct)
   }
+
+  const createSomething = document.getElementById('create');
+  createSomething.addEventListener('click', createProduct)
 
 });
