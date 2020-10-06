@@ -30,25 +30,29 @@ function calculateAll() {
 function removeProduct(event) {
     const target = event.currentTarget;
     console.log('The target in remove is:', target);
-    const row = target.parentNode.parentNode
-    const body = target.parentNode.parentNode.parentNode
+    const row = target.parentNode.parentNode;
+    const body = target.parentNode.parentNode;
     body.remove(row)
 }
 
 // ITERATION 5
 
 function createProduct() {
+    const create = document.getElementById('.create-product button');
+    create.addEventListener('click', createProduct);
+    const name = document.querySelector('create-product input').placeholder = "Product Name";
+    const unit = document.querySelector('create-product input').placeholder = "Product Price";
     //... your code goes here
 }
 
 window.addEventListener('load', () => {
-    const calculatePricesBtn = document.getElementById('calculate');
+    const calculatePricesBtn = document.getElementById('create');
     calculatePricesBtn.addEventListener('click', calculateAll);
 
     //... your code goes here
     const elimina = document.getElementsByClassName('btn btn-remove');
     for (let i = 0; i < elimina.length; i++) {
-        elimina[i].addEventListener('click', removeProduct)
+        elimina[i].addEventListener('click', removeProduct);
     }
 
 });
