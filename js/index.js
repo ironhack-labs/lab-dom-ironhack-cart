@@ -46,50 +46,41 @@ function createProduct(event) {
   const newProduct = target.parentNode.parentNode
   const productName = newProduct.querySelector('[placeholder="Product Name"]').value
   const productPrice = newProduct.querySelector('[placeholder="Product Price"]').value
-  let test = `
-             
-              <td class="quantity">\
-                <input type="number" value="0" min="0" placeholder="Quantity" />\
-              </td>\
-              <td class="subtotal">$<span>0</span></td>\
-              <td class="action">\
-              <button class="btn btn-remove">Remove</button>\
-              </td>`
-    const newRow = productTable.insertRow()
-    newRow.classList.add('product')
+  const newRow = productTable.insertRow()
+  newRow.classList.add('product')
 
 
-    for(x=0; x<5; x++){
-      let cell = newRow.insertCell(x)
-      switch (x){
-        case 0:
-          cell.innerHTML=`<span>${productName}</span>`
-          cell.classList.add('name')
-          break
-        case 1:
-          cell.innerHTML=`$<span>${productPrice}</span>`
-          cell.classList.add('price')
-          break
-        case 2:
-          cell.innerHTML='<input type="number" value="0" min="0" placeholder="Quantity" />'
-          cell.classList.add('quantity')
-          break
-        case 3:
-          cell.innerHTML='$<span>0</span>'
-          cell.classList.add('subtotal')
-          break
-        case 4:
-          cell.innerHTML='<button class="btn btn-remove">Remove</button>'
-          cell.classList.add('action')
-          break
-      }
-
+  for(x=0; x<5; x++){
+    let cell = newRow.insertCell(x)
+    switch (x){
+      case 0:
+        cell.innerHTML=`<span>${productName}</span>`
+        cell.classList.add('name')
+        break
+      case 1:
+        cell.innerHTML=`$<span>${productPrice}</span>`
+        cell.classList.add('price')
+        break
+      case 2:
+        cell.innerHTML='<input type="number" value="0" min="0" placeholder="Quantity" />'
+        cell.classList.add('quantity')
+        break
+      case 3:
+        cell.innerHTML='$<span>0</span>'
+        cell.classList.add('subtotal')
+        break
+      case 4:
+        cell.innerHTML='<button class="btn btn-remove">Remove</button>'
+        cell.classList.add('action')
+        break
     }
-    const removeItemBtns = document.querySelectorAll('.product .action')
-    const removeItemBtnsArray = [...removeItemBtns]
-    removeItemBtnsArray.forEach(function(el){
-      el.addEventListener('click', removeProduct)
-    })
+
+  }
+  const removeItemBtns = document.querySelectorAll('.product .action')
+  const removeItemBtnsArray = [...removeItemBtns]
+  removeItemBtnsArray.forEach(function(el){
+    el.addEventListener('click', removeProduct)
+  })
 }
 
 window.addEventListener('load', () => {
