@@ -52,25 +52,25 @@ function createProduct() {
   var table = document.getElementById("body");
   
 
-let newRow = document.createElement('tr');
-newRow.innerHTML = `<tr class="product">
-<td class="name">
-  <span>${newName}</span>
-</td>
-<td class="price">$<span>${newPrice}</span></td>
-<td class="quantity">
-  <input type="number" value="0" min="0" placeholder="Quantity" />
-</td>
-<td class="subtotal">$<span>0</span></td>
-<td class="action">
-  <button class="btn btn-remove">Remove</button>
-</td>
-</tr>`;
-table.append(newRow);
-}
+  let newRow = document.createElement('tr');
+  newRow.setAttribute('class', 'product')
+  newRow.innerHTML = `
+    <td class="name">
+      <span>${newName}</span>
+    </td>
+    <td class="price">$<span>${newPrice}</span></td>
+    <td class="quantity">
+      <input type="number" value="0" min="0" placeholder="Quantity" />
+    </td>
+    <td class="subtotal">$<span>0</span></td>
+    <td class="action">
+      <button class="btn btn-remove">Remove</button>
+    </td>`;
+    table.append(newRow);
+    eventListener()
+ }
 
-
-window.addEventListener('load', () => {
+function eventListener(){
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
@@ -80,10 +80,9 @@ window.addEventListener('load', () => {
   }
   const createSomething = document.getElementById('create');
   createSomething.addEventListener('click', createProduct)
-  if(createProduct){
-    for(let i = 0; i < removeProducts.length; i++){
-      removeProducts[i].addEventListener('click', removeProduct)
-    }
-  }
+}
+
+window.addEventListener('load', () => {
+  eventListener()
 
 });
