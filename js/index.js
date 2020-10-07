@@ -75,25 +75,22 @@ function createProduct() {
 
   let newPrice=document.querySelector('.create-product #price').value;
 
-  var table=documennt.getElementById('body');
+  var table=document.getElementById('cart');
 
-  let newRow= `<tr class="product">
-   <td class="name">
-     <span>${newName}</span>
-   </td>
-   <td class="price">$<span>${newPrice}</span></td>
-   <td class="quantity">
-     <input type="number" value="0" min="0" placeholder="Quantity" />
-   </td>
-   <td class="subtotal">$<span>0</span></td>
-   <td class="action">
-     <button class="btn btn-remove">Remove</button>
-   </td>
- </tr>`;
+  var row=table.insertRow(1);
 
- 
+  row.innerHTML='<tr class="product"></tr>';
 
- table.innerHTML+=newRow;
+  var cell1 = row.insertCell(0);
+    cell1.innerHTML=`<td class="name"> <span>${newName}</span>  </td>`;
+  var cell2 = row.insertCell(1);
+    cell2.innerHTML=`<td class="price">$<span>${newPrice}</span></td>`;
+  var cell3 = row.insertCell(2);
+    cell3.innerHTML='<td class="quantity"><input type="number" value="0" min="0" placeholder="Quantity" /></td>';
+  var cell4 = row.insertCell(3);
+    cell4.innerHTML='<td class="subtotal">$<span>0</span></td>';
+  var cell5 = row.insertCell(4);
+    cell5.innerHTML='<td class="action"><button class="btn btn-remove">Remove</button></td>';
 
    
 }
