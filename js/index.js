@@ -15,10 +15,7 @@ function calculateAll() {
   for (let i=0; i < allProducts.length; i++) {
     totalSubtotal += updateSubtotal(allProducts[i]);
   }
-  // ITERATION 3
-  //... your code goes here
-
-  document.querySelector('.total-value span').innerHTML = totalSubtotal;
+  document.querySelector('#total-value span').innerHTML = totalSubtotal;
 }
 
 // ITERATION 4
