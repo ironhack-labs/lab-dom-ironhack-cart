@@ -5,7 +5,7 @@ function updateSubtotal(product) {
   const price = product.querySelector('.price span').innerHTML;
   const quantity = product.querySelector('.quantity input').value;
   const subtotal = price * quantity;
-  product.querySelector('.subtotal span').textContent = subtotal.toString();
+  product.querySelector('.subtotal span').textContent = subtotal;
   return subtotal;
 }
 
@@ -13,20 +13,15 @@ function calculateAll() {
   const products = document.querySelectorAll('.product');
   let total = 0;
   products.forEach((product) => {
-    let subtotal = updateSubtotal(product);
-    total += subtotal;
+    total += updateSubtotal(product);
   });
-  document.querySelector('#total-value span').textContent = total.toString();
+  document.querySelector('#total-value span').textContent = total;
   return total;
 }
 
 // ITERATION 4
-const removeButtons = document.querySelectorAll('.btn-remove');
-removeButtons.forEach((button) => button.addEventListener('click', removeProduct));
-
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
   //const parentBox = target.parentNode.parentNode;
   const parentBox = target.closest('.product');
   parentBox.parentNode.removeChild(parentBox);
@@ -54,4 +49,6 @@ function createProduct() {
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
+  const removeButtons = document.querySelectorAll('.btn-remove');
+  removeButtons.forEach((button) => button.addEventListener('click', removeProduct));
 });
