@@ -21,11 +21,16 @@ function calculateAll() {
 }
 
 // ITERATION 4
+const removeButtons = document.querySelectorAll('.btn-remove');
+removeButtons.forEach((button) => button.addEventListener('click', removeProduct));
 
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
-  //... your code goes here
+  //const parentBox = target.parentNode.parentNode;
+  const parentBox = target.closest('.product');
+  parentBox.parentNode.removeChild(parentBox);
+  calculateAll();
 }
 
 // ITERATION 5
