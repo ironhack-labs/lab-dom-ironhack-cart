@@ -24,21 +24,24 @@ function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target.parentNode.parentNode);
   //... your code goes here
-  target.parentNode.parentNode.parentNode.removeChild(target.parentNode.parentNode)
+  target.closest("tbody").removeChild(target.closest(".product"))
   calculateAll()
 }
 
 // ITERATION 5
 
+const sampleTag = document.querySelector(".product").cloneNode(true);
+
 function createProduct() {
   const creatorRow = event.currentTarget.parentNode.parentNode.getElementsByTagName("td");
-  const sampleTag = document.querySelector(".product").cloneNode(true);
-  sampleTag.querySelector(".btn-remove").addEventListener(`click`, removeProduct);
-  sampleTag.querySelector(".name span").innerHTML = creatorRow[0].querySelector("input").value;
+  const tagToCreate = sampleTag.cloneNode(true);
+  // Add the Event Listener in the remove button
+  tagToCreate.querySelector(".btn-remove").addEventListener(`click`, removeProduct);
+  tagToCreate.querySelector(".name span").innerHTML = creatorRow[0].querySelector("input").value;
   creatorRow[0].querySelector("input").value = "";
-  sampleTag.querySelector(".price span").innerHTML = creatorRow[1].querySelector("input").value;
+  tagToCreate.querySelector(".price span").innerHTML = creatorRow[1].querySelector("input").value;
   creatorRow[1].querySelector("input").value = 0;
-  document.getElementsByTagName("tbody")[0].appendChild(sampleTag);
+  document.getElementsByTagName("tbody")[0].appendChild(tagToCreate);
 }
 
 window.addEventListener('load', () => {
