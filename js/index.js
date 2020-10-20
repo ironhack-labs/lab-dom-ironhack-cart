@@ -1,9 +1,15 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
-
-  //... your code goes here
+  //console.log('Calculating subtotal, yey!');
+  const price = product.querySelector('.price span').textContent;
+  const quantity = product.querySelector('.quantity input').value;
+  //console.log(`quantity is ${quantity}`);
+  const total = (price * quantity);
+  //console.log(`price is ${price}`);
+  //console.log(`${price} ${quantity} my total is ${total}`);
+  const subTotal = product.querySelector('.subtotal span');
+  return subTotal.innerHTML = total;
 }
 
 function calculateAll() {
@@ -11,6 +17,7 @@ function calculateAll() {
   // it runs when only iteration 1 is completed. at later point, it can be removed.
   const singleProduct = document.querySelector('.product');
   updateSubtotal(singleProduct);
+  console.log('blabla');
   // end of test
 
   // ITERATION 2
