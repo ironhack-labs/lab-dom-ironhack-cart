@@ -40,6 +40,11 @@ table input[type='number'] {
   max-width: 4em;
 }
 
+#create {
+  background-color: #f27471;
+  color: white;
+}
+
 .btn {
   display: inline-block;
   border: 0;
