@@ -11,7 +11,12 @@ function updateSubtotal(product) {
   let price = Number($price);
   let quantity = Number($quantity);
   const subtotal = price * quantity;
-  debugger
+
+  product.querySelector('.subtotal span').innerHTML = subtotal
+  // debugger
+  // send.value
+  // send =  subtotal
+
 
 }
 
