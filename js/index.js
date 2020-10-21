@@ -1,9 +1,14 @@
+// goal is to calculate the subtotal price,
+
+
 // ITERATION 1
 
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
-
   //... your code goes here
+  let price = product.querySelector('.price span')
+  let quantity = product.querySelector('.quantity input')
+  debugger
 }
 
 function calculateAll() {
