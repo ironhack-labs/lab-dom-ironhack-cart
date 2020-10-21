@@ -16,9 +16,11 @@ function updateSubtotal(product) {
 function calculateAll() {
   let endTotal = 0
   const allProducts = document.querySelectorAll('.product')
-  for (let i = 0; i < allProducts.length; i++) {
-    endTotal += updateSubtotal(allProducts[i])
+
+  for (product of allProducts) {
+    endTotal += updateSubtotal(product)
   }
+
   return displayTotal.innerHTML = endTotal
 }
 
@@ -29,8 +31,8 @@ function removeProduct(event) {
 
 function activateRemoveButtons() {
   const removeButtonsGroup = document.querySelectorAll('.btn-remove')
-  for (let i = 0; i < removeButtonsGroup.length; i++) {
-    removeButtonsGroup[i].addEventListener('click', removeProduct)
+  for (button of removeButtonsGroup) {
+    button.addEventListener('click', removeProduct)
   }
 }
 
