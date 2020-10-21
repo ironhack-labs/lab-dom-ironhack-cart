@@ -30,12 +30,30 @@ function removeProduct(event) {
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  const $baseRow = document.querySelector('.product');
+  const $newRow = $baseRow.cloneNode(true);
+
+  const productName = document.querySelector('.create-product input[type=text]').value;
+  let productPrice = Number(document.querySelector('.create-product input[type=number]').value);
+
+  if (!(productPrice % 1)) productPrice = `${productPrice}.00`;
+  if (productPrice % 1) productPrice = `${Math.floor(productPrice)}.${Math.round(productPrice % 1 * 100)}`;
+
+  $newRow.querySelector('.name > span').innerText = productName;
+  $newRow.querySelector('.price > span').innerText = productPrice;
+  $baseRow.parentElement.appendChild($newRow);
+  //$newRow.querySelector('.quantity > input').value = 
+
 }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  document.querySelectorAll('.btn.btn-remove').forEach(btn => btn.addEventListener('click', removeProduct))
+  document.querySelectorAll('.btn.btn-remove').forEach(btn => btn.addEventListener('click', removeProduct));
+
+  const $createBtn = document.getElementById('create');
+  $createBtn.addEventListener('click', createProduct);
+
 });
+
