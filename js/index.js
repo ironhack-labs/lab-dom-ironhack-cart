@@ -29,8 +29,10 @@ function removeProduct(event) {
 
 // ITERATION 5
 
-function createProduct() {
-  //... your code goes here
+function createProduct(productName, priceVal) {
+  let newProd = document.createElement("tr");
+  let productName = newProd.classList.add("product");
+  newProd.innerHTML = `<td class="name"><span></td>`;
 }
 
 window.addEventListener("load", () => {
@@ -41,4 +43,7 @@ window.addEventListener("load", () => {
   removeBtn.forEach((btn) => {
     btn.addEventListener("click", removeProduct);
   });
+
+  const createBtn = document.getElementById("create");
+  createBtn.addEventListener("click", createProduct);
 });
