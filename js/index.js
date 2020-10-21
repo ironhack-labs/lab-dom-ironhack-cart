@@ -27,6 +27,7 @@ function calculateAll() {
 function removeProduct(event) {
   const target = event.currentTarget;
   itemList.removeChild(target.parentNode.parentNode)
+  calculateAll()
 }
 
 function activateRemoveButtons() {
