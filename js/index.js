@@ -1,5 +1,4 @@
 //Global HTML selectors
-const allProducts = document.querySelectorAll('#cart tr.product')
 const displayTotal = document.querySelector('#total-value span')
 const itemList = document.querySelector('#cart tbody')
 const newProductName = document.querySelector('.create-product .product-name input')
@@ -10,14 +9,14 @@ function updateSubtotal(product) {
   const price = product.querySelector('.price span');
   const quantity = product.querySelector('.quantity input')
   const subTotal = product.querySelector('.subtotal span')
-  let totalValue = parseInt(price.innerHTML) * parseInt(quantity.value)
+  let totalValue = Number(price.innerHTML) * parseFloat(quantity.value)
   subTotal.innerHTML = totalValue
   return totalValue
 }
 
 function calculateAll() {
   let endTotal = 0
-
+  const allProducts = document.querySelectorAll('#cart tr.product')
   for (let i = 0; i < allProducts.length; i++) {
     endTotal += updateSubtotal(allProducts[i])
   }
