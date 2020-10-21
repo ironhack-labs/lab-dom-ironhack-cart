@@ -7,8 +7,9 @@ function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
   //... your code goes here
   let price = product.querySelector('.price span')
-  let quantity = product.querySelector('.quantity input')
-  debugger
+  let quantity = product.querySelector(' input').value
+  console.log(quantity);
+
 }
 
 function calculateAll() {
