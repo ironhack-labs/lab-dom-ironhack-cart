@@ -1,10 +1,9 @@
 //Global HTML selectors
 const displayTotal = document.querySelector('#total-value span')
-const itemList = document.querySelector('#cart tbody')
-const newProductName = document.querySelector('.create-product .product-name input')
-const newProductPrice = document.querySelector('.create-product .product-price input')
+const itemList = document.querySelector('tbody')
+const newProductName = document.querySelector('.product-name input')
+const newProductPrice = document.querySelector('.product-price input')
 
-// ITERATION 1
 function updateSubtotal(product) {
   const price = product.querySelector('.price span');
   const quantity = product.querySelector('.quantity input')
@@ -16,20 +15,25 @@ function updateSubtotal(product) {
 
 function calculateAll() {
   let endTotal = 0
-  const allProducts = document.querySelectorAll('#cart tr.product')
+  const allProducts = document.querySelectorAll('.product')
   for (let i = 0; i < allProducts.length; i++) {
     endTotal += updateSubtotal(allProducts[i])
   }
   return displayTotal.innerHTML = endTotal
 }
 
-// ITERATION 4
 function removeProduct(event) {
   const target = event.currentTarget;
   itemList.removeChild(target.parentNode.parentNode)
 }
 
-// ITERATION 5
+function activateRemoveButtons() {
+  const removeButtonsGroup = document.querySelectorAll('.btn-remove')
+  for (let i = 0; i < removeButtonsGroup.length; i++) {
+    removeButtonsGroup[i].addEventListener('click', removeProduct)
+  }
+}
+
 function createProduct() {
   let newProductRow = document.createElement('tr')
 
@@ -53,6 +57,7 @@ function createProduct() {
     itemList.appendChild(newProductRow)
     newProductName.value = ''
     newProductPrice.value = '0'
+    activateRemoveButtons()
   }
 }
 
@@ -60,10 +65,8 @@ window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  const removeButtonsGroup = document.querySelectorAll('.btn-remove')
-  for (let i = 0; i < removeButtonsGroup.length; i++) {
-    removeButtonsGroup[i].addEventListener('click', removeProduct)
-  }
+  activateRemoveButtons()
+
   const createButton = document.querySelector('#create')
   createButton.addEventListener('click', createProduct)
 });
