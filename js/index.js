@@ -52,7 +52,7 @@ function createProduct() {
     newProductRow.innerHTML = `<td class="name">
             <span>${newProductName.value}</span>
           </td>
-          <td class="price">$<span>${Number(newProductPrice.value).toFixed(2)}</span></td>
+          <td class="price">$<span>${newProductPrice.value}</span></td>
           <td class="quantity">
             <input type="number" value="0" min="0" placeholder="Quantity" />
           </td>
