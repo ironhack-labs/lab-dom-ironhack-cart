@@ -17,7 +17,7 @@ function updateSubtotal(product) {
   // debugger
   // send.value
   // send =  subtotal
-
+  return subtotal
 
 }
 
@@ -31,14 +31,24 @@ function calculateAll() {
   // ITERATION 2
   //... your code goes here
   const $products = document.querySelector('tbody ').rows;
-
+  let totalValue = 0
   for (let product of $products) {
     product;
-    updateSubtotal(product);////to call the function updateSubtotal with every tr.product DOM node in the table#cart.
+    ////to call the function updateSubtotal with every tr.product DOM node in the table#cart.
+    totalValue += updateSubtotal(product);
+    // debugger
   }
+
+  console.log(totalValue)
 
   // ITERATION 3
   //... your code goes here
+  //At the end of the calculateAll() function, reuse the total value you just calculated in the previous iteration and update the corresponding DOM element.
+
+
+  //Calculate the total price for the products in your cart by summing all of the subtotals returned by updateSubtotal() when it was called with each product.
+
+  //Lastly, display that value on your DOM.
 }
 
 // ITERATION 4
