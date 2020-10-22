@@ -14,6 +14,7 @@ function updateSubtotal(product) {
 
   product.querySelector('.subtotal span').innerHTML = subtotal
   // debugger
+  // debugger
   // send.value
   // send =  subtotal
 
@@ -25,13 +26,18 @@ function calculateAll() {
   // it runs when only iteration 1 is completed. at later point, it can be removed.
   // const singleProduct = document.querySelector('.product');
   const $products = document.querySelector('tbody ').rows;
-  console.log($products);
+
+  for (let product of $products) {
+    product;
+    updateSubtotal(product);
+
+  }
+  // debugger
   // debugger
   //to call the function updateSubtotal with every tr.product DOM node in the table#cart.
 
 
 
-  updateSubtotal(singleProduct);
   // end of test
 
   // ITERATION 2
