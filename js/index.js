@@ -39,12 +39,11 @@ function calculateAll() {
     // debugger
   }
 
-  console.log(totalValue)
 
   // ITERATION 3
   //... your code goes here
   //At the end of the calculateAll() function, reuse the total value you just calculated in the previous iteration and update the corresponding DOM element.
-
+  document.querySelector('#total-value').innerHTML = totalValue
 
   //Calculate the total price for the products in your cart by summing all of the subtotals returned by updateSubtotal() when it was called with each product.
 
