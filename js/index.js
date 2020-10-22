@@ -28,7 +28,7 @@ function calculateAll() {
 
   // end of test
 
-  // ITERATION 2
+  // ITERATION  2
   //... your code goes here
   const $products = document.querySelector('tbody ').rows;
   let totalValue = 0
