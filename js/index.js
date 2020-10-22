@@ -25,23 +25,17 @@ function calculateAll() {
   // code in the following two lines is added just for testing purposes.
   // it runs when only iteration 1 is completed. at later point, it can be removed.
   // const singleProduct = document.querySelector('.product');
-  const $products = document.querySelector('tbody ').rows;
-
-  for (let product of $products) {
-    product;
-    updateSubtotal(product);
-
-  }
-  // debugger
-  // debugger
-  //to call the function updateSubtotal with every tr.product DOM node in the table#cart.
-
-
 
   // end of test
 
   // ITERATION 2
   //... your code goes here
+  const $products = document.querySelector('tbody ').rows;
+
+  for (let product of $products) {
+    product;
+    updateSubtotal(product);////to call the function updateSubtotal with every tr.product DOM node in the table#cart.
+  }
 
   // ITERATION 3
   //... your code goes here
