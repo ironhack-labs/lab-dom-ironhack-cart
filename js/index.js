@@ -28,29 +28,25 @@ function updateSubtotal(product) {
 //   // code in the following two lines is added just for testing purposes.
 //   // it runs when only iteration 1 is completed. at later point, it can be removed.
 
-// function calculateAll() {
-//     const singleProduct = document.querySelector('.product');
-//     updateSubtotal(singleProduct);
-// }
-
-// ITERATION 2
-
 function calculateAll() {
+    const singleProduct = document.querySelector('.product');
+    updateSubtotal(singleProduct);
 
-    const cartItemElements = document.getElementsByClassName('cart-item')
+    // ITERATION 2
 
+
+    const products = document.getElementsByClassName('product')
     let totalValue = 0;
 
-    for (const cartItemElement of cartItemElements) {
-        totalValue += updateSubtotal(cartItemElement);
+    for (let counter = 0; counter < products.length; counter++) {
+        const element = products[counter];
+        totalValue += updateSubtotal(element);
     }
+
 
 
     //     // ITERATION 3
     document.querySelector('#total-value span').innerHTML = totalValue;
-    subTotalElement.innerText = subTotal;
-    updateSubtotal(totalValue);
-    return totalValue;
 
 }
 
