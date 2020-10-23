@@ -1,31 +1,48 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
+  const price = product.querySelector('.price span')
+  const quantity = product.querySelector(".quantity > input")
+  const numberOfQuantity = quantity.value
+  const subTotalPrice = price.innerText * numberOfQuantity
+  const subTotal = product.querySelector(".subtotal > span")
+  subTotal.innerText = subTotalPrice
+  return subTotalPrice.innerText
+}
 
-  //... your code goes here
+function updateTotal(subtotal){
+const subTotal = subtotal.querySelector(".subtotal")
+const totalTag = document.querySelector("#total-value")
+totalTag.innerText = subTotal.innerText
+return totalTag.innerText
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
-
   // ITERATION 2
-  //... your code goes here
+  const singleProduct = document.querySelectorAll('.product');
+  singleProduct.forEach(updateSubtotal);
 
   // ITERATION 3
-  //... your code goes here
-}
+  let total = 0
+  const singleSubTotal = document.querySelectorAll(".subtotal > span");
+  singleSubTotal.forEach(function callBack(currentValue,index){
+    const subTotal = Number(currentValue.innerText)
+    total += subTotal
+  })
+  const totalTag = document.querySelector("#total-value > span")
+  totalTag.innerText = total
+  }
 
 // ITERATION 4
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+  //const cartTag = document.querySelector("#cart")
+  //const singleProduct = document.querySelectorAll('.product');
+  //console.log('The target in remove is:', target);
+  //cartTag.removeChild(singleProduct)
+  const tag = target.parentNode.parentNode;
+  tag.parentNode.removeChild(tag);
 }
 
 // ITERATION 5
@@ -38,5 +55,7 @@ window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+  const removeBtn = document.querySelector(".btn-remove")
+  removeBtn.addEventListener('click', removeProduct);
+
 });
