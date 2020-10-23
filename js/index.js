@@ -2,7 +2,7 @@
 
 function updateSubtotal(product) {
   const price = product.querySelector('.price span').innerHTML;
-  const quantity = (product.querySelector('.quantity input').value);
+  const quantity = product.querySelector('.quantity input').valuegot ;
   let subtotal = price*quantity;
   product.querySelector('.subtotal span').innerHTML = subtotal;
   return subtotal;
