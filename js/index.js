@@ -33,6 +33,7 @@ for(let i=0; i < products.length; i++){
 
   // ITERATION 3
   //... your code goes here
+  
 }
 
 // ITERATION 4
