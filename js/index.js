@@ -27,13 +27,13 @@ let products = document.getElementsByClassName('product');
 let totalValue = 0;
 for(let i=0; i < products.length; i++){
   let total = products[i];
-  totalValue = updateSubtotal(total);
+  totalValue += updateSubtotal(total);
 }
 
 
   // ITERATION 3
   //... your code goes here
-  
+  document.querySelector('#total-value span').innerText = totalValue;
 }
 
 // ITERATION 4
