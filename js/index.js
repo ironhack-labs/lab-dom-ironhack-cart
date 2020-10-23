@@ -49,16 +49,46 @@ function removeProduct(event) {
 
 // ITERATION 5
 
-function createProduct() {
+function createProduct(modellProduct) {
   //... your code goes here
+  const productName = document.querySelector('input[placeholder="Product Name" ]').value;
+  const price = document.querySelector('input[placeholder="Product Price" ]').value;
+  const table = document.querySelector("tbody");
+  const newProduct = modellProduct.cloneNode(true);
+  addRemoveListener(newProduct);
+  newProduct.querySelector(".name span").innerText = productName;
+  newProduct.querySelector(".price span").innerText = price; 
+  table.appendChild(newProduct);
+  document.querySelector('input[placeholder="Product Name" ]').value = "";
+  document.querySelector('input[placeholder="Product Price" ]').value =0;
+ 
 }
+
+function generateClonableProduct(){//Genera un clon del primer producto para poder utilizarlo a pesar de que se eliminen todas las filas
+
+  const product = document.querySelector('.product');
+  const newProduct = product.cloneNode(true);
+  
+  return newProduct;
+}
+
+function addRemoveListener(object) { //añade el listener al botón remove de las filas
+  const remove = object.querySelector('.btn-remove');
+  remove.addEventListener('click', removeProduct);
+ }
+
+
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
   const removeBtn = document.querySelectorAll('.btn-remove');
   removeBtn.forEach(remove => remove.addEventListener('click', removeProduct));
-
+  
+  const modellProduct = generateClonableProduct();//creamos la primera copia de la que saldrán el resto
+  
+  const createBtn = document.querySelector('#create');
+  createBtn.addEventListener('click',()=>createProduct(modellProduct));
 
 
   //... your code goes here
