@@ -1,42 +1,65 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
 
-  //... your code goes here
+  console.log('Calculating subtotal, yey!');
+  const price = product.querySelector('.price span').innerHTML
+  const quantity = product.querySelector('.quantity input').value
+  console.log(quantity)
+  return product.querySelector('.subtotal span').innerHTML = price * quantity
+
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
 
-  // ITERATION 2
-  //... your code goes here
+  // ITERATION 2 & 3
 
-  // ITERATION 3
-  //... your code goes here
+  const allProducts = document.querySelectorAll('.product')
+  let sum = 0
+  allProducts.forEach(element => {
+    sum += updateSubtotal(element)
+  });
+
+  document.querySelector('#total-value span').innerHTML = sum
+
 }
+
 
 // ITERATION 4
 
 function removeProduct(event) {
+
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+  const productToRemove = target.parentNode.parentNode   //  parent node up to class=product
+
+  document.querySelector('#total-value span').innerHTML -= productToRemove.querySelector('.subtotal span').innerHTML  //  updating total price
+  
+  productToRemove.parentNode.removeChild(productToRemove)  //  getting one more parent node to remove the complete product class row 
+
 }
 
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+
+
+  
 }
 
 window.addEventListener('load', () => {
+
+  const removebtn = document.querySelectorAll('.btn-remove')
+  removebtn.forEach(elm => {
+    elm.onclick = evt => {
+      removeProduct(evt)
+    }
+  })
+
+  const createbtn = document.querySelector('#create')
+  createbtn.onclick
+
+
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
 });
