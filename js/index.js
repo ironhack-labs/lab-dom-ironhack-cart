@@ -54,13 +54,14 @@ function createProduct(event) {
   
   const parent = document.querySelector('#cart')
   const rowRef = document.querySelector('.product')
-  parent.insertBefore(rowRef)
+  const newRow = document.createElement(rowRef)
+  // parent.insertBefore(rowRef)
 
 
   // parent.appendChild(newRow)
 
 
-  console.log(ref)
+  console.log(newRow)
 }
 
 window.addEventListener('load', () => {
