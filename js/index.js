@@ -1,8 +1,8 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  const price = product.querySelector('.price span').innerText
-  const quantity = product.querySelector('.quantity input').value
+  const price = parseInt(product.querySelector('.price span').innerText)
+  const quantity = parseInt(product.querySelector('.quantity input').value)
 
   const calculateSubtotal = (price * quantity)
   
@@ -43,7 +43,6 @@ function removeProduct(event) {
 
     return
   } 
-
 }
 
 // ITERATION 5
