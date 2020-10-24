@@ -48,8 +48,19 @@ function removeProduct(event) {
 
 // ITERATION 5
 
-function createProduct() {
-  //... your code goes here
+function createProduct(event) {
+  const name = document.querySelector('.new-name').value
+  const price = document.querySelector('.new-price').value
+  
+  const parent = document.querySelector('#cart')
+  const rowRef = document.querySelector('.product')
+  parent.insertBefore(rowRef)
+
+
+  // parent.appendChild(newRow)
+
+
+  console.log(ref)
 }
 
 window.addEventListener('load', () => {
@@ -60,4 +71,7 @@ window.addEventListener('load', () => {
   removeBtn.forEach(function (btn) {
     btn.addEventListener('click', removeProduct)
   })
+
+  const createBtn = document.querySelector('#create')
+  createBtn.addEventListener('click', createProduct)
 });
