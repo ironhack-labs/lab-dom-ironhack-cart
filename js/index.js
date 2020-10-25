@@ -19,42 +19,24 @@ function updateSubtotal(product) {
 
 function calculateAll() {
 
-  //TESTS
-  /*
-  code in the following two lines is added just for testing purposes.
-  it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  */
-
-
-  // ITERATION 2
-
-  //1.Creación constante y su selector
-  const everyProduct = document.querySelectorAll('.product')
+  // ITERATION 2 & 3
+  const eachProduct = document.querySelectorAll('.product')
   
-  console.log(typeof everyProduct)
-  
- 
+  let total = 0
 
-  //2.Ejecución de función por cada uno de los elementos del array resultantes por el selector querySelectorAll
-  everyProduct.forEach(function (element){
+  eachProduct.forEach(function (element) {
     
-    element = updateSubtotal(element)
-      
-    console.log(updateSubtotal)
-  
+    total += updateSubtotal(element)
 
   })
 
-
-  
-  // ITERATION 3
-
-  
-
+  document.querySelector('#total-value span').innerHTML = total
 
 }
+
+// eachProduct.querySelectorAll('.subtotal span').innerHTML += total
+
+// const eachSubTotal = document.querySelectorAll('.subtotal span').innerHTML
 
 // ITERATION 4
 
