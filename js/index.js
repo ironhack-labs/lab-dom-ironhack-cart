@@ -6,7 +6,9 @@ function updateSubtotal(product) {
   price.innerHTML = '.price span';
   quantity.innerHTML = '.quantity span';
   let valor=price*quantity;
-
+  let subtotal = document.createElement('.subtotal span');
+  subtotal=valor;
+  valor.appendChild(subtotal);
   console.log('Calculating subtotal, yey!');
 
  
