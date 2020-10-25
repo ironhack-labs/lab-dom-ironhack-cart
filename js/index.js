@@ -3,22 +3,78 @@
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
 
+window.addEventListener('load', () => {
+  const calculatePricesBtn = document.getElementById('calculate');
+  calculatePricesBtn.addEventListener('click', calculateAll);
+});
+  const price = product.querySelector('.price span');
+  const quantity = product.querySelector('.quantity input').value;
+  let subtotalPrice = quantity * price.innerHTML;
+  let subtotalTag = product.querySelector('.subtotal span')
+  subtotalTag.innerHTML = subtotalPrice;  
+  return subtotalPrice;
+   }
+  
+
+
+
   //... your code goes here
-}
+
+  
+
+
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
+  
+  
+      // ITERATION 2
 
-  // ITERATION 2
-  //... your code goes here
 
-  // ITERATION 3
-  //... your code goes here
+  let ourProducts = document.querySelectorAll('.product');
+  ourProducts.forEach(function (name) {
+    updateSubtotal(name);     
+  })
+
+    //... your code goes here 
+//  let allSubtotal = document.querySelectorAll('.subtotal');
+
+    // ITERATION 3
+  
+  
+
+let allSubtotal = document.querySelectorAll('.subtotal span');
+  
+  let subT = sumNumbers(allSubtotal)
+  const total = document.querySelector('#total-value span');
+  total.textContent = subT;
+
+function sumNumbers(array) {    
+    let suma = 0;
+for (let i = 0; i < array.length; i++){
+  suma += parseInt(array[i].textContent);
+    } return (suma);
 }
+  
+    //... your code goes here
+  
+}
+
+
+
+calculateAll()
+
+
+
+ 
+
+
+
+
+
+
+
+
+
 
 // ITERATION 4
 
