@@ -68,6 +68,10 @@ function createProduct(evt) {
   //  RESETTING CUSTOM VALUES
   customProduct.querySelectorAll('input').forEach(input => input.value = '')
 
+  //  !!SOLUCIÓN DE MI PROBLEMA DEL BONUS 5: 
+  //  REPETIR EL ONCLICK DEL BOTON REMOVE DENTRO DE ESTA FUNCION
+  //  createProduct!!
+
   const removebtn = document.querySelectorAll('.btn-remove')
 
   removebtn.forEach(elm => {
