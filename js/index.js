@@ -48,35 +48,22 @@ function calculateAll() {
 
 // ITERATION 4
 
-// function removeProduct(event) {
-//   const target = event.currentTarget;
-
-//   //... your code goes here
-// }
-
-// function deleteBotons(botons)
-// {
-//   const selectBoton = document.querySelectorAll('.action button')
-
-//   selectBoton.onclick('click')
-
-//   console.log(selectBoton)
-// }
-
-  // selectBoton.forEach(function (push) {
-  //   selectBoton.addEventListener('click', alert("peligro"))
-  // })
-// }
-
-// console.log('The target in remove is:', target);
-
-
-
-
-
-
-
-
+function removeProduct(event) {
+  const target = event.currentTarget;
+  console.log('The target in remove is:', target); 
+  
+  let deleteName = document.querySelector('.name')
+  document.querySelector('.product').removeChild(deleteName)
+  let deleteQuantity = document.querySelector('.quantity')
+  document.querySelector('.product').removeChild(deleteQuantity)
+  let deletePrice = document.querySelector('.price')
+  document.querySelector('.product').removeChild(deletePrice)
+  let deleteSubtotal = document.querySelector('.subtotal')
+  document.querySelector('.product').removeChild(deleteSubtotal)
+  let deleteButon = document.querySelector('.action')
+  document.querySelector('.product').removeChild(deleteButon)
+  
+}
 
 
 
@@ -95,20 +82,8 @@ window.addEventListener('load', () => {
   calculatePricesBtn.addEventListener('click', calculateAll);
 
 
+  const selectBoton = document.querySelectorAll('.action button')
+  selectBoton.forEach(function (deleteboton) {
+    deleteboton.addEventListener('click', removeProduct);
   })
-
-const selectBoton = document.querySelectorAll('.btn btn-remove')
-
-  selectBoton.forEach(function (delete) {
-      delete.onclick = console.log("me han hecho click")
-    })
-      
-
-
-
-  // selectBoton.forEach(function () {
-  //   selectBoton.onclick
-  //   console.log(selectBoton)
-
-  //... your code goes here
-
+})
