@@ -29,21 +29,26 @@ function calculateAll() {
 
 
   // ITERATION 2
- const everyProduct = document.querySelectorAll('.product .price span').innerHTML
-  
-  console.log({ everyProduct })
 
-  everyProduct.forEach(function (elemento){
+  //1.Creación constante y su selector
+  const everyProduct = document.querySelectorAll('.product')
+  
+  console.log(typeof everyProduct)
+  
+ 
+
+  //2.Ejecución de función por cada uno de los elementos del array resultantes por el selector querySelectorAll
+  everyProduct.forEach(function (element){
     
-    elemento += updateSubtotal
-
-    return updateSubtotal(elemento)
-
-  });
+    element = updateSubtotal(element)
+      
+    console.log(updateSubtotal)
   
-  let sumSubtotal 
+
+  })
 
 
+  
   // ITERATION 3
 
   
