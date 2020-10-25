@@ -48,8 +48,8 @@ function calculateAll() {
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  
-  
+
+
   //... your code goes here
 }
 
@@ -63,8 +63,12 @@ window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
   
-  const removeBtn = document.querySelectorAll('.action')
-  removeBtn.addEventListener('click', removeProduct)
+  const removeBtn = document.querySelectorAll('.btn-remove')
+  removeBtn.forEach(element => {
+    element.addEventListener('click', removeProduct)
+  }
+  )
+  
 
   //... your code goes here
 });
