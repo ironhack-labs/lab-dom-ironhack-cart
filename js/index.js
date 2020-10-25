@@ -21,15 +21,18 @@ function calculateAll() {
 
   // ITERATION 2
   //... your code goes here
-  let total=0;
   const multipleProducts = document.getElementsByClassName ('.product');
   for(let i=0; i<multipleProducts.length;i++){
-    total=total+updateSubtotal(multipleProducts[i]);
+    updateSubtotal(multipleProducts[i]);
   }
 
   // ITERATION 3
   //... your code goes here
-  document.querySelector('.total-value span').innerHTML=total;
+  let total=0;
+  const priceProducts = document.getElementsByClassName ('.subtotal');
+  for(let i=0; i<priceProducts.length;i++){
+    total=total + priceProducts.innerText;
+  }
 }
 
 // ITERATION 4
