@@ -53,7 +53,7 @@ function removeProduct(event) {
   const row = action.parentNode
   const table = row.parentNode
 
-  table.removeChild(line)
+  table.removeChild(row)
 
   calculateAll()
 
@@ -64,6 +64,7 @@ function removeProduct(event) {
 
 function createProduct() {
   //... your code goes here
+  
 }
 
 window.addEventListener('load', () => {
@@ -75,6 +76,9 @@ window.addEventListener('load', () => {
     element.addEventListener('click', removeProduct)
   }
   )
+
+  const createP = document.querySelector('#create')
+  createP.addEventListener('click',createProduct)
   
 
   //... your code goes here
