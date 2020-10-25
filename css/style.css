@@ -65,3 +65,7 @@ h2,
 .calculate-total {
   text-align: center;
 }
+#create{
+  background-color: rgb(173, 173, 173);
+  color: #fff;
+}
