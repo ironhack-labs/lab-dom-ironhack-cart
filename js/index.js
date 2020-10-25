@@ -49,6 +49,13 @@ function calculateAll() {
 function removeProduct(event) {
   const target = event.currentTarget;
 
+  const action = target.parentNode
+  const row = action.parentNode
+  const table = row.parentNode
+
+  table.removeChild(line)
+
+  calculateAll()
 
   //... your code goes here
 }
