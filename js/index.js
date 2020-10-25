@@ -12,14 +12,15 @@ function updateSubtotal(product) {
  
   product.querySelector('.subtotal span').innerHTML = subTotal
   
-  
   return subTotal
 
 }
 
+
+
+// ITERATION 2 & 3
 function calculateAll() {
 
-  // ITERATION 2 & 3
   const eachProduct = document.querySelectorAll('.product')
   
   let total = 0
@@ -34,16 +35,19 @@ function calculateAll() {
 
 }
 
-// eachProduct.querySelectorAll('.subtotal span').innerHTML += total
 
-// const eachSubTotal = document.querySelectorAll('.subtotal span').innerHTML
 
 // ITERATION 4
 
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
-  //... your code goes here
+
+  const btnRemove = document.querySelector('.btn btn-remove')
+
+
+
+  
 }
 
 // ITERATION 5
