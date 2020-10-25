@@ -39,26 +39,50 @@ function calculateAll() {
 
   })
 
-  console.log(precioFinal)
-
   const finalPrize = document.querySelector('#total-value span')
-
-  console.log(finalPrize)
 
   finalPrize.innerHTML = precioFinal
 
 }
 
 
-
-
 // ITERATION 4
 
-function removeProduct(event) {
-  const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
-}
+// function removeProduct(event) {
+//   const target = event.currentTarget;
+
+//   //... your code goes here
+// }
+
+// function deleteBotons(botons)
+// {
+//   const selectBoton = document.querySelectorAll('.action button')
+
+//   selectBoton.onclick('click')
+
+//   console.log(selectBoton)
+// }
+
+  // selectBoton.forEach(function (push) {
+  //   selectBoton.addEventListener('click', alert("peligro"))
+  // })
+// }
+
+// console.log('The target in remove is:', target);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // ITERATION 5
 
@@ -70,5 +94,21 @@ window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
+
+  })
+
+const selectBoton = document.querySelectorAll('.btn btn-remove')
+
+  selectBoton.forEach(function (delete) {
+      delete.onclick = console.log("me han hecho click")
+    })
+      
+
+
+
+  // selectBoton.forEach(function () {
+  //   selectBoton.onclick
+  //   console.log(selectBoton)
+
   //... your code goes here
-});
+
