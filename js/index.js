@@ -68,8 +68,16 @@ function createProduct(evt) {
   //  RESETTING CUSTOM VALUES
   customProduct.querySelectorAll('input').forEach(input => input.value = '')
 
+  const removebtn = document.querySelectorAll('.btn-remove')
+
+  removebtn.forEach(elm => {
+    elm.onclick = evt => {
+      removeProduct(evt)
+    }
+  })
 
 }
+
 
 window.addEventListener('load', () => {
 
