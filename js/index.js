@@ -54,11 +54,36 @@ function createProduct() {
   //... your code goes here
 console.log('...creating')
 const target = event.currentTarget;
-const targetParent = target.parentNode
-const price = targetParent.querySelector('input').value
-let name = targetParent.querySelector('input').value
-
 console.log(target)
+const targetParent = target.parentNode.parentNode
+const price = targetParent.querySelector('#newProductPrice').value
+let name = targetParent.querySelector('#newProductName').value
+console.log(price)
+console.log(name)
+let qbox = document.querySelector('.quantity').innerHTML
+let subtotal = document.querySelector('.subtotal').innerHTML
+let remove = document.querySelector('.action').innerHTML
+
+// document.createElement()
+let specific_tbody = document.querySelector('tbody');
+let row = specific_tbody.insertRow()
+var cell1 = row.insertCell(0);
+var cell2 = row.insertCell(1);
+var cell3 = row.insertCell(2);
+var cell4 = row.insertCell(3);
+var cell5 = row.insertCell(4);
+cell1.innerText = name
+cell1.classList = 'name'
+cell2.innerText = `$${price}.00`
+cell2.classList = 'price'
+cell3.innerHTML = qbox
+cell3.classList = 'quantity'
+cell4.innerHTML = subtotal
+cell4.classList = 'subtotal'
+cell5.innerHTML = remove
+cell5.classList = 'action'
+row.classList = 'product'
+
 // In createProduct you should target the name and 
 // unit price input DOM nodes, extract their values, 
 // add a new row to the table with the product name 
