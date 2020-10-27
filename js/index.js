@@ -6,7 +6,7 @@ function updateSubtotal(product) {
 
   const subtotalNum = price.innerText * quantity.value;
   const subtotalElement = product.querySelector('.subtotal span');
-  subtotalElement.innerText = subtotalNum;
+  subtotalElement.innerText = subtotalNum.toFixed(2);
 
   return subtotalNum; 
 }
@@ -21,7 +21,7 @@ function calculateAll() {
   })
 
   const totalValueElement = document.querySelector('#total-value span');
-  totalValueElement.innerText = totalValueNum;
+  totalValueElement.innerText = totalValueNum.toFixed(2);
 }
 
 // ITERATION 4
@@ -47,7 +47,7 @@ function createProduct() {
       <td class="name">
         <span>${product.value}</span>
       </td>
-      <td class="price">$<span>${amount.value}</span></td>
+      <td class="price">$<span>${Number(amount.value).toFixed(2)}</span></td>
       <td class="quantity">
         <input type="number" value="0" min="0" placeholder="Quantity" />
       </td>
