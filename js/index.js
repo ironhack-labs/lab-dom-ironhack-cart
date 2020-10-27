@@ -13,7 +13,7 @@ function calculateAll() {
 let sum = 0;
 const allProducts = document.getElementsByClassName('product');
 for (let i = 0; i<allProducts.length; i++) {
- sum += updateSubtotal(allProducts[i]);
+ updateSubtotal(allProducts[i]);
 }
 const totalValue = document.querySelector('#total-value span');
 totalValue.innerHTML = sum;
@@ -22,9 +22,9 @@ totalValue.innerHTML = sum;
 // ITERATION 4
 
 function removeProduct(event) {
-  const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+const target = event.currentTarget.parentNode.parentNode;
+document.querySelector("tbody").removeChild(target)
+calculateAll()
 }
 
 // ITERATION 5
@@ -38,4 +38,8 @@ window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
   //... your code goes here
+  const removeButtons = document.getElementsByClassName('btn-remove');
+  for (let i = 0; i< removeButtons.length; i++) {
+    removeButtons[i].addEventListener('click', removeProduct);
+   }
 });
