@@ -28,17 +28,6 @@ function calculateAll() {
   } )
   document.querySelector('#total-value span').innerText = subTot
 }
-  //   if (state.glutenFreeCrust) {
-  //     oneMush.classList.add('crust-gluten-free');
-  //   } else {
-  //     oneMush.classList.remove('crust-gluten-free');
-  //   }
-  // });
-
-// for 
-
-  // updateSubtotal(singleProduct)
-  // end of test
 
   // ITERATION 2
   //... your code goes here
@@ -52,6 +41,10 @@ function calculateAll() {
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
+  let parent = target.parentNode.parentNode.parentNode
+  let child = target.parentNode.parentNode
+  parent.removeChild(child)
+  calculateAll()
   //... your code goes here
 }
 
@@ -64,6 +57,19 @@ function createProduct() {
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
+  
+  
 
+  const removeBtn = document.querySelectorAll('.btn-remove');
+  // removeBtn.addEventListener('click', removeProduct)
+  removeBtn.forEach(button =>{
+    button.addEventListener('click', removeProduct)
+  })  
   //... your code goes here
 });
+
+
+// document.querySelectorAll('.product').forEach(product => {
+//   updateSubtotal(product)
+//   subTot = updateSubtotal(product) + subTot
+//  } )
