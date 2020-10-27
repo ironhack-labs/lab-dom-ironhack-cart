@@ -52,6 +52,10 @@ addNewProduct.innerHTML += ` <tr class="product">
 </tr>
 ` 
 }
+const removeButtons = document.getElementsByClassName('btn-remove');
+for (let i = 0; i< removeButtons.length; i++) {
+removeButtons[i].addEventListener('click', removeProduct);
+}
 }
 
 // even listener to the button of calculate total prices 
