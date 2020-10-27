@@ -25,8 +25,7 @@ function calculateAll() {
     updateSubtotal(el);
   });
   // *********
-  let nodeListSubtotals = document.querySelectorAll(".subtotal>span");
-  console.log(nodeListSubtotals);
+  let nodeListSubtotals = document.querySelectorAll(".subtotal span");
 
   let sum = 0;
   for (i = 0; i < nodeListSubtotals.length; i++) {
@@ -39,14 +38,20 @@ function calculateAll() {
   return sum;
 }
 
-
 // ITERATION 4
 
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log("The target in remove is:", target);
-  //... your code goes here
+
+  target.parentNode.parentNode.remove();
+  calculateAll(); // recalc totals
 }
+const nodeListRemoves = document.querySelectorAll(".btn-remove");
+nodeListRemoves.forEach((rButton) => {
+  rButton.addEventListener("click", removeProduct);
+});
+
 
 // ITERATION 5
 
