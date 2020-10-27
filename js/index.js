@@ -52,13 +52,29 @@ function removeProduct(event) {
 
 function createProduct() {
   //... your code goes here
+console.log('...creating')
+const target = event.currentTarget;
+const targetParent = target.parentNode
+const price = targetParent.querySelector('input').value
+let name = targetParent.querySelector('input').value
+
+console.log(target)
+// In createProduct you should target the name and 
+// unit price input DOM nodes, extract their values, 
+// add a new row to the table with the product name 
+// and unitary price, as well as the quantity input 
+// and "Remove" button, and ensure that all of the functionality
+//  works as expected.
+
+
 }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
   
-  
+  const createBtn = document.querySelector('#create');
+  createBtn.addEventListener('click', createProduct)
 
   const removeBtn = document.querySelectorAll('.btn-remove');
   // removeBtn.addEventListener('click', removeProduct)
