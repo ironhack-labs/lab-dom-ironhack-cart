@@ -28,7 +28,30 @@ calculateAll()
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  const values = []
+  const newProductandPrice = document.querySelectorAll('.create-product input');
+  for (let i = 0; i<newProductandPrice.length; i++) {
+    values.push(newProductandPrice[i].value);
+    newProductandPrice[i].value="";
+   }
+console.log(values);
+if (values.length > 0){
+let addNewProduct=  document.querySelector('tbody'); 
+addNewProduct.innerHTML += ` <tr class="product">
+  <td class="name">
+    <span>${values[0]}</span>
+  </td>
+  <td class="price">$<span>${values[1]}</span></td>
+  <td class="quantity">
+    <input type="number" value="0" min="0" placeholder="Quantity" />
+  </td>
+  <td class="subtotal">$<span>0</span></td>
+  <td class="action">
+    <button class="btn btn-remove">Remove</button>
+  </td>
+</tr>
+` 
+}
 }
 
 // even listener to the button of calculate total prices 
@@ -40,4 +63,7 @@ window.addEventListener('load', () => {
   for (let i = 0; i< removeButtons.length; i++) {
     removeButtons[i].addEventListener('click', removeProduct);
    }
+   const createBotton = document.getElementById('create');
+   createBotton.addEventListener('click', createProduct);
+
 });
