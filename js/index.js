@@ -2,19 +2,19 @@
 
 function updateSubtotal(product) {
 
-  console.log('Calculating subtotal, yey!');
+  // console.log('Calculating subtotal, yey!');
   const price = product.querySelector('.price span');
-  console.log("We are printing price :", price);
+  // console.log("We are printing price :", price);
   const quantity = product.querySelector('.quantity input');
-  console.log("We are printing quantity :", quantity);
+  // console.log("We are printing quantity :", quantity);
 
   let priceValue = price.innerText;
-  console.log("Print price", priceValue);
+  // console.log("Print price", priceValue);
   let quantityValue = quantity.value;
-  console.log("Print quantity", quantityValue);
+  // console.log("Print quantity", quantityValue);
 
   let subtotal = priceValue * quantityValue;
-  console.log("Subtotal", subtotal);
+  // console.log("Subtotal", subtotal);
 
   product.querySelector('.subtotal span').innerText = subtotal;
 
@@ -42,9 +42,9 @@ function calculateAll() {
   let total = 0;
   ///////////////////////////
   for (let i = 0; i <product.length; i++){
-    console.log("Here it is each subtotal", updateSubtotal(product[i]));
+    // console.log("Here it is each subtotal", updateSubtotal(product[i]));
     total += updateSubtotal(product[i]);
-    console.log("the total is =", total);
+    // console.log("the total is =", total);
   }
   /////////////////////////// WHY NOT WORKING???
   // product.forEach(oneproduct => {
@@ -52,9 +52,9 @@ function calculateAll() {
   // });
 
 
-  console.log("This is the total value",document.querySelector('#total-value span').innerText);
+  // console.log("This is the total value",document.querySelector('#total-value span').innerText);
   document.querySelector('#total-value span').innerText = total;
-  console.log("this is the total:",total)
+  // console.log("this is the total:",total)
   return total;
   // product.forEach(element => {
   //   console.log("Here is the element", element);
@@ -76,19 +76,28 @@ function calculateAll() {
 // ITERATION 4
 
 function removeProduct(event) {
-  console.log("At least entered in removeProduct");
+  // console.log("At least entered in removeProduct");
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
+  // console.log('The target in remove is:', target);
   //... your code goes here
-  console.log("this is the parentNode", target.parentNode.parentNode);
+  // console.log("this is the parentNode", target.parentNode.parentNode);
   target.parentNode.parentNode.parentNode.removeChild(target.parentNode.parentNode);
   calculateAll();
 }
 
 // ITERATION 5
 
-function createProduct() {
+function createProduct(event) {
   //... your code goes here
+  console.log("Wahoooo");
+  const target = event.currentTarget.parentNode.parentNode;
+  const productName=target.querySelector('input').value;
+  console.log("This is the target", productName);
+  const price = target.querySelector('input').parentNode.nextSibling.nextSibling.querySelector('input').value;
+  console.log(price);
+  console.log("This is the price", productName);
+// const newProductName=
+
 }
 
 window.addEventListener('load', () => {
@@ -97,12 +106,14 @@ window.addEventListener('load', () => {
 
   //... your code goes here
   const removeButton = document.querySelectorAll('.btn-remove');
-  console.log("What's inside the remove button", removeButton);
+  // console.log("What's inside the remove button", removeButton);
   removeButton.forEach(button => {
-    console.log("THis is one of each buttons", button)
+    // console.log("THis is one of each buttons", button)
     button.addEventListener('click', removeProduct);
   }
 
   );
+  
+    document.getElementById('create').onclick =createProduct;
   // calculatePricesBtn.addEventListener('click', calculateAll);
 });
