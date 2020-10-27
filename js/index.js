@@ -1,11 +1,11 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
-  const quantity =  product.querySelector(".quantity input").value;
+  console.log("Calculating subtotal, yey!");
+  const quantity = product.querySelector(".quantity input").value;
   const subtotal = product.querySelector(".subtotal span");
   const price = product.querySelector(".price span").innerHTML;
-  return subtotal.textContent = parseInt(price) * parseInt(quantity);
+  return (subtotal.textContent = parseInt(price) * parseInt(quantity));
 }
 
 function calculateAll() {
@@ -13,7 +13,7 @@ function calculateAll() {
 
   const products = document.querySelectorAll(".product");
   let sum = 0;
-  products.forEach(function(product) {
+  products.forEach(function (product) {
     sum += updateSubtotal(product);
   });
 
@@ -26,7 +26,9 @@ function calculateAll() {
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  (event.currentTarget).parentNode.parentNode.parentNode.removeChild(event.currentTarget.parentNode.parentNode);
+  event.currentTarget.parentNode.parentNode.parentNode.removeChild(
+    event.currentTarget.parentNode.parentNode
+  );
 }
 
 // ITERATION 5
@@ -34,8 +36,9 @@ function removeProduct(event) {
 function createProduct() {
   let product = document.createElement("tr");
   const name = document.querySelector(".create-product td input").value;
-  const price = document.querySelector(`.create-product td input[type=number]`).value;
- /* let numb = true;
+  const price = document.querySelector(`.create-product td input[type=number]`)
+    .value;
+  /* let numb = true;
   for(let i = 0; i < price.length; i++) {
     if ((price[i] < `0` || price[i] > '9') && price[i] != '.') {
       numb = false;
@@ -44,9 +47,9 @@ function createProduct() {
   }
   if (numb)
     {*/
-    const tbody = document.querySelector('tbody');
-    product.setAttribute('class', "product");
-    product.innerHTML = `
+  const tbody = document.querySelector("tbody");
+  product.setAttribute("class", "product");
+  product.innerHTML = `
     <td class="name">
       <span>${name}</span>
     </td>
@@ -58,17 +61,21 @@ function createProduct() {
     <td class="action">
       <button class="btn btn-remove">Remove</button>
     </td>`;
-    tbody.appendChild(product); 
-  //}  
+  tbody.appendChild(product);
+  document.querySelector(".create-product td input").value = "";
+  document.querySelector(`.create-product td input[type=number]`).value = "";
+  const removeBtn = product.querySelector(".btn-remove");
+  removeBtn.addEventListener("click", removeProduct);
+  //}
 }
 
-window.addEventListener('load', () => {
-  const calculatePricesBtn = document.getElementById('calculate');
-  calculatePricesBtn.addEventListener('click', calculateAll);
-  const removeBtn = document.querySelectorAll('.btn-remove');
-  removeBtn.forEach(function(btn) {
-    btn.addEventListener('click', removeProduct);
+window.addEventListener("load", () => {
+  const calculatePricesBtn = document.getElementById("calculate");
+  calculatePricesBtn.addEventListener("click", calculateAll);
+  const removeBtn = document.querySelectorAll(".btn-remove");
+  removeBtn.forEach(function (btn) {
+    btn.addEventListener("click", removeProduct);
   });
   const createProductBtn = document.querySelector("#create");
-  createProductBtn.addEventListener('click', createProduct);
+  createProductBtn.addEventListener("click", createProduct);
 });
