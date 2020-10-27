@@ -7,6 +7,8 @@ function updateSubtotal(product) {
   const subtotal = price * quantity
   
   product.querySelector('.subtotal span').innerHTML = subtotal 
+
+  return subtotal;
   }
   
 
