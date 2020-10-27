@@ -80,6 +80,9 @@ function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
   //... your code goes here
+  console.log("this is the parentNode", target.parentNode.parentNode);
+  target.parentNode.parentNode.parentNode.removeChild(target.parentNode.parentNode);
+  calculateAll();
 }
 
 // ITERATION 5
@@ -94,10 +97,10 @@ window.addEventListener('load', () => {
 
   //... your code goes here
   const removeButton = document.querySelectorAll('.btn-remove');
-  console.log("What's inside the remove button", removeButton)
+  console.log("What's inside the remove button", removeButton);
   removeButton.forEach(button => {
     console.log("THis is one of each buttons", button)
-    button.addEventListener('click', console.log("clickingremove"));
+    button.addEventListener('click', removeProduct);
   }
 
   );
