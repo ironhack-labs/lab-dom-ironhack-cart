@@ -1,42 +1,58 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
-
-  //... your code goes here
+  const price = product.querySelector('.price span').innerHTML;
+  const quantity = product.querySelector('.quantity input').value;
+  const subtotal = price * quantity;
+  let subTotalHTML = product.querySelector('.subtotal span');
+  subTotalHTML.innerHTML = subtotal;
+  return subtotal;
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
-
-  // ITERATION 2
-  //... your code goes here
-
-  // ITERATION 3
-  //... your code goes here
+  let total = 0;
+  let newProducts = document.getElementsByClassName('product');
+  console.log(newProducts);
+  for (let newProduct of newProducts) {
+    total += updateSubtotal(newProduct);
+  }
+  let finalTotalDisplay = document.querySelector('#total-value span');
+  finalTotalDisplay.innerText = total;
 }
 
-// ITERATION 4
-
 function removeProduct(event) {
+
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+  const parent = event.target.parentNode.parentNode;
+  parent.remove(event.target);
 }
 
 // ITERATION 5
-
+document.getElementById('create').addEventListener('click', createProduct);
 function createProduct() {
-  //... your code goes here
-}
+    let table = document.querySelector('tbody')
+    let row = document.querySelector('.product');
+    let rowClone = row.cloneNode(true);
+    table.appendChild(rowClone);
+
+    let rowCloneName = rowClone.querySelector('.name span')
+    let nameInput = document.querySelector('.create-product td input').value;
+    rowCloneName.innerHTML = `<span>${nameInput}</span>`
+
+    let rowClonePrice = rowClone.querySelector('.price span')
+    let numberInput = document.querySelector('.input-field-number input').value;
+    let numberInputDecimal = parseFloat(numberInput).toFixed(2)
+    rowClonePrice.innerHTML = `<span>${numberInputDecimal}</span>`
+    
+    document.querySelector('.input-form input').value = ''
+  }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+  const removeButtons = document.querySelectorAll('.btn-remove');
+  for (let button of removeButtons) {
+    button.addEventListener('click', removeProduct);
+  }
 });
