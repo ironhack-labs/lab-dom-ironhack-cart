@@ -22,31 +22,22 @@ function calculateAll() {
 
   const allProductsCollection = document.getElementsByClassName('product');
 
-  let allProdArray = [...allProductsCollection]
+  const allProdArray = [...allProductsCollection]
 
-    allProdArray.forEach((product) => {
+   allProdArray.forEach((product) => {
     updateSubtotal(product)
   });
+
+
+
+
+let reduceArray = allProdArray.reduce((acc, index) =>{
+  return acc + updateSubtotal(index)
+}, 0)
+
+let totalValue = document.getElementById('total-value')
+totalValue.innerHTML = "Total: $" + reduceArray
 }
-
-
-
-const totalValue = document.getElementById('total-value') 
-
-
-const subTotal = document.querySelectorAll('.subtotal span')
-
-const subTotalArr = [...subTotal]
-
-let i = 0
-
-subTotalArr.forEach((product) => {
- i+= Number(product.innerHTML)
-});
-
-totalValue.innerHTML = i
-
-
  //const sumTotal =  subTotalArr.reduce((acc, index)=>{
     //return acc + index
   //}, 0);
