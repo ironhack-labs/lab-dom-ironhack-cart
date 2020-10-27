@@ -1,5 +1,4 @@
 // ITERATION 1
-
 function updateSubtotal(product) {
   const price = product.querySelector('.price span');
   const quantity = product.querySelector('.quantity input');
@@ -13,14 +12,13 @@ function calculateAll() {
 let sum = 0;
 const allProducts = document.getElementsByClassName('product');
 for (let i = 0; i<allProducts.length; i++) {
- updateSubtotal(allProducts[i]);
+ sum += updateSubtotal(allProducts[i]);
 }
 const totalValue = document.querySelector('#total-value span');
 totalValue.innerHTML = sum;
 }
 
 // ITERATION 4
-
 function removeProduct(event) {
 const target = event.currentTarget.parentNode.parentNode;
 document.querySelector("tbody").removeChild(target)
