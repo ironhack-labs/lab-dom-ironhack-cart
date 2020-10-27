@@ -54,6 +54,7 @@ table input[type='number'] {
 
 .btn-success {
   background-color: #2cc5fa;
+  visibility: hidden;
 }
 
 .btn-remove {
