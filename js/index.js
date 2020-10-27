@@ -24,10 +24,37 @@ function calculateAll() {
 
   let allProdArray = [...allProductsCollection]
 
-  const arrSum = allProdArray.forEach((product) => {
+    allProdArray.forEach((product) => {
     updateSubtotal(product)
   });
 }
+
+
+
+const totalValue = document.getElementById('total-value') 
+
+
+const subTotal = document.querySelectorAll('.subtotal span')
+
+const subTotalArr = [...subTotal]
+
+let i = 0
+
+subTotalArr.forEach((product) => {
+ i+= Number(product.innerHTML)
+});
+
+totalValue.innerHTML = i
+
+
+ //const sumTotal =  subTotalArr.reduce((acc, index)=>{
+    //return acc + index
+  //}, 0);
+
+//let totalValue = document.getElementById('total-value')
+
+//totalValue = sumTotal
+
   // code in the following two lines is added just for testing purposes.
   // it runs when only iteration 1 is completed. at later point, it can be removed.
   //const singleProduct = document.querySelector('.product');
