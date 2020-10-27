@@ -25,18 +25,11 @@ function calculateAll() {
     sumaTotal += updateSubtotal(product[i])  
 }
 
-
   // ITERATION 3
  
   document.querySelector('#total-value span').innerHTML = sumaTotal
 
-  console.log(total)
-
-  total += updateSubtotal(product)
- 
 }
- 
-  
  
 
 // ITERATION 4
@@ -57,5 +50,4 @@ window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
 });
