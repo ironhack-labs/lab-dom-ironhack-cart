@@ -3,7 +3,7 @@
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
 
-  //... your code goes here
+  //... your code goes her
 }
 
 function calculateAll() {
