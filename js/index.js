@@ -12,7 +12,7 @@ function updateSubtotal(product) {
   console.log(priceSubtotal)
   // Find the place where subtotal is stored and update it
   product.querySelector('.subtotal span').innerHTML = priceSubtotal;
-  console.log("subtotal is right now "+ subtotal)
+  console.log("subtotal is right now "+ priceSubtotal)
 // return subtotal for further usage of this function
   return priceSubtotal
 }
@@ -23,12 +23,20 @@ function calculateAll() {
   // const singleProduct = document.querySelector('.product');
   // updateSubtotal(singleProduct);
   // // end of test
-
+// call updateSubtotal on every item
   // ITERATION 2
-
+  let priceTotal = 0;
+let allProducts = document.getElementsByClassName('product');
+console.log(allProducts)
+// add up all the subtotals
+for (let i=0; i<allProducts.length; i++) {
+  priceTotal += updateSubtotal(allProducts[i]);
+console.log(priceTotal)
+}
 
   // ITERATION 3
-  //... your code goes here
+  // Set the total priceTotal
+  document.querySelector('h2 span').innerHTML = priceTotal;
 }
 
 // ITERATION 4
