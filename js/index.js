@@ -34,12 +34,15 @@ function calculateAll() {
 
 // ITERATION 4
 
-function removeProduct(event) {  
-  const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
-
-}
+window.addEventListener('load', () =>{  const removeButton = document.getElementsByClassName('btn-remove');  
+const removeButtonArray = [...removeButton];  
+removeButtonArray.forEach((remove) =>{    
+  remove.addEventListener('click', removeProduct);  });});
+function removeProduct(event) {  const target = event.currentTarget;  
+  console.log('The target in remove is:', target);  
+  //... your code goes here  
+  this.parentNode.parentNode.remove();      
+  const total = document.getElementById('calculate');   total.click();}
 
 // ITERATION 5
 
