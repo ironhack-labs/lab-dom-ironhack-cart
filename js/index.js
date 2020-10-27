@@ -50,20 +50,63 @@ function calculateAll() {
 // ITERATION 4
 
 function removeProduct(event) {
-  const target = event.currentTarget;
+  const target = event.currentTarget.parentNode.parentNode;
   console.log('The target in remove is:', target);
-  //... your code goes here
+
+  const parent = event.currentTarget.parentNode.parentNode.parentNode
+
+  parent.removeChild(target)
+
+  calculateAll()
+
+  
 }
 
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+
+  const theName = document.querySelector('.create-product input').value
+  const thePrice = document.querySelector('.price-in').value
+  let theParent = document.getElementById('the-body')
+
+  let newRow = document.createElement('tr')
+  newRow.innerHTML = `
+      <td class="name" id="new-row">
+        <span>${theName}</span>
+      </td>
+      <td class="price">$<span>${thePrice}</span></td>
+      <td class="quantity">
+        <input type="number" value="0" min="0" placeholder="Quantity" />
+      </td>
+      <td class="subtotal">$<span>0</span></td>
+      <td class="action">
+        <button class="btn btn-remove">Remove</button>
+      </td>`
+
+    newRow.setAttribute('class', 'product')
+
+  theParent.appendChild(newRow)
+
+  //Añado de nuevo un addEventListener porque el general se lanza en el load
+  // de la página, y no funcionará para elementos creados después
+  // del load como es el caso.
+
+  const removeBtn =  newRow.querySelector('.btn-remove')
+  removeBtn.addEventListener('click', removeProduct)
+
 }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+  const removeBtn = document.getElementsByClassName('btn-remove')
+  removeBtnArr = [...removeBtn]
+  removeBtnArr.forEach((button)=>{
+    button.addEventListener('click', removeProduct)
+  })
+
+  const createProductBtn = document.getElementById('create')
+  createProductBtn.addEventListener('click', createProduct)
 });
