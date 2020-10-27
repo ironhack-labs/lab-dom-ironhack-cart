@@ -52,6 +52,8 @@ function createProduct() {
   console.log('creating')
   const newProductName = document.querySelector('#newProductName').value;
   const newProductPrice = document.querySelector('#newProductPrice').value;
+  if(!newProductName || newProductPrice == 0) return
+
   console.log(newProductName + ' ' + newProductPrice);
   document.querySelector('#newProductName').value = '';
   document.querySelector('#newProductPrice').value = '';
@@ -60,7 +62,7 @@ function createProduct() {
     <td class="name">
       <span>${newProductName}</span>
     </td>
-    <td class="price">$<span>${newProductPrice}</span></td>
+    <td class="price">$<span>${parseFloat(newProductPrice).toFixed(2)}</span></td>
     <td class="quantity">
       <input type="number" value="0" min="0" placeholder="Quantity" />
     </td>
