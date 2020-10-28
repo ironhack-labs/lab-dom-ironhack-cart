@@ -5,7 +5,7 @@ function updateSubtotal(product) {
   const price = product.querySelector('.price span').innerText;
   const quantity = product.querySelector('.quantity input').value;
   const subtotal = price * quantity;
-  product.querySelector('.subtotal').innerText = subtotal;
+  product.querySelector('.subtotal').innerText = `$${subtotal}`;
   return subtotal;
 
   //... your code goes here
@@ -39,12 +39,12 @@ function removeProduct(event) {
 }
 
 // ITERATION 5
-getElementById('create').addEventListener('click', createProduct);
+// getElementById('create').addEventListener('click', createProduct);
 
-function createProduct() {
-  const createdName = document.querySelector('#product-name');
-  const createdPrice = document.querySelector('#product-price')
-}
+// function createProduct() {
+//   const createdName = document.querySelector('#product-name');
+//   const createdPrice = document.querySelector('#product-price')
+// }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
