@@ -51,11 +51,49 @@ function removeProduct(event) {
 
 function createProduct() {
   //... your code goes here
+  console.log("createProduct clicked");
+  // In createProduct you should target the name and unit price input DOM nodes, extract their values, add a new row to the table with the product name and unitary price, as well as the quantity input and "Remove" button, and ensure that all of the functionality works as expected.
+  // Create the new node to insert
+// let newNode = document.createElement("span")
+
+// // Get a reference to the parent node
+// let parentDiv = document.getElementById("childElement").parentNode
+
+// // Begin test case [ 1 ] : Existing childElement (all works correctly)
+// let sp2 = document.getElementById("childElement")
+// parentDiv.insertBefore(newNode, sp2)
+// // End test case [ 1 ]
+let newName = document.querySelector('.create-product input').value;
+let newPrice = document.querySelector('.create-product td:nth-child(2) input ').value;
+console.log("newName input = " + newName)
+let newProduct = `<tr class="product">
+<td class="name">
+  <span>${newName}</span>
+</td>
+<td class="price">$<span>${newPrice}</span></td>
+<td class="quantity">
+  <input type="number" value="0" min="0" placeholder="Quantity" />
+</td>
+<td class="subtotal">$<span>0</span></td>
+<td class="action">
+  <button class="btn btn-remove">Remove</button>
+</td>
+</tr>`
+let productTable = document.querySelector("tbody");
+productTable.insertAdjacentHTML('beforeend', newProduct)
+
+// // <div id="one">one</div>
+// var d1 = document.getElementById('one');
+// d1.insertAdjacentHTML('afterend', '<div id="two">two</div>');
+
+// // At this point, the new structure is:
+// // <div id="one">one</div><div id="two">two</div>'
 }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
-
-  //... your code goes here
+  // Add a click event handler to the "Create Product" that will take a function named createProduct as a callback.
+  const createProductBtn = document.getElementById('create');
+  createProductBtn.addEventListener('click', createProduct)
 });
