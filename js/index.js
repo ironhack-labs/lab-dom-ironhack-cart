@@ -1,15 +1,16 @@
 // ITERATION 1
 ' use strict'
+
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
   const price = product.querySelector('.price span');
-  const quantityInput = document.querySelector('.quantity input')
+  const quantityInput = product.querySelector('.quantity input')
   const cost = Number(price.innerHTML);
   const input = Number(quantityInput.value);
   const totalProduct = cost * input;
   const subtotal = product.querySelector('.subtotal span');
   subtotal.innerHTML = totalProduct;
-  return totalProduct;
+  totalProduct;
 }
 
 function calculateAll() {
@@ -23,7 +24,7 @@ function calculateAll() {
 
   console.log(total);
   const totalValue = document.querySelector('#total-value span')
-  return totalValue.textContent = total;
+  totalValue.innerHTML = total;
 
 }
 
