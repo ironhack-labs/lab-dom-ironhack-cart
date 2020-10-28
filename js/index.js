@@ -1,4 +1,4 @@
-// ITERATION 1
+// ITERATION 1,2,3
 
 function updateSubtotal(product) {
   const price = product.querySelector(".price span ").innerHTML;
@@ -24,7 +24,7 @@ function calculateAll() {
   allProducts.forEach(function (el) {
     updateSubtotal(el);
   });
-  // *********
+
   let nodeListSubtotals = document.querySelectorAll(".subtotal span");
 
   let sum = 0;
@@ -52,12 +52,21 @@ nodeListRemoves.forEach((rButton) => {
   rButton.addEventListener("click", removeProduct);
 });
 
-
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+
+  // newProduct to take the values from the input fields in the input fields which are children of the create product class
+  const newProduct = document.querySelectorAll(".create-product > td input");
+  const newProductName = newProduct[0].innerHTML;
+  const newProductPrice = newProduct[1].innerHTML;
+  
+  console.log(newProductName);
+  console.log(newProductPrice);
 }
+
+const createProdButton = document.querySelector("#create");
+createProdButton.addEventListener("click", createProduct);
 
 window.addEventListener("load", () => {
   const calculatePricesBtn = document.getElementById("calculate");
