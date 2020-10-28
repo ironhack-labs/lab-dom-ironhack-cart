@@ -10,7 +10,7 @@ function updateSubtotal(product) {
   const totalProduct = cost * input;
   const subtotal = product.querySelector('.subtotal span');
   subtotal.innerHTML = totalProduct;
-  totalProduct;
+  return totalProduct;
 }
 
 function calculateAll() {
