@@ -9,8 +9,6 @@ function updateSubtotal(product) {
   return total
 }
 
-
-
 function calculateAll() {
   // ITERATION 2
 
@@ -32,15 +30,28 @@ function calculateAll() {
 
 }
 
-calculateAll()
-
 // ITERATION 4
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+  // console.log('The target in remove is:', target);
+  // ... your code goes here
+
+  const child= document.getElementsByClassName('product')
+  childArr= [...child]
+  
+  childArr.forEach((product)=> {
+    product.onclick = function () {
+      const parent= product.parentNode
+      parent.removeChild(product)
+      return calculateAll()
+    }
+  
+  })
+  // console.log(childArr)
+
 }
+
 
 // ITERATION 5
 
@@ -52,7 +63,10 @@ window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+  const removeButtons = document.getElementsByClassName('btn-remove')
+  removeButtonsArray = [...removeButtons]
+  removeButtonsArray.forEach((button)=> {
+    button.addEventListener('click', removeProduct)
+  })
 });
 
-updateSubtotal(document)
