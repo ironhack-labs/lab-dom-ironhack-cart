@@ -29,10 +29,11 @@ function calculateAll() {
   // length: 2
   //__proto__: Array(0)
 //* use subT for iteration 3 will have to use .reduce?
-  
-
   // ITERATION 3
-  //... your code goes here
+  let totals = subTs.reduce((acc, num)=> acc + num ,0);
+  const totalAmt = document.querySelector('#total-value span');
+  let updateTot = totalAmt.innerHTML = totals;
+cl(updateTot)
 }
 // ITERATION 4
 
