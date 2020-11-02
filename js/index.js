@@ -1,46 +1,36 @@
 const cl = (...p) => console.log(...p)
+
+const aProduct = document.querySelector('.product')
 // ITERATION 1
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
-  const price = product.querySelector('.price span');
-  let quantity = product.querySelector('.quantity input'); 
-  let subTotal = product.querySelector('.subtotal span');
-  let amtPrice = price.innerHTML;  
-  let amtQuantity = quantity.value;
-  let total = Number(amtPrice) * Number(amtQuantity);
-  let updateSub = subTotal.innerHTML = total;
-  return updateSub;
+  const price = product.querySelector('.price span').innerHTML;
+  const quantity = product.querySelector('.quantity input').value;
+  const subtotalAmt = product.querySelector('.subtotal span');
+  let subtotal = price * quantity;
+  
+  return subtotalAmt.innerHTML = subtotal;
 }
 
-function calculateAll() {
- 
-  // const singleProduct = document.querySelector('.product');
-  // updateSubtotal(singleProduct);
-  
-  // ITERATION 2
-  //... your code goes here
+// ITERATION 2,3,4
+function calculateAll() { 
   const productColl = document.getElementsByClassName('product');
   let productArr = [...productColl]
-  let subTs = productArr.map(e => updateSubtotal(e))
-  cl(subTs)  // returns array of amounts:
-  // >index.js:1 (2) [50, 37.5]
-  // 0: 50
-  // 1: 37.5
-  // length: 2
-  //__proto__: Array(0)
-//* use subT for iteration 3 will have to use .reduce?
-  // ITERATION 3
-  let totals = subTs.reduce((acc, num)=> acc + num ,0);
   const totalAmt = document.querySelector('#total-value span');
-  let updateTot = totalAmt.innerHTML = totals;
-cl(updateTot)
+  let subTotals = productArr.map(e => updateSubtotal(e))
+  let total = subTotals.reduce((acc, num)=> acc + num ,0);
+  
+  return totalAmt.innerHTML = total;
 }
-// ITERATION 4
 
+// ITERATION 4
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
-  //... your code goes here
+  const row = this.parentNode.parentNode
+  row.remove()
+  row.value = 0
+  calculateAll()
+  
 }
 
 // ITERATION 5
@@ -49,9 +39,39 @@ function createProduct() {
   //... your code goes here
 }
 
+
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+  const removePricesBtn = document.getElementsByClassName('btn-remove');
+  for(i = 0; i < removePricesBtn.length; i++){
+    removePricesBtn[i].addEventListener('click', removeProduct);
+  }
+
 });
+
+
+
+
+
+// // ITERATION 4
+
+// function removeProduct(event) {
+//   const target = event.currentTarget;
+//   console.log('The target in remove is:', target);
+//   //... your code goes here
+// }
+
+// // ITERATION 5
+
+// function createProduct() {
+//   //... your code goes here
+// }
+
+// window.addEventListener('load', () => {
+//   const calculatePricesBtn = document.getElementById('calculate');
+//   calculatePricesBtn.addEventListener('click', calculateAll);
+
+//   //... your code goes here
+// });
