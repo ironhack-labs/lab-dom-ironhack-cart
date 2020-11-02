@@ -3,27 +3,33 @@ const cl = (...p) => console.log(...p)
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
   const price = product.querySelector('.price span');
-  const quantity = product.querySelector('.quantity input'); 
-  const subTotal = product.querySelector('.subtotal span');
-  const amtPrice = price.innerHTML;  
-  const amtQuantity = quantity.value;
-  const total = Number(amtPrice) * Number(amtQuantity);
-  const updateSub = subTotal.innerHTML = total;
+  let quantity = product.querySelector('.quantity input'); 
+  let subTotal = product.querySelector('.subtotal span');
+  let amtPrice = price.innerHTML;  
+  let amtQuantity = quantity.value;
+  let total = Number(amtPrice) * Number(amtQuantity);
+  let updateSub = subTotal.innerHTML = total;
   return updateSub;
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
-  const productColl = document.getElementsByClassName('product');
-  /// iterate through collection -- grab product[0] product[1]..and so on
-  //updateSubtotal();
-
+ 
+  // const singleProduct = document.querySelector('.product');
+  // updateSubtotal(singleProduct);
+  
   // ITERATION 2
   //... your code goes here
+  const productColl = document.getElementsByClassName('product');
+  let productArr = [...productColl]
+  let subTs = productArr.map(e => updateSubtotal(e))
+  cl(subTs)  // returns array of amounts:
+  // >index.js:1 (2) [50, 37.5]
+  // 0: 50
+  // 1: 37.5
+  // length: 2
+  //__proto__: Array(0)
+//* use subT for iteration 3 will have to use .reduce?
+  
 
   // ITERATION 3
   //... your code goes here
