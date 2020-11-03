@@ -34,6 +34,8 @@ totalValue.innerHTML = sumTotal;
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
+  event.parentNode.parentNode.remove();
+  calculateAll();
   //... your code goes here
 }
 
@@ -47,5 +49,11 @@ window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
+  const btnRemove = document.querySelectorAll(`.btn-remove`);
+  btnRemove.forEach((elem) => {
+      elem.addEventListener(`click`, () => {
+        removeProduct(elem);
+      });
+  });
   //... your code goes here
 });
