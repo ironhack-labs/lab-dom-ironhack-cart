@@ -1,25 +1,24 @@
 const cl = (...p) => console.log(...p)
 
-const aProduct = document.querySelector('.product')
+const aProduct = document.querySelectorAll('.product')
+const allProducts = document.getElementsByClassName('product');
 // ITERATION 1
 function updateSubtotal(product) {
   const price = product.querySelector('.price span').innerHTML;
   const quantity = product.querySelector('.quantity input').value;
   const subtotalAmt = product.querySelector('.subtotal span');
-  let subtotal = price * quantity;
+  const subtotal = price * quantity;
   
   return subtotalAmt.innerHTML = subtotal;
 }
 
 // ITERATION 2,3
 function calculateAll() { 
-  const productColl = document.getElementsByClassName('product');
-  let productArr = [...productColl]
+  const products = [...allProducts]
+  const subTotals = products.map(e => updateSubtotal(e)).reduce((acc, num)=> acc + num ,0)
   const totalAmt = document.querySelector('#total-value span');
-  let subTotals = productArr.map(e => updateSubtotal(e))
-  let total = subTotals.reduce((acc, num)=> acc + num ,0);
   
-  return totalAmt.innerHTML = total;
+  return totalAmt.innerHTML = subTotals;
 }
 
 // ITERATION 4
