@@ -18,6 +18,7 @@
           <th>Action</th>
         </tr>
       </thead>
+
       <tbody>
         <tr class="product">
           <td class="name">
@@ -32,17 +33,31 @@
             <button class="btn btn-remove">Remove</button>
           </td>
         </tr>
-        <!-- Iteration 2: Add more products here -->
+
+          <tr class="product">
+          <td class="name">
+            <span>Ironhack Beach Towel</span>
+          </td>
+          <td class="price">$<span>12.50</span></td>
+          <td class="quantity">
+            <input type="number" value="0" min="0" placeholder="Quantity" />
+          </td>
+          <td class="subtotal">$<span>0</span></td>
+          <td class="action">
+            <button class="btn btn-remove">Remove</button>
+          </td>
+        </tr>
       </tbody>
+
       <tfoot>
-        <!-- <tr class="create-product">
-          <td>
-            <input type="text" placeholder="Product Name" />
+        <tr class="create-product">
+          <td id='one'>
+            <input id='productName' type="text" placeholder="Product Name" />
           </td>
-          <td>
-            <input type="number" min="0" value="0" placeholder="Product Price" />
+          <td id='two'>
+            <input id = 'productQuanity' type="number" min="0" value="0" placeholder="Product Price" />
           </td>
-          <td></td>
+          <td id='three'></td>
           <td></td>
           <td>
             <button id="create" class="btn">Create Product</button>
@@ -50,6 +65,7 @@
         </tr> -->
       </tfoot>
     </table>
+
     <p class="calculate-total">
       <button id="calculate" class="btn btn-success">Calculate Prices</button>
     </p>
