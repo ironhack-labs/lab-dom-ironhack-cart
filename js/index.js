@@ -24,56 +24,70 @@ function calculateAll() {
 // ITERATION 4
 function removeProduct(event) {
   const target = event.currentTarget;
+  console.log('The target in remove is:', target);
   let row = target.parentNode.parentNode
   row.remove()
   row.value = 0
-  calculateAll()
+  calculateAll()  
 }
 
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  const newProdInput = document.querySelectorAll('.create-product input')
+
+  const newProdName = newProdInput[0]
+  const userInputName = newProdName.value
+
+  const newProdPrice = newProdInput[1]
+  const userProdPrice = newProdPrice.value
+  
+
+  const productTBody = document.querySelector('tbody')
+  const newRowTR =document.createElement('tr')
+  newRowTR.className = 'product' //// how da fuck do only on click
+  newRowTR.innerHTML = `
+    <tr class="product">
+        <td class="name">
+          <span>${userInputName}</span>
+        </td>
+        <td class="price">$<span>${userProdPrice}</span></td>
+        <td class="quantity">
+          <input type="number" value="0" min="0" placeholder="Quantity" />
+        </td>
+        <td class="subtotal">$<span>0</span></td>
+        <td class="action">
+          <button class="btn btn-remove">Remove</button>
+        </td>
+      `
+    
+    productTBody.appendChild(newRowTR) 
+    deleteButt()
+    newProdName.value =""
+    newProdPrice.value = 0
 }
 
-
-window.addEventListener('load', () => {
-  const calculatePricesBtn = document.getElementById('calculate');
-  calculatePricesBtn.addEventListener('click', calculateAll);
-
+  
+function deleteButt(){
   const removePricesBtn = document.getElementsByClassName('btn-remove');
   for(i = 0; i < removePricesBtn.length; i++){
     removePricesBtn[i].addEventListener('click', removeProduct)
   }
+}
+
+
+
+//// do not touch answer for jasmine
+window.addEventListener('load', () => {
+  const calculatePricesBtn = document.getElementById('calculate');
+  calculatePricesBtn.addEventListener('click', calculateAll);
+
+  deleteButt()
+
+  const createBtn = document.querySelector("#create")
+  createBtn.addEventListener('click', createProduct)
 
 });
 
 
 
-
-
-// // ITERATION 4
-
-
-
-// // ITERATION 5
-
-// function createProduct() {
-//   //... your code goes here
-// }
-
-// window.addEventListener('load', () => {
-//   const calculatePricesBtn = document.getElementById('calculate');
-//   calculatePricesBtn.addEventListener('click', calculateAll);
-
-//   //... your code goes here
-// });
-// The two inputs inside of tfoot represent the name for the new product and the unit price, respectively. The "Create Product" button should add a new product to the cart when triggered.
-
-// Add a click event handler to the "Create Product" that will take a function named createProduct as a callback.
-
-// In createProduct you should target the name and unit price input DOM nodes, extract their values, add a new row to the table with the product name and unitary price, as well as the quantity input and "Remove" button, and ensure that all of the functionality works as expected.
-
-// Remember, the new product should look undistinguished and behave like any of the products previously included in the cart. As such, one should be able to calculate its subtotal when the "Calculate All" button is clicked, and remove the product.
-
-// When the product creation is finalized, please, clear the input fields in the creation form.
