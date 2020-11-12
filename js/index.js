@@ -49,10 +49,10 @@ function createProduct() {
   const newProdPrice = newProdInput[1]
   const userProdPrice = newProdPrice.value
   
-
+/// refoactor to auto add two decimal places .toFixed(2) not working right
   const productTBody = document.querySelector('tbody')
   const newRowTR =document.createElement('tr')
-  newRowTR.className = 'product' //// how da fuck do only on click
+  newRowTR.className = 'product' 
   newRowTR.innerHTML = `
     <tr class="product">
         <td class="name">
