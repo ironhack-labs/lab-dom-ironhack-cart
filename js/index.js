@@ -24,14 +24,21 @@ function calculateAll() {
 // ITERATION 4
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
   let row = target.parentNode.parentNode
   row.remove()
   row.value = 0
   calculateAll()  
 }
 
+
 // ITERATION 5
+
+function deleteButt(){
+  const removePricesBtn = document.getElementsByClassName('btn-remove');
+  for(i = 0; i < removePricesBtn.length; i++){
+    removePricesBtn[i].addEventListener('click', removeProduct)
+  }
+}
 
 function createProduct() {
   const newProdInput = document.querySelectorAll('.create-product input')
@@ -59,7 +66,7 @@ function createProduct() {
         <td class="action">
           <button class="btn btn-remove">Remove</button>
         </td>
-      `
+      `;
     
     productTBody.appendChild(newRowTR) 
     deleteButt()
@@ -68,17 +75,10 @@ function createProduct() {
 }
 
   
-function deleteButt(){
-  const removePricesBtn = document.getElementsByClassName('btn-remove');
-  for(i = 0; i < removePricesBtn.length; i++){
-    removePricesBtn[i].addEventListener('click', removeProduct)
-  }
-}
 
-
-
-//// do not touch answer for jasmine
 window.addEventListener('load', () => {
+  console.log('js connected')
+
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
