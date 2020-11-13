@@ -53,7 +53,6 @@ function createProduct() {
   const newRowTR =document.createElement('tr')
   newRowTR.className = 'product' 
   newRowTR.innerHTML = `
-    <tr class="product">
         <td class="name">
           <span>${userInputName}</span>
         </td>
@@ -64,8 +63,7 @@ function createProduct() {
         <td class="subtotal">$<span>0</span></td>
         <td class="action">
           <button class="btn btn-remove">Remove</button>
-        </td>
-      `;
+        </td>`;
     
     productTBody.appendChild(newRowTR) 
     deleteButt()
@@ -73,7 +71,6 @@ function createProduct() {
     newProdPrice.value = 0
 }
 
-  
 
 window.addEventListener('load', () => {
   console.log('js connected')
