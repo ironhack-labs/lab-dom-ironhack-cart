@@ -49,7 +49,6 @@ function createProduct() {
   const newProdPrice = newProdInput[1]
   const userProdPrice = newProdPrice.value
   
-/// refoactor to auto add two decimal places .toFixed(2) not working right
   const productTBody = document.querySelector('tbody')
   const newRowTR =document.createElement('tr')
   newRowTR.className = 'product' 
@@ -58,7 +57,7 @@ function createProduct() {
         <td class="name">
           <span>${userInputName}</span>
         </td>
-        <td class="price">$<span>${userProdPrice}</span></td>
+        <td class="price">$<span>${Number(userProdPrice).toFixed(2)}</span></td>
         <td class="quantity">
           <input type="number" value="0" min="0" placeholder="Quantity" />
         </td>
