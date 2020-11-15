@@ -28,11 +28,12 @@ function calculateAll() {
 // ITERATION 4
 function addRemoveToButtons() {
   const removeBtn = document.querySelectorAll('.btn-remove');
-  removeBtn.forEach((el) => el.addEventListener('click', () => removeProduct(el)));
+  removeBtn.forEach((el) => el.addEventListener('click', (event) => removeProduct(event)));
 }
 
 function removeProduct(event) {
-  event.parentNode.parentNode.remove();
+  console.log(event);
+  // event.target.parentNode.parentNode.remove();
   calculateAll();
 
 }
@@ -41,8 +42,45 @@ function removeProduct(event) {
 // document.querySelector('.create-product').addEventListener('click', createProduct);
 
 function createProduct() {
-  // const productName = document.querySelectorAll('.create-product input')[0].innerText;
-  // const productPrice = document.querySelectorAll('.create-product input')[1].value;
+  document.querySelector('#create').addEventListener('click', () => {
+
+  // 1 get inputs
+    const newProduct = document.querySelectorAll('.create-product input');
+    const newProductName = newProduct[0].value;
+    const newProductPrice = newProduct[1].value;
+    
+    //2 append it to the DOM
+    const parentTbody = document.querySelector('tbody');
+    const newTr = document.createElement('tr');
+    newTr.setAttribute('class', 'product');
+    newTr.innerHTML = `
+    <td class="name">
+  <span>${newProductName}</span>
+  </td>
+  <td class="price">$<span>${newProductPrice}</span></td>
+  <td class="quantity">
+    <input type="number" value="0" min="0" placeholder="Quantity" />
+  </td>
+  <td class="subtotal">$<span>0</span></td>
+  <td class="action">
+    <button class="btn btn-remove">Remove</button>
+  </td>`;
+    // console.log(newTr);
+    parentTbody.appendChild(newTr);
+//clear inputs
+newProduct[0].value = '';
+newProduct[1].value = '';
+
+addRemoveToButtons();
+// const newTrBtn = newTr.querySelector('.btn-remove');
+// console.log(newTrBtn)
+// newTrBtn.addEventListener('click', removeProduct)
+
+
+
+  });
+  
+} 
 
 
 
@@ -50,13 +88,9 @@ function createProduct() {
   // console.log({productName})
   // const unitPrice =;
 
-}
-
-
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
   addRemoveToButtons();
-
-  // ... your code goes here
+  createProduct();
 });
