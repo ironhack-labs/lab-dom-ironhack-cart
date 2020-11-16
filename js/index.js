@@ -1,42 +1,75 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
+
   console.log('Calculating subtotal, yey!');
 
-  //... your code goes here
+  const spanPrice = product.querySelector('.price span');
+  const price  = Number(spanPrice.innerText);
+  
+
+  const quantityInput = product.querySelector('.quantity input');
+  const  quantity = quantityInput.value;
+  
+  const subTotal = quantity * price
+
+  const subTotalSpan = product.querySelector ('.subtotal');
+  subTotalSpan.innerText = subTotal
+  return subTotal
+
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
+  
+  const products = document.querySelectorAll('.product');
+  
+  let total = 0
+  
+  products.forEach(product => {
+      total += updateSubtotal(product)
+      
+  })
 
-  // ITERATION 2
-  //... your code goes here
+  document.querySelector('#total-value span').innerText = total
 
-  // ITERATION 3
-  //... your code goes here
 }
 
 // ITERATION 4
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+    
+  target.parentNode.parentNode.remove(); 
+
 }
 
 // ITERATION 5
 
+
 function createProduct() {
-  //... your code goes here
+  const tBody = document.querySelector('tbody');
+  const newTR = document.createElement('tr');
+  newTR.classList.add('product')
+  newTR.innerHTML = `
+    <tr class="product">
+    <td class="name"><span>${document.querySelector('.create-product input').value}</span></td>
+    <td class="price">$<span>${document.querySelector('.create-product input[type="number"]').value}</span></td>
+    <td class="quantity">
+     <input type="number" value="0" min="0" placeholder="Quantity" />
+    </td>
+    <td class="subtotal">$<span>0</span></td>
+    <td class="action">
+      <button class="btn btn-remove">Remove</button>
+    </td>`;
+  
+   tBodyArr[0].appendChild(newTR)
 }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
+  const removeProductBtn = document.querySelectorAll('.btn-remove');
+  const addProductBtn = document.getElementById('create');
   calculatePricesBtn.addEventListener('click', calculateAll);
-
-  //... your code goes here
+  removeProductBtn.forEach( single => single.addEventListener('click', removeProduct));
+  addProductBtn.addEventListener('click', createProduct)
 });
