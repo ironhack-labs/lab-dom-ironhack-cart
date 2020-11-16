@@ -8,7 +8,7 @@ function updateSubtotal(product) {
   const subTotal = product.querySelector(".subtotal span");
   subTotal.innerHTML = subTotalCalc;
 
-  return subTotal;
+  return subTotalCalc;
 }
 
 function calculateAll() {
@@ -43,15 +43,15 @@ function removeProduct(event) {
 
 function createProduct() {
   const newProduct = document.querySelector('.create-product');
-  let inputProductName = newProduct.querySelector('input');
-  let inputProductNameValue = inputProductName.value; 
-  let inputProductPrice = newProduct.querySelector("input[type='number']");
-  let inputProductPriceValue = inputProductPrice.value;
+  const inputProductName = newProduct.querySelector('input');
+  const inputProductNameValue = inputProductName.value; 
+  const inputProductPrice = newProduct.querySelector("input[type='number']");
+  const inputProductPriceValue = inputProductPrice.value;
 
   const tableRow = document.createElement('tr');
   tableRow.className = 'product';
   tableRow.innerHTML = `<td class="name">
-  <span>${inputProductName}</span>
+  <span>${inputProductNameValue}</span>
 </td>
 <td class="price">$<span>${inputProductPriceValue}</span></td>
 <td class="quantity">
