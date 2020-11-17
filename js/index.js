@@ -51,7 +51,6 @@ function createProduct() {
   const newTR = document.createElement('tr');
   newTR.classList.add('product')
   newTR.innerHTML = `
-    <tr class="product">
     <td class="name"><span>${document.querySelector('.create-product input').value}</span></td>
     <td class="price">$<span>${document.querySelector('.create-product input[type="number"]').value}</span></td>
     <td class="quantity">
@@ -61,8 +60,9 @@ function createProduct() {
     <td class="action">
       <button class="btn btn-remove">Remove</button>
     </td>`;
+  tBody.appendChild(newTR)
+  newTR.querySelector('.btn-remove').addEventListener('click',removeProduct);
   
-   tBodyArr[0].appendChild(newTR)
 }
 
 window.addEventListener('load', () => {
