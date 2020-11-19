@@ -42,11 +42,7 @@ function calculateAll() {
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
-  //... your code goes here
   let parentNode = target.parentNode.parentNode;
-  while (parentNode.firstChild) {
-    parentNode.removeChild(parentNode.firstChild);
-  };
   parentNode.remove();
   calculateAll();
 }
