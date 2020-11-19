@@ -16,9 +16,9 @@ function calculateAll() {
   // const singleProduct = document.querySelector('.product');
   // updateSubtotal(singleProduct);
   // end of test
-
   // ITERATION 2
   const products = document.querySelectorAll(".product");
+  console.log(products.length, " -- length");
   products.forEach(product => {
     updateSubtotal(product)
   })
@@ -37,18 +37,20 @@ function calculateAll() {
 function removeProduct(event) {
   const target = event.currentTarget;
   (target.parentNode.parentNode).remove();
-
+  calculateAll();
 }
 
 // ITERATION 5
 
 function createProduct() {
   const table = document.querySelector("#cart tbody");
+
   //get information from the last column
   const nameNewProduct = document.querySelector('.create-product input[type="text"]');
   const unitPriceNewProduct = document.querySelector('.create-product input[type="number"]');
   //create element
   const row = document.createElement("tr");
+  row.setAttribute("class", "product");
   row.innerHTML += `<td class="name"><span>${nameNewProduct.value}</span> </td>`;
   row.innerHTML += ` <td class="price">$<span>${unitPriceNewProduct.value}</span></td>`;
   row.innerHTML += `<td class="quantity"><input type="number" value="0" min="0" placeholder="Quantity" /></td>`;
@@ -56,14 +58,17 @@ function createProduct() {
   row.innerHTML += `<td class="action"><button class="btn btn-remove">Remove</button></td>`
 
   //show new a product
-  table.appendChild(row);
+  a = table.appendChild(row);
+
+  //addEventListener cho new button
+  a.querySelector("button").addEventListener("click", removeProduct);
 
   //delete input fields in last form
-  nameNewProduct.value ='';
-  unitPriceNewProduct.value ='';
+  nameNewProduct.value = '';
+  unitPriceNewProduct.value = '';
 
 }
-calculateAll();
+
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
@@ -74,10 +79,9 @@ window.addEventListener('load', () => {
     btn.addEventListener('click', removeProduct);
   })
 
-   //add a new product
+  //add a new product
   const addBtn = document.getElementById("create");
   addBtn.addEventListener('click', createProduct);
 
 });
 
-//after add a new product, I can't remove it or calculate price for it. I wanna know how to update #table, list of .product
