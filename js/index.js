@@ -36,18 +36,14 @@ function calculateAll() {
   });
 
   totalValue.innerHTML = subtotalFinal;
-
-  // subtotal.reduce((product) => {
-  //   console.log(sum(product.innerHTML));
-  // });
 }
 
 // ITERATION 4
 
 function removeProduct(event) {
-  const target = event.currentTarget;
-  console.log("The target in remove is:", target);
-  //... your code goes here
+  const target = event.parentNode.parentNode.remove();
+  calculateAll();
+  // console.log("The target in remove is:", target);
 }
 
 // ITERATION 5
@@ -59,6 +55,10 @@ function createProduct() {
 window.addEventListener("load", () => {
   const calculatePricesBtn = document.getElementById("calculate");
   calculatePricesBtn.addEventListener("click", calculateAll);
+  const btnRemove = document.querySelectorAll(".btn.btn-remove");
 
-  //... your code goes here
+  btnRemove.forEach((removal) => {
+    console.log(btnRemove);
+    removal.addEventListener("click", () => removeProduct(removal));
+  });
 });
