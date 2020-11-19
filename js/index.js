@@ -10,22 +10,6 @@ function updateSubtotal(product) {
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  // ITERATION 1
-  // const singleProduct = document.querySelector('.product');
-  // updateSubtotal(singleProduct);
-  // end of test
-
-  // ITERATION 2/3 using for loop
-  // let allProducts = document.querySelectorAll(".product"); 
-  // let totalPrice = 0; 
-  // for (let i=0; i < allProducts.length; i++) {
-  //   updateSubtotal(allProducts[i]);
-  // // ITERATION 3
-  //   totalPrice += Number(allProducts[i].querySelector(".subtotal span").textContent);
-  // }
-  // document.querySelector("#total-value span").textContent = totalPrice;
 
 // ITERATION 2/3 using forEach
   let allProducts = [... document.querySelectorAll(".product")];
@@ -46,21 +30,41 @@ function removeProduct(event) {
   parentNode.remove();
   calculateAll();
 }
-console.log(document.querySelector(".btn-remove").parentNode.parentNode)
-
 
 
 // ITERATION 5
-
 function createProduct() {
-  //... your code goes here
-}
+  let newProduct = document.getElementById("newProductName").value ;
+  let newPrice = document.getElementById("newProductPrice").value ;
 
-window.addEventListener('load', () => {
+  const newProductLine = document.createElement("tr")
+
+  newProductLine.classList.add("product")
+  document.querySelector("tbody").appendChild(newProductLine);
+
+  const tbodyLastChild = document.querySelector(".product:last-child")
+  tbodyLastChild.innerHTML += `<td class="name"><span>${newProduct}</span></td>`
+  tbodyLastChild.innerHTML += `<td class="price">$<span>${newPrice}</span></td>`
+  tbodyLastChild.innerHTML += `<td class="quantity"><input type="number" value="0" min="0" placeholder="Quantity" /></td>`
+  tbodyLastChild.innerHTML += `<td class="subtotal">$<span>0</span></td>`
+  tbodyLastChild.innerHTML += `<td class="action"><button class="btn btn-remove">Remove</button></td>`
+
+  document.getElementById("newProductName").value = 0 ;
+  document.getElementById("newProductPrice").value = 0 ;
+}
+//To be simplified/broken up
+
+  const tbodyLastChild = document.querySelector("product:last-child")
+console.log(typeof document.querySelector(".product:last-child").innerHTML)
+
+
+window.addEventListener('click', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
   const removeBtn = [... document.getElementsByClassName("btn btn-remove")];
   removeBtn.forEach( button => button.addEventListener('click', removeProduct));
-  //... your code goes here
+
+  const createProductBtn = document.getElementById("create");
+  createProductBtn.addEventListener("click", createProduct);
 });
