@@ -38,42 +38,36 @@ function calculateAll() {
 
 }
 
-
-/*
-
 // ITERATION 4
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  
   console.log('The target in remove is:', target);
   //... your code goes here
-  //tbody.removeChild(event.currentTarget);
-  
-  
 
+  document.querySelector("tbody").removeChild(target.parentNode.parentNode);
+  calculateAll();
 }
  
 // ITERATION 5
 
 function createProduct() {
   //... your code goes here
+
+  
   
 }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
-  const buttons = document.querySelectorAll(".btn-remove");
+
   
-  buttons.forEach(button => {
-    let button = updateSubtotal(prod); 
-
-
-  console.log(buttons);
-  button.addEventListener('click', removeProduct);
   //... your code goes here
+
+  const buttonsRmv = document.querySelectorAll(".btn-remove"); 
+  buttonsRmv.forEach((button) => {
+    button.onclick = removeProduct;
+  });   
   
 });
-
-*/
