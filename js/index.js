@@ -1,26 +1,53 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
+const price = document.querySelector('.price span');
+//returns <span>25.00</span>
+const quantity = document.querySelector('.quantity input');
+//the input tag inside quantity class in .product
 
-  //... your code goes here
+let extractedPrice = price.innerHTML;
+//25.00
+let extractedQuantity = quantity.value;
+//0
+let calculateSubtotal = extractedPrice * extractedQuantity;
+//new variable containing the result of the multiplication expression
+let subtotalValue = document.querySelector('.subtotal span');
+//the subtotal class inside each product
+subtotalValue.innerHTML = calculateSubtotal;
+//assigning calculateSubtotal to be the value inside Subtotal
+extractedSubtotal = subtotalValue.innerHTML;
+//JUST the number inside of the subtotal span
 }
 
+//THIS HAPPENS FIRST//
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
+  const products = document.querySelectorAll('.product');
+  products.forEach(product => {
+    updateSubtotal(product);
+  });
+  
 
-  // ITERATION 2
-  //... your code goes here
-
-  // ITERATION 3
-  //... your code goes here
+  /*const arrayOfProducts = [...document.getElementsByClassName('.subtotal')];
+  arrayOfProducts.forEach(product => {
+    updateSubtotal(product);
+  });
+  */
+  
+  /*using a for loop instead of forEach if I don't transform the HTML
+  collection into an array - don't have the right syntax here either
+  for(let i = 0; i < allProducts.length; i++) {
+    updateSubtotal(products[i]);
+  }*/
+  
+  // ITERATION 4
+  let totalValue = document.querySelector('#total-value span');
+  for(let i = 0; i < products.length; i ++) {
+    totalValue += extractedSubtotal[i];
+  }
 }
+ 
 
-// ITERATION 4
 
 function removeProduct(event) {
   const target = event.currentTarget;
@@ -39,4 +66,4 @@ window.addEventListener('load', () => {
   calculatePricesBtn.addEventListener('click', calculateAll);
 
   //... your code goes here
-});
+})
