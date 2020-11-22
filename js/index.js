@@ -1,42 +1,74 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
+  const price = product.querySelector('.price span');
+  const quantity = product.querySelector('.quantity input');
 
-  //... your code goes here
+  const valuePrice = price.innerHTML;
+  const valueQuantity = quantity.value;
+
+  const total = product.querySelector('.subtotal span');
+  return total.innerHTML = valuePrice * valueQuantity;
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
-
   // ITERATION 2
-  //... your code goes here
+  
+  // let sum = 0;
+  // for (let i = 0; i < products.length; i++) {
+  //   sum += updateSubtotal(products[i]);
+  // }
+  
+  const cartItems = document.querySelectorAll('.product');
+  
+  cartItems.forEach((product) => updateSubtotal(product));
 
   // ITERATION 3
-  //... your code goes here
+const sub = document.querySelectorAll('.subtotal span');
+
+const totalPrices = [...sub]
+  .map((item) => Number(item.textContent))
+  // alternative to Number() +item.textContent
+  .reduce((acc, currentValue) => acc += currentValue);
+
+ const result = document.querySelector('#total-value span')
+ return result.innerHTML = totalPrices;
 }
 
 // ITERATION 4
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+
+  const mainParentNode = target.closest('.product');
+  mainParentNode.remove();
+
+  calculateAll(); 
 }
 
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  // const newItem = document.querySelector('.create-product input');
+  // const newItem = document.querySelectorAll('.create-product');
+  // const newItem = document.getElementsByClassName('create-product')[0];
+    // const name = newItem.getElementsByTagName('input')[0].value;
+    // const price = newItem.getElementsByTagName('input')[1].value;
+
+//.cloneNode(true);
+//.appendChild();
+
 }
 
 window.addEventListener('load', () => {
+  
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+  const remove = [...document.getElementsByClassName('btn btn-remove')];
+  remove.forEach((btn) => 
+  btn.addEventListener('click', removeProduct));
+
+  const createItem = document.getElementById('create');
+  createItem.addEventListener('click', createProduct);
 });
