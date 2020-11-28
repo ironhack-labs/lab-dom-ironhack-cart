@@ -24,22 +24,32 @@ function calculateAll() {
 }
 
 // ITERATION 4
-
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log("The target in remove is:", target);
-}
+  const parentbtn = target.parentNode;
+  const parent = parentbtn.parentNode;
+  const quantityTarget = parent.querySelector(".quantity input");
 
+  quantityTarget.value = 0;
+  calculateAll();
+}
 // ITERATION 5
 
-function createProduct() {
-  //... your code goes here
+function createProduct(event) {
+  console.log("hello");
 }
 
 window.addEventListener("load", () => {
   const calculatePricesBtn = document.getElementById("calculate");
   calculatePricesBtn.addEventListener("click", calculateAll);
 
-  // const removePricesBtn = document.querySelectorAll(".btn-remove");
-  // removePricesBtn.addEventListener("click", removeProduct);
+  const removePricesBtn = [
+    ...document.getElementsByClassName("btn btn-remove"),
+  ];
+  removePricesBtn.forEach((button) =>
+    button.addEventListener("click", removeProduct)
+  );
+
+  const addProductBtn = document.getElementById("create");
+  addProductBtn.addEventListener("click", createProduct);
 });
