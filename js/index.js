@@ -12,25 +12,27 @@ function updateSubtotal(product) {
 }
 
 function calculateAll() {
-  const productsList = document.getElementsByClassName('product')
-  let totalValue = document.getElementById('total-value').querySelector('span')
-  let totalSum = 0
+  // ITERATION 2
+  const products = document.querySelectorAll('.product');
+  let total = 0;
 
-   for(let i = 0; i<productsList.length; i++){
-    totalSum += updateSubtotal(productsList[i])
-    totalValue.innerHTML = totalSum
-  }
+  products.forEach(product => {
+    updateSubtotal(product);
+    total += Number(updateSubtotal(product));
+  });
 
-  return totalSum
+  // ITERATION 3
+  const totalValue = document.querySelector('#total-value span');
+  totalValue.innerHTML = total.toFixed(2);
 }
 
 // ITERATION 4
 
 function removeProduct(event) {
-  const target = event.currentTarget
-  const temProduct = target.parentNode.parentNode
+  const target = (event.currentTarget).parentNode.parentNode
+  
+  target.parentNode.removeChild(target)
 
-  temProduct.parentNode.removeChild(temProduct) 
   calculateAll()
 }
 
@@ -60,10 +62,10 @@ window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate')
   calculatePricesBtn.addEventListener('click', calculateAll)
 
-  const removeBtn = document.getElementsByClassName('btn btn-remove')
-  for(let i =0; i<removeBtn.length; i++){
-    removeBtn[i].addEventListener('click', removeProduct) 
-  }
+  const removeBtns = document.querySelectorAll('.btn-remove');
+  removeBtns.forEach(removeBtn => {
+    removeBtn.addEventListener('click', removeProduct);
+  });
 
   const addElementBtn = document.getElementById('create')
   addElementBtn.addEventListener('click',createProduct)
