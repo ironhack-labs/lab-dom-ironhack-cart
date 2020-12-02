@@ -1,42 +1,81 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
-
-  //... your code goes here
+  const price = product.querySelector('.price span').innerHTML;
+  const quantity = product.querySelector('input').value;
+  const priceXQuantity = price * quantity;
+  const subtotal = product.querySelector('.subtotal span');
+  subtotal.innerHTML = priceXQuantity;
+  return subtotal.innerHTML;
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
-
   // ITERATION 2
-  //... your code goes here
+  const products = document.querySelectorAll('.product');
+  let total = 0;
+  products.forEach(product => {
+    updateSubtotal(product);
+    total += Number(updateSubtotal(product));
+  });
 
   // ITERATION 3
-  //... your code goes here
+  const totalValue = document.querySelector('#total-value span');
+  totalValue.innerHTML = total.toFixed(2);
 }
 
 // ITERATION 4
 
 function removeProduct(event) {
-  const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+  const product = (event.currentTarget).parentNode.parentNode; // -> Es el abuelo del evento 'btn-remove' === tr 'product' -> target === product
+  const target = product;
+  const tBody = document.getElementsByTagName('tbody')[0]; // ¿Como se hace escalable si se añadiese otra tabla? --> ¿Añadiendo una clase?
+  tBody.removeChild(target);
+  calculateAll(-target); // -> pasando el negativo de target (= product) se resta el importe automáticamente de calculateAll()
 }
 
 // ITERATION 5
 
-function createProduct() {
-  //... your code goes here
+function createProduct(event) {
+  // Crea una copia profunda de la primera row "product" para usar como "plantilla"
+  const tBody = document.getElementsByTagName('tbody')[0];
+  const productToCopy = document.querySelector('tbody .product');
+  const newProduct = productToCopy.cloneNode(true);
+
+  // Crea el target e itera sobre los inputs ProductPrice y ProductName para extraer sus valores:
+  const createProduct = (event.currentTarget).parentNode.parentNode; 
+  const target = createProduct.querySelectorAll('input');
+  let targetName;
+  let targetPrice;
+  target.forEach(input => {
+    input.type.includes('text') ? targetName = input.value : targetPrice = input.value; 
+  });
+
+  // Modifica la copia de la primera row "product" y añade los valores ProductPrice y ProductName extraídos
+  const newProductPrice = newProduct.querySelector('.price span');
+  const newProductName = newProduct.querySelector('.name span');
+  newProductPrice.innerHTML = targetPrice;
+  newProductName.innerHTML = targetName;
+
+  
+  // Añade la copia de "product" con el innerHTML actualizado a la tabla.
+  tBody.appendChild(newProduct);
+  createProduct.reset();
+  // target.forEach(input => {
+  //   input.reset();
+  // });
+  // console.log(targetName);
 }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+  const removeProductBtns = document.querySelectorAll('.btn-remove');
+  removeProductBtns.forEach(removeProductBtn => {
+    removeProductBtn.addEventListener('click', removeProduct);
+  });
+
+  const createProductBtn = document.querySelector('#create');
+  createProductBtn.addEventListener('click', createProduct);
 });
+
