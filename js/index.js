@@ -12,46 +12,66 @@ function updateSubtotal(product) {
 }
 
 function calculateAll() {
-  // ITERATION 2
-  const products = document.querySelectorAll('.product');
-  let total = 0;
+  const productsList = document.getElementsByClassName('product')
+  let totalValue = document.getElementById('total-value').querySelector('span')
+  let totalSum = 0
 
-  products.forEach(product => {
-    updateSubtotal(product);
-    total += Number(updateSubtotal(product));
-  });
+   for(let i = 0; i<productsList.length; i++){
+    totalSum += updateSubtotal(productsList[i])
+    totalValue.innerHTML = totalSum
+  }
 
-  // ITERATION 3
-  const totalValue = document.querySelector('#total-value span');
-  totalValue.innerHTML = total.toFixed(2);
+  return totalSum
 }
 
 // ITERATION 4
 
 function removeProduct(event) {
-  const target = (event.currentTarget).parentNode.parentNode
-  
-  target.parentNode.removeChild(target)
+  const target = event.currentTarget
+  const temProduct = target.parentNode.parentNode
 
+  temProduct.parentNode.removeChild(temProduct) 
   calculateAll()
 }
 
 // ITERATION 5
 
+const generateProduct = () =>{
+  let newProduct = document.createElement('tr')
+  newProduct.className += 'product'
+
+  newProduct.innerHTML = `<tr class="product">
+  <td class="name">
+    <span></span>
+  </td>
+  <td class="price">$<span>0.00</span></td>
+  <td class="quantity">
+    <input type="number" value="0" min="0" placeholder="Quantity" />
+  </td>
+  <td class="subtotal">$<span>0</span></td>
+  <td class="action">
+    <button class="btn btn-remove">Remove</button>
+  </td>`
+
+  document.getElementById('cart').appendChild(newProduct)
+  newProduct.getElementsByClassName('btn btn-remove')[0].addEventListener('click', removeProduct)
+
+  return newProduct
+}
+
+const assignValues = (product,name,price) => {
+  product.querySelector('.price span').innerHTML = Number(price).toFixed(2)
+  product.querySelector('.name span').innerHTML = name
+}
+
 function createProduct() {
+
+  const newElement = generateProduct()
 
   const productName = document.querySelector('.create-product').cells[0].childNodes[1].value
   const unitPrice = document.querySelector('.create-product').cells[1].childNodes[1].value
 
-  const newElement = document.getElementsByClassName('product')[0].cloneNode(true)
-
-  newElement.querySelector('.price span').innerHTML = Number(unitPrice).toFixed(2)
-  newElement.querySelector('.name span').innerHTML = productName
-  newElement.querySelector('.quantity input').value = 0
-  newElement.querySelector('.subtotal span').innerHTML = 0 
-
-  document.getElementById('cart').appendChild(newElement)
-  newElement.getElementsByClassName('btn btn-remove')[0].addEventListener('click', removeProduct)
+  assignValues(newElement,productName,unitPrice)
   
   document.querySelector('.create-product').cells[1].childNodes[1].value = 0
   document.querySelector('.create-product').cells[0].childNodes[1].value = ''
@@ -62,10 +82,10 @@ window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate')
   calculatePricesBtn.addEventListener('click', calculateAll)
 
-  const removeBtns = document.querySelectorAll('.btn-remove');
-  removeBtns.forEach(removeBtn => {
-    removeBtn.addEventListener('click', removeProduct);
-  });
+  const removeBtn = document.getElementsByClassName('btn btn-remove')
+  for(let i =0; i<removeBtn.length; i++){
+    removeBtn[i].addEventListener('click', removeProduct) 
+  }
 
   const addElementBtn = document.getElementById('create')
   addElementBtn.addEventListener('click',createProduct)
