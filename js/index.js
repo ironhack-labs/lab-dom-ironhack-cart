@@ -1,7 +1,7 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
+  //console.log('Calculating subtotal, yey!');
 
   //... your code goes here
   const price = product.querySelector('.price span').innerHTML
@@ -9,10 +9,10 @@ function updateSubtotal(product) {
   //console.log (`Hola ${price}`)
 
   const subtotal = price * quantity
-  console.log(subtotal)
+  //console.log(subtotal)
   
   const subtotalDOM = product.querySelector('.subtotal span')
-  console.log(subtotalDOM)
+  //console.log(subtotalDOM)
   
   subtotalDOM.innerHTML = subtotal
 
@@ -62,7 +62,31 @@ function removeProduct(event) {
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  const body = document.getElementsByTagName('table')[0]
+  
+  const table   = document.createElement("tbody");
+
+  for (let i = 0; i < 1; i++) {
+    const row = document.createElement("tr");
+ 
+    for (let j = 0; j < 5; j++) {
+      const cell = document.createElement("td");
+
+      // const textCell = document.createTextNode("celda en la fila " + i + ", columna " + j);
+      // cell.appendChild(textCell);
+
+      row.appendChild(cell);
+
+    }
+    table.appendChild(row);
+  }
+
+  const rowTable = document.createElement("tr");
+  rowTable.appendChild(table);
+  
+  body.appendChild(table);
+  
+  //calculateAll()
 }
 
 window.addEventListener('load', () => {
@@ -78,4 +102,9 @@ window.addEventListener('load', () => {
   newBtnsRemove.forEach( (button) => {
     button.addEventListener('click', removeProduct)
   })
+
+  //Button create products
+  const createNewProduct = document.getElementById('create')
+  //console.log(createNewProduct)
+  createNewProduct.addEventListener('click', createProduct)
 });
