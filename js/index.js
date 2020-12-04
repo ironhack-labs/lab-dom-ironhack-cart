@@ -64,16 +64,54 @@ function removeProduct(event) {
 function createProduct() {
   const body = document.getElementsByTagName('table')[0]
   
-  const table   = document.createElement("tbody");
+  const table   = document.createElement("tbody")
 
   for (let i = 0; i < 1; i++) {
-    const row = document.createElement("tr");
+    const row = document.createElement("tr")
+    row.classList.add('product')
  
     for (let j = 0; j < 5; j++) {
-      const cell = document.createElement("td");
+      const cell = document.createElement("td")
 
-      // const textCell = document.createTextNode("celda en la fila " + i + ", columna " + j);
-      // cell.appendChild(textCell);
+      if (j == 0) {
+        cell.classList.add('name')
+        const span = document.createElement('span')
+        cell.appendChild(span)
+      }
+
+      else if (j == 1) {
+        cell.classList.add('price')
+        const span = document.createElement('span')
+        cell.textContent = '$'
+        cell.appendChild(span)
+      }
+        
+      else if (j == 2) {
+        cell.classList.add('quantity')
+        const input = document.createElement('input')
+        cell.appendChild(input)
+        input.setAttribute('type', 'number')
+        input.setAttribute('value', '0')
+        input.setAttribute('min', '0')
+        input.setAttribute('placeholder', 'Quantity')
+      }
+        
+      else if (j == 3) {
+        cell.classList.add('subtotal')
+        const span = document.createElement('span')
+        cell.textContent = '$'
+        cell.appendChild(span)
+        span.textContent = '0'
+      }
+      
+      else if (j == 4) {
+        const button = document.createElement('button')
+        cell.appendChild(button)
+        cell.classList.add('action')
+        button.classList.add('btn')
+        button.classList.add('btn-remove')
+        button.textContent = 'Remove'
+      }
 
       row.appendChild(cell);
 
