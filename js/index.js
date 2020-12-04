@@ -77,6 +77,9 @@ function createProduct() {
         cell.classList.add('name')
         const span = document.createElement('span')
         cell.appendChild(span)
+        const productName = document.querySelector('.product-name input').value
+        //console.log(productName)
+        span.innerHTML = productName
       }
 
       else if (j == 1) {
@@ -84,6 +87,9 @@ function createProduct() {
         const span = document.createElement('span')
         cell.textContent = '$'
         cell.appendChild(span)
+        const unitPrice = document.querySelector('.unitPrice input').value
+        //console.log (unitPrice)
+        span.innerHTML = unitPrice
       }
         
       else if (j == 2) {
@@ -124,7 +130,7 @@ function createProduct() {
   
   body.appendChild(table);
   
-  //calculateAll()
+  calculateAll()
 }
 
 window.addEventListener('load', () => {
