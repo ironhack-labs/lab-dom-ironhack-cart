@@ -8,7 +8,7 @@ function updateSubtotal(product) {
   //console.log(price.innerHTML)
   //console.log(quantity.value)
   subtotal.innerHTML = price.innerHTML * quantity.value;
-  return parseInt(subtotal.innerHTML);
+  return Number(subtotal.innerHTML);
   //console.log(subtotal.innerHTML);
   console.log('Calculating subtotal, yey!');
 
@@ -38,9 +38,17 @@ function calculateAll() {
 // ITERATION 4
 
 function removeProduct(event) {
+  //access the element an event was fired on
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
   //... your code goes here
+  //access its parent node and call removeChild on it
+  const parentButton = target.parentNode;
+  const parentAction = parentButton.parentNode;
+  const parentProduct = document.querySelector("tbody");
+  parentProduct.removeChild(parentAction);
+  calculateAll();
+
 }
 
 // ITERATION 5
@@ -54,4 +62,23 @@ window.addEventListener('load', () => {
   calculatePricesBtn.addEventListener('click', calculateAll);
 
   //... your code goes here
-});
+  // querying the document for all "Remove" buttons
+  /*
+    const buttons = document.querySelectorAll('.btn-remove');
+    console.log(`buttons ${buttons}` )
+    //loop through them, and add a click event listener to each, passing a named function removeProduct as the callback argument.
+    buttons.forEach((button) => {
+  
+  
+      button.addEventListener('click', removeProduct);
+    })
+  
+   */
+  const products = document.querySelectorAll('.product');
+  products.forEach((product) => {
+    const button = product.querySelector("button");
+    button.addEventListener('click', removeProduct);
+  })
+}
+)
+
