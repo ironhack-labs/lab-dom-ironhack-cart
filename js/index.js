@@ -57,24 +57,29 @@ function removeProduct(event) {
 
 function createProduct() {
 
-  let productName = document.querySelector(".create-product input[type='text']").value
+  let productName = document.querySelector(".create-product input[type='text']")
 
-  let unitPrice = document.querySelector(".create-product input[type='number']").value;
+  let unitPrice = document.querySelector(".create-product input[type='number']")
+
+  
 
   let newProduct = document.querySelector(".product")
   let cloneProduct = newProduct.cloneNode(true)
-  cloneProduct.querySelector(".name span").innerHTML = productName;
-  cloneProduct.querySelector(".price span").innerHTML = unitPrice;
+  cloneProduct.querySelector(".name span").innerHTML = productName.value;
+  cloneProduct.querySelector(".price span").innerHTML = unitPrice.value;
+  cloneProduct.querySelector(".quantity input").value = 0;
+
 
   const itemsList = document.querySelector("tbody")
   itemsList.appendChild(cloneProduct)
-  productName.value = "vacio"
-  unitPrice.value = 0
+  
   //TO-DO: refactorizar
   const removeButtons = document.querySelectorAll(".btn-remove");
-  removeButtons.forEach((button) =>
-    button.addEventListener("click", removeProduct)
-  );
+  removeButtons.forEach((button) => button.addEventListener("click", removeProduct));
+  
+  productName.value = ""
+  unitPrice.value = 0
+
   calculateAll();
   //... your code goes here
 }
