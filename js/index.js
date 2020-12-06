@@ -43,19 +43,48 @@ function removeProduct(event) {
   console.log('The target in remove is:', target);
   //... your code goes here
   //access its parent node and call removeChild on it
-  const parentButton = target.parentNode;
+  /*const parentButton = target.parentNode;
   const parentAction = parentButton.parentNode;
   const parentProduct = document.querySelector("tbody");
-  parentProduct.removeChild(parentAction);
+  parentProduct.removeChild(parentAction);*/
+  
+  //Shortest version
+  const parentButton = target.parentNode.parentNode
+  parentButton.parentNode.removeChild(parentButton)
   calculateAll();
-
 }
 
 // ITERATION 5
 
-function createProduct() {
-  //... your code goes here
+function clearFields(){
+  document.querySelectorAll('.create-product input')[0].value = ''; 
+  document.querySelectorAll('.create-product input')[1].value = 0;
 }
+
+function createProduct() {
+  const productName= document.querySelectorAll('.create-product input')[0].value; 
+  const productPrice= document.querySelectorAll('.create-product input')[1].value;
+  
+
+  const parentDirection= document.getElementById('cart');
+  let newChild= document.createElement('tr'); //I create the child tag
+  newChild.setAttribute('className','product');
+  newChild = document.getElementsByClassName('product')[0].cloneNode(true); //I clone information to add to the new child
+  parentDirection.appendChild(newChild); //I link the parent with the child
+
+  const newName= document.querySelectorAll('.name span')[document.querySelectorAll('.name span').length-1]; //I change the name of the new child
+  newName.innerHTML=productName;
+
+  const newPrice= document.querySelectorAll('.price span')[document.querySelectorAll('.price span').length-1];
+  newPrice.innerHTML=productPrice;
+
+  const deleteButton= document.querySelectorAll('.btn-remove')[document.querySelectorAll('.btn-remove').length-1]
+  deleteButton.addEventListener('click', removeProduct);
+
+  clearFields();
+
+}
+
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
@@ -75,10 +104,14 @@ window.addEventListener('load', () => {
   
    */
   const products = document.querySelectorAll('.product');
+  
   products.forEach((product) => {
     const button = product.querySelector("button");
     button.addEventListener('click', removeProduct);
   })
+
+  const createButton= document.getElementById('create');
+  createButton.addEventListener('click',createProduct);
+  
 }
 )
-
