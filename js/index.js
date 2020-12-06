@@ -64,12 +64,31 @@ function clearFields(){
 function createProduct() {
   const productName= document.querySelectorAll('.create-product input')[0].value; 
   const productPrice= document.querySelectorAll('.create-product input')[1].value;
-  
-
   const parentDirection= document.getElementById('cart');
+  
   let newChild= document.createElement('tr'); //I create the child tag
-  newChild.setAttribute('className','product');
-  newChild = document.getElementsByClassName('product')[0].cloneNode(true); //I clone information to add to the new child
+  
+  newChild.setAttribute('class','product');//I add the class product to the new child
+  
+  newChild.innerHTML =  `<tr class="product"> 
+  <td class="name">
+    <span>${productName}</span>
+  </td>
+  <td class="price">$<span>${Number(productPrice).toFixed(2)}</span></td>
+  <td class="quantity">
+    <input type="number" value="0" min="0" placeholder="Quantity" />
+  </td>
+  <td class="subtotal">$<span>0</span></td>
+  <td class="action">
+    <button class="btn btn-remove">Remove</button>
+  </td>
+</tr>`
+
+  
+  //newChild.setAttribute('className','product');
+  //newChild = document.getElementsByClassName('product')[0].cloneNode(true); //I clone information to add to the new child
+
+
   parentDirection.appendChild(newChild); //I link the parent with the child
 
   const newName= document.querySelectorAll('.name span')[document.querySelectorAll('.name span').length-1]; //I change the name of the new child
