@@ -28,7 +28,8 @@ function calculateAll() {
     const subtotal = updateSubtotal(currentProduct)
     total = total + subtotal
   });
-  //ITERATION 2.2 - Seleccionamos '.product' lo guardamos en una nodelist en la constante singleProduct
+ // ITERATION 3 ----------------------------------------------------------------------------------------------------------------------------------------------------
+ // Seleccionamos '.product' lo guardamos en una nodelist en la constante singleProduct
   const singleProduct = document.querySelector('.product');
   //Llamamos a la funcion updateSubTotal con el parametro singleProduct
   updateSubtotal(singleProduct);
@@ -36,11 +37,6 @@ function calculateAll() {
   let totalSpan = document.querySelector('#total-value span');
   totalSpan.innerHTML = total.toFixed(2);
 }
-
-
-
-
-
 // ITERATION 4 ----------------------------------------------------------------------------------------------------------------------------------------------------
 function removeProduct(event) {
   //Guardarmos en target el event
@@ -51,38 +47,25 @@ function removeProduct(event) {
   temporalProduct.parentNode.removeChild(temporalProduct)
   calculateAll()
 }
-
-
-// ITERATION 5
+// ITERATION 5 ----------------------------------------------------------------------------------------------------------------------------------------------------
 function clearInputs(){
-
   document.querySelectorAll('.create-product input')[0].value = ''; 
   document.querySelectorAll('.create-product input')[1].value = 0;
-
 }
-
 function createProduct(event) {
-
   const newProductName = document.querySelectorAll('.create-product input')[0].value
-  
   const newProductPrice = document.querySelectorAll('.create-product input')[1].value 
   console.log(newProductPrice)
-  
   if(newProductName.length === 0){
     window.alert('Please, fill name of product!')
     return false
-    
   }
   if(newProductPrice === '0'){
     window.alert('Please, fill price of product!')
     return false
-    
   }
-  
   let newChild = document.createElement('tr')
-
   newChild.setAttribute('class','product')
-
   newChild.innerHTML = `<tr class="product">
   <td class="name">
     <span>Premium Beer</span>
@@ -97,19 +80,13 @@ function createProduct(event) {
   </td>
   </tr>`
   const parentDirection = document.getElementById('cart')
-
   parentDirection.appendChild(newChild)
-
   const newName= document.querySelectorAll('.name span')[document.querySelectorAll('.name span').length-1]; //I change the name of the new child
   newName.innerHTML=newProductName;
- 
   const newPrice= document.querySelectorAll('.price span')[document.querySelectorAll('.price span').length-1];
   newPrice.innerHTML=newProductPrice;
-
   const deleteButton= document.querySelectorAll('.btn-remove')[document.querySelectorAll('.btn-remove').length-1]
   deleteButton.addEventListener('click', removeProduct);
-
-  
   clearInputs()
 }
 
@@ -117,14 +94,12 @@ function createProduct(event) {
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
-
   const removeProductBtn = document.getElementsByClassName('btn btn-remove');
   for( let i =0; i<removeProductBtn.length; i++){
     removeProductBtn[i].addEventListener('click', removeProduct)
   }
   const addCreateBtn = document.getElementById('create');
   addCreateBtn.addEventListener('click', createProduct);
-
 }); 
 
 
