@@ -1,3 +1,9 @@
+const catchRemoveButtons = () => {
+  const removeButtons = document.querySelectorAll(".btn-remove");
+  removeButtons.forEach((button) => button.addEventListener("click", removeProduct));
+
+}
+
 // ITERATION 1
 
 function updateSubtotal(product) {
@@ -61,7 +67,7 @@ function createProduct() {
 
   let unitPrice = document.querySelector(".create-product input[type='number']")
 
-  
+
 
   let newProduct = document.querySelector(".product")
   let cloneProduct = newProduct.cloneNode(true)
@@ -72,11 +78,9 @@ function createProduct() {
 
   const itemsList = document.querySelector("tbody")
   itemsList.appendChild(cloneProduct)
-  
-  //TO-DO: refactorizar
-  const removeButtons = document.querySelectorAll(".btn-remove");
-  removeButtons.forEach((button) => button.addEventListener("click", removeProduct));
-  
+
+  catchRemoveButtons()
+
   productName.value = ""
   unitPrice.value = 0
 
@@ -89,8 +93,7 @@ window.addEventListener("load", () => {
   const calculatePricesBtn = document.getElementById("calculate");
   calculatePricesBtn.addEventListener("click", calculateAll);
 
-  const removeButtons = document.querySelectorAll(".btn-remove");
-  removeButtons.forEach(button => button.addEventListener("click", removeProduct))
+  catchRemoveButtons()
 
   const createButton = document.querySelector("#create");
   createButton.addEventListener("click", createProduct)
