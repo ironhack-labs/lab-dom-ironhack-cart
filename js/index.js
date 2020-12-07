@@ -2,7 +2,6 @@
 // ITERATION 1 ----------------------------------------------------------------------------------------------------------------------------------------------------
 // Calcular el valor de price multiplicado por quantity de cada producto
  function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
   //ITERATION 1.1 - Crear variables y obtener elementos del DOM de price y quantity
   let price = product.querySelector('.price span');
   let quantity = product.querySelector('.quantity input');
@@ -14,7 +13,7 @@
   //ITERATION 1.4 - Obtenemos los elementos del DOM de subtotal para guardar ahí el resultado de la multiplicacion
   let calcSubTotal = product.querySelector('.subtotal span');
   //ITERATION 1.5 - Devolvemos valor de subTotalValue "seteado" en calcSubTotal
-  calcSubTotal.innerHTML = subTotalValue
+  calcSubTotal.innerHTML = (new Intl.NumberFormat("de-DE", {minimumFractionDigits: 2},).format(subTotalValue));
   return subTotalValue
 }
 // ITERATION 2 ----------------------------------------------------------------------------------------------------------------------------------------------------
@@ -35,7 +34,7 @@ function calculateAll() {
   updateSubtotal(singleProduct);
   //Seleccionamos el id total-value span, lo guardamos en totalSpan y seteamos en totalSpan con .innerHTML, el resultado de la suma de todos los updateSubtotal de los productos
   let totalSpan = document.querySelector('#total-value span');
-  totalSpan.innerHTML = total.toFixed(2);
+  totalSpan.innerHTML = (new Intl.NumberFormat("de-DE", {minimumFractionDigits: 2},).format(total));
 }
 // ITERATION 4 ----------------------------------------------------------------------------------------------------------------------------------------------------
 function removeProduct(event) {
