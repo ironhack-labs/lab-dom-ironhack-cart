@@ -67,17 +67,22 @@ function createProduct() {
 
   let unitPrice = document.querySelector(".create-product input[type='number']")
 
-
-
-  let newProduct = document.querySelector(".product")
-  let cloneProduct = newProduct.cloneNode(true)
-  cloneProduct.querySelector(".name span").innerHTML = productName.value;
-  cloneProduct.querySelector(".price span").innerHTML = unitPrice.value;
-  cloneProduct.querySelector(".quantity input").value = 0;
-
+  const row = `<tr class="product">
+          <td class="name">
+            <span>${productName.value}</span>
+          </td>
+          <td class="price">$<span>${unitPrice.value}</span></td>
+          <td class="quantity">
+            <input type="number" value="0" min="0" placeholder="Quantity" />
+          </td>
+          <td class="subtotal">$<span>0</span></td>
+          <td class="action">
+            <button class="btn btn-remove">Remove</button>
+          </td>
+        </tr>`
 
   const itemsList = document.querySelector("tbody")
-  itemsList.appendChild(cloneProduct)
+  itemsList.insertAdjacentHTML('beforeend', row)
 
   catchRemoveButtons()
 
