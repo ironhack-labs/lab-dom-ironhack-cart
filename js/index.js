@@ -3,19 +3,19 @@
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
 
-  const price = product.querySelector('.price span');
-  const quantity = product.querySelector('.quantity input');
+  //HICE YO: const price = product.querySelector('.price span');
+  //HICE YO: const quantity = product.querySelector('.quantity input');
 
-  const subtotal = price.innerHTML*(quantity.value);
-  product.querySelector('.subtotal span').innerHTML=subtotal;
-  return subtotal;
+  //HICE YO: const subtotal = price.innerHTML*(quantity.value);
+  //HICE YO: product.querySelector('.subtotal span').innerHTML=subtotal;
+   //HICE YO:return subtotal;
 }
 
 function calculateAll() {
   // code in the following two lines is added just for testing purposes.
   // it runs when only iteration 1 is completed. at later point, it can be removed.
-  // const singleProduct = document.querySelector('.product');
-  // updateSubtotal(singleProduct);
+   const singleProduct = document.querySelector('.product');
+   updateSubtotal(singleProduct);
   // end of test
 
   // ITERATION 2
@@ -27,13 +27,13 @@ function calculateAll() {
 
   // ITERATION 3
   //... your code goes here
-  let total=0;
-  const priceProducts = document.getElementsByClassName ('.subtotal');
-  for(let i=0; i<priceProducts.length;i++){
-    total=total + priceProducts.innerHTML;
-  }
-  document.querySelector('#total-value span').innerHTML=total;
-}
+   //HICE YO:let total=0;
+   //HICE YO:const priceProducts = document.getElementsByClassName ('.subtotal');
+   //HICE YO:for(let i=0; i<priceProducts.length;i++){
+    //HICE YO: total=total + priceProducts.innerHTML;
+  //HICE YO: }
+   //HICE YO:document.querySelector('#total-value span').innerHTML=total;
+ //HICE YO:}
 
 // ITERATION 4
 
