@@ -1,4 +1,4 @@
-let ghostProduct = undefined
+let ghostProduct
 
 function updateSubtotal(product) {
 
