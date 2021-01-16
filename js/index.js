@@ -139,7 +139,12 @@ function createProduct() {
 
         newActionColumn.appendChild(newActionButton)
 
+
+  //Hay que cambiar el placeholder, si no queda feo
+  const priceInput = createTextInput[1]
+  priceInput.setAttribute('placeholder', '0')
   
+  //Reset de valores de los inputs
   createTextInput.forEach(input => input.value = '')
 
   }
