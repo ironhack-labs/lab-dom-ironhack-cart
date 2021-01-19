@@ -1,6 +1,6 @@
 // ITERATION 1
 
-const subTotalArr = [];
+let subTotalArr = [];
 const total = document.querySelector('#total-value span');
 
 function updateSubtotal(product) {
@@ -11,7 +11,6 @@ function updateSubtotal(product) {
   const totalSubtotal = price * quantity;
   const subTotal = product.querySelector('.subtotal span');
   subTotal.innerHTML = totalSubtotal;
-
   subTotalArr.push(totalSubtotal);
 
 }
@@ -22,7 +21,7 @@ function calculateAll() {
   // const singleProduct = document.querySelector('.product');
   // updateSubtotal(singleProduct);
   // end of test
-
+  subTotalArr = [];
   // ITERATION 2
   //... your code goes here
   
@@ -35,8 +34,9 @@ function calculateAll() {
     return num1 + num2 
   })
 
+  
   total.innerHTML = totalPrice;
-
+  
 }
 
 
