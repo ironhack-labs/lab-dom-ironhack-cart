@@ -40,28 +40,35 @@ function removeProduct(event) {
 
 function createProduct() {
   const newProduct = document.querySelectorAll('.create-product input');
-
-  // get the first product and clone it
-  const clonedNode = document.querySelector('.product').cloneNode(true);
   const name = newProduct[0].value;
   const price = newProduct[1].value;
 
   // add some logic to ensure the input makes sense
-  if (name === '' || price === 0) {
+  if (name === '' || Number(price) === 0) {
     alert("Please enter the product's name or price!")
   } else {
-    // updating new product information
-    clonedNode.querySelector('.name span').innerText = name;
-    clonedNode.querySelector('.price span').innerText = Number.parseFloat(price).toFixed(2);
+    let productRow = document.createElement('tr')
+    productRow.classList.add('product');
+    productRow.innerHTML = newProductMakeup(name, Number.parseFloat(price).toFixed(2));
+    productRow.querySelector('.btn-remove').addEventListener('click', removeProduct);
+    document.querySelector('#cart tbody').appendChild(productRow);
 
-    // addventListener to the new clonedNode remove button
-    // since the bottom code only executed when the DOM is loaded
-    clonedNode.querySelector('.btn-remove').addEventListener('click', removeProduct);
-    document.querySelector('#cart tbody').appendChild(clonedNode);
-    
-    // remove existing text
     newProduct[0].value= '';
     newProduct[1].value = 0;
+    
+    // This works well if you don't delete all product
+    // // updating new product information
+    // clonedNode.querySelector('.name span').innerText = name;
+    // clonedNode.querySelector('.price span').innerText = Number.parseFloat(price).toFixed(2);
+
+    // // addventListener to the new clonedNode remove button
+    // // since the bottom code only executed when the DOM is loaded
+    // clonedNode.querySelector('.btn-remove').addEventListener('click', removeProduct);
+    // document.querySelector('#cart tbody').appendChild(clonedNode);
+    
+    // // remove existing text
+    // newProduct[0].value= '';
+    // newProduct[1].value = 0;
   }
 }
 
@@ -72,3 +79,20 @@ window.addEventListener('load', () => {
   document.querySelectorAll('.btn-remove').forEach(el => el.addEventListener('click', removeProduct));
   document.getElementById('create').addEventListener('click', createProduct);
 });
+
+
+// create a function to generate the innerHTML of a product
+function newProductMakeup(name, price) {
+  return `<td class="name">
+    <span>${name}</span>
+  </td>
+  <td class="price">$<span>${price}</span></td>
+  <td class="quantity">
+    <input type="number" value="0" min="0" placeholder="Quantity" />
+  </td>
+  <td class="subtotal">$<span>0</span></td>
+  <td class="action">
+    <button class="btn btn-remove">Remove</button>
+  </td>
+  `
+}
