@@ -62,11 +62,17 @@ window.addEventListener('load', () => {
   calculatePricesBtn.addEventListener('click', calculateAll);
 
   let removeBtns = document.querySelectorAll('.btn-remove'); 
-  removeBtns.forEach((function(button) {
-    button.onclick = removeProduct;
-  })
+
+  removeBtns.forEach(
+    (
+      function(button) {
+        button.onclick = removeProduct;
+      }
+    )
+  )
 
   let addBtn = document.querySelector('#create');
+  
   addBtn.addEventListener('click', function () {
   createProduct();
 
