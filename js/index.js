@@ -1,42 +1,73 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
-
-  //... your code goes here
+  const price = parseFloat(product.querySelector(".price span").innerText);
+  const quantity = parseInt(product.querySelector(".quantity input").value);
+  const subtotal = (price * quantity).toFixed(2);
+  product.querySelector(".subtotal span").innerText = subtotal;
+  return parseFloat(subtotal);
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
+  let total = 0;
+  const products = document.getElementsByClassName("product");
+  Array.from(products).map((tr) => {
+    total += updateSubtotal(tr);
+  });
 
-  // ITERATION 2
-  //... your code goes here
-
-  // ITERATION 3
-  //... your code goes here
+  const totalContainer = document.getElementById("total-value");
+  totalContainer.firstElementChild.innerText = total.toFixed(2);
 }
 
 // ITERATION 4
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+  const buttonHolder = target.parentElement.parentElement;
+  buttonHolder.parentElement.removeChild(buttonHolder);
+  calculateAll();
 }
 
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  const elementList = document.getElementById("product-list");
+
+  const newProductName = document.getElementById("new-product-name").value;
+  const newProductPrice = document.getElementById("new-product-price").value;
+
+  const newProduct = `<tr class="product">
+  <td class="name">
+    <span>${newProductName}</span>
+  </td>
+
+  <td class="price">$<span>${newProductPrice}</span></td>
+  <td class="quantity">
+    <input type="number" value="0" min="0" placeholder="Quantity" />
+  </td>
+  <td class="subtotal">$<span>0</span></td>
+  <td class="action">
+    <button class="btn btn-remove">Remove</button>
+  </td>
+</tr>`;
+
+  elementList.innerHTML += newProduct;
+  addEventRemove();
 }
 
-window.addEventListener('load', () => {
-  const calculatePricesBtn = document.getElementById('calculate');
-  calculatePricesBtn.addEventListener('click', calculateAll);
+window.addEventListener("load", () => {
+  const calculatePricesBtn = document.getElementById("calculate");
+  calculatePricesBtn.addEventListener("click", calculateAll);
 
-  //... your code goes here
+  const createButton = document.getElementById("create");
+  createButton.onclick = createProduct;
+
+  addEventRemove();
 });
+
+function addEventRemove() {
+  let buttons = document.getElementsByClassName("btn-remove");
+  Array.from(buttons).map((btn) => {
+    btn.onclick = removeProduct;
+  });
+}
