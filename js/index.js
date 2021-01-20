@@ -2,11 +2,11 @@
 
 function updateSubtotal(product) {
 
-  const price = product.querySelector('.price span').innerHTML;
-  const quantity = document.querySelector('.quantity input').value;
-  let subtotal = Number(price * quantity);
+  const price = product.querySelector('.price span').innerText;
+  const quantity = product.querySelector('.quantity input').value;
+  let subtotal = price * quantity;
 
-  product.querySelector('.subtotal span').innerText = subtotal;
+  product.querySelector('.subtotal > span').innerText = subtotal;
 
   return subtotal;
 }
@@ -15,15 +15,13 @@ function calculateAll() {
   
   // ITERATION 2
 
-  let allProducts = [...document.getElementsByClassName('product')];
-  let totalPrice = document.querySelector('#total-value span');
   let total = 0;
-  
-  allProducts.forEach(function(product){
-    total += updateSubtotal(product);
-  })
 
-  return totalPrice.innerHTML = total;
+  document.querySelectorAll('.product').forEach(function (product) {
+    total += updateSubtotal(product);
+  });
+
+  document.querySelector('#total-value').innerText = `Total: $${total}`;
 
   // ITERATION 3
 
@@ -34,27 +32,28 @@ function calculateAll() {
 function removeProduct(event) {
 
   const target = event.currentTarget;
-  const child = target.closest('tr');
-  const parent = target.closest('tbody');
+  const product = target.parentNode.parentNode;
 
-  parent.removeChild(child);
+  product.remove();
+
+  calculateAll();
 }
 
 // ITERATION 5
 
 function createProduct() {
 
-  let newInput = document.querySelector('.create-product input').value;
-  let newPriceBefore = document.querySelector('.create-product td').nextElementSibling.querySelector('input').value;
-  let newPrice = Number(newPriceBefore).toFixed(2);
+  let product = document.querySelector('.product');
+  let newProduct = product.cloneNode(true);
 
-  let addedNewProduct = document.querySelector('.product').cloneNode(true);
-  document.querySelector('tbody').appendChild(addedNewProduct);
+  newProduct.querySelector('.name span').innerText = document.querySelector('.create-product td input').value;
+  newProduct.querySelector('.subtotal span').innerText = 0;
+  newProduct.querySelector('.price span').innerText = document.querySelector('#cart > tfoot > tr > td:nth-child(2) > input[type=number]').value;
+  newProduct.querySelector('.action .btn').addEventListener('click', removeProduct);
+  let tBody = document.querySelector('tbody');
 
-  let addedInput = document.querySelector('.product:last-child').firstElementChild.firstElementChild;
-  addedInput.textContent = newInput;
-  let addedPrice = document.querySelector('.product:last-child').childNodes[3].firstElementChild;
-  addedPrice.innerText = newPrice;
+  tBody.appendChild(newProduct);
+  
 }
 
 window.addEventListener('load', () => {
@@ -63,8 +62,14 @@ window.addEventListener('load', () => {
   calculatePricesBtn.addEventListener('click', calculateAll);
 
   let removeBtns = document.querySelectorAll('.btn-remove'); 
-  removeBtns.forEach(btn => btn.onclick = removeProduct);
+  removeBtns.forEach((function(button) {
+    button.onclick = removeProduct;
+  })
 
-  let addBtn = document.getElementById('create');
-  addBtn.onclick = createProduct;
+  let addBtn = document.querySelector('#create');
+  addBtn.addEventListener('click', function () {
+  createProduct();
+
+  });
+
 });
