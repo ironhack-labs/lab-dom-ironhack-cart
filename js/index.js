@@ -15,23 +15,19 @@ function calculateAll() {
   
   // ITERATION 2
 
+  let allProducts = [...document.getElementsByClassName('product')];
+  let totalPrice = document.querySelector('#total-value span');
   let total = 0;
-  const allProducts = document.getElementsByClassName('product');
+  
+  allProducts.forEach(function(product){
+    total += updateSubtotal(product);
+  })
 
-  for (let product of allProducts) {
-    product =+ updateSubtotal(product); 
-  }
-
-  document.querySelector('#total-value span').innerHTML = total;
-
-  return total;
-
+  return totalPrice.innerHTML = total;
 
   // ITERATION 3
-  //... your code goes here
 
 }
-
 
 // ITERATION 4
 
