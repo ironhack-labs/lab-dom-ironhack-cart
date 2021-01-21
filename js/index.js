@@ -1,23 +1,30 @@
 // ITERATION 1
-
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
-
-  //... your code goes here
+    const price=product.querySelector('.price span');
+    const quantity=product.querySelector('.quantity input');
+    const sub=product.querySelector('.subtotal span');
+    const priceNumber=Number(price.innerHTML);
+    const quantityNum=Number(quantity.value);
+    const mult= (priceNumber*quantityNum);
+    sub.innerHTML=mult;
+    return mult;
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
-
   // ITERATION 2
-  //... your code goes here
-
+  const firstProduct = document.querySelectorAll('.product')[0];
+  const secondProduct = document.querySelectorAll('.product')[1];
+  updateSubtotal(firstProduct)
+  updateSubtotal(secondProduct)
+    
   // ITERATION 3
-  //... your code goes here
+  const totalPrice=document.querySelector('#total-value span')
+  console.log(totalPrice)
+  const sumAll=Number(updateSubtotal(firstProduct)+updateSubtotal(secondProduct))
+  console.log(sumAll)
+  totalPrice.innerHTML=sumAll
+  return sumAll
+
 }
 
 // ITERATION 4
@@ -25,18 +32,41 @@ function calculateAll() {
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
-  //... your code goes here
+
+
+
+    
+  /*const quantity=product.querySelector('.quantity input');
+  const sub=product.querySelector('.subtotal span');
+
+  const elimAll=Number(quantity, sub)
+  elimAll.removeChild()
+
+  console.log(elimAll)
+
+  const elimAll= document.getElementByClassName(".quantity input")
+  while(elimAll.firstChild){
+    elimAll.removeChild(elimAll.firstChild)
+  }
+    const elim = document.querySelectorAll(".product")
+  elim.removeChild(elim.childNodes[0])
+    const elim = document.querySelectorAll(".product")
+  elim.removeChild(elim.childNodes[0])
+  */
 }
 
 // ITERATION 5
-
-function createProduct() {
   //... your code goes here
-}
+
+
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
   //... your code goes here
+
+  const removePricesBtn = document.getElementById('remove');
+  removePricesBtn.addEventListener('click', removeProduct);
+
 });
