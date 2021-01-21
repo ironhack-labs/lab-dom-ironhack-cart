@@ -28,7 +28,7 @@ function calculateAll() {
     let total = document.querySelector("#total-value span");
     let subtotalArray = updateSubtotal(products);
     console.log(subtotalArray);
-    total.innerText = subtotalArray.reduce((a, b) => Number(a) + Number(b));
+    total.innerText = subtotalArray.reduce((a, b) => Number(a) + Number(b), 0);
     // ITERATION 3
     //... your code goes here
 }
@@ -39,17 +39,53 @@ function removeProduct(event) {
     const target = event.currentTarget;
     console.log("The target in remove is:", target);
     //... your code goes here
+    const product = target.parentNode.parentNode.parentNode;
+    console.log(product);
+    product.removeChild(target.parentNode.parentNode);
+    calculateAll();
 }
 
 // ITERATION 5
 
 function createProduct() {
     //... your code goes here
+    const productName = document.querySelector(
+        ".create-product td input[type=text]"
+    ).value;
+    const productPrice = Number(
+        document.querySelector(".create-product td input[type=number]").value
+    ).toFixed(2);
+    console.log(productName);
+    console.log(productPrice);
+    const tableBody = document.querySelector("#cart tbody");
+    tableBody.innerHTML += `<tr class="product">
+    <td class="name">
+        <span>${productName}</span>
+    </td>
+    <td class="price">$<span>${productPrice}</span></td>
+    <td class="quantity">
+        <input type="number" value="0" min="0" placeholder="Quantity" />
+    </td>
+    <td class="subtotal">$<span>0</span></td>
+    <td class="action">
+        <button class="btn btn-remove">Remove</button>
+    </td>
+</tr>`;
+    const removeButtons = document.querySelectorAll(".btn-remove");
+    for (let i = 0; i < removeButtons.length; i++) {
+        removeButtons[i].addEventListener("click", removeProduct);
+    }
 }
 
 window.addEventListener("load", () => {
     const calculatePricesBtn = document.getElementById("calculate");
     calculatePricesBtn.addEventListener("click", calculateAll);
+    const removeButtons = document.querySelectorAll(".btn-remove");
+    for (let i = 0; i < removeButtons.length; i++) {
+        removeButtons[i].addEventListener("click", removeProduct);
+    }
+    const createProductBtn = document.querySelector("#create");
+    createProductBtn.addEventListener("click", createProduct);
 
     //... your code goes here
 });
