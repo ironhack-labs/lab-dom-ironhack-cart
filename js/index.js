@@ -33,15 +33,15 @@ function removeProduct(event) {
 function createProduct() {
   const elementList = document.getElementById("product-list");
 
-  const newProductName = document.getElementById("new-product-name").value;
-  const newProductPrice = document.getElementById("new-product-price").value;
+  let newProductName = document.getElementById("new-product-name");
+  let newProductPrice = document.getElementById("new-product-price");
 
   const newProduct = `<tr class="product">
   <td class="name">
-    <span>${newProductName}</span>
+    <span>${newProductName.value}</span>
   </td>
 
-  <td class="price">$<span>${newProductPrice}</span></td>
+  <td class="price">$<span>${newProductPrice.value}</span></td>
   <td class="quantity">
     <input type="number" value="0" min="0" placeholder="Quantity" />
   </td>
@@ -52,6 +52,8 @@ function createProduct() {
 </tr>`;
 
   elementList.innerHTML += newProduct;
+  newProductName.value = "";
+  newProductPrice.value = 0;
   addEventRemove();
 }
 
