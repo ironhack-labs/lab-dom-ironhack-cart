@@ -41,18 +41,52 @@ function calculateAll() {
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
-  //... your code goes here
+  const parentRow = target.parentNode.parentNode;
+  const parentTable = parentRow.parentNode;
+  parentTable.removeChild(parentRow);
+  calculateAll();
 }
 
 // ITERATION 5
+function checkPriceFormat(num) {
+  console.log("hello from the checking function!");
+  if (num.length < 4) num + ".00";
+}
 
 function createProduct() {
-  //... your code goes here
+  const table = document.querySelector("#cart tbody");
+
+  const createRow = document.querySelector('.create-product');
+  let productName = createRow.querySelector('input[type="text"]').value;
+  let productPrice = Number(createRow.querySelector('input[type="number"]').value);
+  const newRow = document.createElement('tr');
+  console.log(productName);
+  console.log(productPrice);
+  console.log(typeof productPrice);
+  newRow.innerHTML = `
+    <td class="name">
+      <span>${productName}</span>
+    </td>
+    <td class="price">$<span>${productPrice}</span></td>
+    <td class="quantity">
+      <input type="number" value="0" min="0" placeholder="Quantity" />
+    </td>
+    <td class="subtotal">$<span>0</span></td>
+    <td class="action">
+      <button class="btn btn-remove">Remove</button>
+    </td>
+  `;
+  table.appendChild(newRow);
+  productName = "";
+  productPrice = "";
 }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
+  let removeBtns = document.querySelectorAll('.btn-remove');
+  let createBtn = document.getElementById("create");
+  
   calculatePricesBtn.addEventListener('click', calculateAll);
-
-  //... your code goes here
+  removeBtns.forEach(btn => btn.addEventListener('click', removeProduct));
+  createBtn.addEventListener('click', createProduct);
 });
