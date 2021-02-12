@@ -40,13 +40,13 @@ function createProduct(event) {
   const cart = document.querySelector("#cart > tbody") ;
   const createProduct = event.target.parentElement.parentElement ;
 
+  const tr = document.createElement("tr") ;
+  tr.classList.add("product") ;
+  cart.appendChild(tr) ;
+
 
   //  long solution, but I wanted to learn to use createElement
   //  ---------------------------------------------------------
-
-  // const tr = document.createElement("tr") ;
-  // tr.classList.add("product") ;
-  // cart.appendChild(tr) ;
 
   // const name = document.createElement("td") ;
   // tr.appendChild(name)
@@ -91,8 +91,28 @@ function createProduct(event) {
 
   // Faster Solution : using innerText
   // ---------------------------------
-  cart.innerHTML += `
-  <tr class="product">
+  //
+  //  This solution seems not to work : when add a line, the initial values quantity are reset to 0.
+  //  So I created a tr, add inner html in tr and add the tr to tbody. Like that, previous tr stay
+  //  the same
+  //
+  // cart.innerHTML += `
+  // <tr class="product">
+  //   <td class="name">
+  //     <span>${createProduct.children[0].children[0].value}</span>
+  //   </td>
+  //   <td class="price">$<span>${createProduct.children[1].children[0].value}</span></td>
+  //   <td class="quantity">
+  //     <input type="number" value="0" min="0" placeholder="Quantity" />
+  //   </td>
+  //   <td class="subtotal">$<span>0</span></td>
+  //   <td class="action">
+  //     <button class="btn btn-remove">Remove</button>
+  //   </td>
+  // </tr>
+  // `
+
+  tr.innerHTML += `
     <td class="name">
       <span>${createProduct.children[0].children[0].value}</span>
     </td>
@@ -104,7 +124,6 @@ function createProduct(event) {
     <td class="action">
       <button class="btn btn-remove">Remove</button>
     </td>
-  </tr>
   `
 
   let button = cart.querySelectorAll(".btn.btn-remove") ;
