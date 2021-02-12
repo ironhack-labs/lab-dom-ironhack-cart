@@ -41,8 +41,8 @@ function createProduct(event) {
   const createProduct = event.target.parentElement.parentElement ;
 
 
-  // Very long code, but to try to create a tree via createElement
-  // -------------------------------------------------------------
+  //  long solution, but I wanted to learn to use createElement
+  //  ---------------------------------------------------------
 
   // const tr = document.createElement("tr") ;
   // tr.classList.add("product") ;
@@ -80,17 +80,25 @@ function createProduct(event) {
   // span3.innerText = 0 ;
   // subtotal.appendChild(span3) ;
 
+  // const action = document.createElement("td") ;
+  // action.classList.add("action")
+  // tr.appendChild(action) ;
+  // const button = document.createElement("button") ;
+  // button.classList.add("btn")
+  // button.classList.add("btn-remove")
+  // button.innerText = "Remove" ;
+  // action.appendChild(button)  
 
-  // Faster, but with html
-  // ---------------------
+  // Faster Solution : using innerText
+  // ---------------------------------
   cart.innerHTML += `
   <tr class="product">
     <td class="name">
-      <span>Ironhack Rubber Duck</span>
+      <span>${createProduct.children[0].children[0].value}</span>
     </td>
-    <td class="price">$<span>${createProduct.children[0].children[0].value}</span></td>
+    <td class="price">$<span>${createProduct.children[1].children[0].value}</span></td>
     <td class="quantity">
-      <input type="number" value="${createProduct.children[1].children[0].value}" min="0" placeholder="Quantity" />
+      <input type="number" value="0" min="0" placeholder="Quantity" />
     </td>
     <td class="subtotal">$<span>0</span></td>
     <td class="action">
@@ -104,7 +112,6 @@ function createProduct(event) {
 
   button.onclick = removeProduct
   // don't forget to add an event listener to the new buttons
-
 }
 
 window.addEventListener('load', () => {
