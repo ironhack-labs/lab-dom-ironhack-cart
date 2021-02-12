@@ -126,6 +126,10 @@ function createProduct(event) {
     </td>
   `
 
+  createProduct.children[0].children[0].value = "" ;
+  createProduct.children[1].children[0].value = 0 ;
+  createProduct.children[0].children[0].focus() ;
+
   let button = cart.querySelectorAll(".btn.btn-remove") ;
   button = button[button.length - 1] ;
 
