@@ -22,25 +22,27 @@ function calculateAll() {
 
   // ITERATION 2
   let products = document.querySelectorAll('.product');
-  
-  console.log(products[0])
+
+  // let product1 = products[0];
+  // let product2 = products[1];
 
   products.forEach(product => {
     updateSubtotal(product);
   }); 
 
-  
+  let subtotal1 = document.querySelector('.subtotal span').innerHTML;
+  let subtotal2 = document.querySelector('.product:nth-child(2) .subtotal span').innerHTML;
+  let subtotal1Val = Number(subtotal1);
+  let subtotal2Val = Number(subtotal2);
+  let total = subtotal1Val + subtotal2Val;
 
+  let totalOfCart = document.querySelector("#total-value span");
+  totalOfCart.innerHTML = total;
 };
 
 
 // ITERATION 3
-let total = document.querySelector("#total-value span");
-
-// console.log(total);
-
-let totalValue = total.innerHTML;
-totalValue = calculateAll;
+//>See up
 
 
 
