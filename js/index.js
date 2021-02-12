@@ -1,10 +1,10 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  const price = product.querySelector('.price span');
-  const quantity = product.querySelector('.quantity input');
+  const price = document.querySelector('.price span');
+  const quantity = document.querySelector('.quantity input');
   const subtotal = price.innerHTML * quantity.innerHTML;
-  const updateSubtotal = product.querySelector('.subtotal');
+  const updateSubtotal = document.querySelector('.subtotal');
   return subtotal;
 }
 
