@@ -199,7 +199,7 @@ We already declared `removeProduct(event)` and added some starter code. After yo
 
 As we can see, `removeProduct(event)` expects the event as a single argument, and that is going to trigger the removal of the corresponding product from the cart.
 
-:bulb: Tip: To access the element an event was fired on, you can reference `event.currentTarget`. To remove a node from the DOM, you need to access its parent node and call [`removeChild`](https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild) on it. You can access the parent of a DOM node from its property `parentNode`.
+:bulb: Tip: To access the element an event was fired on, you can reference `event.currentTarget`. To remove a node from the DOM, you need to access its parent node and call [`removeChild`](https://developer.mozilla.org/en-US/ docs/Web/API/Node/removeChild) on it. You can access the parent of a DOM node from its property `parentNode`.
 
 Make sure the price gets updated accordingly when you remove products from the shopping cart.
 
