@@ -62,5 +62,9 @@ window.addEventListener("load", () => {
   const calculatePricesBtn = document.getElementById("calculate");
   calculatePricesBtn.addEventListener("click", calculateAll);
 
-  //... your code goes here
+  const removeBtn = document.querySelectorAll(".btn-remove");
+  removeBtn.forEach(btn => {
+    addEventListener('click', removeProduct);
+    console.log("Yo")
+  })
 });
