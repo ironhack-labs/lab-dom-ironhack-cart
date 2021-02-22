@@ -51,7 +51,9 @@ function removeProduct(event) {
   console.log("The target in remove is:", target);
   let tableBody = document.querySelector("tbody");
   let product = document.querySelector(".product");
-  let delProduct = tableBody.removeChild(product);
+  tableBody.removeChild(product);
+  calculateAll();
+
 }
 
 // ITERATION 5
