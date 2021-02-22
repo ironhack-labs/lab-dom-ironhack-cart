@@ -10,34 +10,31 @@ function updateSubtotal(product) {
   let subtotal = priceValue * quantityValue;
 
   let result = product.querySelector(".subtotal span");
-  return (result.innerHTML = subtotal);
+  result.innerHTML = subtotal;
+  return subtotal;
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  // const singleProduct = document.querySelector('.product');
-  // updateSubtotal(singleProduct);
-  // end of test
-
+  
   // ITERATION 2
   let products = document.querySelectorAll('.product');
+  let totalPrice=0;
 
   // let product1 = products[0];
   // let product2 = products[1];
 
   products.forEach(product => {
-    updateSubtotal(product);
+    totalPrice += updateSubtotal(product);
   }); 
-
-  let subtotal1 = document.querySelector('.subtotal span').innerHTML;
-  let subtotal2 = document.querySelector('.product:nth-child(2) .subtotal span').innerHTML;
-  let subtotal1Val = Number(subtotal1);
-  let subtotal2Val = Number(subtotal2);
-  let total = subtotal1Val + subtotal2Val;
+  //*HARCODED*//
+  // let subtotal1 = document.querySelector('.subtotal span').innerHTML;
+  // let subtotal2 = document.querySelector('.product:nth-child(2) .subtotal span').innerHTML;
+  // let subtotal1Val = Number(subtotal1);
+  // let subtotal2Val = Number(subtotal2);
+  // let total = subtotal1Val + subtotal2Val;
 
   let totalOfCart = document.querySelector("#total-value span");
-  totalOfCart.innerHTML = total;
+  totalOfCart.innerHTML = totalPrice;
 };
 
 
