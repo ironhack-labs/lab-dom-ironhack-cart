@@ -66,7 +66,7 @@ window.addEventListener("load", () => {
 
   const removeBtn = document.querySelectorAll(".btn.btn-remove");
   removeBtn.forEach(btn => {
-    addEventListener('click', removeProduct);
-    console.log(removeBtn)
-  })
+    btn.addEventListener('click', removeProduct);
+    console.log(removeBtn);
+  });
 });
