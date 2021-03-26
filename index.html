@@ -18,7 +18,7 @@
           <th>Action</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="product-contain">
         <tr class="product">
           <td class="name">
             <span>Ironhack Rubber Duck</span>
@@ -32,28 +32,79 @@
             <button class="btn btn-remove">Remove</button>
           </td>
         </tr>
-        <!-- Iteration 2: Add more products here -->
+        <tr class="product">
+          <td class="name">
+            <span>Ironhack Soap</span>
+          </td>
+          <td class="price">$<span>3.00</span></td>
+          <td class="quantity">
+            <input type="number" value="0" min="0" placeholder="Quantity" />
+          </td>
+          <td class="subtotal">$<span>0</span></td>
+          <td class="action">
+            <button class="btn btn-remove">Remove</button>
+          </td>
+        </tr>
+        <tr class="product">
+          <td class="name">
+            <span>Ironhack Scooter</span>
+          </td>
+          <td class="price">$<span>49.99</span></td>
+          <td class="quantity">
+            <input type="number" value="0" min="0" placeholder="Quantity" />
+          </td>
+          <td class="subtotal">$<span>0</span></td>
+          <td class="action">
+            <button class="btn btn-remove">Remove</button>
+          </td>
+        </tr>
       </tbody>
       <tfoot>
-        <!-- <tr class="create-product">
+        <tr class="create-product">
           <td>
-            <input type="text" placeholder="Product Name" />
+            <input id="product-name" type="text" placeholder="Product Name" />
           </td>
           <td>
-            <input type="number" min="0" value="0" placeholder="Product Price" />
+            <input id="product-price" type="number" min="0" value="0" placeholder="Product Price" />
           </td>
           <td></td>
           <td></td>
           <td>
             <button id="create" class="btn">Create Product</button>
           </td>
-        </tr> -->
+        </tr>
       </tfoot>
     </table>
+    <div id="error-holder" class="hidden">
+      <h3 id="error-msg" > Enter both a Product Name and Unit Price.</h3>
+    </div>
     <p class="calculate-total">
       <button id="calculate" class="btn btn-success">Calculate Prices</button>
     </p>
     <h2 id="total-value">Total: $<span>0</span></h2>
+    <!-- build new product -->
+    <table class="hidden">
+      <tbody id="row-temp">
+        <tr class="product">
+          <td class="name">
+            <span></span>
+          </td>
+          <td class="price">$<span></span></td>
+          <td class="quantity">
+            <input type="number" value="0" min="0" placeholder="Quantity" />
+          </td>
+          <td class="subtotal">$<span>0</span></td>
+          <td class="action">
+            <button class="btn btn-remove">Remove</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!--error msg
+    <div class="hidden">
+      <h3 id="error-msg"> Enter both a Product Name and Unit Price.</h3>
+    </div>
+    -->
     <script type="text/javascript" src="./js/index.js"></script>
   </body>
 </html>

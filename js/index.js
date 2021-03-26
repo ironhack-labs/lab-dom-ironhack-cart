@@ -1,42 +1,75 @@
-// ITERATION 1
 
-function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
+const $ = function( ele ) {
+  return document.querySelector( ele );
+};
+let errorCheck = false;
 
-  //... your code goes here
-}
+const updateSubtotal = (product) => {
+  const price = product.querySelector('.price span').textContent;
+  const quantity = product.querySelector('.quantity input').value;
+  const sub = price * quantity;
+  const subtotal = product.querySelector('.subtotal span');
+  subtotal.textContent = sub;
+  return sub;
+};
 
-function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
+const calculateAll= () => {
+  let total = 0;
+  document.querySelectorAll('.product').forEach(prod =>
+    total += updateSubtotal(prod)
+  );
+  $('#total-value span').innerText = total.toFixed(2);
+};
 
-  // ITERATION 2
-  //... your code goes here
+const removeProduct = (ele) => {
+  const elToRem = ele.currentTarget;
+  const prodRow = elToRem.parentNode.parentNode;
+  prodRow.parentNode.removeChild(prodRow);
+};
 
-  // ITERATION 3
-  //... your code goes here
-}
-
-// ITERATION 4
-
-function removeProduct(event) {
-  const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
-}
+const toggleError = () => {
+  $('#error-holder').classList.toggle('hidden');
+  errorCheck = false;
+};
 
 // ITERATION 5
-
 function createProduct() {
-  //... your code goes here
+  if (errorCheck) {
+    toggleError();
+  }
+
+  let copy;
+  let prodName = $('#product-name').value;
+  let prodPrice = $('#product-price').value;
+  let rowHold = $('#row-temp tr');
+
+  if (prodName==='' || prodPrice===0) {
+    let err;
+    err = $('#error-msg').cloneNode(true);
+    //$('#error-holder').append(err);
+    toggleError();
+    errorCheck = true;
+    return false
+  }
+
+  rowHold.querySelector('.name span').innerHTML = prodName;
+  rowHold.querySelector('.price span').innerHTML = prodPrice;
+
+  copy = rowHold.cloneNode(true);
+
+  $('#product-contain').appendChild(copy);
+
+  document.querySelectorAll('.btn-remove').forEach(e => {
+    e.addEventListener('click', removeProduct);
+  });
 }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+  document.querySelectorAll('.btn-remove').forEach(e => {
+    e.addEventListener('click', removeProduct);
+    $('#create').addEventListener('click', createProduct)
+  });
 });

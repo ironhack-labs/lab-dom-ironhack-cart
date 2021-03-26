@@ -65,3 +65,19 @@ h2,
 .calculate-total {
   text-align: center;
 }
+
+.hidden {
+  display: none;
+}
+
+#error-holder {
+  background-color: #f2747136;
+  text-align: center;
+  border-radius: 5px;
+  width: 500px;
+  margin: 0 auto;
+}
+
+#error-msg {
+  color: #bf1f1f;
+}
