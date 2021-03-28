@@ -47,7 +47,16 @@ function calculateAll() {
 
 // ITERATION 4
 
-function removeProduct(event) {
+function removeProduct() {
+
+  let deletBtn = document.getElementsByClassName('btn btn-remove')
+
+  Object.entries(deletBtn).forEach(button => {
+
+    button[1].addEventListener('click', removeProduct)
+
+  });
+
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
 
@@ -55,7 +64,6 @@ function removeProduct(event) {
 
   node.parentNode.removeChild(node)
 
-  //... your code goes here
 }
 
 // ITERATION 5
@@ -76,7 +84,7 @@ function createProduct(event) {
 
   //const newItem = document.createElement('tr class="product"')
 
-  let newElement = (`<td class="name">      <span>${newProduct} </span>    </td>    <td class="price">$<span>${newPrice}</span></td> <td class="quantity"> <input type="number" value="0" min="0" placeholder="Quantity" /> </td> <td class="subtotal">$<span>0</span></td> <td class="action"> <button class="btn btn-remove">Remove</button> </td>`)
+  let newElement = (`<td class="name">      <span>${newProduct} </span>    </td>    <td class="price">$<span>${newPrice}</span></td> <td class="quantity"> <input type="number" value="0" min="0" placeholder="Quantity" /> </td> <td class="subtotal">$<span>0</span></td> <td class="action"> <button class="btn btn-remove" onclick = removeProduct()>Remove</button> </td>`)
 
   //console.log(newElement);
   let newRow = target[target.length - 1].insertAdjacentHTML('afterend', newElement)
@@ -89,7 +97,7 @@ window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  const deletBtn = document.getElementsByClassName('btn btn-remove')
+  let deletBtn = document.getElementsByClassName('btn btn-remove')
 
   Object.entries(deletBtn).forEach(button => {
 
