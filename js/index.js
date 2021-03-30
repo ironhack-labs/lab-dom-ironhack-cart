@@ -21,9 +21,18 @@ function calculateAll() {
 
   // ITERATION 2
   //... your code goes here
+  const allProducts = document.querySelectorAll('.product')
+  
+  let totalPrice = 0
+  
+  allProducts.forEach((product)=> {
+  totalPrice += updateSubtotal(product)
+  })
 
+  
   // ITERATION 3
   //... your code goes here
+  document.querySelector('#total-value span').innerText = totalPrice
 }
 
 // ITERATION 4
