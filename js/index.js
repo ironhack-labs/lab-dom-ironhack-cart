@@ -1,35 +1,44 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  let price = product.querySelector('.price span').innerText;
-  let quantity = product.querySelector('.quantity input').value;
-  let subTotal = parseInt(price) * parseInt(quantity);
+  const price = product.querySelector('.price span');
+  const quantity = product.querySelector('.quantity input');
+  let subtotal = price.innerText * quantity.value;
+  product.querySelector('.subtotal span').innerText = subtotal;
+  return subtotal;
+}
+
+function updateSubtotal(product) {
+  const price = product.querySelector('.price span').innerText;
+  const quantity = product.querySelector('.quantity input').value;
   
-  product.querySelector('.subtotal span').innerText = `${subTotal}`;
+  let subTotal = price * quantity;
+  
+  product.querySelector('.subtotal span').innerText = subTotal;
 
   return subTotal;
 }
 
 function calculateAll() {
-  console.log('yo')
+  
   let totalPrice = 0;
   
   let products = document.querySelectorAll('.product');
   
-  products.forEach((product) => {
-    totalPrice += updateSubtotal(product)
-  })
+  products.forEach((product) => totalPrice += updateSubtotal(product));
 
-  document.querySelector('#total-value').innerText = `Total: $${totalPrice}`;
+  document.querySelector('#total-value span').innerText = totalPrice;
 }
 
 // ITERATION 4
 
 function removeProduct(event) {
-  const target = event.currentTarget;
-  console.log(target)
-  let product = target.parentNode;
-  product.remove()
+  const target = event.currentTarget.parentNode;
+
+  let productTarget = target.parentNode;
+  
+  productTarget.remove()
+  
   calculateAll()  
 }
 
@@ -37,52 +46,69 @@ function removeProduct(event) {
 
 function createProduct() {
 
-  let createInput = document.getElementById('create-input');
-  let productName = createInput.value;
+  let createInput = document.querySelectorAll('.create-product input');
+  console.log(createInput)
+  let productName = createInput[0].value;
   let priceInput = document.getElementById('price-input');
-  let productPrice = priceInput.value;
+  let productPrice = +parseFloat(priceInput.value).toFixed(2);
 
-  let productTr = document.createElement('tr');
-  productTr.classList.add('product');
+  if(productName === '' || priceInput === 0) {
+    alert('Please give your product a name and a price :D')
+  } else {
+    let productRow = document.createElement('tr')
 
-  let nameTd = document.createElement('td');
-  nameTd.classList.add('name');
-  nameTd.innerHTML = '<span>' + productName + '</span>';
+    productRow.classList.add('product');
+    productRow.innerHTML = constructProduct(productName, productPrice);
+    
+    productRow.querySelector('.btn-remove').addEventListener('click', removeProduct);
 
-  let priceTd = document.createElement('td');
-  priceTd.classList.add('price');
-  priceTd.innerHTML = '$ <span>' + productPrice + '</span>';
+    document.querySelector('#cart tbody').appendChild(productRow);
 
-  let quantityTd = document.createElement('td');
-  quantityTd.classList.add('quantity');
+    createInput[0].value= '';
+    createInput[1].value = 0;
+  }
 
-  let quantityInput = document.createElement('input');
-  quantityInput.setAttribute('type', 'number');
-  quantityInput.setAttribute('value', '0');
-  quantityInput.setAttribute('min', '0');
-  quantityInput.setAttribute('placeholder', 'Quantity');
+  // let productTr = document.createElement('tr');
+  // productTr.classList.add('product');
 
-  let subTotalTd = document.createElement('td');
-  subTotalTd.classList.add('subtotal')
-  subTotalTd.innerHTML = '$ <span>0</span>';
+  // let nameTd = document.createElement('td');
+  // nameTd.classList.add('name');
+  // nameTd.innerHTML = '<span>' + productName + '</span>';
 
-  let actionTd = document.createElement('td');
-  actionTd.classList.add('action');
-  let actionBtn = document.createElement('button');
-  actionBtn.classList.add('btn');
-  actionBtn.classList.add('btn-remove')
-  actionBtn.innerText = 'Remove';
+  // let priceTd = document.createElement('td');
+  // priceTd.classList.add('price');
+  // priceTd.innerHTML = '$ <span>' + productPrice + '</span>';
 
-  let tbody = document.getElementById('cart-items');
-  tbody.appendChild(productTr);
+  // let quantityTd = document.createElement('td');
+  // quantityTd.classList.add('quantity');
+
+  // let quantityInput = document.createElement('input');
+  // quantityInput.setAttribute('type', 'number');
+  // quantityInput.setAttribute('value', '0');
+  // quantityInput.setAttribute('min', '0');
+  // quantityInput.setAttribute('placeholder', 'Quantity');
+
+  // let subTotalTd = document.createElement('td');
+  // subTotalTd.classList.add('subtotal')
+  // subTotalTd.innerHTML = '$ <span>0</span>';
+
+  // let actionTd = document.createElement('td');
+  // actionTd.classList.add('action');
+  // let actionBtn = document.createElement('button');
+  // actionBtn.classList.add('btn');
+  // actionBtn.classList.add('btn-remove')
+  // actionBtn.innerText = 'Remove';
+
+  // let tbody = document.getElementById('cart-items');
+  // tbody.appendChild(productTr);
   
-  productTr.appendChild(nameTd);
-  productTr.appendChild(priceTd);
-  productTr.appendChild(quantityTd);
-  quantityTd.appendChild(quantityInput);
-  productTr.appendChild(subTotalTd);
-  productTr.appendChild(actionTd);
-  actionTd.appendChild(actionBtn);
+  // productTr.appendChild(nameTd);
+  // productTr.appendChild(priceTd);
+  // productTr.appendChild(quantityTd);
+  // quantityTd.appendChild(quantityInput);
+  // productTr.appendChild(subTotalTd);
+  // productTr.appendChild(actionTd);
+  // actionTd.appendChild(actionBtn);
 }
 
 window.addEventListener('load', () => {
@@ -93,11 +119,27 @@ window.addEventListener('load', () => {
   createBtn.addEventListener('click', createProduct);
 })
   
-const removeBtns = document.querySelectorAll('.action');
+
+const removeBtns = document.querySelectorAll('.btn-remove');
 for (i = 0; i < removeBtns.length; i++) {
   removeBtns[i].onclick = function(event) {
     console.log('yo')
     removeProduct(event);
   }
 }
+
+function constructProduct(name, price) {
+  return `<td class="name">
+            <span>${name}</span>
+          </td>
+          <td class="price">$<span>${price}</span></td>
+          <td class="quantity">
+            <input type="number" value="0" min="0" placeholder="Quantity" />
+          </td>
+          <td class="subtotal">$<span>0</span></td>
+          <td class="action">
+            <button class="btn btn-remove">Remove</button>
+          </td>`
+}
+
 
