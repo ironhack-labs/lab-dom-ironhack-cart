@@ -31,9 +31,37 @@ function removeProduct(event) {
 // ITERATION 5
 
 function createProduct() {
-  
+  const newProduct = document.querySelectorAll('.create-product input');
+  const name = newProduct[0].value;
+  const price = newProduct[1].value;
+
+  let productRow = document.createElement('tr')
+  productRow.classList.add('product');
+  productRow.innerHTML = newProductRowTemplate(name, Number.parseFloat(price).toFixed(2));
+  productRow.querySelector('.btn-remove').addEventListener('click', removeProduct);
+  document.querySelector('#cart tbody').appendChild(productRow);
+
+  newProduct[0].value= '';
+  newProduct[1].value = 0;
 }
 
+
+const newProductRowTemplate = (name, price) => {
+return `<tr class="product">
+  <td class="name">
+    <span>${name}</span>
+  </td>
+  <td class="price">$<span>${price}</span></td>
+  <td class="quantity">
+    <input type="number" value="0" min="0" placeholder="Quantity" />
+  </td>
+  <td class="subtotal">$<span>0</span></td>
+  <td class="action">
+    <button class="btn btn-remove">Remove</button>
+  </td>
+</tr>
+`
+}
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
@@ -42,5 +70,5 @@ window.addEventListener('load', () => {
   removeBtn.forEach(button => button.addEventListener('click', removeProduct));
 
   const createBtn = document.getElementById('create');
-  createBtn.addEvenetListener('click', createProduct);
+  createBtn.addEventListener('click', createProduct);
 });
