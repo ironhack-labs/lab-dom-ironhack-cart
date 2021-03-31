@@ -14,12 +14,6 @@ function updateSubtotal(product) {
 }
 
 function calculateAll() {
-  // // code in the following two lines is added just for testing purposes.
-  // // it runs when only iteration 1 is completed. at later point, it can be removed.
-  // const singleProduct = document.getElementById('product');
-  // updateSubtotal(singleProduct);
-  // // end of test
-
   // ITERATION 2
   let total = 0;
   const products = [...document.getElementsByClassName("product")];
@@ -43,14 +37,35 @@ function removeProduct(event) {
 function createProduct() {
   const elementToClone = document.querySelector(".product");
   const child = elementToClone.cloneNode(true);
-  const name = document.getElementById("nameNewProduct").value;
-  const price = document.getElementById("priceNewProduct").value;
+  const nameInputEl = document.getElementById("nameNewProduct");
+  const priceInputEl = document.getElementById("priceNewProduct");
+  let name = nameInputEl.value;
+  let price = priceInputEl.value;
+
+  //Input Validation
+  if(!name && (price == '' || price <= 0)){
+    nameInputEl.style.borderColor = 'red';
+    priceInputEl.style.borderColor = 'red';
+    return;
+  } else if (!price || price <= 0){
+    priceInputEl.style.borderColor = 'red';
+    return;
+  } else if (!name){
+    nameInputEl.style.borderColor = 'red';
+    return;
+  }
   
   child.querySelector(".btn-remove").addEventListener("click", removeProduct);
   child.querySelector(".name span").innerHTML = name;
   child.querySelector(".price span").innerHTML = price;
 
   parent.appendChild(child);
+
+  //Cleaning create product input values and border
+  nameInputEl.value = '';
+  priceInputEl.value = '';
+  nameInputEl.style.borderColor = '#dadada';
+  priceInputEl.style.borderColor = '#dadada';
 }
 
 window.addEventListener("load", () => {
