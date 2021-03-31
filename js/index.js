@@ -20,20 +20,15 @@ function calculateAll() {
   // ITERATION 3
   const subT = document.querySelector("#total-value span");
   subT.innerHTML = total;
-
+}
 
 // ITERATION 4
 
-function removeProduct(event) {
-  const target = event.currentTarget;
-  const child = target.parentNode.parentNode;
-  parent.removeChild(child);
-}
 
 
 // ITERATION 5
 
-function createProduct() {
+/*function createProduct() {
   let productList = document.querySelector('tbody');
 
   let newProduct = document.createElement('tr', { class: 'product' });
