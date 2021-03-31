@@ -22,15 +22,14 @@ function calculateAll() { //On click Calculate Total invoque these function
   //... your code goes here
   let productList = [...document.querySelectorAll('.product')];
 
+  let totalPrice = 0;
+
   productList.forEach((product) => {
-    updateSubtotal(product);
+    totalPrice += updateSubtotal(product);
   });
-  
+
   // ITERATION 3
-  //... your code goes here
-  // sum of each subtotal
-  // save subtotal in a newvar+=newvar
-  // Update DOM with total value
+  document.querySelector('#total-value span').innerHTML = totalPrice;
 }
 
 // ITERATION 4
