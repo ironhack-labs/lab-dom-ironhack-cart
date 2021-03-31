@@ -36,30 +36,41 @@ function createProduct() {
   const name = document.querySelector(".create-product input[type='text']").value;
   const price = document.querySelector(".create-product input[type='number']").value;
 
-
   const parentNode = document.querySelector('tbody');
   const newItem = document.createElement('tr');
   newItem.setAttribute('class', 'product');
   parentNode.appendChild(newItem);
-  console.log(parentNode)
-  // const itemName = document.createElement('td').classList.add('name');
-  // itemName.appendChild(document.createElement('span').innerText(price))
-  // const itemPrice = document.createElement('td').classList.add('price');
-  // const itemQuantity = document.createElement('td').classList.add("mystyle");
-  // const itemSubtotal = document.createElement('td');
-  // const itemRemove = document.createElement('td');
-  
-  //document.createElement('block').appendChild( document.createElement('b')
-  // newItem.appendChild(itemName);
 
-  
-  // parentNode.appendChild(newItem);
+  const itemName = document.createElement('td');
+  itemName.setAttribute('class', 'name');
+  itemName.innerText = name;
+  newItem.appendChild(itemName);
 
- 
-  // parentNode.append --> to add child element 
-  
+  const itemPrice = document.createElement('td');
+
+  itemPrice.setAttribute('class', 'price');
+  itemPrice.innerHTML = `$<span>${price}</span>`; 
+  newItem.appendChild(itemPrice);
+
+  const itemQuantity = document.createElement('td');
+  itemQuantity.setAttribute('class', 'quantity');
+  itemQuantity.innerHTML = '<input type="number" value="0" min="0" placeholder="Quantity"></input>'
+  newItem.appendChild(itemQuantity)
 
 
+  const itemSubtotal = document.createElement('td');
+  itemSubtotal.setAttribute('class', 'subtotal');
+  itemSubtotal.innerText = '$0';
+  newItem.appendChild(itemSubtotal);
+
+  const itemRemove = document.createElement('td');
+  itemRemove.setAttribute('class', 'action');
+  newItem.appendChild(itemRemove);
+
+  const removeBtn = document.createElement('button');
+  removeBtn.setAttribute('class', 'btn btn-remove');
+  removeBtn.innerText = 'Remove';
+  itemRemove.appendChild(removeBtn);
 }
 
 window.addEventListener('load', () => {
