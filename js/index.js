@@ -11,15 +11,7 @@ function updateSubtotal(product) { //Calculate subtotal of given product
 }
 
 function calculateAll() { //On click Calculate Total invoque these function
-
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  // const singleProduct = document.querySelector('.product');
-  // updateSubtotal(singleProduct);
-  // end of test
-
   // ITERATION 2
-  //... your code goes here
   let productList = [...document.querySelectorAll('.product')];
 
   let totalPrice = 0;
@@ -33,20 +25,26 @@ function calculateAll() { //On click Calculate Total invoque these function
 }
 
 // ITERATION 4
-
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+  target.parentNode.parentNode.remove();
 }
 
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+//... your code goes here
 }
 
 window.addEventListener('load', () => {
+  let selectRemove = [...document.querySelectorAll('.product .action .btn-remove')];
+
+  selectRemove.forEach((button)=> {
+    button.addEventListener('click',removeProduct);
+  })
+  
+  console.log(selectRemove);
+
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
