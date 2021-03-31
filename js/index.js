@@ -46,7 +46,7 @@ function createProduct() {
   let newPrice = document.querySelector(".create-product input[type='number']").value;
   const parentElement = document.querySelector('tbody');
   let newProduct = document.createElement('tr');
-
+  newProduct.classList.add('product');
   newProduct.innerHTML = `<td class="name">
   <span> ${newProductName} </span >
 </td >
