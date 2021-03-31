@@ -11,6 +11,8 @@ function updateSubtotal(product) {
   let subTotal = price*quantity;
   subTotalSelector.innerHTML = subTotal;
   return subTotal;
+
+  // Hola
 }
 
 function calculateAll() {
