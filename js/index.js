@@ -71,6 +71,12 @@ function createProduct() {
   removeBtn.setAttribute('class', 'btn btn-remove');
   removeBtn.innerText = 'Remove';
   itemRemove.appendChild(removeBtn);
+
+  removeBtn.addEventListener('click', removeProduct);
+
+  document.querySelector(".create-product input[type='text']").value = '';
+  document.querySelector(".create-product input[type='number']").value = '';
+  // clear values
 }
 
 window.addEventListener('load', () => {
@@ -82,3 +88,5 @@ window.addEventListener('load', () => {
   }
   document.querySelector('#create').addEventListener('click', createProduct);
 });
+
+
