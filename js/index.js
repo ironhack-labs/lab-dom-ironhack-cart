@@ -1,6 +1,3 @@
-// let priceSelector = document.querySelector('.price span');
-// let quantitySelector = document.querySelector('.quantity input');
-// let subTotalSelector = document.querySelector('.subtotal span');
 let productSelection = document.getElementsByClassName('product');
 
 // ITERATION 1
@@ -42,7 +39,11 @@ function removeProduct(event) {
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  let createBtn = document.getElementById('create')
+  let createInputs = document.getElementsByClassName('.create product input').value;
+  
+
+  createBtn.addEventListener('click', createProduct)
 }
 
 window.addEventListener('load', () => {
