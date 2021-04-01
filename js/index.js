@@ -13,18 +13,24 @@ function updateSubtotal(product) {
 
 function calculateAll() {
   // ITERATION 2
-  let total = 0;
-  const products = [...document.getElementsByClassName("product")];
-  products.forEach((el) => (total += updateSubtotal(el)));
+  const allProducts = document.getElementsByClassName('product');
+  const twoProductsArr = [...allProducts];
+  const sum = twoProductsArr.forEach((el) => {
+    updateSubtotal(el);
+  });
 
   // ITERATION 3
-  const subT = document.querySelector("#total-value span");
-  subT.innerHTML = total;
+  const total = document.querySelector('#total-value span');
+  const subtotals = document.querySelectorAll('.subtotal span');
+  const totalsArr = [...subtotals];
+  let totalSum = 0;
+  totalsArr.forEach((product) => {
+    totalSum += Number(product.innerHTML);
+  });
+  total.innerHTML = totalSum;
 }
 
 // ITERATION 4
-
-
 
 // ITERATION 5
 
@@ -55,4 +61,4 @@ window.addEventListener('load', () => {
   calculatePricesBtn.addEventListener('click', calculateAll);
 
   //... your code goes here
-});
+}); */
