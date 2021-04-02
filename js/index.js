@@ -6,6 +6,7 @@ function updateSubtotal(product) {
   product.querySelector('.subtotal span').innerText = subtotal.toFixed(2);
   return subtotal;
 }
+
 function calculateAll() {
   let cart = document.querySelector('#cart');
   let products = cart.querySelectorAll('.product');
@@ -15,14 +16,17 @@ function calculateAll() {
   });
   document.querySelector('#total-value span').innerText = total.toFixed(2);
 }
+
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
   let product = target.closest('.product');
   product.remove();
 }
+
 function createProduct() {
 }
+
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
@@ -30,18 +34,4 @@ window.addEventListener('load', () => {
   removeButtons.forEach((button) => {
     button.addEventListener('click', removeProduct);
   });
-});
-
-
-// ITERATION 5
-
-function createProduct() {
-  //... your code goes here
-}
-
-window.addEventListener('load', () => {
-  const calculatePricesBtn = document.getElementById('calculate');
-  calculatePricesBtn.addEventListener('click', calculateAll);
-
-  //... your code goes here
 });
