@@ -22,7 +22,6 @@ function removeProduct(event) {
   product.remove();
 }
 function createProduct() {
-  //... your code goes here
 }
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
