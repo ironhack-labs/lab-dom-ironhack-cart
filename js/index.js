@@ -1,14 +1,6 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  const price = product.querySelector('.price span');
-  const quantity = product.querySelector('.quantity input');
-  let subtotal = price.innerText * quantity.value;
-  product.querySelector('.subtotal span').innerText = subtotal;
-  return subtotal;
-}
-
-function updateSubtotal(product) {
   const price = product.querySelector('.price span').innerText;
   const quantity = product.querySelector('.quantity input').value;
   
@@ -67,51 +59,19 @@ function createProduct() {
     createInput[0].value= '';
     createInput[1].value = 0;
   }
-
-  // let productTr = document.createElement('tr');
-  // productTr.classList.add('product');
-
-  // let nameTd = document.createElement('td');
-  // nameTd.classList.add('name');
-  // nameTd.innerHTML = '<span>' + productName + '</span>';
-
-  // let priceTd = document.createElement('td');
-  // priceTd.classList.add('price');
-  // priceTd.innerHTML = '$ <span>' + productPrice + '</span>';
-
-  // let quantityTd = document.createElement('td');
-  // quantityTd.classList.add('quantity');
-
-  // let quantityInput = document.createElement('input');
-  // quantityInput.setAttribute('type', 'number');
-  // quantityInput.setAttribute('value', '0');
-  // quantityInput.setAttribute('min', '0');
-  // quantityInput.setAttribute('placeholder', 'Quantity');
-
-  // let subTotalTd = document.createElement('td');
-  // subTotalTd.classList.add('subtotal')
-  // subTotalTd.innerHTML = '$ <span>0</span>';
-
-  // let actionTd = document.createElement('td');
-  // actionTd.classList.add('action');
-  // let actionBtn = document.createElement('button');
-  // actionBtn.classList.add('btn');
-  // actionBtn.classList.add('btn-remove')
-  // actionBtn.innerText = 'Remove';
-
-  // let tbody = document.getElementById('cart-items');
-  // tbody.appendChild(productTr);
-  
-  // productTr.appendChild(nameTd);
-  // productTr.appendChild(priceTd);
-  // productTr.appendChild(quantityTd);
-  // quantityTd.appendChild(quantityInput);
-  // productTr.appendChild(subTotalTd);
-  // productTr.appendChild(actionTd);
-  // actionTd.appendChild(actionBtn);
 }
 
+const resetQuantity = () => {
+  const quantityInputs = document.querySelectorAll('.quantity input'); 
+  console.log({quantityInputs})
+  
+  quantityInputs.forEach(input => input.value = 0);
+} 
+
 window.addEventListener('load', () => {
+  
+  resetQuantity();
+
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
