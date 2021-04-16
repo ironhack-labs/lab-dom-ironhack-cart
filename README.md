@@ -4,6 +4,9 @@
 
 ![shopping cart](https://i.imgur.com/s2Qxc9Z.jpg)
 
+
+DEMO: https://ironptsolutions.github.io/lab-dom-ironhack-cart/
+
 ## Introduction
 
 E-commerce has proven to be a big game-changer in the 21st century economy. As one of the largest sales channels, second only to physical retail, e-commerce [is expected](https://www.statista.com/statistics/379046/worldwide-retail-e-commerce-sales/) to be responsible for 4.9 trillion USD in worldwide sales by the year 2021.
