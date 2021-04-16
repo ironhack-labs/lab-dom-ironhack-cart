@@ -26,18 +26,59 @@ function calculateAll() {
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
-  //... your code goes here
+  target.closest('.product').remove(); // https://developer.mozilla.org/en-US/docs/Web/API/Element/closest
 }
 
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  const name = document.querySelector('.create-product [name="name"]').value;
+  const price = parseFloat(document.querySelector('.create-product [name="price"]').value);
+  if (name && price) {
+    const product = document.querySelector('#templates .product').cloneNode(true);
+    product.querySelector('.name span').textContent = name;
+    product.querySelector('.price span').textContent = price.toFixed(2);
+    product.querySelector('.btn-remove').addEventListener('click', removeProduct);
+
+    document.querySelector('#cart tbody').append(product);
+  }
+}
+
+function onClickCreateProduct() {
+  const name = document.querySelector('.create-product [name="name"]').value;
+  const price = parseFloat(document.querySelector('.create-product [name="price"]').value);
+  if (name && price) {
+    createProduct(name, price);
+  }
+}
+
+function createProduct(name, price) {
+  const product = document.querySelector('#templates .product').cloneNode(true);
+  product.querySelector('.name span').textContent = name;
+  product.querySelector('.price span').textContent = price.toFixed(2);
+  product.querySelector('.btn-remove').addEventListener('click', removeProduct);
+
+  document.querySelector('#cart tbody').append(product);
+}
+
+// ITERATION 6: random product
+
+function createRandomProduct() {
+  const name = faker.commerce.productName();
+  const price = parseFloat(faker.commerce.price());
+  createProduct(name, price);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+  document.querySelectorAll('.product .btn-remove')
+    .forEach(btn => btn.addEventListener('click', removeProduct));
+
+  document.querySelector('#create')
+    .addEventListener('click', onClickCreateProduct);
+
+  document.querySelector('#create-random')
+    .addEventListener('click', createRandomProduct);
 });
