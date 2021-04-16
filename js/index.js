@@ -31,23 +31,17 @@ function removeProduct(event) {
 
 // ITERATION 5
 
-function createProduct() {
-  const name = document.querySelector('.create-product [name="name"]').value;
-  const price = parseFloat(document.querySelector('.create-product [name="price"]').value);
-  if (name && price) {
-    const product = document.querySelector('#templates .product').cloneNode(true);
-    product.querySelector('.name span').textContent = name;
-    product.querySelector('.price span').textContent = price.toFixed(2);
-    product.querySelector('.btn-remove').addEventListener('click', removeProduct);
-
-    document.querySelector('#cart tbody').append(product);
-  }
-}
-
 function onClickCreateProduct() {
-  const name = document.querySelector('.create-product [name="name"]').value;
-  const price = parseFloat(document.querySelector('.create-product [name="price"]').value);
+  const nameInput = document.querySelector('.create-product [name="name"]');
+  const name = nameInput.value;
+  
+  const priceInput = document.querySelector('.create-product [name="price"]');
+  const price = parseFloat(priceInput.value);
+  
   if (name && price) {
+    nameInput.value = '';
+    priceInput.value = 0;
+    nameInput.focus();
     createProduct(name, price);
   }
 }
@@ -57,6 +51,7 @@ function createProduct(name, price) {
   product.querySelector('.name span').textContent = name;
   product.querySelector('.price span').textContent = price.toFixed(2);
   product.querySelector('.btn-remove').addEventListener('click', removeProduct);
+  product.querySelector('[name="quantity"]').addEventListener('input', calculateAll)
 
   document.querySelector('#cart tbody').append(product);
 }
@@ -69,9 +64,17 @@ function createRandomProduct() {
   createProduct(name, price);
 }
 
+// ITERATION 7: delete all products
+function deleteAllProducts() {
+  document.querySelectorAll('#cart .product')
+    .forEach(product => product.remove());
+  calculateAll();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
-  const calculatePricesBtn = document.getElementById('calculate');
-  calculatePricesBtn.addEventListener('click', calculateAll);
+
+  document.getElementById('delete-all')
+    .addEventListener('click', deleteAllProducts)
 
   document.querySelectorAll('.product .btn-remove')
     .forEach(btn => btn.addEventListener('click', removeProduct));
@@ -79,6 +82,17 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('#create')
     .addEventListener('click', onClickCreateProduct);
 
-  document.querySelector('#create-random')
+  document.getElementById('create-random')
     .addEventListener('click', createRandomProduct);
+
+  document.querySelector('[name="price"]')
+    .addEventListener('keyup', (event) => {
+      // https://keycode.info/
+      if (event.keyCode === 13) {
+        onClickCreateProduct()
+      }
+    });
+
+  document.querySelectorAll('.product [name="quantity"]')
+    .forEach(input => input.addEventListener('input', calculateAll));
 });

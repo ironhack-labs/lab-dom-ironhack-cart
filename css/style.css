@@ -65,3 +65,13 @@ h2,
 .calculate-total {
   text-align: center;
 }
+
+table .action .btn,
+#create {
+  width: 100%;
+}
+
+.cart-actions {
+  text-align: center;
+  margin: 10px 0;
+}
