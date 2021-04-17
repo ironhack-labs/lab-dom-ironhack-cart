@@ -27,6 +27,7 @@ function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
   target.closest('.product').remove(); // https://developer.mozilla.org/en-US/docs/Web/API/Element/closest
+  calculateAll();
 }
 
 // ITERATION 5
