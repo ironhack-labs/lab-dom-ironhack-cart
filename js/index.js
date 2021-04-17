@@ -4,12 +4,14 @@ function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
  
   //... your code goes here
-  const price = product.querySelector('.price span')
-  const quantity = product.querySelector('.quantity input')
+  const price =parseFloat (product.querySelector('.price span').textContent)
+  const quantity = parseInt(product.querySelector('.quantity input').value)
 
-  const priceSubtotal= price.innerHTML*quantity.value
+  const priceSubtotal= price*quantity
 
-  product.querySelector('.subtotal span').innerHTML= priceSubtotal
+  return priceSubtotal;
+
+  product.querySelector('.subtotal span').textContent= Number(priceSubtotal.toFixed(2));
 
 
 }
@@ -23,37 +25,57 @@ function calculateAll() {
 
   // ITERATION 2
   //... your code goes here
+
+  //const total =Array.from (document.queryselector('.product'))
+  //  .reduce((total,product)=>total + updateSubtotal(product),0)
+  //o
+  //.map(product=> updateSubtotal(product))
+  //.reduce((total,subtotal)=> total+priceSubtotal)
+
 const Products =document.queryselector('.product')
 const listOfProducts = [...Products]
-listOfProducts =forEach(()=>{
+listOfProducts =forEach((product)=>{
+  total += priceSubtotal
   updateSubtotal()
 })
-  
-
+ 
 
   // ITERATION 3
   //... your code goes here
-  const TotalValue =document.querySelector('total-value span')
-  
+
+  document.querySelector(#total-value span)
+
 }
 
 // ITERATION 4
 
 function removeProduct(event) {
-  const target = event.currentTarget;
-  console.log('The target in remove is:', target);
+  const deleteBtn = event.currentTarget;
+  console.log('The target in remove is:', deleteBtn);
+  
   //... your code goes here
+  deleteBtn.closest('.product').remove();
+  calculateAll();
 }
 
 // ITERATION 5
 
 function createProduct() {
+  const name =document.querySelector('.create-product [name="name"]').value
+  const price =parseFloat(document.querySelector('.create-product [name="price"]').value)
+  if(name && price){
+    const product =document.querySelector('#templates ,product)
+  }
+
   //... your code goes here
 }
 
 window.addEventListener('load', () => {
+  console.log('cart loaded')
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
   //... your code goes here
+   document.querySelectorAll('.product .btn-remove ')
+  .forEach=> btn.addEventListener('click',removeProduct)
 });
