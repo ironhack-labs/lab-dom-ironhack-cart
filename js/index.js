@@ -1,66 +1,109 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  //Capture the price and quantity values and convert them as numbers
-  const priceSpanElement = product.querySelector('.price span');
-  const quantityInputElement = product.querySelector('.quantity input');
-  const price = parseFloat(priceSpanElement.innerHTML);
-  const quantity = quantityInputElement.value;
-  console.log(Number(price), parseFloat(quantity));
-  // get the subtotal value
-  // Render the subtotal value in the element with ".subtotal" (class subtotal)
-  const subtotal = Number(price) * parseFloat(quantity);
-  const subtotalElement = product.querySelector('.subtotal span');
-  subtotalElement.innerHTML = subtotal;
+  console.log("Calculating subtotal, yey!");
+  const price = parseFloat(product.querySelector(".price span").textContent);
+  const amount = parseInt(product.querySelector(".quantity input").value);
+  const subtotal = price * amount;
+  product.querySelector(".subtotal span").textContent = subtotal.toFixed(2);
   return subtotal;
-
-  console.log('Calculating subtotal, yey!');
-
-  //... your code goes here
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  // const singleProduct = document.querySelector('.product');
-  const productElements = document.getElementsByClassName('product');
-  let totalValue = 0;
-  for (productElement of productElements) {
-    totalValue += updateSubtotal(productElement)
-  }
-  //updateSubtotal(singleProduct);
-  // end of test
+  const total = Array.from(document.querySelectorAll(".product")).reduce(
+    (total, product) => total + updateSubtotal(product),
+    0
+  );
+  console.log(total);
 
+  // ITERATION 2
+  document.querySelector("#total-value span").textContent = total.toFixed(2);
 
-
-  // call the function updateSubtotal with every tr.product DOM node in the table#cart
-  // get cart item elements getElementsByClassName
-  //for product of products call updateSubtotal(product)
-
-  // reuse total value of it 2
-  // update dom element
-  // calculate totalprice by summing all of subtotal returned by updateSubtotal()
-  const totalValueSpan = document.querySelector('#total-value span').innerHTML = totalValue;
-
+  // ITERATION 3
+  //... your code goes here
 }
 
 // ITERATION 4
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+  console.log("The target in remove is:", target);
+  target.closest(".product").remove(); // https://developer.mozilla.org/en-US/docs/Web/API/Element/closest
+  calculateAll();
 }
 
 // ITERATION 5
 
-function createProduct() {
-  //... your code goes here
+function onClickCreateProduct() {
+  const nameInput = document.querySelector('.create-product [name="name"]');
+  const name = nameInput.value;
+
+  const priceInput = document.querySelector('.create-product [name="price"]');
+  const price = parseFloat(priceInput.value);
+
+  if (name && price) {
+    nameInput.value = "";
+    priceInput.value = 0;
+    nameInput.focus();
+    createProduct(name, price);
+  }
 }
 
-window.addEventListener('load', () => {
-  const calculatePricesBtn = document.getElementById('calculate');
-  calculatePricesBtn.addEventListener('click', calculateAll);
+function createProduct(name, price) {
+  const product = document.querySelector("#templates .product").cloneNode(true);
+  product.querySelector(".name span").textContent = name;
+  product.querySelector(".price span").textContent = price.toFixed(2);
+  product.querySelector(".btn-remove").addEventListener("click", removeProduct);
+  product
+    .querySelector('[name="quantity"]')
+    .addEventListener("input", calculateAll);
 
-  //... your code goes here
+  document.querySelector("#cart tbody").append(product);
+}
+
+// ITERATION 6: random product
+
+function createRandomProduct() {
+  const name = faker.commerce.productName();
+  const price = parseFloat(faker.commerce.price());
+  createProduct(name, price);
+}
+
+// ITERATION 7: delete all products
+function deleteAllProducts() {
+  document
+    .querySelectorAll("#cart .product")
+    .forEach((product) => product.remove());
+  calculateAll();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  document
+    .getElementById("delete-all")
+    .addEventListener("click", deleteAllProducts);
+
+  document
+    .querySelectorAll(".product .btn-remove")
+    .forEach((btn) => btn.addEventListener("click", removeProduct));
+
+  document
+    .querySelector("#create")
+    .addEventListener("click", onClickCreateProduct);
+
+  document
+    .getElementById("create-random")
+    .addEventListener("click", createRandomProduct);
+
+  document
+    .querySelector('[name="price"]')
+    .addEventListener("keyup", (event) => {
+      // https://keycode.info/
+      if (event.keyCode === 13) {
+        onClickCreateProduct();
+      }
+    });
+
+  document
+    .querySelectorAll('.product [name="quantity"]')
+    .forEach((input) => input.addEventListener("input", calculateAll));
 });
