@@ -6,7 +6,7 @@ function updateSubtotal(product) {
   const subtotalPrice = (parseFloat(price.textContent) * quantity.value);
   const subtotal = product.querySelector('.subtotal span');
 
-  subtotal.textContent = subtotalPrice;
+  subtotal.textContent = subtotalPrice.toFixed(2);
 
   return subtotalPrice;
 }
@@ -21,7 +21,7 @@ function calculateAll() {
     totalPrice += updateSubtotal(allProducts[i]);
   }
 
-  totalPriceDisplay.textContent = totalPrice;
+  totalPriceDisplay.textContent = totalPrice.toFixed(2);
 
 }
 
