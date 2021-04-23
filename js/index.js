@@ -40,8 +40,6 @@ function removeProduct(event) {
 
 function createProduct() {
   
-  // target the name and unit price input DOM nodes, extract their values, add a new row to the table with the product name and unitary price, as well as the quantity input and "Remove" button, and ensure that all of the functionality works as expected.
-
   const nameInput = document.getElementById('input-text');
   const priceInput = document.getElementById('input-price');
 
