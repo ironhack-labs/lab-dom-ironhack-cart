@@ -3,9 +3,9 @@
 function updateSubtotal(product) {
   const price = product.querySelector('.price span');
   const quantity = product.querySelector('.quantity input');
+  const subtotalPrice = parseFloat(price.textContent) * quantity.value;
 
-  console.log(price);
-  console.log(quantity);
+  console.log(subtotalPrice);
 
   //... your code goes here
 }
