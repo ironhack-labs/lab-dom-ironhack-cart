@@ -30,10 +30,33 @@ function calculateAll() {
 
   // ITERATION 3
   //... your code goes here
-  let subtotal = product.querySelector(".subtotal span")
-  let total= document.getElementById(total-value);
-  subtotal.reduce((acc,subT)=> acc+=subT)
+  let total= document.querySelector("#total-value span");
+  let cumul = 0;
+  
+products.forEach((product)=> {
+  cumul+=parseInt(updateSubtotal(product));
+  return cumul;
+})
+
+total.innerHTML= cumul;
+
+
+
+
+
+  // function getCumul() {
+  //   for (let i=0; i< products.length;i++){
+  //   cumul+=updateSubtotal(products[i]);
+  //     console.log(cumul)
+  //   return cumul } 
+  //   }
+
+  // total.innerHTML =  getCumul();
+  
+
+
 }
+
 
 // ITERATION 4
 
@@ -55,3 +78,4 @@ window.addEventListener("load", () => {
 
   //... your code goes here
 });
+
