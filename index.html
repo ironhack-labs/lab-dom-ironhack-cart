@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="./css/style.css" />
+    <script type="module" src="./js/index.js"></script>
     <title>Ironhack Cart</title>
   </head>
   <body>
@@ -27,15 +28,28 @@
           <td class="quantity">
             <input type="number" value="0" min="0" placeholder="Quantity" />
           </td>
-          <td class="subtotal">$<span>0</span></td>
+          <td class="subtotal">$<span>0.00</span></td>
           <td class="action">
             <button class="btn btn-remove">Remove</button>
           </td>
         </tr>
         <!-- Iteration 2: Add more products here -->
+        <tr class="product">
+          <td class="name">
+            <span>Ironhack Beach Towel</span>
+          </td>
+          <td class="price">$<span>12.50</span></td>
+          <td class="quantity">
+            <input type="number" value="0" min="0" placeholder="Quantity" />
+          </td>
+          <td class="subtotal">$<span>0.00</span></td>
+          <td class="action">
+            <button class="btn btn-remove">Remove</button>
+          </td>
+        </tr>
       </tbody>
       <tfoot>
-        <!-- <tr class="create-product">
+        <tr class="create-product">
           <td>
             <input type="text" placeholder="Product Name" />
           </td>
@@ -47,13 +61,12 @@
           <td>
             <button id="create" class="btn">Create Product</button>
           </td>
-        </tr> -->
+        </tr>
       </tfoot>
     </table>
     <p class="calculate-total">
       <button id="calculate" class="btn btn-success">Calculate Prices</button>
     </p>
-    <h2 id="total-value">Total: $<span>0</span></h2>
-    <script type="text/javascript" src="./js/index.js"></script>
+    <h2 id="total-value">Total: $<span>0.00</span></h2>
   </body>
 </html>
