@@ -1,4 +1,4 @@
-// ITERATION 1
+// ITERATION 1 ------ Completed
 
 function updateSubtotal(product) {
   // .innerHTML fue añadido para conseguir el número
@@ -18,18 +18,49 @@ return subtotal
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
+  // ITERATION 2 & 3 ----- Completed
 
-  // ITERATION 2
-  //... your code goes here
-
-  // ITERATION 3
-  //... your code goes here
+  //Recibir los productos
+  const getProducts = document.getElementsByClassName('product');
+  //Crear un nuevo Array para después iterar sobre cada elemento
+  const product = [...getProducts]
+  let total = 0;
+  product.forEach((i) => {
+    total = total + updateSubtotal(i);
+  });
+  //Actualizar el valor del ID total-value - span tag
+  document.querySelector("#total-value span").innerHTML = total
 }
+
+/* 
+
+La iteración 2 funciona correctamente: 
+
+function calculateAll() {
+  // ITERATION 2 
+  //Producto número 1 -> Clase Product, elemento 1
+  const product1 = document.getElementsByClassName('product')[0];
+  updateSubtotal(product1);
+  //Producto número 2 -> Clase Product, elemento 2
+  const product2 = document.getElementsByClassName('product')[1];
+  updateSubtotal(product2);
+ */
+
+/*
+
+ La iteración 3 no regresaba el valor como número
+ 
+ //ITERATION 3
+
+  const getTotal = [...document.getElementsByClassName('subtotal')]
+  const total = getTotal.reduce((acc, item) => {
+    return acc += Number(item.innerText)
+  }, 0)
+  console.log(total)
+  return total
+}
+
+*/
 
 // ITERATION 4
 
