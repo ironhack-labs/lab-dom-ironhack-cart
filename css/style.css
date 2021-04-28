@@ -1,12 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap');
 
 body {
+  background-color: black;
   margin: 0 auto;
   padding: 1em;
   max-width: 60em;
   font-family: 'Roboto Mono', sans-serif;
   line-height: 1.5;
-  color: #2d354c;
+  color: white;
+
+}
+
+.quantity {
+  color: black;
 }
 
 button,

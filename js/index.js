@@ -1,9 +1,20 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
+  // .innerHTML fue añadido para conseguir el número
+  let price = product.querySelector('.price span').innerHTML; 
+  // .value consigue el valor dentro de input - value
+  let quantity = product.querySelector('.quantity input').value; 
+/*
+Anteriormente he intentado con lo siguiente pero regresa un Nan:
+let subtotal = price.innerHTML * quantity; 
+*/
+let subtotal = price * quantity;
 
-  //... your code goes here
+// El uso del toFixed para conseguir dos números después del decimal
+product.querySelector('.subtotal span').innerHTML = subtotal.toFixed(2)
+
+return subtotal
 }
 
 function calculateAll() {
