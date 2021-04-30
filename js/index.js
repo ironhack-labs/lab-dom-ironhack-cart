@@ -53,7 +53,7 @@ function createProduct() {
 
 const inputs = document.querySelectorAll(".create-product td input");
 console.log(inputs)
-const container = document.getElementsByTagName("tbody")
+const container = document.querySelector("tbody")
 
 const tr = document.createElement("tr")
 tr.className = "product"
