@@ -46,11 +46,17 @@ table input[type='number'] {
   max-width: 4em;
 }
 
+.create-product{
+  color: black;
+  background-color: black;
+}
+
 .btn {
   display: inline-block;
   border: 0;
   border-radius: 0.25em;
   cursor: pointer;
+  background-color: #2cc5fa;
 }
 
 .btn-success,
