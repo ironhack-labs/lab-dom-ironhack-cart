@@ -37,6 +37,7 @@ function createProduct() {
   let newProductName = document.querySelector(`.create-product input[type="text"]`).value;
   let newProductQuantity = document.querySelector(`.create-product input[type="number"]`).value;
   let newRow = document.createElement('tr');
+  newRow.getAttribute("class", "product")
   newRow.innerHTML = `<td class="name">
   <span>${newProductName}</span>
 </td>
@@ -50,7 +51,6 @@ function createProduct() {
 </td>`
 
   let parent = document.querySelector("tbody");
-  console.log(parent)
   parent.appendChild(newRow);
 }
 
