@@ -31,12 +31,14 @@ function calculateAll() {
   //que me devolvera el importe total (subtotalProduct) para ese producto en funcion del numero de unidades compradas (cantidad)
   //Este importe se ira sumando al del siguiente producto, acumulandose en la variable totalCart,
   //que hemos definido como la direccion donde se encuentra el id="total-value" y el tag span
-  let total = 0
+  let total = 0 // ¿por que hay que definir una variable total y no puede usarse totalCart que ya empieza con valor 0?
   const Products = document.querySelectorAll('.product').forEach(singleProduct => {
     total += updateSubtotal(singleProduct);
+
   });
-  let totalCart = document.querySelector('#total-value span').textContent
-  totalCart = total
+
+  let totalCart = document.querySelector('#total-value span').textContent = total
+  //totalCart = total ¿por que no funciona así?
 
   // const spantotalCart = totalCart.getElementsbyTagName('span')
 
