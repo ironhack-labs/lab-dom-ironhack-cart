@@ -6,7 +6,7 @@
 
 ## Introduction
 
-E-commerce has proven to be a big game-changer in the 21st century economy. As one of the largest sales channels, second only to physical retail, e-commerce [is expected](https://www.statista.com/statistics/379046/worldwide-retail-e-commerce-sales/) to be responsible for 4.9 trillion USD in worldwide sales by the year 2021.
+E-commerce has proven to be a big game-changer in the 21st century economy. As one of the largest sales channels, second only to physical retail, e-commerce [is expected](https://www.statista.com/statistics/379046/worldwide-retail-e-commerce-sales/) to be responsible for 6.3 trillion USD in worldwide sales by the year 2024.
 
 E-commerce is, however, a highly competitive business, and building a positive user experience is crucial to retaining customers and improving conversions. As such, it is not uncommon for companies to make a significant investment in optimizing the purchase flow on their e-commerce platforms.
 
@@ -16,8 +16,9 @@ In this lab, we will be building the **IronCart**, a shopping cart for the unoff
 
 ## Requirements
 
-- Fork this repo
-- Clone this repo
+- Fork this repo.
+- Clone it to your machine.
+- Visit the "actions" tab in your fork, and enable workflows
 
 ## Submission
 
@@ -25,11 +26,17 @@ In this lab, we will be building the **IronCart**, a shopping cart for the unoff
 
 ```bash
 $ git add .
-$ git commit -m "done"
+$ git commit -m "Lab solved"
 $ git push origin master
 ```
 
 - Create Pull Request so your TAs can check up your work.
+
+## Automated Tests
+
+This lab includes an automated testing suite. For DOM related labs, our automated tests should be seen as a secondary tool, that helps you to programmatically understand wether your solution is correct and allows the educational team to track your progress.
+
+To run the automated tests, please, open your terminal, change directories into the root of the lab, and run `npm install` to install the test runner. Now, you can run the `npm run test:watch` command to run automated tests in watch mode. Open the resulting `lab-solution.html` file with the "Live Server" VSCode extension to always see the most up to date test results.
 
 ## Instructions
 
@@ -133,9 +140,9 @@ function updateSubtotal(product) {
 }
 ```
 
-- **Step 2**: Now, when you got the above mentioned DOM elements, your next step should be extracting the specific values from them. _Hint_: maybe `innerHTML` rings the bell? In case you are curious to find other ways to achieve the same result, you can start with checking [`textContent`](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent) and [`innerText`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText) on Google. However, don't get distracted here, let this be your _additional reading_ when you complete the lab.
+- **Step 2**: Now, when you got the above mentioned DOM elements, your next step should be extracting the specific values from them. _Hint_: maybe `innerHTML` rings a bell? In case you are curious to find other ways to achieve the same result, you can start with checking [`textContent`](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent) and [`innerText`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText) on Google. Additionally, you can extract the value from an input by accessing an [the input element's `value` property](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefvalue). However, don't get distracted here, let this be your _additional reading_ when you complete the lab.
 
-- **Step 3**: Use the values you extracted from the above mentioned DOM elements to calculate the subtotal price. You can create a new variable, and its value will be equal to the product of these values. Ex. If a user picked 3 Ironhack Rubber Ducks, they should see that the subtotal is 75 dollars ($25 * 3 = $75).
+- **Step 3**: Use the values you extracted from the above mentioned DOM elements to calculate the subtotal price. You can create a new variable, and its value will be equal to the product of these values. Ex. If a user picked 3 Ironhack Rubber Ducks, they should see that the subtotal is 75 dollars ($25 \* 3 = $75).
 
 - **Step 4**: Now, when you are becoming DOM manipulation ninja, use your skills once again to get the DOM element that should hold the subtotal. _Hint_: it is the element with the class `subtotal`.
 
@@ -193,7 +200,7 @@ Lastly, display that value on your DOM.
 
 Users should be able to remove products from their carts. For that purpose, every product row in our table has a "Remove" button at the end.
 
-But let's approach to solving our problem in bits and pieces. Inside the existing `window.addEventListener()`, start with querying the document for all "Remove" buttons, loop through them, and add a `click` event listener to each, passing a named function `removeProduct` as the callback argument. If you need a hint on how to do this, just take a look at how we did it with adding event listener on the `calculatePricesBtn`.
+But let's try to solve our problem one bit at a time. Inside of the existing function you're passing to `window.addEventListener()`, start with querying the document for all "Remove" buttons, loop through them, and add a `click` event listener to each, passing a named function `removeProduct` as the callback argument. If you need a hint on how to do this, just take a look at how we did it with adding event listener on the `calculatePricesBtn`.
 
 We already declared `removeProduct(event)` and added some starter code. After you are done with querying the remove buttons and adding the `click` event listener on them, open the console and click on any `Remove` button.
 
