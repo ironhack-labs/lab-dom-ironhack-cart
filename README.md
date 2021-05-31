@@ -162,6 +162,8 @@ function updateSubtotal(product) {
 
 Check [here](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_30b87c596b79954f63b3482d2f320fe4.gif) the expected output.
 
+<hr>
+
 ### Iteration 2: `calculateAll()`
 
 Our current code works perfectly for one product, but we expect to have more than one product on our cart. As such, we will use `calculateAll` to trigger the update of subtotals for every product.
@@ -184,6 +186,8 @@ The final output should look like the following:
 
 ![](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_0efb56fc0e5717469417e806fa7cde12.gif)
 
+<hr>
+
 ### Iteration 3: Total
 
 Our calculation functionality is still incomplete. The subtotal for each product is being updated, but the total value remains untouched.
@@ -193,6 +197,8 @@ At the end of the `calculateAll()` function, reuse the total value you just calc
 Lastly, display that value on your DOM.
 
 ![](https://i.imgur.com/SCtdzMd.png)
+
+<hr>
 
 ## Bonus Iterations
 
@@ -211,6 +217,8 @@ As we can see, `removeProduct(event)` expects the event as a single argument, an
 Make sure the price gets updated accordingly when you remove products from the shopping cart.
 
 Click [here](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_17b1e9e4d2606239163dddbc5b2a3d9f.gif) to see the expected result.
+
+<hr>
 
 ### Iteration 5: Creating new products
 
@@ -254,5 +262,7 @@ Remember, the new product should look undistinguished and behave like any of the
 When the product creation is finalized, please, clear the input fields in the creation form.
 
 Click [here](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_00abbd15326ec24d93147196024458f6.gif) to see the expected result.
+
+<br>
 
 **Happy coding! 💙**
