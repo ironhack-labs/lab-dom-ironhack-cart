@@ -121,7 +121,7 @@ describe('Ironhack Cart', () => {
       const productRemoveButtonElement = await productElement.$('button');
       await productRemoveButtonElement.click();
       const removedProductElement = await page.$('.product');
-      expect(removedProductElement).toBeFalsy();
+      expect(removedProductElement).toBeFalsy(); //what does this line do?
     });
   });
 

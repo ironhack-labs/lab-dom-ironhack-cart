@@ -115,7 +115,7 @@ function createNewChild(name, price){
   td2.appendChild(span2)
 
   const td3 = createElement('td', ['quantity'], '')
-  const input3 = createElement('input', [], 0)
+  const input3 = createElement('input', [], '')
   // input3.type = 'number'
   input3.setAttribute('type', 'number')
   input3.setAttribute('value', '0')
@@ -145,6 +145,12 @@ function createNewChild(name, price){
 
   document.querySelector('#create-product-name').value = ''
   document.querySelector('#create-product-price').value = '0'
+
+// I don't understand why did not get the eventListener by default
+  button5.addEventListener('click', (e) => {
+    // e.currentTarget.style.color = 'green'
+    removeProduct(e)
+  })
 
   
 }
