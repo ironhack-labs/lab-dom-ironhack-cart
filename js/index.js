@@ -2,8 +2,23 @@
 
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
+  const singleProduct = document.querySelector('.product');
+  updateSubtotal(singleProduct);
+  function updateSubtotal(product) {
+    const price = product.querySelector('.price span');
+    const quantity = product.querySelector('.quantity');
 
-  //... your code goes here
+
+
+
+
+
+
+
+
+
+    // ... your code goes here
+  }
 }
 
 function calculateAll() {
