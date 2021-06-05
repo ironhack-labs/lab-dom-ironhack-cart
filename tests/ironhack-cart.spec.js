@@ -115,22 +115,33 @@ describe('Ironhack Cart', () => {
   });
 
   describe('Remove products', () => {
+//******************************************************************************************************************
+//in order to test this I had to modify the html and only leave one row in the tbody (see line 126) 
     it('should allow removal of single existing product', async () => {
       const productElement = await page.$('.product');
       expect(productElement).toBeTruthy();
       const productRemoveButtonElement = await productElement.$('button');
       await productRemoveButtonElement.click();
       const removedProductElement = await page.$('.product');
-      expect(removedProductElement).toBeFalsy(); //what does this line do?
+//******************************************************************************************************************
+//the test below wouldn't work if the starting Html would have had two ".product rows"
+      expect(removedProductElement).toBeFalsy(); 
     });
   });
 
   describe('Create products', () => {
+//******************************************************************************************************************
+//135 says that Before each test we remove one element, right? 
     beforeEach(async () => {
       // Remove existing products
       await page.evaluate(() => {
+//******************************************************************************************************************
+//I think this only removes one element - the first one? 
         const productElement = document.querySelector('.product');
         productElement.parentElement.removeChild(productElement);
+
+        // document.querySelector.apply('tbody').innerHTML=''
+
       });
     });
 
@@ -142,11 +153,18 @@ describe('Ironhack Cart', () => {
         '.create-product input[type="number"]',
         createdProductPrice.toString()
       );
+
+//******************************************************************************************************************     
+//Is it possible there is no event listener on the .create button? Answer: No, it isn't. The eventListener is there
       await page.click('.create-product button');
+      // await page.click('#create');
+
+
       const productElement = await page.$('.product');
       const productPrice = await productElement.$eval(
         '.price span',
         (element) => element.innerHTML
+
       );
       const productQuantity = await productElement.$eval(
         '.quantity input',
@@ -156,7 +174,7 @@ describe('Ironhack Cart', () => {
         '.subtotal span',
         (element) => element.innerHTML
       );
-      expect(Number(productPrice)).toBe(createdProductPrice);
+      expect(Number(productPrice)).toBe(Number(createdProductPrice));
       expect(Number(productQuantity)).toBe(0);
       expect(Number(subtotalPrice)).toBe(0);
     });
@@ -170,6 +188,8 @@ describe('Ironhack Cart', () => {
       const productRemoveButtonElement = await productElement.$('button');
       await productRemoveButtonElement.click();
       const removedProductElement = await page.$('.product');
+//******************************************************************************************************************
+// 193 is true only if in the begining there would have been only one ".product row"      
       expect(removedProductElement).toBeFalsy();
     });
   });

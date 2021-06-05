@@ -54,12 +54,12 @@ function removeProduct(event) {
 
 function createProduct() {
   //... your code goes here
-  const newProductNameNode = document.querySelector('#create-product-name')
+  const newProductNameNode = document.querySelector('.create-product input[type="text"]')    //('#create-product-name')
   const newProductName = newProductNameNode.value
-  const newProductPriceNode = document.querySelector('#create-product-price')
+  const newProductPriceNode = document.querySelector('.create-product input[type="number"]')    //('#create-product-price')
   const newProductPrice = newProductPriceNode.value
-  // console.log(`Introducem ${newProductName} la pretul de ${newProductPrice}`)
-  if( newProductNameNode != '' && newProductPrice != 0){
+  console.log(`Introducem ${newProductName} la pretul de ${newProductPrice}`)
+  if( newProductName != '' && newProductPrice != '0'){
     addNewChild(newProductName, newProductPrice)
   }else{
     alert("Please complete both name and price for new product.")
@@ -70,9 +70,23 @@ function createProduct() {
 
 function addNewChild(name, price){
 
-  // cloning an existing tr and givingit the newTr class for future reference
-  const templateTebleRow = document.querySelector('.product')
-  const newTableRow = templateTebleRow.cloneNode(true)
+  const newTableRow = document.createElement('tr')
+  newTableRow.classList.add('product')
+  newTableRow.innerHTML = `
+      <td class="name">
+        <span>${name}</span>
+      </td>
+      <td class="price">$<span>${Number(price).toFixed(2)}</span></td>
+      <td class="quantity">
+        <input type="number" value="0" min="0" placeholder="Quantity" />
+      </td>
+      <td class="subtotal">$<span>0</span></td>
+      <td class="action">
+        <button class="btn btn-remove">Remove</button>
+      </td>
+  `
+
+
   newTableRow.classList.add('newTr')
   
   // adding new tr to the tbody parent
@@ -95,8 +109,8 @@ function addNewChild(name, price){
   document.querySelector('.newTr').classList.remove('newTr')
 
   //reset input form
-  document.querySelector('#create-product-name').value = ''
-  document.querySelector('#create-product-price').value = '0'
+  document.querySelector('.create-product input[type="text"]').value = ''   //('#create-product-name').value = ''
+  document.querySelector('.create-product input[type="number"]').value = '0'   //('#create-product-price').value = '0'
 
 }
 
@@ -129,6 +143,9 @@ window.addEventListener('load', () => {
 
 
 });
+
+
+
 
 
 
