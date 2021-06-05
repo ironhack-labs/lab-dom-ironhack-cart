@@ -1,34 +1,58 @@
 // ITERATION 1
 
-function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
 
-  //... your code goes here
+function formatNumbers(num) {
+  if (num < 10) { return num }
+  else { return num.toFixed(2) }
+};
+
+function updateSubtotal(product) {
+  let price = product.querySelector(".price span").innerHTML
+  let quantity = product.querySelector(".quantity input").value
+  let subTotalElement = product.querySelector(".subtotal span");
+  let subTotalProduct = price * quantity;
+  subTotalElement.innerHTML = formatNumbers(subTotalProduct);
+
+  return subTotalProduct;
+
+
+  // Apparently 6 * 10.95 = 65.69999999? 
 }
+
+
+// ITERATION 3
+//... your code goes here
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
 
-  // ITERATION 2
-  //... your code goes here
+  const productArr = document.querySelectorAll(".product");
+  let totalSum = 0;
+  for (let i = 0; i < productArr.length; i++) {
+    totalSum += updateSubtotal(productArr[i])
+  }
+  const totalElement = document.querySelector("#total-value span");
+  totalElement.innerHTML = formatNumbers(totalSum);
 
-  // ITERATION 3
-  //... your code goes here
+
+
 }
+
+
 
 // ITERATION 4
 
 function removeProduct(event) {
+  let parent = document.querySelector("#cart tbody")
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+  let td = target.parentNode;
+  let tr = td.parentNode;
+  parent.removeChild(tr);
+  calculateAll();
 }
 
 // ITERATION 5
+
+// Hint: Clone Node 
 
 function createProduct() {
   //... your code goes here
@@ -37,6 +61,9 @@ function createProduct() {
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
+  const removeBtns = document.getElementsByClassName("btn btn-remove")
+  for (let i = 0; i < removeBtns.length; i++) { removeBtns[i].addEventListener("click", removeProduct) }
+
 
   //... your code goes here
 });
