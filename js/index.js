@@ -5,13 +5,10 @@ window.addEventListener('load', () => {
   //... your code goes here
 
 
-  document.querySelector('.quantity').onclick = function () {
+  // document.querySelector('.quantity').onclick = function () {
 
-    const subTotalValue = updateSubtotal()
 
-    document.querySelector('.subtotal').textContent = subTotalValue
-
-  }
+  // }
 }
 )
 
@@ -20,10 +17,10 @@ window.addEventListener('load', () => {
 
 function updateSubtotal(product, quantity) {
 
-  const priceValue = document.querySelector('.price').textContent
+  const priceValue = document.querySelector('.price span').textContent
   const quantityValue = document.querySelector('.quantity').value
-  
-  return "$" + (priceValue * quantityValue)
+
+  return "$" + priceValue * quantityValue
 
   //... your code goes here
 
@@ -32,9 +29,13 @@ function updateSubtotal(product, quantity) {
 function calculateAll() {
   // code in the following two lines is added just for testing purposes.
   // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
+  const subTotalValue = updateSubtotal()
 
+  document.querySelector('.subtotal').textContent = subTotalValue
+
+  const totalValues =+ subTotalValue
+  
+  document.querySelector('#total-value').textContent = "Total: " + subTotalValue
 
   // end of test
 
