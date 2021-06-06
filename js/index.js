@@ -59,6 +59,10 @@ function removeProduct(event) {
 /// THE LONG WAY
 
 function createProduct() {
+
+if(document.querySelector(".product")===null){
+
+
   let newProductName = document.querySelector(".create-product td:nth-child(1) input").value;
   let newProductPrice = document.querySelector(".create-product td:nth-child(2) input").value;
   let nPrPrFormat = newProductPrice + ".00";
@@ -127,20 +131,45 @@ function createProduct() {
   row.appendChild(removeColumn);
   parent.appendChild(row);
 
-
+}
+else createProductQuicker()
 }
 
 
-// THE SHORTER WAY 
+// THE SHORT(ER) WAY 
 
-function createProductQuick (){
-
-
+function createProductQuicker() {
+  let newProductName = document.querySelector(".create-product td:nth-child(1) input").value;
+  let newProductPrice = document.querySelector(".create-product td:nth-child(2) input").value;
+  let nPrPrFormat = newProductPrice + ".00";
+  let parent = document.querySelector("#cart tbody");
   
+  
+  let productRow = document.querySelector(".product");
+  let productClone = productRow.cloneNode(true);
+  
+  
+  parent.appendChild(productClone)
+  
+  
+  let updateName = document.querySelectorAll('.name')
+  updateName[updateName.length - 1].innerHTML = newProductName;
+
+  let updatePrice = document.querySelectorAll('.price span')
+  updatePrice[updatePrice.length - 1].innerHTML = nPrPrFormat;
+
+  let updateQuantity=document.querySelectorAll('.quantity input')
+ updateQuantity[updateQuantity.length-1].value=0;
+
+  let updateSubtotal=document.querySelectorAll('.subtotal span')
+  updateSubtotal[updateSubtotal.length-1].innerHTML='0';
+
+  let updateAction = document.querySelectorAll('.action button');
+  updateAction[updateAction.length-1].addEventListener('click', removeProduct)
+
+
+
 }
-
-
-
 
 
 
@@ -152,5 +181,7 @@ window.addEventListener('load', () => {
   for (let i = 0; i < removeBtns.length; i++) { removeBtns[i].addEventListener("click", removeProduct) }
 
   const createProductBtn = document.getElementById("create")
+  
+  
   createProductBtn.addEventListener("click", createProduct)
 });
