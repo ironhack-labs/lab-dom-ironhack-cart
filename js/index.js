@@ -72,6 +72,42 @@ function addNewChild(name, price){
 
   const newTableRow = document.createElement('tr')
   newTableRow.classList.add('product')
+
+    const td1 = document.createElement('td', ['name'], '')
+    const span1 = document.createElement('span', [], name)
+    td1.appendChild(span1)
+  
+    const td2 = document.createElement('td', ['price'], '$')
+    const span2 = document.createElement('span', [], price)
+    td2.appendChild(span2)
+  
+    const td3 = document.createElement('td', ['quantity'], '')
+    const input3 = document.createElement('input', [], '')
+    input3.type = 'number'
+    input3.setAttribute('type', 'number')
+    input3.setAttribute('value', '0')
+    input3.setAttribute('min', '0')
+    input3.setAttribute('placeholder', 'Quantity')
+  
+    td3.appendChild(input3)
+  
+    const td4 = document.createElement('td', ['subtotal'], '$')
+    const span4 = document.createElement('span', [], 0)
+    td4.appendChild(span4)
+    
+    const td5 = document.createElement('td', ['action'], '')
+    const button5 = document.createElement('button', ['btn', 'btn-remove'], 'Remove')
+    td5.appendChild(button5)
+  
+    newTableRow.appendChild(td1)
+    newTableRow.appendChild(td2)
+    newTableRow.appendChild(td3)
+    newTableRow.appendChild(td4)
+    newTableRow.appendChild(td5)
+
+
+
+
   newTableRow.innerHTML = `
       <td class="name">
         <span>${name}</span>
