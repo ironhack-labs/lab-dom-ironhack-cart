@@ -6,11 +6,8 @@ function updateSubtotal(product) {
   let quantityValue = quantity.value;
 
   let subTotalValue = priceValue * quantityValue;
-
   let subTotal = product.querySelector('.subtotal span');
-
   subTotal.innerText = subTotalValue;
-
   return subTotal;
 }
 
