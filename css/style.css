@@ -43,7 +43,7 @@ table input[type='number'] {
 .btn {
   display: inline-block;
   border: 0;
-  border-radius: 0.25em;
+  border-radius: 0.5em;
   cursor: pointer;
 }
 
@@ -58,6 +58,10 @@ table input[type='number'] {
 
 .btn-remove {
   background-color: #f27471;
+}
+
+.btn-create {
+  background-color: aquamarine;
 }
 
 h1,
