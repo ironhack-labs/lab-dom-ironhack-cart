@@ -28,6 +28,14 @@ function calculateAll() {
   total.innerText = sum.toFixed(2)
 }
 
+function makeDocumentFragment() {
+  //duplicate product row as a document Fragment - before remove deletes all the rows to copy!
+  let range = document.createRange()
+  range.selectNode(document.querySelector('.product'))
+  documentFragment = range.cloneContents()
+  return documentFragment
+}
+let productTemplate = makeDocumentFragment()
 
 // ITERATION 4
 function initRemoveButtons() { //made into a function to call again later
@@ -38,25 +46,21 @@ allRemoveButtons.forEach((button) => button.addEventListener ('click', removePro
 function removeProduct(event) {
   const target = event.currentTarget;
   target.parentNode.parentNode.remove()
+  calculateAll()
 }
 // ITERATION 5
 
 const createButton = document.querySelector('#create')
 createButton.addEventListener('click', createProduct)
 
-
 function createProduct() {
   const target = event.currentTarget;
-
+  //create document fragment that is the product tr node to modify and then append.
+productFragment = makeDocumentFragment()
   //create variables for inputted values
   const newProduct = document.querySelector('tfoot input[type=text]').value
   const newPrice = document.querySelector('tfoot input[type=number]').value
   
-  //duplicate product row as a document Fragment
-  let range = document.createRange()
-range.selectNode(document.querySelector('.product'))
-productFragment = range.cloneContents()
-
 //target the first name and price of the document fragement and update with given values
 const productSpan = productFragment.querySelectorAll('td span ')
 productSpan.forEach((span,index,nodeList) => {
