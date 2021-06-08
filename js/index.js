@@ -55,22 +55,24 @@ function createProduct() {
 </td>`
 
   document.querySelector("tbody").append(newProduct)
-  const button = document.getElementsByClassName("btn-remove")
-  newProduct.addEventListener("click", () => {
-    newProduct.remove()
-  })
+  addRemoveEventListenter()
+
 }
 
 window.addEventListener('load', () => {
+  addRemoveEventListenter()
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
+  const createNew = document.getElementById("create")
+  createNew.addEventListener("click", createProduct)
+  //... your code goes here
+});
+
+function addRemoveEventListenter(){
   const removing = document.getElementsByClassName("btn-remove")
   const removingArray = [...removing]
   removingArray.forEach((remove) => {
     remove.addEventListener("click", removeProduct)
 
   })
-  const createNew = document.getElementById("create")
-  createNew.addEventListener("click", createProduct)
-  //... your code goes here
-});
+}
