@@ -11,6 +11,9 @@ function updateSubtotal(product) {
 
 
 
+
+
+
   
 
   
@@ -27,17 +30,23 @@ function calculateAll() {
   // updateSubtotal(singleProduct);
   // end of test
   // ITERATION 2
-  let totalAmount =0;
+  
   Array.from(document.getElementsByClassName("product")).map(function (elem){
     
    updateSubtotal(elem)
-
-   
-  
-   
     
   })
-  console.log( Number(document.querySelector('.subtotal span').innerText))
+
+  let totalAmount = 0 
+
+  Array.from(document.querySelectorAll('.subtotal span')).map(function (num){
+  
+   totalAmount += Number(num.innerText)
+   })
+
+   document.querySelector('#total-value span').innerText = totalAmount
+
+ 
       
 
 
