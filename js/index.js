@@ -1,23 +1,32 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
+  let prodVal = product.querySelector('.price span').innerHTML
+  console.log(prodVal) 
+  let quantity = product.querySelector('.quantity input').value
+  console.log(quantity)
+  let subtotal = product.querySelector('.subtotal span')
+  subtotal.innerHTML = Number(prodVal) * Number(quantity)
 
-  //... your code goes here
+  return subtotal.innerHTML;
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
-
   // ITERATION 2
-  //... your code goes here
+  let products = document.querySelectorAll('.product')
+  products.forEach((elem) => {
+    updateSubtotal(elem)
+  })
 
   // ITERATION 3
-  //... your code goes here
+  let total = 0;
+  products.forEach((elem) => {
+    let subtotal = Number(elem.querySelector('.subtotal span').innerHTML)
+    total += subtotal;
+  })
+  
+  let finTotal = document.querySelector('#total-value span')
+  finTotal.innerHTML = total 
 }
 
 // ITERATION 4
@@ -25,7 +34,13 @@ function calculateAll() {
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
-  //... your code goes here
+  let node = target.parentNode
+  let parent = node.parentNode
+  
+  let subtotal = parent.querySelector('.subtotal span')
+  let finTotal = document.querySelector('#total-value span')
+  finTotal.innerHTML -= subtotal.innerHTML
+  parent.remove()
 }
 
 // ITERATION 5
@@ -38,5 +53,9 @@ window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+  const removeProdcart = document.querySelectorAll('.btn-remove');
+  removeProdcart.forEach((elem) => {
+    elem.addEventListener('click', (event) => {
+      removeProduct(event)})
+  })
 });
