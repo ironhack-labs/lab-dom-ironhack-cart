@@ -1,10 +1,19 @@
 // ITERATION 1
 
+const { product } = require("puppeteer");
+
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
 
-  //... your code goes here
+  const price = product.querySelector(".price span").innerText;
+  const quantity = product.querySelector(".quantity input").value;
+  let subTotal = product.querySelector(".subtotal span");
+
+  
+  return subTotal = price * quantity;
+
 }
+
 
 function calculateAll() {
   // code in the following two lines is added just for testing purposes.
@@ -14,10 +23,14 @@ function calculateAll() {
   // end of test
 
   // ITERATION 2
-  //... your code goes here
+ const products = document.querySelectorAll(".product");
+ products.forEach(product) => {
+   updateSubtotal(product);
+ }
 
   // ITERATION 3
-  //... your code goes here
+  let totalPrice = document.querySelector("#total-value span");
+  totalPrice = 
 }
 
 // ITERATION 4
@@ -25,7 +38,7 @@ function calculateAll() {
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
-  //... your code goes here
+  target.remove();
 }
 
 // ITERATION 5
