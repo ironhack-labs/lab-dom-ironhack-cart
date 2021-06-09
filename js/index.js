@@ -24,6 +24,14 @@ let sum = 0
     sum=0;
   }
 
+ function removeProduct(event) {
+   const target = event.currentTarget;
+   console.log("the target in remove is:", target);
+   target.parentElement.parentElement.remove()
+   calculateAll ()
+ }
+
+
   window.addEventListener('load', () => {
 
     const calculatePricesBtn = document.getElementById('calculate');
@@ -37,8 +45,6 @@ let sum = 0
       let createButton = document.querySelector('#create');
     
       createButton.addEventListener('click', createProduct);
-    
-  
   });
  
       
