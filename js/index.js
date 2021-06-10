@@ -26,6 +26,8 @@ console.log(element);
   totalPrice += updateSubtotal(element);
 });
 
+// ITERATION 3
+
 document.querySelector('#total-value span').innerText = totalPrice;
 
 console.log(totalPrice);
@@ -33,29 +35,41 @@ console.log(totalPrice);
 }
  
 
-
-
-  // ITERATION 3
-  //... your code goes here
-
-
 // ITERATION 4
 
 function removeProduct(event) {
-  const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+
+const target = event.currentTarget;
+
+console.log(target);
+
+target.parentNode.parentNode.remove();
+
+calculateAll();
+
 }
+
 
 // ITERATION 5
 
 function createProduct() {
   //... your code goes here
+
+
+
+  
 }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
+
+  const removeButton = document.querySelector('.btn-remove');
+  removeButton.addEventListener('click', removeProduct);
+
+  const createProductBtn = document.querySelector('.btn');
+  createProductBtn.addEventListener('click', createProduct);
+
 
   //... your code goes here
 });
