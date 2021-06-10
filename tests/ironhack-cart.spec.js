@@ -12,8 +12,8 @@ const addProductsToCart = ({ products }) => {
         <td class="price">$<span>${price.toFixed(2)}</span></td>
         <td class="quantity">
           <input type="number" value="${quantity.toFixed(
-            2
-          )}" min="0" placeholder="Quantity" />
+      2
+    )}" min="0" placeholder="Quantity" />
         </td>
         <td class="subtotal">$<span>0</span></td>
         <td class="action">
@@ -130,7 +130,9 @@ describe('Ironhack Cart', () => {
       // Remove existing products
       await page.evaluate(() => {
         const productElement = document.querySelector('.product');
-        productElement.parentElement.removeChild(productElement);
+        document.querySelectorAll('.product').forEach(
+          product => product.parentElement.removeChild(product)
+        );
       });
     });
 
