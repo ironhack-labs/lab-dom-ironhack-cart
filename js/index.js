@@ -65,9 +65,14 @@ function createProduct() {
   //... your code goes here
 }
 
-  const calculatePricesBtn = document.getElementById('calculate');
-  calculatePricesBtn.addEventListener('click', calculateAll);
+window.addEventListener('load', () => {
+    const calculatePricesBtn = document.getElementById('calculate');
+    calculatePricesBtn.addEventListener('click', calculateAll);
+
 
   const removeBtt = document.getElementsByClassName("btn-remove")
   for (let i = 0; i < removeBtt.length; i++) { 
     removeBtt[i].addEventListener("click", removeProduct) }
+  
+  });
+
