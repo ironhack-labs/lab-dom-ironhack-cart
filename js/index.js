@@ -35,16 +35,22 @@ function calculateAll() {
 
   // ITERATION 2
 let productNr = getElemntsByClassName('product')
-    //tried:) ->>
-          // for (let i=0; productNr.length > 1; i++)
-          //     (productNr[i]) => {updateSubtotal()}
+                //tried haha:) ->>
+                      // for (let i=0; productNr.length > 1; i++)
+                      //     (productNr[i]) => {updateSubtotal()}
 
-          //Wo.Wie Rferenz table#cart???
+                      //Wo.Wie Rferenz table#cart???
 
 
 
   // ITERATION 3
   //... your code goes here
+  let totalSumElements = document.querySelector('totalValue span')
+
+  ///add the elements of that array: .....
+  let totalSum = document.getElementsByName('subtotalPrice')
+  totalSum.innerHTML = 
+
 }
 
 // ITERATION 4
