@@ -2,13 +2,13 @@
 //for testing (npm run test:watch)
 
 function updateSubtotal(product) {
-  let price = product.querySelector('.price span').innerHTML;
+  let price = product.querySelector('.price span').textContent;// textContent faster than innerText
 
   let quantity = product.querySelector('.quantity input').value;
 
   let subTotal = product.querySelector('.subtotal span')
 
-  subTotal.innerText = price * quantity;
+  subTotal.textContent = price * quantity;
 
   return subTotal;
 }
@@ -21,7 +21,7 @@ function calculateAll() {
   total = 0;
 
   for(let i = 0; i < products.length; i++){
-    total += Number(updateSubtotal(products[i]).innerText);
+    total += Number(updateSubtotal(products[i]).innerHTML);
   }
  
   totalValue.innerText = total;
@@ -34,11 +34,41 @@ function removeProduct(event) {
   console.log('The target in remove is:', target);
   
     target.remove(); // it remove the product but the test fail??
+
+    calculateAll() // calculateAll() is place it at the end to recalculate the total price
+    
 }
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  let nameNew = document.querySelector('.create-product input[placeholder="Product Name"]').value
+  let priceNew = document.querySelector('.create-product input[placeholder="Product Price"]').value
+  let tbody = document.querySelector('tbody')
+
+  // create parent and add parent to the body
+  let tr = document.createElement('tr')
+  tr.classList.add('product')
+  tbody.appendChild(tr)
+
+  //add name
+  let td = document.createElement('td')
+  tr.appendChild(td)
+
+  td.classList.add('name')
+  
+  let spanName = td.appendChild( document.createElement('span') )
+  spanName.innerText = nameNew
+
+  // create and add price
+  let tdPrice = document.createElement('td')
+  tdPrice.classList.add('price')
+  let spanPrice = document.createElement('span')
+  spanPrice.innerText = priceNew
+
+  // add to parent
+  tr.appendChild(tdPrice)
+  tdPrice.innerText = '$'
+  tdPrice.appendChild(spanPrice)
 }
 
 window.addEventListener('load', () => {
@@ -50,5 +80,6 @@ window.addEventListener('load', () => {
     removeProductBtn[i].addEventListener('click', removeProduct);
   }
 
-  //... your code goes here
+  const createBtn = document.querySelector('#create')
+  createBtn.addEventListener('click', createProduct)
 });
