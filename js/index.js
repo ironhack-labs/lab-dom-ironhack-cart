@@ -47,15 +47,15 @@ function removeProduct(event) {
 function createProduct(event)  {
   //... your code goes here
   const createProduct = event.target.parentNode.parentNode
-  const newProductName = createProduct.querySelector("input[type = 'text']").value;
-  const newProductPrice = createProduct.querySelector("input[type = 'number']").valueAsNumber.toFixed(2);
+  const newProductName = createProduct.querySelector("input[type = 'text']");
+  const newProductPrice = createProduct.querySelector("input[type = 'number']");
   const newRowElement = document.createElement('tr');
   newRowElement.className = 'product'
   newRowElement.innerHTML = `
   <td class="name">
-  <span>I${newProductName}</span>
+  <span>I${newProductName.value}</span>
 </td>
-<td class="price">$<span>${newProductPrice}</span></td>
+<td class="price">$<span>${newProductPrice.valueAsNumber.toFixed(2)}</span></td>
 <td class="quantity">
   <input type="number" value="0" min="0" placeholder="Quantity" />
 </td>
@@ -66,6 +66,12 @@ function createProduct(event)  {
   `
   const parent = document.querySelector('#cart tbody');
   parent.appendChild(newRowElement);
+
+  const removeBtn = newRowElement.querySelector('.btn-remove');
+  removeBtn.addEventListener('click', removeProduct)
+   
+  newProductName.value = ''
+  newProductPrice.value = ''
 }
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
