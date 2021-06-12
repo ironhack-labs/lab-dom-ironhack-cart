@@ -27,6 +27,7 @@ const addProductsToCart = ({ products }) => {
 // Ironhack Cart Test-suite
 describe('Ironhack Cart', () => {
   beforeAll(async () => {
+    page = await global.__BROWSER__.newpage
     page.on('console', (msg) => console.log(msg.text()));
     await page.goto('http://localhost:4444');
   });

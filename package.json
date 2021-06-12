@@ -37,5 +37,12 @@
   "prettier": {
     "singleQuote": true,
     "trailingComma": "none"
+  },
+  "dependencies": {
+    "chalk": "^4.1.1",
+    "fs": "*",
+    "mkdirp": "^1.0.4",
+    "os": "^0.1.1",
+    "path": "^0.12.7"
   }
 }
