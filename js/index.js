@@ -36,12 +36,14 @@ function calculateAll() {
   
 }
 
-// ITERATION 4
-
+// ITERATION 4 >>>>Anytime I try to work in this it breaks the functionality - what's going on with that?!
+/*
 function removeProduct(event) {
-  const target = event.currentTarget;
+  const target = event.currentTarget.parentElement.parentElement;
   const removeBtn = document.querySelectorAll(".button ")
   console.log('The target in remove is:', target);
+  target.parentElement.removeChild(target);
+  calculateAll();
   //... your code goes here
 }
 
@@ -57,3 +59,4 @@ window.addEventListener('load', () => {
 
   //... your code goes here
 });
+*/
