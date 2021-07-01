@@ -16,6 +16,8 @@ function updateSubtotal(product) {
   return subTotal
 }
 
+//test for the functions
+
 function calculateAll() {
   // code in the following two lines is added just for testing purposes.
   // it runs when only iteration 1 is completed. at later point, it can be removed.
@@ -46,6 +48,7 @@ function calculateAll() {
 }
 
 // ITERATION 4
+
   function removeProduct(event) { 
 
   const target = event.currentTarget;
