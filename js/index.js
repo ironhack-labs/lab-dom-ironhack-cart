@@ -52,7 +52,6 @@ function createProduct(event) {
       </tr>
     `;
 
-  const target = event.currentTarget;
   const parentElement = document.querySelector("tbody");
   parentElement.insertAdjacentHTML('afterbegin', newElement);
   init();
