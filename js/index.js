@@ -20,7 +20,7 @@ function updateSubtotal(product) {
 function calculateAll() {
   const allTheProducts = document.querySelectorAll('.product');
   // ITERATION 2
-  const total = Array.from(allTheProducts).reduce((acc, el) => acc += updateSubtotal(el), 0);
+  const total = [...allTheProducts].reduce((acc, el) => acc += updateSubtotal(el), 0);
   // ITERATION 3
   document.querySelector("#total-value span").innerText = total;
 }
