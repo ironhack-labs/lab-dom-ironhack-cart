@@ -31,7 +31,7 @@ function calculateAll() {
 function removeProduct(event) {
   const target = event.currentTarget;
  
-  let row = target.parentNode.parentNode
+  let row = target.closest('.product')
   row.remove()
   row = null 
 
