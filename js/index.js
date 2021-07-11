@@ -1,19 +1,17 @@
 // ITERATION 1
 
+// const { product } = require("puppeteer");
+
 function updateSubtotal(product) {
-  const price = product.querySelector(".price span");
-  const quantity = product.querySelector(".quantity input");
-  const priceValue = price.textContent
-  const quantityValue = quantity.value // the input changes to what the user actually input 
-  const subtotal = document.querySelector(".subtotal span")
-  const subtotalPrice = priceValue * quantityValue
+  const price = Number(product.querySelector(".price span").textContent);
+  // const priceValue = Number(price.textContent)
+  const quantity = Number(product.querySelector(".quantity input").value);
+  // const quantityValue = Number(quantity.value) 
+  const subtotal = product.querySelector(".subtotal span") // careful to take "PRODUCT" and not "DOCUMENT"
+  const subtotalPrice = price * quantity
   subtotal.textContent = subtotalPrice
+  // console.log("price " + price + " quantity " + quantity + " subtotal " + subtotalPrice)
   return subtotalPrice
-  
-  // console.log("priceValue", priceValue)
-  // console.log("quantityValue", quantityValue)
-  // console.log("Subtotal.textContent", subtotal.textContent)
-  // console.log('Calculating subtotal ' + subtotalPrice);
 }
 
 
@@ -25,47 +23,63 @@ function calculateAll() {
   // end of test
 
   // ITERATION 2
-  const productsTable = document.querySelector("#cart tbody");
-  const numberProducts = productsTable.rows.length
+  let totalPrice = 0
+  const products = document.querySelectorAll(".product"); // renders it into an ARRAY format !!!
+  products.forEach(product => {
+    totalPrice += updateSubtotal(product)
+  });
 
-  for (i = 0; i < numberProducts; i++) {
-    const singleProduct = document.querySelector(`#cart tbody tr:nth-child(${i+1})`)
-    console.log("tr", singleProduct)
-    updateSubtotal(singleProduct)
-    console.log(`Subtotal Price ${i+1} ${updateSubtotal(singleProduct)}`)
+  document.querySelector("#total-value span").textContent = totalPrice
   }
 
   // ITERATION 3
   //... your code goes here
-}
 
 
-function cloneProduct(product) {
-  const singleProduct = document.querySelector('.product');
-  const cart = document.querySelector("#cart tbody");
-  const newProduct = singleProduct.cloneNode(true)
-  cart.appendChild(newProduct)
-}
+
+// function cloneProduct(product) {
+//   const singleProduct = document.querySelector('.product');
+//   const cart = document.querySelector("#cart tbody");
+//   const newProduct = singleProduct.cloneNode(true)
+//   cart.appendChild(newProduct)
+// }
 
 
 
 // ITERATION 4
 
-// function removeProduct(event) {
-//   const target = event.currentTarget;
-//   console.log('The target in remove is:', target);
-//   //... your code goes here
-// }
+function removeProduct(event) {
+  const target = event.currentTarget;
+  console.log("target.parentNode.parentNode " + target.parentNode.parentNode);
+  console.log("target.parentNode " + target.parentNode);
+  target.parentNode.parentNode.parentNode.removeChild(target.parentNode.parentNode)
+}
+
+
 
 // ITERATION 5
 
 function createProduct() {
+  const newProduct = document.createElement("tr")
+  newProduct.classList.add("product")
+  const cart = document.querySelector("#cart tbody");
+  cart.appendChild(newProduct)
+
+
   //... your code goes here
 }
 
 window.addEventListener('load', () => { // wait for everything to be loaded before activating the button
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
+
+  const btnRemove = document.querySelectorAll(".btn-remove")
+  btnRemove.forEach (button => {
+    button.addEventListener('click', removeProduct) // DONT CALL THE FUCTION WITH ()
+  })
+
+  const createProductBtn = document.getElementById('create');
+  createProductBtn.addEventListener('click', createProduct)
 
   //... your code goes here
 });
