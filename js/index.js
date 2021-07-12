@@ -49,24 +49,41 @@ function calculateAll() {
 // ITERATION 4
 
 function removeProduct(event) {
+  console.log("btn remove works on newly created btns")
   const target = event.currentTarget;
-  console.log("target.parentNode.parentNode " + target.parentNode.parentNode);
-  console.log("target.parentNode " + target.parentNode);
-  target.parentNode.parentNode.parentNode.removeChild(target.parentNode.parentNode)
+  const parent = target.closest(".product");
+  parent.remove()
+  
 }
-
 
 
 // ITERATION 5
 
 function createProduct() {
   const newProduct = document.createElement("tr")
-  newProduct.classList.add("product")
-  const cart = document.querySelector("#cart tbody");
-  cart.appendChild(newProduct)
+  // newProduct.classList.add("product")
+  // const cart = document.querySelector("#cart tbody");
+  // cart.appendChild(newProduct)
+  // console.log(cart)
 
+  const newProductName = document.querySelector(".create-product td:first-child input").value
+  // console.log(newProductName)
+  const newProductPrice = document.querySelector(".create-product td:nth-child(2) input").value
+  // console.log(newProductPrice)
 
-  //... your code goes here
+  newProduct.innerHTML = `<td class="name">
+  <span>${newProductName}</span>
+</td>
+<td class="price">$<span>${newProductPrice}</span></td>
+<td class="quantity">
+  <input type="number" value="0" min="0" placeholder="Quantity" />
+</td>
+<td class="subtotal">$<span>0</span></td>
+<td class="action">
+  <button class="btn btn-remove">Remove</button>
+</td>`
+
+  console.log(cart)
 }
 
 window.addEventListener('load', () => { // wait for everything to be loaded before activating the button
@@ -80,9 +97,44 @@ window.addEventListener('load', () => { // wait for everything to be loaded befo
 
   const createProductBtn = document.getElementById('create');
   createProductBtn.addEventListener('click', createProduct)
-
-  //... your code goes here
 });
 
 
-calculateAll()
+/*
+after creating a new product
+console.log(document.querySelectorAll(".btn-remove")) ==> 3 buttons 
+*/
+
+
+
+
+/*
+  // product name
+  const newProductName = document.createElement("td");
+  newProduct.appendChild(newProductName);
+  newProductName.classList.add("class");
+  newProductName.textContent = document.querySelectorAll(".create input:first-child").value
+  
+  // unit price
+  const newProductPrice = document.createElement("td");
+  newProduct.appendChil(newProductPrice);
+  newProductPrice.classList.add("price");
+  newProductPrice.textContent = document.querySelectorAll(".create input:nth-child(2)").value
+
+  // quantity
+  const newProductQuantity = document.createElement("td");
+  newProduct.appendChild(newProductQuantity)
+  newProductQuantity.classList.add("quantity");
+  newProductQuantity.innerHTML = "<input type=\"number\" value=\"0\" min=\"0\" placeholder=\"Quantity\" />";
+  
+  // subtotal
+  const newProductSubtotal = document.createElement("td");
+  newProduct.appendChild(newProductSubtotal);
+  newProduct.classList.add("subtotal");
+  newProductSubtotal.innerHTML = "$<span>0</span>";
+
+  // remove
+  const newRemoveBtn = document.createElement("button");
+  newRemoveBtn.classList.add(".btn .btn-remove");
+  newRemoveBtn.textContent = "Remove"
+*/
