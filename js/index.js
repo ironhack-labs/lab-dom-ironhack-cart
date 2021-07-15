@@ -32,6 +32,7 @@ function removeProduct(event) {
   target.parentNode.parentNode.parentNode.removeChild(
     target.parentNode.parentNode
   );
+  console.log(target.parentNode.parentNode.parentNode);
   const totalValueElement = document.querySelector('#total-value span');
   totalValueElement.innerHTML = calculateAll();
 }
@@ -39,7 +40,23 @@ function removeProduct(event) {
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  const productName = document.querySelectorAll('.create-product input')[0];
+  const unitPrice = document.querySelectorAll('.create-product input')[1];
+
+  const singleProduct = document.querySelector('.product');
+  const cloneProduct = singleProduct.cloneNode(true);
+
+  cloneProduct.querySelector('.name span').innerHTML = productName.value;
+  if (unitPrice.value < 0) {
+    alert('Please enter valid price!');
+  } else {
+    cloneProduct.querySelector('.price span').innerHTML = unitPrice.value;
+    cloneProduct.querySelector('.quantity input').innerHTML = 0;
+    document.querySelector('tbody').appendChild(cloneProduct);
+  }
+
+  productName.value = '';
+  unitPrice.value = 0;
 }
 
 window.addEventListener('load', () => {
@@ -50,4 +67,7 @@ window.addEventListener('load', () => {
   removeProductBtn.forEach((button) => {
     button.addEventListener('click', removeProduct);
   });
+
+  const createProductBtn = document.querySelector('#create');
+  createProductBtn.addEventListener('click', createProduct);
 });
