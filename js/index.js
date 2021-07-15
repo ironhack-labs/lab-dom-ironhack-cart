@@ -21,14 +21,19 @@ function calculateAll() {
   });
 
   document.querySelector('#total-value span').innerHTML = totalValue;
+
+  return totalValue;
 }
 
 // ITERATION 4
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+  target.parentNode.parentNode.parentNode.removeChild(
+    target.parentNode.parentNode
+  );
+  const totalValueElement = document.querySelector('#total-value span');
+  totalValueElement.innerHTML = calculateAll();
 }
 
 // ITERATION 5
@@ -41,5 +46,8 @@ window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+  const removeProductBtn = document.querySelectorAll('.btn-remove');
+  removeProductBtn.forEach((button) => {
+    button.addEventListener('click', removeProduct);
+  });
 });
