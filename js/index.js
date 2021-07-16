@@ -29,10 +29,6 @@ function calculateAll() {
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  target.parentNode.parentNode.parentNode.removeChild(
-    target.parentNode.parentNode
-  );
-  console.log(target.parentNode.parentNode.parentNode);
   const totalValueElement = document.querySelector('#total-value span');
   totalValueElement.innerHTML = calculateAll();
 }
@@ -63,10 +59,22 @@ window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  const removeProductBtn = document.querySelectorAll('.btn-remove');
-  removeProductBtn.forEach((button) => {
-    button.addEventListener('click', removeProduct);
-  });
+  // const removeProductBtn = document.querySelectorAll('.btn-remove');
+
+  const parentElement = document.querySelector('tbody');
+  parentElement.addEventListener('click', handleClicks);
+
+  function handleClicks(e) {
+    if (e.target.classList.contains('btn-remove')) {
+      console.log('remove');
+      const buttonParentElement = document.querySelector('.product');
+      parentElement.removeChild(buttonParentElement);
+    }
+  }
+
+  // removeProductBtn.forEach((button) => {
+  //   button.addEventListener('click', removeProduct);
+  // });
 
   const createProductBtn = document.querySelector('#create');
   createProductBtn.addEventListener('click', createProduct);
