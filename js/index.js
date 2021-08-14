@@ -95,3 +95,4 @@ window.addEventListener('load', () => {
   const createProductBtn = document.getElementById('create');
   createProductBtn.addEventListener('click', createProduct);
 });
+
