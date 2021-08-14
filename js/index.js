@@ -43,18 +43,55 @@ function removeProduct(event) {
   totalElement.innerHTML = newTotal;
 }
 
+function updateRemoveBtns() {
+  const removeProductBtns = document.getElementsByClassName('btn-remove');
+  for (let i = 0; i < removeProductBtns.length; i++) {
+    removeProductBtns[i].addEventListener('click', removeProduct);
+  }
+}
+
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  const cart = document.querySelector('#cart tbody');
+
+  //Select the nodes that contain the new product's name and price
+  let productName = document.querySelector('.new-product-name input');
+  let productPrice = document.querySelector('.new-product-price input');
+
+  //String that will be included in the .html with the productName and productPrice
+  const newProduct = `
+    <tr class="product">
+    <td class="name">
+      <span>${productName.value}</span>
+    </td>
+    <td class="price">$<span>${productPrice.value}</span></td>
+    <td class="quantity">
+      <input type="number" value="0" min="0" placeholder="Quantity" />
+    </td>
+    <td class="subtotal">$<span>0</span></td>
+    <td class="action">
+     <button class="btn btn-remove">Remove</button>
+    </td>
+  </tr>
+  `;
+
+  cart.innerHTML += newProduct;
+
+  //Resets the New Product input fields
+  productName.value = '';
+  productPrice.value = 0;
+
+  //Updates the remove buttons event listener so it is functional also for the new product
+  updateRemoveBtns();
 }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  const removeProductBtns = document.getElementsByClassName('btn-remove');
-  for (let i = 0; i < removeProductBtns.length; i++) {
-    removeProductBtns[i].addEventListener('click', removeProduct);
-  }
+  updateRemoveBtns();
+
+  const createProductBtn = document.getElementById('create');
+  createProductBtn.addEventListener('click', createProduct);
 });
