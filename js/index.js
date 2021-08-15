@@ -41,8 +41,7 @@ function calculateAll() {
   // anterior y actualice el elemento DOM correspondiente. Calcule el precio total de los productos en su carrito 
   // sumando todos los subtotales devueltos por updateSubtotal()cuando se llamó con cada producto.
 
-  document.getElementById('total-value').textContent = priceTotal;
-  //return priceTotal;
+  document.getElementById('total-value').textContent = `Total: $${priceTotal}`;
 }
 
 // ITERATION 4
@@ -50,11 +49,10 @@ function calculateAll() {
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
-
   //... your code goes here
-
-
-
+  const row = target.parentNode.parentNode;
+  row.parentNode.removeChild(row)
+  calculateAll()
 }
 
 // ITERATION 5
@@ -70,8 +68,10 @@ window.addEventListener('load', () => {
   //... your code goes here
 
 
-  const buttonDelete = document.querySelector('.btn btn-remove')
-  buttonDelete.addEventListener('click', removeProduct);
+  const deleteButtons = document.querySelectorAll('.btn-remove')
 
+  for (let i = 0; i < deleteButtons.length; i++) {
+    deleteButtons[i].addEventListener('click', removeProduct)
+  }
 })
 
