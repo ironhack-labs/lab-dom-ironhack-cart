@@ -64,7 +64,19 @@ function calculateAll() {
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
+  // console.log('The target in remove is:', target);
+
+  // let allParent = document.getElementsByClassName("product")
+  // console.log(target.parentNode.parentNode)
+  // for (i = 0; i < allParent.length; i++) {
+  //   console.log(allParent)
+  // }
+
+
+  target.parentElement.parentElement.remove()
+  // target.parentNode.parentNode.remove()
+  calculateAll()
+
   //... your code goes here
 }
 
@@ -72,11 +84,56 @@ function removeProduct(event) {
 
 function createProduct() {
   //... your code goes here
+  let bodyTable = document.querySelector("#cart tbody")
+  let newProduct = document.createElement("tr")
+  newProduct.setAttribute("class", "product")
+  console.log(newProduct.querySelector(".btn-remove"))
+
+  newProduct.innerHTML =
+    `<tr class="product" name="product">
+        <td class="name">
+          <span>${document.querySelector(".create-product #enter__name").value}</span>
+        </td>
+        <td class="price">$<span>${document.querySelector(" .create-product #enter__price ").value}</span></td>
+        <td class="quantity">
+          <input type="number" value="0" min="0" placeholder="Quantity" />
+        </td>
+        <td class="subtotal">$<span>0</span></td>
+        <td class="action">
+          <button class="btn btn-remove">Remove</button>
+        </td>
+      </tr> `
+
+
+  // newProduct.querySelector(".name span").textContent = nameProduct.value
+  // newProduct.querySelector(".price span").textContent = document.querySelector(".create-product span").value
+
+  console.log(typeof (newProduct))
+  bodyTable.appendChild(newProduct)
+
+
+
+
+
+
+
+
+
 }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
+
+  const productRemoveButton = document.getElementsByClassName("btn-remove");
+  for (i = 0; i < productRemoveButton.length; i++) {
+    productRemoveButton[i].addEventListener('click', removeProduct)
+    console.log(productRemoveButton[i].textContent)
+  }
+
+  const productCreateButton = document.getElementById('create');
+  productCreateButton.addEventListener('click', createProduct);
+
 
   //... your code goes here
 });

@@ -12,8 +12,8 @@ const addProductsToCart = ({ products }) => {
         <td class="price">$<span>${price.toFixed(2)}</span></td>
         <td class="quantity">
           <input type="number" value="${quantity.toFixed(
-            2
-          )}" min="0" placeholder="Quantity" />
+      2
+    )}" min="0" placeholder="Quantity" />
         </td>
         <td class="subtotal">$<span>0</span></td>
         <td class="action">
@@ -25,15 +25,15 @@ const addProductsToCart = ({ products }) => {
 };
 
 // Ironhack Cart Test-suite
-describe('Ironhack Cart',  () => {
+describe('Ironhack Cart', () => {
 
   describe('Product subtotals', () => {
     beforeAll(async () => {
       page.on('console', (msg) => console.log(msg.text()));
     });
-  
+
     beforeEach(async () => {
-      await page.goto('http://localhost:4444', { waitUntil: "load"});
+      await page.goto('http://localhost:4444', { waitUntil: "load" });
     });
 
     it('should update single product subtotal when "Calculate Prices" button is clicked', async () => {
@@ -49,7 +49,7 @@ describe('Ironhack Cart',  () => {
         '.subtotal span',
         (element) => element.innerHTML
       );
-      
+
       expect(Number(subtotalPrice)).toBe(productPrice * quantity);
     });
 
@@ -84,10 +84,10 @@ describe('Ironhack Cart',  () => {
     beforeAll(async () => {
       page.on('console', (msg) => console.log(msg.text()));
     });
-  
+
     beforeEach(async () => {
-      await page.goto('http://localhost:4444', { waitUntil: "load"});
-    });
+      await page.goto('http://localhost:4444', { waitUntil: "load" });
+    })
 
     it('should update a single-item cart total when "Calculate Prices" button is clicked', async () => {
       const quantity = 3;
@@ -122,7 +122,7 @@ describe('Ironhack Cart',  () => {
         (element) => element.innerHTML
       );
       expect(Number(totalPrice)).toBe(expectedProductTotal);
-      
+
     });
   });
 
@@ -130,9 +130,9 @@ describe('Ironhack Cart',  () => {
     beforeAll(async () => {
       page.on('console', (msg) => console.log(msg.text()));
     });
-    
+
     beforeEach(async () => {
-      await page.goto('http://localhost:4444', { waitUntil: "load"});
+      await page.goto('http://localhost:4444', { waitUntil: "load" });
       // Remove existing products
       await page.evaluate(() => {
         document
@@ -141,45 +141,45 @@ describe('Ironhack Cart',  () => {
       });
     });
 
-    it('should allow removal of an existing product', async () => { 
+    it('should allow removal of an existing product', async () => {
       await page.type('.create-product input[type="text"]', 'Ironhack Frisbee');
       await page.type('.create-product input[type="number"]', '5');
       await page.click('.create-product button');
-      
+
       const productElement = await page.$('.product');
       expect(productElement).toBeTruthy();
 
       const productRemoveButton = await productElement.$('button');
       await productRemoveButton.click();
-      
+
       const remainingProducts = await page.$$('.product');
       const remainingProduct = await page.$('.product');
-        
+
       expect(remainingProducts.length).toBe(0);
       expect(remainingProduct).toBeFalsy();
     });
 
-    it('should allow removal of multiple existing products', async () => { 
+    it('should allow removal of multiple existing products', async () => {
       const products = [
         { price: 5, name: 'a' },
         { price: 7.5, name: 'b' },
         { price: 10, name: 'c' }
       ];
-      
+
       // Create products
       for (const { name, price } of products) {
         await page.type('.create-product input[type="text"]', name);
         await page.type('.create-product input[type="number"]', price.toString());
         await page.click('.create-product button');
       }
-      
+
       const productEl1 = await page.$('.product:nth-child(1)');
       const productEl2 = await page.$('.product:nth-child(2)');
       const productEl3 = await page.$('.product:nth-child(3)');
       expect(productEl1).toBeTruthy();
       expect(productEl2).toBeTruthy();
       expect(productEl3).toBeTruthy();
-      
+
       const productRemoveButton1 = await productEl1.$('button');
       const productRemoveButton3 = await productEl3.$('button');
       await productRemoveButton1.click();
@@ -187,7 +187,7 @@ describe('Ironhack Cart',  () => {
 
       const remainingProducts = await page.$$('.product');
       const [remainingProductEl] = remainingProducts;
-      
+
       const previousProductName = await productEl2.$eval(
         '.name span',
         (element) => element.innerHTML
@@ -196,7 +196,7 @@ describe('Ironhack Cart',  () => {
         '.name span',
         (element) => element.innerHTML
       );
-      
+
       expect(remainingProductEl).toBeTruthy();
       expect(previousProductName).toBe(remainingProductName);
       expect(remainingProducts.length).toBe(1);
@@ -207,9 +207,9 @@ describe('Ironhack Cart',  () => {
     beforeAll(async () => {
       page.on('console', (msg) => console.log(msg.text()));
     });
-  
+
     beforeEach(async () => {
-      await page.goto('http://localhost:4444', { waitUntil: "load"});
+      await page.goto('http://localhost:4444', { waitUntil: "load" });
       // Remove existing products
       await page.evaluate(() => {
         document
@@ -254,7 +254,7 @@ describe('Ironhack Cart',  () => {
 
       const productElement = await page.$('.product');
       expect(productElement).toBeTruthy();
-      
+
       const productRemoveButtonElement = await productElement.$('button');
       await productRemoveButtonElement.click();
       const removedProductElement = await page.$('.product');
