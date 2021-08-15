@@ -23,7 +23,6 @@ function calculateAll() {
 	return updateTotal
 }
 
-
 function removeProduct(event) {
 	const target = event.currentTarget;
 	const buttons = (document.querySelectorAll('.btn-remove'));
@@ -36,7 +35,6 @@ function removeProduct(event) {
 	calculateAll();
 }
 
-
 function deleteItem() {
 	const buttons = document.querySelectorAll('.btn-remove');
 
@@ -44,9 +42,6 @@ function deleteItem() {
 		button.addEventListener('click', removeProduct);
 	});
 }
-
-
-
 
 function createProduct() {
 	const tbody = document.querySelector('tbody')
