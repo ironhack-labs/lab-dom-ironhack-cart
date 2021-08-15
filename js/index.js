@@ -3,21 +3,46 @@
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
 
-  //... your code goes here
+
+  const price = product.querySelector('.price span');
+  const quantity = product.querySelector('.quantity input');
+
+  const subTotalProduct = price.textContent * quantity.value;
+  console.log(subTotalProduct);
+
+  product.querySelector('.subtotal').textContent = subTotalProduct;
+  return subTotalProduct;
+
 }
+
+
 
 function calculateAll() {
   // code in the following two lines is added just for testing purposes.
   // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
+  // const singleProduct = document.querySelector('.product');
+  // updateSubtotal(singleProduct);
   // end of test
 
   // ITERATION 2
-  //... your code goes here
+  //Su propósito es llamar a la función updateSubtotal con cada tr.product nodo DOM en el table#cart.
+
+  const variousProduct = document.getElementsByClassName('product');
+
+  let priceTotal = 0;
+
+  for (let i = 0; i < variousProduct.length; i++) {
+    priceTotal += updateSubtotal(variousProduct[i]);
+    console.log(variousProduct[i]);
+  }
 
   // ITERATION 3
-  //... your code goes here
+  //Al final de la calculateAll()función, reutilice el valor total que acaba de calcular en la iteración 
+  // anterior y actualice el elemento DOM correspondiente. Calcule el precio total de los productos en su carrito 
+  // sumando todos los subtotales devueltos por updateSubtotal()cuando se llamó con cada producto.
+
+  document.getElementById('total-value').textContent = priceTotal;
+  //return priceTotal;
 }
 
 // ITERATION 4
@@ -25,7 +50,11 @@ function calculateAll() {
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
+
   //... your code goes here
+
+
+
 }
 
 // ITERATION 5
@@ -39,4 +68,10 @@ window.addEventListener('load', () => {
   calculatePricesBtn.addEventListener('click', calculateAll);
 
   //... your code goes here
-});
+
+
+  const buttonDelete = document.querySelector('.btn btn-remove')
+  buttonDelete.addEventListener('click', removeProduct);
+
+})
+
