@@ -26,10 +26,10 @@ function calculateAll() {
 
   // ITERATION 2
 
+  let total = 0;
 
   let totalPrice = document.querySelectorAll('.product')
 
-  let total = 0;
 
   totalPrice.forEach(product => {
     updateSubtotal(product)
@@ -47,19 +47,6 @@ function calculateAll() {
 
 // ITERATION 4
 
-//function removeProduct(event) {
-  //const target = event.currentTarget;
-  //console.log('The target in remove is:', target);
-
-  //const target = event.currentTarget;
-
-  //const parent = target.parentNode;
-
-  //parent.removeChild(target.parentNode);
-
-  //if (document.querySelectorAll('.product').length > 0) calculateAll();
-
-//}
 
 
 
