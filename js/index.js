@@ -1,12 +1,26 @@
 // ITERATION 1
 
+const { product } = require("puppeteer");
+
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
+    
+  const price = product.querySelector('.price span');
+}   const quantity = product.querySelector('.quantity input');
 
-  //... your code goes here
-}
+    const subTotProduct = price.textContent * quantity.value;
+    console.log(price.textContent, quantity.value);
 
-function calculateAll() {
+    product.querySelector('.subtotal').textContent = subTotProduct:
+
+    console.log(subTotProduct);
+
+
+
+
+
+
+    function calculateAll() {
   // code in the following two lines is added just for testing purposes.
   // it runs when only iteration 1 is completed. at later point, it can be removed.
   const singleProduct = document.querySelector('.product');
