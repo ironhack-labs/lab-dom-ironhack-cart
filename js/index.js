@@ -52,8 +52,26 @@ function calculateAll() {
 // ITERATION 4
 function removeProduct(event) {
 	const target = event.currentTarget;
-	alert('The target in remove is:', target);
+
 	//... your code goes here
+	// selecionamos dos parent nodes (dos arriba)
+	//https://developer.mozilla.org/en-US/docs/Web/API/Node/parentElement
+	const parentOfParent = target.parentNode.parentNode;
+	let subTotalsTotal = 0;
+
+	//removemos a partir de dos parent arriba
+	parentOfParent.remove();
+
+	//modificamos el valor del total ya que han sido eliminado uno o varios productos
+	//pillamos por for todos los span del subtotal y lo sumamos, luego lo ponemos en el Total
+	const subTotal = document.querySelectorAll('.subtotal span');
+
+	for (let i = 0; i < subTotal.length; i++) {
+		subTotalsTotal += Number(subTotal[i].innerHTML);
+	}
+
+	//25+15+5+1 = 46
+	document.querySelector('#total-value span').textContent = Number(subTotalsTotal);
 }
 
 // ITERATION 5
@@ -67,4 +85,8 @@ window.addEventListener('load', () => {
 	calculatePricesBtn.addEventListener('click', calculateAll);
 
 	//... your code goes here
+	const removeProductBtn = document.getElementsByClassName('btn-remove');
+	for (let i = 0; i < removeProductBtn.length; i++) {
+		removeProductBtn[i].addEventListener('click', removeProduct);
+	}
 });
