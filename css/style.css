@@ -45,6 +45,7 @@ table input[type='number'] {
   border: 0;
   border-radius: 0.25em;
   cursor: pointer;
+  background-color: #dddddd;
 }
 
 .btn-success,
