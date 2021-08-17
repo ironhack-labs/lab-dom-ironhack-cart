@@ -4,6 +4,18 @@ function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
 
   //... your code goes here
+  const price = product.querySelector('.price span');
+  const quantity = product.querySelector('.quantity input')
+
+  const priceValue = price.innerText
+  // console.log(priceValue)
+  const qtyValue = quantity.value
+  // console.log(qtyValue)
+  const subTotal = qtyValue * priceValue
+  // console.log(subTotal)
+  let subTotalPlace = product.querySelector('.subtotal span')
+  subTotalPlace.innerText = subTotal
+  return subTotal
 }
 
 function calculateAll() {
@@ -15,9 +27,31 @@ function calculateAll() {
 
   // ITERATION 2
   //... your code goes here
+  let everyRow = document.getElementsByClassName('product')
+  // updateSubtotal(everyRow)
+  for (let i = 0; i < everyRow.length; i++) {
+    updateSubtotal(everyRow[i])
+    // console.log(everyRow[i])
+  }
+
 
   // ITERATION 3
   //... your code goes here
+  // let allTotal = document.querySelectorAll('.subtotal span')
+  // console.log(allTotal)
+  // let sumArray = []
+  // for (let i = 0; i < allTotal.length; i++) {
+  //   sumArray.push(allTotal[i].innerText)
+  // }
+  // console.log(sumArray)
+  // let newValue = sumArray.reduce(function (previousValue, currentValue) {
+  //     return parseInt(previousValue) + parseInt(currentValue)
+  //   },
+  //   0)
+  // console.log(newValue)
+  // const totalPricePlace = document.getElementById('total-value')
+  // totalPricePlace.innerText = `Total: $${newValue}`
+
 }
 
 // ITERATION 4
@@ -39,4 +73,6 @@ window.addEventListener('load', () => {
   calculatePricesBtn.addEventListener('click', calculateAll);
 
   //... your code goes here
+
+
 });
