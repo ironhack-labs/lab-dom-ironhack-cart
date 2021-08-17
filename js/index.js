@@ -75,9 +75,96 @@ function removeProduct(event) {
 }
 
 // ITERATION 5
-
-function createProduct() {
+function createProduct(event) {
 	//... your code goes here
+	const target = event.currentTarget;
+	//pillamos input1 para el producto y el input2 para el precio a poner al producto
+	const inputProductoNombre = document.querySelector('.create-product td input');
+	const inputProductoValor = document.querySelector(`.create-product td input[type='number']`);
+
+	//toFloat y input para evitar problemas del unit price del que tenemos que crear
+	let unitPrice = inputProductoValor.value;
+	let unitPriceFinal = parseFloat(unitPrice).toFixed(2);
+
+	//seleccionamos tbody de la tabla
+	const tableBody = document.querySelector('tbody');
+
+	//creamos TR dentro de TBODY
+	const newTrow = document.createElement('tr');
+	newTrow.classList = 'product';
+	tableBody.appendChild(newTrow);
+	//creamos TD dentro de TR dentro de TBODY
+	const newTd = document.createElement('td');
+	newTd.classList = 'name';
+	newTrow.appendChild(newTd);
+	//creamos span dentro de [...] con el nombre pillado del input nombreProducto
+	const newSpan = document.createElement('span');
+	newSpan.textContent = inputProductoNombre.value;
+	newTd.appendChild(newSpan);
+	//creamos td debajo tr primero para la cantidad
+	const newTdPrecio = document.createElement('td');
+	newTdPrecio.classList = 'price';
+	newTdPrecio.innerText = '$';
+	newTrow.appendChild(newTdPrecio);
+	//span dentro TD precio
+	const newSpanPrecio = document.createElement('span');
+	newSpanPrecio.textContent = unitPriceFinal;
+	newTdPrecio.appendChild(newSpanPrecio);
+	//otro td a colgar de TR para la cantidad
+	const newTdCantidad = document.createElement('td');
+	newTdCantidad.classList = 'quantity';
+	newTrow.appendChild(newTdCantidad);
+	//input con mucha mierda
+	const newQuantityInput = document.createElement('input');
+	newQuantityInput.type = 'number';
+	newQuantityInput.min = '0';
+	newQuantityInput.value = '0';
+	newQuantityInput.placeholder = 'Quantity';
+	newTdCantidad.appendChild(newQuantityInput);
+	//otro td a colgar en tr principal para subtotal
+	const newTdSubtotal = document.createElement('td');
+	newTdSubtotal.classList = 'subtotal';
+	newTdSubtotal.innerText = '$';
+	newTrow.appendChild(newTdSubtotal);
+	//span dentro TD subtotal
+	const newSpanSubTotal = document.createElement('span');
+	newSpanSubTotal.innerText = '0';
+	newTdSubtotal.appendChild(newSpanSubTotal);
+	//otro td a colgar en tr principal para el boton
+	const newTdButtonAction = document.createElement('td');
+	newTdButtonAction.classList = 'action';
+	newTrow.appendChild(newTdButtonAction);
+	//un botón dentro del td action
+	const newButton = document.createElement('button');
+	newButton.classList = 'btn btn-remove';
+	newButton.textContent = 'Remove';
+	newTdButtonAction.appendChild(newButton);
+
+	//testing para remover solo uno
+	//he estado haciendo varios testings, pero son la 1 y quiero sobar, así que repito código y tan ancho
+	const removeProductBtn = document.getElementsByClassName('btn-remove');
+	for (let i = 0; i < removeProductBtn.length; i++) {
+		removeProductBtn[i].addEventListener('click', removeProduct);
+	}
+
+	// esta mierda me destroza todos, en lugar del creado
+
+	//estructura a crear
+	/*
+	<tr class="product">
+		<td class="name">
+			<span>Ironhack Pomelo</span>
+		</td>
+		<td class="price">$<span>1.00</span></td>
+		<td class="quantity">
+			<input type="number" value="0" min="0" placeholder="Quantity" />
+		</td>
+		<td class="subtotal">$<span>0</span></td>
+		<td class="action">
+			<button class="btn btn-remove">Remove</button>
+		</td>
+	</tr>
+	*/
 }
 
 window.addEventListener('load', () => {
@@ -89,4 +176,7 @@ window.addEventListener('load', () => {
 	for (let i = 0; i < removeProductBtn.length; i++) {
 		removeProductBtn[i].addEventListener('click', removeProduct);
 	}
+
+	const createNewProduct = document.getElementById('create');
+	createNewProduct.addEventListener('click', createProduct);
 });
