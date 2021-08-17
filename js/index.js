@@ -63,7 +63,52 @@ function createProduct() {
   nameSpan.innerHTML = createName.value;
   //limpiar
   createName.value = '';
-  
+
+  //crear Price
+  let price = document.createElement('td')
+  price.setAttribute('class','price')
+  product.appendChild(price)
+  price.innerHTML='$'
+  let priceSpan = document.createElement('span')
+  price.appendChild(priceSpan)
+  //localizar
+  let createPrice = document.querySelector('#precio-entrada');
+  console.log(createPrice.value)
+  //assignar
+  priceSpan.innerHTML = createPrice.value;
+  //limpiar
+  createPrice.value = '';
+
+  //crear Quantity
+  let quantity = document.createElement('td')
+  quantity.setAttribute('class','quantity')
+  product.appendChild(quantity)
+  let quantityInput = document.createElement('input')
+  quantityInput.setAttribute('type','number')
+  quantityInput.setAttribute('value','0')
+  quantityInput.setAttribute('min','0')
+  quantityInput.setAttribute('placeholder','Quantity')
+  quantity.appendChild(quantityInput)
+
+  //crear Subtotal
+
+  let subtotal = document.createElement('td')
+  subtotal.setAttribute('class','subtotal')
+  product.appendChild(subtotal)
+  subtotal.innerHTML='$'
+  let subtotalSpan = document.createElement('span')
+  subtotal.appendChild(subtotalSpan)
+  subtotalSpan.innerHTML = '0'
+
+  //crear RemoveButton
+
+  let remove = document.createElement('td')
+  remove.setAttribute('class','subtotal')
+  product.appendChild(remove)
+  let removeBtn = document.createElement('button')
+  remove.appendChild(removeBtn)
+  removeBtn.setAttribute('class','btn btn-remove')
+  removeBtn.innerHTML = 'Remove'
 
   //... your code goes here
  
@@ -82,6 +127,16 @@ window.addEventListener('load', () => {
   for (let i=0; i<allRemoveButtons.length; i++){
     allRemoveButtons[i].addEventListener('click', removeProduct);
   }
+  //Evento con setTimeout para aplicar REMOVE a los nuevos productos
+  let createElementBtn = document.querySelector('#create')
+  createElementBtn.addEventListener('click', ()=>{setTimeout(()=>{
+    let allRemoveButtons = document.querySelectorAll(".btn-remove");
+    for (let i=0; i<allRemoveButtons.length; i++){
+      allRemoveButtons[i].addEventListener('click', removeProduct);
+    }
+  }),1000})
+  
+  //Evento para crear producto
   const addProductBtn = document.getElementById('create');
   addProductBtn.addEventListener('click', createProduct);
   }
