@@ -1,5 +1,7 @@
 // ITERATION 1
 
+//const { product } = require("puppeteer");
+
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
 
@@ -7,18 +9,17 @@ function updateSubtotal(product) {
   const price = product.querySelector('.price span');
   // console.log(price);
   const quantity = product.querySelector('.quantity input');
-  // console.log(quantity);
+
 
   // step 2: extract the specific values from the previous elements (price and quantity)
-  const priceValues = price.innerHTML;
-  // console.log(priceValues);
+  const priceValues = Number(price.innerHTML);
+  //console.log(typeof priceValues);
   const quantityValues = quantity.value;
-  // console.log(quantityValues);
 
   // step 3 + 4:get the subtotal element using DOM manipulation then calculate the subtotal price
-  let subtotalPrice = product.querySelector('.subtotal span');
-  subtotalPrice.innerHTML = priceValues * quantityValues;
-  // console.log(subtotalPrice);
+  let subtotalPrice = priceValues * quantityValues
+  product.querySelector('.subtotal span').innerHTML = subtotalPrice;
+  return subtotalPrice;
 }
 
 function calculateAll() {
@@ -27,22 +28,21 @@ function calculateAll() {
   // const singleProduct = document.querySelector('.product');
   // updateSubtotal(singleProduct);
   // end of test
-
+  let total = 0;
+  
   // ITERATION 2
   const allProducts = document.getElementsByClassName('product');
-  // console.log(allProducts); <- getElementsByClassName gave us an HTMLCollection we need to turn it into an array
   const allProductsArr = Array.from(allProducts);
-  // console.log(allProductsArr);
-  allProductsArr.forEach(function(product) {
-    updateSubtotal(product);
-  })
 
+ 
+  allProductsArr.forEach(function(product) {
+    total += updateSubtotal(product); 
+  })
 
   // ITERATION 3
   //get the totalPrice which is the sum of all subtotalPrices
-  const totalPrice = document.querySelector('.total-value span');
-  // console.log(totalPrice);
-  
+  document.querySelector('#total-value span').innerHTML = total;
+
 }
 
 // ITERATION 4
