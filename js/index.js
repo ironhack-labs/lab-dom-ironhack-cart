@@ -25,14 +25,30 @@ function calculateAll() {
   // ... your code goes here
   const allProducts = document.getElementsByClassName('product')
 
-  for (index of allProducts) {
-    updateSubtotal(index)
+  for (let i = 0; i < allProducts.length; i++) {
+    updateSubtotal(allProducts[i])
   }
+
+  // }
 
   // ITERATION 3
   //... your code goes here
+  let allSubTotals = document.querySelectorAll('.subtotal span')
 
+  let sum = 0
+
+  for (let i = 0; i < allSubTotals.length; i++) {
+    sum += parseInt(allSubTotals[i].innerText)
+  }
+
+  const totalPrice = document.getElementById('total-value')
+
+  totalPrice.innerText = `Total: $${sum}`
 }
+
+
+
+
 
 // ITERATION 4
 
