@@ -28,14 +28,13 @@
         </td>
         <td class="price">$<span>25.00</span></td>
         <td class="quantity">
-          <input onchange="calculateAll(this.value)" type="number"  value="0" min="0" placeholder="Quantity" />
+          <input onchange="calculateAll(this.value)" type="number" value="0" min="0" placeholder="Quantity" />
         </td>
         <td class="subtotal">$<span>0</span></td>
         <td class="action">
           <button class="btn btn-remove">Remove</button>
         </td>
       </tr>
-
 
       <tr class="product">
         <td class="name">
@@ -45,7 +44,7 @@
           $<span>12.50</span>
         </td>
         <td class="quantity">
-          <input onchange="calculateAll(this.value)" type="number"  value="0" min="0" placeholder="Quantity" />
+          <input onchange="calculateAll(this.value)" type="number" value="0" min="0" placeholder="Quantity" />
         </td>
         <td class="subtotal">$<span>0</span></td>
         <td class="action">
@@ -59,21 +58,21 @@
 
     <tfoot>
       <tr class="create-product">
-          <td>
-            <input class="product-name" type="text" placeholder="Product Name" />
-          </td>
-          <td>
-            <input class="new-item-price" type="number" min="0" value="0" placeholder="Product Price" />
-          </td>
-          <td></td>
-          <td></td>
-          <td>
-            <button onclick="createProduct()" id="create" class="btn">Create Product</button>
-          </td>
-        </tr>
+        <td>
+          <input class="product-name" type="text" placeholder="Product Name" />
+        </td>
+        <td>
+          <input class="new-item-price" type="number" min="0" value="0" placeholder="Product Price" />
+        </td>
+        <td></td>
+        <td></td>
+        <td>
+          <button onclick="createProduct()" id="create" class="btn">Create Product</button>
+        </td>
+      </tr>
     </tfoot>
-  
-  
+
+
   </table>
   <p class="calculate-total">
     <button id="calculate" class="btn btn-success">Calculate Prices</button>
