@@ -53,7 +53,7 @@ const removeButtons = document.querySelectorAll('.btn-remove');
 function createProduct() {
   const createInput = document.querySelector('#cart > tfoot > tr > td:nth-child(1) > input').value;
   const createUnitPrice = document.querySelector('#cart > tfoot > tr > td:nth-child(2) > input').value;
-  const 
+  const; 
 }
 
 window.addEventListener('load', () => {
