@@ -17,7 +17,6 @@ function calculateAll() {
   // it runs when only iteration 1 is completed. at later point, it can be removed.
   //const singleProduct = document.querySelector('.product');
   //updateSubtotal(singleProduct);
-  alert("pressed");
   // end of test
 
 
@@ -50,8 +49,35 @@ function removeProduct(event) {
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
-}
+  const createRow = document.querySelector('.create-product');
+  let newProdNameInput = createRow.querySelector('input');
+  let newProdNameValue = new newProdNameInput.value;
+  let newProdPriceInput = createRow.querySelector("input[type='number]");
+  let newProdPriceValue = Number(newProdPriceInput.valueAsNumber).toFixed(2);
+
+  const newTableRow = document.createElement('tr');
+  newTableRow.className = 'product';
+  newTableRow.innerHTML = `
+  <td class="name">
+    <span>${newProdNameValue}</span>
+  </td>
+  <td class="price">$<span>${newProdPriceValue}</span></td>
+  <td class="quantity">
+    <input type="number" value="0" min="0" placeholder="Quantity" />
+  </td>
+  <td>class="subtotal">$<span>0</span></td>
+  <td class="action">
+    <button class="btn btn-remove">Remove</>
+  </td>
+  `;
+
+  const parent = document.querySelector('#cart tbody');
+
+  parent.appendChild(newTableRow);
+
+
+const removeBtn = newTableRow.querySelector('.btn-remove')
+removeBtn.addEventListener('click', removeProduct)}
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
