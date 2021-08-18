@@ -77,7 +77,7 @@ function createProduct() {
   product[0].value = '';
   product[1].value = 0;
 
-// Aqui habria que reiniciar los eventlistener?
+// Read this : https://ultimatecourses.com/blog/attaching-event-handlers-to-dynamically-created-javascript-elements
 
   /*
   PORQUE NO FUNCIONAN LOS DOS PRIMEROS?
@@ -103,20 +103,26 @@ function createProduct() {
   parent.appendChild(newProduct);
 
   */
-
 }
 
-window.addEventListener('load', () => {
+
+function callback () {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
   //start with querying the document for all "Remove" buttons, 
+
+  //read this: https://www.kirupa.com/html5/handling_events_for_many_elements.htm 
+  //and change this!
+  
   let allRemoveButtons = document.querySelectorAll (".btn-remove");
-  //loop through them, and add a click event listener to each, 
-  //passing a named function removeProduct as the callback argument.
   for (let i=0; i<allRemoveButtons.length; i++){
     allRemoveButtons[i].addEventListener('click', removeProduct);
   }
+
   const addProductBtn = document.getElementById('create');
   addProductBtn.addEventListener('click', createProduct);
   }
-);
+
+window.addEventListener('load', callback);
+
+window.addEventListener ('click', callback);
