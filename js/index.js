@@ -5,7 +5,7 @@ function updateSubtotal(product) {
   let price = product.querySelector('.price span').innerText;
   let quantity = product.querySelector('.quantity input').value;
   //Number () convierte a float --> comprobar si es un numero
-  let subtotalPrice = Number(price) * Number(quantity);
+  let subtotalPrice = Math.floor((Number(price) * Number(quantity))*100)/100;
   subtotal = product.querySelector('.subtotal span');
   subtotal.innerHTML = subtotalPrice;
   return (subtotalPrice);
@@ -19,9 +19,10 @@ function calculateAll() {
   // end of test
   // ITERATION 2
   let absoluteTotal = 0;
-  let products = document.getElementsByClassName('product');
+  let products = document.querySelectorAll('.product');
   for (let i=0; i<products.length; i++){
     absoluteTotal += updateSubtotal(products[i]);
+  // ITERATION 3
     let cartTotal = document.querySelector('#total-value span');
     cartTotal.innerHTML = absoluteTotal;
   }
@@ -38,10 +39,8 @@ function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
   //... your code goes here
-  let td = target.parentNode;
-  let tr = td.parentNode;
-  let tbody = tr.parentNode;
-  tbody.removeChild(tr);
+  let parent = target.parentNode.parentNode
+  parent.remove();
 }
 
 // ITERATION 5
@@ -111,33 +110,25 @@ function createProduct() {
   removeBtn.innerHTML = 'Remove'
 
   //... your code goes here
- 
-
-  
 
 }
 
-window.addEventListener('load', () => {
+
+  
+function callback() {
+  //Evento para retirar calcular total
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
-  //start with querying the document for all "Remove" buttons, 
-  let allRemoveButtons = document.querySelectorAll (".btn-remove");
-  //loop through them, and add a click event listener to each, 
-  //passing a named function removeProduct as the callback argument.
+  //Evento para retirar producto
+  let allRemoveButtons = document.querySelectorAll(".btn-remove");
   for (let i=0; i<allRemoveButtons.length; i++){
     allRemoveButtons[i].addEventListener('click', removeProduct);
-  }
-  //Evento con setTimeout para aplicar REMOVE a los nuevos productos
-  let createElementBtn = document.querySelector('#create')
-  createElementBtn.addEventListener('click', ()=>{setTimeout(()=>{
-    let allRemoveButtons = document.querySelectorAll(".btn-remove");
-    for (let i=0; i<allRemoveButtons.length; i++){
-      allRemoveButtons[i].addEventListener('click', removeProduct);
-    }
-  }),1000})
-  
+  };
   //Evento para crear producto
-  const addProductBtn = document.getElementById('create');
+  const addProductBtn = document.querySelector('.create-product .btn');
   addProductBtn.addEventListener('click', createProduct);
-  }
-);
+};
+
+window.addEventListener('load', callback);
+
+window.addEventListener('click', callback);
