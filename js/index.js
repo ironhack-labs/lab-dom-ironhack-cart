@@ -15,6 +15,8 @@ function updateSubtotal(product) {
 }
 
 function calculateAll() {
+  // ITERATION 2
+
   let precioTotal = 0;
 
   let products = document.getElementsByClassName('product');
@@ -22,6 +24,8 @@ function calculateAll() {
   for (let i = 0; i < products.length; i++) {
     precioTotal += updateSubtotal(products[i]);
   }
+
+  // ITERATION 3
 
   let totalHtml = document.querySelector('#total-value span');
   totalHtml.innerHTML = precioTotal;
