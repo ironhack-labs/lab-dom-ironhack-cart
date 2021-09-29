@@ -21,19 +21,23 @@ function updateSubtotal(product) {
 function calculateAll() {
   // code in the following two lines is added just for testing purposes.
   // it runs when only iteration 1 is completed. at later point, it can be removed
+  let totalPrice = 0;
   const singleProduct = document.querySelector('.product'); //qs gives me the first element
   updateSubtotal(singleProduct); //the span in the class price
-  
+
   // to do search inside the product
   // ITERATION 2
   // create a list, iterate through the list, iterate
   const productList = document.querySelectorAll(".product")
   productList.forEach(function (element){
-    return updateSubtotal(element);
-    r
+    const subtotalForThisProduct = updateSubtotal(element);
+    totalPrice = totalPrice + subtotalForThisProduct;
   })
+  console.log (totalPrice);
   // ITERATION 3
   //... your code goes here
+  const totalElm = document.querySelector('#total-value span'); //We need the hashtag to access the id
+  totalElm.innerHTML = totalPrice;
 }
 
 // ITERATION 4
@@ -52,7 +56,7 @@ function createProduct() {
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
-  calculatePricesBtn.addEventListener('click', calculateAll );
+  calculatePricesBtn.addEventListener('click', calculateAll);
 
   //...whenever there is a click event do something. the name of the functioncalls the functionction with paraentesis represents th result of the fucntion
 });
