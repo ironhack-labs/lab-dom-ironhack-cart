@@ -3,9 +3,9 @@
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
   //reading the information from the HTML
-  const priceElm = document.querySelector('.price span');
-  const quantityElm = document.querySelector('.quantity input'); //the span in the class price
-  const subtotalElm = document.querySelector('.subtotal span'); 
+  const priceElm = product.querySelector('.price span'); //we will search it in the product class
+  const quantityElm = product.querySelector('.quantity input'); //the span in the class price
+  const subtotalElm = product.querySelector('.subtotal span'); 
 
   //Doing the calculations
   const price = parseFloat(priceElm.innerHTML); //get only the value
@@ -13,22 +13,25 @@ function updateSubtotal(product) {
   const subtotal = price * quantity;
   console.log (subtotal)
 
+  //update dom
   subtotalElm.innerHTML = subtotal; //to assign that element to the value
   return subtotal;
 }
 
 function calculateAll() {
   // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-
+  // it runs when only iteration 1 is completed. at later point, it can be removed
   const singleProduct = document.querySelector('.product'); //qs gives me the first element
   updateSubtotal(singleProduct); //the span in the class price
-
   
   // to do search inside the product
   // ITERATION 2
-  //... your code goes here
-  
+  // create a list, iterate through the list, iterate
+  const productList = document.querySelectorAll(".product")
+  productList.forEach(function (element){
+    return updateSubtotal(element);
+    r
+  })
   // ITERATION 3
   //... your code goes here
 }
