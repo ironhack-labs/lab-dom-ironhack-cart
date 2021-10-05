@@ -19,14 +19,15 @@ function calculateAll() {
   // const singleProduct = document.querySelector('.product');
   // updateSubtotal(singleProduct);
   // end of test
-
+  let totalValue = 0
   // ITERATION 2
   const cartItems = document.querySelectorAll("#cart .product")
   cartItems.forEach(element => {
-    updateSubtotal(element)
+    totalValue += updateSubtotal(element)
   });
   // ITERATION 3
-  //... your code goes here
+  const total = document.querySelector("#total-value span")
+  total.textContent = totalValue
 }
 
 // ITERATION 4
