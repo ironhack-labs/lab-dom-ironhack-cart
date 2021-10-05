@@ -66,87 +66,35 @@ function createProduct() {
   // get the values of the new product --> name and price
   const nameRaw = document.querySelector(".create-product input[type='text']").value;
   const priceRaw = document.querySelector(".create-product input[type='number']").value;
-  // Quality values
+  // String card
   const productName = `${nameRaw.slice(0,1).toUpperCase()}${nameRaw.slice(1)}`;
   const price = Number(priceRaw).toFixed(2);
+  //option 1
+  const productCard = `
+    <tr class="product">
+      <td class="name">
+        <span>${productName}</span>
+      </td>
+      <td class="price">$<span>${price}</span></td>
+      <td class="quantity">
+       <input type="number" value="0" min="0" placeholder="Quantity" />
+      </td>
+      <td class="subtotal">$<span>0</span></td>
+      <td class="action">
+        <button class="btn btn-remove">Remove</button>
+      </td>
+    </tr>
+  `;
   
-  // parent container
-  const tbody = document.querySelector("tbody");
+    // select the parent to add the product created
+    const parentToInsertCard = document.querySelector('#cart tbody');
+    // el.insertAdjacentHTML(position, text)
+    // Parses string cart to --> HTML and inserted into the tree
+    parentToInsertCard.insertAdjacentHTML('beforeend', productCard);
 
-  // Create elements
-  const trProduct = document.createElement("tr");
-  trProduct.classList.add("product");
-  
-  // child 1
-  const tdName = document.createElement("td");
-  tdName.classList.add("name");
- 
-  const spanName = document.createElement("span");
-  spanName.innerText = productName;
-  tdName.appendChild(spanName);
-
-  // child 2
-  const tdPrice = document.createElement("td");
-  tdPrice.classList.add("price");
-  tdPrice.innerText = "$";
-
-  const spanPrice = document.createElement("span");
-  spanPrice.innerText = price;
- 
-  tdPrice.appendChild(spanPrice);  // append span
-
-  // child 3 
-  const tdQuantity = document.createElement("td");
-  tdQuantity.classList.add("quantity");
-
-  const inputQuantity = document.createElement("input");
-  inputQuantity.type = "number";
-  inputQuantity.value = 0;
-  inputQuantity.min = 0;
-  inputQuantity.placeholder = "Quantity";
-  tdQuantity.appendChild(inputQuantity); // append input
-
-  // child 4
-  const tdSubtotal = document.createElement("td");
-  tdSubtotal.classList.add("subtotal");
-  tdSubtotal.innerText = '$';
-
-  const spanSubtotal = document.createElement("span");
-  spanSubtotal.innerText = 0;
-  tdSubtotal.appendChild(spanSubtotal); // append span
-
-  // child 5 
-  const tdAction = document.createElement("td");
-  tdAction.classList.add("action");
-
-  const actionBtn = document.createElement("button");
-  actionBtn.classList.add("btn", "btn-remove");
-  actionBtn.innerText = "Remove";
-
-  tdAction.appendChild(actionBtn); // append button
-  
-  // append child 1
-  trProduct.appendChild(tdName);
-  // append child 2
-  trProduct.appendChild(tdPrice);
-  // append child 3
-  trProduct.appendChild(tdQuantity);
-  // append child 4
-  trProduct.appendChild(tdSubtotal);
-  // append child 5
-  trProduct.appendChild(tdAction);
-
-  // add event listener
-  trProduct.querySelector(".btn-remove").addEventListener("click", (event) => {
-   removeProduct(event);
-  });
-
-  // append tbody
-  tbody.appendChild(trProduct);
-
-  document.querySelector(".create-product input[type='text']").value = '';
-  document.querySelector(".create-product input[type='number']").value = '';
-}
+    document.querySelector(".create-product input[type='text']").value = '';
+    document.querySelector(".create-product input[type='number']").value = '';
+  };
 
 // Add event listener to remove buttons
 // const addListenerToRemoveBtn = () => {
