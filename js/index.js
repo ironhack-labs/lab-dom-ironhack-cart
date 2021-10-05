@@ -14,7 +14,7 @@ function calculateAll() {
   // end of test
 
   // ITERATION 2
-  //... your code goes here
+  //... your code goes here 
 
   // ITERATION 3
   //... your code goes here
