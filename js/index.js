@@ -31,28 +31,49 @@ function calculateAll() {
 // ITERATION 4
 
 function removeProduct(event) {
-  const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  target.closest('tr').remove();
-  calculateAll();
+  if (event.target.classList.contains('btn-remove')) {
+    const target = event.target;
+    console.log('The target in remove is:', target);
+    target.closest('tr').remove();
+    calculateAll();
+  }
 }
 
 // ITERATION 5
 
 function createProduct() {
-  const newProduct = document.querySelector('.product').cloneNode(true);
+  // SOLUTION 1
+  // const newProduct = document.querySelector('.product').cloneNode(true);
+  // const createProduct = document.querySelector('.create-product');
+  // const name = createProduct.querySelector('input[type="text"]').value;
+  // newProduct.querySelector('.name span').textContent = name;
+  // const price = createProduct.querySelector('input[type="number"]').value;
+  // newProduct.querySelector('.price span').textContent = price.toString();
+  // newProduct.querySelector('.quantity input').value = '0';
+  // newProduct.querySelector('.subtotal span').textContent = '0';
+  // document.querySelector('tbody').append(newProduct);
+  // createProduct.querySelector('input[type="text"]').value = '';
+  // createProduct.querySelector('input[type="number"]').value = 0;
+  //SOLUTION 2
   const createProduct = document.querySelector('.create-product');
   const name = createProduct.querySelector('input[type="text"]').value;
-  newProduct.querySelector('.name span').textContent = name;
   const price = createProduct.querySelector('input[type="number"]').value;
-  newProduct.querySelector('.price span').textContent = price.toString();
-  newProduct.querySelector('.quantity input').value = '0';
-  newProduct.querySelector('.subtotal span').textContent = '0';
-  newProduct
-    .querySelector('.btn-remove')
-    .addEventListener('click', removeProduct);
-
-  document.querySelector('tbody').append(newProduct);
+  const html = `<tr class="product">
+    <td class="name">
+      <span>${name}</span>
+    </td>
+    <td class="price">$<span>${price}</span></td>
+    <td class="quantity">
+      <input type="number" value="0" min="0" placeholder="Quantity" />
+    </td>
+    <td class="subtotal">$<span>0</span></td>
+    <td class="action">
+      <button class="btn btn-remove btn-remove-new">Remove</button>
+    </td>
+  </tr>`;
+  const element = document
+    .querySelector('tbody')
+    .insertAdjacentHTML('beforeend', html);
   createProduct.querySelector('input[type="text"]').value = '';
   createProduct.querySelector('input[type="number"]').value = 0;
 }
@@ -60,9 +81,7 @@ function createProduct() {
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
-  const removeBtn = document.querySelectorAll('.btn-remove');
-  [...removeBtn].forEach((button) =>
-    button.addEventListener('click', removeProduct)
-  );
+  const productTable = document.querySelector('tbody');
+  productTable.addEventListener('click', removeProduct);
   document.querySelector('#create').addEventListener('click', createProduct);
 });
