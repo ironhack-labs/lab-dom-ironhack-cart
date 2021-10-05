@@ -7,10 +7,10 @@ function updateSubtotal(product) {
   const quantity = product.querySelector(".quantity input")
   const priceValue = price.innerHTML
   const quantityValue = quantity.value
-  const prodcutSubTotal = priceValue*quantityValue
+  const productSubTotal = priceValue*quantityValue
   const subtotal = product.querySelector(".subtotal span")
-  subtotal.textContent = prodcutSubTotal
-  return prodcutSubTotal
+  subtotal.textContent = productSubTotal
+  return productSubTotal
 }
 
 function calculateAll() {
