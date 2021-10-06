@@ -45,6 +45,24 @@ function removeProduct(event) {
 
 function createProduct() {
   //... your code goes here
+  //get values
+  newProductName = document.querySelector(".create-product input[type=text]")
+  newProductPrice = document.querySelector(".create-product input[type=number]")
+  //clone element - this is bad, if there is no element left anymore
+  const newProductElement = document.querySelector(".product").cloneNode(true)
+  //set new Values to the clone
+  newProductElement.querySelector(".name").textContent = newProductName.value
+  newProductElement.querySelector(".price span").textContent = newProductPrice.value
+  //add remove eventListener
+  newRemoveButton = newProductElement.querySelector(".product .btn-remove")
+  newRemoveButton.addEventListener("click", removeProduct)
+  //get tbody of document to append to
+  const body = document.querySelector("tbody")
+  //append new element to tablebody
+  body.appendChild(newProductElement)
+  //clear inputs
+  newProductName.value = ""
+  newProductPrice.value = ""
 }
 
 window.addEventListener('load', () => {
@@ -53,8 +71,12 @@ window.addEventListener('load', () => {
 
   //remove Button
   const removeButtons = document.querySelectorAll(".product .btn-remove")
-  console.log(removeButtons)
+  //console.log(removeButtons)
   removeButtons.forEach((removeButton) => {removeButton.addEventListener("click", removeProduct)
   })
+
+  // create button
+  const createButton = document.querySelector("#create")
+  createButton.addEventListener("click", createProduct)
   
 });
