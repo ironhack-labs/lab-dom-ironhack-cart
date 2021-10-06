@@ -62,7 +62,7 @@ function createProduct() {
   body.appendChild(newProductElement)
   //clear inputs
   newProductName.value = ""
-  newProductPrice.value = ""
+  newProductPrice.value = "" //test
 }
 
 window.addEventListener('load', () => {
