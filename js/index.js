@@ -53,6 +53,7 @@ function createProduct() {
   //set new Values to the clone
   newProductElement.querySelector(".name").textContent = newProductName.value
   newProductElement.querySelector(".price span").textContent = newProductPrice.value
+  newProductElement.querySelector(".subtotal span").textContent = 0
   //add remove eventListener
   newRemoveButton = newProductElement.querySelector(".product .btn-remove")
   newRemoveButton.addEventListener("click", removeProduct)
