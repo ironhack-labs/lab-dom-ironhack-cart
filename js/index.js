@@ -48,14 +48,23 @@ function createProduct() {
   //get values
   newProductName = document.querySelector(".create-product input[type=text]")
   newProductPrice = document.querySelector(".create-product input[type=number]")
-  //clone element - this is bad, if there is no element left anymore
-  const newProductElement = document.querySelector(".product").cloneNode(true)
-  //set new Values to the clone
-  newProductElement.querySelector(".name").textContent = newProductName.value
-  newProductElement.querySelector(".price span").textContent = newProductPrice.value
-  newProductElement.querySelector(".subtotal span").textContent = 0
-  //add remove eventListener
-  newRemoveButton = newProductElement.querySelector(".product .btn-remove")
+  //create element
+  const newProductElement = document.createElement("tr")
+  newProductElement.className = 'product';
+    newProductElement.innerHTML = `
+    <td class="name">
+      <span>${newProductName.value}</span>
+    </td>
+    <td class="price">$<span>${Number(newProductPrice.value).toFixed(2)}</span></td>
+    <td class="quantity">
+      <input type="number" value="0" min="0" placeholder="Quantity" />
+    </td>
+    <td class="subtotal">$<span>0</span></td>
+    <td class="action">
+      <button class="btn btn-remove">Remove</button>
+    </td>`
+  //add removeButton eventListener
+  let newRemoveButton = newProductElement.querySelector(".btn-remove")
   newRemoveButton.addEventListener("click", removeProduct)
   //get tbody of document to append to
   const body = document.querySelector("tbody")
