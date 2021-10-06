@@ -27,11 +27,13 @@ function calculateAll() {
   // ITERATION 3
   //...
   // transform nodelist into array to access array methods
-  const products = Array.from(document.querySelectorAll('.product')); // nodelist to array
+  //const products = Array.from(document.querySelectorAll('.product')); // nodelist to array
+  const products = document.querySelectorAll('.product'); // nodelist to array
+
   //const products = document.querySelectorAll('.product'); // nodelist to array
   // Option 1
   let total = 0;
-  products.forEach( product => {
+  [...products].forEach( product => {
     total += updateSubtotal(product);
   });
   // Option 2
