@@ -46,6 +46,8 @@ function calculateAll() {
 
 // ITERATION 4
 function removeProduct(event) {
+  debugger
+  event.stopPropagation(); // stop bubbling
   //const target = event.currentTarget;
   //console.log('The target in remove is:', target);
 
@@ -92,6 +94,7 @@ function createProduct() {
     const parentToInsertCard = document.querySelector('#cart tbody');
     // el.insertAdjacentHTML(position, text)
     // Parses string cart to --> HTML and inserted into the tree
+    console.log()
     parentToInsertCard.insertAdjacentHTML('beforeend', productCard);
 
     document.querySelector(".create-product input[type='text']").value = '';
@@ -117,7 +120,9 @@ window.addEventListener('load', () => {
 
   // Add listener to remove buttons
   const productCard = document.querySelector('tbody');
-  productCard.addEventListener('click', removeProduct);
+  productCard.addEventListener('click', removeProduct, {
+    capture: true
+  });
   // const removeBtnCollection = document.querySelectorAll('.btn-remove');
   // // iterate to add listener to each button
   // removeBtnCollection.forEach(removeBtnItem => {
