@@ -28,8 +28,11 @@ function calculateAll() {
   })
 
   // ITERATION 3
-  //... your code goes here
+
+  const total = document.querySelector("#total-value span")
+  total.textContent = calculateAll
 }
+
 
 // ITERATION 4
 
