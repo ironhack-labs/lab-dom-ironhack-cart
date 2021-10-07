@@ -38,9 +38,12 @@ function calculateAll() {
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
+  console.log(target);
+  // console.log('The target in remove is:', target);
   productToRemove = document.querySelector('.product');
-  target.parentNode.parentNode.parentNode.removeChild(productToRemove);
+  target.parentNode.parentNode.parentNode.removeChild(
+    target.parentNode.parentNode
+  );
   calculateAll();
 }
 
@@ -62,15 +65,21 @@ function createProduct() {
   <td class="action">
     <button class="btn btn-remove">Remove</button>
   </td>`;
+  scanRemoveButtons();
+}
+
+function scanRemoveButtons() {
+  let removeSubtotalBtn = document.querySelectorAll('.btn-remove');
+  console.log(removeSubtotalBtn);
+  removeSubtotalBtn.forEach((btn) => {
+    btn.addEventListener('click', removeProduct);
+  });
 }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
-  const removeSubtotalBtn = document.querySelectorAll('.btn-remove');
-  removeSubtotalBtn.forEach((btn) => {
-    btn.addEventListener('click', removeProduct);
-  });
   const createBtn = document.getElementById('create');
   createBtn.addEventListener('click', createProduct);
+  scanRemoveButtons();
 });
