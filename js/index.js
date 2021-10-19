@@ -1,16 +1,21 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
+ // alert('Calculate Prices clicked!');
 
-  //... your code goes here
+  const $price = document.querySelector(".price span").innerText; // Selección del texto correspondiente al nodo de precio
+  const $quantity = document.querySelector(".quantity input").value;// Selección del texto correspondiente al nodo de cantidad
+  const $subtotal = document.querySelector(".subtotal span"); // Selección del texto correspondiente al nodo se subtotal
+  const subTotalCalc = $price * $quantity; // calculo del subtotal (precio * cantidad)
+  return $subtotal.innerHTML = subTotalCalc; //retorno del subtotal y actualización del dom
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
+  //update subtotals of all products
+
+  const $allProducts = document.getElementsByClassName('product'); 
+  updateSubtotal($allProducts)
+
   // end of test
 
   // ITERATION 2
