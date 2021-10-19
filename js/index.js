@@ -1,28 +1,27 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
- // alert('Calculate Prices clicked!');
-
-  const $price = document.querySelector(".price span").innerText; // Selección del texto correspondiente al nodo de precio
-  const $quantity = document.querySelector(".quantity input").value;// Selección del texto correspondiente al nodo de cantidad
-  const $subtotal = document.querySelector(".subtotal span"); // Selección del texto correspondiente al nodo se subtotal
-  const subTotalCalc = $price * $quantity; // calculo del subtotal (precio * cantidad)
-  return $subtotal.innerHTML = subTotalCalc; //retorno del subtotal y actualización del dom
+  const priceElement = product.querySelector(".price span");
+  const quantityElement = product.querySelector(".quantity input");
+  const price = parseFloat(priceElement.innerText);
+  console.log(price);
+  const quantity = quantityElement.valueAsNumber;
+  const subTotal = price * quantity;
+  const subTotalElement = product.querySelector(".subtotal span");
+  subTotalElement.innerText = subTotal;
+  return subTotal;
 }
+  
 
 function calculateAll() {
   //update subtotals of all products
-
-  const $allProducts = document.getElementsByClassName('product'); 
-  updateSubtotal($allProducts)
-
-  // end of test
-
-  // ITERATION 2
-  //... your code goes here
-
-  // ITERATION 3
-  //... your code goes here
+  const cartRows = document.getElementsByClassName("product");
+  let totalValue = 0;
+  for(let value of cartRows){
+   totalValue += updateSubtotal(value)
+ }
+ console.log(totalValue);
+ document.querySelector("#total-value span").innerHTML = totalValue;
 }
 
 // ITERATION 4
