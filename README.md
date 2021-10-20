@@ -107,7 +107,8 @@ window.addEventListener('load', () => {
 
 Don't get confused with [.addEventListener()](https://www.w3schools.com/jsref/met_document_addeventlistener.asp) method, it does exactly the same as [onclick()](https://www.w3schools.com/tags/ev_onclick.asp), with some differences about which you can find more [here](https://stackoverflow.com/questions/6348494/addeventlistener-vs-onclick). In this lab, you can use whichever method you prefer.
 
-Ok, let's move to the `calculateAll()` function. In this function, we used `querySelector` to get the first (and currently the only) DOM element with the class `product`. This element (which we saved in the variable named `singleProduct`) is passed as an argument to the `updateSubtotal()` function. As you can find in the comments, the provided code snippet is used only for testing purposes within iteration 1.
+Ok, let's move to the `calculateAll()` function. In this function, we used `querySelector` to get the first (and currently the only) DOM element with the class `product`. This
+ element (which we saved in the variable named `singleProduct`) is passed as an argument to the `updateSubtotal()` function. As you can find in the comments, the provided code snippet is used only for testing purposes within iteration 1.
 
 ```js
 function calculateAll() {
