@@ -32,24 +32,52 @@ function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
   //... your code goes here
-  let parentTr = target.closest('tr');
-  console.log({ parentTr });
-  document.querySelector('#cart').remove(parentTr);
+  let parentTr = target.parentNode.parentNode;
+
+  console.log(parentTr);
+  document.querySelector('#cart tbody').removeChild(parentTr);
 }
 
 // ITERATION 5
 
-function createProduct() {
+function createProduct(event) {
   //... your code goes here
+  const target = event.currentTarget.parentNode.parentNode;
+
+  let productNameTag = document.getElementById('nameInput');
+  let productPriceTag = document.getElementById('priceInput');
+  console.log('name tag: ', productNameTag);
+  console.log('price tag', productPriceTag);
+
+  let emptyTr = document.querySelector('.product').cloneNode(true);
+  emptyTr.getElementsByTagName(
+    'td'
+  )[0].innerHTML = `<span>${productNameTag.value}</span>`;
+  emptyTr.getElementsByTagName('td')[1].innerHTML = `$ <span>${parseFloat(
+    productPriceTag.value
+  ).toFixed(2)}</span>`;
+  emptyTr.getElementsByTagName('td')[2].innerHTML =
+    '<input id="inputQuantity" type="number" value="0" min="0" placeholder="Quantity" />';
+  emptyTr.getElementsByTagName('td')[3].innerHTML = '$<span>0</span>';
+  document
+    .querySelector('#cart')
+    .getElementsByTagName('tbody')[0]
+    .appendChild(emptyTr);
+  addlisteners();
+  calculateAll();
 }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
+  //... your code goes here
+  addlisteners();
+  let creatBtn = document.querySelector('#create');
+  creatBtn.addEventListener('click', createProduct);
+});
+let addlisteners = (_) => {
   let removeButtons = [...document.querySelectorAll('.btn-remove')];
   removeButtons.forEach((btn) => {
     btn.addEventListener('click', removeProduct);
   });
-
-  //... your code goes here
-});
+};
