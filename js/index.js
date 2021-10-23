@@ -78,6 +78,7 @@ function createProduct() {
   
 
   rowToClone.querySelector(".name span").innerHTML = newProductName;
+  rowToClone.querySelector(".price span").innerHTML = newProductPrice;
 
 
 }
