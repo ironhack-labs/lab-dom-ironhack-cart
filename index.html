@@ -19,35 +19,54 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="product">
-          <td class="name">
+        <tr class="product" id="trProduct">
+          <td class="name" id="nameSpan">
             <span>Ironhack Rubber Duck</span>
           </td>
-          <td class="price">$<span>25.00</span></td>
-          <td class="quantity">
+          <td class="price" id="priceSpan">$<span>25.00</span></td>
+          <td class="quantity" id="quantityInput">
             <input type="number" value="0" min="0" placeholder="Quantity" />
           </td>
           <td class="subtotal">$<span>0</span></td>
           <td class="action">
-            <button class="btn btn-remove">Remove</button>
+            <button id="delete" class="btn btn-remove">Remove</button>
+          </td>
+        </tr>
+        <tr class="product" id="trProduct">
+          <td class="name" id="nameSpan">
+            <span>Ironhack Rubber Duck</span>
+          </td>
+          <td class="price" id="priceSpan">$<span>25.00</span></td>
+          <td class="quantity" id="quantityInput">
+            <input type="number" value="0" min="0" placeholder="Quantity" />
+          </td>
+          <td class="subtotal">$<span>0</span></td>
+          <td class="action">
+            <button id="delete" class="btn btn-remove">Remove</button>
           </td>
         </tr>
         <!-- Iteration 2: Add more products here -->
       </tbody>
       <tfoot>
-        <!-- <tr class="create-product">
+        <tr class="create-product">
           <td>
-            <input type="text" placeholder="Product Name" />
+            <input type="text" placeholder="Product Name" id="nameInput" />
           </td>
           <td>
-            <input type="number" min="0" value="0" placeholder="Product Price" />
+            <input
+              type="number"
+              min="0"
+              value="0"
+              placeholder="Product Price"
+              id="priceInput"
+            />
           </td>
           <td></td>
           <td></td>
           <td>
             <button id="create" class="btn">Create Product</button>
           </td>
-        </tr> -->
+        </tr>
       </tfoot>
     </table>
     <p class="calculate-total">
