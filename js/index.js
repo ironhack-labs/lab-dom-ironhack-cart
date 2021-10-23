@@ -19,14 +19,6 @@ function updateSubtotal(product) {
 
 
 function calculateAll() {
-  /*
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
-  */
-  
   
   // ITERATION 2
   
@@ -68,8 +60,30 @@ function removeProduct(event) {
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  
+  
+  console.log("lol");
+
+  let newProductName = document.querySelector("#new-product-name").value;
+  console.log(newProductName);
+
+  let newProductPrice = document.querySelector("#new-product-price").value;
+  console.log(newProductPrice);
+  
+
+  let rowToClone = document.querySelector(".product").cloneNode(true);
+
+  //rowToClone.querySelector("td")[0].innerHTML = newProductName;
+  
+  
+
+
+
 }
+
+
+
+
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
@@ -79,4 +93,15 @@ window.addEventListener('load', () => {
   removeButtons.forEach(function(removeBtn){
     removeBtn.addEventListener('click', removeProduct);
   })
+
+  
+
 });
+
+
+window.addEventListener("load", () => {
+let createButtons = document.querySelectorAll("#create");
+  createButtons.forEach(function(createBtn){
+    createBtn.addEventListener('click', createProduct);
+  })
+})

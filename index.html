@@ -7,21 +7,22 @@
     <title>Ironhack Cart</title>
   </head>
   <body>
-    <h1>Ironhack Cart</h1>
+    <h1>La Llorería.dom</h1>
+    <h3>tu tienda oficial de sufrimiento online</h3>
     <table id="cart">
       <thead>
         <tr>
-          <th>Product Name</th>
-          <th>Unit Price</th>
-          <th>Quantity</th>
-          <th>Subtotal</th>
-          <th>Action</th>
+          <th>Lo que nadie quiere</th>
+          <th>Lo que vale</th>
+          <th>Los que te llevas</th>
+          <th>Lo que pagas</th>
+          <th>Esto hace cosas</th>
         </tr>
       </thead>
       <tbody>
         <tr class="product">
           <td class="name">
-            <span>Ironhack Rubber Duck</span>
+            <span>Frutos secos mojados by CSS</span>
           </td>
           <td class="price">$<span>25.00</span></td>
           <td class="quantity">
@@ -29,7 +30,7 @@
           </td>
           <td class="subtotal">$<span>0</span></td>
           <td class="action">
-            <button class="btn btn-remove">Remove</button>
+            <button class="btn btn-remove">A tomar por saco</button>
           </td>
         </tr>
 
@@ -38,38 +39,53 @@
           <td class="name">
             <span>Desesperación Enlatada by JavaScript</span>
           </td>
+          <td class="price">$<span>666</span></td>
+          <td class="quantity">
+            <input type="number" value="0" min="0" placeholder="Quantity" />
+          </td>
+          <td class="subtotal">$<span>0</span></td>
+          <td class="action">
+            <button class="btn btn-remove">A tomar por saco</button>
+          </td>
+        </tr>
+
+
+        <tr class="product">
+          <td class="name">
+            <span>Objeto acompañado de objeto con aderezo de objeto y nada que objetar</span>
+          </td>
           <td class="price">$<span>5.99</span></td>
           <td class="quantity">
             <input type="number" value="0" min="0" placeholder="Quantity" />
           </td>
           <td class="subtotal">$<span>0</span></td>
           <td class="action">
-            <button class="btn btn-remove">Remove</button>
+            <button class="btn btn-remove">A tomar por saco</button>
           </td>
         </tr>
 
         <!-- Iteration 2: Add more products here -->
       </tbody>
       <tfoot>
-        <!-- <tr class="create-product">
+        <tr class="create-product">
           <td>
-            <input type="text" placeholder="Product Name" />
+            <input id="new-product-name" type="text" placeholder="¿Te parece poco?" />
           </td>
           <td>
-            <input type="number" min="0" value="0" placeholder="Product Price" />
+            <input id="new-product-price" type="number" min="0" value="0" placeholder="Product Price" />
           </td>
           <td></td>
           <td></td>
           <td>
             <button id="create" class="btn">Create Product</button>
           </td>
-        </tr> -->
+        </tr>
       </tfoot>
     </table>
     <p class="calculate-total">
-      <button id="calculate" class="btn btn-success">Calculate Prices</button>
+      <button id="calculate" class="btn btn-success">No quieres saberlo...</button>
     </p>
-    <h2 id="total-value">Total: $<span>0</span></h2>
+    <h2 id="total-value">Sablazo: $<span>0</span></h2>
     <script type="text/javascript" src="./js/index.js"></script>
   </body>
 </html>
