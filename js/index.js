@@ -1,39 +1,34 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  const price = product.querySelector('.price span');
-  const quantity = product.querySelector('.quantity input');
-
-  console.log('Calculating subtotal, yey!');
-  let subtotalPrice = quantity.value * price.innerHTML;
+  
+  const price = product.querySelector('.price span').innerHTML;
+  const quantity = product.querySelector('.quantity input').value;
+  let subtotalPrice = quantity * price;
 
   const subtotal = product.querySelector('.subtotal span');
-
   subtotal.textContent = subtotalPrice;
 
-  //... your code goes here
+  console.log('subtotal iteration' + subtotalPrice)
+  
+  return subtotalPrice;
+
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  // const singleProduct = document.querySelector('.product');
-  // updateSubtotal(singleProduct);
-  // // end of test
-
   // ITERATION 2
-  //... your code goes here
+  const allProducts = document.getElementsByClassName('product');
+  let totalPrice= 0;
 
-  const products = product.getElementsByClassName(.product);
-  const quantity = products.length;
-
-  const subtotal = product.querySelector('.subtotal span');
-
-  let subtotalPrice = quantity.value * price.innerHTML;
-
+  for (let i = 0; i< allProducts.length; i++){
+    totalPrice += updateSubtotal(allProducts[i]);
+  } 
 
   // ITERATION 3
-  //... your code goes here
+  
+  let total = document.getElementById('total-value').querySelector('span');
+  total.textContent = totalPrice;
+  console.log('subtotal iteration' + totalPrice)
 }
 
 // ITERATION 4
@@ -54,5 +49,6 @@ window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+  const removeProdBtn = document.getElementsByClassName('.action .btn-remove');
+  removeProdBtn.addEventListener('click', removeProduct);
 });
