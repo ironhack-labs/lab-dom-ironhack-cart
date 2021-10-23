@@ -73,10 +73,11 @@ function createProduct() {
 
   let rowToClone = document.querySelector(".product").cloneNode(true);
 
-  //rowToClone.querySelector("td")[0].innerHTML = newProductName;
-  
+  let placeToCloneRow = document.querySelector("#cart");
+  placeToCloneRow.appendChild(rowToClone);
   
 
+  rowToClone.querySelector(".name span").innerHTML = newProductName;
 
 
 }
