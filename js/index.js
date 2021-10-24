@@ -2,7 +2,7 @@
 
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
+  //console.log('Calculating subtotal, yey!');
   //Capturamos los dos elementos del DOM 'price' y 'quantity' y los almacenamos en una variable respectivamente
   const price = product.querySelector('.price span');
   const quantity = product.querySelector('.quantity input');
@@ -36,7 +36,7 @@ function calculateAll() {
   // ITERATION 2
   // Para Coger a todos los elementos 'product' utilizamos document.querySelectorAll(''); (si utilizamos querySelector('') solo llamaria al primero que se encuentre).
   let products = document.querySelectorAll('.product'); 
- console.log(products)
+ //console.log(products)
 
   //Recorremos el DOM con el loop 'forEach' para volver a ejecutar la funcion anterior 'updateSubtotal' y actualizar el 'subtotal' en todos los elementos 'product' que hemos recogido en la variable 'Products'. 
   products.forEach(eachProduct => {
