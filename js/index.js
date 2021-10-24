@@ -50,12 +50,31 @@ function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
   //... your code goes here
+
+  //Se que no es la manera más optima de acceder al producto al que pertenece el botón target, si veis esto, porfa penerme un comentario en git para saber como hacerlo bien.
+  const parentBtn = target.parentElement;//parent of "target"
+  const parentTr = parentBtn.parentElement;
+  const parentTbody = parentTr.parentElement;
+
+  parentTbody.removeChild(parentTr);
+
+  calculateAll()
 }
 
 // ITERATION 5
 
-function createProduct() {
-  //... your code goes here
+function createProduct(event) {
+
+  //Demasiado complejo, no consigo incluirle todos los atributos de un "product" al elemento creado y que tengan el nombre y el precio que se le han ajudicado desde la página. Help!
+  const target = event.currentTarget;
+
+  const newProduct = document.createElement('tr');
+
+  newProduct.setAttribute('class', 'product');
+  const products = document.querySelectorAll('.product');
+
+  document.querySelector('tbody').insertBefore(newProduct, products[products.length]);
+
 }
 
 window.addEventListener('load', () => {
@@ -63,4 +82,13 @@ window.addEventListener('load', () => {
   calculatePricesBtn.addEventListener('click', calculateAll);
 
   //... your code goes here
+  const removeProductBtn = document.querySelectorAll('.btn-remove');
+
+  for (let i = 0; i < removeProductBtn.length; i++) {
+    removeProductBtn[i].addEventListener('click', removeProduct);
+  }
+
+  const createProductBtn = document.querySelector('#create');
+
+  createProductBtn.addEventListener('click', createProduct);
 });
