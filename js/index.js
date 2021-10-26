@@ -35,20 +35,18 @@ function removeProduct(event) {
   const target = event.currentTarget;
   const productParent = target.parentNode.parentNode
 
-  console.log(target)
-  console.log(productParent)
-
   productParent.remove()
 }
 
 // ITERATION 5
 
 function createProduct() {
-  const productName = document.querySelector('input#product-name').value
-  const productPrice = document.querySelector('input#product-price').value
 
-  console.log(productName)
-  console.log(productPrice)
+  const productNameElement = document.querySelector('input#product-name')
+  const productPriceElement = document.querySelector('input#product-price')
+
+  const productName = productNameElement.value
+  const productPrice = productPriceElement.value
 
   // let's create a new product row!
   const productTr = document.createElement('tr')
@@ -111,6 +109,9 @@ function createProduct() {
 
   // We need to add the event listener to the product!
   buttonRemove.addEventListener('click', removeProduct)
+
+  productNameElement.value = ""
+  productPriceElement.value = 0
 
 }
 
