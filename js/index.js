@@ -14,17 +14,13 @@ function updateSubtotal(product) {
 function calculateAll() {
 
   // ITERATION 2
+  let sum = 0
   const productArray = document.getElementsByClassName('product') //Extract a list of the products
-  for(let item of productArray){ //Update subtotal for every product
-    updateSubtotal(item)
+  for(let i = 0; i < productArray.length; i++){ //Update subtotal for every product while adding it to the sum
+    sum += updateSubtotal(productArray[i])
   }
   
   // ITERATION 3
-  let sum = 0
-  for(let product of productArray){
-    sum += updateSubtotal(product) //Obtain sum by adding the returned subtotal every iteration
-  }
-
   const total = document.querySelector('#total-value span') //Target the total span
   total.innerText = sum //Change the total span to the sum
 }
