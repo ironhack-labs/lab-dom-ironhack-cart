@@ -44,6 +44,7 @@ for (let i = 0; i < removeButton.length; i++) {
 function removeProduct(e) {
     const parent = e.parentNode.parentNode
     parent.remove()
+    calculateAll()
 }
 
 // ITERATION 5
