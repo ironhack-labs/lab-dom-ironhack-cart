@@ -9,7 +9,7 @@ function updateSubtotal(product) {
 
     const subtotal = product.querySelector(".subtotal span")
 
-    return (subtotal.innerText = parseFloat(price.innerText) * quantity.value)
+    return subtotal.innerText = Math.round((parseFloat(price.innerText) * quantity.value) * 100) / 100
 }
 
 function calculateAll() {
