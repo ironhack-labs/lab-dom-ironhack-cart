@@ -9,17 +9,12 @@ function updateSubtotal(product) {
 }
 
 function calculateAll() {
- 
-  // ITERATION 2
   const severalProducts = document.getElementsByClassName("product");
-  console.log(severalProducts);
+  let total =0; 
   for( let i=0;i<severalProducts.length;i++){
-    updateSubtotal(severalProducts[i])
+   total = total + updateSubtotal(severalProducts[i])
   }
- 
-
-  // ITERATION 3
-  //... your code goes here
+  document.querySelector("#total-value span").innerText = total;
 }
 
 // ITERATION 4
