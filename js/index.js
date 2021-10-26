@@ -4,7 +4,7 @@ function updateSubtotal(product) {
   //console.log('Calculating subtotal, yey!');
   const price = product.querySelector('.price span').textContent;
   const quantity = product.querySelector('.quantity input').value;
-  const subtotalPrice = parseFloat(price) * quantity
+  const subtotalPrice = Number(price) * quantity
   
   product.querySelector('.subtotal span').textContent = subtotalPrice
   //console.log('subtotalPrice', subtotalPrice)
@@ -14,7 +14,7 @@ function updateSubtotal(product) {
 function calculateAll() {
 
   const listProducts = document.querySelectorAll('.product')
-  listProducts.forEach( (product) => console.log(updateSubtotal(product)) )
+  listProducts.forEach( (product) => updateSubtotal(product) )
   
   // to be able to use .reduce, we convert it into an Array
   const listProductsArray = Array.from(listProducts)
