@@ -52,22 +52,69 @@ function calculateAll() {
 }
 
 // ITERATION 4
+const removeBtn = document.querySelectorAll('.btn-remove');
+
+for (let i=0; i<removeBtn.length; i++){
+  removeBtn[i].setAttribute("onclick","removeProduct(this)")
+}
 
 function removeProduct(event) {
-  const target = event.currentTarget;
-  console.log('The target in remove is:', target);
+  // const target = event.currentTarget;
+  // console.log('The target in remove is:', target);
   //... your code goes here
+  const parent = event.parentNode.parentNode
+  parent.remove()
+ 
 }
+
 
 // ITERATION 5
 
 function createProduct() {
   //... your code goes here
+  //console.log('lalala')
+  //const price = product.querySelector('.price span');
+  // const newName = document.querySelector('.create-product input').value;
+  
+  // console.log(newName)
+
+  //const newUnitPrice = document.querySelector('.create-product input').value;
+  const newIte = document.querySelectorAll('.create-product input');
+  
+  const newName = newIte[0].value
+  const newPrice = newIte[1].value
+
+  
+  let table = document.querySelector("#cart tbody")
+
+  let newItem = document.createElement("tr")
+  newItem.innerHTML = `<tr class="product">
+                  <td class="name">
+                      <span>${newName}</span>
+                  </td>
+                  <td class="price">$<span>${newPrice}</span></td>
+                  <td class="quantity">
+                      <input type="number" value="0" min="0" placeholder="Quantity" />
+                  </td>
+                  <td class="subtotal">$<span>0</span></td>
+                  <td class="action">
+                      <button class="btn btn-remove" onclick="removeProduct(this)">Remove</button>
+                  </td>
+              </tr>`
+  newItem.classList.add("product")
+
+  table.appendChild(newItem)
+  //console.log(newItem[0].value)
 }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
+
+  //add event listener to create button
+  const createBtn = document.getElementById('create');
+  createBtn.addEventListener('click', createProduct);
+  
 
   //... your code goes here
 });
