@@ -2,24 +2,37 @@
 
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
-
+  const price = product.querySelector('.price>span').innerHTML
+  const quantity = product.querySelector('.quantity>input').value
+  console.log(quantity)
+  //const subTotal = document.createTextNode(`${quantity * price}`)
+  subTotal = quantity * price
+  console.log(subTotal)
+  const subtotalSpan = product.querySelector('.subtotal>span')
+  //#create textnode (function)
+  subtotalSpan.innerHTML = subTotal
+  //subtotalSpan.appendChild(subTotal)
+  console.log(subtotalSpan.innerHTML)
+  return subTotal
   //... your code goes here
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
-
   // ITERATION 2
   //... your code goes here
+  const allProducts = document.querySelectorAll('.product');
+  let total = 0;
+
+  allProducts.forEach(function(product){
+    total += updateSubtotal(product)
+  });
+  console.log(total)
+  const totalHTML = document.querySelector('#total-value>span')  
+  totalHTML.innerHTML = `${total}`
 
   // ITERATION 3
   //... your code goes here
 }
-
 // ITERATION 4
 
 function removeProduct(event) {
@@ -31,12 +44,26 @@ function removeProduct(event) {
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  //... TESTING with existing product
+  const newProduct = document.querySelector('.product');
+  const tbody = document.querySelector('tbody')
+  let row = document.createElement('tr')
+
+  let rowtr = tbody.insertRow(1);
+  rowtr.appendChild(newProduct.cloneNode(true));
+
+  const inputList = document.querySelectorAll('tr.create-product>td>input')
+  const productName = inputList[0].value
+  const productPrice = inputList[1].value
+
 }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
+})
 
-  //... your code goes here
-});
+window.addEventListener('load', () => {
+  const createProductBtn = document.getElementById('create');
+  createProductBtn.addEventListener('click', createProduct);
+})
