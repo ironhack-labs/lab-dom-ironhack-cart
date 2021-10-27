@@ -49,6 +49,10 @@ function createProduct() {
   const productName = productNameElement.value
   const productPrice = productPriceElement.value
 
+  // Take a look to .cloneNode !! 
+  // https://developer.mozilla.org/en-US/docs/Web/API/Node/cloneNode
+  // it will be quite the same concept but way shorter than what I did.
+
   // let's create a new product row!
   const productTr = document.createElement('tr')
   productTr.classList.add("product")
