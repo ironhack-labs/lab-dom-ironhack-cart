@@ -27,10 +27,11 @@ function calculateAll() {
 
 // ITERATION 4
 
-function removeProduct(event) {
-  const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+function removeProduct(event) { //Event refers to the event that makes the function get called (for example clicking)
+  const target = event.currentTarget; //Current target points to the html element that the event was started on
+  // console.log('The target in remove is:', target);
+  target.parentNode.parentNode.remove() //button > td > tr, then remove the tr (the product)
+
 }
 
 // ITERATION 5
