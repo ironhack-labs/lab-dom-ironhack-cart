@@ -30,7 +30,8 @@ function removeProduct(event) {
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  const productName = 
+  
 }
 
 window.addEventListener('load', () => {
@@ -40,4 +41,8 @@ window.addEventListener('load', () => {
   for(let i=0; i<removeProductBtns.length;i++){
     removeProductBtns[i].addEventListener("click",removeProduct);
   }
+  const createProduct = document.getElementsById("create");
+  createProduct.addEventListener("click",createProduct);
+
+
 });
