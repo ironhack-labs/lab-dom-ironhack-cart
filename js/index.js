@@ -56,6 +56,27 @@ function removeProduct(event) {
 
 function createProduct() {
   //... your code goes here
+
+  //Know how many products already are to clone the last one
+  const products = document.querySelectorAll('.product')
+  //console.log(products.length)
+  const lastProduct = products[products.length -1]
+  //console.log(lastProduct)
+
+  //clone the last one of class .product
+  const newProduct = lastProduct.cloneNode(true)
+  //console.log(newProduct)
+  //change the content of newProduct
+  //console.log(newProduct.querySelector('.name span'))
+  newProduct.querySelector('.name span').innerText = document.querySelector('#cart > tfoot > tr > td:nth-child(1) > input[type=text]').value;
+  newProduct.querySelector('.price span').innerText = document.querySelector("#cart > tfoot > tr > td:nth-child(2) > input[type=number]").value
+  
+  //add the newProduct after the lastProduct
+  lastProduct.parentNode.append(newProduct)
+
+  //clean the content of the input in the "create product" row
+  document.querySelector('#cart > tfoot > tr > td:nth-child(1) > input[type=text]').value = '';
+  document.querySelector("#cart > tfoot > tr > td:nth-child(2) > input[type=number]").value = '';
 }
 
 window.addEventListener('load', () => {
@@ -67,11 +88,17 @@ window.addEventListener('load', () => {
   removeBtns.forEach(function (btn){
     btn.addEventListener('click', removeProduct)
   })
-  //WHY does this not work??
-  /*
-  for (let btn in removeBtns){
+
+  //WHY DOES THIS NOT WORK?
+
+  /*const removeBtns = document.querySelectorAll('.btn.btn-remove');for (let btn in removeBtns){
     btn.addEventListener('click', removeProduct)
-  }
-  */
+  }*/
+  //for (x in y) gives the key of your
+  //for (x of y) gives the object
+
+  const addProduct = document.querySelector('#create');
+  addProduct.addEventListener('click', createProduct)
+  
 });
 
