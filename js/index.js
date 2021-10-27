@@ -1,7 +1,6 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  // console.log('Calculating subtotal, yey!');
   let subTotal = 0;
 
   let unitPrice = product.querySelector('.price > span').innerText;
@@ -13,17 +12,8 @@ function updateSubtotal(product) {
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  // const singleProduct = document.querySelector('.product');
-  // updateSubtotal(singleProduct);
-  // end of test
-  // ITERATION 2
-
   let products = document.querySelectorAll('tr.product').forEach((product) => {
-    console.log(product);
     updateSubtotal(product);
-    console.log(typeof product);
   });
 
   // ITERATION 3
@@ -37,19 +27,63 @@ function calculateAll() {
 // ITERATION 4
 
 function removeProduct(event) {
-  const target = event.currentTarget;
-  console.log('The target in remove is:', target);
+  event.currentTarget.parentNode.parentNode.remove();
+  calculateAll();
 }
 
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  const inputPrice = document.querySelector(
+    '#cart > tfoot > tr > td:nth-child(2) > input'
+  ).value;
+
+  const productName = document.querySelector(
+    '#cart > tfoot > tr > td:nth-child(1) > input'
+  ).value;
+
+  let newDocument = document.createElement('tr');
+  newDocument.innerHTML = `
+    <tr class="product">
+      <td class="name">
+        <span>${productName}</span>
+      </td>
+      <td class="price">
+        $<span>${inputPrice}</span>
+      </td>
+      <td class="quantity">
+        <input type="number" value="0" min="0" placeholder="Quantity" />
+      </td>
+      <td class="subtotal">
+        $<span>0</span>
+      </td>
+      <td class="action">
+        <button class="btn btn-remove">Remove</button>
+      </td>
+    </tr>
+  `;
+  const reference = document.querySelector('#cart > tbody > tr:last-child');
+
+  function insertAfter(referenceNode, newNode) {
+    referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+  }
+  insertAfter(reference, newDocument);
+
+  newDocument
+    .querySelector('.btn-remove')
+    .addEventListener('click', removeProduct);
+  newDocument.querySelector('.subtotal > span');
 }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+  document.querySelectorAll('.btn.btn-remove').forEach((btn) => {
+    btn.addEventListener('click', removeProduct);
+  });
+
+  const createButton = document
+    .querySelector('#create')
+    .addEventListener('click', createProduct);
 });

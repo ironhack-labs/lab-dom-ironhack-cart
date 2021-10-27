@@ -47,11 +47,13 @@ table input[type='number'] {
   cursor: pointer;
 }
 
+#create,
 .btn-success,
 .btn-remove {
   color: #fff;
 }
 
+#create,
 .btn-success {
   background-color: #2cc5fa;
 }
