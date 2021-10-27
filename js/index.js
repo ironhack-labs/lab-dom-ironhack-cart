@@ -2,6 +2,8 @@
 
 
 
+
+
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
 
@@ -44,7 +46,6 @@ function calculateAll() {
 }
 
 
-calculateAll()
 // ITERATION 4
 
 function removeProduct(event) {
@@ -61,8 +62,8 @@ function createProduct() {
     if (productName === '' || unitPrice === 0) return null;
 
 const create = document.createElement("tr");
-
-  const input = `<tr class="product">
+create.innerHTML =  
+  `<tr class="product">
   <td class="name">
       <span>${productName}</span>
   </td>
@@ -76,7 +77,7 @@ const create = document.createElement("tr");
   </td>
 </tr>`
 
-  create.innerHTML = input
+  
 
   const productsTable = document.querySelector('#cart > tbody');
     productsTable.appendChild(create);
@@ -85,7 +86,6 @@ const create = document.createElement("tr");
 
   console.log (create)
 }
-createProduct()
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
