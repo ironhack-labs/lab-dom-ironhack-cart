@@ -1,7 +1,7 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
+  // console.log('Calculating subtotal, yey!')
   const price = product.querySelector('.price span').innerText
   const quantity = product.querySelector('.quantity input').value
   const calculateSubtotal = price * quantity
@@ -40,8 +40,13 @@ function createProduct() {
 }
 
 window.addEventListener('load', () => {
-  const calculatePricesBtn = document.getElementById('calculate');
-  calculatePricesBtn.addEventListener('click', calculateAll);
+  const calculatePricesBtn = document.getElementById('calculate')
+  calculatePricesBtn.addEventListener('click', calculateAll)
+
+  const rmvBtns = document.querySelectorAll('.btn-remove')
+  for(let btns of rmvBtns){ //Add an event listener to every remove button
+    btns.addEventListener('click', removeProduct) //No () on removeProduct, using () would use the return 
+  }                                               //instead of doing the functionality when clicking
 
   //... your code goes here
 });
