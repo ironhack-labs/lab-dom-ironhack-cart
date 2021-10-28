@@ -18,9 +18,7 @@ function calculateAll() {
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  target.parentNode.parentNode.parentNode.removeChild(
-    target.parentNode.parentNode
-  );
+  document.querySelector('tbody').removeChild(target.closest('.product'));
 }
 
 function createProduct() {
