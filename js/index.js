@@ -1,3 +1,5 @@
+let copyTr = '' //A copy of the first product (tr element) in case we delete all before adding
+
 // ITERATION 1
 
 function updateSubtotal(product) {
@@ -28,8 +30,8 @@ function calculateAll() {
 // ITERATION 4
 
 function removeProduct(event) { //Event refers to the event that makes the function get called (for example clicking)
-  const target = event.currentTarget; //Current target points to the html element that the event was started on
-  // console.log('The target in remove is:', target);
+  const target = event.currentTarget //Current target points to the html element that the event was started on
+  console.log('The target in remove is:', target)
   target.parentNode.parentNode.remove() //button > td > tr, then remove the tr (the product)
 
 }
@@ -37,7 +39,27 @@ function removeProduct(event) { //Event refers to the event that makes the funct
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  const tbody = document.querySelector('#cart tbody') //Target the cart > table body
+  const copyOfCopyTr = copyTr.cloneNode(true) //Make a copy of the already created copy
+
+  let productName = document.getElementById('product-name') //Target product name and price of the new product
+  let productPrice = document.getElementById('product-price')
+
+  copyOfCopyTr.querySelector('.name span').innerText = productName.value //Give the copy the new product name 
+  console.log(productName.value)
+  copyOfCopyTr.querySelector('.price span').innerText = productPrice.value //and price to the copy of the copy
+
+  const rmvBtn = copyOfCopyTr.querySelector('.action button') //Create a remove button for the new product
+  rmvBtn.addEventListener('click', (event)=>{
+    const btn = event.currentTarget;
+    btn.parentNode.parentNode.remove()
+  })
+
+  tbody.appendChild(copyOfCopyTr) //Append the new product to the cart > table body
+
+  productName.value = '' //Set the product in create product back to default values 
+  productName.placeholder = 'Product Name'
+  productPrice.value = 0
 }
 
 window.addEventListener('load', () => {
@@ -49,5 +71,6 @@ window.addEventListener('load', () => {
     btns.addEventListener('click', removeProduct) //No () on removeProduct, using () would use the return 
   }                                               //instead of doing the functionality when clicking
 
-  //... your code goes here
+  const addItmBtn = document.getElementById('create')
+  addItmBtn.addEventListener('click', createProduct)
 });
