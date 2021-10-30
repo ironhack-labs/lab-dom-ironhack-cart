@@ -3,7 +3,25 @@
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
 
-  //... your code goes here
+  //getting dom elements needed
+  const price = product.querySelector('.price span');
+  const quantity = product.querySelector('.quantity input');
+
+  //extracting
+  const priceValue = parseFloat(price.innerText);
+  const quantityValue = quantity.valueAsNumber;
+
+  //total value
+  const subtotalValue = priceValue * quantityValue;
+  
+  //I will inject you 
+  const subTotal = product.querySelector('.subtotal span');
+
+  //the insides of subTotal will be the contents in subtotalValue 
+  subTotal.innerText = subtotalValue;
+
+  return subtotalValue;
+ 
 }
 
 function calculateAll() {
@@ -14,29 +32,69 @@ function calculateAll() {
   // end of test
 
   // ITERATION 2
-  //... your code goes here
+  //getting dom for the products
+  const allProducts = document.getElementsByClassName('product');
+
+  //logging allProducts -> get html collection
+  //console.log('the products are:', allProducts);
+
+//turning html collection into an array
+  let productsArray = [...allProducts];
+  //console.log(allProducts);
+  productsArray.forEach(updateSubtotal);
 
   // ITERATION 3
-  //... your code goes here
+ const total = document.querySelector('#total-value span');
+ //console.log(total.innerHTML);
+
+ let totalPrice = 0;
+ for(let i =0; i< productsArray.length; i++) {
+  let prod = productsArray[i].querySelector('.subtotal span');
+   totalPrice += +(prod.innerHTML);
+ }
+ total.innerHTML = totalPrice;
 }
 
 // ITERATION 4
 
 function removeProduct(event) {
-  const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+  //const target = event.currentTarget;
+  //console.log('The target in remove is:', target);
+ 
+  const target = event.currentTarget.parentNode.parentNode;
+  console.log('the target in remove is:', target);
+
+  let deletedProduct = target.parentNode.removeChild(target);
+
+  calculateAll(); 
+
 }
 
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  console.log('new product');
+  const newProductInput = document.querySelector('.newProduct');
+  const productPrice = document.querySelector('.newPrice').value;
+console.log('product price', productPrice)
+
 }
+
+ function checkButton() {
+  const removeProductButtons = document.getElementsByClassName('.btn-remove');
+  let removeProductBtns = [...removeProductButtons];
+
+  removeProductBtns.forEach(button => {
+    button.addEventListener('click', removeProduct);
+  });
+
+  const createProductBtn = document.getElementById('create');
+  createProductBtn.addEventListener('click', createProduct); 
+} 
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+  checkButton();
 });
