@@ -265,4 +265,4 @@ Click [here](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_00ab
 
 <br>
 
-**Happy coding! 💙**
+*Happy coding! 💙*
