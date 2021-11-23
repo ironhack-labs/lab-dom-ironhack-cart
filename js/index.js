@@ -14,11 +14,6 @@ function updateSubtotal(product) {
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  //const singleProduct = document.querySelector('.product');
-  //updateSubtotal(singleProduct);
-  // end of test
 
   // ITERATION 2
   const productRow = document.getElementsByClassName('product');
@@ -45,7 +40,7 @@ function calculateAll() {
 function removeProduct(event) {
   const target = event.currentTarget.parentNode.parentNode;
   target.parentNode.removeChild(target);
-
+  
   calculateAll();
 }
 
@@ -53,16 +48,11 @@ function removeProduct(event) {
 
 function createProduct() {
   const inputText = document.querySelectorAll('.create-product input')[0].value;
-  console.log(inputText);
   const inputPrice = document.querySelectorAll('.create-product input')[1].value;
-  console.log(inputPrice);
 
   const parent = document.querySelector('tbody');
-  console.log(parent);
-
   const newProduct = document.createElement('tr');
-  newProduct.className = "product"
-  console.log(newProduct);
+  newProduct.className = "product";
 
   const firstTd = newProduct.insertCell(0);
   firstTd.className = 'name';
@@ -91,10 +81,8 @@ function createProduct() {
     removeBtnsArray[i].addEventListener('click', removeProduct);
   };
 
-  document.querySelectorAll('.create-product input')[0].value = "";
-  document.querySelectorAll('.create-product input')[1].value = 0;
-
-
+  inputText.value = "";
+  inputPrice.value = 0;
 }
 
 
