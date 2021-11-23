@@ -31,25 +31,34 @@ function calculateAll() {
   const total = document.querySelector("#total-value span");
   const subtotalsArray = document.getElementsByClassName('subtotal');
 
-  console.log(total);
-  console.log(subtotalsArray);
-
   let totalSum = 0;
 
   for(let i = 0; i < subtotalsArray.length; i++){
     totalSum += parseFloat(subtotalsArray[i].querySelector('span').innerText);
-    console.log(totalSum);
-  };
+  }
 
   total.innerText = totalSum;
 }
 
 // ITERATION 4
 
+const removeBtnsArray = document.getElementsByClassName('btn-remove');
+console.log(removeBtnsArray);
+for(let i = 0; i < removeBtnsArray.length; i++){
+  removeBtnsArray[i].addEventListener('click', removeProduct);
+}
+
 function removeProduct(event) {
-  const target = event.currentTarget;
+  const target = event.currentTarget.parentNode.parentNode;
   console.log('The target in remove is:', target);
-  //... your code goes here
+
+  const removeBtnsArray = document.getElementsByClassName('btn-remove');
+  for(let i = 0; i < removeBtnsArray.length; i++){
+    removeBtnsArray[i].addEventListener('click', removeProduct);
+  }
+
+  target.parentNode.removeChild(target);
+  calculateAll();
 }
 
 // ITERATION 5
