@@ -43,20 +43,12 @@ function calculateAll() {
 // ITERATION 4
 
 const removeBtnsArray = document.getElementsByClassName('btn-remove');
-console.log(removeBtnsArray);
 for(let i = 0; i < removeBtnsArray.length; i++){
   removeBtnsArray[i].addEventListener('click', removeProduct);
 }
 
 function removeProduct(event) {
   const target = event.currentTarget.parentNode.parentNode;
-  console.log('The target in remove is:', target);
-
-  const removeBtnsArray = document.getElementsByClassName('btn-remove');
-  for(let i = 0; i < removeBtnsArray.length; i++){
-    removeBtnsArray[i].addEventListener('click', removeProduct);
-  }
-
   target.parentNode.removeChild(target);
   calculateAll();
 }
