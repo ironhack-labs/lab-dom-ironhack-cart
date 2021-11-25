@@ -23,13 +23,18 @@ function calculateAll() {
 
 // ITERATION 4
 
-function removeProduct(event) {
-  const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
-}
-
 document.getElementById("create").addEventListener('click', createProduct);
+  
+  function removeProduct(event) {
+    const target = event.currentTarget;
+    console.log('The target in remove is:', target);
+    let row = target.parentNode.parentNode;
+    row.parentNode.removeChild(row);
+  }
+  
+  
+
+
 
 
 function createProduct() {
@@ -49,11 +54,15 @@ function createProduct() {
 </td>
   `
   newProductPosition.appendChild(newProduct);
+  newProduct.querySelector(".btn.btn-remove").addEventListener('click', removeProduct);
 }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
-
-  //... your code goes here
+   
+  let removeButtons = document.getElementsByClassName("btn btn-remove");
+  for (let i = 0; i < removeButtons.length; i++) {
+    removeButtons[i].addEventListener('click', removeProduct);
+  }
 });
