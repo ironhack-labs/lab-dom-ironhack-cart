@@ -12,7 +12,7 @@ function updateSubtotal(product) {
 
   // js/index.js
 
-
+return result
 
   //... your code goes here
 }
@@ -26,36 +26,23 @@ function calculateAll() {
 
   // ITERATION 2
   //... your code goes here
-  const price1 = document.getElementsByClassName('price')[0];
-  const price2 = document.getElementsByClassName('price')[1];
 
-  
-  const quantity1 = document.getElementsByClassName('quantity')[0];
-  const quantity2 = document.getElementsByClassName('quantity')[1];
+  let allProducts = document.getElementsByClassName('product');
 
-  const finalPrice1 = price1.querySelector('span').innerText;
-  const finalPrice2 = price2.querySelector('span').innerText;
+  let totalResult = 0;
 
-  const finalQuantity1 = quantity1.querySelector('input').value;
-  const finalQuantity2 = quantity2.querySelector('input').value;
+  for (let i = 0; i < allProducts.length; i++) {
+    totalResult += updateSubtotal(allProducts[i]);
 
-  result1 = finalPrice1 * finalQuantity1;
-  result2 = finalPrice2 * finalQuantity2;
-
-  let subtotal1 = document.getElementsByClassName('subtotal')[0];
-  let subtotal2 = document.getElementsByClassName('subtotal')[1];
-
-  subtotal1.querySelector('span').innerText = result1;
-  subtotal2.querySelector('span').innerText = result2;
+  }
 
 
+  const subtotals = document.querySelector('#total-value > span');
 
-  // ITERATION 3
-  //... your code goes here
+  subtotals.innerText = totalResult;
 
-  let cartTotal = document.getElementById('total-value')
-  cartTotal.querySelector('span').innerText = result1 + result2
-}
+  }
+
 
 // ITERATION 4
 

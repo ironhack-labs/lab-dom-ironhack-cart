@@ -61,6 +61,7 @@ describe('Ironhack Cart',  () => {
       await page.evaluate(addProductsToCart, { products });
       await page.click('button#calculate');
       const productElements = await page.$$('.product');
+
       for (const productElement of productElements) {
         const productPrice = await productElement.$eval(
           '.price span',
