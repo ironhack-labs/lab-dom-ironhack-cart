@@ -47,7 +47,9 @@ function createProduct(event) {
   const item = row.children[0].firstElementChild.value
   const price = row.children[1].firstElementChild.value
 
-  const newRow = cart.tBodies[0].insertRow().innerHTML = `
+  const newRow = cart.tBodies[0].insertRow()
+  newRow.classList.add("product")
+  newRow.innerHTML = `
     <td class="name">
     <span>${item}</span>
     </td>
@@ -62,12 +64,11 @@ function createProduct(event) {
 `
 }
 
-window.addEventListener('load', () => {
+//window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
   const removeButtons = [...document.querySelectorAll(".btn-remove")]
-  //console.log(removeButtons[0], typeof removeButtons)
   removeButtons.forEach(btn => {
     btn.addEventListener("click", (e) => removeProduct(e))
   }
@@ -76,8 +77,7 @@ window.addEventListener('load', () => {
   const createProductBtn = document.getElementById("create")
   createProductBtn.addEventListener("click", (e) => {
     createProduct(e);
-    e.stopImmediatePropagation;
   })
 
   //... your code goes here
-});
+//});
