@@ -29,31 +29,55 @@ function calculateAll() {
 // ITERATION 4
 
 function removeProduct(event) {
-  const target = event.currentTarget;
-  //console.log('The target in remove is:', target);
   //... your code goes here
-  const row = target.closest("tr")
-  row?.parentNode.removeChild(row)
+  const target = event.currentTarget
+  const row = target ? target.closest("tr") : event.closest("tr")
+  row.parentNode?.removeChild(row)
   calculateAll()
 }
 
 // ITERATION 5
 
-function createProduct() {
+function createProduct(event) {
   //... your code goes here
+  const target = event.currentTarget
+  const row = target.closest("tr")
+  const cart = document.getElementById("cart")
+
+  const item = row.children[0].firstElementChild.value
+  const price = row.children[1].firstElementChild.value
+
+  const newRow = cart.tBodies[0].insertRow().innerHTML = `
+    <td class="name">
+    <span>${item}</span>
+    </td>
+    <td class="price">$<span>${price}</span></td>
+    <td class="quantity">
+      <input type="number" value="0" min="0" placeholder="Quantity" />
+    </td>
+    <td class="subtotal">$<span>0</span></td>
+    <td class="action">
+      <button class="btn btn-remove" onclick="removeProduct(this)">Remove</button>
+    </td>
+`
 }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  const removeButtons = [...document.querySelectorAll(".btn.btn-remove")]
+  const removeButtons = [...document.querySelectorAll(".btn-remove")]
   //console.log(removeButtons[0], typeof removeButtons)
   removeButtons.forEach(btn => {
     btn.addEventListener("click", (e) => removeProduct(e))
   }
   )
 
+  const createProductBtn = document.getElementById("create")
+  createProductBtn.addEventListener("click", (e) => {
+    createProduct(e);
+    e.stopImmediatePropagation;
+  })
 
   //... your code goes here
 });
