@@ -5,19 +5,11 @@ function updateSubtotal(product) {
 
   let quantity = product.querySelector('.quantity input').value;
 
-  // console.log(quantity * price);
-
   let subtotal = document.querySelector('.subtotal span');
 
-  subtotal = `${quantity * price}`;
+  subtotal.value = quantity * price;
 
-  console.log(subtotal, 'subtotal');
-
-  let calculate = document.getElementById('calculate');
-
-  // calculate.addEventListener('click', () => {
-  subtotal.innerHTML = subtotal;
-  // });
+  return (product.querySelector('.subtotal span').textContent = subtotal.value);
 }
 
 function calculateAll() {
