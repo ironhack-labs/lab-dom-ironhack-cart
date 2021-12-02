@@ -31,7 +31,7 @@ function removeProduct(event) {
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  //... your code goes here.
 }
 
 window.addEventListener('load', () => {
