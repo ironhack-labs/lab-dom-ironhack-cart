@@ -28,12 +28,12 @@ function calculateAll() {
 
 // ITERATION 4
 
-function removeProduct(event) {
+function removeProduct(element) {
   // const target = event.currentTarget;
   
-  console.log('The target in remove is:', event);
+  console.log('The target in remove is:', element);
   
-  let trNode = event.target.parentNode.parentNode;
+  let trNode = element.parentNode.parentNode;
   trNode.parentNode.removeChild(trNode);
   
 }
@@ -41,8 +41,9 @@ function removeProduct(event) {
 // ITERATION 5
 
 function createProduct() {
-  const nameProduct = document.querySelector('.create-product input[type=text]') ;
+  const nameProduct = document.querySelector('.create-product input[type=text]');
   const valueProduct = document.querySelector('.create-product input[type=number]') ;
+  
   let newProduct = document.createElement('tr');
   newProduct.classList.add('product');
   newProduct.innerHTML = 
@@ -59,17 +60,35 @@ function createProduct() {
   </td>`)
   let tbody = document.querySelector('#cart tbody');
   tbody.appendChild(newProduct);
-  
-  
-  //... your code goes here
+   
+   //... your code goes here
+}
+
+function clearInput() {
+  document.getElementById('reset1').value='Product Name';
+  document.getElementById('reset2').value='0';
 }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
-  const btnRemoveItens = [...document.getElementsByClassName('btn-remove')];
-  btnRemoveItens.forEach( e => e.addEventListener ('click', removeProduct))
+  
+  /* const btnRemoveItens = [...document.getElementsByClassName('btn-remove')];
+  btnRemoveItens.forEach( e => e.addEventListener ('click', removeProduct)) */
+  
   const btnCreateProduct = document.getElementById('create');
   btnCreateProduct.addEventListener('click', createProduct);
-    //... your code goes here
+
+  const clearInp = document.getElementById('create');
+  clearInp.addEventListener('click', clearInput);
+  //... your code goes here
+
+  const tableCart = document.getElementById("cart");
+  tableCart.addEventListener('click', (event) => {
+    let element = event.target;
+  
+    if(element.classList.contains("btn-remove")) {
+      removeProduct(element);
+    };
+  })
 });
