@@ -147,6 +147,7 @@ describe('Ironhack Cart',  () => {
       await page.click('.create-product button');
       
       const productElement = await page.$('.product');
+      console.log(productElement);
       expect(productElement).toBeTruthy();
 
       const productRemoveButton = await productElement.$('button');
