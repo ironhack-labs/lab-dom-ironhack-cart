@@ -72,7 +72,7 @@ function createProduct() {
   productPrice.innerText = '$';
   product.appendChild(productPrice);
   let price = document.createElement('span');
-  let priceInput = document.querySelector('product-price input')
+  let priceInput = document.querySelector('.product-price input')
   price.innerHTML = priceInput.value;
   productPrice.appendChild(price);
 
