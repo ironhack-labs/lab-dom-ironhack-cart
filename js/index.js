@@ -38,16 +38,14 @@ function calculateAll() {
 // ITERATION 4
 
 function removeProduct(event) {
-  const target = event.currentTarget;
+  //const target = event.currentTarget;
+  const target = event.target;
   console.log('The target in remove is:', target);
   //... your code goes here
   const product = target.parentNode.parentNode;
   product.parentNode.removeChild(product);
 
-  // const totalValue = document.querySelector('#total-value span');
-  // const subTotal = updateSubtotal(product.parentNode);
-  // totalValue.innerHtml = totalValue.innerHtml - subTotal;
-  //target.parentNode.removeChild(target);
+  calculateAll();
 }
 
 // ITERATION 5
