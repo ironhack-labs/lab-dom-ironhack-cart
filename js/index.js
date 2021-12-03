@@ -28,14 +28,25 @@ function calculateAll() {
 
 // ITERATION 4
 
-function removeProduct(element) {
+/* function removeProduct(element) {
   // const target = event.currentTarget;
   
   console.log('The target in remove is:', element);
   
   let trNode = element.parentNode.parentNode;
   trNode.parentNode.removeChild(trNode);
+  calculateAll();
+}
+*/
+
+function removeProduct(event) {
+  //const target = event;
   
+  console.log('The target in remove is:', event);
+  
+  let trNode = event.parentNode.parentNode;
+  trNode.parentNode.removeChild(trNode);
+  calculateAll();
 }
 
 // ITERATION 5
@@ -61,12 +72,9 @@ function createProduct() {
   let tbody = document.querySelector('#cart tbody');
   tbody.appendChild(newProduct);
    
+  nameProduct.value='';
+  valueProduct.value='0';
    //... your code goes here
-}
-
-function clearInput() {
-  document.getElementById('reset1').value='Product Name';
-  document.getElementById('reset2').value='0';
 }
 
 window.addEventListener('load', () => {
@@ -79,9 +87,7 @@ window.addEventListener('load', () => {
   const btnCreateProduct = document.getElementById('create');
   btnCreateProduct.addEventListener('click', createProduct);
 
-  const clearInp = document.getElementById('create');
-  clearInp.addEventListener('click', clearInput);
-  //... your code goes here
+   //... your code goes here
 
   const tableCart = document.getElementById("cart");
   tableCart.addEventListener('click', (event) => {
