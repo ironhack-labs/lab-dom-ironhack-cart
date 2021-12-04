@@ -44,7 +44,7 @@ function removeProduct(event) {
   //... your code goes here
   const product = target.parentNode.parentNode;
   product.parentNode.removeChild(product);
-
+  
   calculateAll();
 }
 
@@ -52,55 +52,34 @@ function removeProduct(event) {
 
 function createProduct() {
   //... your code goes here
-  let product = document.createElement('tr');
-  product.setAttribute('class', 'product');
-  let tableBody = document.getElementsByTagName('tbody')[0];
-  tableBody.appendChild(product);
+  const createProduct = document.querySelector('.create-product');
 
-  let productName = document.createElement('td');
-  productName.setAttribute('class', 'name');
-  product.appendChild(productName);
-  let name = document.createElement('span');
-  let nameInput = document.querySelector('.product-name input');
-  name.innerHTML = nameInput.value;
-  productName.appendChild(name);
+  const nameInput = document.querySelector('.product-name input');
+  const priceInput = document.querySelector('.product-price input');
 
-  let productPrice = document.createElement('td');
-  productPrice.setAttribute('class', 'price');
-  productPrice.innerText = '$';
-  product.appendChild(productPrice);
-  let price = document.createElement('span');
-  let priceInput = document.querySelector('.product-price input')
-  price.innerHTML = priceInput.value;
-  productPrice.appendChild(price);
+  const newProduct = document.createElement('tr');
+  newProduct.setAttribute('class', 'product');
+  newProduct.innerHTML = `
+    <td> class="name">
+      <span>${nameInput.value}</span>
+    </td>
+    <td class="price">$<span>${priceInput.valueAsNumber}</span></td>
+    <td class="quantity">
+      <input type="number" value="0" min="0" placeholder="Quantity" />
+    </td>
+    <td class="subtotal">$<span>0</span></td>
+    <td class="action">
+      <button class="btn btn-remove">Remove</button>
+    </td>
+  `;
 
-  let productQuantity = document.createElement('td');
-  productQuantity.setAttribute('class', 'quantity');
-  product.appendChild(productQuantity);
-  let quantity = document.createElement('input');
-  quantity.setAttribute('type', 'number');
-  quantity.setAttribute('value', '0');
-  quantity.setAttribute('min', '0');
-  quantity.setAttribute('placeholder', 'Quantity');
-  productQuantity.appendChild(quantity);
+  newProduct.querySelector('.btn-remove').onclick = removeProduct;
 
-  let productSubTotal = document.createElement('td');
-  productSubTotal.setAttribute('class', 'subtotal');
-  productSubTotal.innerText = '$';
-  product.appendChild(productSubTotal);
-  let subTotal = document.createElement('span');
-  subTotal.innerHTML = '0';
-  productSubTotal.appendChild(subTotal);
+  const tableBody = document.getElementsByTagName('tbody')[0];
+  tableBody.appendChild(newProduct);
 
-
-  let productAction = document.createElement('td');
-  productAction.setAttribute('class', 'action');
-  product.appendChild(productAction);
-  let button = document.createElement('button');
-  button.setAttribute('class', 'btn');
-  button.setAttribute('class', 'btn-remove');
-  button.innerText = 'Remove';
-  productAction.appendChild(button);
+  nameInput.value = '';
+  priceInput.value = 0;
 }
 
 window.addEventListener('load', () => {
