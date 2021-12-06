@@ -20,25 +20,28 @@ function calculateAll() {
   // code in the following two lines is added just for testing purposes.
   // it runs when only iteration 1 is completed. at later point, it can be removed.
 
-const totalProducts = document.getElementsByClassName('product');
+ const singleProduct = document.querySelector('.product');
 
-for (let i = 0; i < totalProducts.length; i++) {
-const allSubtotals = updateSubtotal(totalProducts[i]);
+ updateSubtotal(singleProduct);
 
-const finalPrice = [];
-finalPrice.push(allSubtotals);
-console.log(finalPrice);
-finalPrice.reduce((acc, currVal) => {
-  return acc + currVal;
-})
+ const totalProducts = document.getElementsByClassName('product');
 
-}
+ for (let i = 0; i < totalProducts.length; i++) {
 
-const totalValue = document.getElementById("total-value");
+  const allSubtotals = updateSubtotal(totalProducts[i]);
+  
+ }
 
-const calculatePrices = document.getElementById("calculate");
+ const totalValue = document.querySelector('#total-value span');
+ const totalPrice = document.getElementsByClassName('subtotal');
 
-calculatePrices.onclick = function() {
+ const calculatePrices = document.getElementById("calculate");
+
+ for (let i = 0; i < totalPrice.length; i++) {
+   totalValue.innerHTML = updateSubtotal(totalPrice[i]);
+ }
+  
+calculatePrices.onclick = function() {  
   return totalValue.innerHTML = document.finalPrice;
 }
 
