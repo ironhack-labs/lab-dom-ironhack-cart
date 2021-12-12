@@ -30,10 +30,13 @@ function calculateAll() {
   //... your code goes here
   const products = [...document.getElementsByClassName('product')];
   console.log(products);
-  products.forEach((product) => updateSubtotal(product));
+  let totalPrice = 0;
+  products.forEach((product) => totalPrice += updateSubtotal(product));
 
   // ITERATION 3
   //... your code goes here
+  const total = document.querySelector('#total-value span');
+  total.innerHTML=totalPrice;
 }
 
 // ITERATION 4
