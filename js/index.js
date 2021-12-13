@@ -53,6 +53,31 @@ function removeProduct(event) {
 
 function createProduct() {
   //... your code goes here
+  const items = document.querySelectorAll(".create-product td input");
+  console.log(items);
+  const name = items[0].value;
+  const price = items[1].value;
+  const trElement = document.createElement("tr");
+  trElement.className="product";
+  const content = `<td class="name">
+  <span>${name}</span>
+</td>
+<td class="price">$<span>${price}</span></td>
+<td class="quantity">
+  <input type="number" value="0" min="0" placeholder="Quantity" />
+</td>
+<td class="subtotal">$<span>0</span></td>
+<td class="action">
+  <button class="btn btn-remove">Remove</button>
+</td>`;
+  trElement.innerHTML+=content;
+  const button = trElement.getElementsByTagName("button")[0];
+  button.addEventListener('click',removeProduct);
+  const parent = document.querySelector('#cart tbody');
+  parent.appendChild(trElement);
+
+  items[0].value="";
+  items[1].value=0;
 }
 
 window.addEventListener('load', () => {
@@ -60,6 +85,11 @@ window.addEventListener('load', () => {
   calculatePricesBtn.addEventListener('click', calculateAll);
 
   //... your code goes here
+  //Iteration 4
   const items = document.getElementsByClassName('btn btn-remove');
   [...items].forEach(item => item.addEventListener('click', removeProduct));
+
+  //Iteration 5
+  const create = document.getElementById("create");
+  create.addEventListener('click', createProduct);
 });
