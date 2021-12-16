@@ -1,11 +1,12 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  const price = product.querySelector('.price span').innerText;
+  const price = product.querySelector('.price span').innerHTML;
   const quantity = product.querySelector('.quantity input').value;
-  const subPrice = price * quantity
+  const subPrice = Number(price) * Number(quantity)
   const subtotal = product.querySelector('.subtotal span')
-  subtotal.innerText = subPrice
+  subtotal.innerText = subPrice.toFixed(2)
+  return subtotal;
 }
 
 function calculateAll() {
@@ -18,16 +19,16 @@ function calculateAll() {
   const listSubtotal = listOfProducts.map((product) => Number(product.querySelector('.subtotal span').innerText))
   const total = listSubtotal.reduce((acc,value) => acc + value)
   const totalDom = document.getElementById('total-value');
-  totalDom.innerHTML = `Total: $<span>${total}</span>`
+  totalDom.innerHTML = `Total: $<span>${total.toFixed(2)}</span>`
 }
 
 // ITERATION 4
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
+  //console.log('The target in remove is:', target);
   const parent = target.parentNode.parentNode
-  console.log(parent)
+  //console.log(parent)
   parent.remove()
 }
 
@@ -52,10 +53,15 @@ function createProduct() {
   </tr>`
   let newTR = document.createElement('tr');
   newTR.innerHTML = newProduct
+  newTR.className = "product"
   const parent = document.getElementById('table-body');
   if(productName !==undefined && productPrice > 0) {
     parent.appendChild(newTR);
   }
+  //console.log(newTR)
+  const calculateRemoveBtn = document.getElementsByClassName('btn-remove');
+  const listRemoveBtn = [...calculateRemoveBtn];
+  listRemoveBtn.forEach(btn => btn.addEventListener('click', removeProduct))
   //... your code goes here
 }
 
@@ -70,4 +76,3 @@ window.addEventListener('load', () => {
   const calculateCreateBtn = document.getElementById('create');
   calculateCreateBtn.addEventListener('click', createProduct);
 });
-
