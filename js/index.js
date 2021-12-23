@@ -78,6 +78,7 @@ function createProduct() {
   let actionBtn = document.createElement('button');
   actionBtn.textContent = 'Remove';
   actionBtn.classList.add('btn', 'btn-remove');
+  actionBtn.addEventListener('click', removeProduct);
   tdAction.appendChild(actionBtn);
 
   newLine.appendChild(tdName);
@@ -95,7 +96,6 @@ window.addEventListener('load', () => {
 
   //remove products
   let removeBtn = document.querySelectorAll('.btn-remove');
-
   removeBtn.forEach((elem) => {
     elem.addEventListener('click', removeProduct);
   });
