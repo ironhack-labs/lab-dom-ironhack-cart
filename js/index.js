@@ -88,6 +88,8 @@ function createProduct() {
   newLine.appendChild(tdAction);
 
   body.appendChild(newLine);
+  newProduct.getElementsByTagName('input')[0].value = '';
+  newProduct.getElementsByTagName('input')[1].value = '';
 }
 
 window.addEventListener('load', () => {
