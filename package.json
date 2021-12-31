@@ -9,10 +9,10 @@
   "devDependencies": {
     "jest": "^26.6.3",
     "jest-html-reporter": "^3.3.0",
-    "jest-junit": "^12.0.0",
+    "jest-junit": "^13.0.0",
     "jest-puppeteer": "^5.0.3",
-    "puppeteer": "^9.1.1",
-    "serve": "^11.3.2"
+    "puppeteer": "9.0.0",
+    "serve": "^13.0.2"
   },
   "jest": {
     "preset": "jest-puppeteer",
