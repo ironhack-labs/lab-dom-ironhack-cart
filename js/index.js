@@ -1,49 +1,40 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
+//if using the word 'product' we need to say 'product' before the 'querySelector'
+//document won't work
 //get price and quantity from DOM
 const price = product.querySelector('.price span');
-//make inner html value a number type
-const priceAmount = Number(price.innerHTML);
-//set quantity to the value attribute
-const quantity = document.querySelector('.quantity input');
-const quantityAmount = Number(quantity.value);
-//get the object from DOM and store in a variable
-const subTotal = product.querySelector('.subtotal span');
-//calculate sub total price and store it in a variable
-const subtotalAmount =priceAmount * quantityAmount;
-subTotal.innerHTML = Number(subtotalAmount);
+const priceAmount = price.innerHTML;
+const quantity = product.querySelector('.quantity input');
+const quantityAmount = quantity.value;
 
-return subtotalAmount;
+//calculate sub total price and store it in a variable
+const subTotalAmount = priceAmount * quantityAmount;
+//get the subtotal object from DOM and store in a variable
+const subTotal = product.querySelector('.subtotal span');
+subTotal.innerHTML = subTotalAmount;
+
+console.log(subTotalAmount);
+return subTotalAmount;
 }
 
 function calculateAll() {
   // code in the following two lines is added just for testing purposes.
   // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
+  //const singleProduct = document.querySelector('.product');
+  //updateSubtotal(singleProduct);
   // end of test
-
   // ITERATION 2
-
   let allProducts = document.querySelectorAll('.product');
   let subTotals = 0;
   //for each product on the list, run updateSubtotal
-  allProducts.forEach((singleProduct)=> {
-    subTotals += updateSubtotal(singleProduct);
+  [...allProducts].forEach((eachProduct)=> {
+    subTotals += updateSubtotal(eachProduct);
+    console.log(eachProduct);
   });
   
-
-
-
     //total = total + subTotal;
-  
-
-
-
-
-  
-  
 
   // ITERATION 3
   //... your code goes here
