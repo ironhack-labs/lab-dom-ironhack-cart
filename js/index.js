@@ -1,7 +1,6 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
   const price = product.querySelector('.price span').innerHTML;
   const quantity = product.querySelector('.quantity input').value;
   const subtotal = price * quantity;
@@ -34,20 +33,55 @@ function calculateAll() {
 // ITERATION 4
 
 function removeProduct(event) {
-  const target = event.currentTarget;
+  const target = event.currentTarget.parentNode.parentNode;
   console.log('The target in remove is:', target);
-  //... your code goes here
+  target.remove();
+  calculateAll();
 }
 
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  const name = document
+    .querySelector('.create-product')
+    .querySelectorAll('td')[0]
+    .querySelector('input').value;
+  const price = document
+    .querySelector('.create-product')
+    .querySelectorAll('td')[1]
+    .querySelector('input').value;
+  productsList = document.querySelectorAll('tr');
+  previousProduct = productsList[productsList.length - 2];
+  const text = `<tr class="product">
+  <td class="name">
+    <span>${name}</span>
+  </td>
+  <td class="price">$<span>${price}</span></td>
+  <td class="quantity">
+    <input type="number" value="0" min="0" placeholder="Quantity" />
+  </td>
+  <td class="subtotal">$<span>0</span></td>
+  <td class="action">
+    <button class="btn btn-remove">Remove</button>
+  </td>
+  </tr>`;
+  previousProduct.insertAdjacentHTML('afterend', text);
 }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+  removeBtnLoader();
+
+  const createProductBtn = document.getElementById('create');
+  createProductBtn.addEventListener('click', createProduct);
+  createProductBtn.addEventListener('click', removeBtnLoader);
 });
+
+function removeBtnLoader() {
+  const removeProductBtnArr = document.querySelectorAll('.btn-remove');
+  for (const removeBtn of removeProductBtnArr) {
+    removeBtn.addEventListener('click', removeProduct);
+  }
+}
