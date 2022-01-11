@@ -10,21 +10,22 @@ function updateSubtotal(product) {
 
   let priceValue = [];
   let quantityValue = [];
+  //let subtotalValues = [];
   let subtotal = 0;
 
   for (let i = 0; i < priceElement.length; i++) {
       priceValue.push(priceElement[i].innerText.slice(1));
       quantityValue.push(quantityElement[i].getElementsByTagName("input")[0].value);
       let subtotal = Number(priceValue[i]) * Number(quantityValue[i]);
+      //subtotalValues.push(subtotal);
       subtotalElement[i].innerText  = subtotal;
     }
 
   subtotalElement.innerText = subtotal;
   
-  console.log(subtotal)
 }
 
-function calculateAll() {
+function calculateAll(array) {
   // code in the following two lines is added just for testing purposes.
   // it runs when only iteration 1 is completed. at later point, it can be removed.
   const singleProduct = document.querySelector('.product');
@@ -36,6 +37,15 @@ function calculateAll() {
 
   // ITERATION 3
   //... your code goes here
+
+  let subtotalElement = document.getElementsByClassName("subtotal");
+  let total = 0;
+
+  for (let i = 0; i < subtotalElement.length; i++) {
+    total += Number(subtotalElement[i].innerText);
+  }
+  let totalElement = document.getElementById("total-value");
+  totalElement.getElementsByTagName("span")[0].innerHTML = total;
 }
 
 // ITERATION 4
