@@ -2,8 +2,26 @@
 
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
-
+  
   //... your code goes here
+  let priceElement = document.getElementsByClassName("price");
+  let quantityElement = document.getElementsByClassName("quantity");
+  let subtotalElement = document.getElementsByClassName("subtotal");
+
+  let priceValue = [];
+  let quantityValue = [];
+  let subtotal = 0;
+
+  for (let i = 0; i < priceElement.length; i++) {
+      priceValue.push(priceElement[i].innerText.slice(1));
+      quantityValue.push(quantityElement[i].getElementsByTagName("input")[0].value);
+      let subtotal = Number(priceValue[i]) * Number(quantityValue[i]);
+      subtotalElement[i].innerText  = subtotal;
+    }
+
+  subtotalElement.innerText = subtotal;
+  
+  console.log(subtotal)
 }
 
 function calculateAll() {
