@@ -2,34 +2,36 @@
 
 function updateSubtotal(product) {
 //get price and quantity from DOM
-const price = product.querySelector('.price span').innerHTML;
+const price = product.querySelector('.price span');
+//make inner html value a number type
+const priceAmount = Number(price.innerHTML);
 //set quantity to the value attribute
-let quantity = document.querySelector('.quantity input').value;
+const quantity = document.querySelector('.quantity input');
+const quantityAmount = Number(quantity.value);
+//get the object from DOM and store in a variable
+const subTotal = product.querySelector('.subtotal span');
 //calculate sub total price and store it in a variable
-let subTotal = quantity * price;
-//show the subtotal: get the object from DOM and set new value
-product.querySelector('.subtotal span').innerHTML = subTotal;
-console.log(subTotal);
-return subTotal;
+const subtotalAmount =priceAmount * quantityAmount;
+subTotal.innerHTML = Number(subtotalAmount);
+
+return subtotalAmount;
 }
 
 function calculateAll() {
   // code in the following two lines is added just for testing purposes.
   // it runs when only iteration 1 is completed. at later point, it can be removed.
-  //const singleProduct = document.querySelector('.product');
-  //updateSubtotal(singleProduct);
+  const singleProduct = document.querySelector('.product');
+  updateSubtotal(singleProduct);
   // end of test
 
   // ITERATION 2
 
   let allProducts = document.querySelectorAll('.product');
-  console.log(allProducts);
-  //let total = 0;
+  let subTotals = 0;
   //for each product on the list, run updateSubtotal
-  for (const product of allProducts) {
-    updateSubtotal(product);
-  }
-
+  allProducts.forEach((singleProduct)=> {
+    subTotals += updateSubtotal(singleProduct);
+  });
   
 
 
