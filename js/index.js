@@ -14,8 +14,6 @@ const subTotalAmount = priceAmount * quantityAmount;
 //get the subtotal object from DOM and store in a variable
 const subTotal = product.querySelector('.subtotal span');
 subTotal.innerHTML = subTotalAmount;
-
-console.log(subTotalAmount);
 return subTotalAmount;
 }
 
@@ -31,13 +29,13 @@ function calculateAll() {
   //for each product on the list, run updateSubtotal
   [...allProducts].forEach((eachProduct)=> {
     subTotals += updateSubtotal(eachProduct);
-    console.log(eachProduct);
+    console.log(subTotals);
   });
-  
-    //total = total + subTotal;
-
   // ITERATION 3
-  //... your code goes here
+  const total = document.querySelector('#total-value span');
+  //the order before/after the equal sign MATTERS!
+  //i.e: subTotals = total.innerHTML; won't work
+  total.innerHTML = subTotals;
 }
 
 // ITERATION 4
