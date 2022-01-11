@@ -60,8 +60,31 @@ function removeProduct(event) {
 
 // ITERATION 5
 
-function createProduct() {
+function createProduct(event) {
   //... your code goes here
+  //1 create html structure
+  let tr = document.createElement('tr');
+  tr.classList.add("product");
+  let td = document.createElement('td');
+  td.classList.add("name");
+  let span = document.createElement('span');
+  span.innerHTML = "new product";
+  td.appendChild(span);
+
+  let tdprice = document.createElement('td');
+  tdprice.classList.add("price");
+  let spanprice = document.createElement('span');
+  spanprice.innerHTML = "20";
+  tdprice.appendChild(spanprice);
+
+  let tdquantity = document.createElement('td');
+  tdquantity.classList.add("price");
+  let inputuantity = document.createElement('input');
+  inputuantity.innerHTML = "1";
+  tdquantity.appendChild(inputuantity);
+
+  document.body.appendChild(tr, td, tdprice, tdquantity);
+
 }
 
 window.addEventListener('load', () => {
