@@ -33,9 +33,11 @@ function calculateAll() {
 // ITERATION 4
 
 function removeProduct(event) {
-  const target = event.currentTarget.parentNode.parentNode;
-  console.log('The target in remove is:', target);
-  target.remove();
+  const row = event.currentTarget.parentNode.parentNode;
+  const parent = row.parentNode;
+  console.log('The target in remove is:', row);
+  // row.remove(); //alternative solution
+  parent.removeChild(row);
   calculateAll();
 }
 
