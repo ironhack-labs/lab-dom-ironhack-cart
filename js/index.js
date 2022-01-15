@@ -30,8 +30,6 @@ function calculateAll() {
   arrTr.forEach(eachProduct => {
     sum += updateSubtotal(eachProduct);
   });
-
-  console.log(totalPrice);
   totalPrice.textContent = sum.toFixed(2);
 
 
