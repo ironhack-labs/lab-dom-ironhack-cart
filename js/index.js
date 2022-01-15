@@ -32,19 +32,20 @@ function calculateAll() {
   });
   totalPrice.textContent = sum.toFixed(2);
 
-
-
-  // totalPrice.textContent = totalSub;
-
-
 }
 
 // ITERATION 4
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
   //... your code goes here
+
+  const element = target.parentNode;
+  const row = element.parentNode;
+  const removeProduct = row.parentNode;
+
+  removeProduct.removeChild(row);
+
 
 }
 
@@ -52,6 +53,7 @@ function removeProduct(event) {
 
 function createProduct() {
   //... your code goes here
+
 }
 
 window.addEventListener('load', () => {
@@ -59,4 +61,7 @@ window.addEventListener('load', () => {
   calculatePricesBtn.addEventListener('click', calculateAll);
 
   //... your code goes here
+
+  const removeBtn = document.querySelectorAll('.btn-remove');
+  removeBtn.forEach(eachBtn => eachBtn.addEventListener('click', removeProduct))
 });
