@@ -25,10 +25,8 @@ function calculateAll() {
   const price = document.getElementsByClassName('priceNum')
   const quantity = document.querySelectorAll('.quantityNum')
   const subtotal = document.querySelectorAll('.subtotalNum')
+  let total = 0
 
-  console.log(price[0].innerHTML)
-  console.log(quantity[0].value)
-  console.log(subtotal[0].innerHTML)
 
   const products = document.querySelectorAll('.product')
   console.log(products)
@@ -42,12 +40,15 @@ function calculateAll() {
 
     subtotal[i].innerHTML = subtotalProduct
 
+    total+= subtotalProduct
     console.log(subtotalProduct)
   }
 
 
+
   // ITERATION 3
-  //... your code goes here
+  document.querySelector('#total').innerHTML = total
+  return total 
 }
 
 // ITERATION 4
@@ -56,6 +57,8 @@ function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
   //... your code goes here
+
+  
 }
 
 // ITERATION 5
