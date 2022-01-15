@@ -18,37 +18,55 @@ function updateSubtotal(product) {
 }
 
 
-  function calculateAll() {
-    // code in the following two lines is added just for testing purposes.
-    // it runs when only iteration 1 is completed. at later point, it can be removed.
-    const singleProduct = document.querySelector('.product');
-    updateSubtotal(singleProduct);
-    // end of test
+function calculateAll() {
 
-    // ITERATION 2
-    //... your code goes here
 
-    // ITERATION 3
-    //... your code goes here
+  // ITERATION 2
+  const price = document.getElementsByClassName('priceNum')
+  const quantity = document.querySelectorAll('.quantityNum')
+  const subtotal = document.querySelectorAll('.subtotalNum')
+
+  console.log(price[0].innerHTML)
+  console.log(quantity[0].value)
+  console.log(subtotal[0].innerHTML)
+
+  const products = document.querySelectorAll('.product')
+  console.log(products)
+
+  for (let i = 0; i < products.length ; i++ ) {
+    console.log(i)
+    let itQuantity = quantity[i].value
+    let itPrice = price[i].innerHTML
+    
+    const subtotalProduct = itPrice * itQuantity
+
+    subtotal[i].innerHTML = subtotalProduct
+
+    console.log(subtotalProduct)
   }
 
-  // ITERATION 4
 
-  function removeProduct(event) {
-    const target = event.currentTarget;
-    console.log('The target in remove is:', target);
-    //... your code goes here
-  }
+  // ITERATION 3
+  //... your code goes here
+}
 
-  // ITERATION 5
+// ITERATION 4
 
-  function createProduct() {
-    //... your code goes here
-  }
+function removeProduct(event) {
+  const target = event.currentTarget;
+  console.log('The target in remove is:', target);
+  //... your code goes here
+}
 
-  window.addEventListener('load', () => {
-    const calculatePricesBtn = document.querySelector('#calculate');
-    calculatePricesBtn.addEventListener('click', calculateAll);
+// ITERATION 5
 
-    //... your code goes here
-  });
+function createProduct() {
+  //... your code goes here
+}
+
+window.addEventListener('load', () => {
+  const calculatePricesBtn = document.querySelector('#calculate');
+  calculatePricesBtn.addEventListener('click', calculateAll);
+
+  //... your code goes here
+});
