@@ -80,29 +80,6 @@ function createProduct() {
 
   //... your code goes here
 
-  ProductName = document.querySelector('.create-product input[type=text]').value;
-  ProductPrice = document.querySelector('.create-product input[type=number]').value;
-  const newProduct = document.createElement('tr');
-  console.log(newProduct);
-  newProduct.className = 'product';
-  newProduct.innerHTML = 
-   `<td class="name"><span>${ProductName}</span></td>
-    <td class="price">$<span>${ProductPrice}</span></td>
-    <td class="quantity"><input type="number" value="0" min="0" placeholder="Quantity"/></td>
-    <td class="subtotal">$<span>0</span></td>
-    <td class="action"><button class="btn btn-remove">Remove</button></td>`;
-
-  console.log (newProduct.className);
-  console.log (newProduct.innerHTML);
-  
-  const body = document.querySelector('tbody');
-  console.log(body);
-
-  body.appendChild(newProduct);
-
-  const RemoveBtn = newProduct.querySelector('.btn-remove');
-  RemoveBtn.addEventListener('click', removeProduct);
-
 
 }
 
