@@ -75,11 +75,11 @@ function removeProduct(event) {
 function createProduct() {
   //... your code goes here
 
- 
+
   const newName = document.querySelector('#newItem').value
   const newPrice = document.querySelector('#newPrice').value
   console.log(newPrice)
-  
+
 
   console.log(newName)
 
@@ -97,7 +97,7 @@ window.addEventListener('load', () => {
   //... your code goes here
 
 
-  
+
   const createBtn = document.querySelector('#create')
   createBtn.addEventListener('click', createProduct)
 
@@ -108,3 +108,23 @@ window.addEventListener('load', () => {
   })
 
 });
+
+
+// loquisimo con lo siguiente... 
+let observer = new MutationObserver((mutationList, observer) => {
+  const element = document.querySelector('.product')
+  for (let mutation of mutationList) {
+    if (mutation.type == "childList") {
+
+      document.querySelectorAll('.btn-remove').forEach(eachline => {
+        eachline.onclick = function (e) {
+          removeProduct(e)
+        }
+      })
+
+    }
+  }
+})
+
+let products = document.querySelector('.product')
+observer.observe(products, { "childList": true })
