@@ -77,7 +77,7 @@ function createProduct() {
 
 
   const newName = document.querySelector('#newItem').value
-  const newPrice = document.querySelector('#newPrice').value
+  const newPrice = 1*document.querySelector('#newPrice').value
   console.log(newPrice)
 
 
@@ -85,7 +85,11 @@ function createProduct() {
 
   const newProduct = document.createElement('tr')
   newProduct.setAttribute('class', 'product')
-  newProduct.innerHTML = `<td class="name"> <span>${newName}</span ></td ><td class="price">$<span class="priceNum">${newPrice}</span></td><td class="quantity">    <input class ='quantityNum'type="number" value="0" min="0" placeholder="Quantity" /></td><td class="subtotal">$<span class='subtotalNum'>0</span></td><td class="action">       <button class="btn btn-remove btn3">Remove</button>          </td>`
+  newProduct.innerHTML = `<td class="name"> <span>${newName}</span ></td >
+  <td class="price">$<span class="priceNum">${newPrice.toFixed(2)}</span></td>
+  <td class="quantity"><input class ='quantityNum'type="number" value="0" min="0" placeholder="Quantity" /></td>
+  <td class="subtotal">$<span class='subtotalNum'>0</span></td>
+  <td class="action"><button class="btn btn-remove">Remove</button>          </td>`
 
   document.querySelector('.product-chart').appendChild(newProduct)
 }
