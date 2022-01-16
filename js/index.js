@@ -55,10 +55,24 @@ function calculateAll() {
 
 }
 // ITERATION 4
+const buttonsRemove = document.querySelectorAll(".action")
+buttonsRemove.forEach(function (eachButton) {
+  eachButton.onclick = function () {
+    console.log("delete")
+    removeProduct(event)
+  }
+})
+
+
 function removeProduct(event) {
+
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+  const parent = target.parentNode;
+  const old = parent.parentNode
+  console.log('The target in remove is:', parent);
+  old.removeChild(parent)
+  
+
 }
 // ITERATION 5
   const buttonCreate = document.querySelector('#create');
