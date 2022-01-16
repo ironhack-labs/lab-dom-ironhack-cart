@@ -58,8 +58,6 @@ function removeProduct(event) {
   console.log('The target in remove is:', target);
   //... your code goes here
 
-  let productLine = document.querySelectorAll(".product")
-
 
   document.querySelectorAll(".product").forEach(eachLine => {
     eachLine.onclick = function () {
@@ -92,6 +90,10 @@ function createProduct() {
   <td class="action"><button class="btn btn-remove">Remove</button>          </td>`
 
   document.querySelector('.product-chart').appendChild(newProduct)
+  
+  document.querySelector('#newItem').value = ''
+  document.querySelector('#newPrice').value = 0
+
 }
 
 window.addEventListener('load', () => {
@@ -114,21 +116,4 @@ window.addEventListener('load', () => {
 });
 
 
-// loquisimo con lo siguiente... 
-let observer = new MutationObserver((mutationList, observer) => {
-  const element = document.querySelector('.product')
-  for (let mutation of mutationList) {
-    if (mutation.type == "childList") {
 
-      document.querySelectorAll('.btn-remove').forEach(eachline => {
-        eachline.onclick = function (e) {
-          removeProduct(e)
-        }
-      })
-
-    }
-  }
-})
-
-let products = document.querySelector('.product')
-observer.observe(products, { "childList": true })
