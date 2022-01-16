@@ -88,8 +88,16 @@ function createProduct() {
   console.log(createBtnValue.value)
   newRow.querySelector('.product span').textContent = createBtnValue.value
   const createBtnPrice = document.querySelector('.create-product td:nth-child(2) input')
-  console.log("this is " + createBtnPrice.value)
   newRow.querySelector('.product .price span').textContent = createBtnPrice.value
+
+  ///RESETEO DE LOS VALORES INTRODUCIDOS POR EL USUARIO 
+
+
+  const inputValueByUser = document.querySelectorAll('.create-product input')
+  inputValueByUser[0].value = ""
+  inputValueByUser[0].placeholder = "Product Name"
+  inputValueByUser[1].value = ""
+  inputValueByUser[1].placeholder = 0
 
 
 }
