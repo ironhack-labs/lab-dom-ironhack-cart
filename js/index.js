@@ -53,7 +53,32 @@ function removeProduct(event) {
 
 function createProduct() {
   //... your code goes here
+  let nameValue = document.querySelector('.inputName').value;
+  let priceValue = document.querySelector('.inputPrice').value;
 
+  if (nameValue !== '') {
+    let newRow = document.createElement('tr');
+    newRow.setAttribute('class', 'product');
+    document.querySelector('tbody').appendChild(newRow);
+    newRow.innerHTML = `<td class="name">
+          <span>${nameValue}</span>
+        </td>
+        <td class="price">$<span>${priceValue}</span></td>
+        <td class="quantity">
+          <input type="number" value="0" min="0" placeholder="Quantity" />
+        </td>
+        <td class="subtotal">$<span>0</span></td>
+        <td class="action">
+          <button id="button" class="btn btn-remove">Remove</button>
+        </td> `;
+
+    const removeBtn = newRow.querySelector('.btn-remove');
+    removeBtn.addEventListener('click', removeProduct);
+
+  }
+  else {
+    alert("You must fill 'Product Name'");
+  }
 }
 
 window.addEventListener('load', () => {
@@ -64,4 +89,7 @@ window.addEventListener('load', () => {
 
   const removeBtn = document.querySelectorAll('.btn-remove');
   removeBtn.forEach(eachBtn => eachBtn.addEventListener('click', removeProduct))
+
+  const createBtn = document.getElementById('create');
+  createBtn.addEventListener('click', createProduct);
 });
