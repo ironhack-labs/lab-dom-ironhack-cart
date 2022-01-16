@@ -75,19 +75,17 @@ function removeProduct(event) {
 
 function createProduct() {
   //... your code goes here
-  const name = document.querySelector('.create-product input')
-  const price = document.querySelector('.create-product :nth-child(2)')
-  const a = document.querySelector('tbody')
-  const b = document.querySelector('.product')
-  var cln = b.cloneNode(true);
-  const newRow = a.appendChild(cln)
+  const tbodyNode = document.querySelector('tbody')
+  const productNode = document.querySelector('.product')
+  var cln = productNode.cloneNode(true);
+  const newRow = tbodyNode.appendChild(cln)
 
   const removeButtons = document.querySelectorAll('.btn-remove')
   removeButtons.forEach(eachRemoveBtn => {
     eachRemoveBtn.addEventListener('click', removeProduct)
   })
 
-  newRow.children[0].textContent;
+
 
 
   const createBtnValue = document.querySelector('.create-product input')
