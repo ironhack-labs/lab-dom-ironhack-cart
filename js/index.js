@@ -89,13 +89,73 @@ function removeProduct(event) {
 
   // update total
   calculateAll()
-
 }
 
 // ITERATION 5
 
 function createProduct() {
   //... your code goes here
+
+  // select the row to clone
+  let row = document.querySelector('.product')
+
+  // select the table to append it
+  let table = document.querySelector('tbody')
+
+  // clone the row
+  let clone = row.cloneNode(true)
+
+  // append it and set quantity to 0
+  table.appendChild(clone)
+  let quantity = document.querySelectorAll('.quantity input')
+  console.log(quantity)
+
+  for (let i = 0; i < quantity.length; i++) {
+    if (i === (quantity.length - 1)) {
+      quantity[i].value = 0
+    } else {
+      continue
+    }
+  }
+
+  // select values to change
+  const newNameArrNodes = document.querySelectorAll('.name span')
+  const newPriceArrNodes = document.querySelectorAll('.price span')
+
+  const newNameValue = newNameArrNodes[newNameArrNodes.length - 1]
+  const newPriceValue = newPriceArrNodes[newPriceArrNodes.length - 1]
+
+  // get new values
+  const nameField = document.querySelector('.new-name')
+  const nameValue = nameField.value
+
+  const priceField = document.querySelector('.new-price')
+  const priceValue = priceField.value
+
+  // set new values
+  newNameValue.textContent = nameValue
+  newPriceValue.textContent = parseFloat(priceValue)
+
+  // clear inputs
+  const newProductRow = document.querySelectorAll('.create-product input')
+  newProductRow.forEach(input => {
+    const inputClass = input.getAttribute('class')
+    if (inputClass === "new-name") {
+      input.value = ''
+    } else {
+      input.value = 0
+    }
+  })
+
+
+  // calculate total
+  calculateAll()
+
+  document.querySelectorAll('.btn-remove').forEach(eachBtn => {
+    eachBtn.onclick = function (e) {
+      removeProduct(e.currentTarget)
+    }
+  })
 
 }
 
@@ -112,7 +172,8 @@ window.addEventListener('load', () => {
     }
   })
 
-
+  const createBtn = document.querySelector('#create')
+  createBtn.addEventListener('click', createProduct)
 });
 
 
