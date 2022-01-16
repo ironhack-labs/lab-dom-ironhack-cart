@@ -16,19 +16,17 @@ function calculateAll() {
   // ITERATION 2
 
   const listOfProducts = document.querySelectorAll('.product')
+  let counter = 0
+
     listOfProducts.forEach(eachProduct => {
       updateSubtotal(eachProduct)
       
+      counter += updateSubtotal(eachProduct)
     })  
 
   // ITERATION 3 
-  // const total = document.querySelector('#total-value span')
-  //   total.forEach(eachSubtotal => {
-  //     calculateAll(eachSubtotal)
-
-  //    })
-  
-  
+  let total = document.querySelector('#total-value span')
+    total.innerHTML = counter  
 
 }
 
