@@ -75,6 +75,9 @@ function createProduct() {
     const removeBtn = newRow.querySelector('.btn-remove');
     removeBtn.addEventListener('click', removeProduct);
 
+    document.querySelector('.inputName').value = '';
+    document.querySelector('.inputPrice').value = 0;
+
   }
   else {
     alert("You must fill 'Product Name'");
