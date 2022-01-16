@@ -55,8 +55,14 @@ function removeProduct(event) {
   let a = target.parentNode
 
   let b = a.parentNode
-  const asd = b.remove();
-  calculateAll();
+
+  if (document.querySelectorAll('.product').length > 1) {
+
+
+    const asd = b.remove();
+    calculateAll();
+
+  }
 
 
 
@@ -85,7 +91,6 @@ function createProduct() {
 
 
   const createBtnValue = document.querySelector('.create-product input')
-  console.log(createBtnValue.value)
   newRow.querySelector('.product span').textContent = createBtnValue.value
   const createBtnPrice = document.querySelector('.create-product td:nth-child(2) input')
   newRow.querySelector('.product .price span').textContent = createBtnPrice.value
