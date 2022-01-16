@@ -66,19 +66,6 @@ function createProduct() {
         </tr>`;
 
   cartBody.appendChild(newProduct);
-
-  /*
-  let newProduct = document.createElement('tr');
-  newProduct.className = 'product';
-  const name = document.createElement('td');
-  name.className = 'name';
-  const nameSpan = document.createElement('span');
-  nameSpan.appendChild(document.createTextNode(newName));
-
-  name.appendChild(nameSpan);
-  newProduct.appendChild(name);
-  cartBody.appendChild(newProduct);
-  */
 }
 
 let createProductButton = document.getElementById('create');
