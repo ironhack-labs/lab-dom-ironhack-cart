@@ -24,18 +24,18 @@ function calculateAll() {
   // ITERATION 2
   const allProducts = document.querySelectorAll('.product')
 
-  for (let i = 0; i < allProducts.length; i++) {
-    updateSubtotal(allProducts[i])
-  }
+  allProducts.forEach(product =>
+    updateSubtotal(product)
+  )
 
   // ITERATION 3
   const allSubtotals = document.querySelectorAll('.subtotal span')
 
   let subtotalsSumatory = 0
 
-  for (let i = 0; i < allSubtotals.length; i++) {
-    subtotalsSumatory += parseFloat(allSubtotals[i].innerHTML)
-  }
+  allSubtotals.forEach(subtotal =>
+    subtotalsSumatory += parseFloat(subtotal.innerHTML)
+  )
 
   const totalDisplay = document.querySelector('h2 span')
   totalDisplay.innerHTML = subtotalsSumatory
@@ -48,7 +48,7 @@ function removeProduct(event) {
   console.log('The target in remove is:', target);
   //... your code goes here
 
-  const productToRemove = target.parentNode.parentNode      // el 1º .parentNode llega al td y el 2ª .parentNode llega al tr
+  const productToRemove = target.parentNode.parentNode
   productToRemove.parentNode.removeChild(productToRemove)
 
   const removedProductSubtotal = productToRemove.querySelector('.subtotal span').innerHTML
@@ -72,21 +72,18 @@ function createProduct() {
   rowParent.appendChild(newRow)
 
   // Product's Name
-
   const productName = document.createElement('td')
   productName.setAttribute('class', 'name')
   productName.innerHTML = newProductName
 
 
   // Product's Price
-
   const productPrice = document.createElement('td')
   productPrice.setAttribute('class', 'price')
   productPrice.innerHTML = `$<span>${newProductPrice}</span>`
 
 
   // Product's Quantity
-
   const productQuantity = document.createElement('td')
   productQuantity.setAttribute('class', 'quantity')
   productQuantity.innerHTML = `<input type="number" value="0" min="0" placeholder="Quantity"/>`
@@ -103,19 +100,28 @@ function createProduct() {
   productRemove.setAttribute('class', 'action')
   productRemove.innerHTML = `<button class="btn btn-remove">Remove</button>`
 
+
+
   const productRows = document.querySelectorAll('tbody tr')
 
-  for (let i = 0; i < productRows.length; i++) {
-    if (productRows[i].childNodes.length === 0) {
-      productRows[i].appendChild(productName)
-      productRows[i].appendChild(productPrice)
-      productRows[i].appendChild(productQuantity)
-      productRows[i].appendChild(productSubtotal)
-      productRows[i].appendChild(productRemove)
+  productRows.forEach(function (row) {
+    if (row.childNodes.length === 0) {
+      row.appendChild(productName)
+      row.appendChild(productPrice)
+      row.appendChild(productQuantity)
+      row.appendChild(productSubtotal)
+      row.appendChild(productRemove)
     }
-  }
+  })
 
+
+  const newRemoveButtons = document.querySelectorAll('.btn-remove')
+
+  newRemoveButtons.forEach(button =>
+    button.addEventListener('click', removeProduct)
+  )
 }
+
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
