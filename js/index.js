@@ -73,6 +73,7 @@ function createProduct() {
 
   //get tbody of document to append to
   const body = document.querySelector('tbody');
+
   //append new element to tablebody
   body.appendChild(newProduct);
 
