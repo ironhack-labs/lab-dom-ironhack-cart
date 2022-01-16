@@ -61,8 +61,6 @@ function removeProduct(event) {
   let productLine = document.querySelectorAll(".product")
 
 
-  // document.querySelector('.product-chart').removeChild(productLine[0])
-
   document.querySelectorAll(".product").forEach(eachLine => {
     eachLine.onclick = function () {
       this.remove()
@@ -76,6 +74,20 @@ function removeProduct(event) {
 
 function createProduct() {
   //... your code goes here
+
+ 
+  const newName = document.querySelector('#newItem').value
+  const newPrice = document.querySelector('#newPrice').value
+  console.log(newPrice)
+  
+
+  console.log(newName)
+
+  const newProduct = document.createElement('tr')
+  newProduct.setAttribute('class', 'product')
+  newProduct.innerHTML = `<td class="name"> <span>${newName}</span ></td ><td class="price">$<span class="priceNum">${newPrice}</span></td><td class="quantity">    <input class ='quantityNum'type="number" value="0" min="0" placeholder="Quantity" /></td><td class="subtotal">$<span class='subtotalNum'>0</span></td><td class="action">       <button class="btn btn-remove btn3">Remove</button>          </td>`
+
+  document.querySelector('.product-chart').appendChild(newProduct)
 }
 
 window.addEventListener('load', () => {
@@ -84,13 +96,15 @@ window.addEventListener('load', () => {
 
   //... your code goes here
 
-  //const removeButton = document.querySelector('.btn-remove')
 
-  //removeButton.addEventListener('click', removeProduct)
+  
+  const createBtn = document.querySelector('#create')
+  createBtn.addEventListener('click', createProduct)
 
   document.querySelectorAll('.btn-remove').forEach(eachline => {
     eachline.onclick = function (e) {
       removeProduct(e)
     }
   })
+
 });
