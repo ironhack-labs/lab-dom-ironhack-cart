@@ -116,83 +116,86 @@ function createProduct() {
   let createdPrice = document.querySelector('.createdPrice')
   console.log(createdPrice.value)
 
+  //añadido el bucle "if" para evitar crear producto con valores inexistentes
 
-  let table = document.querySelector('tbody')
-  let newTr = document.createElement('tr')
-  newTr.setAttribute('class', 'product')
-  table.appendChild(newTr)
+  if (createdName.value !== '' && createdPrice.value !== '0') {
+    let table = document.querySelector('tbody')
+    let newTr = document.createElement('tr')
+    newTr.setAttribute('class', 'product')
+    table.appendChild(newTr)
 
-  //name
-  let newTd1 = document.createElement('td')
-  newTr.appendChild(newTd1)
-  newTd1.setAttribute('class', 'name')
+    //name
+    let newTd1 = document.createElement('td')
+    newTr.appendChild(newTd1)
+    newTd1.setAttribute('class', 'name')
 
-  let newTd1Span = document.createElement('span')
-  newTd1.appendChild(newTd1Span)
-  newTd1Span.innerText = createdName.value
-
-
-  //price
-
-  let newTd2 = document.createElement('td')
-  newTr.appendChild(newTd2)
-  newTd2.setAttribute('class', 'price')
-
-  let newTd2Span = document.createElement('span')
-  newTd2Span.innerText = createdPrice.value
-  newTd2.innerHTML = '$'
-  newTd2.appendChild(newTd2Span)
+    let newTd1Span = document.createElement('span')
+    newTd1.appendChild(newTd1Span)
+    newTd1Span.innerText = createdName.value
 
 
+    //price
 
-  //quantity
+    let newTd2 = document.createElement('td')
+    newTr.appendChild(newTd2)
+    newTd2.setAttribute('class', 'price')
 
-  let newTd3 = document.createElement('td')
-  newTr.appendChild(newTd3)
-  newTd3.setAttribute('class', 'quantity')
-
-  let newTd3input = document.createElement('input')
-  newTd3input.setAttribute('type', 'number')
-  newTd3input.setAttribute('value', '0')
-  newTd3input.setAttribute('min', '0')
-  newTd3input.setAttribute('placeholder', 'Quantity')
-  newTd3.appendChild(newTd3input)
-
-
-  //subtotal
-
-  let newTd4 = document.createElement('td')
-  newTr.appendChild(newTd4)
-  newTd4.setAttribute('class', 'subtotal')
+    let newTd2Span = document.createElement('span')
+    newTd2Span.innerText = createdPrice.value
+    newTd2.innerHTML = '$'
+    newTd2.appendChild(newTd2Span)
 
 
 
-  let newTd4Span = document.createElement('span')
-  newTd4Span.innerText = 0
-  newTd4.innerHTML = '$'
-  newTd4.appendChild(newTd4Span)
+    //quantity
 
-  //button remove
+    let newTd3 = document.createElement('td')
+    newTr.appendChild(newTd3)
+    newTd3.setAttribute('class', 'quantity')
 
-  let newTd5 = document.createElement('td')
-  newTr.appendChild(newTd5)
-  newTd5.setAttribute('class', 'action')
-
-  console.log('testpoint')
-
-  let newTd5Button = document.createElement('button')
-  newTd5Button.classList.add('btn', 'btn-remove')
-  newTd5.appendChild(newTd5Button)
-  newTd5Button.innerText = 'Remove'
+    let newTd3input = document.createElement('input')
+    newTd3input.setAttribute('type', 'number')
+    newTd3input.setAttribute('value', '0')
+    newTd3input.setAttribute('min', '0')
+    newTd3input.setAttribute('placeholder', 'Quantity')
+    newTd3.appendChild(newTd3input)
 
 
+    //subtotal
 
-  console.log('succes2')
+    let newTd4 = document.createElement('td')
+    newTr.appendChild(newTd4)
+    newTd4.setAttribute('class', 'subtotal')
 
 
+
+    let newTd4Span = document.createElement('span')
+    newTd4Span.innerText = 0
+    newTd4.innerHTML = '$'
+    newTd4.appendChild(newTd4Span)
+
+    //button remove
+
+    let newTd5 = document.createElement('td')
+    newTr.appendChild(newTd5)
+    newTd5.setAttribute('class', 'action')
+
+    console.log('testpoint')
+
+    let newTd5Button = document.createElement('button')
+    newTd5Button.classList.add('btn', 'btn-remove')
+    newTd5.appendChild(newTd5Button)
+    newTd5Button.innerText = 'Remove'
+
+
+
+    console.log('succes2')
+
+  }
 
   createdName.value = ''
   createdPrice.value = '0'
+
 
 
 }
