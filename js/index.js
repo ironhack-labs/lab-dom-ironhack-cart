@@ -1,4 +1,10 @@
+///CREO CLON DEL NODO HTML PARA CLONARLO EN LA ITERATION 4
+const productNode = document.querySelector('.product')
+const cln = productNode.cloneNode(true);
+
+
 // ITERATION 1
+
 
 function updateSubtotal(product) {
 
@@ -56,15 +62,10 @@ function removeProduct(event) {
 
   let b = a.parentNode
 
-  if (document.querySelectorAll('.product').length > 1) {
 
 
-    const asd = b.remove();
-    calculateAll();
-
-  }
-
-
+  const asd = b.remove();
+  calculateAll();
 
 
 
@@ -75,9 +76,12 @@ function removeProduct(event) {
 
 function createProduct() {
   //... your code goes here
+
+  if (document.querySelector('.create-product input').value === "") {
+    return
+  }
   const tbodyNode = document.querySelector('tbody')
-  const productNode = document.querySelector('.product')
-  var cln = productNode.cloneNode(true);
+
   const newRow = tbodyNode.appendChild(cln)
 
   const removeButtons = document.querySelectorAll('.btn-remove')
@@ -98,9 +102,8 @@ function createProduct() {
 
   const inputValueByUser = document.querySelectorAll('.create-product input')
   inputValueByUser[0].value = ""
-  inputValueByUser[0].placeholder = "Product Name"
-  inputValueByUser[1].value = ""
-  inputValueByUser[1].placeholder = 0
+  inputValueByUser[1].value = "0"
+
 
 
 }
