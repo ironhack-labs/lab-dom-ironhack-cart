@@ -24,9 +24,17 @@ function calculateAll() {
   updateSubtotal(allProducts[1])
 
   // ITERATION 3
-  const totalPrice = product.querySelectorAll('.subtotal span');
+  const totalPrice = document.querySelectorAll('.subtotal span');
+  const totalPriceValue = totalPrice[0].textContent + totalPrice[1].textContent
 
-  const totalDisplay = 
+
+  //Consigo obtener ambos subtotales para enseñarlos en el total pero me concatena los valores
+
+  console.log(totalPrice[0].innerHTML + totalPrice[1].innerHTML)
+
+
+  const totalDisplay = document.querySelector('#total-value span')
+  totalDisplay.textContent = totalPriceValue
 }
 
 // ITERATION 4
