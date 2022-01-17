@@ -14,18 +14,20 @@ function updateSubtotal(product) {
 
   subtotal.textContent = subtotalPrice
 
+  return subtotalPrice
+
 }
 
 function calculateAll() {
 
   // ITERATION 2
   const allProducts = document.querySelectorAll('.product');
-  updateSubtotal(allProducts[0])
-  updateSubtotal(allProducts[1])
+  const productOne = updateSubtotal(allProducts[0])
+  const productTwo = updateSubtotal(allProducts[1])
 
   // ITERATION 3
   const totalPrice = document.querySelectorAll('.subtotal span');
-  const totalPriceValue = totalPrice[0].textContent + totalPrice[1].textContent
+  const totalPriceValue = productOne + productTwo
 
 
   //Consigo obtener ambos subtotales para enseñarlos en el total pero me concatena los valores
@@ -42,7 +44,9 @@ function calculateAll() {
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
-  //... your code goes here
+  const removeButton = querySelectorAll('.btn-remove');
+
+
 }
 
 // ITERATION 5
