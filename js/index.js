@@ -80,9 +80,11 @@ function createProduct() {
   if (document.querySelector('.create-product input').value === "") {
     return
   }
+
+  let newRowCloned = cln.cloneNode(true);
   const tbodyNode = document.querySelector('tbody')
 
-  const newRow = tbodyNode.appendChild(cln)
+  const newRow = tbodyNode.appendChild(newRowCloned)
 
   const removeButtons = document.querySelectorAll('.btn-remove')
   removeButtons.forEach(eachRemoveBtn => {
