@@ -57,16 +57,27 @@ function createProduct(event) {
       'td input'
     );
   let name = values[0].value;
-  let price = values[1].value;
-  let newProduct = document.querySelector('.product').cloneNode(true);
-  newProduct.querySelector('.name span').innerHTML = name;
-  newProduct.querySelector('.price span').innerHTML = price;
-  newProduct.querySelector('.quantity input').value = 0;
-  newProduct.querySelector('.subtotal span').innerHTML = 0;
-  newProduct
-    .querySelector('.btn-remove')
-    .addEventListener('click', removeProduct);
-  document.querySelector('tbody').append(newProduct);
+  let price = String(Number(values[1].value).toFixed(2));
+  let newProduct = `
+  <tr class="product">
+    <td class="name">
+      <span>${name}</span>
+    </td>
+    <td class="price">$<span>${price}</span></td>
+    <td class="quantity">
+      <input type="number" value="0" min="0" placeholder="Quantity" />
+    </td>
+    <td class="subtotal">$<span>0</span></td>
+    <td class="action">
+      <button class="btn btn-remove">Remove</button>
+    </td>
+  </tr>
+`;
+  document.querySelector('tbody').innerHTML += newProduct;
+  let removeButtons = document.querySelectorAll('.btn-remove');
+  for (button of removeButtons) {
+    button.addEventListener('click', removeProduct);
+  }
 }
 
 window.addEventListener('load', () => {
