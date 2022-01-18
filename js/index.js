@@ -5,7 +5,9 @@ function updateSubtotal(product) {
   let price = product.querySelector('.price span').innerHTML;
   let quantity = product.querySelector('.quantity input').value;
   // product.querySelector("sub")
-  product.querySelector('.subtotal span').innerHTML = String(price * quantity);
+  product.querySelector('.subtotal span').innerHTML = String(
+    (price * quantity).toFixed(2)
+  );
   return price * quantity;
   //... your code goes here
 }
@@ -27,7 +29,9 @@ function calculateAll() {
 
   // ITERATION 3
   //... your code goes here
-  document.querySelector('#total-value span').innerHTML = String(total);
+  document.querySelector('#total-value span').innerHTML = String(
+    total.toFixed(2)
+  );
 }
 
 // ITERATION 4
