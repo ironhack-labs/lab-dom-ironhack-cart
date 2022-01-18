@@ -1,32 +1,74 @@
 // ITERATION 1
 
-function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
 
-  //... your code goes here
+  function updateSubtotal(product) {
+    console.log('Calculating subtotal, yey!');
+//... your code goes here
+
+    const price = product.querySelector('.price span').textContent;
+    console.log(price)
+
+    const quantity = product.querySelector('.quantity input').value;
+    console.log(quantity)
+
+    currentValue= quantity*price;
+    console.log(currentValue)
+
+
+    const subTotal = product.querySelector('.subtotal span');
+    subTotal.innerHTML = currentValue;
+    return currentValue
+
+
+
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
+
 
   // ITERATION 2
-  //... your code goes here
+ //seleccionar el array de los nodos de productos
 
-  // ITERATION 3
-  //... your code goes here
+function calculateAll() {
+
+  const bothProducts = document.querySelectorAll('.product');
+
+  let sum = 0;
+
+  for (let i = 0; i < bothProducts.length; i++) {
+
+  let subtotal = updateSubtotal(bothProducts[i]);
+  bothProducts[i].querySelector('.subtotal span').textContent = subtotal;
+  sum += subtotal;
+
+  }
+  document.querySelector('#total-value span').textContent = sum;
 }
+
+
+
+
+
+// ITERATION 3
+// seleccionar los nodos del array de subtotales
+
 
 // ITERATION 4
 
 function removeProduct(event) {
+
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
   //... your code goes here
+
+const removeButtons = document.getElementByClass('btn-remove');
+removeButtons.addEventListener('click', () =>{
+  for (let i=0; i<removeButtons.length;i++){
+    document.querySelector('tbody').removeChild(removeButtons)
+    }
+  })
 }
+
 
 // ITERATION 5
 
@@ -35,6 +77,7 @@ function createProduct() {
 }
 
 window.addEventListener('load', () => {
+  console.log("prueba");
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
