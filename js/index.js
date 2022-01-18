@@ -8,7 +8,7 @@
     const price = product.querySelector('.price span').textContent;
     console.log(price)
 
-    const quantity = product.querySelector('.quantity input').textContent;
+    const quantity = product.querySelector('.quantity input').value;
     console.log(quantity)
 
     currentValue= quantity*price;
@@ -17,36 +17,41 @@
 
     const subTotal = product.querySelector('.subtotal span');
     subTotal.innerHTML = currentValue;
+    return currentValue
+
+
 
 }
-
 
 function calculateAll() {
 
 
   // ITERATION 2
  //seleccionar el array de los nodos de productos
-  const bothProducts= document.getElementsByClassName('product').textContent;
 
-  const totalNodes = document.getElementById('total-value span').textContent;
+function calculateAll() {
 
-  const subTotalBothNodes= document.getElementsByClassName('subtotal span').textContent;
+  const bothProducts = document.querySelectorAll('.product');
 
   let sum = 0;
 
+  for (let i = 0; i < bothProducts.length; i++) {
 
-  //iterar sobre el array de los productos
-  
-    for (let i = 0; i < bothProducts.length; i++){
-    updateSubtotal(bothProducts[i])
-    sum+= subTotalBothNodes[i]
-    }
-  // ITERATION 3
-  // seleccionar los nodos del array de subtotales
+  let subtotal = updateSubtotal(bothProducts[i]);
+  bothProducts[i].querySelector('.subtotal span').textContent = subtotal;
+  sum += subtotal;
 
-    totalNodes= subTotalBothNodes[i];
-    const totalText= getElementById('total-value').textcontent(totalNodes);
+  }
+  document.querySelector('#total-value span').textContent = sum;
 }
+
+
+
+
+
+// ITERATION 3
+// seleccionar los nodos del array de subtotales
+
 
 // ITERATION 4
 
@@ -59,9 +64,9 @@ function removeProduct(event) {
 const removeButtons = document.getElementByClass('btn-remove');
 removeButtons.addEventListener('click', () =>{
   for (let i=0; i<removeButtons.length;i++){
-  document.querySelector('tbody).removeChild(removeButtons)
-
+    document.querySelector('tbody').removeChild(removeButtons)
     }
+  })
 }
 
 
@@ -72,6 +77,7 @@ function createProduct() {
 }
 
 window.addEventListener('load', () => {
+  console.log("prueba");
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
