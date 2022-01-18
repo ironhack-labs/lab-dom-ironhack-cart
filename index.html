@@ -18,7 +18,7 @@
           <th>Action</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="body">
         <tr class="product">
           <td class="name">
             <span>Ironhack Rubber Duck</span>
@@ -47,19 +47,21 @@
         </tr>
       </tbody>
       <tfoot>
-        <!-- <tr class="create-product">
+        <tr id="oldRow" class="create-product">
           <td>
-            <input type="text" placeholder="Product Name" />
+            <input id="newName" type="text" placeholder="Product Name" />
           </td>
           <td>
-            <input type="number" min="0" value="0" placeholder="Product Price" />
+            <input id="newPrice" type="number" min="0" value="0" step="0.1" placeholder="Product Price" />
           </td>
-          <td></td>
-          <td></td>
+          <td class="quantity">
+            <input id="newQt" type="number" value="0" min="0" placeholder="Quantity" />
+          </td>
+          <td id="subtotal-new" class="subtotal">$<span>0</span></td>
           <td>
-            <button id="create" class="btn">Create Product</button>
+            <button id="create" class="btn button-create">Create Product</button>
           </td>
-        </tr> -->
+        </tr>
       </tfoot>
     </table>
     <p class="calculate-total">
