@@ -38,7 +38,17 @@ function removeProduct(event) {
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  
+  const productName = document.getElementById('new-product-name').value;
+  const productPrice = document.getElementById('new-product-price').value;
+
+  const table = document.getElementById('cart');
+
+  const newRow = document.querySelector('.product').cloneNode(true);
+  newRow.querySelector('.name span').innerText = productName;
+  newRow.querySelector('.price span').innerText = productPrice;
+
+  table.appendChild(newRow);
 }
 
 window.addEventListener('load', () => {
@@ -49,5 +59,12 @@ window.addEventListener('load', () => {
   const removeButtons = document.getElementsByClassName('btn btn-remove');
   const removeButtonList = [...removeButtons];
   removeButtonList.forEach(button => button.addEventListener('click', removeProduct))
+
+  const createBtn = document.getElementById('create');
+  createBtn.addEventListener('click', () => {
+    createProduct();
+    document.getElementById("new-product-name").value = "";
+    document.getElementById("new-product-price").value = 0;
+  });
 
 });
