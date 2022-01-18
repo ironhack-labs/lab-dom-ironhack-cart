@@ -22,6 +22,7 @@ function calculateAll() {
     total += updateSubtotal(products[i]);
   }
 
+  document.querySelector("#total-value span").innerText = total.toFixed(2);
   // ITERATION 3
   //... your code goes here
 }
