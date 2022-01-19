@@ -48,10 +48,9 @@ function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
   //... your code goes here
-  target.parentNode.innerHTML=""
-  // this will only work for the preset buttons. the copys arent affected
-  // maybe it is because if the window eventlistener that only starts once
-  // when the page loads
+  target.parentNode.innerHTML="" //will remove entire html tree of the affected row,
+  // we could also remove just the class i guess
+
 }
 
 // ITERATION 5
@@ -85,6 +84,16 @@ function createProduct() {
   newRow.appendChild(clonedColumnSubtotal)
   const clonedColumnAction =document.querySelector('.action').cloneNode(true)
   newRow.appendChild(clonedColumnAction)
+
+  // add event listener to button as well
+  const allActionBtns = Array.from(document.getElementsByClassName('action'));;
+  
+    
+    allActionBtns.forEach(function(actionBtn){
+      actionBtn.addEventListener('click', removeProduct)
+    })
+  //lazy me decided to just cycle through all buttons again and activate all, could also select just last button
+  
   //clean input fields 
   document.querySelector('.create-product td:nth-child(1) input').value=''
   document.querySelector('.create-product td:nth-child(2) input').value=0
@@ -103,7 +112,6 @@ window.addEventListener('load', () => {
   const allActionBtns = Array.from(document.getElementsByClassName('action'));
   console.log(allActionBtns)
   allActionBtns.forEach(function(actionBtn){
-    //console.log(actionBtn)
     actionBtn.addEventListener('click', removeProduct)
   })
 });
