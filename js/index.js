@@ -82,6 +82,7 @@ function createProduct() {
 
   let table = document.querySelector('.product').parentNode;
   let row = table.insertRow(0);
+  row.classList.add('product');
   // let cell1 = row.insertCell(0);
   // let cell2 = row.insertCell(1);
   // let cell3 = row.insertCell(2);
@@ -114,6 +115,9 @@ function createProduct() {
   
   calculateAll()
   RemoveBtn()
+  allInputs[0].value = ''
+  allInputs[1].value = 0
+
 
 }
 
