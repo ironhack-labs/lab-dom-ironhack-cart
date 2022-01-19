@@ -38,7 +38,7 @@ function calculateAll() {
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  let parent = target[document.getElementById('tbody')];
+  let parent = target.parentNode.parentNode.parentNode;
   console.log(typeof parent);
   parent.removeChild(target.parentNode.parentNode);
   calculateAll();
@@ -47,8 +47,71 @@ function removeProduct(event) {
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  // const target = event.currentTarget;
+  // const nameOfProduct = document.querySelector('.new-pro input').value;
+  // const priceOfProduct = document.querySelector('.new-price input').value;
+  // let newProduct = target.nameOfProduct;
+  // let newPrice = target.priceOfProduct;
+  let allInputs = document.querySelectorAll('.create-product input');
+  let newProductName = allInputs[0].value;
+  let newProductPrice = allInputs[1].value;
+  console.log(newProductName, newProductPrice);
+  let newRow = document.createElement('tr');
+  newRow.className = 'product';
+  newRow.innerHTML = `
+        <td class="name">
+          <span>${newProductName}</span>
+        </td>
+        <td class="price">$<span>${newProductPrice}</span></td>
+        <td class="quantity">
+          <input type="number" value="0" min="0" placeholder="Quantity" />
+        </td>
+        <td class="subtotal">$<span>0</span></td>
+        <td class="action">
+          <button class="btn btn-remove">Remove</button>
+        </td>
+`;
+  console.log(newRow);
+  let parent = document.querySelector('tbody');
+  parent.appendChild(newRow);
+  const removeBtns = document.querySelectorAll('.btn-remove');
+  removeBtns.forEach(function (button) {
+    button.addEventListener('click', removeProduct);
+  });
+  allInputs[0].value = '';
+  allInputs[1].value = 0;
 }
+// function createProduct() {
+//   let allInputs = document.querySelectorAll('.create-product input');
+//   let newProductName = allInputs[0].value;
+//   let newProductPrice = allInputs[1].value;
+//   let table = document.querySelector('.product').parentNode;
+//   let row = table.insertRow(0);
+//   row.innerHTML = `<tr class="product">
+//   <td class="name">
+//     <span>${newProductName}</span>
+//   </td>
+//   <td class="price">$<span>${newProductPrice}</span></td>
+//   <td class="quantity">
+//     <input type="number" value="0" min="0" placeholder="Quantity" />
+//   </td>
+//   <td class="subtotal">$<span>0</span></td>
+//   <td class="action">
+//     <button class="btn btn-remove">Remove</button>
+//   </td>`;
+//   //</tr>cell1.innerHTML = newProductName;
+//   //</tr>cell2.innerHTML = '$' + newProductPrice;
+//   //</tr>cell3.innerHTML = input
+//   //</tr>cell4.innerHTML = SubTotal
+//   //</tr>cell5.innerHTML = btn
+//   //</tr>row.classList.add('product')
+//   //cell5.classList.add('action')
+//   console.log(newProductName);
+//   console.log(newProductPrice);
+//   console.log(table);
+//   calculateAll();
+//   RemoveBtn();
+// }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
@@ -58,4 +121,5 @@ window.addEventListener('load', () => {
   removeBtns.forEach(function (button) {
     button.addEventListener('click', removeProduct);
   });
+  document.querySelector('#create').addEventListener('click', createProduct);
 });
