@@ -73,45 +73,73 @@ function removeProduct(event) {
 
 function createProduct() {
   // This does not wor, yet => if a new product is created, the calculation does not work anymore
-  let SubTotal = 1
-  let btn = '<button class="btn btn-remove">Remove</button>'
-  let input = '<input type="number" value="0" min="0" placeholder="Quantity" />'
+  // let SubTotal = 1
+  // let btn = '<button class="btn btn-remove">Remove</button>'
+  // let input = '<input type="number" value="0" min="0" placeholder="Quantity" />'
   let allInputs = document.querySelectorAll('.create-product input')  
   let newProductName = allInputs[0].value
   let newProductPrice = allInputs[1].value
 
   let table = document.querySelector('.product').parentNode;
   let row = table.insertRow(0);
-  let cell1 = row.insertCell(0);
-  let cell2 = row.insertCell(1);
-  let cell3 = row.insertCell(2);
-  let cell4 = row.insertCell(3);
-  let cell5 = row.insertCell(4);
-  cell1.innerHTML = newProductName;
-  cell2.innerHTML = newProductPrice;
-  cell3.innerHTML = input
-  cell4.innerHTML = SubTotal
-  cell5.innerHTML = btn
-  row.classList.add('product')
-  cell5.classList.add('action')
+  // let cell1 = row.insertCell(0);
+  // let cell2 = row.insertCell(1);
+  // let cell3 = row.insertCell(2);
+  // let cell4 = row.insertCell(3);
+  // let cell5 = row.insertCell(4);
+  row.innerHTML = `<tr class="product">
+  <td class="name">
+    <span>${newProductName}</span>
+  </td>
+  <td class="price">$<span>${newProductPrice}</span></td>
+  <td class="quantity">
+    <input type="number" value="0" min="0" placeholder="Quantity" />
+  </td>
+  <td class="subtotal">$<span>0</span></td>
+  <td class="action">
+    <button class="btn btn-remove">Remove</button>
+  </td>`
+  //</tr>cell1.innerHTML = newProductName;
+  //</tr>cell2.innerHTML = '$' + newProductPrice;
+  //</tr>cell3.innerHTML = input
+  //</tr>cell4.innerHTML = SubTotal
+  //</tr>cell5.innerHTML = btn
+  //</tr>row.classList.add('product')
+  //cell5.classList.add('action')
   
 
   console.log(newProductName)
   console.log(newProductPrice)
   console.log(table)
+  
+  calculateAll()
+  RemoveBtn()
+
 }
 
-window.addEventListener('load', () => {
-  const calculatePricesBtn = document.getElementById('calculate');
-  calculatePricesBtn.addEventListener('click', calculateAll);
-
+function RemoveBtn() {
   const removeBtn = document.querySelectorAll('.btn-remove') 
   //console.log(removeBtn)
 
   removeBtn.forEach(function(btn) {
     btn.addEventListener('click',removeProduct)
   })
+}
+
+window.addEventListener('load', () => {
+  const calculatePricesBtn = document.getElementById('calculate');
+  calculatePricesBtn.addEventListener('click', calculateAll);
+
+  //const removeBtn = document.querySelectorAll('.btn-remove') 
+  ////console.log(removeBtn)
+//
+  //removeBtn.forEach(function(btn) {
+  //  btn.addEventListener('click',removeProduct)
+  //})
+
+  RemoveBtn()
 
   const createProductBtn = document.getElementById('create');
   createProductBtn.addEventListener('click', createProduct)
 });
+
