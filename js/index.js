@@ -54,12 +54,18 @@ function calculateAll() {
 // ITERATION 4
 
 function removeProduct(event) {
+  console.log("Here")
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
+
+
+  //this is to search for the parent
+  let rowParent = target.closest('tr');
+  console.log(rowParent)
+
+  // this is to remove the row
+  rowParent.remove();
   
-  const removeBtns = document.querySelectorAll('.btn-remove');
-  removeBtns.addEventListener('click', removeProduct);
-  console.log('the remove this is here: ' + removeBtns)
 }
 
 // ITERATION 5
@@ -76,19 +82,30 @@ function createProduct() {
   const table = document.querySelector('.table')
   console.log(table)
 
+
+
   let rowHtml = '<tr class="product">'
   rowHtml += `<td>${nameOfNewProduct}</td>`
   rowHtml += `<td class="price">$<span>${priceOfNewProduct}</span></td>`
   rowHtml += `<td class="quantity"><input type="number" value="0" min="0" placeholder="Quantity" /></td>`
   rowHtml += `<td class="subtotal">$<span>0</span></td>`
   rowHtml += `<td class="action"><button class="btn btn-remove">Remove</button></td>`
-  rowHtml+= "</tr>"
+  rowHtml += "</tr>"
 
 
 
   console.log(rowHtml)
   table.innerHTML += rowHtml
 
+  setRemoveListeners();
+
+}
+
+function setRemoveListeners() {
+  const removeBtns = document.querySelectorAll('.btn-remove');
+  removeBtns.forEach(removeBtn => {
+    removeBtn.addEventListener('click', removeProduct);
+  });
 }
 
 window.addEventListener('load', () => {
@@ -98,8 +115,5 @@ window.addEventListener('load', () => {
   const createProductBtn = document.getElementById('create');
   createProductBtn.addEventListener('click', createProduct);
 
-  
-
-  
-
+  setRemoveListeners();
 });
