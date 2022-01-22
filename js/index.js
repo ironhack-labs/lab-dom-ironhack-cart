@@ -59,6 +59,8 @@ function createProduct(target) {
   newNode.getElementsByTagName('span')[0].innerHTML = ProductName;
   newNode.getElementsByTagName('span')[1].innerHTML  = ProductPrice;
 
+  newNode.getElementsByClassName('btn-remove')[0].addEventListener('click', removeProduct);
+
   document.querySelector('.product').parentNode.appendChild(newNode);
 
   document.getElementById('ProductName').value = "";
