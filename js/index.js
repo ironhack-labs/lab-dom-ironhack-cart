@@ -32,26 +32,54 @@ function calculateAll() {
 
   let PageTotalSum = document.querySelector('#total-value span');
   PageTotalSum.innerHTML = totalSum;
-
-  // ITERATION 3
-  //... your code goes here
 }
 
-// ITERATION 4
 
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
-  //... your code goes here
+
+  const child = event.currentTarget.parentNode.parentNode;
+  const parent = child.parentNode;
+  parent.removeChild(child);
+
 }
 
-// ITERATION 5
+function createProduct(target) {
 
-function createProduct() {
-  //... your code goes here
+  const ProductName = document.getElementById('ProductName').value;
+  const ProductPrice = document.getElementById('ProductPrice').value;
+
+  const ProductList = document.getElementById('ProductList');
+
+  const ProductTemplate = document.querySelector('.product');
+
+  let newNode = ProductTemplate.cloneNode(true);
+
+  newNode.getElementsByTagName('span')[0].innerHTML = ProductName;
+  newNode.getElementsByTagName('span')[1].innerHTML  = ProductPrice;
+
+  document.querySelector('.product').parentNode.appendChild(newNode);
+
+  document.getElementById('ProductName').value = "";
+  document.getElementById('ProductPrice').value = 0;
+  calculateAll();
 }
 
 window.addEventListener('load', () => {
+  // Calculate prices event handler
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
+
+  // remove button event handler
+  const AllRemoveBtn = document.getElementsByClassName('btn-remove');
+
+  for (let btn of AllRemoveBtn)
+  {
+    btn.addEventListener('click', removeProduct);
+  }
+
+  // create Product button event handler
+  const CreateProductBtn = document.getElementById('create');
+  CreateProductBtn.addEventListener('click', createProduct);
 });
