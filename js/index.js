@@ -28,6 +28,18 @@ function calculateAll() {
   totalElement.innerText = newSubtotal;
 }
 
+// ITERATION 4
+
+function removeProduct(event) {
+  const target = event.currentTarget;
+  console.log('The target in remove is:', target);
+  //... your code goes here
+  const productToBeDeleted = target.parentElement.parentElement;
+  const allProducts = document.querySelector('tbody');
+
+  allProducts.removeChild(productToBeDeleted);
+}
+
 // ITERATION 5
 
 function createProduct() {
@@ -61,18 +73,12 @@ function createProduct() {
   inputProductName.value = '';
   inputProductPrice.value = 0;
   inputProductName.focus();
-}
 
-// ITERATION 4
-
-function removeProduct(event) {
-  const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
-  const productToBeDeleted = target.parentElement.parentElement;
-  const allProducts = document.querySelector('tbody');
-
-  allProducts.removeChild(productToBeDeleted);
+  const removeBtn = document.getElementsByClassName('btn-remove');
+  for (let i = 0; i < removeBtn.length; i++) {
+    console.log(removeBtn[i]);
+    removeBtn[i].addEventListener('click', removeProduct);
+  }
 }
 
 window.addEventListener('load', () => {
