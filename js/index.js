@@ -4,6 +4,27 @@ function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
 
   //... your code goes here
+  const price = product.querySelector('.price span').innerText;
+  // console.log('the price is:', price);
+  // console.log('the type of price is:', typeof price);
+  const quantity = product.querySelector('.quantity input').value;
+  // console.log('the quantity is:', quantity)
+  // console.log('the type of quantity is:', typeof quantity);
+  const subtotalElement = product.querySelector('.subtotal span');
+  // console.log('the subtotalElement is:',subtotalElement)
+  // console.log('the type of subtotalElement is:', typeof subtotalElement);
+
+  const priceNumber = parseFloat(price);
+  // console.log('price was a string and now is:', priceNumber, typeof priceNumber)
+  const quantityNumber = parseFloat(quantity);
+  // console.log('quantity was a string and now is:', quantityNumber, typeof quantityNumber)
+
+  const subtotal = priceNumber * quantityNumber;
+  // console.log('the priceNumber is:', priceNumber, 'quantityNumber is:', quantityNumber, 'the subtotal is:', subtotal, typeof subtotal )
+
+  subtotalElement.innerText = subtotal;
+  // console.log(subtotalElement,subtotalElement.innerText, subtotal )
+  return subtotal;
 }
 
 function calculateAll() {
@@ -15,9 +36,19 @@ function calculateAll() {
 
   // ITERATION 2
   //... your code goes here
+  const x = document.getElementsByClassName('product');
+  let calculateAll = 0;
+  
+  for (let i = 0; i < x.length; i++) {
+    calculateAll += updateSubtotal(x[i]);
+  }
 
   // ITERATION 3
   //... your code goes here
+  const totalPrice = document.querySelector('#total-value span');
+  
+  totalPrice.innerText = calculateAll;
+  
 }
 
 // ITERATION 4
