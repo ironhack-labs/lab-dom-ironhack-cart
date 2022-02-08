@@ -3,40 +3,66 @@
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
 
-  //... your code goes here
+  let price = product.querySelector('.price span').innerText;
+
+  let quantity = product.querySelector('.quantity input').value;
+
+  let priceNum = parseFloat(price);
+
+  let quantityNum = parseFloat(quantity);
+
+  let subtotalElement = product.querySelector('.subtotal span');
+ 
+  let subtotalPrice = priceNum * quantityNum;
+
+  subtotalElement.innerText = subtotalPrice
+  
+  return subtotalPrice;
 }
 
-function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
-
   // ITERATION 2
-  //... your code goes here
+function calculateAll() {
+let allProducts = document.getElementsByClassName('product');
+
+let totalPrice = 0;
+
+for (let i = 0; i < allProducts.length; i++){
+  totalPrice += updateSubtotal(allProducts[i]);
+}
 
   // ITERATION 3
-  //... your code goes here
+let totalPriceElement = document.querySelector('#total-value span');
+
+totalPriceElement.innerText = totalPrice;
 }
 
 // ITERATION 4
-
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
-  //... your code goes here
+  
+  let trElement = target.parentNode.parentNode;
+  let trElementParent = trElement.parentNode;
+
+  trElementParent.removeChild(trElement);
+
+  calculateAll();
 }
 
 // ITERATION 5
-
 function createProduct() {
   //... your code goes here
+
 }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+  let removeButtons = document.getElementsByClassName('btn btn-remove');
+
+  for (let removeButton of removeButtons ){
+    removeButton.addEventListener('click', removeProduct);
+  }
+
 });
