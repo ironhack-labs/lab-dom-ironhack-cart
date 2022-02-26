@@ -45,67 +45,40 @@ function calculateAll() {
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  alert('The target in remove is:', target);
-
-  //... your code goes here
+  const productWeWantToRemove = target.parentNode.parentNode;
+  productWeWantToRemove.parentNode.removeChild(productWeWantToRemove);
+  //console.log(target.parentNode.parentNode);
 }
 
 // ITERATION 5
 
 function createProduct() {
+  //console.log('Creating a product');
+  const nameElement = document.querySelector('.create-product input[type="text"]');
+  const priceElement = document.querySelector('.create-product input[type="number"]');
 
-  const textInput = document.getElementById("textInput");
-  const newProductName = textInput.value;
+  const newTableRow = document.createElement('tr');
+  newTableRow.className = 'product';
+  const htmlStringOfProduct = `
+  <td class="name">
+    <span>${nameElement.value}</span>
+  </td>
+  <td class="price">$<span>${priceElement.value}</span></td>
+  <td class="quantity">
+    <input type="number" value="0" min="0" placeholder="Quantity" />
+  </td>
+  <td class="subtotal">$<span>0</span></td>
+  <td class="action">
+    <button class="btn btn-remove">Remove</button>
+  </td>
+        `;
+  newTableRow.innerHTML = htmlStringOfProduct;
 
-  const priceInput = document.getElementById("priceInput");
-  const newProductPrice = priceInput.value;
+  const removeButton = newTableRow.querySelector('button');
+  removeButton.addEventListener('click', removeProduct);
 
-  // const tbodyCart = document.createElement("tbody");
-
-  const trClassProduct = document.createElement("tr");
-  // tbodyCart.appendChild(trClassProduct);
-
-  const tdClassName = document.createElement("td");
-  trClassProduct.appendChild(tdClassName);
-  const span1 = document.createElement("span");
-  tdClassName.appendChild(span1);
-  span1.value = newProductName;
-
-  const tdClassPrice = document.createElement("td");
-  trClassProduct.appendChild(tdClassPrice);
-  const span2 = document.createElement("span");
-  tdClassPrice.appendChild(span2);
-  span2.value = newProductPrice;
-
-  const tdClassQuantity = document.createElement("td");
-  trClassProduct.appendChild(tdClassQuantity);
-  const input1 = document.createElement("input");
-  tdClassQuantity.appendChild(input1);
-
-  const tdClassSubtotal = document.createElement("td");
-  trClassProduct.appendChild(tdClassSubtotal);
-  const span3 = document.createElement("span");
-  tdClassSubtotal.appendChild(span3);
-
-  const tdClassAction = document.createElement("td");
-  trClassProduct.appendChild(tdClassAction);
-  const button1 = document.createElement("button");
-  tdClassAction.appendChild(button1);
-
-  trClassProduct.className = "product";
-  tdClassName.className = "name";
-  tdClassPrice.className = "price";
-  tdClassQuantity.className = "quantity";
-  tdClassSubtotal.className = "subtotal";
-  tdClassAction.className = "action";
-  button1.className = "btn btn-remove";
-
-
-  // add the newly created element and its content into the DOM
-  const currentTrClassProduct = document.getElementsByClassName("product");
-  document.body.insertBefore(trClassProduct, currentTrClassProduct);
-
-  // When the product creation is finalized, please, clear the input fields in the creation form.
+  const tableBodyElement = document.querySelector('tbody');
+  tableBodyElement.appendChild(newTableRow);
 }
 
 
@@ -116,11 +89,9 @@ window.addEventListener('load', () => {
   const createProductBtn = document.getElementById('create');
   createProductBtn.addEventListener('click', createProduct);
 
-  /* const removeProductBtn = document.getElementsByClassName("btn btn-remove");
- 
-   const products = document.getElementsByClassName("product");
- 
-   for (let i = 0; i < removeProductBtn.length; i++) {
-     removeProductBtn.addEventListener('click', removeProduct(products[i]));
-   } */
+  const removeButtons = document.querySelectorAll('.product button');
+  const removeButtonsArray = [...removeButtons];
+  removeButtonsArray.forEach((removeButton) => {
+    removeButton.addEventListener('click', removeProduct);
+  });
 });
