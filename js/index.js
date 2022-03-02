@@ -28,8 +28,7 @@ document.querySelectorAll('.btn-remove').forEach(button=>{
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log('The target in remove is:', target.parentNode.parentNode.parentNode);
-  target.parentNode.parentNode.parentNode.removeChild(target.parentNode.parentNode)
+  target.closest('tr').remove()
   calculateAll()
 }
 
