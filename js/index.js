@@ -4,6 +4,13 @@ function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
 
   //... your code goes here
+  //The subtotal price will be the result of the multiplication of those values.
+  /* The product has a price and quantity 
+  (where quantity represents how many items of a specific product a user has added in the cart). 
+  In the provided code, we see that there is also a subtotal price. 
+  The subtotal price will be the result of the multiplication of those values. */
+  const price = product.querySelector(' .price span');
+  const quantity = product.querySelector(' .number span');
 }
 
 function calculateAll() {
