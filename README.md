@@ -304,7 +304,7 @@ $ npm run test:watch
 
 
 
-In case you want to check the tests for more details, they are in the `tests/ironhack-cart` file.
+In case you want to check the tests for more details, they are in the `tests/ironhack-cart.spec.js` file.
 
 
 
