@@ -6,18 +6,21 @@
 
 ## Introduction
 
-E-commerce has proven to be a big game-changer in the 21st century economy. As one of the largest sales channels, second only to physical retail, e-commerce [is expected](https://www.statista.com/statistics/379046/worldwide-retail-e-commerce-sales/) to be responsible for 6.3 trillion USD in worldwide sales by the year 2024.
+E-commerce has proven to be a big game-changer in the 21st-century economy. As one of the largest sales channels, second only to physical retail, e-commerce [is expected](https://www.statista.com/statistics/379046/worldwide-retail-e-commerce-sales/) to be responsible for 6.3 trillion USD in worldwide sales by the year 2024.
 
-E-commerce is, however, a highly competitive business, and building a positive user experience is crucial to retaining customers and improving conversions. As such, it is not uncommon for companies to make a significant investment in optimizing the purchase flow on their e-commerce platforms.
+E-commerce is a highly competitive business, and building a positive user experience is crucial to retaining customers and improving conversions. It is not uncommon for companies to make a significant investment in optimizing the purchase flow on their e-commerce platforms.
 
-One of the largest components of this experience is **the shopping cart**.
+One of the most significant components of this experience is **the shopping cart**.
 
-In this lab, we will be building the **IronCart**, a shopping cart for the unofficial Ironhack merchandising store. Visitors should be able to add and remove products from the shopping cart, as well as to modify the number (quantity) of items that they want to purchase. Additionally, users should be able to see the subtotal and total price for the items they have added.
+In this lab, we will be building the **IronCart**, a shopping cart for the unofficial Ironhack merchandising store. Visitors should be able to add and remove products from the shopping cart, and modify the number (quantity) of items that they want to purchase. Additionally, users should be able to see the subtotal and total price for the items they have added.
 
 ## Requirements
 
 - Fork this repo.
+
 - Clone it to your machine.
+
+  
 
 ## Submission
 
@@ -25,27 +28,44 @@ In this lab, we will be building the **IronCart**, a shopping cart for the unoff
 
 ```bash
 $ git add .
-$ git commit -m "Lab solved"
+$ git commit -m "Solved lab"
 $ git push origin master
 ```
 
-- Create Pull Request so your TAs can check up your work.
+- Create a Pull Request so that your TAs can check your work.
 
-## Automated Tests
+  
 
-This lab includes an automated testing suite. For DOM related labs, our automated tests should be seen as a secondary tool, that helps you to programmatically understand wether your solution is correct and allows the educational team to track your progress.
 
-To run the automated tests, please, open your terminal, change directories into the root of the lab, and run `npm install` to install the test runner. Now, you can run the `npm run test:watch` command to run automated tests in watch mode. Open the resulting `lab-solution.html` file with the "Live Server" VSCode extension to always see the most up to date test results.
 
 ## Instructions
 
-Most of the changes you will be making will be in the `js/index.js` file. We added the initial markup in `index.html`, and some basic stylings that you will not need to change in the `css/style.css` file. While developing, make sure you use the same class names as the ones already used (and available in the CSS file) to make our shopping cart nice and clean.
+You will do most of your work in the `js/index.js` file. We added the initial markup in `index.html` and some basic styling. While developing, make sure you use the same class names as those already used (and available in the CSS file) to make our shopping cart nice and clean.
 
 Let's go!
 
+
+
+<br>
+
+<hr>
+
+
+### Note about tests
+
+This LAB is equipped with unit tests to provide automated feedback on your lab progress.
+
+**After completing the basic iterations**, go to the **"Test Your Code"** section at the bottom. There you'll be asked to install the testing dependencies and run the tests to check how many tests your code is passing. Once you run the tests, correct your code to pass the failing tests.
+
+<hr>
+
+<br>
+
+
+
 ### Iteration 1: `updateSubtotal`
 
-Open the `index.html` in your browser. As you can see, for now, there is only one row in the table which represents one product. In this first iteration, you will be focused just on that product, and later on, we will help you to think of ways how to scale to having multiple products.
+Open the `index.html` in your browser. As you can see, there is only one row in the table that represents one product. In this first iteration, you will be focused just on that product, and later on, we will help you think of ways to upgrade to having multiple products.
 
 Let's take a look at the provided HTML code. We have the **table tag with the id `#cart`**, as shown below:
 
@@ -163,6 +183,7 @@ Check [here](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_30b8
 
 <hr>
 
+
 ### Iteration 2: `calculateAll()`
 
 Our current code works perfectly for one product, but we expect to have more than one product on our cart. As such, we will use `calculateAll` to trigger the update of subtotals for every product.
@@ -187,6 +208,7 @@ The final output should look like the following:
 
 <hr>
 
+
 ### Iteration 3: Total
 
 Our calculation functionality is still incomplete. The subtotal for each product is being updated, but the total value remains untouched.
@@ -198,6 +220,7 @@ Lastly, display that value on your DOM.
 ![](https://i.imgur.com/SCtdzMd.png)
 
 <hr>
+
 
 ## Bonus Iterations
 
@@ -218,6 +241,7 @@ Make sure the price gets updated accordingly when you remove products from the s
 Click [here](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_17b1e9e4d2606239163dddbc5b2a3d9f.gif) to see the expected result.
 
 <hr>
+
 
 ### Iteration 5: Creating new products
 
@@ -261,6 +285,28 @@ Remember, the new product should look undistinguished and behave like any of the
 When the product creation is finalized, please, clear the input fields in the creation form.
 
 Click [here](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_00abbd15326ec24d93147196024458f6.gif) to see the expected result.
+
+<br>
+
+
+
+## Test Your Code
+
+We will be working with automated tests again!
+
+Please, open your terminal, change directories into the root of the lab, and run `npm install` to install the test runner. Now, you can run the `npm run test:watch` command to run automated tests in *watch mode*. Open the resulting `lab-solution.html` file using the "Live Server" VSCode extension to always see the test results.
+
+```bash
+$ cd lab-dom-ironhack-cart
+$ npm install
+$ npm run test:watch
+```
+
+
+
+In case you want to check the tests for more details, they are in the `tests/ironhack-cart` file.
+
+
 
 <br>
 
