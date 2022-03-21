@@ -18,7 +18,6 @@ In this lab, we will be building the **IronCart**, a shopping cart for the unoff
 
 - Fork this repo.
 - Clone it to your machine.
-- Visit the "actions" tab in your fork, and enable workflows
 
 ## Submission
 
