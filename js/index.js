@@ -56,23 +56,26 @@ function removeProduct(event) {
 
   body.removeChild(tr);
 
-  calculateAll()
+  calculateAll();
 }
 
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+
+  
 }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
   const btnArray = Array.from(document.getElementsByClassName('btn-remove'));
-
   btnArray.forEach((buttons) => {
     buttons.addEventListener('click', removeProduct);
   });
 
+  const createProductBtn = document.querySelector('.btn-success');
+  console.log(createProductBtn);
+  createProductBtn.addEventListener('click', createProduct);
   //... your code goes here
 });
