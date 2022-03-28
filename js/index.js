@@ -1,10 +1,14 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
-
-  //... your code goes here
+  const price = document.querySelector('.price');
+  const quantity = document.querySelector('quantity');
+  let subTutotal = quantity * price
 }
+
+console.log(price.value);
+
+
 
 function calculateAll() {
   // code in the following two lines is added just for testing purposes.
@@ -39,4 +43,4 @@ window.addEventListener('load', () => {
   calculatePricesBtn.addEventListener('click', calculateAll);
 
   //... your code goes here
-});
+})
