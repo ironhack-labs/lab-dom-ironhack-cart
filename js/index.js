@@ -3,29 +3,55 @@
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
 
-  //... your code goes here
+  const price = product.querySelector('.price span')
+  const quantity = product.querySelector('.quantity input')
+  const subtotal = product.querySelector('.subtotal span')
+  const quantityValue = quantity.value
+  const priceValue = price.innerHTML
+  const result = quantityValue * priceValue
+  subtotal.innerHTML = result
 }
 
 function calculateAll() {
   // code in the following two lines is added just for testing purposes.
   // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
+  /*const singleProduct = document.querySelector('.product');
+  updateSubtotal(singleProduct);*/
   // end of test
 
-  // ITERATION 2
-  //... your code goes here
+  const products = document.querySelectorAll('.product')
+  products.forEach(eachProduct => {
+    updateSubtotal(eachProduct)
+  })
+
+
 
   // ITERATION 3
-  //... your code goes here
+  let sum = 0
+  const subtotals = document.querySelectorAll('.subtotal span')
+  console.log(subtotals)
+  subtotals.forEach(eachSubtotal => {
+    sum += parseInt(eachSubtotal.textContent)
+  })
+  const total = document.querySelector('#total-value')
+  total.innerHTML = `Total $${sum}`
 }
 
 // ITERATION 4
 
 function removeProduct(event) {
-  const target = event.currentTarget;
+  const removeButtons = event.document.querySelectorAll('.btn btn-remove');
+  removeButtons.forEach(eachRemoveButton => {
+    eachRemoveButton.onclick = (item) => {
+      const ironhackItem = document.querySelectorAll('.product')
+      ironhackItem.forEach(eachItem => {
+        eachItem.remove
+      })
+
+    }
+  })
   console.log('The target in remove is:', target);
-  //... your code goes here
+
 }
 
 // ITERATION 5
