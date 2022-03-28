@@ -3,7 +3,35 @@
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
 
-  //... your code goes here
+  const price = product.querySelector('.price span');
+  product.querySelector('.price span').innerHTML = price
+
+  const quantity = product.querySelector(".quantity input");
+  product.querySelector(".quantity input").innerHTML = quantity
+
+  button.onclick = (product) => {
+    const total = product.querySelector(".calculate-total");
+    const calculateSubtotal = price * quantity
+
+    product.querySelector(".total-value").textContent = calculateSubtotal
+  }
+}
+
+  // INTENTO 3
+  //for (i = 1; i <= total_items; i++) {
+  // itemID = document.getElementsByClassName("quantity" + i);}
+  // document.getElementsByClassName("calculate - total").innerHTML = "$" + total;
+
+
+  // INTENTO 2
+  // product.getElementByClass(".quantity").innerHTML =
+  //(price.querySelector("tbody subtotal").innerHTML);
+
+  // INTENTO 1
+  //let totalQuantity = (price * quantity)
+
+  //let subtotal = product.querySelector('.subtotal');
+  //subtotal.innerHTML = totalQuantity
 }
 
 function calculateAll() {
