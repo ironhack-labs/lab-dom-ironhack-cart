@@ -1,10 +1,28 @@
 // ITERATION 1
 
-function updateSubtotal(product) {
+function updateSubtotal() {
   console.log('Calculating subtotal, yey!');
 
   //... your code goes here
+
+  const product = document.querySelector('.product')
+
+  const price = product.querySelector('.price')
+  const quantity = product.querySelector('.quantity')
+  const subtotal = product.querySelector('.subtotal span')
+
+  calculateSubtotal.forEach((quantityItem) => {
+
+    quantityItem = quantity.value
+    subtotal += quantityItem * price
+    calculate += price
+  })
+
 }
+
+updateSubtotal(calculateSubtotal.addEventListener('click', calculate) = `${total}`)
+
+
 
 function calculateAll() {
   // code in the following two lines is added just for testing purposes.
@@ -15,6 +33,7 @@ function calculateAll() {
 
   // ITERATION 2
   //... your code goes here
+
 
   // ITERATION 3
   //... your code goes here
