@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ironhack Calculadora</title>
+</head>
+<body>
+
+	<h1>Calculadora</h1>
+
+	<table>
+		<thead>
+			<th>nombre</th>
+			<th>Precio</th>
+			<th>Cantidad</th>
+			<th>Subtotal</th>
+		</thead>
+
+		<tbody>
+			<!-- PRIMER PRODUCTO -->
+			<tr class="product">
+				<td>
+					<span>Computadora</span>                                                                                           
+				</td>
+				<td class="price">
+					$<span>400.00</span>
+				</td>
+				<td class="quantity">
+					<input type="number" value="0"/>
+				</td>
+				<td class="subtotal">
+					$<span>0</span>
+				</td>
+			</tr>
+
+			<!-- SEGUNDO PRODUCTO -->
+			<tr class="product">
+				<td>
+					<span>Monitor</span>
+				</td>
+				<td class="price">
+					$<span>200.00</span>
+				</td>
+				<td class="quantity">
+					<input type="number" value="0"/>
+				</td>
+				<td class="subtotal">
+					$<span>0</span>
+				</td>
+			</tr>
+
+			<!-- TERCER PRODUCTO -->
+			<tr class="product">
+				<td>
+					<span>Mouse</span>
+				</td>
+				<td class="price">
+					$<span>100.00</span>
+				</td>
+				<td class="quantity">
+					<input type="number" value="0"/>
+				</td>
+				<td class="subtotal">
+					$<span>0</span>
+				</td>
+			</tr>
+		</tbody>
+
+	</table>
+
+	
+	<p id="result">Total: $<span>0</span></p>
+
+	<button id="calculatePricesBtn">
+		Calcular precios totales
+	</button>
+	
+
+	<script src="./indextest.js"></script>
+</body>
+</html>
