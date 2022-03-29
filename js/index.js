@@ -1,31 +1,32 @@
 // ITERATION 1
 
-function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
+const calculatePricesBtn = document.getElementById('calculate');
+const multipleProducts = document.querySelectorAll('.product');
+const result = document.querySelector('#total-value span');
+const removeBtn = document.querySelector('.btn-remove');
 
-  //... your code goes here
+function updateSubtotal(singleProduct) {
+  const price = singleProduct.querySelector('.price span').innerHTML;
+  const quantity = singleProduct.querySelector('.quantity input').value;
+  const subtotal = price * quantity;
+  singleProduct.querySelector('.subtotal span').innerHTML = subtotal;
+  console.log(subtotal);
+  return subtotal;
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
+  let totalValue = 0;
 
-  // ITERATION 2
-  //... your code goes here
-
-  // ITERATION 3
-  //... your code goes here
+  for (let i = 0; i < multipleProducts.length; i++) {
+    totalValue += updateSubtotal(multipleProducts[i]);
+  }
+  result.innerHTML = totalValue;
 }
-
-// ITERATION 4
 
 function removeProduct(event) {
   const target = event.currentTarget;
+  quantity = 0;
   console.log('The target in remove is:', target);
-  //... your code goes here
 }
 
 // ITERATION 5
@@ -35,8 +36,13 @@ function createProduct() {
 }
 
 window.addEventListener('load', () => {
-  const calculatePricesBtn = document.getElementById('calculate');
-  calculatePricesBtn.addEventListener('click', calculateAll);
+  console.log('Al parecer todo bien, a calcular');
 
-  //... your code goes here
+  // LISTAR TODOS LOS EVENTOS DISPONIBLES DE LA APLICACIÓN
+  calculatePricesBtn.addEventListener('click', () => {
+    calculateAll();
+  });
+  removeBtn.addEventListener('click', () => {
+    removeProduct();
+  });
 });
