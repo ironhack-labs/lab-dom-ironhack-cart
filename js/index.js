@@ -40,6 +40,8 @@ function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
   //... your code goes here
+  const productToRemove = target.parentNode.parentNode
+  productToRemove.remove()
 }
 
 // ITERATION 5
@@ -69,6 +71,9 @@ const table = document.querySelector("tbody")
 const row = table.insertRow()
 row.classList.add('product')
 row.innerHTML = newElement
+
+rembtn()
+
 }
 
 window.addEventListener('load', () => {
@@ -77,5 +82,15 @@ window.addEventListener('load', () => {
 
   //... your code goes here
   const createBtn = document.getElementById("create")
-  createBtn.addEventListener("click",createProduct)
+  createBtn.addEventListener("click",createProduct)  
+  
+  rembtn()
+
 });
+
+function rembtn(){
+  const btnremove = document.getElementsByClassName("btn-remove")
+    for (let j=0; j < btnremove.length;j++){
+      btnremove[j].addEventListener("click",removeProduct)
+    }
+}
