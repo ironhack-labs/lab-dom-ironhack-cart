@@ -32,7 +32,7 @@ function removeProduct(event) {
 
 // ITERATION 5
 
-function createProduct() {
+function createProduct(event) {
   const newProduct = event.currentTarget.parentNode.parentElement;
   let newProductName = newProduct.getElementsByTagName('input')[0].value;
   let newProductPrice = newProduct.getElementsByTagName('input')[1].value;
@@ -43,7 +43,7 @@ function createProduct() {
 
 // Did this the 'long way' over just injecting a bunch of HTML
 //
-function addProductRow(name,price) {
+function addProductRow2(name,price) {
   const table = document.getElementById('cart').getElementsByTagName('tbody')[0];
   let newRow = table.insertRow();
   newRow.setAttribute("class","product");
@@ -72,11 +72,12 @@ function addProductRow(name,price) {
 
 // re-written to try and make this more 'readable'
 // 
-function addProductRow2(name,price) {
+function addProductRow(name,price) {
   const table = document.getElementById('cart').getElementsByTagName('tbody')[0];
   let nameCell, priceCell, QuantCell,subtotalCell,actionCell;
   let newRow = table.insertRow(); // default = -1 [append to end - note we're using 'tbody' not the whole table!]
-  let btnHTML = document.getElementByClassName('btn btn-remove')[0].outerHTML;
+  // let btnHTML = 'document.getElementByClassName('btn btn-remove')[0].outerHTML;'
+  let btnHTML = `<button class="btn btn-remove">Remove</button>`;
   newRow.setAttribute("class","product");
     nameCell = newRow.insertCell(0);
     nameCell.setAttribute("class","name");
