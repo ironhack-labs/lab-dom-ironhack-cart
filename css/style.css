@@ -42,7 +42,7 @@ table input[type='number'] {
 
 .btn {
   display: inline-block;
-  border: 0;
+  border: 1;
   border-radius: 0.25em;
   cursor: pointer;
 }
