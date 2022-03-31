@@ -1,7 +1,6 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  // console.log('Calculating subtotal, yey!');
   let price, quantity, total;
   price = product.querySelector('.price span').innerHTML;
   quantity = product.querySelector('.quantity input').value;
@@ -16,22 +15,17 @@ function calculateAll() {
   allProducts = [...(document.getElementsByClassName('product'))];    
   // ITERATION 2
   allProducts.forEach((element,index) => cartTotal+=updateSubtotal(element) );
-
   // ITERATION 3
   document.querySelector('#total-value span').innerHTML = cartTotal;
-
 }
 
 // ITERATION 4
-
 function removeProduct(event) {
   const target = event.currentTarget.parentNode.parentNode;
   target.parentElement.removeChild(target);
   calculateAll();
 }
-
 // ITERATION 5
-
 function createProduct(event) {
   const newProduct = event.currentTarget.parentNode.parentElement;
   let newProductName = newProduct.getElementsByTagName('input')[0].value;
@@ -53,7 +47,7 @@ function addProductRow2(name,price) {
     newCell.innerHTML = `<span id="name">${name}</span>`;
       newCell = newRow.insertCell(1);
       newCell.setAttribute("class","price");
-      newCell.innerHTML = `$<span>${price}</span>`;
+      newCell.innerHTML = `$<span>${Number(price).toFixed(2)}</span>`;
       newCell = newRow.insertCell(2);
         newCell.setAttribute("class","quantity");
         newCell.innerHTML = `<input type="number" value="0" min="0" placeholder="Quantity">`;
@@ -84,7 +78,7 @@ function addProductRow(name,price) {
     nameCell.innerHTML = `<span id="name">${name}</span>`;
       priceCell = newRow.insertCell(1);
       priceCell.setAttribute("class","price");
-      priceCell.innerHTML = `$<span>${price}</span>`;
+      priceCell.innerHTML = `$<span>${Number(price).toFixed(2)}</span>`;
         QuantCell = newRow.insertCell(2);
         QuantCell.setAttribute("class","quantity");
         QuantCell.innerHTML = `<input type="number" value="0" min="0" placeholder="Quantity">`;
