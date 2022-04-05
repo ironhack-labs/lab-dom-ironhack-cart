@@ -78,6 +78,8 @@ function createProduct() {
     let removeBtn = document.querySelectorAll(".action .btn-remove")
     removeBtn.forEach( (btn) => {
     btn.addEventListener('click', removeProduct)
+
+    document.getElementById('create').addEventListener('click', createProduct)
   })
 }
 
