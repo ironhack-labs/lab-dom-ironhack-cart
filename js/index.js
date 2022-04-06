@@ -36,7 +36,7 @@ function calculateAll() {
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target to remove is:', target);
-  
+  product.removeChild('.btn btn-remove')
 }
 
 // ITERATION 5
@@ -48,5 +48,9 @@ window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+  
+  window.addEventListener('load', () =>{
+    const removeButtons = document.getElementsByClassName('.btn btn-remove')
+    removeButtons.addEventListener('click', removeProduct())
+  })
 });
