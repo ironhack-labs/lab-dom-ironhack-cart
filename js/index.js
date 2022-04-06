@@ -31,7 +31,10 @@ function calculateAll() {
     totalSum += subtotal});
 
   // ITERATION 3
-  //const total = document.getElementById(".total-value)"
+  const total = document.querySelector("#total-value span")
+  total.innerText = totalSum;
+  console.log(total);
+
 }
 
 // ITERATION 4
