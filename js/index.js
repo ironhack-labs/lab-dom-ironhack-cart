@@ -19,29 +19,24 @@ function updateSubtotal(product) {
 function calculateAll() {
 
   const products = document.querySelectorAll('.product');
-  let total = 0;
+  let totalSum = 0;
+
   products.forEach( (product) => {
     subtotal =  updateSubtotal(product);
-    total += subtotal;
+    totalSum += subtotal;
   });
 
-  return total
+  let total = document.querySelector("#total-value span");
+  total.innerText = totalSum;
+  console.log(total);
 }
-  // end of test
-
-  // ITERATION 2
-  //... your code goes here
-
-  // ITERATION 3
-  //... your code goes here
-
 
 // ITERATION 4
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+  console.log('The target to remove is:', target);
+  
 }
 
 // ITERATION 5
