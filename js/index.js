@@ -48,7 +48,7 @@ function calculateAll() {
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
+  //console.log('The target in remove is:', target);
   //... your code goes here
   target.parentNode.parentNode.remove();
   calculateAll();
@@ -79,12 +79,11 @@ function createProduct() {
     </td>
   `
 
+  product.querySelector(".btn-remove").addEventListener('click', removeProduct)
   let listOfProducts=document.querySelector("tbody")
   listOfProducts.appendChild(product)
   name.value='';
   value.value=0;
-
-  
 }
 
 window.addEventListener('load', () => {
