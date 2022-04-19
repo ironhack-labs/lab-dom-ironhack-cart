@@ -14,27 +14,26 @@ console.log(price)
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  // const singleProduct = document.querySelector('.product');
- 
-  // end of test
 
   // ITERATION 2
   const products = document.querySelectorAll('.product');
-  // const product2 = document.getElementsByClassName('product')[1];
-  products.forEach((product) => { updateSubtotal(product) })
+ 
+  const total = [...products].reduce((acc, product) => {
+    return acc + updateSubtotal(product)
+  }, 0)
+  console.log(total)
   // for (let i = 0; i < products.length; i++) {
   //   updateSubtotal(products[i]);
   // }
 
-}
+
   
 
   
   // ITERATION 3
-  //... your code goes here
-
+  let totalPrice = document.querySelector('#total-value span');
+  totalPrice.innerHTML = total;
+}
 // ITERATION 4
 
 function removeProduct(event) {
