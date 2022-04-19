@@ -55,7 +55,9 @@ table input[type='number'] {
 .btn-success {
   background-color: #2cc5fa;
 }
-
+.btn-create {
+  background-color: #00c437;
+}
 .btn-remove {
   background-color: #f27471;
 }
