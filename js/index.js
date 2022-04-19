@@ -72,7 +72,7 @@ function createProduct() {
     .appendChild(btnRemove);
   name.value = '';
   price.value = '';
-  const removeProductBtn = document.querySelectorAll('.btn-remove');
+  removeProductBtn = document.querySelectorAll('.btn-remove');
   for (let i = 0; i < removeProductBtn.length; i++) {
     removeProductBtn[i].addEventListener('click', removeProduct);
   }
@@ -83,4 +83,8 @@ window.addEventListener('load', () => {
   calculatePricesBtn.addEventListener('click', calculateAll);
   const newProduct = document.getElementById('create-new-product');
   newProduct.addEventListener('click', createProduct);
+  let removeProductBtn = document.querySelectorAll('.btn-remove');
+  for (let i = 0; i < removeProductBtn.length; i++) {
+    removeProductBtn[i].addEventListener('click', removeProduct);
+  }
 });
