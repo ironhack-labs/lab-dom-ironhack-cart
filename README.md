@@ -1,4 +1,4 @@
-![logo_ironhack_blue 7](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
+<!-- ![logo_ironhack_blue 7](https://user-images.githubusercontent.com/23629340/40541063-a07a0a8a-601a-11e8-91b5-2f13e4e6b441.png)
 
 # LAB | Ironhack Cart
 
@@ -310,4 +310,4 @@ In case you want to check the tests for more details, they are in the `tests/iro
 
 <br>
 
-**Happy coding! 💙**
+**Happy coding! 💙** -->
