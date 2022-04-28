@@ -41,7 +41,6 @@ function calculateAll() {
   total.innerHTML = totalSum;
 }
 
-
 // ITERATION 4
 
 function removeProduct(event) {
