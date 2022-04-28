@@ -34,6 +34,7 @@ function calculateAll() {
     subtotal = updateSubtotal(singleProduct); 
     totalSum += subtotal; 
   });
+  
  
   // ITERATION 3
   //... your code goes here
