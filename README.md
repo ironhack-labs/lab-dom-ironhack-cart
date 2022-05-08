@@ -2,7 +2,7 @@
 
 # LAB | Ironhack Cart
 
-![shopping cart](https://i.imgur.com/s2Qxc9Z.jpg)
+![run-shopping](https://user-images.githubusercontent.com/76580/167319404-fac1e927-fba5-4717-9c28-dcd5521443c6.gif)
 
 ## Introduction
 
