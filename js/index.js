@@ -2,7 +2,9 @@
 
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
-
+  const price = product.querySelector('.price').querySelector('span').innerText;
+  const quantity = product.querySelector('.quantity').querySelector('input').value;
+  product.querySelector('.subtotal').querySelector('span').innerText = price * quantity;
   //... your code goes here
 }
 
@@ -24,7 +26,8 @@ function calculateAll() {
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
+  
+  console.log('The target in remove is:', target.parentNode.parentNode);
   //... your code goes here
 }
 
@@ -34,9 +37,11 @@ function createProduct() {
   //... your code goes here
 }
 
-window.addEventListener('load', () => {
+window.addEventListener('DOMContentLoaded', () => {
   const calculatePricesBtn = document.getElementById('calculate');
+  const deleteBtn = document.querySelector('.btn-remove');
   calculatePricesBtn.addEventListener('click', calculateAll);
+  deleteBtn.addEventListener('click', removeProduct);
 
   //... your code goes here
 });
