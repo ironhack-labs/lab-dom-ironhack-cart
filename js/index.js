@@ -19,8 +19,8 @@ function removeProduct(event) {
 }
 
 function updateTotalValue() {
-  const subtotal = document.querySelectorAll('.subtotal span');
-  document.querySelector('#total-value span').innerText = Array.from(subtotal).reduce((total, subtotal) => total += parseInt(subtotal.innerText), 0)
+  const subtotal = document.querySelectorAll('#cart .subtotal span');
+  document.querySelector('#total-value span').innerText = Array.from(subtotal).reduce((total, subtotal) => total += parseFloat(subtotal.innerText), 0)
 }
 
 function createProduct() {
@@ -35,7 +35,7 @@ function createProduct() {
     alert('Por favor, introduce una precio al producto superior a 0');
     return;
   }
-  
+
   const templateProduct = document.querySelector('.templateProduct .product').cloneNode(true);
   templateProduct.querySelector('.price span').innerText = valueNumber.toFixed(2);
   templateProduct.querySelector('.name span').innerText = valueText;
