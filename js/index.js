@@ -24,19 +24,21 @@ function updateTotalValue() {
 }
 
 function createProduct() {
-  if (!document.querySelector('.create-product [type="text"]').value) {
+  const valueText = document.querySelector('.create-product [type="text"]').value.trim();
+  const valueNumber = parseInt(document.querySelector('.create-product [type="number"]').value);
+
+  if (!valueText) {
     alert('Por favor, rellena con un nombre el producto del carro');
     return;
   }
-  if (!parseInt(document.querySelector('.create-product [type="number"]').value)) {
+  if (!valueNumber) {
     alert('Por favor, introduce una precio al producto superior a 0');
     return;
   }
-  const templateProduct = document.querySelector('.product').cloneNode(true);
-  templateProduct.querySelector('.price span').innerText = parseInt(document.querySelector('.create-product [type="number"]').value).toFixed(2);
-  templateProduct.querySelector('.name span').innerText = document.querySelector('.create-product [type="text"]').value
-  templateProduct.querySelector('.subtotal span').innerText = 0
-  templateProduct.querySelector('.quantity input').value = 0
+  
+  const templateProduct = document.querySelector('.templateProduct .product').cloneNode(true);
+  templateProduct.querySelector('.price span').innerText = valueNumber.toFixed(2);
+  templateProduct.querySelector('.name span').innerText = valueText;
   templateProduct.querySelector('.btn-remove').addEventListener('click', (event) => removeProduct(event));
   
   document.querySelector('#cart tbody').appendChild(templateProduct);
