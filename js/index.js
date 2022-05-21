@@ -1,26 +1,20 @@
 function updateSubtotal(product) {
   const price = product.querySelector('.price span').innerText;
   const quantity = product.querySelector('.quantity input').value;
-  product.querySelector('.subtotal span').innerText = parseFloat(price) * parseInt(quantity);
+  const result = (price * parseInt(quantity)).toFixed(2);
+  product.querySelector('.subtotal span').innerText = result;
+  return parseFloat(result);
 }
 
 function calculateAll() {
-  const products = document.querySelectorAll('.product');
-  for (let singleProduct of products) {
-    updateSubtotal(singleProduct);
-  }
-  updateTotalValue();
+  const products = Array.from(document.querySelectorAll('.product'));
+  document.querySelector('#total-value span').innerText = products.reduce((total, product) => total += updateSubtotal(product), 0)
 }
 
 function removeProduct(event) {
   const target = event.currentTarget;
   target.parentNode.parentNode.remove();
   updateTotalValue();
-}
-
-function updateTotalValue() {
-  const subtotal = document.querySelectorAll('#cart .subtotal span');
-  document.querySelector('#total-value span').innerText = Array.from(subtotal).reduce((total, subtotal) => total += parseFloat(subtotal.innerText), 0)
 }
 
 function createProduct() {
