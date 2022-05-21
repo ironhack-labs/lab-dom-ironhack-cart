@@ -1,20 +1,20 @@
 function updateSubtotal(product) {
-  const price = product.querySelector('.price span').innerText;
-  const quantity = product.querySelector('.quantity input').value;
-  const result = (price * parseInt(quantity)).toFixed(2);
-  product.querySelector('.subtotal span').innerText = result;
-  return parseFloat(result);
+  const price = parseFloat(product.querySelector('.price span').innerText);
+  const quantity = parseInt(product.querySelector('.quantity input').value);
+  const result = price * quantity;
+  product.querySelector('.subtotal span').innerText = result.toFixed(2);
+  return result;
 }
 
 function calculateAll() {
-  const products = Array.from(document.querySelectorAll('.product'));
-  document.querySelector('#total-value span').innerText = products.reduce((total, product) => total += updateSubtotal(product), 0)
+  const products = Array.from(document.querySelectorAll('#cart .product'));
+  document.querySelector('#total-value span').innerText = products.reduce((total, product) => total + updateSubtotal(product), 0).toFixed(2)
 }
 
 function removeProduct(event) {
   const target = event.currentTarget;
   target.parentNode.parentNode.remove();
-  updateTotalValue();
+  calculateAll();
 }
 
 function createProduct() {
