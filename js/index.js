@@ -37,12 +37,12 @@ function createProduct() {
   templateProduct.querySelector('.name span').innerText = document.querySelector('.create-product [type="text"]').value
   templateProduct.querySelector('.subtotal span').innerText = 0
   templateProduct.querySelector('.quantity input').value = 0
+  templateProduct.querySelector('.btn-remove').addEventListener('click', (event) => removeProduct(event));
   
   document.querySelector('#cart tbody').appendChild(templateProduct);
 
   document.querySelector('.create-product [type="number"]').value = 0;
   document.querySelector('.create-product [type="text"]').value = '';
-  addDeleteAction();
 }
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -56,6 +56,6 @@ window.addEventListener('DOMContentLoaded', () => {
 function addDeleteAction() {
   const deleteBtns = document.querySelectorAll('.btn-remove');
   for (let deleteBtn of deleteBtns) {
-    deleteBtn.addEventListener('click', removeProduct);
+    deleteBtn.addEventListener('click', (event) => removeProduct(event));
   }
 }
