@@ -28,8 +28,12 @@ function createProduct() {
     alert('Por favor, rellena con un nombre el producto del carro');
     return;
   }
+  if (!parseInt(document.querySelector('.create-product [type="number"]').value)) {
+    alert('Por favor, introduce una precio al producto superior a 0');
+    return;
+  }
   const templateProduct = document.querySelector('.product').cloneNode(true);
-  templateProduct.querySelector('.price span').innerText = document.querySelector('.create-product [type="number"]').value
+  templateProduct.querySelector('.price span').innerText = parseInt(document.querySelector('.create-product [type="number"]').value).toFixed(2);
   templateProduct.querySelector('.name span').innerText = document.querySelector('.create-product [type="text"]').value
   templateProduct.querySelector('.subtotal span').innerText = 0
   templateProduct.querySelector('.quantity input').value = 0
