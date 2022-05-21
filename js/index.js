@@ -28,48 +28,16 @@ function createProduct() {
     alert('Por favor, rellena con un nombre el producto del carro');
     return;
   }
-  const product = document.createElement('tr')
-  product.className = 'product';
-  for (let column of Object.keys(attributes)) {
-    const element = document.createElement('td');
-    element.className = column;
-    for (let tag of attributes[column]['element']) {
-      switch(tag.tag) {
-        case 'span':
-          const itemSpan = document.createElement(tag.tag);
-          switch(column) {
-            case 'subtotal':
-              element.innerText = '$';
-              itemSpan.innerText = 0;
-              break;
-            case 'price':
-              element.innerText = '$';
-              itemSpan.innerText = document.querySelector('.create-product [type="number"]').value;
-              break;
-            case 'name':
-              itemSpan.innerText = document.querySelector('.create-product [type="text"]').value;
-          }
-          element.appendChild(itemSpan);
-          break;
-        case 'button':
-          const itemButton = document.createElement(tag.tag);
-          itemButton.innerText = 'Remove';
-          itemButton.className = tag.characteristics.class;
-          element.appendChild(itemButton);
-          break;
-        case 'input':
-          const itemInput = document.createElement(tag.tag);
-          element.appendChild(itemInput);
-          for (let characteristic of Object.keys(attributes[column]['element'][0]['characteristics'])) {
-            itemInput.setAttribute(characteristic, attributes[column]['element'][0]['characteristics'][characteristic]);
-          }
-          itemInput.value = 0;
-          break;
-      }
-      product.appendChild(element);
-    }
-  }
-  document.querySelector('#cart tbody').appendChild(product);
+  const templateProduct = document.querySelector('.product').cloneNode(true);
+  templateProduct.querySelector('.price span').innerText = document.querySelector('.create-product [type="number"]').value
+  templateProduct.querySelector('.name span').innerText = document.querySelector('.create-product [type="text"]').value
+  templateProduct.querySelector('.subtotal span').innerText = 0
+  templateProduct.querySelector('.quantity input').value = 0
+  
+  document.querySelector('#cart tbody').appendChild(templateProduct);
+
+  document.querySelector('.create-product [type="number"]').value = 0;
+  document.querySelector('.create-product [type="text"]').value = '';
   addDeleteAction();
 }
 
