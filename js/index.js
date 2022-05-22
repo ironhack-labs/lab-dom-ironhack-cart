@@ -43,6 +43,24 @@ function removeProduct(event) {
 
 function createProduct() {
   //... your code goes here
+  const productName = document.querySelector('.create-product input[type=text]')
+  const namePro = productName.value
+  const productPrice = document.querySelector('.create-product input[type=number]')
+  const pricePro = productPrice.value
+  parseFloat(productPrice)
+  const createProduct = document.querySelector('.product').cloneNode(true);
+
+  createProduct.querySelector('.name span').innerText = namePro
+  createProduct.querySelector('.price span').innerText = pricePro
+  
+  createProduct.querySelector('.btn-remove').addEventListener('click', (event) => {
+     removeProduct(event)
+  })
+
+  document.querySelector('tbody').append(createProduct);
+
+  productName.value = ''
+  productPrice.value = 0
 }
 
 window.addEventListener('load', () => {
@@ -53,15 +71,15 @@ window.addEventListener('load', () => {
   for (let removeBtn of removeBtns) {
     removeBtn.addEventListener('click', (event) => {
       const mensaje = confirm("¿Quieres borrar el producto?");
-            //Verificamos si el usuario acepto el mensaje
             if (mensaje) {
-            alert("Borrado");
             removeProduct(event)
             }
-            //Verificamos si el usuario denegó el mensaje
             else {
             alert("Denegado el borrado");
             }
     });
   }
+
+  const createBtn = document.getElementById('create');
+  createBtn.addEventListener('click', createProduct);
 });
