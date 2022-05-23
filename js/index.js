@@ -22,11 +22,12 @@ function calculateAll() {
   //updateSubtotal(singleProduct);
   // end of test
 
-  // ITERATION 2
+  // ITERATION 2,3
   const products = Array.from(document.querySelectorAll('.product'));
   const total = products.reduce((total,product) =>{
     return total + updateSubtotal(product)
   },0);
+
   document.querySelector('#total-value span').innerText= total.toFixed(2);
   
   }
