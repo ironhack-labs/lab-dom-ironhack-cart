@@ -1,20 +1,19 @@
 // ITERATION 1
 
+const { product } = require("puppeteer");
+
 function updateSubtotal(product) {
   
-  let priceDOM = product.querySelector('.price span');
+  const priceDOM = parseFloat(product.querySelector('.price span').innerText);
   
-  let quantityDOM = product.querySelector('.quantity input');
-  let quantity = quantityDOM.value;
+  const quantityDOM = parseFloat(product.querySelector('.quantity input').value);
+  
+  const priceTotal = priceDOM.innerHTML * quantityDOM;
  
-  let priceTotal = priceDOM.innerHTML * quantity;
- 
-  let subTotalDOM = product.querySelector('.subtotal span');
-  subTotalDOM.innerText = priceTotal;
+  product.querySelector('.subtotal span').innerText = priceTotal.toFixed(2);;
 
   return priceTotal
 };
-
 
 function calculateAll() {
   // code in the following two lines is added just for testing purposes.
@@ -24,32 +23,22 @@ function calculateAll() {
   // end of test
 
   // ITERATION 2
-  let variosProductos = document.querySelectorAll(".product");
-  let contenedor = 0;
-
-  for(let elementoProducto of variosProductos){
-    updateSubtotal(elementoProducto);
-   
-    let funcionTotalSingle = updateSubtotal(elementoProducto);
-    contenedor+= funcionTotalSingle;
-    console.log(contenedor);
-    
-  }
- 
+  const products = Array.from(document.querySelectorAll('.product'));
+  const total = products.reduce((total,product) =>{
+    return total + updateSubtotal(product)
+  },0);
+  document.querySelector('#total-value span').innerText= total.toFixed(2);
   
-  // ITERATION 3
-  let totalValueDOM = document.querySelector("#total-value span");
-    totalValueDOM.innerHTML= contenedor;
-    
-    return contenedor
+  }
 
-  } 
 // ITERATION 4
 
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
   //... your code goes here
+  target.parentNode.remove();
+  calculateAll();
 }
 
 // ITERATION 5
