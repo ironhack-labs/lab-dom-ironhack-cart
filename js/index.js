@@ -43,7 +43,7 @@ function createProduct() {
   const newProduct = document.createElement('tr');
   newProduct.classList.add('product');
   newProduct.innerHTML = `
-           <td class="name">
+          <td class="name">
             <span>${productName.value}</span>
           </td>
           <td class="price">$<span>${productPrice.value}</span></td>
@@ -57,7 +57,6 @@ function createProduct() {
   `;
   newProduct.querySelector('button').addEventListener('click', removeProduct);
   document.querySelector('#cart tbody').appendChild(newProduct);
-  console.log(productName);
   productName.value = '';
   productPrice.value = 0;
 }
