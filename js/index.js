@@ -44,6 +44,8 @@ function createProduct() {
   <td class="subtotal">$<span>0</span></td>
   <td class="action"><button class="btn btn-remove">Remove</button></td>
   `;
+  const newRemoveBtns = newItem.querySelector('button');
+  newRemoveBtns.addEventListener('click', removeProduct);
   listItem[0].appendChild(newItem);
   newProductName.value = '';
   newProductPrice.value = 0;
