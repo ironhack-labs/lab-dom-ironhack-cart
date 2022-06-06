@@ -25,12 +25,16 @@ function calculateAll() {
 
   let subTotalPrice = document.querySelectorAll('.subtotal span')
 
-  subTotalPrice.forEach((i) => {
-    let allSubTotalPrice = subTotalPrice[i]
-    let totalPrice = document.querySelector('.total-value span')
-    totalPrice.innerText = allSubTotalPrice
+  let allSubTotalPrice = 0
+  subTotalPrice.forEach(elem => {
+    console.log(elem)
+    allSubTotalPrice += Number(elem.innerHTML)
 
   })
+
+  let totalPrice = document.querySelector('.total-value span')
+  totalPrice.innerText = allSubTotalPrice
+
 }
 
 // ITERATION 4
