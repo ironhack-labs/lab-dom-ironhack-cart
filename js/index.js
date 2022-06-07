@@ -17,7 +17,7 @@ function calculateAll() {
   // end of test
 
   // ITERATION 2
-  let totalValue = 0;
+    let totalValue = 0;
   const products = document.querySelectorAll('.product')
   products.forEach(product => {
    totalValue += updateSubtotal(product)
@@ -35,7 +35,7 @@ function calculateAll() {
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
-  //... your code goes here
+  target.innerHTML = ''
 }
 
 // ITERATION 5
@@ -48,5 +48,6 @@ window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+  const rmvProduct = document.getElementsByClassName('btn-remove');
+  rmvProduct.addEventListener('click', removeProduct)
 });
