@@ -1,20 +1,23 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
+
   const price = product.querySelector('.price span').textContent;
+
   const quantity = product.querySelector('.quantity input').value;
+
   const subtotalBox = product.querySelector('.subtotal span');
 
-  let subtotal = price * quantity;
+  let subtotal = Number(price) * Number(quantity);
 
   subtotalBox.textContent = subtotal;
 
   return subtotal;
 }
 
-function calculateAll() {
-  
   // ITERATION 2 & 3
+function calculateAll() {  
+
     const products = document.getElementsByClassName('product');
 
     const totalPrice = document.querySelector('#total-value span');
@@ -31,10 +34,13 @@ function calculateAll() {
 // ITERATION 4
 
 function removeProduct(event) {
+
   const target = event.currentTarget;
+
   console.log('The target in remove is:', target);
 
   const parent = target.closest('.product');
+
   parent.remove();
 
   calculateAll();
@@ -87,6 +93,7 @@ function createProduct() {
   const buttonRemove = document.createElement('button');    
   buttonRemove.classList.add('btn','btn-remove');
   buttonRemove.textContent = 'Remove';
+  buttonRemove.addEventListener('click', removeProduct);
 
   productName.appendChild(spanName);
   productPrice.appendChild(spanPrice);
