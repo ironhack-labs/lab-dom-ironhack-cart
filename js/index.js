@@ -1,21 +1,29 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
 
-  //... your code goes here
+  const price = product.querySelector(".price span").innerText;
+  const quantity = product.querySelector("input").value;
+
+  let subtotal = Number(price) * quantity;
+  product.querySelector(".subtotal span").innerText = subtotal
+  return subtotal
 }
 
 function calculateAll() {
   // code in the following two lines is added just for testing purposes.
   // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
+ const singleProduct = document.querySelector('.product');
   updateSubtotal(singleProduct);
   // end of test
 
   // ITERATION 2
-  //... your code goes here
 
+
+ 
+  
+  
+  
   // ITERATION 3
   //... your code goes here
 }
@@ -40,3 +48,23 @@ window.addEventListener('load', () => {
 
   //... your code goes here
 });
+
+
+/* NOTAS
+
+ACESO A ELEMS
+
+- document.getElementById("id")
+- document.getElementsByClassName("class")
+- document.getElementsByTagName("p")
+- document.querySelector("ul")
+- document.querySelectorAll("")
+
+ACCESO A CONTENIDO DE UN ELEM
+ 
+(se pueden usar para sobreescribir el contenido de un elem)
+
+- document.querySelector("p").innerText
+- document.querySelector("p").textContent
+- document.querySelector("p").innerHTML
+*/
