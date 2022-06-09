@@ -1,5 +1,7 @@
 // ITERATION 1
 
+const { NetworkManager } = require("puppeteer");
+
 function updateSubtotal(product) {
 
   const price = product.querySelector('.price span').textContent;;
@@ -25,8 +27,8 @@ function calculateAll() {
 
   const totalValue = document.querySelector('#total-value span');
   totalValue.textContent = total;
-
-
+  
+  
 }
 
 // ITERATION 4
@@ -38,10 +40,16 @@ function removeProduct(event) {
   calculateAll() ;
 }
 
+
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+   let newproduct = document.querySelector('product')
+   const inputName = document.querySelector('input[type="text"]').value;
+   const unitPrice = document.querySelector('input[placeholder="Product Name"] ').value;
+   
+   
+   
 }
 
 window.addEventListener('load', () => {
@@ -50,7 +58,10 @@ window.addEventListener('load', () => {
 
   const removeButton = document.querySelectorAll('.btn-remove')
 
-  for (button of removeButton) {
+  for(button of removeButton) {
     button.addEventListener('click', removeProduct);
-  } //... your code goes here
+  } 
+
+  const createBtn = document.querySelector('#create'); 
+  createBtn.addEventListener('click', createProduct); 
 });
