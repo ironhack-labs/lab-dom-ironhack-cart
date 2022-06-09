@@ -12,8 +12,8 @@
       <thead>
         <tr>
           <th>Product Name</th>
-          <th>Unit Price</th>
-          <th>Quantity</th>
+          <th >Unit Price</th>
+          <th >Quantity</th>
           <th>Subtotal</th>
           <th>Action</th>
         </tr>
@@ -32,10 +32,23 @@
             <button class="btn btn-remove">Remove</button>
           </td>
         </tr>
+        <tr class="product">
+          <td class="name">
+            <span>Duck</span>
+          </td>
+          <td class="price">$<span>5.00</span></td>
+          <td class="quantity">
+            <input type="number" value="0" min="0" placeholder="Quantity" />
+          </td>
+          <td class="subtotal">$<span>0</span></td>
+          <td class="action">
+            <button class="btn btn-remove">Remove</button>
+          </td>
+        </tr>
         <!-- Iteration 2: Add more products here -->
       </tbody>
       <tfoot>
-        <!-- <tr class="create-product">
+        <tr class="create-product">
           <td>
             <input type="text" placeholder="Product Name" />
           </td>
@@ -47,7 +60,7 @@
           <td>
             <button id="create" class="btn">Create Product</button>
           </td>
-        </tr> -->
+        </tr> 
       </tfoot>
     </table>
     <p class="calculate-total">
