@@ -111,6 +111,7 @@ The one product we currently have in our `#cart` is placed in the `tr` with the 
 
 The product has a **price** and **quantity** (where quantity represents how many items of a specific product a user has added in the cart). In the provided code, we see that there is also a **subtotal price**. The subtotal price will be the result of the _multiplication_ of those values.
 
+
 Your goal is to calculate the subtotal price, but let's approach it gradually. Let's break it down to a couple of steps:
 
 - **Step 0**: In this step, our goal is to help you understand the provided code in the `js/index.js`. Thanks to the provided code, the `Calculate Prices` button already has some functionality. Using the DOM manipulation, we got the element with the `id="calculate"` and added an event listener `click` to it. When clicked, this button will fire the `calculateAll()` function. The following code snippet does exactly what we explained:
@@ -200,7 +201,7 @@ To start, remove or comment out the existing code inside the `calculateAll()` (t
 function calculateAll() {
   // ...
 }
-```
+``` 
 
 The final output should look like the following:
 
