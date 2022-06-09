@@ -211,8 +211,6 @@ The final output should look like the following:
 
 ### Iteration 3: Total
 
-Our calculation functionality is still incomplete. The subtotal for each product is being updated, but the total value remains untouched.
-
 At the end of the `calculateAll()` function, reuse the total value you just calculated in the previous iteration and update the corresponding DOM element. Calculate the total price for the products in your cart by summing all of the subtotals returned by `updateSubtotal()` when it was called with each product.
 
 Lastly, display that value on your DOM.
@@ -225,8 +223,6 @@ Lastly, display that value on your DOM.
 ## Bonus Iterations
 
 ### Iteration 4: Removing a product
-
-Users should be able to remove products from their carts. For that purpose, every product row in our table has a "Remove" button at the end.
 
 But let's try to solve our problem one bit at a time. Inside of the existing function you're passing to `window.addEventListener()`, start with querying the document for all "Remove" buttons, loop through them, and add a `click` event listener to each, passing a named function `removeProduct` as the callback argument. If you need a hint on how to do this, just take a look at how we did it with adding event listener on the `calculatePricesBtn`.
 

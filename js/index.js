@@ -1,12 +1,13 @@
 // ITERATION 1
-
 function updateSubtotal(product) {
+  
   console.log('Calculating subtotal, yey!');
   const price = Number(product.querySelector('.price span').innerHTML)
   const quantity = Number(product.querySelector('.quantity input').value);
   const subtotalValue = price * quantity;
   let subtotal = product.querySelector('.subtotal span');
   subtotal.textContent = subtotalValue;
+
   return subtotalValue;
 }
 
@@ -38,17 +39,29 @@ function removeProduct(event) {
   calculateAll();
 }
 
-// ITERATION 5
-//the two inputs inside of `tfoot` represent the name for the new product and the unit price, respectively. The "Create Product" button should add a new product to the cart when triggered.
-// Add a `click` event handler to the "Create Product" that will take a function named `createProduct` as a callback.
-// In `createProduct` you should target the name and unit price input DOM nodes, extract their values, add a new row to the table with the product name and unitary price, 
-//as well as the quantity input and "Remove" button, and ensure that all of the functionality works as expected.
-// Remember, the new product should look undistinguished and behave like any of the products previously included in the cart. 
-//As such, one should be able to calculate its subtotal when the "Calculate All" button is clicked, and remove the product.
-// When the product creation is finalized, please, clear the input fields in the creation form.
-
+//ITERATION 5
 function createProduct() {
-  //... your code goes here
+  let copiedNode = document.querySelector('.product').cloneNode(true);
+  const inputName = document.querySelector('input[type="text"]').value;
+  const inputPrice = document.querySelector('input[placeholder="Product Price"]').value;
+
+  if (inputName === '' || inputPrice === '') {
+    alert('Please insert a name and a price.');
+    return
+  }
+
+  document.querySelector('tbody').appendChild(copiedNode);
+
+  let newNameValue = copiedNode.querySelector('.name span');
+  let newPriceValue = copiedNode.querySelector('.price span');
+
+  newNameValue.textContent = inputName;
+  newPriceValue.textContent = inputPrice;
+
+  copiedNode.querySelector('.btn-remove').addEventListener('click', removeProduct);
+
+  document.querySelector('#textInput').value = '';
+  document.querySelector('#priceInput').value = 0;
 }
 
 window.addEventListener('load', () => {
@@ -60,5 +73,6 @@ window.addEventListener('load', () => {
     button.addEventListener('click', removeProduct);
   }
 
-  const createBtn = document.querySelector
+  const createBtn = document.querySelector('#create');
+  createBtn.addEventListener('click', createProduct)
 });
