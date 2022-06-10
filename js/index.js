@@ -1,7 +1,5 @@
 // ITERATION 1
 
-const { NetworkManager } = require("puppeteer");
-
 function updateSubtotal(product) {
 
   const price = product.querySelector('.price span').textContent;;
@@ -27,19 +25,17 @@ function calculateAll() {
 
   const totalValue = document.querySelector('#total-value span');
   totalValue.textContent = total;
-  
-  
-}
 
+}
 // ITERATION 4
 
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
+  
   target.parentNode.parentNode.remove();
   calculateAll() ;
 }
-
 
 // ITERATION 5
 
