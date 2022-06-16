@@ -21,6 +21,10 @@ function calculateAll() {
     updateSubtotal(products[i]);
     total += Number(products[i].querySelector('.subtotal span').innerText);
   }
+  //another way to do it without the for loop vvvvv
+  //const products = document.getElementsByClassName('product');
+  //products = Array.from(products)
+  //forEach(function (elementInMyProducts){myTotal += updateSubtotal(elementInMyProducts)})
   // ITERATION 3
   document.querySelector('#total-value span').innerText = total;
 }
@@ -48,6 +52,8 @@ function createProduct() {
   newItem.querySelector('.name span').textContent = products[0].value;
   newItem.querySelector('.price span').textContent = products[1].value;
   newItem.getElementsByClassName('btn btn-remove')[0].addEventListener('click', removeProduct);
+  products[0].value = '';
+  products[1].value = '';
 }
 
 window.addEventListener('load', () => {
