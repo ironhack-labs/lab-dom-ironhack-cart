@@ -1,5 +1,3 @@
-// ITERATION 1
-
 function updateSubtotal(product) {
   const price = product.querySelector('.price span').innerText;
   const quantity = product.querySelector('.quantity input').value;
@@ -30,12 +28,9 @@ function removeProduct(event) {
   calculateAll();
 }
 
-// ITERATION 5
-
 function createProduct(newRow) {
   const newElmName = document.querySelector('#new-name input').value;
   const newElmPrice = document.querySelector('#new-price input').value;
-  // 2. add a new row
 
   const products = document.querySelector('tbody');
   newRow.querySelector('.product span').innerText = newElmName;
@@ -60,6 +55,4 @@ window.addEventListener('load', () => {
   createBtn.addEventListener('click', () => {
     createProduct(newRow);
   });
-
-  //... your code goes here
 });
