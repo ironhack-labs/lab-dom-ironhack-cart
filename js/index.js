@@ -1,42 +1,65 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
+  const price = product.querySelector('.price span').innerText;
+  const quantity = product.querySelector('.quantity input').value;
+  const subTotal = price * quantity;
 
-  //... your code goes here
+  const subtotalElm = product.querySelector('.subtotal span');
+  subtotalElm.innerText = subTotal;
+  return subTotal;
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
-
-  // ITERATION 2
-  //... your code goes here
-
-  // ITERATION 3
-  //... your code goes here
+  const products = document.querySelectorAll('.product');
+  let total = 0;
+  products.forEach((product) => {
+    total += updateSubtotal(product);
+  });
+  const totalElm = document.querySelector('#total-value span');
+  totalElm.innerText = total;
 }
-
-// ITERATION 4
 
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
-  //... your code goes here
+
+  const products = document.querySelector('tbody');
+  products.removeChild(target.parentNode.parentNode);
+
+  calculateAll();
 }
 
 // ITERATION 5
 
-function createProduct() {
-  //... your code goes here
+function createProduct(newRow) {
+  const newElmName = document.querySelector('#new-name input').value;
+  const newElmPrice = document.querySelector('#new-price input').value;
+  // 2. add a new row
+
+  const products = document.querySelector('tbody');
+  newRow.querySelector('.product span').innerText = newElmName;
+  newRow.querySelector('.product .price span').innerText = newElmPrice;
+  products.appendChild(newRow);
 }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
+
+  const newRow = document.querySelector('.product').cloneNode(true);
+
+  const removeBtns = document.querySelectorAll('.btn.btn-remove');
+  removeBtns.forEach((removeBtn) => {
+    removeBtn.addEventListener('click', (event) => {
+      removeProduct(event);
+    });
+  });
+
+  const createBtn = document.getElementById('create');
+  createBtn.addEventListener('click', () => {
+    createProduct(newRow);
+  });
 
   //... your code goes here
 });
