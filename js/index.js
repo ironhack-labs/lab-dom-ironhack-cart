@@ -30,8 +30,8 @@ function calculateAll() {
 // ITERATION 4
 
 function removeProduct(event) {
-  const target = event.currentTarget;
-  console.log('The target in remove is:', target);
+  const target = event.currentTarget.parentNode.parentNode;
+  document.getElementById('body').removeChild(target);
 }
 
 // ITERATION 5
@@ -49,6 +49,7 @@ function createProduct() {
     document.querySelector('#quantity-input').value
   ).toFixed(2);
 
+  //this just seems logical... 😄
   if (newProductName === '' || newProductPrice == 0) return;
 
   newProduct.querySelector('.product span').innerText = newProductName;
@@ -65,5 +66,9 @@ createProductBtn.addEventListener('click', createProduct);
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
+  const removeBtns = [...document.getElementsByClassName('btn-remove')];
   calculatePricesBtn.addEventListener('click', calculateAll);
+  removeBtns.forEach((btn) => {
+    btn.addEventListener('click', removeProduct);
+  });
 });
