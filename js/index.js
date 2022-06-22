@@ -43,12 +43,29 @@ function removeProduct(event) {
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  const table = document.getElementById('body')
+  const product = document.querySelector('.product').innerHTML
+  const newProduct = document.createElement('tr')
+
+  newProduct.className = 'product'
+  newProduct.innerHTML = product
+
+  const newProductName = document.querySelector('#name-input').value
+  const newProductPrice = Number(document.querySelector('#quantity-input').value).toFixed(2)
+
+  newProduct.querySelector('.product span').innerText = newProductName
+  newProduct.querySelector('.price span').innerText = newProductPrice
+
+  table.appendChild(newProduct)
+
+  document.querySelector('#name-input').value = ''
+  document.querySelector('#quantity-input').value = 0
 }
+
+const createProductBtn = document.querySelector('#create')
+createProductBtn.addEventListener('click', createProduct)
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
-
-  //... your code goes here
 });
