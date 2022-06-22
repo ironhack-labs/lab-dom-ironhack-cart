@@ -19,40 +19,46 @@ function calculateAll() {
 }
 
 function removeProduct(event) {
-  const target = event.currentTarget;
-  console.log('The target in remove is:', target);
+  let target = event.target;
+  console.log('The target to remove is:', target);
 
   const products = document.querySelector('tbody');
-  products.removeChild(target.parentNode.parentNode);
+  for (let i = 0; i < 10; i++) {
+    target = target.parentNode;
+    if (target.matches('.product')) {
+      break;
+    }
+  }
+  products.removeChild(target);
 
   calculateAll();
 }
 
-function createProduct(newRow) {
+function createProduct(firstRow) {
   const newElmName = document.querySelector('#new-name input').value;
   const newElmPrice = document.querySelector('#new-price input').value;
 
-  const products = document.querySelector('tbody');
+  const newRow = firstRow.cloneNode(true);
   newRow.querySelector('.product span').innerText = newElmName;
   newRow.querySelector('.product .price span').innerText = newElmPrice;
+
+  const products = document.querySelector('tbody');
   products.appendChild(newRow);
 }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
-
-  const newRow = document.querySelector('.product').cloneNode(true);
-
-  const removeBtns = document.querySelectorAll('.btn.btn-remove');
-  removeBtns.forEach((removeBtn) => {
-    removeBtn.addEventListener('click', (event) => {
-      removeProduct(event);
-    });
-  });
+  const firstRow = document.querySelector('.product').cloneNode(true);
 
   const createBtn = document.getElementById('create');
   createBtn.addEventListener('click', () => {
-    createProduct(newRow);
+    createProduct(firstRow);
   });
+});
+
+document.addEventListener('click', function (event) {
+  if (event.target && event.target.className == 'btn btn-remove') {
+    removeProduct(event);
+  }
 });
