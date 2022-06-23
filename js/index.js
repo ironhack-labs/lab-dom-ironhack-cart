@@ -23,7 +23,7 @@ function calculateAll() {
     Total = Total + updateSubtotal;
   }
   const myTotal = document.querySelector('h2 span');
-  myTotal.innerText = Total.toFixed(2);
+  myTotal.innerText = Total;
   calculate.addEventListener('click', calculateAll);
 }
 
