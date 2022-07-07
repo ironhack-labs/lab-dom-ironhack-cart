@@ -1,17 +1,7 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  /*
-  OPCIÓN 1
-  const price = product.querySelector('.price span');
-  const quantity = product.querySelector('.quantity input');
-    let subTotal1 = price.innerHTML * quantity.value;
-    const subTotal = document.querySelector('.subtotal span');
-      subTotal.innerHTML = subTotal1
-    console.log(subTotal1)*/
 
-
-  //OPCIÓN 2
     console.log('Calculating subtotal, yey!');
   
     const price = product.querySelector('.price span');
@@ -21,7 +11,6 @@ function updateSubtotal(product) {
   }//Ruta = Valor de la operación matemática.
 
  
-
     // ITERATION 2
     //... your code goes here
   function calculateAll() {
@@ -59,5 +48,5 @@ window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+
 });
