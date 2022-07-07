@@ -1,34 +1,45 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
+  /*
+  OPCIÓN 1
   const price = product.querySelector('.price span');
-  const quantity = product.querySelector('.quantity');
-  let subtotal = price.innerHTML * quantity.value; 
-  product.querySelector('.subtotal span').innerHTML = subtotal;
-  return subtotal;
-}
-
-function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
-
-  // ITERATION 2
-  //... your code goes here
-  let total = 0;
-  const products = document.getElementsByClassName('product');
-  for (let i = 0; i < products.length; i++){
+  const quantity = product.querySelector('.quantity input');
+    let subTotal1 = price.innerHTML * quantity.value;
+    const subTotal = document.querySelector('.subtotal span');
+      subTotal.innerHTML = subTotal1
+    console.log(subTotal1)*/
 
 
-  // ITERATION 3
-  //... your code goes here
-  total += updateSubtotal(products[i]);
-}
-document.querySelector('#total-value span').innerHTML = total;
-}
+  //OPCIÓN 2
+    console.log('Calculating subtotal, yey!');
+  
+    const price = product.querySelector('.price span');
+    const quantity = product.querySelector('.quantity input');
+    let subtotal1 = price.innerHTML * quantity.value
+    document.querySelector('.subtotal span').innerHTML = subtotal1;
+  }//Ruta = Valor de la operación matemática.
+
+ 
+
+    // ITERATION 2
+    //... your code goes here
+  function calculateAll() {
+  document.getElementsByClassName(".product");
+
+    // code in the following two lines is added just for testing purposes.
+    // it runs when only iteration 1 is completed. at later point, it can be removed.
+    let subtotal2 = "";
+    document.querySelector('.subtotal span').innerHTML = subtotal2;
+    const singleProduct = document.querySelector('.product');
+    updateSubtotal(singleProduct);
+    
+    // end of test
+
+  }
+
+// ITERATION 3
+//... your code goes here
 
 // ITERATION 4
 
