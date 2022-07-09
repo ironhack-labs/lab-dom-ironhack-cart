@@ -1,15 +1,15 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  const price = product.querySelector('.price span').textContent;
+  const price = product.querySelector('.price span').innerText;
   const quantity = product.querySelector('.quantity input').valueAsNumber;
   const subtotal = product.querySelector('.subtotal span');
-  subtotal.textContent = parseFloat(price) * parseInt(quantity);
-  return parseFloat(subtotal.textContent);
+  subtotal.innerText = parseFloat(price) * parseInt(quantity);
+  return parseFloat(subtotal.innerText);
 }
 
 function calculateAll() {
-  document.querySelector('#total-value span').textContent = [
+  document.querySelector('#total-value span').innerText = [
     ...document.getElementsByClassName('product')
   ].reduce((acc, product) => (acc += updateSubtotal(product)), 0);
 }
@@ -50,14 +50,14 @@ function createNewProductRow(price, name) {
   const tdName = document.createElement('td');
   const nameSpan = document.createElement('span');
   tdName.className = 'name';
-  nameSpan.textContent = name;
+  nameSpan.innerText = name;
   tdName.appendChild(nameSpan);
 
   const tdPrice = document.createElement('td');
   tdPrice.className = 'price';
-  tdPrice.textContent = '$';
+  tdPrice.innerText = '$';
   const tdPriceContent = document.createElement('span');
-  tdPriceContent.textContent = price;
+  tdPriceContent.innerText = price;
   tdPrice.appendChild(tdPriceContent);
 
   const tdQuantity = document.createElement('td');
@@ -71,16 +71,16 @@ function createNewProductRow(price, name) {
 
   const tdTotal = document.createElement('td');
   tdTotal.className = 'subtotal';
-  tdTotal.textContent = '$';
+  tdTotal.innerText = '$';
   const totalSpan = document.createElement('span');
-  totalSpan.textContent = 0;
+  totalSpan.innerText = 0;
   tdTotal.appendChild(totalSpan);
 
   const tdAction = document.createElement('td');
   tdAction.className = 'action';
   const buttonAction = document.createElement('button');
   buttonAction.className = 'btn btn-remove';
-  buttonAction.textContent = 'Remove';
+  buttonAction.innerText = 'Remove';
   buttonAction.addEventListener('click', removeProduct);
   tdAction.appendChild(buttonAction);
 
@@ -103,7 +103,7 @@ window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  [...document.getElementsByClassName('btn btn-remove')].forEach((el) =>
+  document.querySelectorAll('.btn.btn-remove').forEach((el) =>
     el.addEventListener('click', removeProduct)
   );
   document.querySelector('#create').addEventListener('click', createProduct);
