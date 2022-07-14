@@ -3,18 +3,29 @@
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
 
-  //... your code goes here
+  const price = product.querySelector('.price span').innerText;
+  const quantity = product.querySelector('.quantity input').value;
+  const comboPriceQty = price * quantity;
+  const subtotal = product.querySelector('.subtotal span');
+  subtotal.innerHTML = comboPriceQty;
+  return comboPriceQty;
 }
 
-function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
+// they want us to use the innerText as its aware of rendered appearance of text
+//  can extract the value from an input by accessing an the input element's value property.
+
 
   // ITERATION 2
-  //... your code goes here
+
+  function calculateAll() {
+    const allProducts = document.getElementsByClassName('product');
+    let total = 0;
+    for (i = 0; i < allProducts.length; i++) {
+    total += updateSubtotal(allProducts[i]);
+    }
+
+    let totalPrice = document.querySelector('#total-value span').innerHTML
+   
 
   // ITERATION 3
   //... your code goes here
