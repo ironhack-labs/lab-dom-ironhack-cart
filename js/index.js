@@ -21,7 +21,8 @@ function calculateAll() {
           total += updateSubtotal(element);
     });
     // ITERATION 3
-    document.getElementById('total-value').innerHTML = total;
+    // document.getElementById('total-value span').innerHTML = total;
+    document.querySelector('#total-value span').innerHTML = total;
 }
 
 // ITERATION 4
@@ -59,8 +60,13 @@ function createProduct() {
         <button class="btn btn-remove">Remove</button>
       </td>
     `;
+ 
  newProduct.appendChild(tableTr);
  parentNode.appendChild(newProduct);
+ 
+ const removeProductBtn=tableTr.querySelector('.btn');
+ removeProductBtn.addEventListener('click', removeProduct, true);
+
 
 
 }
