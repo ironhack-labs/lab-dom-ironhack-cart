@@ -2,15 +2,15 @@
 
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
-  
+
   // get the data from the table
   let quantity = product.querySelector('.quantity input').value;
   let price = product.querySelector('.price span').textContent;
 
-  let subtotal = quantity*price; 
+  let subtotal = quantity * price;
 
-  product.querySelector(".subtotal span").innerHTML =  subtotal;
-  
+  product.querySelector('.subtotal span').innerHTML = subtotal;
+
   return subtotal;
 }
 
@@ -19,13 +19,17 @@ function calculateAll() {
   // it runs when only iteration 1 is completed. at later point, it can be removed.
   const singleProduct = document.getElementsByClassName('product'); // devuelve HTML collection
   const arrayProduct = [...singleProduct];
-  
-  console.log(arrayProduct)
+  let totalValue = 0;
+  for (let i = 0; i < arrayProduct.length; i++) {
+    totalValue += updateSubtotal(arrayProduct[i]);
+  }
 
-  console.log(updateSubtotal(arrayProduct[0]));
+  let calcButton = document.getElementById('calculate');
 
-  console.log(updateSubtotal(arrayProduct[1]))
-
+  calcButton.onclick = function () {
+    document.getElementById('total-value').querySelector('span').innerHTML= totalValue;
+    // no entiendo por qué se actualiza el valor del subtotal cuando se pulsa el botón 
+  };
 
   // end of test
 
