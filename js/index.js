@@ -3,40 +3,66 @@
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
 
-  //... your code goes here
+  const price = product.querySelector('.price span').textContent;
+  const quantity = product.querySelector('.quantity input').value;
+  let subtotal = product.querySelector('.subtotal span');
+  subtotal.innerHTML = price * quantity;
+
+  return parseFloat(subtotal.innerHTML);
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
+  const products = document.getElementsByClassName("product");
+  const arrProd = [...products];
 
-  // ITERATION 2
-  //... your code goes here
+  let total = 0;
+  for (i in arrProd) {
+    total += updateSubtotal(arrProd[i]);
+    console.log(updateSubtotal(arrProd[i]));
+  }
+  console.log(total);
+  document.querySelector('#total-value span').innerHTML = total;
 
-  // ITERATION 3
-  //... your code goes here
 }
-
 // ITERATION 4
 
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
-  //... your code goes here
+  target.parentNode.parentNode.remove();
+  calculateAll();
+
+  
 }
 
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  const name = document.querySelector('.create-name input').value;
+  const price = document.querySelector('.create-price input').value;
+  //target the element to copy;
+
+  const node = document.getElementsByClassName("product")[0];
+  const clone = node.cloneNode(true);
+  document.getElementById('cartbody').appendChild(clone);
+  document.getElementById('cartbody').lastChild.querySelector('.name span') = name;
+
+  // best effort so far
 }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
+  
+  const removeElBtn = document.getElementsByClassName('btn btn-remove');
+  const arrRemove = [...removeElBtn];
+  for(i in arrRemove) {
+    console.log(arrRemove[i])
+    arrRemove[i].addEventListener('click',removeProduct);
+  }
+//add click event to 'Create product' btn
+  const addProdBtn = document.getElementById('create');
+  addProdBtn.addEventListener('click',createProduct);
 
-  //... your code goes here
+  
 });
