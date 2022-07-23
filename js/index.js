@@ -39,8 +39,11 @@ window.addEventListener('load', () => {
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+
+  const rowToDelete = target.parentNode.parentNode;
+  rowToDelete.parentNode.removeChild(rowToDelete);
+
+  calculateAll();
 }
 
 // ITERATION 5
