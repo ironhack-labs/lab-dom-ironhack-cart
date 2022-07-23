@@ -38,7 +38,16 @@ function removeProduct(event) {
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  const name = document.querySelector('.create-name input').value;
+  const price = document.querySelector('.create-price input').value;
+  //target the element to copy;
+
+  const node = document.getElementsByClassName("product")[0];
+  const clone = node.cloneNode(true);
+  document.getElementById('cartbody').appendChild(clone);
+  document.getElementById('cartbody').lastChild.querySelector('.name span') = name;
+
+  // best effort so far
 }
 
 window.addEventListener('load', () => {
@@ -51,6 +60,9 @@ window.addEventListener('load', () => {
     console.log(arrRemove[i])
     arrRemove[i].addEventListener('click',removeProduct);
   }
+//add click event to 'Create product' btn
+  const addProdBtn = document.getElementById('create');
+  addProdBtn.addEventListener('click',createProduct);
 
-  //... your code goes here
+  
 });
