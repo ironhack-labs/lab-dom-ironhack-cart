@@ -26,32 +26,50 @@ function calculateAll() {
 
   let calcButton = document.getElementById('calculate');
 
-  calcButton.onclick = function () {
-    document.getElementById('total-value').querySelector('span').innerHTML= totalValue;
-    // no entiendo por qué se actualiza el valor del subtotal cuando se pulsa el botón 
-  };
+  //calcButton.onclick = function () {
+  document.getElementById('total-value').querySelector('span').innerHTML =
+    totalValue;
+  // no entiendo por qué se actualiza el valor del subtotal cuando se pulsa el botón
+  //};
 
   // end of test
-
-  // ITERATION 2
-  // let quantity = document.querySelectorAll()
-  // ITERATION 3
-  //... your code goes here
 }
 
-calculateAll();
+//calculateAll();
 // ITERATION 4
 
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
-  //... your code goes here
+  const rowNode = target.parentNode.parentNode; // get the whole product
+  rowNode.parentNode.removeChild(rowNode);
+  calculateAll();
 }
 
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  const nameProduct = document.querySelector(".create-product input[type='text']").value;
+  const unitPrice = document.querySelector(".create-product input[type='number']").value;
+
+  // console.log(unitPrice);
+  // console.log(nameProduct);
+
+  const classToClone = document.querySelector('.product'); // get the first product row
+  const clonedClass = classToClone.cloneNode(true);
+
+  if (unitPrice != 0 && nameProduct != '') {
+    clonedClass.querySelector('.name span').innerHTML = nameProduct;
+    clonedClass.querySelector('.price span').innerHTML = unitPrice;
+    classToClone.parentNode.appendChild(clonedClass);
+    const newRemoveBtn = clonedClass.getElementsByClassName('btn-remove');
+    newRemoveBtn[0].addEventListener('click', removeProduct);    
+  } else {
+    console.log('El nombre del producto o el precio son incorrectos');
+  }
+
+  document.querySelector(".create-product input[type='text']").value = null;
+  document.querySelector(".create-product input[type='number']").value = 0;
 }
 
 window.addEventListener('load', () => {
@@ -59,4 +77,13 @@ window.addEventListener('load', () => {
   calculatePricesBtn.addEventListener('click', calculateAll);
 
   //... your code goes here
+  const removeProductBtn = document.getElementsByClassName('btn-remove');
+  let removeProductList = [...removeProductBtn];
+
+  for (let i = 0; i < removeProductBtn.length; i++) {
+    removeProductList[i].addEventListener('click', removeProduct);
+  }
+
+  const addProductBtn = document.getElementById('create');
+  addProductBtn.addEventListener('click', createProduct);
 });
