@@ -52,6 +52,11 @@ table input[type='number'] {
   color: #fff;
 }
 
+.btn-add {
+  background: #00a65a;
+  color: #fff;
+}
+
 .btn-success {
   background-color: #2cc5fa;
 }
