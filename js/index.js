@@ -42,8 +42,28 @@ function removeProduct(event) {
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
-
+  const name = document.querySelectorAll('.create-product input')[0].value;
+  let price = document.querySelectorAll('.create-product input')[1].value;
+  price = Number(price).toFixed(2);
+  const htmlString = `
+  
+  <td class="name">
+  <span>${name}</span>
+</td>
+<td class="price">$<span>${price}</span></td>
+<td class="quantity">
+  <input type="number" value="0" min="0" placeholder="Quantity" />
+</td>
+<td class="subtotal">$<span>0</span></td>
+<td class="action">
+  <button class="btn btn-remove">Remove</button>
+</td>
+      
+  `
+  const newRow = document.createElement('tr');
+  newRow.classList.add('product');
+  newRow.innerHTML = htmlString;
+  document.querySelector('tbody').appendChild(newRow);
 }
 
 window.addEventListener('load', () => {
@@ -60,3 +80,5 @@ window.addEventListener('load', () => {
   createNewProduct.addEventListener('click', createProduct);
   
 });
+
+
