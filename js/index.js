@@ -48,7 +48,7 @@ function removeProduct(event) {
   console.log('The target in remove is:', target);
   //... your code goes here
 }
-//
+
 // ITERATION 5
 
 function createProduct() {
