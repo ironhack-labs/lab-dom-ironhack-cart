@@ -49,8 +49,33 @@ function removeProduct(event) {
 
 // ITERATION 5
 
+
+
 function createProduct() {
-  //... your code goes here
+ let newRow = document.createElement("tr");
+ newRow.setAttribute("class", "product");
+ 
+ let productName = document.createElement("td");
+ productName.setAttribute("class", "name");
+ let productNameSpan = document.createElement("span");
+ productNameSpan.innerHTML = QUE NARISES METO AQUI;
+ productName.appendChild(productNameSpan);
+ 
+ let productPrice = document.createElement("td");
+ productPrice.setAttribute("class", "price");
+ let productPriceSpan = document.createElement("span");
+ productPriceSpan.innerHTML = QUE NARISES METO AQUI;
+ productPrice.appendChild(productPriceSpan);
+
+
+ let productQuantity = document.createElement("td");
+ productQuantity.setAttribute("class", "quantity");
+ let productSubtotal = document.createElement("td");
+ productSubtotal.setAttribute("class", "subtotal");
+ let productRemoveBtn = document.createElement("td");
+ productRemoveBtn.setAttribute("class", "action");
+
+
 }
 
 window.addEventListener('load', () => {
@@ -59,6 +84,9 @@ window.addEventListener('load', () => {
 
   const removeAProductBtn = document.getElementById('remove');
   removeAProductBtn.addEventListener('click', removeProduct);
+
+  const createAProductBtn = document.getElementById('create');
+  createAProductBtn.addEventListener('click', createProduct);
 });
 
 
