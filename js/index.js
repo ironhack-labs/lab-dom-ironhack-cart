@@ -3,10 +3,6 @@
 function updateSubtotal(product) {
   const price = product.querySelector('.price span');
   const quantity = product.querySelector('.quantity input');
-  //let valuePrice = price.getElementbyTagName(span).innerHTML;
-  //let valueQuantity = product.getElementbyTagName(span).innerHTML;
-  //let sumSubtotal = valuePrice*valueQuantity;
-  //let subtotal = product.querySelector('.subtotal span')
   const priceValue = price.innerText;
   const quantityValue = quantity.value;
 
