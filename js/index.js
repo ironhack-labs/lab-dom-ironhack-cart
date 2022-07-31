@@ -38,52 +38,59 @@ function calculateAll() {
 // ITERATION 4
 
 function removeProduct(event) {
-  const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  let tbody = document.getElementById("table-body");
-  console.log(tbody);
+ //mi forma
+  let tbody = document.getElementById("tbody");
   let removedProduct = document.querySelector(".product");
-  console.log(removedProduct);
   tbody.removeChild(removedProduct);
+
+  //clase
+  // const test = event.currentTarget;
+  // console.log(event.currentTarget);
+  // const removeChildVariable = test.parentNode.parentNode;
+  // const parent = removeChildVariable.parentNode;
+  // parent.removeChild(removeChildVariable);
+
+  calculateAll();
 }
 
-// ITERATION 5
-
-
+// // ITERATION 5
 
 function createProduct() {
- let newRow = document.createElement("tr");
- newRow.setAttribute("class", "product");
- 
- let productName = document.createElement("td");
- productName.setAttribute("class", "name");
- let productNameSpan = document.createElement("span");
- productNameSpan.innerHTML = QUE NARISES METO AQUI;
- productName.appendChild(productNameSpan);
- 
- let productPrice = document.createElement("td");
- productPrice.setAttribute("class", "price");
- let productPriceSpan = document.createElement("span");
- productPriceSpan.innerHTML = QUE NARISES METO AQUI;
- productPrice.appendChild(productPriceSpan);
+ let newProduct = document.querySelector('#newProduct');
+ let newPrice = document.querySelector('#newPrice');
 
+ const addToTheList = document.getElementById('tbody');
+ addToTheList.innerHTML += `
+ <tr class="product">
+        <td class="name">
+          <span>${newProduct.value}</span>
+        </td>
+        <td class="price">$<span>${newPrice.value}</span></td>
+        <td class="quantity">
+          <input type="number" value="0" min="0" placeholder="Quantity" />
+        </td>
+        <td class="subtotal">$<span>0</span></td>
+        <td class="action">
+          <button class="btn btn-remove">Remove</button>
+        </td>
+      </tr>
+ `;
 
- let productQuantity = document.createElement("td");
- productQuantity.setAttribute("class", "quantity");
- let productSubtotal = document.createElement("td");
- productSubtotal.setAttribute("class", "subtotal");
- let productRemoveBtn = document.createElement("td");
- productRemoveBtn.setAttribute("class", "action");
-
-
+  //Clear the input fields
+  newProduct.value = 'Product Name';
+  newPrice.value = 0;
 }
 
 window.addEventListener('load', () => {
-  const calculatePricesBtn = document.getElementById('calculate');
+  const calculatePricesBtn = document.querySelector('#calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  const removeAProductBtn = document.getElementById('remove');
+  const removeAProductBtn = document.querySelector('.btn-remove');
   removeAProductBtn.addEventListener('click', removeProduct);
+
+  //clase
+  // const removeBtn = document.querySelectorAll('.btn-remove');
+  // removeBtn.forEach((standards) => (standards.onclick = removeProduct));
 
   const createAProductBtn = document.getElementById('create');
   createAProductBtn.addEventListener('click', createProduct);

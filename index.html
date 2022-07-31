@@ -18,7 +18,7 @@
           <th>Action</th>
         </tr>
       </thead>
-      <tbody id = "table-body">
+      <tbody id = "tbody">
         <tr class="product">
           <td class="name">
             <span>Ironhack Rubber Duck</span>
@@ -29,18 +29,31 @@
           </td>
           <td class="subtotal">$<span>0</span></td>
           <td class="action">
-            <button id = "remove" class="btn btn-remove">Remove</button>
+            <button class="btn btn-remove">Remove</button>
           </td>
         </tr>
         <!-- Iteration 2: Add more products here -->
+         <!-- <tr class="product">
+          <td class="name">
+            <span>Ironhack Beach Towel</span>
+          </td>
+          <td class="price">$<span>12.50</span></td>
+          <td class="quantity">
+            <input type="number" value="0" min="0" placeholder="Quantity" />
+          </td>
+          <td class="subtotal">$<span>0</span></td>
+          <td class="action">
+            <button class="btn btn-remove">Remove</button>
+          </td>
+        </tr> -->
       </tbody>
       <tfoot>
         <tr class="create-product">
           <td>
-            <input type="text" placeholder="Product Name" />
+            <input id="newProduct" type="text" placeholder="Product Name" />
           </td>
           <td>
-            <input type="number" min="0" value="0" placeholder="Product Price" />
+            <input id="newPrice" type="number" min="0" value="0" placeholder="Product Price" />
           </td>
           <td></td>
           <td></td>
