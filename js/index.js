@@ -23,9 +23,12 @@ function calculateAll() {
   // updateSubtotal(singleProduct);
   // end of test
   // ITERATION 2
-  //... your code goes here
+  const products = document.querySelectorAll('.product');
+  let total = 0;
+  products.forEach((product) => (total += updateSubtotal(product)));
   // ITERATION 3
-  //... your code goes here
+  const getTotal = document.querySelector('#total-value span');
+  getTotal.innerHTML = total;
 }
 
 // ITERATION 4
