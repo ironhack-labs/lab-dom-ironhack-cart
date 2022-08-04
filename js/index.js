@@ -31,4 +31,4 @@ function calculateAll() {
   result.innerHTML = totalPrice;
 }
 
-// ITERATION 4
+// ITERATION g
