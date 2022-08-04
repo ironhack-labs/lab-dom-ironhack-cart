@@ -1,9 +1,31 @@
+let product = document.querySelectorAll('.product');
+
+let removeBtn = document.querySelectorAll('.btn-remove');
+
+const table = document.querySelector('tbody');
+
+const createBtn = document.querySelector('#create');
+
 // ITERATION 1
 
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
 
-  //... your code goes here
+    let accumulator = 0;
+
+  const price = document.querySelectorAll('.price span');
+  const subtotal = document.querySelectorAll('.subtotal span');
+  [...price].map(($price, i) => {
+    let unit = document.querySelectorAll("input[type='number']");
+
+    unit = [...unit][i].value;
+    let parcial = Number($price.innerHTML) * unit;
+
+    [...subtotal][i].innerHTML = parcial;
+
+    accumulator += parcial;
+  });
+  return accumulator;
 }
 
 function calculateAll() {
@@ -14,18 +36,42 @@ function calculateAll() {
   // end of test
 
   // ITERATION 2
-  //... your code goes here
+  let totalSum = updateSubtotal();
 
   // ITERATION 3
-  //... your code goes here
+  total.innerHTML = totalSum;
 }
+window.addEventListener('load', () => {
+  const $calculateTrigger = document.getElementById('calculate');
+
+  $calculateTrigger.addEventListener('click', calculateAll);
+});
+
+[...removeBtn].map((elem) =>
+  elem.addEventListener(
+    'click',
+    function (e) {
+      productRemoveListener(e);
+    },
+    false
+  )
+);
+
+createBtn.addEventListener('click', function () {
+  createProduct();
+});
 
 // ITERATION 4
 
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
-  //... your code goes here
+}
+  function productRemoveListener(event) {
+    let currentProduct = event.target.parentNode.parentNode;
+    table.removeChild(currentProduct);
+  
+    calculateAll();
 }
 
 // ITERATION 5
