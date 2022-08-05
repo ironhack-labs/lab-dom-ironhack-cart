@@ -25,14 +25,23 @@ function removeProduct(event) {
 function createProduct() {
   let name = document.querySelector('tfoot .create-product input[type="text"]').value;
   let price = document.querySelector('tfoot .create-product input[type="number"]').value;
-  let template = document.getElementsByClassName('product')[0];
-  let newProduct = template.cloneNode(true);
-  newProduct.querySelector('.name span').textContent = name;
-  newProduct.querySelector('.price span').textContent = price;
-  newProduct.querySelector('.quantity input').value = 0;
-  newProduct.querySelector('.subtotal span').textContent = 0;
+  let newProduct = document.createElement('tr');
+  newProduct.className = 'product'; 
+  newProduct.innerHTML = `
+          <td class="name">
+            <span>${name}</span>
+          </td>
+          <td class="price">$<span>${price}</span></td>
+          <td class="quantity">
+            <input type="number" value="0" min="0" placeholder="Quantity" />
+          </td>
+          <td class="subtotal">$<span>0</span></td>
+          <td class="action">
+            <button class="btn btn-remove">Remove</button>
+          </td>
+`;
   newProduct.querySelector('.btn-remove').addEventListener('click', removeProduct);
-  document.querySelector('tbody').append(newProduct);
+  document.querySelector('tbody').appendChild(newProduct);
 }
 
 window.addEventListener('load', () => {
