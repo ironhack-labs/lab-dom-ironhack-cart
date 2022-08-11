@@ -47,8 +47,24 @@ function calculateAll() {
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
-  //... your code goes here
+//no idea!
+  const shoppingCart = document.getElementById('cart');
+  const oneProduct = shoppingCart.getElementsByClassName('product');
+  const td = oneProduct.getElementsByClassName('action');
+
+  td.getParent.removeChild(target);
+
+  // if (target) {
+  //    oneProduct.parentNode.removeChild(oneProduct);
+  // }
+
+  // target.shoppingCart.removeChild(oneProduct);
+
+  //cart -> "product" -> "action" -> 'btn-remove"
+  //  removeChild(child);
 }
+
+// element.style.display = "none";
 
 // ITERATION 5
 
@@ -60,5 +76,10 @@ window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+  const removeBtn = document.getElementsByClassName('btn-remove');
+  const removeBtnArray = [...removeBtn];
+
+  removeBtnArray.forEach((button) => {
+    button.addEventListener('click', removeProduct);
+  });
 });
