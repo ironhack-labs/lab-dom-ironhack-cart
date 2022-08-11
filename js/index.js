@@ -16,12 +16,30 @@ function calculateAll() {
   // const singleProduct = document.querySelector('.product');
   // updateSubtotal(singleProduct);
 
+  //ITERATION 2
   const allProducts = document.getElementsByClassName('product');
   const allProductsArray = [...allProducts];
-  allProductsArray.forEach((product) => updateSubtotal(product));
+  let allProductsSum = 0;
+  allProductsArray.forEach((product) => {
+    allProductsSum += updateSubtotal(product);
+  });
 
   // ITERATION 3
-  //... your code goes here
+
+  //This took me forever. Why does the below return an HTMLCollection with a length of 1?
+  //const totalSpan = totalElement.getElementsByTagName('span')
+
+  //For classes much easier :)  product.querySelector('.price span')
+
+  const totalElement = document.getElementById('total-value');
+  const totalSpan = totalElement.getElementsByTagName('span')[0];
+
+  //This also had me confused. Why does:
+  // const totalSpan = totalElement.getElementsByTagName('span')[0].innerText
+  //Correctly select the span inner text, but then
+  // totalSpan = allProductsSum
+  //will not correctly adjust total on the page? Meaning, it has to be written so:
+  totalSpan.innerText = allProductsSum;
 }
 
 // ITERATION 4

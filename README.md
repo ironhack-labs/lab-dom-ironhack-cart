@@ -6,7 +6,7 @@
 
 ## Introduction
 
-E-commerce has proven to be a big game-changer in the 21st-century economy. As one of the largest sales channels, second only to physical retail, e-commerce [is expected](https://www.statista.com/statistics/379046/worldwide-retail-e-commerce-sales/) to be responsible for 6.3 trillion USD in worldwide sales by the year 2024.
+E-commerce has proven to be a big game-changer in the 21st-century economy. As one of the largest sales channels, second only to p hysical retail, e-commerce [is expected](https://www.statista.com/statistics/379046/worldwide-retail-e-commerce-sales/) to be responsible for 6.3 trillion USD in worldwide sales by the year 2024.
 
 E-commerce is a highly competitive business, and building a positive user experience is crucial to retaining customers and improving conversions. It is not uncommon for companies to make a significant investment in optimizing the purchase flow on their e-commerce platforms.
 
@@ -20,8 +20,6 @@ In this lab, we will be building the **IronCart**, a shopping cart for the unoff
 
 - Clone it to your machine.
 
-  
-
 ## Submission
 
 - Upon completion, run the following commands:
@@ -34,22 +32,15 @@ $ git push origin master
 
 - Create a Pull Request so that your TAs can check your work.
 
-  
-
-
-
 ## Instructions
 
 You will do most of your work in the `js/index.js` file. We added the initial markup in `index.html` and some basic styling. While developing, make sure you use the same class names as those already used (and available in the CSS file) to make our shopping cart nice and clean.
 
 Let's go!
 
-
-
 <br>
 
 <hr>
-
 
 ### Note about tests
 
@@ -60,8 +51,6 @@ This LAB is equipped with unit tests to provide automated feedback on your lab p
 <hr>
 
 <br>
-
-
 
 ### Iteration 1: `updateSubtotal`
 
@@ -183,7 +172,6 @@ Check [here](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_30b8
 
 <hr>
 
-
 ### Iteration 2: `calculateAll()`
 
 Our current code works perfectly for one product, but we expect to have more than one product on our cart. As such, we will use `calculateAll` to trigger the update of subtotals for every product.
@@ -208,7 +196,6 @@ The final output should look like the following:
 
 <hr>
 
-
 ### Iteration 3: Total
 
 Our calculation functionality is still incomplete. The subtotal for each product is being updated, but the total value remains untouched.
@@ -220,7 +207,6 @@ Lastly, display that value on your DOM.
 ![](https://i.imgur.com/SCtdzMd.png)
 
 <hr>
-
 
 ## Bonus Iterations
 
@@ -241,7 +227,6 @@ Make sure the price gets updated accordingly when you remove products from the s
 Click [here](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_17b1e9e4d2606239163dddbc5b2a3d9f.gif) to see the expected result.
 
 <hr>
-
 
 ### Iteration 5: Creating new products
 
@@ -288,13 +273,11 @@ Click [here](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_00ab
 
 <br>
 
-
-
 ## Test Your Code
 
 We will be working with automated tests again!
 
-Please, open your terminal, change directories into the root of the lab, and run `npm install` to install the test runner. Now, you can run the `npm run test:watch` command to run automated tests in *watch mode*. Open the resulting `lab-solution.html` file using the "Live Server" VSCode extension to always see the test results.
+Please, open your terminal, change directories into the root of the lab, and run `npm install` to install the test runner. Now, you can run the `npm run test:watch` command to run automated tests in _watch mode_. Open the resulting `lab-solution.html` file using the "Live Server" VSCode extension to always see the test results.
 
 ```bash
 $ cd lab-dom-ironhack-cart
@@ -302,11 +285,7 @@ $ npm install
 $ npm run test:watch
 ```
 
-
-
 In case you want to check the tests for more details, they are in the `tests/ironhack-cart.spec.js` file.
-
-
 
 <br>
 
