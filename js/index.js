@@ -1,42 +1,43 @@
 // ITERATION 1
-// console.dir(document);
-// console.log(document.URL);
  function updateSubtotal(product) {
    console.log('Calculating subtotal, yey!');
 
    const price = product.querySelector('.price span').innerHTML; // STEPS 1 & 2
-   const quantity = product.querySelector('.quantity input').innerHTML;
+   const quantity = product.querySelector('.quantity input').value;
 
    const subTotal = price * quantity; // STEP 3
 
-   const subTotalElement = document.getElementsByClassName('subtotal');
+   const subTotalElement = product.querySelector('.subtotal span');;
    subTotalElement.innerText = subTotal; // STEP4
 
    return subTotal;  // STEP 5
-  
  }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
-
   // ITERATION 2
-  //... your code goes here
+  const productList = document.querySelectorAll('.product');   // get every tr.product
+  let totalPrice = 0;
+    productList.forEach(function (singleProduct) {             //  call the function updateSubtotal with every tr.product DOM node
+    const subtotal = updateSubtotal(singleProduct);
+    totalPrice += subtotal;
+ });
 
-  // ITERATION 3
-  //... your code goes here
+// // ITERATION 3 Total
+const totalPriceElement = document.querySelector("#total-value span");   // Get DOM element that holds the cart total value 
+totalPriceElement.textContent = totalPrice; // Update the DOM element (Using the total value you just calculated)
+
+
 }
 
-// ITERATION 4
+// ITERATION 4 Removing a product
 
 function removeProduct(event) {
-  const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+  const removeButton = event.currentTarget;                         // 4.save remove button (target) in a variable
+  removeButton.parentNode.parentNode.remove();                      // 5.access its parent node (product row of the table) and delete it
+  calculateAll();                                                   // 6.recalculate the totals                       
+    
 }
+
 
 // ITERATION 5
 
@@ -48,5 +49,9 @@ window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
-});
+  const removeButtons = document.querySelectorAll(".btn-remove");         // 1.start with querying the document for all "Remove" buttons
+    for (let i = 0; i <= removeButtons.length; i++) {                     // 2.loop through them
+      removeButtons[i].addEventListener('click', removeProduct);          // 3.add a click event listener to each, passing a named function as the callback argument
+                                                                             
+    }
+  });
