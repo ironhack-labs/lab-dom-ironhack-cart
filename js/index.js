@@ -40,7 +40,6 @@ function removeProduct(event) {
 
   singleProduct = event.currentTarget.parentNode.parentNode;
 
-  console.log(singleProduct);
   singleProduct.parentNode.removeChild(singleProduct);
   calculateAll();
   //tbody -> "product" -> "action" -> 'btn-remove"
