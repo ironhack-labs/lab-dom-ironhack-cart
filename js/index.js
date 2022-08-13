@@ -35,16 +35,16 @@ function calculateAll() {
 // ITERATION 4
 
 function removeProduct(event) {
-  // const target = event.currentTarget;
-  // console.log('The target in remove is:', target);
-
-  singleProduct = event.currentTarget.parentNode.parentNode;
-
-  singleProduct.parentNode.removeChild(singleProduct);
-  calculateAll();
-  //tbody -> "product" -> "action" -> 'btn-remove"
-  //  removeChild(child);
+  event.currentTarget.parentNode.parentNode.remove();
+  console.log(event.currentTarget);
+  console.log(event.currentTarget.parentNode.parentNode);
 }
+
+// function removeProduct2(element) {
+//   element.parentNode.parentNode.remove();
+//   console.log(element);
+//   console.log(element.parentNode.parentNode);
+// }
 
 // ITERATION 5
 
