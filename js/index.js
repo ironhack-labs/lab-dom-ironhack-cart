@@ -37,7 +37,8 @@ function createProduct() {
   // I dont like this, but html forced my hand
   // I should instead use insertAdjacentElement()
   // its better :)
-  products.insertAdjacentHTML('beforeend', `<tr class="product">
+  products.insertAdjacentHTML('beforeend',
+    `<tr class="product">
         <td class="name">
           <span>${newName}</span>
         </td>
@@ -53,6 +54,11 @@ function createProduct() {
   // It add the action listener to the delete button to the new """node"""
   const removeProductBtns = document.querySelectorAll('.btn-remove');
   removeProductBtns[removeProductBtns.length - 1].addEventListener('click', removeProduct);
+
+  //Resetting the values on create product after the new product has been added
+  document.querySelector('.create-product input[type=text]').value = '';
+  document.querySelector('.create-product input[type=number]').value = '';
+
 }
 
 window.addEventListener('load', () => {
