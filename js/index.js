@@ -41,8 +41,6 @@ function calculateAll() {
     document.querySelector('#total-value span').innerHTML = totalValue
   }
 
-  // return product.querySelector('#total-value').innerHTML = totalValue
-
 
   // updateSubtotal(allProducts);
   // ITERATION 3
@@ -58,11 +56,25 @@ function removeProduct(event) {
 
   //... your code goes here
 
+  let resta1 = document.querySelector('#total-value span').innerHTML
+  let resta2 = document.querySelector('.subtotal span').innerHTML
 
+  let resultadoTotal = resta1 - resta2
+
+  document.querySelector('#total-value span').innerHTML = resultadoTotal
 
   let removePadre = document.querySelector('.padreProduct')
   let removeHijo = document.querySelector('.product')
-  let removeProduct = removePadre.removeChild(removeHijo)
+  let deleteProduct = removePadre.removeChild(removeHijo)
+
+
+  return deleteProduct
+
+  // for (let i = 0; i < removePadre.length; i++) {
+  //   let removeHijo = document.querySelectorAll('.product')[i]
+  //   removeHijo.remove(removeHijo)
+  //   console.log(removeHijo)
+  // }
 
   // let newPrice = 0;
 
@@ -83,8 +95,42 @@ function removeProduct(event) {
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  // ... your code goes here
+
+  let productName = document.querySelector('.create-product input').value
+  let productUnit = document.querySelector('.create-product .productUnit').value
+
+  document.querySelector('.create-product .productUnit').innerHTML = productUnit
+
+
+  let table = document.querySelector('.padreProduct')
+
+  let row = table.insertRow(0)
+  row.classList.add("product")
+
+  let cell1 = row.insertCell(0)
+  cell1.classList.add("name")
+
+  let cell2 = row.insertCell(1)
+  cell2.classList.add("price")
+
+  let cell3 = row.insertCell(2)
+  cell3.classList.add("quantity")
+
+  let cell4 = row.insertCell(3)
+  cell4.classList.add("subtotal")
+
+  let cell5 = row.insertCell(4)
+  cell5.classList.add("action")
+
+  cell1.innerHTML = `$<pan>${productName}</span>`
+  cell2.innerHTML = `$<pan>${productUnit}</span>`
+  cell3.innerHTML = `<input type="number" value="0" min="0" placeholder="Quantity" />`
+  cell4.innerHTML = `$<span>0</span>`
+  cell5.innerHTML = `<button class="btn btn-remove">Remove</button>`
+
 }
+
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
