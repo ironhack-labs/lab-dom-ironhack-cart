@@ -86,7 +86,7 @@ function createProduct() {
 
     const quantity = document.querySelectorAll(' .quantity input');
     quantity[quantity.length - 1].addEventListener('input', subtotal);
-    quantity[quantity.length - 1].addEventListener('input', calculateAll);
+    // quantity[quantity.length - 1].addEventListener('input', calculateAll);
   }
 }
 
@@ -117,5 +117,5 @@ window.addEventListener('load', () => {
 
   const quantity = document.querySelectorAll(' .quantity input');
   quantity.forEach((el) => el.addEventListener('input', subtotal));
-  quantity.forEach((el) => el.addEventListener('input', calculateAll));
+  // quantity.forEach((el) => el.addEventListener('input', calculateAll));
 });
