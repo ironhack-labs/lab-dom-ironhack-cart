@@ -25,8 +25,10 @@ function calculateAll() {
   let total = 0;
   cart.forEach((el) => (total += updateSubtotal(el)));
 
+  const total2dec = parseFloat(total).toFixed(2);
+
   const totalValue = document.querySelector('#total-value span');
-  totalValue.textContent = total;
+  totalValue.textContent = total2dec;
 
   // ITERATION 3
   //... your code goes here
@@ -50,7 +52,7 @@ function createProduct() {
   const name = document.querySelector('#create-product-name').value;
   const price = document.querySelector('#create-product-price').value;
   const tableBody = document.querySelector('#cart tbody');
-  const number = parseInt(price).toFixed(2);
+  const number = parseFloat(price).toFixed(2);
 
   if (number === 0 || name.length === 0) {
     number === 0
@@ -77,6 +79,7 @@ function createProduct() {
 
     const quantity = document.querySelectorAll(' .quantity input');
     quantity.forEach((el) => el.addEventListener('input', subtotal));
+    quantity.forEach((el) => el.addEventListener('input', calculateAll));
   }
 }
 
@@ -107,4 +110,5 @@ window.addEventListener('load', () => {
 
   const quantity = document.querySelectorAll(' .quantity input');
   quantity.forEach((el) => el.addEventListener('input', subtotal));
+  quantity.forEach((el) => el.addEventListener('input', calculateAll));
 });
