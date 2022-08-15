@@ -4,10 +4,11 @@
 
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
-
   //... your code goes here
-  const price = product.querySelector('.price span').innerHTML;
-  const quantity = product.querySelector('.quantity input').value;
+  const price = parseFloat(product.querySelector('.price span').innerHTML
+  const quantity = parseFloat(product.querySelector('.quantity input').value)
+
+  console.log(price)
 
   const subTotal = price * quantity;
 
@@ -39,8 +40,9 @@ function calculateAll() {
     updateSubtotal(multiprice)
     totalValue += updateSubtotal(multiprice)
     document.querySelector('#total-value span').innerHTML = totalValue
-  }
 
+  }
+  console.log(totalValue)
 
   // updateSubtotal(allProducts);
   // ITERATION 3
@@ -56,41 +58,23 @@ function removeProduct(event) {
 
   //... your code goes here
 
-  let resta1 = document.querySelector('#total-value span').innerHTML
-  let resta2 = document.querySelector('.subtotal span').innerHTML
+  // let resta1 = document.querySelector('#total-value span').innerHTML
+  // let resta2 = document.querySelector('.subtotal span').innerHTML
 
-  let resultadoTotal = resta1 - resta2
+  // let resultadoTotal = resta1 - resta2
 
-  document.querySelector('#total-value span').innerHTML = resultadoTotal
+  // document.querySelector('#total-value span').innerHTML = resultadoTotal
 
   let removePadre = document.querySelector('.padreProduct')
   let removeHijo = target.parentNode.parentNode
   let deleteProduct = removePadre.removeChild(removeHijo)
 
+  calculateAll()
+
   console.log(target.parentNode.parentNode)
 
 
   return deleteProduct
-
-  // for (let i = 0; i < removePadre.length; i++) {
-  //   let removeHijo = document.querySelectorAll('.product')[i]
-  //   removeHijo.remove(removeHijo)
-  //   console.log(removeHijo)
-  // }
-
-  // let newPrice = 0;
-
-  // if (removeProduct) {
-  //   newPrice = totalValue.querySelector('#total-value span') - subTotal.querySelector('.subtotal')
-  //   newPrice.querySelector('#total-value span').innerHTML = totalValue
-  // }
-
-
-  // for (let i = 0; i < removeProduct.length; i++) {
-  //   let eliminar = document.querySelectorAll('.product')[i]
-
-  //   eliminar.innerHTML = "new text"
-  // }
 
 }
 
@@ -101,7 +85,7 @@ function createProduct() {
 
   let productName = document.querySelector('.create-product input').value
   let productUnit = document.querySelector('.create-product .productUnit').value
-  let productSubTotal = document.querySelector('.subtotal span').innerHTML
+  let productSubTotal = productUnit
 
   document.querySelector('.create-product .productUnit').innerHTML = productUnit
 
@@ -126,11 +110,12 @@ function createProduct() {
   let cell5 = row.insertCell(4)
   cell5.classList.add("action")
 
-  cell1.innerHTML = `$<pan>${productName}</span>`
-  cell2.innerHTML = `$<pan>${productUnit}</span>`
+  cell1.innerHTML = `<span>${productName}</span>`
+  cell2.innerHTML = `$<span>${productUnit}</span>`
   cell3.innerHTML = `<input type="number" value="0" min="0" placeholder="Quantity" />`
   cell4.innerHTML = `$<span>${productSubTotal}</span>`
   cell5.innerHTML = `<button class="btn btn-remove">Remove</button>`
+  cell5.querySelector('.btn-remove').addEventListener('click', removeProduct)
 
 
 }
