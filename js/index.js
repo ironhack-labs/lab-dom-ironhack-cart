@@ -64,8 +64,10 @@ function removeProduct(event) {
   document.querySelector('#total-value span').innerHTML = resultadoTotal
 
   let removePadre = document.querySelector('.padreProduct')
-  let removeHijo = document.querySelector('.product')
+  let removeHijo = target.parentNode.parentNode
   let deleteProduct = removePadre.removeChild(removeHijo)
+
+  console.log(target.parentNode.parentNode)
 
 
   return deleteProduct
@@ -99,6 +101,7 @@ function createProduct() {
 
   let productName = document.querySelector('.create-product input').value
   let productUnit = document.querySelector('.create-product .productUnit').value
+  let productSubTotal = document.querySelector('.subtotal span').innerHTML
 
   document.querySelector('.create-product .productUnit').innerHTML = productUnit
 
@@ -126,8 +129,9 @@ function createProduct() {
   cell1.innerHTML = `$<pan>${productName}</span>`
   cell2.innerHTML = `$<pan>${productUnit}</span>`
   cell3.innerHTML = `<input type="number" value="0" min="0" placeholder="Quantity" />`
-  cell4.innerHTML = `$<span>0</span>`
+  cell4.innerHTML = `$<span>${productSubTotal}</span>`
   cell5.innerHTML = `<button class="btn btn-remove">Remove</button>`
+
 
 }
 
