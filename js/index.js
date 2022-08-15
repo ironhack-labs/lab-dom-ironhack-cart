@@ -40,8 +40,7 @@ function removeProduct(event) {
   const tableBody = document.querySelector('#cart tbody');
   console.log('The target in remove is:', target);
   // target.parentElement.parentElement.innerHTML = '';
-  console.log(target.parentNode.parentNode);
-  tableBody.removeChild(target.parentNode.parentNode);
+  tableBody.removeChild(target.closest('.product'));
 }
 
 // ITERATION 5
@@ -51,7 +50,7 @@ function createProduct() {
   const name = document.querySelector('#create-product-name').value;
   const price = document.querySelector('#create-product-price').value;
   const tableBody = document.querySelector('#cart tbody');
-  const number = parseFloat(price).toFixed(2);
+  const number = parseInt(price).toFixed(2);
 
   if (number === 0 || name.length === 0) {
     number === 0
@@ -83,13 +82,15 @@ function createProduct() {
 
 function subtotal(event) {
   const target = event.currentTarget;
-  const price =
-    target.parentNode.parentNode.querySelector('.price span').textContent;
-  const quantity =
-    target.parentNode.parentNode.querySelector('.quantity input').value;
+  const price = target
+    .closest('.product')
+    .querySelector('.price span').textContent;
+  const quantity = target
+    .closest('.product')
+    .querySelector('.quantity input').value;
 
   const subtotal = price * quantity;
-  target.parentNode.parentNode.querySelector('.subtotal span').innerHTML =
+  target.closest('.product').querySelector('.subtotal span').innerHTML =
     subtotal;
 }
 
