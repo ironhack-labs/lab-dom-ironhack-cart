@@ -5,9 +5,11 @@ function updateSubtotal(product) {
 
   //... your code goes here
   const price = product.querySelector('.price span').textContent;
+  const priceNum = parseFloat(price);
   const quantity = product.querySelector('.quantity input').value;
-  const subtotal = price * quantity;
-  product.querySelector('.subtotal span').innerHTML = subtotal;
+  const subtotal = priceNum * quantity;
+  // console.log(subtotal);
+  product.querySelector('.subtotal span').innerHTML = subtotal.toFixed(2);
 
   return subtotal;
 }
@@ -21,7 +23,7 @@ function calculateAll() {
 
   // ITERATION 2
   //... your code goes here
-  const cart = document.querySelectorAll('#cart tbody .product');
+  const cart = document.querySelectorAll('.product');
   let total = 0;
   cart.forEach((el) => (total += updateSubtotal(el)));
 
@@ -38,11 +40,13 @@ function calculateAll() {
 
 function removeProduct(event) {
   const target = event.currentTarget;
+  console.log('The target in remove is:', target);
   //... your code goes here
   const tableBody = document.querySelector('#cart tbody');
-  console.log('The target in remove is:', target);
+  const row = target.closest('.product');
   // target.parentElement.parentElement.innerHTML = '';
-  tableBody.removeChild(target.closest('.product'));
+  tableBody.removeChild(row);
+  calculateAll();
 }
 
 // ITERATION 5
@@ -59,7 +63,9 @@ function createProduct() {
       ? alert('Can not add a product with no price')
       : alert('Can not add a product with no name');
   } else {
-    tableBody.innerHTML += `
+    tableBody.insertAdjacentHTML(
+      'beforeend',
+      `
         <tr class="product">
           <td class="name">
             <span>${name}</span>
@@ -73,13 +79,14 @@ function createProduct() {
             <button class="btn btn-remove">Remove</button>
           </td>
         </tr>
-        `;
+        `
+    );
     const removeBtns = document.querySelectorAll(' .btn-remove');
-    removeBtns.forEach((btn) => btn.addEventListener('click', removeProduct));
+    removeBtns[removeBtns.length - 1].addEventListener('click', removeProduct);
 
     const quantity = document.querySelectorAll(' .quantity input');
-    quantity.forEach((el) => el.addEventListener('input', subtotal));
-    quantity.forEach((el) => el.addEventListener('input', calculateAll));
+    quantity[quantity.length - 1].addEventListener('input', subtotal);
+    quantity[quantity.length - 1].addEventListener('input', calculateAll);
   }
 }
 
