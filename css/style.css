@@ -47,6 +47,10 @@ table input[type='number'] {
   cursor: pointer;
 }
 
+#create {
+  background-color: rgb(221, 217, 217);
+}
+
 .btn-success,
 .btn-remove {
   color: #fff;
