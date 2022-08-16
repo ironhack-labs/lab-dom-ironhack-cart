@@ -65,3 +65,8 @@ h2,
 .calculate-total {
   text-align: center;
 }
+
+.newProduct td{
+  background-color:#FFFFFF;
+  padding: 0.75em 1em;
+}
