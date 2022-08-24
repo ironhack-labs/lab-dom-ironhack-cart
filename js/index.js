@@ -77,6 +77,8 @@ function createProduct() {
   console.log(newProductPrice)
 
   // Create the entire structure of the row, programmatically.
+  // find a way to input values from newProductName, newProductPrice
+  
 
   // newRow.appendChild(newProductName)
   // newRow.appendChild(newProductPrice)
