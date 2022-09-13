@@ -1,9 +1,19 @@
 // ITERATION 1
 
-function updateSubtotal(product) {
+function updateSubtotal() {
   console.log('Calculating subtotal, yey!');
 
-  //... your code goes here
+  let price = document.querySelectorAll('.price span');
+  let subtotal = document.querySelectorAll('.subtotal span');
+  let acc = 0;
+  [...price].map((eachPrice, i) => {
+    let unit = document.querySelectorAll('.amount');
+    unit = [...unit][i].value;
+    let parcial = Number(eachPrice.innerHTML) * unit;
+    [...subtotal][i].innerHTML = parcial;
+    acc += parcial;
+  });
+  return acc;
 }
 
 function calculateAll() {
@@ -14,7 +24,6 @@ function calculateAll() {
   // end of test
 
   // ITERATION 2
-  //... your code goes here
 
   // ITERATION 3
   //... your code goes here
