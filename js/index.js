@@ -16,15 +16,25 @@ function updateSubtotal() {
   return acc;
 }
 
+window.addEventListener('load', () => {
+  const $calculateTrigger = document.getElementById('calculate');
+
+  $calculateTrigger.addEventListener('click', calculateAll);
+});
+
 function calculateAll() {
   // code in the following two lines is added just for testing purposes.
   // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
+  // const singleProduct = document.querySelector('.product');
+  // updateSubtotal(singleProduct);
   // end of test
 
   // ITERATION 2
-
+  let total = document.querySelector('#total-value span');
+  let totalSum = updateSubtotal();
+  console.log('soy la suma total', totalSum);
+  total.innerHTML = totalSum;
+  console.log(total.innerHTML);
   // ITERATION 3
   //... your code goes here
 }
