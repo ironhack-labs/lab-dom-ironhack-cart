@@ -20,6 +20,7 @@ td,
 button,
 input {
   padding: 0.75em 1em;
+  text-align: center;
 }
 
 table#cart {
@@ -56,8 +57,20 @@ table input[type='number'] {
   background-color: #2cc5fa;
 }
 
+.btn-success:hover {
+  background-color: #1b82a4;
+}
+
 .btn-remove {
   background-color: #f27471;
+}
+
+.btn-remove:hover {
+  background-color: #b94543;
+}
+
+.amount {
+  cursor: pointer;
 }
 
 h1,
