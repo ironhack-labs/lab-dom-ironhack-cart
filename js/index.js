@@ -39,8 +39,24 @@ function calculateAll() {
   });
 
 
+
+
   // ITERATION 3
-  //... your code goes here
+  const totalCollection = (document.querySelectorAll('.subtotal span'));
+  let totalValue = 0;
+  // console.log(totalCollection);
+  totalCollection.forEach((product) => {
+    // console.log(parseFloat(product.innerText));
+    totalValue += parseFloat(product.innerText);
+
+  });
+  console.log(totalValue);
+
+// total-value span
+  const totalDomElement = document.querySelector('#total-value span');
+  totalDomElement.innerText = totalValue;
+
+  
 }
 
 // ITERATION 4
