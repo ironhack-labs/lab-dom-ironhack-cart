@@ -19,13 +19,21 @@ function calculateAll() {
   // ITERATION 2
   const productCollection = document.querySelectorAll('tr.product');
   const productArr = [...productCollection];
-  productArr.forEach(function(element){
+  let total = 0;
+  productArr.forEach(function (element) {
     updateSubtotal(element);
-  })
+    let span = element.querySelector('.subtotal span').innerHTML;
+    total = total + Number(span);
+  });
   
-
+  
   // ITERATION 3
-  //... your code goes here
+  
+  const totalSpan = document.querySelector('#total-value span');
+  totalSpan.innerHTML = total;
+
+  console.log(totalSpan.innerHTML)
+  
 }
 
 // ITERATION 4
