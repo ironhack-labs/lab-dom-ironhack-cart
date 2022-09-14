@@ -1,3 +1,7 @@
+let product = document.querySelectorAll('.product');
+let removeBtn = document.querySelectorAll('.btn-remove');
+const table = document.querySelector('tbody');
+
 // ITERATION 1
 
 function updateSubtotal() {
@@ -32,19 +36,23 @@ function calculateAll() {
   // ITERATION 2
   let total = document.querySelector('#total-value span');
   let totalSum = updateSubtotal();
-  console.log('soy la suma total', totalSum);
-  total.innerHTML = totalSum;
-  console.log(total.innerHTML);
+
   // ITERATION 3
-  //... your code goes here
+  total.innerHTML = totalSum;
 }
+
+[...removeBtn].map((elem) =>
+  elem.addEventListener('click', function (event) {
+    removeProduct(event);
+  })
+);
 
 // ITERATION 4
 
 function removeProduct(event) {
-  const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+  let currentProduct = event.target.parentNode.parentNode;
+  table.removeChild(currentProduct);
+  calculateAll();
 }
 
 // ITERATION 5
