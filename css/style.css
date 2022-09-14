@@ -49,7 +49,8 @@ table input[type='number'] {
 }
 
 .btn-success,
-.btn-remove {
+.btn-remove,
+.btn-create {
   color: #fff;
 }
 
@@ -67,6 +68,14 @@ table input[type='number'] {
 
 .btn-remove:hover {
   background-color: #b94543;
+}
+
+.btn-create {
+  background-color: rgb(67, 243, 73);
+}
+
+.btn-create:hover {
+  background-color: rgb(40, 209, 45);
 }
 
 .amount {
