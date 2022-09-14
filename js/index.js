@@ -30,14 +30,25 @@ productsForSaleArr.forEach(element => {updateSubtotal(element)
   
 
 
+
+
+
+
+
+
+
   // ITERATION 3
   //... your code goes here
-const bigTotal = Number(document.querySelector("h2 span").innerHTML)
 
-subtotalCollection = document.getElementsByClassName("subtotal");
-subtotalCollectionArr = [...subtotalCollection]
-console.log(subtotalCollectionArr)
+let finalTotal = 0;
 
+let subtotalCollection = (document.querySelectorAll('.subtotal span'));
+console.log(subtotalCollection)
+
+subtotalCollection.forEach((value)=> {finalTotal += Number(value.innertext)});
+
+const totalElm = document.querySelector('#total-value span')
+totalElm.innerHTML = finalTotal
 
 
 }
