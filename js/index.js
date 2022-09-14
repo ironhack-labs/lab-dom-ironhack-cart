@@ -1,18 +1,14 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
-
-  const price = parseFloat(product.querySelector('.price span').innerText)
-
-  const quantity = product.querySelector('.quantity input').valueAsNumber
-
-  let subtotalPrice = price * quantity
-
-  const subtotalElement = product.querySelector('.subtotal span')
-
-  subtotalElement.innerText = subtotalPrice
-
+  const price = product.querySelector('.price span');
+  const quantity = product.querySelector('.quantity input');
+  console.log('Calling method');
+  const priceV = parseFloat(price.innerText);
+  const quantityV = quantity.value;
+  const subtotalV = priceV * quantityV;
+  const subtotalElm = product.querySelector('.subtotal span');
+  subtotalElm.innerHTML = subtotalV;
 }
 
 function calculateAll() {
@@ -26,29 +22,12 @@ function calculateAll() {
 
   // ITERATION 2
   //... your code goes here
-  // const singleProduct = document.querySelector('.product');
-  // updateSubtotal(singleProduct);
 
+  const productsElm = document.querySelectorAll('.product');
 
-
-  // let total = 0;
-  const allProducts = document.getElementsByClassName("product")
-console.log(allProducts);
-  const allProductsArray = [...allProducts];
-  console.log(allProductsArray);
-  // allProductsArray.forEach(function(domElement){
-  //  domElement.innerHTML
-  // });
-  /*
-  console.log("All products: " + typeof allProducts + typeof singleProduct);
-     for (let i = 0; i < allProducts.length; i++){
-         total = singleProduct + allProducts[i]
-     }
- */
- 
-     updateSubtotal(allProducts);
-
-  
+  productsElm.forEach((product) => {
+    updateSubtotal(product);
+  });
 
   // ITERATION 3
   //... your code goes here
