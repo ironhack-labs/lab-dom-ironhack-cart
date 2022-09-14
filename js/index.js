@@ -26,13 +26,9 @@ function calculateAll() {
   // updateSubtotal(singleProduct);
   // end of test
 
-  // const productCollection = document.getElementsByClassName('product');
-  // console.log(productCollection);
-  // updateSubtotal(productCollection);
   
   // ITERATION 2
-  //... your code goes here
-  
+
   const productCollection = document.querySelectorAll('.product');
   productCollection.forEach( (productElm) => {
     updateSubtotal(productElm);
@@ -44,15 +40,12 @@ function calculateAll() {
   // ITERATION 3
   const totalCollection = (document.querySelectorAll('.subtotal span'));
   let totalValue = 0;
-  // console.log(totalCollection);
   totalCollection.forEach((product) => {
-    // console.log(parseFloat(product.innerText));
     totalValue += parseFloat(product.innerText);
 
   });
   console.log(totalValue);
 
-// total-value span
   const totalDomElement = document.querySelector('#total-value span');
   totalDomElement.innerText = totalValue;
 
