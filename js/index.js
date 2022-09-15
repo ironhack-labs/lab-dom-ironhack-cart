@@ -25,9 +25,9 @@ function calculateAll() {
   // ITERATION 3
   //... your code goes here
   allProductsCopy.forEach(element => {
-    totalPrice += parseFloat(updateSubtotal(element));
+    totalPrice += updateSubtotal(element);
   });
-  document.getElementById("total-value").querySelector("span").innerText = totalPrice;
+  document.querySelector("#total-value span").innerText = totalPrice;
 }
 
 // ITERATION 4
