@@ -122,6 +122,7 @@ window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 });
+
 ```
 
 Don't get confused with [.addEventListener()](https://www.w3schools.com/jsref/met_document_addeventlistener.asp) method, it does exactly the same as [onclick()](https://www.w3schools.com/tags/ev_onclick.asp), with some differences about which you can find more [here](https://stackoverflow.com/questions/6348494/addeventlistener-vs-onclick). In this lab, you can use whichever method you prefer.
