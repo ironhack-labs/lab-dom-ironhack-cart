@@ -37,6 +37,7 @@ for (let index = 0; index < arrayProducts.length; index++) {
 
 
 
+
 // ITERATION 4
 
 function removeProduct(event) {
