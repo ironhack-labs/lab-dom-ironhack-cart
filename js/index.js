@@ -19,29 +19,29 @@ function calculateAll() {
 
   // ITERATION 2
   const allProducts = document.querySelectorAll('.product');
+  let counter = 0;
   allProducts.forEach((eachProduct) => {
     updateSubtotal(eachProduct);
-    let counter = 0;
     // obtengo subtotal de cada elemento
     let eachSubtotal = eachProduct.querySelector('.subtotal span');
     // coercion a Number
     eachSubtotal = +eachSubtotal.innerHTML;
-    // el contador actualmente contiene los dos subtotales de cada elemento.
-    // iterar por cada uno de ellos y agregarlo al contador
-    // eachSubtotal.forEach((element) => {
-    //   console.log(element); //--> eachSubtotal.forEach is not a function
-    // });
-
-    // counter = eachSubtotal
     return eachSubtotal;
   });
-
+  
   // ITERATION 3
+  allProducts.forEach((element) => {
+    // console.log(element.querySelector('.subtotal span').innerHTML)
+    counter += +element.querySelector('.subtotal span').innerHTML;
+    return counter
+  });
   // accedo por id al h2 que contiene el span ($0)
-  let totalPriceDOM = document.querySelectorAll('#total-value span');
+  let totalPriceDOM = document.querySelector('#total-value span');
   // accedo al valor 0 y coercion a Number
-  let totalPriceNumDOM = +totalPriceDOM[0].innerHTML;
-  // totalPriceNumDom =  counter //--> traer valor de la It-2
+  totalPriceDOM.innerHTML =  +counter
+  totalPriceDOM = +totalPriceDOM
+  // console.log(typeof totalPriceDOM)
+  return totalPriceDOM
 }
 
 // ITERATION 4
