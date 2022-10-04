@@ -9,17 +9,23 @@ product.querySelector('.subtotal span').innerHTML = subPrice
 return subPrice
 }
 
+//ITERATIONS 2 & 3
+
 function calculateAll() {
   
  const singleProduct = document.getElementsByClassName('product');
- for (i=0; i<singleProduct.length; i++)
-  updateSubtotal(singleProduct[i]); 
- 
+ let totalPrice = 0
+ let total = document.getElementById('total-value').lastChild;
+ for (i=0; i<singleProduct.length; i++){
+  totalPrice += updateSubtotal(singleProduct[i]); 
+ }
+  total.innerHTML = totalPrice
 }
 
 // ITERATION 4
 
 function removeProduct(event) {
+
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
   //... your code goes here
