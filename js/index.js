@@ -11,21 +11,24 @@ function updateSubtotal(product) {
   return subtotalValue;
 }
 
+// ITERATION 2 and 3
+
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
+  const myProduct = document.querySelector('.product');
+  updateSubtotal(myProduct);
+  const allProducts = document.querySelectorAll('.product');
+  let totalPrice = 0;
+  for (let product of allProducts) {
 
-  // ITERATION 2
-  //... your code goes here
-
-  // ITERATION 3
-  //... your code goes here
+    totalPrice += updateSubtotal(product);
+  }
+  let totalCurrency = document.querySelector('#total-value span'); 
+  totalCurrency.innerText = totalPrice;
+  return totalPrice;
 }
 
 // ITERATION 4
+
 
 function removeProduct(event) {
   const target = event.currentTarget;
