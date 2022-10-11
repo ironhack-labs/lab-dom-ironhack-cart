@@ -1,0 +1,5 @@
+Perguntas:
+
+1. Isn't possible to add a text, for example, 
+to several tags using .innerHTML?
+2. setAttribute() to create a new attribute. It didn't work for me.
