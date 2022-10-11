@@ -14,9 +14,7 @@ function updateSubtotal(product) {
 function calculateAll() {
 
   // ITERATION 2
-  console.log("Hello, I am the start of Interation 2!")
   let arrayProducts = document.querySelectorAll(".product")
-  console.log(arrayProducts);
   let sum = 0;
   for (let i = 0; i < arrayProducts.length; i++) {
     sum += updateSubtotal(arrayProducts[i]);
@@ -32,27 +30,11 @@ function calculateAll() {
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  /* ------------------------------- */
-
-/*const row = target.parentNode.parentNode
-  const parent = row.parentNode
-  parent.removeChild(row);
-  calculateAll();
-
-  target.tbody.removeChild(target.tr) */
- /*  target.parentNode */
-
-  /* ------------------------------- */
 
   let targetParent = target.parentNode; // tr
-  let targetGrandparent = target.targetParent; // tbody
 
-  targetGrandparent.removeChild(targetParent);
   targetParent.remove();
 }
-
-/* targetParent.removeChild(targetChild); */
 
 // ITERATION 5
 
@@ -63,11 +45,16 @@ function createProduct() {
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
+});
 
-  const arrRemoveProductsBtn = document.querySelectorAll(".btn btn-remove");
+let arrRemoveProductsBtn;
+
+window.addEventListener('click', () => {
+  console.log("I am clicking.")
+  arrRemoveProductsBtn = document.querySelectorAll(".action");
   for (let i = 0; i < arrRemoveProductsBtn.length; i++ ) {
     arrRemoveProductsBtn[i].addEventListener('click', removeProduct);
-  }
-  
+  };
+  console.log(document.querySelectorAll(".action"));
 });
 
