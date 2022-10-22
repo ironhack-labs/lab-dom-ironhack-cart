@@ -37,14 +37,15 @@ table input {
 }
 
 table input[type='number'] {
-  max-width: 4em;
+  max-width: 5em;
 }
 
 .btn {
-  display: inline-block;
+  display: block;
   border: 0;
   border-radius: 0.25em;
   cursor: pointer;
+  margin-inline: auto;
 }
 
 .btn-success,
@@ -64,4 +65,19 @@ h1,
 h2,
 .calculate-total {
   text-align: center;
+}
+
+/* New product Animation */
+
+.new-product {
+  animation: new-product 1s linear;
+}
+
+@keyframes new-product {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
