@@ -45,7 +45,9 @@ function createProduct() {
   let newProductName = document.querySelector('.create-name');
   let newProductPrice = document.querySelector('.create-price');
   if (!newProductName.value || !newProductPrice.value) {
-    alert('Please, fill up both input fields to add a new product. :)');
+    alert(
+      'Please, fill up both input fields correctly to add a new product. :)'
+    );
   } else {
     let tBody = document.querySelector('tbody');
     let addNewProduct = document.createElement('tr');
@@ -55,7 +57,7 @@ function createProduct() {
       <td class="price">$<span>${newProductPrice.value}</span></td>
       <td class="quantity"><input type="number" value="0" min="0" placeholder="Quantity" /></td>
       <td class="subtotal">$<span>0</span></td>
-      <td class="action"><button class="btn btn-remove">Remove</button></td>
+      <td class="action"><button onClick={removeProduct(event)} class="btn btn-remove">Remove</button></td>
     `;
     tBody.append(addNewProduct);
     newProductName.value = '';
