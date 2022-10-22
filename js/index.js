@@ -57,9 +57,7 @@ function removeProduct(event) {
 
 function createProduct() {
   //... your code goes here
-  let pepito = document.getElementById('cart').getElementsByTagName('tbody')[0];
-
-}
+// the last on action is so dificult
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
