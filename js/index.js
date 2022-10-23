@@ -29,31 +29,15 @@ console.log(document.querySelectorAll('.product'))
 // ITERATION 4
 
 function removeProduct(event) {
-  console.log('Hola1')
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
-  const parent = document.querySelector('tbody')
-  const product = document.querySelectorAll('.product')
 
-  for (let i = 0; i < product.length; i++) {
-    console.log('Hola')
-    product[i].onclick = function () {
-      parent.removeChild(product)
-    }
-  }
+  const parent = target.parentNode.parentNode;
+  parent.remove();
 
-  // const productValue = document.querySelectorAll('.product');
-  // let totalValue = document.querySelector('#total-value span')
-  // let subtotal = 0
-  // for (let i = 0; i < productValue.length; i++) {
-
-  //   subtotal += updateSubtotal(productValue[i])
-  // }
-
-  // totalValue.innerText = subtotal
-
-
+  calculateAll();
 }
+
 
 // ITERATION 5
 
@@ -65,17 +49,8 @@ window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
   const removeBtn = document.querySelectorAll('.btn-remove');
-  removeBtn.addEventListener('click', removeProduct());
-  // const removeBtn = document.querySelectorAll('btn-remove');
-  // removeBtn.addEventListener('click', removeProduct)
-
-
-  // for (let i = 0; i < removeBtn.length; i++) {
-
-  //   removeBtn.onclick = function () {
-
-  //     removeProduct();
-  //   }
-  // }
+  for (let i = 0; i < removeBtn.length; i++) {
+    removeBtn[i].addEventListener('click', removeProduct);
+  }
 
 });
