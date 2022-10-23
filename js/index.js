@@ -36,11 +36,10 @@ function calculateAll() {
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  const removeQuantity = document.querySelector('tr').removeChild(target)
+  const removeParent = target.parentNode.parentNode
+  removeParent.parentNode.removeChild(removeParent)
+  // console.log('The target in remove is:', target);
 
-
-  console.log('The target in remove is:', target);
-  //... your code goes here
 }
 
 // ITERATION 5 
