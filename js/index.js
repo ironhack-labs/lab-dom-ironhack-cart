@@ -71,9 +71,9 @@ window.addEventListener('load', () => {
     removeBtn.addEventListener('click', removeProduct);
   }
   
-  //   const addProductBtn = document.getElementById('create');
-  //    addProductBtn.addEventListener('click', createProduct);
-  // }
+    const addProductBtn = document.getElementById('create');
+     addProductBtn.addEventListener('click', createProduct);
+  
 });
 
 
