@@ -57,22 +57,23 @@ function removeProduct(event) {
 
 function createProduct() {
   //... your code goes here
-// the last on action is so dificult
+  // the last on action is so dificult
+}
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
   //... your code goes here
- let arryReBtn = document.getElementsByClassName('btn btn-remove')
-  for (let i = 0; i <  arryReBtn.length; i++){
+  let arryReBtn = document.getElementsByClassName('btn btn-remove')
+  for (let i = 0; i < arryReBtn.length; i++) {
     const removeBtn = arryReBtn[i]
     removeBtn.addEventListener('click', removeProduct);
   }
   
-  const addProductBtn = document.getElementById('create');
-   addProductBtn.addEventListener('click', createProduct);
-}
-);
+  //   const addProductBtn = document.getElementById('create');
+  //    addProductBtn.addEventListener('click', createProduct);
+  // }
+});
 
 
