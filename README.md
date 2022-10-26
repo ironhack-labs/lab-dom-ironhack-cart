@@ -297,9 +297,9 @@ We will be working with automated tests again!
 Please, open your terminal, change directories into the root of the lab, and run `npm install` to install the test runner. Now, you can run the `npm run test:watch` command to run automated tests in *watch mode*. Open the resulting `lab-solution.html` file using the "Live Server" VSCode extension to always see the test results.
 
 ```bash
-$ cd lab-dom-ironhack-cart
-$ npm install
-$ npm run test:watch
+cd lab-dom-ironhack-cart
+npm install
+npm run test:watch
 ```
 
 
