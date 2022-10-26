@@ -50,23 +50,31 @@ function removeProduct(event) {
 function createProduct() {
   //... your code goes here
   let productEntryList = document.querySelectorAll('.create-product input');
-  console.log(productEntryList);
+
   let inputProduct = productEntryList[0].value;
   let unitPrice = productEntryList[1].value;
-  let rowToBeCloned = document.querySelector('.product');
-  let newRow = rowToBeCloned.cloneNode(true);
-  //console.log(inputProduct);
- // console.log(unitPrice);
-  newRow.querySelector('.name span').innerHTML = inputProduct;
-  newRow.querySelector('.price span').innerHTML = unitPrice;
-  newRow.querySelector('.quantity input').value = 0;
-  newRow.querySelector('.subtotal span').innerHTML = 0;
-  console.log(newRow);
-  newRow.querySelector('.btn-remove').addEventListener('click', removeProduct);
-  document.querySelector('tbody').appendChild(newRow);
-  productEntryList[0].value = '';
-  productEntryList[1].value = 0;
+  if (inputProduct && unitPrice) {
+    const newProduct = document.createElement('tr');
+    newProduct.className = 'product';
+    newProduct.innerHTML = `<td class="name">
+                      <span>${inputProduct}</span>
+                    </td>
+                    <td class="price">$<span>${unitPrice}</span></td>
+                    <td class="quantity">
+                      <input type="number" value="0" min="0" placeholder="Quantity" />
+                    </td>
+                    <td class="subtotal">$<span>0</span></td>
+                    <td class="action">
+                      <button class="btn btn-remove">Remove</button>
+                    </td>`;
 
+    document.querySelector('tbody').appendChild(newProduct);
+    newProduct
+      .querySelector('.btn-remove')
+      .addEventListener('click', removeProduct);
+    productEntryList[0].value = '';
+    productEntryList[1].value = 0;
+  }
 }
 
 window.addEventListener('load', () => {
