@@ -16,20 +16,20 @@ function updateSubtotal(product) {
 function calculateAll() {
   // code in the following two lines is added just for testing purposes.
   // it runs when only iteration 1 is completed. at later point, it can be removed.
-  // const singleProduct = document.querySelector('.product');
-  // updateSubtotal(singleProduct);
+  const singleProduct = document.querySelector('.product');
+  updateSubtotal(singleProduct);
   // end of test
 
   // ITERATION 2
 
-  var rows = document.querySelectorAll('#cart tbody tr')
-  console.log(rows.length);
+  // var rows = document.querySelectorAll('#cart tbody tr')
+  // console.log(rows.length);
 
-  rows.forEach(element => {
-      const rowProduct = document.getElementsByClassName('.product');
-      updateSubtotal(rowProduct);
+  // rows.forEach(element => {
+  //     const rowProduct = document.getElementsByClassName('.product');
+  //     updateSubtotal(rowProduct);
     
-  });
+  // });
 
   // ITERATION 3
   //... your code goes here
