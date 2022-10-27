@@ -8,8 +8,7 @@ function updateSubtotal(product) {
   const quantity = product.querySelector('.quantity input');
   const subtotal = product.querySelector('.subtotal span');
 
-  quantity.value = Math.max(quantity.value, 0)
-  const subtotalPrice = price.innerHTML * quantity.value
+  let subtotalPrice = price.innerHTML * quantity.value
   subtotal.innerText = subtotalPrice;
   return subtotalPrice
 }
