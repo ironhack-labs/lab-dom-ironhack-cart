@@ -1,5 +1,9 @@
 // ITERATION 1
+// Global Variables 
 const calculatePricesBtn = document.getElementById('calculate');
+const createProductElement  = document.querySelector('.create-product')
+const createProductName = createProductElement.querySelector('input[type="text"]');
+const createProductPrice = createProductElement.querySelector('input[type="number"]');
 
 function updateSubtotal(product) {
 
@@ -27,8 +31,6 @@ function calculateAll() {
   }
    // Updated the final TOTAL
    totalDisplay.innerHTML =  total;
-
-
 }
 
 // ITERATION 4
@@ -43,9 +45,16 @@ function removeProduct(event) {
 // ITERATION 5
 
 function createProduct() {
-  let product = document.querySelector('.product');
+
+
+  if( !(createProductName.value &&  createProductPrice.value > 0) ) {
+    alert('Please Fill all required fields');
+    return;
+  };
+  const product = document.querySelector('.product');
   // Copy the whole element 
-  let newProduct = product.cloneNode(true);
+  const newProduct = product.cloneNode(true);
+
 
   // Element Selected 
   const newProductName = newProduct.querySelector('.name span');
@@ -55,8 +64,8 @@ function createProduct() {
   const newProductBtn = newProduct.querySelector('.btn');
 
   // Input Selected 
-  const  productName = document.querySelector('input[type="text"]');
-  const  unitPrice = document.querySelector('input[type="number"]');
+  const  productName = document.querySelector('.create-product input[type="text"]');
+  const  unitPrice = document.querySelector('.create-product input[type="number"]');
 
   // Inject the html new  with values for new row 
   newProductName.innerText = productName.value;
@@ -68,6 +77,15 @@ function createProduct() {
   // Push the element into table
   const tbody = document.querySelector('#cart tbody');
   tbody.appendChild(newProduct);
+  cleanInputField();
+}
+  
+// Clean Input Field from each 
+function cleanInputField(){
+
+    // Set the value for the new row 
+    createProductName.value = '';
+    createProductPrice.value = 0;
 }
 
 window.addEventListener('load', () => {
