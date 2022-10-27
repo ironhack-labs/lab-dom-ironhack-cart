@@ -4,6 +4,14 @@ function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
 
   //... your code goes here
+  const price = product.querySelector('.price span');
+  const quantity = product.querySelector('.quantity input');
+  const subtotal = product.querySelector('.subtotal span');
+
+  quantity.value = Math.max(quantity.value, 0)
+  const subtotalPrice = price.innerHTML * quantity.value
+  subtotal.innerText = subtotalPrice;
+  return subtotalPrice
 }
 
 function calculateAll() {
@@ -15,9 +23,16 @@ function calculateAll() {
 
   // ITERATION 2
   //... your code goes here
-
+  let product = document.getElementsByClassName('product')
+  let sum = 0
+  for(item of product) {
+    sum += updateSubtotal(item)
+  }
   // ITERATION 3
   //... your code goes here
+  let resu = document.querySelector("#total-value span" )
+  resu.innerHTML = sum
+  return sum 
 }
 
 // ITERATION 4
