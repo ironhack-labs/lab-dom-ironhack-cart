@@ -45,17 +45,19 @@ function createProduct() {
   let prodName = document.querySelector('.create-product td input[type=text]'); 
   let prodPrice = document.querySelector('.create-product td input[type=number]');
   // let storeExample = document.querySelector('.product');
-  // storeExample.querySelector('.name span').innerText = prodName;
-  // storeExample.querySelector('.price span').innerText = prodPrice;
-  console.log(prodPrice)
+  // let tableClone = storeExample.cloneNode(true);
+  // tableClone.querySelector('.name span').innerText = prodName;
+  // tableClone.querySelector('.price span').innerText = prodPrice;
+  console.log(prodPrice);
   if(!prodName.value) {
     prodName.classList.add('missing-info');
     return
-  } else if (!prodPrice.value) {
+  } else if (prodPrice.value == 0) {
     prodPrice.classList.add('missing-info');
     return
   }
-  prodName.classList.remove('missing-info')
+  prodName.classList.remove('missing-info');
+  prodPrice.classList.remove('missing-info');
 
 
   let newContentList = document.createElement('tr');
