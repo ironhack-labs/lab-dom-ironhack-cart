@@ -12,38 +12,61 @@ function updateSubtotal(product) {
   return subtotalCalculated;
 }
 
-
+// ITERATION 2 & 3
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
-
-  // ITERATION 2
-  //... your code goes here
-
-  // ITERATION 3
-  //... your code goes here
+  const allProducts = document.getElementsByClassName('product');
+  let totalAmmount = 0;
+  for (let i = 0; i < allProducts.length; i++) {
+    const universalSubtotal = updateSubtotal(allProducts[i]);
+    totalAmmount += universalSubtotal;
+  }
+  const total = document.querySelector('#total-value span');
+  total.innerText = totalAmmount;
 }
 
 // ITERATION 4
-
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+  target.parentNode.parentNode.remove();
+  calculateAll();
 }
 
 // ITERATION 5
-
 function createProduct() {
-  //... your code goes here
+  const newNameInput = document.querySelector('.create-product input[type=text]');
+  const newPriceInput = document.querySelector('.create-product input[type=number]');
+  const lastOfProducts = document.querySelector('.product:last-of-type');
+
+  newPriceInput.value = Math.max(newPriceInput.value, 0);
+
+  let newProduct = document.createElement('tr');
+  newProduct.className = 'product'
+  newProduct.innerHTML = `<td class="name"> 
+                            <span>${newNameInput.value}</span>
+                          </td>
+                          <td class="price">$<span>${newPriceInput.value}</span></td>
+                          <td class="quantity">
+                            <input type="number" value="0" min="0" placeholder="Quantity" />
+                          </td>
+                          <td class="subtotal">$<span>0</span></td>
+                          <td class="action">
+                            <button class="btn btn-remove">Remove</button>
+                          </td>`
+  lastOfProducts.insertAdjacentElement('afterend', newProduct);
+  newProduct.querySelector('.btn-remove').addEventListener('click', removeProduct);
+  newNameInput.value = "";
+  newPriceInput.value = "";  
 }
 
+// BUTTONS
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
-});
+  const removeBtns = document.querySelectorAll('.btn-remove');
+  const removeBtnsArr = [...removeBtns];
+  removeBtnsArr.forEach((b) => { b.addEventListener('click', removeProduct)});
+  
+  const createBtn = document.getElementById('create');
+  createBtn.addEventListener('click', createProduct);
+})
