@@ -32,19 +32,22 @@ function calculateAll() {
     total += updateSubtotal(eachRowElement)
   })
   // console.log(total);
-  console.log(typeof total);
+  // console.log(typeof total);
   let totalInHtml = document.querySelector('#total-value span');
   // console.log(totalInHtml);
   totalInHtml.innerHTML = total;
-
 }
 
 // ITERATION 4
-
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
+  //console.log('The target in remove is:', target);
   //... your code goes here
+  const rowTarget = target.parentNode.parentNode;
+  rowTarget.remove();
+  // let d = document.querySelector("tbody");
+  // d.removeChild(target);
+  calculateAll();
 }
 
 // ITERATION 5
@@ -56,6 +59,11 @@ function createProduct() {
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
-
   //... your code goes here
+  const removeProducts = document.querySelectorAll('.btn-remove');
+  // const removeProducts = [...document.getElementsByClassName('btn-remove')];
+  removeProducts.forEach((row) => {
+    row.addEventListener("click", removeProduct)
+  })
+
 });
