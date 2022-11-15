@@ -8,26 +8,39 @@ function updateSubtotal(product) {
   let quantity = quantityInput.value;
   let subtotal = product.querySelector('.subtotal span');
   
-  let totalPrice = quantity * price;
-  subtotal.innerHTML = totalPrice;
+  let totalPriceByArticle = quantity * price;
+  subtotal.innerHTML = totalPriceByArticle;
+  
+  return totalPriceByArticle;
+
 }
+
 
 function calculateAll() {
 
   const allProducts = document.getElementsByClassName('product');
-  for (product of allProducts ){
-    updateSubtotal(product);
-  }
-  
-  
-  
-  
   // ITERATION 2
-
+  let values = [];
+  for (product of allProducts ){
+    
+    
+      values.push(updateSubtotal(product));
+    
+    
+    console.log(values)
+  }
   
 
   // ITERATION 3
-  //... your code goes here
+  let total = document.querySelector('#total-value span');
+  let acc = 0;
+  for(element of values){
+    acc += element;
+  }
+  
+  
+  total.innerHTML = acc ;
+  
 }
 
 // ITERATION 4
