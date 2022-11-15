@@ -62,15 +62,15 @@ function removeProduct(event) {
 
 function createProduct() {
   let tablebody = document.querySelector('#cart tbody');
-  const productRow = document.createElement('tr');
-  productRow.setAttribute('class', 'product');
+  const newProductRow = document.createElement('tr');
+  newProductRow.setAttribute('class', 'product');
   const productName = document.querySelector(
     '.create-product td input[type = text]'
   );
   const price = document.querySelector(
     '.create-product td input[type = number]'
   );
-  productRow.innerHTML += `<td class="name">
+  newProductRow.innerHTML += `<td class="name">
         <span>${productName.value}</span>
         </td>
         <td class="price">$<span>${Number(price.value).toFixed(2)}</span></td>
@@ -83,10 +83,10 @@ function createProduct() {
         </td>
       </tr>
     `;
-  tablebody.appendChild(productRow);
+  tablebody.appendChild(newProductRow);
   productName.value = '';
   price.value = '0';
-  productRow
+  newProductRow
     .querySelector('.btn-remove')
     .addEventListener('click', removeProduct);
 }
