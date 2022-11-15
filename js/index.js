@@ -14,12 +14,17 @@ function updateSubtotal(product) {
 
 function calculateAll() {
 
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
+  const allProducts = document.getElementsByClassName('product');
+  for (product of allProducts ){
+    updateSubtotal(product);
+  }
   
-
+  
+  
+  
   // ITERATION 2
-  //... your code goes here
+
+  
 
   // ITERATION 3
   //... your code goes here
