@@ -1,5 +1,4 @@
 // ITERATION 1
-
 function updateSubtotal(product) {
 
   const price = product.querySelector('.price span')
@@ -36,8 +35,9 @@ function calculateAll() {
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+  target.parentNode.parentNode.remove()
+
+  calculateAll()
 }
 
 // ITERATION 5
@@ -50,5 +50,9 @@ window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+  const deleteProductoBtn = document.querySelectorAll('.btn-remove')
+  for (btn of deleteProductoBtn){
+    btn.addEventListener('click', removeProduct)
+  }
+
 });
