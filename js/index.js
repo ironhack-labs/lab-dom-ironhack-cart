@@ -1,5 +1,7 @@
 // ITERATION 1
 
+//const { ConsoleMessage } = require("puppeteer");
+
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
   let priceSpan = product.querySelector('.price span');
@@ -48,7 +50,13 @@ function calculateAll() {
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
-  //... your code goes here
+  let dlt = target.parentNode.parentNode;
+  
+  if(dlt.parentNode){
+    dlt.parentNode.removeChild(dlt);
+    
+  }
+  calculateAll();
 }
 
 // ITERATION 5
@@ -57,9 +65,15 @@ function createProduct() {
   //... your code goes here
 }
 
+
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+  let removeBtns = document.querySelectorAll('.btn.btn-remove');
+
+  for(btn of removeBtns){
+
+    btn.addEventListener('click', removeProduct);
+  }
 });
