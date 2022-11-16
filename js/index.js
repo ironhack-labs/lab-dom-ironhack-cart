@@ -32,16 +32,16 @@ function removeProduct(event) {
 function createProduct(event) {
   const createElement = event.currentTarget.parentNode.parentNode
 
-  const name = createElement.querySelector('[type=text]').value
-  const price = +createElement.querySelector('[type=number]').value
+  const name = createElement.querySelector('[type=text]')
+  const price = createElement.querySelector('[type=number]')
   
   const product = document.createElement('tr')
   product.className = 'product'
   product.innerHTML = `
     <td class="name">
-      <span>${name}</span>
+      <span>${name.value}</span>
     </td>
-    <td class="price">$<span>${price}</span></td>
+    <td class="price">$<span>${+price.value}</span></td>
     <td class="quantity">
       <input type="number" value="0" min="0" placeholder="Quantity" />
     </td>
@@ -56,16 +56,8 @@ function createProduct(event) {
 
   product.querySelector('.btn-remove').addEventListener('click', removeProduct)
 
-  
-  // console.log(tableBody);
-/*
-  const productName = document.createElement('td')
-  productName.className ='name'
-  const nameText = document.createElement('span')
-  nameText.innerHTML = name
-  productName.appendChild(nameText)
-  product.appendChild(productName) */
-  // console.log(product);
+  name.value = ''
+  price.value = ''
 }
 
 window.addEventListener('load', () => {
