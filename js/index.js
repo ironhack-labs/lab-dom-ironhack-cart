@@ -2,31 +2,36 @@
 
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
-  const price = parseFloat(product.querySelector('.price span').innerHTML);
-  console.log(price) // 25
-  const quantity = product.querySelector('.quantity input');
-  const quantityAttribute = quantity.getAttribute('value');
-  console.log(quantityAttribute) // 0
-  const subTotalPrice = price * (quantityAttribute.valueAsNumber);
-  console.log(subTotalPrice) //there is some issue here which I can't figure out, it returns NaN
-  let subTotal = product.querySelector('.subtotal span').innerHTML
-  console.log(subTotal) // doesn't update when the quantity changes 
+  const price = product.querySelector('.price span').innerHTML; // something inside of the product and span 
+  const quantity = product.querySelector('.quantity input').valueAsNumber;
+  const subTotalPrice = +price * quantity;
+  const subTotal = product.querySelector('.subtotal span')
   subTotal.innerHTML = subTotalPrice; 
-  return subTotal.innerHTML;  
+  return subTotalPrice
 }
 
 function calculateAll() {
   // code in the following two lines is added just for testing purposes.
   // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
+  // const singleProduct = document.querySelector('.product');
+  // updateSubtotal(singleProduct);
   // end of test
 
   // ITERATION 2
   // call the function updateSubtotal with every tr.product DOM node in the table#cart
 
+  const productsCollection = document.getElementsByClassName('product');
+  const productsList = [...productsCollection]
+  let total = 0;
+  for (let i=0; i< productsList.length; i+= 1) {
+    total += updateSubtotal(productsList[i])
+  }
+
+
   // ITERATION 3
-  //... your code goes here
+  const totalElm = document.querySelector('#total-value span');
+  totalElm.innerText = total;
+  
 }
 
 // ITERATION 4
