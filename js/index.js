@@ -35,8 +35,8 @@ subtotals.forEach(value => {
   total += Number(value);
 })
 console.log(total);
-const totalValue = document.getElementById('total-value');
-totalValue.innerText = `Total: $` + total;
+const totalValue = document.querySelector('#total-value span');
+totalValue.innerText = total;
 }
 
 // ITERATION 4
