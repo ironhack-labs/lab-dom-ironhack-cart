@@ -38,7 +38,8 @@ function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
   
-  // no idea..
+  //const element = document.getElementById("demo");
+  //element.remove();
 
   
 }
@@ -67,6 +68,7 @@ window.addEventListener('load', () => {
   const removeBtn = allRemoveBtns.forEach((elm) => {
     elm.addEventListener("click", (e) => {
         console.log(e.target);
+        e.target.remove();
     });
   });
   //console.log('*** GETTING SOMEWHERE ***');
