@@ -5,7 +5,9 @@ function updateSubtotal(product) {
     const price = +singleProduct.querySelector('.price span').innerText;
     const quantity = +singleProduct.getElementsByTagName('input')[0].value;
 
-    singleProduct.querySelector('.subtotal span').innerText = price * quantity;
+    singleProduct.querySelector('.subtotal span').innerText = (
+      price * quantity
+    ).toFixed(2);
   });
 }
 
@@ -21,7 +23,7 @@ function calculateAll() {
     total += sub;
   });
 
-  document.querySelector('#total-value span').innerText = total;
+  document.querySelector('#total-value span').innerText = total.toFixed(2);
 }
 
 // ITERATION 4
@@ -37,8 +39,12 @@ function removeProduct(event) {
 // ITERATION 5
 
 function createProduct() {
-  const productName = document.querySelector('.create-product input[type="text"]');
-  const productPrice = document.querySelector('.create-product input[type="number"]');
+  const productName = document.querySelector(
+    '.create-product input[type="text"]'
+  );
+  const productPrice = document.querySelector(
+    '.create-product input[type="number"]'
+  );
 
   const rowProduct = `
       <td class="name"><span>${productName.value}</span></td>
@@ -57,6 +63,15 @@ function createProduct() {
   newProduct.innerHTML = rowProduct;
 
   document.querySelector('tbody').appendChild(newProduct);
+
+  const newBtnRemove = document
+    .querySelector('tbody')
+    .querySelectorAll('.btn-remove');
+
+  newBtnRemove[newBtnRemove.length - 1].addEventListener(
+    'click',
+    removeProduct
+  );
 
   productName.value = '';
   productPrice.value = 0;
