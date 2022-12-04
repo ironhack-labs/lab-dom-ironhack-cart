@@ -28,7 +28,7 @@ table#cart {
 }
 
 table#cart tfoot {
-  background: #eee;
+  background: rgb(128, 171, 132);
 }
 
 table#cart td,
@@ -45,6 +45,8 @@ table input[type='number'] {
   border: 0;
   border-radius: 0.25em;
   cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid rgb(63, 63, 63);
 }
 
 .btn-success,
@@ -52,8 +54,14 @@ table input[type='number'] {
   color: #fff;
 }
 
+.create-product button{
+  background-color: rgb(145, 243, 153);
+  font-weight: bold;
+}
+
 .btn-success {
-  background-color: #2cc5fa;
+  background-color: #85ccf0;
+  color: #3c5b69;
 }
 
 .btn-remove {
@@ -64,4 +72,14 @@ h1,
 h2,
 .calculate-total {
   text-align: center;
+}
+
+.action {
+  display: flex;
+  justify-content: center;
+}
+
+.action-create{
+  display: flex;
+  justify-content: center;
 }
