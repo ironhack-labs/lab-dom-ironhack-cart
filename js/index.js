@@ -9,6 +9,7 @@ function updateSubtotal(product) {
   const totalProduct = `${(price * quantity).toFixed(2)}`;
   const subtotal = product.querySelector('.subtotal span');
   subtotal.innerHTML = totalProduct;
+  return +totalProduct;
 }
 
 function calculateAll() {
@@ -21,10 +22,15 @@ function calculateAll() {
   // ITERATION 2
   //... your code goes here
   const products = document.querySelectorAll('.product')
-  products.forEach((product) => updateSubtotal(product));
+  // products.forEach((product) => updateSubtotal(product));
 
   // ITERATION 3
   //... your code goes here
+  let totalPrice = 0;
+  products.forEach((product) => {
+    totalPrice += updateSubtotal(product);
+  });
+  document.querySelector('#total-value span').innerHTML = totalPrice.toFixed(2);
 }
 
 // ITERATION 4
