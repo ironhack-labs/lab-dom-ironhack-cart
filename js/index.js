@@ -56,6 +56,7 @@ function createProduct() {
           </td>
         `;
   parent.appendChild(productRow);
+  productRow.querySelector(".btn-remove").addEventListener("click", removeProduct)
 }
 
 window.addEventListener('load', () => {
