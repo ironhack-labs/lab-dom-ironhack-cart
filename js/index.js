@@ -2,6 +2,12 @@
 
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
+  const price = document.querySelector('.price span').innerHTML; 
+  const quantity = document.querySelector('.quantity input').value;
+  let subtotalPrice = price * quantity;
+  let subtotalHolder = product.querySelector('.subtotal span')
+  subtotalHolder.innerText = subtotalPrice;
+  return subtotalHolder.innerText;
 
   //... your code goes here
 }
@@ -27,6 +33,7 @@ function removeProduct(event) {
   console.log('The target in remove is:', target);
   //... your code goes here
 }
+
 
 // ITERATION 5
 
