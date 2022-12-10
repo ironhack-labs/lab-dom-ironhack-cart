@@ -3,7 +3,12 @@
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
 
-  //... your code goes here
+  const price = product.querySelector('.price span').innerText
+  const quantity = product.querySelector('.quantity input').valueAsNumber
+  const subtotal = +price * quantity
+  const getSubtotal = product.querySelector('.subtotal span')
+  getSubtotal.innerText = `${subtotal}`
+  
 }
 
 function calculateAll() {
@@ -14,24 +19,36 @@ function calculateAll() {
   // end of test
 
   // ITERATION 2
-  //... your code goes here
+  
+   const allProducts = document.getElementsByClassName('product')
+   const productsList = [...allProducts]                              //create a new array to use "for of method later"
+   let total = 0;
 
+   for (const product of productsList) {
+     total += updateSubtotal(product)                               //add to a previous method
+   }
   // ITERATION 3
   //... your code goes here
+  let totalPrice = document.querySelector('#total-value span');
+  totalPrice.innerHTML = total
 }
 
 // ITERATION 4
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+  
+  const parent = target.parentNode.parentNode
+
+  parent.remove()
+
+  calculateAll()
 }
 
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  
 }
 
 window.addEventListener('load', () => {
