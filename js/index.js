@@ -1,11 +1,10 @@
 
-function updateSubtotal(product) { 
-
+function updateSubtotal(product) {
   const price = parseFloat(product.querySelector('.price span').innerText);
   const quantity = parseFloat(product.querySelector('.quantity input').value);
+  let subtotalPrice = price * quantity; 
  
-  let subtotalPrice = product.querySelector('.subtotal span').innerText;
-  subtotalPrice = price * quantity;
+  product.querySelector('.subtotal span').innerText = subtotalPrice
   return subtotalPrice
  
 }
@@ -19,15 +18,9 @@ window.addEventListener('load', () => {
 function calculateAll() {
 
   const totalProducts = document.querySelectorAll('.product');
-  updateSubtotal(totalProducts);
-
-  // ITERATION 3
-  let total = 0;
-  totalProducts.forEach((subtotal) => {   
-    const subtotal = +subtotal.querySelector('.subtotal span').innerText;
-    total += subtotal;
-  });
-  document.querySelector('#total-value span').innerText = total.toFixed(2);
+  totalProducts.forEach(product => {
+    updateSubtotal(product)
+  })
 }
 
 // ITERATION 4
