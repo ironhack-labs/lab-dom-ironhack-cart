@@ -21,7 +21,7 @@
       <tbody>
         <tr class="product">
           <td class="name">
-            <span>Ironhack Rubber Duck</span>
+            <span>Ironhack Rubber Duck 1</span>
           </td>
           <td class="price">$<span>25.00</span></td>
           <td class="quantity">
@@ -35,7 +35,7 @@
         <!-- Iteration 2: Add more products here -->
         <tr class="product">
           <td class="name">
-            <span>Ironhack Rubber Duck</span>
+            <span>Ironhack Rubber Duck 2</span>
           </td>
           <td class="price">$<span>25.00</span></td>
           <td class="quantity">
@@ -48,25 +48,48 @@
         </tr>
       </tbody>
       <tfoot>
-        <!-- <tr class="create-product">
+        <tr class="create-product">
           <td>
-            <input type="text" placeholder="Product Name" />
+            <input id="product-name" type="text" placeholder="Product Name" />
           </td>
           <td>
-            <input type="number" min="0" value="0" placeholder="Product Price" />
+            <input id="unit-price" type="number" min="0" value="0" placeholder="Product Price" />
           </td>
           <td></td>
           <td></td>
           <td>
-            <button id="create" class="btn">Create Product</button>
+            <button id="create" class="btn btn-create">Create Product</button>
           </td>
-        </tr> -->
+        </tr> 
       </tfoot>
     </table>
     <p class="calculate-total">
       <button id="calculate" class="btn btn-success">Calculate Prices</button>
     </p>
     <h2 id="total-value">Total: $<span>0</span></h2>
+
+    <!-- Dynamic JS HTML Templates -->
+    <div id="templates" style="display: none;">
+      <table>
+        <tr class="product">
+          <td class="name">
+            <span></span>
+          </td>
+          <td class="price">$<span></span></td>
+          <td class="quantity">
+            <input type="number" name="quantity" value="0" min="0" placeholder="Quantity" />
+          </td>
+          <td class="subtotal">$<span>0</span></td>
+          <td class="action">
+            <button class="btn btn-remove">Remove</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+
     <script type="text/javascript" src="./js/index.js"></script>
+
   </body>
 </html>
+
+
