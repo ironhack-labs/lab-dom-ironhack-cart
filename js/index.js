@@ -18,14 +18,14 @@ function calculateAll() {
   // end of test
   // ITERATION 2
 
-  const allProducts = [...document.getElementsByClassName('product')];
-
+  const allProducts = [...document.getElementsByClassName('product')]; //creating an actual array from the HTML collection
+  let total = 0;
   allProducts.forEach((product) => {
     updateSubtotal(product);
+    total += Number(updateSubtotal(product));
   });
 
-  // ITERATION 3
-  //... your code goes here
+  document.querySelector('#total-value span').innerHTML = total;
 }
 
 // ITERATION 4
