@@ -48,7 +48,18 @@ Let's go!
 
 <br>
 
+<hr>
 
+
+### Note about tests
+
+This LAB is equipped with unit tests to provide automated feedback on your lab progress.
+
+**After completing the basic iterations**, go to the **"Test Your Code"** section at the bottom. There you'll be asked to install the testing dependencies and run the tests to check how many tests your code is passing. Once you run the tests, correct your code to pass the failing tests.
+
+<hr>
+
+<br>
 
 
 
@@ -274,6 +285,26 @@ Remember, the new product should look undistinguished and behave like any of the
 When the product creation is finalized, please, clear the input fields in the creation form.
 
 Click [here](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_00abbd15326ec24d93147196024458f6.gif) to see the expected result.
+
+<br>
+
+
+
+## Test Your Code
+
+We will be working with automated tests again!
+
+Please, open your terminal, change directories into the root of the lab, and run `npm install` to install the test runner. Now, you can run the `npm run test:watch` command to run automated tests in *watch mode*. Open the resulting `lab-solution.html` file using the "Live Server" VSCode extension to always see the test results.
+
+```bash
+$ cd lab-dom-ironhack-cart
+$ npm install
+$ npm run test:watch
+```
+
+
+
+In case you want to check the tests for more details, they are in the `tests/ironhack-cart.spec.js` file.
 
 
 
