@@ -173,6 +173,7 @@ Check [here](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_30b8
 <hr>
 
 
+
 ### Iteration 2: `calculateAll()`
 
 Our current code works perfectly for one product, but we expect to have more than one product on our cart. As such, we will use `calculateAll` to trigger the update of subtotals for every product.
@@ -198,6 +199,7 @@ The final output should look like the following:
 <hr>
 
 
+
 ### Iteration 3: Total
 
 Our calculation functionality is still incomplete. The subtotal for each product is being updated, but the total value remains untouched.
@@ -209,6 +211,7 @@ Lastly, display that value on your DOM.
 ![](https://i.imgur.com/SCtdzMd.png)
 
 <hr>
+
 
 
 ## Bonus Iterations
@@ -230,6 +233,7 @@ Make sure the price gets updated accordingly when you remove products from the s
 Click [here](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_17b1e9e4d2606239163dddbc5b2a3d9f.gif) to see the expected result.
 
 <hr>
+
 
 
 ### Iteration 5: Creating new products
@@ -280,3 +284,345 @@ Click [here](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_00ab
 <br>
 
 **Happy coding! 💙**
+
+
+
+
+
+
+
+## FAQs
+
+
+
+<details>
+  <summary>I am stuck in the exercise and don't know how to solve the problem or where to start.</summary>
+  <br>
+
+
+  If you are stuck in your code and don't know how to solve the problem or where to start, you should take a step back and try to form a clear question about the specific issue you are facing. This will help you narrow down the problem and come up with potential solutions.
+
+
+For example, is it a concept that you don't understand, or are you receiving an error message that you don't know how to fix? It is usually helpful to try to state the problem as clearly as possible, including any error messages you are receiving. This can help you communicate the issue to others and potentially get help from classmates or online resources. 
+
+
+Once you have a clear understanding of the problem, you will be able to start working towards the solution.
+
+  [Back to top](#faqs)
+</details>
+
+
+
+<details>
+  <summary>How do I loop over an array using the <code>forEach()</code> method?</summary>
+  <br>
+
+
+  The `forEach()` method executes a provided function once for each array element. It does not return a new array, but rather executes the function on each element in the array.
+
+The syntax of the `forEach()` method is as follows:
+
+```js
+array.forEach( function(element) {
+  // code to be executed for each element
+});
+```
+
+
+
+Here is an example that uses the `forEach()` method to log each element and its index in an array to the console:
+
+```js
+const fruits = ['apple', 'banana', 'cherry'];
+
+fruits.forEach( function(element, index) {
+  console.log(`${index}: ${element}`);
+});
+```
+
+
+
+You can also use an arrow function as the callback function for `forEach()`:
+
+```js
+fruits.forEach((element, index) => {
+  console.log(`${index}: ${element}`);
+});
+```
+
+
+
+  [Back to top](#faqs)
+</details>
+
+
+
+<details>
+  <summary>How can I append a new DOM element to an existing one?</summary>
+  <br>
+
+To append a new DOM element to an existing one in JavaScript, you can use the `appendChild()` method. 
+
+
+
+**Example:**
+
+```js
+// Get the parent element
+var parentElement = document.getElementById("parent");
+
+// Create the new element
+var newElement = document.createElement("p");
+
+// Set the text content of the new element
+newElement.textContent = "This is a new paragraph.";
+
+// Append the new element to the parent element
+parentElement.appendChild(newElement);
+```
+
+This will create a new `p` element with the text `"This is a new paragraph."` and append it to the element with the ID `parent`.
+
+
+
+<br>
+
+[Back to top](#faqs)
+</details>
+
+
+
+
+
+<details>
+  <summary>Why do some DOM element values have to be converted to numbers when they already seem to be numbers?</summary>
+  <br>
+
+This is because all values in HTML are strings and all attribute values are strings. Therefore, DOM element values are returned as strings even if they contain numeric values.
+
+
+
+If you want to use a value from a DOM element as a number, you will need to convert it to a number type.
+
+
+
+Here is an example of how to access and convert the value of the `price` element to a number using JavaScript:
+
+```js
+// Get the input element
+const input = item.querySelector('input');
+
+// Convert the string value of the input element to a number
+const value = Number(input.value);
+```
+
+<br>
+
+
+
+[Back to top](#faqs)
+</details>
+
+
+
+
+
+<details>
+  <summary>I keep getting the <code>NaN</code> result in my program. How can I fix it?</summary>
+  <br>
+
+In Javascript,`NaN` stands for "Not a Number," and it is a special value that represents a problem with a numerical operation or a failed type coercion. There are several reasons why you might get `NaN` as a result in your JavaScript code:
+
+
+
+1. **Dividing a number by `0`**: Any operation that involves dividing a number by `0` (zero) will result in `NaN`. Example:
+
+   ```js
+   const result = 10 / 0;
+   
+   console.log(result); // NaN
+   ```
+
+   <br>
+
+2. **Parsing an invalid number**: If you try to parse `undefined` or a string that can't be represented as a number using the `parseInt()`, `parseFloat()` functions, you will get `NaN` as a result. 
+   <br>
+
+   Example of parsing an invalid value with `parseInt()`: 
+
+   ```js
+   const result1 = parseInt("ironhack");
+   const result2 = parseInt(undefined);
+   
+   console.log(result1); // NaN
+   console.log(result2); // NaN
+   ```
+
+   <br>Example of parsing an invalid value with `parseFloat()`:
+
+   ```js
+   const result1 = parseFloat("ironhack");
+   const result2 = parseFloat(undefined);
+   
+   console.log(result1); // NaN
+   console.log(result2); // NaN
+   ```
+
+   <br>Example of parsing an invalid value with `Number()`:
+
+   ```js
+   const result1 = Number("ironhack");
+   const result2 = Number(undefined);
+   
+   console.log(result1); // NaN
+   console.log(result2); // NaN
+   ```
+
+   <br>
+
+   
+
+To fix the `NaN` issue in your code, you can try a couple of things:
+
+- Check if you are attempting to divide a number by `0`. 
+- Make sure that the strings you are trying to parse as numbers are actually valid representations of numbers. You can use the `console.log()` to check the values of your variables and see if this is the issue.
+
+<br>
+
+[Back to top](#faqs)
+</details>
+
+
+
+
+
+<details>
+  <summary>How do I add an event listener?</summary>
+  <br>
+
+To add an event listener, use the `addEventListener()` method. This method takes two arguments: the *event type* and the *event handler function* that will be called when the event occurs.
+
+
+
+Here's an example on how to add a *click* event listener to a button element:
+
+```js
+const button = document.querySelector('button');
+
+function handleClick() {
+  console.log('Button was clicked');
+}
+
+button.addEventListener('click', handleClick);
+```
+
+This will add a click event listener to the `button` element, which will call the `handleClick()` function whenever the button is clicked.
+
+<br>
+
+For more information, check: [MDN - addEventListener()](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener)
+
+<br>
+
+[Back to top](#faqs)
+</details>
+
+
+
+
+
+<details>
+  <summary>How do I remove an event listener?</summary>
+  <br>
+
+To remove an event listener use the `removeEventListener()` method. This method takes two arguments: the *event type* and the *event handler function* that was originally assigned when adding the event listener.
+
+
+
+For example, let's say you have added the following event listener:
+
+```js
+button.addEventListener('click', handleClick);
+```
+
+To remove this event listener, you can use the following code:
+
+```js
+button.removeEventListener('click', handleClick);
+```
+
+<br>
+
+For more information, check: [MDN - removeEventListener()](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener)
+
+<br>
+
+[Back to top](#faqs)
+</details>
+
+
+
+
+
+<details>
+  <summary>Why am I getting <code>null</code> when I try to access an HTML element?</summary>
+  <br>
+
+There are a couple of possible reasons why you might be getting a `null` value when trying to access a DOM element in JavaScript:
+
+
+
+1. **You are using the wrong selector or mistyping the name**: Make sure you are using the correct selector and spelling to access the element. If you are using an incorrect selector or mistyping the name, you will get a `null` value when you try to access the element.
+
+2. **The element is not yet loaded**: If you are trying to access an element that is not yet loaded in the DOM (e.g., an element that is defined in a script that is loaded at the bottom of the page), you will get a `null` value when you try to access it. You can fix this by wrapping your code in a `window.onload` event handler, which will ensure that the element is available before your code runs:
+
+   ```js
+   window.addEventListener("load", function (event) {
+     const element = document.querySelector('#my-element');
+     // now you can safely access the element
+   };
+   ```
+
+
+
+<br>
+
+[Back to top](#faqs)
+</details>
+
+
+
+
+
+<details>
+  <summary>I am unable to push changes to the repository. What should I do?</summary>
+  <br>
+
+
+  There are a couple of possible reasons why you may be unable to *push* changes to a Git repository:
+
+1. **You have not committed your changes:** Before you can push your changes to the repository, you need to commit them using the `git commit` command. Make sure you have committed your changes and try pushing again. To do this, run the following terminal commands from the project folder:
+
+   ```bash
+   git add .
+   git commit -m "Your commit message"
+   git push
+   ```
+
+
+2. **You do not have permission to push to the repository:** If you have cloned the repository directly from the main Ironhack repository without making a *Fork* first, you do not have write access to the repository.
+   To check which remote repository you have cloned, run the following terminal command from the project folder:
+
+   ```bash
+   git remote -v
+   ```
+
+If the link shown is the same as the main Ironhack repository, you will need to fork the repository to your Github account first, and then clone your fork to your local machine to be able to push the changes.
+
+Note: You may want to make a copy of the code your have locally, to avoid losing it in the process.
+
+
+
+  [Back to top](#faqs)
+</details>
+
