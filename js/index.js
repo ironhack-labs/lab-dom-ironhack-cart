@@ -1,3 +1,6 @@
+const productDOM = document.getElementsByClassName('product');
+const products = [...productDOM];
+
 // ITERATION 1
 
 function updateSubtotal(product) {
@@ -9,8 +12,7 @@ function updateSubtotal(product) {
 
 function calculateAll() {
   // ITERATION 2
-  const productDOM = document.getElementsByClassName('product');
-  const products = [...productDOM];
+
   products.forEach((product) => {
     updateSubtotal(product);
   });
@@ -25,12 +27,13 @@ function calculateAll() {
 }
 
 // ITERATION 4
-
-function removeProduct(event) {
-  const target = event.target;
-  const productRow = target.parentNode.parentNode;
-  productRow.parentNode.removeChild(productRow);
-}
+products.forEach((product) => {
+  const removeButton = product.querySelector('.btn.btn-remove');
+  removeButton.addEventListener('click', (e) => {
+    const tr = e.target.parentNode.parentNode;
+    tr.parentNode.removeChild(tr);
+  });
+});
 
 // ITERATION 5
 
