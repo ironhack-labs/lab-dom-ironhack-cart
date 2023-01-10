@@ -16,7 +16,12 @@ function calculateAll() {
   });
 
   // ITERATION 3
-  //... your code goes here
+  let total = 0;
+  products.forEach((product) => {
+    total += Number(product.querySelector('.subtotal span').textContent);
+  });
+
+  document.querySelector('#total-value span').textContent = total;
 }
 
 // ITERATION 4
