@@ -227,6 +227,7 @@ describe('Ironhack Cart',  () => {
         createdProductPrice.toString()
       );
       await page.click('.create-product button');
+
       const productElement = await page.$('.product');
       expect(productElement).toBeTruthy();
       const productPrice = await productElement.$eval(

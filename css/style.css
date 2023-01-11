@@ -65,3 +65,9 @@ h2,
 .calculate-total {
   text-align: center;
 }
+
+input[placeholder = "Price"]::-webkit-inner-spin-button,
+input[placeholder = "Price"]::-webkit-outer-spin-button { 
+	-webkit-appearance: none;
+}
+/* to remove the arrow buttons in the price input field */
