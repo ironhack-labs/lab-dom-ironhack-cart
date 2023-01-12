@@ -14,17 +14,18 @@ function updateSubtotal(product) {
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector(".product")
-  updateSubtotal(singleProduct)
-  // end of test
+  /* const singleProduct = document.querySelector(".product")
+  updateSubtotal(singleProduct) */
 
-  // ITERATION 2
-  let multiProducts = [...document.getElementsByClassName("product")]
-  multiProducts.forEach((element) => updateSubtotal(element))
+  // ITERATION 2 & 3
+  let cartValue = 0 // returning value
+  let multiProducts = [...document.getElementsByClassName("product")] // all products in an array
 
-  // ITERATION 3
+  multiProducts.forEach((element) => {
+    updateSubtotal(element), (cartValue += updateSubtotal(element)) // loop to update subtotal and total cart value
+  })
+
+  document.querySelector("#total-value span").innerHTML = `${cartValue}` // place value into DOM
 }
 
 // ITERATION 4
