@@ -39,13 +39,15 @@ function removeProduct(event) {
   
   let products = document.querySelector('tbody');
   products.removeChild(target.parentNode.parentNode);
+
+  calculateAll()
 }
 
 // ITERATION 5
 
 function createProduct() {
   //... your code goes here
-  
+
 }
 
 window.addEventListener('load', () => {
