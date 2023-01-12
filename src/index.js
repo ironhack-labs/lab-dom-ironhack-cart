@@ -1,31 +1,62 @@
+// TO UPDATE SUBTOTAL WHEN SELECTING THE QUANTITY
+const allInputs = document.querySelectorAll('.quantity input');
+const allProducts = document.querySelectorAll('.product');
+
+allInputs.forEach((element) => {
+  element.addEventListener('change', () => {
+    allProducts.forEach((element) => {
+      updateSubtotal(element);
+    });
+  });
+});
+
 // ITERATION 1
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
+  let price = product.querySelector('.price span').innerHTML;
+  let quantity = product.querySelector('.quantity input').value;
+  let subtotal = product.querySelector('.subtotal span');
+  let calculatedSubtotal = price * quantity;
+  subtotal.innerHTML = calculatedSubtotal;
 
-  //... your code goes here
+  // return subtotal.innerHTML;
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
-
   // ITERATION 2
-  //... your code goes here
+  const allProducts = document.querySelectorAll('.product');
+
+  allProducts.forEach((element) => {
+    updateSubtotal(element);
+  });
 
   // ITERATION 3
-  //... your code goes here
+  const allSubTotals = document.querySelectorAll('.product .subtotal span');
+  const totalValue = document.querySelector('#total-value span');
+
+  let accumulator = 0;
+
+  allSubTotals.forEach((element) => {
+    accumulator = Number(element.innerHTML) + accumulator;
+  });
+  totalValue.innerHTML = accumulator;
 }
 
 // ITERATION 4
+const allRemoveButtons = document.querySelectorAll('.btn-remove');
 
-function removeProduct(event) {
-  const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+allRemoveButtons.forEach((removeBtn) => {
+  removeBtn.addEventListener('click', () => {
+    removeProduct(removeBtn);
+  });
+});
+
+function removeProduct(removeBtn) {
+  console.log(removeBtn);
+  const product = removeBtn.parentNode.parentNode;
+  const tbody = removeBtn.parentNode.parentNode.parentNode;
+
+  tbody.removeChild(product);
 }
 
 // ITERATION 5
