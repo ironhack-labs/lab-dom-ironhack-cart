@@ -12,7 +12,6 @@ function updateSubtotal(product) {
 
 function calculateAll() {
   // ITERATION 2
-
   products.forEach((product) => {
     updateSubtotal(product);
   });
@@ -40,11 +39,11 @@ products.forEach((product) => {
 function createProduct() {
   const nameInput = document.querySelector('.newProduct').value;
   const priceInput = document.querySelector('.newPrice').value;
+  const table = document.querySelector('tbody');
 
   // Create the new row for the product
-  const newRow = document.createElement('tr');
-  newRow.className = 'product';
-  newRow.innerHTML = `
+  table.innerHTML += `
+        <tr class="product">
           <td class="name">
             <span>${nameInput}</span>
           </td>
@@ -54,12 +53,10 @@ function createProduct() {
           </td>
           <td class="subtotal">$<span>0</span></td>
           <td class="action">
-            <button class="btn btn-remove" onclick="removeProduct(event)">Remove</button>
+            <button class="btn btn-remove">Remove</button>
           </td>
+        </tr>
   `;
-
-  const tableBody = document.querySelector('tbody');
-  tableBody.appendChild(newRow);
 }
 
 window.addEventListener('load', () => {
