@@ -72,7 +72,8 @@ function createProduct() {
   document.querySelector(".name span").innerText = newProduct
   document.querySelector(".price span").innerText = newPrice
   
-  
+  document.querySelector(".create-product input").value = "Product Price"
+  document.getElementById("new-price").value= 0
 }
 
 window.addEventListener('load', () => {
