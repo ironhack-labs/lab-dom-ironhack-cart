@@ -41,13 +41,38 @@ function removeProduct(event) {
   const target = event.currentTarget;
   target.parentNode.parentNode.remove()
   
+  calculateAll()
+
 }
 
 // ITERATION 5
 
-function createProduct() {
-  //... your code goes here
+function createProduct(event) {
+const inputText = document.querySelector("input").type
+const value = document.querySelector("input").value
+
+
+
 }
+
+/* function addTodo() {
+  console.log("add todo")
+
+  const input = document.querySelector("input")
+  const value = input.value
+  console.log(value)
+
+  const todo = document.createElement("li")
+  todo.innerText = value
+  todo.addEventListener("click", toggleTodo)
+
+  console.log(todo)
+
+  const list = document.querySelector("ul")
+  list.appendChild(todo)
+
+  input.value = ""
+ */
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
@@ -57,6 +82,8 @@ window.addEventListener('load', () => {
   removeBtn.forEach(function(button){
     button.addEventListener('click', removeProduct)
 
+    const createBtn = document.getElementById('create')
+    createBtn.addEventListener('click', createProduct);
   })  
  
 });
