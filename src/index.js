@@ -67,13 +67,9 @@ function createProduct() {
   // Select cart and append new product as a child
   document.querySelector("#cart tbody").insertAdjacentHTML( "beforeend", product);
 
-  // Remove all event listeners for the remove button, then add event listeners again to all (including the new) remove buttons
-  const removeProductBtns = document.querySelectorAll(".btn-remove");
-  console.log(removeProductBtns);
-  removeProductBtns.forEach(product => {
-    product.removeEventListener("click", removeProduct);
-    product.addEventListener("click", removeProduct);
-  })
+  // Select newly added product and add an eventlistener to its remove button
+  const newlyAddedRemoveBtnElem = document.querySelector("#cart tbody tr:last-child .btn-remove");
+  newlyAddedRemoveBtnElem.addEventListener("click", removeProduct);
 
   // Reset input for product name and price
   nameElem.value = null;
