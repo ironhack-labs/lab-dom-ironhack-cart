@@ -17,9 +17,8 @@ function calculateAll() {
   for (let i = 0; i <= productCollection.length-1; i++) {
     total += +updateSubtotal(productCollection[i]).innerHTML;
   }
-  document.getElementById("total-value") = total
+  document.getElementById("total-value").innerText = `Total:\$${total.toFixed(2)}`
 }
-
 // ITERATION 4
 
 function removeProduct(event) {
