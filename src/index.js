@@ -59,19 +59,57 @@ function removeProduct(event) {
   const target = event.currentTarget;
   console.log("The target in remove is:", target);
   //... your code goes here
+  target.parentNode.parentNode.remove();
 }
-
-// const removeBtns = document.querySelectorAll(".btn-remove");
-// console.log(removeBtns);
-
-// removeBtns.forEach((btn) =>
-//   btn.addEventListener("click", () => console.log("a button was clicjked"))
-// );
 
 // ITERATION 5
 
 function createProduct() {
   //... your code goes here
+
+  // selecting the input values
+  const name = document.querySelector(
+    '.create-product input[type="text"]'
+  ).value;
+  const price = document.querySelector(
+    '.create-product input[type="number"]'
+  ).value;
+  console.log(name, price);
+
+  // selecting the new Product row
+  const newProduct = document.createElement("tr");
+
+  // assign the product class needed for subtotal calculation
+  newProduct.classList.add("product");
+
+  // change the innerHTML: copy and paste template from index.html
+  newProduct.innerHTML = `<td class="name">
+  <span>${name}</span>
+  </td>
+  <td class="price">$<span>${price}</span></td>
+  <td class="quantity">
+  <input type="number" value="0" min="0" placeholder="Quantity" />
+  </td>
+  <td class="subtotal">$<span>${price}</span></td>
+  <td class="action">
+  <button class="btn btn-remove">Remove</button>
+  </td>`;
+
+  // selecting the tbody container
+  const tBody = document.querySelector("tbody");
+
+  // assign the new Product to the table body
+  tBody.appendChild(newProduct);
+
+  // select all remove buttons
+  const removeBtns = document.querySelectorAll(".btn-remove");
+
+  // loop thru all remove buttons and addeventlistener
+  removeBtns.forEach((btn) => btn.addEventListener("click", removeProduct));
+
+  // clear the input values
+  document.querySelector('.create-product input[type="text"]').value = "";
+  document.querySelector('.create-product input[type="number"]').value = 0;
 }
 
 window.addEventListener("load", () => {
@@ -80,10 +118,14 @@ window.addEventListener("load", () => {
 
   // select all remove buttons
   const removeBtns = document.querySelectorAll(".btn-remove");
-  console.log(removeBtns);
 
   // loop thru all remove buttons and addeventlistener
   removeBtns.forEach((btn) => btn.addEventListener("click", removeProduct));
 
   //... your code goes here
+  // select create button and addeventlistener
+  const createBtn = document.querySelector("#create");
+
+  // add event listener
+  createBtn.addEventListener("click", createProduct);
 });
