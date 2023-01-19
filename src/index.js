@@ -70,7 +70,8 @@ const priceProduct = document.querySelector('.create-product input[placeholder="
 
 
  const cart = document.querySelector("#cart tbody")
- const newProduct = `<tr class="product">
+ const newProduct = document.createElement("tr")
+ newProduct.innerHTML =`<tr class="product">
  <td class="name">
    <span>${nameProduct}</span>
  </td>
@@ -84,7 +85,7 @@ const priceProduct = document.querySelector('.create-product input[placeholder="
  </td>
 </tr>`
 
-cart.innerHTML += newProduct
+cart.appendChild(newProduct)
 
 
 const newRemoveBtn = cart.querySelectorAll(".btn-remove");
