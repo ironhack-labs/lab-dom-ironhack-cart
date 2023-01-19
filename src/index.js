@@ -43,8 +43,6 @@ function createProduct() {
   const price = document.querySelector(".create-product input[placeholder='Product Price']").value;
   const quantity = document.querySelector(".create-product input[placeholder='Product Quantity']").value;
 
-  console.log(price, name);
-
   const newProductHTML = `<tr class="product">
           <td class="name">
             <span>${name}</span>
