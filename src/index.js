@@ -39,8 +39,9 @@ function removeProduct(event) {
 
 function createProduct() {
   "use strict";
-  const name = document.querySelector(".create-product input[type='text']").value;
-  const price = document.querySelector(".create-product input[type='number']").value;
+  const name = document.querySelector(".create-product input[placeholder='Product Name']").value;
+  const price = document.querySelector(".create-product input[placeholder='Product Price']").value;
+  const quantity = document.querySelector(".create-product input[placeholder='Product Quantity']").value;
 
   console.log(price, name);
 
@@ -50,7 +51,7 @@ function createProduct() {
           </td>
           <td class="price">$<span>${price}</span></td>
           <td class="quantity">
-            <input type="number" value="0" min="0" placeholder="Quantity" />
+            <input type="number" value="${quantity}" min="0" placeholder="Quantity" />
           </td>
           <td class="subtotal">$<span>0</span></td>
           <td class="action">
@@ -60,8 +61,9 @@ function createProduct() {
 
   document.querySelector("tbody tr:last-child").insertAdjacentHTML("afterend", newProductHTML);
 
-  document.querySelector(".create-product input[type='text']").value = "";
-  document.querySelector(".create-product input[type='number']").value = 0;
+  document.querySelector(".create-product input[placeholder='Product Name']").value = "";
+  document.querySelector(".create-product input[placeholder='Product Price']").value = 0;
+  document.querySelector(".create-product input[placeholder='Product Quantity']").value = 0;
 }
 
 window.addEventListener("load", () => {
