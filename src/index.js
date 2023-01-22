@@ -60,6 +60,7 @@ function removeProduct(event) {
   const child = target.parentNode.parentNode
 
   parent.removeChild(child)
+  calculateAll()
 
 }
 
@@ -71,6 +72,7 @@ function createProduct() {
   const productsArray = document.getElementsByTagName('tbody')[0]
   const productClone = productsArray.children[0]
 
+  //Crear una copia de uno de los produtos originales
   const newProduct = productClone.cloneNode(true)
 
   // Tomar datos del tfoot
@@ -89,75 +91,6 @@ function createProduct() {
   newProduct.querySelector('.price span').innerText = newProductPrice
 
   productsArray.appendChild(newProduct)
-
-
-  // const row = document.createElement('tr')
-  // row.setAttribute('class', 'product')
-
-  // for (let i = 0; i < 5; i++) {
-  //   const cell = document.createElement('td')
-
-  //   switch (i) {
-  //     case 0:
-  //       cell.setAttribute('class', 'name')
-  //       const cellContent1 = document.createElement('span')
-  //       const cellText1 = document.createTextNode('Producto')
-
-  //       cellContent1.appendChild(cellText1)
-  //       cell.appendChild(cellContent1)
-  //       break;
-
-  //     case 1:
-  //       cell.setAttribute('class', 'price')
-  //       const dollarSign = document.createTextNode('$')
-  //       const cellContent2 = document.createElement('span')
-  //       const cellText2 = document.createTextNode('0')
-
-  //       cellContent2.appendChild(cellText2)
-  //       cell.appendChild(dollarSign)
-  //       cell.appendChild(cellContent2)
-  //       break;
-
-  //     case 2:
-  //       cell.setAttribute('class', 'quantity')
-  //       const quantityForm = document.createElement('input')
-  //       quantityForm.setAttribute('type', 'number')
-  //       quantityForm.setAttribute('value', '0')
-  //       quantityForm.setAttribute('min', '0')
-  //       quantityForm.setAttribute('placeholder', 'Quantity')
-
-  //       cell.appendChild(quantityForm)
-  //       break;
-
-  //     case 3:
-  //       cell.setAttribute('class', 'subtotal')
-  //       const dollarSignST = document.createTextNode('$')
-  //       const cellContentST = document.createElement('span')
-  //       const cellTextST = document.createTextNode('0')
-
-  //       cellContentST.appendChild(cellTextST)
-  //       cell.appendChild(dollarSignST)
-  //       cell.appendChild(cellContentST)
-  //       break;
-
-  //     case 4:
-  //       // cell.setAttribute('class', 'action')
-  //       // const removeBtn = document.createElement('button')
-  //       // removeBtn.setAttribute('class', 'btn btn-remove')
-  //       // removeBtn.setAttribute('innerText', 'Remove')
-
-  //       // cell.appendChild(removeBtn)
-  //       break;
-
-  //     default:
-  //       break;
-  //   }
-
-
-  //   row.appendChild(cell)
-  // }
-
-  // productsArray.appendChild(row)
 
 }
 
