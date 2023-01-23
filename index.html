@@ -31,7 +31,7 @@
         </td>
         <td class="subtotal">$<span>0</span></td>
         <td class="action">
-          <button onclick="removeProduct(event)" class=" btn btn-remove">Remove</button>
+          <button class=" btn btn-remove">Remove</button>
         </td>
       </tr>
       <tr class="product">
@@ -44,7 +44,7 @@
         </td>
         <td class="subtotal">$<span>0</span></td>
         <td class="action">
-          <button onclick="removeProduct(event)" class="btn btn-remove">Remove</button>
+          <button class="btn btn-remove">Remove</button>
         </td>
       </tr>
       <!-- Iteration 2: Add more products here -->
@@ -52,15 +52,15 @@
     <tfoot>
       <tr class="create-product">
         <td>
-          <input class='new-product' type="text" placeholder="Product Name" />
+          <input class='new-product' id='product-name' type="text" placeholder="Product Name" />
         </td>
         <td>
-          <input class='new-Price' type="number" min="0" value="0" placeholder="Product Price" />
+          <input class='new-Price' id='product-price' type="number" min="0" value="0" placeholder="Product Price" />
         </td>
         <td></td>
         <td></td>
         <td>
-          <button id="create" onclick="createProduct(evento)" class="btn">Create Product</button>
+          <button id="create" class="btn">Create Product</button>
         </td>
       </tr>
     </tfoot>

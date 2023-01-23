@@ -88,23 +88,46 @@ function removeProduct(event) {
 
 // ITERATION 5
 
-function createProduct(evento) {
+function createProduct() {
   //... your code goes here
 
-  const target = evento.currentTarget
+  const txtProduct = document.querySelector('#product-name').value
+
+  const txtPrice = document.querySelector('#product-price').value
+
+  if (txtProduct === "") {
+    alert('Añada un producto')
+    return
+  }
+  if (txtPrice === '0') {
+    alert('Añada precio')
+    return
+  }
+
+  const tr = document.querySelector(".product")
+
+  const tr_prime = tr.cloneNode(true)
+
+  document.querySelector('#product-name').value = ""
+
+  document.querySelector('#product-price').value = 0
 
 
-  const txtProduct = document.querySelector('.new-product input').value
+  tr_prime.querySelector('.price span').innerHTML = txtPrice
 
-  const txtPrice = document.querySelector('.new-price input').value
+  tr_prime.querySelector('.quantity input').value = 0
 
-  txtProduct.appendChild(newProduct)
+  tr_prime.querySelector('.name span').innerHTML = txtProduct
 
-  txtPrice.appendChild(newPrice)
+  tr_prime.querySelector('.subtotal span').innerHTML = 0
+
+
+  document.querySelector('tbody').appendChild(tr_prime)
 
 
 
-  calculateAll()
+  addRemoveEvent()
+
 }
 
 
@@ -117,7 +140,17 @@ window.addEventListener('load', () => {
 
   calculatePricesBtn.addEventListener('click', calculateAll)
 
+  addRemoveEvent()
 
+  const buttonCreate = document.getElementById('create')
+
+  buttonCreate.addEventListener('click', createProduct)
+
+})
+
+
+
+function addRemoveEvent() {
 
   const buttonsRemove = document.querySelectorAll(".btn-remove")
 
@@ -125,15 +158,9 @@ window.addEventListener('load', () => {
 
     buttonsRemove[i].addEventListener('click', removeProduct)
   }
+}
 
 
-
-
-  const buttonCreate = document.getElementById('create')
-
-  buttonCreate.addEventListener('click', createProduct)
-
-})
 
 
 
