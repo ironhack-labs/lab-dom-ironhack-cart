@@ -3,31 +3,54 @@
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
 
-  //... your code goes here
+  const price = product.querySelector('.price span').innerText
+  const quantity = product.querySelector('.quantity input').value
+
+  const subtotal = product.querySelector('.subtotal span')
+  subtotal.innerText = price * quantity
+
 }
 
-function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
 
   // ITERATION 2
-  //... your code goes here
+
+  function calculateAll() {
+
+    const multipleProducts = document.getElementsByClassName("product");
+    
+    for(let i=0; i< multipleProducts.length; i++) {
+    singleProduct = multipleProducts[i]
+    updateSubtotal(singleProduct);
+    }
+  
 
   // ITERATION 3
-  //... your code goes here
+  
+let totalPrice = document.querySelector('#total-value span')
+let subtotalPrices = document.querySelectorAll('.subtotal span')
+let total = 0;
+
+for(let i=0; i< subtotalPrices.length; i++) {
+  total += Number(subtotalPrices[i].innerText)
+
 }
+totalPrice.innerText = total
+
+}
+
+
+
 
 // ITERATION 4
 
 function removeProduct(event) {
-  const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+  let buttonNow = event.currentTarget
+  let deleteData= buttonNow.parentNode.parentNode
+  deleteData.remove()
+
 }
 
+// <button class="btn btn-remove">Remove</button>
 // ITERATION 5
 
 function createProduct() {
@@ -38,5 +61,12 @@ window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+  let eliminarBoton = document.querySelectorAll(".btn-remove")
+  eliminarBoton.forEach((cadaElemento)=>{
+    cadaElemento.addEventListener("click", removeProduct )
+  })
+
 });
+
+//remove y parent node otro.parentnode borramos todos los padres
+// hasta borrar todo el html
