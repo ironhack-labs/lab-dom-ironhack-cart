@@ -11,31 +11,59 @@
     <table id="cart">
       <thead>
         <tr>
-          <th>Product Name</th>
-          <th>Unit Price</th>
-          <th>Quantity</th>
-          <th>Subtotal</th>
-          <th>Action</th>
+          <th>Product IronName</th>
+          <th>Iron Price</th>
+          <th>Quantity of Iron</th>
+          <th>Iron Subtotal</th>
+          <th>Iron Action</th>
         </tr>
       </thead>
+
+
+
       <tbody>
         <tr class="product">
           <td class="name">
             <span>Ironhack Rubber Duck</span>
           </td>
-          <td class="price">$<span>25.00</span></td>
+
+          <td class="price">€<span>25.00</span></td>
+
           <td class="quantity">
             <input type="number" value="0" min="0" placeholder="Quantity" />
           </td>
-          <td class="subtotal">$<span>0</span></td>
+
+          <td class="subtotal">€<span>0</span></td>
+
           <td class="action">
-            <button class="btn btn-remove">Remove</button>
+            <button class="btn btn-remove">Remove Iron</button>
           </td>
         </tr>
-        <!-- Iteration 2: Add more products here -->
+
+
+        <tr class="product">
+          <td class="name">
+            <span>Ironhack Yellow Submarine</span>
+          </td>
+
+          <td class="price">€<span>19.69</span></td>
+
+          <td class="quantity">
+            <input type="number" value="0" min="0" placeholder="Quantity" />
+          </td>
+
+          <td class="subtotal">€<span>0</span></td>
+          
+          <td class="action">
+            <button class="btn btn-remove">Remove Iron</button>
+          </td>
+        </tr>
       </tbody>
+
+
+
       <tfoot>
-        <!-- <tr class="create-product">
+        <tr class="create-product">
           <td>
             <input type="text" placeholder="Product Name" />
           </td>
@@ -51,9 +79,9 @@
       </tfoot>
     </table>
     <p class="calculate-total">
-      <button id="calculate" class="btn btn-success">Calculate Prices</button>
+      <button id="calculate" class="btn btn-success">Calculate Iron Prices</button>
     </p>
-    <h2 id="total-value">Total: $<span>0</span></h2>
-    <script type="text/javascript" src="./js/index.js"></script>
+    <h2 id="total-value">Iron Total: €<span>0</span></h2>
+    <script type="text/javascript" src="./src/index.js"></script>
   </body>
 </html>
