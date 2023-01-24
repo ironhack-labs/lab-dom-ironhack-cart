@@ -33,7 +33,7 @@ $ git push origin master
 
 ## Instructions
 
-You will do most of your work in the `js/index.js` file. We added the initial markup in `index.html` and some basic styling. While developing, make sure you use the same class names as those already used (and available in the CSS file) to make our shopping cart nice and clean.
+You will do most of your work in the `src/index.js` file. We added the initial markup in `index.html` and some basic styling. While developing, make sure you use the same class names as those already used (and available in the CSS file) to make our shopping cart nice and clean.
 
 Let's go!
 
@@ -93,10 +93,10 @@ The product has a **price** and **quantity** (where quantity represents how many
 
 Your goal is to calculate the subtotal price, but let's approach it gradually. Let's break it down into a couple of steps:
 
-- **Step 0**: In this step, our goal is to help you understand the provided code in the `js/index.js`. Thanks to the provided code, the `Calculate Prices` button already has some functionality. Using the DOM manipulation, we got the element with the `id="calculate"` and added an event listener `click` to it. When clicked, this button will fire the `calculateAll()` function. The following code snippet does exactly what we explained:
+- **Step 0**: In this step, our goal is to help you understand the provided code in the `src/index.js`. Thanks to the provided code, the `Calculate Prices` button already has some functionality. Using the DOM manipulation, we got the element with the `id="calculate"` and added an event listener `click` to it. When clicked, this button will fire the `calculateAll()` function. The following code snippet does exactly what we explained:
 
 ```javascript
-// js/index.js
+// src/index.js
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
@@ -136,7 +136,7 @@ Let's start:
 - **Step 1**: Inside `updateSubtotal()`, create two variables (we suggest naming them `price` and `quantity`) and use your just gained DOM manipulation skills to GET DOM elements that hold price and quantity. To give you a head start, you could use the following code to get the DOM element holding the `price`:
 
 ```js
-// js/index.js
+// src/index.js
 function updateSubtotal(product) {
   const price = product.querySelector('.price span');
   // ... your code goes here
