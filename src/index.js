@@ -42,7 +42,9 @@ function removeProduct(event) {
 // ITERATION 5
 
 function createProduct() {
-  
+  // const createRow = document.querySelector('.create-product');
+  // let newProduct = createRow.querySelector('input');
+   
 }
 
 
