@@ -8,8 +8,18 @@ function updateSubtotal(product) {
   const subtotalValue = priceValue * quantityValue;
 
   subtotalEl.innerText = subtotalValue;
+}
 
-  return subtotalValue;
+function getTotal() {
+  const allSubtotalEls = document.querySelectorAll(".subtotal span");
+
+  let totalValue = 0;
+
+  allSubtotalEls.forEach(element=> {
+    totalValue += Number(element.innerText);
+  })
+
+  return totalValue;
 }
 
 function calculateAll() {
@@ -21,15 +31,13 @@ function calculateAll() {
   // ITERATION 2
   const allProducts = document.querySelectorAll(".product");
 
-  let totalPrice = 0;
-
   allProducts.forEach(product => {
-    totalPrice += updateSubtotal(product);
+    updateSubtotal(product);
   });
 
   // ITERATION 3
   const totalEl = document.querySelector("#total-value span");
-  totalEl.innerText = totalPrice;
+  totalEl.innerText = getTotal();
 }
 
 // ITERATION 4
