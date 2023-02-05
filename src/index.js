@@ -1,63 +1,71 @@
 // ITERATION 1
 //https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
-  const price = product.querySelector(".price > span").textContent
-  const quantity = product.querySelector(".quantity > input").value
-  const subTotal = (Number(price * quantity)).toFixed(2)
+  console.log('Calculating subtotal, yey!')
+  const price = product.querySelector('.price > span').textContent
+  const quantity = product.querySelector('.quantity > input').value
+  const subTotal = Number(price * quantity).toFixed(2)
 
-  product.querySelector(".subtotal > span").textContent = subTotal
+  product.querySelector('.subtotal > span').textContent = subTotal
   return subTotal
-  }
+}
 
-
+// ITERATION 2
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-    //  const singleProduct = document.querySelector('.product')
-    // updateSubtotal(singleProduct);
-  // end of test
-
-  // ITERATION 2
   let sum = 0
-  const allProducts = document.querySelectorAll(".product")
+  const allProducts = document.querySelectorAll('.product')
   for (let i = 0; i < allProducts.length; i++) {
     sum += Number(updateSubtotal(allProducts[i]))
   }
 
   // ITERATION 3
   let totalPrice = document.querySelector('#total-value > span')
-  totalPrice.innerText = (Number(sum)).toFixed(2)
+  totalPrice.innerText = Number(sum).toFixed(2)
 
   return totalPrice.innerText
 }
 
 // ITERATION 4
-//I cannot solve it!
+//event.currentTarget = ハンドラが登録された要素（親）
+//event.target = イベントが発生した要素
 function removeProduct(event) {
-  const target = event.currentTarget;
- 
-  console.log('The target in remove is:', target);
-  const allProducts = document.querySelectorAll(".product")
-
-  for (let i = 0; i < allProducts.length; i++) {
-    allProducts[i].addEventListener('click', removeProduct, false)
-  }
-  document.body.addEventListener('click', removeProduct, false)
-  }
-  
-
+  //target => <button class="btn btn-remove">Remove</button>
+  const target = event.currentTarget
+  console.log('The target in remove is:', target)
+  //一番近い親要素を削除する
+  target.closest('.product').remove()
+  calculateAll()
+}
 
 // ITERATION 5
-
 function createProduct() {
-  
+  const tbody = document.querySelector('tbody')
+  const original = document.querySelector('.product')
+  const copy = original.cloneNode(true)
+  tbody.appendChild(copy)
+
+  let newName = copy.querySelector('.name > span')
+  let newPrice = copy.querySelector('.price > span')
+  // let newQuantity = copy.querySelector('.quantity input').value
+
+  const inputName = document.querySelector('.create-product [type="text"]')
+  newName.textContent = inputName.value
+  const inputPrice = document.querySelector('.create-product [type="number"]')
+  newPrice.textContent = Number(inputPrice.value).toFixed(2)
 }
 
 window.addEventListener('load', () => {
-  const calculatePricesBtn = document.getElementById('calculate');
-  calculatePricesBtn.addEventListener('click', calculateAll);
+  const calculatePricesBtn = document.getElementById('calculate')
+  calculatePricesBtn.addEventListener('click', calculateAll)
 
-  
+  const removeBtn = document.querySelectorAll('.btn-remove')
+  removeBtn.forEach((btn) => {
+    btn.addEventListener('click', removeProduct)
+  })
 
-});
+  const create = document.getElementById('create')
+  create.style.backgroundColor = '#fff'
+  create.addEventListener('click', () => {
+    createProduct()
+  })
+})
