@@ -16,11 +16,23 @@ function calculateAll() {
   for(let i = 0; i < products.length; i++){
     updateSubtotal(products[i]);
   }
-  // ITERATION 2
-  //... your code goes here
+  
+  getTotal();
+}
 
-  // ITERATION 3
-  //... your code goes here
+function getTotal(product){
+  let subTotal = 0;
+  const parentEl = document.querySelector("tbody");
+  const products = parentEl.getElementsByClassName("product");
+  for(let i = 0; i < products.length; i++){
+    const subTotalVal = products[i].querySelector(".subtotal");
+    subTotal += Number(subTotalVal.innerText);
+    console.log(subTotal);
+  }
+
+  const totalValue = document.getElementById("total-value");
+  const total = totalValue.querySelector("span");
+  total.innerHTML = `<span>${subTotal}</span>`;
 }
 
 // ITERATION 4
