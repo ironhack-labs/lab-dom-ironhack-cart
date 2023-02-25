@@ -1,37 +1,58 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
+  const price = product.querySelector('.price span');
+  const quantity = product.querySelector('.quantity input');
+  const subtotal = product.querySelector('.subtotal span');
 
-  //... your code goes here
+  const priceValue = price.innerText;
+  const quantityValue = quantity.value;
+
+  const subtotalValue = priceValue * quantityValue;
+  subtotal.innerText = subtotalValue;
+  return subtotalValue;
 }
 
-function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
+  function calculateAll() {
+    const products = document.getElementsByClassName('product');
+    let totalPrice = 0;
+  
+    for (let i = 0; i < products.length; i++) {
+      const product = products[i];
+      const subtotal = updateSubtotal(product);
+      totalPrice += subtotal;
+    }
+  
+    const totalValue = document.querySelector('#total-value span');
+    totalValue.textContent = totalPrice;
+  }
 
-  // ITERATION 2
-  //... your code goes here
 
-  // ITERATION 3
-  //... your code goes here
-}
 
-// ITERATION 4
+//Bonus ITERATION 4
 
-function removeProduct(event) {
-  const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
-}
-
-// ITERATION 5
+ function removeProduct(event) {
+    const target = event.currentTarget;
+    const productRow = target.parentNode.parentNode;
+    const tbody = document.querySelector('#cart tbody');
+  
+    tbody.removeChild(productRow);
+  
+    // Recalculate total after removing product
+    calculateAll();
+  }
+  
+  const removeButtons = document.querySelectorAll('.btn-remove');
+  
+  removeButtons.forEach(function (button) {
+    button.addEventListener('click', removeProduct);
+  });
+  
+// ITERATION 5 - Not finished
 
 function createProduct() {
   //... your code goes here
+  
 }
 
 window.addEventListener('load', () => {
@@ -39,4 +60,5 @@ window.addEventListener('load', () => {
   calculatePricesBtn.addEventListener('click', calculateAll);
 
   //... your code goes here
+  
 });
