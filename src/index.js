@@ -31,6 +31,7 @@ function removeProduct(event) {
 
   //... your code goes here
   target.parentNode.parentNode.remove();
+  calculateAll();
 }
 
 // ITERATION 5
@@ -60,6 +61,7 @@ function createProduct() {
 
   document.querySelector('.product-name').value = "";
   document.querySelector('.product-price').value = 0;
+
 
 }
 
