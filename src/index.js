@@ -11,15 +11,17 @@ function updateSubtotal(product) {
   }
 
   function calculateAll() {
-    const allProducts = document.getElementsByClassName('product');
-    let total = 0;
-    for (let i = 0; i < allProducts.length; i++) {
-      const product = allProducts[i];
-      const subtotal = updateSubtotal(product);
-      total += subtotal;
+     const allProducts = document.getElementsByClassName('product');
+      let total = 0;
+      for (let i = 0; i < allProducts.length; i++) {
+        const product = allProducts[i];
+        const subtotal = updateSubtotal(product);
+        total += subtotal;
+      }
+      document.querySelector('#total-value span').textContent = total;
     }
-    document.querySelector('#total-value span').textContent = total;
-  }
+  
+   
 
 
  
