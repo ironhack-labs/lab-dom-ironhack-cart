@@ -16,14 +16,14 @@ function updateSubtotal(product) {
 }
 
 function calculateAll() {
-  const products = document.getElementsByClassName("product");
-  console.log(products);
+  const products = document.querySelectorAll(".product");
+
   let totalPrice = 0;
-  for (const product of products) {
+  products.forEach((product) => {
     totalPrice += updateSubtotal(product);
-  }
-  console.log(totalPrice);
-  let totalSum = document.getElementById("total-value");
+  });
+
+  const totalSum = document.querySelector("#total-value span");
 
   totalSum.innerText = totalPrice;
   return totalSum;
@@ -33,19 +33,39 @@ function calculateAll() {
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log("The target in remove is:", target);
-  //... your code goes here
+
+  const tBodyElem = document.querySelector("tbody");
+  tBodyElem.removeChild(target.parentNode.parentNode);
+
+  calculateAll();
 }
 
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  const productTitle = document.querySelector("#product-name-input");
+  const productPrice = document.querySelector("#product-price-input");
+
+  const clonedProduct = document.querySelector(".product").cloneNode(true);
+  clonedProduct.querySelector(".name span").innerText = productTitle.value;
+  clonedProduct.querySelector(".price span").innerText = productPrice.value;
+  clonedProduct.querySelector(".subtotal span").innerText = "0";
+
+  document.querySelector("tbody").appendChild(clonedProduct);
+
+  productTitle.value = "";
+  productPrice.value = "";
 }
 
 window.addEventListener("load", () => {
-  const calculatePricesBtn = document.getElementById("calculate");
+  const calculatePricesBtn = document.querySelector("#calculate");
   calculatePricesBtn.addEventListener("click", calculateAll);
 
-  //... your code goes here
+  const removeBtn = document.querySelectorAll(".btn.btn-remove");
+  removeBtn.forEach((btn) => {
+    btn.addEventListener("click", removeProduct);
+  });
+
+  const createBtn = document.querySelector("#create");
+  createBtn.addEventListener("click", createProduct);
 });
