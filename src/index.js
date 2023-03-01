@@ -43,8 +43,7 @@ function calculateAll() {
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  const products = document.querySelectorAll(".product");
-  console.log(products);
+  event.target.closest('tr').remove()
 
   // const bdy = document.querySelector("#cart");
   // bdy.removeChild(target);
