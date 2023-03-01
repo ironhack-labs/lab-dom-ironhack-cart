@@ -43,24 +43,19 @@ parent.removeChild(children);
 
 // ITERATION 5
 
-/*function createProduct() {
+function createProduct() {
   let newProduct = document.querySelectorAll('.create-product input');
   let newProductName = newProductInputs[0].value;
   let newProductPrice = newProductInputs[1].value;
   const tableBody = document.querySelector("tbody");
   tableBody.createElement(newProduct, newProductName, newProductPrice);
-  const calculatePricesBtn = document.getElementById('calculate');
-  calculatePricesBtn.addEventListener('click', calculateAll);
-  let removeButton = document.querySelectorAll('.btn-remove')
-  removeButton.forEach(removeButton => removeButton.addEventListener('click', removeProduct));
   
 }
   
 
 
-create-product.addEventListener("click", (createProduct) => {
-  createProduct(create-product);
-})  */
+
+  
 
    
 
@@ -71,4 +66,8 @@ window.addEventListener('load', () => {
   let removeButton = document.querySelectorAll('.btn-remove')
   removeButton.forEach(removeButton => removeButton.addEventListener('click', removeProduct));
 })
-   
+window.onload = () => {
+  document.getElementById('create').onclick = () => {
+    createProduct();
+  }
+}
