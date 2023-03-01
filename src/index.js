@@ -1,42 +1,71 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
+  console.log("Calculating subtotal, yey!");
 
-  //... your code goes here
+  const price = product.querySelector(".price span").innerText;
+  const priceNum = parseFloat(price);
+  const quantity = product.querySelector(".quantity input").value;
+  const quantityNum = Number(quantity);
+
+  const subTotalPrice = priceNum * quantityNum;
+
+  const subTotalElem = product.querySelector(".subtotal span");
+  subTotalElem.innerText = subTotalPrice;
+  return subTotalPrice;
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
+  const products = document.querySelectorAll(".product");
 
-  // ITERATION 2
-  //... your code goes here
+  let totalPrice = 0;
+  products.forEach((product) => {
+    totalPrice += updateSubtotal(product);
+  });
 
-  // ITERATION 3
-  //... your code goes here
+  const totalSum = document.querySelector("#total-value span");
+
+  totalSum.innerText = totalPrice;
+  return totalSum;
 }
 
 // ITERATION 4
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+
+  const tBodyElem = document.querySelector("tbody");
+  tBodyElem.removeChild(target.parentNode.parentNode);
+
+  calculateAll();
 }
 
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  const productTitle = document.querySelector("#product-name-input");
+  const productPrice = document.querySelector("#product-price-input");
+
+  const clonedProduct = document.querySelector(".product").cloneNode(true);
+  clonedProduct.querySelector(".name span").innerText = productTitle.value;
+  clonedProduct.querySelector(".price span").innerText = productPrice.value;
+  clonedProduct.querySelector(".subtotal span").innerText = "0";
+
+  document.querySelector("tbody").appendChild(clonedProduct);
+
+  productTitle.value = "";
+  productPrice.value = "";
 }
 
-window.addEventListener('load', () => {
-  const calculatePricesBtn = document.getElementById('calculate');
-  calculatePricesBtn.addEventListener('click', calculateAll);
+window.addEventListener("load", () => {
+  const calculatePricesBtn = document.querySelector("#calculate");
+  calculatePricesBtn.addEventListener("click", calculateAll);
 
-  //... your code goes here
+  const removeBtn = document.querySelectorAll(".btn.btn-remove");
+  removeBtn.forEach((btn) => {
+    btn.addEventListener("click", removeProduct);
+  });
+
+  const createBtn = document.querySelector("#create");
+  createBtn.addEventListener("click", createProduct);
 });
