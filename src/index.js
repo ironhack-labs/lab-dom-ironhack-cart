@@ -1,20 +1,41 @@
 // ITERATION 1
-
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
+  console.log(
+    "Calculating subtotal, yey!",
+    product
+  );
 
-  //... your code goes here
+  // get price and quantity elements and assign them to variables
+  const price = parseFloat(
+    product.querySelector(".price span").innerText
+  );
+  const quantity = parseInt(
+    product.querySelector(".quantity input").value
+  );
+
+  // calculate subtotal
+  const subTotal = price * quantity;
+
+  // get the subtotal Element and assign it to the new total
+  const subtotalElement = product.querySelector(
+    ".subtotal span"
+  );
+  subtotalElement.innerText = subTotal;
+
+  console.log("The subtotal is ", subTotal);
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
-
   // ITERATION 2
-  //... your code goes here
+  // get all products
+  const allProducts =
+    document.getElementsByClassName(`product`);
+
+  // loop through each product and execute updatesubtotal function
+  for (let i = 0; i < allProducts.length; i++) {
+    const element = allProducts[i];
+    updateSubtotal(element);
+  }
 
   // ITERATION 3
   //... your code goes here
@@ -24,7 +45,7 @@ function calculateAll() {
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
+  console.log("The target in remove is:", target);
   //... your code goes here
 }
 
@@ -34,9 +55,13 @@ function createProduct() {
   //... your code goes here
 }
 
-window.addEventListener('load', () => {
-  const calculatePricesBtn = document.getElementById('calculate');
-  calculatePricesBtn.addEventListener('click', calculateAll);
+window.addEventListener("load", () => {
+  const calculatePricesBtn =
+    document.getElementById("calculate");
+  calculatePricesBtn.addEventListener(
+    "click",
+    calculateAll
+  );
 
   //... your code goes here
 });
