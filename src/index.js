@@ -1,7 +1,7 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
+  //console.log('Calculating subtotal, yey!');
 
   //... your code goes here
   const price = product.querySelector(`.price span`).innerText;
@@ -10,8 +10,6 @@ function updateSubtotal(product) {
   const quantityNumber = parseInt(quantity);
 
   const subtotal = priceNumber * quantityNumber;
-
-  console.log(subtotal);
 
   const subtotalElm = product.querySelector(".subtotal span");
 
@@ -46,7 +44,7 @@ function calculateAll() {
 // ITERATION 4
 
 function removeProduct(event) {
-  const target = event.currentTarget;
+  const target = event.target;
   console.log('The target in remove is:', target);
   //... your code goes here
   const rowToRemove = target.parentNode.parentNode;
@@ -59,6 +57,81 @@ function removeProduct(event) {
 
 function createProduct() {
   //... your code goes here
+  const parentBody = document.querySelector("tbody");
+
+  const productNameElm = document.querySelectorAll(".create-product input")[0];
+  const productPriceElm = document.querySelectorAll(".create-product input")[1];
+  let productName = productNameElm.value;
+  let productPrice = productPriceElm.value;
+  productPrice = parseFloat(productPrice);
+
+  //Creating elements
+
+  const productRow = document.createElement("tr");
+  productRow.setAttribute("class", "product");
+
+  //Create and append to the row the cell that contains the name of the product
+  const productNameCell = document.createElement("td");
+  productNameCell.setAttribute("class", "name");
+  
+  const productNameValue = document.createElement("span");
+  productNameValue.innerText = productName;
+
+  productNameCell.appendChild(productNameValue);
+  productRow.appendChild(productNameCell);
+  
+  //Create and append to the row the cell that contains the price of the product
+  const productPriceCell = document.createElement("td");
+  productPriceCell.setAttribute("class", "price");
+  productPriceCell.innerText = "$";
+  
+  const productPriceValue = document.createElement("span");
+  productPriceValue.innerText = productPrice;
+
+  productPriceCell.appendChild(productPriceValue);
+  productRow.appendChild(productPriceCell);
+  
+  //Create and append to the row the cell that contains the quantity of product
+  const productQuantityCell = document.createElement("td");
+  productQuantityCell.setAttribute("class", "quantity");
+  
+  const productQuantityInput = document.createElement("input");
+  productQuantityInput.setAttribute("type", "number");
+  productQuantityInput.setAttribute("value", "0");
+  productQuantityInput.setAttribute("min", "0");
+  productQuantityInput.setAttribute("placeholder", "Quantity");
+
+  productQuantityCell.appendChild(productQuantityInput);
+  productRow.appendChild(productQuantityCell);
+
+  //Create and append to the row the cell that contains the subtotal of the product
+  const productTotalCell = document.createElement("td");
+  productTotalCell.setAttribute("class", "subtotal");
+  productTotalCell.innerText = "$";
+  
+  const productTotalValue = document.createElement("span");
+  productTotalValue.innerText = "0";
+
+  productTotalCell.appendChild(productTotalValue);
+  productRow.appendChild(productTotalCell);
+  
+  //Create and append to the row the cell that contains the remove button of the product
+  const productBtnCell = document.createElement("td");
+  productBtnCell.setAttribute("class", "action");
+  
+  const productBtnValue = document.createElement("button");
+  productBtnValue.innerText = "Remove";
+  productBtnValue.setAttribute("class", "btn btn-remove");
+
+  productBtnCell.appendChild(productBtnValue);
+  productRow.appendChild(productBtnCell);
+
+  //Append the row to the body of the table
+  parentBody.appendChild(productRow);
+
+  productNameElm.value = "";
+  productPriceElm.value = 0;
+
 }
 
 window.addEventListener('load', () => {
@@ -66,11 +139,23 @@ window.addEventListener('load', () => {
   calculatePricesBtn.addEventListener('click', calculateAll);
 
   //... your code goes here
-  const removeBtnsCollection = document.getElementsByClassName("btn-remove");
-  const removeBtnsCollectionCopy = [...removeBtnsCollection];
+  //const removeBtnsCollection = document.getElementsByClassName("btn-remove");
+  //const removeBtnsCollectionCopy = [...removeBtnsCollection];
 
-  removeBtnsCollectionCopy.forEach((button) => {
-    button.addEventListener("click", removeProduct);
-  });
+  //For the page to work correctly, we used an event listener in the document to detect click on the remove buttons 
+  // removeBtnsCollectionCopy.forEach((button) => {
+  //   button.addEventListener("click", removeProduct);
+  // });
+
+  const creatProductBtn = document.getElementById("create");
+
+  creatProductBtn.addEventListener("click", createProduct);
+
 
 });
+
+document.addEventListener("click", (e) => {
+  if(e.target.className === "btn btn-remove") {
+    removeProduct(e);
+  }
+})
