@@ -49,8 +49,27 @@ function removeProduct(event) {
 
 // ITERATION 5
 
-function createProduct() {
-  //... your code goes here
+function createProduct(event) {
+  const inputs= document.querySelectorAll(".create-product td input");
+  //use default value if product name is not given
+  const productName = inputs[0].value || "Ironhack RUBBER Duck";
+  const unitPrice = inputs[1].value.toString();
+  parentNode = document.querySelector("#cart tbody");
+  const newRow = document.createElement("tr");
+  // node.cloneNode could have been used instead of copying the html code and then manipulate the child elements to update product name and price
+  newRow.innerHTML = `
+    <td class="name"><span>${productName}</span></td>
+    <td class="price">$<span>${unitPrice}</span></td>
+    <td class="quantity">
+      <input type="number" value="0" min="0" placeholder="Quantity" />
+    </td>
+    <td class="subtotal">$<span>0</span></td>
+    <td class="action">
+      <button class="btn btn-remove">Remove</button>
+    </td>`;
+  parentNode.appendChild(newRow);
+  // trigger load event to add Event Listeners to the new buttons
+  dispatchEvent(new Event("load"))
 }
 
 window.addEventListener('load', () => {
@@ -60,5 +79,7 @@ window.addEventListener('load', () => {
   for (button of removeButtons) {
     button.addEventListener("click", removeProduct)
   }
+  const addProduct = document.getElementById('create');
+  addProduct.addEventListener("click", createProduct);
   //... your code goes here
 });
