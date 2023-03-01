@@ -1,9 +1,16 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
+  const price = +product.querySelector('.price span').textContent;
+  const quantity = +product.querySelector('.quantity input').getAttribute('value');
+  const subtotalField = product.querySelector('.subtotal span');
+  //const quantity2 = product.querySelector('#editing-view-port div');
+  //const spin = product.querySelector('#spin');
 
-  //... your code goes here
+  const subtotal = price * quantity;
+  subtotalField.innerHTML = price * quantity;
+
+  return subtotal;
 }
 
 function calculateAll() {
