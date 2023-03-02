@@ -6,12 +6,16 @@ function updateSubtotal(product) {
   );
 
   // get price and quantity elements and assign them to variables
-  const price = parseFloat(
-    product.querySelector(".price span").innerText
-  );
-  const quantity = parseInt(
-    product.querySelector(".quantity input").value
-  );
+  const priceElement = product.querySelector(".price span");
+  const price = parseFloat(priceElement.innerText);
+  console.log("Price:", price);
+
+  const quantityElement = product.querySelector(".quantity input");
+  const quantity = parseInt(quantityElement.value);
+  console.log("Quantity:", quantity);
+
+  const subtotal = price * quantity;
+  console.log("Subtotal:", subtotal);
 
   // calculate subtotal
   const subTotal = price * quantity;
@@ -23,6 +27,7 @@ function updateSubtotal(product) {
   subtotalElement.innerText = subTotal;
 
   console.log("The subtotal is ", subTotal);
+  return subTotal
 }
 
 function calculateAll() {
@@ -32,14 +37,21 @@ function calculateAll() {
     document.getElementsByClassName(`product`);
 
   // loop through each product and execute updatesubtotal function
+  let totalPrice = 0;
   for (let i = 0; i < allProducts.length; i++) {
     const element = allProducts[i];
-    updateSubtotal(element);
+    const subtotal = updateSubtotal(element);
+   
+      totalPrice += subtotal;
+    }
+      // get HTML element of totalPrice 
+  const totalElement = document.querySelector(`#total-value span`)
+  totalElement.innerText = totalPrice
+
   }
 
-  // ITERATION 3
-  //... your code goes here
-}
+
+
 
 // ITERATION 4
 
@@ -52,7 +64,14 @@ function removeProduct(event) {
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  // get HTML element of the create button and store in variable
+  const createButton = document.getElementById(`create`);
+
+  // add eventlistener on click 
+  createButton.addEventListener(`click`, createProduct() => {
+    const newProductElement = document.querySelector(`.create product`);
+    const newProduct = newProductElement.value
+  })
 }
 
 window.addEventListener("load", () => {
