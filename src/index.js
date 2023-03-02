@@ -51,7 +51,7 @@ function removeProduct(event) {
 function createProduct() {
   //... your code goes here
 
-  console.log("creating a new product");
+  // console.log("creating a new product");
   // to make my life easier, I’ve added IDs to the inputs
   const productName = document.getElementById("name-input");
   const productPrice = document.getElementById("price-input");
@@ -59,25 +59,91 @@ function createProduct() {
   let product = document.createElement("tr");
   product.classList.add("product");
 
-  // I found it easier to keep an overview
-  // in minimizing the use of .innerHTML
-  // IRL this would be the moment I’d add _lodash.js
-
-  [
-    ["name", `<span>${productName.value}</span>`],
-    ["price", `<span>${productPrice.value}</span>`],
-    [
-      "quantity",
-      `<input type="number" value="0" min="0" placeholder="Quantity" />`,
-    ],
-    ["subtotal", `$<span>0</span>`],
-    ["action", `<button class="btn btn-remove">Remove</button>`],
-  ].forEach((item) => {
-    const td = document.createElement("td");
-    td.classList = item[0];
-    td.innerHTML = item[1];
-    product.appendChild(td);
-  });
+  // The template for the product is organized in an array.
+  // A new cell can be added just by adding to the array.
+  const cells = [
+    {
+      tag: "td",
+      classList: "name",
+      attributes: [],
+      innerHTML: "",
+      children: [
+        {
+          tag: "span",
+          classList: "",
+          attributes: [],
+          innerHTML: productName.value,
+          children: [],
+        },
+      ],
+    },
+    {
+      tag: "td",
+      classList: "price",
+      attributes: [],
+      innerHTML: "$",
+      children: [
+        {
+          tag: "span",
+          classList: "",
+          attributes: [],
+          innerHTML: productPrice.value,
+          children: [],
+        },
+      ],
+    },
+    {
+      tag: "td",
+      classList: "quantity",
+      attributes: [],
+      innerHTML: "",
+      children: [
+        {
+          tag: "input",
+          classList: "",
+          attributes: [
+            ["type", "number"],
+            ["value", "0"],
+            ["min", "0"],
+            ["placeholder", "Quantity"],
+          ],
+          innerHTML: "",
+          children: [],
+        },
+      ],
+    },
+    {
+      tag: "td",
+      classList: "subtotal",
+      attributes: [],
+      innerHTML: "$",
+      children: [
+        {
+          tag: "span",
+          classList: "",
+          attributes: [],
+          innerHTML: "0",
+          children: [],
+        },
+      ],
+    },
+    {
+      tag: "td",
+      classList: "action",
+      attributes: [],
+      innerHTML: "",
+      children: [
+        {
+          tag: "button",
+          classList: "btn btn-remove",
+          attributes: [],
+          innerHTML: "Remove",
+          children: [],
+        },
+      ],
+    },
+  ];
+  createComposedElement(product, cells);
 
   const btn = product.querySelector("button.btn-remove");
   btn.addEventListener("click", removeProduct);
@@ -85,6 +151,36 @@ function createProduct() {
   document.querySelector("#cart tbody").appendChild(product);
   productName.value = "";
   productPrice.value = 0;
+}
+
+function createComposedElement(parent, arr) {
+  // receives a parent HTML element
+  // creates recursively HTML elements from an array of objects
+  // adds the elements to the parent
+  // returns the parent
+
+  arr.forEach((ele) => {
+    const htmlElement = document.createElement(ele.tag);
+    console.log(htmlElement);
+
+    if (ele.attributes.length > 0) {
+      ele.attributes.forEach((attr) => {
+        htmlElement.setAttribute(attr[0], attr[1]);
+      });
+    }
+    if (ele.classList.length > 0) {
+      htmlElement.classList = ele.classList;
+    }
+    if (ele.innerHTML.length > 0) {
+      htmlElement.innerHTML = ele.innerHTML;
+    }
+    if (ele.children.length > 0) {
+      createHTMLelements(htmlElement, ele.children);
+    }
+    parent.appendChild(htmlElement);
+    console.log(parent, htmlElement);
+  });
+  return parent;
 }
 
 window.addEventListener("load", () => {
