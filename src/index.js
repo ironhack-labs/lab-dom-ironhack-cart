@@ -145,7 +145,9 @@ function createProduct() {
   ];
   createComposedElement(product, cells);
 
+  // Now we can select the remove button
   const btn = product.querySelector("button.btn-remove");
+  // and add an eventListener to it.
   btn.addEventListener("click", removeProduct);
 
   document.querySelector("#cart tbody").appendChild(product);
@@ -175,7 +177,10 @@ function createComposedElement(parent, arr) {
       htmlElement.innerHTML = ele.innerHTML;
     }
     if (ele.children.length > 0) {
-      createHTMLelements(htmlElement, ele.children);
+      // if the ele has children this funtion calls itself
+      // by passing htmlElement as parent
+      // and ele.children as array
+      createComposedElement(htmlElement, ele.children);
     }
     parent.appendChild(htmlElement);
     console.log(parent, htmlElement);
