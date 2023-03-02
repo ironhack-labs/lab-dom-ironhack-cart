@@ -4,6 +4,46 @@
 
 ![giphy (2)](https://user-images.githubusercontent.com/76580/167435963-34b5ddf0-e318-446a-b59f-2edeed3eb030.gif)
 
+<details>
+  <summary>
+   <h2>Learning Goals</h2>
+  </summary>
+
+  This exercise is designed to allow you practice and apply the concepts and techniques taught in class. 
+
+  Upon completion of this exercise, you will be able to:
+
+- Select HTML elements using DOM methods and properties
+  
+  > `querySelector()`, `querySelectorAll()`, `getElementsByClassName()`, `getElementById()`, `element.currentTarget`, `element.parentNode`
+
+- Access and modify *content of HTML elements* using HTML element properties
+  
+  > `element.textContent`, `element.innerHTML`
+
+- Add or remove *HTML elements* to the DOM using using Javascript DOM methods
+
+  > `document.createElement()`, `element.append()` , `element.appendChild()`, `element.removeChild()`
+
+- Add or remove *event listeners* to respond to user actions, such as button clicks
+
+  > `element.addEventListener()`, `element.removeEventListener()`
+
+- Pass functions as arguments to other functions (callbacks)
+
+- Iterate over *lists of HTML elements* and perform actions on each such as accessing values, adding or removing events, etc.
+
+- Access and modify properties, values and attributes of HTML elements
+
+  > `element.setAttribute()`, `element.getAttribute()`, `element.classList.add()`, `element.classList.remove()`, `classList`, `style`, `value`, `type`
+
+  <br>
+  <hr> 
+  
+  
+
+</details>
+
 ## Introduction
 
 E-commerce has proven to be a big game-changer in the 21st-century economy. As one of the largest sales channels, second only to physical retail, e-commerce [is expected](https://www.statista.com/statistics/379046/worldwide-retail-e-commerce-sales/) to be responsible for 6.3 trillion USD in worldwide sales by the year 2024.
