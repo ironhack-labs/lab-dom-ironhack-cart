@@ -2,7 +2,7 @@
 
 function updateSubtotal(product) {
   const price = +product.querySelector('.price span').textContent;
-  const quantity = +product.querySelector('.quantity input').getAttribute('value');
+  const quantity = +product.querySelector('.quantity input').value;
   const subtotalField = product.querySelector('.subtotal span');
   const subtotal = price * quantity;
   subtotalField.innerHTML = subtotal.toFixed(2);
@@ -26,17 +26,16 @@ function calculateAll() {
 // ITERATION 4
 function removeProduct(event) {
   const target = event.currentTarget;
-  target.closest(".product").remove();
+  target.closest('.product').remove();
   calculateAll();
 }
 
 // ITERATION 5
-
 function createProduct(event) {
   const target = event.currentTarget;
   const tbody = document.querySelector('tbody');
-  const productName = document.querySelector('.create-product input[type="text"]').getAttribute('value');
-  const productPrice = document.querySelector('.create-product input[type="number"]').getAttribute('value');
+  const productName = document.querySelector('.create-product input[type="text"]').value;
+  const productPrice = document.querySelector('.create-product input[type="number"]').value;
 
   let newProductRow = document.createElement('tr');
   newProductRow.className = 'product';
