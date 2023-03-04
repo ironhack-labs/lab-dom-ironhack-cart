@@ -29,10 +29,19 @@ function calculateAll() {
 // - create a const of the element (button) that was clicked
 // - remove the element with the .product class that is closest to the clicked button
 // - recalculate the sum
-function removeProduct(event) {
-  const target = event.currentTarget;
-  target.closest('.product').remove();
-  calculateAll();
+// function removeProduct(event) {
+//   const target = event.currentTarget;
+//   target.closest('.product').remove();
+//   calculateAll();
+// }
+
+// - make an array of all remove buttons
+// - add an event listener to click on each button
+function removeBtns() {
+  const removeProductBtns = document.getElementsByClassName("btn-remove");
+  for (let i=0; i < removeProductBtns.length; i++) {
+    removeProductBtns[i].addEventListener('click', removeProduct);
+  }
 }
 
 // ITERATION 5
@@ -42,14 +51,17 @@ function removeProduct(event) {
 function createProduct(event) {
   const target = event.currentTarget;
   const tbody = document.querySelector('tbody');
-  const productName = document.querySelector('.create-product input[type="text"]').value;
-  const productPrice = document.querySelector('.create-product input[type="number"]').value;
+  let productName = document.querySelector('.create-product input[type="text"]').value;
+  let productPrice = document.querySelector('.create-product input[type="number"]').value;
 
   let newProductRow = document.createElement('tr');
   newProductRow.className = 'product';
   newProductRow.innerHTML = '<td class="name"><span>' + productName + '</span></td><td class="price">$<span>' + productPrice + '</span></td><td class="quantity"><input type="number" value="0" min="0" placeholder="Quantity"></td><td class="subtotal">$<span>0</span></td><td class="action"><button class="btn btn-remove">Remove</button></td>';
 
   tbody.appendChild(newProductRow);
+
+  removeBtns();
+  //tbody.lastChild.querySelector('.btn-remove').addEventListener('click', removeProduct);
 }
 
 // EVENT LISTENERS
@@ -60,10 +72,7 @@ window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  const removeProductBtns = document.getElementsByClassName("btn-remove");
-  for (let i=0; i < removeProductBtns.length; i++) {
-    removeProductBtns[i].addEventListener('click', removeProduct);
-  }
+  removeBtns();
 
   const createProductBtn = document.getElementById("create");
   createProductBtn.addEventListener('click', createProduct);
