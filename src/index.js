@@ -35,32 +35,27 @@ function removeProduct(event) {
   calculateAll();
 }
 
-// - make an array of all remove buttons
-// - add an event listener to click on each button
-function removeBtns() {
-  const removeProductBtns = document.getElementsByClassName("btn-remove");
-  for (let i=0; i < removeProductBtns.length; i++) {
-    removeProductBtns[i].addEventListener('click', removeProduct);
-  }
-}
 
 // ITERATION 5
 // - get the name and price for the new product
 // - create the HTML for the new product, inserting the name and price
 // - add this HTML to the end of the table body
+// - add an event listener to the remove button of that new product
 function createProduct(event) {
   const target = event.currentTarget;
   const tbody = document.querySelector('tbody');
-  let productName = document.querySelector('.create-product input[type="text"]').value;
-  let productPrice = document.querySelector('.create-product input[type="number"]').value;
+  let productName = document.querySelector('.create-product input[type="text"]');     // good to know: in a real world project you would have to prevent XSS attacks here
+  let productPrice = document.querySelector('.create-product input[type="number"]');
 
   let newProductRow = document.createElement('tr');
   newProductRow.className = 'product';
-  newProductRow.innerHTML = '<td class="name"><span>' + productName + '</span></td><td class="price">$<span>' + productPrice + '</span></td><td class="quantity"><input type="number" value="0" min="0" placeholder="Quantity"></td><td class="subtotal">$<span>0</span></td><td class="action"><button class="btn btn-remove">Remove</button></td>';
+  newProductRow.innerHTML = '<td class="name"><span>' + productName.value + '</span></td><td class="price">$<span>' + productPrice.value + '</span></td><td class="quantity"><input type="number" value="0" min="0" placeholder="Quantity"></td><td class="subtotal">$<span>0</span></td><td class="action"><button class="btn btn-remove">Remove</button></td>';
   tbody.appendChild(newProductRow);
+  tbody.lastChild.querySelector('.btn-remove').addEventListener('click', removeProduct);
 
-  removeBtns()
-  //alternative: tbody.lastChild.querySelector('.btn-remove').addEventListener('click', removeProduct);
+  // clear product name and product price
+  productName.value = "";
+  productPrice.value = "";
 }
 
 // EVENT LISTENERS
@@ -71,7 +66,12 @@ window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  removeBtns()
+  // - make an array of all remove buttons
+  // - add an event listener to click on each button
+  const removeProductBtns = document.getElementsByClassName("btn-remove");
+  for (let i=0; i < removeProductBtns.length; i++) {
+    removeProductBtns[i].addEventListener('click', removeProduct);
+  }
 
   const createProductBtn = document.getElementById("create");
   createProductBtn.addEventListener('click', createProduct);
