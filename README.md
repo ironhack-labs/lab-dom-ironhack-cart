@@ -64,9 +64,9 @@ In this lab, we will be building the **IronCart**, a shopping cart for the unoff
 - Upon completion, run the following commands:
 
 ```bash
-$ git add .
-$ git commit -m "Solved lab"
-$ git push origin master
+git add .
+git commit -m "Solved lab"
+git push origin master
 ```
 
 - Create a Pull Request so that your TAs can check your work.
