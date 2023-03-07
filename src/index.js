@@ -15,29 +15,57 @@ function calculateAll() {
   //const singleProduct = document.querySelector(".product");
   //updateSubtotal(singleProduct);
   // ITERATION 2
+  let total = 0;
   const products = document.querySelectorAll(".product");
   products.forEach((product) => {
-    updateSubtotal(product);
+    total += updateSubtotal(product);
   });
   // ITERATION 3
+  document.querySelector("#total-value span").innerHTML = total;
 }
 
 // ITERATION 4
-
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log("The target in remove is:", target);
-  //... your code goes here
+  document.querySelector("tbody").removeChild(target.parentNode.parentNode);
+  calculateAll();
 }
 
 // ITERATION 5
-
 function createProduct() {
-  //... your code goes here
+  const nameElement = document.querySelector(".create-product .name input");
+  const priceElement = document.querySelector(".create-product .price input");
+
+  //Clone product element based on template and update the clone
+  const template = document.querySelector("#productrow");
+  const cloneProductElement = template.content.cloneNode(true);
+
+  cloneProductElement.querySelector(".price span").innerHTML = (
+    !isNaN(priceElement.value) ? Number(priceElement.value) : 0
+  ).toFixed(2);
+  cloneProductElement.querySelector(".name span").innerHTML = nameElement.value;
+  cloneProductElement
+    .querySelector(".action .btn-remove")
+    .addEventListener("click", removeProduct);
+
+  document
+    .querySelector("tbody")
+    .appendChild(cloneProductElement)
+    .addEventListener("click", removeProduct);
+
+  //Clear inputs fields
+  nameElement.value = "";
+  priceElement.value = "";
 }
 
 window.addEventListener("load", () => {
-  const calculatePricesBtn = document.getElementById("calculate");
+  calculateAll();
+  const calculatePricesBtn = document.querySelector("#calculate");
   calculatePricesBtn.addEventListener("click", calculateAll);
-  //... your code goes here
+  const removeBtns = document.querySelectorAll(".action .btn-remove");
+  removeBtns.forEach(function (btn) {
+    btn.addEventListener("click", removeProduct);
+  });
+  const createBtn = document.querySelector("#create");
+  createBtn.addEventListener("click", createProduct);
 });
