@@ -9,7 +9,7 @@
    <h2>Learning Goals</h2>
   </summary>
 
-  This exercise is designed to allow you practice and apply the concepts and techniques taught in class. 
+   This exercise allows you to practice and apply the concepts and techniques taught in class. 
 
   Upon completion of this exercise, you will be able to:
 
@@ -21,7 +21,7 @@
   
   > `element.textContent`, `element.innerHTML`
 
-- Add or remove *HTML elements* to the DOM using using Javascript DOM methods
+- Add or remove *HTML elements* to the DOM using Javascript DOM methods
 
   > `document.createElement()`, `element.append()` , `element.appendChild()`, `element.removeChild()`
 
@@ -31,7 +31,7 @@
 
 - Pass functions as arguments to other functions (callbacks)
 
-- Iterate over *lists of HTML elements* and perform actions on each such as accessing values, adding or removing events, etc.
+- Iterate over *lists of HTML elements* and perform actions on each, such as accessing values, adding or removing events, etc.
 
 - Access and modify properties, values and attributes of HTML elements
 
@@ -48,11 +48,11 @@
 
 E-commerce has proven to be a big game-changer in the 21st-century economy. As one of the largest sales channels, second only to physical retail, e-commerce [is expected](https://www.statista.com/statistics/379046/worldwide-retail-e-commerce-sales/) to be responsible for 6.3 trillion USD in worldwide sales by the year 2024.
 
-E-commerce is a highly competitive business, and building a positive user experience is crucial to retaining customers and improving conversions. It is not uncommon for companies to make a significant investment in optimizing the purchase flow on their e-commerce platforms.
+E-commerce is a highly competitive business, and building a positive user experience is crucial to retaining customers and improving conversions. As a result, it is common for companies to make a significant investment in optimizing the purchase flow on their e-commerce platforms.
 
 One of the most significant components of this experience is **the shopping cart**.
 
-In this lab, we will be building the **IronCart**, a shopping cart for the unofficial Ironhack merchandising store. Visitors should be able to add and remove products from the shopping cart and modify the number (quantity) of items that they want to purchase. Additionally, users should be able to see the subtotal and total price for the items they have added.
+In this lab, we will be building the **IronCart**, a shopping cart for the unofficial Ironhack merchandising store. Visitors should be able to add and remove products from the shopping cart and modify the number (quantity) of items they want to purchase. Additionally, users should be able to see the subtotal and total prices for the items they have added.
 
 ## Requirements
 
@@ -133,7 +133,7 @@ The product has a **price** and **quantity** (where quantity represents how many
 
 Your goal is to calculate the subtotal price, but let's approach it gradually. Let's break it down into a couple of steps:
 
-- **Step 0**: In this step, our goal is to help you understand the provided code in the `src/index.js`. Thanks to the provided code, the `Calculate Prices` button already has some functionality. Using the DOM manipulation, we got the element with the `id="calculate"` and added an event listener `click` to it. When clicked, this button will fire the `calculateAll()` function. The following code snippet does exactly what we explained:
+- **Step 0**: In this step, our goal is to help you understand the provided code in the `src/index.js`. Thanks to the provided code, the `Calculate Prices` button already has some functionality. Using the DOM manipulation, we got the element with the `id="calculate"` and added an event listener `click` to it. This button will fire the `calculateAll()` function when clicked. The following code snippet does exactly what we explained:
 
 ```javascript
 // src/index.js
@@ -146,7 +146,7 @@ window.addEventListener('load', () => {
 
 Don't get confused with [.addEventListener()](https://www.w3schools.com/jsref/met_document_addeventlistener.asp) method, it does exactly the same as [onclick()](https://www.w3schools.com/tags/ev_onclick.asp), with some differences about which you can find more [here](https://stackoverflow.com/questions/6348494/addeventlistener-vs-onclick). In this lab, you can use whichever method you prefer.
 
-Ok, let's move to the `calculateAll()` function. In this function, we used `querySelector` to get the first (and currently the only) DOM element with the class `product`. This element (which we saved in the variable named `singleProduct`) is passed as an argument to the `updateSubtotal()` function. As you can find in the comments, the provided code snippet is used only for testing purposes within iteration 1.
+Ok, let's move to the `calculateAll()` function. We used `querySelector` in this function to get the first (and currently the only) DOM element with the class `product`. This element (which we saved in the variable named `singleProduct`) is passed as an argument to the `updateSubtotal()` function. As you can find in the comments, the provided code snippet is used only for testing purposes within iteration 1.
 
 ```js
 function calculateAll() {
@@ -163,7 +163,7 @@ function calculateAll() {
 }
 ```
 
-And finally, we started the `updateSubtotal(product)` function. For now, the only thing this function is doing is alerting `Calculate Prices clicked!` when the _Calculate Prices_ button is clicked.
+And finally, we started the `updateSubtotal(product)` function. For now, this function is only alerting `Calculate Prices clicked!` when the _Calculate Prices_ button is clicked.
 
 <br>
 
@@ -201,7 +201,7 @@ function updateSubtotal(product) {
 }
 ```
 
-:bulb: _Hint_: Make sure your `calculateAll()` function has the testing code we previously mentioned. If the code is in its place after you successfully finished the `updateSubtotal()` function, you should be able to see the corresponding updates in the `Subtotal` field in the table.
+:bulb: _Hint_: Make sure your `calculateAll()` function has the testing code we previously mentioned. If the code is in its place after you successfully finish the `updateSubtotal()` function, you should see the corresponding updates in the `Subtotal` field in the table.
 
 Check [here](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_30b87c596b79954f63b3482d2f320fe4.gif) the expected output.
 
@@ -253,7 +253,7 @@ Lastly, display that value on your DOM.
 
 Users should be able to remove products from their carts. For that purpose, every product row in our table has a "Remove" button at the end.
 
-But let's try to solve our problem one bit at a time. Inside of the existing function you're passing to `window.addEventListener()`, start with querying the document for all "Remove" buttons, loop through them, and add a `click` event listener to each, passing a named function `removeProduct` as the callback argument. If you need a hint on how to do this, just take a look at how we did it by adding an event listener on the `calculatePricesBtn`.
+But let's try to solve our problem one bit at a time. Inside of the existing function you're passing to `window.addEventListener()`, start with querying the document for all "Remove" buttons, loop through them, and add a `click` event listener to each, passing a named function `removeProduct` as the callback argument. If you need a hint on how to do this, look at how we did it by adding an event listener on the `calculatePricesBtn`.
 
 We already declared `removeProduct(event)` and added some starter code. After you are done with querying the remove buttons and adding the `click` event listener on them, open the console and click on any `Remove` button.
 
@@ -261,7 +261,7 @@ As we can see, `removeProduct(event)` expects the event as a single argument, an
 
 :bulb: Tip: To access the element an event was fired on, you can reference `event.currentTarget`. To remove a node from the DOM, you need to access its parent node and call [`removeChild`](https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild) on it. You can access the parent of a DOM node from its property `parentNode`.
 
-Make sure the price gets updated accordingly when you remove products from the shopping cart.
+Ensure the price is updated when you remove products from the shopping cart.
 
 Click [here](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_17b1e9e4d2606239163dddbc5b2a3d9f.gif) to see the expected result.
 
@@ -269,7 +269,7 @@ Click [here](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_17b1
 
 ### Iteration 5: Creating new products
 
-To finish it off, we will allow the user to add a custom product to their cart.
+To finish it off, we will allow users to add a custom product to their cart.
 
 Uncomment the `tfoot` element and its children from the `index.html` file:
 
@@ -298,13 +298,13 @@ Uncomment the `tfoot` element and its children from the `index.html` file:
 
 ![](https://i.imgur.com/J8aserm.png)
 
-The two inputs inside of `tfoot` represent the name of the new product and the unit price, respectively. The "Create Product" button should add a new product to the cart when triggered.
+The two inputs inside of `tfoot` represent the new product's name and the unit price, respectively. When triggered, the "Create Product" button should add a new product to the cart.
 
 Add a `click` event handler to the "Create Product" that will take a function named `createProduct` as a callback.
 
-In `createProduct` you should target the name and unit price input DOM nodes, extract their values, add a new row to the table with the product name and unitary price, as well as the quantity input and "Remove" button, and ensure that all of the functionality works as expected.
+In `createProduct`, you should target the name and unit price input DOM nodes, extract their values, add a new row to the table with the product name and unitary price, as well as the quantity input and "Remove" button, and ensure that all of the functionality works as expected.
 
-Remember, the new product should look undistinguished and behave like any of the products previously included in the cart. As such, one should be able to calculate its subtotal when the "Calculate All" button is clicked, and remove the product.
+Remember, the new product should look undistinguished and behave like any of the products previously included in the cart. As such, one should be able to calculate its subtotal when the "Calculate All" button is clicked and remove the product.
 
 When the product creation is finalized, please, clear the input fields in the creation form.
 
@@ -324,10 +324,10 @@ Click [here](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_00ab
   <br>
 
 
-  If you are stuck in your code and don't know how to solve the problem or where to start, you should take a step back and try to form a clear question about the specific issue you are facing. This will help you narrow down the problem and come up with potential solutions.
+  If you are stuck in your code and don't know how to solve the problem or where to start, you should take a step back and try to form a clear question about the specific issue you are facing. This will help you narrow down the problem and develop potential solutions.
 
 
-  For example, is it a concept that you don't understand, or are you receiving an error message that you don't know how to fix? It is usually helpful to try to state the problem as clearly as possible, including any error messages you are receiving. This can help you communicate the issue to others and potentially get help from classmates or online resources. 
+  For example, is it a concept you don't understand, or are you receiving an error message you don't know how to fix? It is usually helpful to try to state the problem as clearly as possible, including any error messages you are receiving. This can help you communicate the issue to others and potentially get help from classmates or online resources. 
 
   Once you have a clear understanding of the problem, you will be able to start working toward the solution.
 
@@ -339,7 +339,7 @@ Click [here](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_00ab
   <br>
 
 
-  The `forEach()` method executes a provided function once for each array element. It does not return a new array, but rather executes the function on each element in the array.
+  The `forEach()` method executes a provided function once for each array element. It does not return a new array but rather executes the function on each element in the array.
 
   The syntax of the `forEach()` method is as follows:
 
@@ -424,7 +424,7 @@ Click [here](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_00ab
   <summary>I keep getting the <code>NaN</code> result in my program. How can I fix it?</summary>
   <br>
 
-  In JavaScript, `NaN` stands for "Not a Number," and it is a special value that represents a problem with a numerical operation or a failed type of coercion. There are several reasons why you might get `NaN` as a result in your JavaScript code:
+  In JavaScript, `NaN` stands for "Not a Number". It is a special value that represents a problem with a numerical operation or a failed type of coercion. There are several reasons why you might get `NaN` as a result in your JavaScript code:
 
 
 
@@ -488,7 +488,7 @@ Click [here](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_00ab
   <summary>How do I add an event listener?</summary>
   <br>
 
-  To add an event listener, use the `addEventListener()` method. This method takes two arguments: the *event type* and the *event handler function* that will be called when the event occurs.
+  Use the `addEventListener()` method to add an event listener. This method takes two arguments: the *event type* and the *event handler function* that will be called when the event occurs.
 
   Here's an example of how to add a *click* event listener to a button element:
 
@@ -514,7 +514,7 @@ Click [here](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_00ab
   <summary>How do I remove an event listener?</summary>
   <br>
 
-  To remove an event listener, use the `removeEventListener()` method. This method takes two arguments: the *event type* and the *event handler function* that was originally assigned when adding the event listener.
+  Use the `removeEventListener()` method to remove an event listener. This method takes two arguments: the *event type* and the *event handler function* that was originally assigned when adding the event listener.
 
   For example, let's say you have added the following event listener:
 
@@ -559,29 +559,23 @@ Click [here](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_00ab
   <summary>I am unable to push changes to the repository. What should I do?</summary>
   <br>
 
+There are a couple of possible reasons why you may be unable to *push* changes to a Git repository:
 
-  There are a couple of possible reasons why you may be unable to *push* changes to a Git repository:
+1. **You have not committed your changes:** Before you can push your changes to the repository, you need to commit them using the `git commit` command. Make sure you have committed your changes and try pushing again. To do this, run the following terminal commands from the project folder:
+  ```bash
+  git add .
+  git commit -m "Your commit message"
+  git push
+  ```
+2. **You do not have permission to push to the repository:** If you have cloned the repository directly from the main Ironhack repository without making a *Fork* first, you do not have write access to the repository.
+To check which remote repository you have cloned, run the following terminal command from the project folder:
+  ```bash
+  git remote -v
+  ```
+If the link shown is the same as the main Ironhack repository, you will need to fork the repository to your GitHub account first and then clone your fork to your local machine to be able to push the changes.
 
-  1. **You have not committed your changes:** Before you can push your changes to the repository, you need to commit them using the `git commit` command. Make sure you have committed your changes and try pushing again. To do this, run the following terminal commands from the project folder:
-
-   ```bash
-   git add .
-   git commit -m "Your commit message"
-   git push
-   ```
-
-  2. **You do not have permission to push to the repository:** If you have cloned the repository directly from the main Ironhack repository without making a *Fork* first, you do not have write access to the repository.
-   To check which remote repository you have cloned, run the following terminal command from the project folder:
-
-   ```bash
-   git remote -v
-   ```
-
-  If the link shown is the same as the main Ironhack repository, you will need to fork the repository to your GitHub account first, and then clone your fork to your local machine to be able to push the changes.
-
-  Note: You may want to make a copy of the code you have locally, to avoid losing it in the process.
+**Note**: You should make a copy of your local code to avoid losing it in the process.
 
   [Back to top](#faqs)
-  
-</details>
 
+</details>
