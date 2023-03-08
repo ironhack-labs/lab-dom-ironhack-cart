@@ -45,6 +45,45 @@ function createProduct() {
     '[placeholder="Product Price"]'
   ).value;
   console.log("Product created");
+
+  const product = `
+  <tr class="product">
+          <td class="name">
+            <span>${productName}</span>
+          </td>
+          <td class="price">$<span>${productPrice}</span></td>
+          <td class="quantity">
+            <input type="number" value="0" min="0" placeholder="Quantity" />
+          </td>
+          <td class="subtotal">$<span>0</span></td>
+          <td class="action">
+            <button class="btn btn-remove">Remove</button>
+          </td>
+        </tr>
+  
+  `;
+  let newTr = document.createElement(`tr`);
+  newTr.setAttribute("class", "product");
+  newTr.innerHTML = product;
+  let table = document.getElementsByTagName("tbody")[0];
+  table.appendChild(newTr);
+  eventListener();
+}
+
+function eventListener() {
+  const calculatePricesBtn = document.getElementById("calculate");
+  calculatePricesBtn.addEventListener("click", calculateAll);
+
+  //... your code goes here
+  const removeBtn = document.getElementsByClassName("action");
+  for (let i = 0; i < removeBtn.length; i++) {
+    removeBtn[i].addEventListener("click", removeProduct);
+    removeBtn[i].addEventListener("click", calculateAll);
+  }
+
+  //create button
+  const createBtn = document.getElementById("create");
+  createBtn.addEventListener("click", createProduct);
 }
 
 window.addEventListener("load", () => {
