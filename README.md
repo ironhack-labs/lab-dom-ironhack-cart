@@ -141,7 +141,9 @@ function updateSubtotal(product) {
   const price = product.querySelector('.price span');
   // ... your code goes here
 }
+
 ```
+
 
 - **Step 2**: Now, when you got the above-mentioned DOM elements, your next step should be extracting the specific values from them. _Hint_: maybe `innerHTML` rings a bell? In case you are curious to find other ways to achieve the same result, you can start by checking [`textContent`](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent) and [`innerText`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText) on Google. Additionally, you can extract the value from an input by accessing an [the input element's `value` property](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#htmlattrdefvalue). However, don't get distracted here, let this be your _additional reading_ when you complete the lab.
 
