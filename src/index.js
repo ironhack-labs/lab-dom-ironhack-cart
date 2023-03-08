@@ -18,14 +18,18 @@ function calculateAll() {
 
   // ITERATION 2
   //... your code goes here
+  let count = 0;
   const allSubtotal = document.querySelectorAll(".product");
   allSubtotal.forEach(element => {
-    updateSubtotal(element);
+       count += updateSubtotal(element);
   });
   // ITERATION 3
   //... your code goes here
   
- const total = product.querySelector('#total-value span')
+ document.querySelector('#total-value span').innerText = count;
+
+ return count;
+ 
 }
 
 // ITERATION 4
