@@ -18,17 +18,17 @@ function calculateAll() {
 
   // ITERATION 2
   //... your code goes here
-  let count = 0;
+  let calculatePriceTotal = 0;
   const allSubtotal = document.querySelectorAll(".product");
   allSubtotal.forEach(element => {
-       count += updateSubtotal(element);
+    calculatePriceTotal += updateSubtotal(element);
   });
   // ITERATION 3
   //... your code goes here
   
- document.querySelector('#total-value span').innerText = count;
+ document.querySelector('#total-value span').innerText = calculatePriceTotal;
 
- return count;
+ return calculatePriceTotal;
  
 }
 
@@ -38,6 +38,12 @@ function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
   //... your code goes here
+  const btnRemove = document.querySelectorAll(".btn-remove");
+  btnRemove.addEventListener("click",()=>{
+    btnRemove.removeChild(target.parentNode.parentNode)
+  })
+  
+
 }
 
 // ITERATION 5
