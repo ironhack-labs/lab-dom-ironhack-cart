@@ -27,7 +27,6 @@ function calculateAll() {
   // ITERATION 3
   const total = document.querySelector("#total-value span");
   total.innerHTML = subtotalSum.toFixed(2);
-  return subtotalSum;
 }
 
 // ITERATION 4
@@ -35,7 +34,8 @@ function calculateAll() {
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log("The target in remove is:", target);
-  //... your code goes here
+  const targetParent = target.parentNode;
+  targetParent.parentNode.removeChild(targetParent);
 }
 
 // ITERATION 5
@@ -48,5 +48,9 @@ window.addEventListener("load", () => {
   const calculatePricesBtn = document.getElementById("calculate");
   calculatePricesBtn.addEventListener("click", calculateAll);
 
-  //... your code goes here
+  const removeButtons = document.getElementsByClassName("action");
+  for (let i = 0; i < removeButtons.length; i++) {
+    removeButtons[i].addEventListener("click", removeProduct);
+    removeButtons[i].addEventListener("click", calculateAll);
+  }
 });
