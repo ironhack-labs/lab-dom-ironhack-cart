@@ -2,7 +2,6 @@ function updateSubtotal(product) {
   console.log("Calculating subtotal, yey!");
 
   // ITERATION 1
-  //... your code goes here
 
   const price = product.querySelector(".price span").innerHTML;
   const quantity = product.querySelector(".quantity input").value;
@@ -13,16 +12,14 @@ function updateSubtotal(product) {
   subtotal.innerHTML = subtotalPrice;
 }
 
-function calculateAll() {  
+function calculateAll() {
   // code in the following two lines is added just for testing purposes.
   // it runs when only iteration 1 is completed. at a later point, it can be removed.
-  const singleProduct = document.querySelector(".product");
-  updateSubtotal(singleProduct);
+  // const singleProduct = document.querySelector(".product");
+  // updateSubtotal(singleProduct);
   // end of the test
 
-
   // ITERATION 2
-  //... your code goes here
 
   const allProducts = document.getElementsByClassName("product");
 
@@ -31,7 +28,6 @@ function calculateAll() {
   }
 
   // ITERATION 3
-  //... your code goes here
 
   const totalPrice = document.querySelector("#total-value span");
 
@@ -48,7 +44,14 @@ function calculateAll() {
 
 // ITERATION 4
 
-function removeProduct(event) {}
+function removeProduct(event) {
+  const target = event.currentTarget;
+  const childTarget = target.parentNode.parentNode;
+  const parentTarget = childTarget.parentNode;
+  parentTarget.removeChild(childTarget);
+
+  calculateAll();
+}
 
 // ITERATION 5
 
@@ -63,5 +66,20 @@ function createProduct() {
 window.addEventListener("load", () => {
   const calculatePricesBtn = document.getElementById("calculate");
   calculatePricesBtn.addEventListener("click", calculateAll);
-  //... your code goes here
+
+  const removeBtn = document.querySelectorAll(".btn-remove");
+
+  for (let i = 0; i < removeBtn.length; i++) {
+    removeBtn[i].addEventListener("click", removeProduct);
+  }
 });
+// la iteración 4 es como la primera, en la función tienes que eliminar solo una fila. entonces el evento está pensado para que sea un botón
+// tienes que después ir subiendo hasta llegar a la tabla, y una vez tengas la tabla seleccionada, utiliza removeChild para borrar la fila en concreto
+
+// entonces tienes que subir hasta llegar al tbody
+// y ya al tbody le eliminas un hijo que es la fila donde está el botón Remove que se ha pulsado
+// antes te he dicho que en la siguiente iteración se añade el eventListener y no, me he liado jeje tienes que hacer el loop dentro del window.addEventListener que está al final
+
+// dentro del window.addEventListener tienes que hacer el eventListener para borrar y crear el producto
+
+// Cuando pulsas el boton, ya JS sabe qué botón es, por lo tanto al ir subiendo vas a llegar a un punto donde tendrás la fila en concreto que tienes que borrar, por lo tanto no te preocupes por saber que hijo en concreto es porque ya JS lo sabex
