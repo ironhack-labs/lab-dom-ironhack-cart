@@ -34,8 +34,9 @@ function calculateAll() {
 function removeProduct(event) {
   const target = event.currentTarget;
 
-  const singleProduct = document.querySelector(".product");
-  singleProduct.parentNode.removeChild(singleProduct);
+  // const singleProduct = document.querySelector(".product");
+  // singleProduct.parentNode.removeChild(singleProduct);
+  target.parentElement.parentElement.remove();
 
   console.log("The target in remove is:", target);
 }
@@ -46,13 +47,13 @@ function createProduct() {
   //... your code goes here
 }
 
-window.addEventListener("load", () => {
+window.addEventListener("load", () => { // para crear el evento del click al que yo le puedo asignar 
   const calculatePricesBtn = document.getElementById("calculate");
   calculatePricesBtn.addEventListener("click", calculateAll);
 
   const removeBtn = document.querySelectorAll(".btn-remove");
   removeBtn.forEach((button) => {
-    button.addEventListener("click", removeProduct); // no entiendo muy bien .addEventListener
+    button.addEventListener("click", removeProduct); 
   });
 
   const createProductBtn = document.querySelector("#create");
