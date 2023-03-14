@@ -52,7 +52,8 @@ document.querySelector('#total-value span').innerText=totalPrice
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
-  //... your code goes here
+  target.closest(".product").remove();
+  calculateAll();
 }
 
 // ITERATION 5
@@ -64,6 +65,11 @@ function createProduct() {
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
-
   //... your code goes here
-});
+
+  const removeProductBtn = document.querySelectorAll('.btn-remove');
+  [...removeProductBtn].forEach(btn => {
+    btn.addEventListener("click", removeProduct)
+  })
+
+})
