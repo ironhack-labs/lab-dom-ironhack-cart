@@ -27,36 +27,22 @@ function updateSubtotal(product) {
 
 function calculateAll() {
   
-  // ITERATION 2
+// ITERATION 2 + ITERATION 3
 
   let products = document.getElementsByClassName('product');
   let subtotal = 0; 
 
   for (let i = 0; i < products.length; i++) {
     subtotal = subtotal + updateSubtotal(products[i]);
-  }
-
-  // ITERATION 3
-
-  // Make array with subtotals
-
-  let allSubtotals = document.getElementsByClassName('subtotal');
-  console.log(allSubtotals);
-
-  // Sum Subtotals 
-
-  let sumSubtotal = 0;
-
-  for (let i = 0; i < allSubtotals.length; i++) {
-    sumSubtotal = sumSubtotal + updateSubtotal(Number(allSubtotals[i]));
+    console.log(subtotal);
+  
+//ITERATION 3 Put value to right place: 
     
-    console.log(sumSubtotal);
-
-    // Store result at right place
-    sumSubtotal = document.getElementsByIdName('total-value');
-    console.log(allSubtotal.length);
+  document.getElementById('total-value').innerText = subtotal
   }
-}
+  }
+
+
 
 
 
