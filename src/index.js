@@ -43,16 +43,44 @@ function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
   //... your code goes here
-  let removeBtns = document.querySelectorAll(".btn btn-remove");
-  removeBtns.forEach((btn) => {
-    addEventListener("click", removeProduct);
-  })
+  const removeProduct = document.querySelector(".product");
+  removeProduct.parentNode.removeChild(removeProduct);
+  console.log(removeProduct)
+
+  let total = document.querySelector("#total-value span");
+  let removedValue = removeProduct.querySelector(".subtotal span");
+
+  const newTotal = total.innerText - removedValue.innerText;
+
+  document.querySelector("#total-value span").innerText = `${newTotal}`;
 }
 
 // ITERATION 5
 
 function createProduct() {
   //... your code goes here
+  const products = document.querySelector(".create-product");
+  const productBody = document.querySelector(".product");
+  let name = products.querySelector(".product-name input");
+  let price = products.querySelector(".product-price input");
+  
+  let newProduct = products.createElement(
+  productBody.innerHTML += `
+    <tr class="product">
+    <td class="name">
+    <span>${name.value}</span>
+  </td>
+  <td class="price">$<span>${price.value}</span></td>
+  <td class="quantity">
+    <input type="number" value="0" min="0" placeholder="Quantity" />
+  </td>
+  <td class="subtotal">$<span>0</span></td>
+  <td class="action">
+    <button class="btn btn-remove">Remove</button>
+  </td>
+  </tr>`
+  );
+  document.body.table.tbody.appendChild(newProduct);
 }
 
 window.addEventListener('load', () => {
@@ -60,4 +88,11 @@ window.addEventListener('load', () => {
   calculatePricesBtn.addEventListener('click', calculateAll);
 
   //... your code goes here
+  const removeBtns = document.querySelectorAll(".btn-remove");
+  removeBtns.forEach((btn) => {
+    btn.addEventListener("click", removeProduct);
+  })
+
+  const createProductBtn = document.querySelector("#create");
+  createProductBtn.addEventListener("click", createProduct);
 });
