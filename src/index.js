@@ -1,10 +1,9 @@
 // ITERATION 1
-
 function updateSubtotal(product) {
 
   // recieve values
   const price = product.querySelector(".price span");
-  const quantity = product.querySelector(".quantity input[type=number]");
+  const quantity = product.querySelector(".quantity input");
 
   // calculate 
   const subtotal = price.innerText * quantity.value;
@@ -24,8 +23,6 @@ function calculateAll() {
   // ITERATION 2
   let total = 0;
   const products = document.getElementsByClassName('product');
-  console.log( products[0] )
-  console.log( products[1] )
   // Array.from(products).forEach( product => updateSubtotal(product) )
   for ( oneProduct of products ) total += updateSubtotal( oneProduct )
 
@@ -34,22 +31,29 @@ function calculateAll() {
 }
 
 // ITERATION 4
-
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+
+  // to make it easier to read, just create a variable that targets the row
+  const targetRow = event.currentTarget.parentNode.parentNode;
+
+  // and then to get the parent of it, do row.parentNode, and then you can removeChild
+  targetRow.parentNode.removeChild( targetRow );
+  
+  calculateAll();
 }
 
 // ITERATION 5
-
 function createProduct() {
   //... your code goes here
 }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
-  calculatePricesBtn.addEventListener('click', calculateAll);
+  calculatePricesBtn.addEventListener( 'click', calculateAll );
+
+  const removeButtons = document.getElementsByClassName('btn-remove');
+  for ( oneButton of removeButtons ) oneButton.addEventListener( 'click', removeProduct )
 
   //... your code goes here
 });
