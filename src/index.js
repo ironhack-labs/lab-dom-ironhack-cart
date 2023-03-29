@@ -31,7 +31,6 @@ function calculateAll() {
     totalPrice += updateSubtotal(price)
   });
 
-
   // ITERATION 3
   document.querySelector('#total-value span').innerText = totalPrice
 }
@@ -50,9 +49,68 @@ function removeProduct(event) {
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
-}
+  console.log("test")
 
+  const name = document.querySelector('.new-name').value
+  console.log(name)
+
+  const price = document.querySelector('.new-price ').value
+  console.log(price)
+
+  const newProductTr = document.createElement("tr")
+  newProductTr.classList.add("product")
+
+  const newProductNameTd = document.createElement("td")
+  newProductNameTd.classList.add("name")
+
+  const newProductNameSpan = document.createElement("span")
+  newProductNameSpan.innerText = name
+  newProductNameTd.appendChild(newProductNameSpan)
+
+  newProductTr.appendChild(newProductNameTd)
+
+  const newProductPriceTd = document.createElement("td")
+  newProductPriceTd.classList.add("price")
+
+  const newProductPriceSpan = document.createElement("span")
+  newProductPriceSpan.innerText = price
+  newProductPriceTd.appendChild(newProductPriceSpan)
+  newProductTr.appendChild(newProductPriceTd)
+
+  const newProductQuantityTd = document.createElement("td")
+  newProductQuantityTd.classList.add("quantity")
+
+  const newProductQuantityInput = document.createElement("input")
+  newProductQuantityInput.type = "number"
+  newProductQuantityInput.value = 0
+  newProductQuantityInput.min = 0
+  newProductQuantityInput.placeholder = "Quantity"
+  newProductQuantityTd.appendChild(newProductQuantityInput)
+  newProductTr.appendChild(newProductQuantityTd)
+
+  const newProductSubtotalTd = document.createElement("td")
+  newProductSubtotalTd.classList.add("subtotal")
+
+  const newProductSubtotalSpan = document.createElement("span")
+  newProductSubtotalSpan.innerText = 0
+  newProductSubtotalTd.appendChild(newProductSubtotalSpan)
+  newProductTr.appendChild(newProductSubtotalTd)
+
+  const newActionTd = document.createElement("td")
+  newActionTd.classList.add("action")
+
+  const newActionButton = document.createElement("button")
+  newActionButton.classList.add("btn-remove")
+  newActionButton.classList.add("btn")
+
+  newActionButton.innerText = "Remove"
+  newActionTd.appendChild(newActionButton)
+  newProductTr.appendChild(newActionTd)
+
+  document.querySelector('tbody').appendChild(newProductTr)
+
+  newActionButton.addEventListener("click", removeProduct)
+}
 
 
 
@@ -61,8 +119,10 @@ window.addEventListener('load', () => {
   calculatePricesBtn.addEventListener('click', calculateAll);
 
   const removeBtn = document.querySelectorAll('.btn-remove');
-
   removeBtn.forEach(button => {
     button.addEventListener('click', removeProduct);
   })
+
+  const createBtn = document.getElementById('create');
+  createBtn.addEventListener('click', createProduct);
 });
