@@ -21,24 +21,44 @@ function updateSubtotal(product) {
   
   // Step 5 Set the subtotal price to the corresponding DOM element
   subtotal.innerText = subtotalPrice;
-    
+  
+  return subtotal
 }
 
 function calculateAll() {
   
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-
-  // end of test
-
   // ITERATION 2
-  //... your code goes here
+
+  let products = document.getElementsByClassName('product');
+  let subtotal = 0; 
+
+  for (let i = 0; i < products.length; i++) {
+    subtotal = subtotal + updateSubtotal(products[i]);
+  }
 
   // ITERATION 3
-  //... your code goes here
+
+  // Make array with subtotals
+
+  let allSubtotals = document.getElementsByClassName('subtotal');
+  console.log(allSubtotals);
+
+  // Sum Subtotals 
+
+  let sumSubtotal = 0;
+
+  for (let i = 0; i < allSubtotals.length; i++) {
+    sumSubtotal = sumSubtotal + updateSubtotal(Number(allSubtotals[i]));
+    
+    console.log(sumSubtotal);
+
+    // Store result at right place
+    sumSubtotal = document.getElementsByIdName('total-value');
+    console.log(allSubtotal.length);
+  }
 }
+
+
 
 // ITERATION 4
 
