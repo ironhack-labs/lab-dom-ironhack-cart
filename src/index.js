@@ -145,6 +145,9 @@ function createProduct() {
 <td class="action">
   <button class="btn btn-remove">Remove</button>
 </td>`;
+
+  let removeProductBtn = newProduct.querySelector(".btn-remove");
+  removeProductBtn.addEventListener("click", removeProduct);
 }
 
 // Event Listeners -----------------------------------------
