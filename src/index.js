@@ -53,6 +53,7 @@ function createProduct() {
   // security concern!!! 
   // users can use the <input> field to insert "<script href=''></script>" and inject some script to steel data.
   // usually we want to escape all characters for input.values before using it
+  // https://portswigger.net/web-security/cross-site-scripting
   const newProduct = `<tr class="product">
     <td class="name">
       <span>${productName}</span>
