@@ -10,6 +10,8 @@ function updateSubtotal(product) {
 
   // add result to DOM
   product.querySelector('.subtotal span').innerHTML = subtotal;
+
+  // return subtotal to sum up the total later
   return subtotal;
 }
 
@@ -35,7 +37,7 @@ function removeProduct(event) {
   const target = event.currentTarget;
 
   // to make it easier to read, just create a variable that targets the row
-  const targetRow = event.currentTarget.parentNode.parentNode;
+  const targetRow = target.parentNode.parentNode;
 
   // and then to get the parent of it, do row.parentNode, and then you can removeChild
   targetRow.parentNode.removeChild( targetRow );
@@ -48,6 +50,9 @@ function createProduct() {
   const productName = document.querySelector('tfoot input[type=text]').value;
   const productPrice = document.querySelector('tfoot input[type=number]').value;
   
+  // security concern!!! 
+  // users can use the <input> field to insert "<script href=''></script>" and inject some script to steel data.
+  // usually we want to escape all characters for input.values before using it
   const newProduct = `<tr class="product">
     <td class="name">
       <span>${productName}</span>
