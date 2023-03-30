@@ -34,6 +34,7 @@ function removeProduct(event) {
   const target = event.currentTarget;
 target.parentNode.parentNode.remove()
  
+calculateAll()
 
   }
 
