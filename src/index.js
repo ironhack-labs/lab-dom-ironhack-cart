@@ -55,8 +55,22 @@ function removeProduct(event) {
 // ITERATION 5
 
 function createProduct() {
-  const inputs = document.querySelectorAll('.create-product input');
+  console.log('click')
+  const inputs = document.querySelectorAll(".create-product input")
+  const name = inputs[0].value
+  const price = inputs[1].value
+  const tbody = document.querySelector("tbody")
+  const rowContent = `<td class="name"><span>${name}</span></td><td class="price">$<span>${price}</span></td><td class="quantity"><input type="number" value="0" min="0" placeholder="Quantity" /></td><td class="subtotal">$<span>0</span></td><td class="action"><button class="btn btn-remove">Remove</button></td>`
+
+  const row = document.createElement("tr")
+  row.classList.add("product")
+  row.innerHTML = rowContent
+
+  tbody.appendChild(row)
   
+  let removeProductBtn = row.querySelector(".btn-remove")
+  removeProductBtn.addEventListener("click", removeProduct)
+
   //... your code goes here
 }
 
@@ -69,7 +83,8 @@ window.addEventListener('load', () => {
     removeProductBtn.addEventListener('click', removeProduct)
   })
 
-  const addProductsBtn = document.getElementById
+  const addProductsBtn = document.getElementById('create')
+  addProductsBtn.addEventListener('click', createProduct)
 
   //... your code goes here
 });
