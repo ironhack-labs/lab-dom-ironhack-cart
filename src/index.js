@@ -52,19 +52,27 @@ function removeProduct(event) {
 // ITERATION 5
 
 
-const create=document.getElementById("create")
-create.addEventListener('click',createProduct);
+
 
 function createProduct() {
   //... your code goes here
-  const tFoot=document.getElementsByClassName('create-product');
-  console.log(tFoot)
-  console.log("i am inside create product")
-
-
- 
-
+    console.log("inside create")
+    const inputs = document.querySelectorAll(".create-product input")
+    const name = inputs[0].value
+    const price = inputs[1].value
+    const tbody = document.querySelector("tbody")
+    const rowContent = `<td class="name"><span>${name}</span></td><td class="price">$<span>${price}</span></td><td class="quantity"><input type="number" value="0" min="0" placeholder="Quantity" /></td><td class="subtotal">$<span>0</span></td><td class="action"><button class="btn btn-remove">Remove</button></td>`
+  
+    const row = document.createElement("tr")
+    row.classList.add("product")
+    row.innerHTML = rowContent
+  
+    tbody.appendChild(row)
+    
+    let removeProductBtn = row.querySelector(".btn-remove")
+    removeProductBtn.addEventListener("click", removeProduct)
 }
+
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
@@ -72,14 +80,15 @@ window.addEventListener('load', () => {
 
   //... your code goes here
    const actions=document.querySelectorAll('.btn-remove')
-   console.log(actions)
-   
+  //  console.log(actions)
+
    for(let action of actions)
    {
     action.addEventListener('click',removeProduct)
    }
 
-   
+   const create=document.getElementById('create')
+   create.addEventListener('click',createProduct); 
 
 
 
