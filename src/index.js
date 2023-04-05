@@ -32,6 +32,8 @@ function removeProduct(event) {
   window.eventStuff = target
 
   target.parentNode.parentNode.removeChild(target.parentNode)
+
+  calculateAll()
 }
 
 // ITERATION 5
