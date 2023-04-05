@@ -24,6 +24,7 @@ function calculateAll() {
   // end of test
 
   // ITERATION 2
+
   const products = document.querySelectorAll(".product");
   // console.log(products);
   let totalSum = 0;
@@ -33,6 +34,7 @@ function calculateAll() {
   });
 
   // ITERATION 3
+
   const total = document.querySelector("#total-value span");
   total.innerHTML = totalSum.toFixed(2);
 }
@@ -42,9 +44,8 @@ function calculateAll() {
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log("The target in remove is:", target);
+
   // First parent node is the td, second is the tr (the product), which is what we want to remove
-  console.log(event.currentTarget.parentNode.parentNode);
-  //
   event.currentTarget.parentNode.parentNode.remove();
 
   // Updates the total price
