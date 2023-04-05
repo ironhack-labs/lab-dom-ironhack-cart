@@ -41,8 +41,6 @@ function removeProduct(event) {
 
 // ITERATION 5
 const productTemplate = document.querySelector(".product").cloneNode(true);
-// productTemplate.querySelector(".name").innerText = "New Things";
-// console.dir(productTemplate);
 
 function createProduct() {
 	const productName = document.querySelector(
