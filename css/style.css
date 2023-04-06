@@ -65,3 +65,11 @@ h2,
 .calculate-total {
   text-align: center;
 }
+
+#create {
+  color: white;
+  background-color: grey;
+}
+.product {
+  background-color:white;
+}
