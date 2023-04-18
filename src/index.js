@@ -1,32 +1,48 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
+  let price = product.querySelector(".price span").innerText;
+  let quantity = product.querySelector(".quantity input").value;
 
-  //... your code goes here
+  let subtotalText = product.querySelector(".subtotal span")
+  let subtotal = price * quantity;
+  subtotalText.innerText = subtotal;
+
+  return subtotal;
 }
-
-function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
-
-  // ITERATION 2
+// ITERATION 2
   //... your code goes here
+function calculateAll() {
+let allProducts = document.getElementsByClassName("product");
+let sumTotal = 0
+for (let i = 0; i < allProducts.length; i++){
+  updateSubtotal(allProducts[i]);
+  sumTotal += updateSubtotal(allProducts[i]);
+}
 
   // ITERATION 3
   //... your code goes here
+let totalAll = document.querySelector("#total-value span");
+totalAll.innerHTML= sumTotal;
 }
 
 // ITERATION 4
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
+  console.log('The target in remove is:', target.parentNode.parentNode);
+  target.parentNode.parentNode.remove();
   //... your code goes here
-}
+  }
+
+  const removeButton = document.getElementsByClassName('btn-remove');
+  for (let i=0; i<removeButton.length; i++){
+    removeButton[i];
+    removeButton[i].addEventListener('click', removeProduct);
+  }
+
+
+
 
 // ITERATION 5
 
@@ -38,5 +54,9 @@ window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+  
+  let button = document.getElementById("calculate");
+  button.onclick = function(){
+    window.alert('Calculate prices clicked');
+  };
 });
