@@ -25,25 +25,25 @@ function calculateAll() {
   // end of test
 
   // ITERATION 2
-  const products = document.querySelectorAll(".product");
+  let products = document.querySelectorAll(".product");
 
-  const total = 0;
+  let total = 0;
   products.forEach((eachProd) => {
     total += updateSubtotal(eachProd);
   });
 
 
   // ITERATION 3
-  const totalValueDOM = document.querySelector("#total-value span");
+  let totalValueDOM = document.querySelector("#total-value span");
   totalValueDOM.innerText = total;}
 
 // ITERATION 4
 
 function removeProduct(event) {
-  const target = event.currentTarget;
+  let target = event.currentTarget;
   console.log('The target in remove is:', target);
 
-  const productRemove = target.parentNode.parentNode;
+  let productRemove = target.parentNode.parentNode;
   console.log(productRemove);
   productRemove.remove();
   calculateAll();
@@ -111,7 +111,7 @@ function createProduct() {
 
 
 window.addEventListener('load', () => {
-  const calculatePricesBtn = document.getElementById('calculate');
+  let calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
   //... your code goes here
