@@ -46,12 +46,18 @@ function createProduct() {
 
   let newName = copy.querySelector('.name > span')
   let newPrice = copy.querySelector('.price > span')
-  // let newQuantity = copy.querySelector('.quantity input').value
+  let newQuantity = copy.querySelector('.quantity [type="number"]')
+  newQuantity.value = 0
 
   const inputName = document.querySelector('.create-product [type="text"]')
   newName.textContent = inputName.value
   const inputPrice = document.querySelector('.create-product [type="number"]')
   newPrice.textContent = Number(inputPrice.value).toFixed(2)
+  const removeBtn = copy.querySelector('.btn-remove')
+  removeBtn.addEventListener('click', removeProduct)
+
+  inputName.value = ''
+  inputPrice.value = 0
 }
 
 window.addEventListener('load', () => {
