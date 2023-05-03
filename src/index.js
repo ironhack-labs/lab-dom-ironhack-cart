@@ -2,10 +2,10 @@
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
 
-  const price = product.querySelector('.price span').innerHTML;
+  const price = parseFloat(product.querySelector('.price span').innerHTML);
 
-  const quantity = product.querySelector('#quantity');
-  const quantityValue = quantity.value;
+  const quantity = product.querySelector('.quantity>input');
+  const quantityValue = parseInt(quantity.value, 10);
 
 
   const resultado = quantityValue*price
