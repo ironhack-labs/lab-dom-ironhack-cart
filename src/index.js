@@ -28,9 +28,25 @@ function calculateAll() {
   })
 
 
-  return console.log(total)
+  //return console.log(total)
   // ITERATION 3
-  //... your code goes here
+  let allSubtotalElements = document.querySelectorAll('.subtotal span')
+
+  let sumtotal = 0;
+  allSubtotalElements.forEach(element => {
+    const columnSubtotal = element.innerHTML;
+    sumtotal += Number(columnSubtotal);
+
+  })
+
+
+  let totalPaint = document.querySelector('#total-value span')
+
+
+  totalPaint.innerHTML = sumtotal
+
+
+  return total
 }
 
 // ITERATION 4
