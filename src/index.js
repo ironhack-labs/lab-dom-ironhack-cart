@@ -55,7 +55,36 @@ function removeProduct(event) {
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  const productNameInput = document.querySelector(
+    '.create-product input[type="text"]'
+  );
+  const productPriceInput = document.querySelector(
+    '.create-product input[type="number"]'
+  );
+
+  const productName = productNameInput.value;
+  const productPrice = productPriceInput.value;
+
+  const newRow = document.createElement("tr");
+  newRow.className = "product";
+  newRow.innerHTML = `
+    <td class="name"><span>${productName}</span></td>
+    <td class="price">$<span>${productPrice}</span></td>
+    <td class="quantity">
+      <input type="number" value="0" min="0" placeholder="Quantity" />
+    </td>
+    <td class="subtotal">$<span>0</span></td>
+    <td class="action">
+      <button class="btn btn-remove">Remove</button>
+    </td>
+  `;
+  const tableBody = document.querySelector("#cart tbody");
+  tableBody.appendChild(newRow);
+
+  newRow.querySelector(".btn-remove").addEventListener("click", removeProduct);
+
+  productNameInput.value = "";
+  productPriceInput.value = 0;
 }
 
 window.addEventListener("load", () => {
@@ -63,9 +92,11 @@ window.addEventListener("load", () => {
   calculatePricesBtn.addEventListener("click", calculateAll);
 
   const removeBtn = document.getElementsByClassName("btn-remove");
-  console.log(removeBtn);
 
   for (let i = 0; i < removeBtn.length; i++) {
     removeBtn[i].addEventListener("click", removeProduct);
   }
+
+  const createProductBtn = document.getElementById("create");
+  createProductBtn.addEventListener("click", createProduct);
 });
