@@ -1,8 +1,5 @@
 // @ts-nocheck
 // ITERATION 1
-
-const tbody = document.querySelector('tbody')
-
 function updateSubtotal(product) {
   // console.log('Calculating subtotal, yey!')
   const price = product.querySelector('.price span').innerHTML
@@ -41,14 +38,15 @@ function removeProduct(event) {
 // ITERATION 5
 function createProduct() {
   const newItem = document.querySelectorAll('.create-product input')
-  const price = Number(newItem[1].value).toFixed(2)
+  const productName = newItem[0].value
+  const productPrice = newItem[1].value
 
   const itemHTML = `
     <tr class="product">
       <td class="name">
-        <span>${newItem[0].value}</span>
+        <span>${productName}</span>
       </td>
-      <td class="price">$<span>${price}</span></td>
+      <td class="price">$<span>${Number(productPrice).toFixed(2)}</span></td>
       <td class="quantity">
         <input type="number" value="0" min="0" placeholder="Quantity" />
       </td>
@@ -63,12 +61,11 @@ function createProduct() {
     document.querySelector('tbody').innerHTML += itemHTML
     
     // Adds event listener to every new item added in Table (unneficient)
-    document.querySelectorAll('.btn-remove').forEach((button) =>
-      button.addEventListener("click", removeProduct)
-    )
-
-    newItem[0].value = '', newItem[1].value = 0
+    document.querySelector('.btn-remove').addEventListener("click", removeProduct)
+      
+    newItem[0].value = "", newItem[1].value = 0
   }
+  
 }
 
 window.addEventListener('load', () => {
