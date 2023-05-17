@@ -56,19 +56,25 @@ showTotalValue.innerText = `$${total}`;
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+  console.log("The target in remove is:", target);
+  const targetProductRow = target.parentNode.parentNode;
+  targetProductRow.parentNode.removeChild(targetProductRow);
+  calculateAll();
 }
 
 // ITERATION 5
 
-function createProduct() {
-  //... your code goes here
-}
+function createProduct() {}
 
-window.addEventListener('load', () => {
-  const calculatePricesBtn = document.getElementById('calculate');
-  calculatePricesBtn.addEventListener('click', calculateAll);
+window.addEventListener("load", () => {
+  const calculatePricesBtn = document.getElementById("calculate");
+  calculatePricesBtn.addEventListener("click", calculateAll);
 
-  //... your code goes here
+  const allRemoveBtns = document.querySelectorAll(".btn-remove");
+  allRemoveBtns.forEach((removeBtn) => {
+    removeBtn.addEventListener("click", removeProduct);
+  });
+
+  const createBtn = document.getElementById("create");
+  createBtn.addEventListener("click", createProduct);
 });
