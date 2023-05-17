@@ -11,9 +11,10 @@ function updateSubtotal(product) {
 
   const quantityValue = quantity.value;
 
-  const subtotal = document.getElementsByClassName("subtotal");
+  const subtotal = document.querySelector(".subtotal span");
 
   const subtotalValue = priceValue * quantityValue;
+  subtotal.innerText = subtotalValue;
   console.log(subtotalValue); // it's working!! But not showing...
   return subtotalValue;
 }
