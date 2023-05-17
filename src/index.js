@@ -2,12 +2,12 @@
 
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
-  const price = document.querySelector('.price span');
+  const price = product.querySelector('.price span');
   const priceVal = Number(price.innerText);
-  const quantity = document.querySelector('.quantity input');
+  const quantity = product.querySelector('.quantity input');
   const quantityVal = Number(quantity.value)
   const subtotalCalc = priceVal * quantityVal;
-  const subtotal = document.querySelector('.subtotal span');
+  const subtotal = product.querySelector('.subtotal span');
   subtotal.innerText = subtotalCalc
   return subtotal.innerText;
   }
@@ -21,22 +21,35 @@ function calculateAll() {
 
   // ITERATION 2
 const allRows = document.querySelectorAll('.product')
-console.log(allRows[1])
+console.log(allRows)
 
-updateSubtotal(allRows[1])
+let total = 0
 
-// allRows.forEach(updateSubtotal)
-
-// for (let i = 0; i < allRows.length; i++) {
-//   // let product = allRows[i];
-//   // updateSubtotal(product);
-//   // console.log(allRows.length)
-//   // console.log(product)
-// }
-
+allRows.forEach((product) => {
+  const result = updateSubtotal(product);
+  total += Number(result)
+})
 
   // ITERATION 3
-  //... your code goes here
+
+const showTotalValue = document.querySelector('#total-value');
+showTotalValue.innerText = `$${total}`;
+
+
+// Tried that one below but it didn't worked:
+
+// let allSubtotals = document.querySelectorAll('.product .subtotal')
+// console.log(allSubtotals)
+
+
+// allSubtotals.reduce((acc, subtotal) =>{
+//   console.log(subtotal.innerText)
+//   console.log(acc)
+//   // acc + Number(subtotal.innerText);
+
+// },0);
+
+  // return totalPrice
 }
 
 // ITERATION 4
