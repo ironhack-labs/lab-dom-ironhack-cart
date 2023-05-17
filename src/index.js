@@ -47,12 +47,36 @@ function removeProduct(event) {
 
 
 // ITERATION 5
-
+// I replaced product here for document and got the code working.
 function createProduct() {
-  //... your code goes here
+  
+  const newProd = document.querySelector('.create-product input[type=text]').value;
+  const newPrice = document.querySelector('.create-product input[type=number]').value;
 
+  if (!newProd || !newPrice) {
+    alert("Please fill the data to create product.")
+  } else {
+
+    const newItem = document.querySelector("tfoot");
+newItem.innerHTML = `<tbody>
+  <tr class="product">
+    <td class="name">
+      <span>${newProd}</span>
+    </td>
+    <td class="price">$<span>${newPrice}</span></td>
+    <td class="quantity">
+      <input type="number" value="0" min="0" placeholder="Quantity" />
+    </td>
+    <td class="subtotal">$<span>0</span></td>
+    <td class="action">
+      <button class="btn btn-remove">Remove</button>
+    </td>
+  </tr>
+  </tbody>`;
 }
+//new line on the tab
 
+};
 
 
 
@@ -65,10 +89,7 @@ const removeBtnList = document.querySelectorAll('.btn-remove');
 
 const createBtn = document.querySelectorAll('#create');
   createBtn.forEach((product,i) => {
-  createBtn[i].addEventListener('click', () => { 
-    // removeProduct(product);
-    console.log("phew...working")
-  });
+  createBtn[i].addEventListener('click', () => createProduct());
 });
 
 
