@@ -41,19 +41,30 @@ function calculateAll() {
 
 function removeProduct(event) {
 	const target = event.currentTarget;
-	console.log("The target in remove is:", target);
-	//... your code goes here
+	/* target.parentNode.parentNode.parentNode.removeChild(
+		target.parentNode.parentNode
+	); // can be refactored using target.closest("selector") */
+	parentElement = target.closest("tbody"); // in the inspector I see I want to remove <tr class="product">, the whole line in the cart. It's parent is the tbody element.
+	childElement = target.closest(".product");
+	parentElement.removeChild(childElement);
 }
 
 // ITERATION 5
 
 function createProduct() {
-	//... your code goes here
+	const productLineDOM = document.querySelector(".product");
+	const productTemplate = productLineDOM.cloneNode(true);
+	tBody = document.querySelector("tbody");
+	tBody.insertBefore(productTemplate, null);
 }
 
 window.addEventListener("load", () => {
 	const calculatePricesBtn = document.getElementById("calculate");
 	calculatePricesBtn.addEventListener("click", calculateAll);
-
-	//... your code goes here
+	const removeBtnNode = document.querySelectorAll(".btn-remove");
+	removeBtnNode.forEach((removeBtnDOM) => {
+		removeBtnDOM.addEventListener("click", removeProduct);
+	});
+	const createProdDOM = document.querySelector("#create");
+	createProdDOM.addEventListener("click", createProduct);
 });
