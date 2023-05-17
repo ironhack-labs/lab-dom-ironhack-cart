@@ -34,8 +34,8 @@ function calculateAll() {
   // ITERATION 3
   //... your code goes here
 
-  const totalPriceSum = document.getElementById("total-value span");//we can not figure out why this is giving us null
-  //totalPriceSum.innerText = priceTotal;
+  const totalPriceSum = document.querySelector("#total-value span");
+  totalPriceSum.innerText = priceTotal;
 
 }
 
