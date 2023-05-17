@@ -34,20 +34,8 @@ function calculateAll() {
   // ITERATION 3
   //... your code goes here
 
-  const totalPriceSum = document.querySelector("total-value h2 span");
-  console.log(totalPriceSum);
-  //const totalPriceSumArr = [...totalPriceSum];
-  
+  const totalPriceSum = document.getElementById("total-value span");//we can not figure out why this is giving us null
   //totalPriceSum.innerText = priceTotal;
-
-  //let subTotal = product.querySelector(".subtotal span");
-  //subTotal.innerText = subTotalResult;
-
-
-
-
-
-
 
 }
 
