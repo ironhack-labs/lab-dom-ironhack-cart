@@ -53,7 +53,16 @@ function removeProduct(event) {
 
 function createProduct() {
 	const productLineDOM = document.querySelector(".product");
-	const productTemplate = productLineDOM.cloneNode(true);
+	let productTemplate = productLineDOM.cloneNode(true);
+
+	productTemplate.addEventListener("click", removeProduct); //give new line te remove functionality
+	templateNameNode = productTemplate.querySelector(".name");
+	templatePriceNode = productTemplate.querySelector(".price");
+	templateNameNode.innerText = "INPUT";
+	templatePriceNode.innerText = "INPUT";
+
+	console.log(productTemplate, templateNameNode, templatePriceNode);
+
 	tBody = document.querySelector("tbody");
 	tBody.insertBefore(productTemplate, null);
 }
