@@ -57,8 +57,9 @@ function createProduct() {
     alert("Please fill the data to create product.")
   } else {
 
-    const newItem = document.querySelector("tfoot");
-newItem.innerHTML = `<tbody>
+    const newItem = document.querySelector("#cart tbody");
+   
+    newBody = `<tbody>
   <tr class="product">
     <td class="name">
       <span>${newProd}</span>
@@ -72,12 +73,26 @@ newItem.innerHTML = `<tbody>
       <button class="btn btn-remove">Remove</button>
     </td>
   </tr>
-  </tbody>`;
+  </tbody>
+  `;
+
+  newItem.insertAdjacentHTML("afterend", newBody)
+  
+  removeProduct()
+
+  calculateAll()
 }
 //new line on the tab
+// If you want Pedro, i don't know if it's in Portugese too but it's can be interesting !
+// https://www.pierre-giraud.com/javascript-apprendre-coder-cours/dom-ajout-modification-suppression/
 
 };
 
+
+const createBtn = document.querySelectorAll('#create');
+  createBtn.forEach((product,i) => {
+  createBtn[i].addEventListener('click', () => createProduct());
+});
 
 
 const removeBtnList = document.querySelectorAll('.btn-remove');
@@ -87,10 +102,6 @@ const removeBtnList = document.querySelectorAll('.btn-remove');
   });
 });
 
-const createBtn = document.querySelectorAll('#create');
-  createBtn.forEach((product,i) => {
-  createBtn[i].addEventListener('click', () => createProduct());
-});
 
 
 window.addEventListener('load', () => {
