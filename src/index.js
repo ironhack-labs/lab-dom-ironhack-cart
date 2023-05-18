@@ -143,3 +143,11 @@ window.addEventListener('load', () => {
   productFirst = [...document.getElementsByClassName("product")][0]
   productFirstHTML = productFirst.innerHTML
 });
+
+// ALTERNATIVES TO GLOBAL VAR
+// - with a closure and an IIFE to make a private variable
+// - with an hidden html tag
+
+// other ideas from next morning correction:
+// .cloneNode()
+// target.closest("tbody") / target.closest("product")
