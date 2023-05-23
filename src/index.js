@@ -1,7 +1,6 @@
 // @ts-nocheck
 // ITERATION 1
 function updateSubtotal(product) {
-  // console.log('Calculating subtotal, yey!')
   const price = product.querySelector('.price span').innerHTML
   const quantity = product.querySelector('.quantity input').value
 
@@ -29,7 +28,6 @@ function calculateAll() {
 // ITERATION 4
 function removeProduct(event) {
   const target = event.currentTarget
-  console.log('The target in remove is:', target)
 
   target.parentElement.parentElement.remove()
   calculateAll()
@@ -85,7 +83,6 @@ window.addEventListener('load', () => {
 // const tBody = document.querySelector('tbody')
 // tbody.addEventListener('click', (event) => { 
 //   if (event.target.classList.contains('btn-remove')) {
-//     console.log(event.target.parentElement, 'remove')
 //     event.target.parentElement.parentElement.remove()
 //   }
 // })
