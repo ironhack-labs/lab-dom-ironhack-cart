@@ -20,8 +20,8 @@ function updateSubtotal(product) {
 
   const subtotalElement = product.querySelector('td.subtotal > span');
   subtotalElement.textContent = subtotal.toFixed(2);
-  console.log(subtotalElement);
-  //encuentro el elemento subotal, le digo que su contenido tenga 2 decimales
+  //encuentro el elemento subotal, le digo que su contenido tenga 2 decimales y lo paso a
+  return subtotal
 }
 
 function calculateAll() {
@@ -38,8 +38,16 @@ function calculateAll() {
   Lo transformo en Array y para cada uno de sus elementos quiero que me actualice el precio*/
 
   
-  // ITERATION 3
-  //... your code goes here
+  // ITERATION 3 
+  
+  let totalPrice = 0; //totalPrice empieza en 0
+
+  Array.from(multipleProducts).forEach(subtotalPrice => totalPrice += updateSubtotal(subtotalPrice));
+  //hago que para cada producto le sume el subtrotal al precio total
+
+  const totalPriceElement = document.querySelector('#total-value span');
+  totalPriceElement.textContent = totalPrice.toFixed(2);
+  //hacemos que el valor del precio total sea igual a la suma de los subtotales
 }
 
 // ITERATION 4
