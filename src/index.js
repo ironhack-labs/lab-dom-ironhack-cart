@@ -2,22 +2,26 @@
 
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
+  //el console.log me imprime el mensaje
 
   const priceElement = product.querySelector('td.price > span');
   const price = Number(priceElement.textContent);
   console.log(price);
+  /*encuentro el elemento que quiero con el queryselector
+  le digo que el precio es el texto que hay en ese elemento y lo conviewro a numero*/
+
  
   const quantityElement = product.querySelector('td.quantity > input');
   const quantityValue = Number(quantityElement.value);
   console.log(quantityValue);
 
-  const subtotal = price * quantityValue
+  const subtotal = price * quantityValue //hago la multiplicación
   console.log(subtotal);
 
   const subtotalElement = product.querySelector('td.subtotal > span');
   subtotalElement.textContent = subtotal.toFixed(2);
   console.log(subtotalElement);
-  //... your code goes here
+  //encuentro el elemento subotal, le digo que su contenido tenga 2 decimales
 }
 
 function calculateAll() {
@@ -28,9 +32,12 @@ function calculateAll() {
   // end of test
 
   // ITERATION 2
-  //... your code goes here
-  const multipleProducts = document.get
+  const multipleProducts = document.getElementsByClassName('product');
+  Array.from(multipleProducts).forEach(product => updateSubtotal(product));
+  /*encuentro todos los elemento con la clase product
+  Lo transformo en Array y para cada uno de sus elementos quiero que me actualice el precio*/
 
+  
   // ITERATION 3
   //... your code goes here
 }
