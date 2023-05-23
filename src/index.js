@@ -82,18 +82,20 @@ function createProduct() {
 
   const productPriceCell = document.createElement('td');
   productPriceCell.classList.add('price');
-  productPriceCell.textContent = "$ "+ productPriceInput.value;
+  productPriceCell.textContent = "$"+ productPriceInput.value;
 
   const productQuantityCell = document.createElement('td');
   productQuantityCell.classList.add('quantity');
   const quantityInput = document.createElement('input');
-  //quantityInput.type = isNaN;
+  quantityInput.type = 'number';
   quantityInput.value = 0;
   quantityInput.min = 0;
   quantityInput.placeholder = 'Quantity'
 
+  let sub = 0;
   const productSubtotalCell = document.createElement('td');
   productSubtotalCell.classList.add('subtotal');
+  productSubtotalCell.textContent = '$' + sub;
 
   const productActionCell = document.createElement('td');
   productActionCell.classList.add('action');
