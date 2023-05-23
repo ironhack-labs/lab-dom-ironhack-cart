@@ -2,38 +2,39 @@
 
 function updateSubtotal(product) {
   
-  const priceElement = product.querySelector(".price span");
-  const price = Number(priceElement.innerText);
+  const priceElement = product.querySelector(".price span");  // accedo al elemento precio en el HTML.
+  const price = Number(priceElement.innerText);  // accedo al contenido del elemento precio y lo convierto en un número pq la consola indica que originalmente es un string.
 
-  const quantityElement = product.querySelector(".quantity input");
-  const quantity = Number(quantityElement.value);
+  const quantityElement = product.querySelector(".quantity input");  // accedo al elemento quantity en el HTML.
+  const quantity = Number(quantityElement.value);  // accedo al value del elemento quantity (ya que es un input) y lo convierto en un número pq la consola indica que originalmente es un string.
 
-  const subtotal = price * quantity;
-  const subtotalElement = product.querySelector(".subtotal span");
-  subtotalElement.innerHTML = subtotal;
+  const subtotal = price * quantity;  // creo una constante subtotal que es el resultado de multiplicar el número guardado en precio y el número guardado en quantity.
+  const subtotalElement = product.querySelector(".subtotal span");  // accedo al elemento Subtotal en el HTML.
+  subtotalElement.innerHTML = subtotal;  // indico que el contenido que quiero que tenga el elemento Subtotal sea la constante subtotal que hemos declarado antes.
 
-  return subtotal;
-  //... your code goes here
+  return subtotal; // quiero que esta función me devuelva el subtotal.
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  //const singleProduct = document.querySelector('.product');
-  //updateSubtotal(singleProduct);
-  // end of test
-
+  
   // ITERATION 2
-  const allProducts = document.getElementsByClassName("product");
+  
+  const allProducts = document.getElementsByClassName("product");  // creo una constante que acceda a todos los productos que se encuentran en el HTML.
 
-  Array.from(allProducts).forEach((product) => {
-    updateSubtotal(product)
+  Array.from(allProducts).forEach((product) => {  // convierto allProducts en un array e itero sobre el con un forEach.
+    updateSubtotal(product)   // indico que por cada producto, se ejecute la función de updateSubtotal y así calculo el subtotal de cada producto. 
   });
 
-  //... your code goes here
-
   // ITERATION 3
-  //... your code goes here
+
+  let totalPrice = 0;  // declaro una variable let que más adelante va a ser la suma total del precio.
+  
+  Array.from(allProducts).forEach((product) => {  // convierto allProducts en un array e itero sobre él con un forEach.
+    totalPrice += updateSubtotal(product);  // indico que por cada producto me vaya sumando el updateSubtotal (que ya indicamos antes que me devuelve el subtotal del producto) a la variable totalPrice.
+  });
+  
+  const totalElement = document.querySelector("#total-value span");  // accedo al elemento del total en el HTML.
+  totalElement.innerText = totalPrice;  // indico que el contenido que tiene el elemento del total sea la variable totalPrice.
 }
 
 // ITERATION 4
