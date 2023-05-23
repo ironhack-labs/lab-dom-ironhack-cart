@@ -64,12 +64,34 @@ function removeProduct(event) {
 
 function createProduct() {
   //... your code goes here
-  const productNameInput = document.querySelector('tr.create-product > td > input');
-  const productNameValue = productNameInput.value
-  const newRow = document.createElement('tr');
-  console.log(newRow)
+  const itemTable = document.getElementById('cart');
+  const itemTableBody = document.querySelector('tbody');
 
+  const productNameInput = document.querySelector('tr.create-product > td > input');
+  const productNameValue = productNameInput.value;
+  
+  const newRow = document.createElement('tr');
+  newRow.classList.add('product');
+  
   const productNameCell = document.createElement('td');
+  productNameCell.classList.add('name');
+
+  const productPriceCell = document.createElement('td');
+  productPriceCell.classList.add('price');
+
+  const productQuantityCell = document.createElement('td');
+  productQuantityCell.classList.add('quantity');
+
+  const productSubtotalCell = document.createElement('td');
+  productSubtotalCell.classList.add('subtotal');
+
+  const productActionCell = document.createElement('td');
+  productActionCell.classList.add('action');
+
+  
+  newRow.append(productNameCell, productPriceCell, productQuantityCell, productSubtotalCell, productActionCell)
+  itemTableBody.appendChild(newRow)
+
 
 }
 
