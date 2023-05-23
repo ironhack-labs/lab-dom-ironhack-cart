@@ -56,6 +56,8 @@ function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
   //... your code goes here
+  event.target.closest('tr').remove();
+
 }
 
 // ITERATION 5
@@ -69,4 +71,10 @@ window.addEventListener('load', () => {
   calculatePricesBtn.addEventListener('click', calculateAll);
 
   //... your code goes here
+  const removeBtn = document.getElementsByClassName('btn-remove');
+  Array.from(removeBtn).forEach(button => {
+    button.addEventListener('click', removeProduct)
+  
+});
+
 });
