@@ -69,18 +69,28 @@ function createProduct() {
 
   const productNameInput = document.querySelector('tr.create-product > td > input');
   const productNameValue = productNameInput.value;
+
+  const productPriceInput = document.querySelector('tr.create-product > td + td > input');
+  const productPriceValue = productPriceInput.value;
   
   const newRow = document.createElement('tr');
   newRow.classList.add('product');
   
   const productNameCell = document.createElement('td');
   productNameCell.classList.add('name');
+  productNameCell.textContent = productNameValue;
 
   const productPriceCell = document.createElement('td');
   productPriceCell.classList.add('price');
+  productPriceCell.textContent = "$ "+ productPriceInput.value;
 
   const productQuantityCell = document.createElement('td');
   productQuantityCell.classList.add('quantity');
+  const quantityInput = document.createElement('input');
+  //quantityInput.type = isNaN;
+  quantityInput.value = 0;
+  quantityInput.min = 0;
+  quantityInput.placeholder = 'Quantity'
 
   const productSubtotalCell = document.createElement('td');
   productSubtotalCell.classList.add('subtotal');
@@ -88,7 +98,7 @@ function createProduct() {
   const productActionCell = document.createElement('td');
   productActionCell.classList.add('action');
 
-  
+  productQuantityCell.append(quantityInput);
   newRow.append(productNameCell, productPriceCell, productQuantityCell, productSubtotalCell, productActionCell)
   itemTableBody.appendChild(newRow)
 
