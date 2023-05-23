@@ -39,8 +39,8 @@ function calculateAll() {
 
 // ITERATION 4
 
-const buttonRemove = document.querySelectorAll('.action > button');
-[...buttonRemove].forEach(e=>e.addEventListener('click',removeProduct));
+function removeButton(btnEvent){
+[...btnEvent].forEach(e=>e.addEventListener('click',removeProduct));
 
 function removeProduct(event) {
   const target = event.currentTarget;
@@ -49,15 +49,92 @@ function removeProduct(event) {
   event.target.closest('tr').remove();
 
 }
+}
+
+
 
 // ITERATION 5
+
+// Selección de tabla
+const getTable = document.getElementById('table')
+
 
 function createProduct() {
   //... your code goes here
   const newProductsection = document.querySelector('.create-product')
-  //ME QUEDÉ AQUÍ
-  //const productName = newProductsection.querySelector
+  
+  //obtención de valores
+  const productsName = newProductsection.querySelectorAll('input');
+  const productName = [...productsName][0].value;
+  const productPrice = Number([...productsName][1].value).toFixed(2);
+
+  //nueva fila
+  const newRow = document.createElement('tr');
+
+  //Name Cell
+  const nameCell = document.createElement('td');
+  const spanName = document.createElement('span');
+  spanName.textContent = productName;
+  nameCell.appendChild(spanName);
+  nameCell.classList.add('name');
+
+  //Price Cell
+  const priceCell = document.createElement('td');
+  priceCell.classList.add('price');
+  priceCell.textContent='$'
+  const spanPrice = document.createElement('span');
+  spanPrice.textContent = productPrice;
+    priceCell.appendChild(spanPrice);
+  
+
+  //Quantity
+  const quantityCell = document.createElement('td');
+  quantityCell.classList.add('quantity');
+  const quantityInput = document.createElement('input');
+  quantityInput.type = 'number';
+  quantityInput.value = '0';
+  quantityInput.min = '0';
+  quantityInput.placeholder = 'Quantity';
+  quantityCell.appendChild(quantityInput)
+
+  //Subtotal
+  const subTotalCell = document.createElement('td')
+  subTotalCell.classList.add("subtotal")
+  const sTotalPrice = document.createElement('span');
+  sTotalPrice.textContent = '0';
+  priceCell.innerHTML = '$';
+  priceCell.appendChild(sTotalPrice);
+  priceCell.classList.add('price');
+
+
+
+  //Button
+  const buttonCell = document.createElement('td');
+  buttonCell.classList.add('action')
+  const newButtonRemove = document.createElement('button');
+  newButtonRemove.classList.add('btn');
+  newButtonRemove.classList.add('btn-remove');
+  newButtonRemove.textContent = 'Remove';
+  buttonCell.appendChild(newButtonRemove);
+
+  
+  newRow.append(nameCell, priceCell,quantityCell,subTotalCell, buttonCell);
+  getTable.appendChild(newRow);
+console.log(productPrice)
+console.log(priceCell)
+
+
+  //dar evento al botón remover
+  const buttonRemove = document.querySelectorAll('.action > button');
+removeButton(buttonRemove)
+ 
 }
+
+
+const btnCreate = document.getElementById('create');
+btnCreate.addEventListener('click',createProduct)
+
+
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
