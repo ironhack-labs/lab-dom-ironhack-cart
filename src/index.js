@@ -64,6 +64,13 @@ function removeProduct(event) {
 
 function createProduct() {
   //... your code goes here
+  const productNameInput = document.querySelector('tr.create-product > td > input');
+  const productNameValue = productNameInput.value
+  const newRow = document.createElement('tr');
+  console.log(newRow)
+
+  const productNameCell = document.createElement('td');
+
 }
 
 window.addEventListener('load', () => {
@@ -74,7 +81,9 @@ window.addEventListener('load', () => {
   const removeBtn = document.getElementsByClassName('btn-remove');
   Array.from(removeBtn).forEach(button => {
     button.addEventListener('click', removeProduct)
-  
-});
+  });
+
+  const addProduct = document.getElementById('create');
+  addProduct.addEventListener('click', createProduct)
 
 });
