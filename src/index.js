@@ -78,28 +78,43 @@ function createProduct() {
   
   const productNameCell = document.createElement('td');
   productNameCell.classList.add('name');
-  productNameCell.textContent = productNameValue;
+  const productNameCellElement = document.createElement('span');
+  productNameCellElement.textContent = productNameValue
 
   const productPriceCell = document.createElement('td');
   productPriceCell.classList.add('price');
-  productPriceCell.textContent = "$"+ productPriceInput.value;
+  productPriceCell.textContent = "$";
+  const productPriceCellElement = document.createElement('span');
+  productPriceCellElement.textContent = productPriceValue
 
   const productQuantityCell = document.createElement('td');
   productQuantityCell.classList.add('quantity');
+  
   const quantityInput = document.createElement('input');
   quantityInput.type = 'number';
   quantityInput.value = 0;
   quantityInput.min = 0;
   quantityInput.placeholder = 'Quantity'
 
-  let sub = 0;
   const productSubtotalCell = document.createElement('td');
   productSubtotalCell.classList.add('subtotal');
-  productSubtotalCell.textContent = '$' + sub;
+  productSubtotalCell.textContent = "$";
+
+  const productSubtotalCellElement = document.createElement('span');
+  productSubtotalCellElement.textContent = 0;
+ 
 
   const productActionCell = document.createElement('td');
   productActionCell.classList.add('action');
+  const productActionBtn = document.createElement('button');
+  productActionBtn.classList.add('btn', 'btn-remove')
+  productActionBtn.textContent = 'Remove';
+  productActionBtn.addEventListener('click', removeProduct);
 
+  productPriceCell.append(productPriceCellElement)
+  productNameCell.append(productNameCellElement)
+  productActionCell.append(productActionBtn);
+  productSubtotalCell.append(productSubtotalCellElement); 
   productQuantityCell.append(quantityInput);
   newRow.append(productNameCell, productPriceCell, productQuantityCell, productSubtotalCell, productActionCell)
   itemTableBody.appendChild(newRow)
