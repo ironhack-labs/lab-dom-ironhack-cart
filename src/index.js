@@ -18,7 +18,7 @@ function updateSubtotal(product) {
 function calculateAll() {
   
   // ITERATION 2
-  
+
   const allProducts = document.getElementsByClassName("product");  // creo una constante que acceda a todos los productos que se encuentran en el HTML.
 
   Array.from(allProducts).forEach((product) => {  // convierto allProducts en un array e itero sobre el con un forEach.
@@ -41,14 +41,29 @@ function calculateAll() {
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
-}
+  event.target.closest("tr").remove();
+  }
+
 
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  const productTable = document.getElementById("cart");
+  const productTableBody = productTable.querySelector("tbody");
+  const productNameElement = document.querySelector(".class > input");
+  const productPriceElement = document.querySelector(".class > input + input");
+  const productName = productNameElement.value;
+  const productPrice = productPriceElement.value;
+
+  const newRow = document.createElement("tr");
+  const productNameCell = document.createElement("td");
+  productNameCell.innerText = productName;
+  const productPriceCell = document.createElement("td");
+  productPriceCell.innerText = productPrice;
+
+  newRow.append(productNameCell, productPriceCell);
+  productTableBody.appendChild(newRow);
+  
 }
 
 window.addEventListener('load', () => {
@@ -56,4 +71,10 @@ window.addEventListener('load', () => {
   calculatePricesBtn.addEventListener('click', calculateAll);
 
   //... your code goes here
+  const removeButtons = document.getElementsByClassName("btn-remove");
+  Array.from(removeButtons).forEach( button => button.addEventListener("click", removeProduct));
+
+  const createButton = document.getElementById("create");
+  createButton.addEventListener("click", createProduct);
+
 });
