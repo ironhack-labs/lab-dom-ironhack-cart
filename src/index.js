@@ -63,15 +63,62 @@ function removeProduct(event) {
   console.log('The target in remove is:', target);
   //... your code goes here
   event.target.closest('tr').remove();
-
-  
+  calculateAll(); // llamo la funcion para que me recalcule luego que le haga remove y me de el valor del de que queda.
 
 }
 
 // ITERATION 5
 
+const createProductBtn = document.getElementById('create');
+createProductBtn.onclick = (button) => {
+  createProduct();
+}
+
 function createProduct() {
   //... your code goes here
+  const productNam = document.querySelector('tr.create-product input')
+  const productNamValue = productNam.value; // capturar el valor del nombre del producto
+
+  const productValue = documente.querySelector('tr.create-product > td + td > input')
+  const productValueValue = productValue.value; // capturar el valor del producto
+
+  const newRow = document.createElement('tr');
+  newRow.classList.add('product');
+
+  const nameCell = document.createElement('td');
+  const spanCell = document.createElement('span')
+  spanCell.textContent = productNamValue;
+  nameCell.classList.add('name');
+
+  const priceCell = document.createElement('td');
+  priceCell.textContent = price;
+  priceCell.classList.add ('price');
+
+  const quantityCell = document.createElement ('td');
+  quantityCell.textContent = quantity;
+  quantityCell.classList.add('quantity');
+
+  const subtotoalCell = document.createElement('td');
+  subtotoalCell.textContent = subtotal;
+  subtotoalCell.classList.add(subtotal);
+
+  const actionCell = document.createElement('td');
+  const removBtn = document.createElement('button');
+  removBtn.classList.add('btn', 'btn-remove');
+  removBtn.textContent = 'Remove';
+
+  createProductBtn(removBtn);
+  actionCell.appendChild(removBtn);
+
+  newRow.append(nameCell, priceCell, quantityCell, subtotoalCell, actionCell );
+
+  createProductBtn.append(newRow);
+
+
+
+
+
+  
 }
 
 window.addEventListener('load', () => {
