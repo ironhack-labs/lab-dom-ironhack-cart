@@ -56,7 +56,8 @@ function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
   //... your code goes here
-  event.target.closest('tr').remove();
+  target.closest('tr').remove();
+  calculateAll();
 
 }
 
@@ -71,8 +72,10 @@ function createProduct() {
   const productNameValue = productNameInput.value;
 
   const productPriceInput = document.querySelector('tr.create-product > td + td > input');
-  const productPriceValue = productPriceInput.value;
+  const productPriceValue = Number(productPriceInput.value);
   
+  if (productNameValue && productPriceValue) {
+   
   const newRow = document.createElement('tr');
   newRow.classList.add('product');
   
@@ -85,7 +88,7 @@ function createProduct() {
   productPriceCell.classList.add('price');
   productPriceCell.textContent = "$";
   const productPriceCellElement = document.createElement('span');
-  productPriceCellElement.textContent = productPriceValue
+  productPriceCellElement.textContent = productPriceValue.toFixed(2)
 
   const productQuantityCell = document.createElement('td');
   productQuantityCell.classList.add('quantity');
@@ -118,6 +121,12 @@ function createProduct() {
   productQuantityCell.append(quantityInput);
   newRow.append(productNameCell, productPriceCell, productQuantityCell, productSubtotalCell, productActionCell)
   itemTableBody.appendChild(newRow)
+
+  productNameInput.value = "";
+  productPriceInput.value = "";
+
+  }
+
 
 
 }
