@@ -79,41 +79,72 @@ function createProduct() {
   const productNam = document.querySelector('tr.create-product input')
   const productNamValue = productNam.value; // capturar el valor del nombre del producto
 
-  const productValue = documente.querySelector('tr.create-product > td + td > input')
-  const productValueValue = Number (productValue.value); // capturar el valor del producto
+  const productValue = document.querySelector('tr.create-product > td + td > input');
+  const productPriceValue = Number (productValue.value); // capturar el valor del producto
+  
 
-  const newRow = document.createElement('tr');
-  newRow.classList.add('product');
+  if (productNamValue && productPriceValue ){
 
-  const nameCell = document.createElement('td');
-  const spanCell = document.createElement('span');
-  spanCell.textContent = productNamValue;
-  spanCell.textContent = productNamValue;
-  nameCell.classList.add('name');
+      // crear nueva fila
+    const newRow = document.createElement('tr');
+    newRow.classList.add('product');
 
-  const priceCell = document.createElement('td');
-  priceCell.textContent = price;
-  priceCell.classList.add ('price');
+    const namesTableBody = document.querySelector('tbody');
 
-  const quantityCell = document.createElement ('td');
-  quantityCell.textContent = quantity;
-  quantityCell.classList.add('quantity');
+    // crear celda nombre
 
-  const subtotoalCell = document.createElement('td');
-  subtotoalCell.textContent = subtotal;
-  subtotoalCell.classList.add(subtotal);
+    const nameElement = document.createElement ('td');
+    nameElement.classList.add ('name');
+    const spanElement = document.createElement ('span');
+    spanElement.textContent = productNamValue;
+    nameElement.appendChild(spanElement);
 
-  const actionCell = document.createElement('td');
-  const removBtn = document.createElement('button');
-  removBtn.classList.add('btn', 'btn-remove');
-  removBtn.textContent = 'Remove';
 
-  createProductBtn(removBtn);
-  actionCell.appendChild(removBtn);
 
-  newRow.append(nameCell, priceCell, quantityCell, subtotoalCell, actionCell );
+    // crear celda precio
 
-  createProductBtn.append(newRow);
+    const priceElement = document.createElement('td');
+    priceElement.classList.add('price');
+    priceElement.textContent = '$';
+    //content.appendChild(priceElement);
+    const priceElementSpan = document.createElement('span');
+    priceElementSpan.textContent = productPriceValue.toFixed(2);
+    priceElement.appendChild(priceElementSpan);
+
+    // crear celda cantidad
+
+    const quantityElement = document.createElement('td')
+    quantityElement.classList.add('quantity')
+    const inputquantityElement = document.createElement('input');
+    inputquantityElement.type = 'number';
+    inputquantityElement.value = '0';
+    inputquantityElement.min = '0';
+    inputquantityElement.placeholder = 'Quantity';
+    quantityElement.appendChild(inputquantityElement);
+
+    // crear celda subtotal
+
+    const subtotalElement = document.createElement('td');
+    subtotalElement.classList.add('subtotal')
+    subtotalElement.textContent ='$';
+    const inputSubtotalElement =  document.createElement('span');
+    inputSubtotalElement.textContent = '0';
+    subtotalElement.appendChild(inputSubtotalElement);
+    
+    // crear action
+
+    const actionElement = document.createElement('td');
+    actionElement.classList.add('action');
+    const buttonElement = document.createElement('button');
+    buttonElement.classList.add('btn','btn-remove');
+    buttonElement.textContent('Remove');
+    actionElement.appendChild(buttonElement);
+
+
+    newRow.append(nameElement, priceElement, quantityElement, subtotalElement, actionElement );
+    namesTableBody.appendChild(newRow);
+
+  }
 
 
 
