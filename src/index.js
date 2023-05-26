@@ -70,7 +70,7 @@ function removeProduct(event) {
 // ITERATION 5
 
 const createProductBtn = document.getElementById('create');
-createProductBtn.onclick = (button) => {
+createProductBtn.onclick = (event) => {
   createProduct();
 }
 
@@ -80,13 +80,14 @@ function createProduct() {
   const productNamValue = productNam.value; // capturar el valor del nombre del producto
 
   const productValue = documente.querySelector('tr.create-product > td + td > input')
-  const productValueValue = productValue.value; // capturar el valor del producto
+  const productValueValue = Number (productValue.value); // capturar el valor del producto
 
   const newRow = document.createElement('tr');
   newRow.classList.add('product');
 
   const nameCell = document.createElement('td');
-  const spanCell = document.createElement('span')
+  const spanCell = document.createElement('span');
+  spanCell.textContent = productNamValue;
   spanCell.textContent = productNamValue;
   nameCell.classList.add('name');
 
