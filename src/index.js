@@ -9,9 +9,10 @@ function updateSubtotal(product) {
 function calculateAll() {
   // code in the following two lines is added just for testing purposes.
   // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const products = document.querySelectorAll('.product');
+  
   updateSubtotal(products);
   // end of test
+  
   let totalValue = 0;
   [...products].forEach((e)=>{
     const priceTag = e.querySelector('.price > span');
@@ -32,6 +33,9 @@ function calculateAll() {
 
   // ITERATION 3
   //... your code goes here
+
+  
+
   const total = document.querySelector('#total-value > span')
   total.textContent = totalValue.toFixed(2);
 
@@ -80,11 +84,11 @@ function createProduct() {
 
   //Price Cell
   const priceCell = document.createElement('td');
+  //priceCell.textContent='$';
   priceCell.classList.add('price');
-  priceCell.textContent='$'
   const spanPrice = document.createElement('span');
-  spanPrice.textContent = productPrice;
-    priceCell.appendChild(spanPrice);
+  spanPrice.textContent = productPrice; 
+  priceCell.append(spanPrice);
   
 
   //Quantity
@@ -102,9 +106,9 @@ function createProduct() {
   subTotalCell.classList.add("subtotal")
   const sTotalPrice = document.createElement('span');
   sTotalPrice.textContent = '0';
-  priceCell.innerHTML = '$';
-  priceCell.appendChild(sTotalPrice);
-  priceCell.classList.add('price');
+  subTotalCell.innerHTML = '$';
+  subTotalCell.appendChild(sTotalPrice);
+  subTotalCell.classList.add('price');
 
 
 
@@ -127,6 +131,10 @@ console.log(priceCell)
   //dar evento al botón remover
   const buttonRemove = document.querySelectorAll('.action > button');
 removeButton(buttonRemove)
+
+// dar evento al botón remover
+const products = document.querySelectorAll('.product');
+updateSubtotal(products)
  
 }
 
