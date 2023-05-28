@@ -49,7 +49,6 @@ function calculateAll() {
   totalPriceElement.textContent = totalPrice.toFixed(2);
   //hacemos que el valor del precio total sea igual a la suma de los subtotales
 }
-
 // ITERATION 4
 
 function removeProduct(event) {
@@ -82,22 +81,21 @@ function createProduct() {
   const productNameCell = document.createElement('td');
   productNameCell.classList.add('name');
   const productNameCellElement = document.createElement('span');
-  productNameCellElement.textContent = productNameValue
+  productNameCellElement.textContent = productNameValue;
 
   const productPriceCell = document.createElement('td');
   productPriceCell.classList.add('price');
   productPriceCell.textContent = "$";
   const productPriceCellElement = document.createElement('span');
-  productPriceCellElement.textContent = productPriceValue.toFixed(2)
+  productPriceCellElement.textContent = productPriceValue.toFixed(2);
 
   const productQuantityCell = document.createElement('td');
   productQuantityCell.classList.add('quantity');
   
   const quantityInput = document.createElement('input');
   quantityInput.type = 'number';
-  quantityInput.value = 0;
   quantityInput.min = 0;
-  quantityInput.placeholder = 'Quantity'
+  quantityInput.placeholder = 'Quantity';
 
   const productSubtotalCell = document.createElement('td');
   productSubtotalCell.classList.add('subtotal');
@@ -114,11 +112,11 @@ function createProduct() {
   productActionBtn.textContent = 'Remove';
   productActionBtn.addEventListener('click', removeProduct);
 
-  productPriceCell.append(productPriceCellElement)
-  productNameCell.append(productNameCellElement)
-  productActionCell.append(productActionBtn);
-  productSubtotalCell.append(productSubtotalCellElement); 
-  productQuantityCell.append(quantityInput);
+  productPriceCell.appendChild(productPriceCellElement)
+  productNameCell.appendChild(productNameCellElement)
+  productActionCell.appendChild(productActionBtn);
+  productSubtotalCell.appendChild(productSubtotalCellElement); 
+  productQuantityCell.appendChild(quantityInput);
   newRow.append(productNameCell, productPriceCell, productQuantityCell, productSubtotalCell, productActionCell)
   itemTableBody.appendChild(newRow)
 
