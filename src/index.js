@@ -9,7 +9,7 @@ function updateSubtotal(product) {
 
   const subtotal = price * quantity;
 
-  product.querySelector('.subtotal span').innerHTML = subtotal
+  product.querySelector('.subtotal span').innerHTML = subtotal;
 
   return subtotal;
 }
@@ -31,6 +31,7 @@ function calculateAll() {
   });
 
   // ITERATION 3
+  document.querySelector('#total-value span').innerHTML = subtotalSum;
   
 }
 
