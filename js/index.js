@@ -5,7 +5,7 @@ function updateSubtotal(product) {
 
   //... your code goes here
 }
-
+//OMar
 function calculateAll() {
   // code in the following two lines is added just for testing purposes.
   // it runs when only iteration 1 is completed. at later point, it can be removed.
