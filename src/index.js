@@ -37,7 +37,42 @@ function removeProduct(event) {
 // ITERATION 5
 
 function createProduct() {
-  //... your code goes here
+  const productNameElement = document.querySelector(
+    ".create-product input[type='text']"
+  );
+  const productPriceElement = document.querySelector(
+    ".create-product input[type='number']"
+  );
+
+  const productName = productNameElement.value;
+  const productPrice = Number(productPriceElement.value);
+
+  if (productName === "" || typeof productPrice !== "number") return;
+
+  const row = document.createElement("tr");
+  row.classList.add("product");
+  const nameCell = document.createElement("td");
+  nameCell.innerHTML = `<span>${productName}</span>`;
+  nameCell.classList.add("name");
+  const priceCell = document.createElement("td");
+  priceCell.innerHTML = `$<span>${productPrice.toFixed(2)}</span>`;
+  priceCell.classList.add("price");
+  const quantityCell = document.createElement("td");
+  quantityCell.innerHTML = `<input type="number" value="0" min="0" placeholder="Quantity" />`;
+  quantityCell.classList.add("quantity");
+  const subtotalCell = document.createElement("td");
+  subtotalCell.innerHTML = `$<span>0.00</span>`;
+  subtotalCell.classList.add("subtotal");
+  const actionCell = document.createElement("td");
+  actionCell.innerHTML = `<button class="btn btn-remove">Remove</button>`;
+  actionCell.classList.add("action");
+  actionCell.firstChild.addEventListener("click", removeProduct);
+  row.append(nameCell, priceCell, quantityCell, subtotalCell, actionCell);
+
+  document.querySelector("#cart tbody").appendChild(row);
+
+  productNameElement.value = "";
+  productPriceElement.value = 0;
 }
 
 window.addEventListener("load", () => {
@@ -49,4 +84,7 @@ window.addEventListener("load", () => {
   removeButtons.forEach((button) =>
     button.addEventListener("click", removeProduct)
   );
+
+  const createProductButton = document.querySelector(".create-product #create");
+  createProductButton.addEventListener("click", createProduct);
 });
