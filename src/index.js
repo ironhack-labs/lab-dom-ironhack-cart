@@ -4,20 +4,17 @@ function updateSubtotal(product) {
   const price = Number(product.querySelector(".price span").innerHTML);
   const quantity = Number(product.querySelector(".quantity input").value);
 
-  const subtotal = document.querySelector(".subtotal span");
+  const subtotal = product.querySelector(".subtotal span");
   if (typeof price === "number" && typeof quantity === "number") {
-    subtotal.innerHTML = `${price * quantity}`;
+    subtotal.innerHTML = `${(price * quantity).toFixed(2)}`;
   } else {
     subtotal.innerHTML = `0`;
   }
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
+  const products = document.querySelectorAll("tr.product");
+  products.forEach((product) => updateSubtotal(product));
 
   // ITERATION 2
   //... your code goes here
