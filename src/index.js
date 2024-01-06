@@ -1,26 +1,29 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  const price = Number(product.querySelector(".price span").innerHTML);
-  const quantity = Number(product.querySelector(".quantity input").value);
+  const priceElement = Number(product.querySelector(".price span").innerHTML);
+  const quantityElement = Number(
+    product.querySelector(".quantity input").value
+  );
 
-  const subtotal = product.querySelector(".subtotal span");
-  if (typeof price === "number" && typeof quantity === "number") {
-    subtotal.innerHTML = `${(price * quantity).toFixed(2)}`;
-  } else {
-    subtotal.innerHTML = `0`;
-  }
+  const subtotalElement = product.querySelector(".subtotal span");
+  const subtotal =
+    typeof priceElement === "number" && typeof quantityElement === "number"
+      ? priceElement * quantityElement
+      : 0;
+  subtotalElement.innerHTML = `${subtotal.toFixed(2)}`;
+  return subtotal;
 }
 
 function calculateAll() {
-  const products = document.querySelectorAll("tr.product");
-  products.forEach((product) => updateSubtotal(product));
-
   // ITERATION 2
-  //... your code goes here
+  const products = document.querySelectorAll("tr.product");
+  let total = 0;
+  products.forEach((product) => (total += updateSubtotal(product)));
 
   // ITERATION 3
-  //... your code goes here
+  const totalElement = document.querySelector("#total-value span");
+  totalElement.innerHTML = `${total.toFixed(2)}`;
 }
 
 // ITERATION 4
