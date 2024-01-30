@@ -65,26 +65,28 @@ function createProduct() {
   let productName = document.getElementById('new-name')
   let productPrice = document.getElementById('new-price')
 
-  let newRow = document.createElement("tr")
-  newRow.classList.add('product')
-  newRow.innerHTML = `<td class="name">
-    <span>${productName.value}</span>
-  </td>
-  <td class="price">$<span>${parseFloat(productPrice.value).toFixed(2)}</span></td>
-  <td class="quantity">
-    <input type="number" value="0" min="0" placeholder="Quantity" />
-  </td>
-  <td class="subtotal">$<span>0</span></td>
-  <td class="action">
-    <button class="btn btn-remove">Remove</button>
-  </td>`
-  cart.appendChild(newRow)
-  
-  console.log(productName.value, parseFloat(productPrice.value))
+  if(productName.value !== "" && productPrice.value !== "0") {
+    let newRow = document.createElement("tr")
+    newRow.classList.add('product')
+    newRow.innerHTML = `<td class="name">
+      <span>${productName.value}</span>
+    </td>
+    <td class="price">$<span>${parseFloat(productPrice.value).toFixed(2)}</span></td>
+    <td class="quantity">
+      <input type="number" value="0" min="0" placeholder="Quantity" />
+    </td>
+    <td class="subtotal">$<span>0</span></td>
+    <td class="action">
+      <button class="btn btn-remove">Remove</button>
+    </td>`
+    cart.appendChild(newRow)
+    
+    console.log(productName.value, parseFloat(productPrice.value))
+  }
 
   // Resetear valores
   productName.value = ""
-  productPrice.value = ""
+  productPrice.value = "0"
 
 }
 
