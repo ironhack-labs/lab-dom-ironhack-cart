@@ -1,4 +1,3 @@
-let totalPrices = []
 const cart = document.querySelector('#cart tbody')
 
 // ITERATION 1
@@ -14,24 +13,21 @@ function updateSubtotal(product, index) {
 
   subtotal.innerHTML = subtotalValue
 
-  // totalPrices.splice(index, 1, subtotalValue)
-  totalPrices.push(subtotalValue)
+  return(subtotalValue) // RETORNAR VALOR TOTAL
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  // const singleProduct = document.querySelector('.product');
-  // updateSubtotal(singleProduct);
-  // end of test
-
-  totalPrices = [] // Reiniciar totalPrices cada vez que se calcula el total
 
   // ITERATION 2
+  let newValue = 0 // NUEVO VALOR TOTAL
   let singleProduct = document.querySelectorAll('.product');
+
   singleProduct.forEach((product, index) => {
-    updateSubtotal(product, index);
+    let newPrice = updateSubtotal(product, index);
+    newValue += newPrice // DEFINIR VALOR TOTAL
   })
+
+  console.log(newValue) // CONSOLE ESTE VALOR
 
   // const singleProduct = document.getElementsByClassName('product');
   // for(let product of singleProduct) {
@@ -41,18 +37,14 @@ function calculateAll() {
   
   // ITERATION 3
   const total = document.querySelector('#total-value span')
-  total.innerHTML = totalPrices.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-
-  console.log(totalPrices)
+  total.innerHTML = newValue
 
 }
 
 // ITERATION 4
 
 function removeProduct(event) {
-  const target = event.currentTarget;
-  // console.log('The target in remove is:', target);
-  
+  const target = event.currentTarget;  
   const elementToRemove = target.parentNode.parentNode
 
   cart.removeChild(elementToRemove) // Eliminamos el elemento
