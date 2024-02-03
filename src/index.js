@@ -2,38 +2,15 @@
 function updateSubtotal(product) {
   //  console.log('Calculating subtotal, yey!');
   
- /* const price = product.querySelector('.price span').innerText;
-  // is this use of .innerWHATEVS correct?
+  const price = product.querySelector('.price span').textContent;
 
-  let quantity = document.querySelector('.quantity input').value;
+  const quantity = product.querySelector('.quantity input').value;
 
-  let subtotal = price * quantity
-
-  console.log(subtotal)
+  const subtotal = price * quantity
 
   product.querySelector('.subtotal span').innerHTML = subtotal
 
   return subtotal
-  
-/*  let subtotal = product.querySelector('.subtotal span')
-
-  subtotal.innerHTML = subtotalCalculation */
-
-  const price = product.querySelector('.price span');
-
-  const priceValue = price.innerText;
-
-  let quantity = product.querySelector('.quantity input');
-
-  let quantityValue = quantity.value;
-
-  let subtotal = product.querySelector('.subtotal span')
-
-  let subtotalValue = priceValue * quantityValue
-  
-  subtotal.innerText = subtotalValue
-
-  return subtotalValue
   
 }
 
@@ -67,11 +44,15 @@ let total = 0
 
 for (let i = 0; i < product.length; i++) {
   let singleProduct = product[i]
-//  console.log(updateSubtotal(singleProduct))
   total = total + updateSubtotal(singleProduct)
 }
 
-//console.log(total)
+console.log(total)
+
+let totalCart = document.querySelector('#total-value span')
+
+totalCart.innerHTML = total
+
 }
 
 
