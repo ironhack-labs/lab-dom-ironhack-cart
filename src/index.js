@@ -43,15 +43,9 @@ function createProduct() {
 }
 
 window.addEventListener("load", () => {
-  //event listening on calculate prices button
-  const calculatePricesBtn = document.getElementById("calculate");
-  calculatePricesBtn.addEventListener("click", calculateAll);
-
-  //another event listener on remove buttons -> I should fix that, too many listeners!
-  const removeBtns = document.querySelectorAll(".btn-remove");
-  removeBtns.forEach((btn) => btn.addEventListener("click", removeProduct));
-
-  //yet another listener, but still not working properly (the createProduct).
-  const createProductBtn = document.getElementById("create");
-  createProductBtn.addEventListener("click", createProduct);
+  document.getElementById('cart').addEventListener('click', function(event) {
+    if (event.target.className === 'calculate') calculateAll(event);
+    if (event.target.className === 'btn-remove') removeProduct(event);
+    if (event.target.id === 'create') createProduct(event);
+  })
 });
