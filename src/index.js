@@ -1,42 +1,71 @@
 // ITERATION 1
 
+
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
 
-  //... your code goes here
+
+  const priceElement = product.querySelector('.price span');
+  const quantityElement = product.querySelector('.quantity input');
+
+  const price = parseFloat(priceElement.innerText);
+  const quantity = parseInt(quantityElement.value);
+
+  const subtotal = price * quantity;
+
+  const subtotalElement = product.querySelector('.subtotal span');
+
+  subtotalElement.innerText = `${subtotal.toFixed(2)}`;
+
+  return subtotal;
 }
+
+
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
 
-  // ITERATION 2
-  //... your code goes here
 
-  // ITERATION 3
-  //... your code goes here
+  const filasProduct = document.getElementsByClassName("product");
+  let total = 0;
+
+  for (let i = 0; i < filasProduct.length; i++) {
+
+    const fila = filasProduct[i];
+    const subtotalValue = updateSubtotal(fila)
+
+
+    if (!isNaN(subtotalValue)) {
+      total += subtotalValue;
+    }
+  }
+
+  const totalElement = document.getElementById('total-value');
+  totalElement.innerText = `$ ${total.toFixed(2)}`;
 }
+
 
 // ITERATION 4
 
 function removeProduct(event) {
-  const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
+  const productRow = event.target.closest('.product');
+  productRow.parentNode.removeChild(productRow);
+  calculateAll();
 }
 
-// ITERATION 5
-
-function createProduct() {
-  //... your code goes here
+function setupEventListeners() {
+  const removeButtons = document.querySelectorAll('.btn-remove');
+  removeButtons.forEach((button) => {
+    button.addEventListener('click', removeProduct);
+  });
 }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+  
+  setupEventListeners();
 });
+
+// ITERATION 5
+
