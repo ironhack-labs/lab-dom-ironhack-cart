@@ -1,42 +1,51 @@
-// ITERATION 1
-
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
-
-  //... your code goes here
+  let price = product.querySelector(".price span").innerHTML;
+  let quantity = product.querySelector(".quantity input").value;
+  let subtotal = product.querySelector(".subtotal");
+  let subtotalValue = price * quantity;
+  subtotal.innerHTML = `$${subtotalValue}`;
+  return subtotalValue;
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
-
-  // ITERATION 2
-  //... your code goes here
-
-  // ITERATION 3
-  //... your code goes here
+  let total = 0;
+  const products = [...document.getElementsByClassName("product")];
+  products.forEach((product) => (total += updateSubtotal(product)));
+  let totalValue = document.getElementById("total-value").querySelector("span");
+  totalValue.innerHTML = total;
 }
-
-// ITERATION 4
 
 function removeProduct(event) {
   const target = event.currentTarget;
-  console.log('The target in remove is:', target);
-  //... your code goes here
-}
+  const productRow = target.parentNode.parentNode;
+  productRow.remove();
 
-// ITERATION 5
+  calculateAll();
+}
 
 function createProduct() {
-  //... your code goes here
+  const table = document.getElementById("cart");
+  //I will clone the first row of the table and then change the content.
+  const newRow = document.querySelector('.product').cloneNode(true);
+
+  newRow.querySelector('.quantity input').value = 0;
+  newRow.querySelector('.subtotal').innerHTML = '$0';
+  
+  const unitPrice = document.getElementById("new-product-price").value;
+  const productName = document.getElementById("new-product-name").value;
+
+  newRow.querySelector('.name span').textContent = productName;
+  newRow.querySelector('.price span').textContent = unitPrice;
+
+  newRow.querySelector('.btn-remove').addEventListener('click', removeProduct);
+
+  table.querySelector('tbody').appendChild(newRow);
 }
 
-window.addEventListener('load', () => {
-  const calculatePricesBtn = document.getElementById('calculate');
-  calculatePricesBtn.addEventListener('click', calculateAll);
-
-  //... your code goes here
+window.addEventListener("load", () => {
+  document.getElementById('cart').addEventListener('click', function(event) {
+    if (event.target.className === 'calculate') calculateAll(event);
+    if (event.target.className === 'btn-remove') removeProduct(event);
+    if (event.target.id === 'create') createProduct(event);
+  })
 });
