@@ -1,23 +1,51 @@
 // ITERATION 1
 
 function updateSubtotal(product) {
-  console.log('Calculating subtotal, yey!');
+  //step 1 and 2
+  const price = parseFloat(product.querySelector('.price span').innerHTML);
+  const quantity = product.querySelector('.quantity input').value;
 
-  //... your code goes here
+  //step 3 and 4
+
+  const valueOfSubtotal = price * quantity;
+
+  //step 5
+  const subtotalEl = product.querySelector('.subtotal span');
+  subtotalEl.innerHTML = valueOfSubtotal;
+
+  return valueOfSubtotal;
+
+  //console.log('Calculating subtotal, yey!');
 }
 
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
-
   // ITERATION 2
-  //... your code goes here
+  const products = document.getElementsByClassName('product');
+  let total = 0;
 
-  // ITERATION 3
-  //... your code goes here
+  for (let i = 0; i < products.length; i++) {
+    let currentProduct = products[i]; //the product on the list is assigned to current product
+    total += updateSubtotal(currentProduct);
+  }
+  console.log(total);
+}
+// ITERATION 3
+function calculateAll() {
+  const products = document.getElementsByClassName('product');
+  let total = 0;
+
+  for (let i = 0; i < products.length; i++) {
+    let currentProduct = products[i];
+    total += updateSubtotal(currentProduct);
+  }
+
+  const totalElement = document.getElementById('total-value');
+  if (totalElement) {
+    const spanElement = totalElement.querySelector('span');
+    if (spanElement) {
+      spanElement.textContent = total.toFixed(2); 
+    }
+  }
 }
 
 // ITERATION 4
