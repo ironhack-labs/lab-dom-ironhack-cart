@@ -14,7 +14,9 @@ function updateSubtotal(product) {
 
 function calculateAll() {
  
+  // Creamos variable para el valor total de nuestro carrito
   let total = 0
+
   // Seleccionamos todos los elementos con la clase "product"
   const products = document.querySelectorAll('.product');
 
@@ -24,16 +26,32 @@ function calculateAll() {
   }
 
   // ITERATION 3
-  //... your code goes here
+  const totalValue = document.querySelector('#total-value span').textContent = total
 }
 
 // ITERATION 4
 
 function removeProduct(event) {
+  
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
-  //... your code goes here
+
+  target.parentNode.parentNode.remove()
+
+  calculateAll()
+  
 }
+
+window.addEventListener('click', () => {
+  const removeBtn = document.querySelectorAll('.btn-remove')
+  
+  for(let value of removeBtn) {
+  
+    value.addEventListener('click', removeProduct)
+  }
+  return removeBtn
+})
+
 
 // ITERATION 5
 
