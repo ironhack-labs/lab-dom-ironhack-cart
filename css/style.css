@@ -65,3 +65,11 @@ h2,
 .calculate-total {
   text-align: center;
 }
+
+.btn-create {
+  border: 1px solid rgb(6, 102, 6); 
+  background-color: rgb(6, 102, 6);
+  border-radius: 5px;
+  font-weight: bold;
+  color:white;
+}
