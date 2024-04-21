@@ -2,19 +2,38 @@
 
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
-
-  //... your code goes here
+let price = parseFloat(product.querySelector('.price span').textContent);
+let quantity = parseFloat(price.querySelector('.price input').value);
+let subtotal = price * quantity;
+product.querySelector('.subtotal').textContent = subtotal.toFixed(2); // Mostra il subtotale con due decimali
+  return subtotal;
 }
+// Funzione per aggiornare il subtotale totale della tabella
+function updateTotal() {
+  let total = 0;
+  document.querySelectorAll('.tbody .tr').forEach(product => {
+    total += calculateSubtotal(product);
+  });
+}
+
+// Aggiungi eventi di input per i campi di quantità e prezzo
+document.querySelectorAll('.quantity, .price').forEach(input => {
+  input.addEventListener('input', updateTotal);
+});
+
+// Chiama updateTotal() all'avvio per inizializzare il totale
+updateTotal();
 
 function calculateAll() {
   // code in the following two lines is added just for testing purposes.
   // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
+  let singleProduct = document.querySelector('.product');
   updateSubtotal(singleProduct);
   // end of test
 
   // ITERATION 2
-  //... your code goes here
+  let productRow = document.getElementsByClassName('#cart. product');
+  productRow.forEach(productRow => {updateSubtotal(productRow);})
 
   // ITERATION 3
   //... your code goes here
