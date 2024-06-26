@@ -9,6 +9,11 @@ body {
   color: #2d354c;
 }
 
+a{
+  text-decoration: none;
+  color: white;
+}
+
 button,
 input {
   font: inherit;
