@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono:400,700&display=swap");
 
 body {
   margin: 0 auto;
   padding: 1em;
   max-width: 60em;
-  font-family: 'Roboto Mono', sans-serif;
+  font-family: "Roboto Mono", sans-serif;
   line-height: 1.5;
   color: #2d354c;
 }
@@ -36,7 +36,7 @@ table input {
   border: 1px solid #dadada;
 }
 
-table input[type='number'] {
+table input[type="number"] {
   max-width: 4em;
 }
 
@@ -53,7 +53,7 @@ table input[type='number'] {
 }
 
 .btn-success {
-  background-color: #2cc5fa;
+  background-color: #9ed387;
 }
 
 .btn-remove {
@@ -64,4 +64,8 @@ h1,
 h2,
 .calculate-total {
   text-align: center;
+}
+
+#create {
+  background-color: rgb(139, 213, 215);
 }
