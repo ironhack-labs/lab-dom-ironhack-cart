@@ -47,6 +47,10 @@ table input[type='number'] {
   cursor: pointer;
 }
 
+.action {
+  text-align: center;
+}
+
 .btn-success,
 .btn-remove {
   color: #fff;
@@ -63,5 +67,9 @@ table input[type='number'] {
 h1,
 h2,
 .calculate-total {
+  text-align: center;
+}
+
+.create-product td:last-child {
   text-align: center;
 }
