@@ -59,7 +59,10 @@ table input[type='number'] {
 .btn-remove {
   background-color: #f27471;
 }
-
+/*botón crear*/
+.btn-create {
+  background-color: #315ee5;
+}
 h1,
 h2,
 .calculate-total {
