@@ -27,6 +27,7 @@ table#cart {
   border-collapse: collapse;
 }
 
+
 table#cart tfoot {
   background: #eee;
 }
@@ -58,6 +59,10 @@ table input[type='number'] {
 
 .btn-remove {
   background-color: #f27471;
+}
+
+.btn-create {
+  background-color: #b7cdb9;
 }
 
 h1,
