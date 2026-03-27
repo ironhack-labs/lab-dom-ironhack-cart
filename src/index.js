@@ -37,7 +37,7 @@ function calculateAll() {
 
   //document.querySelector('#total-value span').innerHTML = total;
 }
-
+//Bonus
 // ITERATION 4
 
 function removeProduct(event) {
