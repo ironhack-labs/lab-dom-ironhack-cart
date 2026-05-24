@@ -13,6 +13,7 @@ function updateSubtotal(product) {
     // Step 3: Calculate the subtotal price
     const subtotalValue = priceValue * quantityValue;
 
+
     // Step 4 & 5: Get the subtotal DOM element and update its text content
     const subtotalElement = product.querySelector('.subtotal span');
     subtotalElement.innerText = subtotalValue.toFixed(2); // Formats the number to 2 decimal places (e.g., 25.00)
