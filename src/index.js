@@ -1,42 +1,87 @@
 // ITERATION 1
-
 function updateSubtotal(product) {
   console.log('Calculating subtotal, yey!');
 
-  //... your code goes here
+  const price = parseFloat(product.querySelector('.price span').innerText);
+  const quantity = parseInt(product.querySelector('.quantity input').value, 10);
+  const subtotal = price * quantity;
+
+  product.querySelector('.subtotal span').innerText = subtotal.toFixed(2);
+  return subtotal;
 }
 
+// ITERATION 2 & 3
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
+  const allProducts = document.getElementsByClassName('product');
+  let total = 0;
 
-  // ITERATION 2
-  //... your code goes here
+  for (let i = 0; i < allProducts.length; i++) {
+    total += updateSubtotal(allProducts[i]);
+  }
 
-  // ITERATION 3
-  //... your code goes here
+  const totalElement = document.querySelector('#total-value span');
+  totalElement.innerText = total.toFixed(2);
 }
 
 // ITERATION 4
-
 function removeProduct(event) {
   const target = event.currentTarget;
   console.log('The target in remove is:', target);
-  //... your code goes here
+
+  const productRow = target.closest('tr.product');
+  productRow.parentNode.removeChild(productRow);
+
+  calculateAll();
 }
 
 // ITERATION 5
-
 function createProduct() {
-  //... your code goes here
+  const nameInput = document.querySelector('.new-product-name');
+  const priceInput = document.querySelector('.new-product-price');
+
+  const name = nameInput.value.trim();
+  const price = parseFloat(priceInput.value);
+
+  if (!name || isNaN(price) || price <= 0) {
+    alert('Please enter a valid product name and price.');
+    return;
+  }
+
+  const newRow = document.createElement('tr');
+  newRow.className = 'product';
+
+  newRow.innerHTML = `
+    <td class="name">
+      <span>${name}</span>
+    </td>
+    <td class="price">$<span>${price.toFixed(2)}</span></td>
+    <td class="quantity">
+      <input type="number" value="0" min="0" placeholder="Quantity" />
+    </td>
+    <td class="subtotal">$<span>0</span></td>
+    <td class="action">
+      <button class="btn btn-remove">Remove</button>
+    </td>
+  `;
+
+  document.querySelector('#cart tbody').appendChild(newRow);
+
+  const newRemoveBtn = newRow.querySelector('.btn-remove');
+  newRemoveBtn.addEventListener('click', removeProduct);
+
+  nameInput.value = '';
+  priceInput.value = '';
 }
 
 window.addEventListener('load', () => {
   const calculatePricesBtn = document.getElementById('calculate');
   calculatePricesBtn.addEventListener('click', calculateAll);
 
-  //... your code goes here
+  const removeBtns = document.querySelectorAll('.btn-remove');
+  removeBtns.forEach(btn => {
+    btn.addEventListener('click', removeProduct);
+  });
+
+  const createBtn = document.getElementById('create');
+  createBtn.addEventListener('click', createProduct);
 });
